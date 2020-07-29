@@ -243,6 +243,10 @@ func (m *CategoricalParameterRange) GetValues() []string {
 	return nil
 }
 
+// ParameterRangeOneOf describes a single ParameterRange, which is a one-of structure that can be one of
+// the three possible types: ContinuousParameterRange, IntegerParameterRange, and CategoricalParameterRange.
+// This one-of structure in Flyte enables specifying a Parameter in a type-safe manner
+// See: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
 type ParameterRangeOneOf struct {
 	// Types that are valid to be assigned to ParameterRangeType:
 	//	*ParameterRangeOneOf_ContinuousParameterRange

@@ -2504,6 +2504,13 @@ public final class ParameterRangesOuterClass {
     public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangeOneOf.ParameterRangeTypeCase getParameterRangeTypeCase();
   }
   /**
+   * <pre>
+   * ParameterRangeOneOf describes a single ParameterRange, which is a one-of structure that can be one of
+   * the three possible types: ContinuousParameterRange, IntegerParameterRange, and CategoricalParameterRange.
+   * This one-of structure in Flyte enables specifying a Parameter in a type-safe manner
+   * See: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRangeOneOf}
    */
   public  static final class ParameterRangeOneOf extends
@@ -2933,6 +2940,13 @@ public final class ParameterRangesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * ParameterRangeOneOf describes a single ParameterRange, which is a one-of structure that can be one of
+     * the three possible types: ContinuousParameterRange, IntegerParameterRange, and CategoricalParameterRange.
+     * This one-of structure in Flyte enables specifying a Parameter in a type-safe manner
+     * See: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRangeOneOf}
      */
     public static final class Builder extends

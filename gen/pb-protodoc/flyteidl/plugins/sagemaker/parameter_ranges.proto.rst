@@ -150,8 +150,12 @@ values
 flyteidl.plugins.sagemaker.ParameterRangeOneOf
 ----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L43>`_
+`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L48>`_
 
+ParameterRangeOneOf describes a single ParameterRange, which is a one-of structure that can be one of
+the three possible types: ContinuousParameterRange, IntegerParameterRange, and CategoricalParameterRange.
+This one-of structure in Flyte enables specifying a Parameter in a type-safe manner
+See: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
 
 .. code-block:: json
 
@@ -192,7 +196,7 @@ categorical_parameter_range
 flyteidl.plugins.sagemaker.ParameterRanges
 ------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L53>`_
+`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L58>`_
 
 ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
 https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html

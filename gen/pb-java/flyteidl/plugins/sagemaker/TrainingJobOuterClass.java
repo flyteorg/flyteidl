@@ -2478,9 +2478,9 @@ public final class TrainingJobOuterClass {
      * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
      */
-    boolean hasInputFileType();
+    int getInputFileTypeValue();
     /**
      * <pre>
      * The type of the input files (when using FILE input mode)
@@ -2488,19 +2488,9 @@ public final class TrainingJobOuterClass {
      * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType();
-    /**
-     * <pre>
-     * The type of the input files (when using FILE input mode)
-     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-     */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value getInputFileType();
   }
   /**
    * <pre>
@@ -2529,6 +2519,7 @@ public final class TrainingJobOuterClass {
       algorithmName_ = 0;
       algorithmVersion_ = "";
       metricDefinitions_ = java.util.Collections.emptyList();
+      inputFileType_ = 0;
     }
 
     @java.lang.Override
@@ -2582,17 +2573,10 @@ public final class TrainingJobOuterClass {
                   input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.parser(), extensionRegistry));
               break;
             }
-            case 42: {
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder subBuilder = null;
-              if (inputFileType_ != null) {
-                subBuilder = inputFileType_.toBuilder();
-              }
-              inputFileType_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(inputFileType_);
-                inputFileType_ = subBuilder.buildPartial();
-              }
+            case 40: {
+              int rawValue = input.readEnum();
 
+              inputFileType_ = rawValue;
               break;
             }
             default: {
@@ -2793,7 +2777,7 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int INPUT_FILE_TYPE_FIELD_NUMBER = 5;
-    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType inputFileType_;
+    private int inputFileType_;
     /**
      * <pre>
      * The type of the input files (when using FILE input mode)
@@ -2801,10 +2785,10 @@ public final class TrainingJobOuterClass {
      * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
      */
-    public boolean hasInputFileType() {
-      return inputFileType_ != null;
+    public int getInputFileTypeValue() {
+      return inputFileType_;
     }
     /**
      * <pre>
@@ -2813,22 +2797,12 @@ public final class TrainingJobOuterClass {
      * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType() {
-      return inputFileType_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
-    }
-    /**
-     * <pre>
-     * The type of the input files (when using FILE input mode)
-     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-     */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder() {
-      return getInputFileType();
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value getInputFileType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.valueOf(inputFileType_);
+      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2857,8 +2831,8 @@ public final class TrainingJobOuterClass {
       for (int i = 0; i < metricDefinitions_.size(); i++) {
         output.writeMessage(4, metricDefinitions_.get(i));
       }
-      if (inputFileType_ != null) {
-        output.writeMessage(5, getInputFileType());
+      if (inputFileType_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.TEXT_CSV.getNumber()) {
+        output.writeEnum(5, inputFileType_);
       }
       unknownFields.writeTo(output);
     }
@@ -2884,9 +2858,9 @@ public final class TrainingJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, metricDefinitions_.get(i));
       }
-      if (inputFileType_ != null) {
+      if (inputFileType_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.TEXT_CSV.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getInputFileType());
+          .computeEnumSize(5, inputFileType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2909,11 +2883,7 @@ public final class TrainingJobOuterClass {
           .equals(other.getAlgorithmVersion())) return false;
       if (!getMetricDefinitionsList()
           .equals(other.getMetricDefinitionsList())) return false;
-      if (hasInputFileType() != other.hasInputFileType()) return false;
-      if (hasInputFileType()) {
-        if (!getInputFileType()
-            .equals(other.getInputFileType())) return false;
-      }
+      if (inputFileType_ != other.inputFileType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2935,10 +2905,8 @@ public final class TrainingJobOuterClass {
         hash = (37 * hash) + METRIC_DEFINITIONS_FIELD_NUMBER;
         hash = (53 * hash) + getMetricDefinitionsList().hashCode();
       }
-      if (hasInputFileType()) {
-        hash = (37 * hash) + INPUT_FILE_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getInputFileType().hashCode();
-      }
+      hash = (37 * hash) + INPUT_FILE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + inputFileType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3095,12 +3063,8 @@ public final class TrainingJobOuterClass {
         } else {
           metricDefinitionsBuilder_.clear();
         }
-        if (inputFileTypeBuilder_ == null) {
-          inputFileType_ = null;
-        } else {
-          inputFileType_ = null;
-          inputFileTypeBuilder_ = null;
-        }
+        inputFileType_ = 0;
+
         return this;
       }
 
@@ -3141,11 +3105,7 @@ public final class TrainingJobOuterClass {
         } else {
           result.metricDefinitions_ = metricDefinitionsBuilder_.build();
         }
-        if (inputFileTypeBuilder_ == null) {
-          result.inputFileType_ = inputFileType_;
-        } else {
-          result.inputFileType_ = inputFileTypeBuilder_.build();
-        }
+        result.inputFileType_ = inputFileType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3231,8 +3191,8 @@ public final class TrainingJobOuterClass {
             }
           }
         }
-        if (other.hasInputFileType()) {
-          mergeInputFileType(other.getInputFileType());
+        if (other.inputFileType_ != 0) {
+          setInputFileTypeValue(other.getInputFileTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3841,9 +3801,7 @@ public final class TrainingJobOuterClass {
         return metricDefinitionsBuilder_;
       }
 
-      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType inputFileType_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder> inputFileTypeBuilder_;
+      private int inputFileType_ = 0;
       /**
        * <pre>
        * The type of the input files (when using FILE input mode)
@@ -3851,10 +3809,10 @@ public final class TrainingJobOuterClass {
        * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
        */
-      public boolean hasInputFileType() {
-        return inputFileTypeBuilder_ != null || inputFileType_ != null;
+      public int getInputFileTypeValue() {
+        return inputFileType_;
       }
       /**
        * <pre>
@@ -3863,35 +3821,11 @@ public final class TrainingJobOuterClass {
        * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType() {
-        if (inputFileTypeBuilder_ == null) {
-          return inputFileType_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
-        } else {
-          return inputFileTypeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The type of the input files (when using FILE input mode)
-       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-       */
-      public Builder setInputFileType(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType value) {
-        if (inputFileTypeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          inputFileType_ = value;
-          onChanged();
-        } else {
-          inputFileTypeBuilder_.setMessage(value);
-        }
-
+      public Builder setInputFileTypeValue(int value) {
+        inputFileType_ = value;
+        onChanged();
         return this;
       }
       /**
@@ -3901,17 +3835,29 @@ public final class TrainingJobOuterClass {
        * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
        */
-      public Builder setInputFileType(
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder builderForValue) {
-        if (inputFileTypeBuilder_ == null) {
-          inputFileType_ = builderForValue.build();
-          onChanged();
-        } else {
-          inputFileTypeBuilder_.setMessage(builderForValue.build());
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value getInputFileType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.valueOf(inputFileType_);
+        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
+       */
+      public Builder setInputFileType(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Value value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-
+        
+        inputFileType_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
@@ -3921,95 +3867,13 @@ public final class TrainingJobOuterClass {
        * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-       */
-      public Builder mergeInputFileType(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType value) {
-        if (inputFileTypeBuilder_ == null) {
-          if (inputFileType_ != null) {
-            inputFileType_ =
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.newBuilder(inputFileType_).mergeFrom(value).buildPartial();
-          } else {
-            inputFileType_ = value;
-          }
-          onChanged();
-        } else {
-          inputFileTypeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The type of the input files (when using FILE input mode)
-       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;</code>
        */
       public Builder clearInputFileType() {
-        if (inputFileTypeBuilder_ == null) {
-          inputFileType_ = null;
-          onChanged();
-        } else {
-          inputFileType_ = null;
-          inputFileTypeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The type of the input files (when using FILE input mode)
-       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-       */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder getInputFileTypeBuilder() {
         
+        inputFileType_ = 0;
         onChanged();
-        return getInputFileTypeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The type of the input files (when using FILE input mode)
-       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-       */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder() {
-        if (inputFileTypeBuilder_ != null) {
-          return inputFileTypeBuilder_.getMessageOrBuilder();
-        } else {
-          return inputFileType_ == null ?
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
-        }
-      }
-      /**
-       * <pre>
-       * The type of the input files (when using FILE input mode)
-       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder> 
-          getInputFileTypeFieldBuilder() {
-        if (inputFileTypeBuilder_ == null) {
-          inputFileTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder>(
-                  getInputFileType(),
-                  getParentForChildren(),
-                  isClean());
-          inputFileType_ = null;
-        }
-        return inputFileTypeBuilder_;
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5688,24 +5552,25 @@ public final class TrainingJobOuterClass {
       "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001" +
       "\"7\n\rInputFileType\"&\n\005Value\022\014\n\010TEXT_CSV\020\000" +
       "\022\017\n\013TEXT_LIBSVM\020\001\"/\n\020MetricDefinition\022\014\n" +
-      "\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"\313\002\n\026Algorithm" +
+      "\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"\321\002\n\026Algorithm" +
       "Specification\022?\n\ninput_mode\030\001 \001(\0162+.flyt" +
       "eidl.plugins.sagemaker.InputMode.Value\022G" +
       "\n\016algorithm_name\030\002 \001(\0162/.flyteidl.plugin" +
       "s.sagemaker.AlgorithmName.Value\022\031\n\021algor" +
       "ithm_version\030\003 \001(\t\022H\n\022metric_definitions" +
       "\030\004 \003(\0132,.flyteidl.plugins.sagemaker.Metr" +
-      "icDefinition\022B\n\017input_file_type\030\005 \001(\0132)." +
+      "icDefinition\022H\n\017input_file_type\030\005 \001(\0162/." +
       "flyteidl.plugins.sagemaker.InputFileType" +
-      "\"e\n\031TrainingJobResourceConfig\022\026\n\016instanc" +
-      "e_count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021" +
-      "volume_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022" +
-      "S\n\027algorithm_specification\030\001 \001(\01322.flyte" +
-      "idl.plugins.sagemaker.AlgorithmSpecifica" +
-      "tion\022[\n\034training_job_resource_config\030\002 \001" +
-      "(\01325.flyteidl.plugins.sagemaker.Training" +
-      "JobResourceConfigB5Z3github.com/lyft/fly" +
-      "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      ".Value\"e\n\031TrainingJobResourceConfig\022\026\n\016i" +
+      "nstance_count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001" +
+      "(\t\022\031\n\021volume_size_in_gb\030\003 \001(\003\"\277\001\n\013Traini" +
+      "ngJob\022S\n\027algorithm_specification\030\001 \001(\01322" +
+      ".flyteidl.plugins.sagemaker.AlgorithmSpe" +
+      "cification\022[\n\034training_job_resource_conf" +
+      "ig\030\002 \001(\01325.flyteidl.plugins.sagemaker.Tr" +
+      "ainingJobResourceConfigB5Z3github.com/ly" +
+      "ft/flyteidl/gen/pb-go/flyteidl/pluginsb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

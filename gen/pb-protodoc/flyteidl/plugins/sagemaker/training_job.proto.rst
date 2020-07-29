@@ -170,7 +170,7 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecifica
     "algorithm_name": "...",
     "algorithm_version": "...",
     "metric_definitions": [],
-    "input_file_type": "{...}"
+    "input_file_type": "..."
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode:
@@ -204,7 +204,7 @@ metric_definitions
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type:
 
 input_file_type
-  (:ref:`flyteidl.plugins.sagemaker.InputFileType <api_msg_flyteidl.plugins.sagemaker.InputFileType>`) The type of the input files (when using FILE input mode)
+  (:ref:`flyteidl.plugins.sagemaker.InputFileType.Value <api_enum_flyteidl.plugins.sagemaker.InputFileType.Value>`) The type of the input files (when using FILE input mode)
   See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
   https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
   

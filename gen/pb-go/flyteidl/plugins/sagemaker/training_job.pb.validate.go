@@ -328,15 +328,7 @@ func (m *AlgorithmSpecification) Validate() error {
 
 	}
 
-	if v, ok := interface{}(m.GetInputFileType()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return AlgorithmSpecificationValidationError{
-				field:  "InputFileType",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for InputFileType
 
 	return nil
 }

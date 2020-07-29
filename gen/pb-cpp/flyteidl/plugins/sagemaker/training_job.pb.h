@@ -806,15 +806,6 @@ class AlgorithmSpecification final :
   ::std::string* release_algorithm_version();
   void set_allocated_algorithm_version(::std::string* algorithm_version);
 
-  // .flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;
-  bool has_input_file_type() const;
-  void clear_input_file_type();
-  static const int kInputFileTypeFieldNumber = 5;
-  const ::flyteidl::plugins::sagemaker::InputFileType& input_file_type() const;
-  ::flyteidl::plugins::sagemaker::InputFileType* release_input_file_type();
-  ::flyteidl::plugins::sagemaker::InputFileType* mutable_input_file_type();
-  void set_allocated_input_file_type(::flyteidl::plugins::sagemaker::InputFileType* input_file_type);
-
   // .flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;
   void clear_input_mode();
   static const int kInputModeFieldNumber = 1;
@@ -827,6 +818,12 @@ class AlgorithmSpecification final :
   ::flyteidl::plugins::sagemaker::AlgorithmName_Value algorithm_name() const;
   void set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName_Value value);
 
+  // .flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;
+  void clear_input_file_type();
+  static const int kInputFileTypeFieldNumber = 5;
+  ::flyteidl::plugins::sagemaker::InputFileType_Value input_file_type() const;
+  void set_input_file_type(::flyteidl::plugins::sagemaker::InputFileType_Value value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification)
  private:
   class HasBitSetters;
@@ -834,9 +831,9 @@ class AlgorithmSpecification final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition > metric_definitions_;
   ::google::protobuf::internal::ArenaStringPtr algorithm_version_;
-  ::flyteidl::plugins::sagemaker::InputFileType* input_file_type_;
   int input_mode_;
   int algorithm_name_;
+  int input_file_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1343,55 +1340,18 @@ AlgorithmSpecification::metric_definitions() const {
   return metric_definitions_;
 }
 
-// .flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;
-inline bool AlgorithmSpecification::has_input_file_type() const {
-  return this != internal_default_instance() && input_file_type_ != nullptr;
-}
+// .flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;
 inline void AlgorithmSpecification::clear_input_file_type() {
-  if (GetArenaNoVirtual() == nullptr && input_file_type_ != nullptr) {
-    delete input_file_type_;
-  }
-  input_file_type_ = nullptr;
+  input_file_type_ = 0;
 }
-inline const ::flyteidl::plugins::sagemaker::InputFileType& AlgorithmSpecification::input_file_type() const {
-  const ::flyteidl::plugins::sagemaker::InputFileType* p = input_file_type_;
+inline ::flyteidl::plugins::sagemaker::InputFileType_Value AlgorithmSpecification::input_file_type() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::InputFileType*>(
-      &::flyteidl::plugins::sagemaker::_InputFileType_default_instance_);
+  return static_cast< ::flyteidl::plugins::sagemaker::InputFileType_Value >(input_file_type_);
 }
-inline ::flyteidl::plugins::sagemaker::InputFileType* AlgorithmSpecification::release_input_file_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
+inline void AlgorithmSpecification::set_input_file_type(::flyteidl::plugins::sagemaker::InputFileType_Value value) {
   
-  ::flyteidl::plugins::sagemaker::InputFileType* temp = input_file_type_;
-  input_file_type_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::plugins::sagemaker::InputFileType* AlgorithmSpecification::mutable_input_file_type() {
-  
-  if (input_file_type_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputFileType>(GetArenaNoVirtual());
-    input_file_type_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
-  return input_file_type_;
-}
-inline void AlgorithmSpecification::set_allocated_input_file_type(::flyteidl::plugins::sagemaker::InputFileType* input_file_type) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete input_file_type_;
-  }
-  if (input_file_type) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      input_file_type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, input_file_type, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  input_file_type_ = input_file_type;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
+  input_file_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
 }
 
 // -------------------------------------------------------------------
