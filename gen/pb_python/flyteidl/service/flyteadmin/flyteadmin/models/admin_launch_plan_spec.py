@@ -50,7 +50,8 @@ class AdminLaunchPlanSpec(object):
         'annotations': 'AdminAnnotations',
         'auth': 'AdminAuth',
         'auth_role': 'AdminAuthRole',
-        'quality_of_service': 'CoreQualityOfService'
+        'quality_of_service': 'CoreQualityOfService',
+        'output_data_prefix': 'str'
     }
 
     attribute_map = {
@@ -63,10 +64,11 @@ class AdminLaunchPlanSpec(object):
         'annotations': 'annotations',
         'auth': 'auth',
         'auth_role': 'auth_role',
-        'quality_of_service': 'quality_of_service'
+        'quality_of_service': 'quality_of_service',
+        'output_data_prefix': 'output_data_prefix'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, quality_of_service=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, quality_of_service=None, output_data_prefix=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -79,6 +81,7 @@ class AdminLaunchPlanSpec(object):
         self._auth = None
         self._auth_role = None
         self._quality_of_service = None
+        self._output_data_prefix = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -101,6 +104,8 @@ class AdminLaunchPlanSpec(object):
             self.auth_role = auth_role
         if quality_of_service is not None:
             self.quality_of_service = quality_of_service
+        if output_data_prefix is not None:
+            self.output_data_prefix = output_data_prefix
 
     @property
     def workflow_id(self):
@@ -319,6 +324,27 @@ class AdminLaunchPlanSpec(object):
         """
 
         self._quality_of_service = quality_of_service
+
+    @property
+    def output_data_prefix(self):
+        """Gets the output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
+
+
+        :return: The output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_data_prefix
+
+    @output_data_prefix.setter
+    def output_data_prefix(self, output_data_prefix):
+        """Sets the output_data_prefix of this AdminLaunchPlanSpec.
+
+
+        :param output_data_prefix: The output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
+        :type: str
+        """
+
+        self._output_data_prefix = output_data_prefix
 
     def to_dict(self):
         """Returns the model properties as a dict"""

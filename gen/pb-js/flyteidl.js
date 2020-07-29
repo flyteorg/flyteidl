@@ -20311,6 +20311,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAuth|null} [auth] LaunchPlanSpec auth
              * @property {flyteidl.admin.IAuthRole|null} [authRole] LaunchPlanSpec authRole
              * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] LaunchPlanSpec qualityOfService
+             * @property {string|null} [outputDataPrefix] LaunchPlanSpec outputDataPrefix
              */
 
             /**
@@ -20409,6 +20410,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.qualityOfService = null;
 
             /**
+             * LaunchPlanSpec outputDataPrefix.
+             * @member {string} outputDataPrefix
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.outputDataPrefix = "";
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -20452,6 +20461,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.outputDataPrefix != null && message.hasOwnProperty("outputDataPrefix"))
+                    writer.uint32(/* id 17, wireType 2 =*/138).string(message.outputDataPrefix);
                 return writer;
             };
 
@@ -20502,6 +20513,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 16:
                         message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.outputDataPrefix = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20570,6 +20584,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "qualityOfService." + error;
                 }
+                if (message.outputDataPrefix != null && message.hasOwnProperty("outputDataPrefix"))
+                    if (!$util.isString(message.outputDataPrefix))
+                        return "outputDataPrefix: string expected";
                 return null;
             };
 

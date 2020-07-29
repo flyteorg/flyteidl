@@ -3705,6 +3705,7 @@ definitions:
                     format: "format"
                   simple: {}
               required: true
+        output_data_prefix: "output_data_prefix"
         labels:
           values:
             key: "values"
@@ -4116,6 +4117,7 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
+          output_data_prefix: "output_data_prefix"
           labels:
             values:
               key: "values"
@@ -4366,6 +4368,7 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
+          output_data_prefix: "output_data_prefix"
           labels:
             values:
               key: "values"
@@ -4457,6 +4460,10 @@ definitions:
       quality_of_service:
         description: "Indicates the runtime priority of the execution."
         $ref: "#/definitions/coreQualityOfService"
+      output_data_prefix:
+        type: "string"
+        title: "Prefix for where offloaded data from user workflows will be written\
+          \ (ie Blobs, Schema, query data, etc.)"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4591,6 +4598,7 @@ definitions:
                   format: "format"
                 simple: {}
             required: true
+      output_data_prefix: "output_data_prefix"
       labels:
         values:
           key: "values"

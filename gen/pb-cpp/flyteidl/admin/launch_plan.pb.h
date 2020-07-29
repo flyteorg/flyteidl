@@ -904,6 +904,20 @@ class LaunchPlanSpec final :
   PROTOBUF_DEPRECATED ::std::string* release_role();
   PROTOBUF_DEPRECATED void set_allocated_role(::std::string* role);
 
+  // string output_data_prefix = 17;
+  void clear_output_data_prefix();
+  static const int kOutputDataPrefixFieldNumber = 17;
+  const ::std::string& output_data_prefix() const;
+  void set_output_data_prefix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_data_prefix(::std::string&& value);
+  #endif
+  void set_output_data_prefix(const char* value);
+  void set_output_data_prefix(const char* value, size_t size);
+  ::std::string* mutable_output_data_prefix();
+  ::std::string* release_output_data_prefix();
+  void set_allocated_output_data_prefix(::std::string* output_data_prefix);
+
   // .flyteidl.core.Identifier workflow_id = 1;
   bool has_workflow_id() const;
   void clear_workflow_id();
@@ -991,6 +1005,7 @@ class LaunchPlanSpec final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr role_;
+  ::google::protobuf::internal::ArenaStringPtr output_data_prefix_;
   ::flyteidl::core::Identifier* workflow_id_;
   ::flyteidl::admin::LaunchPlanMetadata* entity_metadata_;
   ::flyteidl::core::ParameterMap* default_inputs_;
@@ -2810,6 +2825,59 @@ inline void LaunchPlanSpec::set_allocated_quality_of_service(::flyteidl::core::Q
   }
   quality_of_service_ = quality_of_service;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.quality_of_service)
+}
+
+// string output_data_prefix = 17;
+inline void LaunchPlanSpec::clear_output_data_prefix() {
+  output_data_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& LaunchPlanSpec::output_data_prefix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+  return output_data_prefix_.GetNoArena();
+}
+inline void LaunchPlanSpec::set_output_data_prefix(const ::std::string& value) {
+  
+  output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+}
+#if LANG_CXX11
+inline void LaunchPlanSpec::set_output_data_prefix(::std::string&& value) {
+  
+  output_data_prefix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+}
+#endif
+inline void LaunchPlanSpec::set_output_data_prefix(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+}
+inline void LaunchPlanSpec::set_output_data_prefix(const char* value, size_t size) {
+  
+  output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+}
+inline ::std::string* LaunchPlanSpec::mutable_output_data_prefix() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+  return output_data_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* LaunchPlanSpec::release_output_data_prefix() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
+  
+  return output_data_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void LaunchPlanSpec::set_allocated_output_data_prefix(::std::string* output_data_prefix) {
+  if (output_data_prefix != nullptr) {
+    
+  } else {
+    
+  }
+  output_data_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_data_prefix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.output_data_prefix)
 }
 
 // -------------------------------------------------------------------

@@ -25,4 +25,5 @@ type AdminLaunchPlanSpec struct {
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
 	// Indicates the runtime priority of the execution.
 	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
+	OutputDataPrefix string `json:"output_data_prefix,omitempty"`
 }
