@@ -22,6 +22,16 @@ message AlgorithmName {
 }
 
 
+// When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+// See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+// https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+message InputFileType {
+    enum Value {
+        TEXT_CSV = 0;
+        TEXT_LIBSVM = 1;
+    }
+}
+
 // Specifies a metric that the training algorithm writes to stderr or stdout.
 // This object is a pass-through.
 // See this for details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html
@@ -43,6 +53,7 @@ message MetricDefinition {
 message AlgorithmSpecification {
     // The input mode can be either PIPE or FILE
     InputMode.Value input_mode = 1;
+
     // The algorithm name is used for deciding which pre-built image to point to
     // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     AlgorithmName.Value algorithm_name = 2;
@@ -54,6 +65,11 @@ message AlgorithmSpecification {
     // See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
     // and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
     repeated MetricDefinition metric_definitions = 4;
+
+    // The type of the input files (when using FILE input mode)
+    // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+    // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+    InputFileType input_file_type = 5;
 }
 
 // TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
