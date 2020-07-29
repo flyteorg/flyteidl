@@ -173,7 +173,7 @@ User-provided launch plan definition and configuration values.
     "auth": "{...}",
     "auth_role": "{...}",
     "quality_of_service": "{...}",
-    "output_data_prefix": "..."
+    "raw_output_data_prefix": "..."
   }
 
 .. _api_field_flyteidl.admin.LaunchPlanSpec.workflow_id:
@@ -235,10 +235,11 @@ quality_of_service
   (:ref:`flyteidl.core.QualityOfService <api_msg_flyteidl.core.QualityOfService>`) Indicates the runtime priority of the execution.
   
   
-.. _api_field_flyteidl.admin.LaunchPlanSpec.output_data_prefix:
+.. _api_field_flyteidl.admin.LaunchPlanSpec.raw_output_data_prefix:
 
-output_data_prefix
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Prefix for where offloaded data from user workflows will be written (ie Blobs, Schema, query data, etc.)
+raw_output_data_prefix
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+  e.g. s3://bucket/key or s3://bucket/
   
   
 
@@ -248,7 +249,7 @@ output_data_prefix
 flyteidl.admin.LaunchPlanClosure
 --------------------------------
 
-`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L105>`_
+`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L106>`_
 
 Values computed by the flyte platform after launch plan registration.
 These include expected_inputs required to be present in a CreateExecutionRequest
@@ -301,7 +302,7 @@ updated_at
 flyteidl.admin.LaunchPlanMetadata
 ---------------------------------
 
-`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L124>`_
+`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L125>`_
 
 Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch
 the reference workflow.
@@ -332,7 +333,7 @@ notifications
 flyteidl.admin.LaunchPlanUpdateRequest
 --------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L133>`_
+`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L134>`_
 
 Request to set the referenced launch plan state to the configured value.
 
@@ -362,7 +363,7 @@ state
 flyteidl.admin.LaunchPlanUpdateResponse
 ---------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L142>`_
+`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L143>`_
 
 Purposefully empty, may be populated in the future.
 
@@ -378,7 +379,7 @@ Purposefully empty, may be populated in the future.
 flyteidl.admin.ActiveLaunchPlanRequest
 --------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L146>`_
+`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L147>`_
 
 Represents a request struct for finding an active launch plan for a given NamedEntityIdentifier
 
@@ -400,7 +401,7 @@ id
 flyteidl.admin.ActiveLaunchPlanListRequest
 ------------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L151>`_
+`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L152>`_
 
 Represents a request structure to list active launch plans within a project/domain.
 

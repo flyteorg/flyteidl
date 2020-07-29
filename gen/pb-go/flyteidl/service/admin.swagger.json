@@ -3379,9 +3379,9 @@
           "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of the execution."
         },
-        "output_data_prefix": {
+        "raw_output_data_prefix": {
           "type": "string",
-          "title": "Prefix for where offloaded data from user workflows will be written (ie Blobs, Schema, query data, etc.)"
+          "title": "Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
         }
       },
       "description": "User-provided launch plan definition and configuration values."

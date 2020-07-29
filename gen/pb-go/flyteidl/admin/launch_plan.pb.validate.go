@@ -540,7 +540,7 @@ func (m *LaunchPlanSpec) Validate() error {
 		}
 	}
 
-	// no validation rules for OutputDataPrefix
+	// no validation rules for RawOutputDataPrefix
 
 	return nil
 }

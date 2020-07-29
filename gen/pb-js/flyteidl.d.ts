@@ -8505,8 +8505,8 @@ export namespace flyteidl {
             /** LaunchPlanSpec qualityOfService */
             qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
-            /** LaunchPlanSpec outputDataPrefix */
-            outputDataPrefix?: (string|null);
+            /** LaunchPlanSpec rawOutputDataPrefix */
+            rawOutputDataPrefix?: (string|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -8548,8 +8548,8 @@ export namespace flyteidl {
             /** LaunchPlanSpec qualityOfService. */
             public qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
-            /** LaunchPlanSpec outputDataPrefix. */
-            public outputDataPrefix: string;
+            /** LaunchPlanSpec rawOutputDataPrefix. */
+            public rawOutputDataPrefix: string;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
