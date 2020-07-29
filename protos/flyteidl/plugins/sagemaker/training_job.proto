@@ -32,7 +32,7 @@ message AlgorithmName {
 }
 
 
-// When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+// Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
 // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
 message InputFileType {
@@ -65,7 +65,6 @@ message AlgorithmSpecification {
     InputMode.Value input_mode = 1;
 
     // The algorithm name is used for deciding which pre-built image to point to
-    // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     AlgorithmName.Value algorithm_name = 2;
     // The algorithm version field is used for deciding which pre-built image to point to
     // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
