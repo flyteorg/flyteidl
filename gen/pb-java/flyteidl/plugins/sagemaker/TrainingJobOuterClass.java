@@ -1155,10 +1155,6 @@ public final class TrainingJobOuterClass {
        * <code>TEXT_CSV = 0;</code>
        */
       TEXT_CSV(0),
-      /**
-       * <code>TEXT_LIBSVM = 1;</code>
-       */
-      TEXT_LIBSVM(1),
       UNRECOGNIZED(-1),
       ;
 
@@ -1166,10 +1162,6 @@ public final class TrainingJobOuterClass {
        * <code>TEXT_CSV = 0;</code>
        */
       public static final int TEXT_CSV_VALUE = 0;
-      /**
-       * <code>TEXT_LIBSVM = 1;</code>
-       */
-      public static final int TEXT_LIBSVM_VALUE = 1;
 
 
       public final int getNumber() {
@@ -1191,7 +1183,6 @@ public final class TrainingJobOuterClass {
       public static Value forNumber(int value) {
         switch (value) {
           case 0: return TEXT_CSV;
-          case 1: return TEXT_LIBSVM;
           default: return null;
         }
       }
@@ -5541,27 +5532,26 @@ public final class TrainingJobOuterClass {
       "gle/protobuf/duration.proto\"(\n\tInputMode" +
       "\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n\rAlgorit" +
       "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001" +
-      "\":\n\020InputContentType\"&\n\005Value\022\014\n\010TEXT_CS" +
-      "V\020\000\022\017\n\013TEXT_LIBSVM\020\001\"/\n\020MetricDefinition" +
-      "\022\014\n\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"\327\002\n\026Algori" +
-      "thmSpecification\022?\n\ninput_mode\030\001 \001(\0162+.f" +
-      "lyteidl.plugins.sagemaker.InputMode.Valu" +
-      "e\022G\n\016algorithm_name\030\002 \001(\0162/.flyteidl.plu" +
-      "gins.sagemaker.AlgorithmName.Value\022\031\n\021al" +
-      "gorithm_version\030\003 \001(\t\022H\n\022metric_definiti" +
-      "ons\030\004 \003(\0132,.flyteidl.plugins.sagemaker.M" +
-      "etricDefinition\022N\n\022input_content_type\030\005 " +
-      "\001(\01622.flyteidl.plugins.sagemaker.InputCo" +
-      "ntentType.Value\"e\n\031TrainingJobResourceCo" +
-      "nfig\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinstance" +
-      "_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(\003\"\277" +
-      "\001\n\013TrainingJob\022S\n\027algorithm_specificatio" +
-      "n\030\001 \001(\01322.flyteidl.plugins.sagemaker.Alg" +
-      "orithmSpecification\022[\n\034training_job_reso" +
-      "urce_config\030\002 \001(\01325.flyteidl.plugins.sag" +
-      "emaker.TrainingJobResourceConfigB5Z3gith" +
-      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
-      "pluginsb\006proto3"
+      "\")\n\020InputContentType\"\025\n\005Value\022\014\n\010TEXT_CS" +
+      "V\020\000\"/\n\020MetricDefinition\022\014\n\004name\030\001 \001(\t\022\r\n" +
+      "\005regex\030\002 \001(\t\"\327\002\n\026AlgorithmSpecification\022" +
+      "?\n\ninput_mode\030\001 \001(\0162+.flyteidl.plugins.s" +
+      "agemaker.InputMode.Value\022G\n\016algorithm_na" +
+      "me\030\002 \001(\0162/.flyteidl.plugins.sagemaker.Al" +
+      "gorithmName.Value\022\031\n\021algorithm_version\030\003" +
+      " \001(\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyte" +
+      "idl.plugins.sagemaker.MetricDefinition\022N" +
+      "\n\022input_content_type\030\005 \001(\01622.flyteidl.pl" +
+      "ugins.sagemaker.InputContentType.Value\"e" +
+      "\n\031TrainingJobResourceConfig\022\026\n\016instance_" +
+      "count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021vo" +
+      "lume_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n" +
+      "\027algorithm_specification\030\001 \001(\01322.flyteid" +
+      "l.plugins.sagemaker.AlgorithmSpecificati" +
+      "on\022[\n\034training_job_resource_config\030\002 \001(\013" +
+      "25.flyteidl.plugins.sagemaker.TrainingJo" +
+      "bResourceConfigB5Z3github.com/lyft/flyte" +
+      "idl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

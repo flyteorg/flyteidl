@@ -38,7 +38,6 @@ message AlgorithmName {
 message InputContentType {
     enum Value {
         TEXT_CSV = 0;
-        TEXT_LIBSVM = 1;
     }
 }
 

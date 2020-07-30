@@ -136,13 +136,12 @@ inline bool AlgorithmName_Value_Parse(
 }
 enum InputContentType_Value {
   InputContentType_Value_TEXT_CSV = 0,
-  InputContentType_Value_TEXT_LIBSVM = 1,
   InputContentType_Value_InputContentType_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   InputContentType_Value_InputContentType_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool InputContentType_Value_IsValid(int value);
 const InputContentType_Value InputContentType_Value_Value_MIN = InputContentType_Value_TEXT_CSV;
-const InputContentType_Value InputContentType_Value_Value_MAX = InputContentType_Value_TEXT_LIBSVM;
+const InputContentType_Value InputContentType_Value_Value_MAX = InputContentType_Value_TEXT_CSV;
 const int InputContentType_Value_Value_ARRAYSIZE = InputContentType_Value_Value_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* InputContentType_Value_descriptor();
@@ -515,8 +514,6 @@ class InputContentType final :
   typedef InputContentType_Value Value;
   static const Value TEXT_CSV =
     InputContentType_Value_TEXT_CSV;
-  static const Value TEXT_LIBSVM =
-    InputContentType_Value_TEXT_LIBSVM;
   static inline bool Value_IsValid(int value) {
     return InputContentType_Value_IsValid(value);
   }
