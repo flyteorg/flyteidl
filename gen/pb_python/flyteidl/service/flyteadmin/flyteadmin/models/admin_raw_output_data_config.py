@@ -31,42 +31,42 @@ class AdminRawOutputDataConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'raw_output_data_prefix': 'str'
+        'output_location_prefix': 'str'
     }
 
     attribute_map = {
-        'raw_output_data_prefix': 'raw_output_data_prefix'
+        'output_location_prefix': 'output_location_prefix'
     }
 
-    def __init__(self, raw_output_data_prefix=None):  # noqa: E501
+    def __init__(self, output_location_prefix=None):  # noqa: E501
         """AdminRawOutputDataConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._raw_output_data_prefix = None
+        self._output_location_prefix = None
         self.discriminator = None
 
-        if raw_output_data_prefix is not None:
-            self.raw_output_data_prefix = raw_output_data_prefix
+        if output_location_prefix is not None:
+            self.output_location_prefix = output_location_prefix
 
     @property
-    def raw_output_data_prefix(self):
-        """Gets the raw_output_data_prefix of this AdminRawOutputDataConfig.  # noqa: E501
+    def output_location_prefix(self):
+        """Gets the output_location_prefix of this AdminRawOutputDataConfig.  # noqa: E501
 
 
-        :return: The raw_output_data_prefix of this AdminRawOutputDataConfig.  # noqa: E501
+        :return: The output_location_prefix of this AdminRawOutputDataConfig.  # noqa: E501
         :rtype: str
         """
-        return self._raw_output_data_prefix
+        return self._output_location_prefix
 
-    @raw_output_data_prefix.setter
-    def raw_output_data_prefix(self, raw_output_data_prefix):
-        """Sets the raw_output_data_prefix of this AdminRawOutputDataConfig.
+    @output_location_prefix.setter
+    def output_location_prefix(self, output_location_prefix):
+        """Sets the output_location_prefix of this AdminRawOutputDataConfig.
 
 
-        :param raw_output_data_prefix: The raw_output_data_prefix of this AdminRawOutputDataConfig.  # noqa: E501
+        :param output_location_prefix: The output_location_prefix of this AdminRawOutputDataConfig.  # noqa: E501
         :type: str
         """
 
-        self._raw_output_data_prefix = raw_output_data_prefix
+        self._output_location_prefix = output_location_prefix
 
     def to_dict(self):
         """Returns the model properties as a dict"""

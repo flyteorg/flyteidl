@@ -360,7 +360,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2e
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::RawOutputDataConfig, raw_output_data_prefix_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::RawOutputDataConfig, output_location_prefix_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -480,8 +480,8 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto[] 
   "\032.flyteidl.admin.LaunchPlan\022\r\n\005token\030\002 \001"
   "(\t\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000"
   "\022$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010"
-  "\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026raw_o"
-  "utput_data_prefix\030\001 \001(\t\"\246\004\n\016LaunchPlanSp"
+  "\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026outpu"
+  "t_location_prefix\030\001 \001(\t\"\246\004\n\016LaunchPlanSp"
   "ec\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core."
   "Identifier\022;\n\017entity_metadata\030\002 \001(\0132\".fl"
   "yteidl.admin.LaunchPlanMetadata\0223\n\016defau"
@@ -2326,7 +2326,7 @@ class RawOutputDataConfig::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RawOutputDataConfig::kRawOutputDataPrefixFieldNumber;
+const int RawOutputDataConfig::kOutputLocationPrefixFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RawOutputDataConfig::RawOutputDataConfig()
@@ -2338,9 +2338,9 @@ RawOutputDataConfig::RawOutputDataConfig(const RawOutputDataConfig& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  raw_output_data_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.raw_output_data_prefix().size() > 0) {
-    raw_output_data_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.raw_output_data_prefix_);
+  output_location_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.output_location_prefix().size() > 0) {
+    output_location_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.output_location_prefix_);
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.RawOutputDataConfig)
 }
@@ -2348,7 +2348,7 @@ RawOutputDataConfig::RawOutputDataConfig(const RawOutputDataConfig& from)
 void RawOutputDataConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_RawOutputDataConfig_flyteidl_2fadmin_2flaunch_5fplan_2eproto.base);
-  raw_output_data_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  output_location_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 RawOutputDataConfig::~RawOutputDataConfig() {
@@ -2357,7 +2357,7 @@ RawOutputDataConfig::~RawOutputDataConfig() {
 }
 
 void RawOutputDataConfig::SharedDtor() {
-  raw_output_data_prefix_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  output_location_prefix_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void RawOutputDataConfig::SetCachedSize(int size) const {
@@ -2375,7 +2375,7 @@ void RawOutputDataConfig::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  raw_output_data_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  output_location_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -2392,13 +2392,13 @@ const char* RawOutputDataConfig::_InternalParse(const char* begin, const char* e
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string raw_output_data_prefix = 1;
+      // string output_location_prefix = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix");
-        object = msg->mutable_raw_output_data_prefix();
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.RawOutputDataConfig.output_location_prefix");
+        object = msg->mutable_output_location_prefix();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -2442,15 +2442,15 @@ bool RawOutputDataConfig::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string raw_output_data_prefix = 1;
+      // string output_location_prefix = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_raw_output_data_prefix()));
+                input, this->mutable_output_location_prefix()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->raw_output_data_prefix().data(), static_cast<int>(this->raw_output_data_prefix().length()),
+            this->output_location_prefix().data(), static_cast<int>(this->output_location_prefix().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix"));
+            "flyteidl.admin.RawOutputDataConfig.output_location_prefix"));
         } else {
           goto handle_unusual;
         }
@@ -2484,14 +2484,14 @@ void RawOutputDataConfig::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string raw_output_data_prefix = 1;
-  if (this->raw_output_data_prefix().size() > 0) {
+  // string output_location_prefix = 1;
+  if (this->output_location_prefix().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->raw_output_data_prefix().data(), static_cast<int>(this->raw_output_data_prefix().length()),
+      this->output_location_prefix().data(), static_cast<int>(this->output_location_prefix().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix");
+      "flyteidl.admin.RawOutputDataConfig.output_location_prefix");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->raw_output_data_prefix(), output);
+      1, this->output_location_prefix(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2507,15 +2507,15 @@ void RawOutputDataConfig::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string raw_output_data_prefix = 1;
-  if (this->raw_output_data_prefix().size() > 0) {
+  // string output_location_prefix = 1;
+  if (this->output_location_prefix().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->raw_output_data_prefix().data(), static_cast<int>(this->raw_output_data_prefix().length()),
+      this->output_location_prefix().data(), static_cast<int>(this->output_location_prefix().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix");
+      "flyteidl.admin.RawOutputDataConfig.output_location_prefix");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->raw_output_data_prefix(), target);
+        1, this->output_location_prefix(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2539,11 +2539,11 @@ size_t RawOutputDataConfig::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string raw_output_data_prefix = 1;
-  if (this->raw_output_data_prefix().size() > 0) {
+  // string output_location_prefix = 1;
+  if (this->output_location_prefix().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->raw_output_data_prefix());
+        this->output_location_prefix());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2573,9 +2573,9 @@ void RawOutputDataConfig::MergeFrom(const RawOutputDataConfig& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.raw_output_data_prefix().size() > 0) {
+  if (from.output_location_prefix().size() > 0) {
 
-    raw_output_data_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.raw_output_data_prefix_);
+    output_location_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.output_location_prefix_);
   }
 }
 
@@ -2604,7 +2604,7 @@ void RawOutputDataConfig::Swap(RawOutputDataConfig* other) {
 void RawOutputDataConfig::InternalSwap(RawOutputDataConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  raw_output_data_prefix_.Swap(&other->raw_output_data_prefix_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  output_location_prefix_.Swap(&other->output_location_prefix_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

@@ -4275,25 +4275,30 @@ public final class LaunchPlanOuterClass {
 
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+     * Prefix for where offloaded data from user workflows will be written
      * e.g. s3://bucket/key or s3://bucket/
      * </pre>
      *
-     * <code>string raw_output_data_prefix = 1;</code>
+     * <code>string output_location_prefix = 1;</code>
      */
-    java.lang.String getRawOutputDataPrefix();
+    java.lang.String getOutputLocationPrefix();
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+     * Prefix for where offloaded data from user workflows will be written
      * e.g. s3://bucket/key or s3://bucket/
      * </pre>
      *
-     * <code>string raw_output_data_prefix = 1;</code>
+     * <code>string output_location_prefix = 1;</code>
      */
     com.google.protobuf.ByteString
-        getRawOutputDataPrefixBytes();
+        getOutputLocationPrefixBytes();
   }
   /**
+   * <pre>
+   * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+   * See https://github.com/lyft/flyte/issues/211 for more background information.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.RawOutputDataConfig}
    */
   public  static final class RawOutputDataConfig extends
@@ -4306,7 +4311,7 @@ public final class LaunchPlanOuterClass {
       super(builder);
     }
     private RawOutputDataConfig() {
-      rawOutputDataPrefix_ = "";
+      outputLocationPrefix_ = "";
     }
 
     @java.lang.Override
@@ -4336,7 +4341,7 @@ public final class LaunchPlanOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              rawOutputDataPrefix_ = s;
+              outputLocationPrefix_ = s;
               break;
             }
             default: {
@@ -4371,44 +4376,44 @@ public final class LaunchPlanOuterClass {
               flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig.class, flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig.Builder.class);
     }
 
-    public static final int RAW_OUTPUT_DATA_PREFIX_FIELD_NUMBER = 1;
-    private volatile java.lang.Object rawOutputDataPrefix_;
+    public static final int OUTPUT_LOCATION_PREFIX_FIELD_NUMBER = 1;
+    private volatile java.lang.Object outputLocationPrefix_;
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+     * Prefix for where offloaded data from user workflows will be written
      * e.g. s3://bucket/key or s3://bucket/
      * </pre>
      *
-     * <code>string raw_output_data_prefix = 1;</code>
+     * <code>string output_location_prefix = 1;</code>
      */
-    public java.lang.String getRawOutputDataPrefix() {
-      java.lang.Object ref = rawOutputDataPrefix_;
+    public java.lang.String getOutputLocationPrefix() {
+      java.lang.Object ref = outputLocationPrefix_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        rawOutputDataPrefix_ = s;
+        outputLocationPrefix_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+     * Prefix for where offloaded data from user workflows will be written
      * e.g. s3://bucket/key or s3://bucket/
      * </pre>
      *
-     * <code>string raw_output_data_prefix = 1;</code>
+     * <code>string output_location_prefix = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getRawOutputDataPrefixBytes() {
-      java.lang.Object ref = rawOutputDataPrefix_;
+        getOutputLocationPrefixBytes() {
+      java.lang.Object ref = outputLocationPrefix_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        rawOutputDataPrefix_ = b;
+        outputLocationPrefix_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4429,8 +4434,8 @@ public final class LaunchPlanOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRawOutputDataPrefixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rawOutputDataPrefix_);
+      if (!getOutputLocationPrefixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, outputLocationPrefix_);
       }
       unknownFields.writeTo(output);
     }
@@ -4441,8 +4446,8 @@ public final class LaunchPlanOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRawOutputDataPrefixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rawOutputDataPrefix_);
+      if (!getOutputLocationPrefixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, outputLocationPrefix_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4459,8 +4464,8 @@ public final class LaunchPlanOuterClass {
       }
       flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig other = (flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig) obj;
 
-      if (!getRawOutputDataPrefix()
-          .equals(other.getRawOutputDataPrefix())) return false;
+      if (!getOutputLocationPrefix()
+          .equals(other.getOutputLocationPrefix())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4472,8 +4477,8 @@ public final class LaunchPlanOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RAW_OUTPUT_DATA_PREFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getRawOutputDataPrefix().hashCode();
+      hash = (37 * hash) + OUTPUT_LOCATION_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputLocationPrefix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4570,6 +4575,11 @@ public final class LaunchPlanOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * See https://github.com/lyft/flyte/issues/211 for more background information.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.RawOutputDataConfig}
      */
     public static final class Builder extends
@@ -4607,7 +4617,7 @@ public final class LaunchPlanOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rawOutputDataPrefix_ = "";
+        outputLocationPrefix_ = "";
 
         return this;
       }
@@ -4635,7 +4645,7 @@ public final class LaunchPlanOuterClass {
       @java.lang.Override
       public flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig buildPartial() {
         flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig result = new flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig(this);
-        result.rawOutputDataPrefix_ = rawOutputDataPrefix_;
+        result.outputLocationPrefix_ = outputLocationPrefix_;
         onBuilt();
         return result;
       }
@@ -4684,8 +4694,8 @@ public final class LaunchPlanOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig other) {
         if (other == flyteidl.admin.LaunchPlanOuterClass.RawOutputDataConfig.getDefaultInstance()) return this;
-        if (!other.getRawOutputDataPrefix().isEmpty()) {
-          rawOutputDataPrefix_ = other.rawOutputDataPrefix_;
+        if (!other.getOutputLocationPrefix().isEmpty()) {
+          outputLocationPrefix_ = other.outputLocationPrefix_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4717,22 +4727,22 @@ public final class LaunchPlanOuterClass {
         return this;
       }
 
-      private java.lang.Object rawOutputDataPrefix_ = "";
+      private java.lang.Object outputLocationPrefix_ = "";
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+       * Prefix for where offloaded data from user workflows will be written
        * e.g. s3://bucket/key or s3://bucket/
        * </pre>
        *
-       * <code>string raw_output_data_prefix = 1;</code>
+       * <code>string output_location_prefix = 1;</code>
        */
-      public java.lang.String getRawOutputDataPrefix() {
-        java.lang.Object ref = rawOutputDataPrefix_;
+      public java.lang.String getOutputLocationPrefix() {
+        java.lang.Object ref = outputLocationPrefix_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          rawOutputDataPrefix_ = s;
+          outputLocationPrefix_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4740,20 +4750,20 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+       * Prefix for where offloaded data from user workflows will be written
        * e.g. s3://bucket/key or s3://bucket/
        * </pre>
        *
-       * <code>string raw_output_data_prefix = 1;</code>
+       * <code>string output_location_prefix = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getRawOutputDataPrefixBytes() {
-        java.lang.Object ref = rawOutputDataPrefix_;
+          getOutputLocationPrefixBytes() {
+        java.lang.Object ref = outputLocationPrefix_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          rawOutputDataPrefix_ = b;
+          outputLocationPrefix_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4761,52 +4771,52 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+       * Prefix for where offloaded data from user workflows will be written
        * e.g. s3://bucket/key or s3://bucket/
        * </pre>
        *
-       * <code>string raw_output_data_prefix = 1;</code>
+       * <code>string output_location_prefix = 1;</code>
        */
-      public Builder setRawOutputDataPrefix(
+      public Builder setOutputLocationPrefix(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        rawOutputDataPrefix_ = value;
+        outputLocationPrefix_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+       * Prefix for where offloaded data from user workflows will be written
        * e.g. s3://bucket/key or s3://bucket/
        * </pre>
        *
-       * <code>string raw_output_data_prefix = 1;</code>
+       * <code>string output_location_prefix = 1;</code>
        */
-      public Builder clearRawOutputDataPrefix() {
+      public Builder clearOutputLocationPrefix() {
         
-        rawOutputDataPrefix_ = getDefaultInstance().getRawOutputDataPrefix();
+        outputLocationPrefix_ = getDefaultInstance().getOutputLocationPrefix();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+       * Prefix for where offloaded data from user workflows will be written
        * e.g. s3://bucket/key or s3://bucket/
        * </pre>
        *
-       * <code>string raw_output_data_prefix = 1;</code>
+       * <code>string output_location_prefix = 1;</code>
        */
-      public Builder setRawOutputDataPrefixBytes(
+      public Builder setOutputLocationPrefixBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        rawOutputDataPrefix_ = value;
+        outputLocationPrefix_ = value;
         onChanged();
         return this;
       }
@@ -13843,8 +13853,8 @@ public final class LaunchPlanOuterClass {
       "\032.flyteidl.admin.LaunchPlan\022\r\n\005token\030\002 \001" +
       "(\t\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000" +
       "\022$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010" +
-      "\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026raw_o" +
-      "utput_data_prefix\030\001 \001(\t\"\246\004\n\016LaunchPlanSp" +
+      "\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026outpu" +
+      "t_location_prefix\030\001 \001(\t\"\246\004\n\016LaunchPlanSp" +
       "ec\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core." +
       "Identifier\022;\n\017entity_metadata\030\002 \001(\0132\".fl" +
       "yteidl.admin.LaunchPlanMetadata\0223\n\016defau" +
@@ -13935,7 +13945,7 @@ public final class LaunchPlanOuterClass {
     internal_static_flyteidl_admin_RawOutputDataConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_RawOutputDataConfig_descriptor,
-        new java.lang.String[] { "RawOutputDataPrefix", });
+        new java.lang.String[] { "OutputLocationPrefix", });
     internal_static_flyteidl_admin_LaunchPlanSpec_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new

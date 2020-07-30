@@ -894,26 +894,26 @@ class RawOutputDataConfig final :
 
   // accessors -------------------------------------------------------
 
-  // string raw_output_data_prefix = 1;
-  void clear_raw_output_data_prefix();
-  static const int kRawOutputDataPrefixFieldNumber = 1;
-  const ::std::string& raw_output_data_prefix() const;
-  void set_raw_output_data_prefix(const ::std::string& value);
+  // string output_location_prefix = 1;
+  void clear_output_location_prefix();
+  static const int kOutputLocationPrefixFieldNumber = 1;
+  const ::std::string& output_location_prefix() const;
+  void set_output_location_prefix(const ::std::string& value);
   #if LANG_CXX11
-  void set_raw_output_data_prefix(::std::string&& value);
+  void set_output_location_prefix(::std::string&& value);
   #endif
-  void set_raw_output_data_prefix(const char* value);
-  void set_raw_output_data_prefix(const char* value, size_t size);
-  ::std::string* mutable_raw_output_data_prefix();
-  ::std::string* release_raw_output_data_prefix();
-  void set_allocated_raw_output_data_prefix(::std::string* raw_output_data_prefix);
+  void set_output_location_prefix(const char* value);
+  void set_output_location_prefix(const char* value, size_t size);
+  ::std::string* mutable_output_location_prefix();
+  ::std::string* release_output_location_prefix();
+  void set_allocated_output_location_prefix(::std::string* output_location_prefix);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.RawOutputDataConfig)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr raw_output_data_prefix_;
+  ::google::protobuf::internal::ArenaStringPtr output_location_prefix_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -2476,57 +2476,57 @@ inline Auth::MethodCase Auth::method_case() const {
 
 // RawOutputDataConfig
 
-// string raw_output_data_prefix = 1;
-inline void RawOutputDataConfig::clear_raw_output_data_prefix() {
-  raw_output_data_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string output_location_prefix = 1;
+inline void RawOutputDataConfig::clear_output_location_prefix() {
+  output_location_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& RawOutputDataConfig::raw_output_data_prefix() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
-  return raw_output_data_prefix_.GetNoArena();
+inline const ::std::string& RawOutputDataConfig::output_location_prefix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
+  return output_location_prefix_.GetNoArena();
 }
-inline void RawOutputDataConfig::set_raw_output_data_prefix(const ::std::string& value) {
+inline void RawOutputDataConfig::set_output_location_prefix(const ::std::string& value) {
   
-  raw_output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
 #if LANG_CXX11
-inline void RawOutputDataConfig::set_raw_output_data_prefix(::std::string&& value) {
+inline void RawOutputDataConfig::set_output_location_prefix(::std::string&& value) {
   
-  raw_output_data_prefix_.SetNoArena(
+  output_location_prefix_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
 #endif
-inline void RawOutputDataConfig::set_raw_output_data_prefix(const char* value) {
+inline void RawOutputDataConfig::set_output_location_prefix(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  raw_output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
-inline void RawOutputDataConfig::set_raw_output_data_prefix(const char* value, size_t size) {
+inline void RawOutputDataConfig::set_output_location_prefix(const char* value, size_t size) {
   
-  raw_output_data_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
-inline ::std::string* RawOutputDataConfig::mutable_raw_output_data_prefix() {
+inline ::std::string* RawOutputDataConfig::mutable_output_location_prefix() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
-  return raw_output_data_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
+  return output_location_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* RawOutputDataConfig::release_raw_output_data_prefix() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+inline ::std::string* RawOutputDataConfig::release_output_location_prefix() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
   
-  return raw_output_data_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return output_location_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void RawOutputDataConfig::set_allocated_raw_output_data_prefix(::std::string* raw_output_data_prefix) {
-  if (raw_output_data_prefix != nullptr) {
+inline void RawOutputDataConfig::set_allocated_output_location_prefix(::std::string* output_location_prefix) {
+  if (output_location_prefix != nullptr) {
     
   } else {
     
   }
-  raw_output_data_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), raw_output_data_prefix);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.RawOutputDataConfig.raw_output_data_prefix)
+  output_location_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_location_prefix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
 
 // -------------------------------------------------------------------

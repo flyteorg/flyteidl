@@ -448,7 +448,7 @@ func (m *RawOutputDataConfig) Validate() error {
 		return nil
 	}
 
-	// no validation rules for RawOutputDataPrefix
+	// no validation rules for OutputLocationPrefix
 
 	return nil
 }

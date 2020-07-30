@@ -3590,7 +3590,7 @@ definitions:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
         raw_output_data_config:
-          raw_output_data_prefix: "raw_output_data_prefix"
+          output_location_prefix: "output_location_prefix"
         entity_metadata:
           schedule:
             kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4003,7 +4003,7 @@ definitions:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
           raw_output_data_config:
-            raw_output_data_prefix: "raw_output_data_prefix"
+            output_location_prefix: "output_location_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4255,7 +4255,7 @@ definitions:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
           raw_output_data_config:
-            raw_output_data_prefix: "raw_output_data_prefix"
+            output_location_prefix: "output_location_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4484,7 +4484,7 @@ definitions:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
       raw_output_data_config:
-        raw_output_data_prefix: "raw_output_data_prefix"
+        output_location_prefix: "output_location_prefix"
       entity_metadata:
         schedule:
           kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -5447,12 +5447,15 @@ definitions:
   adminRawOutputDataConfig:
     type: "object"
     properties:
-      raw_output_data_prefix:
+      output_location_prefix:
         type: "string"
-        title: "Prefix for where offloaded data from user workflows will be written\
-          \ (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
+        title: "Prefix for where offloaded data from user workflows will be written\n\
+          e.g. s3://bucket/key or s3://bucket/"
+    description: "Encapsulates user settings pertaining to offloaded data (i.e. Blobs,\
+      \ Schema, query data, etc.).\nSee https://github.com/lyft/flyte/issues/211 for\
+      \ more background information."
     example:
-      raw_output_data_prefix: "raw_output_data_prefix"
+      output_location_prefix: "output_location_prefix"
   adminSchedule:
     type: "object"
     properties:

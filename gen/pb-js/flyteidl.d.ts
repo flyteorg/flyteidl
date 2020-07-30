@@ -8475,8 +8475,8 @@ export namespace flyteidl {
         /** Properties of a RawOutputDataConfig. */
         interface IRawOutputDataConfig {
 
-            /** RawOutputDataConfig rawOutputDataPrefix */
-            rawOutputDataPrefix?: (string|null);
+            /** RawOutputDataConfig outputLocationPrefix */
+            outputLocationPrefix?: (string|null);
         }
 
         /** Represents a RawOutputDataConfig. */
@@ -8488,8 +8488,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IRawOutputDataConfig);
 
-            /** RawOutputDataConfig rawOutputDataPrefix. */
-            public rawOutputDataPrefix: string;
+            /** RawOutputDataConfig outputLocationPrefix. */
+            public outputLocationPrefix: string;
 
             /**
              * Creates a new RawOutputDataConfig instance using the specified properties.

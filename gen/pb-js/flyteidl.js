@@ -20301,7 +20301,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a RawOutputDataConfig.
              * @memberof flyteidl.admin
              * @interface IRawOutputDataConfig
-             * @property {string|null} [rawOutputDataPrefix] RawOutputDataConfig rawOutputDataPrefix
+             * @property {string|null} [outputLocationPrefix] RawOutputDataConfig outputLocationPrefix
              */
 
             /**
@@ -20320,12 +20320,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * RawOutputDataConfig rawOutputDataPrefix.
-             * @member {string} rawOutputDataPrefix
+             * RawOutputDataConfig outputLocationPrefix.
+             * @member {string} outputLocationPrefix
              * @memberof flyteidl.admin.RawOutputDataConfig
              * @instance
              */
-            RawOutputDataConfig.prototype.rawOutputDataPrefix = "";
+            RawOutputDataConfig.prototype.outputLocationPrefix = "";
 
             /**
              * Creates a new RawOutputDataConfig instance using the specified properties.
@@ -20351,8 +20351,8 @@ export const flyteidl = $root.flyteidl = (() => {
             RawOutputDataConfig.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.rawOutputDataPrefix);
+                if (message.outputLocationPrefix != null && message.hasOwnProperty("outputLocationPrefix"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.outputLocationPrefix);
                 return writer;
             };
 
@@ -20375,7 +20375,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.rawOutputDataPrefix = reader.string();
+                        message.outputLocationPrefix = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20396,9 +20396,9 @@ export const flyteidl = $root.flyteidl = (() => {
             RawOutputDataConfig.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
-                    if (!$util.isString(message.rawOutputDataPrefix))
-                        return "rawOutputDataPrefix: string expected";
+                if (message.outputLocationPrefix != null && message.hasOwnProperty("outputLocationPrefix"))
+                    if (!$util.isString(message.outputLocationPrefix))
+                        return "outputLocationPrefix: string expected";
                 return null;
             };
 

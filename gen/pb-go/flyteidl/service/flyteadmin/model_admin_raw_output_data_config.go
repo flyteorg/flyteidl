@@ -9,6 +9,7 @@
 
 package flyteadmin
 
+// Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.). See https://github.com/lyft/flyte/issues/211 for more background information.
 type AdminRawOutputDataConfig struct {
-	RawOutputDataPrefix string `json:"raw_output_data_prefix,omitempty"`
+	OutputLocationPrefix string `json:"output_location_prefix,omitempty"`
 }
