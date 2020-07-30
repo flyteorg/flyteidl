@@ -20295,6 +20295,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return Auth;
         })();
 
+        admin.RawOutputDataConfig = (function() {
+
+            /**
+             * Properties of a RawOutputDataConfig.
+             * @memberof flyteidl.admin
+             * @interface IRawOutputDataConfig
+             * @property {string|null} [rawOutputDataPrefix] RawOutputDataConfig rawOutputDataPrefix
+             */
+
+            /**
+             * Constructs a new RawOutputDataConfig.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a RawOutputDataConfig.
+             * @implements IRawOutputDataConfig
+             * @constructor
+             * @param {flyteidl.admin.IRawOutputDataConfig=} [properties] Properties to set
+             */
+            function RawOutputDataConfig(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RawOutputDataConfig rawOutputDataPrefix.
+             * @member {string} rawOutputDataPrefix
+             * @memberof flyteidl.admin.RawOutputDataConfig
+             * @instance
+             */
+            RawOutputDataConfig.prototype.rawOutputDataPrefix = "";
+
+            /**
+             * Creates a new RawOutputDataConfig instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.RawOutputDataConfig
+             * @static
+             * @param {flyteidl.admin.IRawOutputDataConfig=} [properties] Properties to set
+             * @returns {flyteidl.admin.RawOutputDataConfig} RawOutputDataConfig instance
+             */
+            RawOutputDataConfig.create = function create(properties) {
+                return new RawOutputDataConfig(properties);
+            };
+
+            /**
+             * Encodes the specified RawOutputDataConfig message. Does not implicitly {@link flyteidl.admin.RawOutputDataConfig.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.RawOutputDataConfig
+             * @static
+             * @param {flyteidl.admin.IRawOutputDataConfig} message RawOutputDataConfig message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RawOutputDataConfig.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.rawOutputDataPrefix);
+                return writer;
+            };
+
+            /**
+             * Decodes a RawOutputDataConfig message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.RawOutputDataConfig
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.RawOutputDataConfig} RawOutputDataConfig
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RawOutputDataConfig.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.RawOutputDataConfig();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.rawOutputDataPrefix = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RawOutputDataConfig message.
+             * @function verify
+             * @memberof flyteidl.admin.RawOutputDataConfig
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RawOutputDataConfig.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
+                    if (!$util.isString(message.rawOutputDataPrefix))
+                        return "rawOutputDataPrefix: string expected";
+                return null;
+            };
+
+            return RawOutputDataConfig;
+        })();
+
         admin.LaunchPlanSpec = (function() {
 
             /**
@@ -20311,7 +20421,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAuth|null} [auth] LaunchPlanSpec auth
              * @property {flyteidl.admin.IAuthRole|null} [authRole] LaunchPlanSpec authRole
              * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] LaunchPlanSpec qualityOfService
-             * @property {string|null} [rawOutputDataPrefix] LaunchPlanSpec rawOutputDataPrefix
+             * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] LaunchPlanSpec rawOutputDataConfig
              */
 
             /**
@@ -20410,12 +20520,12 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.qualityOfService = null;
 
             /**
-             * LaunchPlanSpec rawOutputDataPrefix.
-             * @member {string} rawOutputDataPrefix
+             * LaunchPlanSpec rawOutputDataConfig.
+             * @member {flyteidl.admin.IRawOutputDataConfig|null|undefined} rawOutputDataConfig
              * @memberof flyteidl.admin.LaunchPlanSpec
              * @instance
              */
-            LaunchPlanSpec.prototype.rawOutputDataPrefix = "";
+            LaunchPlanSpec.prototype.rawOutputDataConfig = null;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -20461,8 +20571,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
-                    writer.uint32(/* id 17, wireType 2 =*/138).string(message.rawOutputDataPrefix);
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
+                    $root.flyteidl.admin.RawOutputDataConfig.encode(message.rawOutputDataConfig, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -20515,7 +20625,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
                         break;
                     case 17:
-                        message.rawOutputDataPrefix = reader.string();
+                        message.rawOutputDataConfig = $root.flyteidl.admin.RawOutputDataConfig.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20584,9 +20694,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "qualityOfService." + error;
                 }
-                if (message.rawOutputDataPrefix != null && message.hasOwnProperty("rawOutputDataPrefix"))
-                    if (!$util.isString(message.rawOutputDataPrefix))
-                        return "rawOutputDataPrefix: string expected";
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig")) {
+                    let error = $root.flyteidl.admin.RawOutputDataConfig.verify(message.rawOutputDataConfig);
+                    if (error)
+                        return "rawOutputDataConfig." + error;
+                }
                 return null;
             };
 

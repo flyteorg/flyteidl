@@ -21,6 +21,7 @@ from flyteadmin.models.admin_auth import AdminAuth  # noqa: F401,E501
 from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_launch_plan_metadata import AdminLaunchPlanMetadata  # noqa: F401,E501
+from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_parameter_map import CoreParameterMap  # noqa: F401,E501
@@ -51,7 +52,7 @@ class AdminLaunchPlanSpec(object):
         'auth': 'AdminAuth',
         'auth_role': 'AdminAuthRole',
         'quality_of_service': 'CoreQualityOfService',
-        'raw_output_data_prefix': 'str'
+        'raw_output_data_config': 'AdminRawOutputDataConfig'
     }
 
     attribute_map = {
@@ -65,10 +66,10 @@ class AdminLaunchPlanSpec(object):
         'auth': 'auth',
         'auth_role': 'auth_role',
         'quality_of_service': 'quality_of_service',
-        'raw_output_data_prefix': 'raw_output_data_prefix'
+        'raw_output_data_config': 'raw_output_data_config'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, quality_of_service=None, raw_output_data_prefix=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, quality_of_service=None, raw_output_data_config=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -81,7 +82,7 @@ class AdminLaunchPlanSpec(object):
         self._auth = None
         self._auth_role = None
         self._quality_of_service = None
-        self._raw_output_data_prefix = None
+        self._raw_output_data_config = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -104,8 +105,8 @@ class AdminLaunchPlanSpec(object):
             self.auth_role = auth_role
         if quality_of_service is not None:
             self.quality_of_service = quality_of_service
-        if raw_output_data_prefix is not None:
-            self.raw_output_data_prefix = raw_output_data_prefix
+        if raw_output_data_config is not None:
+            self.raw_output_data_config = raw_output_data_config
 
     @property
     def workflow_id(self):
@@ -326,25 +327,25 @@ class AdminLaunchPlanSpec(object):
         self._quality_of_service = quality_of_service
 
     @property
-    def raw_output_data_prefix(self):
-        """Gets the raw_output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
+    def raw_output_data_config(self):
+        """Gets the raw_output_data_config of this AdminLaunchPlanSpec.  # noqa: E501
 
 
-        :return: The raw_output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
-        :rtype: str
+        :return: The raw_output_data_config of this AdminLaunchPlanSpec.  # noqa: E501
+        :rtype: AdminRawOutputDataConfig
         """
-        return self._raw_output_data_prefix
+        return self._raw_output_data_config
 
-    @raw_output_data_prefix.setter
-    def raw_output_data_prefix(self, raw_output_data_prefix):
-        """Sets the raw_output_data_prefix of this AdminLaunchPlanSpec.
+    @raw_output_data_config.setter
+    def raw_output_data_config(self, raw_output_data_config):
+        """Sets the raw_output_data_config of this AdminLaunchPlanSpec.
 
 
-        :param raw_output_data_prefix: The raw_output_data_prefix of this AdminLaunchPlanSpec.  # noqa: E501
-        :type: str
+        :param raw_output_data_config: The raw_output_data_config of this AdminLaunchPlanSpec.  # noqa: E501
+        :type: AdminRawOutputDataConfig
         """
 
-        self._raw_output_data_prefix = raw_output_data_prefix
+        self._raw_output_data_config = raw_output_data_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

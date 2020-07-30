@@ -3379,9 +3379,8 @@
           "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of the execution."
         },
-        "raw_output_data_prefix": {
-          "type": "string",
-          "title": "Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
+        "raw_output_data_config": {
+          "$ref": "#/definitions/adminRawOutputDataConfig"
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -3857,6 +3856,15 @@
           "items": {
             "$ref": "#/definitions/adminProject"
           }
+        }
+      }
+    },
+    "adminRawOutputDataConfig": {
+      "type": "object",
+      "properties": {
+        "raw_output_data_prefix": {
+          "type": "string",
+          "title": "Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
         }
       }
     },

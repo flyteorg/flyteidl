@@ -3589,6 +3589,8 @@ definitions:
         auth:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
+        raw_output_data_config:
+          raw_output_data_prefix: "raw_output_data_prefix"
         entity_metadata:
           schedule:
             kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -3705,7 +3707,6 @@ definitions:
                     format: "format"
                   simple: {}
               required: true
-        raw_output_data_prefix: "raw_output_data_prefix"
         labels:
           values:
             key: "values"
@@ -4001,6 +4002,8 @@ definitions:
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
+          raw_output_data_config:
+            raw_output_data_prefix: "raw_output_data_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4117,7 +4120,6 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
-          raw_output_data_prefix: "raw_output_data_prefix"
           labels:
             values:
               key: "values"
@@ -4252,6 +4254,8 @@ definitions:
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
+          raw_output_data_config:
+            raw_output_data_prefix: "raw_output_data_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4368,7 +4372,6 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
-          raw_output_data_prefix: "raw_output_data_prefix"
           labels:
             values:
               key: "values"
@@ -4460,10 +4463,8 @@ definitions:
       quality_of_service:
         description: "Indicates the runtime priority of the execution."
         $ref: "#/definitions/coreQualityOfService"
-      raw_output_data_prefix:
-        type: "string"
-        title: "Prefix for where offloaded data from user workflows will be written\
-          \ (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
+      raw_output_data_config:
+        $ref: "#/definitions/adminRawOutputDataConfig"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4482,6 +4483,8 @@ definitions:
       auth:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
+      raw_output_data_config:
+        raw_output_data_prefix: "raw_output_data_prefix"
       entity_metadata:
         schedule:
           kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4598,7 +4601,6 @@ definitions:
                   format: "format"
                 simple: {}
             required: true
-      raw_output_data_prefix: "raw_output_data_prefix"
       labels:
         values:
           key: "values"
@@ -5442,6 +5444,15 @@ definitions:
           id: "id"
         description: "description"
         id: "id"
+  adminRawOutputDataConfig:
+    type: "object"
+    properties:
+      raw_output_data_prefix:
+        type: "string"
+        title: "Prefix for where offloaded data from user workflows will be written\
+          \ (i.e. Blobs, Schema, query data, etc.)\ne.g. s3://bucket/key or s3://bucket/"
+    example:
+      raw_output_data_prefix: "raw_output_data_prefix"
   adminSchedule:
     type: "object"
     properties:
