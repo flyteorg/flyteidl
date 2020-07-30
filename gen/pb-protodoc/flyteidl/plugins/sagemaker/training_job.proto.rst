@@ -80,12 +80,12 @@ XGBOOST
   ⁣
   
 
-.. _api_msg_flyteidl.plugins.sagemaker.InputFileType:
+.. _api_msg_flyteidl.plugins.sagemaker.InputContentType:
 
-flyteidl.plugins.sagemaker.InputFileType
-----------------------------------------
+flyteidl.plugins.sagemaker.InputContentType
+-------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputFileType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
+`[flyteidl.plugins.sagemaker.InputContentType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
 
 Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
@@ -97,20 +97,20 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-p
 
 
 
-.. _api_enum_flyteidl.plugins.sagemaker.InputFileType.Value:
+.. _api_enum_flyteidl.plugins.sagemaker.InputContentType.Value:
 
-Enum flyteidl.plugins.sagemaker.InputFileType.Value
----------------------------------------------------
+Enum flyteidl.plugins.sagemaker.InputContentType.Value
+------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputFileType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
+`[flyteidl.plugins.sagemaker.InputContentType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
 
 
-.. _api_enum_value_flyteidl.plugins.sagemaker.InputFileType.Value.TEXT_CSV:
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputContentType.Value.TEXT_CSV:
 
 TEXT_CSV
   *(DEFAULT)* ⁣
   
-.. _api_enum_value_flyteidl.plugins.sagemaker.InputFileType.Value.TEXT_LIBSVM:
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputContentType.Value.TEXT_LIBSVM:
 
 TEXT_LIBSVM
   ⁣
@@ -170,7 +170,7 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecifica
     "algorithm_name": "...",
     "algorithm_version": "...",
     "metric_definitions": [],
-    "input_file_type": "..."
+    "input_content_type": "..."
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode:
@@ -200,10 +200,10 @@ metric_definitions
   and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
   
   
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_content_type:
 
-input_file_type
-  (:ref:`flyteidl.plugins.sagemaker.InputFileType.Value <api_enum_flyteidl.plugins.sagemaker.InputFileType.Value>`) The type of the input files (when using FILE input mode)
+input_content_type
+  (:ref:`flyteidl.plugins.sagemaker.InputContentType.Value <api_enum_flyteidl.plugins.sagemaker.InputContentType.Value>`) The content type of the input
   See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
   https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
   

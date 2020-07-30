@@ -165,10 +165,10 @@ var _ interface {
 	ErrorName() string
 } = AlgorithmNameValidationError{}
 
-// Validate checks the field values on InputFileType with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *InputFileType) Validate() error {
+// Validate checks the field values on InputContentType with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *InputContentType) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -176,9 +176,9 @@ func (m *InputFileType) Validate() error {
 	return nil
 }
 
-// InputFileTypeValidationError is the validation error returned by
-// InputFileType.Validate if the designated constraints aren't met.
-type InputFileTypeValidationError struct {
+// InputContentTypeValidationError is the validation error returned by
+// InputContentType.Validate if the designated constraints aren't met.
+type InputContentTypeValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -186,22 +186,22 @@ type InputFileTypeValidationError struct {
 }
 
 // Field function returns field value.
-func (e InputFileTypeValidationError) Field() string { return e.field }
+func (e InputContentTypeValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e InputFileTypeValidationError) Reason() string { return e.reason }
+func (e InputContentTypeValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e InputFileTypeValidationError) Cause() error { return e.cause }
+func (e InputContentTypeValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e InputFileTypeValidationError) Key() bool { return e.key }
+func (e InputContentTypeValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e InputFileTypeValidationError) ErrorName() string { return "InputFileTypeValidationError" }
+func (e InputContentTypeValidationError) ErrorName() string { return "InputContentTypeValidationError" }
 
 // Error satisfies the builtin error interface
-func (e InputFileTypeValidationError) Error() string {
+func (e InputContentTypeValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -213,14 +213,14 @@ func (e InputFileTypeValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sInputFileType.%s: %s%s",
+		"invalid %sInputContentType.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = InputFileTypeValidationError{}
+var _ error = InputContentTypeValidationError{}
 
 var _ interface {
 	Field() string
@@ -228,7 +228,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = InputFileTypeValidationError{}
+} = InputContentTypeValidationError{}
 
 // Validate checks the field values on MetricDefinition with the rules defined
 // in the proto definition for this message. If any rules are violated, an
@@ -328,7 +328,7 @@ func (m *AlgorithmSpecification) Validate() error {
 
 	}
 
-	// no validation rules for InputFileType
+	// no validation rules for InputContentType
 
 	return nil
 }

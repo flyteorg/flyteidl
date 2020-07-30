@@ -35,7 +35,7 @@ message AlgorithmName {
 // Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
 // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-message InputFileType {
+message InputContentType {
     enum Value {
         TEXT_CSV = 0;
         TEXT_LIBSVM = 1;
@@ -75,10 +75,10 @@ message AlgorithmSpecification {
     // and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
     repeated MetricDefinition metric_definitions = 4;
 
-    // The type of the input files (when using FILE input mode)
+    // The content type of the input
     // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
     // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-    InputFileType.Value input_file_type = 5;
+    InputContentType.Value input_content_type = 5;
 }
 
 // TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the

@@ -59,9 +59,9 @@ extern AlgorithmNameDefaultTypeInternal _AlgorithmName_default_instance_;
 class AlgorithmSpecification;
 class AlgorithmSpecificationDefaultTypeInternal;
 extern AlgorithmSpecificationDefaultTypeInternal _AlgorithmSpecification_default_instance_;
-class InputFileType;
-class InputFileTypeDefaultTypeInternal;
-extern InputFileTypeDefaultTypeInternal _InputFileType_default_instance_;
+class InputContentType;
+class InputContentTypeDefaultTypeInternal;
+extern InputContentTypeDefaultTypeInternal _InputContentType_default_instance_;
 class InputMode;
 class InputModeDefaultTypeInternal;
 extern InputModeDefaultTypeInternal _InputMode_default_instance_;
@@ -81,7 +81,7 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmName>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
-template<> ::flyteidl::plugins::sagemaker::InputFileType* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputFileType>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::InputContentType* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputContentType>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::MetricDefinition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJob* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJob>(Arena*);
@@ -134,26 +134,26 @@ inline bool AlgorithmName_Value_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<AlgorithmName_Value>(
     AlgorithmName_Value_descriptor(), name, value);
 }
-enum InputFileType_Value {
-  InputFileType_Value_TEXT_CSV = 0,
-  InputFileType_Value_TEXT_LIBSVM = 1,
-  InputFileType_Value_InputFileType_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  InputFileType_Value_InputFileType_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum InputContentType_Value {
+  InputContentType_Value_TEXT_CSV = 0,
+  InputContentType_Value_TEXT_LIBSVM = 1,
+  InputContentType_Value_InputContentType_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  InputContentType_Value_InputContentType_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool InputFileType_Value_IsValid(int value);
-const InputFileType_Value InputFileType_Value_Value_MIN = InputFileType_Value_TEXT_CSV;
-const InputFileType_Value InputFileType_Value_Value_MAX = InputFileType_Value_TEXT_LIBSVM;
-const int InputFileType_Value_Value_ARRAYSIZE = InputFileType_Value_Value_MAX + 1;
+bool InputContentType_Value_IsValid(int value);
+const InputContentType_Value InputContentType_Value_Value_MIN = InputContentType_Value_TEXT_CSV;
+const InputContentType_Value InputContentType_Value_Value_MAX = InputContentType_Value_TEXT_LIBSVM;
+const int InputContentType_Value_Value_ARRAYSIZE = InputContentType_Value_Value_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* InputFileType_Value_descriptor();
-inline const ::std::string& InputFileType_Value_Name(InputFileType_Value value) {
+const ::google::protobuf::EnumDescriptor* InputContentType_Value_descriptor();
+inline const ::std::string& InputContentType_Value_Name(InputContentType_Value value) {
   return ::google::protobuf::internal::NameOfEnum(
-    InputFileType_Value_descriptor(), value);
+    InputContentType_Value_descriptor(), value);
 }
-inline bool InputFileType_Value_Parse(
-    const ::std::string& name, InputFileType_Value* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<InputFileType_Value>(
-    InputFileType_Value_descriptor(), name, value);
+inline bool InputContentType_Value_Parse(
+    const ::std::string& name, InputContentType_Value* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<InputContentType_Value>(
+    InputContentType_Value_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -419,25 +419,25 @@ class AlgorithmName final :
 };
 // -------------------------------------------------------------------
 
-class InputFileType final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.InputFileType) */ {
+class InputContentType final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.InputContentType) */ {
  public:
-  InputFileType();
-  virtual ~InputFileType();
+  InputContentType();
+  virtual ~InputContentType();
 
-  InputFileType(const InputFileType& from);
+  InputContentType(const InputContentType& from);
 
-  inline InputFileType& operator=(const InputFileType& from) {
+  inline InputContentType& operator=(const InputContentType& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  InputFileType(InputFileType&& from) noexcept
-    : InputFileType() {
+  InputContentType(InputContentType&& from) noexcept
+    : InputContentType() {
     *this = ::std::move(from);
   }
 
-  inline InputFileType& operator=(InputFileType&& from) noexcept {
+  inline InputContentType& operator=(InputContentType&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -449,34 +449,34 @@ class InputFileType final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const InputFileType& default_instance();
+  static const InputContentType& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const InputFileType* internal_default_instance() {
-    return reinterpret_cast<const InputFileType*>(
-               &_InputFileType_default_instance_);
+  static inline const InputContentType* internal_default_instance() {
+    return reinterpret_cast<const InputContentType*>(
+               &_InputContentType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(InputFileType* other);
-  friend void swap(InputFileType& a, InputFileType& b) {
+  void Swap(InputContentType* other);
+  friend void swap(InputContentType& a, InputContentType& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline InputFileType* New() const final {
-    return CreateMaybeMessage<InputFileType>(nullptr);
+  inline InputContentType* New() const final {
+    return CreateMaybeMessage<InputContentType>(nullptr);
   }
 
-  InputFileType* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<InputFileType>(arena);
+  InputContentType* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<InputContentType>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const InputFileType& from);
-  void MergeFrom(const InputFileType& from);
+  void CopyFrom(const InputContentType& from);
+  void MergeFrom(const InputContentType& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -498,7 +498,7 @@ class InputFileType final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(InputFileType* other);
+  void InternalSwap(InputContentType* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -512,35 +512,35 @@ class InputFileType final :
 
   // nested types ----------------------------------------------------
 
-  typedef InputFileType_Value Value;
+  typedef InputContentType_Value Value;
   static const Value TEXT_CSV =
-    InputFileType_Value_TEXT_CSV;
+    InputContentType_Value_TEXT_CSV;
   static const Value TEXT_LIBSVM =
-    InputFileType_Value_TEXT_LIBSVM;
+    InputContentType_Value_TEXT_LIBSVM;
   static inline bool Value_IsValid(int value) {
-    return InputFileType_Value_IsValid(value);
+    return InputContentType_Value_IsValid(value);
   }
   static const Value Value_MIN =
-    InputFileType_Value_Value_MIN;
+    InputContentType_Value_Value_MIN;
   static const Value Value_MAX =
-    InputFileType_Value_Value_MAX;
+    InputContentType_Value_Value_MAX;
   static const int Value_ARRAYSIZE =
-    InputFileType_Value_Value_ARRAYSIZE;
+    InputContentType_Value_Value_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
   Value_descriptor() {
-    return InputFileType_Value_descriptor();
+    return InputContentType_Value_descriptor();
   }
   static inline const ::std::string& Value_Name(Value value) {
-    return InputFileType_Value_Name(value);
+    return InputContentType_Value_Name(value);
   }
   static inline bool Value_Parse(const ::std::string& name,
       Value* value) {
-    return InputFileType_Value_Parse(name, value);
+    return InputContentType_Value_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputFileType)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputContentType)
  private:
   class HasBitSetters;
 
@@ -818,11 +818,11 @@ class AlgorithmSpecification final :
   ::flyteidl::plugins::sagemaker::AlgorithmName_Value algorithm_name() const;
   void set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName_Value value);
 
-  // .flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;
-  void clear_input_file_type();
-  static const int kInputFileTypeFieldNumber = 5;
-  ::flyteidl::plugins::sagemaker::InputFileType_Value input_file_type() const;
-  void set_input_file_type(::flyteidl::plugins::sagemaker::InputFileType_Value value);
+  // .flyteidl.plugins.sagemaker.InputContentType.Value input_content_type = 5;
+  void clear_input_content_type();
+  static const int kInputContentTypeFieldNumber = 5;
+  ::flyteidl::plugins::sagemaker::InputContentType_Value input_content_type() const;
+  void set_input_content_type(::flyteidl::plugins::sagemaker::InputContentType_Value value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification)
  private:
@@ -833,7 +833,7 @@ class AlgorithmSpecification final :
   ::google::protobuf::internal::ArenaStringPtr algorithm_version_;
   int input_mode_;
   int algorithm_name_;
-  int input_file_type_;
+  int input_content_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1113,7 +1113,7 @@ class TrainingJob final :
 
 // -------------------------------------------------------------------
 
-// InputFileType
+// InputContentType
 
 // -------------------------------------------------------------------
 
@@ -1340,18 +1340,18 @@ AlgorithmSpecification::metric_definitions() const {
   return metric_definitions_;
 }
 
-// .flyteidl.plugins.sagemaker.InputFileType.Value input_file_type = 5;
-inline void AlgorithmSpecification::clear_input_file_type() {
-  input_file_type_ = 0;
+// .flyteidl.plugins.sagemaker.InputContentType.Value input_content_type = 5;
+inline void AlgorithmSpecification::clear_input_content_type() {
+  input_content_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::InputFileType_Value AlgorithmSpecification::input_file_type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
-  return static_cast< ::flyteidl::plugins::sagemaker::InputFileType_Value >(input_file_type_);
+inline ::flyteidl::plugins::sagemaker::InputContentType_Value AlgorithmSpecification::input_content_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_content_type)
+  return static_cast< ::flyteidl::plugins::sagemaker::InputContentType_Value >(input_content_type_);
 }
-inline void AlgorithmSpecification::set_input_file_type(::flyteidl::plugins::sagemaker::InputFileType_Value value) {
+inline void AlgorithmSpecification::set_input_content_type(::flyteidl::plugins::sagemaker::InputContentType_Value value) {
   
-  input_file_type_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type)
+  input_content_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_content_type)
 }
 
 // -------------------------------------------------------------------
@@ -1580,10 +1580,10 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::AlgorithmName_Value>() {
   return ::flyteidl::plugins::sagemaker::AlgorithmName_Value_descriptor();
 }
-template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::InputFileType_Value> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::InputContentType_Value> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::InputFileType_Value>() {
-  return ::flyteidl::plugins::sagemaker::InputFileType_Value_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::InputContentType_Value>() {
+  return ::flyteidl::plugins::sagemaker::InputContentType_Value_descriptor();
 }
 
 }  // namespace protobuf
