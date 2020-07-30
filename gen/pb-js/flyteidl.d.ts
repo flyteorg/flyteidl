@@ -6639,6 +6639,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a RawOutputDataConfig. */
+        interface IRawOutputDataConfig {
+
+            /** RawOutputDataConfig outputLocationPrefix */
+            outputLocationPrefix?: (string|null);
+        }
+
+        /** Represents a RawOutputDataConfig. */
+        class RawOutputDataConfig implements IRawOutputDataConfig {
+
+            /**
+             * Constructs a new RawOutputDataConfig.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IRawOutputDataConfig);
+
+            /** RawOutputDataConfig outputLocationPrefix. */
+            public outputLocationPrefix: string;
+
+            /**
+             * Creates a new RawOutputDataConfig instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RawOutputDataConfig instance
+             */
+            public static create(properties?: flyteidl.admin.IRawOutputDataConfig): flyteidl.admin.RawOutputDataConfig;
+
+            /**
+             * Encodes the specified RawOutputDataConfig message. Does not implicitly {@link flyteidl.admin.RawOutputDataConfig.verify|verify} messages.
+             * @param message RawOutputDataConfig message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IRawOutputDataConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RawOutputDataConfig message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RawOutputDataConfig
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.RawOutputDataConfig;
+
+            /**
+             * Verifies a RawOutputDataConfig message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an EventErrorAlreadyInTerminalState. */
         interface IEventErrorAlreadyInTerminalState {
 
@@ -8466,58 +8518,6 @@ export namespace flyteidl {
 
             /**
              * Verifies an Auth message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a RawOutputDataConfig. */
-        interface IRawOutputDataConfig {
-
-            /** RawOutputDataConfig outputLocationPrefix */
-            outputLocationPrefix?: (string|null);
-        }
-
-        /** Represents a RawOutputDataConfig. */
-        class RawOutputDataConfig implements IRawOutputDataConfig {
-
-            /**
-             * Constructs a new RawOutputDataConfig.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IRawOutputDataConfig);
-
-            /** RawOutputDataConfig outputLocationPrefix. */
-            public outputLocationPrefix: string;
-
-            /**
-             * Creates a new RawOutputDataConfig instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns RawOutputDataConfig instance
-             */
-            public static create(properties?: flyteidl.admin.IRawOutputDataConfig): flyteidl.admin.RawOutputDataConfig;
-
-            /**
-             * Encodes the specified RawOutputDataConfig message. Does not implicitly {@link flyteidl.admin.RawOutputDataConfig.verify|verify} messages.
-             * @param message RawOutputDataConfig message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IRawOutputDataConfig, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a RawOutputDataConfig message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns RawOutputDataConfig
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.RawOutputDataConfig;
-
-            /**
-             * Verifies a RawOutputDataConfig message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

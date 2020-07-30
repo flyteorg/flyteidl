@@ -64,14 +64,6 @@ message Auth {
   }
 }
 
-// Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
-// See https://github.com/lyft/flyte/issues/211 for more background information.
-message RawOutputDataConfig {
-    // Prefix for where offloaded data from user workflows will be written
-    // e.g. s3://bucket/key or s3://bucket/
-    string output_location_prefix            = 1;
-}
-
 // User-provided launch plan definition and configuration values.
 message LaunchPlanSpec {
     // Reference to the Workflow template that the launch plan references

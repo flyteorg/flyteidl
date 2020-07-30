@@ -151,37 +151,12 @@ kubernetes_service_account
   
 
 
-.. _api_msg_flyteidl.admin.RawOutputDataConfig:
-
-flyteidl.admin.RawOutputDataConfig
-----------------------------------
-
-`[flyteidl.admin.RawOutputDataConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L68>`_
-
-Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
-See https://github.com/lyft/flyte/issues/211 for more background information.
-
-.. code-block:: json
-
-  {
-    "output_location_prefix": "..."
-  }
-
-.. _api_field_flyteidl.admin.RawOutputDataConfig.output_location_prefix:
-
-output_location_prefix
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Prefix for where offloaded data from user workflows will be written
-  e.g. s3://bucket/key or s3://bucket/
-  
-  
-
-
 .. _api_msg_flyteidl.admin.LaunchPlanSpec:
 
 flyteidl.admin.LaunchPlanSpec
 -----------------------------
 
-`[flyteidl.admin.LaunchPlanSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L75>`_
+`[flyteidl.admin.LaunchPlanSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L67>`_
 
 User-provided launch plan definition and configuration values.
 
@@ -272,7 +247,7 @@ raw_output_data_config
 flyteidl.admin.LaunchPlanClosure
 --------------------------------
 
-`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L111>`_
+`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L103>`_
 
 Values computed by the flyte platform after launch plan registration.
 These include expected_inputs required to be present in a CreateExecutionRequest
@@ -325,7 +300,7 @@ updated_at
 flyteidl.admin.LaunchPlanMetadata
 ---------------------------------
 
-`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L130>`_
+`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L122>`_
 
 Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch
 the reference workflow.
@@ -356,7 +331,7 @@ notifications
 flyteidl.admin.LaunchPlanUpdateRequest
 --------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L139>`_
+`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L131>`_
 
 Request to set the referenced launch plan state to the configured value.
 
@@ -386,7 +361,7 @@ state
 flyteidl.admin.LaunchPlanUpdateResponse
 ---------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L148>`_
+`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L140>`_
 
 Purposefully empty, may be populated in the future.
 
@@ -402,7 +377,7 @@ Purposefully empty, may be populated in the future.
 flyteidl.admin.ActiveLaunchPlanRequest
 --------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L152>`_
+`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L144>`_
 
 Represents a request struct for finding an active launch plan for a given NamedEntityIdentifier
 
@@ -424,7 +399,7 @@ id
 flyteidl.admin.ActiveLaunchPlanListRequest
 ------------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L157>`_
+`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L149>`_
 
 Represents a request structure to list active launch plans within a project/domain.
 

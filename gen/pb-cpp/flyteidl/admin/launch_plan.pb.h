@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[13]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -94,9 +94,6 @@ extern LaunchPlanUpdateRequestDefaultTypeInternal _LaunchPlanUpdateRequest_defau
 class LaunchPlanUpdateResponse;
 class LaunchPlanUpdateResponseDefaultTypeInternal;
 extern LaunchPlanUpdateResponseDefaultTypeInternal _LaunchPlanUpdateResponse_default_instance_;
-class RawOutputDataConfig;
-class RawOutputDataConfigDefaultTypeInternal;
-extern RawOutputDataConfigDefaultTypeInternal _RawOutputDataConfig_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
 namespace google {
@@ -113,7 +110,6 @@ template<> ::flyteidl::admin::LaunchPlanMetadata* Arena::CreateMaybeMessage<::fl
 template<> ::flyteidl::admin::LaunchPlanSpec* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanSpec>(Arena*);
 template<> ::flyteidl::admin::LaunchPlanUpdateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanUpdateRequest>(Arena*);
 template<> ::flyteidl::admin::LaunchPlanUpdateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanUpdateResponse>(Arena*);
-template<> ::flyteidl::admin::RawOutputDataConfig* Arena::CreateMaybeMessage<::flyteidl::admin::RawOutputDataConfig>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -799,126 +795,6 @@ class Auth final :
 };
 // -------------------------------------------------------------------
 
-class RawOutputDataConfig final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.RawOutputDataConfig) */ {
- public:
-  RawOutputDataConfig();
-  virtual ~RawOutputDataConfig();
-
-  RawOutputDataConfig(const RawOutputDataConfig& from);
-
-  inline RawOutputDataConfig& operator=(const RawOutputDataConfig& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RawOutputDataConfig(RawOutputDataConfig&& from) noexcept
-    : RawOutputDataConfig() {
-    *this = ::std::move(from);
-  }
-
-  inline RawOutputDataConfig& operator=(RawOutputDataConfig&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const RawOutputDataConfig& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RawOutputDataConfig* internal_default_instance() {
-    return reinterpret_cast<const RawOutputDataConfig*>(
-               &_RawOutputDataConfig_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  void Swap(RawOutputDataConfig* other);
-  friend void swap(RawOutputDataConfig& a, RawOutputDataConfig& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RawOutputDataConfig* New() const final {
-    return CreateMaybeMessage<RawOutputDataConfig>(nullptr);
-  }
-
-  RawOutputDataConfig* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RawOutputDataConfig>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RawOutputDataConfig& from);
-  void MergeFrom(const RawOutputDataConfig& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RawOutputDataConfig* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string output_location_prefix = 1;
-  void clear_output_location_prefix();
-  static const int kOutputLocationPrefixFieldNumber = 1;
-  const ::std::string& output_location_prefix() const;
-  void set_output_location_prefix(const ::std::string& value);
-  #if LANG_CXX11
-  void set_output_location_prefix(::std::string&& value);
-  #endif
-  void set_output_location_prefix(const char* value);
-  void set_output_location_prefix(const char* value, size_t size);
-  ::std::string* mutable_output_location_prefix();
-  ::std::string* release_output_location_prefix();
-  void set_allocated_output_location_prefix(::std::string* output_location_prefix);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.RawOutputDataConfig)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr output_location_prefix_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
-};
-// -------------------------------------------------------------------
-
 class LaunchPlanSpec final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.LaunchPlanSpec) */ {
  public:
@@ -957,7 +833,7 @@ class LaunchPlanSpec final :
                &_LaunchPlanSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(LaunchPlanSpec* other);
   friend void swap(LaunchPlanSpec& a, LaunchPlanSpec& b) {
@@ -1177,7 +1053,7 @@ class LaunchPlanClosure final :
                &_LaunchPlanClosure_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(LaunchPlanClosure* other);
   friend void swap(LaunchPlanClosure& a, LaunchPlanClosure& b) {
@@ -1329,7 +1205,7 @@ class LaunchPlanMetadata final :
                &_LaunchPlanMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(LaunchPlanMetadata* other);
   friend void swap(LaunchPlanMetadata& a, LaunchPlanMetadata& b) {
@@ -1457,7 +1333,7 @@ class LaunchPlanUpdateRequest final :
                &_LaunchPlanUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(LaunchPlanUpdateRequest* other);
   friend void swap(LaunchPlanUpdateRequest& a, LaunchPlanUpdateRequest& b) {
@@ -1579,7 +1455,7 @@ class LaunchPlanUpdateResponse final :
                &_LaunchPlanUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(LaunchPlanUpdateResponse* other);
   friend void swap(LaunchPlanUpdateResponse& a, LaunchPlanUpdateResponse& b) {
@@ -1684,7 +1560,7 @@ class ActiveLaunchPlanRequest final :
                &_ActiveLaunchPlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(ActiveLaunchPlanRequest* other);
   friend void swap(ActiveLaunchPlanRequest& a, ActiveLaunchPlanRequest& b) {
@@ -1799,7 +1675,7 @@ class ActiveLaunchPlanListRequest final :
                &_ActiveLaunchPlanListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(ActiveLaunchPlanListRequest* other);
   friend void swap(ActiveLaunchPlanListRequest& a, ActiveLaunchPlanListRequest& b) {
@@ -2474,63 +2350,6 @@ inline Auth::MethodCase Auth::method_case() const {
 }
 // -------------------------------------------------------------------
 
-// RawOutputDataConfig
-
-// string output_location_prefix = 1;
-inline void RawOutputDataConfig::clear_output_location_prefix() {
-  output_location_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& RawOutputDataConfig::output_location_prefix() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-  return output_location_prefix_.GetNoArena();
-}
-inline void RawOutputDataConfig::set_output_location_prefix(const ::std::string& value) {
-  
-  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-}
-#if LANG_CXX11
-inline void RawOutputDataConfig::set_output_location_prefix(::std::string&& value) {
-  
-  output_location_prefix_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-}
-#endif
-inline void RawOutputDataConfig::set_output_location_prefix(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-}
-inline void RawOutputDataConfig::set_output_location_prefix(const char* value, size_t size) {
-  
-  output_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-}
-inline ::std::string* RawOutputDataConfig::mutable_output_location_prefix() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-  return output_location_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* RawOutputDataConfig::release_output_location_prefix() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-  
-  return output_location_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void RawOutputDataConfig::set_allocated_output_location_prefix(::std::string* output_location_prefix) {
-  if (output_location_prefix != nullptr) {
-    
-  } else {
-    
-  }
-  output_location_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_location_prefix);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
-}
-
-// -------------------------------------------------------------------
-
 // LaunchPlanSpec
 
 // .flyteidl.core.Identifier workflow_id = 1;
@@ -3007,12 +2826,6 @@ inline void LaunchPlanSpec::set_allocated_quality_of_service(::flyteidl::core::Q
 inline bool LaunchPlanSpec::has_raw_output_data_config() const {
   return this != internal_default_instance() && raw_output_data_config_ != nullptr;
 }
-inline void LaunchPlanSpec::clear_raw_output_data_config() {
-  if (GetArenaNoVirtual() == nullptr && raw_output_data_config_ != nullptr) {
-    delete raw_output_data_config_;
-  }
-  raw_output_data_config_ = nullptr;
-}
 inline const ::flyteidl::admin::RawOutputDataConfig& LaunchPlanSpec::raw_output_data_config() const {
   const ::flyteidl::admin::RawOutputDataConfig* p = raw_output_data_config_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.raw_output_data_config)
@@ -3038,7 +2851,7 @@ inline ::flyteidl::admin::RawOutputDataConfig* LaunchPlanSpec::mutable_raw_outpu
 inline void LaunchPlanSpec::set_allocated_raw_output_data_config(::flyteidl::admin::RawOutputDataConfig* raw_output_data_config) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete raw_output_data_config_;
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(raw_output_data_config_);
   }
   if (raw_output_data_config) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
@@ -3671,8 +3484,6 @@ inline void ActiveLaunchPlanListRequest::set_allocated_sort_by(::flyteidl::admin
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
