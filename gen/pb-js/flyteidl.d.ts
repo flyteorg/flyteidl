@@ -4516,6 +4516,82 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a DynamicJobSpec. */
+        interface IDynamicJobSpec {
+
+            /** DynamicJobSpec nodes */
+            nodes?: (flyteidl.core.INode[]|null);
+
+            /** DynamicJobSpec minSuccesses */
+            minSuccesses?: (Long|null);
+
+            /** DynamicJobSpec outputs */
+            outputs?: (flyteidl.core.IBinding[]|null);
+
+            /** DynamicJobSpec tasks */
+            tasks?: (flyteidl.core.ITaskTemplate[]|null);
+
+            /** DynamicJobSpec subworkflows */
+            subworkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
+        }
+
+        /** Represents a DynamicJobSpec. */
+        class DynamicJobSpec implements IDynamicJobSpec {
+
+            /**
+             * Constructs a new DynamicJobSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IDynamicJobSpec);
+
+            /** DynamicJobSpec nodes. */
+            public nodes: flyteidl.core.INode[];
+
+            /** DynamicJobSpec minSuccesses. */
+            public minSuccesses: Long;
+
+            /** DynamicJobSpec outputs. */
+            public outputs: flyteidl.core.IBinding[];
+
+            /** DynamicJobSpec tasks. */
+            public tasks: flyteidl.core.ITaskTemplate[];
+
+            /** DynamicJobSpec subworkflows. */
+            public subworkflows: flyteidl.core.IWorkflowTemplate[];
+
+            /**
+             * Creates a new DynamicJobSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DynamicJobSpec instance
+             */
+            public static create(properties?: flyteidl.core.IDynamicJobSpec): flyteidl.core.DynamicJobSpec;
+
+            /**
+             * Encodes the specified DynamicJobSpec message. Does not implicitly {@link flyteidl.core.DynamicJobSpec.verify|verify} messages.
+             * @param message DynamicJobSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IDynamicJobSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DynamicJobSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DynamicJobSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DynamicJobSpec;
+
+            /**
+             * Verifies a DynamicJobSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a ContainerError. */
         interface IContainerError {
 
