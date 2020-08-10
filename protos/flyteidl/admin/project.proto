@@ -12,6 +12,15 @@ message Domain {
     string name  = 2;
 }
 
+// Used to insert arbitrary key value pairs of tags on a project.
+message Tag {
+  // Key portion of the Tag
+  string key = 1;
+
+  // Value portion of the Tag
+  value = 2;
+}
+
 // Top-level namespace used to classify different entities like workflows and executions.
 message Project {
     string id               = 1;
@@ -22,6 +31,8 @@ message Project {
     repeated Domain domains = 3;
 
     string description      = 4;
+
+    repeated Tag tags = 5;
 }
 
 message Projects {
