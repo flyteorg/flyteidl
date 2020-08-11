@@ -79,6 +79,7 @@ from flyteadmin.models.admin_project_domain_attributes_update_response import Ad
 from flyteadmin.models.admin_project_register_request import AdminProjectRegisterRequest
 from flyteadmin.models.admin_project_register_response import AdminProjectRegisterResponse
 from flyteadmin.models.admin_projects import AdminProjects
+from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
@@ -127,6 +128,9 @@ from flyteadmin.models.core_blob_metadata import CoreBlobMetadata
 from flyteadmin.models.core_blob_type import CoreBlobType
 from flyteadmin.models.core_boolean_expression import CoreBooleanExpression
 from flyteadmin.models.core_branch_node import CoreBranchNode
+from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag
+from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus
+from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
 from flyteadmin.models.core_compiled_workflow import CoreCompiledWorkflow
@@ -191,8 +195,10 @@ from flyteadmin.models.execution_error_error_kind import ExecutionErrorErrorKind
 from flyteadmin.models.execution_metadata_execution_mode import ExecutionMetadataExecutionMode
 from flyteadmin.models.flyteidladmin_node_execution import FlyteidladminNodeExecution
 from flyteadmin.models.flyteidladmin_task_execution import FlyteidladminTaskExecution
+from flyteadmin.models.flyteidladmin_task_node_metadata import FlyteidladminTaskNodeMetadata
 from flyteadmin.models.flyteidladmin_workflow_node_metadata import FlyteidladminWorkflowNodeMetadata
 from flyteadmin.models.flyteidlcore_schema import FlyteidlcoreSchema
+from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata
 from flyteadmin.models.io_strategy_download_mode import IOStrategyDownloadMode
 from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode
