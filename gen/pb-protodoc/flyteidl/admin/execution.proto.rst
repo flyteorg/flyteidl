@@ -742,13 +742,13 @@ inputs
 .. _api_field_flyteidl.admin.WorkflowExecutionGetDataResponse.full_inputs:
 
 full_inputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if they are small enough to be returned.
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if they are under a configured size threshold.
   
   
 .. _api_field_flyteidl.admin.WorkflowExecutionGetDataResponse.full_outputs:
 
 full_outputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are small eough to be returned.
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are under a configured size threshold.
   
   
 

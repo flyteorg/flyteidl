@@ -5052,12 +5052,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of node execution outputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        title: "Optional, full_inputs will only be populated if they are small enough\
-          \ to be returned"
+        description: "Optional, full_inputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        title: "Optional, full_outputs will only be populated if they are small enough\
-          \ to be returned"
+        description: "Optional, full_outputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for NodeExecutionGetDataRequest which contains\
       \ inputs and outputs for a node execution."
@@ -5914,12 +5914,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of task execution outputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        title: "Optional, full_inputs will only be populated if they are small enough\
-          \ to be returned"
+        description: "Optional, full_inputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        title: "Optional, full_outputs will only be populated if they are small enough\
-          \ to be returned"
+        description: "Optional, full_outputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
@@ -12023,12 +12023,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of execution inputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        description: "Optional, full_inputs will only be populated if they are small\
-          \ enough to be returned."
+        description: "Optional, full_inputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        description: "Optional, full_outputs will only be populated if they are small\
-          \ eough to be returned."
+        description: "Optional, full_outputs will only be populated if they are under\
+          \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for WorkflowExecutionGetDataRequest which contains\
       \ inputs and outputs for an execution."

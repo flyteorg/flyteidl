@@ -112,9 +112,9 @@ message TaskExecutionGetDataResponse {
     // Signed url to fetch a core.LiteralMap of task execution outputs.
     UrlBlob outputs                            = 2;
 
-    // Optional, full_inputs will only be populated if they are small enough to be returned
+    // Optional, full_inputs will only be populated if they are under a configured size threshold.
     core.LiteralMap full_inputs                = 3;
 
-    // Optional, full_outputs will only be populated if they are small enough to be returned
+    // Optional, full_outputs will only be populated if they are under a configured size threshold.
     core.LiteralMap full_outputs               = 4;
 }

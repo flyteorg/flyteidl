@@ -271,9 +271,9 @@ message WorkflowExecutionGetDataResponse {
     // Signed url to fetch a core.LiteralMap of execution inputs.
     UrlBlob inputs                             = 2;
 
-    // Optional, full_inputs will only be populated if they are small enough to be returned.
+    // Optional, full_inputs will only be populated if they are under a configured size threshold.
     core.LiteralMap full_inputs                = 3;
 
-    // Optional, full_outputs will only be populated if they are small eough to be returned.
+    // Optional, full_outputs will only be populated if they are under a configured size threshold.
     core.LiteralMap full_outputs               = 4;
 }

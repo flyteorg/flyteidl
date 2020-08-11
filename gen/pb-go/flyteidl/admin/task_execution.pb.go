@@ -458,9 +458,9 @@ type TaskExecutionGetDataResponse struct {
 	Inputs *UrlBlob `protobuf:"bytes,1,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	// Signed url to fetch a core.LiteralMap of task execution outputs.
 	Outputs *UrlBlob `protobuf:"bytes,2,opt,name=outputs,proto3" json:"outputs,omitempty"`
-	// Optional, full_inputs will only be populated if they are small enough to be returned
+	// Optional, full_inputs will only be populated if they are under a configured size threshold.
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
-	// Optional, full_outputs will only be populated if they are small enough to be returned
+	// Optional, full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs          *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`
