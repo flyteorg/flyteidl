@@ -429,16 +429,16 @@ class AdminServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def RegisterProject(self, request, context):
-    """flyteidl.admin.Project should be passed but the domains property should be empty;
-    it will be ingored in the handler as domains cannot be updted via this API.
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def UpdateProject(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """flyteidl.admin.Project should be passed but the domains property should be empty;
+    it will be ignored in the handler as domains cannot be updated via this API.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

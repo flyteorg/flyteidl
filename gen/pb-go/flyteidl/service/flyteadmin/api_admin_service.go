@@ -4278,7 +4278,7 @@ func (a *AdminServiceApiService) ListWorkflows2(ctx context.Context, idProject s
 }
 
 /* 
-AdminServiceApiService flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.
+AdminServiceApiService
 Register a project.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
@@ -4750,7 +4750,7 @@ func (a *AdminServiceApiService) UpdateNamedEntity(ctx context.Context, resource
 }
 
 /* 
-AdminServiceApiService
+AdminServiceApiService flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
 Update a project.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id

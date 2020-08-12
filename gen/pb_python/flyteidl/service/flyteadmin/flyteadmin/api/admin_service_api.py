@@ -4847,7 +4847,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def register_project(self, body, **kwargs):  # noqa: E501
-        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.  # noqa: E501
+        """register_project  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4869,7 +4869,7 @@ class AdminServiceApi(object):
             return data
 
     def register_project_with_http_info(self, body, **kwargs):  # noqa: E501
-        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.  # noqa: E501
+        """register_project  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5430,7 +5430,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_project(self, id, body, **kwargs):  # noqa: E501
-        """update_project  # noqa: E501
+        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
         Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5453,7 +5453,7 @@ class AdminServiceApi(object):
             return data
 
     def update_project_with_http_info(self, id, body, **kwargs):  # noqa: E501
-        """update_project  # noqa: E501
+        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
         Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
