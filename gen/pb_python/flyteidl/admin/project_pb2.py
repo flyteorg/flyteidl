@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x89\x01\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequest\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x89\x01\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequest\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponse\"@\n\x14ProjectUpdateRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x17\n\x15ProjectUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -234,16 +234,74 @@ _PROJECTREGISTERRESPONSE = _descriptor.Descriptor(
   serialized_end=423,
 )
 
+
+_PROJECTUPDATEREQUEST = _descriptor.Descriptor(
+  name='ProjectUpdateRequest',
+  full_name='flyteidl.admin.ProjectUpdateRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project', full_name='flyteidl.admin.ProjectUpdateRequest.project', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=425,
+  serialized_end=489,
+)
+
+
+_PROJECTUPDATERESPONSE = _descriptor.Descriptor(
+  name='ProjectUpdateResponse',
+  full_name='flyteidl.admin.ProjectUpdateResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=491,
+  serialized_end=514,
+)
+
 _PROJECT.fields_by_name['domains'].message_type = _DOMAIN
 _PROJECT.fields_by_name['labels'].message_type = flyteidl_dot_admin_dot_common__pb2._LABELS
 _PROJECTS.fields_by_name['projects'].message_type = _PROJECT
 _PROJECTREGISTERREQUEST.fields_by_name['project'].message_type = _PROJECT
+_PROJECTUPDATEREQUEST.fields_by_name['project'].message_type = _PROJECT
 DESCRIPTOR.message_types_by_name['Domain'] = _DOMAIN
 DESCRIPTOR.message_types_by_name['Project'] = _PROJECT
 DESCRIPTOR.message_types_by_name['Projects'] = _PROJECTS
 DESCRIPTOR.message_types_by_name['ProjectListRequest'] = _PROJECTLISTREQUEST
 DESCRIPTOR.message_types_by_name['ProjectRegisterRequest'] = _PROJECTREGISTERREQUEST
 DESCRIPTOR.message_types_by_name['ProjectRegisterResponse'] = _PROJECTREGISTERRESPONSE
+DESCRIPTOR.message_types_by_name['ProjectUpdateRequest'] = _PROJECTUPDATEREQUEST
+DESCRIPTOR.message_types_by_name['ProjectUpdateResponse'] = _PROJECTUPDATERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Domain = _reflection.GeneratedProtocolMessageType('Domain', (_message.Message,), dict(
@@ -287,6 +345,20 @@ ProjectRegisterResponse = _reflection.GeneratedProtocolMessageType('ProjectRegis
   # @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectRegisterResponse)
   ))
 _sym_db.RegisterMessage(ProjectRegisterResponse)
+
+ProjectUpdateRequest = _reflection.GeneratedProtocolMessageType('ProjectUpdateRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROJECTUPDATEREQUEST,
+  __module__ = 'flyteidl.admin.project_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectUpdateRequest)
+  ))
+_sym_db.RegisterMessage(ProjectUpdateRequest)
+
+ProjectUpdateResponse = _reflection.GeneratedProtocolMessageType('ProjectUpdateResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROJECTUPDATERESPONSE,
+  __module__ = 'flyteidl.admin.project_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectUpdateResponse)
+  ))
+_sym_db.RegisterMessage(ProjectUpdateResponse)
 
 
 DESCRIPTOR._options = None

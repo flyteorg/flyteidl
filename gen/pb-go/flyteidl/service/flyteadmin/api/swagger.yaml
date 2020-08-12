@@ -1423,20 +1423,20 @@ paths:
     post:
       tags:
       - "AdminService"
-      description: "Register a project."
-      operationId: "RegisterProject"
+      description: "Update a project."
+      operationId: "UpdateProject"
       parameters:
       - in: "body"
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/adminProjectRegisterRequest"
+          $ref: "#/definitions/adminProjectUpdateRequest"
         x-exportParamName: "Body"
       responses:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminProjectRegisterResponse"
+            $ref: "#/definitions/adminProjectUpdateResponse"
   ? /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}
   : get:
       tags:
@@ -5437,6 +5437,13 @@ definitions:
       project:
         $ref: "#/definitions/adminProject"
   adminProjectRegisterResponse:
+    type: "object"
+  adminProjectUpdateRequest:
+    type: "object"
+    properties:
+      project:
+        $ref: "#/definitions/adminProject"
+  adminProjectUpdateResponse:
     type: "object"
   adminProjects:
     type: "object"

@@ -313,6 +313,16 @@ service AdminService {
     };
   }
 
+  rpc UpdateProject (flyteidl.admin.ProjectUpdateRequest) returns (flyteidl.admin.ProjectUpdateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/projects"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Update a project."
+    };
+  }
+
   rpc ListProjects (flyteidl.admin.ProjectListRequest) returns (flyteidl.admin.Projects) {
     option (google.api.http) = {
       get:  "/api/v1/projects"

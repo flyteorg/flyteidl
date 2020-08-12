@@ -1642,13 +1642,13 @@
         ]
       },
       "post": {
-        "description": "Register a project.",
-        "operationId": "RegisterProject",
+        "description": "Update a project.",
+        "operationId": "UpdateProject",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminProjectRegisterResponse"
+              "$ref": "#/definitions/adminProjectUpdateResponse"
             }
           }
         },
@@ -1658,7 +1658,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/adminProjectRegisterRequest"
+              "$ref": "#/definitions/adminProjectUpdateRequest"
             }
           }
         ],
@@ -3858,6 +3858,17 @@
       }
     },
     "adminProjectRegisterResponse": {
+      "type": "object"
+    },
+    "adminProjectUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "$ref": "#/definitions/adminProject"
+        }
+      }
+    },
+    "adminProjectUpdateResponse": {
       "type": "object"
     },
     "adminProjects": {
