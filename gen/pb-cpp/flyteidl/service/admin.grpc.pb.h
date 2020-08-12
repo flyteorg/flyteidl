@@ -225,6 +225,8 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetDataResponse>> PrepareAsyncGetNodeExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetDataResponse>>(PrepareAsyncGetNodeExecutionDataRaw(context, request, cq));
     }
+    // flyteidl.admin.Project should be passed but the domains property should be empty;
+    // it will be ingored in the handler as domains cannot be updted via this API.
     virtual ::grpc::Status RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::flyteidl::admin::ProjectRegisterResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>> AsyncRegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>>(AsyncRegisterProjectRaw(context, request, cq));
@@ -461,6 +463,8 @@ class AdminService final {
       virtual void GetNodeExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNodeExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetNodeExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // flyteidl.admin.Project should be passed but the domains property should be empty;
+      // it will be ingored in the handler as domains cannot be updted via this API.
       virtual void RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -1294,6 +1298,8 @@ class AdminService final {
     virtual ::grpc::Status ListNodeExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status ListNodeExecutionsForTask(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status GetNodeExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response);
+    // flyteidl.admin.Project should be passed but the domains property should be empty;
+    // it will be ingored in the handler as domains cannot be updted via this API.
     virtual ::grpc::Status RegisterProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response);
     virtual ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response);
     virtual ::grpc::Status ListProjects(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response);

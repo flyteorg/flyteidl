@@ -31326,13 +31326,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function registerProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProject} request Project message or plain object
+             * @param {flyteidl.admin.IProjectRegisterRequest} request ProjectRegisterRequest message or plain object
              * @param {flyteidl.service.AdminService.RegisterProjectCallback} callback Node-style callback called with the error, if any, and ProjectRegisterResponse
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.registerProject = function registerProject(request, callback) {
-                return this.rpcCall(registerProject, $root.flyteidl.admin.Project, $root.flyteidl.admin.ProjectRegisterResponse, request, callback);
+                return this.rpcCall(registerProject, $root.flyteidl.admin.ProjectRegisterRequest, $root.flyteidl.admin.ProjectRegisterResponse, request, callback);
             }, "name", { value: "RegisterProject" });
 
             /**
@@ -31340,7 +31340,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function registerProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProject} request Project message or plain object
+             * @param {flyteidl.admin.IProjectRegisterRequest} request ProjectRegisterRequest message or plain object
              * @returns {Promise<flyteidl.admin.ProjectRegisterResponse>} Promise
              * @variation 2
              */

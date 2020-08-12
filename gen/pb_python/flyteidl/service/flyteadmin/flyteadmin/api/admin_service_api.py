@@ -4847,7 +4847,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def register_project(self, body, **kwargs):  # noqa: E501
-        """register_project  # noqa: E501
+        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4869,7 +4869,7 @@ class AdminServiceApi(object):
             return data
 
     def register_project_with_http_info(self, body, **kwargs):  # noqa: E501
-        """register_project  # noqa: E501
+        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

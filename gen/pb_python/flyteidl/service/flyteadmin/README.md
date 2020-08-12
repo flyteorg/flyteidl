@@ -108,7 +108,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**list_workflow_ids**](docs/AdminServiceApi.md#list_workflow_ids) | **GET** /api/v1/workflow_ids/{project}/{domain} | 
 *AdminServiceApi* | [**list_workflows**](docs/AdminServiceApi.md#list_workflows) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**list_workflows2**](docs/AdminServiceApi.md#list_workflows2) | **GET** /api/v1/workflows/{id.project}/{id.domain} | 
-*AdminServiceApi* | [**register_project**](docs/AdminServiceApi.md#register_project) | **POST** /api/v1/projects | 
+*AdminServiceApi* | [**register_project**](docs/AdminServiceApi.md#register_project) | **POST** /api/v1/projects | flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.
 *AdminServiceApi* | [**relaunch_execution**](docs/AdminServiceApi.md#relaunch_execution) | **POST** /api/v1/executions/relaunch | 
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**update_launch_plan**](docs/AdminServiceApi.md#update_launch_plan) | **PUT** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | 

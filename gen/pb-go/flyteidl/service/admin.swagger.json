@@ -1642,6 +1642,7 @@
         ]
       },
       "post": {
+        "summary": "flyteidl.admin.Project should be passed but the domains property should be empty;\nit will be ingored in the handler as domains cannot be updted via this API.",
         "description": "Register a project.",
         "operationId": "RegisterProject",
         "responses": {

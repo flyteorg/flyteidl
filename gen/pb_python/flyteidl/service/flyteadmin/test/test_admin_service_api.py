@@ -266,6 +266,7 @@ class TestAdminServiceApi(unittest.TestCase):
     def test_register_project(self):
         """Test case for register_project
 
+        flyteidl.admin.Project should be passed but the domains property should be empty; it will be ingored in the handler as domains cannot be updted via this API.  # noqa: E501
         """
         pass
 

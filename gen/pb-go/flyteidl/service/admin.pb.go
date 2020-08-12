@@ -249,6 +249,8 @@ type AdminServiceClient interface {
 	ListNodeExecutions(ctx context.Context, in *admin.NodeExecutionListRequest, opts ...grpc.CallOption) (*admin.NodeExecutionList, error)
 	ListNodeExecutionsForTask(ctx context.Context, in *admin.NodeExecutionForTaskListRequest, opts ...grpc.CallOption) (*admin.NodeExecutionList, error)
 	GetNodeExecutionData(ctx context.Context, in *admin.NodeExecutionGetDataRequest, opts ...grpc.CallOption) (*admin.NodeExecutionGetDataResponse, error)
+	// flyteidl.admin.Project should be passed but the domains property should be empty;
+	// it will be ingored in the handler as domains cannot be updted via this API.
 	RegisterProject(ctx context.Context, in *admin.ProjectRegisterRequest, opts ...grpc.CallOption) (*admin.ProjectRegisterResponse, error)
 	UpdateProject(ctx context.Context, in *admin.Project, opts ...grpc.CallOption) (*admin.ProjectUpdateResponse, error)
 	ListProjects(ctx context.Context, in *admin.ProjectListRequest, opts ...grpc.CallOption) (*admin.Projects, error)
@@ -701,6 +703,8 @@ type AdminServiceServer interface {
 	ListNodeExecutions(context.Context, *admin.NodeExecutionListRequest) (*admin.NodeExecutionList, error)
 	ListNodeExecutionsForTask(context.Context, *admin.NodeExecutionForTaskListRequest) (*admin.NodeExecutionList, error)
 	GetNodeExecutionData(context.Context, *admin.NodeExecutionGetDataRequest) (*admin.NodeExecutionGetDataResponse, error)
+	// flyteidl.admin.Project should be passed but the domains property should be empty;
+	// it will be ingored in the handler as domains cannot be updted via this API.
 	RegisterProject(context.Context, *admin.ProjectRegisterRequest) (*admin.ProjectRegisterResponse, error)
 	UpdateProject(context.Context, *admin.Project) (*admin.ProjectUpdateResponse, error)
 	ListProjects(context.Context, *admin.ProjectListRequest) (*admin.Projects, error)

@@ -13201,17 +13201,17 @@ export namespace flyteidl {
 
             /**
              * Calls RegisterProject.
-             * @param request Project message or plain object
+             * @param request ProjectRegisterRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectRegisterResponse
              */
-            public registerProject(request: flyteidl.admin.IProject, callback: flyteidl.service.AdminService.RegisterProjectCallback): void;
+            public registerProject(request: flyteidl.admin.IProjectRegisterRequest, callback: flyteidl.service.AdminService.RegisterProjectCallback): void;
 
             /**
              * Calls RegisterProject.
-             * @param request Project message or plain object
+             * @param request ProjectRegisterRequest message or plain object
              * @returns Promise
              */
-            public registerProject(request: flyteidl.admin.IProject): Promise<flyteidl.admin.ProjectRegisterResponse>;
+            public registerProject(request: flyteidl.admin.IProjectRegisterRequest): Promise<flyteidl.admin.ProjectRegisterResponse>;
 
             /**
              * Calls UpdateProject.
