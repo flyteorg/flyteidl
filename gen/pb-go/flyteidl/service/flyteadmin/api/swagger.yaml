@@ -1423,14 +1423,37 @@ paths:
     post:
       tags:
       - "AdminService"
-      description: "Update a project."
-      operationId: "UpdateProject"
+      description: "Register a project."
+      operationId: "RegisterProject"
       parameters:
       - in: "body"
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/adminProjectUpdateRequest"
+          $ref: "#/definitions/adminProjectRegisterRequest"
+        x-exportParamName: "Body"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminProjectRegisterResponse"
+  /api/v1/projects/{id}:
+    put:
+      tags:
+      - "AdminService"
+      description: "Update a project."
+      operationId: "UpdateProject"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+        x-exportParamName: "Id"
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/adminProject"
         x-exportParamName: "Body"
       responses:
         200:
@@ -5438,11 +5461,6 @@ definitions:
         $ref: "#/definitions/adminProject"
   adminProjectRegisterResponse:
     type: "object"
-  adminProjectUpdateRequest:
-    type: "object"
-    properties:
-      project:
-        $ref: "#/definitions/adminProject"
   adminProjectUpdateResponse:
     type: "object"
   adminProjects:

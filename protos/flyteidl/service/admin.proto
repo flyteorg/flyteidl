@@ -303,7 +303,7 @@ service AdminService {
     };
   };
 
-  rpc RegisterProject (flyteidl.admin.ProjectRegisterRequest) returns (flyteidl.admin.ProjectRegisterResponse) {
+  rpc RegisterProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectRegisterResponse) {
     option (google.api.http) = {
       post: "/api/v1/projects"
       body: "*"
@@ -313,9 +313,9 @@ service AdminService {
     };
   }
 
-  rpc UpdateProject (flyteidl.admin.ProjectUpdateRequest) returns (flyteidl.admin.ProjectUpdateResponse) {
+  rpc UpdateProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectUpdateResponse) {
     option (google.api.http) = {
-      post: "/api/v1/projects"
+      put: "/api/v1/projects/{id}"
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {

@@ -232,11 +232,11 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>> PrepareAsyncRegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>>(PrepareAsyncRegisterProjectRaw(context, request, cq));
     }
-    virtual ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::flyteidl::admin::ProjectUpdateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::flyteidl::admin::ProjectUpdateResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>>(AsyncUpdateProjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>>(PrepareAsyncUpdateProjectRaw(context, request, cq));
     }
     virtual ::grpc::Status ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::flyteidl::admin::Projects* response) = 0;
@@ -465,9 +465,9 @@ class AdminService final {
       virtual void RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)>) = 0;
@@ -592,8 +592,8 @@ class AdminService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetDataResponse>* PrepareAsyncGetNodeExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>* AsyncRegisterProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectRegisterResponse>* PrepareAsyncRegisterProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectUpdateResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Projects>* AsyncListProjectsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Projects>* PrepareAsyncListProjectsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionEventResponse>* AsyncCreateWorkflowEventRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -814,11 +814,11 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectRegisterResponse>> PrepareAsyncRegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectRegisterResponse>>(PrepareAsyncRegisterProjectRaw(context, request, cq));
     }
-    ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::flyteidl::admin::ProjectUpdateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::flyteidl::admin::ProjectUpdateResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>>(AsyncUpdateProjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>>(PrepareAsyncUpdateProjectRaw(context, request, cq));
     }
     ::grpc::Status ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::flyteidl::admin::Projects* response) override;
@@ -1047,9 +1047,9 @@ class AdminService final {
       void RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)>) override;
       void RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void UpdateProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)>) override;
       void ListProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)>) override;
@@ -1182,8 +1182,8 @@ class AdminService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetDataResponse>* PrepareAsyncGetNodeExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectRegisterResponse>* AsyncRegisterProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectRegisterResponse>* PrepareAsyncRegisterProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Projects>* AsyncListProjectsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Projects>* PrepareAsyncListProjectsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionEventResponse>* AsyncCreateWorkflowEventRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1295,7 +1295,7 @@ class AdminService final {
     virtual ::grpc::Status ListNodeExecutionsForTask(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status GetNodeExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response);
     virtual ::grpc::Status RegisterProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response);
-    virtual ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response);
+    virtual ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response);
     virtual ::grpc::Status ListProjects(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response);
     virtual ::grpc::Status CreateWorkflowEvent(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest* request, ::flyteidl::admin::WorkflowExecutionEventResponse* response);
     virtual ::grpc::Status CreateNodeEvent(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionEventRequest* request, ::flyteidl::admin::NodeExecutionEventResponse* response);
@@ -1846,11 +1846,11 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateProject(::grpc::ServerContext* context, ::flyteidl::admin::ProjectUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::ProjectUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateProject(::grpc::ServerContext* context, ::flyteidl::admin::Project* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::ProjectUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -3008,17 +3008,17 @@ class AdminService final {
    public:
     ExperimentalWithCallbackMethod_UpdateProject() {
       ::grpc::Service::experimental().MarkMethodCallback(26,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::ProjectUpdateRequest, ::flyteidl::admin::ProjectUpdateResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::Project, ::flyteidl::admin::ProjectUpdateResponse>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::admin::ProjectUpdateRequest* request,
+                 const ::flyteidl::admin::Project* request,
                  ::flyteidl::admin::ProjectUpdateResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->UpdateProject(context, request, response, controller);
                  }));
     }
     void SetMessageAllocatorFor_UpdateProject(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::ProjectUpdateRequest, ::flyteidl::admin::ProjectUpdateResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::ProjectUpdateRequest, ::flyteidl::admin::ProjectUpdateResponse>*>(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::Project, ::flyteidl::admin::ProjectUpdateResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::Project, ::flyteidl::admin::ProjectUpdateResponse>*>(
           ::grpc::Service::experimental().GetHandler(26))
               ->SetMessageAllocator(allocator);
     }
@@ -3026,11 +3026,11 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListProjects : public BaseClass {
@@ -4014,7 +4014,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4840,7 +4840,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5857,7 +5857,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -6815,18 +6815,18 @@ class AdminService final {
    public:
     WithStreamedUnaryMethod_UpdateProject() {
       ::grpc::Service::MarkMethodStreamed(26,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::ProjectUpdateRequest, ::flyteidl::admin::ProjectUpdateResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProject<BaseClass>::StreamedUpdateProject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::Project, ::flyteidl::admin::ProjectUpdateResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProject<BaseClass>::StreamedUpdateProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateProject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::ProjectUpdateRequest,::flyteidl::admin::ProjectUpdateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::Project,::flyteidl::admin::ProjectUpdateResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_ListProjects : public BaseClass {

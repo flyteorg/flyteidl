@@ -158,7 +158,7 @@ class AdminServiceStub(object):
         )
     self.UpdateProject = channel.unary_unary(
         '/flyteidl.service.AdminService/UpdateProject',
-        request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectUpdateRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectUpdateResponse.FromString,
         )
     self.ListProjects = channel.unary_unary(
@@ -696,7 +696,7 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'UpdateProject': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateProject,
-          request_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectUpdateRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_project__pb2.Project.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectUpdateResponse.SerializeToString,
       ),
       'ListProjects': grpc.unary_unary_rpc_method_handler(

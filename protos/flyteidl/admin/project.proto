@@ -45,9 +45,5 @@ message ProjectRegisterRequest {
 message ProjectRegisterResponse {
 }
 
-message ProjectUpdateRequest {
-    Project project                       = 1;
-}
-
 message ProjectUpdateResponse {
 }

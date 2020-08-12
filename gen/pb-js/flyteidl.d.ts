@@ -10838,58 +10838,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ProjectUpdateRequest. */
-        interface IProjectUpdateRequest {
-
-            /** ProjectUpdateRequest project */
-            project?: (flyteidl.admin.IProject|null);
-        }
-
-        /** Represents a ProjectUpdateRequest. */
-        class ProjectUpdateRequest implements IProjectUpdateRequest {
-
-            /**
-             * Constructs a new ProjectUpdateRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IProjectUpdateRequest);
-
-            /** ProjectUpdateRequest project. */
-            public project?: (flyteidl.admin.IProject|null);
-
-            /**
-             * Creates a new ProjectUpdateRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ProjectUpdateRequest instance
-             */
-            public static create(properties?: flyteidl.admin.IProjectUpdateRequest): flyteidl.admin.ProjectUpdateRequest;
-
-            /**
-             * Encodes the specified ProjectUpdateRequest message. Does not implicitly {@link flyteidl.admin.ProjectUpdateRequest.verify|verify} messages.
-             * @param message ProjectUpdateRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IProjectUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a ProjectUpdateRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ProjectUpdateRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ProjectUpdateRequest;
-
-            /**
-             * Verifies a ProjectUpdateRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a ProjectUpdateResponse. */
         interface IProjectUpdateResponse {
         }
@@ -13253,31 +13201,31 @@ export namespace flyteidl {
 
             /**
              * Calls RegisterProject.
-             * @param request ProjectRegisterRequest message or plain object
+             * @param request Project message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectRegisterResponse
              */
-            public registerProject(request: flyteidl.admin.IProjectRegisterRequest, callback: flyteidl.service.AdminService.RegisterProjectCallback): void;
+            public registerProject(request: flyteidl.admin.IProject, callback: flyteidl.service.AdminService.RegisterProjectCallback): void;
 
             /**
              * Calls RegisterProject.
-             * @param request ProjectRegisterRequest message or plain object
+             * @param request Project message or plain object
              * @returns Promise
              */
-            public registerProject(request: flyteidl.admin.IProjectRegisterRequest): Promise<flyteidl.admin.ProjectRegisterResponse>;
+            public registerProject(request: flyteidl.admin.IProject): Promise<flyteidl.admin.ProjectRegisterResponse>;
 
             /**
              * Calls UpdateProject.
-             * @param request ProjectUpdateRequest message or plain object
+             * @param request Project message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectUpdateResponse
              */
-            public updateProject(request: flyteidl.admin.IProjectUpdateRequest, callback: flyteidl.service.AdminService.UpdateProjectCallback): void;
+            public updateProject(request: flyteidl.admin.IProject, callback: flyteidl.service.AdminService.UpdateProjectCallback): void;
 
             /**
              * Calls UpdateProject.
-             * @param request ProjectUpdateRequest message or plain object
+             * @param request Project message or plain object
              * @returns Promise
              */
-            public updateProject(request: flyteidl.admin.IProjectUpdateRequest): Promise<flyteidl.admin.ProjectUpdateResponse>;
+            public updateProject(request: flyteidl.admin.IProject): Promise<flyteidl.admin.ProjectUpdateResponse>;
 
             /**
              * Calls ListProjects.

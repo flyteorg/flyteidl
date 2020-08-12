@@ -263,6 +263,12 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_register_project(self):
+        """Test case for register_project
+
+        """
+        pass
+
     def test_relaunch_execution(self):
         """Test case for relaunch_execution
 

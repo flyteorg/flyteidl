@@ -1642,6 +1642,33 @@
         ]
       },
       "post": {
+        "description": "Register a project.",
+        "operationId": "RegisterProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminProjectRegisterResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminProjectRegisterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/projects/{id}": {
+      "put": {
         "description": "Update a project.",
         "operationId": "UpdateProject",
         "responses": {
@@ -1654,11 +1681,17 @@
         },
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/adminProjectUpdateRequest"
+              "$ref": "#/definitions/adminProject"
             }
           }
         ],
@@ -3859,14 +3892,6 @@
     },
     "adminProjectRegisterResponse": {
       "type": "object"
-    },
-    "adminProjectUpdateRequest": {
-      "type": "object",
-      "properties": {
-        "project": {
-          "$ref": "#/definitions/adminProject"
-        }
-      }
     },
     "adminProjectUpdateResponse": {
       "type": "object"

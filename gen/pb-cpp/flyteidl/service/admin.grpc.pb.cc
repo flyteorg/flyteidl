@@ -847,11 +847,11 @@ void AdminService::Stub::experimental_async::RegisterProject(::grpc::ClientConte
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectRegisterResponse>::Create(channel_.get(), cq, rpcmethod_RegisterProject_, context, request, false);
 }
 
-::grpc::Status AdminService::Stub::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::flyteidl::admin::ProjectUpdateResponse* response) {
+::grpc::Status AdminService::Stub::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::flyteidl::admin::ProjectUpdateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateProject_, context, request, response);
 }
 
-void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProject_, context, request, response, std::move(f));
 }
 
@@ -859,7 +859,7 @@ void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProject_, context, request, response, std::move(f));
 }
 
-void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProject_, context, request, response, reactor);
 }
 
@@ -867,11 +867,11 @@ void AdminService::Stub::experimental_async::UpdateProject(::grpc::ClientContext
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProject_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AdminService::Stub::AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AdminService::Stub::AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProject_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AdminService::Stub::PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectUpdateResponse>* AdminService::Stub::PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::Project& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProject_, context, request, false);
 }
 
@@ -1485,7 +1485,7 @@ AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::ProjectUpdateRequest, ::flyteidl::admin::ProjectUpdateResponse>(
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::Project, ::flyteidl::admin::ProjectUpdateResponse>(
           std::mem_fn(&AdminService::Service::UpdateProject), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[27],
@@ -1759,7 +1759,7 @@ AdminService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AdminService::Service::UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectUpdateRequest* request, ::flyteidl::admin::ProjectUpdateResponse* response) {
+::grpc::Status AdminService::Service::UpdateProject(::grpc::ServerContext* context, const ::flyteidl::admin::Project* request, ::flyteidl::admin::ProjectUpdateResponse* response) {
   (void) context;
   (void) request;
   (void) response;

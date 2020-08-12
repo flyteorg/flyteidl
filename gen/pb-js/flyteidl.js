@@ -25904,118 +25904,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return ProjectRegisterResponse;
         })();
 
-        admin.ProjectUpdateRequest = (function() {
-
-            /**
-             * Properties of a ProjectUpdateRequest.
-             * @memberof flyteidl.admin
-             * @interface IProjectUpdateRequest
-             * @property {flyteidl.admin.IProject|null} [project] ProjectUpdateRequest project
-             */
-
-            /**
-             * Constructs a new ProjectUpdateRequest.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a ProjectUpdateRequest.
-             * @implements IProjectUpdateRequest
-             * @constructor
-             * @param {flyteidl.admin.IProjectUpdateRequest=} [properties] Properties to set
-             */
-            function ProjectUpdateRequest(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ProjectUpdateRequest project.
-             * @member {flyteidl.admin.IProject|null|undefined} project
-             * @memberof flyteidl.admin.ProjectUpdateRequest
-             * @instance
-             */
-            ProjectUpdateRequest.prototype.project = null;
-
-            /**
-             * Creates a new ProjectUpdateRequest instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.ProjectUpdateRequest
-             * @static
-             * @param {flyteidl.admin.IProjectUpdateRequest=} [properties] Properties to set
-             * @returns {flyteidl.admin.ProjectUpdateRequest} ProjectUpdateRequest instance
-             */
-            ProjectUpdateRequest.create = function create(properties) {
-                return new ProjectUpdateRequest(properties);
-            };
-
-            /**
-             * Encodes the specified ProjectUpdateRequest message. Does not implicitly {@link flyteidl.admin.ProjectUpdateRequest.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.ProjectUpdateRequest
-             * @static
-             * @param {flyteidl.admin.IProjectUpdateRequest} message ProjectUpdateRequest message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ProjectUpdateRequest.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.project != null && message.hasOwnProperty("project"))
-                    $root.flyteidl.admin.Project.encode(message.project, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a ProjectUpdateRequest message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.ProjectUpdateRequest
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ProjectUpdateRequest} ProjectUpdateRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ProjectUpdateRequest.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectUpdateRequest();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.project = $root.flyteidl.admin.Project.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a ProjectUpdateRequest message.
-             * @function verify
-             * @memberof flyteidl.admin.ProjectUpdateRequest
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ProjectUpdateRequest.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.project != null && message.hasOwnProperty("project")) {
-                    let error = $root.flyteidl.admin.Project.verify(message.project);
-                    if (error)
-                        return "project." + error;
-                }
-                return null;
-            };
-
-            return ProjectUpdateRequest;
-        })();
-
         admin.ProjectUpdateResponse = (function() {
 
             /**
@@ -31438,13 +31326,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function registerProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProjectRegisterRequest} request ProjectRegisterRequest message or plain object
+             * @param {flyteidl.admin.IProject} request Project message or plain object
              * @param {flyteidl.service.AdminService.RegisterProjectCallback} callback Node-style callback called with the error, if any, and ProjectRegisterResponse
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.registerProject = function registerProject(request, callback) {
-                return this.rpcCall(registerProject, $root.flyteidl.admin.ProjectRegisterRequest, $root.flyteidl.admin.ProjectRegisterResponse, request, callback);
+                return this.rpcCall(registerProject, $root.flyteidl.admin.Project, $root.flyteidl.admin.ProjectRegisterResponse, request, callback);
             }, "name", { value: "RegisterProject" });
 
             /**
@@ -31452,7 +31340,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function registerProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProjectRegisterRequest} request ProjectRegisterRequest message or plain object
+             * @param {flyteidl.admin.IProject} request Project message or plain object
              * @returns {Promise<flyteidl.admin.ProjectRegisterResponse>} Promise
              * @variation 2
              */
@@ -31471,13 +31359,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function updateProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProjectUpdateRequest} request ProjectUpdateRequest message or plain object
+             * @param {flyteidl.admin.IProject} request Project message or plain object
              * @param {flyteidl.service.AdminService.UpdateProjectCallback} callback Node-style callback called with the error, if any, and ProjectUpdateResponse
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.updateProject = function updateProject(request, callback) {
-                return this.rpcCall(updateProject, $root.flyteidl.admin.ProjectUpdateRequest, $root.flyteidl.admin.ProjectUpdateResponse, request, callback);
+                return this.rpcCall(updateProject, $root.flyteidl.admin.Project, $root.flyteidl.admin.ProjectUpdateResponse, request, callback);
             }, "name", { value: "UpdateProject" });
 
             /**
@@ -31485,7 +31373,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function updateProject
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IProjectUpdateRequest} request ProjectUpdateRequest message or plain object
+             * @param {flyteidl.admin.IProject} request Project message or plain object
              * @returns {Promise<flyteidl.admin.ProjectUpdateResponse>} Promise
              * @variation 2
              */
