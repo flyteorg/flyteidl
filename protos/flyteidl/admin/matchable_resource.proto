@@ -68,21 +68,17 @@ message PluginOverride {
   // A predefined yet extensible Task type identifier.
   string task_type = 1;
 
-  // The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-  string plugin_id = 2;
-
-  // OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
-  repeated string fallback_plugin_ids = 3;
+  // A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
+  repeated string plugin_id = 2;
 
   enum MissingPluginBehavior {
     FAIL = 0;
 
-    // Use the in-order list of fallback_plugin_ids as supported fallbacks for this task type.
-    OVERRIDE_FALLBACK = 1;
-
     // Uses the system-configured default implementation.
-    USE_DEFAULT = 2;
+    USE_DEFAULT = 1;
   }
+  
+  // Defines the behavior when no plugin from the plugin_id list is not found.
   MissingPluginBehavior missing_plugin_behavior = 4;
 }
 
