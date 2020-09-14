@@ -13,9 +13,8 @@ package flyteadmin
 type AdminPluginOverride struct {
 	// A predefined yet extensible Task type identifier.
 	TaskType string `json:"task_type,omitempty"`
-	// The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-	PluginId string `json:"plugin_id,omitempty"`
-	// OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
-	FallbackPluginIds []string `json:"fallback_plugin_ids,omitempty"`
+	// A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
+	PluginId []string `json:"plugin_id,omitempty"`
+	// Defines the behavior when no plugin from the plugin_id list is not found.
 	MissingPluginBehavior *PluginOverrideMissingPluginBehavior `json:"missing_plugin_behavior,omitempty"`
 }

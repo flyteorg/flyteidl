@@ -2806,11 +2806,10 @@
       "type": "string",
       "enum": [
         "FAIL",
-        "OVERRIDE_FALLBACK",
         "USE_DEFAULT"
       ],
       "default": "FAIL",
-      "description": " - OVERRIDE_FALLBACK: Use the in-order list of fallback_plugin_ids as supported fallbacks for this task type.\n - USE_DEFAULT: Uses the system-configured default implementation."
+      "description": " - USE_DEFAULT: Uses the system-configured default implementation."
     },
     "QualityOfServiceTier": {
       "type": "string",
@@ -3825,18 +3824,15 @@
           "description": "A predefined yet extensible Task type identifier."
         },
         "plugin_id": {
-          "type": "string",
-          "description": "The unique name of the plugin which should handle tasks of this type instead of the default registered plugin."
-        },
-        "fallback_plugin_ids": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "description": "OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform."
+          "description": "A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id."
         },
         "missing_plugin_behavior": {
-          "$ref": "#/definitions/PluginOverrideMissingPluginBehavior"
+          "$ref": "#/definitions/PluginOverrideMissingPluginBehavior",
+          "description": "Defines the behavior when no plugin from the plugin_id list is not found."
         }
       },
       "description": "This MatchableAttribute configures selecting alternate plugin implementations for a given task type.\nIn addition to an override implementation a selection of fallbacks can be provided or other modes\nfor handling cases where the desired plugin override is not enabled in a given Flyte deployment."

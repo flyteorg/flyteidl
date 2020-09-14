@@ -312,7 +312,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::PluginOverride, task_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::PluginOverride, plugin_id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::PluginOverride, fallback_plugin_ids_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::PluginOverride, missing_plugin_behavior_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchingAttributes, _internal_metadata_),
@@ -357,10 +356,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 31, -1, sizeof(::flyteidl::admin::ExecutionQueueAttributes)},
   { 37, -1, sizeof(::flyteidl::admin::ExecutionClusterLabel)},
   { 43, -1, sizeof(::flyteidl::admin::PluginOverride)},
-  { 52, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
-  { 64, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
-  { 74, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
-  { 80, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
+  { 51, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
+  { 63, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
+  { 73, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
+  { 79, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -398,44 +397,43 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "ributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
   ":\0028\001\"(\n\030ExecutionQueueAttributes\022\014\n\004tags"
   "\030\001 \003(\t\"&\n\025ExecutionClusterLabel\022\r\n\005value"
-  "\030\001 \001(\t\"\365\001\n\016PluginOverride\022\021\n\ttask_type\030\001"
-  " \001(\t\022\021\n\tplugin_id\030\002 \001(\t\022\033\n\023fallback_plug"
-  "in_ids\030\003 \003(\t\022U\n\027missing_plugin_behavior\030"
-  "\004 \001(\01624.flyteidl.admin.PluginOverride.Mi"
-  "ssingPluginBehavior\"I\n\025MissingPluginBeha"
-  "vior\022\010\n\004FAIL\020\000\022\025\n\021OVERRIDE_FALLBACK\020\001\022\017\n"
-  "\013USE_DEFAULT\020\002\"\320\003\n\022MatchingAttributes\022J\n"
-  "\030task_resource_attributes\030\001 \001(\0132&.flytei"
-  "dl.admin.TaskResourceAttributesH\000\022P\n\033clu"
-  "ster_resource_attributes\030\002 \001(\0132).flyteid"
-  "l.admin.ClusterResourceAttributesH\000\022N\n\032e"
-  "xecution_queue_attributes\030\003 \001(\0132(.flytei"
-  "dl.admin.ExecutionQueueAttributesH\000\022H\n\027e"
-  "xecution_cluster_label\030\004 \001(\0132%.flyteidl."
-  "admin.ExecutionClusterLabelH\000\022=\n\022quality"
-  "_of_service\030\005 \001(\0132\037.flyteidl.core.Qualit"
-  "yOfServiceH\000\0229\n\017plugin_override\030\006 \001(\0132\036."
-  "flyteidl.admin.PluginOverrideH\000B\010\n\006targe"
-  "t\"\242\001\n MatchableAttributesConfiguration\0226"
-  "\n\nattributes\030\001 \001(\0132\".flyteidl.admin.Matc"
-  "hingAttributes\022\016\n\006domain\030\002 \001(\t\022\017\n\007projec"
-  "t\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013launch_plan"
-  "\030\005 \001(\t\"Z\n\036ListMatchableAttributesRequest"
-  "\0228\n\rresource_type\030\001 \001(\0162!.flyteidl.admin"
-  ".MatchableResource\"k\n\037ListMatchableAttri"
-  "butesResponse\022H\n\016configurations\030\001 \003(\01320."
-  "flyteidl.admin.MatchableAttributesConfig"
-  "uration*\251\001\n\021MatchableResource\022\021\n\rTASK_RE"
-  "SOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUT"
-  "ION_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003"
-  "\022$\n QUALITY_OF_SERVICE_SPECIFICATION\020\004\022\023"
-  "\n\017PLUGIN_OVERRIDE\020\005B3Z1github.com/lyft/f"
-  "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+  "\030\001 \001(\t\"\301\001\n\016PluginOverride\022\021\n\ttask_type\030\001"
+  " \001(\t\022\021\n\tplugin_id\030\002 \003(\t\022U\n\027missing_plugi"
+  "n_behavior\030\004 \001(\01624.flyteidl.admin.Plugin"
+  "Override.MissingPluginBehavior\"2\n\025Missin"
+  "gPluginBehavior\022\010\n\004FAIL\020\000\022\017\n\013USE_DEFAULT"
+  "\020\001\"\320\003\n\022MatchingAttributes\022J\n\030task_resour"
+  "ce_attributes\030\001 \001(\0132&.flyteidl.admin.Tas"
+  "kResourceAttributesH\000\022P\n\033cluster_resourc"
+  "e_attributes\030\002 \001(\0132).flyteidl.admin.Clus"
+  "terResourceAttributesH\000\022N\n\032execution_que"
+  "ue_attributes\030\003 \001(\0132(.flyteidl.admin.Exe"
+  "cutionQueueAttributesH\000\022H\n\027execution_clu"
+  "ster_label\030\004 \001(\0132%.flyteidl.admin.Execut"
+  "ionClusterLabelH\000\022=\n\022quality_of_service\030"
+  "\005 \001(\0132\037.flyteidl.core.QualityOfServiceH\000"
+  "\0229\n\017plugin_override\030\006 \001(\0132\036.flyteidl.adm"
+  "in.PluginOverrideH\000B\010\n\006target\"\242\001\n Matcha"
+  "bleAttributesConfiguration\0226\n\nattributes"
+  "\030\001 \001(\0132\".flyteidl.admin.MatchingAttribut"
+  "es\022\016\n\006domain\030\002 \001(\t\022\017\n\007project\030\003 \001(\t\022\020\n\010w"
+  "orkflow\030\004 \001(\t\022\023\n\013launch_plan\030\005 \001(\t\"Z\n\036Li"
+  "stMatchableAttributesRequest\0228\n\rresource"
+  "_type\030\001 \001(\0162!.flyteidl.admin.MatchableRe"
+  "source\"k\n\037ListMatchableAttributesRespons"
+  "e\022H\n\016configurations\030\001 \003(\01320.flyteidl.adm"
+  "in.MatchableAttributesConfiguration*\251\001\n\021"
+  "MatchableResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020"
+  "CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022"
+  "\033\n\027EXECUTION_CLUSTER_LABEL\020\003\022$\n QUALITY_"
+  "OF_SERVICE_SPECIFICATION\020\004\022\023\n\017PLUGIN_OVE"
+  "RRIDE\020\005B3Z1github.com/lyft/flyteidl/gen/"
+  "pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
-  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1880,
+  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1828,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
@@ -459,7 +457,6 @@ bool PluginOverride_MissingPluginBehavior_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
-    case 2:
       return true;
     default:
       return false;
@@ -468,7 +465,6 @@ bool PluginOverride_MissingPluginBehavior_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const PluginOverride_MissingPluginBehavior PluginOverride::FAIL;
-const PluginOverride_MissingPluginBehavior PluginOverride::OVERRIDE_FALLBACK;
 const PluginOverride_MissingPluginBehavior PluginOverride::USE_DEFAULT;
 const PluginOverride_MissingPluginBehavior PluginOverride::MissingPluginBehavior_MIN;
 const PluginOverride_MissingPluginBehavior PluginOverride::MissingPluginBehavior_MAX;
@@ -2387,7 +2383,6 @@ class PluginOverride::HasBitSetters {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PluginOverride::kTaskTypeFieldNumber;
 const int PluginOverride::kPluginIdFieldNumber;
-const int PluginOverride::kFallbackPluginIdsFieldNumber;
 const int PluginOverride::kMissingPluginBehaviorFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2399,15 +2394,11 @@ PluginOverride::PluginOverride()
 PluginOverride::PluginOverride(const PluginOverride& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
-      fallback_plugin_ids_(from.fallback_plugin_ids_) {
+      plugin_id_(from.plugin_id_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   task_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.task_type().size() > 0) {
     task_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.task_type_);
-  }
-  plugin_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.plugin_id().size() > 0) {
-    plugin_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plugin_id_);
   }
   missing_plugin_behavior_ = from.missing_plugin_behavior_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.PluginOverride)
@@ -2417,7 +2408,6 @@ void PluginOverride::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_PluginOverride_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   task_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plugin_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   missing_plugin_behavior_ = 0;
 }
 
@@ -2428,7 +2418,6 @@ PluginOverride::~PluginOverride() {
 
 void PluginOverride::SharedDtor() {
   task_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plugin_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void PluginOverride::SetCachedSize(int size) const {
@@ -2446,9 +2435,8 @@ void PluginOverride::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  fallback_plugin_ids_.Clear();
+  plugin_id_.Clear();
   task_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plugin_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   missing_plugin_behavior_ = 0;
   _internal_metadata_.Clear();
 }
@@ -2482,30 +2470,14 @@ const char* PluginOverride::_InternalParse(const char* begin, const char* end, v
         ptr += size;
         break;
       }
-      // string plugin_id = 2;
+      // repeated string plugin_id = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.PluginOverride.plugin_id");
-        object = msg->mutable_plugin_id();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // repeated string fallback_plugin_ids = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.PluginOverride.fallback_plugin_ids");
-          object = msg->add_fallback_plugin_ids();
+          ctx->extra_parse_data().SetFieldName("flyteidl.admin.PluginOverride.plugin_id");
+          object = msg->add_plugin_id();
           if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
             parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
             goto string_till_end;
@@ -2514,7 +2486,7 @@ const char* PluginOverride::_InternalParse(const char* begin, const char* end, v
           ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
           ptr += size;
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
       // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;
@@ -2574,31 +2546,16 @@ bool PluginOverride::MergePartialFromCodedStream(
         break;
       }
 
-      // string plugin_id = 2;
+      // repeated string plugin_id = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_plugin_id()));
+                input, this->add_plugin_id()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->plugin_id().data(), static_cast<int>(this->plugin_id().length()),
+            this->plugin_id(this->plugin_id_size() - 1).data(),
+            static_cast<int>(this->plugin_id(this->plugin_id_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.admin.PluginOverride.plugin_id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string fallback_plugin_ids = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_fallback_plugin_ids()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->fallback_plugin_ids(this->fallback_plugin_ids_size() - 1).data(),
-            static_cast<int>(this->fallback_plugin_ids(this->fallback_plugin_ids_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.PluginOverride.fallback_plugin_ids"));
         } else {
           goto handle_unusual;
         }
@@ -2656,24 +2613,14 @@ void PluginOverride::SerializeWithCachedSizes(
       1, this->task_type(), output);
   }
 
-  // string plugin_id = 2;
-  if (this->plugin_id().size() > 0) {
+  // repeated string plugin_id = 2;
+  for (int i = 0, n = this->plugin_id_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plugin_id().data(), static_cast<int>(this->plugin_id().length()),
+      this->plugin_id(i).data(), static_cast<int>(this->plugin_id(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.PluginOverride.plugin_id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->plugin_id(), output);
-  }
-
-  // repeated string fallback_plugin_ids = 3;
-  for (int i = 0, n = this->fallback_plugin_ids_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->fallback_plugin_ids(i).data(), static_cast<int>(this->fallback_plugin_ids(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.PluginOverride.fallback_plugin_ids");
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->fallback_plugin_ids(i), output);
+      2, this->plugin_id(i), output);
   }
 
   // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;
@@ -2706,25 +2653,14 @@ void PluginOverride::SerializeWithCachedSizes(
         1, this->task_type(), target);
   }
 
-  // string plugin_id = 2;
-  if (this->plugin_id().size() > 0) {
+  // repeated string plugin_id = 2;
+  for (int i = 0, n = this->plugin_id_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plugin_id().data(), static_cast<int>(this->plugin_id().length()),
+      this->plugin_id(i).data(), static_cast<int>(this->plugin_id(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.PluginOverride.plugin_id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->plugin_id(), target);
-  }
-
-  // repeated string fallback_plugin_ids = 3;
-  for (int i = 0, n = this->fallback_plugin_ids_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->fallback_plugin_ids(i).data(), static_cast<int>(this->fallback_plugin_ids(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.PluginOverride.fallback_plugin_ids");
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->fallback_plugin_ids(i), target);
+      WriteStringToArray(2, this->plugin_id(i), target);
   }
 
   // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;
@@ -2754,12 +2690,12 @@ size_t PluginOverride::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string fallback_plugin_ids = 3;
+  // repeated string plugin_id = 2;
   total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->fallback_plugin_ids_size());
-  for (int i = 0, n = this->fallback_plugin_ids_size(); i < n; i++) {
+      ::google::protobuf::internal::FromIntSize(this->plugin_id_size());
+  for (int i = 0, n = this->plugin_id_size(); i < n; i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->fallback_plugin_ids(i));
+      this->plugin_id(i));
   }
 
   // string task_type = 1;
@@ -2767,13 +2703,6 @@ size_t PluginOverride::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->task_type());
-  }
-
-  // string plugin_id = 2;
-  if (this->plugin_id().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->plugin_id());
   }
 
   // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;
@@ -2809,14 +2738,10 @@ void PluginOverride::MergeFrom(const PluginOverride& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  fallback_plugin_ids_.MergeFrom(from.fallback_plugin_ids_);
+  plugin_id_.MergeFrom(from.plugin_id_);
   if (from.task_type().size() > 0) {
 
     task_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.task_type_);
-  }
-  if (from.plugin_id().size() > 0) {
-
-    plugin_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plugin_id_);
   }
   if (from.missing_plugin_behavior() != 0) {
     set_missing_plugin_behavior(from.missing_plugin_behavior());
@@ -2848,10 +2773,8 @@ void PluginOverride::Swap(PluginOverride* other) {
 void PluginOverride::InternalSwap(PluginOverride* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  fallback_plugin_ids_.InternalSwap(CastToBase(&other->fallback_plugin_ids_));
+  plugin_id_.InternalSwap(CastToBase(&other->plugin_id_));
   task_type_.Swap(&other->task_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  plugin_id_.Swap(&other->plugin_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(missing_plugin_behavior_, other->missing_plugin_behavior_);
 }

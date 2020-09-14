@@ -111,8 +111,7 @@ namespace admin {
 
 enum PluginOverride_MissingPluginBehavior {
   PluginOverride_MissingPluginBehavior_FAIL = 0,
-  PluginOverride_MissingPluginBehavior_OVERRIDE_FALLBACK = 1,
-  PluginOverride_MissingPluginBehavior_USE_DEFAULT = 2,
+  PluginOverride_MissingPluginBehavior_USE_DEFAULT = 1,
   PluginOverride_MissingPluginBehavior_PluginOverride_MissingPluginBehavior_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   PluginOverride_MissingPluginBehavior_PluginOverride_MissingPluginBehavior_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
@@ -937,8 +936,6 @@ class PluginOverride final :
   typedef PluginOverride_MissingPluginBehavior MissingPluginBehavior;
   static const MissingPluginBehavior FAIL =
     PluginOverride_MissingPluginBehavior_FAIL;
-  static const MissingPluginBehavior OVERRIDE_FALLBACK =
-    PluginOverride_MissingPluginBehavior_OVERRIDE_FALLBACK;
   static const MissingPluginBehavior USE_DEFAULT =
     PluginOverride_MissingPluginBehavior_USE_DEFAULT;
   static inline bool MissingPluginBehavior_IsValid(int value) {
@@ -964,27 +961,27 @@ class PluginOverride final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string fallback_plugin_ids = 3;
-  int fallback_plugin_ids_size() const;
-  void clear_fallback_plugin_ids();
-  static const int kFallbackPluginIdsFieldNumber = 3;
-  const ::std::string& fallback_plugin_ids(int index) const;
-  ::std::string* mutable_fallback_plugin_ids(int index);
-  void set_fallback_plugin_ids(int index, const ::std::string& value);
+  // repeated string plugin_id = 2;
+  int plugin_id_size() const;
+  void clear_plugin_id();
+  static const int kPluginIdFieldNumber = 2;
+  const ::std::string& plugin_id(int index) const;
+  ::std::string* mutable_plugin_id(int index);
+  void set_plugin_id(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_fallback_plugin_ids(int index, ::std::string&& value);
+  void set_plugin_id(int index, ::std::string&& value);
   #endif
-  void set_fallback_plugin_ids(int index, const char* value);
-  void set_fallback_plugin_ids(int index, const char* value, size_t size);
-  ::std::string* add_fallback_plugin_ids();
-  void add_fallback_plugin_ids(const ::std::string& value);
+  void set_plugin_id(int index, const char* value);
+  void set_plugin_id(int index, const char* value, size_t size);
+  ::std::string* add_plugin_id();
+  void add_plugin_id(const ::std::string& value);
   #if LANG_CXX11
-  void add_fallback_plugin_ids(::std::string&& value);
+  void add_plugin_id(::std::string&& value);
   #endif
-  void add_fallback_plugin_ids(const char* value);
-  void add_fallback_plugin_ids(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& fallback_plugin_ids() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_fallback_plugin_ids();
+  void add_plugin_id(const char* value);
+  void add_plugin_id(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& plugin_id() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_plugin_id();
 
   // string task_type = 1;
   void clear_task_type();
@@ -1000,20 +997,6 @@ class PluginOverride final :
   ::std::string* release_task_type();
   void set_allocated_task_type(::std::string* task_type);
 
-  // string plugin_id = 2;
-  void clear_plugin_id();
-  static const int kPluginIdFieldNumber = 2;
-  const ::std::string& plugin_id() const;
-  void set_plugin_id(const ::std::string& value);
-  #if LANG_CXX11
-  void set_plugin_id(::std::string&& value);
-  #endif
-  void set_plugin_id(const char* value);
-  void set_plugin_id(const char* value, size_t size);
-  ::std::string* mutable_plugin_id();
-  ::std::string* release_plugin_id();
-  void set_allocated_plugin_id(::std::string* plugin_id);
-
   // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;
   void clear_missing_plugin_behavior();
   static const int kMissingPluginBehaviorFieldNumber = 4;
@@ -1025,9 +1008,8 @@ class PluginOverride final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> fallback_plugin_ids_;
+  ::google::protobuf::RepeatedPtrField<::std::string> plugin_id_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
-  ::google::protobuf::internal::ArenaStringPtr plugin_id_;
   int missing_plugin_behavior_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
@@ -2168,126 +2150,73 @@ inline void PluginOverride::set_allocated_task_type(::std::string* task_type) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.PluginOverride.task_type)
 }
 
-// string plugin_id = 2;
+// repeated string plugin_id = 2;
+inline int PluginOverride::plugin_id_size() const {
+  return plugin_id_.size();
+}
 inline void PluginOverride::clear_plugin_id() {
-  plugin_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  plugin_id_.Clear();
 }
-inline const ::std::string& PluginOverride::plugin_id() const {
+inline const ::std::string& PluginOverride::plugin_id(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.PluginOverride.plugin_id)
-  return plugin_id_.GetNoArena();
+  return plugin_id_.Get(index);
 }
-inline void PluginOverride::set_plugin_id(const ::std::string& value) {
-  
-  plugin_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+inline ::std::string* PluginOverride::mutable_plugin_id(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.PluginOverride.plugin_id)
+  return plugin_id_.Mutable(index);
+}
+inline void PluginOverride::set_plugin_id(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:flyteidl.admin.PluginOverride.plugin_id)
+  plugin_id_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void PluginOverride::set_plugin_id(::std::string&& value) {
-  
-  plugin_id_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.PluginOverride.plugin_id)
+inline void PluginOverride::set_plugin_id(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.PluginOverride.plugin_id)
+  plugin_id_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void PluginOverride::set_plugin_id(const char* value) {
+inline void PluginOverride::set_plugin_id(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  plugin_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  plugin_id_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:flyteidl.admin.PluginOverride.plugin_id)
 }
-inline void PluginOverride::set_plugin_id(const char* value, size_t size) {
-  
-  plugin_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+inline void PluginOverride::set_plugin_id(int index, const char* value, size_t size) {
+  plugin_id_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.PluginOverride.plugin_id)
 }
-inline ::std::string* PluginOverride::mutable_plugin_id() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.PluginOverride.plugin_id)
-  return plugin_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* PluginOverride::add_plugin_id() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.PluginOverride.plugin_id)
+  return plugin_id_.Add();
 }
-inline ::std::string* PluginOverride::release_plugin_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.PluginOverride.plugin_id)
-  
-  return plugin_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void PluginOverride::set_allocated_plugin_id(::std::string* plugin_id) {
-  if (plugin_id != nullptr) {
-    
-  } else {
-    
-  }
-  plugin_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plugin_id);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.PluginOverride.plugin_id)
-}
-
-// repeated string fallback_plugin_ids = 3;
-inline int PluginOverride::fallback_plugin_ids_size() const {
-  return fallback_plugin_ids_.size();
-}
-inline void PluginOverride::clear_fallback_plugin_ids() {
-  fallback_plugin_ids_.Clear();
-}
-inline const ::std::string& PluginOverride::fallback_plugin_ids(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  return fallback_plugin_ids_.Get(index);
-}
-inline ::std::string* PluginOverride::mutable_fallback_plugin_ids(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  return fallback_plugin_ids_.Mutable(index);
-}
-inline void PluginOverride::set_fallback_plugin_ids(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  fallback_plugin_ids_.Mutable(index)->assign(value);
+inline void PluginOverride::add_plugin_id(const ::std::string& value) {
+  plugin_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.PluginOverride.plugin_id)
 }
 #if LANG_CXX11
-inline void PluginOverride::set_fallback_plugin_ids(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  fallback_plugin_ids_.Mutable(index)->assign(std::move(value));
+inline void PluginOverride::add_plugin_id(::std::string&& value) {
+  plugin_id_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.PluginOverride.plugin_id)
 }
 #endif
-inline void PluginOverride::set_fallback_plugin_ids(int index, const char* value) {
+inline void PluginOverride::add_plugin_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  fallback_plugin_ids_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.PluginOverride.fallback_plugin_ids)
+  plugin_id_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.PluginOverride.plugin_id)
 }
-inline void PluginOverride::set_fallback_plugin_ids(int index, const char* value, size_t size) {
-  fallback_plugin_ids_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-}
-inline ::std::string* PluginOverride::add_fallback_plugin_ids() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  return fallback_plugin_ids_.Add();
-}
-inline void PluginOverride::add_fallback_plugin_ids(const ::std::string& value) {
-  fallback_plugin_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-}
-#if LANG_CXX11
-inline void PluginOverride::add_fallback_plugin_ids(::std::string&& value) {
-  fallback_plugin_ids_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-}
-#endif
-inline void PluginOverride::add_fallback_plugin_ids(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  fallback_plugin_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-}
-inline void PluginOverride::add_fallback_plugin_ids(const char* value, size_t size) {
-  fallback_plugin_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.PluginOverride.fallback_plugin_ids)
+inline void PluginOverride::add_plugin_id(const char* value, size_t size) {
+  plugin_id_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.PluginOverride.plugin_id)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-PluginOverride::fallback_plugin_ids() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  return fallback_plugin_ids_;
+PluginOverride::plugin_id() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.PluginOverride.plugin_id)
+  return plugin_id_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
-PluginOverride::mutable_fallback_plugin_ids() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.PluginOverride.fallback_plugin_ids)
-  return &fallback_plugin_ids_;
+PluginOverride::mutable_plugin_id() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.PluginOverride.plugin_id)
+  return &plugin_id_;
 }
 
 // .flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;

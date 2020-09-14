@@ -22580,8 +22580,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IPluginOverride
              * @property {string|null} [taskType] PluginOverride taskType
-             * @property {string|null} [pluginId] PluginOverride pluginId
-             * @property {Array.<string>|null} [fallbackPluginIds] PluginOverride fallbackPluginIds
+             * @property {Array.<string>|null} [pluginId] PluginOverride pluginId
              * @property {flyteidl.admin.PluginOverride.MissingPluginBehavior|null} [missingPluginBehavior] PluginOverride missingPluginBehavior
              */
 
@@ -22594,7 +22593,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IPluginOverride=} [properties] Properties to set
              */
             function PluginOverride(properties) {
-                this.fallbackPluginIds = [];
+                this.pluginId = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -22611,19 +22610,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * PluginOverride pluginId.
-             * @member {string} pluginId
+             * @member {Array.<string>} pluginId
              * @memberof flyteidl.admin.PluginOverride
              * @instance
              */
-            PluginOverride.prototype.pluginId = "";
-
-            /**
-             * PluginOverride fallbackPluginIds.
-             * @member {Array.<string>} fallbackPluginIds
-             * @memberof flyteidl.admin.PluginOverride
-             * @instance
-             */
-            PluginOverride.prototype.fallbackPluginIds = $util.emptyArray;
+            PluginOverride.prototype.pluginId = $util.emptyArray;
 
             /**
              * PluginOverride missingPluginBehavior.
@@ -22659,11 +22650,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.taskType != null && message.hasOwnProperty("taskType"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
-                if (message.pluginId != null && message.hasOwnProperty("pluginId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.pluginId);
-                if (message.fallbackPluginIds != null && message.fallbackPluginIds.length)
-                    for (let i = 0; i < message.fallbackPluginIds.length; ++i)
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.fallbackPluginIds[i]);
+                if (message.pluginId != null && message.pluginId.length)
+                    for (let i = 0; i < message.pluginId.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.pluginId[i]);
                 if (message.missingPluginBehavior != null && message.hasOwnProperty("missingPluginBehavior"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.missingPluginBehavior);
                 return writer;
@@ -22691,12 +22680,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.taskType = reader.string();
                         break;
                     case 2:
-                        message.pluginId = reader.string();
-                        break;
-                    case 3:
-                        if (!(message.fallbackPluginIds && message.fallbackPluginIds.length))
-                            message.fallbackPluginIds = [];
-                        message.fallbackPluginIds.push(reader.string());
+                        if (!(message.pluginId && message.pluginId.length))
+                            message.pluginId = [];
+                        message.pluginId.push(reader.string());
                         break;
                     case 4:
                         message.missingPluginBehavior = reader.int32();
@@ -22723,15 +22709,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.taskType != null && message.hasOwnProperty("taskType"))
                     if (!$util.isString(message.taskType))
                         return "taskType: string expected";
-                if (message.pluginId != null && message.hasOwnProperty("pluginId"))
-                    if (!$util.isString(message.pluginId))
-                        return "pluginId: string expected";
-                if (message.fallbackPluginIds != null && message.hasOwnProperty("fallbackPluginIds")) {
-                    if (!Array.isArray(message.fallbackPluginIds))
-                        return "fallbackPluginIds: array expected";
-                    for (let i = 0; i < message.fallbackPluginIds.length; ++i)
-                        if (!$util.isString(message.fallbackPluginIds[i]))
-                            return "fallbackPluginIds: string[] expected";
+                if (message.pluginId != null && message.hasOwnProperty("pluginId")) {
+                    if (!Array.isArray(message.pluginId))
+                        return "pluginId: array expected";
+                    for (let i = 0; i < message.pluginId.length; ++i)
+                        if (!$util.isString(message.pluginId[i]))
+                            return "pluginId: string[] expected";
                 }
                 if (message.missingPluginBehavior != null && message.hasOwnProperty("missingPluginBehavior"))
                     switch (message.missingPluginBehavior) {
@@ -22739,7 +22722,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "missingPluginBehavior: enum value expected";
                     case 0:
                     case 1:
-                    case 2:
                         break;
                     }
                 return null;
@@ -22750,14 +22732,12 @@ export const flyteidl = $root.flyteidl = (() => {
              * @name flyteidl.admin.PluginOverride.MissingPluginBehavior
              * @enum {string}
              * @property {number} FAIL=0 FAIL value
-             * @property {number} OVERRIDE_FALLBACK=1 OVERRIDE_FALLBACK value
-             * @property {number} USE_DEFAULT=2 USE_DEFAULT value
+             * @property {number} USE_DEFAULT=1 USE_DEFAULT value
              */
             PluginOverride.MissingPluginBehavior = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "FAIL"] = 0;
-                values[valuesById[1] = "OVERRIDE_FALLBACK"] = 1;
-                values[valuesById[2] = "USE_DEFAULT"] = 2;
+                values[valuesById[1] = "USE_DEFAULT"] = 1;
                 return values;
             })();
 

@@ -34,24 +34,21 @@ class AdminPluginOverride(object):
     """
     swagger_types = {
         'task_type': 'str',
-        'plugin_id': 'str',
-        'fallback_plugin_ids': 'list[str]',
+        'plugin_id': 'list[str]',
         'missing_plugin_behavior': 'PluginOverrideMissingPluginBehavior'
     }
 
     attribute_map = {
         'task_type': 'task_type',
         'plugin_id': 'plugin_id',
-        'fallback_plugin_ids': 'fallback_plugin_ids',
         'missing_plugin_behavior': 'missing_plugin_behavior'
     }
 
-    def __init__(self, task_type=None, plugin_id=None, fallback_plugin_ids=None, missing_plugin_behavior=None):  # noqa: E501
+    def __init__(self, task_type=None, plugin_id=None, missing_plugin_behavior=None):  # noqa: E501
         """AdminPluginOverride - a model defined in Swagger"""  # noqa: E501
 
         self._task_type = None
         self._plugin_id = None
-        self._fallback_plugin_ids = None
         self._missing_plugin_behavior = None
         self.discriminator = None
 
@@ -59,8 +56,6 @@ class AdminPluginOverride(object):
             self.task_type = task_type
         if plugin_id is not None:
             self.plugin_id = plugin_id
-        if fallback_plugin_ids is not None:
-            self.fallback_plugin_ids = fallback_plugin_ids
         if missing_plugin_behavior is not None:
             self.missing_plugin_behavior = missing_plugin_behavior
 
@@ -91,10 +86,10 @@ class AdminPluginOverride(object):
     def plugin_id(self):
         """Gets the plugin_id of this AdminPluginOverride.  # noqa: E501
 
-        The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.  # noqa: E501
+        A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.  # noqa: E501
 
         :return: The plugin_id of this AdminPluginOverride.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._plugin_id
 
@@ -102,41 +97,19 @@ class AdminPluginOverride(object):
     def plugin_id(self, plugin_id):
         """Sets the plugin_id of this AdminPluginOverride.
 
-        The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.  # noqa: E501
+        A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.  # noqa: E501
 
         :param plugin_id: The plugin_id of this AdminPluginOverride.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._plugin_id = plugin_id
 
     @property
-    def fallback_plugin_ids(self):
-        """Gets the fallback_plugin_ids of this AdminPluginOverride.  # noqa: E501
-
-        OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.  # noqa: E501
-
-        :return: The fallback_plugin_ids of this AdminPluginOverride.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._fallback_plugin_ids
-
-    @fallback_plugin_ids.setter
-    def fallback_plugin_ids(self, fallback_plugin_ids):
-        """Sets the fallback_plugin_ids of this AdminPluginOverride.
-
-        OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.  # noqa: E501
-
-        :param fallback_plugin_ids: The fallback_plugin_ids of this AdminPluginOverride.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._fallback_plugin_ids = fallback_plugin_ids
-
-    @property
     def missing_plugin_behavior(self):
         """Gets the missing_plugin_behavior of this AdminPluginOverride.  # noqa: E501
 
+        Defines the behavior when no plugin from the plugin_id list is not found.  # noqa: E501
 
         :return: The missing_plugin_behavior of this AdminPluginOverride.  # noqa: E501
         :rtype: PluginOverrideMissingPluginBehavior
@@ -147,6 +120,7 @@ class AdminPluginOverride(object):
     def missing_plugin_behavior(self, missing_plugin_behavior):
         """Sets the missing_plugin_behavior of this AdminPluginOverride.
 
+        Defines the behavior when no plugin from the plugin_id list is not found.  # noqa: E501
 
         :param missing_plugin_behavior: The missing_plugin_behavior of this AdminPluginOverride.  # noqa: E501
         :type: PluginOverrideMissingPluginBehavior

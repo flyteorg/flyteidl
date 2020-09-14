@@ -8,12 +8,11 @@
  */
 
 package flyteadmin
-// PluginOverrideMissingPluginBehavior :  - OVERRIDE_FALLBACK: Use the in-order list of fallback_plugin_ids as supported fallbacks for this task type.  - USE_DEFAULT: Uses the system-configured default implementation.
+// PluginOverrideMissingPluginBehavior :  - USE_DEFAULT: Uses the system-configured default implementation.
 type PluginOverrideMissingPluginBehavior string
 
 // List of PluginOverrideMissingPluginBehavior
 const (
 	PluginOverrideMissingPluginBehaviorFAIL PluginOverrideMissingPluginBehavior = "FAIL"
-	PluginOverrideMissingPluginBehaviorOVERRIDE_FALLBACK PluginOverrideMissingPluginBehavior = "OVERRIDE_FALLBACK"
 	PluginOverrideMissingPluginBehaviorUSE_DEFAULT PluginOverrideMissingPluginBehavior = "USE_DEFAULT"
 )

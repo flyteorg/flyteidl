@@ -411,8 +411,6 @@ func (m *PluginOverride) Validate() error {
 
 	// no validation rules for TaskType
 
-	// no validation rules for PluginId
-
 	// no validation rules for MissingPluginBehavior
 
 	return nil

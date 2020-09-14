@@ -9447,10 +9447,7 @@ export namespace flyteidl {
             taskType?: (string|null);
 
             /** PluginOverride pluginId */
-            pluginId?: (string|null);
-
-            /** PluginOverride fallbackPluginIds */
-            fallbackPluginIds?: (string[]|null);
+            pluginId?: (string[]|null);
 
             /** PluginOverride missingPluginBehavior */
             missingPluginBehavior?: (flyteidl.admin.PluginOverride.MissingPluginBehavior|null);
@@ -9469,10 +9466,7 @@ export namespace flyteidl {
             public taskType: string;
 
             /** PluginOverride pluginId. */
-            public pluginId: string;
-
-            /** PluginOverride fallbackPluginIds. */
-            public fallbackPluginIds: string[];
+            public pluginId: string[];
 
             /** PluginOverride missingPluginBehavior. */
             public missingPluginBehavior: flyteidl.admin.PluginOverride.MissingPluginBehavior;
@@ -9515,8 +9509,7 @@ export namespace flyteidl {
             /** MissingPluginBehavior enum. */
             enum MissingPluginBehavior {
                 FAIL = 0,
-                OVERRIDE_FALLBACK = 1,
-                USE_DEFAULT = 2
+                USE_DEFAULT = 1
             }
         }
 

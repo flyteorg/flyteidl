@@ -4058,62 +4058,52 @@ public final class MatchableResourceOuterClass {
 
     /**
      * <pre>
-     * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>string plugin_id = 2;</code>
-     */
-    java.lang.String getPluginId();
-    /**
-     * <pre>
-     * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-     * </pre>
-     *
-     * <code>string plugin_id = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getPluginIdBytes();
-
-    /**
-     * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
-     * </pre>
-     *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
     java.util.List<java.lang.String>
-        getFallbackPluginIdsList();
+        getPluginIdList();
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
-    int getFallbackPluginIdsCount();
+    int getPluginIdCount();
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
-    java.lang.String getFallbackPluginIds(int index);
+    java.lang.String getPluginId(int index);
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
     com.google.protobuf.ByteString
-        getFallbackPluginIdsBytes(int index);
+        getPluginIdBytes(int index);
 
     /**
+     * <pre>
+     * Defines the behavior when no plugin from the plugin_id list is not found.
+     * </pre>
+     *
      * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
      */
     int getMissingPluginBehaviorValue();
     /**
+     * <pre>
+     * Defines the behavior when no plugin from the plugin_id list is not found.
+     * </pre>
+     *
      * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
      */
     flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior getMissingPluginBehavior();
@@ -4138,8 +4128,7 @@ public final class MatchableResourceOuterClass {
     }
     private PluginOverride() {
       taskType_ = "";
-      pluginId_ = "";
-      fallbackPluginIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pluginId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       missingPluginBehavior_ = 0;
     }
 
@@ -4175,17 +4164,11 @@ public final class MatchableResourceOuterClass {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              pluginId_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                fallbackPluginIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                pluginId_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
               }
-              fallbackPluginIds_.add(s);
+              pluginId_.add(s);
               break;
             }
             case 32: {
@@ -4209,8 +4192,8 @@ public final class MatchableResourceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          fallbackPluginIds_ = fallbackPluginIds_.getUnmodifiableView();
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          pluginId_ = pluginId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -4240,20 +4223,12 @@ public final class MatchableResourceOuterClass {
       FAIL(0),
       /**
        * <pre>
-       * Use the in-order list of fallback_plugin_ids as supported fallbacks for this task type.
-       * </pre>
-       *
-       * <code>OVERRIDE_FALLBACK = 1;</code>
-       */
-      OVERRIDE_FALLBACK(1),
-      /**
-       * <pre>
        * Uses the system-configured default implementation.
        * </pre>
        *
-       * <code>USE_DEFAULT = 2;</code>
+       * <code>USE_DEFAULT = 1;</code>
        */
-      USE_DEFAULT(2),
+      USE_DEFAULT(1),
       UNRECOGNIZED(-1),
       ;
 
@@ -4263,20 +4238,12 @@ public final class MatchableResourceOuterClass {
       public static final int FAIL_VALUE = 0;
       /**
        * <pre>
-       * Use the in-order list of fallback_plugin_ids as supported fallbacks for this task type.
-       * </pre>
-       *
-       * <code>OVERRIDE_FALLBACK = 1;</code>
-       */
-      public static final int OVERRIDE_FALLBACK_VALUE = 1;
-      /**
-       * <pre>
        * Uses the system-configured default implementation.
        * </pre>
        *
-       * <code>USE_DEFAULT = 2;</code>
+       * <code>USE_DEFAULT = 1;</code>
        */
-      public static final int USE_DEFAULT_VALUE = 2;
+      public static final int USE_DEFAULT_VALUE = 1;
 
 
       public final int getNumber() {
@@ -4298,8 +4265,7 @@ public final class MatchableResourceOuterClass {
       public static MissingPluginBehavior forNumber(int value) {
         switch (value) {
           case 0: return FAIL;
-          case 1: return OVERRIDE_FALLBACK;
-          case 2: return USE_DEFAULT;
+          case 1: return USE_DEFAULT;
           default: return null;
         }
       }
@@ -4396,101 +4362,67 @@ public final class MatchableResourceOuterClass {
     }
 
     public static final int PLUGIN_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object pluginId_;
+    private com.google.protobuf.LazyStringList pluginId_;
     /**
      * <pre>
-     * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>string plugin_id = 2;</code>
-     */
-    public java.lang.String getPluginId() {
-      java.lang.Object ref = pluginId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pluginId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-     * </pre>
-     *
-     * <code>string plugin_id = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPluginIdBytes() {
-      java.lang.Object ref = pluginId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pluginId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FALLBACK_PLUGIN_IDS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList fallbackPluginIds_;
-    /**
-     * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
-     * </pre>
-     *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
     public com.google.protobuf.ProtocolStringList
-        getFallbackPluginIdsList() {
-      return fallbackPluginIds_;
+        getPluginIdList() {
+      return pluginId_;
     }
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
-    public int getFallbackPluginIdsCount() {
-      return fallbackPluginIds_.size();
+    public int getPluginIdCount() {
+      return pluginId_.size();
     }
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
-    public java.lang.String getFallbackPluginIds(int index) {
-      return fallbackPluginIds_.get(index);
+    public java.lang.String getPluginId(int index) {
+      return pluginId_.get(index);
     }
     /**
      * <pre>
-     * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+     * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
      * </pre>
      *
-     * <code>repeated string fallback_plugin_ids = 3;</code>
+     * <code>repeated string plugin_id = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getFallbackPluginIdsBytes(int index) {
-      return fallbackPluginIds_.getByteString(index);
+        getPluginIdBytes(int index) {
+      return pluginId_.getByteString(index);
     }
 
     public static final int MISSING_PLUGIN_BEHAVIOR_FIELD_NUMBER = 4;
     private int missingPluginBehavior_;
     /**
+     * <pre>
+     * Defines the behavior when no plugin from the plugin_id list is not found.
+     * </pre>
+     *
      * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
      */
     public int getMissingPluginBehaviorValue() {
       return missingPluginBehavior_;
     }
     /**
+     * <pre>
+     * Defines the behavior when no plugin from the plugin_id list is not found.
+     * </pre>
+     *
      * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
      */
     public flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior getMissingPluginBehavior() {
@@ -4516,11 +4448,8 @@ public final class MatchableResourceOuterClass {
       if (!getTaskTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskType_);
       }
-      if (!getPluginIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pluginId_);
-      }
-      for (int i = 0; i < fallbackPluginIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fallbackPluginIds_.getRaw(i));
+      for (int i = 0; i < pluginId_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pluginId_.getRaw(i));
       }
       if (missingPluginBehavior_ != flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior.FAIL.getNumber()) {
         output.writeEnum(4, missingPluginBehavior_);
@@ -4537,16 +4466,13 @@ public final class MatchableResourceOuterClass {
       if (!getTaskTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskType_);
       }
-      if (!getPluginIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pluginId_);
-      }
       {
         int dataSize = 0;
-        for (int i = 0; i < fallbackPluginIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(fallbackPluginIds_.getRaw(i));
+        for (int i = 0; i < pluginId_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pluginId_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getFallbackPluginIdsList().size();
+        size += 1 * getPluginIdList().size();
       }
       if (missingPluginBehavior_ != flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior.FAIL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -4569,10 +4495,8 @@ public final class MatchableResourceOuterClass {
 
       if (!getTaskType()
           .equals(other.getTaskType())) return false;
-      if (!getPluginId()
-          .equals(other.getPluginId())) return false;
-      if (!getFallbackPluginIdsList()
-          .equals(other.getFallbackPluginIdsList())) return false;
+      if (!getPluginIdList()
+          .equals(other.getPluginIdList())) return false;
       if (missingPluginBehavior_ != other.missingPluginBehavior_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4587,11 +4511,9 @@ public final class MatchableResourceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getTaskType().hashCode();
-      hash = (37 * hash) + PLUGIN_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPluginId().hashCode();
-      if (getFallbackPluginIdsCount() > 0) {
-        hash = (37 * hash) + FALLBACK_PLUGIN_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getFallbackPluginIdsList().hashCode();
+      if (getPluginIdCount() > 0) {
+        hash = (37 * hash) + PLUGIN_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPluginIdList().hashCode();
       }
       hash = (37 * hash) + MISSING_PLUGIN_BEHAVIOR_FIELD_NUMBER;
       hash = (53 * hash) + missingPluginBehavior_;
@@ -4736,10 +4658,8 @@ public final class MatchableResourceOuterClass {
         super.clear();
         taskType_ = "";
 
-        pluginId_ = "";
-
-        fallbackPluginIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        pluginId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         missingPluginBehavior_ = 0;
 
         return this;
@@ -4771,12 +4691,11 @@ public final class MatchableResourceOuterClass {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.taskType_ = taskType_;
-        result.pluginId_ = pluginId_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          fallbackPluginIds_ = fallbackPluginIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+        if (((bitField0_ & 0x00000002) != 0)) {
+          pluginId_ = pluginId_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.fallbackPluginIds_ = fallbackPluginIds_;
+        result.pluginId_ = pluginId_;
         result.missingPluginBehavior_ = missingPluginBehavior_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -4831,17 +4750,13 @@ public final class MatchableResourceOuterClass {
           taskType_ = other.taskType_;
           onChanged();
         }
-        if (!other.getPluginId().isEmpty()) {
-          pluginId_ = other.pluginId_;
-          onChanged();
-        }
-        if (!other.fallbackPluginIds_.isEmpty()) {
-          if (fallbackPluginIds_.isEmpty()) {
-            fallbackPluginIds_ = other.fallbackPluginIds_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+        if (!other.pluginId_.isEmpty()) {
+          if (pluginId_.isEmpty()) {
+            pluginId_ = other.pluginId_;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureFallbackPluginIdsIsMutable();
-            fallbackPluginIds_.addAll(other.fallbackPluginIds_);
+            ensurePluginIdIsMutable();
+            pluginId_.addAll(other.pluginId_);
           }
           onChanged();
         }
@@ -4967,233 +4882,152 @@ public final class MatchableResourceOuterClass {
         return this;
       }
 
-      private java.lang.Object pluginId_ = "";
-      /**
-       * <pre>
-       * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-       * </pre>
-       *
-       * <code>string plugin_id = 2;</code>
-       */
-      public java.lang.String getPluginId() {
-        java.lang.Object ref = pluginId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pluginId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-       * </pre>
-       *
-       * <code>string plugin_id = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPluginIdBytes() {
-        java.lang.Object ref = pluginId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pluginId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-       * </pre>
-       *
-       * <code>string plugin_id = 2;</code>
-       */
-      public Builder setPluginId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        pluginId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-       * </pre>
-       *
-       * <code>string plugin_id = 2;</code>
-       */
-      public Builder clearPluginId() {
-        
-        pluginId_ = getDefaultInstance().getPluginId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The unique name of the plugin which should handle tasks of this type instead of the default registered plugin.
-       * </pre>
-       *
-       * <code>string plugin_id = 2;</code>
-       */
-      public Builder setPluginIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pluginId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList fallbackPluginIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureFallbackPluginIdsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          fallbackPluginIds_ = new com.google.protobuf.LazyStringArrayList(fallbackPluginIds_);
-          bitField0_ |= 0x00000004;
+      private com.google.protobuf.LazyStringList pluginId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePluginIdIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          pluginId_ = new com.google.protobuf.LazyStringArrayList(pluginId_);
+          bitField0_ |= 0x00000002;
          }
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
-          getFallbackPluginIdsList() {
-        return fallbackPluginIds_.getUnmodifiableView();
+          getPluginIdList() {
+        return pluginId_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public int getFallbackPluginIdsCount() {
-        return fallbackPluginIds_.size();
+      public int getPluginIdCount() {
+        return pluginId_.size();
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public java.lang.String getFallbackPluginIds(int index) {
-        return fallbackPluginIds_.get(index);
+      public java.lang.String getPluginId(int index) {
+        return pluginId_.get(index);
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getFallbackPluginIdsBytes(int index) {
-        return fallbackPluginIds_.getByteString(index);
+          getPluginIdBytes(int index) {
+        return pluginId_.getByteString(index);
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public Builder setFallbackPluginIds(
+      public Builder setPluginId(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureFallbackPluginIdsIsMutable();
-        fallbackPluginIds_.set(index, value);
+  ensurePluginIdIsMutable();
+        pluginId_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public Builder addFallbackPluginIds(
+      public Builder addPluginId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureFallbackPluginIdsIsMutable();
-        fallbackPluginIds_.add(value);
+  ensurePluginIdIsMutable();
+        pluginId_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public Builder addAllFallbackPluginIds(
+      public Builder addAllPluginId(
           java.lang.Iterable<java.lang.String> values) {
-        ensureFallbackPluginIdsIsMutable();
+        ensurePluginIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fallbackPluginIds_);
+            values, pluginId_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public Builder clearFallbackPluginIds() {
-        fallbackPluginIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+      public Builder clearPluginId() {
+        pluginId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * OPTIONAL The unique names of the plugin implementations, in order of decreasing preference, which should handle tasks of this type when the override plugin id is unavailable on the flyte platform.
+       * A set of plugin ids which should handle tasks of this type instead of the default registered plugin. The list will be tried in order until a plugin is found with that id.
        * </pre>
        *
-       * <code>repeated string fallback_plugin_ids = 3;</code>
+       * <code>repeated string plugin_id = 2;</code>
        */
-      public Builder addFallbackPluginIdsBytes(
+      public Builder addPluginIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureFallbackPluginIdsIsMutable();
-        fallbackPluginIds_.add(value);
+        ensurePluginIdIsMutable();
+        pluginId_.add(value);
         onChanged();
         return this;
       }
 
       private int missingPluginBehavior_ = 0;
       /**
+       * <pre>
+       * Defines the behavior when no plugin from the plugin_id list is not found.
+       * </pre>
+       *
        * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
        */
       public int getMissingPluginBehaviorValue() {
         return missingPluginBehavior_;
       }
       /**
+       * <pre>
+       * Defines the behavior when no plugin from the plugin_id list is not found.
+       * </pre>
+       *
        * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
        */
       public Builder setMissingPluginBehaviorValue(int value) {
@@ -5202,6 +5036,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines the behavior when no plugin from the plugin_id list is not found.
+       * </pre>
+       *
        * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
        */
       public flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior getMissingPluginBehavior() {
@@ -5210,6 +5048,10 @@ public final class MatchableResourceOuterClass {
         return result == null ? flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Defines the behavior when no plugin from the plugin_id list is not found.
+       * </pre>
+       *
        * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
        */
       public Builder setMissingPluginBehavior(flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior value) {
@@ -5222,6 +5064,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines the behavior when no plugin from the plugin_id list is not found.
+       * </pre>
+       *
        * <code>.flyteidl.admin.PluginOverride.MissingPluginBehavior missing_plugin_behavior = 4;</code>
        */
       public Builder clearMissingPluginBehavior() {
@@ -9618,39 +9464,38 @@ public final class MatchableResourceOuterClass {
       "ributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
       ":\0028\001\"(\n\030ExecutionQueueAttributes\022\014\n\004tags" +
       "\030\001 \003(\t\"&\n\025ExecutionClusterLabel\022\r\n\005value" +
-      "\030\001 \001(\t\"\365\001\n\016PluginOverride\022\021\n\ttask_type\030\001" +
-      " \001(\t\022\021\n\tplugin_id\030\002 \001(\t\022\033\n\023fallback_plug" +
-      "in_ids\030\003 \003(\t\022U\n\027missing_plugin_behavior\030" +
-      "\004 \001(\01624.flyteidl.admin.PluginOverride.Mi" +
-      "ssingPluginBehavior\"I\n\025MissingPluginBeha" +
-      "vior\022\010\n\004FAIL\020\000\022\025\n\021OVERRIDE_FALLBACK\020\001\022\017\n" +
-      "\013USE_DEFAULT\020\002\"\320\003\n\022MatchingAttributes\022J\n" +
-      "\030task_resource_attributes\030\001 \001(\0132&.flytei" +
-      "dl.admin.TaskResourceAttributesH\000\022P\n\033clu" +
-      "ster_resource_attributes\030\002 \001(\0132).flyteid" +
-      "l.admin.ClusterResourceAttributesH\000\022N\n\032e" +
-      "xecution_queue_attributes\030\003 \001(\0132(.flytei" +
-      "dl.admin.ExecutionQueueAttributesH\000\022H\n\027e" +
-      "xecution_cluster_label\030\004 \001(\0132%.flyteidl." +
-      "admin.ExecutionClusterLabelH\000\022=\n\022quality" +
-      "_of_service\030\005 \001(\0132\037.flyteidl.core.Qualit" +
-      "yOfServiceH\000\0229\n\017plugin_override\030\006 \001(\0132\036." +
-      "flyteidl.admin.PluginOverrideH\000B\010\n\006targe" +
-      "t\"\242\001\n MatchableAttributesConfiguration\0226" +
-      "\n\nattributes\030\001 \001(\0132\".flyteidl.admin.Matc" +
-      "hingAttributes\022\016\n\006domain\030\002 \001(\t\022\017\n\007projec" +
-      "t\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013launch_plan" +
-      "\030\005 \001(\t\"Z\n\036ListMatchableAttributesRequest" +
-      "\0228\n\rresource_type\030\001 \001(\0162!.flyteidl.admin" +
-      ".MatchableResource\"k\n\037ListMatchableAttri" +
-      "butesResponse\022H\n\016configurations\030\001 \003(\01320." +
-      "flyteidl.admin.MatchableAttributesConfig" +
-      "uration*\251\001\n\021MatchableResource\022\021\n\rTASK_RE" +
-      "SOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUT" +
-      "ION_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003" +
-      "\022$\n QUALITY_OF_SERVICE_SPECIFICATION\020\004\022\023" +
-      "\n\017PLUGIN_OVERRIDE\020\005B3Z1github.com/lyft/f" +
-      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "\030\001 \001(\t\"\301\001\n\016PluginOverride\022\021\n\ttask_type\030\001" +
+      " \001(\t\022\021\n\tplugin_id\030\002 \003(\t\022U\n\027missing_plugi" +
+      "n_behavior\030\004 \001(\01624.flyteidl.admin.Plugin" +
+      "Override.MissingPluginBehavior\"2\n\025Missin" +
+      "gPluginBehavior\022\010\n\004FAIL\020\000\022\017\n\013USE_DEFAULT" +
+      "\020\001\"\320\003\n\022MatchingAttributes\022J\n\030task_resour" +
+      "ce_attributes\030\001 \001(\0132&.flyteidl.admin.Tas" +
+      "kResourceAttributesH\000\022P\n\033cluster_resourc" +
+      "e_attributes\030\002 \001(\0132).flyteidl.admin.Clus" +
+      "terResourceAttributesH\000\022N\n\032execution_que" +
+      "ue_attributes\030\003 \001(\0132(.flyteidl.admin.Exe" +
+      "cutionQueueAttributesH\000\022H\n\027execution_clu" +
+      "ster_label\030\004 \001(\0132%.flyteidl.admin.Execut" +
+      "ionClusterLabelH\000\022=\n\022quality_of_service\030" +
+      "\005 \001(\0132\037.flyteidl.core.QualityOfServiceH\000" +
+      "\0229\n\017plugin_override\030\006 \001(\0132\036.flyteidl.adm" +
+      "in.PluginOverrideH\000B\010\n\006target\"\242\001\n Matcha" +
+      "bleAttributesConfiguration\0226\n\nattributes" +
+      "\030\001 \001(\0132\".flyteidl.admin.MatchingAttribut" +
+      "es\022\016\n\006domain\030\002 \001(\t\022\017\n\007project\030\003 \001(\t\022\020\n\010w" +
+      "orkflow\030\004 \001(\t\022\023\n\013launch_plan\030\005 \001(\t\"Z\n\036Li" +
+      "stMatchableAttributesRequest\0228\n\rresource" +
+      "_type\030\001 \001(\0162!.flyteidl.admin.MatchableRe" +
+      "source\"k\n\037ListMatchableAttributesRespons" +
+      "e\022H\n\016configurations\030\001 \003(\01320.flyteidl.adm" +
+      "in.MatchableAttributesConfiguration*\251\001\n\021" +
+      "MatchableResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020" +
+      "CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022" +
+      "\033\n\027EXECUTION_CLUSTER_LABEL\020\003\022$\n QUALITY_" +
+      "OF_SERVICE_SPECIFICATION\020\004\022\023\n\017PLUGIN_OVE" +
+      "RRIDE\020\005B3Z1github.com/lyft/flyteidl/gen/" +
+      "pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9707,7 +9552,7 @@ public final class MatchableResourceOuterClass {
     internal_static_flyteidl_admin_PluginOverride_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_PluginOverride_descriptor,
-        new java.lang.String[] { "TaskType", "PluginId", "FallbackPluginIds", "MissingPluginBehavior", });
+        new java.lang.String[] { "TaskType", "PluginId", "MissingPluginBehavior", });
     internal_static_flyteidl_admin_MatchingAttributes_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_MatchingAttributes_fieldAccessorTable = new

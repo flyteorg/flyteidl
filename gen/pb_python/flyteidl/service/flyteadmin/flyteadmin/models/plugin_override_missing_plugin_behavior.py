@@ -27,7 +27,6 @@ class PluginOverrideMissingPluginBehavior(object):
     allowed enum values
     """
     FAIL = "FAIL"
-    OVERRIDE_FALLBACK = "OVERRIDE_FALLBACK"
     USE_DEFAULT = "USE_DEFAULT"
 
     """
