@@ -4119,6 +4119,12 @@ public final class MatchableResourceOuterClass {
     flyteidl.admin.MatchableResourceOuterClass.PluginOverride.MissingPluginBehavior getMissingPluginBehavior();
   }
   /**
+   * <pre>
+   * This MatchableAttribute configures selecting alternate plugin implementations for a given task type.
+   * In addition to an override implementation a selection of fallbacks can be provided or other modes
+   * for handling cases where the desired plugin override is not enabled in a given Flyte deployment.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.PluginOverride}
    */
   public  static final class PluginOverride extends
@@ -4685,6 +4691,12 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * This MatchableAttribute configures selecting alternate plugin implementations for a given task type.
+     * In addition to an override implementation a selection of fallbacks can be provided or other modes
+     * for handling cases where the desired plugin override is not enabled in a given Flyte deployment.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.PluginOverride}
      */
     public static final class Builder extends

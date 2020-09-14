@@ -328,6 +328,9 @@ func (m *ExecutionClusterLabel) GetValue() string {
 	return ""
 }
 
+// This MatchableAttribute configures selecting alternate plugin implementations for a given task type.
+// In addition to an override implementation a selection of fallbacks can be provided or other modes
+// for handling cases where the desired plugin override is not enabled in a given Flyte deployment.
 type PluginOverride struct {
 	// A predefined yet extensible Task type identifier.
 	TaskType string `protobuf:"bytes,1,opt,name=task_type,json=taskType,proto3" json:"task_type,omitempty"`
