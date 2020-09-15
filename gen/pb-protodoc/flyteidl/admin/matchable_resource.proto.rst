@@ -200,7 +200,7 @@ USE_DEFAULT
 flyteidl.admin.MatchingAttributes
 ---------------------------------
 
-`[flyteidl.admin.MatchingAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L86>`_
+`[flyteidl.admin.MatchingAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L85>`_
 
 Generic container for encapsulating all types of the above attributes messages.
 
@@ -270,7 +270,7 @@ plugin_override
 flyteidl.admin.MatchableAttributesConfiguration
 -----------------------------------------------
 
-`[flyteidl.admin.MatchableAttributesConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L104>`_
+`[flyteidl.admin.MatchableAttributesConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L103>`_
 
 Represents a custom set of attributes applied for either a domain; a domain and project; or
 domain, project and workflow name.
@@ -317,7 +317,7 @@ launch_plan
 flyteidl.admin.ListMatchableAttributesRequest
 ---------------------------------------------
 
-`[flyteidl.admin.ListMatchableAttributesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L117>`_
+`[flyteidl.admin.ListMatchableAttributesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L116>`_
 
 Request all matching resource attributes.
 
@@ -339,7 +339,7 @@ resource_type
 flyteidl.admin.ListMatchableAttributesResponse
 ----------------------------------------------
 
-`[flyteidl.admin.ListMatchableAttributesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L122>`_
+`[flyteidl.admin.ListMatchableAttributesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L121>`_
 
 Response for a request for all matching resource attributes.
 
