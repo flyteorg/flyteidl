@@ -82,7 +82,6 @@ message PluginOverride {
   MissingPluginBehavior missing_plugin_behavior = 4;
 }
 
-
 // Generic container for encapsulating all types of the above attributes messages.
 message MatchingAttributes {
   oneof target {
