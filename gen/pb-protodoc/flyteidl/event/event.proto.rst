@@ -313,7 +313,8 @@ Plugin specific execution event information. For tasks like Python, Hive, Spark,
     "output_uri": "...",
     "error": "{...}",
     "custom_info": "{...}",
-    "phase_version": "..."
+    "phase_version": "...",
+    "metadata": "{...}"
   }
 
 .. _api_field_flyteidl.event.TaskExecutionEvent.task_id:
@@ -401,4 +402,53 @@ phase_version
   The version field should be incremented when metadata changes across the duration of an individual phase.
   
   
+.. _api_field_flyteidl.event.TaskExecutionEvent.metadata:
 
+metadata
+  (:ref:`flyteidl.event.TaskExecutionMetadata <api_msg_flyteidl.event.TaskExecutionMetadata>`) Metadata around how a task was executed.
+  
+  
+
+
+.. _api_msg_flyteidl.event.TaskExecutionMetadata:
+
+flyteidl.event.TaskExecutionMetadata
+------------------------------------
+
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L158>`_
+
+Holds metadata around how a task was executed.
+
+.. code-block:: json
+
+  {
+    "instance_type": "..."
+  }
+
+.. _api_field_flyteidl.event.TaskExecutionMetadata.instance_type:
+
+instance_type
+  (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceType <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceType>`) 
+  
+
+.. _api_enum_flyteidl.event.TaskExecutionMetadata.InstanceType:
+
+Enum flyteidl.event.TaskExecutionMetadata.InstanceType
+------------------------------------------------------
+
+`[flyteidl.event.TaskExecutionMetadata.InstanceType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L160>`_
+
+Includes the type of machine used for this specific task execution. 
+
+.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceType.DEFAULT:
+
+DEFAULT
+  *(DEFAULT)* ⁣The default instance type configured for the flyte application platform.
+  
+  
+.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceType.INTERRUPTIBLE:
+
+INTERRUPTIBLE
+  ⁣The instance type configured for interruptible tasks.
+  
+  
