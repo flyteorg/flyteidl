@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Holds metadata around how a task was executed.
+// Holds metadata around how a task was executed. TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
 type EventTaskExecutionMetadata struct {
-	InstanceType *TaskExecutionMetadataInstanceType `json:"instance_type,omitempty"`
+	InstanceClass *TaskExecutionMetadataInstanceClass `json:"instance_class,omitempty"`
 }

@@ -2549,12 +2549,12 @@ definitions:
     - "DESCENDING"
     - "ASCENDING"
     default: "DESCENDING"
-  TaskExecutionMetadataInstanceType:
+  TaskExecutionMetadataInstanceClass:
     type: "string"
-    description: "Includes the type of machine used for this specific task execution.\n\
-      \n - DEFAULT: The default instance type configured for the flyte application\
-      \ platform.\n - INTERRUPTIBLE: The instance type configured for interruptible\
-      \ tasks."
+    description: "Includes the broad cateogry of machine used for this specific task\
+      \ execution.\n\n - DEFAULT: The default instance class configured for the flyte\
+      \ application platform.\n - INTERRUPTIBLE: The instance class configured for\
+      \ interruptible tasks."
     enum:
     - "DEFAULT"
     - "INTERRUPTIBLE"
@@ -24674,9 +24674,10 @@ definitions:
   eventTaskExecutionMetadata:
     type: "object"
     properties:
-      instance_type:
-        $ref: "#/definitions/TaskExecutionMetadataInstanceType"
-    description: "Holds metadata around how a task was executed."
+      instance_class:
+        $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
+    description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
+      \ Extend to include freeform fields (https://github.com/lyft/flyte/issues/325)."
   eventWorkflowExecutionEvent:
     type: "object"
     properties:

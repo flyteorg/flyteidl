@@ -11248,17 +11248,18 @@ public final class Event {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
      */
-    int getInstanceTypeValue();
+    int getInstanceClassValue();
     /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
      */
-    flyteidl.event.Event.TaskExecutionMetadata.InstanceType getInstanceType();
+    flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass();
   }
   /**
    * <pre>
    * Holds metadata around how a task was executed.
+   * TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
    * </pre>
    *
    * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -11273,7 +11274,7 @@ public final class Event {
       super(builder);
     }
     private TaskExecutionMetadata() {
-      instanceType_ = 0;
+      instanceClass_ = 0;
     }
 
     @java.lang.Override
@@ -11300,10 +11301,10 @@ public final class Event {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 128: {
               int rawValue = input.readEnum();
 
-              instanceType_ = rawValue;
+              instanceClass_ = rawValue;
               break;
             }
             default: {
@@ -11340,16 +11341,16 @@ public final class Event {
 
     /**
      * <pre>
-     * Includes the type of machine used for this specific task execution. 
+     * Includes the broad cateogry of machine used for this specific task execution. 
      * </pre>
      *
-     * Protobuf enum {@code flyteidl.event.TaskExecutionMetadata.InstanceType}
+     * Protobuf enum {@code flyteidl.event.TaskExecutionMetadata.InstanceClass}
      */
-    public enum InstanceType
+    public enum InstanceClass
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * The default instance type configured for the flyte application platform.
+       * The default instance class configured for the flyte application platform.
        * </pre>
        *
        * <code>DEFAULT = 0;</code>
@@ -11357,7 +11358,7 @@ public final class Event {
       DEFAULT(0),
       /**
        * <pre>
-       * The instance type configured for interruptible tasks.
+       * The instance class configured for interruptible tasks.
        * </pre>
        *
        * <code>INTERRUPTIBLE = 1;</code>
@@ -11368,7 +11369,7 @@ public final class Event {
 
       /**
        * <pre>
-       * The default instance type configured for the flyte application platform.
+       * The default instance class configured for the flyte application platform.
        * </pre>
        *
        * <code>DEFAULT = 0;</code>
@@ -11376,7 +11377,7 @@ public final class Event {
       public static final int DEFAULT_VALUE = 0;
       /**
        * <pre>
-       * The instance type configured for interruptible tasks.
+       * The instance class configured for interruptible tasks.
        * </pre>
        *
        * <code>INTERRUPTIBLE = 1;</code>
@@ -11396,11 +11397,11 @@ public final class Event {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static InstanceType valueOf(int value) {
+      public static InstanceClass valueOf(int value) {
         return forNumber(value);
       }
 
-      public static InstanceType forNumber(int value) {
+      public static InstanceClass forNumber(int value) {
         switch (value) {
           case 0: return DEFAULT;
           case 1: return INTERRUPTIBLE;
@@ -11408,15 +11409,15 @@ public final class Event {
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<InstanceType>
+      public static com.google.protobuf.Internal.EnumLiteMap<InstanceClass>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          InstanceType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<InstanceType>() {
-              public InstanceType findValueByNumber(int number) {
-                return InstanceType.forNumber(number);
+          InstanceClass> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<InstanceClass>() {
+              public InstanceClass findValueByNumber(int number) {
+                return InstanceClass.forNumber(number);
               }
             };
 
@@ -11433,9 +11434,9 @@ public final class Event {
         return flyteidl.event.Event.TaskExecutionMetadata.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final InstanceType[] VALUES = values();
+      private static final InstanceClass[] VALUES = values();
 
-      public static InstanceType valueOf(
+      public static InstanceClass valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -11449,28 +11450,28 @@ public final class Event {
 
       private final int value;
 
-      private InstanceType(int value) {
+      private InstanceClass(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.event.TaskExecutionMetadata.InstanceType)
+      // @@protoc_insertion_point(enum_scope:flyteidl.event.TaskExecutionMetadata.InstanceClass)
     }
 
-    public static final int INSTANCE_TYPE_FIELD_NUMBER = 1;
-    private int instanceType_;
+    public static final int INSTANCE_CLASS_FIELD_NUMBER = 16;
+    private int instanceClass_;
     /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
      */
-    public int getInstanceTypeValue() {
-      return instanceType_;
+    public int getInstanceClassValue() {
+      return instanceClass_;
     }
     /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
      */
-    public flyteidl.event.Event.TaskExecutionMetadata.InstanceType getInstanceType() {
+    public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
       @SuppressWarnings("deprecation")
-      flyteidl.event.Event.TaskExecutionMetadata.InstanceType result = flyteidl.event.Event.TaskExecutionMetadata.InstanceType.valueOf(instanceType_);
-      return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceType.UNRECOGNIZED : result;
+      flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
+      return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11487,8 +11488,8 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (instanceType_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceType.DEFAULT.getNumber()) {
-        output.writeEnum(1, instanceType_);
+      if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
+        output.writeEnum(16, instanceClass_);
       }
       unknownFields.writeTo(output);
     }
@@ -11499,9 +11500,9 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (instanceType_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceType.DEFAULT.getNumber()) {
+      if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, instanceType_);
+          .computeEnumSize(16, instanceClass_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11518,7 +11519,7 @@ public final class Event {
       }
       flyteidl.event.Event.TaskExecutionMetadata other = (flyteidl.event.Event.TaskExecutionMetadata) obj;
 
-      if (instanceType_ != other.instanceType_) return false;
+      if (instanceClass_ != other.instanceClass_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11530,8 +11531,8 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + instanceType_;
+      hash = (37 * hash) + INSTANCE_CLASS_FIELD_NUMBER;
+      hash = (53 * hash) + instanceClass_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11630,6 +11631,7 @@ public final class Event {
     /**
      * <pre>
      * Holds metadata around how a task was executed.
+     * TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
      * </pre>
      *
      * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -11669,7 +11671,7 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instanceType_ = 0;
+        instanceClass_ = 0;
 
         return this;
       }
@@ -11697,7 +11699,7 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.TaskExecutionMetadata buildPartial() {
         flyteidl.event.Event.TaskExecutionMetadata result = new flyteidl.event.Event.TaskExecutionMetadata(this);
-        result.instanceType_ = instanceType_;
+        result.instanceClass_ = instanceClass_;
         onBuilt();
         return result;
       }
@@ -11746,8 +11748,8 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.TaskExecutionMetadata other) {
         if (other == flyteidl.event.Event.TaskExecutionMetadata.getDefaultInstance()) return this;
-        if (other.instanceType_ != 0) {
-          setInstanceTypeValue(other.getInstanceTypeValue());
+        if (other.instanceClass_ != 0) {
+          setInstanceClassValue(other.getInstanceClassValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11778,47 +11780,47 @@ public final class Event {
         return this;
       }
 
-      private int instanceType_ = 0;
+      private int instanceClass_ = 0;
       /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
        */
-      public int getInstanceTypeValue() {
-        return instanceType_;
+      public int getInstanceClassValue() {
+        return instanceClass_;
       }
       /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
        */
-      public Builder setInstanceTypeValue(int value) {
-        instanceType_ = value;
+      public Builder setInstanceClassValue(int value) {
+        instanceClass_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
        */
-      public flyteidl.event.Event.TaskExecutionMetadata.InstanceType getInstanceType() {
+      public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
         @SuppressWarnings("deprecation")
-        flyteidl.event.Event.TaskExecutionMetadata.InstanceType result = flyteidl.event.Event.TaskExecutionMetadata.InstanceType.valueOf(instanceType_);
-        return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceType.UNRECOGNIZED : result;
+        flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
+        return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
        */
-      public Builder setInstanceType(flyteidl.event.Event.TaskExecutionMetadata.InstanceType value) {
+      public Builder setInstanceClass(flyteidl.event.Event.TaskExecutionMetadata.InstanceClass value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        instanceType_ = value.getNumber();
+        instanceClass_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;</code>
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
        */
-      public Builder clearInstanceType() {
+      public Builder clearInstanceClass() {
         
-        instanceType_ = 0;
+        instanceClass_ = 0;
         onChanged();
         return this;
       }
@@ -11976,12 +11978,12 @@ public final class Event {
       ".google.protobuf.Struct\022\025\n\rphase_version" +
       "\030\014 \001(\r\0227\n\010metadata\030\020 \001(\0132%.flyteidl.even" +
       "t.TaskExecutionMetadataB\017\n\routput_result" +
-      "\"\222\001\n\025TaskExecutionMetadata\022I\n\rinstance_t" +
-      "ype\030\001 \001(\01622.flyteidl.event.TaskExecution" +
-      "Metadata.InstanceType\".\n\014InstanceType\022\013\n" +
-      "\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B3Z1github." +
-      "com/lyft/flyteidl/gen/pb-go/flyteidl/eve" +
-      "ntb\006proto3"
+      "\"\225\001\n\025TaskExecutionMetadata\022K\n\016instance_c" +
+      "lass\030\020 \001(\01623.flyteidl.event.TaskExecutio" +
+      "nMetadata.InstanceClass\"/\n\rInstanceClass" +
+      "\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B3Z1gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12047,7 +12049,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
-        new java.lang.String[] { "InstanceType", });
+        new java.lang.String[] { "InstanceClass", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

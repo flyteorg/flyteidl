@@ -793,7 +793,7 @@ func (m *TaskExecutionMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for InstanceType
+	// no validation rules for InstanceClass
 
 	return nil
 }

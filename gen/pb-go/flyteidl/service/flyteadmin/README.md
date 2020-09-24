@@ -275,7 +275,7 @@ Class | Method | HTTP request | Description
  - [SchemaColumnSchemaColumnType](docs/SchemaColumnSchemaColumnType.md)
  - [SchemaTypeSchemaColumn](docs/SchemaTypeSchemaColumn.md)
  - [SortDirection](docs/SortDirection.md)
- - [TaskExecutionMetadataInstanceType](docs/TaskExecutionMetadataInstanceType.md)
+ - [TaskExecutionMetadataInstanceClass](docs/TaskExecutionMetadataInstanceClass.md)
  - [TaskLogMessageFormat](docs/TaskLogMessageFormat.md)
  - [WorkflowMetadataOnFailurePolicy](docs/WorkflowMetadataOnFailurePolicy.md)
 

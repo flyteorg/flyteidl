@@ -415,40 +415,41 @@ metadata
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L158>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L159>`_
 
 Holds metadata around how a task was executed.
+TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
 
 .. code-block:: json
 
   {
-    "instance_type": "..."
+    "instance_class": "..."
   }
 
-.. _api_field_flyteidl.event.TaskExecutionMetadata.instance_type:
+.. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
 
-instance_type
-  (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceType <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceType>`) 
+instance_class
+  (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceClass <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass>`) 
   
 
-.. _api_enum_flyteidl.event.TaskExecutionMetadata.InstanceType:
+.. _api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass:
 
-Enum flyteidl.event.TaskExecutionMetadata.InstanceType
-------------------------------------------------------
+Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
+-------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L160>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L161>`_
 
-Includes the type of machine used for this specific task execution. 
+Includes the broad cateogry of machine used for this specific task execution. 
 
-.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceType.DEFAULT:
+.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceClass.DEFAULT:
 
 DEFAULT
-  *(DEFAULT)* ⁣The default instance type configured for the flyte application platform.
+  *(DEFAULT)* ⁣The default instance class configured for the flyte application platform.
   
   
-.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceType.INTERRUPTIBLE:
+.. _api_enum_value_flyteidl.event.TaskExecutionMetadata.InstanceClass.INTERRUPTIBLE:
 
 INTERRUPTIBLE
-  ⁣The instance type configured for interruptible tasks.
+  ⁣The instance class configured for interruptible tasks.
   
   

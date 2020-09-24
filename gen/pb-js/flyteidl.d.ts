@@ -5350,8 +5350,8 @@ export namespace flyteidl {
         /** Properties of a TaskExecutionMetadata. */
         interface ITaskExecutionMetadata {
 
-            /** TaskExecutionMetadata instanceType */
-            instanceType?: (flyteidl.event.TaskExecutionMetadata.InstanceType|null);
+            /** TaskExecutionMetadata instanceClass */
+            instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5363,8 +5363,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.ITaskExecutionMetadata);
 
-            /** TaskExecutionMetadata instanceType. */
-            public instanceType: flyteidl.event.TaskExecutionMetadata.InstanceType;
+            /** TaskExecutionMetadata instanceClass. */
+            public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
@@ -5401,8 +5401,8 @@ export namespace flyteidl {
 
         namespace TaskExecutionMetadata {
 
-            /** InstanceType enum. */
-            enum InstanceType {
+            /** InstanceClass enum. */
+            enum InstanceClass {
                 DEFAULT = 0,
                 INTERRUPTIBLE = 1
             }

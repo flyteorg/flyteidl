@@ -156,14 +156,15 @@ message TaskExecutionEvent {
 }
 
 // Holds metadata around how a task was executed.
+// TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
 message TaskExecutionMetadata {
-    // Includes the type of machine used for this specific task execution. 
-    enum InstanceType {
-        // The default instance type configured for the flyte application platform.
+    // Includes the broad cateogry of machine used for this specific task execution. 
+    enum InstanceClass {
+        // The default instance class configured for the flyte application platform.
         DEFAULT = 0; 
 
-        // The instance type configured for interruptible tasks.
+        // The instance class configured for interruptible tasks.
         INTERRUPTIBLE = 1;
     }
-    InstanceType instance_type = 1;
+    InstanceClass instance_class = 16;
 }

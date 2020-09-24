@@ -97,26 +97,26 @@ template<> ::flyteidl::event::WorkflowNodeMetadata* Arena::CreateMaybeMessage<::
 namespace flyteidl {
 namespace event {
 
-enum TaskExecutionMetadata_InstanceType {
-  TaskExecutionMetadata_InstanceType_DEFAULT = 0,
-  TaskExecutionMetadata_InstanceType_INTERRUPTIBLE = 1,
-  TaskExecutionMetadata_InstanceType_TaskExecutionMetadata_InstanceType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  TaskExecutionMetadata_InstanceType_TaskExecutionMetadata_InstanceType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum TaskExecutionMetadata_InstanceClass {
+  TaskExecutionMetadata_InstanceClass_DEFAULT = 0,
+  TaskExecutionMetadata_InstanceClass_INTERRUPTIBLE = 1,
+  TaskExecutionMetadata_InstanceClass_TaskExecutionMetadata_InstanceClass_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  TaskExecutionMetadata_InstanceClass_TaskExecutionMetadata_InstanceClass_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool TaskExecutionMetadata_InstanceType_IsValid(int value);
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata_InstanceType_InstanceType_MIN = TaskExecutionMetadata_InstanceType_DEFAULT;
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata_InstanceType_InstanceType_MAX = TaskExecutionMetadata_InstanceType_INTERRUPTIBLE;
-const int TaskExecutionMetadata_InstanceType_InstanceType_ARRAYSIZE = TaskExecutionMetadata_InstanceType_InstanceType_MAX + 1;
+bool TaskExecutionMetadata_InstanceClass_IsValid(int value);
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata_InstanceClass_InstanceClass_MIN = TaskExecutionMetadata_InstanceClass_DEFAULT;
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata_InstanceClass_InstanceClass_MAX = TaskExecutionMetadata_InstanceClass_INTERRUPTIBLE;
+const int TaskExecutionMetadata_InstanceClass_InstanceClass_ARRAYSIZE = TaskExecutionMetadata_InstanceClass_InstanceClass_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* TaskExecutionMetadata_InstanceType_descriptor();
-inline const ::std::string& TaskExecutionMetadata_InstanceType_Name(TaskExecutionMetadata_InstanceType value) {
+const ::google::protobuf::EnumDescriptor* TaskExecutionMetadata_InstanceClass_descriptor();
+inline const ::std::string& TaskExecutionMetadata_InstanceClass_Name(TaskExecutionMetadata_InstanceClass value) {
   return ::google::protobuf::internal::NameOfEnum(
-    TaskExecutionMetadata_InstanceType_descriptor(), value);
+    TaskExecutionMetadata_InstanceClass_descriptor(), value);
 }
-inline bool TaskExecutionMetadata_InstanceType_Parse(
-    const ::std::string& name, TaskExecutionMetadata_InstanceType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<TaskExecutionMetadata_InstanceType>(
-    TaskExecutionMetadata_InstanceType_descriptor(), name, value);
+inline bool TaskExecutionMetadata_InstanceClass_Parse(
+    const ::std::string& name, TaskExecutionMetadata_InstanceClass* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<TaskExecutionMetadata_InstanceClass>(
+    TaskExecutionMetadata_InstanceClass_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1452,46 +1452,46 @@ class TaskExecutionMetadata final :
 
   // nested types ----------------------------------------------------
 
-  typedef TaskExecutionMetadata_InstanceType InstanceType;
-  static const InstanceType DEFAULT =
-    TaskExecutionMetadata_InstanceType_DEFAULT;
-  static const InstanceType INTERRUPTIBLE =
-    TaskExecutionMetadata_InstanceType_INTERRUPTIBLE;
-  static inline bool InstanceType_IsValid(int value) {
-    return TaskExecutionMetadata_InstanceType_IsValid(value);
+  typedef TaskExecutionMetadata_InstanceClass InstanceClass;
+  static const InstanceClass DEFAULT =
+    TaskExecutionMetadata_InstanceClass_DEFAULT;
+  static const InstanceClass INTERRUPTIBLE =
+    TaskExecutionMetadata_InstanceClass_INTERRUPTIBLE;
+  static inline bool InstanceClass_IsValid(int value) {
+    return TaskExecutionMetadata_InstanceClass_IsValid(value);
   }
-  static const InstanceType InstanceType_MIN =
-    TaskExecutionMetadata_InstanceType_InstanceType_MIN;
-  static const InstanceType InstanceType_MAX =
-    TaskExecutionMetadata_InstanceType_InstanceType_MAX;
-  static const int InstanceType_ARRAYSIZE =
-    TaskExecutionMetadata_InstanceType_InstanceType_ARRAYSIZE;
+  static const InstanceClass InstanceClass_MIN =
+    TaskExecutionMetadata_InstanceClass_InstanceClass_MIN;
+  static const InstanceClass InstanceClass_MAX =
+    TaskExecutionMetadata_InstanceClass_InstanceClass_MAX;
+  static const int InstanceClass_ARRAYSIZE =
+    TaskExecutionMetadata_InstanceClass_InstanceClass_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
-  InstanceType_descriptor() {
-    return TaskExecutionMetadata_InstanceType_descriptor();
+  InstanceClass_descriptor() {
+    return TaskExecutionMetadata_InstanceClass_descriptor();
   }
-  static inline const ::std::string& InstanceType_Name(InstanceType value) {
-    return TaskExecutionMetadata_InstanceType_Name(value);
+  static inline const ::std::string& InstanceClass_Name(InstanceClass value) {
+    return TaskExecutionMetadata_InstanceClass_Name(value);
   }
-  static inline bool InstanceType_Parse(const ::std::string& name,
-      InstanceType* value) {
-    return TaskExecutionMetadata_InstanceType_Parse(name, value);
+  static inline bool InstanceClass_Parse(const ::std::string& name,
+      InstanceClass* value) {
+    return TaskExecutionMetadata_InstanceClass_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-  void clear_instance_type();
-  static const int kInstanceTypeFieldNumber = 1;
-  ::flyteidl::event::TaskExecutionMetadata_InstanceType instance_type() const;
-  void set_instance_type(::flyteidl::event::TaskExecutionMetadata_InstanceType value);
+  // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+  void clear_instance_class();
+  static const int kInstanceClassFieldNumber = 16;
+  ::flyteidl::event::TaskExecutionMetadata_InstanceClass instance_class() const;
+  void set_instance_class(::flyteidl::event::TaskExecutionMetadata_InstanceClass value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.event.TaskExecutionMetadata)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  int instance_type_;
+  int instance_class_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
 };
@@ -3273,18 +3273,18 @@ inline TaskExecutionEvent::OutputResultCase TaskExecutionEvent::output_result_ca
 
 // TaskExecutionMetadata
 
-// .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-inline void TaskExecutionMetadata::clear_instance_type() {
-  instance_type_ = 0;
+// .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+inline void TaskExecutionMetadata::clear_instance_class() {
+  instance_class_ = 0;
 }
-inline ::flyteidl::event::TaskExecutionMetadata_InstanceType TaskExecutionMetadata::instance_type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.instance_type)
-  return static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceType >(instance_type_);
+inline ::flyteidl::event::TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::instance_class() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.instance_class)
+  return static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceClass >(instance_class_);
 }
-inline void TaskExecutionMetadata::set_instance_type(::flyteidl::event::TaskExecutionMetadata_InstanceType value) {
+inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExecutionMetadata_InstanceClass value) {
   
-  instance_type_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_type)
+  instance_class_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_class)
 }
 
 #ifdef __GNUC__
@@ -3313,10 +3313,10 @@ inline void TaskExecutionMetadata::set_instance_type(::flyteidl::event::TaskExec
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::event::TaskExecutionMetadata_InstanceType> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::event::TaskExecutionMetadata_InstanceClass> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::event::TaskExecutionMetadata_InstanceType>() {
-  return ::flyteidl::event::TaskExecutionMetadata_InstanceType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::event::TaskExecutionMetadata_InstanceClass>() {
+  return ::flyteidl::event::TaskExecutionMetadata_InstanceClass_descriptor();
 }
 
 }  // namespace protobuf

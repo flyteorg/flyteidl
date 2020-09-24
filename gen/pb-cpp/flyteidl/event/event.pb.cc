@@ -304,7 +304,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fevent_2fevent_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, instance_type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, instance_class_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::event::WorkflowExecutionEvent)},
@@ -387,17 +387,17 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   ".google.protobuf.Struct\022\025\n\rphase_version"
   "\030\014 \001(\r\0227\n\010metadata\030\020 \001(\0132%.flyteidl.even"
   "t.TaskExecutionMetadataB\017\n\routput_result"
-  "\"\222\001\n\025TaskExecutionMetadata\022I\n\rinstance_t"
-  "ype\030\001 \001(\01622.flyteidl.event.TaskExecution"
-  "Metadata.InstanceType\".\n\014InstanceType\022\013\n"
-  "\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B3Z1github."
-  "com/lyft/flyteidl/gen/pb-go/flyteidl/eve"
-  "ntb\006proto3"
+  "\"\225\001\n\025TaskExecutionMetadata\022K\n\016instance_c"
+  "lass\030\020 \001(\01623.flyteidl.event.TaskExecutio"
+  "nMetadata.InstanceClass\"/\n\rInstanceClass"
+  "\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B3Z1gith"
+  "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/"
+  "eventb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fevent_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fevent_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto,
-  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2290,
+  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2293,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {
@@ -416,11 +416,11 @@ void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fevent_2fevent_2eproto = []() { AddDescriptors_flyteidl_2fevent_2fevent_2eproto(); return true; }();
 namespace flyteidl {
 namespace event {
-const ::google::protobuf::EnumDescriptor* TaskExecutionMetadata_InstanceType_descriptor() {
+const ::google::protobuf::EnumDescriptor* TaskExecutionMetadata_InstanceClass_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto);
   return file_level_enum_descriptors_flyteidl_2fevent_2fevent_2eproto[0];
 }
-bool TaskExecutionMetadata_InstanceType_IsValid(int value) {
+bool TaskExecutionMetadata_InstanceClass_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -431,11 +431,11 @@ bool TaskExecutionMetadata_InstanceType_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata::DEFAULT;
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata::INTERRUPTIBLE;
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata::InstanceType_MIN;
-const TaskExecutionMetadata_InstanceType TaskExecutionMetadata::InstanceType_MAX;
-const int TaskExecutionMetadata::InstanceType_ARRAYSIZE;
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::DEFAULT;
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::INTERRUPTIBLE;
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::InstanceClass_MIN;
+const TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::InstanceClass_MAX;
+const int TaskExecutionMetadata::InstanceClass_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -4768,7 +4768,7 @@ class TaskExecutionMetadata::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TaskExecutionMetadata::kInstanceTypeFieldNumber;
+const int TaskExecutionMetadata::kInstanceClassFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskExecutionMetadata::TaskExecutionMetadata()
@@ -4780,12 +4780,12 @@ TaskExecutionMetadata::TaskExecutionMetadata(const TaskExecutionMetadata& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  instance_type_ = from.instance_type_;
+  instance_class_ = from.instance_class_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.TaskExecutionMetadata)
 }
 
 void TaskExecutionMetadata::SharedCtor() {
-  instance_type_ = 0;
+  instance_class_ = 0;
 }
 
 TaskExecutionMetadata::~TaskExecutionMetadata() {
@@ -4811,7 +4811,7 @@ void TaskExecutionMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  instance_type_ = 0;
+  instance_class_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -4828,11 +4828,11 @@ const char* TaskExecutionMetadata::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+      // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+      case 16: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 128) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_instance_type(static_cast<::flyteidl::event::TaskExecutionMetadata_InstanceType>(val));
+        msg->set_instance_class(static_cast<::flyteidl::event::TaskExecutionMetadata_InstanceClass>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -4859,18 +4859,18 @@ bool TaskExecutionMetadata::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:flyteidl.event.TaskExecutionMetadata)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+      // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (128 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_instance_type(static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceType >(value));
+          set_instance_class(static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceClass >(value));
         } else {
           goto handle_unusual;
         }
@@ -4904,10 +4904,10 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-  if (this->instance_type() != 0) {
+  // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+  if (this->instance_class() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->instance_type(), output);
+      16, this->instance_class(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4923,10 +4923,10 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-  if (this->instance_type() != 0) {
+  // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+  if (this->instance_class() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->instance_type(), target);
+      16, this->instance_class(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4950,10 +4950,10 @@ size_t TaskExecutionMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.event.TaskExecutionMetadata.InstanceType instance_type = 1;
-  if (this->instance_type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->instance_type());
+  // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+  if (this->instance_class() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->instance_class());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4983,8 +4983,8 @@ void TaskExecutionMetadata::MergeFrom(const TaskExecutionMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.instance_type() != 0) {
-    set_instance_type(from.instance_type());
+  if (from.instance_class() != 0) {
+    set_instance_class(from.instance_class());
   }
 }
 
@@ -5013,7 +5013,7 @@ void TaskExecutionMetadata::Swap(TaskExecutionMetadata* other) {
 void TaskExecutionMetadata::InternalSwap(TaskExecutionMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(instance_type_, other->instance_type_);
+  swap(instance_class_, other->instance_class_);
 }
 
 ::google::protobuf::Metadata TaskExecutionMetadata::GetMetadata() const {

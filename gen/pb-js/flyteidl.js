@@ -12969,7 +12969,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a TaskExecutionMetadata.
              * @memberof flyteidl.event
              * @interface ITaskExecutionMetadata
-             * @property {flyteidl.event.TaskExecutionMetadata.InstanceType|null} [instanceType] TaskExecutionMetadata instanceType
+             * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
              */
 
             /**
@@ -12988,12 +12988,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * TaskExecutionMetadata instanceType.
-             * @member {flyteidl.event.TaskExecutionMetadata.InstanceType} instanceType
+             * TaskExecutionMetadata instanceClass.
+             * @member {flyteidl.event.TaskExecutionMetadata.InstanceClass} instanceClass
              * @memberof flyteidl.event.TaskExecutionMetadata
              * @instance
              */
-            TaskExecutionMetadata.prototype.instanceType = 0;
+            TaskExecutionMetadata.prototype.instanceClass = 0;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
@@ -13019,8 +13019,8 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.instanceType != null && message.hasOwnProperty("instanceType"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.instanceType);
+                if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
+                    writer.uint32(/* id 16, wireType 0 =*/128).int32(message.instanceClass);
                 return writer;
             };
 
@@ -13042,8 +13042,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.instanceType = reader.int32();
+                    case 16:
+                        message.instanceClass = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13064,10 +13064,10 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.instanceType != null && message.hasOwnProperty("instanceType"))
-                    switch (message.instanceType) {
+                if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
+                    switch (message.instanceClass) {
                     default:
-                        return "instanceType: enum value expected";
+                        return "instanceClass: enum value expected";
                     case 0:
                     case 1:
                         break;
@@ -13076,13 +13076,13 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * InstanceType enum.
-             * @name flyteidl.event.TaskExecutionMetadata.InstanceType
+             * InstanceClass enum.
+             * @name flyteidl.event.TaskExecutionMetadata.InstanceClass
              * @enum {string}
              * @property {number} DEFAULT=0 DEFAULT value
              * @property {number} INTERRUPTIBLE=1 INTERRUPTIBLE value
              */
-            TaskExecutionMetadata.InstanceType = (function() {
+            TaskExecutionMetadata.InstanceClass = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "DEFAULT"] = 0;
                 values[valuesById[1] = "INTERRUPTIBLE"] = 1;

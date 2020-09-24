@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.task_execution_metadata_instance_type import TaskExecutionMetadataInstanceType  # noqa: F401,E501
+from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass  # noqa: F401,E501
 
 
 class EventTaskExecutionMetadata(object):
@@ -33,42 +33,42 @@ class EventTaskExecutionMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'instance_type': 'TaskExecutionMetadataInstanceType'
+        'instance_class': 'TaskExecutionMetadataInstanceClass'
     }
 
     attribute_map = {
-        'instance_type': 'instance_type'
+        'instance_class': 'instance_class'
     }
 
-    def __init__(self, instance_type=None):  # noqa: E501
+    def __init__(self, instance_class=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._instance_type = None
+        self._instance_class = None
         self.discriminator = None
 
-        if instance_type is not None:
-            self.instance_type = instance_type
+        if instance_class is not None:
+            self.instance_class = instance_class
 
     @property
-    def instance_type(self):
-        """Gets the instance_type of this EventTaskExecutionMetadata.  # noqa: E501
+    def instance_class(self):
+        """Gets the instance_class of this EventTaskExecutionMetadata.  # noqa: E501
 
 
-        :return: The instance_type of this EventTaskExecutionMetadata.  # noqa: E501
-        :rtype: TaskExecutionMetadataInstanceType
+        :return: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: TaskExecutionMetadataInstanceClass
         """
-        return self._instance_type
+        return self._instance_class
 
-    @instance_type.setter
-    def instance_type(self, instance_type):
-        """Sets the instance_type of this EventTaskExecutionMetadata.
+    @instance_class.setter
+    def instance_class(self, instance_class):
+        """Sets the instance_class of this EventTaskExecutionMetadata.
 
 
-        :param instance_type: The instance_type of this EventTaskExecutionMetadata.  # noqa: E501
-        :type: TaskExecutionMetadataInstanceType
+        :param instance_class: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: TaskExecutionMetadataInstanceClass
         """
 
-        self._instance_type = instance_type
+        self._instance_class = instance_class
 
     def to_dict(self):
         """Returns the model properties as a dict"""

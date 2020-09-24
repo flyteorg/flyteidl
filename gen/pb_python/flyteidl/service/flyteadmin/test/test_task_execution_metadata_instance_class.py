@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.task_execution_metadata_instance_type import TaskExecutionMetadataInstanceType  # noqa: E501
+from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestTaskExecutionMetadataInstanceType(unittest.TestCase):
-    """TaskExecutionMetadataInstanceType unit test stubs"""
+class TestTaskExecutionMetadataInstanceClass(unittest.TestCase):
+    """TaskExecutionMetadataInstanceClass unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTaskExecutionMetadataInstanceType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTaskExecutionMetadataInstanceType(self):
-        """Test TaskExecutionMetadataInstanceType"""
+    def testTaskExecutionMetadataInstanceClass(self):
+        """Test TaskExecutionMetadataInstanceClass"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.task_execution_metadata_instance_type.TaskExecutionMetadataInstanceType()  # noqa: E501
+        # model = flyteadmin.models.task_execution_metadata_instance_class.TaskExecutionMetadataInstanceClass()  # noqa: E501
         pass
 
 
