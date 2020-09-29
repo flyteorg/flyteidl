@@ -16,6 +16,12 @@ message FixedRate {
     FixedRateUnit unit = 2;
 }
 
+// Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
+message CronScheduleWithOffset {
+    string schedule = 1;
+    string offset = 2;
+}
+
 // Defines complete set of information required to trigger an execution on a schedule.
 message Schedule {
 
@@ -24,6 +30,7 @@ message Schedule {
         // e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
         string cron_expression = 1;
         FixedRate rate = 2;
+        CronScheduleWithOffset cron_schedule_with_offset = 4;
     }
 
     // Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off.
