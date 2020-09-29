@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_cron_schedule_with_offset import AdminCronScheduleWithOffset  # noqa: F401,E501
 from flyteadmin.models.admin_fixed_rate import AdminFixedRate  # noqa: F401,E501
 
 
@@ -35,20 +36,23 @@ class AdminSchedule(object):
     swagger_types = {
         'cron_expression': 'str',
         'rate': 'AdminFixedRate',
+        'cron_schedule_with_offset': 'AdminCronScheduleWithOffset',
         'kickoff_time_input_arg': 'str'
     }
 
     attribute_map = {
         'cron_expression': 'cron_expression',
         'rate': 'rate',
+        'cron_schedule_with_offset': 'cron_schedule_with_offset',
         'kickoff_time_input_arg': 'kickoff_time_input_arg'
     }
 
-    def __init__(self, cron_expression=None, rate=None, kickoff_time_input_arg=None):  # noqa: E501
+    def __init__(self, cron_expression=None, rate=None, cron_schedule_with_offset=None, kickoff_time_input_arg=None):  # noqa: E501
         """AdminSchedule - a model defined in Swagger"""  # noqa: E501
 
         self._cron_expression = None
         self._rate = None
+        self._cron_schedule_with_offset = None
         self._kickoff_time_input_arg = None
         self.discriminator = None
 
@@ -56,6 +60,8 @@ class AdminSchedule(object):
             self.cron_expression = cron_expression
         if rate is not None:
             self.rate = rate
+        if cron_schedule_with_offset is not None:
+            self.cron_schedule_with_offset = cron_schedule_with_offset
         if kickoff_time_input_arg is not None:
             self.kickoff_time_input_arg = kickoff_time_input_arg
 
@@ -100,6 +106,27 @@ class AdminSchedule(object):
         """
 
         self._rate = rate
+
+    @property
+    def cron_schedule_with_offset(self):
+        """Gets the cron_schedule_with_offset of this AdminSchedule.  # noqa: E501
+
+
+        :return: The cron_schedule_with_offset of this AdminSchedule.  # noqa: E501
+        :rtype: AdminCronScheduleWithOffset
+        """
+        return self._cron_schedule_with_offset
+
+    @cron_schedule_with_offset.setter
+    def cron_schedule_with_offset(self, cron_schedule_with_offset):
+        """Sets the cron_schedule_with_offset of this AdminSchedule.
+
+
+        :param cron_schedule_with_offset: The cron_schedule_with_offset of this AdminSchedule.  # noqa: E501
+        :type: AdminCronScheduleWithOffset
+        """
+
+        self._cron_schedule_with_offset = cron_schedule_with_offset
 
     @property
     def kickoff_time_input_arg(self):

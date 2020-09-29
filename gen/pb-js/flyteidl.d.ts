@@ -9146,6 +9146,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a CronScheduleWithOffset. */
+        interface ICronScheduleWithOffset {
+
+            /** CronScheduleWithOffset schedule */
+            schedule?: (string|null);
+
+            /** CronScheduleWithOffset offset */
+            offset?: (string|null);
+        }
+
+        /** Represents a CronScheduleWithOffset. */
+        class CronScheduleWithOffset implements ICronScheduleWithOffset {
+
+            /**
+             * Constructs a new CronScheduleWithOffset.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ICronScheduleWithOffset);
+
+            /** CronScheduleWithOffset schedule. */
+            public schedule: string;
+
+            /** CronScheduleWithOffset offset. */
+            public offset: string;
+
+            /**
+             * Creates a new CronScheduleWithOffset instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CronScheduleWithOffset instance
+             */
+            public static create(properties?: flyteidl.admin.ICronScheduleWithOffset): flyteidl.admin.CronScheduleWithOffset;
+
+            /**
+             * Encodes the specified CronScheduleWithOffset message. Does not implicitly {@link flyteidl.admin.CronScheduleWithOffset.verify|verify} messages.
+             * @param message CronScheduleWithOffset message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ICronScheduleWithOffset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CronScheduleWithOffset message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CronScheduleWithOffset
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.CronScheduleWithOffset;
+
+            /**
+             * Verifies a CronScheduleWithOffset message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Schedule. */
         interface ISchedule {
 
@@ -9154,6 +9212,9 @@ export namespace flyteidl {
 
             /** Schedule rate */
             rate?: (flyteidl.admin.IFixedRate|null);
+
+            /** Schedule cronScheduleWithOffset */
+            cronScheduleWithOffset?: (flyteidl.admin.ICronScheduleWithOffset|null);
 
             /** Schedule kickoffTimeInputArg */
             kickoffTimeInputArg?: (string|null);
@@ -9174,11 +9235,14 @@ export namespace flyteidl {
             /** Schedule rate. */
             public rate?: (flyteidl.admin.IFixedRate|null);
 
+            /** Schedule cronScheduleWithOffset. */
+            public cronScheduleWithOffset?: (flyteidl.admin.ICronScheduleWithOffset|null);
+
             /** Schedule kickoffTimeInputArg. */
             public kickoffTimeInputArg: string;
 
             /** Schedule ScheduleExpression. */
-            public ScheduleExpression?: ("cronExpression"|"rate");
+            public ScheduleExpression?: ("cronExpression"|"rate"|"cronScheduleWithOffset");
 
             /**
              * Creates a new Schedule instance using the specified properties.

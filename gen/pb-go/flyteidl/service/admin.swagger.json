@@ -2979,6 +2979,18 @@
         }
       }
     },
+    "adminCronScheduleWithOffset": {
+      "type": "object",
+      "properties": {
+        "schedule": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "string"
+        }
+      },
+      "description": "Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled."
+    },
     "adminDomain": {
       "type": "object",
       "properties": {
@@ -3984,6 +3996,9 @@
         },
         "rate": {
           "$ref": "#/definitions/adminFixedRate"
+        },
+        "cron_schedule_with_offset": {
+          "$ref": "#/definitions/adminCronScheduleWithOffset"
         },
         "kickoff_time_input_arg": {
           "type": "string",

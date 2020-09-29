@@ -2645,6 +2645,18 @@ definitions:
     example:
       attributes:
         key: "attributes"
+  adminCronScheduleWithOffset:
+    type: "object"
+    properties:
+      schedule:
+        type: "string"
+      offset:
+        type: "string"
+    description: "Supported only by some schedulers for example Spotify/Styx. Your\
+      \ platform may not have this enabled."
+    example:
+      schedule: "schedule"
+      offset: "offset"
   adminDomain:
     type: "object"
     properties:
@@ -3650,6 +3662,9 @@ definitions:
             rate:
               unit: {}
               value: 0
+            cron_schedule_with_offset:
+              schedule: "schedule"
+              offset: "offset"
           notifications:
           - pager_duty:
               recipients_email:
@@ -4063,6 +4078,9 @@ definitions:
               rate:
                 unit: {}
                 value: 0
+              cron_schedule_with_offset:
+                schedule: "schedule"
+                offset: "offset"
             notifications:
             - pager_duty:
                 recipients_email:
@@ -4315,6 +4333,9 @@ definitions:
               rate:
                 unit: {}
                 value: 0
+              cron_schedule_with_offset:
+                schedule: "schedule"
+                offset: "offset"
             notifications:
             - pager_duty:
                 recipients_email:
@@ -4451,6 +4472,9 @@ definitions:
         rate:
           unit: {}
           value: 0
+        cron_schedule_with_offset:
+          schedule: "schedule"
+          offset: "offset"
       notifications:
       - pager_duty:
           recipients_email:
@@ -4544,6 +4568,9 @@ definitions:
           rate:
             unit: {}
             value: 0
+          cron_schedule_with_offset:
+            schedule: "schedule"
+            offset: "offset"
         notifications:
         - pager_duty:
             recipients_email:
@@ -5667,6 +5694,8 @@ definitions:
           \ne.g. for a schedule that runs every 15 minutes: \"0/15 * * * ? *\""
       rate:
         $ref: "#/definitions/adminFixedRate"
+      cron_schedule_with_offset:
+        $ref: "#/definitions/adminCronScheduleWithOffset"
       kickoff_time_input_arg:
         type: "string"
         description: "Name of the input variable that the kickoff time will be supplied\
@@ -5679,6 +5708,9 @@ definitions:
       rate:
         unit: {}
         value: 0
+      cron_schedule_with_offset:
+        schedule: "schedule"
+        offset: "offset"
   adminSlackNotification:
     type: "object"
     properties:

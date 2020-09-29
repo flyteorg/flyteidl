@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
  - [AdminAuth](docs/AdminAuth.md)
  - [AdminAuthRole](docs/AdminAuthRole.md)
  - [AdminClusterResourceAttributes](docs/AdminClusterResourceAttributes.md)
+ - [AdminCronScheduleWithOffset](docs/AdminCronScheduleWithOffset.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
  - [AdminExecution](docs/AdminExecution.md)

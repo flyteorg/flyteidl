@@ -21889,6 +21889,133 @@ export const flyteidl = $root.flyteidl = (() => {
             return FixedRate;
         })();
 
+        admin.CronScheduleWithOffset = (function() {
+
+            /**
+             * Properties of a CronScheduleWithOffset.
+             * @memberof flyteidl.admin
+             * @interface ICronScheduleWithOffset
+             * @property {string|null} [schedule] CronScheduleWithOffset schedule
+             * @property {string|null} [offset] CronScheduleWithOffset offset
+             */
+
+            /**
+             * Constructs a new CronScheduleWithOffset.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a CronScheduleWithOffset.
+             * @implements ICronScheduleWithOffset
+             * @constructor
+             * @param {flyteidl.admin.ICronScheduleWithOffset=} [properties] Properties to set
+             */
+            function CronScheduleWithOffset(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CronScheduleWithOffset schedule.
+             * @member {string} schedule
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @instance
+             */
+            CronScheduleWithOffset.prototype.schedule = "";
+
+            /**
+             * CronScheduleWithOffset offset.
+             * @member {string} offset
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @instance
+             */
+            CronScheduleWithOffset.prototype.offset = "";
+
+            /**
+             * Creates a new CronScheduleWithOffset instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @static
+             * @param {flyteidl.admin.ICronScheduleWithOffset=} [properties] Properties to set
+             * @returns {flyteidl.admin.CronScheduleWithOffset} CronScheduleWithOffset instance
+             */
+            CronScheduleWithOffset.create = function create(properties) {
+                return new CronScheduleWithOffset(properties);
+            };
+
+            /**
+             * Encodes the specified CronScheduleWithOffset message. Does not implicitly {@link flyteidl.admin.CronScheduleWithOffset.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @static
+             * @param {flyteidl.admin.ICronScheduleWithOffset} message CronScheduleWithOffset message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CronScheduleWithOffset.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.schedule != null && message.hasOwnProperty("schedule"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.schedule);
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.offset);
+                return writer;
+            };
+
+            /**
+             * Decodes a CronScheduleWithOffset message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.CronScheduleWithOffset} CronScheduleWithOffset
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CronScheduleWithOffset.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.CronScheduleWithOffset();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.schedule = reader.string();
+                        break;
+                    case 2:
+                        message.offset = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CronScheduleWithOffset message.
+             * @function verify
+             * @memberof flyteidl.admin.CronScheduleWithOffset
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CronScheduleWithOffset.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.schedule != null && message.hasOwnProperty("schedule"))
+                    if (!$util.isString(message.schedule))
+                        return "schedule: string expected";
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    if (!$util.isString(message.offset))
+                        return "offset: string expected";
+                return null;
+            };
+
+            return CronScheduleWithOffset;
+        })();
+
         admin.Schedule = (function() {
 
             /**
@@ -21897,6 +22024,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ISchedule
              * @property {string|null} [cronExpression] Schedule cronExpression
              * @property {flyteidl.admin.IFixedRate|null} [rate] Schedule rate
+             * @property {flyteidl.admin.ICronScheduleWithOffset|null} [cronScheduleWithOffset] Schedule cronScheduleWithOffset
              * @property {string|null} [kickoffTimeInputArg] Schedule kickoffTimeInputArg
              */
 
@@ -21932,6 +22060,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Schedule.prototype.rate = null;
 
             /**
+             * Schedule cronScheduleWithOffset.
+             * @member {flyteidl.admin.ICronScheduleWithOffset|null|undefined} cronScheduleWithOffset
+             * @memberof flyteidl.admin.Schedule
+             * @instance
+             */
+            Schedule.prototype.cronScheduleWithOffset = null;
+
+            /**
              * Schedule kickoffTimeInputArg.
              * @member {string} kickoffTimeInputArg
              * @memberof flyteidl.admin.Schedule
@@ -21944,12 +22080,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Schedule ScheduleExpression.
-             * @member {"cronExpression"|"rate"|undefined} ScheduleExpression
+             * @member {"cronExpression"|"rate"|"cronScheduleWithOffset"|undefined} ScheduleExpression
              * @memberof flyteidl.admin.Schedule
              * @instance
              */
             Object.defineProperty(Schedule.prototype, "ScheduleExpression", {
-                get: $util.oneOfGetter($oneOfFields = ["cronExpression", "rate"]),
+                get: $util.oneOfGetter($oneOfFields = ["cronExpression", "rate", "cronScheduleWithOffset"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -21983,6 +22119,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.FixedRate.encode(message.rate, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.kickoffTimeInputArg != null && message.hasOwnProperty("kickoffTimeInputArg"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.kickoffTimeInputArg);
+                if (message.cronScheduleWithOffset != null && message.hasOwnProperty("cronScheduleWithOffset"))
+                    $root.flyteidl.admin.CronScheduleWithOffset.encode(message.cronScheduleWithOffset, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -22009,6 +22147,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.rate = $root.flyteidl.admin.FixedRate.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.cronScheduleWithOffset = $root.flyteidl.admin.CronScheduleWithOffset.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.kickoffTimeInputArg = reader.string();
@@ -22046,6 +22187,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.admin.FixedRate.verify(message.rate);
                         if (error)
                             return "rate." + error;
+                    }
+                }
+                if (message.cronScheduleWithOffset != null && message.hasOwnProperty("cronScheduleWithOffset")) {
+                    if (properties.ScheduleExpression === 1)
+                        return "ScheduleExpression: multiple values";
+                    properties.ScheduleExpression = 1;
+                    {
+                        let error = $root.flyteidl.admin.CronScheduleWithOffset.verify(message.cronScheduleWithOffset);
+                        if (error)
+                            return "cronScheduleWithOffset." + error;
                     }
                 }
                 if (message.kickoffTimeInputArg != null && message.hasOwnProperty("kickoffTimeInputArg"))
