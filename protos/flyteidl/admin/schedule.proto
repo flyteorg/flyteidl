@@ -17,7 +17,7 @@ message FixedRate {
 }
 
 // Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
-message CronScheduleWithOffset {
+message CronSchedule {
     string schedule = 1;
     string offset = 2;
 }
