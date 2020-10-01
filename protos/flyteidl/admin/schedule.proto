@@ -28,7 +28,7 @@ message Schedule {
     oneof ScheduleExpression {
         // Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
         // e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
-        string cron_expression = 1;
+        string cron_expression = 1 [deprecated=true];
         FixedRate rate = 2;
         CronSchedule cron_schedule = 4;
     }
