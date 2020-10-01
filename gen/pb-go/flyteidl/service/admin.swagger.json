@@ -2988,8 +2988,7 @@
         "offset": {
           "type": "string"
         }
-      },
-      "description": "Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled."
+      }
     },
     "adminDomain": {
       "type": "object",

@@ -97,7 +97,6 @@ func (m *FixedRate) GetUnit() FixedRateUnit {
 	return FixedRateUnit_MINUTE
 }
 
-// Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
 type CronSchedule struct {
 	Schedule             string   `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
 	Offset               string   `protobuf:"bytes,2,opt,name=offset,proto3" json:"offset,omitempty"`

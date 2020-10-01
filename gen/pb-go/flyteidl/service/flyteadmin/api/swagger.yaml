@@ -2652,8 +2652,6 @@ definitions:
         type: "string"
       offset:
         type: "string"
-    description: "Supported only by some schedulers for example Spotify/Styx. Your\
-      \ platform may not have this enabled."
     example:
       schedule: "schedule"
       offset: "offset"

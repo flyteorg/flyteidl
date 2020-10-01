@@ -36,9 +36,8 @@ unit
 flyteidl.admin.CronSchedule
 ---------------------------
 
-`[flyteidl.admin.CronSchedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L19>`_
+`[flyteidl.admin.CronSchedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L18>`_
 
-Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
 
 .. code-block:: json
 
@@ -64,7 +63,7 @@ offset
 flyteidl.admin.Schedule
 -----------------------
 
-`[flyteidl.admin.Schedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L25>`_
+`[flyteidl.admin.Schedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L24>`_
 
 Defines complete set of information required to trigger an execution on a schedule.
 

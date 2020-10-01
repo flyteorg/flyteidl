@@ -9,7 +9,6 @@
 
 package flyteadmin
 
-// Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
 type AdminCronSchedule struct {
 	Schedule string `json:"schedule,omitempty"`
 	Offset string `json:"offset,omitempty"`

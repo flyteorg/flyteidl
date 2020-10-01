@@ -726,10 +726,6 @@ public final class ScheduleOuterClass {
         getOffsetBytes();
   }
   /**
-   * <pre>
-   * Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
-   * </pre>
-   *
    * Protobuf type {@code flyteidl.admin.CronSchedule}
    */
   public  static final class CronSchedule extends
@@ -1047,10 +1043,6 @@ public final class ScheduleOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * Supported only by some schedulers for example Spotify/Styx. Your platform may not have this enabled.
-     * </pre>
-     *
      * Protobuf type {@code flyteidl.admin.CronSchedule}
      */
     public static final class Builder extends
