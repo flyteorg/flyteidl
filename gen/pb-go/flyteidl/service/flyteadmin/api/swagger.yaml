@@ -2645,7 +2645,7 @@ definitions:
     example:
       attributes:
         key: "attributes"
-  adminCronScheduleWithOffset:
+  adminCronSchedule:
     type: "object"
     properties:
       schedule:
@@ -3658,13 +3658,13 @@ definitions:
         entity_metadata:
           schedule:
             kickoff_time_input_arg: "kickoff_time_input_arg"
+            cron_schedule:
+              schedule: "schedule"
+              offset: "offset"
             cron_expression: "cron_expression"
             rate:
               unit: {}
               value: 0
-            cron_schedule_with_offset:
-              schedule: "schedule"
-              offset: "offset"
           notifications:
           - pager_duty:
               recipients_email:
@@ -4074,13 +4074,13 @@ definitions:
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
+              cron_schedule:
+                schedule: "schedule"
+                offset: "offset"
               cron_expression: "cron_expression"
               rate:
                 unit: {}
                 value: 0
-              cron_schedule_with_offset:
-                schedule: "schedule"
-                offset: "offset"
             notifications:
             - pager_duty:
                 recipients_email:
@@ -4329,13 +4329,13 @@ definitions:
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
+              cron_schedule:
+                schedule: "schedule"
+                offset: "offset"
               cron_expression: "cron_expression"
               rate:
                 unit: {}
                 value: 0
-              cron_schedule_with_offset:
-                schedule: "schedule"
-                offset: "offset"
             notifications:
             - pager_duty:
                 recipients_email:
@@ -4468,13 +4468,13 @@ definitions:
     example:
       schedule:
         kickoff_time_input_arg: "kickoff_time_input_arg"
+        cron_schedule:
+          schedule: "schedule"
+          offset: "offset"
         cron_expression: "cron_expression"
         rate:
           unit: {}
           value: 0
-        cron_schedule_with_offset:
-          schedule: "schedule"
-          offset: "offset"
       notifications:
       - pager_duty:
           recipients_email:
@@ -4564,13 +4564,13 @@ definitions:
       entity_metadata:
         schedule:
           kickoff_time_input_arg: "kickoff_time_input_arg"
+          cron_schedule:
+            schedule: "schedule"
+            offset: "offset"
           cron_expression: "cron_expression"
           rate:
             unit: {}
             value: 0
-          cron_schedule_with_offset:
-            schedule: "schedule"
-            offset: "offset"
         notifications:
         - pager_duty:
             recipients_email:
@@ -5694,8 +5694,8 @@ definitions:
           \ne.g. for a schedule that runs every 15 minutes: \"0/15 * * * ? *\""
       rate:
         $ref: "#/definitions/adminFixedRate"
-      cron_schedule_with_offset:
-        $ref: "#/definitions/adminCronScheduleWithOffset"
+      cron_schedule:
+        $ref: "#/definitions/adminCronSchedule"
       kickoff_time_input_arg:
         type: "string"
         description: "Name of the input variable that the kickoff time will be supplied\
@@ -5704,13 +5704,13 @@ definitions:
       \ on a schedule."
     example:
       kickoff_time_input_arg: "kickoff_time_input_arg"
+      cron_schedule:
+        schedule: "schedule"
+        offset: "offset"
       cron_expression: "cron_expression"
       rate:
         unit: {}
         value: 0
-      cron_schedule_with_offset:
-        schedule: "schedule"
-        offset: "offset"
   adminSlackNotification:
     type: "object"
     properties:
