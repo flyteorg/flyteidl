@@ -30,7 +30,7 @@ message Schedule {
         // e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
         string cron_expression = 1;
         FixedRate rate = 2;
-        CronScheduleWithOffset cron_schedule_with_offset = 4;
+        CronSchedule cron_schedule = 4;
     }
 
     // Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off.
