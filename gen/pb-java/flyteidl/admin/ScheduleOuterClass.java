@@ -701,8 +701,8 @@ public final class ScheduleOuterClass {
 
   }
 
-  public interface CronScheduleOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.CronSchedule)
+  public interface CronScheduleWithOffsetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.CronScheduleWithOffset)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -726,18 +726,18 @@ public final class ScheduleOuterClass {
         getOffsetBytes();
   }
   /**
-   * Protobuf type {@code flyteidl.admin.CronSchedule}
+   * Protobuf type {@code flyteidl.admin.CronScheduleWithOffset}
    */
-  public  static final class CronSchedule extends
+  public  static final class CronScheduleWithOffset extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.CronSchedule)
-      CronScheduleOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.CronScheduleWithOffset)
+      CronScheduleWithOffsetOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CronSchedule.newBuilder() to construct.
-    private CronSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CronScheduleWithOffset.newBuilder() to construct.
+    private CronScheduleWithOffset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CronSchedule() {
+    private CronScheduleWithOffset() {
       schedule_ = "";
       offset_ = "";
     }
@@ -747,7 +747,7 @@ public final class ScheduleOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CronSchedule(
+    private CronScheduleWithOffset(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -799,15 +799,15 @@ public final class ScheduleOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronSchedule_descriptor;
+      return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronSchedule_fieldAccessorTable
+      return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronScheduleWithOffset_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.ScheduleOuterClass.CronSchedule.class, flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder.class);
+              flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.class, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder.class);
     }
 
     public static final int SCHEDULE_FIELD_NUMBER = 1;
@@ -923,10 +923,10 @@ public final class ScheduleOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.ScheduleOuterClass.CronSchedule)) {
+      if (!(obj instanceof flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset)) {
         return super.equals(obj);
       }
-      flyteidl.admin.ScheduleOuterClass.CronSchedule other = (flyteidl.admin.ScheduleOuterClass.CronSchedule) obj;
+      flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset other = (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) obj;
 
       if (!getSchedule()
           .equals(other.getSchedule())) return false;
@@ -952,69 +952,69 @@ public final class ScheduleOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(byte[] data)
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseDelimitedFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule parseFrom(
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1027,7 +1027,7 @@ public final class ScheduleOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.ScheduleOuterClass.CronSchedule prototype) {
+    public static Builder newBuilder(flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1043,26 +1043,26 @@ public final class ScheduleOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.admin.CronSchedule}
+     * Protobuf type {@code flyteidl.admin.CronScheduleWithOffset}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.CronSchedule)
-        flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.CronScheduleWithOffset)
+        flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronSchedule_descriptor;
+        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronSchedule_fieldAccessorTable
+        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronScheduleWithOffset_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.ScheduleOuterClass.CronSchedule.class, flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder.class);
+                flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.class, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder.class);
       }
 
-      // Construct using flyteidl.admin.ScheduleOuterClass.CronSchedule.newBuilder()
+      // Construct using flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1090,17 +1090,17 @@ public final class ScheduleOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronSchedule_descriptor;
+        return flyteidl.admin.ScheduleOuterClass.internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.ScheduleOuterClass.CronSchedule getDefaultInstanceForType() {
-        return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getDefaultInstanceForType() {
+        return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.ScheduleOuterClass.CronSchedule build() {
-        flyteidl.admin.ScheduleOuterClass.CronSchedule result = buildPartial();
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset build() {
+        flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1108,8 +1108,8 @@ public final class ScheduleOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.ScheduleOuterClass.CronSchedule buildPartial() {
-        flyteidl.admin.ScheduleOuterClass.CronSchedule result = new flyteidl.admin.ScheduleOuterClass.CronSchedule(this);
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset buildPartial() {
+        flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset result = new flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset(this);
         result.schedule_ = schedule_;
         result.offset_ = offset_;
         onBuilt();
@@ -1150,16 +1150,16 @@ public final class ScheduleOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.ScheduleOuterClass.CronSchedule) {
-          return mergeFrom((flyteidl.admin.ScheduleOuterClass.CronSchedule)other);
+        if (other instanceof flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) {
+          return mergeFrom((flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.ScheduleOuterClass.CronSchedule other) {
-        if (other == flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset other) {
+        if (other == flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance()) return this;
         if (!other.getSchedule().isEmpty()) {
           schedule_ = other.schedule_;
           onChanged();
@@ -1183,11 +1183,11 @@ public final class ScheduleOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.ScheduleOuterClass.CronSchedule parsedMessage = null;
+        flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.ScheduleOuterClass.CronSchedule) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1347,41 +1347,41 @@ public final class ScheduleOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.CronSchedule)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.CronScheduleWithOffset)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.CronSchedule)
-    private static final flyteidl.admin.ScheduleOuterClass.CronSchedule DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.CronScheduleWithOffset)
+    private static final flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.ScheduleOuterClass.CronSchedule();
+      DEFAULT_INSTANCE = new flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset();
     }
 
-    public static flyteidl.admin.ScheduleOuterClass.CronSchedule getDefaultInstance() {
+    public static flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CronSchedule>
-        PARSER = new com.google.protobuf.AbstractParser<CronSchedule>() {
+    private static final com.google.protobuf.Parser<CronScheduleWithOffset>
+        PARSER = new com.google.protobuf.AbstractParser<CronScheduleWithOffset>() {
       @java.lang.Override
-      public CronSchedule parsePartialFrom(
+      public CronScheduleWithOffset parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CronSchedule(input, extensionRegistry);
+        return new CronScheduleWithOffset(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CronSchedule> parser() {
+    public static com.google.protobuf.Parser<CronScheduleWithOffset> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CronSchedule> getParserForType() {
+    public com.google.protobuf.Parser<CronScheduleWithOffset> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.ScheduleOuterClass.CronSchedule getDefaultInstanceForType() {
+    public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1425,17 +1425,17 @@ public final class ScheduleOuterClass {
     flyteidl.admin.ScheduleOuterClass.FixedRateOrBuilder getRateOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    boolean hasCronSchedule();
+    boolean hasCronScheduleWithOffset();
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    flyteidl.admin.ScheduleOuterClass.CronSchedule getCronSchedule();
+    flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getCronScheduleWithOffset();
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder getCronScheduleOrBuilder();
+    flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder getCronScheduleWithOffsetOrBuilder();
 
     /**
      * <pre>
@@ -1528,14 +1528,14 @@ public final class ScheduleOuterClass {
               break;
             }
             case 34: {
-              flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder subBuilder = null;
+              flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder subBuilder = null;
               if (scheduleExpressionCase_ == 4) {
-                subBuilder = ((flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_).toBuilder();
+                subBuilder = ((flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_).toBuilder();
               }
               scheduleExpression_ =
-                  input.readMessage(flyteidl.admin.ScheduleOuterClass.CronSchedule.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_);
+                subBuilder.mergeFrom((flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_);
                 scheduleExpression_ = subBuilder.buildPartial();
               }
               scheduleExpressionCase_ = 4;
@@ -1579,7 +1579,7 @@ public final class ScheduleOuterClass {
         implements com.google.protobuf.Internal.EnumLite {
       @java.lang.Deprecated CRON_EXPRESSION(1),
       RATE(2),
-      CRON_SCHEDULE(4),
+      CRON_SCHEDULE_WITH_OFFSET(4),
       SCHEDULEEXPRESSION_NOT_SET(0);
       private final int value;
       private ScheduleExpressionCase(int value) {
@@ -1597,7 +1597,7 @@ public final class ScheduleOuterClass {
         switch (value) {
           case 1: return CRON_EXPRESSION;
           case 2: return RATE;
-          case 4: return CRON_SCHEDULE;
+          case 4: return CRON_SCHEDULE_WITH_OFFSET;
           case 0: return SCHEDULEEXPRESSION_NOT_SET;
           default: return null;
         }
@@ -1692,30 +1692,30 @@ public final class ScheduleOuterClass {
       return flyteidl.admin.ScheduleOuterClass.FixedRate.getDefaultInstance();
     }
 
-    public static final int CRON_SCHEDULE_FIELD_NUMBER = 4;
+    public static final int CRON_SCHEDULE_WITH_OFFSET_FIELD_NUMBER = 4;
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    public boolean hasCronSchedule() {
+    public boolean hasCronScheduleWithOffset() {
       return scheduleExpressionCase_ == 4;
     }
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    public flyteidl.admin.ScheduleOuterClass.CronSchedule getCronSchedule() {
+    public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getCronScheduleWithOffset() {
       if (scheduleExpressionCase_ == 4) {
-         return (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_;
+         return (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_;
       }
-      return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+      return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
     }
     /**
-     * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+     * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
      */
-    public flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder getCronScheduleOrBuilder() {
+    public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder getCronScheduleWithOffsetOrBuilder() {
       if (scheduleExpressionCase_ == 4) {
-         return (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_;
+         return (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_;
       }
-      return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+      return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
     }
 
     public static final int KICKOFF_TIME_INPUT_ARG_FIELD_NUMBER = 3;
@@ -1784,7 +1784,7 @@ public final class ScheduleOuterClass {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, kickoffTimeInputArg_);
       }
       if (scheduleExpressionCase_ == 4) {
-        output.writeMessage(4, (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_);
+        output.writeMessage(4, (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_);
       }
       unknownFields.writeTo(output);
     }
@@ -1807,7 +1807,7 @@ public final class ScheduleOuterClass {
       }
       if (scheduleExpressionCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_);
+          .computeMessageSize(4, (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1837,8 +1837,8 @@ public final class ScheduleOuterClass {
               .equals(other.getRate())) return false;
           break;
         case 4:
-          if (!getCronSchedule()
-              .equals(other.getCronSchedule())) return false;
+          if (!getCronScheduleWithOffset()
+              .equals(other.getCronScheduleWithOffset())) return false;
           break;
         case 0:
         default:
@@ -1866,8 +1866,8 @@ public final class ScheduleOuterClass {
           hash = (53 * hash) + getRate().hashCode();
           break;
         case 4:
-          hash = (37 * hash) + CRON_SCHEDULE_FIELD_NUMBER;
-          hash = (53 * hash) + getCronSchedule().hashCode();
+          hash = (37 * hash) + CRON_SCHEDULE_WITH_OFFSET_FIELD_NUMBER;
+          hash = (53 * hash) + getCronScheduleWithOffset().hashCode();
           break;
         case 0:
         default:
@@ -2050,10 +2050,10 @@ public final class ScheduleOuterClass {
           }
         }
         if (scheduleExpressionCase_ == 4) {
-          if (cronScheduleBuilder_ == null) {
+          if (cronScheduleWithOffsetBuilder_ == null) {
             result.scheduleExpression_ = scheduleExpression_;
           } else {
-            result.scheduleExpression_ = cronScheduleBuilder_.build();
+            result.scheduleExpression_ = cronScheduleWithOffsetBuilder_.build();
           }
         }
         result.kickoffTimeInputArg_ = kickoffTimeInputArg_;
@@ -2121,8 +2121,8 @@ public final class ScheduleOuterClass {
             mergeRate(other.getRate());
             break;
           }
-          case CRON_SCHEDULE: {
-            mergeCronSchedule(other.getCronSchedule());
+          case CRON_SCHEDULE_WITH_OFFSET: {
+            mergeCronScheduleWithOffset(other.getCronScheduleWithOffset());
             break;
           }
           case SCHEDULEEXPRESSION_NOT_SET: {
@@ -2415,67 +2415,67 @@ public final class ScheduleOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ScheduleOuterClass.CronSchedule, flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder> cronScheduleBuilder_;
+          flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder> cronScheduleWithOffsetBuilder_;
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public boolean hasCronSchedule() {
+      public boolean hasCronScheduleWithOffset() {
         return scheduleExpressionCase_ == 4;
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public flyteidl.admin.ScheduleOuterClass.CronSchedule getCronSchedule() {
-        if (cronScheduleBuilder_ == null) {
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset getCronScheduleWithOffset() {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           if (scheduleExpressionCase_ == 4) {
-            return (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_;
+            return (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_;
           }
-          return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+          return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
         } else {
           if (scheduleExpressionCase_ == 4) {
-            return cronScheduleBuilder_.getMessage();
+            return cronScheduleWithOffsetBuilder_.getMessage();
           }
-          return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+          return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public Builder setCronSchedule(flyteidl.admin.ScheduleOuterClass.CronSchedule value) {
-        if (cronScheduleBuilder_ == null) {
+      public Builder setCronScheduleWithOffset(flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset value) {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           scheduleExpression_ = value;
           onChanged();
         } else {
-          cronScheduleBuilder_.setMessage(value);
+          cronScheduleWithOffsetBuilder_.setMessage(value);
         }
         scheduleExpressionCase_ = 4;
         return this;
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public Builder setCronSchedule(
-          flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder builderForValue) {
-        if (cronScheduleBuilder_ == null) {
+      public Builder setCronScheduleWithOffset(
+          flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder builderForValue) {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           scheduleExpression_ = builderForValue.build();
           onChanged();
         } else {
-          cronScheduleBuilder_.setMessage(builderForValue.build());
+          cronScheduleWithOffsetBuilder_.setMessage(builderForValue.build());
         }
         scheduleExpressionCase_ = 4;
         return this;
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public Builder mergeCronSchedule(flyteidl.admin.ScheduleOuterClass.CronSchedule value) {
-        if (cronScheduleBuilder_ == null) {
+      public Builder mergeCronScheduleWithOffset(flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset value) {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           if (scheduleExpressionCase_ == 4 &&
-              scheduleExpression_ != flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance()) {
-            scheduleExpression_ = flyteidl.admin.ScheduleOuterClass.CronSchedule.newBuilder((flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_)
+              scheduleExpression_ != flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance()) {
+            scheduleExpression_ = flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.newBuilder((flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_)
                 .mergeFrom(value).buildPartial();
           } else {
             scheduleExpression_ = value;
@@ -2483,18 +2483,18 @@ public final class ScheduleOuterClass {
           onChanged();
         } else {
           if (scheduleExpressionCase_ == 4) {
-            cronScheduleBuilder_.mergeFrom(value);
+            cronScheduleWithOffsetBuilder_.mergeFrom(value);
           }
-          cronScheduleBuilder_.setMessage(value);
+          cronScheduleWithOffsetBuilder_.setMessage(value);
         }
         scheduleExpressionCase_ = 4;
         return this;
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public Builder clearCronSchedule() {
-        if (cronScheduleBuilder_ == null) {
+      public Builder clearCronScheduleWithOffset() {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           if (scheduleExpressionCase_ == 4) {
             scheduleExpressionCase_ = 0;
             scheduleExpression_ = null;
@@ -2505,49 +2505,49 @@ public final class ScheduleOuterClass {
             scheduleExpressionCase_ = 0;
             scheduleExpression_ = null;
           }
-          cronScheduleBuilder_.clear();
+          cronScheduleWithOffsetBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder getCronScheduleBuilder() {
-        return getCronScheduleFieldBuilder().getBuilder();
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder getCronScheduleWithOffsetBuilder() {
+        return getCronScheduleWithOffsetFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
-      public flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder getCronScheduleOrBuilder() {
-        if ((scheduleExpressionCase_ == 4) && (cronScheduleBuilder_ != null)) {
-          return cronScheduleBuilder_.getMessageOrBuilder();
+      public flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder getCronScheduleWithOffsetOrBuilder() {
+        if ((scheduleExpressionCase_ == 4) && (cronScheduleWithOffsetBuilder_ != null)) {
+          return cronScheduleWithOffsetBuilder_.getMessageOrBuilder();
         } else {
           if (scheduleExpressionCase_ == 4) {
-            return (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_;
+            return (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_;
           }
-          return flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+          return flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.admin.CronSchedule cron_schedule = 4;</code>
+       * <code>.flyteidl.admin.CronScheduleWithOffset cron_schedule_with_offset = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ScheduleOuterClass.CronSchedule, flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder> 
-          getCronScheduleFieldBuilder() {
-        if (cronScheduleBuilder_ == null) {
+          flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder> 
+          getCronScheduleWithOffsetFieldBuilder() {
+        if (cronScheduleWithOffsetBuilder_ == null) {
           if (!(scheduleExpressionCase_ == 4)) {
-            scheduleExpression_ = flyteidl.admin.ScheduleOuterClass.CronSchedule.getDefaultInstance();
+            scheduleExpression_ = flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.getDefaultInstance();
           }
-          cronScheduleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.ScheduleOuterClass.CronSchedule, flyteidl.admin.ScheduleOuterClass.CronSchedule.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleOrBuilder>(
-                  (flyteidl.admin.ScheduleOuterClass.CronSchedule) scheduleExpression_,
+          cronScheduleWithOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset.Builder, flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffsetOrBuilder>(
+                  (flyteidl.admin.ScheduleOuterClass.CronScheduleWithOffset) scheduleExpression_,
                   getParentForChildren(),
                   isClean());
           scheduleExpression_ = null;
         }
         scheduleExpressionCase_ = 4;
         onChanged();;
-        return cronScheduleBuilder_;
+        return cronScheduleWithOffsetBuilder_;
       }
 
       private java.lang.Object kickoffTimeInputArg_ = "";
@@ -2697,10 +2697,10 @@ public final class ScheduleOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_FixedRate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_CronSchedule_descriptor;
+    internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_CronSchedule_fieldAccessorTable;
+      internal_static_flyteidl_admin_CronScheduleWithOffset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Schedule_descriptor;
   private static final 
@@ -2718,15 +2718,16 @@ public final class ScheduleOuterClass {
       "\n\035flyteidl/admin/schedule.proto\022\016flyteid" +
       "l.admin\"G\n\tFixedRate\022\r\n\005value\030\001 \001(\r\022+\n\004u" +
       "nit\030\002 \001(\0162\035.flyteidl.admin.FixedRateUnit" +
-      "\"0\n\014CronSchedule\022\020\n\010schedule\030\001 \001(\t\022\016\n\006of" +
-      "fset\030\002 \001(\t\"\301\001\n\010Schedule\022\035\n\017cron_expressi" +
-      "on\030\001 \001(\tB\002\030\001H\000\022)\n\004rate\030\002 \001(\0132\031.flyteidl." +
-      "admin.FixedRateH\000\0225\n\rcron_schedule\030\004 \001(\013" +
-      "2\034.flyteidl.admin.CronScheduleH\000\022\036\n\026kick" +
-      "off_time_input_arg\030\003 \001(\tB\024\n\022ScheduleExpr" +
-      "ession*.\n\rFixedRateUnit\022\n\n\006MINUTE\020\000\022\010\n\004H" +
-      "OUR\020\001\022\007\n\003DAY\020\002B3Z1github.com/lyft/flytei" +
-      "dl/gen/pb-go/flyteidl/adminb\006proto3"
+      "\":\n\026CronScheduleWithOffset\022\020\n\010schedule\030\001" +
+      " \001(\t\022\016\n\006offset\030\002 \001(\t\"\327\001\n\010Schedule\022\035\n\017cro" +
+      "n_expression\030\001 \001(\tB\002\030\001H\000\022)\n\004rate\030\002 \001(\0132\031" +
+      ".flyteidl.admin.FixedRateH\000\022K\n\031cron_sche" +
+      "dule_with_offset\030\004 \001(\0132&.flyteidl.admin." +
+      "CronScheduleWithOffsetH\000\022\036\n\026kickoff_time" +
+      "_input_arg\030\003 \001(\tB\024\n\022ScheduleExpression*." +
+      "\n\rFixedRateUnit\022\n\n\006MINUTE\020\000\022\010\n\004HOUR\020\001\022\007\n" +
+      "\003DAY\020\002B3Z1github.com/lyft/flyteidl/gen/p" +
+      "b-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2746,18 +2747,18 @@ public final class ScheduleOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_FixedRate_descriptor,
         new java.lang.String[] { "Value", "Unit", });
-    internal_static_flyteidl_admin_CronSchedule_descriptor =
+    internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_admin_CronSchedule_fieldAccessorTable = new
+    internal_static_flyteidl_admin_CronScheduleWithOffset_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_CronSchedule_descriptor,
+        internal_static_flyteidl_admin_CronScheduleWithOffset_descriptor,
         new java.lang.String[] { "Schedule", "Offset", });
     internal_static_flyteidl_admin_Schedule_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_Schedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Schedule_descriptor,
-        new java.lang.String[] { "CronExpression", "Rate", "CronSchedule", "KickoffTimeInputArg", "ScheduleExpression", });
+        new java.lang.String[] { "CronExpression", "Rate", "CronScheduleWithOffset", "KickoffTimeInputArg", "ScheduleExpression", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

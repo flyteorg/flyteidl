@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_cron_schedule import AdminCronSchedule  # noqa: E501
+from flyteadmin.models.admin_cron_schedule_with_offset import AdminCronScheduleWithOffset  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminCronSchedule(unittest.TestCase):
-    """AdminCronSchedule unit test stubs"""
+class TestAdminCronScheduleWithOffset(unittest.TestCase):
+    """AdminCronScheduleWithOffset unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminCronSchedule(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminCronSchedule(self):
-        """Test AdminCronSchedule"""
+    def testAdminCronScheduleWithOffset(self):
+        """Test AdminCronScheduleWithOffset"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_cron_schedule.AdminCronSchedule()  # noqa: E501
+        # model = flyteadmin.models.admin_cron_schedule_with_offset.AdminCronScheduleWithOffset()  # noqa: E501
         pass
 
 

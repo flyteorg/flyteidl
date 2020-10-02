@@ -31,12 +31,12 @@ unit
   
 
 
-.. _api_msg_flyteidl.admin.CronSchedule:
+.. _api_msg_flyteidl.admin.CronScheduleWithOffset:
 
-flyteidl.admin.CronSchedule
----------------------------
+flyteidl.admin.CronScheduleWithOffset
+-------------------------------------
 
-`[flyteidl.admin.CronSchedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L18>`_
+`[flyteidl.admin.CronScheduleWithOffset proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L18>`_
 
 
 .. code-block:: json
@@ -46,12 +46,12 @@ flyteidl.admin.CronSchedule
     "offset": "..."
   }
 
-.. _api_field_flyteidl.admin.CronSchedule.schedule:
+.. _api_field_flyteidl.admin.CronScheduleWithOffset.schedule:
 
 schedule
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.CronSchedule.offset:
+.. _api_field_flyteidl.admin.CronScheduleWithOffset.offset:
 
 offset
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
@@ -72,7 +72,7 @@ Defines complete set of information required to trigger an execution on a schedu
   {
     "cron_expression": "...",
     "rate": "{...}",
-    "cron_schedule": "{...}",
+    "cron_schedule_with_offset": "{...}",
     "kickoff_time_input_arg": "..."
   }
 
@@ -84,7 +84,7 @@ cron_expression
   
   
   
-  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule <api_field_flyteidl.admin.Schedule.cron_schedule>` may be set.
+  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule_with_offset <api_field_flyteidl.admin.Schedule.cron_schedule_with_offset>` may be set.
   
 .. _api_field_flyteidl.admin.Schedule.rate:
 
@@ -92,15 +92,15 @@ rate
   (:ref:`flyteidl.admin.FixedRate <api_msg_flyteidl.admin.FixedRate>`) 
   
   
-  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule <api_field_flyteidl.admin.Schedule.cron_schedule>` may be set.
+  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule_with_offset <api_field_flyteidl.admin.Schedule.cron_schedule_with_offset>` may be set.
   
-.. _api_field_flyteidl.admin.Schedule.cron_schedule:
+.. _api_field_flyteidl.admin.Schedule.cron_schedule_with_offset:
 
-cron_schedule
-  (:ref:`flyteidl.admin.CronSchedule <api_msg_flyteidl.admin.CronSchedule>`) 
+cron_schedule_with_offset
+  (:ref:`flyteidl.admin.CronScheduleWithOffset <api_msg_flyteidl.admin.CronScheduleWithOffset>`) 
   
   
-  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule <api_field_flyteidl.admin.Schedule.cron_schedule>` may be set.
+  Only one of :ref:`cron_expression <api_field_flyteidl.admin.Schedule.cron_expression>`, :ref:`rate <api_field_flyteidl.admin.Schedule.rate>`, :ref:`cron_schedule_with_offset <api_field_flyteidl.admin.Schedule.cron_schedule_with_offset>` may be set.
   
 .. _api_field_flyteidl.admin.Schedule.kickoff_time_input_arg:
 

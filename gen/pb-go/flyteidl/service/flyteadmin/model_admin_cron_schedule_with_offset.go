@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-type AdminCronSchedule struct {
+type AdminCronScheduleWithOffset struct {
 	Schedule string `json:"schedule,omitempty"`
 	Offset string `json:"offset,omitempty"`
 }

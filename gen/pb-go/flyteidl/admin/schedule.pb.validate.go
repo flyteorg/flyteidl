@@ -104,10 +104,10 @@ var _ interface {
 	ErrorName() string
 } = FixedRateValidationError{}
 
-// Validate checks the field values on CronSchedule with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *CronSchedule) Validate() error {
+// Validate checks the field values on CronScheduleWithOffset with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *CronScheduleWithOffset) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -119,9 +119,9 @@ func (m *CronSchedule) Validate() error {
 	return nil
 }
 
-// CronScheduleValidationError is the validation error returned by
-// CronSchedule.Validate if the designated constraints aren't met.
-type CronScheduleValidationError struct {
+// CronScheduleWithOffsetValidationError is the validation error returned by
+// CronScheduleWithOffset.Validate if the designated constraints aren't met.
+type CronScheduleWithOffsetValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -129,22 +129,24 @@ type CronScheduleValidationError struct {
 }
 
 // Field function returns field value.
-func (e CronScheduleValidationError) Field() string { return e.field }
+func (e CronScheduleWithOffsetValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e CronScheduleValidationError) Reason() string { return e.reason }
+func (e CronScheduleWithOffsetValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e CronScheduleValidationError) Cause() error { return e.cause }
+func (e CronScheduleWithOffsetValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e CronScheduleValidationError) Key() bool { return e.key }
+func (e CronScheduleWithOffsetValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e CronScheduleValidationError) ErrorName() string { return "CronScheduleValidationError" }
+func (e CronScheduleWithOffsetValidationError) ErrorName() string {
+	return "CronScheduleWithOffsetValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e CronScheduleValidationError) Error() string {
+func (e CronScheduleWithOffsetValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -156,14 +158,14 @@ func (e CronScheduleValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sCronSchedule.%s: %s%s",
+		"invalid %sCronScheduleWithOffset.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = CronScheduleValidationError{}
+var _ error = CronScheduleWithOffsetValidationError{}
 
 var _ interface {
 	Field() string
@@ -171,7 +173,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = CronScheduleValidationError{}
+} = CronScheduleWithOffsetValidationError{}
 
 // Validate checks the field values on Schedule with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -199,12 +201,12 @@ func (m *Schedule) Validate() error {
 			}
 		}
 
-	case *Schedule_CronSchedule:
+	case *Schedule_CronScheduleWithOffset:
 
-		if v, ok := interface{}(m.GetCronSchedule()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetCronScheduleWithOffset()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return ScheduleValidationError{
-					field:  "CronSchedule",
+					field:  "CronScheduleWithOffset",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
