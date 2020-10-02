@@ -706,20 +706,42 @@ public final class ScheduleOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+     * Also supports nonstandard predefined scheduling definitions
+     * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+     * except &#64;reboot
+     * </pre>
+     *
      * <code>string schedule = 1;</code>
      */
     java.lang.String getSchedule();
     /**
+     * <pre>
+     * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+     * Also supports nonstandard predefined scheduling definitions
+     * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+     * except &#64;reboot
+     * </pre>
+     *
      * <code>string schedule = 1;</code>
      */
     com.google.protobuf.ByteString
         getScheduleBytes();
 
     /**
+     * <pre>
+     * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * </pre>
+     *
      * <code>string offset = 2;</code>
      */
     java.lang.String getOffset();
     /**
+     * <pre>
+     * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * </pre>
+     *
      * <code>string offset = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -813,6 +835,13 @@ public final class ScheduleOuterClass {
     public static final int SCHEDULE_FIELD_NUMBER = 1;
     private volatile java.lang.Object schedule_;
     /**
+     * <pre>
+     * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+     * Also supports nonstandard predefined scheduling definitions
+     * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+     * except &#64;reboot
+     * </pre>
+     *
      * <code>string schedule = 1;</code>
      */
     public java.lang.String getSchedule() {
@@ -828,6 +857,13 @@ public final class ScheduleOuterClass {
       }
     }
     /**
+     * <pre>
+     * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+     * Also supports nonstandard predefined scheduling definitions
+     * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+     * except &#64;reboot
+     * </pre>
+     *
      * <code>string schedule = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -847,6 +883,10 @@ public final class ScheduleOuterClass {
     public static final int OFFSET_FIELD_NUMBER = 2;
     private volatile java.lang.Object offset_;
     /**
+     * <pre>
+     * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * </pre>
+     *
      * <code>string offset = 2;</code>
      */
     public java.lang.String getOffset() {
@@ -862,6 +902,10 @@ public final class ScheduleOuterClass {
       }
     }
     /**
+     * <pre>
+     * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+     * </pre>
+     *
      * <code>string offset = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1199,6 +1243,13 @@ public final class ScheduleOuterClass {
 
       private java.lang.Object schedule_ = "";
       /**
+       * <pre>
+       * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+       * Also supports nonstandard predefined scheduling definitions
+       * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+       * except &#64;reboot
+       * </pre>
+       *
        * <code>string schedule = 1;</code>
        */
       public java.lang.String getSchedule() {
@@ -1214,6 +1265,13 @@ public final class ScheduleOuterClass {
         }
       }
       /**
+       * <pre>
+       * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+       * Also supports nonstandard predefined scheduling definitions
+       * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+       * except &#64;reboot
+       * </pre>
+       *
        * <code>string schedule = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1230,6 +1288,13 @@ public final class ScheduleOuterClass {
         }
       }
       /**
+       * <pre>
+       * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+       * Also supports nonstandard predefined scheduling definitions
+       * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+       * except &#64;reboot
+       * </pre>
+       *
        * <code>string schedule = 1;</code>
        */
       public Builder setSchedule(
@@ -1243,6 +1308,13 @@ public final class ScheduleOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+       * Also supports nonstandard predefined scheduling definitions
+       * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+       * except &#64;reboot
+       * </pre>
+       *
        * <code>string schedule = 1;</code>
        */
       public Builder clearSchedule() {
@@ -1252,6 +1324,13 @@ public final class ScheduleOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+       * Also supports nonstandard predefined scheduling definitions
+       * as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+       * except &#64;reboot
+       * </pre>
+       *
        * <code>string schedule = 1;</code>
        */
       public Builder setScheduleBytes(
@@ -1268,6 +1347,10 @@ public final class ScheduleOuterClass {
 
       private java.lang.Object offset_ = "";
       /**
+       * <pre>
+       * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+       * </pre>
+       *
        * <code>string offset = 2;</code>
        */
       public java.lang.String getOffset() {
@@ -1283,6 +1366,10 @@ public final class ScheduleOuterClass {
         }
       }
       /**
+       * <pre>
+       * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+       * </pre>
+       *
        * <code>string offset = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1299,6 +1386,10 @@ public final class ScheduleOuterClass {
         }
       }
       /**
+       * <pre>
+       * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+       * </pre>
+       *
        * <code>string offset = 2;</code>
        */
       public Builder setOffset(
@@ -1312,6 +1403,10 @@ public final class ScheduleOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+       * </pre>
+       *
        * <code>string offset = 2;</code>
        */
       public Builder clearOffset() {
@@ -1321,6 +1416,10 @@ public final class ScheduleOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+       * </pre>
+       *
        * <code>string offset = 2;</code>
        */
       public Builder setOffsetBytes(

@@ -17,7 +17,12 @@ message FixedRate {
 }
 
 message CronSchedule {
+    // Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+    // Also supports nonstandard predefined scheduling definitions
+    // as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+    // except @reboot
     string schedule = 1;
+    // ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
     string offset = 2;
 }
 

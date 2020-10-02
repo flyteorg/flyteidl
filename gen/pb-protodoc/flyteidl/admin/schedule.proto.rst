@@ -49,12 +49,17 @@ flyteidl.admin.CronSchedule
 .. _api_field_flyteidl.admin.CronSchedule.schedule:
 
 schedule
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+  Also supports nonstandard predefined scheduling definitions
+  as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+  except @reboot
+  
   
 .. _api_field_flyteidl.admin.CronSchedule.offset:
 
 offset
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
+  
   
 
 
@@ -63,7 +68,7 @@ offset
 flyteidl.admin.Schedule
 -----------------------
 
-`[flyteidl.admin.Schedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L24>`_
+`[flyteidl.admin.Schedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L29>`_
 
 Defines complete set of information required to trigger an execution on a schedule.
 

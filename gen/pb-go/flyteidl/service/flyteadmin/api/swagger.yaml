@@ -2650,8 +2650,13 @@ definitions:
     properties:
       schedule:
         type: "string"
+        title: "Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;\n\
+          Also supports nonstandard predefined scheduling definitions\nas described\
+          \ by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions\n\
+          except @reboot"
       offset:
         type: "string"
+        title: "ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations"
     example:
       schedule: "schedule"
       offset: "offset"

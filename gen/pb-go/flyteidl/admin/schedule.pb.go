@@ -98,7 +98,12 @@ func (m *FixedRate) GetUnit() FixedRateUnit {
 }
 
 type CronSchedule struct {
-	Schedule             string   `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	// Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
+	// Also supports nonstandard predefined scheduling definitions
+	// as described by https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
+	// except @reboot
+	Schedule string `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	// ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations
 	Offset               string   `protobuf:"bytes,2,opt,name=offset,proto3" json:"offset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
