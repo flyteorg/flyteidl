@@ -2979,7 +2979,7 @@
         }
       }
     },
-    "adminCronScheduleWithOffset": {
+    "adminCronSchedule": {
       "type": "object",
       "properties": {
         "schedule": {
@@ -3996,8 +3996,8 @@
         "rate": {
           "$ref": "#/definitions/adminFixedRate"
         },
-        "cron_schedule_with_offset": {
-          "$ref": "#/definitions/adminCronScheduleWithOffset"
+        "cron_schedule": {
+          "$ref": "#/definitions/adminCronSchedule"
         },
         "kickoff_time_input_arg": {
           "type": "string",
