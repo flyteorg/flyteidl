@@ -205,12 +205,12 @@ input_content_type
   
 
 
-.. _api_msg_flyteidl.plugins.sagemaker.DistributionFramework:
+.. _api_msg_flyteidl.plugins.sagemaker.DistributedProtocol:
 
-flyteidl.plugins.sagemaker.DistributionFramework
-------------------------------------------------
+flyteidl.plugins.sagemaker.DistributedProtocol
+----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributionFramework proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L82>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L82>`_
 
 
 .. code-block:: json
@@ -219,25 +219,20 @@ flyteidl.plugins.sagemaker.DistributionFramework
 
 
 
-.. _api_enum_flyteidl.plugins.sagemaker.DistributionFramework.Value:
+.. _api_enum_flyteidl.plugins.sagemaker.DistributedProtocol.Value:
 
-Enum flyteidl.plugins.sagemaker.DistributionFramework.Value
------------------------------------------------------------
+Enum flyteidl.plugins.sagemaker.DistributedProtocol.Value
+---------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributionFramework.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
 
 
-.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.NONE:
+.. _api_enum_value_flyteidl.plugins.sagemaker.DistributedProtocol.Value.UNSPECIFIED:
 
-NONE
+UNSPECIFIED
   *(DEFAULT)* ⁣
   
-.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.FRAMEWORK_NATIVE:
-
-FRAMEWORK_NATIVE
-  ⁣
-  
-.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.MPI:
+.. _api_enum_value_flyteidl.plugins.sagemaker.DistributedProtocol.Value.MPI:
 
 MPI
   ⁣
@@ -248,7 +243,7 @@ MPI
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L93>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L92>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -260,7 +255,7 @@ Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sa
     "instance_count": "...",
     "instance_type": "...",
     "volume_size_in_gb": "...",
-    "distribution_framework": "{...}"
+    "distributed_protocol": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count:
@@ -281,10 +276,10 @@ volume_size_in_gb
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The size of the ML storage volume that you want to provision.
   
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol:
 
-distribution_framework
-  (:ref:`flyteidl.plugins.sagemaker.DistributionFramework <api_msg_flyteidl.plugins.sagemaker.DistributionFramework>`) 
+distributed_protocol
+  (:ref:`flyteidl.plugins.sagemaker.DistributedProtocol <api_msg_flyteidl.plugins.sagemaker.DistributedProtocol>`) 
   
 
 
@@ -293,7 +288,7 @@ distribution_framework
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L106>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L105>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

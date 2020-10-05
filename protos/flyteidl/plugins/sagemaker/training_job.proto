@@ -80,11 +80,10 @@ message AlgorithmSpecification {
     InputContentType.Value input_content_type = 5;
 }
 
-message DistributionFramework {
+message DistributedProtocol {
     enum Value {
-        NONE = 0;
-        FRAMEWORK_NATIVE = 1;
-        MPI = 2;
+        UNSPECIFIED = 0;
+        MPI = 1;
     }
 }
 
@@ -99,7 +98,7 @@ message TrainingJobResourceConfig {
     // The size of the ML storage volume that you want to provision.
     int64 volume_size_in_gb = 3;
 
-    DistributionFramework distribution_framework = 4;
+    DistributedProtocol distributed_protocol = 4;
 }
 
 // The spec of a training job. This is mostly a pass-through object

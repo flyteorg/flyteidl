@@ -3910,23 +3910,23 @@ public final class TrainingJobOuterClass {
 
   }
 
-  public interface DistributionFrameworkOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.DistributionFramework)
+  public interface DistributedProtocolOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.DistributedProtocol)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * Protobuf type {@code flyteidl.plugins.sagemaker.DistributionFramework}
+   * Protobuf type {@code flyteidl.plugins.sagemaker.DistributedProtocol}
    */
-  public  static final class DistributionFramework extends
+  public  static final class DistributedProtocol extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.DistributionFramework)
-      DistributionFrameworkOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.DistributedProtocol)
+      DistributedProtocolOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DistributionFramework.newBuilder() to construct.
-    private DistributionFramework(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DistributedProtocol.newBuilder() to construct.
+    private DistributedProtocol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DistributionFramework() {
+    private DistributedProtocol() {
     }
 
     @java.lang.Override
@@ -3934,7 +3934,7 @@ public final class TrainingJobOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DistributionFramework(
+    private DistributedProtocol(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3973,49 +3973,41 @@ public final class TrainingJobOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor;
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributionFramework_fieldAccessorTable
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder.class);
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code flyteidl.plugins.sagemaker.DistributionFramework.Value}
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.DistributedProtocol.Value}
      */
     public enum Value
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>NONE = 0;</code>
+       * <code>UNSPECIFIED = 0;</code>
        */
-      NONE(0),
+      UNSPECIFIED(0),
       /**
-       * <code>FRAMEWORK_NATIVE = 1;</code>
+       * <code>MPI = 1;</code>
        */
-      FRAMEWORK_NATIVE(1),
-      /**
-       * <code>MPI = 2;</code>
-       */
-      MPI(2),
+      MPI(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>NONE = 0;</code>
+       * <code>UNSPECIFIED = 0;</code>
        */
-      public static final int NONE_VALUE = 0;
+      public static final int UNSPECIFIED_VALUE = 0;
       /**
-       * <code>FRAMEWORK_NATIVE = 1;</code>
+       * <code>MPI = 1;</code>
        */
-      public static final int FRAMEWORK_NATIVE_VALUE = 1;
-      /**
-       * <code>MPI = 2;</code>
-       */
-      public static final int MPI_VALUE = 2;
+      public static final int MPI_VALUE = 1;
 
 
       public final int getNumber() {
@@ -4036,9 +4028,8 @@ public final class TrainingJobOuterClass {
 
       public static Value forNumber(int value) {
         switch (value) {
-          case 0: return NONE;
-          case 1: return FRAMEWORK_NATIVE;
-          case 2: return MPI;
+          case 0: return UNSPECIFIED;
+          case 1: return MPI;
           default: return null;
         }
       }
@@ -4065,7 +4056,7 @@ public final class TrainingJobOuterClass {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDescriptor().getEnumTypes().get(0);
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Value[] VALUES = values();
@@ -4088,7 +4079,7 @@ public final class TrainingJobOuterClass {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.DistributionFramework.Value)
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.DistributedProtocol.Value)
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4124,10 +4115,10 @@ public final class TrainingJobOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework)) {
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework) obj;
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4145,69 +4136,69 @@ public final class TrainingJobOuterClass {
       return hash;
     }
 
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(byte[] data)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseDelimitedFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4220,7 +4211,7 @@ public final class TrainingJobOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework prototype) {
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4236,26 +4227,26 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.plugins.sagemaker.DistributionFramework}
+     * Protobuf type {@code flyteidl.plugins.sagemaker.DistributedProtocol}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.DistributionFramework)
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.DistributedProtocol)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor;
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributionFramework_fieldAccessorTable
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder.class);
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.newBuilder()
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4279,17 +4270,17 @@ public final class TrainingJobOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor;
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDefaultInstanceForType() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDefaultInstance();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework build() {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework result = buildPartial();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4297,8 +4288,8 @@ public final class TrainingJobOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework buildPartial() {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework(this);
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol(this);
         onBuilt();
         return result;
       }
@@ -4337,16 +4328,16 @@ public final class TrainingJobOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework) {
-          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework)other);
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework other) {
-        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4362,11 +4353,11 @@ public final class TrainingJobOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework parsedMessage = null;
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4388,41 +4379,41 @@ public final class TrainingJobOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.DistributionFramework)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.DistributedProtocol)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.DistributionFramework)
-    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.DistributedProtocol)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework();
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol();
     }
 
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDefaultInstance() {
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DistributionFramework>
-        PARSER = new com.google.protobuf.AbstractParser<DistributionFramework>() {
+    private static final com.google.protobuf.Parser<DistributedProtocol>
+        PARSER = new com.google.protobuf.AbstractParser<DistributedProtocol>() {
       @java.lang.Override
-      public DistributionFramework parsePartialFrom(
+      public DistributedProtocol parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DistributionFramework(input, extensionRegistry);
+        return new DistributedProtocol(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DistributionFramework> parser() {
+    public static com.google.protobuf.Parser<DistributedProtocol> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DistributionFramework> getParserForType() {
+    public com.google.protobuf.Parser<DistributedProtocol> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDefaultInstanceForType() {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4469,17 +4460,17 @@ public final class TrainingJobOuterClass {
     long getVolumeSizeInGb();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    boolean hasDistributionFramework();
+    boolean hasDistributedProtocol();
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDistributionFramework();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol();
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder getDistributionFrameworkOrBuilder();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder();
   }
   /**
    * <pre>
@@ -4544,14 +4535,14 @@ public final class TrainingJobOuterClass {
               break;
             }
             case 34: {
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder subBuilder = null;
-              if (distributionFramework_ != null) {
-                subBuilder = distributionFramework_.toBuilder();
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder subBuilder = null;
+              if (distributedProtocol_ != null) {
+                subBuilder = distributedProtocol_.toBuilder();
               }
-              distributionFramework_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.parser(), extensionRegistry);
+              distributedProtocol_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(distributionFramework_);
-                distributionFramework_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(distributedProtocol_);
+                distributedProtocol_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4656,25 +4647,25 @@ public final class TrainingJobOuterClass {
       return volumeSizeInGb_;
     }
 
-    public static final int DISTRIBUTION_FRAMEWORK_FIELD_NUMBER = 4;
-    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework distributionFramework_;
+    public static final int DISTRIBUTED_PROTOCOL_FIELD_NUMBER = 4;
+    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol distributedProtocol_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    public boolean hasDistributionFramework() {
-      return distributionFramework_ != null;
+    public boolean hasDistributedProtocol() {
+      return distributedProtocol_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDistributionFramework() {
-      return distributionFramework_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDefaultInstance() : distributionFramework_;
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol() {
+      return distributedProtocol_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder getDistributionFrameworkOrBuilder() {
-      return getDistributionFramework();
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder() {
+      return getDistributedProtocol();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4700,8 +4691,8 @@ public final class TrainingJobOuterClass {
       if (volumeSizeInGb_ != 0L) {
         output.writeInt64(3, volumeSizeInGb_);
       }
-      if (distributionFramework_ != null) {
-        output.writeMessage(4, getDistributionFramework());
+      if (distributedProtocol_ != null) {
+        output.writeMessage(4, getDistributedProtocol());
       }
       unknownFields.writeTo(output);
     }
@@ -4723,9 +4714,9 @@ public final class TrainingJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, volumeSizeInGb_);
       }
-      if (distributionFramework_ != null) {
+      if (distributedProtocol_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDistributionFramework());
+          .computeMessageSize(4, getDistributedProtocol());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4748,10 +4739,10 @@ public final class TrainingJobOuterClass {
           .equals(other.getInstanceType())) return false;
       if (getVolumeSizeInGb()
           != other.getVolumeSizeInGb()) return false;
-      if (hasDistributionFramework() != other.hasDistributionFramework()) return false;
-      if (hasDistributionFramework()) {
-        if (!getDistributionFramework()
-            .equals(other.getDistributionFramework())) return false;
+      if (hasDistributedProtocol() != other.hasDistributedProtocol()) return false;
+      if (hasDistributedProtocol()) {
+        if (!getDistributedProtocol()
+            .equals(other.getDistributedProtocol())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4772,9 +4763,9 @@ public final class TrainingJobOuterClass {
       hash = (37 * hash) + VOLUME_SIZE_IN_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVolumeSizeInGb());
-      if (hasDistributionFramework()) {
-        hash = (37 * hash) + DISTRIBUTION_FRAMEWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getDistributionFramework().hashCode();
+      if (hasDistributedProtocol()) {
+        hash = (37 * hash) + DISTRIBUTED_PROTOCOL_FIELD_NUMBER;
+        hash = (53 * hash) + getDistributedProtocol().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4921,11 +4912,11 @@ public final class TrainingJobOuterClass {
 
         volumeSizeInGb_ = 0L;
 
-        if (distributionFrameworkBuilder_ == null) {
-          distributionFramework_ = null;
+        if (distributedProtocolBuilder_ == null) {
+          distributedProtocol_ = null;
         } else {
-          distributionFramework_ = null;
-          distributionFrameworkBuilder_ = null;
+          distributedProtocol_ = null;
+          distributedProtocolBuilder_ = null;
         }
         return this;
       }
@@ -4956,10 +4947,10 @@ public final class TrainingJobOuterClass {
         result.instanceCount_ = instanceCount_;
         result.instanceType_ = instanceType_;
         result.volumeSizeInGb_ = volumeSizeInGb_;
-        if (distributionFrameworkBuilder_ == null) {
-          result.distributionFramework_ = distributionFramework_;
+        if (distributedProtocolBuilder_ == null) {
+          result.distributedProtocol_ = distributedProtocol_;
         } else {
-          result.distributionFramework_ = distributionFrameworkBuilder_.build();
+          result.distributedProtocol_ = distributedProtocolBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5019,8 +5010,8 @@ public final class TrainingJobOuterClass {
         if (other.getVolumeSizeInGb() != 0L) {
           setVolumeSizeInGb(other.getVolumeSizeInGb());
         }
-        if (other.hasDistributionFramework()) {
-          mergeDistributionFramework(other.getDistributionFramework());
+        if (other.hasDistributedProtocol()) {
+          mergeDistributedProtocol(other.getDistributedProtocol());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5216,121 +5207,121 @@ public final class TrainingJobOuterClass {
         return this;
       }
 
-      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework distributionFramework_;
+      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol distributedProtocol_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder> distributionFrameworkBuilder_;
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder> distributedProtocolBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public boolean hasDistributionFramework() {
-        return distributionFrameworkBuilder_ != null || distributionFramework_ != null;
+      public boolean hasDistributedProtocol() {
+        return distributedProtocolBuilder_ != null || distributedProtocol_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework getDistributionFramework() {
-        if (distributionFrameworkBuilder_ == null) {
-          return distributionFramework_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDefaultInstance() : distributionFramework_;
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol() {
+        if (distributedProtocolBuilder_ == null) {
+          return distributedProtocol_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
         } else {
-          return distributionFrameworkBuilder_.getMessage();
+          return distributedProtocolBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public Builder setDistributionFramework(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework value) {
-        if (distributionFrameworkBuilder_ == null) {
+      public Builder setDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol value) {
+        if (distributedProtocolBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          distributionFramework_ = value;
+          distributedProtocol_ = value;
           onChanged();
         } else {
-          distributionFrameworkBuilder_.setMessage(value);
+          distributedProtocolBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public Builder setDistributionFramework(
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder builderForValue) {
-        if (distributionFrameworkBuilder_ == null) {
-          distributionFramework_ = builderForValue.build();
+      public Builder setDistributedProtocol(
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder builderForValue) {
+        if (distributedProtocolBuilder_ == null) {
+          distributedProtocol_ = builderForValue.build();
           onChanged();
         } else {
-          distributionFrameworkBuilder_.setMessage(builderForValue.build());
+          distributedProtocolBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public Builder mergeDistributionFramework(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework value) {
-        if (distributionFrameworkBuilder_ == null) {
-          if (distributionFramework_ != null) {
-            distributionFramework_ =
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.newBuilder(distributionFramework_).mergeFrom(value).buildPartial();
+      public Builder mergeDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol value) {
+        if (distributedProtocolBuilder_ == null) {
+          if (distributedProtocol_ != null) {
+            distributedProtocol_ =
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.newBuilder(distributedProtocol_).mergeFrom(value).buildPartial();
           } else {
-            distributionFramework_ = value;
+            distributedProtocol_ = value;
           }
           onChanged();
         } else {
-          distributionFrameworkBuilder_.mergeFrom(value);
+          distributedProtocolBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public Builder clearDistributionFramework() {
-        if (distributionFrameworkBuilder_ == null) {
-          distributionFramework_ = null;
+      public Builder clearDistributedProtocol() {
+        if (distributedProtocolBuilder_ == null) {
+          distributedProtocol_ = null;
           onChanged();
         } else {
-          distributionFramework_ = null;
-          distributionFrameworkBuilder_ = null;
+          distributedProtocol_ = null;
+          distributedProtocolBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder getDistributionFrameworkBuilder() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder getDistributedProtocolBuilder() {
         
         onChanged();
-        return getDistributionFrameworkFieldBuilder().getBuilder();
+        return getDistributedProtocolFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder getDistributionFrameworkOrBuilder() {
-        if (distributionFrameworkBuilder_ != null) {
-          return distributionFrameworkBuilder_.getMessageOrBuilder();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder() {
+        if (distributedProtocolBuilder_ != null) {
+          return distributedProtocolBuilder_.getMessageOrBuilder();
         } else {
-          return distributionFramework_ == null ?
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.getDefaultInstance() : distributionFramework_;
+          return distributedProtocol_ == null ?
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder> 
-          getDistributionFrameworkFieldBuilder() {
-        if (distributionFrameworkBuilder_ == null) {
-          distributionFrameworkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFramework.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributionFrameworkOrBuilder>(
-                  getDistributionFramework(),
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder> 
+          getDistributedProtocolFieldBuilder() {
+        if (distributedProtocolBuilder_ == null) {
+          distributedProtocolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder>(
+                  getDistributedProtocol(),
                   getParentForChildren(),
                   isClean());
-          distributionFramework_ = null;
+          distributedProtocol_ = null;
         }
-        return distributionFrameworkBuilder_;
+        return distributedProtocolBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6221,10 +6212,10 @@ public final class TrainingJobOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor;
+    internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_sagemaker_DistributionFramework_fieldAccessorTable;
+      internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
   private static final 
@@ -6259,20 +6250,20 @@ public final class TrainingJobOuterClass {
       " \001(\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyte" +
       "idl.plugins.sagemaker.MetricDefinition\022N" +
       "\n\022input_content_type\030\005 \001(\01622.flyteidl.pl" +
-      "ugins.sagemaker.InputContentType.Value\"I" +
-      "\n\025DistributionFramework\"0\n\005Value\022\010\n\004NONE" +
-      "\020\000\022\024\n\020FRAMEWORK_NATIVE\020\001\022\007\n\003MPI\020\002\"\270\001\n\031Tr" +
-      "ainingJobResourceConfig\022\026\n\016instance_coun" +
-      "t\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume" +
-      "_size_in_gb\030\003 \001(\003\022Q\n\026distribution_framew" +
-      "ork\030\004 \001(\01321.flyteidl.plugins.sagemaker.D" +
-      "istributionFramework\"\277\001\n\013TrainingJob\022S\n\027" +
-      "algorithm_specification\030\001 \001(\01322.flyteidl" +
-      ".plugins.sagemaker.AlgorithmSpecificatio" +
-      "n\022[\n\034training_job_resource_config\030\002 \001(\0132" +
-      "5.flyteidl.plugins.sagemaker.TrainingJob" +
-      "ResourceConfigB5Z3github.com/lyft/flytei" +
-      "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "ugins.sagemaker.InputContentType.Value\"8" +
+      "\n\023DistributedProtocol\"!\n\005Value\022\017\n\013UNSPEC" +
+      "IFIED\020\000\022\007\n\003MPI\020\001\"\264\001\n\031TrainingJobResource" +
+      "Config\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinstan" +
+      "ce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(\003" +
+      "\022M\n\024distributed_protocol\030\004 \001(\0132/.flyteid" +
+      "l.plugins.sagemaker.DistributedProtocol\"" +
+      "\277\001\n\013TrainingJob\022S\n\027algorithm_specificati" +
+      "on\030\001 \001(\01322.flyteidl.plugins.sagemaker.Al" +
+      "gorithmSpecification\022[\n\034training_job_res" +
+      "ource_config\030\002 \001(\01325.flyteidl.plugins.sa" +
+      "gemaker.TrainingJobResourceConfigB5Z3git" +
+      "hub.com/lyft/flyteidl/gen/pb-go/flyteidl" +
+      "/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6317,18 +6308,18 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor,
         new java.lang.String[] { "InputMode", "AlgorithmName", "AlgorithmVersion", "MetricDefinitions", "InputContentType", });
-    internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_flyteidl_plugins_sagemaker_DistributionFramework_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_sagemaker_DistributionFramework_descriptor,
+        internal_static_flyteidl_plugins_sagemaker_DistributedProtocol_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor,
-        new java.lang.String[] { "InstanceCount", "InstanceType", "VolumeSizeInGb", "DistributionFramework", });
+        new java.lang.String[] { "InstanceCount", "InstanceType", "VolumeSizeInGb", "DistributedProtocol", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new

@@ -16,7 +16,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
@@ -43,10 +43,10 @@ class AlgorithmSpecificationDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AlgorithmSpecification> _instance;
 } _AlgorithmSpecification_default_instance_;
-class DistributionFrameworkDefaultTypeInternal {
+class DistributedProtocolDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<DistributionFramework> _instance;
-} _DistributionFramework_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<DistributedProtocol> _instance;
+} _DistributedProtocol_default_instance_;
 class TrainingJobResourceConfigDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TrainingJobResourceConfig> _instance;
@@ -129,19 +129,19 @@ static void InitDefaultsAlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2f
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {
       &scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
 
-static void InitDefaultsDistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
+static void InitDefaultsDistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::plugins::sagemaker::_DistributionFramework_default_instance_;
-    new (ptr) ::flyteidl::plugins::sagemaker::DistributionFramework();
+    void* ptr = &::flyteidl::plugins::sagemaker::_DistributedProtocol_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::DistributedProtocol();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::plugins::sagemaker::DistributionFramework::InitAsDefaultInstance();
+  ::flyteidl::plugins::sagemaker::DistributedProtocol::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_DistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_DistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
 
 static void InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -156,7 +156,7 @@ static void InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {
-      &scc_info_DistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
+      &scc_info_DistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
 
 static void InitDefaultsTrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -180,7 +180,7 @@ void InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_InputContentType_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_DistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
 }
@@ -223,7 +223,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification, metric_definitions_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification, input_content_type_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::DistributionFramework, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::DistributedProtocol, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -235,7 +235,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, instance_count_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, instance_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, volume_size_in_gb_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, distribution_framework_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, distributed_protocol_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -250,7 +250,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 10, -1, sizeof(::flyteidl::plugins::sagemaker::InputContentType)},
   { 15, -1, sizeof(::flyteidl::plugins::sagemaker::MetricDefinition)},
   { 22, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmSpecification)},
-  { 32, -1, sizeof(::flyteidl::plugins::sagemaker::DistributionFramework)},
+  { 32, -1, sizeof(::flyteidl::plugins::sagemaker::DistributedProtocol)},
   { 37, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig)},
   { 46, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJob)},
 };
@@ -261,7 +261,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_InputContentType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_MetricDefinition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmSpecification_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_DistributionFramework_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_DistributedProtocol_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_),
 };
@@ -288,25 +288,25 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   " \001(\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyte"
   "idl.plugins.sagemaker.MetricDefinition\022N"
   "\n\022input_content_type\030\005 \001(\01622.flyteidl.pl"
-  "ugins.sagemaker.InputContentType.Value\"I"
-  "\n\025DistributionFramework\"0\n\005Value\022\010\n\004NONE"
-  "\020\000\022\024\n\020FRAMEWORK_NATIVE\020\001\022\007\n\003MPI\020\002\"\270\001\n\031Tr"
-  "ainingJobResourceConfig\022\026\n\016instance_coun"
-  "t\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume"
-  "_size_in_gb\030\003 \001(\003\022Q\n\026distribution_framew"
-  "ork\030\004 \001(\01321.flyteidl.plugins.sagemaker.D"
-  "istributionFramework\"\277\001\n\013TrainingJob\022S\n\027"
-  "algorithm_specification\030\001 \001(\01322.flyteidl"
-  ".plugins.sagemaker.AlgorithmSpecificatio"
-  "n\022[\n\034training_job_resource_config\030\002 \001(\0132"
-  "5.flyteidl.plugins.sagemaker.TrainingJob"
-  "ResourceConfigB5Z3github.com/lyft/flytei"
-  "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
+  "ugins.sagemaker.InputContentType.Value\"8"
+  "\n\023DistributedProtocol\"!\n\005Value\022\017\n\013UNSPEC"
+  "IFIED\020\000\022\007\n\003MPI\020\001\"\264\001\n\031TrainingJobResource"
+  "Config\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinstan"
+  "ce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(\003"
+  "\022M\n\024distributed_protocol\030\004 \001(\0132/.flyteid"
+  "l.plugins.sagemaker.DistributedProtocol\""
+  "\277\001\n\013TrainingJob\022S\n\027algorithm_specificati"
+  "on\030\001 \001(\01322.flyteidl.plugins.sagemaker.Al"
+  "gorithmSpecification\022[\n\034training_job_res"
+  "ource_config\030\002 \001(\01325.flyteidl.plugins.sa"
+  "gemaker.TrainingJobResourceConfigB5Z3git"
+  "hub.com/lyft/flyteidl/gen/pb-go/flyteidl"
+  "/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 1157,
+  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 1136,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
@@ -383,15 +383,14 @@ const InputContentType_Value InputContentType::Value_MIN;
 const InputContentType_Value InputContentType::Value_MAX;
 const int InputContentType::Value_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* DistributionFramework_Value_descriptor() {
+const ::google::protobuf::EnumDescriptor* DistributedProtocol_Value_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[3];
 }
-bool DistributionFramework_Value_IsValid(int value) {
+bool DistributedProtocol_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
-    case 2:
       return true;
     default:
       return false;
@@ -399,12 +398,11 @@ bool DistributionFramework_Value_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const DistributionFramework_Value DistributionFramework::NONE;
-const DistributionFramework_Value DistributionFramework::FRAMEWORK_NATIVE;
-const DistributionFramework_Value DistributionFramework::MPI;
-const DistributionFramework_Value DistributionFramework::Value_MIN;
-const DistributionFramework_Value DistributionFramework::Value_MAX;
-const int DistributionFramework::Value_ARRAYSIZE;
+const DistributedProtocol_Value DistributedProtocol::UNSPECIFIED;
+const DistributedProtocol_Value DistributedProtocol::MPI;
+const DistributedProtocol_Value DistributedProtocol::Value_MIN;
+const DistributedProtocol_Value DistributedProtocol::Value_MAX;
+const int DistributedProtocol::Value_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -1907,49 +1905,49 @@ void AlgorithmSpecification::InternalSwap(AlgorithmSpecification* other) {
 
 // ===================================================================
 
-void DistributionFramework::InitAsDefaultInstance() {
+void DistributedProtocol::InitAsDefaultInstance() {
 }
-class DistributionFramework::HasBitSetters {
+class DistributedProtocol::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-DistributionFramework::DistributionFramework()
+DistributedProtocol::DistributedProtocol()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.DistributedProtocol)
 }
-DistributionFramework::DistributionFramework(const DistributionFramework& from)
+DistributedProtocol::DistributedProtocol(const DistributedProtocol& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.DistributedProtocol)
 }
 
-void DistributionFramework::SharedCtor() {
+void DistributedProtocol::SharedCtor() {
 }
 
-DistributionFramework::~DistributionFramework() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.DistributionFramework)
+DistributedProtocol::~DistributedProtocol() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.DistributedProtocol)
   SharedDtor();
 }
 
-void DistributionFramework::SharedDtor() {
+void DistributedProtocol::SharedDtor() {
 }
 
-void DistributionFramework::SetCachedSize(int size) const {
+void DistributedProtocol::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DistributionFramework& DistributionFramework::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_DistributionFramework_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
+const DistributedProtocol& DistributedProtocol::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_DistributedProtocol_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void DistributionFramework::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.DistributionFramework)
+void DistributedProtocol::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1958,9 +1956,9 @@ void DistributionFramework::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* DistributionFramework::_InternalParse(const char* begin, const char* end, void* object,
+const char* DistributedProtocol::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<DistributionFramework*>(object);
+  auto msg = static_cast<DistributedProtocol*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1986,11 +1984,11 @@ const char* DistributionFramework::_InternalParse(const char* begin, const char*
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DistributionFramework::MergePartialFromCodedStream(
+bool DistributedProtocol::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -2003,18 +2001,18 @@ bool DistributionFramework::MergePartialFromCodedStream(
           input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.DistributedProtocol)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.DistributedProtocol)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void DistributionFramework::SerializeWithCachedSizes(
+void DistributedProtocol::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2022,12 +2020,12 @@ void DistributionFramework::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.DistributedProtocol)
 }
 
-::google::protobuf::uint8* DistributionFramework::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* DistributedProtocol::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2035,12 +2033,12 @@ void DistributionFramework::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.DistributedProtocol)
   return target;
 }
 
-size_t DistributionFramework::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.DistributionFramework)
+size_t DistributedProtocol::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2057,23 +2055,23 @@ size_t DistributionFramework::ByteSizeLong() const {
   return total_size;
 }
 
-void DistributionFramework::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.DistributionFramework)
+void DistributedProtocol::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   GOOGLE_DCHECK_NE(&from, this);
-  const DistributionFramework* source =
-      ::google::protobuf::DynamicCastToGenerated<DistributionFramework>(
+  const DistributedProtocol* source =
+      ::google::protobuf::DynamicCastToGenerated<DistributedProtocol>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.DistributedProtocol)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.DistributionFramework)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.DistributedProtocol)
     MergeFrom(*source);
   }
 }
 
-void DistributionFramework::MergeFrom(const DistributionFramework& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.DistributionFramework)
+void DistributedProtocol::MergeFrom(const DistributedProtocol& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -2081,34 +2079,34 @@ void DistributionFramework::MergeFrom(const DistributionFramework& from) {
 
 }
 
-void DistributionFramework::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.DistributionFramework)
+void DistributedProtocol::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void DistributionFramework::CopyFrom(const DistributionFramework& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.DistributionFramework)
+void DistributedProtocol::CopyFrom(const DistributedProtocol& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.DistributedProtocol)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DistributionFramework::IsInitialized() const {
+bool DistributedProtocol::IsInitialized() const {
   return true;
 }
 
-void DistributionFramework::Swap(DistributionFramework* other) {
+void DistributedProtocol::Swap(DistributedProtocol* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void DistributionFramework::InternalSwap(DistributionFramework* other) {
+void DistributedProtocol::InternalSwap(DistributedProtocol* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata DistributionFramework::GetMetadata() const {
+::google::protobuf::Metadata DistributedProtocol::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto);
   return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[kIndexInFileMessages];
 }
@@ -2117,23 +2115,23 @@ void DistributionFramework::InternalSwap(DistributionFramework* other) {
 // ===================================================================
 
 void TrainingJobResourceConfig::InitAsDefaultInstance() {
-  ::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_._instance.get_mutable()->distribution_framework_ = const_cast< ::flyteidl::plugins::sagemaker::DistributionFramework*>(
-      ::flyteidl::plugins::sagemaker::DistributionFramework::internal_default_instance());
+  ::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_._instance.get_mutable()->distributed_protocol_ = const_cast< ::flyteidl::plugins::sagemaker::DistributedProtocol*>(
+      ::flyteidl::plugins::sagemaker::DistributedProtocol::internal_default_instance());
 }
 class TrainingJobResourceConfig::HasBitSetters {
  public:
-  static const ::flyteidl::plugins::sagemaker::DistributionFramework& distribution_framework(const TrainingJobResourceConfig* msg);
+  static const ::flyteidl::plugins::sagemaker::DistributedProtocol& distributed_protocol(const TrainingJobResourceConfig* msg);
 };
 
-const ::flyteidl::plugins::sagemaker::DistributionFramework&
-TrainingJobResourceConfig::HasBitSetters::distribution_framework(const TrainingJobResourceConfig* msg) {
-  return *msg->distribution_framework_;
+const ::flyteidl::plugins::sagemaker::DistributedProtocol&
+TrainingJobResourceConfig::HasBitSetters::distributed_protocol(const TrainingJobResourceConfig* msg) {
+  return *msg->distributed_protocol_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TrainingJobResourceConfig::kInstanceCountFieldNumber;
 const int TrainingJobResourceConfig::kInstanceTypeFieldNumber;
 const int TrainingJobResourceConfig::kVolumeSizeInGbFieldNumber;
-const int TrainingJobResourceConfig::kDistributionFrameworkFieldNumber;
+const int TrainingJobResourceConfig::kDistributedProtocolFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TrainingJobResourceConfig::TrainingJobResourceConfig()
@@ -2149,10 +2147,10 @@ TrainingJobResourceConfig::TrainingJobResourceConfig(const TrainingJobResourceCo
   if (from.instance_type().size() > 0) {
     instance_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instance_type_);
   }
-  if (from.has_distribution_framework()) {
-    distribution_framework_ = new ::flyteidl::plugins::sagemaker::DistributionFramework(*from.distribution_framework_);
+  if (from.has_distributed_protocol()) {
+    distributed_protocol_ = new ::flyteidl::plugins::sagemaker::DistributedProtocol(*from.distributed_protocol_);
   } else {
-    distribution_framework_ = nullptr;
+    distributed_protocol_ = nullptr;
   }
   ::memcpy(&instance_count_, &from.instance_count_,
     static_cast<size_t>(reinterpret_cast<char*>(&volume_size_in_gb_) -
@@ -2164,9 +2162,9 @@ void TrainingJobResourceConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   instance_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&distribution_framework_, 0, static_cast<size_t>(
+  ::memset(&distributed_protocol_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&volume_size_in_gb_) -
-      reinterpret_cast<char*>(&distribution_framework_)) + sizeof(volume_size_in_gb_));
+      reinterpret_cast<char*>(&distributed_protocol_)) + sizeof(volume_size_in_gb_));
 }
 
 TrainingJobResourceConfig::~TrainingJobResourceConfig() {
@@ -2176,7 +2174,7 @@ TrainingJobResourceConfig::~TrainingJobResourceConfig() {
 
 void TrainingJobResourceConfig::SharedDtor() {
   instance_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete distribution_framework_;
+  if (this != internal_default_instance()) delete distributed_protocol_;
 }
 
 void TrainingJobResourceConfig::SetCachedSize(int size) const {
@@ -2195,10 +2193,10 @@ void TrainingJobResourceConfig::Clear() {
   (void) cached_has_bits;
 
   instance_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && distribution_framework_ != nullptr) {
-    delete distribution_framework_;
+  if (GetArenaNoVirtual() == nullptr && distributed_protocol_ != nullptr) {
+    delete distributed_protocol_;
   }
-  distribution_framework_ = nullptr;
+  distributed_protocol_ = nullptr;
   ::memset(&instance_count_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&volume_size_in_gb_) -
       reinterpret_cast<char*>(&instance_count_)) + sizeof(volume_size_in_gb_));
@@ -2248,13 +2246,13 @@ const char* TrainingJobResourceConfig::_InternalParse(const char* begin, const c
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
+      // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::plugins::sagemaker::DistributionFramework::_InternalParse;
-        object = msg->mutable_distribution_framework();
+        parser_till_end = ::flyteidl::plugins::sagemaker::DistributedProtocol::_InternalParse;
+        object = msg->mutable_distributed_protocol();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2336,11 +2334,11 @@ bool TrainingJobResourceConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
+      // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_distribution_framework()));
+               input, mutable_distributed_protocol()));
         } else {
           goto handle_unusual;
         }
@@ -2394,10 +2392,10 @@ void TrainingJobResourceConfig::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->volume_size_in_gb(), output);
   }
 
-  // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
-  if (this->has_distribution_framework()) {
+  // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
+  if (this->has_distributed_protocol()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::distribution_framework(this), output);
+      4, HasBitSetters::distributed_protocol(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2434,11 +2432,11 @@ void TrainingJobResourceConfig::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->volume_size_in_gb(), target);
   }
 
-  // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
-  if (this->has_distribution_framework()) {
+  // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
+  if (this->has_distributed_protocol()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        4, HasBitSetters::distribution_framework(this), target);
+        4, HasBitSetters::distributed_protocol(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2469,11 +2467,11 @@ size_t TrainingJobResourceConfig::ByteSizeLong() const {
         this->instance_type());
   }
 
-  // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
-  if (this->has_distribution_framework()) {
+  // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
+  if (this->has_distributed_protocol()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *distribution_framework_);
+        *distributed_protocol_);
   }
 
   // int64 instance_count = 1;
@@ -2521,8 +2519,8 @@ void TrainingJobResourceConfig::MergeFrom(const TrainingJobResourceConfig& from)
 
     instance_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instance_type_);
   }
-  if (from.has_distribution_framework()) {
-    mutable_distribution_framework()->::flyteidl::plugins::sagemaker::DistributionFramework::MergeFrom(from.distribution_framework());
+  if (from.has_distributed_protocol()) {
+    mutable_distributed_protocol()->::flyteidl::plugins::sagemaker::DistributedProtocol::MergeFrom(from.distributed_protocol());
   }
   if (from.instance_count() != 0) {
     set_instance_count(from.instance_count());
@@ -2559,7 +2557,7 @@ void TrainingJobResourceConfig::InternalSwap(TrainingJobResourceConfig* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   instance_type_.Swap(&other->instance_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(distribution_framework_, other->distribution_framework_);
+  swap(distributed_protocol_, other->distributed_protocol_);
   swap(instance_count_, other->instance_count_);
   swap(volume_size_in_gb_, other->volume_size_in_gb_);
 }
@@ -2946,8 +2944,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::MetricDefinition* A
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::AlgorithmSpecification >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::AlgorithmSpecification >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::DistributionFramework* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::DistributionFramework >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::DistributionFramework >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::DistributedProtocol* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::DistributedProtocol >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::DistributedProtocol >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig >(arena);
