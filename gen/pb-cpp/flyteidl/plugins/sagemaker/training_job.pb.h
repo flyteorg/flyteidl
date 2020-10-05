@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ extern AlgorithmNameDefaultTypeInternal _AlgorithmName_default_instance_;
 class AlgorithmSpecification;
 class AlgorithmSpecificationDefaultTypeInternal;
 extern AlgorithmSpecificationDefaultTypeInternal _AlgorithmSpecification_default_instance_;
+class DistributionFramework;
+class DistributionFrameworkDefaultTypeInternal;
+extern DistributionFrameworkDefaultTypeInternal _DistributionFramework_default_instance_;
 class InputContentType;
 class InputContentTypeDefaultTypeInternal;
 extern InputContentTypeDefaultTypeInternal _InputContentType_default_instance_;
@@ -81,6 +84,7 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmName>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::DistributionFramework* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::DistributionFramework>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputContentType* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputContentType>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::MetricDefinition>(Arena*);
@@ -153,6 +157,28 @@ inline bool InputContentType_Value_Parse(
     const ::std::string& name, InputContentType_Value* value) {
   return ::google::protobuf::internal::ParseNamedEnum<InputContentType_Value>(
     InputContentType_Value_descriptor(), name, value);
+}
+enum DistributionFramework_Value {
+  DistributionFramework_Value_NONE = 0,
+  DistributionFramework_Value_FRAMEWORK_NATIVE = 1,
+  DistributionFramework_Value_MPI = 2,
+  DistributionFramework_Value_DistributionFramework_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DistributionFramework_Value_DistributionFramework_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool DistributionFramework_Value_IsValid(int value);
+const DistributionFramework_Value DistributionFramework_Value_Value_MIN = DistributionFramework_Value_NONE;
+const DistributionFramework_Value DistributionFramework_Value_Value_MAX = DistributionFramework_Value_MPI;
+const int DistributionFramework_Value_Value_ARRAYSIZE = DistributionFramework_Value_Value_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DistributionFramework_Value_descriptor();
+inline const ::std::string& DistributionFramework_Value_Name(DistributionFramework_Value value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DistributionFramework_Value_descriptor(), value);
+}
+inline bool DistributionFramework_Value_Parse(
+    const ::std::string& name, DistributionFramework_Value* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DistributionFramework_Value>(
+    DistributionFramework_Value_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -836,6 +862,139 @@ class AlgorithmSpecification final :
 };
 // -------------------------------------------------------------------
 
+class DistributionFramework final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.DistributionFramework) */ {
+ public:
+  DistributionFramework();
+  virtual ~DistributionFramework();
+
+  DistributionFramework(const DistributionFramework& from);
+
+  inline DistributionFramework& operator=(const DistributionFramework& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DistributionFramework(DistributionFramework&& from) noexcept
+    : DistributionFramework() {
+    *this = ::std::move(from);
+  }
+
+  inline DistributionFramework& operator=(DistributionFramework&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DistributionFramework& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DistributionFramework* internal_default_instance() {
+    return reinterpret_cast<const DistributionFramework*>(
+               &_DistributionFramework_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(DistributionFramework* other);
+  friend void swap(DistributionFramework& a, DistributionFramework& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DistributionFramework* New() const final {
+    return CreateMaybeMessage<DistributionFramework>(nullptr);
+  }
+
+  DistributionFramework* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DistributionFramework>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DistributionFramework& from);
+  void MergeFrom(const DistributionFramework& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DistributionFramework* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef DistributionFramework_Value Value;
+  static const Value NONE =
+    DistributionFramework_Value_NONE;
+  static const Value FRAMEWORK_NATIVE =
+    DistributionFramework_Value_FRAMEWORK_NATIVE;
+  static const Value MPI =
+    DistributionFramework_Value_MPI;
+  static inline bool Value_IsValid(int value) {
+    return DistributionFramework_Value_IsValid(value);
+  }
+  static const Value Value_MIN =
+    DistributionFramework_Value_Value_MIN;
+  static const Value Value_MAX =
+    DistributionFramework_Value_Value_MAX;
+  static const int Value_ARRAYSIZE =
+    DistributionFramework_Value_Value_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Value_descriptor() {
+    return DistributionFramework_Value_descriptor();
+  }
+  static inline const ::std::string& Value_Name(Value value) {
+    return DistributionFramework_Value_Name(value);
+  }
+  static inline bool Value_Parse(const ::std::string& name,
+      Value* value) {
+    return DistributionFramework_Value_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.DistributionFramework)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TrainingJobResourceConfig final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.TrainingJobResourceConfig) */ {
  public:
@@ -874,7 +1033,7 @@ class TrainingJobResourceConfig final :
                &_TrainingJobResourceConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(TrainingJobResourceConfig* other);
   friend void swap(TrainingJobResourceConfig& a, TrainingJobResourceConfig& b) {
@@ -945,6 +1104,15 @@ class TrainingJobResourceConfig final :
   ::std::string* release_instance_type();
   void set_allocated_instance_type(::std::string* instance_type);
 
+  // .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
+  bool has_distribution_framework() const;
+  void clear_distribution_framework();
+  static const int kDistributionFrameworkFieldNumber = 4;
+  const ::flyteidl::plugins::sagemaker::DistributionFramework& distribution_framework() const;
+  ::flyteidl::plugins::sagemaker::DistributionFramework* release_distribution_framework();
+  ::flyteidl::plugins::sagemaker::DistributionFramework* mutable_distribution_framework();
+  void set_allocated_distribution_framework(::flyteidl::plugins::sagemaker::DistributionFramework* distribution_framework);
+
   // int64 instance_count = 1;
   void clear_instance_count();
   static const int kInstanceCountFieldNumber = 1;
@@ -963,6 +1131,7 @@ class TrainingJobResourceConfig final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr instance_type_;
+  ::flyteidl::plugins::sagemaker::DistributionFramework* distribution_framework_;
   ::google::protobuf::int64 instance_count_;
   ::google::protobuf::int64 volume_size_in_gb_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1008,7 +1177,7 @@ class TrainingJob final :
                &_TrainingJob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(TrainingJob* other);
   friend void swap(TrainingJob& a, TrainingJob& b) {
@@ -1083,12 +1252,6 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_resource_config();
   void set_allocated_training_job_resource_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config);
 
-  // bool horovod = 3;
-  void clear_horovod();
-  static const int kHorovodFieldNumber = 3;
-  bool horovod() const;
-  void set_horovod(bool value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJob)
  private:
   class HasBitSetters;
@@ -1096,7 +1259,6 @@ class TrainingJob final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config_;
-  bool horovod_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1360,6 +1522,10 @@ inline void AlgorithmSpecification::set_input_content_type(::flyteidl::plugins::
 
 // -------------------------------------------------------------------
 
+// DistributionFramework
+
+// -------------------------------------------------------------------
+
 // TrainingJobResourceConfig
 
 // int64 instance_count = 1;
@@ -1441,6 +1607,57 @@ inline void TrainingJobResourceConfig::set_volume_size_in_gb(::google::protobuf:
   
   volume_size_in_gb_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.volume_size_in_gb)
+}
+
+// .flyteidl.plugins.sagemaker.DistributionFramework distribution_framework = 4;
+inline bool TrainingJobResourceConfig::has_distribution_framework() const {
+  return this != internal_default_instance() && distribution_framework_ != nullptr;
+}
+inline void TrainingJobResourceConfig::clear_distribution_framework() {
+  if (GetArenaNoVirtual() == nullptr && distribution_framework_ != nullptr) {
+    delete distribution_framework_;
+  }
+  distribution_framework_ = nullptr;
+}
+inline const ::flyteidl::plugins::sagemaker::DistributionFramework& TrainingJobResourceConfig::distribution_framework() const {
+  const ::flyteidl::plugins::sagemaker::DistributionFramework* p = distribution_framework_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::DistributionFramework*>(
+      &::flyteidl::plugins::sagemaker::_DistributionFramework_default_instance_);
+}
+inline ::flyteidl::plugins::sagemaker::DistributionFramework* TrainingJobResourceConfig::release_distribution_framework() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework)
+  
+  ::flyteidl::plugins::sagemaker::DistributionFramework* temp = distribution_framework_;
+  distribution_framework_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::plugins::sagemaker::DistributionFramework* TrainingJobResourceConfig::mutable_distribution_framework() {
+  
+  if (distribution_framework_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::DistributionFramework>(GetArenaNoVirtual());
+    distribution_framework_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework)
+  return distribution_framework_;
+}
+inline void TrainingJobResourceConfig::set_allocated_distribution_framework(::flyteidl::plugins::sagemaker::DistributionFramework* distribution_framework) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete distribution_framework_;
+  }
+  if (distribution_framework) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      distribution_framework = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, distribution_framework, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  distribution_framework_ = distribution_framework;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework)
 }
 
 // -------------------------------------------------------------------
@@ -1549,23 +1766,11 @@ inline void TrainingJob::set_allocated_training_job_resource_config(::flyteidl::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
 }
 
-// bool horovod = 3;
-inline void TrainingJob::clear_horovod() {
-  horovod_ = false;
-}
-inline bool TrainingJob::horovod() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.horovod)
-  return horovod_;
-}
-inline void TrainingJob::set_horovod(bool value) {
-  
-  horovod_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.horovod)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -1602,6 +1807,11 @@ template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::InputContentTy
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::InputContentType_Value>() {
   return ::flyteidl::plugins::sagemaker::InputContentType_Value_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::DistributionFramework_Value> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::DistributionFramework_Value>() {
+  return ::flyteidl::plugins::sagemaker::DistributionFramework_Value_descriptor();
 }
 
 }  // namespace protobuf

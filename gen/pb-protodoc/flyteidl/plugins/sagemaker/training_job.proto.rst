@@ -205,12 +205,50 @@ input_content_type
   
 
 
+.. _api_msg_flyteidl.plugins.sagemaker.DistributionFramework:
+
+flyteidl.plugins.sagemaker.DistributionFramework
+------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.DistributionFramework proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L82>`_
+
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.DistributionFramework.Value:
+
+Enum flyteidl.plugins.sagemaker.DistributionFramework.Value
+-----------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.DistributionFramework.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.NONE:
+
+NONE
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.FRAMEWORK_NATIVE:
+
+FRAMEWORK_NATIVE
+  ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.DistributionFramework.Value.MPI:
+
+MPI
+  ⁣
+  
+
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig:
 
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L85>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L93>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -221,7 +259,8 @@ Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sa
   {
     "instance_count": "...",
     "instance_type": "...",
-    "volume_size_in_gb": "..."
+    "volume_size_in_gb": "...",
+    "distribution_framework": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count:
@@ -242,6 +281,11 @@ volume_size_in_gb
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The size of the ML storage volume that you want to provision.
   
   
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distribution_framework:
+
+distribution_framework
+  (:ref:`flyteidl.plugins.sagemaker.DistributionFramework <api_msg_flyteidl.plugins.sagemaker.DistributionFramework>`) 
+  
 
 
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJob:
@@ -249,7 +293,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L96>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L106>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
@@ -258,8 +302,7 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.
 
   {
     "algorithm_specification": "{...}",
-    "training_job_resource_config": "{...}",
-    "horovod": "..."
+    "training_job_resource_config": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification:
@@ -271,10 +314,5 @@ algorithm_specification
 
 training_job_resource_config
   (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
-  
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.horovod:
-
-horovod
-  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 

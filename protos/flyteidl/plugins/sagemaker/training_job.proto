@@ -80,6 +80,14 @@ message AlgorithmSpecification {
     InputContentType.Value input_content_type = 5;
 }
 
+message DistributionFramework {
+    enum Value {
+        NONE = 0;
+        FRAMEWORK_NATIVE = 1;
+        MPI = 2;
+    }
+}
+
 // TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 // number of instances to launch, and the size of the ML storage volume the user wants to provision
 // Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
@@ -90,6 +98,8 @@ message TrainingJobResourceConfig {
     string instance_type = 2;
     // The size of the ML storage volume that you want to provision.
     int64 volume_size_in_gb = 3;
+
+    DistributionFramework distribution_framework = 4;
 }
 
 // The spec of a training job. This is mostly a pass-through object
@@ -97,5 +107,4 @@ message TrainingJobResourceConfig {
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
     TrainingJobResourceConfig training_job_resource_config = 2;
-    bool horovod = 3;
 }
