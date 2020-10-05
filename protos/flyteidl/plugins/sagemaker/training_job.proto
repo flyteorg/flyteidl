@@ -98,7 +98,7 @@ message TrainingJobResourceConfig {
     // The size of the ML storage volume that you want to provision.
     int64 volume_size_in_gb = 3;
 
-    DistributedProtocol distributed_protocol = 4;
+    DistributedProtocol.Value distributed_protocol = 4;
 }
 
 // The spec of a training job. This is mostly a pass-through object

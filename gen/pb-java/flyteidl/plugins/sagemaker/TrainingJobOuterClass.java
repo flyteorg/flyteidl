@@ -4460,17 +4460,13 @@ public final class TrainingJobOuterClass {
     long getVolumeSizeInGb();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
-    boolean hasDistributedProtocol();
+    int getDistributedProtocolValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol();
-    /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-     */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol();
   }
   /**
    * <pre>
@@ -4492,6 +4488,7 @@ public final class TrainingJobOuterClass {
     }
     private TrainingJobResourceConfig() {
       instanceType_ = "";
+      distributedProtocol_ = 0;
     }
 
     @java.lang.Override
@@ -4534,17 +4531,10 @@ public final class TrainingJobOuterClass {
               volumeSizeInGb_ = input.readInt64();
               break;
             }
-            case 34: {
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder subBuilder = null;
-              if (distributedProtocol_ != null) {
-                subBuilder = distributedProtocol_.toBuilder();
-              }
-              distributedProtocol_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(distributedProtocol_);
-                distributedProtocol_ = subBuilder.buildPartial();
-              }
+            case 32: {
+              int rawValue = input.readEnum();
 
+              distributedProtocol_ = rawValue;
               break;
             }
             default: {
@@ -4648,24 +4638,20 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int DISTRIBUTED_PROTOCOL_FIELD_NUMBER = 4;
-    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol distributedProtocol_;
+    private int distributedProtocol_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
-    public boolean hasDistributedProtocol() {
-      return distributedProtocol_ != null;
+    public int getDistributedProtocolValue() {
+      return distributedProtocol_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol() {
-      return distributedProtocol_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
-    }
-    /**
-     * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-     */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder() {
-      return getDistributedProtocol();
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol() {
+      @SuppressWarnings("deprecation")
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.valueOf(distributedProtocol_);
+      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4691,8 +4677,8 @@ public final class TrainingJobOuterClass {
       if (volumeSizeInGb_ != 0L) {
         output.writeInt64(3, volumeSizeInGb_);
       }
-      if (distributedProtocol_ != null) {
-        output.writeMessage(4, getDistributedProtocol());
+      if (distributedProtocol_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, distributedProtocol_);
       }
       unknownFields.writeTo(output);
     }
@@ -4714,9 +4700,9 @@ public final class TrainingJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, volumeSizeInGb_);
       }
-      if (distributedProtocol_ != null) {
+      if (distributedProtocol_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDistributedProtocol());
+          .computeEnumSize(4, distributedProtocol_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4739,11 +4725,7 @@ public final class TrainingJobOuterClass {
           .equals(other.getInstanceType())) return false;
       if (getVolumeSizeInGb()
           != other.getVolumeSizeInGb()) return false;
-      if (hasDistributedProtocol() != other.hasDistributedProtocol()) return false;
-      if (hasDistributedProtocol()) {
-        if (!getDistributedProtocol()
-            .equals(other.getDistributedProtocol())) return false;
-      }
+      if (distributedProtocol_ != other.distributedProtocol_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4763,10 +4745,8 @@ public final class TrainingJobOuterClass {
       hash = (37 * hash) + VOLUME_SIZE_IN_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVolumeSizeInGb());
-      if (hasDistributedProtocol()) {
-        hash = (37 * hash) + DISTRIBUTED_PROTOCOL_FIELD_NUMBER;
-        hash = (53 * hash) + getDistributedProtocol().hashCode();
-      }
+      hash = (37 * hash) + DISTRIBUTED_PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + distributedProtocol_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4912,12 +4892,8 @@ public final class TrainingJobOuterClass {
 
         volumeSizeInGb_ = 0L;
 
-        if (distributedProtocolBuilder_ == null) {
-          distributedProtocol_ = null;
-        } else {
-          distributedProtocol_ = null;
-          distributedProtocolBuilder_ = null;
-        }
+        distributedProtocol_ = 0;
+
         return this;
       }
 
@@ -4947,11 +4923,7 @@ public final class TrainingJobOuterClass {
         result.instanceCount_ = instanceCount_;
         result.instanceType_ = instanceType_;
         result.volumeSizeInGb_ = volumeSizeInGb_;
-        if (distributedProtocolBuilder_ == null) {
-          result.distributedProtocol_ = distributedProtocol_;
-        } else {
-          result.distributedProtocol_ = distributedProtocolBuilder_.build();
-        }
+        result.distributedProtocol_ = distributedProtocol_;
         onBuilt();
         return result;
       }
@@ -5010,8 +4982,8 @@ public final class TrainingJobOuterClass {
         if (other.getVolumeSizeInGb() != 0L) {
           setVolumeSizeInGb(other.getVolumeSizeInGb());
         }
-        if (other.hasDistributedProtocol()) {
-          mergeDistributedProtocol(other.getDistributedProtocol());
+        if (other.distributedProtocol_ != 0) {
+          setDistributedProtocolValue(other.getDistributedProtocolValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5207,121 +5179,49 @@ public final class TrainingJobOuterClass {
         return this;
       }
 
-      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol distributedProtocol_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder> distributedProtocolBuilder_;
+      private int distributedProtocol_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
-      public boolean hasDistributedProtocol() {
-        return distributedProtocolBuilder_ != null || distributedProtocol_ != null;
+      public int getDistributedProtocolValue() {
+        return distributedProtocol_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol getDistributedProtocol() {
-        if (distributedProtocolBuilder_ == null) {
-          return distributedProtocol_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
-        } else {
-          return distributedProtocolBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-       */
-      public Builder setDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol value) {
-        if (distributedProtocolBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          distributedProtocol_ = value;
-          onChanged();
-        } else {
-          distributedProtocolBuilder_.setMessage(value);
-        }
-
+      public Builder setDistributedProtocolValue(int value) {
+        distributedProtocol_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
-      public Builder setDistributedProtocol(
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder builderForValue) {
-        if (distributedProtocolBuilder_ == null) {
-          distributedProtocol_ = builderForValue.build();
-          onChanged();
-        } else {
-          distributedProtocolBuilder_.setMessage(builderForValue.build());
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol() {
+        @SuppressWarnings("deprecation")
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.valueOf(distributedProtocol_);
+        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
+       */
+      public Builder setDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-
+        
+        distributedProtocol_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-       */
-      public Builder mergeDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol value) {
-        if (distributedProtocolBuilder_ == null) {
-          if (distributedProtocol_ != null) {
-            distributedProtocol_ =
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.newBuilder(distributedProtocol_).mergeFrom(value).buildPartial();
-          } else {
-            distributedProtocol_ = value;
-          }
-          onChanged();
-        } else {
-          distributedProtocolBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public Builder clearDistributedProtocol() {
-        if (distributedProtocolBuilder_ == null) {
-          distributedProtocol_ = null;
-          onChanged();
-        } else {
-          distributedProtocol_ = null;
-          distributedProtocolBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-       */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder getDistributedProtocolBuilder() {
         
+        distributedProtocol_ = 0;
         onChanged();
-        return getDistributedProtocolFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-       */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder getDistributedProtocolOrBuilder() {
-        if (distributedProtocolBuilder_ != null) {
-          return distributedProtocolBuilder_.getMessageOrBuilder();
-        } else {
-          return distributedProtocol_ == null ?
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.getDefaultInstance() : distributedProtocol_;
-        }
-      }
-      /**
-       * <code>.flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder> 
-          getDistributedProtocolFieldBuilder() {
-        if (distributedProtocolBuilder_ == null) {
-          distributedProtocolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocolOrBuilder>(
-                  getDistributedProtocol(),
-                  getParentForChildren(),
-                  isClean());
-          distributedProtocol_ = null;
-        }
-        return distributedProtocolBuilder_;
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6252,18 +6152,18 @@ public final class TrainingJobOuterClass {
       "\n\022input_content_type\030\005 \001(\01622.flyteidl.pl" +
       "ugins.sagemaker.InputContentType.Value\"8" +
       "\n\023DistributedProtocol\"!\n\005Value\022\017\n\013UNSPEC" +
-      "IFIED\020\000\022\007\n\003MPI\020\001\"\264\001\n\031TrainingJobResource" +
+      "IFIED\020\000\022\007\n\003MPI\020\001\"\272\001\n\031TrainingJobResource" +
       "Config\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinstan" +
       "ce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(\003" +
-      "\022M\n\024distributed_protocol\030\004 \001(\0132/.flyteid" +
-      "l.plugins.sagemaker.DistributedProtocol\"" +
-      "\277\001\n\013TrainingJob\022S\n\027algorithm_specificati" +
-      "on\030\001 \001(\01322.flyteidl.plugins.sagemaker.Al" +
-      "gorithmSpecification\022[\n\034training_job_res" +
-      "ource_config\030\002 \001(\01325.flyteidl.plugins.sa" +
-      "gemaker.TrainingJobResourceConfigB5Z3git" +
-      "hub.com/lyft/flyteidl/gen/pb-go/flyteidl" +
-      "/pluginsb\006proto3"
+      "\022S\n\024distributed_protocol\030\004 \001(\01625.flyteid" +
+      "l.plugins.sagemaker.DistributedProtocol." +
+      "Value\"\277\001\n\013TrainingJob\022S\n\027algorithm_speci" +
+      "fication\030\001 \001(\01322.flyteidl.plugins.sagema" +
+      "ker.AlgorithmSpecification\022[\n\034training_j" +
+      "ob_resource_config\030\002 \001(\01325.flyteidl.plug" +
+      "ins.sagemaker.TrainingJobResourceConfigB" +
+      "5Z3github.com/lyft/flyteidl/gen/pb-go/fl" +
+      "yteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

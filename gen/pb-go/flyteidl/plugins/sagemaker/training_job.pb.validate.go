@@ -470,15 +470,7 @@ func (m *TrainingJobResourceConfig) Validate() error {
 
 	// no validation rules for VolumeSizeInGb
 
-	if v, ok := interface{}(m.GetDistributedProtocol()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TrainingJobResourceConfigValidationError{
-				field:  "DistributedProtocol",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for DistributedProtocol
 
 	return nil
 }

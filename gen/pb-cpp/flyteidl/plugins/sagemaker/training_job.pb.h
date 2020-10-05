@@ -1101,15 +1101,6 @@ class TrainingJobResourceConfig final :
   ::std::string* release_instance_type();
   void set_allocated_instance_type(::std::string* instance_type);
 
-  // .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
-  bool has_distributed_protocol() const;
-  void clear_distributed_protocol();
-  static const int kDistributedProtocolFieldNumber = 4;
-  const ::flyteidl::plugins::sagemaker::DistributedProtocol& distributed_protocol() const;
-  ::flyteidl::plugins::sagemaker::DistributedProtocol* release_distributed_protocol();
-  ::flyteidl::plugins::sagemaker::DistributedProtocol* mutable_distributed_protocol();
-  void set_allocated_distributed_protocol(::flyteidl::plugins::sagemaker::DistributedProtocol* distributed_protocol);
-
   // int64 instance_count = 1;
   void clear_instance_count();
   static const int kInstanceCountFieldNumber = 1;
@@ -1122,15 +1113,21 @@ class TrainingJobResourceConfig final :
   ::google::protobuf::int64 volume_size_in_gb() const;
   void set_volume_size_in_gb(::google::protobuf::int64 value);
 
+  // .flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;
+  void clear_distributed_protocol();
+  static const int kDistributedProtocolFieldNumber = 4;
+  ::flyteidl::plugins::sagemaker::DistributedProtocol_Value distributed_protocol() const;
+  void set_distributed_protocol(::flyteidl::plugins::sagemaker::DistributedProtocol_Value value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr instance_type_;
-  ::flyteidl::plugins::sagemaker::DistributedProtocol* distributed_protocol_;
   ::google::protobuf::int64 instance_count_;
   ::google::protobuf::int64 volume_size_in_gb_;
+  int distributed_protocol_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1606,55 +1603,18 @@ inline void TrainingJobResourceConfig::set_volume_size_in_gb(::google::protobuf:
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.volume_size_in_gb)
 }
 
-// .flyteidl.plugins.sagemaker.DistributedProtocol distributed_protocol = 4;
-inline bool TrainingJobResourceConfig::has_distributed_protocol() const {
-  return this != internal_default_instance() && distributed_protocol_ != nullptr;
-}
+// .flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;
 inline void TrainingJobResourceConfig::clear_distributed_protocol() {
-  if (GetArenaNoVirtual() == nullptr && distributed_protocol_ != nullptr) {
-    delete distributed_protocol_;
-  }
-  distributed_protocol_ = nullptr;
+  distributed_protocol_ = 0;
 }
-inline const ::flyteidl::plugins::sagemaker::DistributedProtocol& TrainingJobResourceConfig::distributed_protocol() const {
-  const ::flyteidl::plugins::sagemaker::DistributedProtocol* p = distributed_protocol_;
+inline ::flyteidl::plugins::sagemaker::DistributedProtocol_Value TrainingJobResourceConfig::distributed_protocol() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::DistributedProtocol*>(
-      &::flyteidl::plugins::sagemaker::_DistributedProtocol_default_instance_);
+  return static_cast< ::flyteidl::plugins::sagemaker::DistributedProtocol_Value >(distributed_protocol_);
 }
-inline ::flyteidl::plugins::sagemaker::DistributedProtocol* TrainingJobResourceConfig::release_distributed_protocol() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol)
+inline void TrainingJobResourceConfig::set_distributed_protocol(::flyteidl::plugins::sagemaker::DistributedProtocol_Value value) {
   
-  ::flyteidl::plugins::sagemaker::DistributedProtocol* temp = distributed_protocol_;
-  distributed_protocol_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::plugins::sagemaker::DistributedProtocol* TrainingJobResourceConfig::mutable_distributed_protocol() {
-  
-  if (distributed_protocol_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::DistributedProtocol>(GetArenaNoVirtual());
-    distributed_protocol_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol)
-  return distributed_protocol_;
-}
-inline void TrainingJobResourceConfig::set_allocated_distributed_protocol(::flyteidl::plugins::sagemaker::DistributedProtocol* distributed_protocol) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete distributed_protocol_;
-  }
-  if (distributed_protocol) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      distributed_protocol = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, distributed_protocol, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  distributed_protocol_ = distributed_protocol;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol)
+  distributed_protocol_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol)
 }
 
 // -------------------------------------------------------------------

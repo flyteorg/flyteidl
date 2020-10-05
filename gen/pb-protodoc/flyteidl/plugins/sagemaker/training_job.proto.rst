@@ -255,7 +255,7 @@ Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sa
     "instance_count": "...",
     "instance_type": "...",
     "volume_size_in_gb": "...",
-    "distributed_protocol": "{...}"
+    "distributed_protocol": "..."
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count:
@@ -279,7 +279,7 @@ volume_size_in_gb
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol:
 
 distributed_protocol
-  (:ref:`flyteidl.plugins.sagemaker.DistributedProtocol <api_msg_flyteidl.plugins.sagemaker.DistributedProtocol>`) 
+  (:ref:`flyteidl.plugins.sagemaker.DistributedProtocol.Value <api_enum_flyteidl.plugins.sagemaker.DistributedProtocol.Value>`) 
   
 
 
