@@ -97,4 +97,5 @@ message TrainingJobResourceConfig {
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
     TrainingJobResourceConfig training_job_resource_config = 2;
+    bool horovod = 3;
 }

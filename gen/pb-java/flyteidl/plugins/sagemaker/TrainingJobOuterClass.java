@@ -4702,6 +4702,11 @@ public final class TrainingJobOuterClass {
      * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobResourceConfigOrBuilder();
+
+    /**
+     * <code>bool horovod = 3;</code>
+     */
+    boolean getHorovod();
   }
   /**
    * <pre>
@@ -4771,6 +4776,11 @@ public final class TrainingJobOuterClass {
                 trainingJobResourceConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 24: {
+
+              horovod_ = input.readBool();
               break;
             }
             default: {
@@ -4847,6 +4857,15 @@ public final class TrainingJobOuterClass {
       return getTrainingJobResourceConfig();
     }
 
+    public static final int HOROVOD_FIELD_NUMBER = 3;
+    private boolean horovod_;
+    /**
+     * <code>bool horovod = 3;</code>
+     */
+    public boolean getHorovod() {
+      return horovod_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4867,6 +4886,9 @@ public final class TrainingJobOuterClass {
       if (trainingJobResourceConfig_ != null) {
         output.writeMessage(2, getTrainingJobResourceConfig());
       }
+      if (horovod_ != false) {
+        output.writeBool(3, horovod_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4883,6 +4905,10 @@ public final class TrainingJobOuterClass {
       if (trainingJobResourceConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTrainingJobResourceConfig());
+      }
+      if (horovod_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, horovod_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4909,6 +4935,8 @@ public final class TrainingJobOuterClass {
         if (!getTrainingJobResourceConfig()
             .equals(other.getTrainingJobResourceConfig())) return false;
       }
+      if (getHorovod()
+          != other.getHorovod()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4928,6 +4956,9 @@ public final class TrainingJobOuterClass {
         hash = (37 * hash) + TRAINING_JOB_RESOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getTrainingJobResourceConfig().hashCode();
       }
+      hash = (37 * hash) + HOROVOD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHorovod());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5078,6 +5109,8 @@ public final class TrainingJobOuterClass {
           trainingJobResourceConfig_ = null;
           trainingJobResourceConfigBuilder_ = null;
         }
+        horovod_ = false;
+
         return this;
       }
 
@@ -5114,6 +5147,7 @@ public final class TrainingJobOuterClass {
         } else {
           result.trainingJobResourceConfig_ = trainingJobResourceConfigBuilder_.build();
         }
+        result.horovod_ = horovod_;
         onBuilt();
         return result;
       }
@@ -5167,6 +5201,9 @@ public final class TrainingJobOuterClass {
         }
         if (other.hasTrainingJobResourceConfig()) {
           mergeTrainingJobResourceConfig(other.getTrainingJobResourceConfig());
+        }
+        if (other.getHorovod() != false) {
+          setHorovod(other.getHorovod());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5430,6 +5467,32 @@ public final class TrainingJobOuterClass {
         }
         return trainingJobResourceConfigBuilder_;
       }
+
+      private boolean horovod_ ;
+      /**
+       * <code>bool horovod = 3;</code>
+       */
+      public boolean getHorovod() {
+        return horovod_;
+      }
+      /**
+       * <code>bool horovod = 3;</code>
+       */
+      public Builder setHorovod(boolean value) {
+        
+        horovod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool horovod = 3;</code>
+       */
+      public Builder clearHorovod() {
+        
+        horovod_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5545,13 +5608,14 @@ public final class TrainingJobOuterClass {
       "ugins.sagemaker.InputContentType.Value\"e" +
       "\n\031TrainingJobResourceConfig\022\026\n\016instance_" +
       "count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021vo" +
-      "lume_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n" +
+      "lume_size_in_gb\030\003 \001(\003\"\320\001\n\013TrainingJob\022S\n" +
       "\027algorithm_specification\030\001 \001(\01322.flyteid" +
       "l.plugins.sagemaker.AlgorithmSpecificati" +
       "on\022[\n\034training_job_resource_config\030\002 \001(\013" +
       "25.flyteidl.plugins.sagemaker.TrainingJo" +
-      "bResourceConfigB5Z3github.com/lyft/flyte" +
-      "idl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "bResourceConfig\022\017\n\007horovod\030\003 \001(\010B5Z3gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5607,7 +5671,7 @@ public final class TrainingJobOuterClass {
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,
-        new java.lang.String[] { "AlgorithmSpecification", "TrainingJobResourceConfig", });
+        new java.lang.String[] { "AlgorithmSpecification", "TrainingJobResourceConfig", "Horovod", });
     com.google.protobuf.DurationProto.getDescriptor();
   }
 

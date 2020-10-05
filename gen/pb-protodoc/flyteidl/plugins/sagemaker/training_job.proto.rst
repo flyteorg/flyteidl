@@ -258,7 +258,8 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.
 
   {
     "algorithm_specification": "{...}",
-    "training_job_resource_config": "{...}"
+    "training_job_resource_config": "{...}",
+    "horovod": "..."
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification:
@@ -270,5 +271,10 @@ algorithm_specification
 
 training_job_resource_config
   (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.horovod:
+
+horovod
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 

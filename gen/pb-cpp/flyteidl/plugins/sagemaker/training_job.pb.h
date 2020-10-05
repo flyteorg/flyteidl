@@ -1083,6 +1083,12 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_resource_config();
   void set_allocated_training_job_resource_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config);
 
+  // bool horovod = 3;
+  void clear_horovod();
+  static const int kHorovodFieldNumber = 3;
+  bool horovod() const;
+  void set_horovod(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJob)
  private:
   class HasBitSetters;
@@ -1090,6 +1096,7 @@ class TrainingJob final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config_;
+  bool horovod_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1540,6 +1547,20 @@ inline void TrainingJob::set_allocated_training_job_resource_config(::flyteidl::
   }
   training_job_resource_config_ = training_job_resource_config;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
+}
+
+// bool horovod = 3;
+inline void TrainingJob::clear_horovod() {
+  horovod_ = false;
+}
+inline bool TrainingJob::horovod() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.horovod)
+  return horovod_;
+}
+inline void TrainingJob::set_horovod(bool value) {
+  
+  horovod_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.horovod)
 }
 
 #ifdef __GNUC__

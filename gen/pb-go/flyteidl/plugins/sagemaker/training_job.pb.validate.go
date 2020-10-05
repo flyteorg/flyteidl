@@ -490,6 +490,8 @@ func (m *TrainingJob) Validate() error {
 		}
 	}
 
+	// no validation rules for Horovod
+
 	return nil
 }
 

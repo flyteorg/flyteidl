@@ -216,6 +216,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, algorithm_specification_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, training_job_resource_config_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, horovod_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::InputMode)},
@@ -262,18 +263,19 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   "ugins.sagemaker.InputContentType.Value\"e"
   "\n\031TrainingJobResourceConfig\022\026\n\016instance_"
   "count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021vo"
-  "lume_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n"
+  "lume_size_in_gb\030\003 \001(\003\"\320\001\n\013TrainingJob\022S\n"
   "\027algorithm_specification\030\001 \001(\01322.flyteid"
   "l.plugins.sagemaker.AlgorithmSpecificati"
   "on\022[\n\034training_job_resource_config\030\002 \001(\013"
   "25.flyteidl.plugins.sagemaker.TrainingJo"
-  "bResourceConfigB5Z3github.com/lyft/flyte"
-  "idl/gen/pb-go/flyteidl/pluginsb\006proto3"
+  "bResourceConfig\022\017\n\007horovod\030\003 \001(\010B5Z3gith"
+  "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/"
+  "pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 998,
+  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 1015,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
@@ -2264,6 +2266,7 @@ TrainingJob::HasBitSetters::training_job_resource_config(const TrainingJob* msg)
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TrainingJob::kAlgorithmSpecificationFieldNumber;
 const int TrainingJob::kTrainingJobResourceConfigFieldNumber;
+const int TrainingJob::kHorovodFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TrainingJob::TrainingJob()
@@ -2285,6 +2288,7 @@ TrainingJob::TrainingJob(const TrainingJob& from)
   } else {
     training_job_resource_config_ = nullptr;
   }
+  horovod_ = from.horovod_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.TrainingJob)
 }
 
@@ -2292,8 +2296,8 @@ void TrainingJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::memset(&algorithm_specification_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&training_job_resource_config_) -
-      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(training_job_resource_config_));
+      reinterpret_cast<char*>(&horovod_) -
+      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(horovod_));
 }
 
 TrainingJob::~TrainingJob() {
@@ -2329,6 +2333,7 @@ void TrainingJob::Clear() {
     delete training_job_resource_config_;
   }
   training_job_resource_config_ = nullptr;
+  horovod_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -2369,6 +2374,13 @@ const char* TrainingJob::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool horovod = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        msg->set_horovod(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -2423,6 +2435,19 @@ bool TrainingJob::MergePartialFromCodedStream(
         break;
       }
 
+      // bool horovod = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &horovod_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2462,6 +2487,11 @@ void TrainingJob::SerializeWithCachedSizes(
       2, HasBitSetters::training_job_resource_config(this), output);
   }
 
+  // bool horovod = 3;
+  if (this->horovod() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->horovod(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2487,6 +2517,11 @@ void TrainingJob::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::training_job_resource_config(this), target);
+  }
+
+  // bool horovod = 3;
+  if (this->horovod() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->horovod(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2524,6 +2559,11 @@ size_t TrainingJob::ByteSizeLong() const {
         *training_job_resource_config_);
   }
 
+  // bool horovod = 3;
+  if (this->horovod() != 0) {
+    total_size += 1 + 1;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2557,6 +2597,9 @@ void TrainingJob::MergeFrom(const TrainingJob& from) {
   if (from.has_training_job_resource_config()) {
     mutable_training_job_resource_config()->::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::MergeFrom(from.training_job_resource_config());
   }
+  if (from.horovod() != 0) {
+    set_horovod(from.horovod());
+  }
 }
 
 void TrainingJob::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2586,6 +2629,7 @@ void TrainingJob::InternalSwap(TrainingJob* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(algorithm_specification_, other->algorithm_specification_);
   swap(training_job_resource_config_, other->training_job_resource_config_);
+  swap(horovod_, other->horovod_);
 }
 
 ::google::protobuf::Metadata TrainingJob::GetMetadata() const {
