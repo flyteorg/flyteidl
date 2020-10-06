@@ -210,8 +210,10 @@ input_content_type
 flyteidl.plugins.sagemaker.DistributedProtocol
 ----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributedProtocol proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L82>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L84>`_
 
+When enabling distributed training on a training job, the user should use this message to tell Flyte and SageMaker
+what kind of distributed protocol he/she wants to use to distribute the work.
 
 .. code-block:: json
 
@@ -224,18 +226,24 @@ flyteidl.plugins.sagemaker.DistributedProtocol
 Enum flyteidl.plugins.sagemaker.DistributedProtocol.Value
 ---------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributedProtocol.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L85>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.DistributedProtocol.Value.UNSPECIFIED:
 
 UNSPECIFIED
-  *(DEFAULT)* ⁣
+  *(DEFAULT)* ⁣Use this value if the user wishes to use framework-native distributed training interfaces.
+  If this value is used, Flyte won't configure SageMaker to initialize unnecessary components such as
+  OpenMPI or Parameter Server.
+  
   
 .. _api_enum_value_flyteidl.plugins.sagemaker.DistributedProtocol.Value.MPI:
 
 MPI
-  ⁣
+  ⁣Use this value if the user wishes to use MPI as the underlying protocol for her distributed training job
+  MPI is a framework-agnostic distributed protocol. It has multiple implementations. Currently, we have only
+  tested the OpenMPI implementation, which is the recommended implementation for Horovod.
+  
   
 
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig:
@@ -243,7 +251,7 @@ MPI
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L92>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L100>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -279,7 +287,10 @@ volume_size_in_gb
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.distributed_protocol:
 
 distributed_protocol
-  (:ref:`flyteidl.plugins.sagemaker.DistributedProtocol.Value <api_enum_flyteidl.plugins.sagemaker.DistributedProtocol.Value>`) 
+  (:ref:`flyteidl.plugins.sagemaker.DistributedProtocol.Value <api_enum_flyteidl.plugins.sagemaker.DistributedProtocol.Value>`) When users specify an instance_count > 1, Flyte will try to configure SageMaker to enable distributed training.
+  If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+  field should be set to the corresponding enum value
+  
   
 
 
@@ -288,7 +299,7 @@ distributed_protocol
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L105>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L115>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

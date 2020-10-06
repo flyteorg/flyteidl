@@ -3915,6 +3915,11 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * When enabling distributed training on a training job, the user should use this message to tell Flyte and SageMaker
+   * what kind of distributed protocol he/she wants to use to distribute the work.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.DistributedProtocol}
    */
   public  static final class DistributedProtocol extends
@@ -3990,10 +3995,22 @@ public final class TrainingJobOuterClass {
     public enum Value
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       * Use this value if the user wishes to use framework-native distributed training interfaces.
+       * If this value is used, Flyte won't configure SageMaker to initialize unnecessary components such as
+       * OpenMPI or Parameter Server.
+       * </pre>
+       *
        * <code>UNSPECIFIED = 0;</code>
        */
       UNSPECIFIED(0),
       /**
+       * <pre>
+       * Use this value if the user wishes to use MPI as the underlying protocol for her distributed training job
+       * MPI is a framework-agnostic distributed protocol. It has multiple implementations. Currently, we have only
+       * tested the OpenMPI implementation, which is the recommended implementation for Horovod.
+       * </pre>
+       *
        * <code>MPI = 1;</code>
        */
       MPI(1),
@@ -4001,10 +4018,22 @@ public final class TrainingJobOuterClass {
       ;
 
       /**
+       * <pre>
+       * Use this value if the user wishes to use framework-native distributed training interfaces.
+       * If this value is used, Flyte won't configure SageMaker to initialize unnecessary components such as
+       * OpenMPI or Parameter Server.
+       * </pre>
+       *
        * <code>UNSPECIFIED = 0;</code>
        */
       public static final int UNSPECIFIED_VALUE = 0;
       /**
+       * <pre>
+       * Use this value if the user wishes to use MPI as the underlying protocol for her distributed training job
+       * MPI is a framework-agnostic distributed protocol. It has multiple implementations. Currently, we have only
+       * tested the OpenMPI implementation, which is the recommended implementation for Horovod.
+       * </pre>
+       *
        * <code>MPI = 1;</code>
        */
       public static final int MPI_VALUE = 1;
@@ -4227,6 +4256,11 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * When enabling distributed training on a training job, the user should use this message to tell Flyte and SageMaker
+     * what kind of distributed protocol he/she wants to use to distribute the work.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.DistributedProtocol}
      */
     public static final class Builder extends
@@ -4460,10 +4494,22 @@ public final class TrainingJobOuterClass {
     long getVolumeSizeInGb();
 
     /**
+     * <pre>
+     * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+     * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+     * field should be set to the corresponding enum value
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
     int getDistributedProtocolValue();
     /**
+     * <pre>
+     * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+     * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+     * field should be set to the corresponding enum value
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol();
@@ -4640,12 +4686,24 @@ public final class TrainingJobOuterClass {
     public static final int DISTRIBUTED_PROTOCOL_FIELD_NUMBER = 4;
     private int distributedProtocol_;
     /**
+     * <pre>
+     * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+     * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+     * field should be set to the corresponding enum value
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
     public int getDistributedProtocolValue() {
       return distributedProtocol_;
     }
     /**
+     * <pre>
+     * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+     * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+     * field should be set to the corresponding enum value
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
      */
     public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol() {
@@ -5181,12 +5239,24 @@ public final class TrainingJobOuterClass {
 
       private int distributedProtocol_ = 0;
       /**
+       * <pre>
+       * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+       * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+       * field should be set to the corresponding enum value
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public int getDistributedProtocolValue() {
         return distributedProtocol_;
       }
       /**
+       * <pre>
+       * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+       * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+       * field should be set to the corresponding enum value
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public Builder setDistributedProtocolValue(int value) {
@@ -5195,6 +5265,12 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+       * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+       * field should be set to the corresponding enum value
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value getDistributedProtocol() {
@@ -5203,6 +5279,12 @@ public final class TrainingJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+       * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+       * field should be set to the corresponding enum value
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public Builder setDistributedProtocol(flyteidl.plugins.sagemaker.TrainingJobOuterClass.DistributedProtocol.Value value) {
@@ -5215,6 +5297,12 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * When users specify an instance_count &gt; 1, Flyte will try to configure SageMaker to enable distributed training.
+       * If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+       * field should be set to the corresponding enum value
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.DistributedProtocol.Value distributed_protocol = 4;</code>
        */
       public Builder clearDistributedProtocol() {

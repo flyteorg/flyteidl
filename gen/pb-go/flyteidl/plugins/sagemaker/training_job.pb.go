@@ -96,8 +96,14 @@ func (InputContentType_Value) EnumDescriptor() ([]byte, []int) {
 type DistributedProtocol_Value int32
 
 const (
+	// Use this value if the user wishes to use framework-native distributed training interfaces.
+	// If this value is used, Flyte won't configure SageMaker to initialize unnecessary components such as
+	// OpenMPI or Parameter Server.
 	DistributedProtocol_UNSPECIFIED DistributedProtocol_Value = 0
-	DistributedProtocol_MPI         DistributedProtocol_Value = 1
+	// Use this value if the user wishes to use MPI as the underlying protocol for her distributed training job
+	// MPI is a framework-agnostic distributed protocol. It has multiple implementations. Currently, we have only
+	// tested the OpenMPI implementation, which is the recommended implementation for Horovod.
+	DistributedProtocol_MPI DistributedProtocol_Value = 1
 )
 
 var DistributedProtocol_Value_name = map[int32]string{
@@ -365,6 +371,8 @@ func (m *AlgorithmSpecification) GetInputContentType() InputContentType_Value {
 	return InputContentType_TEXT_CSV
 }
 
+// When enabling distributed training on a training job, the user should use this message to tell Flyte and SageMaker
+// what kind of distributed protocol he/she wants to use to distribute the work.
 type DistributedProtocol struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -405,7 +413,10 @@ type TrainingJobResourceConfig struct {
 	// The ML compute instance type
 	InstanceType string `protobuf:"bytes,2,opt,name=instance_type,json=instanceType,proto3" json:"instance_type,omitempty"`
 	// The size of the ML storage volume that you want to provision.
-	VolumeSizeInGb       int64                     `protobuf:"varint,3,opt,name=volume_size_in_gb,json=volumeSizeInGb,proto3" json:"volume_size_in_gb,omitempty"`
+	VolumeSizeInGb int64 `protobuf:"varint,3,opt,name=volume_size_in_gb,json=volumeSizeInGb,proto3" json:"volume_size_in_gb,omitempty"`
+	// When users specify an instance_count > 1, Flyte will try to configure SageMaker to enable distributed training.
+	// If the users wish to use framework-agnostic distributed protocol such as MPI or Parameter Server, this
+	// field should be set to the corresponding enum value
 	DistributedProtocol  DistributedProtocol_Value `protobuf:"varint,4,opt,name=distributed_protocol,json=distributedProtocol,proto3,enum=flyteidl.plugins.sagemaker.DistributedProtocol_Value" json:"distributed_protocol,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                  `json:"-"`
 	XXX_unrecognized     []byte                    `json:"-"`
