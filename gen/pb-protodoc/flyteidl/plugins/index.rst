@@ -12,6 +12,7 @@ Plugins available in the Flyte system.
 
 	sagemaker/index
 	array_job.proto
+	mpi.proto
 	presto.proto
 	pytorch.proto
 	qubole.proto
