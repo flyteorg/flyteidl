@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x1egoogle/protobuf/duration.proto\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\")\n\x10InputContentType\"\x15\n\x05Value\x12\x0c\n\x08TEXT_CSV\x10\x00\"/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"\xd7\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12H\n\x12metric_definitions\x18\x04 \x03(\x0b\x32,.flyteidl.plugins.sagemaker.MetricDefinition\x12N\n\x12input_content_type\x18\x05 \x01(\x0e\x32\x32.flyteidl.plugins.sagemaker.InputContentType.Value\"8\n\x13\x44istributedProtocol\"!\n\x05Value\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x07\n\x03MPI\x10\x01\"\xba\x01\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\x12S\n\x14\x64istributed_protocol\x18\x04 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.DistributedProtocol.Value\"\xbf\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12[\n\x1ctraining_job_resource_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfigB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x1egoogle/protobuf/duration.proto\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\")\n\x10InputContentType\"\x15\n\x05Value\x12\x0c\n\x08TEXT_CSV\x10\x00\"/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"\xd7\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12H\n\x12metric_definitions\x18\x04 \x03(\x0b\x32,.flyteidl.plugins.sagemaker.MetricDefinition\x12N\n\x12input_content_type\x18\x05 \x01(\x0e\x32\x32.flyteidl.plugins.sagemaker.InputContentType.Value\"8\n\x13\x44istributedProtocol\"!\n\x05Value\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x07\n\x03MPI\x10\x01\"\xba\x01\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\x12S\n\x14\x64istributed_protocol\x18\x04 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.DistributedProtocol.Value\"6\n\x10\x43heckpointConfig\x12\x12\n\nlocal_path\x18\x01 \x01(\t\x12\x0e\n\x06s3_uri\x18\x02 \x01(\t\"\xbf\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12[\n\x1ctraining_job_resource_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfigB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -361,6 +361,44 @@ _TRAININGJOBRESOURCECONFIG = _descriptor.Descriptor(
 )
 
 
+_CHECKPOINTCONFIG = _descriptor.Descriptor(
+  name='CheckpointConfig',
+  full_name='flyteidl.plugins.sagemaker.CheckpointConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='local_path', full_name='flyteidl.plugins.sagemaker.CheckpointConfig.local_path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='s3_uri', full_name='flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=887,
+  serialized_end=941,
+)
+
+
 _TRAININGJOB = _descriptor.Descriptor(
   name='TrainingJob',
   full_name='flyteidl.plugins.sagemaker.TrainingJob',
@@ -394,8 +432,8 @@ _TRAININGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=1079,
+  serialized_start=944,
+  serialized_end=1135,
 )
 
 _INPUTMODE_VALUE.containing_type = _INPUTMODE
@@ -416,6 +454,7 @@ DESCRIPTOR.message_types_by_name['MetricDefinition'] = _METRICDEFINITION
 DESCRIPTOR.message_types_by_name['AlgorithmSpecification'] = _ALGORITHMSPECIFICATION
 DESCRIPTOR.message_types_by_name['DistributedProtocol'] = _DISTRIBUTEDPROTOCOL
 DESCRIPTOR.message_types_by_name['TrainingJobResourceConfig'] = _TRAININGJOBRESOURCECONFIG
+DESCRIPTOR.message_types_by_name['CheckpointConfig'] = _CHECKPOINTCONFIG
 DESCRIPTOR.message_types_by_name['TrainingJob'] = _TRAININGJOB
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -467,6 +506,13 @@ TrainingJobResourceConfig = _reflection.GeneratedProtocolMessageType('TrainingJo
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
   ))
 _sym_db.RegisterMessage(TrainingJobResourceConfig)
+
+CheckpointConfig = _reflection.GeneratedProtocolMessageType('CheckpointConfig', (_message.Message,), dict(
+  DESCRIPTOR = _CHECKPOINTCONFIG,
+  __module__ = 'flyteidl.plugins.sagemaker.training_job_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.CheckpointConfig)
+  ))
+_sym_db.RegisterMessage(CheckpointConfig)
 
 TrainingJob = _reflection.GeneratedProtocolMessageType('TrainingJob', (_message.Message,), dict(
   DESCRIPTOR = _TRAININGJOB,

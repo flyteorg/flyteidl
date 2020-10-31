@@ -294,12 +294,39 @@ distributed_protocol
   
 
 
+.. _api_msg_flyteidl.plugins.sagemaker.CheckpointConfig:
+
+flyteidl.plugins.sagemaker.CheckpointConfig
+-------------------------------------------
+
+`[flyteidl.plugins.sagemaker.CheckpointConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L113>`_
+
+
+.. code-block:: json
+
+  {
+    "local_path": "...",
+    "s3_uri": "..."
+  }
+
+.. _api_field_flyteidl.plugins.sagemaker.CheckpointConfig.local_path:
+
+local_path
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri:
+
+s3_uri
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJob:
 
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L115>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L120>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

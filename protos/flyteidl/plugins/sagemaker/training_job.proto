@@ -111,6 +111,11 @@ message TrainingJobResourceConfig {
     DistributedProtocol.Value distributed_protocol = 4;
 }
 
+message CheckpointConfig {
+    string local_path = 1;
+    string s3_uri = 2;
+}
+
 // The spec of a training job. This is mostly a pass-through object
 // https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 message TrainingJob {

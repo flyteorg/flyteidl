@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ extern AlgorithmNameDefaultTypeInternal _AlgorithmName_default_instance_;
 class AlgorithmSpecification;
 class AlgorithmSpecificationDefaultTypeInternal;
 extern AlgorithmSpecificationDefaultTypeInternal _AlgorithmSpecification_default_instance_;
+class CheckpointConfig;
+class CheckpointConfigDefaultTypeInternal;
+extern CheckpointConfigDefaultTypeInternal _CheckpointConfig_default_instance_;
 class DistributedProtocol;
 class DistributedProtocolDefaultTypeInternal;
 extern DistributedProtocolDefaultTypeInternal _DistributedProtocol_default_instance_;
@@ -84,6 +87,7 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmName>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::CheckpointConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::CheckpointConfig>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::DistributedProtocol* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::DistributedProtocol>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputContentType* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputContentType>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
@@ -1133,6 +1137,141 @@ class TrainingJobResourceConfig final :
 };
 // -------------------------------------------------------------------
 
+class CheckpointConfig final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.CheckpointConfig) */ {
+ public:
+  CheckpointConfig();
+  virtual ~CheckpointConfig();
+
+  CheckpointConfig(const CheckpointConfig& from);
+
+  inline CheckpointConfig& operator=(const CheckpointConfig& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CheckpointConfig(CheckpointConfig&& from) noexcept
+    : CheckpointConfig() {
+    *this = ::std::move(from);
+  }
+
+  inline CheckpointConfig& operator=(CheckpointConfig&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CheckpointConfig& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CheckpointConfig* internal_default_instance() {
+    return reinterpret_cast<const CheckpointConfig*>(
+               &_CheckpointConfig_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(CheckpointConfig* other);
+  friend void swap(CheckpointConfig& a, CheckpointConfig& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CheckpointConfig* New() const final {
+    return CreateMaybeMessage<CheckpointConfig>(nullptr);
+  }
+
+  CheckpointConfig* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CheckpointConfig>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CheckpointConfig& from);
+  void MergeFrom(const CheckpointConfig& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CheckpointConfig* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string local_path = 1;
+  void clear_local_path();
+  static const int kLocalPathFieldNumber = 1;
+  const ::std::string& local_path() const;
+  void set_local_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_local_path(::std::string&& value);
+  #endif
+  void set_local_path(const char* value);
+  void set_local_path(const char* value, size_t size);
+  ::std::string* mutable_local_path();
+  ::std::string* release_local_path();
+  void set_allocated_local_path(::std::string* local_path);
+
+  // string s3_uri = 2;
+  void clear_s3_uri();
+  static const int kS3UriFieldNumber = 2;
+  const ::std::string& s3_uri() const;
+  void set_s3_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_s3_uri(::std::string&& value);
+  #endif
+  void set_s3_uri(const char* value);
+  void set_s3_uri(const char* value, size_t size);
+  ::std::string* mutable_s3_uri();
+  ::std::string* release_s3_uri();
+  void set_allocated_s3_uri(::std::string* s3_uri);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.CheckpointConfig)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr local_path_;
+  ::google::protobuf::internal::ArenaStringPtr s3_uri_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TrainingJob final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.TrainingJob) */ {
  public:
@@ -1171,7 +1310,7 @@ class TrainingJob final :
                &_TrainingJob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(TrainingJob* other);
   friend void swap(TrainingJob& a, TrainingJob& b) {
@@ -1619,6 +1758,116 @@ inline void TrainingJobResourceConfig::set_distributed_protocol(::flyteidl::plug
 
 // -------------------------------------------------------------------
 
+// CheckpointConfig
+
+// string local_path = 1;
+inline void CheckpointConfig::clear_local_path() {
+  local_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CheckpointConfig::local_path() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+  return local_path_.GetNoArena();
+}
+inline void CheckpointConfig::set_local_path(const ::std::string& value) {
+  
+  local_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+}
+#if LANG_CXX11
+inline void CheckpointConfig::set_local_path(::std::string&& value) {
+  
+  local_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+}
+#endif
+inline void CheckpointConfig::set_local_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  local_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+}
+inline void CheckpointConfig::set_local_path(const char* value, size_t size) {
+  
+  local_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+}
+inline ::std::string* CheckpointConfig::mutable_local_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+  return local_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CheckpointConfig::release_local_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+  
+  return local_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CheckpointConfig::set_allocated_local_path(::std::string* local_path) {
+  if (local_path != nullptr) {
+    
+  } else {
+    
+  }
+  local_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), local_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.CheckpointConfig.local_path)
+}
+
+// string s3_uri = 2;
+inline void CheckpointConfig::clear_s3_uri() {
+  s3_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CheckpointConfig::s3_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+  return s3_uri_.GetNoArena();
+}
+inline void CheckpointConfig::set_s3_uri(const ::std::string& value) {
+  
+  s3_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+}
+#if LANG_CXX11
+inline void CheckpointConfig::set_s3_uri(::std::string&& value) {
+  
+  s3_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+}
+#endif
+inline void CheckpointConfig::set_s3_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  s3_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+}
+inline void CheckpointConfig::set_s3_uri(const char* value, size_t size) {
+  
+  s3_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+}
+inline ::std::string* CheckpointConfig::mutable_s3_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+  return s3_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CheckpointConfig::release_s3_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+  
+  return s3_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CheckpointConfig::set_allocated_s3_uri(::std::string* s3_uri) {
+  if (s3_uri != nullptr) {
+    
+  } else {
+    
+  }
+  s3_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), s3_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.CheckpointConfig.s3_uri)
+}
+
+// -------------------------------------------------------------------
+
 // TrainingJob
 
 // .flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 1;
@@ -1726,6 +1975,8 @@ inline void TrainingJob::set_allocated_training_job_resource_config(::flyteidl::
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
