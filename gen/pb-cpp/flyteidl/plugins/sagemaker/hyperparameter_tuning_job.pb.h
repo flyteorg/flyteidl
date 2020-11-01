@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/core/tasks.pb.h"
 #include "flyteidl/plugins/sagemaker/parameter_ranges.pb.h"
 #include "flyteidl/plugins/sagemaker/training_job.pb.h"
 // @@protoc_insertion_point(includes)
@@ -258,6 +259,15 @@ class HyperparameterTuningJob final :
   ::flyteidl::plugins::sagemaker::TrainingJob* mutable_training_job();
   void set_allocated_training_job(::flyteidl::plugins::sagemaker::TrainingJob* training_job);
 
+  // .flyteidl.core.TaskMetadata training_job_metadata = 4;
+  bool has_training_job_metadata() const;
+  void clear_training_job_metadata();
+  static const int kTrainingJobMetadataFieldNumber = 4;
+  const ::flyteidl::core::TaskMetadata& training_job_metadata() const;
+  ::flyteidl::core::TaskMetadata* release_training_job_metadata();
+  ::flyteidl::core::TaskMetadata* mutable_training_job_metadata();
+  void set_allocated_training_job_metadata(::flyteidl::core::TaskMetadata* training_job_metadata);
+
   // int64 max_number_of_training_jobs = 2;
   void clear_max_number_of_training_jobs();
   static const int kMaxNumberOfTrainingJobsFieldNumber = 2;
@@ -276,6 +286,7 @@ class HyperparameterTuningJob final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::TrainingJob* training_job_;
+  ::flyteidl::core::TaskMetadata* training_job_metadata_;
   ::google::protobuf::int64 max_number_of_training_jobs_;
   ::google::protobuf::int64 max_parallel_training_jobs_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1022,6 +1033,51 @@ inline void HyperparameterTuningJob::set_max_parallel_training_jobs(::google::pr
   
   max_parallel_training_jobs_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.HyperparameterTuningJob.max_parallel_training_jobs)
+}
+
+// .flyteidl.core.TaskMetadata training_job_metadata = 4;
+inline bool HyperparameterTuningJob::has_training_job_metadata() const {
+  return this != internal_default_instance() && training_job_metadata_ != nullptr;
+}
+inline const ::flyteidl::core::TaskMetadata& HyperparameterTuningJob::training_job_metadata() const {
+  const ::flyteidl::core::TaskMetadata* p = training_job_metadata_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HyperparameterTuningJob.training_job_metadata)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::TaskMetadata*>(
+      &::flyteidl::core::_TaskMetadata_default_instance_);
+}
+inline ::flyteidl::core::TaskMetadata* HyperparameterTuningJob::release_training_job_metadata() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.HyperparameterTuningJob.training_job_metadata)
+  
+  ::flyteidl::core::TaskMetadata* temp = training_job_metadata_;
+  training_job_metadata_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::TaskMetadata* HyperparameterTuningJob::mutable_training_job_metadata() {
+  
+  if (training_job_metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::TaskMetadata>(GetArenaNoVirtual());
+    training_job_metadata_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.HyperparameterTuningJob.training_job_metadata)
+  return training_job_metadata_;
+}
+inline void HyperparameterTuningJob::set_allocated_training_job_metadata(::flyteidl::core::TaskMetadata* training_job_metadata) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(training_job_metadata_);
+  }
+  if (training_job_metadata) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      training_job_metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, training_job_metadata, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  training_job_metadata_ = training_job_metadata;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.HyperparameterTuningJob.training_job_metadata)
 }
 
 // -------------------------------------------------------------------

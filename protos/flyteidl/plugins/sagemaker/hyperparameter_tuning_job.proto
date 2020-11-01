@@ -23,7 +23,7 @@ message HyperparameterTuningJob {
     int64 max_parallel_training_jobs = 3;
 
     // The metadata of the underlying training job.
-    TaskMetadata training_job_metadata = 4;
+    core.TaskMetadata training_job_metadata = 4;
 }
 
 // HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job

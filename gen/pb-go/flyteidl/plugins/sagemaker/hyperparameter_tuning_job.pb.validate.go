@@ -58,6 +58,16 @@ func (m *HyperparameterTuningJob) Validate() error {
 
 	// no validation rules for MaxParallelTrainingJobs
 
+	if v, ok := interface{}(m.GetTrainingJobMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return HyperparameterTuningJobValidationError{
+				field:  "TrainingJobMetadata",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

@@ -62,6 +62,31 @@ public final class HyperparameterTuningJobOuterClass {
      * <code>int64 max_parallel_training_jobs = 3;</code>
      */
     long getMaxParallelTrainingJobs();
+
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    boolean hasTrainingJobMetadata();
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    flyteidl.core.Tasks.TaskMetadata getTrainingJobMetadata();
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    flyteidl.core.Tasks.TaskMetadataOrBuilder getTrainingJobMetadataOrBuilder();
   }
   /**
    * <pre>
@@ -127,6 +152,19 @@ public final class HyperparameterTuningJobOuterClass {
             case 24: {
 
               maxParallelTrainingJobs_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              flyteidl.core.Tasks.TaskMetadata.Builder subBuilder = null;
+              if (trainingJobMetadata_ != null) {
+                subBuilder = trainingJobMetadata_.toBuilder();
+              }
+              trainingJobMetadata_ = input.readMessage(flyteidl.core.Tasks.TaskMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(trainingJobMetadata_);
+                trainingJobMetadata_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -222,6 +260,39 @@ public final class HyperparameterTuningJobOuterClass {
       return maxParallelTrainingJobs_;
     }
 
+    public static final int TRAINING_JOB_METADATA_FIELD_NUMBER = 4;
+    private flyteidl.core.Tasks.TaskMetadata trainingJobMetadata_;
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    public boolean hasTrainingJobMetadata() {
+      return trainingJobMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    public flyteidl.core.Tasks.TaskMetadata getTrainingJobMetadata() {
+      return trainingJobMetadata_ == null ? flyteidl.core.Tasks.TaskMetadata.getDefaultInstance() : trainingJobMetadata_;
+    }
+    /**
+     * <pre>
+     * The metadata of the underlying training job.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+     */
+    public flyteidl.core.Tasks.TaskMetadataOrBuilder getTrainingJobMetadataOrBuilder() {
+      return getTrainingJobMetadata();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -245,6 +316,9 @@ public final class HyperparameterTuningJobOuterClass {
       if (maxParallelTrainingJobs_ != 0L) {
         output.writeInt64(3, maxParallelTrainingJobs_);
       }
+      if (trainingJobMetadata_ != null) {
+        output.writeMessage(4, getTrainingJobMetadata());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -265,6 +339,10 @@ public final class HyperparameterTuningJobOuterClass {
       if (maxParallelTrainingJobs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, maxParallelTrainingJobs_);
+      }
+      if (trainingJobMetadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getTrainingJobMetadata());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -290,6 +368,11 @@ public final class HyperparameterTuningJobOuterClass {
           != other.getMaxNumberOfTrainingJobs()) return false;
       if (getMaxParallelTrainingJobs()
           != other.getMaxParallelTrainingJobs()) return false;
+      if (hasTrainingJobMetadata() != other.hasTrainingJobMetadata()) return false;
+      if (hasTrainingJobMetadata()) {
+        if (!getTrainingJobMetadata()
+            .equals(other.getTrainingJobMetadata())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -311,6 +394,10 @@ public final class HyperparameterTuningJobOuterClass {
       hash = (37 * hash) + MAX_PARALLEL_TRAINING_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxParallelTrainingJobs());
+      if (hasTrainingJobMetadata()) {
+        hash = (37 * hash) + TRAINING_JOB_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTrainingJobMetadata().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -458,6 +545,12 @@ public final class HyperparameterTuningJobOuterClass {
 
         maxParallelTrainingJobs_ = 0L;
 
+        if (trainingJobMetadataBuilder_ == null) {
+          trainingJobMetadata_ = null;
+        } else {
+          trainingJobMetadata_ = null;
+          trainingJobMetadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -491,6 +584,11 @@ public final class HyperparameterTuningJobOuterClass {
         }
         result.maxNumberOfTrainingJobs_ = maxNumberOfTrainingJobs_;
         result.maxParallelTrainingJobs_ = maxParallelTrainingJobs_;
+        if (trainingJobMetadataBuilder_ == null) {
+          result.trainingJobMetadata_ = trainingJobMetadata_;
+        } else {
+          result.trainingJobMetadata_ = trainingJobMetadataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -547,6 +645,9 @@ public final class HyperparameterTuningJobOuterClass {
         }
         if (other.getMaxParallelTrainingJobs() != 0L) {
           setMaxParallelTrainingJobs(other.getMaxParallelTrainingJobs());
+        }
+        if (other.hasTrainingJobMetadata()) {
+          mergeTrainingJobMetadata(other.getTrainingJobMetadata());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -810,6 +911,159 @@ public final class HyperparameterTuningJobOuterClass {
         maxParallelTrainingJobs_ = 0L;
         onChanged();
         return this;
+      }
+
+      private flyteidl.core.Tasks.TaskMetadata trainingJobMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskMetadata, flyteidl.core.Tasks.TaskMetadata.Builder, flyteidl.core.Tasks.TaskMetadataOrBuilder> trainingJobMetadataBuilder_;
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public boolean hasTrainingJobMetadata() {
+        return trainingJobMetadataBuilder_ != null || trainingJobMetadata_ != null;
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public flyteidl.core.Tasks.TaskMetadata getTrainingJobMetadata() {
+        if (trainingJobMetadataBuilder_ == null) {
+          return trainingJobMetadata_ == null ? flyteidl.core.Tasks.TaskMetadata.getDefaultInstance() : trainingJobMetadata_;
+        } else {
+          return trainingJobMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public Builder setTrainingJobMetadata(flyteidl.core.Tasks.TaskMetadata value) {
+        if (trainingJobMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trainingJobMetadata_ = value;
+          onChanged();
+        } else {
+          trainingJobMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public Builder setTrainingJobMetadata(
+          flyteidl.core.Tasks.TaskMetadata.Builder builderForValue) {
+        if (trainingJobMetadataBuilder_ == null) {
+          trainingJobMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          trainingJobMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public Builder mergeTrainingJobMetadata(flyteidl.core.Tasks.TaskMetadata value) {
+        if (trainingJobMetadataBuilder_ == null) {
+          if (trainingJobMetadata_ != null) {
+            trainingJobMetadata_ =
+              flyteidl.core.Tasks.TaskMetadata.newBuilder(trainingJobMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            trainingJobMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          trainingJobMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public Builder clearTrainingJobMetadata() {
+        if (trainingJobMetadataBuilder_ == null) {
+          trainingJobMetadata_ = null;
+          onChanged();
+        } else {
+          trainingJobMetadata_ = null;
+          trainingJobMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public flyteidl.core.Tasks.TaskMetadata.Builder getTrainingJobMetadataBuilder() {
+        
+        onChanged();
+        return getTrainingJobMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      public flyteidl.core.Tasks.TaskMetadataOrBuilder getTrainingJobMetadataOrBuilder() {
+        if (trainingJobMetadataBuilder_ != null) {
+          return trainingJobMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return trainingJobMetadata_ == null ?
+              flyteidl.core.Tasks.TaskMetadata.getDefaultInstance() : trainingJobMetadata_;
+        }
+      }
+      /**
+       * <pre>
+       * The metadata of the underlying training job.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskMetadata training_job_metadata = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskMetadata, flyteidl.core.Tasks.TaskMetadata.Builder, flyteidl.core.Tasks.TaskMetadataOrBuilder> 
+          getTrainingJobMetadataFieldBuilder() {
+        if (trainingJobMetadataBuilder_ == null) {
+          trainingJobMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.TaskMetadata, flyteidl.core.Tasks.TaskMetadata.Builder, flyteidl.core.Tasks.TaskMetadataOrBuilder>(
+                  getTrainingJobMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          trainingJobMetadata_ = null;
+        }
+        return trainingJobMetadataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4410,33 +4664,35 @@ public final class HyperparameterTuningJobOuterClass {
     java.lang.String[] descriptorData = {
       "\n:flyteidl/plugins/sagemaker/hyperparame" +
       "ter_tuning_job.proto\022\032flyteidl.plugins.s" +
-      "agemaker\0321flyteidl/plugins/sagemaker/par" +
-      "ameter_ranges.proto\032-flyteidl/plugins/sa" +
-      "gemaker/training_job.proto\"\241\001\n\027Hyperpara" +
-      "meterTuningJob\022=\n\014training_job\030\001 \001(\0132\'.f" +
-      "lyteidl.plugins.sagemaker.TrainingJob\022#\n" +
-      "\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032ma" +
-      "x_parallel_training_jobs\030\003 \001(\003\"H\n!Hyperp" +
-      "arameterTuningObjectiveType\"#\n\005Value\022\014\n\010" +
-      "MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\221\001\n\035Hyperparame" +
-      "terTuningObjective\022[\n\016objective_type\030\001 \001" +
-      "(\0162C.flyteidl.plugins.sagemaker.Hyperpar" +
-      "ameterTuningObjectiveType.Value\022\023\n\013metri" +
-      "c_name\030\002 \001(\t\"A\n\034HyperparameterTuningStra" +
-      "tegy\"!\n\005Value\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"" +
-      ":\n\034TrainingJobEarlyStoppingType\"\032\n\005Value" +
-      "\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\203\003\n\035HyperparameterTu" +
-      "ningJobConfig\022J\n\025hyperparameter_ranges\030\001" +
-      " \001(\0132+.flyteidl.plugins.sagemaker.Parame" +
-      "terRanges\022W\n\017tuning_strategy\030\002 \001(\0162>.fly" +
-      "teidl.plugins.sagemaker.HyperparameterTu" +
-      "ningStrategy.Value\022S\n\020tuning_objective\030\003" +
-      " \001(\01329.flyteidl.plugins.sagemaker.Hyperp" +
-      "arameterTuningObjective\022h\n training_job_" +
-      "early_stopping_type\030\004 \001(\0162>.flyteidl.plu" +
-      "gins.sagemaker.TrainingJobEarlyStoppingT" +
-      "ype.ValueB5Z3github.com/lyft/flyteidl/ge" +
-      "n/pb-go/flyteidl/pluginsb\006proto3"
+      "agemaker\032\031flyteidl/core/tasks.proto\0321fly" +
+      "teidl/plugins/sagemaker/parameter_ranges" +
+      ".proto\032-flyteidl/plugins/sagemaker/train" +
+      "ing_job.proto\"\335\001\n\027HyperparameterTuningJo" +
+      "b\022=\n\014training_job\030\001 \001(\0132\'.flyteidl.plugi" +
+      "ns.sagemaker.TrainingJob\022#\n\033max_number_o" +
+      "f_training_jobs\030\002 \001(\003\022\"\n\032max_parallel_tr" +
+      "aining_jobs\030\003 \001(\003\022:\n\025training_job_metada" +
+      "ta\030\004 \001(\0132\033.flyteidl.core.TaskMetadata\"H\n" +
+      "!HyperparameterTuningObjectiveType\"#\n\005Va" +
+      "lue\022\014\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\221\001\n\035Hype" +
+      "rparameterTuningObjective\022[\n\016objective_t" +
+      "ype\030\001 \001(\0162C.flyteidl.plugins.sagemaker.H" +
+      "yperparameterTuningObjectiveType.Value\022\023" +
+      "\n\013metric_name\030\002 \001(\t\"A\n\034HyperparameterTun" +
+      "ingStrategy\"!\n\005Value\022\014\n\010BAYESIAN\020\000\022\n\n\006RA" +
+      "NDOM\020\001\":\n\034TrainingJobEarlyStoppingType\"\032" +
+      "\n\005Value\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\203\003\n\035Hyperpara" +
+      "meterTuningJobConfig\022J\n\025hyperparameter_r" +
+      "anges\030\001 \001(\0132+.flyteidl.plugins.sagemaker" +
+      ".ParameterRanges\022W\n\017tuning_strategy\030\002 \001(" +
+      "\0162>.flyteidl.plugins.sagemaker.Hyperpara" +
+      "meterTuningStrategy.Value\022S\n\020tuning_obje" +
+      "ctive\030\003 \001(\01329.flyteidl.plugins.sagemaker" +
+      ".HyperparameterTuningObjective\022h\n traini" +
+      "ng_job_early_stopping_type\030\004 \001(\0162>.flyte" +
+      "idl.plugins.sagemaker.TrainingJobEarlySt" +
+      "oppingType.ValueB5Z3github.com/lyft/flyt" +
+      "eidl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4449,6 +4705,7 @@ public final class HyperparameterTuningJobOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.core.Tasks.getDescriptor(),
           flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor(),
           flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor(),
         }, assigner);
@@ -4457,7 +4714,7 @@ public final class HyperparameterTuningJobOuterClass {
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJob_descriptor,
-        new java.lang.String[] { "TrainingJob", "MaxNumberOfTrainingJobs", "MaxParallelTrainingJobs", });
+        new java.lang.String[] { "TrainingJob", "MaxNumberOfTrainingJobs", "MaxParallelTrainingJobs", "TrainingJobMetadata", });
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_fieldAccessorTable = new
@@ -4488,6 +4745,7 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor,
         new java.lang.String[] { "HyperparameterRanges", "TuningStrategy", "TuningObjective", "TrainingJobEarlyStoppingType", });
+    flyteidl.core.Tasks.getDescriptor();
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor();
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor();
   }

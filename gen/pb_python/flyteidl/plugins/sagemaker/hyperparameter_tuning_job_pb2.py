@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 from flyteidl.plugins.sagemaker import parameter_ranges_pb2 as flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2
 from flyteidl.plugins.sagemaker import training_job_pb2 as flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2
 
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n:flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xa1\x01\n\x17HyperparameterTuningJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"H\n!HyperparameterTuningObjectiveType\"#\n\x05Value\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x91\x01\n\x1dHyperparameterTuningObjective\x12[\n\x0eobjective_type\x18\x01 \x01(\x0e\x32\x43.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"A\n\x1cHyperparameterTuningStrategy\"!\n\x05Value\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\":\n\x1cTrainingJobEarlyStoppingType\"\x1a\n\x05Value\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\"\x83\x03\n\x1dHyperparameterTuningJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12W\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12h\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.ValueB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n:flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xdd\x01\n\x17HyperparameterTuningJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\x12:\n\x15training_job_metadata\x18\x04 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\"H\n!HyperparameterTuningObjectiveType\"#\n\x05Value\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x91\x01\n\x1dHyperparameterTuningObjective\x12[\n\x0eobjective_type\x18\x01 \x01(\x0e\x32\x43.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"A\n\x1cHyperparameterTuningStrategy\"!\n\x05Value\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\":\n\x1cTrainingJobEarlyStoppingType\"\x1a\n\x05Value\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\"\x83\x03\n\x1dHyperparameterTuningJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12W\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12h\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.ValueB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,])
 
 
 
@@ -45,8 +46,8 @@ _HYPERPARAMETERTUNINGOBJECTIVETYPE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=389,
-  serialized_end=424,
+  serialized_start=476,
+  serialized_end=511,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGOBJECTIVETYPE_VALUE)
 
@@ -67,8 +68,8 @@ _HYPERPARAMETERTUNINGSTRATEGY_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=606,
-  serialized_end=639,
+  serialized_start=693,
+  serialized_end=726,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGSTRATEGY_VALUE)
 
@@ -89,8 +90,8 @@ _TRAININGJOBEARLYSTOPPINGTYPE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=673,
-  serialized_end=699,
+  serialized_start=760,
+  serialized_end=786,
 )
 _sym_db.RegisterEnumDescriptor(_TRAININGJOBEARLYSTOPPINGTYPE_VALUE)
 
@@ -123,6 +124,13 @@ _HYPERPARAMETERTUNINGJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='training_job_metadata', full_name='flyteidl.plugins.sagemaker.HyperparameterTuningJob.training_job_metadata', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -135,8 +143,8 @@ _HYPERPARAMETERTUNINGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=189,
-  serialized_end=350,
+  serialized_start=216,
+  serialized_end=437,
 )
 
 
@@ -160,8 +168,8 @@ _HYPERPARAMETERTUNINGOBJECTIVETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=352,
-  serialized_end=424,
+  serialized_start=439,
+  serialized_end=511,
 )
 
 
@@ -198,8 +206,8 @@ _HYPERPARAMETERTUNINGOBJECTIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=572,
+  serialized_start=514,
+  serialized_end=659,
 )
 
 
@@ -223,8 +231,8 @@ _HYPERPARAMETERTUNINGSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=574,
-  serialized_end=639,
+  serialized_start=661,
+  serialized_end=726,
 )
 
 
@@ -248,8 +256,8 @@ _TRAININGJOBEARLYSTOPPINGTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=641,
-  serialized_end=699,
+  serialized_start=728,
+  serialized_end=786,
 )
 
 
@@ -300,11 +308,12 @@ _HYPERPARAMETERTUNINGJOBCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=702,
-  serialized_end=1089,
+  serialized_start=789,
+  serialized_end=1176,
 )
 
 _HYPERPARAMETERTUNINGJOB.fields_by_name['training_job'].message_type = flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2._TRAININGJOB
+_HYPERPARAMETERTUNINGJOB.fields_by_name['training_job_metadata'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKMETADATA
 _HYPERPARAMETERTUNINGOBJECTIVETYPE_VALUE.containing_type = _HYPERPARAMETERTUNINGOBJECTIVETYPE
 _HYPERPARAMETERTUNINGOBJECTIVE.fields_by_name['objective_type'].enum_type = _HYPERPARAMETERTUNINGOBJECTIVETYPE_VALUE
 _HYPERPARAMETERTUNINGSTRATEGY_VALUE.containing_type = _HYPERPARAMETERTUNINGSTRATEGY
