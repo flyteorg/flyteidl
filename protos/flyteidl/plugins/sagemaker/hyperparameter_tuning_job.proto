@@ -4,8 +4,10 @@ package flyteidl.plugins.sagemaker;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
+import "flyteidl/core/tasks.proto";
 import "flyteidl/plugins/sagemaker/parameter_ranges.proto";
 import "flyteidl/plugins/sagemaker/training_job.proto";
+
 
 // A pass-through for SageMaker's hyperparameter tuning job
 message HyperparameterTuningJob {
@@ -19,6 +21,9 @@ message HyperparameterTuningJob {
     // The maximum number of concurrent training job that an hpo job can launch
     // https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
     int64 max_parallel_training_jobs = 3;
+
+    // The metadata of the underlying training job.
+    TaskMetadata training_job_metadata = 4;
 }
 
 // HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
