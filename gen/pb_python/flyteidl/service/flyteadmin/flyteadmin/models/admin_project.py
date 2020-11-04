@@ -18,7 +18,7 @@ import six
 
 from flyteadmin.models.admin_domain import AdminDomain  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
-from flyteadmin.models.project_state import ProjectState  # noqa: F401,E501
+from flyteadmin.models.project_project_state import ProjectProjectState  # noqa: F401,E501
 
 
 class AdminProject(object):
@@ -40,7 +40,7 @@ class AdminProject(object):
         'domains': 'list[AdminDomain]',
         'description': 'str',
         'labels': 'AdminLabels',
-        'state': 'ProjectState'
+        'state': 'ProjectProjectState'
     }
 
     attribute_map = {
@@ -191,7 +191,7 @@ class AdminProject(object):
 
 
         :return: The state of this AdminProject.  # noqa: E501
-        :rtype: ProjectState
+        :rtype: ProjectProjectState
         """
         return self._state
 
@@ -201,7 +201,7 @@ class AdminProject(object):
 
 
         :param state: The state of this AdminProject.  # noqa: E501
-        :type: ProjectState
+        :type: ProjectProjectState
         """
 
         self._state = state

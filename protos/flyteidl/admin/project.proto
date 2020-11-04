@@ -19,7 +19,7 @@ message Domain {
 // Top-level namespace used to classify different entities like workflows and executions.
 message Project {
     // The state of the project is used to control its visibility in the UI and validity.
-    enum State {
+    enum ProjectState {
         // By default, all projects are considered active.
         ACTIVE = 0;
 
@@ -43,7 +43,7 @@ message Project {
     // tag projects with ownership information.
     Labels labels = 5;
 
-    State state = 6;
+    ProjectState state = 6;
 }
 
 message Projects {

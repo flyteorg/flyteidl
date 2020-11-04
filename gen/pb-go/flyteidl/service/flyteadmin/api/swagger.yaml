@@ -2483,7 +2483,7 @@ definitions:
     - "FAIL"
     - "USE_DEFAULT"
     default: "FAIL"
-  ProjectState:
+  ProjectProjectState:
     type: "string"
     description: "The state of the project is used to control its visibility in the\
       \ UI and validity.\n\n - ACTIVE: By default, all projects are considered active.\n\
@@ -5515,7 +5515,7 @@ definitions:
           \ with ownership information."
         $ref: "#/definitions/adminLabels"
       state:
-        $ref: "#/definitions/ProjectState"
+        $ref: "#/definitions/ProjectProjectState"
     description: "Top-level namespace used to classify different entities like workflows\
       \ and executions."
     example:

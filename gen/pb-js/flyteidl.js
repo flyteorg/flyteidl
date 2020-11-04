@@ -25924,7 +25924,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.admin.IDomain>|null} [domains] Project domains
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
-             * @property {flyteidl.admin.Project.State|null} [state] Project state
+             * @property {flyteidl.admin.Project.ProjectState|null} [state] Project state
              */
 
             /**
@@ -25985,7 +25985,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Project state.
-             * @member {flyteidl.admin.Project.State} state
+             * @member {flyteidl.admin.Project.ProjectState} state
              * @memberof flyteidl.admin.Project
              * @instance
              */
@@ -26124,14 +26124,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * State enum.
-             * @name flyteidl.admin.Project.State
+             * ProjectState enum.
+             * @name flyteidl.admin.Project.ProjectState
              * @enum {string}
              * @property {number} ACTIVE=0 ACTIVE value
              * @property {number} ARCHIVED=1 ARCHIVED value
              * @property {number} SYSTEM_GENERATED=2 SYSTEM_GENERATED value
              */
-            Project.State = (function() {
+            Project.ProjectState = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "ACTIVE"] = 0;
                 values[valuesById[1] = "ARCHIVED"] = 1;

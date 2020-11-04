@@ -89,27 +89,27 @@ template<> ::flyteidl::admin::Projects* Arena::CreateMaybeMessage<::flyteidl::ad
 namespace flyteidl {
 namespace admin {
 
-enum Project_State {
-  Project_State_ACTIVE = 0,
-  Project_State_ARCHIVED = 1,
-  Project_State_SYSTEM_GENERATED = 2,
-  Project_State_Project_State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  Project_State_Project_State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum Project_ProjectState {
+  Project_ProjectState_ACTIVE = 0,
+  Project_ProjectState_ARCHIVED = 1,
+  Project_ProjectState_SYSTEM_GENERATED = 2,
+  Project_ProjectState_Project_ProjectState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  Project_ProjectState_Project_ProjectState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool Project_State_IsValid(int value);
-const Project_State Project_State_State_MIN = Project_State_ACTIVE;
-const Project_State Project_State_State_MAX = Project_State_SYSTEM_GENERATED;
-const int Project_State_State_ARRAYSIZE = Project_State_State_MAX + 1;
+bool Project_ProjectState_IsValid(int value);
+const Project_ProjectState Project_ProjectState_ProjectState_MIN = Project_ProjectState_ACTIVE;
+const Project_ProjectState Project_ProjectState_ProjectState_MAX = Project_ProjectState_SYSTEM_GENERATED;
+const int Project_ProjectState_ProjectState_ARRAYSIZE = Project_ProjectState_ProjectState_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Project_State_descriptor();
-inline const ::std::string& Project_State_Name(Project_State value) {
+const ::google::protobuf::EnumDescriptor* Project_ProjectState_descriptor();
+inline const ::std::string& Project_ProjectState_Name(Project_ProjectState value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Project_State_descriptor(), value);
+    Project_ProjectState_descriptor(), value);
 }
-inline bool Project_State_Parse(
-    const ::std::string& name, Project_State* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Project_State>(
-    Project_State_descriptor(), name, value);
+inline bool Project_ProjectState_Parse(
+    const ::std::string& name, Project_ProjectState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Project_ProjectState>(
+    Project_ProjectState_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -341,32 +341,32 @@ class Project final :
 
   // nested types ----------------------------------------------------
 
-  typedef Project_State State;
-  static const State ACTIVE =
-    Project_State_ACTIVE;
-  static const State ARCHIVED =
-    Project_State_ARCHIVED;
-  static const State SYSTEM_GENERATED =
-    Project_State_SYSTEM_GENERATED;
-  static inline bool State_IsValid(int value) {
-    return Project_State_IsValid(value);
+  typedef Project_ProjectState ProjectState;
+  static const ProjectState ACTIVE =
+    Project_ProjectState_ACTIVE;
+  static const ProjectState ARCHIVED =
+    Project_ProjectState_ARCHIVED;
+  static const ProjectState SYSTEM_GENERATED =
+    Project_ProjectState_SYSTEM_GENERATED;
+  static inline bool ProjectState_IsValid(int value) {
+    return Project_ProjectState_IsValid(value);
   }
-  static const State State_MIN =
-    Project_State_State_MIN;
-  static const State State_MAX =
-    Project_State_State_MAX;
-  static const int State_ARRAYSIZE =
-    Project_State_State_ARRAYSIZE;
+  static const ProjectState ProjectState_MIN =
+    Project_ProjectState_ProjectState_MIN;
+  static const ProjectState ProjectState_MAX =
+    Project_ProjectState_ProjectState_MAX;
+  static const int ProjectState_ARRAYSIZE =
+    Project_ProjectState_ProjectState_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
-  State_descriptor() {
-    return Project_State_descriptor();
+  ProjectState_descriptor() {
+    return Project_ProjectState_descriptor();
   }
-  static inline const ::std::string& State_Name(State value) {
-    return Project_State_Name(value);
+  static inline const ::std::string& ProjectState_Name(ProjectState value) {
+    return Project_ProjectState_Name(value);
   }
-  static inline bool State_Parse(const ::std::string& name,
-      State* value) {
-    return Project_State_Parse(name, value);
+  static inline bool ProjectState_Parse(const ::std::string& name,
+      ProjectState* value) {
+    return Project_ProjectState_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -434,11 +434,11 @@ class Project final :
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
-  // .flyteidl.admin.Project.State state = 6;
+  // .flyteidl.admin.Project.ProjectState state = 6;
   void clear_state();
   static const int kStateFieldNumber = 6;
-  ::flyteidl::admin::Project_State state() const;
-  void set_state(::flyteidl::admin::Project_State value);
+  ::flyteidl::admin::Project_ProjectState state() const;
+  void set_state(::flyteidl::admin::Project_ProjectState value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Project)
  private:
@@ -1357,15 +1357,15 @@ inline void Project::set_allocated_labels(::flyteidl::admin::Labels* labels) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Project.labels)
 }
 
-// .flyteidl.admin.Project.State state = 6;
+// .flyteidl.admin.Project.ProjectState state = 6;
 inline void Project::clear_state() {
   state_ = 0;
 }
-inline ::flyteidl::admin::Project_State Project::state() const {
+inline ::flyteidl::admin::Project_ProjectState Project::state() const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.Project.state)
-  return static_cast< ::flyteidl::admin::Project_State >(state_);
+  return static_cast< ::flyteidl::admin::Project_ProjectState >(state_);
 }
-inline void Project::set_state(::flyteidl::admin::Project_State value) {
+inline void Project::set_state(::flyteidl::admin::Project_ProjectState value) {
   
   state_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.Project.state)
@@ -1496,10 +1496,10 @@ inline void ProjectRegisterRequest::set_allocated_project(::flyteidl::admin::Pro
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::admin::Project_State> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::admin::Project_ProjectState> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Project_State>() {
-  return ::flyteidl::admin::Project_State_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Project_ProjectState>() {
+  return ::flyteidl::admin::Project_ProjectState_descriptor();
 }
 
 }  // namespace protobuf

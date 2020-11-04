@@ -84,31 +84,31 @@ labels
 .. _api_field_flyteidl.admin.Project.state:
 
 state
-  (:ref:`flyteidl.admin.Project.State <api_enum_flyteidl.admin.Project.State>`) 
+  (:ref:`flyteidl.admin.Project.ProjectState <api_enum_flyteidl.admin.Project.ProjectState>`) 
   
 
-.. _api_enum_flyteidl.admin.Project.State:
+.. _api_enum_flyteidl.admin.Project.ProjectState:
 
-Enum flyteidl.admin.Project.State
----------------------------------
+Enum flyteidl.admin.Project.ProjectState
+----------------------------------------
 
-`[flyteidl.admin.Project.State proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L21>`_
+`[flyteidl.admin.Project.ProjectState proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L21>`_
 
 The state of the project is used to control its visibility in the UI and validity.
 
-.. _api_enum_value_flyteidl.admin.Project.State.ACTIVE:
+.. _api_enum_value_flyteidl.admin.Project.ProjectState.ACTIVE:
 
 ACTIVE
   *(DEFAULT)* ⁣By default, all projects are considered active.
   
   
-.. _api_enum_value_flyteidl.admin.Project.State.ARCHIVED:
+.. _api_enum_value_flyteidl.admin.Project.ProjectState.ARCHIVED:
 
 ARCHIVED
   ⁣Archived projects are no longer visible in the UI and no longer valid.
   
   
-.. _api_enum_value_flyteidl.admin.Project.State.SYSTEM_GENERATED:
+.. _api_enum_value_flyteidl.admin.Project.ProjectState.SYSTEM_GENERATED:
 
 SYSTEM_GENERATED
   ⁣System generated projects that aren't explicitly created or managed by a user.

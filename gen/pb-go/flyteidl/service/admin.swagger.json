@@ -2811,7 +2811,7 @@
       "default": "FAIL",
       "description": " - USE_DEFAULT: Uses the system-configured default implementation."
     },
-    "ProjectState": {
+    "ProjectProjectState": {
       "type": "string",
       "enum": [
         "ACTIVE",
@@ -3904,7 +3904,7 @@
           "description": "Leverage Labels from flyteidel.admin.common.proto to\ntag projects with ownership information."
         },
         "state": {
-          "$ref": "#/definitions/ProjectState"
+          "$ref": "#/definitions/ProjectProjectState"
         }
       },
       "description": "Top-level namespace used to classify different entities like workflows and executions."

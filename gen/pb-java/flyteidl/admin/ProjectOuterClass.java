@@ -841,13 +841,13 @@ public final class ProjectOuterClass {
     flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.Project.State state = 6;</code>
+     * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
      */
     int getStateValue();
     /**
-     * <code>.flyteidl.admin.Project.State state = 6;</code>
+     * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
      */
-    flyteidl.admin.ProjectOuterClass.Project.State getState();
+    flyteidl.admin.ProjectOuterClass.Project.ProjectState getState();
   }
   /**
    * <pre>
@@ -983,9 +983,9 @@ public final class ProjectOuterClass {
      * The state of the project is used to control its visibility in the UI and validity.
      * </pre>
      *
-     * Protobuf enum {@code flyteidl.admin.Project.State}
+     * Protobuf enum {@code flyteidl.admin.Project.ProjectState}
      */
-    public enum State
+    public enum ProjectState
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
@@ -1052,11 +1052,11 @@ public final class ProjectOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static State valueOf(int value) {
+      public static ProjectState valueOf(int value) {
         return forNumber(value);
       }
 
-      public static State forNumber(int value) {
+      public static ProjectState forNumber(int value) {
         switch (value) {
           case 0: return ACTIVE;
           case 1: return ARCHIVED;
@@ -1065,15 +1065,15 @@ public final class ProjectOuterClass {
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<State>
+      public static com.google.protobuf.Internal.EnumLiteMap<ProjectState>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          State> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<State>() {
-              public State findValueByNumber(int number) {
-                return State.forNumber(number);
+          ProjectState> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProjectState>() {
+              public ProjectState findValueByNumber(int number) {
+                return ProjectState.forNumber(number);
               }
             };
 
@@ -1090,9 +1090,9 @@ public final class ProjectOuterClass {
         return flyteidl.admin.ProjectOuterClass.Project.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final State[] VALUES = values();
+      private static final ProjectState[] VALUES = values();
 
-      public static State valueOf(
+      public static ProjectState valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -1106,11 +1106,11 @@ public final class ProjectOuterClass {
 
       private final int value;
 
-      private State(int value) {
+      private ProjectState(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.admin.Project.State)
+      // @@protoc_insertion_point(enum_scope:flyteidl.admin.Project.ProjectState)
     }
 
     private int bitField0_;
@@ -1298,18 +1298,18 @@ public final class ProjectOuterClass {
     public static final int STATE_FIELD_NUMBER = 6;
     private int state_;
     /**
-     * <code>.flyteidl.admin.Project.State state = 6;</code>
+     * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
-     * <code>.flyteidl.admin.Project.State state = 6;</code>
+     * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
      */
-    public flyteidl.admin.ProjectOuterClass.Project.State getState() {
+    public flyteidl.admin.ProjectOuterClass.Project.ProjectState getState() {
       @SuppressWarnings("deprecation")
-      flyteidl.admin.ProjectOuterClass.Project.State result = flyteidl.admin.ProjectOuterClass.Project.State.valueOf(state_);
-      return result == null ? flyteidl.admin.ProjectOuterClass.Project.State.UNRECOGNIZED : result;
+      flyteidl.admin.ProjectOuterClass.Project.ProjectState result = flyteidl.admin.ProjectOuterClass.Project.ProjectState.valueOf(state_);
+      return result == null ? flyteidl.admin.ProjectOuterClass.Project.ProjectState.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1341,7 +1341,7 @@ public final class ProjectOuterClass {
       if (labels_ != null) {
         output.writeMessage(5, getLabels());
       }
-      if (state_ != flyteidl.admin.ProjectOuterClass.Project.State.ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ProjectOuterClass.Project.ProjectState.ACTIVE.getNumber()) {
         output.writeEnum(6, state_);
       }
       unknownFields.writeTo(output);
@@ -1370,7 +1370,7 @@ public final class ProjectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getLabels());
       }
-      if (state_ != flyteidl.admin.ProjectOuterClass.Project.State.ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ProjectOuterClass.Project.ProjectState.ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, state_);
       }
@@ -2388,13 +2388,13 @@ public final class ProjectOuterClass {
 
       private int state_ = 0;
       /**
-       * <code>.flyteidl.admin.Project.State state = 6;</code>
+       * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
-       * <code>.flyteidl.admin.Project.State state = 6;</code>
+       * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -2402,17 +2402,17 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Project.State state = 6;</code>
+       * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
        */
-      public flyteidl.admin.ProjectOuterClass.Project.State getState() {
+      public flyteidl.admin.ProjectOuterClass.Project.ProjectState getState() {
         @SuppressWarnings("deprecation")
-        flyteidl.admin.ProjectOuterClass.Project.State result = flyteidl.admin.ProjectOuterClass.Project.State.valueOf(state_);
-        return result == null ? flyteidl.admin.ProjectOuterClass.Project.State.UNRECOGNIZED : result;
+        flyteidl.admin.ProjectOuterClass.Project.ProjectState result = flyteidl.admin.ProjectOuterClass.Project.ProjectState.valueOf(state_);
+        return result == null ? flyteidl.admin.ProjectOuterClass.Project.ProjectState.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.admin.Project.State state = 6;</code>
+       * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
        */
-      public Builder setState(flyteidl.admin.ProjectOuterClass.Project.State value) {
+      public Builder setState(flyteidl.admin.ProjectOuterClass.Project.ProjectState value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2422,7 +2422,7 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Project.State state = 6;</code>
+       * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
        */
       public Builder clearState() {
         
@@ -5149,20 +5149,20 @@ public final class ProjectOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/admin/project.proto\022\016flyteidl" +
       ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D" +
-      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\360\001\n\007Proj" +
+      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\376\001\n\007Proj" +
       "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains" +
       "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri" +
       "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a" +
-      "dmin.Labels\022,\n\005state\030\006 \001(\0162\035.flyteidl.ad" +
-      "min.Project.State\"7\n\005State\022\n\n\006ACTIVE\020\000\022\014" +
-      "\n\010ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002\"5\n\010Pr" +
-      "ojects\022)\n\010projects\030\001 \003(\0132\027.flyteidl.admi" +
-      "n.Project\"\024\n\022ProjectListRequest\"B\n\026Proje" +
-      "ctRegisterRequest\022(\n\007project\030\001 \001(\0132\027.fly" +
-      "teidl.admin.Project\"\031\n\027ProjectRegisterRe" +
-      "sponse\"\027\n\025ProjectUpdateResponseB3Z1githu" +
-      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a" +
-      "dminb\006proto3"
+      "dmin.Labels\0223\n\005state\030\006 \001(\0162$.flyteidl.ad" +
+      "min.Project.ProjectState\">\n\014ProjectState" +
+      "\022\n\n\006ACTIVE\020\000\022\014\n\010ARCHIVED\020\001\022\024\n\020SYSTEM_GEN" +
+      "ERATED\020\002\"5\n\010Projects\022)\n\010projects\030\001 \003(\0132\027" +
+      ".flyteidl.admin.Project\"\024\n\022ProjectListRe" +
+      "quest\"B\n\026ProjectRegisterRequest\022(\n\007proje" +
+      "ct\030\001 \001(\0132\027.flyteidl.admin.Project\"\031\n\027Pro" +
+      "jectRegisterResponse\"\027\n\025ProjectUpdateRes" +
+      "ponseB3Z1github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

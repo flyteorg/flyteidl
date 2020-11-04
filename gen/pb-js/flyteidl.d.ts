@@ -10848,7 +10848,7 @@ export namespace flyteidl {
             labels?: (flyteidl.admin.ILabels|null);
 
             /** Project state */
-            state?: (flyteidl.admin.Project.State|null);
+            state?: (flyteidl.admin.Project.ProjectState|null);
         }
 
         /** Represents a Project. */
@@ -10876,7 +10876,7 @@ export namespace flyteidl {
             public labels?: (flyteidl.admin.ILabels|null);
 
             /** Project state. */
-            public state: flyteidl.admin.Project.State;
+            public state: flyteidl.admin.Project.ProjectState;
 
             /**
              * Creates a new Project instance using the specified properties.
@@ -10913,8 +10913,8 @@ export namespace flyteidl {
 
         namespace Project {
 
-            /** State enum. */
-            enum State {
+            /** ProjectState enum. */
+            enum ProjectState {
                 ACTIVE = 0,
                 ARCHIVED = 1,
                 SYSTEM_GENERATED = 2
