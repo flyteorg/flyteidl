@@ -25913,6 +25913,22 @@ export const flyteidl = $root.flyteidl = (() => {
             return Domain;
         })();
 
+        /**
+         * ProjectState enum.
+         * @name flyteidl.admin.ProjectState
+         * @enum {string}
+         * @property {number} PROJECT_ACTIVE=0 PROJECT_ACTIVE value
+         * @property {number} PROJECT_ARCHIVED=1 PROJECT_ARCHIVED value
+         * @property {number} PROJECT_SYSTEM_GENERATED=2 PROJECT_SYSTEM_GENERATED value
+         */
+        admin.ProjectState = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "PROJECT_ACTIVE"] = 0;
+            values[valuesById[1] = "PROJECT_ARCHIVED"] = 1;
+            values[valuesById[2] = "PROJECT_SYSTEM_GENERATED"] = 2;
+            return values;
+        })();
+
         admin.Project = (function() {
 
             /**
@@ -25924,7 +25940,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.admin.IDomain>|null} [domains] Project domains
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
-             * @property {boolean|null} [archived] Project archived
+             * @property {flyteidl.admin.ProjectState|null} [state] Project state
              */
 
             /**
@@ -25984,12 +26000,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Project.prototype.labels = null;
 
             /**
-             * Project archived.
-             * @member {boolean} archived
+             * Project state.
+             * @member {flyteidl.admin.ProjectState} state
              * @memberof flyteidl.admin.Project
              * @instance
              */
-            Project.prototype.archived = false;
+            Project.prototype.state = 0;
 
             /**
              * Creates a new Project instance using the specified properties.
@@ -26026,8 +26042,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.description);
                 if (message.labels != null && message.hasOwnProperty("labels"))
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.archived != null && message.hasOwnProperty("archived"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.archived);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.state);
                 return writer;
             };
 
@@ -26067,7 +26083,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.archived = reader.bool();
+                        message.state = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -26111,9 +26127,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "labels." + error;
                 }
-                if (message.archived != null && message.hasOwnProperty("archived"))
-                    if (typeof message.archived !== "boolean")
-                        return "archived: boolean expected";
+                if (message.state != null && message.hasOwnProperty("state"))
+                    switch (message.state) {
+                    default:
+                        return "state: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 

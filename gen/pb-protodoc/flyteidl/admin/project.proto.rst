@@ -38,7 +38,7 @@ name
 flyteidl.admin.Project
 ----------------------
 
-`[flyteidl.admin.Project proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L18>`_
+`[flyteidl.admin.Project proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L30>`_
 
 Top-level namespace used to classify different entities like workflows and executions.
 
@@ -50,7 +50,7 @@ Top-level namespace used to classify different entities like workflows and execu
     "domains": [],
     "description": "...",
     "labels": "{...}",
-    "archived": "..."
+    "state": "..."
   }
 
 .. _api_field_flyteidl.admin.Project.id:
@@ -81,10 +81,10 @@ labels
   tag projects with ownership information.
   
   
-.. _api_field_flyteidl.admin.Project.archived:
+.. _api_field_flyteidl.admin.Project.state:
 
-archived
-  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+state
+  (:ref:`flyteidl.admin.ProjectState <api_enum_flyteidl.admin.ProjectState>`) 
   
 
 
@@ -93,7 +93,7 @@ archived
 flyteidl.admin.Projects
 -----------------------
 
-`[flyteidl.admin.Projects proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L35>`_
+`[flyteidl.admin.Projects proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L47>`_
 
 
 .. code-block:: json
@@ -114,7 +114,7 @@ projects
 flyteidl.admin.ProjectListRequest
 ---------------------------------
 
-`[flyteidl.admin.ProjectListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L39>`_
+`[flyteidl.admin.ProjectListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L51>`_
 
 
 .. code-block:: json
@@ -129,7 +129,7 @@ flyteidl.admin.ProjectListRequest
 flyteidl.admin.ProjectRegisterRequest
 -------------------------------------
 
-`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L42>`_
+`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L54>`_
 
 
 .. code-block:: json
@@ -150,7 +150,7 @@ project
 flyteidl.admin.ProjectRegisterResponse
 --------------------------------------
 
-`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L46>`_
+`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L58>`_
 
 
 .. code-block:: json
@@ -165,7 +165,7 @@ flyteidl.admin.ProjectRegisterResponse
 flyteidl.admin.ProjectUpdateResponse
 ------------------------------------
 
-`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L49>`_
+`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L61>`_
 
 
 .. code-block:: json
@@ -174,3 +174,30 @@ flyteidl.admin.ProjectUpdateResponse
 
 
 
+.. _api_enum_flyteidl.admin.ProjectState:
+
+Enum flyteidl.admin.ProjectState
+--------------------------------
+
+`[flyteidl.admin.ProjectState proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L18>`_
+
+The status of the project is used to control its visibility in the UI and validity.
+
+.. _api_enum_value_flyteidl.admin.ProjectState.PROJECT_ACTIVE:
+
+PROJECT_ACTIVE
+  *(DEFAULT)* ⁣By default, all projects are considered active.
+  
+  
+.. _api_enum_value_flyteidl.admin.ProjectState.PROJECT_ARCHIVED:
+
+PROJECT_ARCHIVED
+  ⁣Archived projects are no longer visible in the UI and no longer valid.
+  
+  
+.. _api_enum_value_flyteidl.admin.ProjectState.PROJECT_SYSTEM_GENERATED:
+
+PROJECT_SYSTEM_GENERATED
+  ⁣System generated projects that aren't explicitly created or managed by a user.
+  
+  

@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.admin_domain import AdminDomain  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
+from flyteadmin.models.admin_project_state import AdminProjectState  # noqa: F401,E501
 
 
 class AdminProject(object):
@@ -39,7 +40,7 @@ class AdminProject(object):
         'domains': 'list[AdminDomain]',
         'description': 'str',
         'labels': 'AdminLabels',
-        'archived': 'bool'
+        'state': 'AdminProjectState'
     }
 
     attribute_map = {
@@ -48,10 +49,10 @@ class AdminProject(object):
         'domains': 'domains',
         'description': 'description',
         'labels': 'labels',
-        'archived': 'archived'
+        'state': 'state'
     }
 
-    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, archived=None):  # noqa: E501
+    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, state=None):  # noqa: E501
         """AdminProject - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -59,7 +60,7 @@ class AdminProject(object):
         self._domains = None
         self._description = None
         self._labels = None
-        self._archived = None
+        self._state = None
         self.discriminator = None
 
         if id is not None:
@@ -72,8 +73,8 @@ class AdminProject(object):
             self.description = description
         if labels is not None:
             self.labels = labels
-        if archived is not None:
-            self.archived = archived
+        if state is not None:
+            self.state = state
 
     @property
     def id(self):
@@ -185,25 +186,25 @@ class AdminProject(object):
         self._labels = labels
 
     @property
-    def archived(self):
-        """Gets the archived of this AdminProject.  # noqa: E501
+    def state(self):
+        """Gets the state of this AdminProject.  # noqa: E501
 
 
-        :return: The archived of this AdminProject.  # noqa: E501
-        :rtype: bool
+        :return: The state of this AdminProject.  # noqa: E501
+        :rtype: AdminProjectState
         """
-        return self._archived
+        return self._state
 
-    @archived.setter
-    def archived(self, archived):
-        """Sets the archived of this AdminProject.
+    @state.setter
+    def state(self, state):
+        """Sets the state of this AdminProject.
 
 
-        :param archived: The archived of this AdminProject.  # noqa: E501
-        :type: bool
+        :param state: The state of this AdminProject.  # noqa: E501
+        :type: AdminProjectState
         """
 
-        self._archived = archived
+        self._state = state
 
     def to_dict(self):
         """Returns the model properties as a dict"""

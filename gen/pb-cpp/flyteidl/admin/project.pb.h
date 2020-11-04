@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/admin/common.pb.h"
 // @@protoc_insertion_point(includes)
@@ -88,6 +89,28 @@ template<> ::flyteidl::admin::Projects* Arena::CreateMaybeMessage<::flyteidl::ad
 namespace flyteidl {
 namespace admin {
 
+enum ProjectState {
+  PROJECT_ACTIVE = 0,
+  PROJECT_ARCHIVED = 1,
+  PROJECT_SYSTEM_GENERATED = 2,
+  ProjectState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  ProjectState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool ProjectState_IsValid(int value);
+const ProjectState ProjectState_MIN = PROJECT_ACTIVE;
+const ProjectState ProjectState_MAX = PROJECT_SYSTEM_GENERATED;
+const int ProjectState_ARRAYSIZE = ProjectState_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* ProjectState_descriptor();
+inline const ::std::string& ProjectState_Name(ProjectState value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    ProjectState_descriptor(), value);
+}
+inline bool ProjectState_Parse(
+    const ::std::string& name, ProjectState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProjectState>(
+    ProjectState_descriptor(), name, value);
+}
 // ===================================================================
 
 class Domain final :
@@ -383,11 +406,11 @@ class Project final :
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
-  // bool archived = 6;
-  void clear_archived();
-  static const int kArchivedFieldNumber = 6;
-  bool archived() const;
-  void set_archived(bool value);
+  // .flyteidl.admin.ProjectState state = 6;
+  void clear_state();
+  static const int kStateFieldNumber = 6;
+  ::flyteidl::admin::ProjectState state() const;
+  void set_state(::flyteidl::admin::ProjectState value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Project)
  private:
@@ -399,7 +422,7 @@ class Project final :
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::flyteidl::admin::Labels* labels_;
-  bool archived_;
+  int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_2eproto;
 };
@@ -1306,18 +1329,18 @@ inline void Project::set_allocated_labels(::flyteidl::admin::Labels* labels) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Project.labels)
 }
 
-// bool archived = 6;
-inline void Project::clear_archived() {
-  archived_ = false;
+// .flyteidl.admin.ProjectState state = 6;
+inline void Project::clear_state() {
+  state_ = 0;
 }
-inline bool Project::archived() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Project.archived)
-  return archived_;
+inline ::flyteidl::admin::ProjectState Project::state() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Project.state)
+  return static_cast< ::flyteidl::admin::ProjectState >(state_);
 }
-inline void Project::set_archived(bool value) {
+inline void Project::set_state(::flyteidl::admin::ProjectState value) {
   
-  archived_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Project.archived)
+  state_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Project.state)
 }
 
 // -------------------------------------------------------------------
@@ -1441,6 +1464,18 @@ inline void ProjectRegisterRequest::set_allocated_project(::flyteidl::admin::Pro
 
 }  // namespace admin
 }  // namespace flyteidl
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::flyteidl::admin::ProjectState> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::ProjectState>() {
+  return ::flyteidl::admin::ProjectState_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

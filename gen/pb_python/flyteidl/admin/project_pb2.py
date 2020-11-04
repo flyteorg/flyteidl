@@ -4,6 +4,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -21,10 +22,40 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x9b\x01\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12\x10\n\x08\x61rchived\x18\x06 \x01(\x08\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequest\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponse\"\x17\n\x15ProjectUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xb6\x01\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12+\n\x05state\x18\x06 \x01(\x0e\x32\x1c.flyteidl.admin.ProjectState\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequest\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponse\"\x17\n\x15ProjectUpdateResponse*V\n\x0cProjectState\x12\x12\n\x0ePROJECT_ACTIVE\x10\x00\x12\x14\n\x10PROJECT_ARCHIVED\x10\x01\x12\x1c\n\x18PROJECT_SYSTEM_GENERATED\x10\x02\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
+_PROJECTSTATE = _descriptor.EnumDescriptor(
+  name='ProjectState',
+  full_name='flyteidl.admin.ProjectState',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='PROJECT_ACTIVE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROJECT_ARCHIVED', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROJECT_SYSTEM_GENERATED', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=495,
+  serialized_end=581,
+)
+_sym_db.RegisterEnumDescriptor(_PROJECTSTATE)
+
+ProjectState = enum_type_wrapper.EnumTypeWrapper(_PROJECTSTATE)
+PROJECT_ACTIVE = 0
+PROJECT_ARCHIVED = 1
+PROJECT_SYSTEM_GENERATED = 2
 
 
 
@@ -109,9 +140,9 @@ _PROJECT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='archived', full_name='flyteidl.admin.Project.archived', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='state', full_name='flyteidl.admin.Project.state', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -128,7 +159,7 @@ _PROJECT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=114,
-  serialized_end=269,
+  serialized_end=296,
 )
 
 
@@ -158,8 +189,8 @@ _PROJECTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=271,
-  serialized_end=324,
+  serialized_start=298,
+  serialized_end=351,
 )
 
 
@@ -182,8 +213,8 @@ _PROJECTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=326,
-  serialized_end=346,
+  serialized_start=353,
+  serialized_end=373,
 )
 
 
@@ -213,8 +244,8 @@ _PROJECTREGISTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=348,
-  serialized_end=414,
+  serialized_start=375,
+  serialized_end=441,
 )
 
 
@@ -237,8 +268,8 @@ _PROJECTREGISTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=416,
-  serialized_end=441,
+  serialized_start=443,
+  serialized_end=468,
 )
 
 
@@ -261,12 +292,13 @@ _PROJECTUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=466,
+  serialized_start=470,
+  serialized_end=493,
 )
 
 _PROJECT.fields_by_name['domains'].message_type = _DOMAIN
 _PROJECT.fields_by_name['labels'].message_type = flyteidl_dot_admin_dot_common__pb2._LABELS
+_PROJECT.fields_by_name['state'].enum_type = _PROJECTSTATE
 _PROJECTS.fields_by_name['projects'].message_type = _PROJECT
 _PROJECTREGISTERREQUEST.fields_by_name['project'].message_type = _PROJECT
 DESCRIPTOR.message_types_by_name['Domain'] = _DOMAIN
@@ -276,6 +308,7 @@ DESCRIPTOR.message_types_by_name['ProjectListRequest'] = _PROJECTLISTREQUEST
 DESCRIPTOR.message_types_by_name['ProjectRegisterRequest'] = _PROJECTREGISTERREQUEST
 DESCRIPTOR.message_types_by_name['ProjectRegisterResponse'] = _PROJECTREGISTERRESPONSE
 DESCRIPTOR.message_types_by_name['ProjectUpdateResponse'] = _PROJECTUPDATERESPONSE
+DESCRIPTOR.enum_types_by_name['ProjectState'] = _PROJECTSTATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Domain = _reflection.GeneratedProtocolMessageType('Domain', (_message.Message,), dict(

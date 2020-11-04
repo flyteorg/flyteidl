@@ -186,6 +186,7 @@ Class | Method | HTTP request | Description
  - [AdminProjectDomainAttributesUpdateResponse](docs/AdminProjectDomainAttributesUpdateResponse.md)
  - [AdminProjectRegisterRequest](docs/AdminProjectRegisterRequest.md)
  - [AdminProjectRegisterResponse](docs/AdminProjectRegisterResponse.md)
+ - [AdminProjectState](docs/AdminProjectState.md)
  - [AdminProjectUpdateResponse](docs/AdminProjectUpdateResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminRawOutputDataConfig](docs/AdminRawOutputDataConfig.md)
