@@ -18,5 +18,5 @@ type AdminProject struct {
 	Description string `json:"description,omitempty"`
 	// Leverage Labels from flyteidel.admin.common.proto to tag projects with ownership information.
 	Labels *AdminLabels `json:"labels,omitempty"`
-	State *AdminProjectState `json:"state,omitempty"`
+	State *ProjectState `json:"state,omitempty"`
 }

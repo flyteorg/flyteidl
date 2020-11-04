@@ -14,141 +14,6 @@ public final class ProjectOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * <pre>
-   * The status of the project is used to control its visibility in the UI and validity.
-   * </pre>
-   *
-   * Protobuf enum {@code flyteidl.admin.ProjectState}
-   */
-  public enum ProjectState
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * By default, all projects are considered active.
-     * </pre>
-     *
-     * <code>PROJECT_ACTIVE = 0;</code>
-     */
-    PROJECT_ACTIVE(0),
-    /**
-     * <pre>
-     * Archived projects are no longer visible in the UI and no longer valid.
-     * </pre>
-     *
-     * <code>PROJECT_ARCHIVED = 1;</code>
-     */
-    PROJECT_ARCHIVED(1),
-    /**
-     * <pre>
-     * System generated projects that aren't explicitly created or managed by a user.
-     * </pre>
-     *
-     * <code>PROJECT_SYSTEM_GENERATED = 2;</code>
-     */
-    PROJECT_SYSTEM_GENERATED(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * By default, all projects are considered active.
-     * </pre>
-     *
-     * <code>PROJECT_ACTIVE = 0;</code>
-     */
-    public static final int PROJECT_ACTIVE_VALUE = 0;
-    /**
-     * <pre>
-     * Archived projects are no longer visible in the UI and no longer valid.
-     * </pre>
-     *
-     * <code>PROJECT_ARCHIVED = 1;</code>
-     */
-    public static final int PROJECT_ARCHIVED_VALUE = 1;
-    /**
-     * <pre>
-     * System generated projects that aren't explicitly created or managed by a user.
-     * </pre>
-     *
-     * <code>PROJECT_SYSTEM_GENERATED = 2;</code>
-     */
-    public static final int PROJECT_SYSTEM_GENERATED_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ProjectState valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ProjectState forNumber(int value) {
-      switch (value) {
-        case 0: return PROJECT_ACTIVE;
-        case 1: return PROJECT_ARCHIVED;
-        case 2: return PROJECT_SYSTEM_GENERATED;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ProjectState>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ProjectState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ProjectState>() {
-            public ProjectState findValueByNumber(int number) {
-              return ProjectState.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return flyteidl.admin.ProjectOuterClass.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ProjectState[] VALUES = values();
-
-    public static ProjectState valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ProjectState(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:flyteidl.admin.ProjectState)
-  }
-
   public interface DomainOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.Domain)
       com.google.protobuf.MessageOrBuilder {
@@ -976,13 +841,13 @@ public final class ProjectOuterClass {
     flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.ProjectState state = 6;</code>
+     * <code>.flyteidl.admin.Project.State state = 6;</code>
      */
     int getStateValue();
     /**
-     * <code>.flyteidl.admin.ProjectState state = 6;</code>
+     * <code>.flyteidl.admin.Project.State state = 6;</code>
      */
-    flyteidl.admin.ProjectOuterClass.ProjectState getState();
+    flyteidl.admin.ProjectOuterClass.Project.State getState();
   }
   /**
    * <pre>
@@ -1111,6 +976,141 @@ public final class ProjectOuterClass {
       return flyteidl.admin.ProjectOuterClass.internal_static_flyteidl_admin_Project_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.admin.ProjectOuterClass.Project.class, flyteidl.admin.ProjectOuterClass.Project.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * The state of the project is used to control its visibility in the UI and validity.
+     * </pre>
+     *
+     * Protobuf enum {@code flyteidl.admin.Project.State}
+     */
+    public enum State
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * By default, all projects are considered active.
+       * </pre>
+       *
+       * <code>ACTIVE = 0;</code>
+       */
+      ACTIVE(0),
+      /**
+       * <pre>
+       * Archived projects are no longer visible in the UI and no longer valid.
+       * </pre>
+       *
+       * <code>ARCHIVED = 1;</code>
+       */
+      ARCHIVED(1),
+      /**
+       * <pre>
+       * System generated projects that aren't explicitly created or managed by a user.
+       * </pre>
+       *
+       * <code>SYSTEM_GENERATED = 2;</code>
+       */
+      SYSTEM_GENERATED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * By default, all projects are considered active.
+       * </pre>
+       *
+       * <code>ACTIVE = 0;</code>
+       */
+      public static final int ACTIVE_VALUE = 0;
+      /**
+       * <pre>
+       * Archived projects are no longer visible in the UI and no longer valid.
+       * </pre>
+       *
+       * <code>ARCHIVED = 1;</code>
+       */
+      public static final int ARCHIVED_VALUE = 1;
+      /**
+       * <pre>
+       * System generated projects that aren't explicitly created or managed by a user.
+       * </pre>
+       *
+       * <code>SYSTEM_GENERATED = 2;</code>
+       */
+      public static final int SYSTEM_GENERATED_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0: return ACTIVE;
+          case 1: return ARCHIVED;
+          case 2: return SYSTEM_GENERATED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          State> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<State>() {
+              public State findValueByNumber(int number) {
+                return State.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.admin.ProjectOuterClass.Project.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.admin.Project.State)
     }
 
     private int bitField0_;
@@ -1298,18 +1298,18 @@ public final class ProjectOuterClass {
     public static final int STATE_FIELD_NUMBER = 6;
     private int state_;
     /**
-     * <code>.flyteidl.admin.ProjectState state = 6;</code>
+     * <code>.flyteidl.admin.Project.State state = 6;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
-     * <code>.flyteidl.admin.ProjectState state = 6;</code>
+     * <code>.flyteidl.admin.Project.State state = 6;</code>
      */
-    public flyteidl.admin.ProjectOuterClass.ProjectState getState() {
+    public flyteidl.admin.ProjectOuterClass.Project.State getState() {
       @SuppressWarnings("deprecation")
-      flyteidl.admin.ProjectOuterClass.ProjectState result = flyteidl.admin.ProjectOuterClass.ProjectState.valueOf(state_);
-      return result == null ? flyteidl.admin.ProjectOuterClass.ProjectState.UNRECOGNIZED : result;
+      flyteidl.admin.ProjectOuterClass.Project.State result = flyteidl.admin.ProjectOuterClass.Project.State.valueOf(state_);
+      return result == null ? flyteidl.admin.ProjectOuterClass.Project.State.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1341,7 +1341,7 @@ public final class ProjectOuterClass {
       if (labels_ != null) {
         output.writeMessage(5, getLabels());
       }
-      if (state_ != flyteidl.admin.ProjectOuterClass.ProjectState.PROJECT_ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ProjectOuterClass.Project.State.ACTIVE.getNumber()) {
         output.writeEnum(6, state_);
       }
       unknownFields.writeTo(output);
@@ -1370,7 +1370,7 @@ public final class ProjectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getLabels());
       }
-      if (state_ != flyteidl.admin.ProjectOuterClass.ProjectState.PROJECT_ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ProjectOuterClass.Project.State.ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, state_);
       }
@@ -2388,13 +2388,13 @@ public final class ProjectOuterClass {
 
       private int state_ = 0;
       /**
-       * <code>.flyteidl.admin.ProjectState state = 6;</code>
+       * <code>.flyteidl.admin.Project.State state = 6;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
-       * <code>.flyteidl.admin.ProjectState state = 6;</code>
+       * <code>.flyteidl.admin.Project.State state = 6;</code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -2402,17 +2402,17 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ProjectState state = 6;</code>
+       * <code>.flyteidl.admin.Project.State state = 6;</code>
        */
-      public flyteidl.admin.ProjectOuterClass.ProjectState getState() {
+      public flyteidl.admin.ProjectOuterClass.Project.State getState() {
         @SuppressWarnings("deprecation")
-        flyteidl.admin.ProjectOuterClass.ProjectState result = flyteidl.admin.ProjectOuterClass.ProjectState.valueOf(state_);
-        return result == null ? flyteidl.admin.ProjectOuterClass.ProjectState.UNRECOGNIZED : result;
+        flyteidl.admin.ProjectOuterClass.Project.State result = flyteidl.admin.ProjectOuterClass.Project.State.valueOf(state_);
+        return result == null ? flyteidl.admin.ProjectOuterClass.Project.State.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.admin.ProjectState state = 6;</code>
+       * <code>.flyteidl.admin.Project.State state = 6;</code>
        */
-      public Builder setState(flyteidl.admin.ProjectOuterClass.ProjectState value) {
+      public Builder setState(flyteidl.admin.ProjectOuterClass.Project.State value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2422,7 +2422,7 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ProjectState state = 6;</code>
+       * <code>.flyteidl.admin.Project.State state = 6;</code>
        */
       public Builder clearState() {
         
@@ -5149,21 +5149,20 @@ public final class ProjectOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/admin/project.proto\022\016flyteidl" +
       ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D" +
-      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\266\001\n\007Proj" +
+      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\360\001\n\007Proj" +
       "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains" +
       "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri" +
       "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a" +
-      "dmin.Labels\022+\n\005state\030\006 \001(\0162\034.flyteidl.ad" +
-      "min.ProjectState\"5\n\010Projects\022)\n\010projects" +
-      "\030\001 \003(\0132\027.flyteidl.admin.Project\"\024\n\022Proje" +
-      "ctListRequest\"B\n\026ProjectRegisterRequest\022" +
-      "(\n\007project\030\001 \001(\0132\027.flyteidl.admin.Projec" +
-      "t\"\031\n\027ProjectRegisterResponse\"\027\n\025ProjectU" +
-      "pdateResponse*V\n\014ProjectState\022\022\n\016PROJECT" +
-      "_ACTIVE\020\000\022\024\n\020PROJECT_ARCHIVED\020\001\022\034\n\030PROJE" +
-      "CT_SYSTEM_GENERATED\020\002B3Z1github.com/lyft" +
-      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
-      "o3"
+      "dmin.Labels\022,\n\005state\030\006 \001(\0162\035.flyteidl.ad" +
+      "min.Project.State\"7\n\005State\022\n\n\006ACTIVE\020\000\022\014" +
+      "\n\010ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002\"5\n\010Pr" +
+      "ojects\022)\n\010projects\030\001 \003(\0132\027.flyteidl.admi" +
+      "n.Project\"\024\n\022ProjectListRequest\"B\n\026Proje" +
+      "ctRegisterRequest\022(\n\007project\030\001 \001(\0132\027.fly" +
+      "teidl.admin.Project\"\031\n\027ProjectRegisterRe" +
+      "sponse\"\027\n\025ProjectUpdateResponseB3Z1githu" +
+      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a" +
+      "dminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

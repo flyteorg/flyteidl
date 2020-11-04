@@ -88,7 +88,6 @@ from flyteadmin.models.admin_project_domain_attributes_update_request import Adm
 from flyteadmin.models.admin_project_domain_attributes_update_response import AdminProjectDomainAttributesUpdateResponse
 from flyteadmin.models.admin_project_register_request import AdminProjectRegisterRequest
 from flyteadmin.models.admin_project_register_response import AdminProjectRegisterResponse
-from flyteadmin.models.admin_project_state import AdminProjectState
 from flyteadmin.models.admin_project_update_response import AdminProjectUpdateResponse
 from flyteadmin.models.admin_projects import AdminProjects
 from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig
@@ -216,6 +215,7 @@ from flyteadmin.models.flyteidlevent_workflow_node_metadata import Flyteidlevent
 from flyteadmin.models.io_strategy_download_mode import IOStrategyDownloadMode
 from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode
 from flyteadmin.models.plugin_override_missing_plugin_behavior import PluginOverrideMissingPluginBehavior
+from flyteadmin.models.project_state import ProjectState
 from flyteadmin.models.protobuf_list_value import ProtobufListValue
 from flyteadmin.models.protobuf_null_value import ProtobufNullValue
 from flyteadmin.models.protobuf_struct import ProtobufStruct

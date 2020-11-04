@@ -25913,22 +25913,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return Domain;
         })();
 
-        /**
-         * ProjectState enum.
-         * @name flyteidl.admin.ProjectState
-         * @enum {string}
-         * @property {number} PROJECT_ACTIVE=0 PROJECT_ACTIVE value
-         * @property {number} PROJECT_ARCHIVED=1 PROJECT_ARCHIVED value
-         * @property {number} PROJECT_SYSTEM_GENERATED=2 PROJECT_SYSTEM_GENERATED value
-         */
-        admin.ProjectState = (function() {
-            const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "PROJECT_ACTIVE"] = 0;
-            values[valuesById[1] = "PROJECT_ARCHIVED"] = 1;
-            values[valuesById[2] = "PROJECT_SYSTEM_GENERATED"] = 2;
-            return values;
-        })();
-
         admin.Project = (function() {
 
             /**
@@ -25940,7 +25924,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.admin.IDomain>|null} [domains] Project domains
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
-             * @property {flyteidl.admin.ProjectState|null} [state] Project state
+             * @property {flyteidl.admin.Project.State|null} [state] Project state
              */
 
             /**
@@ -26001,7 +25985,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Project state.
-             * @member {flyteidl.admin.ProjectState} state
+             * @member {flyteidl.admin.Project.State} state
              * @memberof flyteidl.admin.Project
              * @instance
              */
@@ -26138,6 +26122,22 @@ export const flyteidl = $root.flyteidl = (() => {
                     }
                 return null;
             };
+
+            /**
+             * State enum.
+             * @name flyteidl.admin.Project.State
+             * @enum {string}
+             * @property {number} ACTIVE=0 ACTIVE value
+             * @property {number} ARCHIVED=1 ARCHIVED value
+             * @property {number} SYSTEM_GENERATED=2 SYSTEM_GENERATED value
+             */
+            Project.State = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "ACTIVE"] = 0;
+                values[valuesById[1] = "ARCHIVED"] = 1;
+                values[valuesById[2] = "SYSTEM_GENERATED"] = 2;
+                return values;
+            })();
 
             return Project;
         })();

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_project_state import AdminProjectState  # noqa: E501
+from flyteadmin.models.project_state import ProjectState  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminProjectState(unittest.TestCase):
-    """AdminProjectState unit test stubs"""
+class TestProjectState(unittest.TestCase):
+    """ProjectState unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminProjectState(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminProjectState(self):
-        """Test AdminProjectState"""
+    def testProjectState(self):
+        """Test ProjectState"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_project_state.AdminProjectState()  # noqa: E501
+        # model = flyteadmin.models.project_state.ProjectState()  # noqa: E501
         pass
 
 

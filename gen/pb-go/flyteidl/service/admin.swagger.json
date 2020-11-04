@@ -2811,6 +2811,16 @@
       "default": "FAIL",
       "description": " - USE_DEFAULT: Uses the system-configured default implementation."
     },
+    "ProjectState": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "ARCHIVED",
+        "SYSTEM_GENERATED"
+      ],
+      "default": "ACTIVE",
+      "description": "The state of the project is used to control its visibility in the UI and validity.\n\n - ACTIVE: By default, all projects are considered active.\n - ARCHIVED: Archived projects are no longer visible in the UI and no longer valid.\n - SYSTEM_GENERATED: System generated projects that aren't explicitly created or managed by a user."
+    },
     "QualityOfServiceTier": {
       "type": "string",
       "enum": [
@@ -3894,7 +3904,7 @@
           "description": "Leverage Labels from flyteidel.admin.common.proto to\ntag projects with ownership information."
         },
         "state": {
-          "$ref": "#/definitions/adminProjectState"
+          "$ref": "#/definitions/ProjectState"
         }
       },
       "description": "Top-level namespace used to classify different entities like workflows and executions."
@@ -3966,16 +3976,6 @@
     },
     "adminProjectRegisterResponse": {
       "type": "object"
-    },
-    "adminProjectState": {
-      "type": "string",
-      "enum": [
-        "PROJECT_ACTIVE",
-        "PROJECT_ARCHIVED",
-        "PROJECT_SYSTEM_GENERATED"
-      ],
-      "default": "PROJECT_ACTIVE",
-      "description": "The status of the project is used to control its visibility in the UI and validity.\n\n - PROJECT_ACTIVE: By default, all projects are considered active.\n - PROJECT_ARCHIVED: Archived projects are no longer visible in the UI and no longer valid.\n - PROJECT_SYSTEM_GENERATED: System generated projects that aren't explicitly created or managed by a user."
     },
     "adminProjectUpdateResponse": {
       "type": "object"

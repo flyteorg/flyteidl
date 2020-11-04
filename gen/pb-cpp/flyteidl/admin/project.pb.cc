@@ -243,26 +243,25 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_2eproto[] =
   "\n\034flyteidl/admin/project.proto\022\016flyteidl"
   ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D"
-  "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\266\001\n\007Proj"
+  "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\360\001\n\007Proj"
   "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains"
   "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri"
   "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a"
-  "dmin.Labels\022+\n\005state\030\006 \001(\0162\034.flyteidl.ad"
-  "min.ProjectState\"5\n\010Projects\022)\n\010projects"
-  "\030\001 \003(\0132\027.flyteidl.admin.Project\"\024\n\022Proje"
-  "ctListRequest\"B\n\026ProjectRegisterRequest\022"
-  "(\n\007project\030\001 \001(\0132\027.flyteidl.admin.Projec"
-  "t\"\031\n\027ProjectRegisterResponse\"\027\n\025ProjectU"
-  "pdateResponse*V\n\014ProjectState\022\022\n\016PROJECT"
-  "_ACTIVE\020\000\022\024\n\020PROJECT_ARCHIVED\020\001\022\034\n\030PROJE"
-  "CT_SYSTEM_GENERATED\020\002B3Z1github.com/lyft"
-  "/flyteidl/gen/pb-go/flyteidl/adminb\006prot"
-  "o3"
+  "dmin.Labels\022,\n\005state\030\006 \001(\0162\035.flyteidl.ad"
+  "min.Project.State\"7\n\005State\022\n\n\006ACTIVE\020\000\022\014"
+  "\n\010ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002\"5\n\010Pr"
+  "ojects\022)\n\010projects\030\001 \003(\0132\027.flyteidl.admi"
+  "n.Project\"\024\n\022ProjectListRequest\"B\n\026Proje"
+  "ctRegisterRequest\022(\n\007project\030\001 \001(\0132\027.fly"
+  "teidl.admin.Project\"\031\n\027ProjectRegisterRe"
+  "sponse\"\027\n\025ProjectUpdateResponseB3Z1githu"
+  "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a"
+  "dminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fproject_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fproject_2eproto,
-  "flyteidl/admin/project.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_2eproto, 642,
+  "flyteidl/admin/project.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_2eproto, 612,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fproject_2eproto() {
@@ -277,11 +276,11 @@ void AddDescriptors_flyteidl_2fadmin_2fproject_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fadmin_2fproject_2eproto = []() { AddDescriptors_flyteidl_2fadmin_2fproject_2eproto(); return true; }();
 namespace flyteidl {
 namespace admin {
-const ::google::protobuf::EnumDescriptor* ProjectState_descriptor() {
+const ::google::protobuf::EnumDescriptor* Project_State_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fadmin_2fproject_2eproto);
   return file_level_enum_descriptors_flyteidl_2fadmin_2fproject_2eproto[0];
 }
-bool ProjectState_IsValid(int value) {
+bool Project_State_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -292,6 +291,14 @@ bool ProjectState_IsValid(int value) {
   }
 }
 
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Project_State Project::ACTIVE;
+const Project_State Project::ARCHIVED;
+const Project_State Project::SYSTEM_GENERATED;
+const Project_State Project::State_MIN;
+const Project_State Project::State_MAX;
+const int Project::State_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -864,11 +871,11 @@ const char* Project::_InternalParse(const char* begin, const char* end, void* ob
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.ProjectState state = 6;
+      // .flyteidl.admin.Project.State state = 6;
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_state(static_cast<::flyteidl::admin::ProjectState>(val));
+        msg->set_state(static_cast<::flyteidl::admin::Project_State>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -973,14 +980,14 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.ProjectState state = 6;
+      // .flyteidl.admin.Project.State state = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_state(static_cast< ::flyteidl::admin::ProjectState >(value));
+          set_state(static_cast< ::flyteidl::admin::Project_State >(value));
         } else {
           goto handle_unusual;
         }
@@ -1059,7 +1066,7 @@ void Project::SerializeWithCachedSizes(
       5, HasBitSetters::labels(this), output);
   }
 
-  // .flyteidl.admin.ProjectState state = 6;
+  // .flyteidl.admin.Project.State state = 6;
   if (this->state() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       6, this->state(), output);
@@ -1126,7 +1133,7 @@ void Project::SerializeWithCachedSizes(
         5, HasBitSetters::labels(this), target);
   }
 
-  // .flyteidl.admin.ProjectState state = 6;
+  // .flyteidl.admin.Project.State state = 6;
   if (this->state() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       6, this->state(), target);
@@ -1192,7 +1199,7 @@ size_t Project::ByteSizeLong() const {
         *labels_);
   }
 
-  // .flyteidl.admin.ProjectState state = 6;
+  // .flyteidl.admin.Project.State state = 6;
   if (this->state() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
