@@ -25924,6 +25924,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.admin.IDomain>|null} [domains] Project domains
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
+             * @property {boolean|null} [archived] Project archived
              */
 
             /**
@@ -25983,6 +25984,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Project.prototype.labels = null;
 
             /**
+             * Project archived.
+             * @member {boolean} archived
+             * @memberof flyteidl.admin.Project
+             * @instance
+             */
+            Project.prototype.archived = false;
+
+            /**
              * Creates a new Project instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.Project
@@ -26017,6 +26026,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.description);
                 if (message.labels != null && message.hasOwnProperty("labels"))
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.archived != null && message.hasOwnProperty("archived"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.archived);
                 return writer;
             };
 
@@ -26054,6 +26065,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.archived = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -26097,6 +26111,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "labels." + error;
                 }
+                if (message.archived != null && message.hasOwnProperty("archived"))
+                    if (typeof message.archived !== "boolean")
+                        return "archived: boolean expected";
                 return null;
             };
 

@@ -10846,6 +10846,9 @@ export namespace flyteidl {
 
             /** Project labels */
             labels?: (flyteidl.admin.ILabels|null);
+
+            /** Project archived */
+            archived?: (boolean|null);
         }
 
         /** Represents a Project. */
@@ -10871,6 +10874,9 @@ export namespace flyteidl {
 
             /** Project labels. */
             public labels?: (flyteidl.admin.ILabels|null);
+
+            /** Project archived. */
+            public archived: boolean;
 
             /**
              * Creates a new Project instance using the specified properties.

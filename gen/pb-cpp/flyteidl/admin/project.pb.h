@@ -383,6 +383,12 @@ class Project final :
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
+  // bool archived = 6;
+  void clear_archived();
+  static const int kArchivedFieldNumber = 6;
+  bool archived() const;
+  void set_archived(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Project)
  private:
   class HasBitSetters;
@@ -393,6 +399,7 @@ class Project final :
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::flyteidl::admin::Labels* labels_;
+  bool archived_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_2eproto;
 };
@@ -1297,6 +1304,20 @@ inline void Project::set_allocated_labels(::flyteidl::admin::Labels* labels) {
   }
   labels_ = labels;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Project.labels)
+}
+
+// bool archived = 6;
+inline void Project::clear_archived() {
+  archived_ = false;
+}
+inline bool Project::archived() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Project.archived)
+  return archived_;
+}
+inline void Project::set_archived(bool value) {
+  
+  archived_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Project.archived)
 }
 
 // -------------------------------------------------------------------

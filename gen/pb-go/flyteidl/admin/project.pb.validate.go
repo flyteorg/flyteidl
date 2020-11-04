@@ -142,6 +142,8 @@ func (m *Project) Validate() error {
 		}
 	}
 
+	// no validation rules for Archived
+
 	return nil
 }
 

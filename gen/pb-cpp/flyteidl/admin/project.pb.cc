@@ -185,6 +185,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_2eproto:
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Project, domains_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Project, description_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Project, labels_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Project, archived_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Projects, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -216,11 +217,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_2eproto:
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::Domain)},
   { 7, -1, sizeof(::flyteidl::admin::Project)},
-  { 17, -1, sizeof(::flyteidl::admin::Projects)},
-  { 23, -1, sizeof(::flyteidl::admin::ProjectListRequest)},
-  { 28, -1, sizeof(::flyteidl::admin::ProjectRegisterRequest)},
-  { 34, -1, sizeof(::flyteidl::admin::ProjectRegisterResponse)},
-  { 39, -1, sizeof(::flyteidl::admin::ProjectUpdateResponse)},
+  { 18, -1, sizeof(::flyteidl::admin::Projects)},
+  { 24, -1, sizeof(::flyteidl::admin::ProjectListRequest)},
+  { 29, -1, sizeof(::flyteidl::admin::ProjectRegisterRequest)},
+  { 35, -1, sizeof(::flyteidl::admin::ProjectRegisterResponse)},
+  { 40, -1, sizeof(::flyteidl::admin::ProjectUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -242,22 +243,23 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_2eproto[] =
   "\n\034flyteidl/admin/project.proto\022\016flyteidl"
   ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D"
-  "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\211\001\n\007Proj"
+  "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\233\001\n\007Proj"
   "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains"
   "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri"
   "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a"
-  "dmin.Labels\"5\n\010Projects\022)\n\010projects\030\001 \003("
-  "\0132\027.flyteidl.admin.Project\"\024\n\022ProjectLis"
-  "tRequest\"B\n\026ProjectRegisterRequest\022(\n\007pr"
-  "oject\030\001 \001(\0132\027.flyteidl.admin.Project\"\031\n\027"
-  "ProjectRegisterResponse\"\027\n\025ProjectUpdate"
-  "ResponseB3Z1github.com/lyft/flyteidl/gen"
-  "/pb-go/flyteidl/adminb\006proto3"
+  "dmin.Labels\022\020\n\010archived\030\006 \001(\010\"5\n\010Project"
+  "s\022)\n\010projects\030\001 \003(\0132\027.flyteidl.admin.Pro"
+  "ject\"\024\n\022ProjectListRequest\"B\n\026ProjectReg"
+  "isterRequest\022(\n\007project\030\001 \001(\0132\027.flyteidl"
+  ".admin.Project\"\031\n\027ProjectRegisterRespons"
+  "e\"\027\n\025ProjectUpdateResponseB3Z1github.com"
+  "/lyft/flyteidl/gen/pb-go/flyteidl/adminb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fproject_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fproject_2eproto,
-  "flyteidl/admin/project.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_2eproto, 509,
+  "flyteidl/admin/project.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_2eproto, 527,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fproject_2eproto() {
@@ -670,6 +672,7 @@ const int Project::kNameFieldNumber;
 const int Project::kDomainsFieldNumber;
 const int Project::kDescriptionFieldNumber;
 const int Project::kLabelsFieldNumber;
+const int Project::kArchivedFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Project::Project()
@@ -699,6 +702,7 @@ Project::Project(const Project& from)
   } else {
     labels_ = nullptr;
   }
+  archived_ = from.archived_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.Project)
 }
 
@@ -708,7 +712,9 @@ void Project::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  labels_ = nullptr;
+  ::memset(&labels_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&archived_) -
+      reinterpret_cast<char*>(&labels_)) + sizeof(archived_));
 }
 
 Project::~Project() {
@@ -746,6 +752,7 @@ void Project::Clear() {
     delete labels_;
   }
   labels_ = nullptr;
+  archived_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -837,6 +844,13 @@ const char* Project::_InternalParse(const char* begin, const char* end, void* ob
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool archived = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
+        msg->set_archived(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -940,6 +954,19 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
+      // bool archived = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &archived_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1012,6 +1039,11 @@ void Project::SerializeWithCachedSizes(
       5, HasBitSetters::labels(this), output);
   }
 
+  // bool archived = 6;
+  if (this->archived() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->archived(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1071,6 +1103,11 @@ void Project::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::labels(this), target);
+  }
+
+  // bool archived = 6;
+  if (this->archived() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->archived(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1133,6 +1170,11 @@ size_t Project::ByteSizeLong() const {
         *labels_);
   }
 
+  // bool archived = 6;
+  if (this->archived() != 0) {
+    total_size += 1 + 1;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1176,6 +1218,9 @@ void Project::MergeFrom(const Project& from) {
   if (from.has_labels()) {
     mutable_labels()->::flyteidl::admin::Labels::MergeFrom(from.labels());
   }
+  if (from.archived() != 0) {
+    set_archived(from.archived());
+  }
 }
 
 void Project::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1211,6 +1256,7 @@ void Project::InternalSwap(Project* other) {
   description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(labels_, other->labels_);
+  swap(archived_, other->archived_);
 }
 
 ::google::protobuf::Metadata Project::GetMetadata() const {

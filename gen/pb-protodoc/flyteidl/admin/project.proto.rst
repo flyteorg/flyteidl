@@ -49,7 +49,8 @@ Top-level namespace used to classify different entities like workflows and execu
     "name": "...",
     "domains": [],
     "description": "...",
-    "labels": "{...}"
+    "labels": "{...}",
+    "archived": "..."
   }
 
 .. _api_field_flyteidl.admin.Project.id:
@@ -80,6 +81,11 @@ labels
   tag projects with ownership information.
   
   
+.. _api_field_flyteidl.admin.Project.archived:
+
+archived
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
 
 
 .. _api_msg_flyteidl.admin.Projects:
@@ -87,7 +93,7 @@ labels
 flyteidl.admin.Projects
 -----------------------
 
-`[flyteidl.admin.Projects proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L33>`_
+`[flyteidl.admin.Projects proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L35>`_
 
 
 .. code-block:: json
@@ -108,7 +114,7 @@ projects
 flyteidl.admin.ProjectListRequest
 ---------------------------------
 
-`[flyteidl.admin.ProjectListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L37>`_
+`[flyteidl.admin.ProjectListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L39>`_
 
 
 .. code-block:: json
@@ -123,7 +129,7 @@ flyteidl.admin.ProjectListRequest
 flyteidl.admin.ProjectRegisterRequest
 -------------------------------------
 
-`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L40>`_
+`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L42>`_
 
 
 .. code-block:: json
@@ -144,7 +150,7 @@ project
 flyteidl.admin.ProjectRegisterResponse
 --------------------------------------
 
-`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L44>`_
+`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L46>`_
 
 
 .. code-block:: json
@@ -159,7 +165,7 @@ flyteidl.admin.ProjectRegisterResponse
 flyteidl.admin.ProjectUpdateResponse
 ------------------------------------
 
-`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L47>`_
+`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L49>`_
 
 
 .. code-block:: json

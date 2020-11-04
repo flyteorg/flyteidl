@@ -38,7 +38,8 @@ class AdminProject(object):
         'name': 'str',
         'domains': 'list[AdminDomain]',
         'description': 'str',
-        'labels': 'AdminLabels'
+        'labels': 'AdminLabels',
+        'archived': 'bool'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class AdminProject(object):
         'name': 'name',
         'domains': 'domains',
         'description': 'description',
-        'labels': 'labels'
+        'labels': 'labels',
+        'archived': 'archived'
     }
 
-    def __init__(self, id=None, name=None, domains=None, description=None, labels=None):  # noqa: E501
+    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, archived=None):  # noqa: E501
         """AdminProject - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -57,6 +59,7 @@ class AdminProject(object):
         self._domains = None
         self._description = None
         self._labels = None
+        self._archived = None
         self.discriminator = None
 
         if id is not None:
@@ -69,6 +72,8 @@ class AdminProject(object):
             self.description = description
         if labels is not None:
             self.labels = labels
+        if archived is not None:
+            self.archived = archived
 
     @property
     def id(self):
@@ -178,6 +183,27 @@ class AdminProject(object):
         """
 
         self._labels = labels
+
+    @property
+    def archived(self):
+        """Gets the archived of this AdminProject.  # noqa: E501
+
+
+        :return: The archived of this AdminProject.  # noqa: E501
+        :rtype: bool
+        """
+        return self._archived
+
+    @archived.setter
+    def archived(self, archived):
+        """Sets the archived of this AdminProject.
+
+
+        :param archived: The archived of this AdminProject.  # noqa: E501
+        :type: bool
+        """
+
+        self._archived = archived
 
     def to_dict(self):
         """Returns the model properties as a dict"""

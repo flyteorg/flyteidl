@@ -29,6 +29,8 @@ message Project {
     // Leverage Labels from flyteidel.admin.common.proto to
     // tag projects with ownership information.
     Labels labels = 5;
+
+    bool archived = 6;
 }
 
 message Projects {

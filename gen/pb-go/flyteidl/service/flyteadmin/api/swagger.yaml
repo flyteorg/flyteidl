@@ -5502,9 +5502,13 @@ definitions:
         description: "Leverage Labels from flyteidel.admin.common.proto to\ntag projects\
           \ with ownership information."
         $ref: "#/definitions/adminLabels"
+      archived:
+        type: "boolean"
+        format: "boolean"
     description: "Top-level namespace used to classify different entities like workflows\
       \ and executions."
     example:
+      archived: true
       name: "name"
       domains:
       - name: "name"
@@ -5654,7 +5658,8 @@ definitions:
           $ref: "#/definitions/adminProject"
     example:
       projects:
-      - name: "name"
+      - archived: true
+        name: "name"
         domains:
         - name: "name"
           id: "id"
@@ -5665,7 +5670,8 @@ definitions:
         labels:
           values:
             key: "values"
-      - name: "name"
+      - archived: true
+        name: "name"
         domains:
         - name: "name"
           id: "id"

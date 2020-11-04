@@ -839,6 +839,11 @@ public final class ProjectOuterClass {
      * <code>.flyteidl.admin.Labels labels = 5;</code>
      */
     flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
+
+    /**
+     * <code>bool archived = 6;</code>
+     */
+    boolean getArchived();
   }
   /**
    * <pre>
@@ -925,6 +930,11 @@ public final class ProjectOuterClass {
                 labels_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 48: {
+
+              archived_ = input.readBool();
               break;
             }
             default: {
@@ -1144,6 +1154,15 @@ public final class ProjectOuterClass {
       return getLabels();
     }
 
+    public static final int ARCHIVED_FIELD_NUMBER = 6;
+    private boolean archived_;
+    /**
+     * <code>bool archived = 6;</code>
+     */
+    public boolean getArchived() {
+      return archived_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1173,6 +1192,9 @@ public final class ProjectOuterClass {
       if (labels_ != null) {
         output.writeMessage(5, getLabels());
       }
+      if (archived_ != false) {
+        output.writeBool(6, archived_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1198,6 +1220,10 @@ public final class ProjectOuterClass {
       if (labels_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getLabels());
+      }
+      if (archived_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, archived_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1227,6 +1253,8 @@ public final class ProjectOuterClass {
         if (!getLabels()
             .equals(other.getLabels())) return false;
       }
+      if (getArchived()
+          != other.getArchived()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1252,6 +1280,9 @@ public final class ProjectOuterClass {
         hash = (37 * hash) + LABELS_FIELD_NUMBER;
         hash = (53 * hash) + getLabels().hashCode();
       }
+      hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getArchived());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1408,6 +1439,8 @@ public final class ProjectOuterClass {
           labels_ = null;
           labelsBuilder_ = null;
         }
+        archived_ = false;
+
         return this;
       }
 
@@ -1453,6 +1486,7 @@ public final class ProjectOuterClass {
         } else {
           result.labels_ = labelsBuilder_.build();
         }
+        result.archived_ = archived_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1542,6 +1576,9 @@ public final class ProjectOuterClass {
         }
         if (other.hasLabels()) {
           mergeLabels(other.getLabels());
+        }
+        if (other.getArchived() != false) {
+          setArchived(other.getArchived());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2200,6 +2237,32 @@ public final class ProjectOuterClass {
           labels_ = null;
         }
         return labelsBuilder_;
+      }
+
+      private boolean archived_ ;
+      /**
+       * <code>bool archived = 6;</code>
+       */
+      public boolean getArchived() {
+        return archived_;
+      }
+      /**
+       * <code>bool archived = 6;</code>
+       */
+      public Builder setArchived(boolean value) {
+        
+        archived_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool archived = 6;</code>
+       */
+      public Builder clearArchived() {
+        
+        archived_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4920,17 +4983,18 @@ public final class ProjectOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/admin/project.proto\022\016flyteidl" +
       ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D" +
-      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\211\001\n\007Proj" +
+      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\233\001\n\007Proj" +
       "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains" +
       "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri" +
       "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a" +
-      "dmin.Labels\"5\n\010Projects\022)\n\010projects\030\001 \003(" +
-      "\0132\027.flyteidl.admin.Project\"\024\n\022ProjectLis" +
-      "tRequest\"B\n\026ProjectRegisterRequest\022(\n\007pr" +
-      "oject\030\001 \001(\0132\027.flyteidl.admin.Project\"\031\n\027" +
-      "ProjectRegisterResponse\"\027\n\025ProjectUpdate" +
-      "ResponseB3Z1github.com/lyft/flyteidl/gen" +
-      "/pb-go/flyteidl/adminb\006proto3"
+      "dmin.Labels\022\020\n\010archived\030\006 \001(\010\"5\n\010Project" +
+      "s\022)\n\010projects\030\001 \003(\0132\027.flyteidl.admin.Pro" +
+      "ject\"\024\n\022ProjectListRequest\"B\n\026ProjectReg" +
+      "isterRequest\022(\n\007project\030\001 \001(\0132\027.flyteidl" +
+      ".admin.Project\"\031\n\027ProjectRegisterRespons" +
+      "e\"\027\n\025ProjectUpdateResponseB3Z1github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4956,7 +5020,7 @@ public final class ProjectOuterClass {
     internal_static_flyteidl_admin_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Project_descriptor,
-        new java.lang.String[] { "Id", "Name", "Domains", "Description", "Labels", });
+        new java.lang.String[] { "Id", "Name", "Domains", "Description", "Labels", "Archived", });
     internal_static_flyteidl_admin_Projects_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_Projects_fieldAccessorTable = new
