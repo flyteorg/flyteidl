@@ -11,6 +11,7 @@ message HiveQuery {
     string query = 1;
     uint32 timeout_sec = 2;
     uint32 retryCount = 3;
+    string staging_query = 4;
 }
 
 // Defines a collection of hive queries.
