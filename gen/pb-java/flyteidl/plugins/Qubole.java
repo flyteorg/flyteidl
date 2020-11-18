@@ -29,14 +29,14 @@ public final class Qubole {
         getQueryBytes();
 
     /**
-     * <code>uint32 timeout_sec = 2;</code>
+     * <code>uint32 timeout_sec = 2 [deprecated = true];</code>
      */
-    int getTimeoutSec();
+    @java.lang.Deprecated int getTimeoutSec();
 
     /**
-     * <code>uint32 retryCount = 3;</code>
+     * <code>uint32 retryCount = 3 [deprecated = true];</code>
      */
-    int getRetryCount();
+    @java.lang.Deprecated int getRetryCount();
 
     /**
      * <code>string staging_query = 4;</code>
@@ -47,6 +47,25 @@ public final class Qubole {
      */
     com.google.protobuf.ByteString
         getStagingQueryBytes();
+
+    /**
+     * <code>string remote_location_prefix = 5;</code>
+     */
+    java.lang.String getRemoteLocationPrefix();
+    /**
+     * <code>string remote_location_prefix = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getRemoteLocationPrefixBytes();
+
+    /**
+     * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+     */
+    int getTemplateValue();
+    /**
+     * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+     */
+    flyteidl.plugins.Qubole.HiveQuery.Templating getTemplate();
   }
   /**
    * <pre>
@@ -67,6 +86,8 @@ public final class Qubole {
     private HiveQuery() {
       query_ = "";
       stagingQuery_ = "";
+      remoteLocationPrefix_ = "";
+      template_ = 0;
     }
 
     @java.lang.Override
@@ -115,6 +136,18 @@ public final class Qubole {
               stagingQuery_ = s;
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remoteLocationPrefix_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              template_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +178,104 @@ public final class Qubole {
       return flyteidl.plugins.Qubole.internal_static_flyteidl_plugins_HiveQuery_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.plugins.Qubole.HiveQuery.class, flyteidl.plugins.Qubole.HiveQuery.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.plugins.HiveQuery.Templating}
+     */
+    public enum Templating
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0),
+      /**
+       * <code>READ = 1;</code>
+       */
+      READ(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>READ = 1;</code>
+       */
+      public static final int READ_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Templating valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Templating forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 1: return READ;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Templating>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Templating> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Templating>() {
+              public Templating findValueByNumber(int number) {
+                return Templating.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.Qubole.HiveQuery.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Templating[] VALUES = values();
+
+      public static Templating valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Templating(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.HiveQuery.Templating)
     }
 
     public static final int QUERY_FIELD_NUMBER = 1;
@@ -184,18 +315,18 @@ public final class Qubole {
     public static final int TIMEOUT_SEC_FIELD_NUMBER = 2;
     private int timeoutSec_;
     /**
-     * <code>uint32 timeout_sec = 2;</code>
+     * <code>uint32 timeout_sec = 2 [deprecated = true];</code>
      */
-    public int getTimeoutSec() {
+    @java.lang.Deprecated public int getTimeoutSec() {
       return timeoutSec_;
     }
 
     public static final int RETRYCOUNT_FIELD_NUMBER = 3;
     private int retryCount_;
     /**
-     * <code>uint32 retryCount = 3;</code>
+     * <code>uint32 retryCount = 3 [deprecated = true];</code>
      */
-    public int getRetryCount() {
+    @java.lang.Deprecated public int getRetryCount() {
       return retryCount_;
     }
 
@@ -233,6 +364,57 @@ public final class Qubole {
       }
     }
 
+    public static final int REMOTE_LOCATION_PREFIX_FIELD_NUMBER = 5;
+    private volatile java.lang.Object remoteLocationPrefix_;
+    /**
+     * <code>string remote_location_prefix = 5;</code>
+     */
+    public java.lang.String getRemoteLocationPrefix() {
+      java.lang.Object ref = remoteLocationPrefix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remoteLocationPrefix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string remote_location_prefix = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRemoteLocationPrefixBytes() {
+      java.lang.Object ref = remoteLocationPrefix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remoteLocationPrefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEMPLATE_FIELD_NUMBER = 6;
+    private int template_;
+    /**
+     * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+     */
+    public int getTemplateValue() {
+      return template_;
+    }
+    /**
+     * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+     */
+    public flyteidl.plugins.Qubole.HiveQuery.Templating getTemplate() {
+      @SuppressWarnings("deprecation")
+      flyteidl.plugins.Qubole.HiveQuery.Templating result = flyteidl.plugins.Qubole.HiveQuery.Templating.valueOf(template_);
+      return result == null ? flyteidl.plugins.Qubole.HiveQuery.Templating.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -259,6 +441,12 @@ public final class Qubole {
       if (!getStagingQueryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stagingQuery_);
       }
+      if (!getRemoteLocationPrefixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, remoteLocationPrefix_);
+      }
+      if (template_ != flyteidl.plugins.Qubole.HiveQuery.Templating.NONE.getNumber()) {
+        output.writeEnum(6, template_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -281,6 +469,13 @@ public final class Qubole {
       }
       if (!getStagingQueryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stagingQuery_);
+      }
+      if (!getRemoteLocationPrefixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, remoteLocationPrefix_);
+      }
+      if (template_ != flyteidl.plugins.Qubole.HiveQuery.Templating.NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, template_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -305,6 +500,9 @@ public final class Qubole {
           != other.getRetryCount()) return false;
       if (!getStagingQuery()
           .equals(other.getStagingQuery())) return false;
+      if (!getRemoteLocationPrefix()
+          .equals(other.getRemoteLocationPrefix())) return false;
+      if (template_ != other.template_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -324,6 +522,10 @@ public final class Qubole {
       hash = (53 * hash) + getRetryCount();
       hash = (37 * hash) + STAGING_QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getStagingQuery().hashCode();
+      hash = (37 * hash) + REMOTE_LOCATION_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getRemoteLocationPrefix().hashCode();
+      hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + template_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -469,6 +671,10 @@ public final class Qubole {
 
         stagingQuery_ = "";
 
+        remoteLocationPrefix_ = "";
+
+        template_ = 0;
+
         return this;
       }
 
@@ -499,6 +705,8 @@ public final class Qubole {
         result.timeoutSec_ = timeoutSec_;
         result.retryCount_ = retryCount_;
         result.stagingQuery_ = stagingQuery_;
+        result.remoteLocationPrefix_ = remoteLocationPrefix_;
+        result.template_ = template_;
         onBuilt();
         return result;
       }
@@ -560,6 +768,13 @@ public final class Qubole {
         if (!other.getStagingQuery().isEmpty()) {
           stagingQuery_ = other.stagingQuery_;
           onChanged();
+        }
+        if (!other.getRemoteLocationPrefix().isEmpty()) {
+          remoteLocationPrefix_ = other.remoteLocationPrefix_;
+          onChanged();
+        }
+        if (other.template_ != 0) {
+          setTemplateValue(other.getTemplateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -661,24 +876,24 @@ public final class Qubole {
 
       private int timeoutSec_ ;
       /**
-       * <code>uint32 timeout_sec = 2;</code>
+       * <code>uint32 timeout_sec = 2 [deprecated = true];</code>
        */
-      public int getTimeoutSec() {
+      @java.lang.Deprecated public int getTimeoutSec() {
         return timeoutSec_;
       }
       /**
-       * <code>uint32 timeout_sec = 2;</code>
+       * <code>uint32 timeout_sec = 2 [deprecated = true];</code>
        */
-      public Builder setTimeoutSec(int value) {
+      @java.lang.Deprecated public Builder setTimeoutSec(int value) {
         
         timeoutSec_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 timeout_sec = 2;</code>
+       * <code>uint32 timeout_sec = 2 [deprecated = true];</code>
        */
-      public Builder clearTimeoutSec() {
+      @java.lang.Deprecated public Builder clearTimeoutSec() {
         
         timeoutSec_ = 0;
         onChanged();
@@ -687,24 +902,24 @@ public final class Qubole {
 
       private int retryCount_ ;
       /**
-       * <code>uint32 retryCount = 3;</code>
+       * <code>uint32 retryCount = 3 [deprecated = true];</code>
        */
-      public int getRetryCount() {
+      @java.lang.Deprecated public int getRetryCount() {
         return retryCount_;
       }
       /**
-       * <code>uint32 retryCount = 3;</code>
+       * <code>uint32 retryCount = 3 [deprecated = true];</code>
        */
-      public Builder setRetryCount(int value) {
+      @java.lang.Deprecated public Builder setRetryCount(int value) {
         
         retryCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 retryCount = 3;</code>
+       * <code>uint32 retryCount = 3 [deprecated = true];</code>
        */
-      public Builder clearRetryCount() {
+      @java.lang.Deprecated public Builder clearRetryCount() {
         
         retryCount_ = 0;
         onChanged();
@@ -776,6 +991,120 @@ public final class Qubole {
   checkByteStringIsUtf8(value);
         
         stagingQuery_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object remoteLocationPrefix_ = "";
+      /**
+       * <code>string remote_location_prefix = 5;</code>
+       */
+      public java.lang.String getRemoteLocationPrefix() {
+        java.lang.Object ref = remoteLocationPrefix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          remoteLocationPrefix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string remote_location_prefix = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRemoteLocationPrefixBytes() {
+        java.lang.Object ref = remoteLocationPrefix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          remoteLocationPrefix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string remote_location_prefix = 5;</code>
+       */
+      public Builder setRemoteLocationPrefix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        remoteLocationPrefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string remote_location_prefix = 5;</code>
+       */
+      public Builder clearRemoteLocationPrefix() {
+        
+        remoteLocationPrefix_ = getDefaultInstance().getRemoteLocationPrefix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string remote_location_prefix = 5;</code>
+       */
+      public Builder setRemoteLocationPrefixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        remoteLocationPrefix_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int template_ = 0;
+      /**
+       * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+       */
+      public int getTemplateValue() {
+        return template_;
+      }
+      /**
+       * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+       */
+      public Builder setTemplateValue(int value) {
+        template_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+       */
+      public flyteidl.plugins.Qubole.HiveQuery.Templating getTemplate() {
+        @SuppressWarnings("deprecation")
+        flyteidl.plugins.Qubole.HiveQuery.Templating result = flyteidl.plugins.Qubole.HiveQuery.Templating.valueOf(template_);
+        return result == null ? flyteidl.plugins.Qubole.HiveQuery.Templating.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+       */
+      public Builder setTemplate(flyteidl.plugins.Qubole.HiveQuery.Templating value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        template_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.HiveQuery.Templating template = 6;</code>
+       */
+      public Builder clearTemplate() {
+        
+        template_ = 0;
         onChanged();
         return this;
       }
@@ -2787,17 +3116,21 @@ public final class Qubole {
   static {
     java.lang.String[] descriptorData = {
       "\n\035flyteidl/plugins/qubole.proto\022\020flyteid" +
-      "l.plugins\032\031flyteidl/core/tasks.proto\"Z\n\t" +
-      "HiveQuery\022\r\n\005query\030\001 \001(\t\022\023\n\013timeout_sec\030" +
-      "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\022\025\n\rstaging_que" +
-      "ry\030\004 \001(\t\"C\n\023HiveQueryCollection\022,\n\007queri" +
-      "es\030\002 \003(\0132\033.flyteidl.plugins.HiveQuery\"\245\001" +
-      "\n\rQuboleHiveJob\022\025\n\rcluster_label\030\001 \001(\t\022C" +
-      "\n\020query_collection\030\002 \001(\0132%.flyteidl.plug" +
-      "ins.HiveQueryCollectionB\002\030\001\022\014\n\004tags\030\003 \003(" +
-      "\t\022*\n\005query\030\004 \001(\0132\033.flyteidl.plugins.Hive" +
-      "QueryB5Z3github.com/lyft/flyteidl/gen/pb" +
-      "-go/flyteidl/pluginsb\006proto3"
+      "l.plugins\032\031flyteidl/core/tasks.proto\"\336\001\n" +
+      "\tHiveQuery\022\r\n\005query\030\001 \001(\t\022\027\n\013timeout_sec" +
+      "\030\002 \001(\rB\002\030\001\022\026\n\nretryCount\030\003 \001(\rB\002\030\001\022\025\n\rst" +
+      "aging_query\030\004 \001(\t\022\036\n\026remote_location_pre" +
+      "fix\030\005 \001(\t\0228\n\010template\030\006 \001(\0162&.flyteidl.p" +
+      "lugins.HiveQuery.Templating\" \n\nTemplatin" +
+      "g\022\010\n\004NONE\020\000\022\010\n\004READ\020\001\"C\n\023HiveQueryCollec" +
+      "tion\022,\n\007queries\030\002 \003(\0132\033.flyteidl.plugins" +
+      ".HiveQuery\"\245\001\n\rQuboleHiveJob\022\025\n\rcluster_" +
+      "label\030\001 \001(\t\022C\n\020query_collection\030\002 \001(\0132%." +
+      "flyteidl.plugins.HiveQueryCollectionB\002\030\001" +
+      "\022\014\n\004tags\030\003 \003(\t\022*\n\005query\030\004 \001(\0132\033.flyteidl" +
+      ".plugins.HiveQueryB5Z3github.com/lyft/fl" +
+      "yteidl/gen/pb-go/flyteidl/pluginsb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2817,7 +3150,7 @@ public final class Qubole {
     internal_static_flyteidl_plugins_HiveQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_HiveQuery_descriptor,
-        new java.lang.String[] { "Query", "TimeoutSec", "RetryCount", "StagingQuery", });
+        new java.lang.String[] { "Query", "TimeoutSec", "RetryCount", "StagingQuery", "RemoteLocationPrefix", "Template", });
     internal_static_flyteidl_plugins_HiveQueryCollection_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_HiveQueryCollection_fieldAccessorTable = new

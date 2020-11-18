@@ -51,6 +51,10 @@ func (m *HiveQuery) Validate() error {
 
 	// no validation rules for StagingQuery
 
+	// no validation rules for RemoteLocationPrefix
+
+	// no validation rules for Template
+
 	return nil
 }
 

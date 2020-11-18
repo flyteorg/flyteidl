@@ -21,11 +21,33 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"Z\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x13\n\x0btimeout_sec\x18\x02 \x01(\r\x12\x12\n\nretryCount\x18\x03 \x01(\r\x12\x15\n\rstaging_query\x18\x04 \x01(\t\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"\xa5\x01\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12\x43\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollectionB\x02\x18\x01\x12\x0c\n\x04tags\x18\x03 \x03(\t\x12*\n\x05query\x18\x04 \x01(\x0b\x32\x1b.flyteidl.plugins.HiveQueryB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"\xde\x01\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0btimeout_sec\x18\x02 \x01(\rB\x02\x18\x01\x12\x16\n\nretryCount\x18\x03 \x01(\rB\x02\x18\x01\x12\x15\n\rstaging_query\x18\x04 \x01(\t\x12\x1e\n\x16remote_location_prefix\x18\x05 \x01(\t\x12\x38\n\x08template\x18\x06 \x01(\x0e\x32&.flyteidl.plugins.HiveQuery.Templating\" \n\nTemplating\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04READ\x10\x01\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"\xa5\x01\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12\x43\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollectionB\x02\x18\x01\x12\x0c\n\x04tags\x18\x03 \x03(\t\x12*\n\x05query\x18\x04 \x01(\x0b\x32\x1b.flyteidl.plugins.HiveQueryB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
 
+
+_HIVEQUERY_TEMPLATING = _descriptor.EnumDescriptor(
+  name='Templating',
+  full_name='flyteidl.plugins.HiveQuery.Templating',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NONE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='READ', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=269,
+  serialized_end=301,
+)
+_sym_db.RegisterEnumDescriptor(_HIVEQUERY_TEMPLATING)
 
 
 _HIVEQUERY = _descriptor.Descriptor(
@@ -48,18 +70,32 @@ _HIVEQUERY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\030\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='retryCount', full_name='flyteidl.plugins.HiveQuery.retryCount', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\030\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='staging_query', full_name='flyteidl.plugins.HiveQuery.staging_query', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='remote_location_prefix', full_name='flyteidl.plugins.HiveQuery.remote_location_prefix', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='template', full_name='flyteidl.plugins.HiveQuery.template', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -68,6 +104,7 @@ _HIVEQUERY = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _HIVEQUERY_TEMPLATING,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -75,8 +112,8 @@ _HIVEQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=78,
-  serialized_end=168,
+  serialized_start=79,
+  serialized_end=301,
 )
 
 
@@ -106,8 +143,8 @@ _HIVEQUERYCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=170,
-  serialized_end=237,
+  serialized_start=303,
+  serialized_end=370,
 )
 
 
@@ -158,10 +195,12 @@ _QUBOLEHIVEJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=240,
-  serialized_end=405,
+  serialized_start=373,
+  serialized_end=538,
 )
 
+_HIVEQUERY.fields_by_name['template'].enum_type = _HIVEQUERY_TEMPLATING
+_HIVEQUERY_TEMPLATING.containing_type = _HIVEQUERY
 _HIVEQUERYCOLLECTION.fields_by_name['queries'].message_type = _HIVEQUERY
 _QUBOLEHIVEJOB.fields_by_name['query_collection'].message_type = _HIVEQUERYCOLLECTION
 _QUBOLEHIVEJOB.fields_by_name['query'].message_type = _HIVEQUERY
@@ -193,5 +232,7 @@ _sym_db.RegisterMessage(QuboleHiveJob)
 
 
 DESCRIPTOR._options = None
+_HIVEQUERY.fields_by_name['timeout_sec']._options = None
+_HIVEQUERY.fields_by_name['retryCount']._options = None
 _QUBOLEHIVEJOB.fields_by_name['query_collection']._options = None
 # @@protoc_insertion_point(module_scope)

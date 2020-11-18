@@ -8,10 +8,24 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
 // Defines a query to execute on a hive cluster.
 message HiveQuery {
+    enum Templating {
+        // The staging query will be prepended to the main query and will then be run.
+        NONE     = 0;
+
+        // The main query will be wrapped around a template that looks like
+        //    CREATE TEMPORARY TABLE some_temp_table AS <user query>;
+        //    INSERT OVERWRITE DIRECTORY '<s3/gcs location>' STORED AS PARQUET
+        //       select * from some_temp_table
+        // and the whole thing will be prepended with the staging query.
+        READ     = 1;
+    }
+
     string query = 1;
-    uint32 timeout_sec = 2;
-    uint32 retryCount = 3;
+    uint32 timeout_sec = 2 [deprecated=true];
+    uint32 retryCount = 3 [deprecated=true];
     string staging_query = 4;
+    string remote_location_prefix = 5;
+    Templating template = 6;
 }
 
 // Defines a collection of hive queries.

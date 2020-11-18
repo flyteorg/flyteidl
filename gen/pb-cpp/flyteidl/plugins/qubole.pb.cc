@@ -86,7 +86,7 @@ void InitDefaults_flyteidl_2fplugins_2fqubole_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fqubole_2eproto[3];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fplugins_2fqubole_2eproto = nullptr;
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fqubole_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fqubole_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fqubole_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -99,6 +99,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fqubole_2eproto
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, timeout_sec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, retrycount_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, staging_query_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, remote_location_prefix_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, template__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQueryCollection, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -117,8 +119,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fqubole_2eproto
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::HiveQuery)},
-  { 9, -1, sizeof(::flyteidl::plugins::HiveQueryCollection)},
-  { 15, -1, sizeof(::flyteidl::plugins::QuboleHiveJob)},
+  { 11, -1, sizeof(::flyteidl::plugins::HiveQueryCollection)},
+  { 17, -1, sizeof(::flyteidl::plugins::QuboleHiveJob)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -135,22 +137,26 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fqubole_2eproto[] =
   "\n\035flyteidl/plugins/qubole.proto\022\020flyteid"
-  "l.plugins\032\031flyteidl/core/tasks.proto\"Z\n\t"
-  "HiveQuery\022\r\n\005query\030\001 \001(\t\022\023\n\013timeout_sec\030"
-  "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\022\025\n\rstaging_que"
-  "ry\030\004 \001(\t\"C\n\023HiveQueryCollection\022,\n\007queri"
-  "es\030\002 \003(\0132\033.flyteidl.plugins.HiveQuery\"\245\001"
-  "\n\rQuboleHiveJob\022\025\n\rcluster_label\030\001 \001(\t\022C"
-  "\n\020query_collection\030\002 \001(\0132%.flyteidl.plug"
-  "ins.HiveQueryCollectionB\002\030\001\022\014\n\004tags\030\003 \003("
-  "\t\022*\n\005query\030\004 \001(\0132\033.flyteidl.plugins.Hive"
-  "QueryB5Z3github.com/lyft/flyteidl/gen/pb"
-  "-go/flyteidl/pluginsb\006proto3"
+  "l.plugins\032\031flyteidl/core/tasks.proto\"\336\001\n"
+  "\tHiveQuery\022\r\n\005query\030\001 \001(\t\022\027\n\013timeout_sec"
+  "\030\002 \001(\rB\002\030\001\022\026\n\nretryCount\030\003 \001(\rB\002\030\001\022\025\n\rst"
+  "aging_query\030\004 \001(\t\022\036\n\026remote_location_pre"
+  "fix\030\005 \001(\t\0228\n\010template\030\006 \001(\0162&.flyteidl.p"
+  "lugins.HiveQuery.Templating\" \n\nTemplatin"
+  "g\022\010\n\004NONE\020\000\022\010\n\004READ\020\001\"C\n\023HiveQueryCollec"
+  "tion\022,\n\007queries\030\002 \003(\0132\033.flyteidl.plugins"
+  ".HiveQuery\"\245\001\n\rQuboleHiveJob\022\025\n\rcluster_"
+  "label\030\001 \001(\t\022C\n\020query_collection\030\002 \001(\0132%."
+  "flyteidl.plugins.HiveQueryCollectionB\002\030\001"
+  "\022\014\n\004tags\030\003 \003(\t\022*\n\005query\030\004 \001(\0132\033.flyteidl"
+  ".plugins.HiveQueryB5Z3github.com/lyft/fl"
+  "yteidl/gen/pb-go/flyteidl/pluginsb\006proto"
+  "3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fqubole_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fqubole_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fqubole_2eproto,
-  "flyteidl/plugins/qubole.proto", &assign_descriptors_table_flyteidl_2fplugins_2fqubole_2eproto, 468,
+  "flyteidl/plugins/qubole.proto", &assign_descriptors_table_flyteidl_2fplugins_2fqubole_2eproto, 601,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fqubole_2eproto() {
@@ -165,6 +171,27 @@ void AddDescriptors_flyteidl_2fplugins_2fqubole_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fplugins_2fqubole_2eproto = []() { AddDescriptors_flyteidl_2fplugins_2fqubole_2eproto(); return true; }();
 namespace flyteidl {
 namespace plugins {
+const ::google::protobuf::EnumDescriptor* HiveQuery_Templating_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fqubole_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fplugins_2fqubole_2eproto[0];
+}
+bool HiveQuery_Templating_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const HiveQuery_Templating HiveQuery::NONE;
+const HiveQuery_Templating HiveQuery::READ;
+const HiveQuery_Templating HiveQuery::Templating_MIN;
+const HiveQuery_Templating HiveQuery::Templating_MAX;
+const int HiveQuery::Templating_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -179,6 +206,8 @@ const int HiveQuery::kQueryFieldNumber;
 const int HiveQuery::kTimeoutSecFieldNumber;
 const int HiveQuery::kRetryCountFieldNumber;
 const int HiveQuery::kStagingQueryFieldNumber;
+const int HiveQuery::kRemoteLocationPrefixFieldNumber;
+const int HiveQuery::kTemplateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HiveQuery::HiveQuery()
@@ -198,9 +227,13 @@ HiveQuery::HiveQuery(const HiveQuery& from)
   if (from.staging_query().size() > 0) {
     staging_query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.staging_query_);
   }
+  remote_location_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.remote_location_prefix().size() > 0) {
+    remote_location_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.remote_location_prefix_);
+  }
   ::memcpy(&timeout_sec_, &from.timeout_sec_,
-    static_cast<size_t>(reinterpret_cast<char*>(&retrycount_) -
-    reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
+    static_cast<size_t>(reinterpret_cast<char*>(&template__) -
+    reinterpret_cast<char*>(&timeout_sec_)) + sizeof(template__));
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.HiveQuery)
 }
 
@@ -209,9 +242,10 @@ void HiveQuery::SharedCtor() {
       &scc_info_HiveQuery_flyteidl_2fplugins_2fqubole_2eproto.base);
   query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   staging_query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  remote_location_prefix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_sec_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retrycount_) -
-      reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
+      reinterpret_cast<char*>(&template__) -
+      reinterpret_cast<char*>(&timeout_sec_)) + sizeof(template__));
 }
 
 HiveQuery::~HiveQuery() {
@@ -222,6 +256,7 @@ HiveQuery::~HiveQuery() {
 void HiveQuery::SharedDtor() {
   query_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   staging_query_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  remote_location_prefix_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void HiveQuery::SetCachedSize(int size) const {
@@ -241,9 +276,10 @@ void HiveQuery::Clear() {
 
   query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   staging_query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  remote_location_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_sec_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retrycount_) -
-      reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
+      reinterpret_cast<char*>(&template__) -
+      reinterpret_cast<char*>(&timeout_sec_)) + sizeof(template__));
   _internal_metadata_.Clear();
 }
 
@@ -276,14 +312,14 @@ const char* HiveQuery::_InternalParse(const char* begin, const char* end, void* 
         ptr += size;
         break;
       }
-      // uint32 timeout_sec = 2;
+      // uint32 timeout_sec = 2 [deprecated = true];
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         msg->set_timeout_sec(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint32 retryCount = 3;
+      // uint32 retryCount = 3 [deprecated = true];
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_retrycount(::google::protobuf::internal::ReadVarint(&ptr));
@@ -304,6 +340,30 @@ const char* HiveQuery::_InternalParse(const char* begin, const char* end, void* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // string remote_location_prefix = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.HiveQuery.remote_location_prefix");
+        object = msg->mutable_remote_location_prefix();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .flyteidl.plugins.HiveQuery.Templating template = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_template_(static_cast<::flyteidl::plugins::HiveQuery_Templating>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -355,7 +415,7 @@ bool HiveQuery::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 timeout_sec = 2;
+      // uint32 timeout_sec = 2 [deprecated = true];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
@@ -368,7 +428,7 @@ bool HiveQuery::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 retryCount = 3;
+      // uint32 retryCount = 3 [deprecated = true];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
@@ -390,6 +450,35 @@ bool HiveQuery::MergePartialFromCodedStream(
             this->staging_query().data(), static_cast<int>(this->staging_query().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.plugins.HiveQuery.staging_query"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string remote_location_prefix = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_remote_location_prefix()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->remote_location_prefix().data(), static_cast<int>(this->remote_location_prefix().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.HiveQuery.remote_location_prefix"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.plugins.HiveQuery.Templating template = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_template_(static_cast< ::flyteidl::plugins::HiveQuery_Templating >(value));
         } else {
           goto handle_unusual;
         }
@@ -433,12 +522,12 @@ void HiveQuery::SerializeWithCachedSizes(
       1, this->query(), output);
   }
 
-  // uint32 timeout_sec = 2;
+  // uint32 timeout_sec = 2 [deprecated = true];
   if (this->timeout_sec() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->timeout_sec(), output);
   }
 
-  // uint32 retryCount = 3;
+  // uint32 retryCount = 3 [deprecated = true];
   if (this->retrycount() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->retrycount(), output);
   }
@@ -451,6 +540,22 @@ void HiveQuery::SerializeWithCachedSizes(
       "flyteidl.plugins.HiveQuery.staging_query");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->staging_query(), output);
+  }
+
+  // string remote_location_prefix = 5;
+  if (this->remote_location_prefix().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->remote_location_prefix().data(), static_cast<int>(this->remote_location_prefix().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.HiveQuery.remote_location_prefix");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->remote_location_prefix(), output);
+  }
+
+  // .flyteidl.plugins.HiveQuery.Templating template = 6;
+  if (this->template_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      6, this->template_(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -477,12 +582,12 @@ void HiveQuery::SerializeWithCachedSizes(
         1, this->query(), target);
   }
 
-  // uint32 timeout_sec = 2;
+  // uint32 timeout_sec = 2 [deprecated = true];
   if (this->timeout_sec() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->timeout_sec(), target);
   }
 
-  // uint32 retryCount = 3;
+  // uint32 retryCount = 3 [deprecated = true];
   if (this->retrycount() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->retrycount(), target);
   }
@@ -496,6 +601,23 @@ void HiveQuery::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->staging_query(), target);
+  }
+
+  // string remote_location_prefix = 5;
+  if (this->remote_location_prefix().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->remote_location_prefix().data(), static_cast<int>(this->remote_location_prefix().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.HiveQuery.remote_location_prefix");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->remote_location_prefix(), target);
+  }
+
+  // .flyteidl.plugins.HiveQuery.Templating template = 6;
+  if (this->template_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      6, this->template_(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -533,18 +655,31 @@ size_t HiveQuery::ByteSizeLong() const {
         this->staging_query());
   }
 
-  // uint32 timeout_sec = 2;
+  // string remote_location_prefix = 5;
+  if (this->remote_location_prefix().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->remote_location_prefix());
+  }
+
+  // uint32 timeout_sec = 2 [deprecated = true];
   if (this->timeout_sec() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->timeout_sec());
   }
 
-  // uint32 retryCount = 3;
+  // uint32 retryCount = 3 [deprecated = true];
   if (this->retrycount() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->retrycount());
+  }
+
+  // .flyteidl.plugins.HiveQuery.Templating template = 6;
+  if (this->template_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->template_());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -582,11 +717,18 @@ void HiveQuery::MergeFrom(const HiveQuery& from) {
 
     staging_query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.staging_query_);
   }
+  if (from.remote_location_prefix().size() > 0) {
+
+    remote_location_prefix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.remote_location_prefix_);
+  }
   if (from.timeout_sec() != 0) {
     set_timeout_sec(from.timeout_sec());
   }
   if (from.retrycount() != 0) {
     set_retrycount(from.retrycount());
+  }
+  if (from.template_() != 0) {
+    set_template_(from.template_());
   }
 }
 
@@ -619,8 +761,11 @@ void HiveQuery::InternalSwap(HiveQuery* other) {
     GetArenaNoVirtual());
   staging_query_.Swap(&other->staging_query_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  remote_location_prefix_.Swap(&other->remote_location_prefix_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(timeout_sec_, other->timeout_sec_);
   swap(retrycount_, other->retrycount_);
+  swap(template__, other->template__);
 }
 
 ::google::protobuf::Metadata HiveQuery::GetMetadata() const {

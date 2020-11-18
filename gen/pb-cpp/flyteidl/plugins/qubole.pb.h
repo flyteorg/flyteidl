@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/tasks.pb.h"
 // @@protoc_insertion_point(includes)
@@ -72,6 +73,27 @@ template<> ::flyteidl::plugins::QuboleHiveJob* Arena::CreateMaybeMessage<::flyte
 namespace flyteidl {
 namespace plugins {
 
+enum HiveQuery_Templating {
+  HiveQuery_Templating_NONE = 0,
+  HiveQuery_Templating_READ = 1,
+  HiveQuery_Templating_HiveQuery_Templating_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  HiveQuery_Templating_HiveQuery_Templating_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool HiveQuery_Templating_IsValid(int value);
+const HiveQuery_Templating HiveQuery_Templating_Templating_MIN = HiveQuery_Templating_NONE;
+const HiveQuery_Templating HiveQuery_Templating_Templating_MAX = HiveQuery_Templating_READ;
+const int HiveQuery_Templating_Templating_ARRAYSIZE = HiveQuery_Templating_Templating_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* HiveQuery_Templating_descriptor();
+inline const ::std::string& HiveQuery_Templating_Name(HiveQuery_Templating value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    HiveQuery_Templating_descriptor(), value);
+}
+inline bool HiveQuery_Templating_Parse(
+    const ::std::string& name, HiveQuery_Templating* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<HiveQuery_Templating>(
+    HiveQuery_Templating_descriptor(), name, value);
+}
 // ===================================================================
 
 class HiveQuery final :
@@ -167,6 +189,32 @@ class HiveQuery final :
 
   // nested types ----------------------------------------------------
 
+  typedef HiveQuery_Templating Templating;
+  static const Templating NONE =
+    HiveQuery_Templating_NONE;
+  static const Templating READ =
+    HiveQuery_Templating_READ;
+  static inline bool Templating_IsValid(int value) {
+    return HiveQuery_Templating_IsValid(value);
+  }
+  static const Templating Templating_MIN =
+    HiveQuery_Templating_Templating_MIN;
+  static const Templating Templating_MAX =
+    HiveQuery_Templating_Templating_MAX;
+  static const int Templating_ARRAYSIZE =
+    HiveQuery_Templating_Templating_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Templating_descriptor() {
+    return HiveQuery_Templating_descriptor();
+  }
+  static inline const ::std::string& Templating_Name(Templating value) {
+    return HiveQuery_Templating_Name(value);
+  }
+  static inline bool Templating_Parse(const ::std::string& name,
+      Templating* value) {
+    return HiveQuery_Templating_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // string query = 1;
@@ -197,17 +245,37 @@ class HiveQuery final :
   ::std::string* release_staging_query();
   void set_allocated_staging_query(::std::string* staging_query);
 
-  // uint32 timeout_sec = 2;
-  void clear_timeout_sec();
-  static const int kTimeoutSecFieldNumber = 2;
-  ::google::protobuf::uint32 timeout_sec() const;
-  void set_timeout_sec(::google::protobuf::uint32 value);
+  // string remote_location_prefix = 5;
+  void clear_remote_location_prefix();
+  static const int kRemoteLocationPrefixFieldNumber = 5;
+  const ::std::string& remote_location_prefix() const;
+  void set_remote_location_prefix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_remote_location_prefix(::std::string&& value);
+  #endif
+  void set_remote_location_prefix(const char* value);
+  void set_remote_location_prefix(const char* value, size_t size);
+  ::std::string* mutable_remote_location_prefix();
+  ::std::string* release_remote_location_prefix();
+  void set_allocated_remote_location_prefix(::std::string* remote_location_prefix);
 
-  // uint32 retryCount = 3;
-  void clear_retrycount();
-  static const int kRetryCountFieldNumber = 3;
-  ::google::protobuf::uint32 retrycount() const;
-  void set_retrycount(::google::protobuf::uint32 value);
+  // uint32 timeout_sec = 2 [deprecated = true];
+  PROTOBUF_DEPRECATED void clear_timeout_sec();
+  PROTOBUF_DEPRECATED static const int kTimeoutSecFieldNumber = 2;
+  PROTOBUF_DEPRECATED ::google::protobuf::uint32 timeout_sec() const;
+  PROTOBUF_DEPRECATED void set_timeout_sec(::google::protobuf::uint32 value);
+
+  // uint32 retryCount = 3 [deprecated = true];
+  PROTOBUF_DEPRECATED void clear_retrycount();
+  PROTOBUF_DEPRECATED static const int kRetryCountFieldNumber = 3;
+  PROTOBUF_DEPRECATED ::google::protobuf::uint32 retrycount() const;
+  PROTOBUF_DEPRECATED void set_retrycount(::google::protobuf::uint32 value);
+
+  // .flyteidl.plugins.HiveQuery.Templating template = 6;
+  void clear_template_();
+  static const int kTemplateFieldNumber = 6;
+  ::flyteidl::plugins::HiveQuery_Templating template_() const;
+  void set_template_(::flyteidl::plugins::HiveQuery_Templating value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.HiveQuery)
  private:
@@ -216,8 +284,10 @@ class HiveQuery final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr query_;
   ::google::protobuf::internal::ArenaStringPtr staging_query_;
+  ::google::protobuf::internal::ArenaStringPtr remote_location_prefix_;
   ::google::protobuf::uint32 timeout_sec_;
   ::google::protobuf::uint32 retrycount_;
+  int template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fqubole_2eproto;
 };
@@ -566,7 +636,7 @@ inline void HiveQuery::set_allocated_query(::std::string* query) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.HiveQuery.query)
 }
 
-// uint32 timeout_sec = 2;
+// uint32 timeout_sec = 2 [deprecated = true];
 inline void HiveQuery::clear_timeout_sec() {
   timeout_sec_ = 0u;
 }
@@ -580,7 +650,7 @@ inline void HiveQuery::set_timeout_sec(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:flyteidl.plugins.HiveQuery.timeout_sec)
 }
 
-// uint32 retryCount = 3;
+// uint32 retryCount = 3 [deprecated = true];
 inline void HiveQuery::clear_retrycount() {
   retrycount_ = 0u;
 }
@@ -645,6 +715,73 @@ inline void HiveQuery::set_allocated_staging_query(::std::string* staging_query)
   }
   staging_query_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), staging_query);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.HiveQuery.staging_query)
+}
+
+// string remote_location_prefix = 5;
+inline void HiveQuery::clear_remote_location_prefix() {
+  remote_location_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HiveQuery::remote_location_prefix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.HiveQuery.remote_location_prefix)
+  return remote_location_prefix_.GetNoArena();
+}
+inline void HiveQuery::set_remote_location_prefix(const ::std::string& value) {
+  
+  remote_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.HiveQuery.remote_location_prefix)
+}
+#if LANG_CXX11
+inline void HiveQuery::set_remote_location_prefix(::std::string&& value) {
+  
+  remote_location_prefix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.HiveQuery.remote_location_prefix)
+}
+#endif
+inline void HiveQuery::set_remote_location_prefix(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  remote_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.HiveQuery.remote_location_prefix)
+}
+inline void HiveQuery::set_remote_location_prefix(const char* value, size_t size) {
+  
+  remote_location_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.HiveQuery.remote_location_prefix)
+}
+inline ::std::string* HiveQuery::mutable_remote_location_prefix() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.HiveQuery.remote_location_prefix)
+  return remote_location_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HiveQuery::release_remote_location_prefix() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.HiveQuery.remote_location_prefix)
+  
+  return remote_location_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HiveQuery::set_allocated_remote_location_prefix(::std::string* remote_location_prefix) {
+  if (remote_location_prefix != nullptr) {
+    
+  } else {
+    
+  }
+  remote_location_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), remote_location_prefix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.HiveQuery.remote_location_prefix)
+}
+
+// .flyteidl.plugins.HiveQuery.Templating template = 6;
+inline void HiveQuery::clear_template_() {
+  template__ = 0;
+}
+inline ::flyteidl::plugins::HiveQuery_Templating HiveQuery::template_() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.HiveQuery.template)
+  return static_cast< ::flyteidl::plugins::HiveQuery_Templating >(template__);
+}
+inline void HiveQuery::set_template_(::flyteidl::plugins::HiveQuery_Templating value) {
+  
+  template__ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.HiveQuery.template)
 }
 
 // -------------------------------------------------------------------
@@ -921,6 +1058,18 @@ inline void QuboleHiveJob::set_allocated_query(::flyteidl::plugins::HiveQuery* q
 
 }  // namespace plugins
 }  // namespace flyteidl
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::flyteidl::plugins::HiveQuery_Templating> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::HiveQuery_Templating>() {
+  return ::flyteidl::plugins::HiveQuery_Templating_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

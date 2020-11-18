@@ -18,7 +18,9 @@ Defines a query to execute on a hive cluster.
     "query": "...",
     "timeout_sec": "...",
     "retryCount": "...",
-    "staging_query": "..."
+    "staging_query": "...",
+    "remote_location_prefix": "...",
+    "template": "..."
   }
 
 .. _api_field_flyteidl.plugins.HiveQuery.query:
@@ -41,14 +43,42 @@ retryCount
 staging_query
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
+.. _api_field_flyteidl.plugins.HiveQuery.remote_location_prefix:
 
+remote_location_prefix
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.plugins.HiveQuery.template:
+
+template
+  (:ref:`flyteidl.plugins.HiveQuery.Templating <api_enum_flyteidl.plugins.HiveQuery.Templating>`) 
+  
+
+.. _api_enum_flyteidl.plugins.HiveQuery.Templating:
+
+Enum flyteidl.plugins.HiveQuery.Templating
+------------------------------------------
+
+`[flyteidl.plugins.HiveQuery.Templating proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L10>`_
+
+
+.. _api_enum_value_flyteidl.plugins.HiveQuery.Templating.NONE:
+
+NONE
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.HiveQuery.Templating.READ:
+
+READ
+  ⁣
+  
 
 .. _api_msg_flyteidl.plugins.HiveQueryCollection:
 
 flyteidl.plugins.HiveQueryCollection
 ------------------------------------
 
-`[flyteidl.plugins.HiveQueryCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L17>`_
+`[flyteidl.plugins.HiveQueryCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L24>`_
 
 Defines a collection of hive queries.
 
@@ -70,7 +100,7 @@ queries
 flyteidl.plugins.QuboleHiveJob
 ------------------------------
 
-`[flyteidl.plugins.QuboleHiveJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L23>`_
+`[flyteidl.plugins.QuboleHiveJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L30>`_
 
 This message works with the 'hive' task type in the SDK and is the object that will be in the 'custom' field
 of a hive task's TaskTemplate
