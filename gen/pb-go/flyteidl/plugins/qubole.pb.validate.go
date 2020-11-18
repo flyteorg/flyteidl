@@ -49,6 +49,8 @@ func (m *HiveQuery) Validate() error {
 
 	// no validation rules for RetryCount
 
+	// no validation rules for StagingQuery
+
 	return nil
 }
 

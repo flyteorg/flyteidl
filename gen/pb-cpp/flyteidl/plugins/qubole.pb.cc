@@ -98,6 +98,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fqubole_2eproto
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, query_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, timeout_sec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, retrycount_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQuery, staging_query_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::HiveQueryCollection, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -116,8 +117,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fqubole_2eproto
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::HiveQuery)},
-  { 8, -1, sizeof(::flyteidl::plugins::HiveQueryCollection)},
-  { 14, -1, sizeof(::flyteidl::plugins::QuboleHiveJob)},
+  { 9, -1, sizeof(::flyteidl::plugins::HiveQueryCollection)},
+  { 15, -1, sizeof(::flyteidl::plugins::QuboleHiveJob)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -134,22 +135,22 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fqubole_2eproto[] =
   "\n\035flyteidl/plugins/qubole.proto\022\020flyteid"
-  "l.plugins\032\031flyteidl/core/tasks.proto\"C\n\t"
+  "l.plugins\032\031flyteidl/core/tasks.proto\"Z\n\t"
   "HiveQuery\022\r\n\005query\030\001 \001(\t\022\023\n\013timeout_sec\030"
-  "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\"C\n\023HiveQueryCo"
-  "llection\022,\n\007queries\030\002 \003(\0132\033.flyteidl.plu"
-  "gins.HiveQuery\"\245\001\n\rQuboleHiveJob\022\025\n\rclus"
-  "ter_label\030\001 \001(\t\022C\n\020query_collection\030\002 \001("
-  "\0132%.flyteidl.plugins.HiveQueryCollection"
-  "B\002\030\001\022\014\n\004tags\030\003 \003(\t\022*\n\005query\030\004 \001(\0132\033.flyt"
-  "eidl.plugins.HiveQueryB5Z3github.com/lyf"
-  "t/flyteidl/gen/pb-go/flyteidl/pluginsb\006p"
-  "roto3"
+  "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\022\025\n\rstaging_que"
+  "ry\030\004 \001(\t\"C\n\023HiveQueryCollection\022,\n\007queri"
+  "es\030\002 \003(\0132\033.flyteidl.plugins.HiveQuery\"\245\001"
+  "\n\rQuboleHiveJob\022\025\n\rcluster_label\030\001 \001(\t\022C"
+  "\n\020query_collection\030\002 \001(\0132%.flyteidl.plug"
+  "ins.HiveQueryCollectionB\002\030\001\022\014\n\004tags\030\003 \003("
+  "\t\022*\n\005query\030\004 \001(\0132\033.flyteidl.plugins.Hive"
+  "QueryB5Z3github.com/lyft/flyteidl/gen/pb"
+  "-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fqubole_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fqubole_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fqubole_2eproto,
-  "flyteidl/plugins/qubole.proto", &assign_descriptors_table_flyteidl_2fplugins_2fqubole_2eproto, 445,
+  "flyteidl/plugins/qubole.proto", &assign_descriptors_table_flyteidl_2fplugins_2fqubole_2eproto, 468,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fqubole_2eproto() {
@@ -177,6 +178,7 @@ class HiveQuery::HasBitSetters {
 const int HiveQuery::kQueryFieldNumber;
 const int HiveQuery::kTimeoutSecFieldNumber;
 const int HiveQuery::kRetryCountFieldNumber;
+const int HiveQuery::kStagingQueryFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HiveQuery::HiveQuery()
@@ -192,6 +194,10 @@ HiveQuery::HiveQuery(const HiveQuery& from)
   if (from.query().size() > 0) {
     query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.query_);
   }
+  staging_query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.staging_query().size() > 0) {
+    staging_query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.staging_query_);
+  }
   ::memcpy(&timeout_sec_, &from.timeout_sec_,
     static_cast<size_t>(reinterpret_cast<char*>(&retrycount_) -
     reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
@@ -202,6 +208,7 @@ void HiveQuery::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_HiveQuery_flyteidl_2fplugins_2fqubole_2eproto.base);
   query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  staging_query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_sec_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&retrycount_) -
       reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
@@ -214,6 +221,7 @@ HiveQuery::~HiveQuery() {
 
 void HiveQuery::SharedDtor() {
   query_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  staging_query_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void HiveQuery::SetCachedSize(int size) const {
@@ -232,6 +240,7 @@ void HiveQuery::Clear() {
   (void) cached_has_bits;
 
   query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  staging_query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_sec_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&retrycount_) -
       reinterpret_cast<char*>(&timeout_sec_)) + sizeof(retrycount_));
@@ -279,6 +288,22 @@ const char* HiveQuery::_InternalParse(const char* begin, const char* end, void* 
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_retrycount(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string staging_query = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.HiveQuery.staging_query");
+        object = msg->mutable_staging_query();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -356,6 +381,21 @@ bool HiveQuery::MergePartialFromCodedStream(
         break;
       }
 
+      // string staging_query = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_staging_query()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->staging_query().data(), static_cast<int>(this->staging_query().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.HiveQuery.staging_query"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -403,6 +443,16 @@ void HiveQuery::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->retrycount(), output);
   }
 
+  // string staging_query = 4;
+  if (this->staging_query().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->staging_query().data(), static_cast<int>(this->staging_query().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.HiveQuery.staging_query");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->staging_query(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -437,6 +487,17 @@ void HiveQuery::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->retrycount(), target);
   }
 
+  // string staging_query = 4;
+  if (this->staging_query().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->staging_query().data(), static_cast<int>(this->staging_query().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.HiveQuery.staging_query");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->staging_query(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -463,6 +524,13 @@ size_t HiveQuery::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->query());
+  }
+
+  // string staging_query = 4;
+  if (this->staging_query().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->staging_query());
   }
 
   // uint32 timeout_sec = 2;
@@ -510,6 +578,10 @@ void HiveQuery::MergeFrom(const HiveQuery& from) {
 
     query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.query_);
   }
+  if (from.staging_query().size() > 0) {
+
+    staging_query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.staging_query_);
+  }
   if (from.timeout_sec() != 0) {
     set_timeout_sec(from.timeout_sec());
   }
@@ -544,6 +616,8 @@ void HiveQuery::InternalSwap(HiveQuery* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   query_.Swap(&other->query_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  staging_query_.Swap(&other->staging_query_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(timeout_sec_, other->timeout_sec_);
   swap(retrycount_, other->retrycount_);

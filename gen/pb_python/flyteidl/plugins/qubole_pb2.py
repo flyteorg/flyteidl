@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"C\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x13\n\x0btimeout_sec\x18\x02 \x01(\r\x12\x12\n\nretryCount\x18\x03 \x01(\r\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"\xa5\x01\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12\x43\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollectionB\x02\x18\x01\x12\x0c\n\x04tags\x18\x03 \x03(\t\x12*\n\x05query\x18\x04 \x01(\x0b\x32\x1b.flyteidl.plugins.HiveQueryB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"Z\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x13\n\x0btimeout_sec\x18\x02 \x01(\r\x12\x12\n\nretryCount\x18\x03 \x01(\r\x12\x15\n\rstaging_query\x18\x04 \x01(\t\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"\xa5\x01\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12\x43\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollectionB\x02\x18\x01\x12\x0c\n\x04tags\x18\x03 \x03(\t\x12*\n\x05query\x18\x04 \x01(\x0b\x32\x1b.flyteidl.plugins.HiveQueryB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
@@ -56,6 +56,13 @@ _HIVEQUERY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='staging_query', full_name='flyteidl.plugins.HiveQuery.staging_query', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -69,7 +76,7 @@ _HIVEQUERY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=78,
-  serialized_end=145,
+  serialized_end=168,
 )
 
 
@@ -99,8 +106,8 @@ _HIVEQUERYCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=147,
-  serialized_end=214,
+  serialized_start=170,
+  serialized_end=237,
 )
 
 
@@ -151,8 +158,8 @@ _QUBOLEHIVEJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=217,
-  serialized_end=382,
+  serialized_start=240,
+  serialized_end=405,
 )
 
 _HIVEQUERYCOLLECTION.fields_by_name['queries'].message_type = _HIVEQUERY

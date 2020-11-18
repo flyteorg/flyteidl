@@ -183,6 +183,20 @@ class HiveQuery final :
   ::std::string* release_query();
   void set_allocated_query(::std::string* query);
 
+  // string staging_query = 4;
+  void clear_staging_query();
+  static const int kStagingQueryFieldNumber = 4;
+  const ::std::string& staging_query() const;
+  void set_staging_query(const ::std::string& value);
+  #if LANG_CXX11
+  void set_staging_query(::std::string&& value);
+  #endif
+  void set_staging_query(const char* value);
+  void set_staging_query(const char* value, size_t size);
+  ::std::string* mutable_staging_query();
+  ::std::string* release_staging_query();
+  void set_allocated_staging_query(::std::string* staging_query);
+
   // uint32 timeout_sec = 2;
   void clear_timeout_sec();
   static const int kTimeoutSecFieldNumber = 2;
@@ -201,6 +215,7 @@ class HiveQuery final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr query_;
+  ::google::protobuf::internal::ArenaStringPtr staging_query_;
   ::google::protobuf::uint32 timeout_sec_;
   ::google::protobuf::uint32 retrycount_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -577,6 +592,59 @@ inline void HiveQuery::set_retrycount(::google::protobuf::uint32 value) {
   
   retrycount_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.HiveQuery.retryCount)
+}
+
+// string staging_query = 4;
+inline void HiveQuery::clear_staging_query() {
+  staging_query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HiveQuery::staging_query() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.HiveQuery.staging_query)
+  return staging_query_.GetNoArena();
+}
+inline void HiveQuery::set_staging_query(const ::std::string& value) {
+  
+  staging_query_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.HiveQuery.staging_query)
+}
+#if LANG_CXX11
+inline void HiveQuery::set_staging_query(::std::string&& value) {
+  
+  staging_query_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.HiveQuery.staging_query)
+}
+#endif
+inline void HiveQuery::set_staging_query(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  staging_query_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.HiveQuery.staging_query)
+}
+inline void HiveQuery::set_staging_query(const char* value, size_t size) {
+  
+  staging_query_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.HiveQuery.staging_query)
+}
+inline ::std::string* HiveQuery::mutable_staging_query() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.HiveQuery.staging_query)
+  return staging_query_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HiveQuery::release_staging_query() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.HiveQuery.staging_query)
+  
+  return staging_query_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HiveQuery::set_allocated_staging_query(::std::string* staging_query) {
+  if (staging_query != nullptr) {
+    
+  } else {
+    
+  }
+  staging_query_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), staging_query);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.HiveQuery.staging_query)
 }
 
 // -------------------------------------------------------------------

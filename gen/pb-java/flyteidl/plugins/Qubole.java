@@ -37,6 +37,16 @@ public final class Qubole {
      * <code>uint32 retryCount = 3;</code>
      */
     int getRetryCount();
+
+    /**
+     * <code>string staging_query = 4;</code>
+     */
+    java.lang.String getStagingQuery();
+    /**
+     * <code>string staging_query = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getStagingQueryBytes();
   }
   /**
    * <pre>
@@ -56,6 +66,7 @@ public final class Qubole {
     }
     private HiveQuery() {
       query_ = "";
+      stagingQuery_ = "";
     }
 
     @java.lang.Override
@@ -96,6 +107,12 @@ public final class Qubole {
             case 24: {
 
               retryCount_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stagingQuery_ = s;
               break;
             }
             default: {
@@ -182,6 +199,40 @@ public final class Qubole {
       return retryCount_;
     }
 
+    public static final int STAGING_QUERY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object stagingQuery_;
+    /**
+     * <code>string staging_query = 4;</code>
+     */
+    public java.lang.String getStagingQuery() {
+      java.lang.Object ref = stagingQuery_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stagingQuery_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string staging_query = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStagingQueryBytes() {
+      java.lang.Object ref = stagingQuery_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stagingQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -205,6 +256,9 @@ public final class Qubole {
       if (retryCount_ != 0) {
         output.writeUInt32(3, retryCount_);
       }
+      if (!getStagingQueryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stagingQuery_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -224,6 +278,9 @@ public final class Qubole {
       if (retryCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, retryCount_);
+      }
+      if (!getStagingQueryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stagingQuery_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -246,6 +303,8 @@ public final class Qubole {
           != other.getTimeoutSec()) return false;
       if (getRetryCount()
           != other.getRetryCount()) return false;
+      if (!getStagingQuery()
+          .equals(other.getStagingQuery())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -263,6 +322,8 @@ public final class Qubole {
       hash = (53 * hash) + getTimeoutSec();
       hash = (37 * hash) + RETRYCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getRetryCount();
+      hash = (37 * hash) + STAGING_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getStagingQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -406,6 +467,8 @@ public final class Qubole {
 
         retryCount_ = 0;
 
+        stagingQuery_ = "";
+
         return this;
       }
 
@@ -435,6 +498,7 @@ public final class Qubole {
         result.query_ = query_;
         result.timeoutSec_ = timeoutSec_;
         result.retryCount_ = retryCount_;
+        result.stagingQuery_ = stagingQuery_;
         onBuilt();
         return result;
       }
@@ -492,6 +556,10 @@ public final class Qubole {
         }
         if (other.getRetryCount() != 0) {
           setRetryCount(other.getRetryCount());
+        }
+        if (!other.getStagingQuery().isEmpty()) {
+          stagingQuery_ = other.stagingQuery_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -639,6 +707,75 @@ public final class Qubole {
       public Builder clearRetryCount() {
         
         retryCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stagingQuery_ = "";
+      /**
+       * <code>string staging_query = 4;</code>
+       */
+      public java.lang.String getStagingQuery() {
+        java.lang.Object ref = stagingQuery_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stagingQuery_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string staging_query = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStagingQueryBytes() {
+        java.lang.Object ref = stagingQuery_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stagingQuery_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string staging_query = 4;</code>
+       */
+      public Builder setStagingQuery(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stagingQuery_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string staging_query = 4;</code>
+       */
+      public Builder clearStagingQuery() {
+        
+        stagingQuery_ = getDefaultInstance().getStagingQuery();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string staging_query = 4;</code>
+       */
+      public Builder setStagingQueryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stagingQuery_ = value;
         onChanged();
         return this;
       }
@@ -2650,17 +2787,17 @@ public final class Qubole {
   static {
     java.lang.String[] descriptorData = {
       "\n\035flyteidl/plugins/qubole.proto\022\020flyteid" +
-      "l.plugins\032\031flyteidl/core/tasks.proto\"C\n\t" +
+      "l.plugins\032\031flyteidl/core/tasks.proto\"Z\n\t" +
       "HiveQuery\022\r\n\005query\030\001 \001(\t\022\023\n\013timeout_sec\030" +
-      "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\"C\n\023HiveQueryCo" +
-      "llection\022,\n\007queries\030\002 \003(\0132\033.flyteidl.plu" +
-      "gins.HiveQuery\"\245\001\n\rQuboleHiveJob\022\025\n\rclus" +
-      "ter_label\030\001 \001(\t\022C\n\020query_collection\030\002 \001(" +
-      "\0132%.flyteidl.plugins.HiveQueryCollection" +
-      "B\002\030\001\022\014\n\004tags\030\003 \003(\t\022*\n\005query\030\004 \001(\0132\033.flyt" +
-      "eidl.plugins.HiveQueryB5Z3github.com/lyf" +
-      "t/flyteidl/gen/pb-go/flyteidl/pluginsb\006p" +
-      "roto3"
+      "\002 \001(\r\022\022\n\nretryCount\030\003 \001(\r\022\025\n\rstaging_que" +
+      "ry\030\004 \001(\t\"C\n\023HiveQueryCollection\022,\n\007queri" +
+      "es\030\002 \003(\0132\033.flyteidl.plugins.HiveQuery\"\245\001" +
+      "\n\rQuboleHiveJob\022\025\n\rcluster_label\030\001 \001(\t\022C" +
+      "\n\020query_collection\030\002 \001(\0132%.flyteidl.plug" +
+      "ins.HiveQueryCollectionB\002\030\001\022\014\n\004tags\030\003 \003(" +
+      "\t\022*\n\005query\030\004 \001(\0132\033.flyteidl.plugins.Hive" +
+      "QueryB5Z3github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2680,7 +2817,7 @@ public final class Qubole {
     internal_static_flyteidl_plugins_HiveQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_HiveQuery_descriptor,
-        new java.lang.String[] { "Query", "TimeoutSec", "RetryCount", });
+        new java.lang.String[] { "Query", "TimeoutSec", "RetryCount", "StagingQuery", });
     internal_static_flyteidl_plugins_HiveQueryCollection_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_HiveQueryCollection_fieldAccessorTable = new
