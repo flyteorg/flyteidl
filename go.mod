@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/antihax/optional v1.0.0
 	github.com/coreos/go-oidc v2.1.0+incompatible
-	github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1 // indirect
+	github.com/go-test/deep v1.0.7
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.3.2
 	github.com/google/gofuzz v1.1.0 // indirect
@@ -16,7 +16,6 @@ require (
 	github.com/lyft/flytestdlib v0.3.0
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect
-	github.com/satori/uuid v1.2.0 // indirect
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.4.0
 	golang.org/x/crypto v0.0.0-20200117160349-530e935923ad // indirect
