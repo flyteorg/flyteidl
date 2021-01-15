@@ -2,6 +2,7 @@ package logs
 
 import (
 	"github.com/go-test/deep"
+	"reflect"
 
 	"testing"
 
@@ -105,7 +106,7 @@ func Test_templateLogPlugin_Regression(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := templateLogPlugin{
+			s := TemplateLogPlugin{
 				templateUri:   tt.fields.templateUri,
 				messageFormat: tt.fields.messageFormat,
 			}
@@ -118,6 +119,63 @@ func Test_templateLogPlugin_Regression(t *testing.T) {
 
 			if diff := deep.Equal(got, tt.want); diff != nil {
 				t.Errorf("GetTaskLog() got = %v, want %v, diff: %v", got, tt.want, diff)
+			}
+		})
+	}
+}
+
+func TestTemplateLogPlugin_NewTaskLog(t *testing.T) {
+	type fields struct {
+		templateUri   string
+		messageFormat core.TaskLog_MessageFormat
+	}
+	type args struct {
+		input TaskLogInput
+	}
+	tests := []struct {
+		name    string
+		fields  fields
+		args    args
+		want    core.TaskLog
+		wantErr bool
+	}{
+		{
+			"splunk",
+			fields{
+				templateUri:   "https://{{.hostname}}/en-US/app/search/search?q=search%20index%3Diks%20kubernetes.namespace_name%3A%3A{{.namespace}}%20host%3D%22{{.podName}}%22&display.page.search.mode=verbose&dispatch.sample_ratio=1&earliest=-24h%40h&latest=now&sid=1596585766.253090_41E7FA1D-27F9-438E-850B-381E85A46081",
+				messageFormat: core.TaskLog_JSON,
+			},
+			args{
+				input: TaskLogInput{
+					HostName:      "my-host",
+					PodName:       "my-pod",
+					Namespace:     "my-namespace",
+					ContainerName: "ignore",
+					ContainerID:   "ignore",
+					LogName:       "main_logs",
+				},
+			},
+			core.TaskLog{
+				Uri:           "https://my-host/en-US/app/search/search?q=search%20index%3Diks%20kubernetes.namespace_name%3A%3Amy-namespace%20host%3D%22my-pod%22&display.page.search.mode=verbose&dispatch.sample_ratio=1&earliest=-24h%40h&latest=now&sid=1596585766.253090_41E7FA1D-27F9-438E-850B-381E85A46081",
+				MessageFormat: core.TaskLog_JSON,
+				Name:          "main_logs",
+			},
+			false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			s := TemplateLogPlugin{
+				templateUri:   tt.fields.templateUri,
+				messageFormat: tt.fields.messageFormat,
+			}
+			got, err := s.NewTaskLog(tt.args.input)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("NewTaskLog() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("NewTaskLog() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
