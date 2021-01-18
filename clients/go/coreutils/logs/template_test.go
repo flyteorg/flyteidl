@@ -142,7 +142,7 @@ func TestTemplateLogPlugin_NewTaskLog(t *testing.T) {
 		{
 			"splunk",
 			fields{
-				templateUri:   "https://{{.hostname}}/en-US/app/search/search?q=search%20index%3Diks%20kubernetes.namespace_name%3A%3A{{.namespace}}%20host%3D%22{{.podName}}%22&display.page.search.mode=verbose&dispatch.sample_ratio=1&earliest=-24h%40h&latest=now&sid=1596585766.253090_41E7FA1D-27F9-438E-850B-381E85A46081",
+				templateUri:   "https://prd-p-ighar.splunkcloud.com/en-US/app/search/search?q=search%20container_name%3D%22{{ .containerName }}%22",
 				messageFormat: core.TaskLog_JSON,
 			},
 			args{
@@ -150,13 +150,13 @@ func TestTemplateLogPlugin_NewTaskLog(t *testing.T) {
 					HostName:      "my-host",
 					PodName:       "my-pod",
 					Namespace:     "my-namespace",
-					ContainerName: "ignore",
+					ContainerName: "my-container",
 					ContainerID:   "ignore",
 					LogName:       "main_logs",
 				},
 			},
 			core.TaskLog{
-				Uri:           "https://my-host/en-US/app/search/search?q=search%20index%3Diks%20kubernetes.namespace_name%3A%3Amy-namespace%20host%3D%22my-pod%22&display.page.search.mode=verbose&dispatch.sample_ratio=1&earliest=-24h%40h&latest=now&sid=1596585766.253090_41E7FA1D-27F9-438E-850B-381E85A46081",
+				Uri:           "https://prd-p-ighar.splunkcloud.com/en-US/app/search/search?q=search%20container_name%3D%22my-container%22",
 				MessageFormat: core.TaskLog_JSON,
 				Name:          "main_logs",
 			},
