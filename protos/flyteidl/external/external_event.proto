@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package flyteidl.external;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/external";
+
+import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
+import "flyteidl/core/catalog.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+message RichWorkflowExecutionEvent {
+   // Workflow execution id
+   core.WorkflowExecutionIdentifier execution_id = 1;
+​
+          // the id of the originator (Propeller) of the event
+   string producer_id = 2;
+
+   core.WorkflowExecution.Phase phase = 3;
+​
+   // This timestamp represents when the original event occurred, it is generated
+   // by the executor of the workflow.
+   google.protobuf.Timestamp occurred_at = 4;
+​
+   // new fields
+​
+  ​// ExecutionSpec.getMetadata()
+  ​// ExecutionSpec.getLabels()
+  ​// ExecutionSpec.getAnnotations()
+  ​// ExecutionSpec.getLaunchPlan() -> toUrn
+   flyteidl.admin.ExecutionSpec execution_spec = 7;
+  ​// ExecutionClosure.getComputedInputs()
+   flyteidl.admin.ExecutionClosure execution_closure = 8;
+
+	  // LaunchPlanSpec -> ???
+   flyteidl.admin.LaunchPlanSpec launch_plan_spec = 9;
+
+	  // LaunchPlanClosure -> ??
+   flyteidl.admin.LaunchPlanClosure launch_plan_closure = 10;
+​
+	  // WorkflowClosure.getCompiledWorkflow().getTemplate().getNodes() to understand the tasks
+	  // Node.getUpstreamNodeIdsList()
+	  // Node.getInputsList()
+   flyteidl.admin.WorkflowClosure workflow_closure = 11;
+}
+
+// Instead of creating a new envelope
+message Event {
+    string id = 1;
+    string producer_id = 2;
+    google.protobuf.Timestamp occurred_at = 3;
+    oneof event {
+        WorkflowEvent,
+        NodeEvent,
+        TaskEvent,
+    }
+
+
