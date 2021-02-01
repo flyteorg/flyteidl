@@ -38,3 +38,15 @@ jobs:
           fetch-depth: "0"
       - name: Service
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
+      - name: Admin
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative --validate_out
+      - name: Core
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/core --with_gateway -l go --go_source_relative --validate_out
+      - name: Event
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/event --with_gateway -l go --go_source_relative --validate_out
+      - name: Plugins
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
+      - name: Datacatalog
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
+      - name: Test
+        run: ./scripts/test_diff.sh
