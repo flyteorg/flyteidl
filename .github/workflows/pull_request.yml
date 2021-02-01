@@ -49,4 +49,4 @@ jobs:
       - name: Datacatalog
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
       - name: Test
-        run: ./scripts/test_diff.sh
+        run: apt-get update && apt-get install git && ./scripts/test_diff.sh

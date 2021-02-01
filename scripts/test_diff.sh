@@ -1,3 +1,7 @@
+#!/bin/bash
+set -e
+set -x
+
 DIRTY=$(git status --porcelain)
 if [ -n "$DIRTY" ]; then
   echo "FAILED: Protos updated without commiting generated code."
