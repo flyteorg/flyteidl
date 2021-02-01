@@ -29,6 +29,8 @@ jobs:
     container:
       image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
       options: --cpus 1
+      env:
+        GITHUB_WORKSPACE: /defs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
