@@ -30,7 +30,7 @@ jobs:
       image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
       options: --cpus 1
       volumes:
-        - ${GITHUB_WORKSPACE}:/defs
+        - /github/workspace:/defs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
