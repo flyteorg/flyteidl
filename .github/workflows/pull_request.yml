@@ -35,4 +35,4 @@ jobs:
         with:
           fetch-depth: "0"
       - name: Service
-        run: python3 /usr/local/bin/generate_protos.py -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
+        run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
