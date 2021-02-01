@@ -48,10 +48,18 @@ jobs:
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
       - name: Datacatalog
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
+      - uses: actions/upload-artifact@master
+        with:
+          name: repo-generated
+          path: ./
   test-proto-changes:
     runs-on: ubuntu-latest
     name: Test Proto Changes
     needs: [generate-protos]
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: repo-generated
+          path: ./
       - name: Test
         run: ./scripts/test_diff.sh
