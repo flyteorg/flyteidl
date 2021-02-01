@@ -62,4 +62,4 @@ jobs:
           name: repo-generated
           path: ./
       - name: Test
-        run: ./scripts/test_diff.sh
+        run: sh ./scripts/test_diff.sh
