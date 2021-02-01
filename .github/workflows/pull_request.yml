@@ -54,4 +54,4 @@ jobs:
     needs: [generate-protos]
     steps:
       - name: Test
-        run: apt-get update && apt-get install git && ./scripts/test_diff.sh
+        run: ./scripts/test_diff.sh
