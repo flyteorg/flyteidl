@@ -57,6 +57,10 @@ jobs:
     name: Test Proto Changes
     needs: [generate-protos]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
       - uses: actions/download-artifact@master
         with:
           name: repo-generated
