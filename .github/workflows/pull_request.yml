@@ -23,14 +23,14 @@ jobs:
           GO111MODULE: "on"
         with:
           args: make install && make lint
-  test-proto-changes:
+  generate-protos:
     runs-on: ubuntu-latest
-    name: Test Proto Changes
+    name: Generate Protos
     container:
       image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
       options: --cpus 1
-      env:
-        GITHUB_WORKSPACE: /defs
+      volumes:
+        - ${GITHUB_WORKSPACE}:/defs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -48,5 +48,10 @@ jobs:
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
       - name: Datacatalog
         run: python3 /usr/local/bin/entrypoint.py -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
+  test-proto-changes:
+    runs-on: ubuntu-latest
+    name: Test Proto Changes
+    needs: [generate-protos]
+    steps:
       - name: Test
         run: apt-get update && apt-get install git && ./scripts/test_diff.sh
