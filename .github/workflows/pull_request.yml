@@ -144,8 +144,10 @@ jobs:
           path: ./gen
       - run: mkdir -p /defs
       - run: cp -R . /defs
+      - run: ls ./gen/pb-js/
       - run: node /code/generate-protobuf.js --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service  -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
       - run: cp -R /defs/gen ./gen
+      - run: ls ./gen/pb-js/
       - uses: actions/upload-artifact@master
         with:
           name: generated
