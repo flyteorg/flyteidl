@@ -174,8 +174,8 @@ jobs:
         with:
           name: generated
           path: ./gen
-      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l go -o /defs/gen/pb-go/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
-      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l python -o /defs/gen/pb_python/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
+      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i ./gen/pb-go/flyteidl/service/admin.swagger.json -l go -o ./gen/pb-go/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
+      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i ./gen/pb-go/flyteidl/service/admin.swagger.json -l python -o ./gen/pb_python/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
       - uses: actions/upload-artifact@master
         with:
           name: generated
