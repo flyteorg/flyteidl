@@ -123,11 +123,6 @@ jobs:
     container:
       image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
       options: --cpus 1
-      volumes:
-        - /github/workspace:/defs
-      env:
-        REPO_BLOB_SHA: master
-        PROJECT_ANNOTATION_PREFIX: flyte.interface
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -145,7 +140,7 @@ jobs:
       - run: ls /service/
       # Open API 2
       - name: OpenAPI-Binary
-        run: go-bindata -pkg service -o /service/openapi.go -prefix ../../ -modtime 1562572800 /service/admin.swagger.json
+        run: go-bindata -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
       - run: rm -rf gen/pb-go/flyteidl/service
       - run: mkdir -p gen/pb-go/flyteidl/service
       - run: cp -R /service gen/pb-go/flyteidl/
