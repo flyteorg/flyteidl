@@ -154,7 +154,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: generated
-          path: /defs/gen
+          path: ./gen
 
   generate-js-code:
     runs-on: ubuntu-latest
