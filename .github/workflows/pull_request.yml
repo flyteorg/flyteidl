@@ -151,7 +151,7 @@ jobs:
   generate-swagger-code:
     runs-on: ubuntu-latest
     name: Generate JS Code
-    needs: [generate--js-code]
+    needs: [generate-js-code]
     container:
       image: docker.io/lyft/swagger-codegen-cli:dc5ce6ec6d7d4d980fa882d6bd13a83cba3be3c3
       options: --cpus 1
