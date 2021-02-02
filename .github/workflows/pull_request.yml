@@ -139,11 +139,14 @@ jobs:
       - run: cp -R gen/pb-go/flyteidl/service/ /
       - run: ls /service/
       # Open API 2
+      - run: pwd
       - run: DIR=`pwd`
       - run: cd /defs
+      - run: pwd
       - name: OpenAPI-Binary
         run: go-bindata -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
       - run: cd $DIR
+      - run: pwd
       - run: rm -rf gen/pb-go/flyteidl/service
       - run: mkdir -p gen/pb-go/flyteidl/service
       - run: cp -R /service gen/pb-go/flyteidl/
