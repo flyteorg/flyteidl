@@ -131,7 +131,6 @@ jobs:
       env:
         REPO_BLOB_SHA: master
         PROJECT_ANNOTATION_PREFIX: flyte.interface
-        GITHUB_WORKSPACE: /defs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -143,8 +142,10 @@ jobs:
         with:
           name: generated
           path: ./gen
+      - run: cp -R . /defs
       - run: ls /defs
       - run: node /code/generate-protobuf.js --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service  -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
+      - run: cp -R /defs/gen ./gen
       - uses: actions/upload-artifact@master
         with:
           name: generated
