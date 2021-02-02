@@ -148,7 +148,9 @@ jobs:
         run: go-bindata -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
       - run: rm -rf gen/pb-go/flyteidl/service
       - run: mkdir -p gen/pb-go/flyteidl/service
-      - run: cp -R /service gen/pb-go/flyteidl/service
+      - run: cp -R /service gen/pb-go/flyteidl/
+      - run: ls gen/pb-go/flyteidl/
+      - run: ls gen/pb-go/flyteidl/service/
       - uses: actions/upload-artifact@master
         with:
           name: generated
