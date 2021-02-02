@@ -144,7 +144,6 @@ jobs:
           path: ./gen
       - run: mkdir -p /defs
       - run: cp -R . /defs
-      - run: ls /defs
       - run: node /code/generate-protobuf.js --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service  -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
       - run: cp -R /defs/gen ./gen
       - uses: actions/upload-artifact@master
@@ -154,7 +153,7 @@ jobs:
 
   generate-swagger-code:
     runs-on: ubuntu-latest
-    name: Generate JS Code
+    name: Generate Swagger Code
     needs: [generate-js-code]
     container:
       image: docker.io/lyft/swagger-codegen-cli:dc5ce6ec6d7d4d980fa882d6bd13a83cba3be3c3
@@ -175,8 +174,8 @@ jobs:
         with:
           name: generated
           path: ./gen
-      - run: generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l go -o /defs/gen/pb-go/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
-      - run: generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l python -o /defs/gen/pb_python/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
+      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l go -o /defs/gen/pb-go/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
+      - run: java -jar /opt/swagger-codegen-cli/swagger-codegen-cli.jar generate -i /defs/gen/pb-go/flyteidl/service/admin.swagger.json -l python -o /defs/gen/pb_python/flyteidl/service/flyteadmin --additional-properties=packageName=flyteadmin
       - uses: actions/upload-artifact@master
         with:
           name: generated
