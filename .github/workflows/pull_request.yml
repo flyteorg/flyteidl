@@ -134,22 +134,15 @@ jobs:
         with:
           name: generated
           path: ./gen
-      - run: mkdir -p /service
       - run: ls gen/pb-go/flyteidl/service/
-      - run: cp -R gen/pb-go/flyteidl/service/ /
-      - run: ls /service/
+      - run: cp -R gen/pb-go/flyteidl/service/ ./
+      - run: ls ./service/
       # Open API 2
-      - run: pwd
-      - run: DIR=`pwd`
-      - run: cd /defs
-      - run: pwd
       - name: OpenAPI-Binary
-        run: go-bindata -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
-      - run: cd $DIR
-      - run: pwd
+        run: go-bindata -pkg service -o ./service/openapi.go -prefix service/ -modtime 1562572800 ./service/admin.swagger.json
       - run: rm -rf gen/pb-go/flyteidl/service
       - run: mkdir -p gen/pb-go/flyteidl/service
-      - run: cp -R /service gen/pb-go/flyteidl/
+      - run: cp -R ./service gen/pb-go/flyteidl/
       - run: ls gen/pb-go/flyteidl/
       - run: ls gen/pb-go/flyteidl/service/
       - uses: actions/upload-artifact@master
