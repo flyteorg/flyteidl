@@ -131,6 +131,7 @@ jobs:
       env:
         REPO_BLOB_SHA: master
         PROJECT_ANNOTATION_PREFIX: flyte.interface
+        GITHUB_WORKSPACE: /defs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
