@@ -140,7 +140,7 @@ jobs:
           name: generated
           path: ./gen
       - run: mkdir -p /service
-      - run: cp -R gen/pb-go/flyteidl/service /service
+      - run: cp -R gen/pb-go/flyteidl/service/ /service
       - run: ls /service/
       # Open API 2
       - name: OpenAPI-Binary
