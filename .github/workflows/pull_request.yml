@@ -113,7 +113,7 @@ jobs:
 
       # OpenAPI 2 file
       - name: OpenAPI-Binary
-        run: go-bindata -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
+        run: go-bindata -pkg service -o ./gen/pb-go/flyteidl/service/openapi.go -prefix ./gen/pb-go/flyteidl/service/ -modtime 1562572800 ./gen/pb-go/flyteidl/service/admin.swagger.json
 
       - uses: actions/upload-artifact@master
         with:
