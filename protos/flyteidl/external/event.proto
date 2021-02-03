@@ -17,27 +17,13 @@ import "google/protobuf/struct.proto";
 
 message WorkflowEvent {
    // Workflow execution id
-   core.WorkflowExecutionIdentifier execution_id = 1;
-
-   // the id of the originator (Propeller) of the event
-   string producer_id = 2;
-
-   core.WorkflowExecution.Phase phase = 3;
+   flyteidl.admin.Execution execution = 1;
 
    // This timestamp represents when the original event occurred, it is generated
    // by the executor of the workflow.
    google.protobuf.Timestamp occurred_at = 4;
 
    // new fields
-
-   // ExecutionSpec.getMetadata()
-   // ExecutionSpec.getLabels()
-   // ExecutionSpec.getAnnotations()
-   // ExecutionSpec.getLaunchPlan() -> toUrn
-   flyteidl.admin.ExecutionSpec execution_spec = 5;
-   // ExecutionClosure.getComputedInputs()
-   flyteidl.admin.ExecutionClosure execution_closure = 6;
-
    // WorkflowClosure.getCompiledWorkflow().getTemplate().getNodes() to understand the tasks
    // Node.getUpstreamNodeIdsList()
    // Node.getInputsList()
@@ -46,17 +32,11 @@ message WorkflowEvent {
 
 message NodeEvent {
     // Unique identifier for this node execution
-    core.NodeExecutionIdentifier id = 1;
-    // the id of the originator (Propeller) of the event
-    string producer_id = 2;
-    core.NodeExecution.Phase phase = 3;
+    flyteidl.admin.NodeExecution node_execution = 1;
+
     // This timestamp represents when the original event occurred, it is generated
     // by the executor of the node.
     google.protobuf.Timestamp occurred_at           = 4;
-    string input_uri = 5;
-
-    flyteidl.admin.NodeExecutionClosure nodeExecutionClosure = 6;
-    flyteidl.admin.NodeExecutionMetaData = 7;
 
     // Node.hasTaskNode()
     flyteidl.core.Node spec_node = 8;
@@ -64,40 +44,36 @@ message NodeEvent {
     // ExecutionSpec.getMetadata()
     // ExecutionSpec.getLabels()
     // ExecutionSpec.getAnnotations()
-    // ExecutionSpec.getLaunchPlan() -> toUrn
+    // ExecutionSpec.getLaunchPlan()
     flyteidl.admin.ExecutionSpec execution_spec = 9;
 }
 
+// Can be extended in the further
+message NodeContext {
+    string spec_node_id = 1;
+}
 
 message TaskEvent {
     // ID of the task. In combination with the retryAttempt this will indicate
     // the task execution uniquely for a given parent node execution.
     flyteidl.admin.TaskExecution taskExecution = 1;
 
-    string spec_node_id = 2;
-
-    // Phase associated with the event
-    core.TaskExecution.Phase phase = 3;
-
-    // id of the process that sent this event, mainly for trace debugging
-    //string producer_id = 5;
-
     // Some phases, like RUNNING, can send multiple events with changed metadata (new logs, additional custom_info, etc)
     // that should be recorded regardless of the lack of phase change.
     // The version field should be incremented when metadata changes across the duration of an individual phase.
-    uint32 phase_version = 4;
+    uint32 phase_version = 2;
 
-    // Metadata around how a task was executed.
-    flyteidl.admin.TaskExecutionMetadata metadata = 5;
+    NodeContext nodeContext = 3;
+
     // ExecutionSpec.getMetadata()
     // ExecutionSpec.getLabels()
     // ExecutionSpec.getAnnotations()
-    // ExecutionSpec.getLaunchPlan() -> toUrn
-    flyteidl.admin.ExecutionSpec execution_spec = 6;
+    // ExecutionSpec.getLaunchPlan()
+    flyteidl.admin.ExecutionSpec execution_spec = 4;
 }
 
 
-// Instead of creating a new envelope
+// Instead of creating a new envelope, we can also use the cloudEvent as the envelope
 message Event {
     string id = 1;
     string producer_id = 2;
