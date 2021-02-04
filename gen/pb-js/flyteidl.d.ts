@@ -8310,6 +8310,451 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an AgentInformation. */
+        interface IAgentInformation {
+
+            /** AgentInformation id */
+            id?: (string|null);
+
+            /** AgentInformation clusterName */
+            clusterName?: (string|null);
+        }
+
+        /** Represents an AgentInformation. */
+        class AgentInformation implements IAgentInformation {
+
+            /**
+             * Constructs a new AgentInformation.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAgentInformation);
+
+            /** AgentInformation id. */
+            public id: string;
+
+            /** AgentInformation clusterName. */
+            public clusterName: string;
+
+            /**
+             * Creates a new AgentInformation instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AgentInformation instance
+             */
+            public static create(properties?: flyteidl.admin.IAgentInformation): flyteidl.admin.AgentInformation;
+
+            /**
+             * Encodes the specified AgentInformation message. Does not implicitly {@link flyteidl.admin.AgentInformation.verify|verify} messages.
+             * @param message AgentInformation message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAgentInformation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AgentInformation message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AgentInformation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.AgentInformation;
+
+            /**
+             * Verifies an AgentInformation message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RetrieveAndLockExecutionRequest. */
+        interface IRetrieveAndLockExecutionRequest {
+
+            /** RetrieveAndLockExecutionRequest visibilityTimeout */
+            visibilityTimeout?: (google.protobuf.IDuration|null);
+
+            /** RetrieveAndLockExecutionRequest agent */
+            agent?: (flyteidl.admin.IAgentInformation|null);
+        }
+
+        /** Represents a RetrieveAndLockExecutionRequest. */
+        class RetrieveAndLockExecutionRequest implements IRetrieveAndLockExecutionRequest {
+
+            /**
+             * Constructs a new RetrieveAndLockExecutionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IRetrieveAndLockExecutionRequest);
+
+            /** RetrieveAndLockExecutionRequest visibilityTimeout. */
+            public visibilityTimeout?: (google.protobuf.IDuration|null);
+
+            /** RetrieveAndLockExecutionRequest agent. */
+            public agent?: (flyteidl.admin.IAgentInformation|null);
+
+            /**
+             * Creates a new RetrieveAndLockExecutionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RetrieveAndLockExecutionRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IRetrieveAndLockExecutionRequest): flyteidl.admin.RetrieveAndLockExecutionRequest;
+
+            /**
+             * Encodes the specified RetrieveAndLockExecutionRequest message. Does not implicitly {@link flyteidl.admin.RetrieveAndLockExecutionRequest.verify|verify} messages.
+             * @param message RetrieveAndLockExecutionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IRetrieveAndLockExecutionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RetrieveAndLockExecutionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RetrieveAndLockExecutionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.RetrieveAndLockExecutionRequest;
+
+            /**
+             * Verifies a RetrieveAndLockExecutionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TerminateExecutionAction. */
+        interface ITerminateExecutionAction {
+
+            /** TerminateExecutionAction id */
+            id?: (flyteidl.core.IIdentifier|null);
+
+            /** TerminateExecutionAction reason */
+            reason?: (string|null);
+        }
+
+        /** Represents a TerminateExecutionAction. */
+        class TerminateExecutionAction implements ITerminateExecutionAction {
+
+            /**
+             * Constructs a new TerminateExecutionAction.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITerminateExecutionAction);
+
+            /** TerminateExecutionAction id. */
+            public id?: (flyteidl.core.IIdentifier|null);
+
+            /** TerminateExecutionAction reason. */
+            public reason: string;
+
+            /**
+             * Creates a new TerminateExecutionAction instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TerminateExecutionAction instance
+             */
+            public static create(properties?: flyteidl.admin.ITerminateExecutionAction): flyteidl.admin.TerminateExecutionAction;
+
+            /**
+             * Encodes the specified TerminateExecutionAction message. Does not implicitly {@link flyteidl.admin.TerminateExecutionAction.verify|verify} messages.
+             * @param message TerminateExecutionAction message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITerminateExecutionAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TerminateExecutionAction message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TerminateExecutionAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TerminateExecutionAction;
+
+            /**
+             * Verifies a TerminateExecutionAction message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionRuntimeMetadata. */
+        interface IExecutionRuntimeMetadata {
+
+            /** ExecutionRuntimeMetadata acceptedAt */
+            acceptedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionRuntimeMetadata labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** ExecutionRuntimeMetadata annotations */
+            annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionRuntimeMetadata authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** ExecutionRuntimeMetadata qualityOfService */
+            qualityOfService?: (flyteidl.core.IQualityOfService|null);
+
+            /** ExecutionRuntimeMetadata rawOutputDataConfig */
+            rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+        }
+
+        /** Represents an ExecutionRuntimeMetadata. */
+        class ExecutionRuntimeMetadata implements IExecutionRuntimeMetadata {
+
+            /**
+             * Constructs a new ExecutionRuntimeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionRuntimeMetadata);
+
+            /** ExecutionRuntimeMetadata acceptedAt. */
+            public acceptedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionRuntimeMetadata labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** ExecutionRuntimeMetadata annotations. */
+            public annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionRuntimeMetadata authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** ExecutionRuntimeMetadata qualityOfService. */
+            public qualityOfService?: (flyteidl.core.IQualityOfService|null);
+
+            /** ExecutionRuntimeMetadata rawOutputDataConfig. */
+            public rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+
+            /**
+             * Creates a new ExecutionRuntimeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionRuntimeMetadata instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionRuntimeMetadata): flyteidl.admin.ExecutionRuntimeMetadata;
+
+            /**
+             * Encodes the specified ExecutionRuntimeMetadata message. Does not implicitly {@link flyteidl.admin.ExecutionRuntimeMetadata.verify|verify} messages.
+             * @param message ExecutionRuntimeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionRuntimeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionRuntimeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionRuntimeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionRuntimeMetadata;
+
+            /**
+             * Verifies an ExecutionRuntimeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionSystemOverrides. */
+        interface IExecutionSystemOverrides {
+
+            /** ExecutionSystemOverrides taskPluginOverrides */
+            taskPluginOverrides?: (flyteidl.admin.IPluginOverride[]|null);
+        }
+
+        /** Represents an ExecutionSystemOverrides. */
+        class ExecutionSystemOverrides implements IExecutionSystemOverrides {
+
+            /**
+             * Constructs a new ExecutionSystemOverrides.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionSystemOverrides);
+
+            /** ExecutionSystemOverrides taskPluginOverrides. */
+            public taskPluginOverrides: flyteidl.admin.IPluginOverride[];
+
+            /**
+             * Creates a new ExecutionSystemOverrides instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionSystemOverrides instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionSystemOverrides): flyteidl.admin.ExecutionSystemOverrides;
+
+            /**
+             * Encodes the specified ExecutionSystemOverrides message. Does not implicitly {@link flyteidl.admin.ExecutionSystemOverrides.verify|verify} messages.
+             * @param message ExecutionSystemOverrides message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionSystemOverrides, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionSystemOverrides message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionSystemOverrides
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionSystemOverrides;
+
+            /**
+             * Verifies an ExecutionSystemOverrides message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a StartExecutionAction. */
+        interface IStartExecutionAction {
+
+            /** StartExecutionAction id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** StartExecutionAction closure */
+            closure?: (flyteidl.core.ICompiledWorkflowClosure|null);
+
+            /** StartExecutionAction inputs */
+            inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** StartExecutionAction execMetadata */
+            execMetadata?: (flyteidl.admin.IExecutionRuntimeMetadata|null);
+
+            /** StartExecutionAction execSysOverrides */
+            execSysOverrides?: (flyteidl.admin.IExecutionSystemOverrides|null);
+        }
+
+        /** Represents a StartExecutionAction. */
+        class StartExecutionAction implements IStartExecutionAction {
+
+            /**
+             * Constructs a new StartExecutionAction.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IStartExecutionAction);
+
+            /** StartExecutionAction id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** StartExecutionAction closure. */
+            public closure?: (flyteidl.core.ICompiledWorkflowClosure|null);
+
+            /** StartExecutionAction inputs. */
+            public inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** StartExecutionAction execMetadata. */
+            public execMetadata?: (flyteidl.admin.IExecutionRuntimeMetadata|null);
+
+            /** StartExecutionAction execSysOverrides. */
+            public execSysOverrides?: (flyteidl.admin.IExecutionSystemOverrides|null);
+
+            /**
+             * Creates a new StartExecutionAction instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StartExecutionAction instance
+             */
+            public static create(properties?: flyteidl.admin.IStartExecutionAction): flyteidl.admin.StartExecutionAction;
+
+            /**
+             * Encodes the specified StartExecutionAction message. Does not implicitly {@link flyteidl.admin.StartExecutionAction.verify|verify} messages.
+             * @param message StartExecutionAction message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IStartExecutionAction, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StartExecutionAction message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StartExecutionAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.StartExecutionAction;
+
+            /**
+             * Verifies a StartExecutionAction message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a RetrieveAndLockExecutionResponse. */
+        interface IRetrieveAndLockExecutionResponse {
+
+            /** RetrieveAndLockExecutionResponse start */
+            start?: (flyteidl.admin.IStartExecutionAction|null);
+
+            /** RetrieveAndLockExecutionResponse terminate */
+            terminate?: (flyteidl.admin.ITerminateExecutionAction|null);
+        }
+
+        /** Represents a RetrieveAndLockExecutionResponse. */
+        class RetrieveAndLockExecutionResponse implements IRetrieveAndLockExecutionResponse {
+
+            /**
+             * Constructs a new RetrieveAndLockExecutionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IRetrieveAndLockExecutionResponse);
+
+            /** RetrieveAndLockExecutionResponse start. */
+            public start?: (flyteidl.admin.IStartExecutionAction|null);
+
+            /** RetrieveAndLockExecutionResponse terminate. */
+            public terminate?: (flyteidl.admin.ITerminateExecutionAction|null);
+
+            /** RetrieveAndLockExecutionResponse action. */
+            public action?: ("start"|"terminate");
+
+            /**
+             * Creates a new RetrieveAndLockExecutionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RetrieveAndLockExecutionResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IRetrieveAndLockExecutionResponse): flyteidl.admin.RetrieveAndLockExecutionResponse;
+
+            /**
+             * Encodes the specified RetrieveAndLockExecutionResponse message. Does not implicitly {@link flyteidl.admin.RetrieveAndLockExecutionResponse.verify|verify} messages.
+             * @param message RetrieveAndLockExecutionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IRetrieveAndLockExecutionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RetrieveAndLockExecutionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RetrieveAndLockExecutionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.RetrieveAndLockExecutionResponse;
+
+            /**
+             * Verifies a RetrieveAndLockExecutionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LaunchPlanCreateRequest. */
         interface ILaunchPlanCreateRequest {
 
@@ -13551,6 +13996,20 @@ export namespace flyteidl {
             public listProjects(request: flyteidl.admin.IProjectListRequest): Promise<flyteidl.admin.Projects>;
 
             /**
+             * Calls RetrieveAndLockExecution.
+             * @param request RetrieveAndLockExecutionRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RetrieveAndLockExecutionResponse
+             */
+            public retrieveAndLockExecution(request: flyteidl.admin.IRetrieveAndLockExecutionRequest, callback: flyteidl.service.AdminService.RetrieveAndLockExecutionCallback): void;
+
+            /**
+             * Calls RetrieveAndLockExecution.
+             * @param request RetrieveAndLockExecutionRequest message or plain object
+             * @returns Promise
+             */
+            public retrieveAndLockExecution(request: flyteidl.admin.IRetrieveAndLockExecutionRequest): Promise<flyteidl.admin.RetrieveAndLockExecutionResponse>;
+
+            /**
              * Calls CreateWorkflowEvent.
              * @param request WorkflowExecutionEventRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and WorkflowExecutionEventResponse
@@ -13972,6 +14431,13 @@ export namespace flyteidl {
              * @param [response] Projects
              */
             type ListProjectsCallback = (error: (Error|null), response?: flyteidl.admin.Projects) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#retrieveAndLockExecution}.
+             * @param error Error, if any
+             * @param [response] RetrieveAndLockExecutionResponse
+             */
+            type RetrieveAndLockExecutionCallback = (error: (Error|null), response?: flyteidl.admin.RetrieveAndLockExecutionResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#createWorkflowEvent}.

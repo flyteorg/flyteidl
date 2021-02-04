@@ -1626,3 +1626,661 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = WorkflowExecutionGetDataResponseValidationError{}
+
+// Validate checks the field values on AgentInformation with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *AgentInformation) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Id
+
+	// no validation rules for ClusterName
+
+	return nil
+}
+
+// AgentInformationValidationError is the validation error returned by
+// AgentInformation.Validate if the designated constraints aren't met.
+type AgentInformationValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AgentInformationValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AgentInformationValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AgentInformationValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AgentInformationValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AgentInformationValidationError) ErrorName() string { return "AgentInformationValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AgentInformationValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAgentInformation.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AgentInformationValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AgentInformationValidationError{}
+
+// Validate checks the field values on RetrieveAndLockExecutionRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *RetrieveAndLockExecutionRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetVisibilityTimeout()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return RetrieveAndLockExecutionRequestValidationError{
+				field:  "VisibilityTimeout",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAgent()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return RetrieveAndLockExecutionRequestValidationError{
+				field:  "Agent",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// RetrieveAndLockExecutionRequestValidationError is the validation error
+// returned by RetrieveAndLockExecutionRequest.Validate if the designated
+// constraints aren't met.
+type RetrieveAndLockExecutionRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e RetrieveAndLockExecutionRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e RetrieveAndLockExecutionRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e RetrieveAndLockExecutionRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e RetrieveAndLockExecutionRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e RetrieveAndLockExecutionRequestValidationError) ErrorName() string {
+	return "RetrieveAndLockExecutionRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e RetrieveAndLockExecutionRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sRetrieveAndLockExecutionRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = RetrieveAndLockExecutionRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = RetrieveAndLockExecutionRequestValidationError{}
+
+// Validate checks the field values on TerminateExecutionAction with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *TerminateExecutionAction) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TerminateExecutionActionValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Reason
+
+	return nil
+}
+
+// TerminateExecutionActionValidationError is the validation error returned by
+// TerminateExecutionAction.Validate if the designated constraints aren't met.
+type TerminateExecutionActionValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TerminateExecutionActionValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TerminateExecutionActionValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TerminateExecutionActionValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TerminateExecutionActionValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TerminateExecutionActionValidationError) ErrorName() string {
+	return "TerminateExecutionActionValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e TerminateExecutionActionValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTerminateExecutionAction.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TerminateExecutionActionValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TerminateExecutionActionValidationError{}
+
+// Validate checks the field values on ExecutionRuntimeMetadata with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionRuntimeMetadata) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetAcceptedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "AcceptedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetLabels()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "Labels",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAnnotations()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "Annotations",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAuthRole()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "AuthRole",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetQualityOfService()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "QualityOfService",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetRawOutputDataConfig()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionRuntimeMetadataValidationError{
+				field:  "RawOutputDataConfig",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ExecutionRuntimeMetadataValidationError is the validation error returned by
+// ExecutionRuntimeMetadata.Validate if the designated constraints aren't met.
+type ExecutionRuntimeMetadataValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionRuntimeMetadataValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionRuntimeMetadataValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionRuntimeMetadataValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionRuntimeMetadataValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionRuntimeMetadataValidationError) ErrorName() string {
+	return "ExecutionRuntimeMetadataValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionRuntimeMetadataValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionRuntimeMetadata.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionRuntimeMetadataValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionRuntimeMetadataValidationError{}
+
+// Validate checks the field values on ExecutionSystemOverrides with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionSystemOverrides) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetTaskPluginOverrides() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ExecutionSystemOverridesValidationError{
+					field:  fmt.Sprintf("TaskPluginOverrides[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ExecutionSystemOverridesValidationError is the validation error returned by
+// ExecutionSystemOverrides.Validate if the designated constraints aren't met.
+type ExecutionSystemOverridesValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionSystemOverridesValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionSystemOverridesValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionSystemOverridesValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionSystemOverridesValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionSystemOverridesValidationError) ErrorName() string {
+	return "ExecutionSystemOverridesValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionSystemOverridesValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionSystemOverrides.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionSystemOverridesValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionSystemOverridesValidationError{}
+
+// Validate checks the field values on StartExecutionAction with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *StartExecutionAction) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StartExecutionActionValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetClosure()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StartExecutionActionValidationError{
+				field:  "Closure",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StartExecutionActionValidationError{
+				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetExecMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StartExecutionActionValidationError{
+				field:  "ExecMetadata",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetExecSysOverrides()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StartExecutionActionValidationError{
+				field:  "ExecSysOverrides",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// StartExecutionActionValidationError is the validation error returned by
+// StartExecutionAction.Validate if the designated constraints aren't met.
+type StartExecutionActionValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e StartExecutionActionValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e StartExecutionActionValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e StartExecutionActionValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e StartExecutionActionValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e StartExecutionActionValidationError) ErrorName() string {
+	return "StartExecutionActionValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e StartExecutionActionValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sStartExecutionAction.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = StartExecutionActionValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = StartExecutionActionValidationError{}
+
+// Validate checks the field values on RetrieveAndLockExecutionResponse with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *RetrieveAndLockExecutionResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	switch m.Action.(type) {
+
+	case *RetrieveAndLockExecutionResponse_Start:
+
+		if v, ok := interface{}(m.GetStart()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return RetrieveAndLockExecutionResponseValidationError{
+					field:  "Start",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *RetrieveAndLockExecutionResponse_Terminate:
+
+		if v, ok := interface{}(m.GetTerminate()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return RetrieveAndLockExecutionResponseValidationError{
+					field:  "Terminate",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// RetrieveAndLockExecutionResponseValidationError is the validation error
+// returned by RetrieveAndLockExecutionResponse.Validate if the designated
+// constraints aren't met.
+type RetrieveAndLockExecutionResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e RetrieveAndLockExecutionResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e RetrieveAndLockExecutionResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e RetrieveAndLockExecutionResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e RetrieveAndLockExecutionResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e RetrieveAndLockExecutionResponseValidationError) ErrorName() string {
+	return "RetrieveAndLockExecutionResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e RetrieveAndLockExecutionResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sRetrieveAndLockExecutionResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = RetrieveAndLockExecutionResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = RetrieveAndLockExecutionResponseValidationError{}

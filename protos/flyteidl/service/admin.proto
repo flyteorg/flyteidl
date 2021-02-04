@@ -336,7 +336,7 @@ service AdminService {
 
   // ------------------------------ Data Plane APIs ---------------------------------------------
 
-  rpc RetrieveAndLockExecution (flyteidl.admin.RetrieveAndLockExecutionRequest) returns (flyteidl.admin.flyteidl.admin.RetrieveAndLockExecutionResponse) {
+  rpc RetrieveAndLockExecution (flyteidl.admin.RetrieveAndLockExecutionRequest) returns (flyteidl.admin.RetrieveAndLockExecutionResponse) {
     option (google.api.http) = {
        post: "/api/v1/executions/retrieve"
        body: "*"

@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**list_workflows2**](docs/AdminServiceApi.md#list_workflows2) | **GET** /api/v1/workflows/{id.project}/{id.domain} | 
 *AdminServiceApi* | [**register_project**](docs/AdminServiceApi.md#register_project) | **POST** /api/v1/projects | 
 *AdminServiceApi* | [**relaunch_execution**](docs/AdminServiceApi.md#relaunch_execution) | **POST** /api/v1/executions/relaunch | 
+*AdminServiceApi* | [**retrieve_and_lock_execution**](docs/AdminServiceApi.md#retrieve_and_lock_execution) | **POST** /api/v1/executions/retrieve | 
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**update_launch_plan**](docs/AdminServiceApi.md#update_launch_plan) | **PUT** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | 
 *AdminServiceApi* | [**update_named_entity**](docs/AdminServiceApi.md#update_named_entity) | **PUT** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | 
@@ -121,6 +122,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AdminAbortMetadata](docs/AdminAbortMetadata.md)
+ - [AdminAgentInformation](docs/AdminAgentInformation.md)
  - [AdminAnnotations](docs/AdminAnnotations.md)
  - [AdminAuth](docs/AdminAuth.md)
  - [AdminAuthRole](docs/AdminAuthRole.md)
@@ -137,7 +139,9 @@ Class | Method | HTTP request | Description
  - [AdminExecutionMetadata](docs/AdminExecutionMetadata.md)
  - [AdminExecutionQueueAttributes](docs/AdminExecutionQueueAttributes.md)
  - [AdminExecutionRelaunchRequest](docs/AdminExecutionRelaunchRequest.md)
+ - [AdminExecutionRuntimeMetadata](docs/AdminExecutionRuntimeMetadata.md)
  - [AdminExecutionSpec](docs/AdminExecutionSpec.md)
+ - [AdminExecutionSystemOverrides](docs/AdminExecutionSystemOverrides.md)
  - [AdminExecutionTerminateRequest](docs/AdminExecutionTerminateRequest.md)
  - [AdminExecutionTerminateResponse](docs/AdminExecutionTerminateResponse.md)
  - [AdminFixedRate](docs/AdminFixedRate.md)
@@ -189,9 +193,12 @@ Class | Method | HTTP request | Description
  - [AdminProjectUpdateResponse](docs/AdminProjectUpdateResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminRawOutputDataConfig](docs/AdminRawOutputDataConfig.md)
+ - [AdminRetrieveAndLockExecutionRequest](docs/AdminRetrieveAndLockExecutionRequest.md)
+ - [AdminRetrieveAndLockExecutionResponse](docs/AdminRetrieveAndLockExecutionResponse.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
+ - [AdminStartExecutionAction](docs/AdminStartExecutionAction.md)
  - [AdminSystemMetadata](docs/AdminSystemMetadata.md)
  - [AdminTask](docs/AdminTask.md)
  - [AdminTaskClosure](docs/AdminTaskClosure.md)
@@ -206,6 +213,7 @@ Class | Method | HTTP request | Description
  - [AdminTaskResourceAttributes](docs/AdminTaskResourceAttributes.md)
  - [AdminTaskResourceSpec](docs/AdminTaskResourceSpec.md)
  - [AdminTaskSpec](docs/AdminTaskSpec.md)
+ - [AdminTerminateExecutionAction](docs/AdminTerminateExecutionAction.md)
  - [AdminUrlBlob](docs/AdminUrlBlob.md)
  - [AdminWorkflow](docs/AdminWorkflow.md)
  - [AdminWorkflowAttributes](docs/AdminWorkflowAttributes.md)

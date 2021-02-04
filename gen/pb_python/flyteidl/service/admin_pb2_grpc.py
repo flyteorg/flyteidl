@@ -166,6 +166,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__pb2.Projects.FromString,
         )
+    self.RetrieveAndLockExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/RetrieveAndLockExecution',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.RetrieveAndLockExecutionRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.RetrieveAndLockExecutionResponse.FromString,
+        )
     self.CreateWorkflowEvent = channel.unary_unary(
         '/flyteidl.service.AdminService/CreateWorkflowEvent',
         request_serializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventRequest.SerializeToString,
@@ -450,6 +455,14 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RetrieveAndLockExecution(self, request, context):
+    """------------------------------ Data Plane APIs ---------------------------------------------
+
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateWorkflowEvent(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -704,6 +717,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListProjects,
           request_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__pb2.Projects.SerializeToString,
+      ),
+      'RetrieveAndLockExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.RetrieveAndLockExecution,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.RetrieveAndLockExecutionRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.RetrieveAndLockExecutionResponse.SerializeToString,
       ),
       'CreateWorkflowEvent': grpc.unary_unary_rpc_method_handler(
           servicer.CreateWorkflowEvent,

@@ -19918,6 +19918,1062 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowExecutionGetDataResponse;
         })();
 
+        admin.AgentInformation = (function() {
+
+            /**
+             * Properties of an AgentInformation.
+             * @memberof flyteidl.admin
+             * @interface IAgentInformation
+             * @property {string|null} [id] AgentInformation id
+             * @property {string|null} [clusterName] AgentInformation clusterName
+             */
+
+            /**
+             * Constructs a new AgentInformation.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an AgentInformation.
+             * @implements IAgentInformation
+             * @constructor
+             * @param {flyteidl.admin.IAgentInformation=} [properties] Properties to set
+             */
+            function AgentInformation(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * AgentInformation id.
+             * @member {string} id
+             * @memberof flyteidl.admin.AgentInformation
+             * @instance
+             */
+            AgentInformation.prototype.id = "";
+
+            /**
+             * AgentInformation clusterName.
+             * @member {string} clusterName
+             * @memberof flyteidl.admin.AgentInformation
+             * @instance
+             */
+            AgentInformation.prototype.clusterName = "";
+
+            /**
+             * Creates a new AgentInformation instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.AgentInformation
+             * @static
+             * @param {flyteidl.admin.IAgentInformation=} [properties] Properties to set
+             * @returns {flyteidl.admin.AgentInformation} AgentInformation instance
+             */
+            AgentInformation.create = function create(properties) {
+                return new AgentInformation(properties);
+            };
+
+            /**
+             * Encodes the specified AgentInformation message. Does not implicitly {@link flyteidl.admin.AgentInformation.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.AgentInformation
+             * @static
+             * @param {flyteidl.admin.IAgentInformation} message AgentInformation message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgentInformation.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.clusterName != null && message.hasOwnProperty("clusterName"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.clusterName);
+                return writer;
+            };
+
+            /**
+             * Decodes an AgentInformation message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.AgentInformation
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.AgentInformation} AgentInformation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgentInformation.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.AgentInformation();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.clusterName = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an AgentInformation message.
+             * @function verify
+             * @memberof flyteidl.admin.AgentInformation
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AgentInformation.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.clusterName != null && message.hasOwnProperty("clusterName"))
+                    if (!$util.isString(message.clusterName))
+                        return "clusterName: string expected";
+                return null;
+            };
+
+            return AgentInformation;
+        })();
+
+        admin.RetrieveAndLockExecutionRequest = (function() {
+
+            /**
+             * Properties of a RetrieveAndLockExecutionRequest.
+             * @memberof flyteidl.admin
+             * @interface IRetrieveAndLockExecutionRequest
+             * @property {google.protobuf.IDuration|null} [visibilityTimeout] RetrieveAndLockExecutionRequest visibilityTimeout
+             * @property {flyteidl.admin.IAgentInformation|null} [agent] RetrieveAndLockExecutionRequest agent
+             */
+
+            /**
+             * Constructs a new RetrieveAndLockExecutionRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a RetrieveAndLockExecutionRequest.
+             * @implements IRetrieveAndLockExecutionRequest
+             * @constructor
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionRequest=} [properties] Properties to set
+             */
+            function RetrieveAndLockExecutionRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RetrieveAndLockExecutionRequest visibilityTimeout.
+             * @member {google.protobuf.IDuration|null|undefined} visibilityTimeout
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @instance
+             */
+            RetrieveAndLockExecutionRequest.prototype.visibilityTimeout = null;
+
+            /**
+             * RetrieveAndLockExecutionRequest agent.
+             * @member {flyteidl.admin.IAgentInformation|null|undefined} agent
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @instance
+             */
+            RetrieveAndLockExecutionRequest.prototype.agent = null;
+
+            /**
+             * Creates a new RetrieveAndLockExecutionRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @static
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.RetrieveAndLockExecutionRequest} RetrieveAndLockExecutionRequest instance
+             */
+            RetrieveAndLockExecutionRequest.create = function create(properties) {
+                return new RetrieveAndLockExecutionRequest(properties);
+            };
+
+            /**
+             * Encodes the specified RetrieveAndLockExecutionRequest message. Does not implicitly {@link flyteidl.admin.RetrieveAndLockExecutionRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @static
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionRequest} message RetrieveAndLockExecutionRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RetrieveAndLockExecutionRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.visibilityTimeout != null && message.hasOwnProperty("visibilityTimeout"))
+                    $root.google.protobuf.Duration.encode(message.visibilityTimeout, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.agent != null && message.hasOwnProperty("agent"))
+                    $root.flyteidl.admin.AgentInformation.encode(message.agent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a RetrieveAndLockExecutionRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.RetrieveAndLockExecutionRequest} RetrieveAndLockExecutionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RetrieveAndLockExecutionRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.RetrieveAndLockExecutionRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.visibilityTimeout = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.agent = $root.flyteidl.admin.AgentInformation.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RetrieveAndLockExecutionRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RetrieveAndLockExecutionRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.visibilityTimeout != null && message.hasOwnProperty("visibilityTimeout")) {
+                    let error = $root.google.protobuf.Duration.verify(message.visibilityTimeout);
+                    if (error)
+                        return "visibilityTimeout." + error;
+                }
+                if (message.agent != null && message.hasOwnProperty("agent")) {
+                    let error = $root.flyteidl.admin.AgentInformation.verify(message.agent);
+                    if (error)
+                        return "agent." + error;
+                }
+                return null;
+            };
+
+            return RetrieveAndLockExecutionRequest;
+        })();
+
+        admin.TerminateExecutionAction = (function() {
+
+            /**
+             * Properties of a TerminateExecutionAction.
+             * @memberof flyteidl.admin
+             * @interface ITerminateExecutionAction
+             * @property {flyteidl.core.IIdentifier|null} [id] TerminateExecutionAction id
+             * @property {string|null} [reason] TerminateExecutionAction reason
+             */
+
+            /**
+             * Constructs a new TerminateExecutionAction.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a TerminateExecutionAction.
+             * @implements ITerminateExecutionAction
+             * @constructor
+             * @param {flyteidl.admin.ITerminateExecutionAction=} [properties] Properties to set
+             */
+            function TerminateExecutionAction(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TerminateExecutionAction id.
+             * @member {flyteidl.core.IIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @instance
+             */
+            TerminateExecutionAction.prototype.id = null;
+
+            /**
+             * TerminateExecutionAction reason.
+             * @member {string} reason
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @instance
+             */
+            TerminateExecutionAction.prototype.reason = "";
+
+            /**
+             * Creates a new TerminateExecutionAction instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @static
+             * @param {flyteidl.admin.ITerminateExecutionAction=} [properties] Properties to set
+             * @returns {flyteidl.admin.TerminateExecutionAction} TerminateExecutionAction instance
+             */
+            TerminateExecutionAction.create = function create(properties) {
+                return new TerminateExecutionAction(properties);
+            };
+
+            /**
+             * Encodes the specified TerminateExecutionAction message. Does not implicitly {@link flyteidl.admin.TerminateExecutionAction.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @static
+             * @param {flyteidl.admin.ITerminateExecutionAction} message TerminateExecutionAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TerminateExecutionAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.reason != null && message.hasOwnProperty("reason"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.reason);
+                return writer;
+            };
+
+            /**
+             * Decodes a TerminateExecutionAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.TerminateExecutionAction} TerminateExecutionAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TerminateExecutionAction.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TerminateExecutionAction();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.reason = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TerminateExecutionAction message.
+             * @function verify
+             * @memberof flyteidl.admin.TerminateExecutionAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TerminateExecutionAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.reason != null && message.hasOwnProperty("reason"))
+                    if (!$util.isString(message.reason))
+                        return "reason: string expected";
+                return null;
+            };
+
+            return TerminateExecutionAction;
+        })();
+
+        admin.ExecutionRuntimeMetadata = (function() {
+
+            /**
+             * Properties of an ExecutionRuntimeMetadata.
+             * @memberof flyteidl.admin
+             * @interface IExecutionRuntimeMetadata
+             * @property {google.protobuf.ITimestamp|null} [acceptedAt] ExecutionRuntimeMetadata acceptedAt
+             * @property {flyteidl.admin.ILabels|null} [labels] ExecutionRuntimeMetadata labels
+             * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionRuntimeMetadata annotations
+             * @property {flyteidl.admin.IAuthRole|null} [authRole] ExecutionRuntimeMetadata authRole
+             * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] ExecutionRuntimeMetadata qualityOfService
+             * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] ExecutionRuntimeMetadata rawOutputDataConfig
+             */
+
+            /**
+             * Constructs a new ExecutionRuntimeMetadata.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ExecutionRuntimeMetadata.
+             * @implements IExecutionRuntimeMetadata
+             * @constructor
+             * @param {flyteidl.admin.IExecutionRuntimeMetadata=} [properties] Properties to set
+             */
+            function ExecutionRuntimeMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ExecutionRuntimeMetadata acceptedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} acceptedAt
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.acceptedAt = null;
+
+            /**
+             * ExecutionRuntimeMetadata labels.
+             * @member {flyteidl.admin.ILabels|null|undefined} labels
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.labels = null;
+
+            /**
+             * ExecutionRuntimeMetadata annotations.
+             * @member {flyteidl.admin.IAnnotations|null|undefined} annotations
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.annotations = null;
+
+            /**
+             * ExecutionRuntimeMetadata authRole.
+             * @member {flyteidl.admin.IAuthRole|null|undefined} authRole
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.authRole = null;
+
+            /**
+             * ExecutionRuntimeMetadata qualityOfService.
+             * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfService
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.qualityOfService = null;
+
+            /**
+             * ExecutionRuntimeMetadata rawOutputDataConfig.
+             * @member {flyteidl.admin.IRawOutputDataConfig|null|undefined} rawOutputDataConfig
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @instance
+             */
+            ExecutionRuntimeMetadata.prototype.rawOutputDataConfig = null;
+
+            /**
+             * Creates a new ExecutionRuntimeMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @static
+             * @param {flyteidl.admin.IExecutionRuntimeMetadata=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionRuntimeMetadata} ExecutionRuntimeMetadata instance
+             */
+            ExecutionRuntimeMetadata.create = function create(properties) {
+                return new ExecutionRuntimeMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified ExecutionRuntimeMetadata message. Does not implicitly {@link flyteidl.admin.ExecutionRuntimeMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @static
+             * @param {flyteidl.admin.IExecutionRuntimeMetadata} message ExecutionRuntimeMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ExecutionRuntimeMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.acceptedAt != null && message.hasOwnProperty("acceptedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.acceptedAt, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.labels != null && message.hasOwnProperty("labels"))
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.annotations != null && message.hasOwnProperty("annotations"))
+                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.authRole != null && message.hasOwnProperty("authRole"))
+                    $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
+                    $root.flyteidl.admin.RawOutputDataConfig.encode(message.rawOutputDataConfig, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an ExecutionRuntimeMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ExecutionRuntimeMetadata} ExecutionRuntimeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ExecutionRuntimeMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionRuntimeMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.acceptedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.rawOutputDataConfig = $root.flyteidl.admin.RawOutputDataConfig.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ExecutionRuntimeMetadata message.
+             * @function verify
+             * @memberof flyteidl.admin.ExecutionRuntimeMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ExecutionRuntimeMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.acceptedAt != null && message.hasOwnProperty("acceptedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.acceptedAt);
+                    if (error)
+                        return "acceptedAt." + error;
+                }
+                if (message.labels != null && message.hasOwnProperty("labels")) {
+                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
+                    if (error)
+                        return "labels." + error;
+                }
+                if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                    let error = $root.flyteidl.admin.Annotations.verify(message.annotations);
+                    if (error)
+                        return "annotations." + error;
+                }
+                if (message.authRole != null && message.hasOwnProperty("authRole")) {
+                    let error = $root.flyteidl.admin.AuthRole.verify(message.authRole);
+                    if (error)
+                        return "authRole." + error;
+                }
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService")) {
+                    let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfService);
+                    if (error)
+                        return "qualityOfService." + error;
+                }
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig")) {
+                    let error = $root.flyteidl.admin.RawOutputDataConfig.verify(message.rawOutputDataConfig);
+                    if (error)
+                        return "rawOutputDataConfig." + error;
+                }
+                return null;
+            };
+
+            return ExecutionRuntimeMetadata;
+        })();
+
+        admin.ExecutionSystemOverrides = (function() {
+
+            /**
+             * Properties of an ExecutionSystemOverrides.
+             * @memberof flyteidl.admin
+             * @interface IExecutionSystemOverrides
+             * @property {Array.<flyteidl.admin.IPluginOverride>|null} [taskPluginOverrides] ExecutionSystemOverrides taskPluginOverrides
+             */
+
+            /**
+             * Constructs a new ExecutionSystemOverrides.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ExecutionSystemOverrides.
+             * @implements IExecutionSystemOverrides
+             * @constructor
+             * @param {flyteidl.admin.IExecutionSystemOverrides=} [properties] Properties to set
+             */
+            function ExecutionSystemOverrides(properties) {
+                this.taskPluginOverrides = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ExecutionSystemOverrides taskPluginOverrides.
+             * @member {Array.<flyteidl.admin.IPluginOverride>} taskPluginOverrides
+             * @memberof flyteidl.admin.ExecutionSystemOverrides
+             * @instance
+             */
+            ExecutionSystemOverrides.prototype.taskPluginOverrides = $util.emptyArray;
+
+            /**
+             * Creates a new ExecutionSystemOverrides instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ExecutionSystemOverrides
+             * @static
+             * @param {flyteidl.admin.IExecutionSystemOverrides=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionSystemOverrides} ExecutionSystemOverrides instance
+             */
+            ExecutionSystemOverrides.create = function create(properties) {
+                return new ExecutionSystemOverrides(properties);
+            };
+
+            /**
+             * Encodes the specified ExecutionSystemOverrides message. Does not implicitly {@link flyteidl.admin.ExecutionSystemOverrides.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ExecutionSystemOverrides
+             * @static
+             * @param {flyteidl.admin.IExecutionSystemOverrides} message ExecutionSystemOverrides message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ExecutionSystemOverrides.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskPluginOverrides != null && message.taskPluginOverrides.length)
+                    for (let i = 0; i < message.taskPluginOverrides.length; ++i)
+                        $root.flyteidl.admin.PluginOverride.encode(message.taskPluginOverrides[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an ExecutionSystemOverrides message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ExecutionSystemOverrides
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ExecutionSystemOverrides} ExecutionSystemOverrides
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ExecutionSystemOverrides.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionSystemOverrides();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.taskPluginOverrides && message.taskPluginOverrides.length))
+                            message.taskPluginOverrides = [];
+                        message.taskPluginOverrides.push($root.flyteidl.admin.PluginOverride.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ExecutionSystemOverrides message.
+             * @function verify
+             * @memberof flyteidl.admin.ExecutionSystemOverrides
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ExecutionSystemOverrides.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskPluginOverrides != null && message.hasOwnProperty("taskPluginOverrides")) {
+                    if (!Array.isArray(message.taskPluginOverrides))
+                        return "taskPluginOverrides: array expected";
+                    for (let i = 0; i < message.taskPluginOverrides.length; ++i) {
+                        let error = $root.flyteidl.admin.PluginOverride.verify(message.taskPluginOverrides[i]);
+                        if (error)
+                            return "taskPluginOverrides." + error;
+                    }
+                }
+                return null;
+            };
+
+            return ExecutionSystemOverrides;
+        })();
+
+        admin.StartExecutionAction = (function() {
+
+            /**
+             * Properties of a StartExecutionAction.
+             * @memberof flyteidl.admin
+             * @interface IStartExecutionAction
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] StartExecutionAction id
+             * @property {flyteidl.core.ICompiledWorkflowClosure|null} [closure] StartExecutionAction closure
+             * @property {flyteidl.core.ILiteralMap|null} [inputs] StartExecutionAction inputs
+             * @property {flyteidl.admin.IExecutionRuntimeMetadata|null} [execMetadata] StartExecutionAction execMetadata
+             * @property {flyteidl.admin.IExecutionSystemOverrides|null} [execSysOverrides] StartExecutionAction execSysOverrides
+             */
+
+            /**
+             * Constructs a new StartExecutionAction.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a StartExecutionAction.
+             * @implements IStartExecutionAction
+             * @constructor
+             * @param {flyteidl.admin.IStartExecutionAction=} [properties] Properties to set
+             */
+            function StartExecutionAction(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * StartExecutionAction id.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @instance
+             */
+            StartExecutionAction.prototype.id = null;
+
+            /**
+             * StartExecutionAction closure.
+             * @member {flyteidl.core.ICompiledWorkflowClosure|null|undefined} closure
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @instance
+             */
+            StartExecutionAction.prototype.closure = null;
+
+            /**
+             * StartExecutionAction inputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} inputs
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @instance
+             */
+            StartExecutionAction.prototype.inputs = null;
+
+            /**
+             * StartExecutionAction execMetadata.
+             * @member {flyteidl.admin.IExecutionRuntimeMetadata|null|undefined} execMetadata
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @instance
+             */
+            StartExecutionAction.prototype.execMetadata = null;
+
+            /**
+             * StartExecutionAction execSysOverrides.
+             * @member {flyteidl.admin.IExecutionSystemOverrides|null|undefined} execSysOverrides
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @instance
+             */
+            StartExecutionAction.prototype.execSysOverrides = null;
+
+            /**
+             * Creates a new StartExecutionAction instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @static
+             * @param {flyteidl.admin.IStartExecutionAction=} [properties] Properties to set
+             * @returns {flyteidl.admin.StartExecutionAction} StartExecutionAction instance
+             */
+            StartExecutionAction.create = function create(properties) {
+                return new StartExecutionAction(properties);
+            };
+
+            /**
+             * Encodes the specified StartExecutionAction message. Does not implicitly {@link flyteidl.admin.StartExecutionAction.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @static
+             * @param {flyteidl.admin.IStartExecutionAction} message StartExecutionAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StartExecutionAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.core.CompiledWorkflowClosure.encode(message.closure, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.inputs != null && message.hasOwnProperty("inputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.execMetadata != null && message.hasOwnProperty("execMetadata"))
+                    $root.flyteidl.admin.ExecutionRuntimeMetadata.encode(message.execMetadata, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.execSysOverrides != null && message.hasOwnProperty("execSysOverrides"))
+                    $root.flyteidl.admin.ExecutionSystemOverrides.encode(message.execSysOverrides, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a StartExecutionAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.StartExecutionAction} StartExecutionAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StartExecutionAction.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.StartExecutionAction();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.closure = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.inputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.execMetadata = $root.flyteidl.admin.ExecutionRuntimeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.execSysOverrides = $root.flyteidl.admin.ExecutionSystemOverrides.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a StartExecutionAction message.
+             * @function verify
+             * @memberof flyteidl.admin.StartExecutionAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            StartExecutionAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.core.CompiledWorkflowClosure.verify(message.closure);
+                    if (error)
+                        return "closure." + error;
+                }
+                if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.inputs);
+                    if (error)
+                        return "inputs." + error;
+                }
+                if (message.execMetadata != null && message.hasOwnProperty("execMetadata")) {
+                    let error = $root.flyteidl.admin.ExecutionRuntimeMetadata.verify(message.execMetadata);
+                    if (error)
+                        return "execMetadata." + error;
+                }
+                if (message.execSysOverrides != null && message.hasOwnProperty("execSysOverrides")) {
+                    let error = $root.flyteidl.admin.ExecutionSystemOverrides.verify(message.execSysOverrides);
+                    if (error)
+                        return "execSysOverrides." + error;
+                }
+                return null;
+            };
+
+            return StartExecutionAction;
+        })();
+
+        admin.RetrieveAndLockExecutionResponse = (function() {
+
+            /**
+             * Properties of a RetrieveAndLockExecutionResponse.
+             * @memberof flyteidl.admin
+             * @interface IRetrieveAndLockExecutionResponse
+             * @property {flyteidl.admin.IStartExecutionAction|null} [start] RetrieveAndLockExecutionResponse start
+             * @property {flyteidl.admin.ITerminateExecutionAction|null} [terminate] RetrieveAndLockExecutionResponse terminate
+             */
+
+            /**
+             * Constructs a new RetrieveAndLockExecutionResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a RetrieveAndLockExecutionResponse.
+             * @implements IRetrieveAndLockExecutionResponse
+             * @constructor
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionResponse=} [properties] Properties to set
+             */
+            function RetrieveAndLockExecutionResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RetrieveAndLockExecutionResponse start.
+             * @member {flyteidl.admin.IStartExecutionAction|null|undefined} start
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @instance
+             */
+            RetrieveAndLockExecutionResponse.prototype.start = null;
+
+            /**
+             * RetrieveAndLockExecutionResponse terminate.
+             * @member {flyteidl.admin.ITerminateExecutionAction|null|undefined} terminate
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @instance
+             */
+            RetrieveAndLockExecutionResponse.prototype.terminate = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * RetrieveAndLockExecutionResponse action.
+             * @member {"start"|"terminate"|undefined} action
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @instance
+             */
+            Object.defineProperty(RetrieveAndLockExecutionResponse.prototype, "action", {
+                get: $util.oneOfGetter($oneOfFields = ["start", "terminate"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new RetrieveAndLockExecutionResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @static
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.RetrieveAndLockExecutionResponse} RetrieveAndLockExecutionResponse instance
+             */
+            RetrieveAndLockExecutionResponse.create = function create(properties) {
+                return new RetrieveAndLockExecutionResponse(properties);
+            };
+
+            /**
+             * Encodes the specified RetrieveAndLockExecutionResponse message. Does not implicitly {@link flyteidl.admin.RetrieveAndLockExecutionResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @static
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionResponse} message RetrieveAndLockExecutionResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RetrieveAndLockExecutionResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.start != null && message.hasOwnProperty("start"))
+                    $root.flyteidl.admin.StartExecutionAction.encode(message.start, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.terminate != null && message.hasOwnProperty("terminate"))
+                    $root.flyteidl.admin.TerminateExecutionAction.encode(message.terminate, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a RetrieveAndLockExecutionResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.RetrieveAndLockExecutionResponse} RetrieveAndLockExecutionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RetrieveAndLockExecutionResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.RetrieveAndLockExecutionResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.start = $root.flyteidl.admin.StartExecutionAction.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.terminate = $root.flyteidl.admin.TerminateExecutionAction.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RetrieveAndLockExecutionResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.RetrieveAndLockExecutionResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RetrieveAndLockExecutionResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.start != null && message.hasOwnProperty("start")) {
+                    properties.action = 1;
+                    {
+                        let error = $root.flyteidl.admin.StartExecutionAction.verify(message.start);
+                        if (error)
+                            return "start." + error;
+                    }
+                }
+                if (message.terminate != null && message.hasOwnProperty("terminate")) {
+                    if (properties.action === 1)
+                        return "action: multiple values";
+                    properties.action = 1;
+                    {
+                        let error = $root.flyteidl.admin.TerminateExecutionAction.verify(message.terminate);
+                        if (error)
+                            return "terminate." + error;
+                    }
+                }
+                return null;
+            };
+
+            return RetrieveAndLockExecutionResponse;
+        })();
+
         admin.LaunchPlanCreateRequest = (function() {
 
             /**
@@ -32155,6 +33211,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IProjectListRequest} request ProjectListRequest message or plain object
              * @returns {Promise<flyteidl.admin.Projects>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#retrieveAndLockExecution}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef RetrieveAndLockExecutionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.RetrieveAndLockExecutionResponse} [response] RetrieveAndLockExecutionResponse
+             */
+
+            /**
+             * Calls RetrieveAndLockExecution.
+             * @function retrieveAndLockExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionRequest} request RetrieveAndLockExecutionRequest message or plain object
+             * @param {flyteidl.service.AdminService.RetrieveAndLockExecutionCallback} callback Node-style callback called with the error, if any, and RetrieveAndLockExecutionResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.retrieveAndLockExecution = function retrieveAndLockExecution(request, callback) {
+                return this.rpcCall(retrieveAndLockExecution, $root.flyteidl.admin.RetrieveAndLockExecutionRequest, $root.flyteidl.admin.RetrieveAndLockExecutionResponse, request, callback);
+            }, "name", { value: "RetrieveAndLockExecution" });
+
+            /**
+             * Calls RetrieveAndLockExecution.
+             * @function retrieveAndLockExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IRetrieveAndLockExecutionRequest} request RetrieveAndLockExecutionRequest message or plain object
+             * @returns {Promise<flyteidl.admin.RetrieveAndLockExecutionResponse>} Promise
              * @variation 2
              */
 

@@ -4,6 +4,9 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/admin/common.proto";
+import "flyteidl/admin/launch_plan.proto";
+import "flyteidl/admin/matchable_resource.proto";
+import "flyteidl/core/compiler.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";

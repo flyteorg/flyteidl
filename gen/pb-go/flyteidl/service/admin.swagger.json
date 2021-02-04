@@ -576,6 +576,33 @@
         ]
       }
     },
+    "/api/v1/executions/retrieve": {
+      "post": {
+        "description": "Retrieves an eligible Execution to be processed by FlytePropeller.  The execution will be locked and provides strong transactional semantics. Only one processor will get one execution. Routing rules are used to determine is eligible",
+        "operationId": "RetrieveAndLockExecution",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminRetrieveAndLockExecutionResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminRetrieveAndLockExecutionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/executions/{id.project}/{id.domain}": {
       "get": {
         "description": "Fetch existing workflow executions matching input filters.",
@@ -2983,6 +3010,19 @@
         }
       }
     },
+    "adminAgentInformation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "A unique identified for the Agent (Could be pod id etc)"
+        },
+        "cluster_name": {
+          "type": "string",
+          "title": "Name of the cluster"
+        }
+      }
+    },
     "adminAnnotations": {
       "type": "object",
       "properties": {
@@ -3166,7 +3206,7 @@
         },
         "domain": {
           "type": "string",
-          "description": "Name of the domain the execution belongs to. \nA domain can be considered as a subset within a specific project."
+          "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project."
         },
         "name": {
           "type": "string",
@@ -3269,6 +3309,36 @@
       },
       "description": "Request to relaunch the referenced execution."
     },
+    "adminExecutionRuntimeMetadata": {
+      "type": "object",
+      "properties": {
+        "accepted_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Reported time at which the execution was created."
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Labels to apply to the execution resource."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Annotations to apply to the execution resource."
+        },
+        "auth_role": {
+          "$ref": "#/definitions/adminAuthRole",
+          "description": "Optional: auth override to apply this execution."
+        },
+        "quality_of_service": {
+          "$ref": "#/definitions/coreQualityOfService",
+          "description": "Indicates the runtime priority of the execution."
+        },
+        "raw_output_data_config": {
+          "$ref": "#/definitions/adminRawOutputDataConfig",
+          "title": "Output path that should be used to record the outputs to"
+        }
+      }
+    },
     "adminExecutionSpec": {
       "type": "object",
       "properties": {
@@ -3311,6 +3381,17 @@
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
+    },
+    "adminExecutionSystemOverrides": {
+      "type": "object",
+      "properties": {
+        "task_plugin_overrides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminPluginOverride"
+          }
+        }
+      }
     },
     "adminExecutionTerminateRequest": {
       "type": "object",
@@ -4048,6 +4129,32 @@
       },
       "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/lyft/flyte/issues/211 for more background information."
     },
+    "adminRetrieveAndLockExecutionRequest": {
+      "type": "object",
+      "properties": {
+        "visibility_timeout": {
+          "type": "string",
+          "title": "Duration for which the object should be hidden from other agents. It is optional and\nthe default can be configured on Flyte ControlPlane"
+        },
+        "agent": {
+          "$ref": "#/definitions/adminAgentInformation",
+          "title": "agent_identifier"
+        }
+      },
+      "title": "Request structure to fetch a new Execution that should be run by this Agent (FlytePropeller like)"
+    },
+    "adminRetrieveAndLockExecutionResponse": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "$ref": "#/definitions/adminStartExecutionAction"
+        },
+        "terminate": {
+          "$ref": "#/definitions/adminTerminateExecutionAction"
+        }
+      },
+      "title": "Response structure that contains the entire workflow closure and execution\nmetadata that are useful to start the execution"
+    },
     "adminSchedule": {
       "type": "object",
       "properties": {
@@ -4093,6 +4200,26 @@
         }
       },
       "description": "Species sort ordering in a list request."
+    },
+    "adminStartExecutionAction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        },
+        "closure": {
+          "$ref": "#/definitions/coreCompiledWorkflowClosure"
+        },
+        "inputs": {
+          "$ref": "#/definitions/coreLiteralMap"
+        },
+        "exec_metadata": {
+          "$ref": "#/definitions/adminExecutionRuntimeMetadata"
+        },
+        "exec_sys_overrides": {
+          "$ref": "#/definitions/adminExecutionSystemOverrides"
+        }
+      }
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -4308,6 +4435,18 @@
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
+    },
+    "adminTerminateExecutionAction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "title": "This action is used to represent that the control plane wants to terminate\na workflow. Eventually we want the control plane to reject unknown or\nterminated executions  from sending events - Events fencing"
     },
     "adminUrlBlob": {
       "type": "object",

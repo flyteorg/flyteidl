@@ -23,6 +23,7 @@ from flyteadmin.api_client import ApiClient
 from flyteadmin.configuration import Configuration
 # import models into sdk package
 from flyteadmin.models.admin_abort_metadata import AdminAbortMetadata
+from flyteadmin.models.admin_agent_information import AdminAgentInformation
 from flyteadmin.models.admin_annotations import AdminAnnotations
 from flyteadmin.models.admin_auth import AdminAuth
 from flyteadmin.models.admin_auth_role import AdminAuthRole
@@ -39,7 +40,9 @@ from flyteadmin.models.admin_execution_list import AdminExecutionList
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata
 from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQueueAttributes
 from flyteadmin.models.admin_execution_relaunch_request import AdminExecutionRelaunchRequest
+from flyteadmin.models.admin_execution_runtime_metadata import AdminExecutionRuntimeMetadata
 from flyteadmin.models.admin_execution_spec import AdminExecutionSpec
+from flyteadmin.models.admin_execution_system_overrides import AdminExecutionSystemOverrides
 from flyteadmin.models.admin_execution_terminate_request import AdminExecutionTerminateRequest
 from flyteadmin.models.admin_execution_terminate_response import AdminExecutionTerminateResponse
 from flyteadmin.models.admin_fixed_rate import AdminFixedRate
@@ -91,9 +94,12 @@ from flyteadmin.models.admin_project_register_response import AdminProjectRegist
 from flyteadmin.models.admin_project_update_response import AdminProjectUpdateResponse
 from flyteadmin.models.admin_projects import AdminProjects
 from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig
+from flyteadmin.models.admin_retrieve_and_lock_execution_request import AdminRetrieveAndLockExecutionRequest
+from flyteadmin.models.admin_retrieve_and_lock_execution_response import AdminRetrieveAndLockExecutionResponse
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
+from flyteadmin.models.admin_start_execution_action import AdminStartExecutionAction
 from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
 from flyteadmin.models.admin_task import AdminTask
 from flyteadmin.models.admin_task_closure import AdminTaskClosure
@@ -108,6 +114,7 @@ from flyteadmin.models.admin_task_list import AdminTaskList
 from flyteadmin.models.admin_task_resource_attributes import AdminTaskResourceAttributes
 from flyteadmin.models.admin_task_resource_spec import AdminTaskResourceSpec
 from flyteadmin.models.admin_task_spec import AdminTaskSpec
+from flyteadmin.models.admin_terminate_execution_action import AdminTerminateExecutionAction
 from flyteadmin.models.admin_url_blob import AdminUrlBlob
 from flyteadmin.models.admin_workflow import AdminWorkflow
 from flyteadmin.models.admin_workflow_attributes import AdminWorkflowAttributes

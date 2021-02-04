@@ -275,6 +275,12 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_retrieve_and_lock_execution(self):
+        """Test case for retrieve_and_lock_execution
+
+        """
+        pass
+
     def test_terminate_execution(self):
         """Test case for terminate_execution
 
