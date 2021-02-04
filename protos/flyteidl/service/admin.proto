@@ -334,6 +334,18 @@ service AdminService {
     };
   }
 
+  // ------------------------------ Data Plane APIs ---------------------------------------------
+
+  rpc RetrieveAndLockExecution (flyteidl.admin.RetrieveAndLockExecutionRequest) returns (flyteidl.admin.flyteidl.admin.RetrieveAndLockExecutionResponse) {
+    option (google.api.http) = {
+       post: "/api/v1/executions/retrieve"
+       body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieves an eligible Execution to be processed by FlytePropeller.  The execution will be locked and provides strong transactional semantics. Only one processor will get one execution. Routing rules are used to determine is eligible"
+    };
+  }
+
   rpc CreateWorkflowEvent (flyteidl.admin.WorkflowExecutionEventRequest) returns (flyteidl.admin.WorkflowExecutionEventResponse) {
     option (google.api.http) = {
       post: "/api/v1/events/workflows"
