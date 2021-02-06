@@ -16,7 +16,7 @@ import os
 import re
 import sys
 
-sys.path.insert(0, os.path.abspath("../../gen/pb-protodoc/"))
+sys.path.insert(0, os.path.abspath("gen/pb-protodoc/"))
 
 
 # -- Project information -----------------------------------------------------
@@ -91,6 +91,7 @@ pygments_style = "sphinx"
 # a list of builtin themes.
 #
 html_theme = "sphinx_material"
+html_logo = "docs/images/flyte_circle_gradient_1_4x4.png"
 html_theme_options = {
     # Set the name of the project to appear in the navigation.
     "nav_title": "Flyte",
@@ -103,7 +104,7 @@ html_theme_options = {
     "color_primary": "deep-purple",
     "color_accent": "blue",
     # Set the repo location to get a badge with stats
-    "repo_url": "https://github.com/lyft/flyte/",
+    "repo_url": "https://github.com/flyteorg/flyte/",
     "repo_name": "flyte",
     # Visible levels of the global TOC; -1 means unlimited
     "globaltoc_depth": 1,
