@@ -18941,6 +18941,1600 @@ public final class Common {
 
   }
 
+  public interface SecurityContextOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SecurityContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    boolean containsValues(
+        java.lang.String key);
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getValues();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getValuesMap();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    java.lang.String getValuesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    java.lang.String getValuesOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * Security context fields to define privilege and access control settings
+   * In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+   * to specify how to merge security context defined at registration and execution time.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.SecurityContext}
+   */
+  public  static final class SecurityContext extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SecurityContext)
+      SecurityContextOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SecurityContext.newBuilder() to construct.
+    private SecurityContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SecurityContext() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SecurityContext(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = com.google.protobuf.MapField.newMapField(
+                    ValuesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              values__ = input.readMessage(
+                  ValuesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              values_.getMutableMap().put(
+                  values__.getKey(), values__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetValues();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.SecurityContext.class, flyteidl.admin.Common.SecurityContext.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private static final class ValuesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_ValuesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> values_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetValues() {
+      if (values_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ValuesDefaultEntryHolder.defaultEntry);
+      }
+      return values_;
+    }
+
+    public int getValuesCount() {
+      return internalGetValues().getMap().size();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public boolean containsValues(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetValues().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getValues() {
+      return getValuesMap();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+      return internalGetValues().getMap();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.lang.String getValuesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetValues().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.lang.String getValuesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetValues().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetValues(),
+          ValuesDefaultEntryHolder.defaultEntry,
+          1);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetValues().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        values__ = ValuesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, values__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.SecurityContext)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.SecurityContext other = (flyteidl.admin.Common.SecurityContext) obj;
+
+      if (!internalGetValues().equals(
+          other.internalGetValues())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetValues().getMap().isEmpty()) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetValues().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SecurityContext parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.SecurityContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Security context fields to define privilege and access control settings
+     * In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+     * to specify how to merge security context defined at registration and execution time.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.SecurityContext}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SecurityContext)
+        flyteidl.admin.Common.SecurityContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetValues();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableValues();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.SecurityContext.class, flyteidl.admin.Common.SecurityContext.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.SecurityContext.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableValues().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SecurityContext_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SecurityContext getDefaultInstanceForType() {
+        return flyteidl.admin.Common.SecurityContext.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SecurityContext build() {
+        flyteidl.admin.Common.SecurityContext result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SecurityContext buildPartial() {
+        flyteidl.admin.Common.SecurityContext result = new flyteidl.admin.Common.SecurityContext(this);
+        int from_bitField0_ = bitField0_;
+        result.values_ = internalGetValues();
+        result.values_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.SecurityContext) {
+          return mergeFrom((flyteidl.admin.Common.SecurityContext)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.SecurityContext other) {
+        if (other == flyteidl.admin.Common.SecurityContext.getDefaultInstance()) return this;
+        internalGetMutableValues().mergeFrom(
+            other.internalGetValues());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.SecurityContext parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.SecurityContext) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> values_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetValues() {
+        if (values_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ValuesDefaultEntryHolder.defaultEntry);
+        }
+        return values_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableValues() {
+        onChanged();;
+        if (values_ == null) {
+          values_ = com.google.protobuf.MapField.newMapField(
+              ValuesDefaultEntryHolder.defaultEntry);
+        }
+        if (!values_.isMutable()) {
+          values_ = values_.copy();
+        }
+        return values_;
+      }
+
+      public int getValuesCount() {
+        return internalGetValues().getMap().size();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public boolean containsValues(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetValues().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getValuesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getValues() {
+        return getValuesMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+        return internalGetValues().getMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.lang.String getValuesOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetValues().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.lang.String getValuesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetValues().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearValues() {
+        internalGetMutableValues().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public Builder removeValues(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableValues().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableValues() {
+        return internalGetMutableValues().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+      public Builder putValues(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableValues().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public Builder putAllValues(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableValues().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SecurityContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SecurityContext)
+    private static final flyteidl.admin.Common.SecurityContext DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.SecurityContext();
+    }
+
+    public static flyteidl.admin.Common.SecurityContext getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SecurityContext>
+        PARSER = new com.google.protobuf.AbstractParser<SecurityContext>() {
+      @java.lang.Override
+      public SecurityContext parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SecurityContext(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SecurityContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SecurityContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.SecurityContext getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Config)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    boolean containsValues(
+        java.lang.String key);
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getValues();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getValuesMap();
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    java.lang.String getValuesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    java.lang.String getValuesOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * <pre>
+   * Config values to define privilege and access control settings
+   * In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+   * to specify how to merge configs defined at registration and execution time.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.Config}
+   */
+  public  static final class Config extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Config)
+      ConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Config.newBuilder() to construct.
+    private Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Config() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Config(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = com.google.protobuf.MapField.newMapField(
+                    ValuesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              values__ = input.readMessage(
+                  ValuesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              values_.getMutableMap().put(
+                  values__.getKey(), values__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_Config_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetValues();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_Config_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.Config.class, flyteidl.admin.Common.Config.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private static final class ValuesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.admin.Common.internal_static_flyteidl_admin_Config_ValuesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> values_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetValues() {
+      if (values_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ValuesDefaultEntryHolder.defaultEntry);
+      }
+      return values_;
+    }
+
+    public int getValuesCount() {
+      return internalGetValues().getMap().size();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public boolean containsValues(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetValues().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getValues() {
+      return getValuesMap();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+      return internalGetValues().getMap();
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.lang.String getValuesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetValues().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Map of custom annotations to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; values = 1;</code>
+     */
+
+    public java.lang.String getValuesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetValues().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetValues(),
+          ValuesDefaultEntryHolder.defaultEntry,
+          1);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetValues().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        values__ = ValuesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, values__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.Config)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.Config other = (flyteidl.admin.Common.Config) obj;
+
+      if (!internalGetValues().equals(
+          other.internalGetValues())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetValues().getMap().isEmpty()) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetValues().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.Config parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Config parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Config parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Config parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.Config prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Config values to define privilege and access control settings
+     * In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+     * to specify how to merge configs defined at registration and execution time.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.Config}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Config)
+        flyteidl.admin.Common.ConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Config_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetValues();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableValues();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Config_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.Config.class, flyteidl.admin.Common.Config.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.Config.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        internalGetMutableValues().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Config_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Config getDefaultInstanceForType() {
+        return flyteidl.admin.Common.Config.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Config build() {
+        flyteidl.admin.Common.Config result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Config buildPartial() {
+        flyteidl.admin.Common.Config result = new flyteidl.admin.Common.Config(this);
+        int from_bitField0_ = bitField0_;
+        result.values_ = internalGetValues();
+        result.values_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.Config) {
+          return mergeFrom((flyteidl.admin.Common.Config)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.Config other) {
+        if (other == flyteidl.admin.Common.Config.getDefaultInstance()) return this;
+        internalGetMutableValues().mergeFrom(
+            other.internalGetValues());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.Config parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.Config) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> values_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetValues() {
+        if (values_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ValuesDefaultEntryHolder.defaultEntry);
+        }
+        return values_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableValues() {
+        onChanged();;
+        if (values_ == null) {
+          values_ = com.google.protobuf.MapField.newMapField(
+              ValuesDefaultEntryHolder.defaultEntry);
+        }
+        if (!values_.isMutable()) {
+          values_ = values_.copy();
+        }
+        return values_;
+      }
+
+      public int getValuesCount() {
+        return internalGetValues().getMap().size();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public boolean containsValues(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetValues().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getValuesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getValues() {
+        return getValuesMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+        return internalGetValues().getMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.lang.String getValuesOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetValues().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public java.lang.String getValuesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetValues().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearValues() {
+        internalGetMutableValues().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public Builder removeValues(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableValues().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableValues() {
+        return internalGetMutableValues().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+      public Builder putValues(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableValues().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom annotations to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; values = 1;</code>
+       */
+
+      public Builder putAllValues(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableValues().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Config)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Config)
+    private static final flyteidl.admin.Common.Config DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.Config();
+    }
+
+    public static flyteidl.admin.Common.Config getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Config>
+        PARSER = new com.google.protobuf.AbstractParser<Config>() {
+      @java.lang.Override
+      public Config parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Config(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Config> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Config> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.Config getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AuthRoleOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.AuthRole)
       com.google.protobuf.MessageOrBuilder {
@@ -18970,6 +20564,7 @@ public final class Common {
   /**
    * <pre>
    * Defines permissions associated with executions.
+   * Deprecated
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.AuthRole}
@@ -19362,6 +20957,7 @@ public final class Common {
     /**
      * <pre>
      * Defines permissions associated with executions.
+     * Deprecated
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.AuthRole}
@@ -19752,6 +21348,1442 @@ public final class Common {
 
     @java.lang.Override
     public flyteidl.admin.Common.AuthRole getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface OverrideablesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Overrideables)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    boolean hasLabels();
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    flyteidl.admin.Common.Labels getLabels();
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
+
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    boolean hasAnnotations();
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    flyteidl.admin.Common.Annotations getAnnotations();
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder();
+
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    boolean hasSecurityContext();
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    flyteidl.admin.Common.SecurityContext getSecurityContext();
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    flyteidl.admin.Common.SecurityContextOrBuilder getSecurityContextOrBuilder();
+
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    boolean hasConfig();
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    flyteidl.admin.Common.Config getConfig();
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    flyteidl.admin.Common.ConfigOrBuilder getConfigOrBuilder();
+  }
+  /**
+   * <pre>
+   * Defines values that can be overriden at registration/runtime
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.Overrideables}
+   */
+  public  static final class Overrideables extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Overrideables)
+      OverrideablesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Overrideables.newBuilder() to construct.
+    private Overrideables(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Overrideables() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Overrideables(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.admin.Common.Labels.Builder subBuilder = null;
+              if (labels_ != null) {
+                subBuilder = labels_.toBuilder();
+              }
+              labels_ = input.readMessage(flyteidl.admin.Common.Labels.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(labels_);
+                labels_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.admin.Common.Annotations.Builder subBuilder = null;
+              if (annotations_ != null) {
+                subBuilder = annotations_.toBuilder();
+              }
+              annotations_ = input.readMessage(flyteidl.admin.Common.Annotations.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(annotations_);
+                annotations_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              flyteidl.admin.Common.SecurityContext.Builder subBuilder = null;
+              if (securityContext_ != null) {
+                subBuilder = securityContext_.toBuilder();
+              }
+              securityContext_ = input.readMessage(flyteidl.admin.Common.SecurityContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(securityContext_);
+                securityContext_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              flyteidl.admin.Common.Config.Builder subBuilder = null;
+              if (config_ != null) {
+                subBuilder = config_.toBuilder();
+              }
+              config_ = input.readMessage(flyteidl.admin.Common.Config.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(config_);
+                config_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_Overrideables_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_Overrideables_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.Overrideables.class, flyteidl.admin.Common.Overrideables.Builder.class);
+    }
+
+    public static final int LABELS_FIELD_NUMBER = 1;
+    private flyteidl.admin.Common.Labels labels_;
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    public boolean hasLabels() {
+      return labels_ != null;
+    }
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    public flyteidl.admin.Common.Labels getLabels() {
+      return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
+    }
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Labels labels = 1;</code>
+     */
+    public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
+      return getLabels();
+    }
+
+    public static final int ANNOTATIONS_FIELD_NUMBER = 2;
+    private flyteidl.admin.Common.Annotations annotations_;
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    public boolean hasAnnotations() {
+      return annotations_ != null;
+    }
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    public flyteidl.admin.Common.Annotations getAnnotations() {
+      return annotations_ == null ? flyteidl.admin.Common.Annotations.getDefaultInstance() : annotations_;
+    }
+    /**
+     * <pre>
+     * Custom annotations for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+     */
+    public flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder() {
+      return getAnnotations();
+    }
+
+    public static final int SECURITY_CONTEXT_FIELD_NUMBER = 3;
+    private flyteidl.admin.Common.SecurityContext securityContext_;
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    public boolean hasSecurityContext() {
+      return securityContext_ != null;
+    }
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    public flyteidl.admin.Common.SecurityContext getSecurityContext() {
+      return securityContext_ == null ? flyteidl.admin.Common.SecurityContext.getDefaultInstance() : securityContext_;
+    }
+    /**
+     * <pre>
+     * Custom labels for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+     */
+    public flyteidl.admin.Common.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+      return getSecurityContext();
+    }
+
+    public static final int CONFIG_FIELD_NUMBER = 4;
+    private flyteidl.admin.Common.Config config_;
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    public boolean hasConfig() {
+      return config_ != null;
+    }
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    public flyteidl.admin.Common.Config getConfig() {
+      return config_ == null ? flyteidl.admin.Common.Config.getDefaultInstance() : config_;
+    }
+    /**
+     * <pre>
+     * Custom configs for overrides.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Config config = 4;</code>
+     */
+    public flyteidl.admin.Common.ConfigOrBuilder getConfigOrBuilder() {
+      return getConfig();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (labels_ != null) {
+        output.writeMessage(1, getLabels());
+      }
+      if (annotations_ != null) {
+        output.writeMessage(2, getAnnotations());
+      }
+      if (securityContext_ != null) {
+        output.writeMessage(3, getSecurityContext());
+      }
+      if (config_ != null) {
+        output.writeMessage(4, getConfig());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (labels_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getLabels());
+      }
+      if (annotations_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getAnnotations());
+      }
+      if (securityContext_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSecurityContext());
+      }
+      if (config_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getConfig());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.Overrideables)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.Overrideables other = (flyteidl.admin.Common.Overrideables) obj;
+
+      if (hasLabels() != other.hasLabels()) return false;
+      if (hasLabels()) {
+        if (!getLabels()
+            .equals(other.getLabels())) return false;
+      }
+      if (hasAnnotations() != other.hasAnnotations()) return false;
+      if (hasAnnotations()) {
+        if (!getAnnotations()
+            .equals(other.getAnnotations())) return false;
+      }
+      if (hasSecurityContext() != other.hasSecurityContext()) return false;
+      if (hasSecurityContext()) {
+        if (!getSecurityContext()
+            .equals(other.getSecurityContext())) return false;
+      }
+      if (hasConfig() != other.hasConfig()) return false;
+      if (hasConfig()) {
+        if (!getConfig()
+            .equals(other.getConfig())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLabels()) {
+        hash = (37 * hash) + LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + getLabels().hashCode();
+      }
+      if (hasAnnotations()) {
+        hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotations().hashCode();
+      }
+      if (hasSecurityContext()) {
+        hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getSecurityContext().hashCode();
+      }
+      if (hasConfig()) {
+        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getConfig().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Overrideables parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Overrideables parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.Overrideables parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.Overrideables prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Defines values that can be overriden at registration/runtime
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.Overrideables}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Overrideables)
+        flyteidl.admin.Common.OverrideablesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Overrideables_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Overrideables_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.Overrideables.class, flyteidl.admin.Common.Overrideables.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.Overrideables.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (labelsBuilder_ == null) {
+          labels_ = null;
+        } else {
+          labels_ = null;
+          labelsBuilder_ = null;
+        }
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
+        } else {
+          annotations_ = null;
+          annotationsBuilder_ = null;
+        }
+        if (securityContextBuilder_ == null) {
+          securityContext_ = null;
+        } else {
+          securityContext_ = null;
+          securityContextBuilder_ = null;
+        }
+        if (configBuilder_ == null) {
+          config_ = null;
+        } else {
+          config_ = null;
+          configBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_Overrideables_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Overrideables getDefaultInstanceForType() {
+        return flyteidl.admin.Common.Overrideables.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Overrideables build() {
+        flyteidl.admin.Common.Overrideables result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.Overrideables buildPartial() {
+        flyteidl.admin.Common.Overrideables result = new flyteidl.admin.Common.Overrideables(this);
+        if (labelsBuilder_ == null) {
+          result.labels_ = labels_;
+        } else {
+          result.labels_ = labelsBuilder_.build();
+        }
+        if (annotationsBuilder_ == null) {
+          result.annotations_ = annotations_;
+        } else {
+          result.annotations_ = annotationsBuilder_.build();
+        }
+        if (securityContextBuilder_ == null) {
+          result.securityContext_ = securityContext_;
+        } else {
+          result.securityContext_ = securityContextBuilder_.build();
+        }
+        if (configBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = configBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.Overrideables) {
+          return mergeFrom((flyteidl.admin.Common.Overrideables)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.Overrideables other) {
+        if (other == flyteidl.admin.Common.Overrideables.getDefaultInstance()) return this;
+        if (other.hasLabels()) {
+          mergeLabels(other.getLabels());
+        }
+        if (other.hasAnnotations()) {
+          mergeAnnotations(other.getAnnotations());
+        }
+        if (other.hasSecurityContext()) {
+          mergeSecurityContext(other.getSecurityContext());
+        }
+        if (other.hasConfig()) {
+          mergeConfig(other.getConfig());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.Overrideables parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.Overrideables) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.admin.Common.Labels labels_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> labelsBuilder_;
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public boolean hasLabels() {
+        return labelsBuilder_ != null || labels_ != null;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public flyteidl.admin.Common.Labels getLabels() {
+        if (labelsBuilder_ == null) {
+          return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
+        } else {
+          return labelsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public Builder setLabels(flyteidl.admin.Common.Labels value) {
+        if (labelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          labels_ = value;
+          onChanged();
+        } else {
+          labelsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public Builder setLabels(
+          flyteidl.admin.Common.Labels.Builder builderForValue) {
+        if (labelsBuilder_ == null) {
+          labels_ = builderForValue.build();
+          onChanged();
+        } else {
+          labelsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public Builder mergeLabels(flyteidl.admin.Common.Labels value) {
+        if (labelsBuilder_ == null) {
+          if (labels_ != null) {
+            labels_ =
+              flyteidl.admin.Common.Labels.newBuilder(labels_).mergeFrom(value).buildPartial();
+          } else {
+            labels_ = value;
+          }
+          onChanged();
+        } else {
+          labelsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public Builder clearLabels() {
+        if (labelsBuilder_ == null) {
+          labels_ = null;
+          onChanged();
+        } else {
+          labels_ = null;
+          labelsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public flyteidl.admin.Common.Labels.Builder getLabelsBuilder() {
+        
+        onChanged();
+        return getLabelsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
+        if (labelsBuilder_ != null) {
+          return labelsBuilder_.getMessageOrBuilder();
+        } else {
+          return labels_ == null ?
+              flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
+        }
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Labels labels = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> 
+          getLabelsFieldBuilder() {
+        if (labelsBuilder_ == null) {
+          labelsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder>(
+                  getLabels(),
+                  getParentForChildren(),
+                  isClean());
+          labels_ = null;
+        }
+        return labelsBuilder_;
+      }
+
+      private flyteidl.admin.Common.Annotations annotations_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Annotations, flyteidl.admin.Common.Annotations.Builder, flyteidl.admin.Common.AnnotationsOrBuilder> annotationsBuilder_;
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public boolean hasAnnotations() {
+        return annotationsBuilder_ != null || annotations_ != null;
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public flyteidl.admin.Common.Annotations getAnnotations() {
+        if (annotationsBuilder_ == null) {
+          return annotations_ == null ? flyteidl.admin.Common.Annotations.getDefaultInstance() : annotations_;
+        } else {
+          return annotationsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public Builder setAnnotations(flyteidl.admin.Common.Annotations value) {
+        if (annotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          annotations_ = value;
+          onChanged();
+        } else {
+          annotationsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public Builder setAnnotations(
+          flyteidl.admin.Common.Annotations.Builder builderForValue) {
+        if (annotationsBuilder_ == null) {
+          annotations_ = builderForValue.build();
+          onChanged();
+        } else {
+          annotationsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public Builder mergeAnnotations(flyteidl.admin.Common.Annotations value) {
+        if (annotationsBuilder_ == null) {
+          if (annotations_ != null) {
+            annotations_ =
+              flyteidl.admin.Common.Annotations.newBuilder(annotations_).mergeFrom(value).buildPartial();
+          } else {
+            annotations_ = value;
+          }
+          onChanged();
+        } else {
+          annotationsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public Builder clearAnnotations() {
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
+          onChanged();
+        } else {
+          annotations_ = null;
+          annotationsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public flyteidl.admin.Common.Annotations.Builder getAnnotationsBuilder() {
+        
+        onChanged();
+        return getAnnotationsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      public flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder() {
+        if (annotationsBuilder_ != null) {
+          return annotationsBuilder_.getMessageOrBuilder();
+        } else {
+          return annotations_ == null ?
+              flyteidl.admin.Common.Annotations.getDefaultInstance() : annotations_;
+        }
+      }
+      /**
+       * <pre>
+       * Custom annotations for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Annotations annotations = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Annotations, flyteidl.admin.Common.Annotations.Builder, flyteidl.admin.Common.AnnotationsOrBuilder> 
+          getAnnotationsFieldBuilder() {
+        if (annotationsBuilder_ == null) {
+          annotationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.Annotations, flyteidl.admin.Common.Annotations.Builder, flyteidl.admin.Common.AnnotationsOrBuilder>(
+                  getAnnotations(),
+                  getParentForChildren(),
+                  isClean());
+          annotations_ = null;
+        }
+        return annotationsBuilder_;
+      }
+
+      private flyteidl.admin.Common.SecurityContext securityContext_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.SecurityContext, flyteidl.admin.Common.SecurityContext.Builder, flyteidl.admin.Common.SecurityContextOrBuilder> securityContextBuilder_;
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public boolean hasSecurityContext() {
+        return securityContextBuilder_ != null || securityContext_ != null;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public flyteidl.admin.Common.SecurityContext getSecurityContext() {
+        if (securityContextBuilder_ == null) {
+          return securityContext_ == null ? flyteidl.admin.Common.SecurityContext.getDefaultInstance() : securityContext_;
+        } else {
+          return securityContextBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public Builder setSecurityContext(flyteidl.admin.Common.SecurityContext value) {
+        if (securityContextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          securityContext_ = value;
+          onChanged();
+        } else {
+          securityContextBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public Builder setSecurityContext(
+          flyteidl.admin.Common.SecurityContext.Builder builderForValue) {
+        if (securityContextBuilder_ == null) {
+          securityContext_ = builderForValue.build();
+          onChanged();
+        } else {
+          securityContextBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public Builder mergeSecurityContext(flyteidl.admin.Common.SecurityContext value) {
+        if (securityContextBuilder_ == null) {
+          if (securityContext_ != null) {
+            securityContext_ =
+              flyteidl.admin.Common.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
+          } else {
+            securityContext_ = value;
+          }
+          onChanged();
+        } else {
+          securityContextBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public Builder clearSecurityContext() {
+        if (securityContextBuilder_ == null) {
+          securityContext_ = null;
+          onChanged();
+        } else {
+          securityContext_ = null;
+          securityContextBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public flyteidl.admin.Common.SecurityContext.Builder getSecurityContextBuilder() {
+        
+        onChanged();
+        return getSecurityContextFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      public flyteidl.admin.Common.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+        if (securityContextBuilder_ != null) {
+          return securityContextBuilder_.getMessageOrBuilder();
+        } else {
+          return securityContext_ == null ?
+              flyteidl.admin.Common.SecurityContext.getDefaultInstance() : securityContext_;
+        }
+      }
+      /**
+       * <pre>
+       * Custom labels for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.SecurityContext security_context = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.SecurityContext, flyteidl.admin.Common.SecurityContext.Builder, flyteidl.admin.Common.SecurityContextOrBuilder> 
+          getSecurityContextFieldBuilder() {
+        if (securityContextBuilder_ == null) {
+          securityContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.SecurityContext, flyteidl.admin.Common.SecurityContext.Builder, flyteidl.admin.Common.SecurityContextOrBuilder>(
+                  getSecurityContext(),
+                  getParentForChildren(),
+                  isClean());
+          securityContext_ = null;
+        }
+        return securityContextBuilder_;
+      }
+
+      private flyteidl.admin.Common.Config config_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Config, flyteidl.admin.Common.Config.Builder, flyteidl.admin.Common.ConfigOrBuilder> configBuilder_;
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public boolean hasConfig() {
+        return configBuilder_ != null || config_ != null;
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public flyteidl.admin.Common.Config getConfig() {
+        if (configBuilder_ == null) {
+          return config_ == null ? flyteidl.admin.Common.Config.getDefaultInstance() : config_;
+        } else {
+          return configBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public Builder setConfig(flyteidl.admin.Common.Config value) {
+        if (configBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          config_ = value;
+          onChanged();
+        } else {
+          configBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public Builder setConfig(
+          flyteidl.admin.Common.Config.Builder builderForValue) {
+        if (configBuilder_ == null) {
+          config_ = builderForValue.build();
+          onChanged();
+        } else {
+          configBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public Builder mergeConfig(flyteidl.admin.Common.Config value) {
+        if (configBuilder_ == null) {
+          if (config_ != null) {
+            config_ =
+              flyteidl.admin.Common.Config.newBuilder(config_).mergeFrom(value).buildPartial();
+          } else {
+            config_ = value;
+          }
+          onChanged();
+        } else {
+          configBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public Builder clearConfig() {
+        if (configBuilder_ == null) {
+          config_ = null;
+          onChanged();
+        } else {
+          config_ = null;
+          configBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public flyteidl.admin.Common.Config.Builder getConfigBuilder() {
+        
+        onChanged();
+        return getConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      public flyteidl.admin.Common.ConfigOrBuilder getConfigOrBuilder() {
+        if (configBuilder_ != null) {
+          return configBuilder_.getMessageOrBuilder();
+        } else {
+          return config_ == null ?
+              flyteidl.admin.Common.Config.getDefaultInstance() : config_;
+        }
+      }
+      /**
+       * <pre>
+       * Custom configs for overrides.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Config config = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Config, flyteidl.admin.Common.Config.Builder, flyteidl.admin.Common.ConfigOrBuilder> 
+          getConfigFieldBuilder() {
+        if (configBuilder_ == null) {
+          configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.Config, flyteidl.admin.Common.Config.Builder, flyteidl.admin.Common.ConfigOrBuilder>(
+                  getConfig(),
+                  getParentForChildren(),
+                  isClean());
+          config_ = null;
+        }
+        return configBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Overrideables)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Overrideables)
+    private static final flyteidl.admin.Common.Overrideables DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.Overrideables();
+    }
+
+    public static flyteidl.admin.Common.Overrideables getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Overrideables>
+        PARSER = new com.google.protobuf.AbstractParser<Overrideables>() {
+      @java.lang.Override
+      public Overrideables parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Overrideables(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Overrideables> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Overrideables> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.Overrideables getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20472,10 +23504,35 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Annotations_ValuesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_SecurityContext_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_SecurityContext_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_SecurityContext_ValuesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_SecurityContext_ValuesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Config_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Config_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Config_ValuesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Config_ValuesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_AuthRole_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_AuthRole_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Overrideables_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Overrideables_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_RawOutputDataConfig_descriptor;
   private static final 
@@ -20548,14 +23605,25 @@ public final class Common {
       "8\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyt" +
       "eidl.admin.Annotations.ValuesEntry\032-\n\013Va" +
       "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"X\n\010AuthRole\022\034\n\022assumable_iam_role\030\001 \001(" +
-      "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH" +
-      "\000B\010\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026ou" +
-      "tput_location_prefix\030\001 \001(\t*\\\n\020NamedEntit" +
-      "yState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED" +
-      "_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002" +
-      "B3Z1github.com/lyft/flyteidl/gen/pb-go/f" +
-      "lyteidl/adminb\006proto3"
+      "\001\"}\n\017SecurityContext\022;\n\006values\030\001 \003(\0132+.f" +
+      "lyteidl.admin.SecurityContext.ValuesEntr" +
+      "y\032-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"k\n\006Config\0222\n\006values\030\001 \003(\0132\".fly" +
+      "teidl.admin.Config.ValuesEntry\032-\n\013Values" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"X\n" +
+      "\010AuthRole\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022" +
+      "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n" +
+      "\006method\"\314\001\n\rOverrideables\022&\n\006labels\030\001 \001(" +
+      "\0132\026.flyteidl.admin.Labels\0220\n\013annotations" +
+      "\030\002 \001(\0132\033.flyteidl.admin.Annotations\0229\n\020s" +
+      "ecurity_context\030\003 \001(\0132\037.flyteidl.admin.S" +
+      "ecurityContext\022&\n\006config\030\004 \001(\0132\026.flyteid" +
+      "l.admin.Config\"5\n\023RawOutputDataConfig\022\036\n" +
+      "\026output_location_prefix\030\001 \001(\t*\\\n\020NamedEn" +
+      "tityState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NA" +
+      "MED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATE" +
+      "D\020\002B3Z1github.com/lyft/flyteidl/gen/pb-g" +
+      "o/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20703,14 +23771,44 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Annotations_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_flyteidl_admin_AuthRole_descriptor =
+    internal_static_flyteidl_admin_SecurityContext_descriptor =
       getDescriptor().getMessageTypes().get(20);
+    internal_static_flyteidl_admin_SecurityContext_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_SecurityContext_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_flyteidl_admin_SecurityContext_ValuesEntry_descriptor =
+      internal_static_flyteidl_admin_SecurityContext_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_SecurityContext_ValuesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_SecurityContext_ValuesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_flyteidl_admin_Config_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_flyteidl_admin_Config_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Config_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_flyteidl_admin_Config_ValuesEntry_descriptor =
+      internal_static_flyteidl_admin_Config_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_Config_ValuesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Config_ValuesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_flyteidl_admin_AuthRole_descriptor =
+      getDescriptor().getMessageTypes().get(22);
     internal_static_flyteidl_admin_AuthRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuthRole_descriptor,
         new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", "Method", });
+    internal_static_flyteidl_admin_Overrideables_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_flyteidl_admin_Overrideables_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Overrideables_descriptor,
+        new java.lang.String[] { "Labels", "Annotations", "SecurityContext", "Config", });
     internal_static_flyteidl_admin_RawOutputDataConfig_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_flyteidl_admin_RawOutputDataConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_RawOutputDataConfig_descriptor,

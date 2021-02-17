@@ -2672,7 +2672,7 @@ definitions:
       kubernetes_service_account:
         type: "string"
     description: "Defines permissions associated with executions created by this launch\
-      \ plan spec."
+      \ plan spec.\nDeprecated."
     example:
       kubernetes_service_account: "kubernetes_service_account"
       assumable_iam_role: "assumable_iam_role"
@@ -2683,7 +2683,7 @@ definitions:
         type: "string"
       kubernetes_service_account:
         type: "string"
-    description: "Defines permissions associated with executions."
+    title: "Defines permissions associated with executions.\nDeprecated"
     example:
       kubernetes_service_account: "kubernetes_service_account"
       assumable_iam_role: "assumable_iam_role"
@@ -2701,6 +2701,20 @@ definitions:
     example:
       attributes:
         key: "attributes"
+  adminConfig:
+    type: "object"
+    properties:
+      values:
+        type: "object"
+        description: "Map of custom annotations to be applied to the execution resource."
+        additionalProperties:
+          type: "string"
+    description: "Config values to define privilege and access control settings\n\
+      In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify\
+      \ how to merge configs defined at registration and execution time."
+    example:
+      values:
+        key: "values"
   adminCronSchedule:
     type: "object"
     properties:
@@ -2854,6 +2868,20 @@ definitions:
         annotations:
           values:
             key: "values"
+        overrides:
+          key:
+            annotations:
+              values:
+                key: "values"
+            config:
+              values:
+                key: "values"
+            security_context:
+              values:
+                key: "values"
+            labels:
+              values:
+                key: "values"
         notifications:
           notifications:
           - pager_duty:
@@ -2886,6 +2914,9 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+        security_context:
+          values:
+            key: "values"
         labels:
           values:
             key: "values"
@@ -3157,6 +3188,20 @@ definitions:
           annotations:
             values:
               key: "values"
+          overrides:
+            key:
+              annotations:
+                values:
+                  key: "values"
+              config:
+                values:
+                  key: "values"
+              security_context:
+                values:
+                  key: "values"
+              labels:
+                values:
+                  key: "values"
           notifications:
             notifications:
             - pager_duty:
@@ -3189,6 +3234,9 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+          security_context:
+            values:
+              key: "values"
           labels:
             values:
               key: "values"
@@ -3291,6 +3339,20 @@ definitions:
           annotations:
             values:
               key: "values"
+          overrides:
+            key:
+              annotations:
+                values:
+                  key: "values"
+              config:
+                values:
+                  key: "values"
+              security_context:
+                values:
+                  key: "values"
+              labels:
+                values:
+                  key: "values"
           notifications:
             notifications:
             - pager_duty:
@@ -3323,6 +3385,9 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+          security_context:
+            values:
+              key: "values"
           labels:
             values:
               key: "values"
@@ -3440,6 +3505,14 @@ definitions:
       auth_role:
         description: "Optional: auth override to apply this execution."
         $ref: "#/definitions/adminAuthRole"
+      security_context:
+        description: "Optional: security context override to apply this execution."
+        $ref: "#/definitions/adminSecurityContext"
+      overrides:
+        type: "object"
+        description: "Map of tasktype to overrideable for each task type."
+        additionalProperties:
+          $ref: "#/definitions/adminOverrideables"
       quality_of_service:
         description: "Indicates the runtime priority of the execution."
         $ref: "#/definitions/coreQualityOfService"
@@ -3480,6 +3553,20 @@ definitions:
       annotations:
         values:
           key: "values"
+      overrides:
+        key:
+          annotations:
+            values:
+              key: "values"
+          config:
+            values:
+              key: "values"
+          security_context:
+            values:
+              key: "values"
+          labels:
+            values:
+              key: "values"
       notifications:
         notifications:
         - pager_duty:
@@ -3512,6 +3599,9 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+      security_context:
+        values:
+          key: "values"
       labels:
         values:
           key: "values"
@@ -3705,15 +3795,9 @@ definitions:
         fixed_inputs:
           literals: {}
         role: "role"
-        quality_of_service:
-          tier: {}
-          spec:
-            queueing_budget: "queueing_budget"
         auth:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
-        raw_output_data_config:
-          output_location_prefix: "output_location_prefix"
         entity_metadata:
           schedule:
             kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -3758,6 +3842,29 @@ definitions:
         annotations:
           values:
             key: "values"
+        overrides:
+          key:
+            annotations:
+              values:
+                key: "values"
+            config:
+              values:
+                key: "values"
+            security_context:
+              values:
+                key: "values"
+            labels:
+              values:
+                key: "values"
+        labels:
+          values:
+            key: "values"
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget: "queueing_budget"
+        raw_output_data_config:
+          output_location_prefix: "output_location_prefix"
         default_inputs:
           parameters:
             key:
@@ -3833,7 +3940,7 @@ definitions:
                     format: "format"
                   simple: {}
               required: true
-        labels:
+        security_context:
           values:
             key: "values"
         auth_role:
@@ -4121,15 +4228,9 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
-          quality_of_service:
-            tier: {}
-            spec:
-              queueing_budget: "queueing_budget"
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
-          raw_output_data_config:
-            output_location_prefix: "output_location_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4174,6 +4275,29 @@ definitions:
           annotations:
             values:
               key: "values"
+          overrides:
+            key:
+              annotations:
+                values:
+                  key: "values"
+              config:
+                values:
+                  key: "values"
+              security_context:
+                values:
+                  key: "values"
+              labels:
+                values:
+                  key: "values"
+          labels:
+            values:
+              key: "values"
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget: "queueing_budget"
+          raw_output_data_config:
+            output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
               key:
@@ -4249,7 +4373,7 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
-          labels:
+          security_context:
             values:
               key: "values"
           auth_role:
@@ -4376,15 +4500,9 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
-          quality_of_service:
-            tier: {}
-            spec:
-              queueing_budget: "queueing_budget"
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
-          raw_output_data_config:
-            output_location_prefix: "output_location_prefix"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4429,6 +4547,29 @@ definitions:
           annotations:
             values:
               key: "values"
+          overrides:
+            key:
+              annotations:
+                values:
+                  key: "values"
+              config:
+                values:
+                  key: "values"
+              security_context:
+                values:
+                  key: "values"
+              labels:
+                values:
+                  key: "values"
+          labels:
+            values:
+              key: "values"
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget: "queueing_budget"
+          raw_output_data_config:
+            output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
               key:
@@ -4504,7 +4645,7 @@ definitions:
                       format: "format"
                     simple: {}
                 required: true
-          labels:
+          security_context:
             values:
               key: "values"
           auth_role:
@@ -4595,6 +4736,15 @@ definitions:
         $ref: "#/definitions/adminAuth"
       auth_role:
         $ref: "#/definitions/adminAuthRole"
+      security_context:
+        title: "Indicates security context for permissions triggered with this launch\
+          \ plan"
+        $ref: "#/definitions/adminSecurityContext"
+      overrides:
+        type: "object"
+        description: "Map of tasktype to overrideable for each task type."
+        additionalProperties:
+          $ref: "#/definitions/adminOverrideables"
       quality_of_service:
         description: "Indicates the runtime priority of the execution."
         $ref: "#/definitions/coreQualityOfService"
@@ -4611,15 +4761,9 @@ definitions:
       fixed_inputs:
         literals: {}
       role: "role"
-      quality_of_service:
-        tier: {}
-        spec:
-          queueing_budget: "queueing_budget"
       auth:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
-      raw_output_data_config:
-        output_location_prefix: "output_location_prefix"
       entity_metadata:
         schedule:
           kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4664,6 +4808,29 @@ definitions:
       annotations:
         values:
           key: "values"
+      overrides:
+        key:
+          annotations:
+            values:
+              key: "values"
+          config:
+            values:
+              key: "values"
+          security_context:
+            values:
+              key: "values"
+          labels:
+            values:
+              key: "values"
+      labels:
+        values:
+          key: "values"
+      quality_of_service:
+        tier: {}
+        spec:
+          queueing_budget: "queueing_budget"
+      raw_output_data_config:
+        output_location_prefix: "output_location_prefix"
       default_inputs:
         parameters:
           key:
@@ -4739,7 +4906,7 @@ definitions:
                   format: "format"
                 simple: {}
             required: true
-      labels:
+      security_context:
         values:
           key: "values"
       auth_role:
@@ -5481,6 +5648,35 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+  adminOverrideables:
+    type: "object"
+    properties:
+      labels:
+        description: "Custom labels for overrides."
+        $ref: "#/definitions/adminLabels"
+      annotations:
+        description: "Custom annotations for overrides."
+        $ref: "#/definitions/adminAnnotations"
+      security_context:
+        description: "Custom labels for overrides."
+        $ref: "#/definitions/adminSecurityContext"
+      config:
+        description: "Custom configs for overrides."
+        $ref: "#/definitions/adminConfig"
+    title: "Defines values that can be overriden at registration/runtime"
+    example:
+      annotations:
+        values:
+          key: "values"
+      config:
+        values:
+          key: "values"
+      security_context:
+        values:
+          key: "values"
+      labels:
+        values:
+          key: "values"
   adminPagerDutyNotification:
     type: "object"
     properties:
@@ -5781,6 +5977,20 @@ definitions:
       rate:
         unit: {}
         value: 0
+  adminSecurityContext:
+    type: "object"
+    properties:
+      values:
+        type: "object"
+        description: "Map of custom annotations to be applied to the execution resource."
+        additionalProperties:
+          type: "string"
+    description: "Security context fields to define privilege and access control settings\n\
+      In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify\
+      \ how to merge security context defined at registration and execution time."
+    example:
+      values:
+        key: "values"
   adminSlackNotification:
     type: "object"
     properties:

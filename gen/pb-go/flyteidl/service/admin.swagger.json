@@ -3006,7 +3006,7 @@
           "type": "string"
         }
       },
-      "description": "Defines permissions associated with executions created by this launch plan spec."
+      "description": "Defines permissions associated with executions created by this launch plan spec.\nDeprecated."
     },
     "adminAuthRole": {
       "type": "object",
@@ -3018,7 +3018,7 @@
           "type": "string"
         }
       },
-      "description": "Defines permissions associated with executions."
+      "title": "Defines permissions associated with executions.\nDeprecated"
     },
     "adminClusterResourceAttributes": {
       "type": "object",
@@ -3031,6 +3031,19 @@
           "description": "Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names of variables in templatized resource files.\nMap values should be the custom values which get substituted during resource creation."
         }
       }
+    },
+    "adminConfig": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom annotations to be applied to the execution resource."
+        }
+      },
+      "description": "Config values to define privilege and access control settings\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge configs defined at registration and execution time."
     },
     "adminCronSchedule": {
       "type": "object",
@@ -3305,6 +3318,17 @@
           "$ref": "#/definitions/adminAuthRole",
           "description": "Optional: auth override to apply this execution."
         },
+        "security_context": {
+          "$ref": "#/definitions/adminSecurityContext",
+          "description": "Optional: security context override to apply this execution."
+        },
+        "overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/adminOverrideables"
+          },
+          "description": "Map of tasktype to overrideable for each task type."
+        },
         "quality_of_service": {
           "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of the execution."
@@ -3495,6 +3519,17 @@
         },
         "auth_role": {
           "$ref": "#/definitions/adminAuthRole"
+        },
+        "security_context": {
+          "$ref": "#/definitions/adminSecurityContext",
+          "title": "Indicates security context for permissions triggered with this launch plan"
+        },
+        "overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/adminOverrideables"
+          },
+          "description": "Map of tasktype to overrideable for each task type."
         },
         "quality_of_service": {
           "$ref": "#/definitions/coreQualityOfService",
@@ -3879,6 +3914,28 @@
         }
       }
     },
+    "adminOverrideables": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Custom labels for overrides."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Custom annotations for overrides."
+        },
+        "security_context": {
+          "$ref": "#/definitions/adminSecurityContext",
+          "description": "Custom labels for overrides."
+        },
+        "config": {
+          "$ref": "#/definitions/adminConfig",
+          "description": "Custom configs for overrides."
+        }
+      },
+      "title": "Defines values that can be overriden at registration/runtime"
+    },
     "adminPagerDutyNotification": {
       "type": "object",
       "properties": {
@@ -4067,6 +4124,19 @@
         }
       },
       "description": "Defines complete set of information required to trigger an execution on a schedule."
+    },
+    "adminSecurityContext": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom annotations to be applied to the execution resource."
+        }
+      },
+      "description": "Security context fields to define privilege and access control settings\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge security context defined at registration and execution time."
     },
     "adminSlackNotification": {
       "type": "object",

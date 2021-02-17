@@ -712,14 +712,65 @@ values
   
 
 
+.. _api_msg_flyteidl.admin.SecurityContext:
+
+flyteidl.admin.SecurityContext
+------------------------------
+
+`[flyteidl.admin.SecurityContext proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L242>`_
+
+Security context fields to define privilege and access control settings
+In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+to specify how to merge security context defined at registration and execution time.
+
+.. code-block:: json
+
+  {
+    "values": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.SecurityContext.values:
+
+values
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of custom annotations to be applied to the execution resource.
+  
+  
+
+
+.. _api_msg_flyteidl.admin.Config:
+
+flyteidl.admin.Config
+---------------------
+
+`[flyteidl.admin.Config proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L250>`_
+
+Config values to define privilege and access control settings
+In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+to specify how to merge configs defined at registration and execution time.
+
+.. code-block:: json
+
+  {
+    "values": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.Config.values:
+
+values
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of custom annotations to be applied to the execution resource.
+  
+  
+
+
 .. _api_msg_flyteidl.admin.AuthRole:
 
 flyteidl.admin.AuthRole
 -----------------------
 
-`[flyteidl.admin.AuthRole proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L240>`_
+`[flyteidl.admin.AuthRole proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L257>`_
 
 Defines permissions associated with executions.
+Deprecated
 
 .. code-block:: json
 
@@ -746,12 +797,56 @@ kubernetes_service_account
   
 
 
+.. _api_msg_flyteidl.admin.Overrideables:
+
+flyteidl.admin.Overrideables
+----------------------------
+
+`[flyteidl.admin.Overrideables proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L265>`_
+
+Defines values that can be overriden at registration/runtime
+
+.. code-block:: json
+
+  {
+    "labels": "{...}",
+    "annotations": "{...}",
+    "security_context": "{...}",
+    "config": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.Overrideables.labels:
+
+labels
+  (:ref:`flyteidl.admin.Labels <api_msg_flyteidl.admin.Labels>`) Custom labels for overrides.
+  
+  
+.. _api_field_flyteidl.admin.Overrideables.annotations:
+
+annotations
+  (:ref:`flyteidl.admin.Annotations <api_msg_flyteidl.admin.Annotations>`) Custom annotations for overrides.
+  
+  
+.. _api_field_flyteidl.admin.Overrideables.security_context:
+
+security_context
+  (:ref:`flyteidl.admin.SecurityContext <api_msg_flyteidl.admin.SecurityContext>`) Custom labels for overrides.
+  
+  
+.. _api_field_flyteidl.admin.Overrideables.config:
+
+config
+  (:ref:`flyteidl.admin.Config <api_msg_flyteidl.admin.Config>`) Custom configs for overrides.
+  
+  
+
+
 .. _api_msg_flyteidl.admin.RawOutputDataConfig:
 
 flyteidl.admin.RawOutputDataConfig
 ----------------------------------
 
-`[flyteidl.admin.RawOutputDataConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L249>`_
+`[flyteidl.admin.RawOutputDataConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L281>`_
 
 Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
 See https://github.com/lyft/flyte/issues/211 for more background information.

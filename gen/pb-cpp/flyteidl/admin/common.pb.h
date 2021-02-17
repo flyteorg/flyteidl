@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fadmin_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[24]
+  static const ::google::protobuf::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -65,6 +65,12 @@ extern Annotations_ValuesEntry_DoNotUseDefaultTypeInternal _Annotations_ValuesEn
 class AuthRole;
 class AuthRoleDefaultTypeInternal;
 extern AuthRoleDefaultTypeInternal _AuthRole_default_instance_;
+class Config;
+class ConfigDefaultTypeInternal;
+extern ConfigDefaultTypeInternal _Config_default_instance_;
+class Config_ValuesEntry_DoNotUse;
+class Config_ValuesEntry_DoNotUseDefaultTypeInternal;
+extern Config_ValuesEntry_DoNotUseDefaultTypeInternal _Config_ValuesEntry_DoNotUse_default_instance_;
 class EmailNotification;
 class EmailNotificationDefaultTypeInternal;
 extern EmailNotificationDefaultTypeInternal _EmailNotification_default_instance_;
@@ -110,6 +116,9 @@ extern NotificationDefaultTypeInternal _Notification_default_instance_;
 class ObjectGetRequest;
 class ObjectGetRequestDefaultTypeInternal;
 extern ObjectGetRequestDefaultTypeInternal _ObjectGetRequest_default_instance_;
+class Overrideables;
+class OverrideablesDefaultTypeInternal;
+extern OverrideablesDefaultTypeInternal _Overrideables_default_instance_;
 class PagerDutyNotification;
 class PagerDutyNotificationDefaultTypeInternal;
 extern PagerDutyNotificationDefaultTypeInternal _PagerDutyNotification_default_instance_;
@@ -119,6 +128,12 @@ extern RawOutputDataConfigDefaultTypeInternal _RawOutputDataConfig_default_insta
 class ResourceListRequest;
 class ResourceListRequestDefaultTypeInternal;
 extern ResourceListRequestDefaultTypeInternal _ResourceListRequest_default_instance_;
+class SecurityContext;
+class SecurityContextDefaultTypeInternal;
+extern SecurityContextDefaultTypeInternal _SecurityContext_default_instance_;
+class SecurityContext_ValuesEntry_DoNotUse;
+class SecurityContext_ValuesEntry_DoNotUseDefaultTypeInternal;
+extern SecurityContext_ValuesEntry_DoNotUseDefaultTypeInternal _SecurityContext_ValuesEntry_DoNotUse_default_instance_;
 class SlackNotification;
 class SlackNotificationDefaultTypeInternal;
 extern SlackNotificationDefaultTypeInternal _SlackNotification_default_instance_;
@@ -135,6 +150,8 @@ namespace protobuf {
 template<> ::flyteidl::admin::Annotations* Arena::CreateMaybeMessage<::flyteidl::admin::Annotations>(Arena*);
 template<> ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Annotations_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage<::flyteidl::admin::AuthRole>(Arena*);
+template<> ::flyteidl::admin::Config* Arena::CreateMaybeMessage<::flyteidl::admin::Config>(Arena*);
+template<> ::flyteidl::admin::Config_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Config_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::EmailNotification* Arena::CreateMaybeMessage<::flyteidl::admin::EmailNotification>(Arena*);
 template<> ::flyteidl::admin::Labels* Arena::CreateMaybeMessage<::flyteidl::admin::Labels>(Arena*);
 template<> ::flyteidl::admin::Labels_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Labels_ValuesEntry_DoNotUse>(Arena*);
@@ -150,9 +167,12 @@ template<> ::flyteidl::admin::NamedEntityUpdateRequest* Arena::CreateMaybeMessag
 template<> ::flyteidl::admin::NamedEntityUpdateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::NamedEntityUpdateResponse>(Arena*);
 template<> ::flyteidl::admin::Notification* Arena::CreateMaybeMessage<::flyteidl::admin::Notification>(Arena*);
 template<> ::flyteidl::admin::ObjectGetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ObjectGetRequest>(Arena*);
+template<> ::flyteidl::admin::Overrideables* Arena::CreateMaybeMessage<::flyteidl::admin::Overrideables>(Arena*);
 template<> ::flyteidl::admin::PagerDutyNotification* Arena::CreateMaybeMessage<::flyteidl::admin::PagerDutyNotification>(Arena*);
 template<> ::flyteidl::admin::RawOutputDataConfig* Arena::CreateMaybeMessage<::flyteidl::admin::RawOutputDataConfig>(Arena*);
 template<> ::flyteidl::admin::ResourceListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ResourceListRequest>(Arena*);
+template<> ::flyteidl::admin::SecurityContext* Arena::CreateMaybeMessage<::flyteidl::admin::SecurityContext>(Arena*);
+template<> ::flyteidl::admin::SecurityContext_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::SecurityContext_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::SlackNotification* Arena::CreateMaybeMessage<::flyteidl::admin::SlackNotification>(Arena*);
 template<> ::flyteidl::admin::Sort* Arena::CreateMaybeMessage<::flyteidl::admin::Sort>(Arena*);
 template<> ::flyteidl::admin::UrlBlob* Arena::CreateMaybeMessage<::flyteidl::admin::UrlBlob>(Arena*);
@@ -3009,6 +3029,296 @@ class Annotations final :
 };
 // -------------------------------------------------------------------
 
+class SecurityContext_ValuesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<SecurityContext_ValuesEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<SecurityContext_ValuesEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  SecurityContext_ValuesEntry_DoNotUse();
+  SecurityContext_ValuesEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const SecurityContext_ValuesEntry_DoNotUse& other);
+  static const SecurityContext_ValuesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const SecurityContext_ValuesEntry_DoNotUse*>(&_SecurityContext_ValuesEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class SecurityContext final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.SecurityContext) */ {
+ public:
+  SecurityContext();
+  virtual ~SecurityContext();
+
+  SecurityContext(const SecurityContext& from);
+
+  inline SecurityContext& operator=(const SecurityContext& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SecurityContext(SecurityContext&& from) noexcept
+    : SecurityContext() {
+    *this = ::std::move(from);
+  }
+
+  inline SecurityContext& operator=(SecurityContext&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const SecurityContext& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SecurityContext* internal_default_instance() {
+    return reinterpret_cast<const SecurityContext*>(
+               &_SecurityContext_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(SecurityContext* other);
+  friend void swap(SecurityContext& a, SecurityContext& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SecurityContext* New() const final {
+    return CreateMaybeMessage<SecurityContext>(nullptr);
+  }
+
+  SecurityContext* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SecurityContext>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SecurityContext& from);
+  void MergeFrom(const SecurityContext& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SecurityContext* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      values() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_values();
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.SecurityContext)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      SecurityContext_ValuesEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > values_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Config_ValuesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Config_ValuesEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<Config_ValuesEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  Config_ValuesEntry_DoNotUse();
+  Config_ValuesEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Config_ValuesEntry_DoNotUse& other);
+  static const Config_ValuesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Config_ValuesEntry_DoNotUse*>(&_Config_ValuesEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class Config final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Config) */ {
+ public:
+  Config();
+  virtual ~Config();
+
+  Config(const Config& from);
+
+  inline Config& operator=(const Config& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Config(Config&& from) noexcept
+    : Config() {
+    *this = ::std::move(from);
+  }
+
+  inline Config& operator=(Config&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Config& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Config* internal_default_instance() {
+    return reinterpret_cast<const Config*>(
+               &_Config_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(Config* other);
+  friend void swap(Config& a, Config& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Config* New() const final {
+    return CreateMaybeMessage<Config>(nullptr);
+  }
+
+  Config* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Config>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Config& from);
+  void MergeFrom(const Config& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Config* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      values() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_values();
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Config)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Config_ValuesEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > values_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class AuthRole final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.AuthRole) */ {
  public:
@@ -3053,7 +3363,7 @@ class AuthRole final :
                &_AuthRole_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   void Swap(AuthRole* other);
   friend void swap(AuthRole& a, AuthRole& b) {
@@ -3168,6 +3478,151 @@ class AuthRole final :
 };
 // -------------------------------------------------------------------
 
+class Overrideables final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Overrideables) */ {
+ public:
+  Overrideables();
+  virtual ~Overrideables();
+
+  Overrideables(const Overrideables& from);
+
+  inline Overrideables& operator=(const Overrideables& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Overrideables(Overrideables&& from) noexcept
+    : Overrideables() {
+    *this = ::std::move(from);
+  }
+
+  inline Overrideables& operator=(Overrideables&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Overrideables& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Overrideables* internal_default_instance() {
+    return reinterpret_cast<const Overrideables*>(
+               &_Overrideables_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  void Swap(Overrideables* other);
+  friend void swap(Overrideables& a, Overrideables& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Overrideables* New() const final {
+    return CreateMaybeMessage<Overrideables>(nullptr);
+  }
+
+  Overrideables* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Overrideables>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Overrideables& from);
+  void MergeFrom(const Overrideables& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Overrideables* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.admin.Labels labels = 1;
+  bool has_labels() const;
+  void clear_labels();
+  static const int kLabelsFieldNumber = 1;
+  const ::flyteidl::admin::Labels& labels() const;
+  ::flyteidl::admin::Labels* release_labels();
+  ::flyteidl::admin::Labels* mutable_labels();
+  void set_allocated_labels(::flyteidl::admin::Labels* labels);
+
+  // .flyteidl.admin.Annotations annotations = 2;
+  bool has_annotations() const;
+  void clear_annotations();
+  static const int kAnnotationsFieldNumber = 2;
+  const ::flyteidl::admin::Annotations& annotations() const;
+  ::flyteidl::admin::Annotations* release_annotations();
+  ::flyteidl::admin::Annotations* mutable_annotations();
+  void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
+
+  // .flyteidl.admin.SecurityContext security_context = 3;
+  bool has_security_context() const;
+  void clear_security_context();
+  static const int kSecurityContextFieldNumber = 3;
+  const ::flyteidl::admin::SecurityContext& security_context() const;
+  ::flyteidl::admin::SecurityContext* release_security_context();
+  ::flyteidl::admin::SecurityContext* mutable_security_context();
+  void set_allocated_security_context(::flyteidl::admin::SecurityContext* security_context);
+
+  // .flyteidl.admin.Config config = 4;
+  bool has_config() const;
+  void clear_config();
+  static const int kConfigFieldNumber = 4;
+  const ::flyteidl::admin::Config& config() const;
+  ::flyteidl::admin::Config* release_config();
+  ::flyteidl::admin::Config* mutable_config();
+  void set_allocated_config(::flyteidl::admin::Config* config);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Overrideables)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::admin::Labels* labels_;
+  ::flyteidl::admin::Annotations* annotations_;
+  ::flyteidl::admin::SecurityContext* security_context_;
+  ::flyteidl::admin::Config* config_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class RawOutputDataConfig final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.RawOutputDataConfig) */ {
  public:
@@ -3206,7 +3661,7 @@ class RawOutputDataConfig final :
                &_RawOutputDataConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    28;
 
   void Swap(RawOutputDataConfig* other);
   friend void swap(RawOutputDataConfig& a, RawOutputDataConfig& b) {
@@ -5442,6 +5897,54 @@ Annotations::mutable_values() {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// SecurityContext
+
+// map<string, string> values = 1;
+inline int SecurityContext::values_size() const {
+  return values_.size();
+}
+inline void SecurityContext::clear_values() {
+  values_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+SecurityContext::values() const {
+  // @@protoc_insertion_point(field_map:flyteidl.admin.SecurityContext.values)
+  return values_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+SecurityContext::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.SecurityContext.values)
+  return values_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// Config
+
+// map<string, string> values = 1;
+inline int Config::values_size() const {
+  return values_.size();
+}
+inline void Config::clear_values() {
+  values_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Config::values() const {
+  // @@protoc_insertion_point(field_map:flyteidl.admin.Config.values)
+  return values_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Config::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.Config.values)
+  return values_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
 // AuthRole
 
 // string assumable_iam_role = 1;
@@ -5639,6 +6142,214 @@ inline AuthRole::MethodCase AuthRole::method_case() const {
 }
 // -------------------------------------------------------------------
 
+// Overrideables
+
+// .flyteidl.admin.Labels labels = 1;
+inline bool Overrideables::has_labels() const {
+  return this != internal_default_instance() && labels_ != nullptr;
+}
+inline void Overrideables::clear_labels() {
+  if (GetArenaNoVirtual() == nullptr && labels_ != nullptr) {
+    delete labels_;
+  }
+  labels_ = nullptr;
+}
+inline const ::flyteidl::admin::Labels& Overrideables::labels() const {
+  const ::flyteidl::admin::Labels* p = labels_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Overrideables.labels)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Labels*>(
+      &::flyteidl::admin::_Labels_default_instance_);
+}
+inline ::flyteidl::admin::Labels* Overrideables::release_labels() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Overrideables.labels)
+  
+  ::flyteidl::admin::Labels* temp = labels_;
+  labels_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::Labels* Overrideables::mutable_labels() {
+  
+  if (labels_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Labels>(GetArenaNoVirtual());
+    labels_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Overrideables.labels)
+  return labels_;
+}
+inline void Overrideables::set_allocated_labels(::flyteidl::admin::Labels* labels) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete labels_;
+  }
+  if (labels) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      labels = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, labels, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  labels_ = labels;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Overrideables.labels)
+}
+
+// .flyteidl.admin.Annotations annotations = 2;
+inline bool Overrideables::has_annotations() const {
+  return this != internal_default_instance() && annotations_ != nullptr;
+}
+inline void Overrideables::clear_annotations() {
+  if (GetArenaNoVirtual() == nullptr && annotations_ != nullptr) {
+    delete annotations_;
+  }
+  annotations_ = nullptr;
+}
+inline const ::flyteidl::admin::Annotations& Overrideables::annotations() const {
+  const ::flyteidl::admin::Annotations* p = annotations_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Overrideables.annotations)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Annotations*>(
+      &::flyteidl::admin::_Annotations_default_instance_);
+}
+inline ::flyteidl::admin::Annotations* Overrideables::release_annotations() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Overrideables.annotations)
+  
+  ::flyteidl::admin::Annotations* temp = annotations_;
+  annotations_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::Annotations* Overrideables::mutable_annotations() {
+  
+  if (annotations_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Annotations>(GetArenaNoVirtual());
+    annotations_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Overrideables.annotations)
+  return annotations_;
+}
+inline void Overrideables::set_allocated_annotations(::flyteidl::admin::Annotations* annotations) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete annotations_;
+  }
+  if (annotations) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      annotations = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, annotations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  annotations_ = annotations;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Overrideables.annotations)
+}
+
+// .flyteidl.admin.SecurityContext security_context = 3;
+inline bool Overrideables::has_security_context() const {
+  return this != internal_default_instance() && security_context_ != nullptr;
+}
+inline void Overrideables::clear_security_context() {
+  if (GetArenaNoVirtual() == nullptr && security_context_ != nullptr) {
+    delete security_context_;
+  }
+  security_context_ = nullptr;
+}
+inline const ::flyteidl::admin::SecurityContext& Overrideables::security_context() const {
+  const ::flyteidl::admin::SecurityContext* p = security_context_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Overrideables.security_context)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::SecurityContext*>(
+      &::flyteidl::admin::_SecurityContext_default_instance_);
+}
+inline ::flyteidl::admin::SecurityContext* Overrideables::release_security_context() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Overrideables.security_context)
+  
+  ::flyteidl::admin::SecurityContext* temp = security_context_;
+  security_context_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::SecurityContext* Overrideables::mutable_security_context() {
+  
+  if (security_context_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::SecurityContext>(GetArenaNoVirtual());
+    security_context_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Overrideables.security_context)
+  return security_context_;
+}
+inline void Overrideables::set_allocated_security_context(::flyteidl::admin::SecurityContext* security_context) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete security_context_;
+  }
+  if (security_context) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      security_context = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, security_context, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  security_context_ = security_context;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Overrideables.security_context)
+}
+
+// .flyteidl.admin.Config config = 4;
+inline bool Overrideables::has_config() const {
+  return this != internal_default_instance() && config_ != nullptr;
+}
+inline void Overrideables::clear_config() {
+  if (GetArenaNoVirtual() == nullptr && config_ != nullptr) {
+    delete config_;
+  }
+  config_ = nullptr;
+}
+inline const ::flyteidl::admin::Config& Overrideables::config() const {
+  const ::flyteidl::admin::Config* p = config_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Overrideables.config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Config*>(
+      &::flyteidl::admin::_Config_default_instance_);
+}
+inline ::flyteidl::admin::Config* Overrideables::release_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Overrideables.config)
+  
+  ::flyteidl::admin::Config* temp = config_;
+  config_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::Config* Overrideables::mutable_config() {
+  
+  if (config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Config>(GetArenaNoVirtual());
+    config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Overrideables.config)
+  return config_;
+}
+inline void Overrideables::set_allocated_config(::flyteidl::admin::Config* config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete config_;
+  }
+  if (config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  config_ = config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Overrideables.config)
+}
+
+// -------------------------------------------------------------------
+
 // RawOutputDataConfig
 
 // string output_location_prefix = 1;
@@ -5697,6 +6408,16 @@ inline void RawOutputDataConfig::set_allocated_output_location_prefix(::std::str
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1598,6 +1598,139 @@ var _ interface {
 	ErrorName() string
 } = AnnotationsValidationError{}
 
+// Validate checks the field values on SecurityContext with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *SecurityContext) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Values
+
+	return nil
+}
+
+// SecurityContextValidationError is the validation error returned by
+// SecurityContext.Validate if the designated constraints aren't met.
+type SecurityContextValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SecurityContextValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SecurityContextValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SecurityContextValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SecurityContextValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SecurityContextValidationError) ErrorName() string { return "SecurityContextValidationError" }
+
+// Error satisfies the builtin error interface
+func (e SecurityContextValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSecurityContext.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SecurityContextValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SecurityContextValidationError{}
+
+// Validate checks the field values on Config with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Config) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Values
+
+	return nil
+}
+
+// ConfigValidationError is the validation error returned by Config.Validate if
+// the designated constraints aren't met.
+type ConfigValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ConfigValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ConfigValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ConfigValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ConfigValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ConfigValidationError) ErrorName() string { return "ConfigValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ConfigValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sConfig.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ConfigValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ConfigValidationError{}
+
 // Validate checks the field values on AuthRole with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *AuthRole) Validate() error {
@@ -1671,6 +1804,111 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = AuthRoleValidationError{}
+
+// Validate checks the field values on Overrideables with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Overrideables) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetLabels()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return OverrideablesValidationError{
+				field:  "Labels",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAnnotations()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return OverrideablesValidationError{
+				field:  "Annotations",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetSecurityContext()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return OverrideablesValidationError{
+				field:  "SecurityContext",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetConfig()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return OverrideablesValidationError{
+				field:  "Config",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// OverrideablesValidationError is the validation error returned by
+// Overrideables.Validate if the designated constraints aren't met.
+type OverrideablesValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e OverrideablesValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e OverrideablesValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e OverrideablesValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e OverrideablesValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e OverrideablesValidationError) ErrorName() string { return "OverrideablesValidationError" }
+
+// Error satisfies the builtin error interface
+func (e OverrideablesValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sOverrideables.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = OverrideablesValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = OverrideablesValidationError{}
 
 // Validate checks the field values on RawOutputDataConfig with the rules
 // defined in the proto definition for this message. If any rules are

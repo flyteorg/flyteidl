@@ -23,6 +23,9 @@ type AdminLaunchPlanSpec struct {
 	// Indicates the permission associated with workflow executions triggered with this launch plan.
 	Auth *AdminAuth `json:"auth,omitempty"`
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
+	SecurityContext *AdminSecurityContext `json:"security_context,omitempty"`
+	// Map of tasktype to overrideable for each task type.
+	Overrides map[string]AdminOverrideables `json:"overrides,omitempty"`
 	// Indicates the runtime priority of the execution.
 	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
 	RawOutputDataConfig *AdminRawOutputDataConfig `json:"raw_output_data_config,omitempty"`
