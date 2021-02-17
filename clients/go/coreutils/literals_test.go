@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
-	"github.com/lyft/flytestdlib/storage"
+	"github.com/flyteorg/flytestdlib/storage"
 
 	"github.com/golang/protobuf/ptypes"
 	structpb "github.com/golang/protobuf/ptypes/struct"

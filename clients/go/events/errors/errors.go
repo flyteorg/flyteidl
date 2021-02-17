@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin"
-	"github.com/lyft/flytestdlib/logger"
+	"github.com/flyteorg/flytestdlib/logger"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
