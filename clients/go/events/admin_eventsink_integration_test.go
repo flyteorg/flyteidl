@@ -6,12 +6,12 @@ package events
 import (
 	"context"
 	"fmt"
+	"github.com/stretchr/testify/assert"
 	netUrl "net/url"
 	"testing"
 	"time"
 
 	"github.com/golang/protobuf/ptypes"
-	"github.com/influxdata/influxdb/pkg/testing/assert"
 	"github.com/lyft/flyteidl/clients/go/admin"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
