@@ -1221,7 +1221,7 @@ func (m *Annotations) GetValues() map[string]string {
 // In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 // to specify how to merge security context defined at registration and execution time.
 type SecurityContext struct {
-	// Map of custom annotations to be applied to the execution resource.
+	// Map of security context values
 	Values               map[string]string `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
@@ -1264,7 +1264,7 @@ func (m *SecurityContext) GetValues() map[string]string {
 // In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 // to specify how to merge configs defined at registration and execution time.
 type Config struct {
-	// Map of custom annotations to be applied to the execution resource.
+	// Map of custom config values
 	Values               map[string]string `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`

@@ -18947,7 +18947,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -18955,7 +18955,7 @@ public final class Common {
     int getValuesCount();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -18970,7 +18970,7 @@ public final class Common {
     getValues();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -18979,7 +18979,7 @@ public final class Common {
     getValuesMap();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -18990,7 +18990,7 @@ public final class Common {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19129,7 +19129,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19149,7 +19149,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19160,7 +19160,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19176,7 +19176,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of security context values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19563,7 +19563,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19583,7 +19583,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19594,7 +19594,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19610,7 +19610,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19634,7 +19634,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19657,7 +19657,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19673,7 +19673,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of security context values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19744,7 +19744,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19752,7 +19752,7 @@ public final class Common {
     int getValuesCount();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19767,7 +19767,7 @@ public final class Common {
     getValues();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19776,7 +19776,7 @@ public final class Common {
     getValuesMap();
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19787,7 +19787,7 @@ public final class Common {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19926,7 +19926,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19946,7 +19946,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19957,7 +19957,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -19973,7 +19973,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Map of custom annotations to be applied to the execution resource.
+     * Map of custom config values
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20360,7 +20360,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20380,7 +20380,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20391,7 +20391,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20407,7 +20407,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20431,7 +20431,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20454,7 +20454,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>
@@ -20470,7 +20470,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Map of custom annotations to be applied to the execution resource.
+       * Map of custom config values
        * </pre>
        *
        * <code>map&lt;string, string&gt; values = 1;</code>

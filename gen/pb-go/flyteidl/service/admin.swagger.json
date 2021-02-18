@@ -3040,7 +3040,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Map of custom annotations to be applied to the execution resource."
+          "title": "Map of custom config values"
         }
       },
       "description": "Config values to define privilege and access control settings\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge configs defined at registration and execution time."
@@ -4133,7 +4133,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Map of custom annotations to be applied to the execution resource."
+          "title": "Map of security context values"
         }
       },
       "description": "Security context fields to define privilege and access control settings\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge security context defined at registration and execution time."

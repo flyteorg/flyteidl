@@ -732,7 +732,7 @@ to specify how to merge security context defined at registration and execution t
 .. _api_field_flyteidl.admin.SecurityContext.values:
 
 values
-  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of custom annotations to be applied to the execution resource.
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of security context values
   
   
 
@@ -757,7 +757,7 @@ to specify how to merge configs defined at registration and execution time.
 .. _api_field_flyteidl.admin.Config.values:
 
 values
-  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of custom annotations to be applied to the execution resource.
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Map of custom config values
   
   
 

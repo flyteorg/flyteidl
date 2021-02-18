@@ -51,7 +51,6 @@ class AdminSecurityContext(object):
     def values(self):
         """Gets the values of this AdminSecurityContext.  # noqa: E501
 
-        Map of custom annotations to be applied to the execution resource.  # noqa: E501
 
         :return: The values of this AdminSecurityContext.  # noqa: E501
         :rtype: dict(str, str)
@@ -62,7 +61,6 @@ class AdminSecurityContext(object):
     def values(self, values):
         """Sets the values of this AdminSecurityContext.
 
-        Map of custom annotations to be applied to the execution resource.  # noqa: E501
 
         :param values: The values of this AdminSecurityContext.  # noqa: E501
         :type: dict(str, str)

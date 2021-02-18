@@ -11,6 +11,5 @@ package flyteadmin
 
 // Security context fields to define privilege and access control settings In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined to specify how to merge security context defined at registration and execution time.
 type AdminSecurityContext struct {
-	// Map of custom annotations to be applied to the execution resource.
 	Values map[string]string `json:"values,omitempty"`
 }

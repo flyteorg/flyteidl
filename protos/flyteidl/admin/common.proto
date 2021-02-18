@@ -241,7 +241,7 @@ message Annotations {
 // In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 // to specify how to merge security context defined at registration and execution time.
 message SecurityContext {
-    // Map of custom annotations to be applied to the execution resource.
+    // Map of security context values
     map<string, string> values          = 1;
 }
 
@@ -249,7 +249,7 @@ message SecurityContext {
 // In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 // to specify how to merge configs defined at registration and execution time.
 message Config {
-    // Map of custom annotations to be applied to the execution resource.
+    // Map of custom config values
     map<string, string> values          = 1;
 }
 

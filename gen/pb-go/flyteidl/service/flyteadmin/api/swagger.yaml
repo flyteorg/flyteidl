@@ -2706,7 +2706,7 @@ definitions:
     properties:
       values:
         type: "object"
-        description: "Map of custom annotations to be applied to the execution resource."
+        title: "Map of custom config values"
         additionalProperties:
           type: "string"
     description: "Config values to define privilege and access control settings\n\
@@ -5982,7 +5982,7 @@ definitions:
     properties:
       values:
         type: "object"
-        description: "Map of custom annotations to be applied to the execution resource."
+        title: "Map of security context values"
         additionalProperties:
           type: "string"
     description: "Security context fields to define privilege and access control settings\n\
