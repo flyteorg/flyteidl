@@ -5,8 +5,8 @@ package plugins
 
 import (
 	fmt "fmt"
+	_ "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	math "math"
 )
 

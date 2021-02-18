@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 )
 
 func MakePrimitive(v interface{}) (*core.Primitive, error) {

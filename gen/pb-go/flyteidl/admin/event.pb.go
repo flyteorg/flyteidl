@@ -5,8 +5,8 @@ package admin
 
 import (
 	fmt "fmt"
+	event "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event"
 	proto "github.com/golang/protobuf/proto"
-	event "github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	math "math"
 )
 

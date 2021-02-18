@@ -6,9 +6,9 @@ package service
 import (
 	context "context"
 	fmt "fmt"
+	admin "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
-	admin "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
