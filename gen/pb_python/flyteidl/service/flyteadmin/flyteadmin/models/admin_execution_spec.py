@@ -21,7 +21,6 @@ from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_notification_list import AdminNotificationList  # noqa: F401,E501
-from flyteadmin.models.admin_overrideables import AdminOverrideables  # noqa: F401,E501
 from flyteadmin.models.admin_security_context import AdminSecurityContext  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
@@ -51,7 +50,6 @@ class AdminExecutionSpec(object):
         'annotations': 'AdminAnnotations',
         'auth_role': 'AdminAuthRole',
         'security_context': 'AdminSecurityContext',
-        'overrides': 'dict(str, AdminOverrideables)',
         'quality_of_service': 'CoreQualityOfService'
     }
 
@@ -65,11 +63,10 @@ class AdminExecutionSpec(object):
         'annotations': 'annotations',
         'auth_role': 'auth_role',
         'security_context': 'security_context',
-        'overrides': 'overrides',
         'quality_of_service': 'quality_of_service'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, auth_role=None, security_context=None, overrides=None, quality_of_service=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, auth_role=None, security_context=None, quality_of_service=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -81,7 +78,6 @@ class AdminExecutionSpec(object):
         self._annotations = None
         self._auth_role = None
         self._security_context = None
-        self._overrides = None
         self._quality_of_service = None
         self.discriminator = None
 
@@ -103,8 +99,6 @@ class AdminExecutionSpec(object):
             self.auth_role = auth_role
         if security_context is not None:
             self.security_context = security_context
-        if overrides is not None:
-            self.overrides = overrides
         if quality_of_service is not None:
             self.quality_of_service = quality_of_service
 
@@ -308,29 +302,6 @@ class AdminExecutionSpec(object):
         """
 
         self._security_context = security_context
-
-    @property
-    def overrides(self):
-        """Gets the overrides of this AdminExecutionSpec.  # noqa: E501
-
-        Map of tasktype to overrideable for each task type.  # noqa: E501
-
-        :return: The overrides of this AdminExecutionSpec.  # noqa: E501
-        :rtype: dict(str, AdminOverrideables)
-        """
-        return self._overrides
-
-    @overrides.setter
-    def overrides(self, overrides):
-        """Sets the overrides of this AdminExecutionSpec.
-
-        Map of tasktype to overrideable for each task type.  # noqa: E501
-
-        :param overrides: The overrides of this AdminExecutionSpec.  # noqa: E501
-        :type: dict(str, AdminOverrideables)
-        """
-
-        self._overrides = overrides
 
     @property
     def quality_of_service(self):

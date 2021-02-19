@@ -6697,58 +6697,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a Config. */
-        interface IConfig {
-
-            /** Config values */
-            values?: ({ [k: string]: string }|null);
-        }
-
-        /** Represents a Config. */
-        class Config implements IConfig {
-
-            /**
-             * Constructs a new Config.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IConfig);
-
-            /** Config values. */
-            public values: { [k: string]: string };
-
-            /**
-             * Creates a new Config instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Config instance
-             */
-            public static create(properties?: flyteidl.admin.IConfig): flyteidl.admin.Config;
-
-            /**
-             * Encodes the specified Config message. Does not implicitly {@link flyteidl.admin.Config.verify|verify} messages.
-             * @param message Config message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IConfig, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Config message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Config
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Config;
-
-            /**
-             * Verifies a Config message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of an AuthRole. */
         interface IAuthRole {
 
@@ -6804,76 +6752,6 @@ export namespace flyteidl {
 
             /**
              * Verifies an AuthRole message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an Overrideables. */
-        interface IOverrideables {
-
-            /** Overrideables labels */
-            labels?: (flyteidl.admin.ILabels|null);
-
-            /** Overrideables annotations */
-            annotations?: (flyteidl.admin.IAnnotations|null);
-
-            /** Overrideables securityContext */
-            securityContext?: (flyteidl.admin.ISecurityContext|null);
-
-            /** Overrideables config */
-            config?: (flyteidl.admin.IConfig|null);
-        }
-
-        /** Represents an Overrideables. */
-        class Overrideables implements IOverrideables {
-
-            /**
-             * Constructs a new Overrideables.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IOverrideables);
-
-            /** Overrideables labels. */
-            public labels?: (flyteidl.admin.ILabels|null);
-
-            /** Overrideables annotations. */
-            public annotations?: (flyteidl.admin.IAnnotations|null);
-
-            /** Overrideables securityContext. */
-            public securityContext?: (flyteidl.admin.ISecurityContext|null);
-
-            /** Overrideables config. */
-            public config?: (flyteidl.admin.IConfig|null);
-
-            /**
-             * Creates a new Overrideables instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Overrideables instance
-             */
-            public static create(properties?: flyteidl.admin.IOverrideables): flyteidl.admin.Overrideables;
-
-            /**
-             * Encodes the specified Overrideables message. Does not implicitly {@link flyteidl.admin.Overrideables.verify|verify} messages.
-             * @param message Overrideables message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IOverrideables, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an Overrideables message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Overrideables
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Overrideables;
-
-            /**
-             * Verifies an Overrideables message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8185,9 +8063,6 @@ export namespace flyteidl {
             /** ExecutionSpec securityContext */
             securityContext?: (flyteidl.admin.ISecurityContext|null);
 
-            /** ExecutionSpec overrides */
-            overrides?: ({ [k: string]: flyteidl.admin.IOverrideables }|null);
-
             /** ExecutionSpec qualityOfService */
             qualityOfService?: (flyteidl.core.IQualityOfService|null);
         }
@@ -8227,9 +8102,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec securityContext. */
             public securityContext?: (flyteidl.admin.ISecurityContext|null);
-
-            /** ExecutionSpec overrides. */
-            public overrides: { [k: string]: flyteidl.admin.IOverrideables };
 
             /** ExecutionSpec qualityOfService. */
             public qualityOfService?: (flyteidl.core.IQualityOfService|null);
@@ -8822,9 +8694,6 @@ export namespace flyteidl {
             /** LaunchPlanSpec securityContext */
             securityContext?: (flyteidl.admin.ISecurityContext|null);
 
-            /** LaunchPlanSpec overrides */
-            overrides?: ({ [k: string]: flyteidl.admin.IOverrideables }|null);
-
             /** LaunchPlanSpec qualityOfService */
             qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
@@ -8870,9 +8739,6 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec securityContext. */
             public securityContext?: (flyteidl.admin.ISecurityContext|null);
-
-            /** LaunchPlanSpec overrides. */
-            public overrides: { [k: string]: flyteidl.admin.IOverrideables };
 
             /** LaunchPlanSpec qualityOfService. */
             public qualityOfService?: (flyteidl.core.IQualityOfService|null);

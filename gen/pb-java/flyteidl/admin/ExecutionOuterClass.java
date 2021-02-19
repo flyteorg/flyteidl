@@ -14924,60 +14924,6 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-    int getOverridesCount();
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-    boolean containsOverrides(
-        java.lang.String key);
-    /**
-     * Use {@link #getOverridesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables>
-    getOverrides();
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-    java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables>
-    getOverridesMap();
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    flyteidl.admin.Common.Overrideables getOverridesOrDefault(
-        java.lang.String key,
-        flyteidl.admin.Common.Overrideables defaultValue);
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    flyteidl.admin.Common.Overrideables getOverridesOrThrow(
-        java.lang.String key);
-
-    /**
-     * <pre>
      * Indicates the runtime priority of the execution. 
      * </pre>
      *
@@ -15170,19 +15116,6 @@ public final class ExecutionOuterClass {
 
               break;
             }
-            case 146: {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                overrides_ = com.google.protobuf.MapField.newMapField(
-                    OverridesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000200;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, flyteidl.admin.Common.Overrideables>
-              overrides__ = input.readMessage(
-                  OverridesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              overrides_.getMutableMap().put(
-                  overrides__.getKey(), overrides__.getValue());
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -15207,18 +15140,6 @@ public final class ExecutionOuterClass {
       return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionSpec_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 18:
-          return internalGetOverrides();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -15227,7 +15148,6 @@ public final class ExecutionOuterClass {
               flyteidl.admin.ExecutionOuterClass.ExecutionSpec.class, flyteidl.admin.ExecutionOuterClass.ExecutionSpec.Builder.class);
     }
 
-    private int bitField0_;
     private int notificationOverridesCase_ = 0;
     private java.lang.Object notificationOverrides_;
     public enum NotificationOverridesCase
@@ -15556,98 +15476,6 @@ public final class ExecutionOuterClass {
       return getSecurityContext();
     }
 
-    public static final int OVERRIDES_FIELD_NUMBER = 18;
-    private static final class OverridesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, flyteidl.admin.Common.Overrideables> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, flyteidl.admin.Common.Overrideables>newDefaultInstance(
-                  flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  flyteidl.admin.Common.Overrideables.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, flyteidl.admin.Common.Overrideables> overrides_;
-    private com.google.protobuf.MapField<java.lang.String, flyteidl.admin.Common.Overrideables>
-    internalGetOverrides() {
-      if (overrides_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            OverridesDefaultEntryHolder.defaultEntry);
-      }
-      return overrides_;
-    }
-
-    public int getOverridesCount() {
-      return internalGetOverrides().getMap().size();
-    }
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    public boolean containsOverrides(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetOverrides().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getOverridesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> getOverrides() {
-      return getOverridesMap();
-    }
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    public java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> getOverridesMap() {
-      return internalGetOverrides().getMap();
-    }
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    public flyteidl.admin.Common.Overrideables getOverridesOrDefault(
-        java.lang.String key,
-        flyteidl.admin.Common.Overrideables defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> map =
-          internalGetOverrides().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Map of tasktype to overrideable for each task type.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-     */
-
-    public flyteidl.admin.Common.Overrideables getOverridesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> map =
-          internalGetOverrides().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
     public static final int QUALITY_OF_SERVICE_FIELD_NUMBER = 17;
     private flyteidl.core.Execution.QualityOfService qualityOfService_;
     /**
@@ -15726,12 +15554,6 @@ public final class ExecutionOuterClass {
       if (qualityOfService_ != null) {
         output.writeMessage(17, getQualityOfService());
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetOverrides(),
-          OverridesDefaultEntryHolder.defaultEntry,
-          18);
       unknownFields.writeTo(output);
     }
 
@@ -15781,16 +15603,6 @@ public final class ExecutionOuterClass {
       if (qualityOfService_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getQualityOfService());
-      }
-      for (java.util.Map.Entry<java.lang.String, flyteidl.admin.Common.Overrideables> entry
-           : internalGetOverrides().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, flyteidl.admin.Common.Overrideables>
-        overrides__ = OverridesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(18, overrides__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15842,8 +15654,6 @@ public final class ExecutionOuterClass {
         if (!getSecurityContext()
             .equals(other.getSecurityContext())) return false;
       }
-      if (!internalGetOverrides().equals(
-          other.internalGetOverrides())) return false;
       if (hasQualityOfService() != other.hasQualityOfService()) return false;
       if (hasQualityOfService()) {
         if (!getQualityOfService()
@@ -15900,10 +15710,6 @@ public final class ExecutionOuterClass {
       if (hasSecurityContext()) {
         hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityContext().hashCode();
-      }
-      if (!internalGetOverrides().getMap().isEmpty()) {
-        hash = (37 * hash) + OVERRIDES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetOverrides().hashCode();
       }
       if (hasQualityOfService()) {
         hash = (37 * hash) + QUALITY_OF_SERVICE_FIELD_NUMBER;
@@ -16034,28 +15840,6 @@ public final class ExecutionOuterClass {
         return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionSpec_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 18:
-            return internalGetOverrides();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 18:
-            return internalGetMutableOverrides();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -16124,7 +15908,6 @@ public final class ExecutionOuterClass {
           securityContext_ = null;
           securityContextBuilder_ = null;
         }
-        internalGetMutableOverrides().clear();
         if (qualityOfServiceBuilder_ == null) {
           qualityOfService_ = null;
         } else {
@@ -16159,8 +15942,6 @@ public final class ExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.ExecutionOuterClass.ExecutionSpec buildPartial() {
         flyteidl.admin.ExecutionOuterClass.ExecutionSpec result = new flyteidl.admin.ExecutionOuterClass.ExecutionSpec(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (launchPlanBuilder_ == null) {
           result.launchPlan_ = launchPlan_;
         } else {
@@ -16206,14 +15987,11 @@ public final class ExecutionOuterClass {
         } else {
           result.securityContext_ = securityContextBuilder_.build();
         }
-        result.overrides_ = internalGetOverrides();
-        result.overrides_.makeImmutable();
         if (qualityOfServiceBuilder_ == null) {
           result.qualityOfService_ = qualityOfService_;
         } else {
           result.qualityOfService_ = qualityOfServiceBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -16284,8 +16062,6 @@ public final class ExecutionOuterClass {
         if (other.hasSecurityContext()) {
           mergeSecurityContext(other.getSecurityContext());
         }
-        internalGetMutableOverrides().mergeFrom(
-            other.internalGetOverrides());
         if (other.hasQualityOfService()) {
           mergeQualityOfService(other.getQualityOfService());
         }
@@ -16345,7 +16121,6 @@ public final class ExecutionOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier launchPlan_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -17648,157 +17423,6 @@ public final class ExecutionOuterClass {
           securityContext_ = null;
         }
         return securityContextBuilder_;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, flyteidl.admin.Common.Overrideables> overrides_;
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.admin.Common.Overrideables>
-      internalGetOverrides() {
-        if (overrides_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              OverridesDefaultEntryHolder.defaultEntry);
-        }
-        return overrides_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.admin.Common.Overrideables>
-      internalGetMutableOverrides() {
-        onChanged();;
-        if (overrides_ == null) {
-          overrides_ = com.google.protobuf.MapField.newMapField(
-              OverridesDefaultEntryHolder.defaultEntry);
-        }
-        if (!overrides_.isMutable()) {
-          overrides_ = overrides_.copy();
-        }
-        return overrides_;
-      }
-
-      public int getOverridesCount() {
-        return internalGetOverrides().getMap().size();
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public boolean containsOverrides(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetOverrides().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getOverridesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> getOverrides() {
-        return getOverridesMap();
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> getOverridesMap() {
-        return internalGetOverrides().getMap();
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public flyteidl.admin.Common.Overrideables getOverridesOrDefault(
-          java.lang.String key,
-          flyteidl.admin.Common.Overrideables defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> map =
-            internalGetOverrides().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public flyteidl.admin.Common.Overrideables getOverridesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> map =
-            internalGetOverrides().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearOverrides() {
-        internalGetMutableOverrides().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public Builder removeOverrides(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableOverrides().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables>
-      getMutableOverrides() {
-        return internalGetMutableOverrides().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-      public Builder putOverrides(
-          java.lang.String key,
-          flyteidl.admin.Common.Overrideables value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableOverrides().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <pre>
-       * Map of tasktype to overrideable for each task type.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.admin.Overrideables&gt; overrides = 18;</code>
-       */
-
-      public Builder putAllOverrides(
-          java.util.Map<java.lang.String, flyteidl.admin.Common.Overrideables> values) {
-        internalGetMutableOverrides().getMutableMap()
-            .putAll(values);
-        return this;
       }
 
       private flyteidl.core.Execution.QualityOfService qualityOfService_;
@@ -21456,11 +21080,6 @@ public final class ExecutionOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21545,7 +21164,7 @@ public final class ExecutionOuterClass {
       "CHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016" +
       "CHILD_WORKFLOW\020\004\"G\n\020NotificationList\0223\n\r" +
       "notifications\030\001 \003(\0132\034.flyteidl.admin.Not" +
-      "ification\"\252\005\n\rExecutionSpec\022.\n\013launch_pl" +
+      "ification\"\230\004\n\rExecutionSpec\022.\n\013launch_pl" +
       "an\030\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006i" +
       "nputs\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002" +
       "\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex" +
@@ -21556,25 +21175,22 @@ public final class ExecutionOuterClass {
       ".flyteidl.admin.Annotations\022/\n\tauth_role" +
       "\030\t \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\0229\n\020" +
       "security_context\030\n \001(\0132\037.flyteidl.admin." +
-      "SecurityContext\022?\n\toverrides\030\022 \003(\0132,.fly" +
-      "teidl.admin.ExecutionSpec.OverridesEntry" +
-      "\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl." +
-      "core.QualityOfService\032O\n\016OverridesEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.flyteidl.a" +
-      "dmin.Overrideables:\0028\001B\030\n\026notification_o" +
-      "verridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequ" +
-      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Ex" +
-      "ecutionTerminateResponse\"Y\n\037WorkflowExec" +
-      "utionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
-      "dl.core.WorkflowExecutionIdentifier\"\326\001\n " +
-      "WorkflowExecutionGetDataResponse\022(\n\007outp" +
-      "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006in" +
-      "puts\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022.\n\013f" +
-      "ull_inputs\030\003 \001(\0132\031.flyteidl.core.Literal" +
-      "Map\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.cor" +
-      "e.LiteralMapB3Z1github.com/lyft/flyteidl" +
-      "/gen/pb-go/flyteidl/adminb\006proto3"
+      "SecurityContext\022;\n\022quality_of_service\030\021 " +
+      "\001(\0132\037.flyteidl.core.QualityOfServiceB\030\n\026" +
+      "notification_overridesJ\004\010\004\020\005\"b\n\031Executio" +
+      "nTerminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl" +
+      ".core.WorkflowExecutionIdentifier\022\r\n\005cau" +
+      "se\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y" +
+      "\n\037WorkflowExecutionGetDataRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\"\326\001\n WorkflowExecutionGetDataRe" +
+      "sponse\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin" +
+      ".UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admi" +
+      "n.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031.flyteid" +
+      "l.core.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132" +
+      "\031.flyteidl.core.LiteralMapB3Z1github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21671,13 +21287,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "SecurityContext", "Overrides", "QualityOfService", "NotificationOverrides", });
-    internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_descriptor =
-      internal_static_flyteidl_admin_ExecutionSpec_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_ExecutionSpec_OverridesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "SecurityContext", "QualityOfService", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

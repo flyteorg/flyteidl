@@ -96,9 +96,6 @@ message LaunchPlanSpec {
     // Indicates security context for permissions triggered with this launch plan
     SecurityContext security_context      = 10;
 
-    // Map of tasktype to overrideable for each task type.
-    map<string, Overrideables> overrides  = 11;
-
     // Indicates the runtime priority of the execution.
     core.QualityOfService quality_of_service   = 16;
 

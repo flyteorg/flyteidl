@@ -21,7 +21,6 @@ from flyteadmin.models.admin_auth import AdminAuth  # noqa: F401,E501
 from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_launch_plan_metadata import AdminLaunchPlanMetadata  # noqa: F401,E501
-from flyteadmin.models.admin_overrideables import AdminOverrideables  # noqa: F401,E501
 from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig  # noqa: F401,E501
 from flyteadmin.models.admin_security_context import AdminSecurityContext  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
@@ -54,7 +53,6 @@ class AdminLaunchPlanSpec(object):
         'auth': 'AdminAuth',
         'auth_role': 'AdminAuthRole',
         'security_context': 'AdminSecurityContext',
-        'overrides': 'dict(str, AdminOverrideables)',
         'quality_of_service': 'CoreQualityOfService',
         'raw_output_data_config': 'AdminRawOutputDataConfig'
     }
@@ -70,12 +68,11 @@ class AdminLaunchPlanSpec(object):
         'auth': 'auth',
         'auth_role': 'auth_role',
         'security_context': 'security_context',
-        'overrides': 'overrides',
         'quality_of_service': 'quality_of_service',
         'raw_output_data_config': 'raw_output_data_config'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, overrides=None, quality_of_service=None, raw_output_data_config=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, quality_of_service=None, raw_output_data_config=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -88,7 +85,6 @@ class AdminLaunchPlanSpec(object):
         self._auth = None
         self._auth_role = None
         self._security_context = None
-        self._overrides = None
         self._quality_of_service = None
         self._raw_output_data_config = None
         self.discriminator = None
@@ -113,8 +109,6 @@ class AdminLaunchPlanSpec(object):
             self.auth_role = auth_role
         if security_context is not None:
             self.security_context = security_context
-        if overrides is not None:
-            self.overrides = overrides
         if quality_of_service is not None:
             self.quality_of_service = quality_of_service
         if raw_output_data_config is not None:
@@ -335,29 +329,6 @@ class AdminLaunchPlanSpec(object):
         """
 
         self._security_context = security_context
-
-    @property
-    def overrides(self):
-        """Gets the overrides of this AdminLaunchPlanSpec.  # noqa: E501
-
-        Map of tasktype to overrideable for each task type.  # noqa: E501
-
-        :return: The overrides of this AdminLaunchPlanSpec.  # noqa: E501
-        :rtype: dict(str, AdminOverrideables)
-        """
-        return self._overrides
-
-    @overrides.setter
-    def overrides(self, overrides):
-        """Sets the overrides of this AdminLaunchPlanSpec.
-
-        Map of tasktype to overrideable for each task type.  # noqa: E501
-
-        :param overrides: The overrides of this AdminLaunchPlanSpec.  # noqa: E501
-        :type: dict(str, AdminOverrideables)
-        """
-
-        self._overrides = overrides
 
     @property
     def quality_of_service(self):

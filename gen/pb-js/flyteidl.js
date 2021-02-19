@@ -16142,128 +16142,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return SecurityContext;
         })();
 
-        admin.Config = (function() {
-
-            /**
-             * Properties of a Config.
-             * @memberof flyteidl.admin
-             * @interface IConfig
-             * @property {Object.<string,string>|null} [values] Config values
-             */
-
-            /**
-             * Constructs a new Config.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a Config.
-             * @implements IConfig
-             * @constructor
-             * @param {flyteidl.admin.IConfig=} [properties] Properties to set
-             */
-            function Config(properties) {
-                this.values = {};
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Config values.
-             * @member {Object.<string,string>} values
-             * @memberof flyteidl.admin.Config
-             * @instance
-             */
-            Config.prototype.values = $util.emptyObject;
-
-            /**
-             * Creates a new Config instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Config
-             * @static
-             * @param {flyteidl.admin.IConfig=} [properties] Properties to set
-             * @returns {flyteidl.admin.Config} Config instance
-             */
-            Config.create = function create(properties) {
-                return new Config(properties);
-            };
-
-            /**
-             * Encodes the specified Config message. Does not implicitly {@link flyteidl.admin.Config.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Config
-             * @static
-             * @param {flyteidl.admin.IConfig} message Config message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Config.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.values != null && message.hasOwnProperty("values"))
-                    for (let keys = Object.keys(message.values), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.values[keys[i]]).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Config message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Config
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Config} Config
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Config.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Config(), key;
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        reader.skip().pos++;
-                        if (message.values === $util.emptyObject)
-                            message.values = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.values[key] = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Config message.
-             * @function verify
-             * @memberof flyteidl.admin.Config
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Config.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.values != null && message.hasOwnProperty("values")) {
-                    if (!$util.isObject(message.values))
-                        return "values: object expected";
-                    let key = Object.keys(message.values);
-                    for (let i = 0; i < key.length; ++i)
-                        if (!$util.isString(message.values[key[i]]))
-                            return "values: string{k:string} expected";
-                }
-                return null;
-            };
-
-            return Config;
-        })();
-
         admin.AuthRole = (function() {
 
             /**
@@ -16410,175 +16288,6 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return AuthRole;
-        })();
-
-        admin.Overrideables = (function() {
-
-            /**
-             * Properties of an Overrideables.
-             * @memberof flyteidl.admin
-             * @interface IOverrideables
-             * @property {flyteidl.admin.ILabels|null} [labels] Overrideables labels
-             * @property {flyteidl.admin.IAnnotations|null} [annotations] Overrideables annotations
-             * @property {flyteidl.admin.ISecurityContext|null} [securityContext] Overrideables securityContext
-             * @property {flyteidl.admin.IConfig|null} [config] Overrideables config
-             */
-
-            /**
-             * Constructs a new Overrideables.
-             * @memberof flyteidl.admin
-             * @classdesc Represents an Overrideables.
-             * @implements IOverrideables
-             * @constructor
-             * @param {flyteidl.admin.IOverrideables=} [properties] Properties to set
-             */
-            function Overrideables(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Overrideables labels.
-             * @member {flyteidl.admin.ILabels|null|undefined} labels
-             * @memberof flyteidl.admin.Overrideables
-             * @instance
-             */
-            Overrideables.prototype.labels = null;
-
-            /**
-             * Overrideables annotations.
-             * @member {flyteidl.admin.IAnnotations|null|undefined} annotations
-             * @memberof flyteidl.admin.Overrideables
-             * @instance
-             */
-            Overrideables.prototype.annotations = null;
-
-            /**
-             * Overrideables securityContext.
-             * @member {flyteidl.admin.ISecurityContext|null|undefined} securityContext
-             * @memberof flyteidl.admin.Overrideables
-             * @instance
-             */
-            Overrideables.prototype.securityContext = null;
-
-            /**
-             * Overrideables config.
-             * @member {flyteidl.admin.IConfig|null|undefined} config
-             * @memberof flyteidl.admin.Overrideables
-             * @instance
-             */
-            Overrideables.prototype.config = null;
-
-            /**
-             * Creates a new Overrideables instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Overrideables
-             * @static
-             * @param {flyteidl.admin.IOverrideables=} [properties] Properties to set
-             * @returns {flyteidl.admin.Overrideables} Overrideables instance
-             */
-            Overrideables.create = function create(properties) {
-                return new Overrideables(properties);
-            };
-
-            /**
-             * Encodes the specified Overrideables message. Does not implicitly {@link flyteidl.admin.Overrideables.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Overrideables
-             * @static
-             * @param {flyteidl.admin.IOverrideables} message Overrideables message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Overrideables.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.labels != null && message.hasOwnProperty("labels"))
-                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.annotations != null && message.hasOwnProperty("annotations"))
-                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.securityContext != null && message.hasOwnProperty("securityContext"))
-                    $root.flyteidl.admin.SecurityContext.encode(message.securityContext, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.config != null && message.hasOwnProperty("config"))
-                    $root.flyteidl.admin.Config.encode(message.config, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes an Overrideables message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Overrideables
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Overrideables} Overrideables
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Overrideables.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Overrideables();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.securityContext = $root.flyteidl.admin.SecurityContext.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.config = $root.flyteidl.admin.Config.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an Overrideables message.
-             * @function verify
-             * @memberof flyteidl.admin.Overrideables
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Overrideables.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.labels != null && message.hasOwnProperty("labels")) {
-                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
-                    if (error)
-                        return "labels." + error;
-                }
-                if (message.annotations != null && message.hasOwnProperty("annotations")) {
-                    let error = $root.flyteidl.admin.Annotations.verify(message.annotations);
-                    if (error)
-                        return "annotations." + error;
-                }
-                if (message.securityContext != null && message.hasOwnProperty("securityContext")) {
-                    let error = $root.flyteidl.admin.SecurityContext.verify(message.securityContext);
-                    if (error)
-                        return "securityContext." + error;
-                }
-                if (message.config != null && message.hasOwnProperty("config")) {
-                    let error = $root.flyteidl.admin.Config.verify(message.config);
-                    if (error)
-                        return "config." + error;
-                }
-                return null;
-            };
-
-            return Overrideables;
         })();
 
         admin.RawOutputDataConfig = (function() {
@@ -19559,7 +19268,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
              * @property {flyteidl.admin.IAuthRole|null} [authRole] ExecutionSpec authRole
              * @property {flyteidl.admin.ISecurityContext|null} [securityContext] ExecutionSpec securityContext
-             * @property {Object.<string,flyteidl.admin.IOverrideables>|null} [overrides] ExecutionSpec overrides
              * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] ExecutionSpec qualityOfService
              */
 
@@ -19572,7 +19280,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IExecutionSpec=} [properties] Properties to set
              */
             function ExecutionSpec(properties) {
-                this.overrides = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -19652,14 +19359,6 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionSpec.prototype.securityContext = null;
 
             /**
-             * ExecutionSpec overrides.
-             * @member {Object.<string,flyteidl.admin.IOverrideables>} overrides
-             * @memberof flyteidl.admin.ExecutionSpec
-             * @instance
-             */
-            ExecutionSpec.prototype.overrides = $util.emptyObject;
-
-            /**
              * ExecutionSpec qualityOfService.
              * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfService
              * @memberof flyteidl.admin.ExecutionSpec
@@ -19725,11 +19424,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.SecurityContext.encode(message.securityContext, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                if (message.overrides != null && message.hasOwnProperty("overrides"))
-                    for (let keys = Object.keys(message.overrides), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 18, wireType 2 =*/146).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.admin.Overrideables.encode(message.overrides[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
                 return writer;
             };
 
@@ -19747,7 +19441,7 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionSpec.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionSpec(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionSpec();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -19777,14 +19471,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 10:
                         message.securityContext = $root.flyteidl.admin.SecurityContext.decode(reader, reader.uint32());
-                        break;
-                    case 18:
-                        reader.skip().pos++;
-                        if (message.overrides === $util.emptyObject)
-                            message.overrides = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.overrides[key] = $root.flyteidl.admin.Overrideables.decode(reader, reader.uint32());
                         break;
                     case 17:
                         message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
@@ -19858,16 +19544,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.SecurityContext.verify(message.securityContext);
                     if (error)
                         return "securityContext." + error;
-                }
-                if (message.overrides != null && message.hasOwnProperty("overrides")) {
-                    if (!$util.isObject(message.overrides))
-                        return "overrides: object expected";
-                    let key = Object.keys(message.overrides);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.admin.Overrideables.verify(message.overrides[key[i]]);
-                        if (error)
-                            return "overrides." + error;
-                    }
                 }
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService")) {
                     let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfService);
@@ -21072,7 +20748,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAuth|null} [auth] LaunchPlanSpec auth
              * @property {flyteidl.admin.IAuthRole|null} [authRole] LaunchPlanSpec authRole
              * @property {flyteidl.admin.ISecurityContext|null} [securityContext] LaunchPlanSpec securityContext
-             * @property {Object.<string,flyteidl.admin.IOverrideables>|null} [overrides] LaunchPlanSpec overrides
              * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] LaunchPlanSpec qualityOfService
              * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] LaunchPlanSpec rawOutputDataConfig
              */
@@ -21086,7 +20761,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.ILaunchPlanSpec=} [properties] Properties to set
              */
             function LaunchPlanSpec(properties) {
-                this.overrides = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -21174,14 +20848,6 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.securityContext = null;
 
             /**
-             * LaunchPlanSpec overrides.
-             * @member {Object.<string,flyteidl.admin.IOverrideables>} overrides
-             * @memberof flyteidl.admin.LaunchPlanSpec
-             * @instance
-             */
-            LaunchPlanSpec.prototype.overrides = $util.emptyObject;
-
-            /**
              * LaunchPlanSpec qualityOfService.
              * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfService
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -21241,11 +20907,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.securityContext != null && message.hasOwnProperty("securityContext"))
                     $root.flyteidl.admin.SecurityContext.encode(message.securityContext, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.overrides != null && message.hasOwnProperty("overrides"))
-                    for (let keys = Object.keys(message.overrides), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 11, wireType 2 =*/90).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.admin.Overrideables.encode(message.overrides[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
@@ -21267,7 +20928,7 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -21300,14 +20961,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 10:
                         message.securityContext = $root.flyteidl.admin.SecurityContext.decode(reader, reader.uint32());
-                        break;
-                    case 11:
-                        reader.skip().pos++;
-                        if (message.overrides === $util.emptyObject)
-                            message.overrides = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.overrides[key] = $root.flyteidl.admin.Overrideables.decode(reader, reader.uint32());
                         break;
                     case 16:
                         message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
@@ -21381,16 +21034,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.SecurityContext.verify(message.securityContext);
                     if (error)
                         return "securityContext." + error;
-                }
-                if (message.overrides != null && message.hasOwnProperty("overrides")) {
-                    if (!$util.isObject(message.overrides))
-                        return "overrides: object expected";
-                    let key = Object.keys(message.overrides);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.admin.Overrideables.verify(message.overrides[key[i]]);
-                        if (error)
-                            return "overrides." + error;
-                    }
                 }
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService")) {
                     let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfService);

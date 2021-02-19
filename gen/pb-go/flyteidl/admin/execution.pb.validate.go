@@ -1219,23 +1219,6 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
-	for key, val := range m.GetOverrides() {
-		_ = val
-
-		// no validation rules for Overrides[key]
-
-		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return ExecutionSpecValidationError{
-					field:  fmt.Sprintf("Overrides[%v]", key),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
 	if v, ok := interface{}(m.GetQualityOfService()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ExecutionSpecValidationError{

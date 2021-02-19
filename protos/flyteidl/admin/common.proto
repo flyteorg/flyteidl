@@ -245,14 +245,6 @@ message SecurityContext {
     map<string, string> values          = 1;
 }
 
-// Config values to define privilege and access control settings
-// In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
-// to specify how to merge configs defined at registration and execution time.
-message Config {
-    // Map of custom config values
-    map<string, string> values          = 1;
-}
-
 // Defines permissions associated with executions.
 // Deprecated
 message AuthRole {
@@ -262,20 +254,6 @@ message AuthRole {
   }
 }
 
-// Defines values that can be overriden at registration/runtime
-message Overrideables {
-    // Custom labels for overrides.
-    Labels labels                         = 1;
-
-    // Custom annotations for overrides.
-    Annotations annotations               = 2;
-
-    // Custom labels for overrides.
-    SecurityContext security_context      = 3;
-
-    // Custom configs for overrides.
-    Config config               = 4;
-}
 
 // Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
 // See https://github.com/lyft/flyte/issues/211 for more background information.

@@ -22,16 +22,14 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SecurityContext_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Overrideables_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AbortMetadata_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SystemMetadata_flyteidl_2fadmin_2fexecution_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<10> scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LiteralMapBlob_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NotificationList_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Execution_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ExecutionMetadata_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_ExecutionClosure_flyteidl_2fadmin_2fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<9> scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionError_flyteidl_2fcore_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_QualityOfService_flyteidl_2fcore_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
@@ -96,10 +94,6 @@ class NotificationListDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<NotificationList> _instance;
 } _NotificationList_default_instance_;
-class ExecutionSpec_OverridesEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ExecutionSpec_OverridesEntry_DoNotUse> _instance;
-} _ExecutionSpec_OverridesEntry_DoNotUse_default_instance_;
 class ExecutionSpecDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ExecutionSpec> _instance;
@@ -315,20 +309,6 @@ static void InitDefaultsNotificationList_flyteidl_2fadmin_2fexecution_2eproto() 
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsNotificationList_flyteidl_2fadmin_2fexecution_2eproto}, {
       &scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
-static void InitDefaultsExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_ExecutionSpec_OverridesEntry_DoNotUse_default_instance_;
-    new (ptr) ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse();
-  }
-  ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto}, {
-      &scc_info_Overrideables_flyteidl_2fadmin_2fcommon_2eproto.base,}};
-
 static void InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -340,8 +320,8 @@ static void InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto() {
   ::flyteidl::admin::ExecutionSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<10> scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 10, InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto}, {
+::google::protobuf::internal::SCCInfo<9> scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 9, InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto.base,
       &scc_info_ExecutionMetadata_flyteidl_2fadmin_2fexecution_2eproto.base,
@@ -350,7 +330,6 @@ static void InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto() {
       &scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_SecurityContext_flyteidl_2fadmin_2fcommon_2eproto.base,
-      &scc_info_ExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto.base,
       &scc_info_QualityOfService_flyteidl_2fcore_2fexecution_2eproto.base,}};
 
 static void InitDefaultsExecutionTerminateRequest_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -426,7 +405,6 @@ void InitDefaults_flyteidl_2fadmin_2fexecution_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_SystemMetadata_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionMetadata_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NotificationList_flyteidl_2fadmin_2fexecution_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ExecutionSpec_OverridesEntry_DoNotUse_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionTerminateRequest_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionTerminateResponse_flyteidl_2fadmin_2fexecution_2eproto.base);
@@ -434,7 +412,7 @@ void InitDefaults_flyteidl_2fadmin_2fexecution_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowExecutionGetDataResponse_flyteidl_2fadmin_2fexecution_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto[18];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto[17];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fexecution_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fexecution_2eproto = nullptr;
 
@@ -540,15 +518,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NotificationList, notifications_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -563,7 +532,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, annotations_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, auth_role_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, security_context_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, overrides_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, quality_of_service_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, notification_overrides_),
   ~0u,  // no _has_bits_
@@ -607,12 +575,11 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 77, -1, sizeof(::flyteidl::admin::SystemMetadata)},
   { 83, -1, sizeof(::flyteidl::admin::ExecutionMetadata)},
   { 95, -1, sizeof(::flyteidl::admin::NotificationList)},
-  { 101, 108, sizeof(::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse)},
-  { 110, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
-  { 127, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
-  { 134, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
-  { 139, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
-  { 145, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
+  { 101, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
+  { 117, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
+  { 124, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
+  { 129, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
+  { 135, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -628,7 +595,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SystemMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_NotificationList_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionSpec_OverridesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionSpec_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionTerminateRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionTerminateResponse_default_instance_),
@@ -639,7 +605,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto, "flyteidl/admin/execution.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fexecution_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto, 18, file_level_enum_descriptors_flyteidl_2fadmin_2fexecution_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fexecution_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto, 17, file_level_enum_descriptors_flyteidl_2fadmin_2fexecution_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fexecution_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
@@ -699,7 +665,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "CHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016"
   "CHILD_WORKFLOW\020\004\"G\n\020NotificationList\0223\n\r"
   "notifications\030\001 \003(\0132\034.flyteidl.admin.Not"
-  "ification\"\252\005\n\rExecutionSpec\022.\n\013launch_pl"
+  "ification\"\230\004\n\rExecutionSpec\022.\n\013launch_pl"
   "an\030\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006i"
   "nputs\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002"
   "\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex"
@@ -710,30 +676,27 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   ".flyteidl.admin.Annotations\022/\n\tauth_role"
   "\030\t \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\0229\n\020"
   "security_context\030\n \001(\0132\037.flyteidl.admin."
-  "SecurityContext\022\?\n\toverrides\030\022 \003(\0132,.fly"
-  "teidl.admin.ExecutionSpec.OverridesEntry"
-  "\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl."
-  "core.QualityOfService\032O\n\016OverridesEntry\022"
-  "\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.flyteidl.a"
-  "dmin.Overrideables:\0028\001B\030\n\026notification_o"
-  "verridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequ"
-  "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow"
-  "ExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Ex"
-  "ecutionTerminateResponse\"Y\n\037WorkflowExec"
-  "utionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flytei"
-  "dl.core.WorkflowExecutionIdentifier\"\326\001\n "
-  "WorkflowExecutionGetDataResponse\022(\n\007outp"
-  "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006in"
-  "puts\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022.\n\013f"
-  "ull_inputs\030\003 \001(\0132\031.flyteidl.core.Literal"
-  "Map\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.cor"
-  "e.LiteralMapB3Z1github.com/lyft/flyteidl"
-  "/gen/pb-go/flyteidl/adminb\006proto3"
+  "SecurityContext\022;\n\022quality_of_service\030\021 "
+  "\001(\0132\037.flyteidl.core.QualityOfServiceB\030\n\026"
+  "notification_overridesJ\004\010\004\020\005\"b\n\031Executio"
+  "nTerminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl"
+  ".core.WorkflowExecutionIdentifier\022\r\n\005cau"
+  "se\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y"
+  "\n\037WorkflowExecutionGetDataRequest\0226\n\002id\030"
+  "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI"
+  "dentifier\"\326\001\n WorkflowExecutionGetDataRe"
+  "sponse\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin"
+  ".UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admi"
+  "n.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031.flyteid"
+  "l.core.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132"
+  "\031.flyteidl.core.LiteralMapB3Z1github.com"
+  "/lyft/flyteidl/gen/pb-go/flyteidl/adminb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3433,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3287,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -6265,43 +6228,6 @@ void NotificationList::InternalSwap(NotificationList* other) {
 
 // ===================================================================
 
-ExecutionSpec_OverridesEntry_DoNotUse::ExecutionSpec_OverridesEntry_DoNotUse() {}
-ExecutionSpec_OverridesEntry_DoNotUse::ExecutionSpec_OverridesEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void ExecutionSpec_OverridesEntry_DoNotUse::MergeFrom(const ExecutionSpec_OverridesEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata ExecutionSpec_OverridesEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto[12];
-}
-void ExecutionSpec_OverridesEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ExecutionSpec_OverridesEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      ExecutionSpec_OverridesEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.ExecutionSpec.OverridesEntry.key"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
 void ExecutionSpec::InitAsDefaultInstance() {
   ::flyteidl::admin::_ExecutionSpec_default_instance_._instance.get_mutable()->launch_plan_ = const_cast< ::flyteidl::core::Identifier*>(
       ::flyteidl::core::Identifier::internal_default_instance());
@@ -6422,9 +6348,6 @@ void ExecutionSpec::clear_security_context() {
   }
   security_context_ = nullptr;
 }
-void ExecutionSpec::clear_overrides() {
-  overrides_.Clear();
-}
 void ExecutionSpec::clear_quality_of_service() {
   if (GetArenaNoVirtual() == nullptr && quality_of_service_ != nullptr) {
     delete quality_of_service_;
@@ -6441,7 +6364,6 @@ const int ExecutionSpec::kLabelsFieldNumber;
 const int ExecutionSpec::kAnnotationsFieldNumber;
 const int ExecutionSpec::kAuthRoleFieldNumber;
 const int ExecutionSpec::kSecurityContextFieldNumber;
-const int ExecutionSpec::kOverridesFieldNumber;
 const int ExecutionSpec::kQualityOfServiceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6454,7 +6376,6 @@ ExecutionSpec::ExecutionSpec(const ExecutionSpec& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  overrides_.MergeFrom(from.overrides_);
   if (from.has_launch_plan()) {
     launch_plan_ = new ::flyteidl::core::Identifier(*from.launch_plan_);
   } else {
@@ -6574,7 +6495,6 @@ void ExecutionSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  overrides_.Clear();
   if (GetArenaNoVirtual() == nullptr && launch_plan_ != nullptr) {
     delete launch_plan_;
   }
@@ -6748,25 +6668,6 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // map<string, .flyteidl.admin.Overrideables> overrides = 18;
-      case 18: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 146) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->overrides_;
-          if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 65535) == 402 && (ptr += 2));
-        break;
-      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -6910,28 +6811,6 @@ bool ExecutionSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, .flyteidl.admin.Overrideables> overrides = 18;
-      case 18: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (146 & 0xFF)) {
-          ExecutionSpec_OverridesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              ExecutionSpec_OverridesEntry_DoNotUse,
-              ::std::string, ::flyteidl::admin::Overrideables,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables > > parser(&overrides_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ExecutionSpec.OverridesEntry.key"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -7018,51 +6897,6 @@ void ExecutionSpec::SerializeWithCachedSizes(
       17, HasBitSetters::quality_of_service(this), output);
   }
 
-  // map<string, .flyteidl.admin.Overrideables> overrides = 18;
-  if (!this->overrides().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ExecutionSpec.OverridesEntry.key");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->overrides().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->overrides().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_iterator
-          it = this->overrides().begin();
-          it != this->overrides().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ExecutionSpec_OverridesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(overrides_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(18, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ExecutionSpec_OverridesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_iterator
-          it = this->overrides().begin();
-          it != this->overrides().end(); ++it) {
-        entry.reset(overrides_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(18, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -7144,51 +6978,6 @@ void ExecutionSpec::SerializeWithCachedSizes(
         17, HasBitSetters::quality_of_service(this), target);
   }
 
-  // map<string, .flyteidl.admin.Overrideables> overrides = 18;
-  if (!this->overrides().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ExecutionSpec.OverridesEntry.key");
-      }
-    };
-
-    if (false &&
-        this->overrides().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->overrides().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_iterator
-          it = this->overrides().begin();
-          it != this->overrides().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ExecutionSpec_OverridesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(overrides_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(18, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ExecutionSpec_OverridesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_iterator
-          it = this->overrides().begin();
-          it != this->overrides().end(); ++it) {
-        entry.reset(overrides_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(18, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -7209,20 +6998,6 @@ size_t ExecutionSpec::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // map<string, .flyteidl.admin.Overrideables> overrides = 18;
-  total_size += 2 *
-      ::google::protobuf::internal::FromIntSize(this->overrides_size());
-  {
-    ::std::unique_ptr<ExecutionSpec_OverridesEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::flyteidl::admin::Overrideables >::const_iterator
-        it = this->overrides().begin();
-        it != this->overrides().end(); ++it) {
-      entry.reset(overrides_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
 
   // .flyteidl.core.Identifier launch_plan = 1;
   if (this->has_launch_plan()) {
@@ -7324,7 +7099,6 @@ void ExecutionSpec::MergeFrom(const ExecutionSpec& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  overrides_.MergeFrom(from.overrides_);
   if (from.has_launch_plan()) {
     mutable_launch_plan()->::flyteidl::core::Identifier::MergeFrom(from.launch_plan());
   }
@@ -7389,7 +7163,6 @@ void ExecutionSpec::Swap(ExecutionSpec* other) {
 void ExecutionSpec::InternalSwap(ExecutionSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  overrides_.Swap(&other->overrides_);
   swap(launch_plan_, other->launch_plan_);
   swap(inputs_, other->inputs_);
   swap(metadata_, other->metadata_);
@@ -8831,9 +8604,6 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionMetadata* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::NotificationList* Arena::CreateMaybeMessage< ::flyteidl::admin::NotificationList >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::NotificationList >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::ExecutionSpec_OverridesEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionSpec* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionSpec >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::ExecutionSpec >(arena);

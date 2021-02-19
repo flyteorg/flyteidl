@@ -26,8 +26,6 @@ type AdminExecutionSpec struct {
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
 	// Optional: security context override to apply this execution.
 	SecurityContext *AdminSecurityContext `json:"security_context,omitempty"`
-	// Map of tasktype to overrideable for each task type.
-	Overrides map[string]AdminOverrideables `json:"overrides,omitempty"`
 	// Indicates the runtime priority of the execution.
 	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
 }
