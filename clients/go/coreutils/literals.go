@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
+	"github.com/lyft/flytestdlib/storage"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/ptypes"
@@ -148,6 +149,17 @@ func MakeBinaryLiteral(v []byte) *core.Literal {
 	}
 }
 
+func MakeGenericLiteral(v *structpb.Struct) *core.Literal {
+	return &core.Literal{
+		Value: &core.Literal_Scalar{
+			Scalar: &core.Scalar{
+				Value: &core.Scalar_Generic{
+					Generic: v,
+				},
+			},
+		}}
+}
+
 func MakeLiteral(v interface{}) (*core.Literal, error) {
 	if v == nil {
 		return &core.Literal{
@@ -169,6 +181,18 @@ func MakeLiteral(v interface{}) (*core.Literal, error) {
 		return MakeLiteralForMap(o)
 	case []byte:
 		return MakeBinaryLiteral(v.([]byte)), nil
+	case *structpb.Struct:
+		return MakeGenericLiteral(v.(*structpb.Struct)), nil
+	case *core.Error:
+		return &core.Literal{
+			Value: &core.Literal_Scalar{
+				Scalar: &core.Scalar{
+					Value: &core.Scalar_Error{
+						Error: v.(*core.Error),
+					},
+				},
+			},
+		}, nil
 	default:
 		return MakePrimitiveLiteral(o)
 	}
@@ -202,11 +226,45 @@ func MakeDefaultLiteralForType(typ *core.LiteralType) (*core.Literal, error) {
 			return MakeLiteral(time.Second)
 		case core.SimpleType_BINARY:
 			return MakeLiteral([]byte{})
-			//case core.SimpleType_WAITABLE:
-			//case core.SimpleType_ERROR:
+		case core.SimpleType_ERROR:
+			return &core.Literal{
+				Value: &core.Literal_Scalar{
+					Scalar: &core.Scalar{
+						Value: &core.Scalar_Error{
+							Error: &core.Error{
+								Message: "Default Error message",
+							},
+						},
+					},
+				},
+			}, nil
+		case core.SimpleType_STRUCT:
+			return &core.Literal{
+				Value: &core.Literal_Scalar{
+					Scalar: &core.Scalar{
+						Value: &core.Scalar_Generic{
+							Generic: &structpb.Struct{},
+						},
+					},
+				},
+			}, nil
 		}
-		return nil, fmt.Errorf("not yet implemented. Default creation is not yet implemented. ")
-
+		return nil, errors.Errorf("Not yet implemented. Default creation is not yet implemented for [%s] ", t.Simple.String())
+	case *core.LiteralType_Blob:
+		return &core.Literal{
+			Value: &core.Literal_Scalar{
+				Scalar: &core.Scalar{
+					Value: &core.Scalar_Blob{
+						Blob: &core.Blob{
+							Metadata: &core.BlobMetadata{
+								Type: t.Blob,
+							},
+							Uri: "/tmp/somepath",
+						},
+					},
+				},
+			},
+		}, nil
 	case *core.LiteralType_CollectionType:
 		single, err := MakeDefaultLiteralForType(t.CollectionType)
 		if err != nil {
@@ -354,4 +412,28 @@ func MakeLiteralMap(v map[string]interface{}) (*core.LiteralMap, error) {
 	return &core.LiteralMap{
 		Literals: literals,
 	}, nil
+}
+
+func MakeLiteralForBlob(path storage.DataReference, isDir bool, format string) *core.Literal {
+	dim := core.BlobType_SINGLE
+	if isDir {
+		dim = core.BlobType_MULTIPART
+	}
+	return &core.Literal{
+		Value: &core.Literal_Scalar{
+			Scalar: &core.Scalar{
+				Value: &core.Scalar_Blob{
+					Blob: &core.Blob{
+						Uri: path.String(),
+						Metadata: &core.BlobMetadata{
+							Type: &core.BlobType{
+								Dimensionality: dim,
+								Format:         format,
+							},
+						},
+					},
+				},
+			},
+		},
+	}
 }
