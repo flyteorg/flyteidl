@@ -57,6 +57,8 @@ func TestMakePrimitive(t *testing.T) {
 		j, err := ptypes.TimestampProto(v)
 		assert.NoError(t, err)
 		assert.Equal(t, j, p.GetDatetime())
+		_, err = MakePrimitive(time.Date(0, 0, 0, 0, 0, 0, 0, time.UTC))
+		assert.Error(t, err)
 	}
 	{
 		v := time.Second * 10
