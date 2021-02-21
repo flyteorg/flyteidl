@@ -1,6 +1,7 @@
 package coreutils
 
 import (
+	structpb "github.com/golang/protobuf/ptypes/struct"
 	"reflect"
 	"testing"
 	"time"
@@ -197,4 +198,86 @@ func TestMakeDefaultLiteralForType(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, []byte{'h'}, s.GetScalar().GetBinary().GetValue())
 	})
+}
+
+func TestMakePrimitiveForType(t *testing.T) {
+	n := time.Now()
+	type args struct {
+		t core.SimpleType
+		s string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    *core.Primitive
+		wantErr bool
+	}{
+		{"error-type", args{core.SimpleType_NONE, "x"}, nil, true},
+
+		{"error-int", args{core.SimpleType_INTEGER, "x"}, nil, true},
+		{"int", args{core.SimpleType_INTEGER, "1"}, MustMakePrimitive(1), false},
+
+		{"error-bool", args{core.SimpleType_BOOLEAN, "x"}, nil, true},
+		{"bool", args{core.SimpleType_BOOLEAN, "true"}, MustMakePrimitive(true), false},
+
+		{"error-float", args{core.SimpleType_FLOAT, "x"}, nil, true},
+		{"float", args{core.SimpleType_FLOAT, "3.1416"}, MustMakePrimitive(3.1416), false},
+
+		{"string", args{core.SimpleType_STRING, "string"}, MustMakePrimitive("string"), false},
+
+		{"error-dt", args{core.SimpleType_DATETIME, "x"}, nil, true},
+		{"dt", args{core.SimpleType_DATETIME, n.Format(time.RFC3339Nano)}, MustMakePrimitive(n), false},
+
+		{"error-dur", args{core.SimpleType_DURATION, "x"}, nil, true},
+		{"dur", args{core.SimpleType_DURATION, time.Hour.String()}, MustMakePrimitive(time.Hour), false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := MakePrimitiveForType(tt.args.t, tt.args.s)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("MakePrimitiveForType() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("MakePrimitiveForType() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestMakeLiteralForSimpleType(t *testing.T) {
+	type args struct {
+		t core.SimpleType
+		s string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    *core.Literal
+		wantErr bool
+	}{
+		{"error-int", args{core.SimpleType_INTEGER, "x"}, nil, true},
+		{"int", args{core.SimpleType_INTEGER, "1"}, MustMakeLiteral(1), false},
+
+		{"error-struct", args{core.SimpleType_STRUCT, "x"}, nil, true},
+		{"struct", args{core.SimpleType_STRUCT, `{"x": 1}`}, MustMakeLiteral(&structpb.Struct{Fields: map[string]*structpb.Value{"x": {Kind: &structpb.Value_NumberValue{NumberValue: 1}}}}), false},
+
+		{"bin", args{core.SimpleType_BINARY, "x"}, MustMakeLiteral([]byte("x")), false},
+
+		{"error", args{core.SimpleType_ERROR, "err"}, MustMakeLiteral(&core.Error{Message: "err"}), false},
+
+		{"none", args{core.SimpleType_NONE, "null"}, MustMakeLiteral(nil), false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := MakeLiteralForSimpleType(tt.args.t, tt.args.s)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("MakeLiteralForSimpleType() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("MakeLiteralForSimpleType() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
