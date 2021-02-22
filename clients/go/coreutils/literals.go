@@ -437,3 +437,59 @@ func MakeLiteralForBlob(path storage.DataReference, isDir bool, format string) *
 		},
 	}
 }
+
+func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
+	literalValue := literal.Value
+	switch literalValue.(type) {
+	case *core.Literal_Scalar:
+		scalarValue := literalValue.(*core.Literal_Scalar).Scalar.Value
+		switch scalarValue.(type) {
+		case *core.Scalar_Primitive:
+			scalarPrimitive := scalarValue.(*core.Scalar_Primitive).Primitive.Value
+			switch scalarPrimitive.(type) {
+			case *core.Primitive_Integer:
+				scalarPrimitiveInt := scalarPrimitive.(*core.Primitive_Integer).Integer
+				return scalarPrimitiveInt, nil
+			case *core.Primitive_FloatValue:
+				scalarPrimitiveFloat := scalarPrimitive.(*core.Primitive_FloatValue).FloatValue
+				return scalarPrimitiveFloat, nil
+			case *core.Primitive_StringValue:
+				scalarPrimitiveString := scalarPrimitive.(*core.Primitive_StringValue).StringValue
+				return scalarPrimitiveString, nil
+			case *core.Primitive_Boolean:
+				scalarPrimitiveBoolean := scalarPrimitive.(*core.Primitive_Boolean).Boolean
+				return scalarPrimitiveBoolean, nil
+			case *core.Primitive_Datetime:
+				scalarPrimitiveDateTime := scalarPrimitive.(*core.Primitive_Datetime).Datetime
+				return scalarPrimitiveDateTime, nil
+			case *core.Primitive_Duration:
+				scalarPrimitiveDuration := scalarPrimitive.(*core.Primitive_Duration).Duration
+				return scalarPrimitiveDuration, nil
+			}
+		}
+		return nil, fmt.Errorf("unsupported literal scalar type %T", scalarValue)
+	case *core.Literal_Collection:
+		collectionValue := literalValue.(*core.Literal_Collection).Collection.Literals
+		collection := make([]interface{}, len(collectionValue))
+		for index, val := range collectionValue {
+			if collectionElem, err := FetchFromLiteral(val); err == nil {
+				collection[index] = collectionElem
+			} else {
+				return nil, err
+			}
+		}
+		return collection, nil
+	case *core.Literal_Map:
+		mapLiteralValue := literalValue.(*core.Literal_Map).Map.Literals
+		mapResult := make(map[string]interface{}, len(mapLiteralValue))
+		for key, val := range mapLiteralValue {
+			if val, err := FetchFromLiteral(val); err == nil {
+				mapResult[key] = val
+			} else {
+				return nil, err
+			}
+		}
+		return mapResult, nil
+	}
+	return nil, fmt.Errorf("unsupported literal type %T", literal)
+}
