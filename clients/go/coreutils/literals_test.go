@@ -163,8 +163,7 @@ func TestMakeLiteral(t *testing.T) {
 		}
 		assert.Equal(t, expectedMapInstance, val)
 	})
-
-
+	
 	t.Run("Map_Booleans", func(t *testing.T) {
 		mapInstance := map[string]interface{}{
 			"key1": []interface{}{true, false, true},

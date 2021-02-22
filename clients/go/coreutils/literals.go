@@ -439,37 +439,34 @@ func MakeLiteralForBlob(path storage.DataReference, isDir bool, format string) *
 }
 
 func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
-	literalValue := literal.Value
-	switch literalValue.(type) {
+	switch literalValue := literal.Value.(type) {
 	case *core.Literal_Scalar:
-		scalarValue := literalValue.(*core.Literal_Scalar).Scalar.Value
-		switch scalarValue.(type) {
+		switch scalarValue := literalValue.Scalar.Value.(type) {
 		case *core.Scalar_Primitive:
-			scalarPrimitive := scalarValue.(*core.Scalar_Primitive).Primitive.Value
-			switch scalarPrimitive.(type) {
+			switch scalarPrimitive := scalarValue.Primitive.Value.(type) {
 			case *core.Primitive_Integer:
-				scalarPrimitiveInt := scalarPrimitive.(*core.Primitive_Integer).Integer
+				scalarPrimitiveInt := scalarPrimitive.Integer
 				return scalarPrimitiveInt, nil
 			case *core.Primitive_FloatValue:
-				scalarPrimitiveFloat := scalarPrimitive.(*core.Primitive_FloatValue).FloatValue
+				scalarPrimitiveFloat := scalarPrimitive.FloatValue
 				return scalarPrimitiveFloat, nil
 			case *core.Primitive_StringValue:
-				scalarPrimitiveString := scalarPrimitive.(*core.Primitive_StringValue).StringValue
+				scalarPrimitiveString := scalarPrimitive.StringValue
 				return scalarPrimitiveString, nil
 			case *core.Primitive_Boolean:
-				scalarPrimitiveBoolean := scalarPrimitive.(*core.Primitive_Boolean).Boolean
+				scalarPrimitiveBoolean := scalarPrimitive.Boolean
 				return scalarPrimitiveBoolean, nil
 			case *core.Primitive_Datetime:
-				scalarPrimitiveDateTime := scalarPrimitive.(*core.Primitive_Datetime).Datetime
+				scalarPrimitiveDateTime := scalarPrimitive.Datetime
 				return scalarPrimitiveDateTime, nil
 			case *core.Primitive_Duration:
-				scalarPrimitiveDuration := scalarPrimitive.(*core.Primitive_Duration).Duration
+				scalarPrimitiveDuration := scalarPrimitive.Duration
 				return scalarPrimitiveDuration, nil
 			}
+			return nil, fmt.Errorf("unsupported literal scalar type %T", scalarValue)
 		}
-		return nil, fmt.Errorf("unsupported literal scalar type %T", scalarValue)
 	case *core.Literal_Collection:
-		collectionValue := literalValue.(*core.Literal_Collection).Collection.Literals
+		collectionValue := literalValue.Collection.Literals
 		collection := make([]interface{}, len(collectionValue))
 		for index, val := range collectionValue {
 			if collectionElem, err := FetchFromLiteral(val); err == nil {
@@ -480,7 +477,7 @@ func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
 		}
 		return collection, nil
 	case *core.Literal_Map:
-		mapLiteralValue := literalValue.(*core.Literal_Map).Map.Literals
+		mapLiteralValue := literalValue.Map.Literals
 		mapResult := make(map[string]interface{}, len(mapLiteralValue))
 		for key, val := range mapLiteralValue {
 			if val, err := FetchFromLiteral(val); err == nil {
