@@ -163,7 +163,7 @@ func TestMakeLiteral(t *testing.T) {
 		}
 		assert.Equal(t, expectedMapInstance, val)
 	})
-	
+
 	t.Run("Map_Booleans", func(t *testing.T) {
 		mapInstance := map[string]interface{}{
 			"key1": []interface{}{true, false, true},
@@ -196,10 +196,9 @@ func TestMakeLiteral(t *testing.T) {
 		assert.Equal(t, expectedMapInstance, val)
 	})
 
-
 	t.Run("NestedMap", func(t *testing.T) {
 		mapInstance := map[string]interface{}{
-			"key1": map[string]interface{}{"key11": 1.0, "key12" : 2.0, "key13" :3.0},
+			"key1": map[string]interface{}{"key11": 1.0, "key12": 2.0, "key13": 3.0},
 			"key2": map[string]interface{}{"key21": 1.0},
 		}
 		lit, err := MakeLiteral(mapInstance)
@@ -209,7 +208,7 @@ func TestMakeLiteral(t *testing.T) {
 		val, err := FetchFromLiteral(lit)
 		assert.NoError(t, err)
 		expectedMapInstance := map[string]interface{}{
-			"key1": map[string]interface{}{"key11": float64(1.0), "key12" : float64(2.0), "key13" :float64(3.0)},
+			"key1": map[string]interface{}{"key11": float64(1.0), "key12": float64(2.0), "key13": float64(3.0)},
 			"key2": map[string]interface{}{"key21": float64(1.0)},
 		}
 		assert.Equal(t, expectedMapInstance, val)
