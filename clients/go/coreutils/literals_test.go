@@ -130,9 +130,6 @@ func TestMakeLiteral(t *testing.T) {
 		lit, err := MakeLiteral("test_string")
 		assert.NoError(t, err)
 		assert.Equal(t, "*core.Primitive_StringValue", reflect.TypeOf(lit.GetScalar().GetPrimitive().Value).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		assert.Equal(t, "test_string", val)
 	})
 
 	t.Run("Array", func(t *testing.T) {
@@ -140,78 +137,16 @@ func TestMakeLiteral(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, "*core.Literal_Collection", reflect.TypeOf(lit.GetValue()).String())
 		assert.Equal(t, "*core.Primitive_Integer", reflect.TypeOf(lit.GetCollection().Literals[0].GetScalar().GetPrimitive().Value).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		arr := []interface{}{int64(1), int64(2), int64(3)}
-		assert.Equal(t, arr, val)
 	})
 
 	t.Run("Map", func(t *testing.T) {
-		mapInstance := map[string]interface{}{
+		lit, err := MakeLiteral(map[string]interface{}{
 			"key1": []interface{}{1, 2, 3},
 			"key2": []interface{}{5},
-		}
-		lit, err := MakeLiteral(mapInstance)
+		})
 		assert.NoError(t, err)
 		assert.Equal(t, "*core.Literal_Map", reflect.TypeOf(lit.GetValue()).String())
 		assert.Equal(t, "*core.Literal_Collection", reflect.TypeOf(lit.GetMap().Literals["key1"].GetValue()).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		expectedMapInstance := map[string]interface{}{
-			"key1": []interface{}{int64(1), int64(2), int64(3)},
-			"key2": []interface{}{int64(5)},
-		}
-		assert.Equal(t, expectedMapInstance, val)
-	})
-
-	t.Run("Map_Booleans", func(t *testing.T) {
-		mapInstance := map[string]interface{}{
-			"key1": []interface{}{true, false, true},
-			"key2": []interface{}{false},
-		}
-		lit, err := MakeLiteral(mapInstance)
-		assert.NoError(t, err)
-		assert.Equal(t, "*core.Literal_Map", reflect.TypeOf(lit.GetValue()).String())
-		assert.Equal(t, "*core.Literal_Collection", reflect.TypeOf(lit.GetMap().Literals["key1"].GetValue()).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		assert.Equal(t, mapInstance, val)
-	})
-
-	t.Run("Map_Floats", func(t *testing.T) {
-		mapInstance := map[string]interface{}{
-			"key1": []interface{}{1.0, 2.0, 3.0},
-			"key2": []interface{}{1.0},
-		}
-		lit, err := MakeLiteral(mapInstance)
-		assert.NoError(t, err)
-		assert.Equal(t, "*core.Literal_Map", reflect.TypeOf(lit.GetValue()).String())
-		assert.Equal(t, "*core.Literal_Collection", reflect.TypeOf(lit.GetMap().Literals["key1"].GetValue()).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		expectedMapInstance := map[string]interface{}{
-			"key1": []interface{}{float64(1.0), float64(2.0), float64(3.0)},
-			"key2": []interface{}{float64(1.0)},
-		}
-		assert.Equal(t, expectedMapInstance, val)
-	})
-
-	t.Run("NestedMap", func(t *testing.T) {
-		mapInstance := map[string]interface{}{
-			"key1": map[string]interface{}{"key11": 1.0, "key12": 2.0, "key13": 3.0},
-			"key2": map[string]interface{}{"key21": 1.0},
-		}
-		lit, err := MakeLiteral(mapInstance)
-		assert.NoError(t, err)
-		assert.Equal(t, "*core.Literal_Map", reflect.TypeOf(lit.GetValue()).String())
-		assert.Equal(t, "*core.Literal_Map", reflect.TypeOf(lit.GetMap().Literals["key1"].GetValue()).String())
-		val, err := FetchFromLiteral(lit)
-		assert.NoError(t, err)
-		expectedMapInstance := map[string]interface{}{
-			"key1": map[string]interface{}{"key11": float64(1.0), "key12": float64(2.0), "key13": float64(3.0)},
-			"key2": map[string]interface{}{"key21": float64(1.0)},
-		}
-		assert.Equal(t, expectedMapInstance, val)
 	})
 
 	t.Run("Binary", func(t *testing.T) {
