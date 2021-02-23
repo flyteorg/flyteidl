@@ -1,3 +1,6 @@
+// extract_literal_test.go
+// Test class for the utility methods which construct flyte literals.
+
 package coreutils
 
 import (

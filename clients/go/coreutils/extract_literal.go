@@ -1,3 +1,24 @@
+// extract_literal.go
+// Utility methods to extract a native golang value from a given Literal.
+// Usage:
+// 1] string literal extraction
+//    lit, _ := MakeLiteral("test_string")
+//    val, _ := ExtractFromLiteral(lit)
+// 2] integer literal extraction. integer would be extracted in type int64.
+//    lit, _ := MakeLiteral([]interface{}{1, 2, 3})
+//    val, _ := ExtractFromLiteral(lit)
+// 3] float literal extraction. float would be extracted in type float64.
+//    lit, _ := MakeLiteral([]interface{}{1.0, 2.0, 3.0})
+//    val, _ := ExtractFromLiteral(lit)
+// 4] map of boolean literal extraction.
+//    mapInstance := map[string]interface{}{
+//			"key1": []interface{}{1, 2, 3},
+//			"key2": []interface{}{5},
+//		}
+//	  lit, _ := MakeLiteral(mapInstance)
+//    val, _ := ExtractFromLiteral(lit)
+// For further examples check the test TestFetchLiteral in extract_literal_test.go
+
 package coreutils
 
 import (
@@ -6,7 +27,7 @@ import (
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 )
 
-func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
+func ExtractFromLiteral(literal *core.Literal) (interface{}, error) {
 	switch literalValue := literal.Value.(type) {
 	case *core.Literal_Scalar:
 		switch scalarValue := literalValue.Scalar.Value.(type) {
@@ -37,7 +58,7 @@ func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
 		collectionValue := literalValue.Collection.Literals
 		collection := make([]interface{}, len(collectionValue))
 		for index, val := range collectionValue {
-			if collectionElem, err := FetchFromLiteral(val); err == nil {
+			if collectionElem, err := ExtractFromLiteral(val); err == nil {
 				collection[index] = collectionElem
 			} else {
 				return nil, err
@@ -48,7 +69,7 @@ func FetchFromLiteral(literal *core.Literal) (interface{}, error) {
 		mapLiteralValue := literalValue.Map.Literals
 		mapResult := make(map[string]interface{}, len(mapLiteralValue))
 		for key, val := range mapLiteralValue {
-			if val, err := FetchFromLiteral(val); err == nil {
+			if val, err := ExtractFromLiteral(val); err == nil {
 				mapResult[key] = val
 			} else {
 				return nil, err

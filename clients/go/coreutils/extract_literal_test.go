@@ -1,3 +1,6 @@
+// extract_literal_test.go
+// Test class for the utility methods which extract a native golang value from a flyte Literal.
+
 package coreutils
 
 import (
@@ -10,7 +13,7 @@ func TestFetchLiteral(t *testing.T) {
 	t.Run("Primitive", func(t *testing.T) {
 		lit, err := MakeLiteral("test_string")
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		assert.Equal(t, "test_string", val)
 	})
@@ -18,7 +21,7 @@ func TestFetchLiteral(t *testing.T) {
 	t.Run("Array", func(t *testing.T) {
 		lit, err := MakeLiteral([]interface{}{1, 2, 3})
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		arr := []interface{}{int64(1), int64(2), int64(3)}
 		assert.Equal(t, arr, val)
@@ -31,7 +34,7 @@ func TestFetchLiteral(t *testing.T) {
 		}
 		lit, err := MakeLiteral(mapInstance)
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		expectedMapInstance := map[string]interface{}{
 			"key1": []interface{}{int64(1), int64(2), int64(3)},
@@ -47,7 +50,7 @@ func TestFetchLiteral(t *testing.T) {
 		}
 		lit, err := MakeLiteral(mapInstance)
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		assert.Equal(t, mapInstance, val)
 	})
@@ -59,7 +62,7 @@ func TestFetchLiteral(t *testing.T) {
 		}
 		lit, err := MakeLiteral(mapInstance)
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		expectedMapInstance := map[string]interface{}{
 			"key1": []interface{}{float64(1.0), float64(2.0), float64(3.0)},
@@ -75,7 +78,7 @@ func TestFetchLiteral(t *testing.T) {
 		}
 		lit, err := MakeLiteral(mapInstance)
 		assert.NoError(t, err)
-		val, err := FetchFromLiteral(lit)
+		val, err := ExtractFromLiteral(lit)
 		assert.NoError(t, err)
 		expectedMapInstance := map[string]interface{}{
 			"key1": map[string]interface{}{"key11": float64(1.0), "key12": float64(2.0), "key13": float64(3.0)},
@@ -87,7 +90,7 @@ func TestFetchLiteral(t *testing.T) {
 	t.Run("Binary", func(t *testing.T) {
 		s := MakeBinaryLiteral([]byte{'h'})
 		assert.Equal(t, []byte{'h'}, s.GetScalar().GetBinary().GetValue())
-		_, err := FetchFromLiteral(s)
+		_, err := ExtractFromLiteral(s)
 		assert.NotNil(t, err)
 	})
 
@@ -95,7 +98,7 @@ func TestFetchLiteral(t *testing.T) {
 		p, err := MakeLiteral(nil)
 		assert.NoError(t, err)
 		assert.NotNil(t, p.GetScalar())
-		_, err = FetchFromLiteral(p)
+		_, err = ExtractFromLiteral(p)
 		assert.NotNil(t, err)
 	})
 }
