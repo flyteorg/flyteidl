@@ -5935,6 +5935,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -6006,7 +6007,6 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
-            version: 1
   adminTaskClosure:
     type: "object"
     properties:
@@ -6076,6 +6076,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -6147,7 +6148,6 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
-          version: 1
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -6463,6 +6463,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -6534,7 +6535,6 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
-              version: 1
       - id:
           domain: "domain"
           resource_type: {}
@@ -6597,6 +6597,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -6668,7 +6669,6 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
-              version: 1
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -8457,6 +8457,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -8528,7 +8529,6 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
-              version: 1
           - template:
               container:
                 args:
@@ -8582,6 +8582,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -8653,7 +8654,6 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
-              version: 1
           primary:
             template:
               outputs:
@@ -11332,6 +11332,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -11403,7 +11404,6 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
-            version: 1
         - template:
             container:
               args:
@@ -11457,6 +11457,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -11528,7 +11529,6 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
-            version: 1
         primary:
           template:
             outputs:
@@ -14143,6 +14143,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -14214,7 +14215,6 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
-                version: 1
             - template:
                 container:
                   args:
@@ -14268,6 +14268,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -14339,7 +14340,6 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
-                version: 1
             primary:
               template:
                 outputs:
@@ -16883,6 +16883,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -16954,7 +16955,6 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
-                version: 1
             - template:
                 container:
                   args:
@@ -17008,6 +17008,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -17079,7 +17080,6 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
-                version: 1
             primary:
               template:
                 outputs:
@@ -18430,6 +18430,7 @@ definitions:
           deprecated_error_message: "deprecated_error_message"
           interruptible: true
           timeout: "timeout"
+        task_type_version: 1
         custom:
           fields:
             key:
@@ -18501,7 +18502,6 @@ definitions:
                     dimensionality: {}
                     format: "format"
                   simple: {}
-        version: 1
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -21074,6 +21074,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -21145,7 +21146,6 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
-          version: 1
       - template:
           container:
             args:
@@ -21199,6 +21199,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -21270,7 +21271,6 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
-          version: 1
       primary:
         template:
           outputs:
@@ -23505,7 +23505,7 @@ definitions:
         $ref: "#/definitions/protobufStruct"
       container:
         $ref: "#/definitions/coreContainer"
-      version:
+      task_type_version:
         type: "integer"
         format: "int32"
         description: "This can be used to customize task handling at execution time\
@@ -23565,6 +23565,7 @@ definitions:
         deprecated_error_message: "deprecated_error_message"
         interruptible: true
         timeout: "timeout"
+      task_type_version: 1
       custom:
         fields:
           key:
@@ -23636,7 +23637,6 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
-      version: 1
   coreTypedInterface:
     type: "object"
     properties:

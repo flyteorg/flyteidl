@@ -120,7 +120,7 @@ message TaskTemplate {
     }
 
     // This can be used to customize task handling at execution time for the same task type.
-    int32 version = 7;
+    int32 task_type_version = 7;
 }
 
 // ----------------- First class Plugins

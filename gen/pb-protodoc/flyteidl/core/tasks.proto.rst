@@ -247,7 +247,7 @@ Tasks are registered as a first step in the system.
     "interface": "{...}",
     "custom": "{...}",
     "container": "{...}",
-    "version": "..."
+    "task_type_version": "..."
   }
 
 .. _api_field_flyteidl.core.TaskTemplate.id:
@@ -292,9 +292,9 @@ container
   handlers.
   
   
-.. _api_field_flyteidl.core.TaskTemplate.version:
+.. _api_field_flyteidl.core.TaskTemplate.task_type_version:
 
-version
+task_type_version
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) This can be used to customize task handling at execution time for the same task type.
   
   

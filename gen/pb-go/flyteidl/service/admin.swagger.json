@@ -5544,7 +5544,7 @@
         "container": {
           "$ref": "#/definitions/coreContainer"
         },
-        "version": {
+        "task_type_version": {
           "type": "integer",
           "format": "int32",
           "description": "This can be used to customize task handling at execution time for the same task type."

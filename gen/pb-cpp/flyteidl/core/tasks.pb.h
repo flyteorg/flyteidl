@@ -1022,11 +1022,11 @@ class TaskTemplate final :
   ::google::protobuf::Struct* mutable_custom();
   void set_allocated_custom(::google::protobuf::Struct* custom);
 
-  // int32 version = 7;
-  void clear_version();
-  static const int kVersionFieldNumber = 7;
-  ::google::protobuf::int32 version() const;
-  void set_version(::google::protobuf::int32 value);
+  // int32 task_type_version = 7;
+  void clear_task_type_version();
+  static const int kTaskTypeVersionFieldNumber = 7;
+  ::google::protobuf::int32 task_type_version() const;
+  void set_task_type_version(::google::protobuf::int32 value);
 
   // .flyteidl.core.Container container = 6;
   bool has_container() const;
@@ -1053,7 +1053,7 @@ class TaskTemplate final :
   ::flyteidl::core::TaskMetadata* metadata_;
   ::flyteidl::core::TypedInterface* interface_;
   ::google::protobuf::Struct* custom_;
-  ::google::protobuf::int32 version_;
+  ::google::protobuf::int32 task_type_version_;
   union TargetUnion {
     TargetUnion() {}
     ::flyteidl::core::Container* container_;
@@ -2617,18 +2617,18 @@ inline ::flyteidl::core::Container* TaskTemplate::mutable_container() {
   return target_.container_;
 }
 
-// int32 version = 7;
-inline void TaskTemplate::clear_version() {
-  version_ = 0;
+// int32 task_type_version = 7;
+inline void TaskTemplate::clear_task_type_version() {
+  task_type_version_ = 0;
 }
-inline ::google::protobuf::int32 TaskTemplate::version() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.version)
-  return version_;
+inline ::google::protobuf::int32 TaskTemplate::task_type_version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.task_type_version)
+  return task_type_version_;
 }
-inline void TaskTemplate::set_version(::google::protobuf::int32 value) {
+inline void TaskTemplate::set_task_type_version(::google::protobuf::int32 value) {
   
-  version_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.version)
+  task_type_version_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.task_type_version)
 }
 
 inline bool TaskTemplate::has_target() const {
