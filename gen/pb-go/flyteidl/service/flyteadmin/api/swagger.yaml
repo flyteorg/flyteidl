@@ -6006,6 +6006,7 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            version: 1
   adminTaskClosure:
     type: "object"
     properties:
@@ -6146,6 +6147,7 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          version: 1
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -6532,6 +6534,7 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              version: 1
       - id:
           domain: "domain"
           resource_type: {}
@@ -6665,6 +6668,7 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              version: 1
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -8524,6 +8528,7 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              version: 1
           - template:
               container:
                 args:
@@ -8648,6 +8653,7 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              version: 1
           primary:
             template:
               outputs:
@@ -11397,6 +11403,7 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            version: 1
         - template:
             container:
               args:
@@ -11521,6 +11528,7 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            version: 1
         primary:
           template:
             outputs:
@@ -14206,6 +14214,7 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                version: 1
             - template:
                 container:
                   args:
@@ -14330,6 +14339,7 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                version: 1
             primary:
               template:
                 outputs:
@@ -16944,6 +16954,7 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                version: 1
             - template:
                 container:
                   args:
@@ -17068,6 +17079,7 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                version: 1
             primary:
               template:
                 outputs:
@@ -18489,6 +18501,7 @@ definitions:
                     dimensionality: {}
                     format: "format"
                   simple: {}
+        version: 1
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -21132,6 +21145,7 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          version: 1
       - template:
           container:
             args:
@@ -21256,6 +21270,7 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          version: 1
       primary:
         template:
           outputs:
@@ -23490,6 +23505,11 @@ definitions:
         $ref: "#/definitions/protobufStruct"
       container:
         $ref: "#/definitions/coreContainer"
+      version:
+        type: "integer"
+        format: "int32"
+        description: "This can be used to customize task handling at execution time\
+          \ for the same task type."
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -23616,6 +23636,7 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
+      version: 1
   coreTypedInterface:
     type: "object"
     properties:
