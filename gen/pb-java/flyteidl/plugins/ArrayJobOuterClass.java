@@ -33,7 +33,6 @@ public final class ArrayJobOuterClass {
      * <pre>
      * Defines the number of instances to launch at most. This number should match the size of the input if the job
      * requires processing of all input data. This has to be a positive number.
-     * +required.
      * </pre>
      *
      * <code>int64 size = 2;</code>
@@ -41,15 +40,21 @@ public final class ArrayJobOuterClass {
     long getSize();
 
     /**
-     * <pre>
-     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-     * assigned. Default value is size.
-     * </pre>
-     *
      * <code>int64 min_successes = 3;</code>
      */
     long getMinSuccesses();
+
+    /**
+     * <pre>
+     * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
+     * job can be marked successful.
+     * </pre>
+     *
+     * <code>float min_success_ratio = 4;</code>
+     */
+    float getMinSuccessRatio();
+
+    public flyteidl.plugins.ArrayJobOuterClass.ArrayJob.SuccessCriteriaCase getSuccessCriteriaCase();
   }
   /**
    * <pre>
@@ -106,8 +111,13 @@ public final class ArrayJobOuterClass {
               break;
             }
             case 24: {
-
-              minSuccesses_ = input.readInt64();
+              successCriteriaCase_ = 3;
+              successCriteria_ = input.readInt64();
+              break;
+            }
+            case 37: {
+              successCriteriaCase_ = 4;
+              successCriteria_ = input.readFloat();
               break;
             }
             default: {
@@ -142,6 +152,44 @@ public final class ArrayJobOuterClass {
               flyteidl.plugins.ArrayJobOuterClass.ArrayJob.class, flyteidl.plugins.ArrayJobOuterClass.ArrayJob.Builder.class);
     }
 
+    private int successCriteriaCase_ = 0;
+    private java.lang.Object successCriteria_;
+    public enum SuccessCriteriaCase
+        implements com.google.protobuf.Internal.EnumLite {
+      MIN_SUCCESSES(3),
+      MIN_SUCCESS_RATIO(4),
+      SUCCESSCRITERIA_NOT_SET(0);
+      private final int value;
+      private SuccessCriteriaCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SuccessCriteriaCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SuccessCriteriaCase forNumber(int value) {
+        switch (value) {
+          case 3: return MIN_SUCCESSES;
+          case 4: return MIN_SUCCESS_RATIO;
+          case 0: return SUCCESSCRITERIA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SuccessCriteriaCase
+    getSuccessCriteriaCase() {
+      return SuccessCriteriaCase.forNumber(
+          successCriteriaCase_);
+    }
+
     public static final int PARALLELISM_FIELD_NUMBER = 1;
     private long parallelism_;
     /**
@@ -163,7 +211,6 @@ public final class ArrayJobOuterClass {
      * <pre>
      * Defines the number of instances to launch at most. This number should match the size of the input if the job
      * requires processing of all input data. This has to be a positive number.
-     * +required.
      * </pre>
      *
      * <code>int64 size = 2;</code>
@@ -173,18 +220,30 @@ public final class ArrayJobOuterClass {
     }
 
     public static final int MIN_SUCCESSES_FIELD_NUMBER = 3;
-    private long minSuccesses_;
     /**
-     * <pre>
-     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-     * assigned. Default value is size.
-     * </pre>
-     *
      * <code>int64 min_successes = 3;</code>
      */
     public long getMinSuccesses() {
-      return minSuccesses_;
+      if (successCriteriaCase_ == 3) {
+        return (java.lang.Long) successCriteria_;
+      }
+      return 0L;
+    }
+
+    public static final int MIN_SUCCESS_RATIO_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
+     * job can be marked successful.
+     * </pre>
+     *
+     * <code>float min_success_ratio = 4;</code>
+     */
+    public float getMinSuccessRatio() {
+      if (successCriteriaCase_ == 4) {
+        return (java.lang.Float) successCriteria_;
+      }
+      return 0F;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -207,8 +266,13 @@ public final class ArrayJobOuterClass {
       if (size_ != 0L) {
         output.writeInt64(2, size_);
       }
-      if (minSuccesses_ != 0L) {
-        output.writeInt64(3, minSuccesses_);
+      if (successCriteriaCase_ == 3) {
+        output.writeInt64(
+            3, (long)((java.lang.Long) successCriteria_));
+      }
+      if (successCriteriaCase_ == 4) {
+        output.writeFloat(
+            4, (float)((java.lang.Float) successCriteria_));
       }
       unknownFields.writeTo(output);
     }
@@ -227,9 +291,15 @@ public final class ArrayJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, size_);
       }
-      if (minSuccesses_ != 0L) {
+      if (successCriteriaCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, minSuccesses_);
+          .computeInt64Size(
+              3, (long)((java.lang.Long) successCriteria_));
+      }
+      if (successCriteriaCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(
+              4, (float)((java.lang.Float) successCriteria_));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -250,8 +320,20 @@ public final class ArrayJobOuterClass {
           != other.getParallelism()) return false;
       if (getSize()
           != other.getSize()) return false;
-      if (getMinSuccesses()
-          != other.getMinSuccesses()) return false;
+      if (!getSuccessCriteriaCase().equals(other.getSuccessCriteriaCase())) return false;
+      switch (successCriteriaCase_) {
+        case 3:
+          if (getMinSuccesses()
+              != other.getMinSuccesses()) return false;
+          break;
+        case 4:
+          if (java.lang.Float.floatToIntBits(getMinSuccessRatio())
+              != java.lang.Float.floatToIntBits(
+                  other.getMinSuccessRatio())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -269,9 +351,20 @@ public final class ArrayJobOuterClass {
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
-      hash = (37 * hash) + MIN_SUCCESSES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinSuccesses());
+      switch (successCriteriaCase_) {
+        case 3:
+          hash = (37 * hash) + MIN_SUCCESSES_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getMinSuccesses());
+          break;
+        case 4:
+          hash = (37 * hash) + MIN_SUCCESS_RATIO_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getMinSuccessRatio());
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,8 +507,8 @@ public final class ArrayJobOuterClass {
 
         size_ = 0L;
 
-        minSuccesses_ = 0L;
-
+        successCriteriaCase_ = 0;
+        successCriteria_ = null;
         return this;
       }
 
@@ -444,7 +537,13 @@ public final class ArrayJobOuterClass {
         flyteidl.plugins.ArrayJobOuterClass.ArrayJob result = new flyteidl.plugins.ArrayJobOuterClass.ArrayJob(this);
         result.parallelism_ = parallelism_;
         result.size_ = size_;
-        result.minSuccesses_ = minSuccesses_;
+        if (successCriteriaCase_ == 3) {
+          result.successCriteria_ = successCriteria_;
+        }
+        if (successCriteriaCase_ == 4) {
+          result.successCriteria_ = successCriteria_;
+        }
+        result.successCriteriaCase_ = successCriteriaCase_;
         onBuilt();
         return result;
       }
@@ -499,8 +598,18 @@ public final class ArrayJobOuterClass {
         if (other.getSize() != 0L) {
           setSize(other.getSize());
         }
-        if (other.getMinSuccesses() != 0L) {
-          setMinSuccesses(other.getMinSuccesses());
+        switch (other.getSuccessCriteriaCase()) {
+          case MIN_SUCCESSES: {
+            setMinSuccesses(other.getMinSuccesses());
+            break;
+          }
+          case MIN_SUCCESS_RATIO: {
+            setMinSuccessRatio(other.getMinSuccessRatio());
+            break;
+          }
+          case SUCCESSCRITERIA_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -530,6 +639,21 @@ public final class ArrayJobOuterClass {
         }
         return this;
       }
+      private int successCriteriaCase_ = 0;
+      private java.lang.Object successCriteria_;
+      public SuccessCriteriaCase
+          getSuccessCriteriaCase() {
+        return SuccessCriteriaCase.forNumber(
+            successCriteriaCase_);
+      }
+
+      public Builder clearSuccessCriteria() {
+        successCriteriaCase_ = 0;
+        successCriteria_ = null;
+        onChanged();
+        return this;
+      }
+
 
       private long parallelism_ ;
       /**
@@ -580,7 +704,6 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
-       * +required.
        * </pre>
        *
        * <code>int64 size = 2;</code>
@@ -592,7 +715,6 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
-       * +required.
        * </pre>
        *
        * <code>int64 size = 2;</code>
@@ -607,7 +729,6 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
-       * +required.
        * </pre>
        *
        * <code>int64 size = 2;</code>
@@ -619,47 +740,78 @@ public final class ArrayJobOuterClass {
         return this;
       }
 
-      private long minSuccesses_ ;
       /**
-       * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size.
-       * </pre>
-       *
        * <code>int64 min_successes = 3;</code>
        */
       public long getMinSuccesses() {
-        return minSuccesses_;
+        if (successCriteriaCase_ == 3) {
+          return (java.lang.Long) successCriteria_;
+        }
+        return 0L;
       }
       /**
-       * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size.
-       * </pre>
-       *
        * <code>int64 min_successes = 3;</code>
        */
       public Builder setMinSuccesses(long value) {
-        
-        minSuccesses_ = value;
+        successCriteriaCase_ = 3;
+        successCriteria_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 min_successes = 3;</code>
+       */
+      public Builder clearMinSuccesses() {
+        if (successCriteriaCase_ == 3) {
+          successCriteriaCase_ = 0;
+          successCriteria_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <pre>
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
+       * job can be marked successful.
+       * </pre>
+       *
+       * <code>float min_success_ratio = 4;</code>
+       */
+      public float getMinSuccessRatio() {
+        if (successCriteriaCase_ == 4) {
+          return (java.lang.Float) successCriteria_;
+        }
+        return 0F;
+      }
+      /**
+       * <pre>
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
+       * job can be marked successful.
+       * </pre>
+       *
+       * <code>float min_success_ratio = 4;</code>
+       */
+      public Builder setMinSuccessRatio(float value) {
+        successCriteriaCase_ = 4;
+        successCriteria_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
-       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
-       * assigned. Default value is size.
+       * If the array job size is not known beforehand, the min_success_ratio can instead be used to determine when an array
+       * job can be marked successful.
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>float min_success_ratio = 4;</code>
        */
-      public Builder clearMinSuccesses() {
-        
-        minSuccesses_ = 0L;
-        onChanged();
+      public Builder clearMinSuccessRatio() {
+        if (successCriteriaCase_ == 4) {
+          successCriteriaCase_ = 0;
+          successCriteria_ = null;
+          onChanged();
+        }
         return this;
       }
       @java.lang.Override
@@ -730,10 +882,11 @@ public final class ArrayJobOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n flyteidl/plugins/array_job.proto\022\020flyt" +
-      "eidl.plugins\"D\n\010ArrayJob\022\023\n\013parallelism\030" +
-      "\001 \001(\003\022\014\n\004size\030\002 \001(\003\022\025\n\rmin_successes\030\003 \001" +
-      "(\003B5Z3github.com/lyft/flyteidl/gen/pb-go" +
-      "/flyteidl/pluginsb\006proto3"
+      "eidl.plugins\"w\n\010ArrayJob\022\023\n\013parallelism\030" +
+      "\001 \001(\003\022\014\n\004size\030\002 \001(\003\022\027\n\rmin_successes\030\003 \001" +
+      "(\003H\000\022\033\n\021min_success_ratio\030\004 \001(\002H\000B\022\n\020suc" +
+      "cess_criteriaB5Z3github.com/lyft/flyteid" +
+      "l/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -752,7 +905,7 @@ public final class ArrayJobOuterClass {
     internal_static_flyteidl_plugins_ArrayJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_ArrayJob_descriptor,
-        new java.lang.String[] { "Parallelism", "Size", "MinSuccesses", });
+        new java.lang.String[] { "Parallelism", "Size", "MinSuccesses", "MinSuccessRatio", "SuccessCriteria", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
