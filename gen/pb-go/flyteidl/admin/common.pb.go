@@ -5,8 +5,8 @@ package admin
 
 import (
 	fmt "fmt"
+	core "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	proto "github.com/golang/protobuf/proto"
-	core "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	math "math"
 )
 

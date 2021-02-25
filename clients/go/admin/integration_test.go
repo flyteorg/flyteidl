@@ -5,12 +5,13 @@ package admin
 import (
 	"context"
 	"fmt"
-	"golang.org/x/oauth2/clientcredentials"
 	"net/url"
 	"testing"
 	"time"
 
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
+	"golang.org/x/oauth2/clientcredentials"
+
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin"
 	"github.com/lyft/flytestdlib/config"
 	"github.com/stretchr/testify/assert"
 )
