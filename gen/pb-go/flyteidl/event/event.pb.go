@@ -5,10 +5,10 @@ package event
 
 import (
 	fmt "fmt"
+	core "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	proto "github.com/golang/protobuf/proto"
 	_struct "github.com/golang/protobuf/ptypes/struct"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
-	core "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	math "math"
 )
 

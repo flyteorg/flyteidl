@@ -10,12 +10,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event"
+	"github.com/flyteorg/flytestdlib/config"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/influxdata/influxdb/pkg/testing/assert"
-	"github.com/lyft/flyteidl/clients/go/admin"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
-	"github.com/lyft/flytestdlib/config"
 )
 
 var (
