@@ -8,7 +8,7 @@ types.proto
 flyteidl.core.SchemaType
 ------------------------
 
-`[flyteidl.core.SchemaType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L23>`_
+`[flyteidl.core.SchemaType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L23>`_
 
 Defines schema columns and types to strongly type-validate schemas interoperability.
 
@@ -29,7 +29,7 @@ columns
 flyteidl.core.SchemaType.SchemaColumn
 -------------------------------------
 
-`[flyteidl.core.SchemaType.SchemaColumn proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L24>`_
+`[flyteidl.core.SchemaType.SchemaColumn proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L24>`_
 
 
 .. code-block:: json
@@ -57,7 +57,7 @@ type
 Enum flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType
 -----------------------------------------------------------
 
-`[flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L28>`_
+`[flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L28>`_
 
 
 .. _api_enum_value_flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType.INTEGER:
@@ -97,7 +97,7 @@ DURATION
 flyteidl.core.BlobType
 ----------------------
 
-`[flyteidl.core.BlobType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L46>`_
+`[flyteidl.core.BlobType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L46>`_
 
 Defines type behavior for blob objects
 
@@ -126,7 +126,7 @@ dimensionality
 Enum flyteidl.core.BlobType.BlobDimensionality
 ----------------------------------------------
 
-`[flyteidl.core.BlobType.BlobDimensionality proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L47>`_
+`[flyteidl.core.BlobType.BlobDimensionality proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L47>`_
 
 
 .. _api_enum_value_flyteidl.core.BlobType.BlobDimensionality.SINGLE:
@@ -145,7 +145,7 @@ MULTIPART
 flyteidl.core.LiteralType
 -------------------------
 
-`[flyteidl.core.LiteralType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L59>`_
+`[flyteidl.core.LiteralType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L59>`_
 
 Defines a strong type to allow type checking between interfaces.
 
@@ -219,7 +219,7 @@ metadata
 flyteidl.core.OutputReference
 -----------------------------
 
-`[flyteidl.core.OutputReference proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L84>`_
+`[flyteidl.core.OutputReference proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L84>`_
 
 A reference to an output produced by a node. The type can be retrieved -and validated- from
 the underlying interface of the node.
@@ -250,7 +250,7 @@ var
 flyteidl.core.Error
 -------------------
 
-`[flyteidl.core.Error proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L93>`_
+`[flyteidl.core.Error proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L93>`_
 
 Represents an error thrown from a node.
 
@@ -279,7 +279,7 @@ message
 Enum flyteidl.core.SimpleType
 -----------------------------
 
-`[flyteidl.core.SimpleType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/types.proto#L9>`_
+`[flyteidl.core.SimpleType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/types.proto#L9>`_
 
 Define a set of simple types.
 
@@ -332,4 +332,3 @@ ERROR
 
 STRUCT
   ⁣
-  

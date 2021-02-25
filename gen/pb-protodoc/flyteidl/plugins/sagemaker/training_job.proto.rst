@@ -8,7 +8,7 @@ training_job.proto
 flyteidl.plugins.sagemaker.InputMode
 ------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L15>`_
+`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L15>`_
 
 The input mode that the algorithm supports. When using the File input mode, SageMaker downloads
 the training data from S3 to the provisioned ML storage Volume, and mounts the directory to docker
@@ -29,7 +29,7 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-p
 Enum flyteidl.plugins.sagemaker.InputMode.Value
 -----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputMode.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L16>`_
+`[flyteidl.plugins.sagemaker.InputMode.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L16>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.Value.FILE:
@@ -48,7 +48,7 @@ PIPE
 flyteidl.plugins.sagemaker.AlgorithmName
 ----------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L26>`_
+`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L26>`_
 
 The algorithm name is used for deciding which pre-built image to point to.
 This is only required for use cases where SageMaker's built-in algorithm mode is used.
@@ -66,7 +66,7 @@ See: https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html
 Enum flyteidl.plugins.sagemaker.AlgorithmName.Value
 ---------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmName.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
+`[flyteidl.plugins.sagemaker.AlgorithmName.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.Value.CUSTOM:
@@ -85,7 +85,7 @@ XGBOOST
 flyteidl.plugins.sagemaker.InputContentType
 -------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputContentType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
+`[flyteidl.plugins.sagemaker.InputContentType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
 
 Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
@@ -102,7 +102,7 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-p
 Enum flyteidl.plugins.sagemaker.InputContentType.Value
 ------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputContentType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
+`[flyteidl.plugins.sagemaker.InputContentType.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.InputContentType.Value.TEXT_CSV:
@@ -116,7 +116,7 @@ TEXT_CSV
 flyteidl.plugins.sagemaker.MetricDefinition
 -------------------------------------------
 
-`[flyteidl.plugins.sagemaker.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L46>`_
+`[flyteidl.plugins.sagemaker.MetricDefinition proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L46>`_
 
 Specifies a metric that the training algorithm writes to stderr or stdout.
 This object is a pass-through.
@@ -148,7 +148,7 @@ regex
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L61>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L61>`_
 
 Specifies the training algorithm to be used in the training job
 This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
@@ -210,7 +210,7 @@ input_content_type
 flyteidl.plugins.sagemaker.DistributedProtocol
 ----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributedProtocol proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L84>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L84>`_
 
 When enabling distributed training on a training job, the user should use this message to tell Flyte and SageMaker
 what kind of distributed protocol he/she wants to use to distribute the work.
@@ -226,7 +226,7 @@ what kind of distributed protocol he/she wants to use to distribute the work.
 Enum flyteidl.plugins.sagemaker.DistributedProtocol.Value
 ---------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.DistributedProtocol.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L85>`_
+`[flyteidl.plugins.sagemaker.DistributedProtocol.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L85>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.DistributedProtocol.Value.UNSPECIFIED:
@@ -251,7 +251,7 @@ MPI
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L100>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L100>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -299,7 +299,7 @@ distributed_protocol
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L115>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L115>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
@@ -320,5 +320,3 @@ algorithm_specification
 
 training_job_resource_config
   (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
-  
-

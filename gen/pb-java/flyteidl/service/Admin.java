@@ -343,7 +343,7 @@ public final class Admin {
       "1/named_entities/{resource_type}/{id.pro" +
       "ject}/{id.domain}/{id.name}:\001*\222A1\032/Updat" +
       "e the fields associated with a NamedEnti" +
-      "tyB5Z3github.com/lyft/flyteidl/gen/pb-go" +
+      "tyB5Z3github.com/flyteorg/flyteidl/gen/pb-go" +
       "/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

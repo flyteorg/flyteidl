@@ -8,7 +8,7 @@ event.proto
 flyteidl.event.WorkflowExecutionEvent
 -------------------------------------
 
-`[flyteidl.event.WorkflowExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L12>`_
+`[flyteidl.event.WorkflowExecutionEvent proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L12>`_
 
 
 .. code-block:: json
@@ -72,7 +72,7 @@ error
 flyteidl.event.NodeExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.NodeExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L35>`_
+`[flyteidl.event.NodeExecutionEvent proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L35>`_
 
 
 .. code-block:: json
@@ -200,7 +200,7 @@ node_name
 flyteidl.event.WorkflowNodeMetadata
 -----------------------------------
 
-`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L84>`_
+`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L84>`_
 
 For Workflow Nodes we need to send information about the workflow that's launched
 
@@ -222,7 +222,7 @@ execution_id
 flyteidl.event.TaskNodeMetadata
 -------------------------------
 
-`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L88>`_
+`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L88>`_
 
 
 .. code-block:: json
@@ -251,7 +251,7 @@ catalog_key
 flyteidl.event.ParentTaskExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L96>`_
+`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L96>`_
 
 
 .. code-block:: json
@@ -272,7 +272,7 @@ id
 flyteidl.event.ParentNodeExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L100>`_
+`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L100>`_
 
 
 .. code-block:: json
@@ -295,7 +295,7 @@ node_id
 flyteidl.event.TaskExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L107>`_
+`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L107>`_
 
 Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 
@@ -415,7 +415,7 @@ metadata
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L159>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L159>`_
 
 Holds metadata around how a task was executed.
 TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
@@ -437,7 +437,7 @@ instance_class
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L161>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/event/event.proto#L161>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 
@@ -451,5 +451,3 @@ DEFAULT
 
 INTERRUPTIBLE
   ⁣The instance class configured for interruptible tasks.
-  
-  

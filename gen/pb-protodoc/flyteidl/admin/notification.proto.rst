@@ -10,7 +10,7 @@ import "validate/validate.proto";
 flyteidl.admin.EmailMessage
 ---------------------------
 
-`[flyteidl.admin.EmailMessage proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/notification.proto#L11>`_
+`[flyteidl.admin.EmailMessage proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/notification.proto#L11>`_
 
 Represents the Email object that is sent to a publisher/subscriber
 to forward the notification.
@@ -52,6 +52,3 @@ subject_line
 body
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The content of the email body.
   This populates the BODY field.
-  
-  
-

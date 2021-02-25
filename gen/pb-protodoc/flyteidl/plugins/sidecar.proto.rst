@@ -8,7 +8,7 @@ sidecar.proto
 flyteidl.plugins.SidecarJob
 ---------------------------
 
-`[flyteidl.plugins.SidecarJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sidecar.proto#L11>`_
+`[flyteidl.plugins.SidecarJob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sidecar.proto#L11>`_
 
 A sidecar job brings up the desired pod_spec.
 The plugin executor is responsible for keeping the pod alive until the primary container terminates
@@ -30,5 +30,3 @@ pod_spec
 
 primary_container_name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
-

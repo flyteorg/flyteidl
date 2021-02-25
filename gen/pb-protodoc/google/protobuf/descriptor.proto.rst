@@ -45,7 +45,7 @@ without any other information (e.g. without reading its imports).
 google.protobuf.FileDescriptorSet
 ---------------------------------
 
-`[google.protobuf.FileDescriptorSet proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L55>`_
+`[google.protobuf.FileDescriptorSet proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L55>`_
 
 The protocol compiler can output a FileDescriptorSet containing the .proto
 files it parses.
@@ -68,7 +68,7 @@ file
 google.protobuf.FileDescriptorProto
 -----------------------------------
 
-`[google.protobuf.FileDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L60>`_
+`[google.protobuf.FileDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L60>`_
 
 Describes a complete .proto file.
 
@@ -167,7 +167,7 @@ syntax
 google.protobuf.DescriptorProto
 -------------------------------
 
-`[google.protobuf.DescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L92>`_
+`[google.protobuf.DescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L92>`_
 
 Describes a message type.
 
@@ -243,7 +243,7 @@ reserved_name
 google.protobuf.DescriptorProto.ExtensionRange
 ----------------------------------------------
 
-`[google.protobuf.DescriptorProto.ExtensionRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L101>`_
+`[google.protobuf.DescriptorProto.ExtensionRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L101>`_
 
 
 .. code-block:: json
@@ -276,7 +276,7 @@ options
 google.protobuf.DescriptorProto.ReservedRange
 ---------------------------------------------
 
-`[google.protobuf.DescriptorProto.ReservedRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L116>`_
+`[google.protobuf.DescriptorProto.ReservedRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L116>`_
 
 Range of reserved tag numbers. Reserved tag numbers may not be used by
 fields or extension ranges in the same message. Reserved ranges may
@@ -307,7 +307,7 @@ end
 google.protobuf.ExtensionRangeOptions
 -------------------------------------
 
-`[google.protobuf.ExtensionRangeOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L126>`_
+`[google.protobuf.ExtensionRangeOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L126>`_
 
 
 .. code-block:: json
@@ -329,7 +329,7 @@ uninterpreted_option
 google.protobuf.FieldDescriptorProto
 ------------------------------------
 
-`[google.protobuf.FieldDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L135>`_
+`[google.protobuf.FieldDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L135>`_
 
 Describes a field within a message.
 
@@ -424,7 +424,7 @@ options
 Enum google.protobuf.FieldDescriptorProto.Type
 ----------------------------------------------
 
-`[google.protobuf.FieldDescriptorProto.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L136>`_
+`[google.protobuf.FieldDescriptorProto.Type proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L136>`_
 
 
 .. _api_enum_value_google.protobuf.FieldDescriptorProto.Type.TYPE_DOUBLE:
@@ -534,7 +534,7 @@ TYPE_SINT64
 Enum google.protobuf.FieldDescriptorProto.Label
 -----------------------------------------------
 
-`[google.protobuf.FieldDescriptorProto.Label proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L169>`_
+`[google.protobuf.FieldDescriptorProto.Label proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L169>`_
 
 
 .. _api_enum_value_google.protobuf.FieldDescriptorProto.Label.LABEL_OPTIONAL:
@@ -559,7 +559,7 @@ LABEL_REPEATED
 google.protobuf.OneofDescriptorProto
 ------------------------------------
 
-`[google.protobuf.OneofDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L216>`_
+`[google.protobuf.OneofDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L216>`_
 
 Describes a oneof.
 
@@ -587,7 +587,7 @@ options
 google.protobuf.EnumDescriptorProto
 -----------------------------------
 
-`[google.protobuf.EnumDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L222>`_
+`[google.protobuf.EnumDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L222>`_
 
 Describes an enum type.
 
@@ -636,7 +636,7 @@ reserved_name
 google.protobuf.EnumDescriptorProto.EnumReservedRange
 -----------------------------------------------------
 
-`[google.protobuf.EnumDescriptorProto.EnumReservedRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L235>`_
+`[google.protobuf.EnumDescriptorProto.EnumReservedRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L235>`_
 
 Range of reserved numeric values. Reserved values may not be used by
 entries in the same enum. Reserved ranges may not overlap.
@@ -670,7 +670,7 @@ end
 google.protobuf.EnumValueDescriptorProto
 ----------------------------------------
 
-`[google.protobuf.EnumValueDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L251>`_
+`[google.protobuf.EnumValueDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L251>`_
 
 Describes a value within an enum.
 
@@ -704,7 +704,7 @@ options
 google.protobuf.ServiceDescriptorProto
 --------------------------------------
 
-`[google.protobuf.ServiceDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L259>`_
+`[google.protobuf.ServiceDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L259>`_
 
 Describes a service.
 
@@ -738,7 +738,7 @@ options
 google.protobuf.MethodDescriptorProto
 -------------------------------------
 
-`[google.protobuf.MethodDescriptorProto proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L267>`_
+`[google.protobuf.MethodDescriptorProto proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L267>`_
 
 Describes a method of a service.
 
@@ -794,7 +794,7 @@ server_streaming
 google.protobuf.FileOptions
 ---------------------------
 
-`[google.protobuf.FileOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L317>`_
+`[google.protobuf.FileOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L317>`_
 
 
 .. code-block:: json
@@ -997,7 +997,7 @@ uninterpreted_option
 Enum google.protobuf.FileOptions.OptimizeMode
 ---------------------------------------------
 
-`[google.protobuf.FileOptions.OptimizeMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L354>`_
+`[google.protobuf.FileOptions.OptimizeMode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L354>`_
 
 Generated classes can be optimized for speed or code size.
 
@@ -1023,7 +1023,7 @@ LITE_RUNTIME
 google.protobuf.MessageOptions
 ------------------------------
 
-`[google.protobuf.MessageOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L441>`_
+`[google.protobuf.MessageOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L441>`_
 
 
 .. code-block:: json
@@ -1115,7 +1115,7 @@ uninterpreted_option
 google.protobuf.FieldOptions
 ----------------------------
 
-`[google.protobuf.FieldOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L506>`_
+`[google.protobuf.FieldOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L506>`_
 
 
 .. code-block:: json
@@ -1225,7 +1225,7 @@ uninterpreted_option
 Enum google.protobuf.FieldOptions.CType
 ---------------------------------------
 
-`[google.protobuf.FieldOptions.CType proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L512>`_
+`[google.protobuf.FieldOptions.CType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L512>`_
 
 
 .. _api_enum_value_google.protobuf.FieldOptions.CType.STRING:
@@ -1250,7 +1250,7 @@ STRING_PIECE
 Enum google.protobuf.FieldOptions.JSType
 ----------------------------------------
 
-`[google.protobuf.FieldOptions.JSType proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L539>`_
+`[google.protobuf.FieldOptions.JSType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L539>`_
 
 
 .. _api_enum_value_google.protobuf.FieldOptions.JSType.JS_NORMAL:
@@ -1277,7 +1277,7 @@ JS_NUMBER
 google.protobuf.OneofOptions
 ----------------------------
 
-`[google.protobuf.OneofOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L599>`_
+`[google.protobuf.OneofOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L599>`_
 
 
 .. code-block:: json
@@ -1299,7 +1299,7 @@ uninterpreted_option
 google.protobuf.EnumOptions
 ---------------------------
 
-`[google.protobuf.EnumOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L607>`_
+`[google.protobuf.EnumOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L607>`_
 
 
 .. code-block:: json
@@ -1339,7 +1339,7 @@ uninterpreted_option
 google.protobuf.EnumValueOptions
 --------------------------------
 
-`[google.protobuf.EnumValueOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L628>`_
+`[google.protobuf.EnumValueOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L628>`_
 
 
 .. code-block:: json
@@ -1371,7 +1371,7 @@ uninterpreted_option
 google.protobuf.ServiceOptions
 ------------------------------
 
-`[google.protobuf.ServiceOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L642>`_
+`[google.protobuf.ServiceOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L642>`_
 
 
 .. code-block:: json
@@ -1403,7 +1403,7 @@ uninterpreted_option
 google.protobuf.MethodOptions
 -----------------------------
 
-`[google.protobuf.MethodOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L662>`_
+`[google.protobuf.MethodOptions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L662>`_
 
 
 .. code-block:: json
@@ -1440,7 +1440,7 @@ uninterpreted_option
 Enum google.protobuf.MethodOptions.IdempotencyLevel
 ---------------------------------------------------
 
-`[google.protobuf.MethodOptions.IdempotencyLevel proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L678>`_
+`[google.protobuf.MethodOptions.IdempotencyLevel proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L678>`_
 
 Is this method side-effect-free (or safe in HTTP parlance), or idempotent,
 or neither? HTTP based RPC implementation may choose GET verb for safe
@@ -1467,7 +1467,7 @@ IDEMPOTENT
 google.protobuf.UninterpretedOption
 -----------------------------------
 
-`[google.protobuf.UninterpretedOption proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L700>`_
+`[google.protobuf.UninterpretedOption proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L700>`_
 
 A message representing a option the parser does not recognize. This only
 appears in options protos created by the compiler::Parser class.
@@ -1530,7 +1530,7 @@ aggregate_value
 google.protobuf.UninterpretedOption.NamePart
 --------------------------------------------
 
-`[google.protobuf.UninterpretedOption.NamePart proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L706>`_
+`[google.protobuf.UninterpretedOption.NamePart proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L706>`_
 
 The name of the uninterpreted option.  Each string represents a segment in
 a dot-separated name.  is_extension is true iff a segment represents an
@@ -1563,7 +1563,7 @@ is_extension
 google.protobuf.SourceCodeInfo
 ------------------------------
 
-`[google.protobuf.SourceCodeInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L727>`_
+`[google.protobuf.SourceCodeInfo proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L727>`_
 
 Encapsulates information about the original source file from which a
 FileDescriptorProto was generated.
@@ -1627,7 +1627,7 @@ location
 google.protobuf.SourceCodeInfo.Location
 ---------------------------------------
 
-`[google.protobuf.SourceCodeInfo.Location proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L772>`_
+`[google.protobuf.SourceCodeInfo.Location proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L772>`_
 
 
 .. code-block:: json
@@ -1748,7 +1748,7 @@ leading_detached_comments
 google.protobuf.GeneratedCodeInfo
 ---------------------------------
 
-`[google.protobuf.GeneratedCodeInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L861>`_
+`[google.protobuf.GeneratedCodeInfo proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L861>`_
 
 Describes the relationship between generated code and its original source
 file. A GeneratedCodeInfo message is associated with only one generated
@@ -1772,7 +1772,7 @@ annotation
 google.protobuf.GeneratedCodeInfo.Annotation
 --------------------------------------------
 
-`[google.protobuf.GeneratedCodeInfo.Annotation proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L865>`_
+`[google.protobuf.GeneratedCodeInfo.Annotation proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/descriptor.proto#L865>`_
 
 
 .. code-block:: json
@@ -1810,7 +1810,3 @@ end
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifies the ending offset in bytes in the generated code that
   relates to the identified offset. The end offset should be one past
   the last relevant byte (so the length of the text = end - begin).
-  
-  
-
-

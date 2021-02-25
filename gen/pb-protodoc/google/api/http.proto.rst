@@ -23,7 +23,7 @@ limitations under the License.
 google.api.Http
 ---------------
 
-`[google.api.Http proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/api/http.proto#L29>`_
+`[google.api.Http proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/api/http.proto#L29>`_
 
 Defines the HTTP configuration for an API service. It contains a list of
 [HttpRule][google.api.HttpRule], each specifying the mapping of an RPC method
@@ -62,7 +62,7 @@ fully_decode_reserved_expansion
 google.api.HttpRule
 -------------------
 
-`[google.api.HttpRule proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/api/http.proto#L313>`_
+`[google.api.HttpRule proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/api/http.proto#L313>`_
 
 # gRPC Transcoding
 
@@ -470,7 +470,7 @@ additional_bindings
 google.api.CustomHttpPattern
 ----------------------------
 
-`[google.api.CustomHttpPattern proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/api/http.proto#L369>`_
+`[google.api.CustomHttpPattern proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/api/http.proto#L369>`_
 
 A custom pattern is used for defining custom HTTP verb.
 
@@ -491,6 +491,3 @@ kind
 
 path
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The path matched by this custom verb.
-  
-  
-

@@ -8,7 +8,7 @@ condition.proto
 flyteidl.core.ComparisonExpression
 ----------------------------------
 
-`[flyteidl.core.ComparisonExpression proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L10>`_
+`[flyteidl.core.ComparisonExpression proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L10>`_
 
 Defines a 2-level tree where the root is a comparison operator and Operands are primitives or known variables.
 Each expression results in a boolean result.
@@ -42,7 +42,7 @@ right_value
 Enum flyteidl.core.ComparisonExpression.Operator
 ------------------------------------------------
 
-`[flyteidl.core.ComparisonExpression.Operator proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L12>`_
+`[flyteidl.core.ComparisonExpression.Operator proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L12>`_
 
 Binary Operator for each expression
 
@@ -84,7 +84,7 @@ LTE
 flyteidl.core.Operand
 ---------------------
 
-`[flyteidl.core.Operand proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L29>`_
+`[flyteidl.core.Operand proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L29>`_
 
 Defines an operand to a comparison expression.
 
@@ -120,7 +120,7 @@ var
 flyteidl.core.BooleanExpression
 -------------------------------
 
-`[flyteidl.core.BooleanExpression proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L40>`_
+`[flyteidl.core.BooleanExpression proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L40>`_
 
 Defines a boolean expression tree. It can be a simple or a conjunction expression.
 Multiple expressions can be combined using a conjunction or a disjunction to result in a final boolean result.
@@ -155,7 +155,7 @@ comparison
 flyteidl.core.ConjunctionExpression
 -----------------------------------
 
-`[flyteidl.core.ConjunctionExpression proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L48>`_
+`[flyteidl.core.ConjunctionExpression proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L48>`_
 
 Defines a conjunction expression of two boolean expressions.
 
@@ -188,7 +188,7 @@ right_expression
 Enum flyteidl.core.ConjunctionExpression.LogicalOperator
 --------------------------------------------------------
 
-`[flyteidl.core.ConjunctionExpression.LogicalOperator proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L51>`_
+`[flyteidl.core.ConjunctionExpression.LogicalOperator proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/condition.proto#L51>`_
 
 Nested conditions. They can be conjoined using AND / OR
 Order of evaluation is not important as the operators are Commutative
@@ -203,4 +203,3 @@ AND
 
 OR
   ⁣
-  

@@ -458,7 +458,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXECU"
   "TION_CLUSTER_LABEL\020\003\022$\n QUALITY_OF_SERVI"
   "CE_SPECIFICATION\020\004\022\023\n\017PLUGIN_OVERRIDE\020\005B"
-  "3Z1github.com/lyft/flyteidl/gen/pb-go/fl"
+  "3Z1github.com/flyteorg/flyteidl/gen/pb-go/fl"
   "yteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {

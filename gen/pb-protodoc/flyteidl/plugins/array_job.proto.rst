@@ -8,7 +8,7 @@ array_job.proto
 flyteidl.plugins.ArrayJob
 -------------------------
 
-`[flyteidl.plugins.ArrayJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/array_job.proto#L8>`_
+`[flyteidl.plugins.ArrayJob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/array_job.proto#L8>`_
 
 Describes a job that can process independent pieces of data concurrently. Multiple copies of the runnable component
 will be executed concurrently.
@@ -43,6 +43,3 @@ min_successes
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
   the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
   assigned. Default value is size.
-  
-  
-

@@ -8,7 +8,7 @@ compiler.proto
 flyteidl.core.ConnectionSet
 ---------------------------
 
-`[flyteidl.core.ConnectionSet proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L11>`_
+`[flyteidl.core.ConnectionSet proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L11>`_
 
 Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 step uses this created ConnectionSet
@@ -37,7 +37,7 @@ upstream
 flyteidl.core.ConnectionSet.IdList
 ----------------------------------
 
-`[flyteidl.core.ConnectionSet.IdList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L12>`_
+`[flyteidl.core.ConnectionSet.IdList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L12>`_
 
 
 .. code-block:: json
@@ -61,7 +61,7 @@ ids
 flyteidl.core.CompiledWorkflow
 ------------------------------
 
-`[flyteidl.core.CompiledWorkflow proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L24>`_
+`[flyteidl.core.CompiledWorkflow proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L24>`_
 
 Output of the compilation Step. This object represents one workflow. We store more metadata at this layer
 
@@ -91,7 +91,7 @@ connections
 flyteidl.core.CompiledTask
 --------------------------
 
-`[flyteidl.core.CompiledTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L32>`_
+`[flyteidl.core.CompiledTask proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L32>`_
 
 Output of the Compilation step. This object represent one Task. We store more metadata at this layer
 
@@ -114,7 +114,7 @@ template
 flyteidl.core.CompiledWorkflowClosure
 -------------------------------------
 
-`[flyteidl.core.CompiledWorkflowClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L41>`_
+`[flyteidl.core.CompiledWorkflowClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/compiler.proto#L41>`_
 
 A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow
 and its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that
@@ -149,6 +149,3 @@ sub_workflows
 tasks
   (:ref:`flyteidl.core.CompiledTask <api_msg_flyteidl.core.CompiledTask>`) Guaranteed that there will only exist one and only one task with a given id, i.e., every task has a unique id
   required (atleast 1)
-  
-  
-

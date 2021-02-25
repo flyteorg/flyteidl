@@ -460,7 +460,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto
   "\027.flyteidl.admin.UrlBlob\022.\n\013full_inputs\030"
   "\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014full"
   "_outputs\030\004 \001(\0132\031.flyteidl.core.LiteralMa"
-  "pB3Z1github.com/lyft/flyteidl/gen/pb-go/"
+  "pB3Z1github.com/flyteorg/flyteidl/gen/pb-go/"
   "flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {

@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/array_job.proto',
   package='flyteidl.plugins',
   syntax='proto3',
-  serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n flyteidl/plugins/array_job.proto\x12\x10\x66lyteidl.plugins\"D\n\x08\x41rrayJob\x12\x13\n\x0bparallelism\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x15\n\rmin_successes\x18\x03 \x01(\x03\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_options=_b('Z3github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
+  serialized_pb=_b('\n flyteidl/plugins/array_job.proto\x12\x10\x66lyteidl.plugins\"D\n\x08\x41rrayJob\x12\x13\n\x0bparallelism\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x15\n\rmin_successes\x18\x03 \x01(\x03\x42\x35Z3github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 

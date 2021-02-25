@@ -242,7 +242,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto[] =
   "WorkflowClosure\022A\n\021compiled_workflow\030\001 \001"
   "(\0132&.flyteidl.core.CompiledWorkflowClosu"
   "re\022.\n\ncreated_at\030\002 \001(\0132\032.google.protobuf"
-  ".TimestampB3Z1github.com/lyft/flyteidl/g"
+  ".TimestampB3Z1github.com/flyteorg/flyteidl/g"
   "en/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto = {

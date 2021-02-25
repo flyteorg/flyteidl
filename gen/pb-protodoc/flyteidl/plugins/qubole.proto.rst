@@ -8,7 +8,7 @@ qubole.proto
 flyteidl.plugins.HiveQuery
 --------------------------
 
-`[flyteidl.plugins.HiveQuery proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L9>`_
+`[flyteidl.plugins.HiveQuery proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L9>`_
 
 Defines a query to execute on a hive cluster.
 
@@ -42,7 +42,7 @@ retryCount
 flyteidl.plugins.HiveQueryCollection
 ------------------------------------
 
-`[flyteidl.plugins.HiveQueryCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L16>`_
+`[flyteidl.plugins.HiveQueryCollection proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L16>`_
 
 Defines a collection of hive queries.
 
@@ -64,7 +64,7 @@ queries
 flyteidl.plugins.QuboleHiveJob
 ------------------------------
 
-`[flyteidl.plugins.QuboleHiveJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L22>`_
+`[flyteidl.plugins.QuboleHiveJob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/qubole.proto#L22>`_
 
 This message works with the 'hive' task type in the SDK and is the object that will be in the 'custom' field
 of a hive task's TaskTemplate
@@ -97,5 +97,3 @@ tags
 
 query
   (:ref:`flyteidl.plugins.HiveQuery <api_msg_flyteidl.plugins.HiveQuery>`) 
-  
-

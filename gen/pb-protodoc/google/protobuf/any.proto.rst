@@ -38,7 +38,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 google.protobuf.Any
 -------------------
 
-`[google.protobuf.Any proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/any.proto#L121>`_
+`[google.protobuf.Any proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/any.proto#L121>`_
 
 `Any` contains an arbitrary serialized protocol buffer message along with a
 URL that describes the type of the serialized message.
@@ -165,6 +165,3 @@ type_url
 
 value
   (`bytes <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Must be a valid serialized protocol buffer of the above specified type.
-  
-  
-

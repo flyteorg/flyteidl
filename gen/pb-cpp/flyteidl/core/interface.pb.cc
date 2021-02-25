@@ -275,7 +275,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto[] =
   "\0132+.flyteidl.core.ParameterMap.Parameter"
   "sEntry\032K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'"
   "\n\005value\030\002 \001(\0132\030.flyteidl.core.Parameter:"
-  "\0028\001B2Z0github.com/lyft/flyteidl/gen/pb-g"
+  "\0028\001B2Z0github.com/flyteorg/flyteidl/gen/pb-g"
   "o/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2finterface_2eproto = {

@@ -8,7 +8,7 @@ task_execution.proto
 flyteidl.admin.TaskExecutionGetRequest
 --------------------------------------
 
-`[flyteidl.admin.TaskExecutionGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L14>`_
+`[flyteidl.admin.TaskExecutionGetRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L14>`_
 
 A message used to fetch a single task execution entity.
 
@@ -31,7 +31,7 @@ id
 flyteidl.admin.TaskExecutionListRequest
 ---------------------------------------
 
-`[flyteidl.admin.TaskExecutionListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L20>`_
+`[flyteidl.admin.TaskExecutionListRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L20>`_
 
 Represents a request structure to retrieve a list of task execution entities.
 
@@ -87,7 +87,7 @@ sort_by
 flyteidl.admin.TaskExecution
 ----------------------------
 
-`[flyteidl.admin.TaskExecution proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L45>`_
+`[flyteidl.admin.TaskExecution proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L45>`_
 
 Encapsulates all details for a single task execution entity.
 A task execution represents an instantiated task, including all inputs and additional
@@ -133,7 +133,7 @@ is_parent
 flyteidl.admin.TaskExecutionList
 --------------------------------
 
-`[flyteidl.admin.TaskExecutionList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L60>`_
+`[flyteidl.admin.TaskExecutionList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L60>`_
 
 Response structure for a query to list of task execution entities.
 
@@ -163,7 +163,7 @@ token
 flyteidl.admin.TaskExecutionClosure
 -----------------------------------
 
-`[flyteidl.admin.TaskExecutionClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L69>`_
+`[flyteidl.admin.TaskExecutionClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L69>`_
 
 Container for task execution details and results.
 
@@ -248,7 +248,7 @@ custom_info
 flyteidl.admin.TaskExecutionGetDataRequest
 ------------------------------------------
 
-`[flyteidl.admin.TaskExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L101>`_
+`[flyteidl.admin.TaskExecutionGetDataRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L101>`_
 
 Request structure to fetch inputs and output urls for a task execution.
 
@@ -271,7 +271,7 @@ id
 flyteidl.admin.TaskExecutionGetDataResponse
 -------------------------------------------
 
-`[flyteidl.admin.TaskExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L107>`_
+`[flyteidl.admin.TaskExecutionGetDataResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task_execution.proto#L107>`_
 
 Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution.
 
@@ -306,6 +306,3 @@ full_inputs
 
 full_outputs
   (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are under a configured size threshold.
-  
-  
-

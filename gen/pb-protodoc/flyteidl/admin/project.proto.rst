@@ -8,7 +8,7 @@ project.proto
 flyteidl.admin.Domain
 ---------------------
 
-`[flyteidl.admin.Domain proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L10>`_
+`[flyteidl.admin.Domain proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L10>`_
 
 Namespace within a project commonly used to differentiate between different service instances.
 e.g. "production", "development", etc.
@@ -38,7 +38,7 @@ name
 flyteidl.admin.Project
 ----------------------
 
-`[flyteidl.admin.Project proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L19>`_
+`[flyteidl.admin.Project proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L19>`_
 
 Top-level namespace used to classify different entities like workflows and executions.
 
@@ -92,7 +92,7 @@ state
 Enum flyteidl.admin.Project.ProjectState
 ----------------------------------------
 
-`[flyteidl.admin.Project.ProjectState proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L21>`_
+`[flyteidl.admin.Project.ProjectState proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L21>`_
 
 The state of the project is used to control its visibility in the UI and validity.
 
@@ -120,7 +120,7 @@ SYSTEM_GENERATED
 flyteidl.admin.Projects
 -----------------------
 
-`[flyteidl.admin.Projects proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L48>`_
+`[flyteidl.admin.Projects proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L48>`_
 
 
 .. code-block:: json
@@ -149,7 +149,7 @@ token
 flyteidl.admin.ProjectListRequest
 ---------------------------------
 
-`[flyteidl.admin.ProjectListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L56>`_
+`[flyteidl.admin.ProjectListRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L56>`_
 
 
 .. code-block:: json
@@ -197,7 +197,7 @@ sort_by
 flyteidl.admin.ProjectRegisterRequest
 -------------------------------------
 
-`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L73>`_
+`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L73>`_
 
 
 .. code-block:: json
@@ -218,7 +218,7 @@ project
 flyteidl.admin.ProjectRegisterResponse
 --------------------------------------
 
-`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L77>`_
+`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L77>`_
 
 
 .. code-block:: json
@@ -233,12 +233,9 @@ flyteidl.admin.ProjectRegisterResponse
 flyteidl.admin.ProjectUpdateResponse
 ------------------------------------
 
-`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L80>`_
+`[flyteidl.admin.ProjectUpdateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L80>`_
 
 
 .. code-block:: json
 
   {}
-
-
-

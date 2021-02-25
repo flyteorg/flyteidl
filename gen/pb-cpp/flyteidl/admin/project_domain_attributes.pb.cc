@@ -259,7 +259,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattri
   "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\0228\n\rres"
   "ource_type\030\003 \001(\0162!.flyteidl.admin.Matcha"
   "bleResource\"\'\n%ProjectDomainAttributesDe"
-  "leteResponseB3Z1github.com/lyft/flyteidl"
+  "leteResponseB3Z1github.com/flyteorg/flyteidl"
   "/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = {

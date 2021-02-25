@@ -8,7 +8,7 @@ catalog.proto
 flyteidl.core.CatalogArtifactTag
 --------------------------------
 
-`[flyteidl.core.CatalogArtifactTag proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L24>`_
+`[flyteidl.core.CatalogArtifactTag proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L24>`_
 
 
 .. code-block:: json
@@ -37,7 +37,7 @@ name
 flyteidl.core.CatalogMetadata
 -----------------------------
 
-`[flyteidl.core.CatalogMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L32>`_
+`[flyteidl.core.CatalogMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L32>`_
 
 Catalog artifact information with specific metadata
 
@@ -75,7 +75,7 @@ source_task_execution
 Enum flyteidl.core.CatalogCacheStatus
 -------------------------------------
 
-`[flyteidl.core.CatalogCacheStatus proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L9>`_
+`[flyteidl.core.CatalogCacheStatus proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/catalog.proto#L9>`_
 
 Indicates the status of CatalogCaching. The reason why this is not embeded in TaskNodeMetadata is, that we may use for other types of nodes as well in the future
 
@@ -113,5 +113,3 @@ CACHE_LOOKUP_FAILURE
 
 CACHE_PUT_FAILURE
   ⁣Used to indicate that cache lookup failed because of an error
-  
-  

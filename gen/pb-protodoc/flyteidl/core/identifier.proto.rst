@@ -8,7 +8,7 @@ identifier.proto
 flyteidl.core.Identifier
 ------------------------
 
-`[flyteidl.core.Identifier proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L19>`_
+`[flyteidl.core.Identifier proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L19>`_
 
 Encapsulation of fields that uniquely identifies a Flyte resource.
 
@@ -60,7 +60,7 @@ version
 flyteidl.core.WorkflowExecutionIdentifier
 -----------------------------------------
 
-`[flyteidl.core.WorkflowExecutionIdentifier proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L38>`_
+`[flyteidl.core.WorkflowExecutionIdentifier proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L38>`_
 
 Encapsulation of fields that uniquely identifies a Flyte workflow execution
 
@@ -98,7 +98,7 @@ name
 flyteidl.core.NodeExecutionIdentifier
 -------------------------------------
 
-`[flyteidl.core.NodeExecutionIdentifier proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L51>`_
+`[flyteidl.core.NodeExecutionIdentifier proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L51>`_
 
 Encapsulation of fields that identify a Flyte node execution entity.
 
@@ -126,7 +126,7 @@ execution_id
 flyteidl.core.TaskExecutionIdentifier
 -------------------------------------
 
-`[flyteidl.core.TaskExecutionIdentifier proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L58>`_
+`[flyteidl.core.TaskExecutionIdentifier proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L58>`_
 
 Encapsulation of fields that identify a Flyte task execution entity.
 
@@ -159,7 +159,7 @@ retry_attempt
 Enum flyteidl.core.ResourceType
 -------------------------------
 
-`[flyteidl.core.ResourceType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L7>`_
+`[flyteidl.core.ResourceType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/identifier.proto#L7>`_
 
 Indicates a resource type within Flyte.
 
@@ -189,5 +189,3 @@ DATASET
   ⁣A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
   Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
   in a similar manner to other Flyte objects
-  
-  

@@ -38,7 +38,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 google.protobuf.Timestamp
 -------------------------
 
-`[google.protobuf.Timestamp proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/timestamp.proto#L124>`_
+`[google.protobuf.Timestamp proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/timestamp.proto#L124>`_
 
 A Timestamp represents a point in time independent of any time zone or local
 calendar, encoded as a count of seconds and fractions of seconds at
@@ -145,6 +145,3 @@ nanos
   second values with fractions must still have non-negative nanos values
   that count forward in time. Must be from 0 to 999,999,999
   inclusive.
-  
-  
-

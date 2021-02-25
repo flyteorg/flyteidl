@@ -8,7 +8,7 @@ schedule.proto
 flyteidl.admin.FixedRate
 ------------------------
 
-`[flyteidl.admin.FixedRate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L13>`_
+`[flyteidl.admin.FixedRate proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L13>`_
 
 Option for schedules run at a certain frequency, e.g. every 2 minutes.
 
@@ -36,7 +36,7 @@ unit
 flyteidl.admin.CronSchedule
 ---------------------------
 
-`[flyteidl.admin.CronSchedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L18>`_
+`[flyteidl.admin.CronSchedule proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L18>`_
 
 
 .. code-block:: json
@@ -68,7 +68,7 @@ offset
 flyteidl.admin.Schedule
 -----------------------
 
-`[flyteidl.admin.Schedule proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L29>`_
+`[flyteidl.admin.Schedule proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L29>`_
 
 Defines complete set of information required to trigger an execution on a schedule.
 
@@ -119,7 +119,7 @@ kickoff_time_input_arg
 Enum flyteidl.admin.FixedRateUnit
 ---------------------------------
 
-`[flyteidl.admin.FixedRateUnit proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L6>`_
+`[flyteidl.admin.FixedRateUnit proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/schedule.proto#L6>`_
 
 Represents a frequency at which to run a schedule.
 
@@ -137,4 +137,3 @@ HOUR
 
 DAY
   ⁣
-  

@@ -5123,7 +5123,7 @@ public final class Event {
       "se\"b\n\031TaskExecutionEventRequest\022\022\n\nreque" +
       "st_id\030\001 \001(\t\0221\n\005event\030\002 \001(\0132\".flyteidl.ev" +
       "ent.TaskExecutionEvent\"\034\n\032TaskExecutionE" +
-      "ventResponseB3Z1github.com/lyft/flyteidl" +
+      "ventResponseB3Z1github.com/flyteorg/flyteidl" +
       "/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

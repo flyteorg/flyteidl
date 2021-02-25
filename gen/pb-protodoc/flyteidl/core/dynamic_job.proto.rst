@@ -8,7 +8,7 @@ dynamic_job.proto
 flyteidl.core.DynamicJobSpec
 ----------------------------
 
-`[flyteidl.core.DynamicJobSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/dynamic_job.proto#L11>`_
+`[flyteidl.core.DynamicJobSpec proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/dynamic_job.proto#L11>`_
 
 Describes a set of tasks to execute and how the final outputs are produced.
 
@@ -55,6 +55,3 @@ tasks
 
 subworkflows
   (:ref:`flyteidl.core.WorkflowTemplate <api_msg_flyteidl.core.WorkflowTemplate>`) [Optional] A complete list of task specs referenced in nodes.
-  
-  
-

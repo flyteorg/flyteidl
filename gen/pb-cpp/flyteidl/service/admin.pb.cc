@@ -357,7 +357,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "1/named_entities/{resource_type}/{id.pro"
   "ject}/{id.domain}/{id.name}:\001*\222A1\032/Updat"
   "e the fields associated with a NamedEnti"
-  "tyB5Z3github.com/lyft/flyteidl/gen/pb-go"
+  "tyB5Z3github.com/flyteorg/flyteidl/gen/pb-go"
   "/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fadmin_2eproto = {

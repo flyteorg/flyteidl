@@ -8,7 +8,7 @@ workflow.proto
 flyteidl.admin.WorkflowCreateRequest
 ------------------------------------
 
-`[flyteidl.admin.WorkflowCreateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L12>`_
+`[flyteidl.admin.WorkflowCreateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L12>`_
 
 Represents a request structure to create a revision of a workflow.
 
@@ -38,7 +38,7 @@ spec
 flyteidl.admin.WorkflowCreateResponse
 -------------------------------------
 
-`[flyteidl.admin.WorkflowCreateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L20>`_
+`[flyteidl.admin.WorkflowCreateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L20>`_
 
 
 .. code-block:: json
@@ -53,7 +53,7 @@ flyteidl.admin.WorkflowCreateResponse
 flyteidl.admin.Workflow
 -----------------------
 
-`[flyteidl.admin.Workflow proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L27>`_
+`[flyteidl.admin.Workflow proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L27>`_
 
 Represents the workflow structure stored in the Admin
 A workflow is created by ordering tasks and associating outputs to inputs
@@ -85,7 +85,7 @@ closure
 flyteidl.admin.WorkflowList
 ---------------------------
 
-`[flyteidl.admin.WorkflowList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L36>`_
+`[flyteidl.admin.WorkflowList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L36>`_
 
 Represents a list of workflows returned from the admin.
 
@@ -116,7 +116,7 @@ token
 flyteidl.admin.WorkflowSpec
 ---------------------------
 
-`[flyteidl.admin.WorkflowSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L46>`_
+`[flyteidl.admin.WorkflowSpec proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L46>`_
 
 Represents a structure that encapsulates the specification of the workflow.
 
@@ -148,7 +148,7 @@ sub_workflows
 flyteidl.admin.WorkflowClosure
 ------------------------------
 
-`[flyteidl.admin.WorkflowClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L57>`_
+`[flyteidl.admin.WorkflowClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L57>`_
 
 A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.
 
@@ -169,6 +169,3 @@ compiled_workflow
 
 created_at
   (:ref:`google.protobuf.Timestamp <api_msg_google.protobuf.Timestamp>`) Time at which the workflow was created.
-  
-  
-

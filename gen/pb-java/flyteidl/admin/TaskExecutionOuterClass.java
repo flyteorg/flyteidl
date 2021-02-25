@@ -9298,7 +9298,7 @@ public final class TaskExecutionOuterClass {
       "lyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001" +
       "(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_ou" +
       "tputs\030\004 \001(\0132\031.flyteidl.core.LiteralMapB3" +
-      "Z1github.com/lyft/flyteidl/gen/pb-go/fly" +
+      "Z1github.com/flyteorg/flyteidl/gen/pb-go/fly" +
       "teidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
