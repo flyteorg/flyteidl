@@ -35,6 +35,7 @@ parallelism
 size
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Defines the number of instances to launch at most. This number should match the size of the input if the job
   requires processing of all input data. This has to be a positive number.
+  In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
   
   
 .. _api_field_flyteidl.plugins.ArrayJob.min_successes:

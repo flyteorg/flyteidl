@@ -33,6 +33,7 @@ public final class ArrayJobOuterClass {
      * <pre>
      * Defines the number of instances to launch at most. This number should match the size of the input if the job
      * requires processing of all input data. This has to be a positive number.
+     * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
      * </pre>
      *
      * <code>int64 size = 2;</code>
@@ -217,6 +218,7 @@ public final class ArrayJobOuterClass {
      * <pre>
      * Defines the number of instances to launch at most. This number should match the size of the input if the job
      * requires processing of all input data. This has to be a positive number.
+     * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
      * </pre>
      *
      * <code>int64 size = 2;</code>
@@ -716,6 +718,7 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
        * <code>int64 size = 2;</code>
@@ -727,6 +730,7 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
        * <code>int64 size = 2;</code>
@@ -741,6 +745,7 @@ public final class ArrayJobOuterClass {
        * <pre>
        * Defines the number of instances to launch at most. This number should match the size of the input if the job
        * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
        * <code>int64 size = 2;</code>

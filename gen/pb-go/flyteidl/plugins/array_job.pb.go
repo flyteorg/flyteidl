@@ -29,6 +29,7 @@ type ArrayJob struct {
 	Parallelism int64 `protobuf:"varint,1,opt,name=parallelism,proto3" json:"parallelism,omitempty"`
 	// Defines the number of instances to launch at most. This number should match the size of the input if the job
 	// requires processing of all input data. This has to be a positive number.
+	// In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
 	Size int64 `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
 	// Types that are valid to be assigned to SuccessCriteria:
 	//	*ArrayJob_MinSuccesses
