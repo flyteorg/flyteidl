@@ -40,7 +40,10 @@ size
 .. _api_field_flyteidl.plugins.ArrayJob.min_successes:
 
 min_successes
-  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+  the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+  assigned. Default value is size (if specified).
+  
   
   
   Only one of :ref:`min_successes <api_field_flyteidl.plugins.ArrayJob.min_successes>`, :ref:`min_success_ratio <api_field_flyteidl.plugins.ArrayJob.min_success_ratio>` may be set.

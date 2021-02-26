@@ -40,6 +40,12 @@ public final class ArrayJobOuterClass {
     long getSize();
 
     /**
+     * <pre>
+     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+     * assigned. Default value is size (if specified).
+     * </pre>
+     *
      * <code>int64 min_successes = 3;</code>
      */
     long getMinSuccesses();
@@ -221,6 +227,12 @@ public final class ArrayJobOuterClass {
 
     public static final int MIN_SUCCESSES_FIELD_NUMBER = 3;
     /**
+     * <pre>
+     * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+     * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+     * assigned. Default value is size (if specified).
+     * </pre>
+     *
      * <code>int64 min_successes = 3;</code>
      */
     public long getMinSuccesses() {
@@ -741,6 +753,12 @@ public final class ArrayJobOuterClass {
       }
 
       /**
+       * <pre>
+       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+       * assigned. Default value is size (if specified).
+       * </pre>
+       *
        * <code>int64 min_successes = 3;</code>
        */
       public long getMinSuccesses() {
@@ -750,6 +768,12 @@ public final class ArrayJobOuterClass {
         return 0L;
       }
       /**
+       * <pre>
+       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+       * assigned. Default value is size (if specified).
+       * </pre>
+       *
        * <code>int64 min_successes = 3;</code>
        */
       public Builder setMinSuccesses(long value) {
@@ -759,6 +783,12 @@ public final class ArrayJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+       * the array job will be marked as successful and outputs will be computed. This has to be a non-negative number if
+       * assigned. Default value is size (if specified).
+       * </pre>
+       *
        * <code>int64 min_successes = 3;</code>
        */
       public Builder clearMinSuccesses() {
