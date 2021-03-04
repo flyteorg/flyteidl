@@ -35,6 +35,7 @@
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/interface.pb.h"
 #include "flyteidl/core/literals.pb.h"
+#include "flyteidl/core/common.pb.h"
 #include <google/protobuf/duration.pb.h>
 #include <google/protobuf/struct.pb.h>
 // @@protoc_insertion_point(includes)
@@ -972,6 +973,18 @@ class TaskTemplate final :
 
   // accessors -------------------------------------------------------
 
+  // repeated .flyteidl.core.Secret secrets = 8;
+  int secrets_size() const;
+  void clear_secrets();
+  static const int kSecretsFieldNumber = 8;
+  ::flyteidl::core::Secret* mutable_secrets(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Secret >*
+      mutable_secrets();
+  const ::flyteidl::core::Secret& secrets(int index) const;
+  ::flyteidl::core::Secret* add_secrets();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Secret >&
+      secrets() const;
+
   // string type = 2;
   void clear_type();
   static const int kTypeFieldNumber = 2;
@@ -1048,6 +1061,7 @@ class TaskTemplate final :
   inline void clear_has_target();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Secret > secrets_;
   ::google::protobuf::internal::ArenaStringPtr type_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::core::TaskMetadata* metadata_;
@@ -2629,6 +2643,33 @@ inline void TaskTemplate::set_task_type_version(::google::protobuf::int32 value)
   
   task_type_version_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.task_type_version)
+}
+
+// repeated .flyteidl.core.Secret secrets = 8;
+inline int TaskTemplate::secrets_size() const {
+  return secrets_.size();
+}
+inline ::flyteidl::core::Secret* TaskTemplate::mutable_secrets(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.secrets)
+  return secrets_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Secret >*
+TaskTemplate::mutable_secrets() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.TaskTemplate.secrets)
+  return &secrets_;
+}
+inline const ::flyteidl::core::Secret& TaskTemplate::secrets(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.secrets)
+  return secrets_.Get(index);
+}
+inline ::flyteidl::core::Secret* TaskTemplate::add_secrets() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.TaskTemplate.secrets)
+  return secrets_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Secret >&
+TaskTemplate::secrets() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.TaskTemplate.secrets)
+  return secrets_;
 }
 
 inline bool TaskTemplate::has_target() const {

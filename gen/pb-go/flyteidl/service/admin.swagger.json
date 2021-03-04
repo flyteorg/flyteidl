@@ -5407,6 +5407,16 @@
       },
       "description": "Defines schema columns and types to strongly type-validate schemas interoperability."
     },
+    "coreSecret": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Identifies the key of the secret that is requested"
+        }
+      },
+      "title": "Encapsulation of fields that specify the requirement of a secret for a plugin"
+    },
     "coreSimpleType": {
       "type": "string",
       "enum": [
@@ -5548,6 +5558,13 @@
           "type": "integer",
           "format": "int32",
           "description": "This can be used to customize task handling at execution time for the same task type."
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSecret"
+          },
+          "description": "a List of Secrets that are requested by this task."
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."

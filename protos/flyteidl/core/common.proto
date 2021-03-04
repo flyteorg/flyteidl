@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package flyteidl.core;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+
+// Encapsulation of fields that specify the requirement of a secret for a plugin
+message Secret {
+  // Identifies the key of the secret that is requested
+  string key = 1;
+
+  // This message has been created for future extensibility
+}

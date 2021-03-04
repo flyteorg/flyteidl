@@ -6007,6 +6007,9 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            secrets:
+            - key: "key"
+            - key: "key"
   adminTaskClosure:
     type: "object"
     properties:
@@ -6148,6 +6151,9 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          secrets:
+          - key: "key"
+          - key: "key"
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -6535,6 +6541,9 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              secrets:
+              - key: "key"
+              - key: "key"
       - id:
           domain: "domain"
           resource_type: {}
@@ -6669,6 +6678,9 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              secrets:
+              - key: "key"
+              - key: "key"
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -8529,6 +8541,9 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              secrets:
+              - key: "key"
+              - key: "key"
           - template:
               container:
                 args:
@@ -8654,6 +8669,9 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              secrets:
+              - key: "key"
+              - key: "key"
           primary:
             template:
               outputs:
@@ -11404,6 +11422,9 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            secrets:
+            - key: "key"
+            - key: "key"
         - template:
             container:
               args:
@@ -11529,6 +11550,9 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            secrets:
+            - key: "key"
+            - key: "key"
         primary:
           template:
             outputs:
@@ -14215,6 +14239,9 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                secrets:
+                - key: "key"
+                - key: "key"
             - template:
                 container:
                   args:
@@ -14340,6 +14367,9 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                secrets:
+                - key: "key"
+                - key: "key"
             primary:
               template:
                 outputs:
@@ -16955,6 +16985,9 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                secrets:
+                - key: "key"
+                - key: "key"
             - template:
                 container:
                   args:
@@ -17080,6 +17113,9 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                secrets:
+                - key: "key"
+                - key: "key"
             primary:
               template:
                 outputs:
@@ -18502,6 +18538,9 @@ definitions:
                     dimensionality: {}
                     format: "format"
                   simple: {}
+        secrets:
+        - key: "key"
+        - key: "key"
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -21146,6 +21185,9 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          secrets:
+          - key: "key"
+          - key: "key"
       - template:
           container:
             args:
@@ -21271,6 +21313,9 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          secrets:
+          - key: "key"
+          - key: "key"
       primary:
         template:
           outputs:
@@ -23348,6 +23393,16 @@ definitions:
         type: {}
       - name: "name"
         type: {}
+  coreSecret:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+        title: "Identifies the key of the secret that is requested"
+    title: "Encapsulation of fields that specify the requirement of a secret for a\
+      \ plugin"
+    example:
+      key: "key"
   coreSimpleType:
     type: "string"
     description: "Define a set of simple types."
@@ -23510,6 +23565,11 @@ definitions:
         format: "int32"
         description: "This can be used to customize task handling at execution time\
           \ for the same task type."
+      secrets:
+        type: "array"
+        description: "a List of Secrets that are requested by this task."
+        items:
+          $ref: "#/definitions/coreSecret"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -23637,6 +23697,9 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
+      secrets:
+      - key: "key"
+      - key: "key"
   coreTypedInterface:
     type: "object"
     properties:

@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.core_container import CoreContainer  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
+from flyteadmin.models.core_secret import CoreSecret  # noqa: F401,E501
 from flyteadmin.models.core_task_metadata import CoreTaskMetadata  # noqa: F401,E501
 from flyteadmin.models.core_typed_interface import CoreTypedInterface  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
@@ -43,7 +44,8 @@ class CoreTaskTemplate(object):
         'interface': 'CoreTypedInterface',
         'custom': 'ProtobufStruct',
         'container': 'CoreContainer',
-        'task_type_version': 'int'
+        'task_type_version': 'int',
+        'secrets': 'list[CoreSecret]'
     }
 
     attribute_map = {
@@ -53,10 +55,11 @@ class CoreTaskTemplate(object):
         'interface': 'interface',
         'custom': 'custom',
         'container': 'container',
-        'task_type_version': 'task_type_version'
+        'task_type_version': 'task_type_version',
+        'secrets': 'secrets'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None, secrets=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -66,6 +69,7 @@ class CoreTaskTemplate(object):
         self._custom = None
         self._container = None
         self._task_type_version = None
+        self._secrets = None
         self.discriminator = None
 
         if id is not None:
@@ -82,6 +86,8 @@ class CoreTaskTemplate(object):
             self.container = container
         if task_type_version is not None:
             self.task_type_version = task_type_version
+        if secrets is not None:
+            self.secrets = secrets
 
     @property
     def id(self):
@@ -241,6 +247,29 @@ class CoreTaskTemplate(object):
         """
 
         self._task_type_version = task_type_version
+
+    @property
+    def secrets(self):
+        """Gets the secrets of this CoreTaskTemplate.  # noqa: E501
+
+        a List of Secrets that are requested by this task.  # noqa: E501
+
+        :return: The secrets of this CoreTaskTemplate.  # noqa: E501
+        :rtype: list[CoreSecret]
+        """
+        return self._secrets
+
+    @secrets.setter
+    def secrets(self, secrets):
+        """Sets the secrets of this CoreTaskTemplate.
+
+        a List of Secrets that are requested by this task.  # noqa: E501
+
+        :param secrets: The secrets of this CoreTaskTemplate.  # noqa: E501
+        :type: list[CoreSecret]
+        """
+
+        self._secrets = secrets
 
     def to_dict(self):
         """Returns the model properties as a dict"""

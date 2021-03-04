@@ -969,6 +969,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskExecutionIdentifier;
         })();
 
+        core.Secret = (function() {
+
+            /**
+             * Properties of a Secret.
+             * @memberof flyteidl.core
+             * @interface ISecret
+             * @property {string|null} [key] Secret key
+             */
+
+            /**
+             * Constructs a new Secret.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Secret.
+             * @implements ISecret
+             * @constructor
+             * @param {flyteidl.core.ISecret=} [properties] Properties to set
+             */
+            function Secret(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Secret key.
+             * @member {string} key
+             * @memberof flyteidl.core.Secret
+             * @instance
+             */
+            Secret.prototype.key = "";
+
+            /**
+             * Creates a new Secret instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Secret
+             * @static
+             * @param {flyteidl.core.ISecret=} [properties] Properties to set
+             * @returns {flyteidl.core.Secret} Secret instance
+             */
+            Secret.create = function create(properties) {
+                return new Secret(properties);
+            };
+
+            /**
+             * Encodes the specified Secret message. Does not implicitly {@link flyteidl.core.Secret.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Secret
+             * @static
+             * @param {flyteidl.core.ISecret} message Secret message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Secret.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                return writer;
+            };
+
+            /**
+             * Decodes a Secret message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Secret
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Secret} Secret
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Secret.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Secret();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Secret message.
+             * @function verify
+             * @memberof flyteidl.core.Secret
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Secret.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                return null;
+            };
+
+            return Secret;
+        })();
+
         core.ConnectionSet = (function() {
 
             /**
@@ -9850,6 +9960,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IStruct|null} [custom] TaskTemplate custom
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
+             * @property {Array.<flyteidl.core.ISecret>|null} [secrets] TaskTemplate secrets
              */
 
             /**
@@ -9861,6 +9972,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.ITaskTemplate=} [properties] Properties to set
              */
             function TaskTemplate(properties) {
+                this.secrets = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -9923,6 +10035,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskTemplate.prototype.taskTypeVersion = 0;
 
+            /**
+             * TaskTemplate secrets.
+             * @member {Array.<flyteidl.core.ISecret>} secrets
+             * @memberof flyteidl.core.TaskTemplate
+             * @instance
+             */
+            TaskTemplate.prototype.secrets = $util.emptyArray;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -9975,6 +10095,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Container.encode(message.container, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.taskTypeVersion != null && message.hasOwnProperty("taskTypeVersion"))
                     writer.uint32(/* id 7, wireType 0 =*/56).int32(message.taskTypeVersion);
+                if (message.secrets != null && message.secrets.length)
+                    for (let i = 0; i < message.secrets.length; ++i)
+                        $root.flyteidl.core.Secret.encode(message.secrets[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -10016,6 +10139,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.taskTypeVersion = reader.int32();
+                        break;
+                    case 8:
+                        if (!(message.secrets && message.secrets.length))
+                            message.secrets = [];
+                        message.secrets.push($root.flyteidl.core.Secret.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10071,6 +10199,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.taskTypeVersion != null && message.hasOwnProperty("taskTypeVersion"))
                     if (!$util.isInteger(message.taskTypeVersion))
                         return "taskTypeVersion: integer expected";
+                if (message.secrets != null && message.hasOwnProperty("secrets")) {
+                    if (!Array.isArray(message.secrets))
+                        return "secrets: array expected";
+                    for (let i = 0; i < message.secrets.length; ++i) {
+                        let error = $root.flyteidl.core.Secret.verify(message.secrets[i]);
+                        if (error)
+                            return "secrets." + error;
+                    }
+                }
                 return null;
             };
 

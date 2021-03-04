@@ -24,4 +24,6 @@ type CoreTaskTemplate struct {
 	Container *CoreContainer `json:"container,omitempty"`
 	// This can be used to customize task handling at execution time for the same task type.
 	TaskTypeVersion int32 `json:"task_type_version,omitempty"`
+	// a List of Secrets that are requested by this task.
+	Secrets []CoreSecret `json:"secrets,omitempty"`
 }

@@ -173,6 +173,7 @@ from flyteadmin.models.core_retry_strategy import CoreRetryStrategy
 from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata
 from flyteadmin.models.core_scalar import CoreScalar
 from flyteadmin.models.core_schema_type import CoreSchemaType
+from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase

@@ -16,6 +16,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Secret_flyteidl_2fcore_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_KeyValuePair_flyteidl_2fcore_2fliterals_2eproto;
@@ -143,13 +144,14 @@ static void InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto() {
   ::flyteidl::core::TaskTemplate::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<5> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto}, {
+::google::protobuf::internal::SCCInfo<6> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 6, InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_TaskMetadata_flyteidl_2fcore_2ftasks_2eproto.base,
       &scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base,
       &scc_info_ListValue_google_2fprotobuf_2fstruct_2eproto.base,
-      &scc_info_Container_flyteidl_2fcore_2ftasks_2eproto.base,}};
+      &scc_info_Container_flyteidl_2fcore_2ftasks_2eproto.base,
+      &scc_info_Secret_flyteidl_2fcore_2fcommon_2eproto.base,}};
 
 static void InitDefaultsContainerPort_flyteidl_2fcore_2ftasks_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -276,6 +278,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, custom_),
   offsetof(::flyteidl::core::TaskTemplateDefaultTypeInternal, container_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, task_type_version_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, secrets_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, target_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ContainerPort, _internal_metadata_),
@@ -320,10 +323,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 14, -1, sizeof(::flyteidl::core::RuntimeMetadata)},
   { 22, -1, sizeof(::flyteidl::core::TaskMetadata)},
   { 35, -1, sizeof(::flyteidl::core::TaskTemplate)},
-  { 48, -1, sizeof(::flyteidl::core::ContainerPort)},
-  { 54, -1, sizeof(::flyteidl::core::Container)},
-  { 67, -1, sizeof(::flyteidl::core::IOStrategy)},
-  { 74, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
+  { 49, -1, sizeof(::flyteidl::core::ContainerPort)},
+  { 55, -1, sizeof(::flyteidl::core::Container)},
+  { 68, -1, sizeof(::flyteidl::core::IOStrategy)},
+  { 75, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -348,74 +351,77 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "\n\031flyteidl/core/tasks.proto\022\rflyteidl.co"
   "re\032\036flyteidl/core/identifier.proto\032\035flyt"
   "eidl/core/interface.proto\032\034flyteidl/core"
-  "/literals.proto\032\036google/protobuf/duratio"
-  "n.proto\032\034google/protobuf/struct.proto\"\232\002"
-  "\n\tResources\0228\n\010requests\030\001 \003(\0132&.flyteidl"
-  ".core.Resources.ResourceEntry\0226\n\006limits\030"
-  "\002 \003(\0132&.flyteidl.core.Resources.Resource"
-  "Entry\032S\n\rResourceEntry\0223\n\004name\030\001 \001(\0162%.f"
-  "lyteidl.core.Resources.ResourceName\022\r\n\005v"
-  "alue\030\002 \001(\t\"F\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022"
-  "\007\n\003CPU\020\001\022\007\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE"
-  "\020\004\"\225\001\n\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.f"
-  "lyteidl.core.RuntimeMetadata.RuntimeType"
-  "\022\017\n\007version\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013Run"
-  "timeType\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014T"
-  "askMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007run"
-  "time\030\002 \001(\0132\036.flyteidl.core.RuntimeMetada"
-  "ta\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Du"
-  "ration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core."
-  "RetryStrategy\022\031\n\021discovery_version\030\006 \001(\t"
-  "\022 \n\030deprecated_error_message\030\007 \001(\t\022\027\n\rin"
-  "terruptible\030\010 \001(\010H\000B\025\n\023interruptible_val"
-  "ue\"\241\002\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flytei"
-  "dl.core.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010meta"
-  "data\030\003 \001(\0132\033.flyteidl.core.TaskMetadata\022"
-  "0\n\tinterface\030\004 \001(\0132\035.flyteidl.core.Typed"
-  "Interface\022\'\n\006custom\030\005 \001(\0132\027.google.proto"
-  "buf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl"
-  ".core.ContainerH\000\022\031\n\021task_type_version\030\007"
-  " \001(\005B\010\n\006target\"\'\n\rContainerPort\022\026\n\016conta"
-  "iner_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001"
-  " \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tr"
-  "esources\030\004 \001(\0132\030.flyteidl.core.Resources"
-  "\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyValuePa"
-  "ir\022+\n\006config\030\006 \003(\0132\033.flyteidl.core.KeyVa"
-  "luePair\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.C"
-  "ontainerPort\0225\n\013data_config\030\t \001(\0132 .flyt"
-  "eidl.core.DataLoadingConfig\"\233\002\n\nIOStrate"
-  "gy\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.cor"
-  "e.IOStrategy.DownloadMode\0229\n\013upload_mode"
-  "\030\002 \001(\0162$.flyteidl.core.IOStrategy.Upload"
-  "Mode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000"
-  "\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD"
-  "\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014"
-  "UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021Da"
-  "taLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninpu"
-  "t_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006for"
-  "mat\030\004 \001(\01621.flyteidl.core.DataLoadingCon"
-  "fig.LiteralMapFormat\022.\n\013io_strategy\030\005 \001("
-  "\0132\031.flyteidl.core.IOStrategy\"1\n\020LiteralM"
-  "apFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B"
-  "2Z0github.com/lyft/flyteidl/gen/pb-go/fl"
-  "yteidl/coreb\006proto3"
+  "/literals.proto\032\032flyteidl/core/common.pr"
+  "oto\032\036google/protobuf/duration.proto\032\034goo"
+  "gle/protobuf/struct.proto\"\232\002\n\tResources\022"
+  "8\n\010requests\030\001 \003(\0132&.flyteidl.core.Resour"
+  "ces.ResourceEntry\0226\n\006limits\030\002 \003(\0132&.flyt"
+  "eidl.core.Resources.ResourceEntry\032S\n\rRes"
+  "ourceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl.core"
+  ".Resources.ResourceName\022\r\n\005value\030\002 \001(\t\"F"
+  "\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007\n\003"
+  "GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\"\225\001\n\017Runti"
+  "meMetadata\0228\n\004type\030\001 \001(\0162*.flyteidl.core"
+  ".RuntimeMetadata.RuntimeType\022\017\n\007version\030"
+  "\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005"
+  "OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014TaskMetadata\022"
+  "\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036"
+  ".flyteidl.core.RuntimeMetadata\022*\n\007timeou"
+  "t\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007re"
+  "tries\030\005 \001(\0132\034.flyteidl.core.RetryStrateg"
+  "y\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprecat"
+  "ed_error_message\030\007 \001(\t\022\027\n\rinterruptible\030"
+  "\010 \001(\010H\000B\025\n\023interruptible_value\"\311\002\n\014TaskT"
+  "emplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden"
+  "tifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033"
+  ".flyteidl.core.TaskMetadata\0220\n\tinterface"
+  "\030\004 \001(\0132\035.flyteidl.core.TypedInterface\022\'\n"
+  "\006custom\030\005 \001(\0132\027.google.protobuf.Struct\022-"
+  "\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Contai"
+  "nerH\000\022\031\n\021task_type_version\030\007 \001(\005\022&\n\007secr"
+  "ets\030\010 \003(\0132\025.flyteidl.core.SecretB\010\n\006targ"
+  "et\"\'\n\rContainerPort\022\026\n\016container_port\030\001 "
+  "\001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007comm"
+  "and\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001"
+  "(\0132\030.flyteidl.core.Resources\022(\n\003env\030\005 \003("
+  "\0132\033.flyteidl.core.KeyValuePair\022+\n\006config"
+  "\030\006 \003(\0132\033.flyteidl.core.KeyValuePair\022+\n\005p"
+  "orts\030\007 \003(\0132\034.flyteidl.core.ContainerPort"
+  "\0225\n\013data_config\030\t \001(\0132 .flyteidl.core.Da"
+  "taLoadingConfig\"\233\002\n\nIOStrategy\022=\n\rdownlo"
+  "ad_mode\030\001 \001(\0162&.flyteidl.core.IOStrategy"
+  ".DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$.fly"
+  "teidl.core.IOStrategy.UploadMode\"L\n\014Down"
+  "loadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD"
+  "_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUpload"
+  "Mode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER"
+  "\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingCon"
+  "fig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t"
+  "\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621."
+  "flyteidl.core.DataLoadingConfig.LiteralM"
+  "apFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyteidl"
+  ".core.IOStrategy\"1\n\020LiteralMapFormat\022\010\n\004"
+  "JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B2Z0github.co"
+  "m/lyft/flyteidl/gen/pb-go/flyteidl/coreb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2139,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2207,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2finterface_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fcommon_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fstruct_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2ftasks_2eproto, deps, 5);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2ftasks_2eproto, deps, 6);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2427,6 +2433,9 @@ void TaskTemplate::set_allocated_container(::flyteidl::core::Container* containe
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.container)
 }
+void TaskTemplate::clear_secrets() {
+  secrets_.Clear();
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskTemplate::kIdFieldNumber;
 const int TaskTemplate::kTypeFieldNumber;
@@ -2435,6 +2444,7 @@ const int TaskTemplate::kInterfaceFieldNumber;
 const int TaskTemplate::kCustomFieldNumber;
 const int TaskTemplate::kContainerFieldNumber;
 const int TaskTemplate::kTaskTypeVersionFieldNumber;
+const int TaskTemplate::kSecretsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskTemplate::TaskTemplate()
@@ -2444,7 +2454,8 @@ TaskTemplate::TaskTemplate()
 }
 TaskTemplate::TaskTemplate(const TaskTemplate& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      secrets_(from.secrets_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.type().size() > 0) {
@@ -2540,6 +2551,7 @@ void TaskTemplate::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  secrets_.Clear();
   type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
     delete id_;
@@ -2663,6 +2675,22 @@ const char* TaskTemplate::_InternalParse(const char* begin, const char* end, voi
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
+      // repeated .flyteidl.core.Secret secrets = 8;
+      case 8: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 66) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::core::Secret::_InternalParse;
+          object = msg->add_secrets();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 66 && (ptr += 1));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -2780,6 +2808,17 @@ bool TaskTemplate::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated .flyteidl.core.Secret secrets = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (66 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_secrets()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2852,6 +2891,15 @@ void TaskTemplate::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->task_type_version(), output);
   }
 
+  // repeated .flyteidl.core.Secret secrets = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->secrets_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8,
+      this->secrets(static_cast<int>(i)),
+      output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2916,6 +2964,14 @@ void TaskTemplate::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->task_type_version(), target);
   }
 
+  // repeated .flyteidl.core.Secret secrets = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->secrets_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        8, this->secrets(static_cast<int>(i)), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -2936,6 +2992,17 @@ size_t TaskTemplate::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .flyteidl.core.Secret secrets = 8;
+  {
+    unsigned int count = static_cast<unsigned int>(this->secrets_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->secrets(static_cast<int>(i)));
+    }
+  }
 
   // string type = 2;
   if (this->type().size() > 0) {
@@ -3018,6 +3085,7 @@ void TaskTemplate::MergeFrom(const TaskTemplate& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  secrets_.MergeFrom(from.secrets_);
   if (from.type().size() > 0) {
 
     type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
@@ -3073,6 +3141,7 @@ void TaskTemplate::Swap(TaskTemplate* other) {
 void TaskTemplate::InternalSwap(TaskTemplate* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&secrets_)->InternalSwap(CastToBase(&other->secrets_));
   type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(id_, other->id_);

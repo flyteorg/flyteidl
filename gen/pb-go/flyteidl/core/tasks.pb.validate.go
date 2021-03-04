@@ -361,6 +361,21 @@ func (m *TaskTemplate) Validate() error {
 
 	// no validation rules for TaskTypeVersion
 
+	for idx, item := range m.GetSecrets() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskTemplateValidationError{
+					field:  fmt.Sprintf("Secrets[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	switch m.Target.(type) {
 
 	case *TaskTemplate_Container:

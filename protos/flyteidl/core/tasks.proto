@@ -3,6 +3,7 @@ syntax = "proto3";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/common.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/struct.proto";
 
@@ -121,6 +122,9 @@ message TaskTemplate {
 
     // This can be used to customize task handling at execution time for the same task type.
     int32 task_type_version = 7;
+
+    // a List of Secrets that are requested by this task.
+    repeated Secret secrets = 8;
 }
 
 // ----------------- First class Plugins

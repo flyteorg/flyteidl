@@ -5205,6 +5205,50 @@ public final class Tasks {
      */
     int getTaskTypeVersion();
 
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    java.util.List<flyteidl.core.Common.Secret> 
+        getSecretsList();
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    flyteidl.core.Common.Secret getSecrets(int index);
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    int getSecretsCount();
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    java.util.List<? extends flyteidl.core.Common.SecretOrBuilder> 
+        getSecretsOrBuilderList();
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    flyteidl.core.Common.SecretOrBuilder getSecretsOrBuilder(
+        int index);
+
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
   }
   /**
@@ -5226,6 +5270,7 @@ public final class Tasks {
     }
     private TaskTemplate() {
       type_ = "";
+      secrets_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5329,6 +5374,15 @@ public final class Tasks {
               taskTypeVersion_ = input.readInt32();
               break;
             }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                secrets_ = new java.util.ArrayList<flyteidl.core.Common.Secret>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              secrets_.add(
+                  input.readMessage(flyteidl.core.Common.Secret.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5344,6 +5398,9 @@ public final class Tasks {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          secrets_ = java.util.Collections.unmodifiableList(secrets_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -5361,6 +5418,7 @@ public final class Tasks {
               flyteidl.core.Tasks.TaskTemplate.class, flyteidl.core.Tasks.TaskTemplate.Builder.class);
     }
 
+    private int bitField0_;
     private int targetCase_ = 0;
     private java.lang.Object target_;
     public enum TargetCase
@@ -5617,6 +5675,61 @@ public final class Tasks {
       return taskTypeVersion_;
     }
 
+    public static final int SECRETS_FIELD_NUMBER = 8;
+    private java.util.List<flyteidl.core.Common.Secret> secrets_;
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    public java.util.List<flyteidl.core.Common.Secret> getSecretsList() {
+      return secrets_;
+    }
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Common.SecretOrBuilder> 
+        getSecretsOrBuilderList() {
+      return secrets_;
+    }
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    public int getSecretsCount() {
+      return secrets_.size();
+    }
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    public flyteidl.core.Common.Secret getSecrets(int index) {
+      return secrets_.get(index);
+    }
+    /**
+     * <pre>
+     * a List of Secrets that are requested by this task.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+     */
+    public flyteidl.core.Common.SecretOrBuilder getSecretsOrBuilder(
+        int index) {
+      return secrets_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5651,6 +5764,9 @@ public final class Tasks {
       }
       if (taskTypeVersion_ != 0) {
         output.writeInt32(7, taskTypeVersion_);
+      }
+      for (int i = 0; i < secrets_.size(); i++) {
+        output.writeMessage(8, secrets_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5687,6 +5803,10 @@ public final class Tasks {
       if (taskTypeVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, taskTypeVersion_);
+      }
+      for (int i = 0; i < secrets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, secrets_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5727,6 +5847,8 @@ public final class Tasks {
       }
       if (getTaskTypeVersion()
           != other.getTaskTypeVersion()) return false;
+      if (!getSecretsList()
+          .equals(other.getSecretsList())) return false;
       if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 6:
@@ -5767,6 +5889,10 @@ public final class Tasks {
       }
       hash = (37 * hash) + TASK_TYPE_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getTaskTypeVersion();
+      if (getSecretsCount() > 0) {
+        hash = (37 * hash) + SECRETS_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretsList().hashCode();
+      }
       switch (targetCase_) {
         case 6:
           hash = (37 * hash) + CONTAINER_FIELD_NUMBER;
@@ -5908,6 +6034,7 @@ public final class Tasks {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getSecretsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5941,6 +6068,12 @@ public final class Tasks {
         }
         taskTypeVersion_ = 0;
 
+        if (secretsBuilder_ == null) {
+          secrets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          secretsBuilder_.clear();
+        }
         targetCase_ = 0;
         target_ = null;
         return this;
@@ -5969,6 +6102,8 @@ public final class Tasks {
       @java.lang.Override
       public flyteidl.core.Tasks.TaskTemplate buildPartial() {
         flyteidl.core.Tasks.TaskTemplate result = new flyteidl.core.Tasks.TaskTemplate(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (idBuilder_ == null) {
           result.id_ = id_;
         } else {
@@ -5998,6 +6133,16 @@ public final class Tasks {
           }
         }
         result.taskTypeVersion_ = taskTypeVersion_;
+        if (secretsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            secrets_ = java.util.Collections.unmodifiableList(secrets_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.secrets_ = secrets_;
+        } else {
+          result.secrets_ = secretsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
         onBuilt();
         return result;
@@ -6066,6 +6211,32 @@ public final class Tasks {
         if (other.getTaskTypeVersion() != 0) {
           setTaskTypeVersion(other.getTaskTypeVersion());
         }
+        if (secretsBuilder_ == null) {
+          if (!other.secrets_.isEmpty()) {
+            if (secrets_.isEmpty()) {
+              secrets_ = other.secrets_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureSecretsIsMutable();
+              secrets_.addAll(other.secrets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.secrets_.isEmpty()) {
+            if (secretsBuilder_.isEmpty()) {
+              secretsBuilder_.dispose();
+              secretsBuilder_ = null;
+              secrets_ = other.secrets_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              secretsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSecretsFieldBuilder() : null;
+            } else {
+              secretsBuilder_.addAllMessages(other.secrets_);
+            }
+          }
+        }
         switch (other.getTargetCase()) {
           case CONTAINER: {
             mergeContainer(other.getContainer());
@@ -6118,6 +6289,7 @@ public final class Tasks {
         return this;
       }
 
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -7011,6 +7183,318 @@ public final class Tasks {
         taskTypeVersion_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<flyteidl.core.Common.Secret> secrets_ =
+        java.util.Collections.emptyList();
+      private void ensureSecretsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          secrets_ = new java.util.ArrayList<flyteidl.core.Common.Secret>(secrets_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Common.Secret, flyteidl.core.Common.Secret.Builder, flyteidl.core.Common.SecretOrBuilder> secretsBuilder_;
+
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public java.util.List<flyteidl.core.Common.Secret> getSecretsList() {
+        if (secretsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(secrets_);
+        } else {
+          return secretsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public int getSecretsCount() {
+        if (secretsBuilder_ == null) {
+          return secrets_.size();
+        } else {
+          return secretsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public flyteidl.core.Common.Secret getSecrets(int index) {
+        if (secretsBuilder_ == null) {
+          return secrets_.get(index);
+        } else {
+          return secretsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder setSecrets(
+          int index, flyteidl.core.Common.Secret value) {
+        if (secretsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretsIsMutable();
+          secrets_.set(index, value);
+          onChanged();
+        } else {
+          secretsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder setSecrets(
+          int index, flyteidl.core.Common.Secret.Builder builderForValue) {
+        if (secretsBuilder_ == null) {
+          ensureSecretsIsMutable();
+          secrets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder addSecrets(flyteidl.core.Common.Secret value) {
+        if (secretsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretsIsMutable();
+          secrets_.add(value);
+          onChanged();
+        } else {
+          secretsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder addSecrets(
+          int index, flyteidl.core.Common.Secret value) {
+        if (secretsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretsIsMutable();
+          secrets_.add(index, value);
+          onChanged();
+        } else {
+          secretsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder addSecrets(
+          flyteidl.core.Common.Secret.Builder builderForValue) {
+        if (secretsBuilder_ == null) {
+          ensureSecretsIsMutable();
+          secrets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          secretsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder addSecrets(
+          int index, flyteidl.core.Common.Secret.Builder builderForValue) {
+        if (secretsBuilder_ == null) {
+          ensureSecretsIsMutable();
+          secrets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder addAllSecrets(
+          java.lang.Iterable<? extends flyteidl.core.Common.Secret> values) {
+        if (secretsBuilder_ == null) {
+          ensureSecretsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, secrets_);
+          onChanged();
+        } else {
+          secretsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder clearSecrets() {
+        if (secretsBuilder_ == null) {
+          secrets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          secretsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public Builder removeSecrets(int index) {
+        if (secretsBuilder_ == null) {
+          ensureSecretsIsMutable();
+          secrets_.remove(index);
+          onChanged();
+        } else {
+          secretsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public flyteidl.core.Common.Secret.Builder getSecretsBuilder(
+          int index) {
+        return getSecretsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public flyteidl.core.Common.SecretOrBuilder getSecretsOrBuilder(
+          int index) {
+        if (secretsBuilder_ == null) {
+          return secrets_.get(index);  } else {
+          return secretsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Common.SecretOrBuilder> 
+           getSecretsOrBuilderList() {
+        if (secretsBuilder_ != null) {
+          return secretsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(secrets_);
+        }
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public flyteidl.core.Common.Secret.Builder addSecretsBuilder() {
+        return getSecretsFieldBuilder().addBuilder(
+            flyteidl.core.Common.Secret.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public flyteidl.core.Common.Secret.Builder addSecretsBuilder(
+          int index) {
+        return getSecretsFieldBuilder().addBuilder(
+            index, flyteidl.core.Common.Secret.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a List of Secrets that are requested by this task.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.Secret secrets = 8;</code>
+       */
+      public java.util.List<flyteidl.core.Common.Secret.Builder> 
+           getSecretsBuilderList() {
+        return getSecretsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Common.Secret, flyteidl.core.Common.Secret.Builder, flyteidl.core.Common.SecretOrBuilder> 
+          getSecretsFieldBuilder() {
+        if (secretsBuilder_ == null) {
+          secretsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Common.Secret, flyteidl.core.Common.Secret.Builder, flyteidl.core.Common.SecretOrBuilder>(
+                  secrets_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          secrets_ = null;
+        }
+        return secretsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13206,57 +13690,59 @@ public final class Tasks {
       "\n\031flyteidl/core/tasks.proto\022\rflyteidl.co" +
       "re\032\036flyteidl/core/identifier.proto\032\035flyt" +
       "eidl/core/interface.proto\032\034flyteidl/core" +
-      "/literals.proto\032\036google/protobuf/duratio" +
-      "n.proto\032\034google/protobuf/struct.proto\"\232\002" +
-      "\n\tResources\0228\n\010requests\030\001 \003(\0132&.flyteidl" +
-      ".core.Resources.ResourceEntry\0226\n\006limits\030" +
-      "\002 \003(\0132&.flyteidl.core.Resources.Resource" +
-      "Entry\032S\n\rResourceEntry\0223\n\004name\030\001 \001(\0162%.f" +
-      "lyteidl.core.Resources.ResourceName\022\r\n\005v" +
-      "alue\030\002 \001(\t\"F\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022" +
-      "\007\n\003CPU\020\001\022\007\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE" +
-      "\020\004\"\225\001\n\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162*.f" +
-      "lyteidl.core.RuntimeMetadata.RuntimeType" +
-      "\022\017\n\007version\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013Run" +
-      "timeType\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014T" +
-      "askMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007run" +
-      "time\030\002 \001(\0132\036.flyteidl.core.RuntimeMetada" +
-      "ta\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Du" +
-      "ration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core." +
-      "RetryStrategy\022\031\n\021discovery_version\030\006 \001(\t" +
-      "\022 \n\030deprecated_error_message\030\007 \001(\t\022\027\n\rin" +
-      "terruptible\030\010 \001(\010H\000B\025\n\023interruptible_val" +
-      "ue\"\241\002\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flytei" +
-      "dl.core.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010meta" +
-      "data\030\003 \001(\0132\033.flyteidl.core.TaskMetadata\022" +
-      "0\n\tinterface\030\004 \001(\0132\035.flyteidl.core.Typed" +
-      "Interface\022\'\n\006custom\030\005 \001(\0132\027.google.proto" +
-      "buf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl" +
-      ".core.ContainerH\000\022\031\n\021task_type_version\030\007" +
-      " \001(\005B\010\n\006target\"\'\n\rContainerPort\022\026\n\016conta" +
-      "iner_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001" +
-      " \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tr" +
-      "esources\030\004 \001(\0132\030.flyteidl.core.Resources" +
-      "\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyValuePa" +
-      "ir\022+\n\006config\030\006 \003(\0132\033.flyteidl.core.KeyVa" +
-      "luePair\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.C" +
-      "ontainerPort\0225\n\013data_config\030\t \001(\0132 .flyt" +
-      "eidl.core.DataLoadingConfig\"\233\002\n\nIOStrate" +
-      "gy\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.cor" +
-      "e.IOStrategy.DownloadMode\0229\n\013upload_mode" +
-      "\030\002 \001(\0162$.flyteidl.core.IOStrategy.Upload" +
-      "Mode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000" +
-      "\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD" +
-      "\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014" +
-      "UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021Da" +
-      "taLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninpu" +
-      "t_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006for" +
-      "mat\030\004 \001(\01621.flyteidl.core.DataLoadingCon" +
-      "fig.LiteralMapFormat\022.\n\013io_strategy\030\005 \001(" +
-      "\0132\031.flyteidl.core.IOStrategy\"1\n\020LiteralM" +
-      "apFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B" +
-      "2Z0github.com/lyft/flyteidl/gen/pb-go/fl" +
-      "yteidl/coreb\006proto3"
+      "/literals.proto\032\032flyteidl/core/common.pr" +
+      "oto\032\036google/protobuf/duration.proto\032\034goo" +
+      "gle/protobuf/struct.proto\"\232\002\n\tResources\022" +
+      "8\n\010requests\030\001 \003(\0132&.flyteidl.core.Resour" +
+      "ces.ResourceEntry\0226\n\006limits\030\002 \003(\0132&.flyt" +
+      "eidl.core.Resources.ResourceEntry\032S\n\rRes" +
+      "ourceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl.core" +
+      ".Resources.ResourceName\022\r\n\005value\030\002 \001(\t\"F" +
+      "\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007\n\003" +
+      "GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\"\225\001\n\017Runti" +
+      "meMetadata\0228\n\004type\030\001 \001(\0162*.flyteidl.core" +
+      ".RuntimeMetadata.RuntimeType\022\017\n\007version\030" +
+      "\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005" +
+      "OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014TaskMetadata\022" +
+      "\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036" +
+      ".flyteidl.core.RuntimeMetadata\022*\n\007timeou" +
+      "t\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007re" +
+      "tries\030\005 \001(\0132\034.flyteidl.core.RetryStrateg" +
+      "y\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprecat" +
+      "ed_error_message\030\007 \001(\t\022\027\n\rinterruptible\030" +
+      "\010 \001(\010H\000B\025\n\023interruptible_value\"\311\002\n\014TaskT" +
+      "emplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
+      "tifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033" +
+      ".flyteidl.core.TaskMetadata\0220\n\tinterface" +
+      "\030\004 \001(\0132\035.flyteidl.core.TypedInterface\022\'\n" +
+      "\006custom\030\005 \001(\0132\027.google.protobuf.Struct\022-" +
+      "\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Contai" +
+      "nerH\000\022\031\n\021task_type_version\030\007 \001(\005\022&\n\007secr" +
+      "ets\030\010 \003(\0132\025.flyteidl.core.SecretB\010\n\006targ" +
+      "et\"\'\n\rContainerPort\022\026\n\016container_port\030\001 " +
+      "\001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007comm" +
+      "and\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001" +
+      "(\0132\030.flyteidl.core.Resources\022(\n\003env\030\005 \003(" +
+      "\0132\033.flyteidl.core.KeyValuePair\022+\n\006config" +
+      "\030\006 \003(\0132\033.flyteidl.core.KeyValuePair\022+\n\005p" +
+      "orts\030\007 \003(\0132\034.flyteidl.core.ContainerPort" +
+      "\0225\n\013data_config\030\t \001(\0132 .flyteidl.core.Da" +
+      "taLoadingConfig\"\233\002\n\nIOStrategy\022=\n\rdownlo" +
+      "ad_mode\030\001 \001(\0162&.flyteidl.core.IOStrategy" +
+      ".DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$.fly" +
+      "teidl.core.IOStrategy.UploadMode\"L\n\014Down" +
+      "loadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD" +
+      "_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUpload" +
+      "Mode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER" +
+      "\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingCon" +
+      "fig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t" +
+      "\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621." +
+      "flyteidl.core.DataLoadingConfig.LiteralM" +
+      "apFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyteidl" +
+      ".core.IOStrategy\"1\n\020LiteralMapFormat\022\010\n\004" +
+      "JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B2Z0github.co" +
+      "m/lyft/flyteidl/gen/pb-go/flyteidl/coreb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13272,6 +13758,7 @@ public final class Tasks {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
+          flyteidl.core.Common.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
@@ -13304,7 +13791,7 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
-        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "Target", });
+        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "Secrets", "Target", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_ContainerPort_fieldAccessorTable = new
@@ -13332,6 +13819,7 @@ public final class Tasks {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
+    flyteidl.core.Common.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

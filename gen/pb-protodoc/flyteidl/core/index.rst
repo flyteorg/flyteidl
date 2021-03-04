@@ -13,6 +13,7 @@ of the various entities in Flyte as well as the type system.
 	:name: coretoc
 
 	catalog.proto
+	common.proto
 	compiler.proto
 	condition.proto
 	dynamic_job.proto

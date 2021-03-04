@@ -278,6 +278,7 @@ Class | Method | HTTP request | Description
  - [CoreRuntimeMetadata](docs/CoreRuntimeMetadata.md)
  - [CoreScalar](docs/CoreScalar.md)
  - [CoreSchemaType](docs/CoreSchemaType.md)
+ - [CoreSecret](docs/CoreSecret.md)
  - [CoreSimpleType](docs/CoreSimpleType.md)
  - [CoreTaskExecutionIdentifier](docs/CoreTaskExecutionIdentifier.md)
  - [CoreTaskExecutionPhase](docs/CoreTaskExecutionPhase.md)
