@@ -12039,7 +12039,7 @@ public final class Tasks {
 
     /**
      * <pre>
-     * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+     * Flag enables DataLoading Config. If this is not set, data loading will not be used!
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -12048,9 +12048,9 @@ public final class Tasks {
 
     /**
      * <pre>
-     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -12062,9 +12062,9 @@ public final class Tasks {
     java.lang.String getInputPath();
     /**
      * <pre>
-     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -12244,7 +12244,7 @@ public final class Tasks {
 
     /**
      * <pre>
-     * LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers. 
+     * LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers.
      * If the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.
      * JSON and YAML do not need any protobuf definitions to read it
      * All remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)
@@ -12376,7 +12376,7 @@ public final class Tasks {
     private boolean enabled_;
     /**
      * <pre>
-     * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+     * Flag enables DataLoading Config. If this is not set, data loading will not be used!
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -12389,9 +12389,9 @@ public final class Tasks {
     private volatile java.lang.Object inputPath_;
     /**
      * <pre>
-     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -12414,9 +12414,9 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -12921,7 +12921,7 @@ public final class Tasks {
       private boolean enabled_ ;
       /**
        * <pre>
-       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used!
        * </pre>
        *
        * <code>bool enabled = 1;</code>
@@ -12931,7 +12931,7 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used!
        * </pre>
        *
        * <code>bool enabled = 1;</code>
@@ -12944,7 +12944,7 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used!
        * </pre>
        *
        * <code>bool enabled = 1;</code>
@@ -12959,9 +12959,9 @@ public final class Tasks {
       private java.lang.Object inputPath_ = "";
       /**
        * <pre>
-       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -12984,9 +12984,9 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -13010,9 +13010,9 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -13033,9 +13033,9 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -13052,9 +13052,9 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file.
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory

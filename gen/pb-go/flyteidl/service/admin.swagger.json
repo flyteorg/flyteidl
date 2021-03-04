@@ -2799,7 +2799,7 @@
       ],
       "default": "JSON",
       "description": "- JSON: JSON / YAML for the metadata (which contains inlined primitive values). The representation is inline with the standard json specification as specified - https://www.json.org/json-en.html\n - PROTO: Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core",
-      "title": "LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers. \nIf the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.\nJSON and YAML do not need any protobuf definitions to read it\nAll remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)"
+      "title": "LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers.\nIf the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.\nJSON and YAML do not need any protobuf definitions to read it\nAll remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)"
     },
     "ExecutionErrorErrorKind": {
       "type": "string",
@@ -4874,7 +4874,7 @@
         },
         "input_path": {
           "type": "string",
-          "title": "File system path (start at root). This folder will contain all the inputs exploded to a separate file. \nExample, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\", then the file system will look like\n/var/flyte/inputs/inputs.\u003cmetadata format dependent -\u003e .pb .json .yaml\u003e -\u003e Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations \n/var/flyte/inputs/x -\u003e X is a file that contains the value of x (integer) in string format\n/var/flyte/inputs/y -\u003e Y is a file in Binary format\n/var/flyte/inputs/z/... -\u003e Note Z itself is a directory\nMore information about the protocol - refer to docs #TODO reference docs here"
+          "title": "File system path (start at root). This folder will contain all the inputs exploded to a separate file.\nExample, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\", then the file system will look like\n/var/flyte/inputs/inputs.\u003cmetadata format dependent -\u003e .pb .json .yaml\u003e -\u003e Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations\n/var/flyte/inputs/x -\u003e X is a file that contains the value of x (integer) in string format\n/var/flyte/inputs/y -\u003e Y is a file in Binary format\n/var/flyte/inputs/z/... -\u003e Note Z itself is a directory\nMore information about the protocol - refer to docs #TODO reference docs here"
         },
         "output_path": {
           "type": "string",

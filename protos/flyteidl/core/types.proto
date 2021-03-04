@@ -8,95 +8,95 @@ import "google/protobuf/struct.proto";
 
 // Define a set of simple types.
 enum SimpleType {
-  NONE = 0;
-  INTEGER = 1;
-  FLOAT = 2;
-  STRING = 3;
-  BOOLEAN = 4;
-  DATETIME = 5;
-  DURATION = 6;
-  BINARY = 7;
-  ERROR = 8;
-  STRUCT = 9;
+    NONE = 0;
+    INTEGER = 1;
+    FLOAT = 2;
+    STRING = 3;
+    BOOLEAN = 4;
+    DATETIME = 5;
+    DURATION = 6;
+    BINARY = 7;
+    ERROR = 8;
+    STRUCT = 9;
 }
 
 // Defines schema columns and types to strongly type-validate schemas interoperability.
 message SchemaType {
-  message SchemaColumn {
-    // A unique name -within the schema type- for the column
-    string name = 1;
+    message SchemaColumn {
+        // A unique name -within the schema type- for the column
+        string name = 1;
 
-    enum SchemaColumnType {
-      INTEGER = 0;
-      FLOAT = 1;
-      STRING = 2;
-      BOOLEAN = 3;
-      DATETIME = 4;
-      DURATION = 5;
+        enum SchemaColumnType {
+            INTEGER = 0;
+            FLOAT = 1;
+            STRING = 2;
+            BOOLEAN = 3;
+            DATETIME = 4;
+            DURATION = 5;
+        }
+
+        // The column type. This allows a limited set of types currently.
+        SchemaColumnType type = 2;
     }
 
-    // The column type. This allows a limited set of types currently.
-    SchemaColumnType type = 2;
-  }
-
-  // A list of ordered columns this schema comprises of.
-  repeated SchemaColumn columns = 3;
+    // A list of ordered columns this schema comprises of.
+    repeated SchemaColumn columns = 3;
 }
 
 // Defines type behavior for blob objects
 message BlobType {
-  enum BlobDimensionality {
-    SINGLE = 0;
-    MULTIPART = 1;
-  }
+    enum BlobDimensionality {
+        SINGLE = 0;
+        MULTIPART = 1;
+    }
 
-  // Format can be a free form string understood by SDK/UI etc like
-  // csv, parquet etc
-  string format = 1;
-  BlobDimensionality dimensionality = 2;
+    // Format can be a free form string understood by SDK/UI etc like
+    // csv, parquet etc
+    string format = 1;
+    BlobDimensionality dimensionality = 2;
 }
 
 // Defines a strong type to allow type checking between interfaces.
 message LiteralType {
-  oneof type {
-    // A simple type that can be compared one-to-one with another.
-    SimpleType simple = 1;
+    oneof type {
+        // A simple type that can be compared one-to-one with another.
+        SimpleType simple = 1;
 
-    // A complex type that requires matching of inner fields.
-    SchemaType schema = 2;
+        // A complex type that requires matching of inner fields.
+        SchemaType schema = 2;
 
-    // Defines the type of the value of a collection. Only homogeneous collections are allowed.
-    LiteralType collection_type = 3;
+        // Defines the type of the value of a collection. Only homogeneous collections are allowed.
+        LiteralType collection_type = 3;
 
-    // Defines the type of the value of a map type. The type of the key is always a string.
-    LiteralType map_value_type = 4;
+        // Defines the type of the value of a map type. The type of the key is always a string.
+        LiteralType map_value_type = 4;
 
-    // A blob might have specialized implementation details depending on associated metadata.
-    BlobType blob = 5;
-  }
+        // A blob might have specialized implementation details depending on associated metadata.
+        BlobType blob = 5;
+    }
 
-  // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
-  // consumers to identify special behavior or display extended information for the type.
-  google.protobuf.Struct metadata = 6;
+    // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
+    // consumers to identify special behavior or display extended information for the type.
+    google.protobuf.Struct metadata = 6;
 }
 
 // A reference to an output produced by a node. The type can be retrieved -and validated- from
 // the underlying interface of the node.
 message OutputReference {
-  // Node id must exist at the graph layer.
-  string node_id = 1;
+    // Node id must exist at the graph layer.
+    string node_id = 1;
 
-  // Variable name must refer to an output variable for the node.
-  string var = 2;
+    // Variable name must refer to an output variable for the node.
+    string var = 2;
 }
 
 // Represents an error thrown from a node.
 message Error {
-  // The node id that threw the error.
-  string failed_node_id = 1;
+    // The node id that threw the error.
+    string failed_node_id = 1;
 
-  // Error message thrown.
-  string message = 2;
+    // Error message thrown.
+    string message = 2;
 }
 
 // Secret encapsulates information about the secret a task needs to proceed. An environment variable
@@ -105,45 +105,45 @@ message Error {
 // _FLYTE_SECRET_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if secrets
 // are passed through file mounts.
 message Secret {
-  enum Type {
-    // Symmetric indicates a shared secret (e.g. password).
-    Symmetric = 0;
+    enum Type {
+        // Symmetric indicates a shared secret (e.g. password).
+        Symmetric = 0;
 
-    // Asymmetric indicates a public-private key where the reference is to the private portion of the key.
-    Asymmetric = 1;
-  }
+        // Asymmetric indicates a public-private key where the reference is to the private portion of the key.
+        Asymmetric = 1;
+    }
 
-  // The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-  // of the secret management system to require case sensitivity.
-  string name = 1;
+    // The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
+    // of the secret management system to require case sensitivity.
+    string name = 1;
 
-  // Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-  // underlying key management system cannot mount it through files, the task will fail.
-  Type type = 2;
+    // Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
+    // underlying key management system cannot mount it through files, the task will fail.
+    Type type = 2;
 }
 
 // OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.
 message OAuth2Client {
-  // client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
-  // secret requested matches the client_id indicated here.
-  string client_id = 1;
+    // client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
+    // secret requested matches the client_id indicated here.
+    string client_id = 1;
 
-  // client_secret is a reference to the secret used to authenticate the OAuth2 client.
-  Secret client_secret = 2;
+    // client_secret is a reference to the secret used to authenticate the OAuth2 client.
+    Secret client_secret = 2;
 }
 
 // Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the
 // right identity for the execution environment.
 message Identity {
-  // iam_role references the fully qualified name of Identity & Access Management role to impersonate.
-  string iam_role = 1;
+    // iam_role references the fully qualified name of Identity & Access Management role to impersonate.
+    string iam_role = 1;
 
-  // k8s_service_account references a kubernetes service account to impersonate.
-  string k8s_service_account = 2;
+    // k8s_service_account references a kubernetes service account to impersonate.
+    string k8s_service_account = 2;
 
-  // oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when
-  // making external calls.
-  OAuth2Client oauth2_client = 3;
+    // oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when
+    // making external calls.
+    OAuth2Client oauth2_client = 3;
 }
 
 // OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.
@@ -152,48 +152,48 @@ message Identity {
 // _FLYTE_TOKEN_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens
 // are passed through file mounts.
 message OAuth2TokenRequest {
-  // Type of the token requested.
-  enum Type {
-    // CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials.
-    CLIENT_CREDENTIALS = 0;
-  }
+    // Type of the token requested.
+    enum Type {
+        // CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials.
+        CLIENT_CREDENTIALS = 0;
+    }
 
-  // name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
-  // environment variables and as a filename for mounting tokens as files.
-  string name = 1;
+    // name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
+    // environment variables and as a filename for mounting tokens as files.
+    string name = 1;
 
-  // type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
-  Type type = 2;
+    // type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+    Type type = 2;
 
-  // client references the client_id/secret to use to request the OAuth2 token.
-  OAuth2Client client = 3;
+    // client references the client_id/secret to use to request the OAuth2 token.
+    OAuth2Client client = 3;
 
-  // idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related
-  // information.
-  // +optional
-  string idp_discovery_endpoint = 4;
+    // idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related
+    // information.
+    // +optional
+    string idp_discovery_endpoint = 4;
 
-  // token_endpoint references the token issuance endpoint. If idp_discovery_endpoint is not provided, this parameter is
-  // mandatory.
-  // +optional
-  string token_endpoint = 5;
+    // token_endpoint references the token issuance endpoint. If idp_discovery_endpoint is not provided, this parameter is
+    // mandatory.
+    // +optional
+    string token_endpoint = 5;
 }
 
 // SecurityContext holds security attributes that apply to tasks.
 message SecurityContext {
-  // run_as encapsulates the identity a pod should run as. If the task fills in multiple fields here, it'll be up to the
-  // backend plugin to choose the appropriate identity for the execution engine the task will run on.
-  Identity run_as = 1;
+    // run_as encapsulates the identity a pod should run as. If the task fills in multiple fields here, it'll be up to the
+    // backend plugin to choose the appropriate identity for the execution engine the task will run on.
+    Identity run_as = 1;
 
-  // secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the
-  // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
-  // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
-  // to the secret) and to pass it to the remote execution engine.
-  repeated Secret secrets = 2;
+    // secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the
+    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
+    // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
+    // to the secret) and to pass it to the remote execution engine.
+    repeated Secret secrets = 2;
 
-  // tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the
-  // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
-  // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
-  // to the secret) and to pass it to the remote execution engine.
-  repeated OAuth2TokenRequest tokens = 3;
+    // tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the
+    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
+    // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
+    // to the secret) and to pass it to the remote execution engine.
+    repeated OAuth2TokenRequest tokens = 3;
 }
