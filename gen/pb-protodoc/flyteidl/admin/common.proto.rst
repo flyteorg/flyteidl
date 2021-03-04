@@ -720,7 +720,7 @@ flyteidl.admin.AuthRole
 `[flyteidl.admin.AuthRole proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L241>`_
 
 Defines permissions associated with executions.
-Deprecated
+Deprecated, please use core.SecurityContext
 
 .. code-block:: json
 

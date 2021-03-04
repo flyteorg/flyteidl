@@ -2683,7 +2683,8 @@ definitions:
         type: "string"
       kubernetes_service_account:
         type: "string"
-    title: "Defines permissions associated with executions.\nDeprecated"
+    title: "Defines permissions associated with executions.\nDeprecated, please use\
+      \ core.SecurityContext"
     example:
       kubernetes_service_account: "kubernetes_service_account"
       assumable_iam_role: "assumable_iam_role"

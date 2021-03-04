@@ -18970,7 +18970,7 @@ public final class Common {
   /**
    * <pre>
    * Defines permissions associated with executions.
-   * Deprecated
+   * Deprecated, please use core.SecurityContext
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.AuthRole}
@@ -19363,7 +19363,7 @@ public final class Common {
     /**
      * <pre>
      * Defines permissions associated with executions.
-     * Deprecated
+     * Deprecated, please use core.SecurityContext
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.AuthRole}

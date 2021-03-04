@@ -3018,7 +3018,7 @@
           "type": "string"
         }
       },
-      "title": "Defines permissions associated with executions.\nDeprecated"
+      "title": "Defines permissions associated with executions.\nDeprecated, please use core.SecurityContext"
     },
     "adminClusterResourceAttributes": {
       "type": "object",

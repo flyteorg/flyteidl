@@ -1218,7 +1218,7 @@ func (m *Annotations) GetValues() map[string]string {
 }
 
 // Defines permissions associated with executions.
-// Deprecated
+// Deprecated, please use core.SecurityContext
 type AuthRole struct {
 	// Types that are valid to be assigned to Method:
 	//	*AuthRole_AssumableIamRole
