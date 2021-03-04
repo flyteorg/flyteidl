@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_security_context import AdminSecurityContext  # noqa: E501
+from flyteadmin.models.core_secret_type import CoreSecretType  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminSecurityContext(unittest.TestCase):
-    """AdminSecurityContext unit test stubs"""
+class TestCoreSecretType(unittest.TestCase):
+    """CoreSecretType unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminSecurityContext(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminSecurityContext(self):
-        """Test AdminSecurityContext"""
+    def testCoreSecretType(self):
+        """Test CoreSecretType"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_security_context.AdminSecurityContext()  # noqa: E501
+        # model = flyteadmin.models.core_secret_type.CoreSecretType()  # noqa: E501
         pass
 
 

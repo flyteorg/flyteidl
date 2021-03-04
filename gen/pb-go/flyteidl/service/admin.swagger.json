@@ -3166,7 +3166,7 @@
         },
         "domain": {
           "type": "string",
-          "description": "Name of the domain the execution belongs to. \nA domain can be considered as a subset within a specific project."
+          "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project."
         },
         "name": {
           "type": "string",
@@ -3306,7 +3306,7 @@
           "description": "Optional: auth override to apply this execution."
         },
         "security_context": {
-          "$ref": "#/definitions/adminSecurityContext",
+          "$ref": "#/definitions/coreSecurityContext",
           "description": "Optional: security context override to apply this execution."
         },
         "quality_of_service": {
@@ -3501,7 +3501,7 @@
           "$ref": "#/definitions/adminAuthRole"
         },
         "security_context": {
-          "$ref": "#/definitions/adminSecurityContext",
+          "$ref": "#/definitions/coreSecurityContext",
           "title": "Indicates security context for permissions triggered with this launch plan"
         },
         "quality_of_service": {
@@ -4075,19 +4075,6 @@
         }
       },
       "description": "Defines complete set of information required to trigger an execution on a schedule."
-    },
-    "adminSecurityContext": {
-      "type": "object",
-      "properties": {
-        "values": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "Map of security context values"
-        }
-      },
-      "description": "Security context fields to define privilege and access control settings\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge security context defined at registration and execution time."
     },
     "adminSlackNotification": {
       "type": "object",
@@ -4862,7 +4849,7 @@
         },
         "data_config": {
           "$ref": "#/definitions/coreDataLoadingConfig",
-          "title": "BETA: Optional configuration for DataLoading. If not specified, then default values are used.\nThis makes it possible to to run a completely portable container, that uses inputs and outputs\nonly from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.\nIf data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories \nare not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation\nto understand the default paths.\nOnly K8s"
+          "title": "BETA: Optional configuration for DataLoading. If not specified, then default values are used.\nThis makes it possible to to run a completely portable container, that uses inputs and outputs\nonly from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.\nIf data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories\nare not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation\nto understand the default paths.\nOnly K8s"
         }
       }
     },
@@ -4977,6 +4964,24 @@
         }
       },
       "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
+    },
+    "coreIdentity": {
+      "type": "object",
+      "properties": {
+        "iam_role": {
+          "type": "string",
+          "description": "iam_role references the fully qualified name of Identity \u0026 Access Management role to impersonate."
+        },
+        "k8s_service_account": {
+          "type": "string",
+          "description": "k8s_service_account references a kubernetes service account to impersonate."
+        },
+        "oauth2_client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "description": "oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when\nmaking external calls."
+        }
+      },
+      "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."
     },
     "coreIfBlock": {
       "type": "object",
@@ -5197,6 +5202,54 @@
       },
       "description": "Defines extra information about the Node."
     },
+    "coreOAuth2Client": {
+      "type": "object",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "client_id is the public id for the client to use. The system will not perform any pre-auth validation that the\nsecret requested matches the client_id indicated here."
+        },
+        "client_secret": {
+          "$ref": "#/definitions/coreSecret",
+          "description": "client_secret is a reference to the secret used to authenticate the OAuth2 client."
+        }
+      },
+      "description": "OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task."
+    },
+    "coreOAuth2TokenRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for\nenvironment variables and as a filename for mounting tokens as files."
+        },
+        "type": {
+          "$ref": "#/definitions/coreOAuth2TokenRequestType",
+          "description": "type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS."
+        },
+        "client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "description": "client references the client_id/secret to use to request the OAuth2 token."
+        },
+        "idp_discovery_endpoint": {
+          "type": "string",
+          "title": "idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related\ninformation.\n+optional"
+        },
+        "token_endpoint": {
+          "type": "string",
+          "title": "token_endpoint references the token issuance endpoint. If idp_discovery_endpoint is not provided, this parameter is\nmandatory.\n+optional"
+        }
+      },
+      "description": "OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.\n_FLYTE_TOKEN_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\ntokens are passed through environment variables.\n_FLYTE_TOKEN_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens\nare passed through file mounts."
+    },
+    "coreOAuth2TokenRequestType": {
+      "type": "string",
+      "enum": [
+        "CLIENT_CREDENTIALS"
+      ],
+      "default": "CLIENT_CREDENTIALS",
+      "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
+    },
     "coreOperand": {
       "type": "object",
       "properties": {
@@ -5407,6 +5460,53 @@
       },
       "description": "Defines schema columns and types to strongly type-validate schemas interoperability."
     },
+    "coreSecret": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity."
+        },
+        "type": {
+          "$ref": "#/definitions/coreSecretType",
+          "description": "Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the\nunderlying key management system cannot mount it through files, the task will fail."
+        }
+      },
+      "description": "Secret encapsulates information about the secret a task needs to proceed. An environment variable\n_FLYTE_SECRET_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\nsecrets are passed through environment variables.\n_FLYTE_SECRET_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if secrets\nare passed through file mounts."
+    },
+    "coreSecretType": {
+      "type": "string",
+      "enum": [
+        "Symmetric",
+        "Asymmetric"
+      ],
+      "default": "Symmetric",
+      "description": " - Symmetric: Symmetric indicates a shared secret (e.g. password).\n - Asymmetric: Asymmetric indicates a public-private key where the reference is to the private portion of the key."
+    },
+    "coreSecurityContext": {
+      "type": "object",
+      "properties": {
+        "run_as": {
+          "$ref": "#/definitions/coreIdentity",
+          "description": "run_as encapsulates the identity a pod should run as. If the task fills in multiple fields here, it'll be up to the\nbackend plugin to choose the appropriate identity for the execution engine the task will run on."
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSecret"
+          },
+          "description": "secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreOAuth2TokenRequest"
+          },
+          "description": "tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        }
+      },
+      "description": "SecurityContext holds security attributes that apply to tasks."
+    },
     "coreSimpleType": {
       "type": "string",
       "enum": [
@@ -5548,6 +5648,10 @@
           "type": "integer",
           "format": "int32",
           "description": "This can be used to customize task handling at execution time for the same task type."
+        },
+        "security_context": {
+          "$ref": "#/definitions/coreSecurityContext",
+          "description": "security_context encapsulates security attributes requested to run this task."
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
