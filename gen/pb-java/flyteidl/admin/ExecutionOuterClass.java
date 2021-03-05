@@ -14912,7 +14912,7 @@ public final class ExecutionOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    flyteidl.core.Types.SecurityContext getSecurityContext();
+    flyteidl.core.Security.SecurityContext getSecurityContext();
     /**
      * <pre>
      * Optional: security context override to apply this execution.
@@ -14920,7 +14920,7 @@ public final class ExecutionOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder();
+    flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
 
     /**
      * <pre>
@@ -15091,11 +15091,11 @@ public final class ExecutionOuterClass {
               break;
             }
             case 82: {
-              flyteidl.core.Types.SecurityContext.Builder subBuilder = null;
+              flyteidl.core.Security.SecurityContext.Builder subBuilder = null;
               if (securityContext_ != null) {
                 subBuilder = securityContext_.toBuilder();
               }
-              securityContext_ = input.readMessage(flyteidl.core.Types.SecurityContext.parser(), extensionRegistry);
+              securityContext_ = input.readMessage(flyteidl.core.Security.SecurityContext.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(securityContext_);
                 securityContext_ = subBuilder.buildPartial();
@@ -15444,7 +15444,7 @@ public final class ExecutionOuterClass {
     }
 
     public static final int SECURITY_CONTEXT_FIELD_NUMBER = 10;
-    private flyteidl.core.Types.SecurityContext securityContext_;
+    private flyteidl.core.Security.SecurityContext securityContext_;
     /**
      * <pre>
      * Optional: security context override to apply this execution.
@@ -15462,8 +15462,8 @@ public final class ExecutionOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    public flyteidl.core.Types.SecurityContext getSecurityContext() {
-      return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+    public flyteidl.core.Security.SecurityContext getSecurityContext() {
+      return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
     }
     /**
      * <pre>
@@ -15472,7 +15472,7 @@ public final class ExecutionOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+    public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
       return getSecurityContext();
     }
 
@@ -17272,9 +17272,9 @@ public final class ExecutionOuterClass {
         return authRoleBuilder_;
       }
 
-      private flyteidl.core.Types.SecurityContext securityContext_;
+      private flyteidl.core.Security.SecurityContext securityContext_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> securityContextBuilder_;
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> securityContextBuilder_;
       /**
        * <pre>
        * Optional: security context override to apply this execution.
@@ -17292,9 +17292,9 @@ public final class ExecutionOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContext getSecurityContext() {
+      public flyteidl.core.Security.SecurityContext getSecurityContext() {
         if (securityContextBuilder_ == null) {
-          return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+          return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         } else {
           return securityContextBuilder_.getMessage();
         }
@@ -17306,7 +17306,7 @@ public final class ExecutionOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public Builder setSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder setSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -17327,7 +17327,7 @@ public final class ExecutionOuterClass {
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
       public Builder setSecurityContext(
-          flyteidl.core.Types.SecurityContext.Builder builderForValue) {
+          flyteidl.core.Security.SecurityContext.Builder builderForValue) {
         if (securityContextBuilder_ == null) {
           securityContext_ = builderForValue.build();
           onChanged();
@@ -17344,11 +17344,11 @@ public final class ExecutionOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public Builder mergeSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder mergeSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (securityContext_ != null) {
             securityContext_ =
-              flyteidl.core.Types.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
+              flyteidl.core.Security.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
           } else {
             securityContext_ = value;
           }
@@ -17384,7 +17384,7 @@ public final class ExecutionOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContext.Builder getSecurityContextBuilder() {
+      public flyteidl.core.Security.SecurityContext.Builder getSecurityContextBuilder() {
         
         onChanged();
         return getSecurityContextFieldBuilder().getBuilder();
@@ -17396,12 +17396,12 @@ public final class ExecutionOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+      public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
         if (securityContextBuilder_ != null) {
           return securityContextBuilder_.getMessageOrBuilder();
         } else {
           return securityContext_ == null ?
-              flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+              flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         }
       }
       /**
@@ -17412,11 +17412,11 @@ public final class ExecutionOuterClass {
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> 
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> 
           getSecurityContextFieldBuilder() {
         if (securityContextBuilder_ == null) {
           securityContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder>(
+              flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder>(
                   getSecurityContext(),
                   getParentForChildren(),
                   isClean());
@@ -21112,85 +21112,85 @@ public final class ExecutionOuterClass {
       "dl.admin\032\033flyteidl/admin/common.proto\032\034f" +
       "lyteidl/core/literals.proto\032\035flyteidl/co" +
       "re/execution.proto\032\036flyteidl/core/identi" +
-      "fier.proto\032\031flyteidl/core/types.proto\032\036g" +
-      "oogle/protobuf/duration.proto\032\037google/pr" +
-      "otobuf/timestamp.proto\"\237\001\n\026ExecutionCrea" +
-      "teRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001" +
-      "(\t\022\014\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035.flyteid" +
-      "l.admin.ExecutionSpec\022)\n\006inputs\030\005 \001(\0132\031." +
-      "flyteidl.core.LiteralMap\"`\n\030ExecutionRel" +
-      "aunchRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core" +
-      ".WorkflowExecutionIdentifier\022\014\n\004name\030\003 \001" +
-      "(\t\"Q\n\027ExecutionCreateResponse\0226\n\002id\030\001 \001(" +
+      "fier.proto\032\034flyteidl/core/security.proto" +
+      "\032\036google/protobuf/duration.proto\032\037google" +
+      "/protobuf/timestamp.proto\"\237\001\n\026ExecutionC" +
+      "reateRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030" +
+      "\002 \001(\t\022\014\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035.flyt" +
+      "eidl.admin.ExecutionSpec\022)\n\006inputs\030\005 \001(\013" +
+      "2\031.flyteidl.core.LiteralMap\"`\n\030Execution" +
+      "RelaunchRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.c" +
+      "ore.WorkflowExecutionIdentifier\022\014\n\004name\030" +
+      "\003 \001(\t\"Q\n\027ExecutionCreateResponse\0226\n\002id\030\001" +
+      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
+      "entifier\"U\n\033WorkflowExecutionGetRequest\022" +
+      "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
+      "utionIdentifier\"\243\001\n\tExecution\0226\n\002id\030\001 \001(" +
       "\0132*.flyteidl.core.WorkflowExecutionIdent" +
-      "ifier\"U\n\033WorkflowExecutionGetRequest\0226\n\002" +
-      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
-      "onIdentifier\"\243\001\n\tExecution\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin.Execut" +
-      "ionSpec\0221\n\007closure\030\003 \001(\0132 .flyteidl.admi" +
-      "n.ExecutionClosure\"M\n\rExecutionList\022-\n\ne" +
-      "xecutions\030\001 \003(\0132\031.flyteidl.admin.Executi" +
-      "on\022\r\n\005token\030\002 \001(\t\"T\n\016LiteralMapBlob\022+\n\006v" +
-      "alues\030\001 \001(\0132\031.flyteidl.core.LiteralMapH\000" +
-      "\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata" +
-      "\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\353\004\n\020E" +
-      "xecutionClosure\0221\n\007outputs\030\001 \001(\0132\036.flyte" +
-      "idl.admin.LiteralMapBlobH\000\022.\n\005error\030\002 \001(" +
-      "\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n\013ab" +
-      "ort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_metadata\030" +
-      "\014 \001(\0132\035.flyteidl.admin.AbortMetadataH\000\0226" +
-      "\n\017computed_inputs\030\003 \001(\0132\031.flyteidl.core." +
-      "LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyteidl" +
-      ".core.WorkflowExecution.Phase\022.\n\nstarted" +
-      "_at\030\005 \001(\0132\032.google.protobuf.Timestamp\022+\n" +
-      "\010duration\030\006 \001(\0132\031.google.protobuf.Durati" +
-      "on\022.\n\ncreated_at\030\007 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022.\n\nupdated_at\030\010 \001(\0132\032.google." +
-      "protobuf.Timestamp\0223\n\rnotifications\030\t \003(" +
-      "\0132\034.flyteidl.admin.Notification\022.\n\013workf" +
-      "low_id\030\013 \001(\0132\031.flyteidl.core.IdentifierB" +
-      "\017\n\routput_result\"+\n\016SystemMetadata\022\031\n\021ex" +
-      "ecution_cluster\030\001 \001(\t\"\313\003\n\021ExecutionMetad" +
-      "ata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.Execu" +
-      "tionMetadata.ExecutionMode\022\021\n\tprincipal\030" +
-      "\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_at\030\004" +
-      " \001(\0132\032.google.protobuf.Timestamp\022E\n\025pare" +
-      "nt_node_execution\030\005 \001(\0132&.flyteidl.core." +
-      "NodeExecutionIdentifier\022G\n\023reference_exe" +
-      "cution\030\020 \001(\0132*.flyteidl.core.WorkflowExe" +
-      "cutionIdentifier\0227\n\017system_metadata\030\021 \001(" +
-      "\0132\036.flyteidl.admin.SystemMetadata\"X\n\rExe" +
-      "cutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n" +
-      "\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLO" +
-      "W\020\004\"G\n\020NotificationList\0223\n\rnotifications" +
-      "\030\001 \003(\0132\034.flyteidl.admin.Notification\"\227\004\n" +
-      "\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fl" +
-      "yteidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031" +
-      ".flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadat" +
-      "a\030\003 \001(\0132!.flyteidl.admin.ExecutionMetada" +
-      "ta\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.adm" +
-      "in.NotificationListH\000\022\025\n\013disable_all\030\006 \001" +
-      "(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.La" +
-      "bels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.adm" +
-      "in.Annotations\022/\n\tauth_role\030\t \001(\0132\030.flyt" +
-      "eidl.admin.AuthRoleB\002\030\001\0228\n\020security_cont" +
-      "ext\030\n \001(\0132\036.flyteidl.core.SecurityContex" +
-      "t\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl" +
-      ".core.QualityOfServiceB\030\n\026notification_o" +
-      "verridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequ" +
-      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Ex" +
-      "ecutionTerminateResponse\"Y\n\037WorkflowExec" +
-      "utionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
-      "dl.core.WorkflowExecutionIdentifier\"\326\001\n " +
-      "WorkflowExecutionGetDataResponse\022(\n\007outp" +
-      "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006in" +
-      "puts\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022.\n\013f" +
-      "ull_inputs\030\003 \001(\0132\031.flyteidl.core.Literal" +
-      "Map\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.cor" +
-      "e.LiteralMapB3Z1github.com/lyft/flyteidl" +
-      "/gen/pb-go/flyteidl/adminb\006proto3"
+      "ifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin.Exe" +
+      "cutionSpec\0221\n\007closure\030\003 \001(\0132 .flyteidl.a" +
+      "dmin.ExecutionClosure\"M\n\rExecutionList\022-" +
+      "\n\nexecutions\030\001 \003(\0132\031.flyteidl.admin.Exec" +
+      "ution\022\r\n\005token\030\002 \001(\t\"T\n\016LiteralMapBlob\022+" +
+      "\n\006values\030\001 \001(\0132\031.flyteidl.core.LiteralMa" +
+      "pH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetad" +
+      "ata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\353\004" +
+      "\n\020ExecutionClosure\0221\n\007outputs\030\001 \001(\0132\036.fl" +
+      "yteidl.admin.LiteralMapBlobH\000\022.\n\005error\030\002" +
+      " \001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n" +
+      "\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_metada" +
+      "ta\030\014 \001(\0132\035.flyteidl.admin.AbortMetadataH" +
+      "\000\0226\n\017computed_inputs\030\003 \001(\0132\031.flyteidl.co" +
+      "re.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyte" +
+      "idl.core.WorkflowExecution.Phase\022.\n\nstar" +
+      "ted_at\030\005 \001(\0132\032.google.protobuf.Timestamp" +
+      "\022+\n\010duration\030\006 \001(\0132\031.google.protobuf.Dur" +
+      "ation\022.\n\ncreated_at\030\007 \001(\0132\032.google.proto" +
+      "buf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\0223\n\rnotifications\030\t" +
+      " \003(\0132\034.flyteidl.admin.Notification\022.\n\013wo" +
+      "rkflow_id\030\013 \001(\0132\031.flyteidl.core.Identifi" +
+      "erB\017\n\routput_result\"+\n\016SystemMetadata\022\031\n" +
+      "\021execution_cluster\030\001 \001(\t\"\313\003\n\021ExecutionMe" +
+      "tadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.Ex" +
+      "ecutionMetadata.ExecutionMode\022\021\n\tprincip" +
+      "al\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_a" +
+      "t\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n\025p" +
+      "arent_node_execution\030\005 \001(\0132&.flyteidl.co" +
+      "re.NodeExecutionIdentifier\022G\n\023reference_" +
+      "execution\030\020 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\0227\n\017system_metadata\030\021" +
+      " \001(\0132\036.flyteidl.admin.SystemMetadata\"X\n\r" +
+      "ExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001" +
+      "\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORK" +
+      "FLOW\020\004\"G\n\020NotificationList\0223\n\rnotificati" +
+      "ons\030\001 \003(\0132\034.flyteidl.admin.Notification\"" +
+      "\227\004\n\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\022-\n\006inputs\030\002 \001(" +
+      "\0132\031.flyteidl.core.LiteralMapB\002\030\001\0223\n\010meta" +
+      "data\030\003 \001(\0132!.flyteidl.admin.ExecutionMet" +
+      "adata\0229\n\rnotifications\030\005 \001(\0132 .flyteidl." +
+      "admin.NotificationListH\000\022\025\n\013disable_all\030" +
+      "\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin" +
+      ".Labels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl." +
+      "admin.Annotations\022/\n\tauth_role\030\t \001(\0132\030.f" +
+      "lyteidl.admin.AuthRoleB\002\030\001\0228\n\020security_c" +
+      "ontext\030\n \001(\0132\036.flyteidl.core.SecurityCon" +
+      "text\022;\n\022quality_of_service\030\021 \001(\0132\037.flyte" +
+      "idl.core.QualityOfServiceB\030\n\026notificatio" +
+      "n_overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateR" +
+      "equest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
+      "lowExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n" +
+      "\032ExecutionTerminateResponse\"Y\n\037WorkflowE" +
+      "xecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.fly" +
+      "teidl.core.WorkflowExecutionIdentifier\"\326" +
+      "\001\n WorkflowExecutionGetDataResponse\022(\n\007o" +
+      "utputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n" +
+      "\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022." +
+      "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite" +
+      "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl." +
+      "core.LiteralMapB3Z1github.com/lyft/flyte" +
+      "idl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21207,7 +21207,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
-          flyteidl.core.Types.getDescriptor(),
+          flyteidl.core.Security.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
@@ -21317,7 +21317,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
-    flyteidl.core.Types.getDescriptor();
+    flyteidl.core.Security.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -24176,9 +24176,9 @@ definitions:
           \ system cannot mount it through files, the task will fail."
         $ref: "#/definitions/coreSecretType"
     description: "Secret encapsulates information about the secret a task needs to\
-      \ proceed. An environment variable\n_FLYTE_SECRET_ENV_PREFIX will be passed\
+      \ proceed. An environment variable\nFLYTE_SECRETS_ENV_PREFIX will be passed\
       \ to indicate the prefix of the environment variables that will be present if\n\
-      secrets are passed through environment variables.\n_FLYTE_SECRET_PATH_PREFIX\
+      secrets are passed through environment variables.\nFLYTE_SECRETS_DEFAULT_DIR\
       \ will be passed to indicate the prefix of the path where secrets will be mounted\
       \ if secrets\nare passed through file mounts."
     example:

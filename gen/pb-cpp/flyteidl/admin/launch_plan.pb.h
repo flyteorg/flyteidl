@@ -36,7 +36,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/interface.pb.h"
-#include "flyteidl/core/types.pb.h"
+#include "flyteidl/core/security.pb.h"
 #include "flyteidl/admin/schedule.pb.h"
 #include "flyteidl/admin/common.pb.h"
 #include <google/protobuf/timestamp.pb.h>

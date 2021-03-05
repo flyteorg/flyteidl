@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\xb0\x02\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"g\n\x06Secret\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.flyteidl.core.Secret.Type\"%\n\x04Type\x12\r\n\tSymmetric\x10\x00\x12\x0e\n\nAsymmetric\x10\x01\"O\n\x0cOAuth2Client\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12,\n\rclient_secret\x18\x02 \x01(\x0b\x32\x15.flyteidl.core.Secret\"m\n\x08Identity\x12\x10\n\x08iam_role\x18\x01 \x01(\t\x12\x1b\n\x13k8s_service_account\x18\x02 \x01(\t\x12\x32\n\roauth2_client\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\"\xdd\x01\n\x12OAuth2TokenRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.flyteidl.core.OAuth2TokenRequest.Type\x12+\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1e\n\x16idp_discovery_endpoint\x18\x04 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x05 \x01(\t\"\x1e\n\x04Type\x12\x16\n\x12\x43LIENT_CREDENTIALS\x10\x00\"\x95\x01\n\x0fSecurityContext\x12\'\n\x06run_as\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Identity\x12&\n\x07secrets\x18\x02 \x03(\x0b\x32\x15.flyteidl.core.Secret\x12\x31\n\x06tokens\x18\x03 \x03(\x0b\x32!.flyteidl.core.OAuth2TokenRequest*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\xb0\x02\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -75,8 +75,8 @@ _SIMPLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1571,
-  serialized_end=1705,
+  serialized_start=898,
+  serialized_end=1032,
 )
 _sym_db.RegisterEnumDescriptor(_SIMPLETYPE)
 
@@ -152,46 +152,6 @@ _BLOBTYPE_BLOBDIMENSIONALITY = _descriptor.EnumDescriptor(
   serialized_end=489,
 )
 _sym_db.RegisterEnumDescriptor(_BLOBTYPE_BLOBDIMENSIONALITY)
-
-_SECRET_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='flyteidl.core.Secret.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='Symmetric', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='Asymmetric', index=1, number=1,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=963,
-  serialized_end=1000,
-)
-_sym_db.RegisterEnumDescriptor(_SECRET_TYPE)
-
-_OAUTH2TOKENREQUEST_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='flyteidl.core.OAuth2TokenRequest.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='CLIENT_CREDENTIALS', index=0, number=0,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1386,
-  serialized_end=1416,
-)
-_sym_db.RegisterEnumDescriptor(_OAUTH2TOKENREQUEST_TYPE)
 
 
 _SCHEMATYPE_SCHEMACOLUMN = _descriptor.Descriptor(
@@ -446,233 +406,6 @@ _ERROR = _descriptor.Descriptor(
   serialized_end=895,
 )
 
-
-_SECRET = _descriptor.Descriptor(
-  name='Secret',
-  full_name='flyteidl.core.Secret',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='flyteidl.core.Secret.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='flyteidl.core.Secret.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _SECRET_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=897,
-  serialized_end=1000,
-)
-
-
-_OAUTH2CLIENT = _descriptor.Descriptor(
-  name='OAuth2Client',
-  full_name='flyteidl.core.OAuth2Client',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='flyteidl.core.OAuth2Client.client_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_secret', full_name='flyteidl.core.OAuth2Client.client_secret', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1002,
-  serialized_end=1081,
-)
-
-
-_IDENTITY = _descriptor.Descriptor(
-  name='Identity',
-  full_name='flyteidl.core.Identity',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='iam_role', full_name='flyteidl.core.Identity.iam_role', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='k8s_service_account', full_name='flyteidl.core.Identity.k8s_service_account', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='oauth2_client', full_name='flyteidl.core.Identity.oauth2_client', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1083,
-  serialized_end=1192,
-)
-
-
-_OAUTH2TOKENREQUEST = _descriptor.Descriptor(
-  name='OAuth2TokenRequest',
-  full_name='flyteidl.core.OAuth2TokenRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='flyteidl.core.OAuth2TokenRequest.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='flyteidl.core.OAuth2TokenRequest.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client', full_name='flyteidl.core.OAuth2TokenRequest.client', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='idp_discovery_endpoint', full_name='flyteidl.core.OAuth2TokenRequest.idp_discovery_endpoint', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_endpoint', full_name='flyteidl.core.OAuth2TokenRequest.token_endpoint', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _OAUTH2TOKENREQUEST_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1195,
-  serialized_end=1416,
-)
-
-
-_SECURITYCONTEXT = _descriptor.Descriptor(
-  name='SecurityContext',
-  full_name='flyteidl.core.SecurityContext',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='run_as', full_name='flyteidl.core.SecurityContext.run_as', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='secrets', full_name='flyteidl.core.SecurityContext.secrets', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='tokens', full_name='flyteidl.core.SecurityContext.tokens', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1419,
-  serialized_end=1568,
-)
-
 _SCHEMATYPE_SCHEMACOLUMN.fields_by_name['type'].enum_type = _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE
 _SCHEMATYPE_SCHEMACOLUMN.containing_type = _SCHEMATYPE
 _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE.containing_type = _SCHEMATYPE_SCHEMACOLUMN
@@ -700,26 +433,11 @@ _LITERALTYPE.fields_by_name['map_value_type'].containing_oneof = _LITERALTYPE.on
 _LITERALTYPE.oneofs_by_name['type'].fields.append(
   _LITERALTYPE.fields_by_name['blob'])
 _LITERALTYPE.fields_by_name['blob'].containing_oneof = _LITERALTYPE.oneofs_by_name['type']
-_SECRET.fields_by_name['type'].enum_type = _SECRET_TYPE
-_SECRET_TYPE.containing_type = _SECRET
-_OAUTH2CLIENT.fields_by_name['client_secret'].message_type = _SECRET
-_IDENTITY.fields_by_name['oauth2_client'].message_type = _OAUTH2CLIENT
-_OAUTH2TOKENREQUEST.fields_by_name['type'].enum_type = _OAUTH2TOKENREQUEST_TYPE
-_OAUTH2TOKENREQUEST.fields_by_name['client'].message_type = _OAUTH2CLIENT
-_OAUTH2TOKENREQUEST_TYPE.containing_type = _OAUTH2TOKENREQUEST
-_SECURITYCONTEXT.fields_by_name['run_as'].message_type = _IDENTITY
-_SECURITYCONTEXT.fields_by_name['secrets'].message_type = _SECRET
-_SECURITYCONTEXT.fields_by_name['tokens'].message_type = _OAUTH2TOKENREQUEST
 DESCRIPTOR.message_types_by_name['SchemaType'] = _SCHEMATYPE
 DESCRIPTOR.message_types_by_name['BlobType'] = _BLOBTYPE
 DESCRIPTOR.message_types_by_name['LiteralType'] = _LITERALTYPE
 DESCRIPTOR.message_types_by_name['OutputReference'] = _OUTPUTREFERENCE
 DESCRIPTOR.message_types_by_name['Error'] = _ERROR
-DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
-DESCRIPTOR.message_types_by_name['OAuth2Client'] = _OAUTH2CLIENT
-DESCRIPTOR.message_types_by_name['Identity'] = _IDENTITY
-DESCRIPTOR.message_types_by_name['OAuth2TokenRequest'] = _OAUTH2TOKENREQUEST
-DESCRIPTOR.message_types_by_name['SecurityContext'] = _SECURITYCONTEXT
 DESCRIPTOR.enum_types_by_name['SimpleType'] = _SIMPLETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -765,41 +483,6 @@ Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), d
   # @@protoc_insertion_point(class_scope:flyteidl.core.Error)
   ))
 _sym_db.RegisterMessage(Error)
-
-Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), dict(
-  DESCRIPTOR = _SECRET,
-  __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.Secret)
-  ))
-_sym_db.RegisterMessage(Secret)
-
-OAuth2Client = _reflection.GeneratedProtocolMessageType('OAuth2Client', (_message.Message,), dict(
-  DESCRIPTOR = _OAUTH2CLIENT,
-  __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.OAuth2Client)
-  ))
-_sym_db.RegisterMessage(OAuth2Client)
-
-Identity = _reflection.GeneratedProtocolMessageType('Identity', (_message.Message,), dict(
-  DESCRIPTOR = _IDENTITY,
-  __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.Identity)
-  ))
-_sym_db.RegisterMessage(Identity)
-
-OAuth2TokenRequest = _reflection.GeneratedProtocolMessageType('OAuth2TokenRequest', (_message.Message,), dict(
-  DESCRIPTOR = _OAUTH2TOKENREQUEST,
-  __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.OAuth2TokenRequest)
-  ))
-_sym_db.RegisterMessage(OAuth2TokenRequest)
-
-SecurityContext = _reflection.GeneratedProtocolMessageType('SecurityContext', (_message.Message,), dict(
-  DESCRIPTOR = _SECURITYCONTEXT,
-  __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.SecurityContext)
-  ))
-_sym_db.RegisterMessage(SecurityContext)
 
 
 DESCRIPTOR._options = None

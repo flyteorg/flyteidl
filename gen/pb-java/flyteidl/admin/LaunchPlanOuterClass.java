@@ -4496,7 +4496,7 @@ public final class LaunchPlanOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    flyteidl.core.Types.SecurityContext getSecurityContext();
+    flyteidl.core.Security.SecurityContext getSecurityContext();
     /**
      * <pre>
      * Indicates security context for permissions triggered with this launch plan
@@ -4504,7 +4504,7 @@ public final class LaunchPlanOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder();
+    flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
 
     /**
      * <pre>
@@ -4699,11 +4699,11 @@ public final class LaunchPlanOuterClass {
               break;
             }
             case 82: {
-              flyteidl.core.Types.SecurityContext.Builder subBuilder = null;
+              flyteidl.core.Security.SecurityContext.Builder subBuilder = null;
               if (securityContext_ != null) {
                 subBuilder = securityContext_.toBuilder();
               }
-              securityContext_ = input.readMessage(flyteidl.core.Types.SecurityContext.parser(), extensionRegistry);
+              securityContext_ = input.readMessage(flyteidl.core.Security.SecurityContext.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(securityContext_);
                 securityContext_ = subBuilder.buildPartial();
@@ -5064,7 +5064,7 @@ public final class LaunchPlanOuterClass {
     }
 
     public static final int SECURITY_CONTEXT_FIELD_NUMBER = 10;
-    private flyteidl.core.Types.SecurityContext securityContext_;
+    private flyteidl.core.Security.SecurityContext securityContext_;
     /**
      * <pre>
      * Indicates security context for permissions triggered with this launch plan
@@ -5082,8 +5082,8 @@ public final class LaunchPlanOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    public flyteidl.core.Types.SecurityContext getSecurityContext() {
-      return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+    public flyteidl.core.Security.SecurityContext getSecurityContext() {
+      return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
     }
     /**
      * <pre>
@@ -5092,7 +5092,7 @@ public final class LaunchPlanOuterClass {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
      */
-    public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+    public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
       return getSecurityContext();
     }
 
@@ -7063,9 +7063,9 @@ public final class LaunchPlanOuterClass {
         return authRoleBuilder_;
       }
 
-      private flyteidl.core.Types.SecurityContext securityContext_;
+      private flyteidl.core.Security.SecurityContext securityContext_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> securityContextBuilder_;
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> securityContextBuilder_;
       /**
        * <pre>
        * Indicates security context for permissions triggered with this launch plan
@@ -7083,9 +7083,9 @@ public final class LaunchPlanOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContext getSecurityContext() {
+      public flyteidl.core.Security.SecurityContext getSecurityContext() {
         if (securityContextBuilder_ == null) {
-          return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+          return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         } else {
           return securityContextBuilder_.getMessage();
         }
@@ -7097,7 +7097,7 @@ public final class LaunchPlanOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public Builder setSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder setSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7118,7 +7118,7 @@ public final class LaunchPlanOuterClass {
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
       public Builder setSecurityContext(
-          flyteidl.core.Types.SecurityContext.Builder builderForValue) {
+          flyteidl.core.Security.SecurityContext.Builder builderForValue) {
         if (securityContextBuilder_ == null) {
           securityContext_ = builderForValue.build();
           onChanged();
@@ -7135,11 +7135,11 @@ public final class LaunchPlanOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public Builder mergeSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder mergeSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (securityContext_ != null) {
             securityContext_ =
-              flyteidl.core.Types.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
+              flyteidl.core.Security.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
           } else {
             securityContext_ = value;
           }
@@ -7175,7 +7175,7 @@ public final class LaunchPlanOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContext.Builder getSecurityContextBuilder() {
+      public flyteidl.core.Security.SecurityContext.Builder getSecurityContextBuilder() {
         
         onChanged();
         return getSecurityContextFieldBuilder().getBuilder();
@@ -7187,12 +7187,12 @@ public final class LaunchPlanOuterClass {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
-      public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+      public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
         if (securityContextBuilder_ != null) {
           return securityContextBuilder_.getMessageOrBuilder();
         } else {
           return securityContext_ == null ?
-              flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+              flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         }
       }
       /**
@@ -7203,11 +7203,11 @@ public final class LaunchPlanOuterClass {
        * <code>.flyteidl.core.SecurityContext security_context = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> 
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> 
           getSecurityContextFieldBuilder() {
         if (securityContextBuilder_ == null) {
           securityContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder>(
+              flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder>(
                   getSecurityContext(),
                   getParentForChildren(),
                   isClean());
@@ -13486,58 +13486,58 @@ public final class LaunchPlanOuterClass {
       "eidl.admin\032\035flyteidl/core/execution.prot" +
       "o\032\034flyteidl/core/literals.proto\032\036flyteid" +
       "l/core/identifier.proto\032\035flyteidl/core/i" +
-      "nterface.proto\032\031flyteidl/core/types.prot" +
-      "o\032\035flyteidl/admin/schedule.proto\032\033flytei" +
-      "dl/admin/common.proto\032\037google/protobuf/t" +
-      "imestamp.proto\"n\n\027LaunchPlanCreateReques" +
-      "t\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.LaunchPl" +
-      "anSpec\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nL" +
-      "aunchPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
-      "entifier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin." +
-      "LaunchPlanSpec\0222\n\007closure\030\003 \001(\0132!.flytei" +
-      "dl.admin.LaunchPlanClosure\"Q\n\016LaunchPlan" +
-      "List\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl.ad" +
-      "min.LaunchPlan\022\r\n\005token\030\002 \001(\t\"T\n\004Auth\022\034\n" +
-      "\022assumable_iam_role\030\001 \001(\tH\000\022$\n\032kubernete" +
-      "s_service_account\030\002 \001(\tH\000B\010\n\006method\"\344\004\n\016" +
-      "LaunchPlanSpec\022.\n\013workflow_id\030\001 \001(\0132\031.fl" +
-      "yteidl.core.Identifier\022;\n\017entity_metadat" +
-      "a\030\002 \001(\0132\".flyteidl.admin.LaunchPlanMetad" +
-      "ata\0223\n\016default_inputs\030\003 \001(\0132\033.flyteidl.c" +
-      "ore.ParameterMap\022/\n\014fixed_inputs\030\004 \001(\0132\031" +
-      ".flyteidl.core.LiteralMap\022\020\n\004role\030\005 \001(\tB" +
-      "\002\030\001\022&\n\006labels\030\006 \001(\0132\026.flyteidl.admin.Lab" +
-      "els\0220\n\013annotations\030\007 \001(\0132\033.flyteidl.admi" +
-      "n.Annotations\022&\n\004auth\030\010 \001(\0132\024.flyteidl.a" +
-      "dmin.AuthB\002\030\001\022/\n\tauth_role\030\t \001(\0132\030.flyte" +
-      "idl.admin.AuthRoleB\002\030\001\0228\n\020security_conte" +
-      "xt\030\n \001(\0132\036.flyteidl.core.SecurityContext" +
-      "\022;\n\022quality_of_service\030\020 \001(\0132\037.flyteidl." +
-      "core.QualityOfService\022C\n\026raw_output_data" +
-      "_config\030\021 \001(\0132#.flyteidl.admin.RawOutput" +
-      "DataConfig\"\217\002\n\021LaunchPlanClosure\022.\n\005stat" +
-      "e\030\001 \001(\0162\037.flyteidl.admin.LaunchPlanState" +
-      "\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteidl.cor" +
-      "e.ParameterMap\0224\n\020expected_outputs\030\003 \001(\013" +
-      "2\032.flyteidl.core.VariableMap\022.\n\ncreated_" +
-      "at\030\004 \001(\0132\032.google.protobuf.Timestamp\022.\n\n" +
-      "updated_at\030\005 \001(\0132\032.google.protobuf.Times" +
-      "tamp\"u\n\022LaunchPlanMetadata\022*\n\010schedule\030\001" +
-      " \001(\0132\030.flyteidl.admin.Schedule\0223\n\rnotifi" +
-      "cations\030\002 \003(\0132\034.flyteidl.admin.Notificat" +
-      "ion\"p\n\027LaunchPlanUpdateRequest\022%\n\002id\030\001 \001" +
-      "(\0132\031.flyteidl.core.Identifier\022.\n\005state\030\002" +
-      " \001(\0162\037.flyteidl.admin.LaunchPlanState\"\032\n" +
-      "\030LaunchPlanUpdateResponse\"L\n\027ActiveLaunc" +
-      "hPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl.admi" +
-      "n.NamedEntityIdentifier\"\203\001\n\033ActiveLaunch" +
-      "PlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006doma" +
-      "in\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%" +
-      "\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort*+\n" +
-      "\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTIVE" +
-      "\020\001B3Z1github.com/lyft/flyteidl/gen/pb-go" +
-      "/flyteidl/adminb\006proto3"
+      "nterface.proto\032\034flyteidl/core/security.p" +
+      "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
+      "teidl/admin/common.proto\032\037google/protobu" +
+      "f/timestamp.proto\"n\n\027LaunchPlanCreateReq" +
+      "uest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
+      "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
+      "hPlanSpec\"\032\n\030LaunchPlanCreateResponse\"\225\001" +
+      "\n\nLaunchPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
+      ".Identifier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.adm" +
+      "in.LaunchPlanSpec\0222\n\007closure\030\003 \001(\0132!.fly" +
+      "teidl.admin.LaunchPlanClosure\"Q\n\016LaunchP" +
+      "lanList\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl" +
+      ".admin.LaunchPlan\022\r\n\005token\030\002 \001(\t\"T\n\004Auth" +
+      "\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022$\n\032kubern" +
+      "etes_service_account\030\002 \001(\tH\000B\010\n\006method\"\344" +
+      "\004\n\016LaunchPlanSpec\022.\n\013workflow_id\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\022;\n\017entity_meta" +
+      "data\030\002 \001(\0132\".flyteidl.admin.LaunchPlanMe" +
+      "tadata\0223\n\016default_inputs\030\003 \001(\0132\033.flyteid" +
+      "l.core.ParameterMap\022/\n\014fixed_inputs\030\004 \001(" +
+      "\0132\031.flyteidl.core.LiteralMap\022\020\n\004role\030\005 \001" +
+      "(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.flyteidl.admin." +
+      "Labels\0220\n\013annotations\030\007 \001(\0132\033.flyteidl.a" +
+      "dmin.Annotations\022&\n\004auth\030\010 \001(\0132\024.flyteid" +
+      "l.admin.AuthB\002\030\001\022/\n\tauth_role\030\t \001(\0132\030.fl" +
+      "yteidl.admin.AuthRoleB\002\030\001\0228\n\020security_co" +
+      "ntext\030\n \001(\0132\036.flyteidl.core.SecurityCont" +
+      "ext\022;\n\022quality_of_service\030\020 \001(\0132\037.flytei" +
+      "dl.core.QualityOfService\022C\n\026raw_output_d" +
+      "ata_config\030\021 \001(\0132#.flyteidl.admin.RawOut" +
+      "putDataConfig\"\217\002\n\021LaunchPlanClosure\022.\n\005s" +
+      "tate\030\001 \001(\0162\037.flyteidl.admin.LaunchPlanSt" +
+      "ate\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteidl." +
+      "core.ParameterMap\0224\n\020expected_outputs\030\003 " +
+      "\001(\0132\032.flyteidl.core.VariableMap\022.\n\ncreat" +
+      "ed_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022" +
+      ".\n\nupdated_at\030\005 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\"u\n\022LaunchPlanMetadata\022*\n\010schedul" +
+      "e\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rnot" +
+      "ifications\030\002 \003(\0132\034.flyteidl.admin.Notifi" +
+      "cation\"p\n\027LaunchPlanUpdateRequest\022%\n\002id\030" +
+      "\001 \001(\0132\031.flyteidl.core.Identifier\022.\n\005stat" +
+      "e\030\002 \001(\0162\037.flyteidl.admin.LaunchPlanState" +
+      "\"\032\n\030LaunchPlanUpdateResponse\"L\n\027ActiveLa" +
+      "unchPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl.a" +
+      "dmin.NamedEntityIdentifier\"\203\001\n\033ActiveLau" +
+      "nchPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006d" +
+      "omain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(" +
+      "\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort" +
+      "*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACT" +
+      "IVE\020\001B3Z1github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13554,7 +13554,7 @@ public final class LaunchPlanOuterClass {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
-          flyteidl.core.Types.getDescriptor(),
+          flyteidl.core.Security.getDescriptor(),
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -13635,7 +13635,7 @@ public final class LaunchPlanOuterClass {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
-    flyteidl.core.Types.getDescriptor();
+    flyteidl.core.Security.getDescriptor();
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

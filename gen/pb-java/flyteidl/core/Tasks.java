@@ -5220,7 +5220,7 @@ public final class Tasks {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
      */
-    flyteidl.core.Types.SecurityContext getSecurityContext();
+    flyteidl.core.Security.SecurityContext getSecurityContext();
     /**
      * <pre>
      * security_context encapsulates security attributes requested to run this task.
@@ -5228,7 +5228,7 @@ public final class Tasks {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
      */
-    flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder();
+    flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
 
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
   }
@@ -5355,11 +5355,11 @@ public final class Tasks {
               break;
             }
             case 66: {
-              flyteidl.core.Types.SecurityContext.Builder subBuilder = null;
+              flyteidl.core.Security.SecurityContext.Builder subBuilder = null;
               if (securityContext_ != null) {
                 subBuilder = securityContext_.toBuilder();
               }
-              securityContext_ = input.readMessage(flyteidl.core.Types.SecurityContext.parser(), extensionRegistry);
+              securityContext_ = input.readMessage(flyteidl.core.Security.SecurityContext.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(securityContext_);
                 securityContext_ = subBuilder.buildPartial();
@@ -5656,7 +5656,7 @@ public final class Tasks {
     }
 
     public static final int SECURITY_CONTEXT_FIELD_NUMBER = 8;
-    private flyteidl.core.Types.SecurityContext securityContext_;
+    private flyteidl.core.Security.SecurityContext securityContext_;
     /**
      * <pre>
      * security_context encapsulates security attributes requested to run this task.
@@ -5674,8 +5674,8 @@ public final class Tasks {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
      */
-    public flyteidl.core.Types.SecurityContext getSecurityContext() {
-      return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+    public flyteidl.core.Security.SecurityContext getSecurityContext() {
+      return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
     }
     /**
      * <pre>
@@ -5684,7 +5684,7 @@ public final class Tasks {
      *
      * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
      */
-    public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+    public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
       return getSecurityContext();
     }
 
@@ -7114,9 +7114,9 @@ public final class Tasks {
         return this;
       }
 
-      private flyteidl.core.Types.SecurityContext securityContext_;
+      private flyteidl.core.Security.SecurityContext securityContext_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> securityContextBuilder_;
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> securityContextBuilder_;
       /**
        * <pre>
        * security_context encapsulates security attributes requested to run this task.
@@ -7134,9 +7134,9 @@ public final class Tasks {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
-      public flyteidl.core.Types.SecurityContext getSecurityContext() {
+      public flyteidl.core.Security.SecurityContext getSecurityContext() {
         if (securityContextBuilder_ == null) {
-          return securityContext_ == null ? flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+          return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         } else {
           return securityContextBuilder_.getMessage();
         }
@@ -7148,7 +7148,7 @@ public final class Tasks {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
-      public Builder setSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder setSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7169,7 +7169,7 @@ public final class Tasks {
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
       public Builder setSecurityContext(
-          flyteidl.core.Types.SecurityContext.Builder builderForValue) {
+          flyteidl.core.Security.SecurityContext.Builder builderForValue) {
         if (securityContextBuilder_ == null) {
           securityContext_ = builderForValue.build();
           onChanged();
@@ -7186,11 +7186,11 @@ public final class Tasks {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
-      public Builder mergeSecurityContext(flyteidl.core.Types.SecurityContext value) {
+      public Builder mergeSecurityContext(flyteidl.core.Security.SecurityContext value) {
         if (securityContextBuilder_ == null) {
           if (securityContext_ != null) {
             securityContext_ =
-              flyteidl.core.Types.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
+              flyteidl.core.Security.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
           } else {
             securityContext_ = value;
           }
@@ -7226,7 +7226,7 @@ public final class Tasks {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
-      public flyteidl.core.Types.SecurityContext.Builder getSecurityContextBuilder() {
+      public flyteidl.core.Security.SecurityContext.Builder getSecurityContextBuilder() {
         
         onChanged();
         return getSecurityContextFieldBuilder().getBuilder();
@@ -7238,12 +7238,12 @@ public final class Tasks {
        *
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
-      public flyteidl.core.Types.SecurityContextOrBuilder getSecurityContextOrBuilder() {
+      public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
         if (securityContextBuilder_ != null) {
           return securityContextBuilder_.getMessageOrBuilder();
         } else {
           return securityContext_ == null ?
-              flyteidl.core.Types.SecurityContext.getDefaultInstance() : securityContext_;
+              flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
         }
       }
       /**
@@ -7254,11 +7254,11 @@ public final class Tasks {
        * <code>.flyteidl.core.SecurityContext security_context = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder> 
+          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> 
           getSecurityContextFieldBuilder() {
         if (securityContextBuilder_ == null) {
           securityContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Types.SecurityContext, flyteidl.core.Types.SecurityContext.Builder, flyteidl.core.Types.SecurityContextOrBuilder>(
+              flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder>(
                   getSecurityContext(),
                   getParentForChildren(),
                   isClean());
@@ -13460,59 +13460,59 @@ public final class Tasks {
       "\n\031flyteidl/core/tasks.proto\022\rflyteidl.co" +
       "re\032\036flyteidl/core/identifier.proto\032\035flyt" +
       "eidl/core/interface.proto\032\034flyteidl/core" +
-      "/literals.proto\032\031flyteidl/core/types.pro" +
-      "to\032\036google/protobuf/duration.proto\032\034goog" +
-      "le/protobuf/struct.proto\"\232\002\n\tResources\0228" +
-      "\n\010requests\030\001 \003(\0132&.flyteidl.core.Resourc" +
-      "es.ResourceEntry\0226\n\006limits\030\002 \003(\0132&.flyte" +
-      "idl.core.Resources.ResourceEntry\032S\n\rReso" +
-      "urceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl.core." +
-      "Resources.ResourceName\022\r\n\005value\030\002 \001(\t\"F\n" +
-      "\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007\n\003G" +
-      "PU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\"\225\001\n\017Runtim" +
-      "eMetadata\0228\n\004type\030\001 \001(\0162*.flyteidl.core." +
-      "RuntimeMetadata.RuntimeType\022\017\n\007version\030\002" +
-      " \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005O" +
-      "THER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014TaskMetadata\022\024" +
-      "\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036." +
-      "flyteidl.core.RuntimeMetadata\022*\n\007timeout" +
-      "\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007ret" +
-      "ries\030\005 \001(\0132\034.flyteidl.core.RetryStrategy" +
-      "\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprecate" +
-      "d_error_message\030\007 \001(\t\022\027\n\rinterruptible\030\010" +
-      " \001(\010H\000B\025\n\023interruptible_value\"\333\002\n\014TaskTe" +
-      "mplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\0132\033." +
-      "flyteidl.core.TaskMetadata\0220\n\tinterface\030" +
-      "\004 \001(\0132\035.flyteidl.core.TypedInterface\022\'\n\006" +
-      "custom\030\005 \001(\0132\027.google.protobuf.Struct\022-\n" +
-      "\tcontainer\030\006 \001(\0132\030.flyteidl.core.Contain" +
-      "erH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020secur" +
-      "ity_context\030\010 \001(\0132\036.flyteidl.core.Securi" +
-      "tyContextB\010\n\006target\"\'\n\rContainerPort\022\026\n\016" +
-      "container_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005im" +
-      "age\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t" +
-      "\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core.Reso" +
-      "urces\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyVa" +
-      "luePair\022+\n\006config\030\006 \003(\0132\033.flyteidl.core." +
-      "KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.flyteidl.c" +
-      "ore.ContainerPort\0225\n\013data_config\030\t \001(\0132 " +
-      ".flyteidl.core.DataLoadingConfig\"\233\002\n\nIOS" +
-      "trategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyteid" +
-      "l.core.IOStrategy.DownloadMode\0229\n\013upload" +
-      "_mode\030\002 \001(\0162$.flyteidl.core.IOStrategy.U" +
-      "ploadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EA" +
-      "GER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOW" +
-      "NLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020" +
-      "\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363" +
-      "\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n" +
-      "\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A" +
-      "\n\006format\030\004 \001(\01621.flyteidl.core.DataLoadi" +
-      "ngConfig.LiteralMapFormat\022.\n\013io_strategy" +
-      "\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020Lit" +
-      "eralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PRO" +
-      "TO\020\002B2Z0github.com/lyft/flyteidl/gen/pb-" +
-      "go/flyteidl/coreb\006proto3"
+      "/literals.proto\032\034flyteidl/core/security." +
+      "proto\032\036google/protobuf/duration.proto\032\034g" +
+      "oogle/protobuf/struct.proto\"\232\002\n\tResource" +
+      "s\0228\n\010requests\030\001 \003(\0132&.flyteidl.core.Reso" +
+      "urces.ResourceEntry\0226\n\006limits\030\002 \003(\0132&.fl" +
+      "yteidl.core.Resources.ResourceEntry\032S\n\rR" +
+      "esourceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl.co" +
+      "re.Resources.ResourceName\022\r\n\005value\030\002 \001(\t" +
+      "\"F\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007" +
+      "\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\"\225\001\n\017Run" +
+      "timeMetadata\0228\n\004type\030\001 \001(\0162*.flyteidl.co" +
+      "re.RuntimeMetadata.RuntimeType\022\017\n\007versio" +
+      "n\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013RuntimeType\022\t" +
+      "\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\235\002\n\014TaskMetadat" +
+      "a\022\024\n\014discoverable\030\001 \001(\010\022/\n\007runtime\030\002 \001(\013" +
+      "2\036.flyteidl.core.RuntimeMetadata\022*\n\007time" +
+      "out\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007" +
+      "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat" +
+      "egy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprec" +
+      "ated_error_message\030\007 \001(\t\022\027\n\rinterruptibl" +
+      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\333\002\n\014Tas" +
+      "kTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\013" +
+      "2\033.flyteidl.core.TaskMetadata\0220\n\tinterfa" +
+      "ce\030\004 \001(\0132\035.flyteidl.core.TypedInterface\022" +
+      "\'\n\006custom\030\005 \001(\0132\027.google.protobuf.Struct" +
+      "\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Cont" +
+      "ainerH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020se" +
+      "curity_context\030\010 \001(\0132\036.flyteidl.core.Sec" +
+      "urityContextB\010\n\006target\"\'\n\rContainerPort\022" +
+      "\026\n\016container_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n" +
+      "\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 " +
+      "\003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core.R" +
+      "esources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.Ke" +
+      "yValuePair\022+\n\006config\030\006 \003(\0132\033.flyteidl.co" +
+      "re.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.flyteid" +
+      "l.core.ContainerPort\0225\n\013data_config\030\t \001(" +
+      "\0132 .flyteidl.core.DataLoadingConfig\"\233\002\n\n" +
+      "IOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyt" +
+      "eidl.core.IOStrategy.DownloadMode\0229\n\013upl" +
+      "oad_mode\030\002 \001(\0162$.flyteidl.core.IOStrateg" +
+      "y.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD" +
+      "_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_" +
+      "DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EX" +
+      "IT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020" +
+      "\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010" +
+      "\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(" +
+      "\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.DataLo" +
+      "adingConfig.LiteralMapFormat\022.\n\013io_strat" +
+      "egy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020" +
+      "LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005" +
+      "PROTO\020\002B2Z0github.com/lyft/flyteidl/gen/" +
+      "pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13528,7 +13528,7 @@ public final class Tasks {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
-          flyteidl.core.Types.getDescriptor(),
+          flyteidl.core.Security.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
@@ -13589,7 +13589,7 @@ public final class Tasks {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
-    flyteidl.core.Types.getDescriptor();
+    flyteidl.core.Security.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
