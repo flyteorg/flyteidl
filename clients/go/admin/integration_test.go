@@ -12,7 +12,7 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin"
-	"github.com/lyft/flytestdlib/config"
+	"github.com/flyteorg/flytestdlib/config"
 	"github.com/stretchr/testify/assert"
 )
 

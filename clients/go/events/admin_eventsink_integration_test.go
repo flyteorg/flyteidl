@@ -6,6 +6,7 @@ package events
 import (
 	"context"
 	"fmt"
+	"github.com/stretchr/testify/assert"
 	netUrl "net/url"
 	"testing"
 	"time"
@@ -14,8 +15,7 @@ import (
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/influxdata/influxdb/pkg/testing/assert"
-	"github.com/lyft/flytestdlib/config"
+	"github.com/flyteorg/flytestdlib/config"
 )
 
 var (
