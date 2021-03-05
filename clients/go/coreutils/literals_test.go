@@ -4,6 +4,7 @@
 package coreutils
 
 import (
+	"github.com/go-test/deep"
 	"reflect"
 	"testing"
 	"time"
@@ -335,7 +336,7 @@ func TestMakeLiteralForSimpleType(t *testing.T) {
 				t.Errorf("MakeLiteralForSimpleType() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
+			if diff := deep.Equal(tt.want, got); diff != nil {
 				t.Errorf("MakeLiteralForSimpleType() got = %v, want %v", got, tt.want)
 			}
 		})
