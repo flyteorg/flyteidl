@@ -10865,7 +10865,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface ISecret
              * @property {string|null} [name] Secret name
-             * @property {flyteidl.core.Secret.Type|null} [type] Secret type
+             * @property {flyteidl.core.Secret.MountType|null} [mountRequirement] Secret mountRequirement
              */
 
             /**
@@ -10892,12 +10892,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Secret.prototype.name = "";
 
             /**
-             * Secret type.
-             * @member {flyteidl.core.Secret.Type} type
+             * Secret mountRequirement.
+             * @member {flyteidl.core.Secret.MountType} mountRequirement
              * @memberof flyteidl.core.Secret
              * @instance
              */
-            Secret.prototype.type = 0;
+            Secret.prototype.mountRequirement = 0;
 
             /**
              * Creates a new Secret instance using the specified properties.
@@ -10925,8 +10925,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
+                if (message.mountRequirement != null && message.hasOwnProperty("mountRequirement"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mountRequirement);
                 return writer;
             };
 
@@ -10952,7 +10952,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.name = reader.string();
                         break;
                     case 2:
-                        message.type = reader.int32();
+                        message.mountRequirement = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10976,10 +10976,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    switch (message.type) {
+                if (message.mountRequirement != null && message.hasOwnProperty("mountRequirement"))
+                    switch (message.mountRequirement) {
                     default:
-                        return "type: enum value expected";
+                        return "mountRequirement: enum value expected";
                     case 0:
                     case 1:
                         break;
@@ -10988,16 +10988,16 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Type enum.
-             * @name flyteidl.core.Secret.Type
+             * MountType enum.
+             * @name flyteidl.core.Secret.MountType
              * @enum {string}
-             * @property {number} Symmetric=0 Symmetric value
-             * @property {number} Asymmetric=1 Asymmetric value
+             * @property {number} ENV_VAR=0 ENV_VAR value
+             * @property {number} FILE=1 FILE value
              */
-            Secret.Type = (function() {
+            Secret.MountType = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "Symmetric"] = 0;
-                values[valuesById[1] = "Asymmetric"] = 1;
+                values[valuesById[0] = "ENV_VAR"] = 0;
+                values[valuesById[1] = "FILE"] = 1;
                 return values;
             })();
 

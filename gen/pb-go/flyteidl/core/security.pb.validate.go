@@ -45,7 +45,7 @@ func (m *Secret) Validate() error {
 
 	// no validation rules for Name
 
-	// no validation rules for Type
+	// no validation rules for MountRequirement
 
 	return nil
 }

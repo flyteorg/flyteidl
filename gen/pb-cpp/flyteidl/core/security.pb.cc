@@ -139,7 +139,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto:
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, name_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, mount_requirement_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2Client, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -198,30 +198,30 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto[] =
   "\n\034flyteidl/core/security.proto\022\rflyteidl"
-  ".core\"g\n\006Secret\022\014\n\004name\030\001 \001(\t\022(\n\004type\030\002 "
-  "\001(\0162\032.flyteidl.core.Secret.Type\"%\n\004Type\022"
-  "\r\n\tSymmetric\020\000\022\016\n\nAsymmetric\020\001\"O\n\014OAuth2"
-  "Client\022\021\n\tclient_id\030\001 \001(\t\022,\n\rclient_secr"
-  "et\030\002 \001(\0132\025.flyteidl.core.Secret\"m\n\010Ident"
-  "ity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023k8s_service_acc"
-  "ount\030\002 \001(\t\0222\n\roauth2_client\030\003 \001(\0132\033.flyt"
-  "eidl.core.OAuth2Client\"\335\001\n\022OAuth2TokenRe"
-  "quest\022\014\n\004name\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.flyt"
-  "eidl.core.OAuth2TokenRequest.Type\022+\n\006cli"
-  "ent\030\003 \001(\0132\033.flyteidl.core.OAuth2Client\022\036"
-  "\n\026idp_discovery_endpoint\030\004 \001(\t\022\026\n\016token_"
-  "endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n\022CLIENT_CREDENT"
-  "IALS\020\000\"\225\001\n\017SecurityContext\022\'\n\006run_as\030\001 \001"
-  "(\0132\027.flyteidl.core.Identity\022&\n\007secrets\030\002"
-  " \003(\0132\025.flyteidl.core.Secret\0221\n\006tokens\030\003 "
-  "\003(\0132!.flyteidl.core.OAuth2TokenRequestB6"
-  "Z4github.com/flyteorg/flyteidl/gen/pb-go"
-  "/flyteidl/coreb\006proto3"
+  ".core\"v\n\006Secret\022\014\n\004name\030\001 \001(\t\022:\n\021mount_r"
+  "equirement\030\002 \001(\0162\037.flyteidl.core.Secret."
+  "MountType\"\"\n\tMountType\022\013\n\007ENV_VAR\020\000\022\010\n\004F"
+  "ILE\020\001\"O\n\014OAuth2Client\022\021\n\tclient_id\030\001 \001(\t"
+  "\022,\n\rclient_secret\030\002 \001(\0132\025.flyteidl.core."
+  "Secret\"m\n\010Identity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023"
+  "k8s_service_account\030\002 \001(\t\0222\n\roauth2_clie"
+  "nt\030\003 \001(\0132\033.flyteidl.core.OAuth2Client\"\335\001"
+  "\n\022OAuth2TokenRequest\022\014\n\004name\030\001 \001(\t\0224\n\004ty"
+  "pe\030\002 \001(\0162&.flyteidl.core.OAuth2TokenRequ"
+  "est.Type\022+\n\006client\030\003 \001(\0132\033.flyteidl.core"
+  ".OAuth2Client\022\036\n\026idp_discovery_endpoint\030"
+  "\004 \001(\t\022\026\n\016token_endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n"
+  "\022CLIENT_CREDENTIALS\020\000\"\225\001\n\017SecurityContex"
+  "t\022\'\n\006run_as\030\001 \001(\0132\027.flyteidl.core.Identi"
+  "ty\022&\n\007secrets\030\002 \003(\0132\025.flyteidl.core.Secr"
+  "et\0221\n\006tokens\030\003 \003(\0132!.flyteidl.core.OAuth"
+  "2TokenRequestB6Z4github.com/flyteorg/fly"
+  "teidl/gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fsecurity_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fsecurity_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto,
-  "flyteidl/core/security.proto", &assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto, 782,
+  "flyteidl/core/security.proto", &assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto, 797,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto() {
@@ -235,11 +235,11 @@ void AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fcore_2fsecurity_2eproto = []() { AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto(); return true; }();
 namespace flyteidl {
 namespace core {
-const ::google::protobuf::EnumDescriptor* Secret_Type_descriptor() {
+const ::google::protobuf::EnumDescriptor* Secret_MountType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
   return file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto[0];
 }
-bool Secret_Type_IsValid(int value) {
+bool Secret_MountType_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -250,11 +250,11 @@ bool Secret_Type_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Secret_Type Secret::Symmetric;
-const Secret_Type Secret::Asymmetric;
-const Secret_Type Secret::Type_MIN;
-const Secret_Type Secret::Type_MAX;
-const int Secret::Type_ARRAYSIZE;
+const Secret_MountType Secret::ENV_VAR;
+const Secret_MountType Secret::FILE;
+const Secret_MountType Secret::MountType_MIN;
+const Secret_MountType Secret::MountType_MAX;
+const int Secret::MountType_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* OAuth2TokenRequest_Type_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
@@ -286,7 +286,7 @@ class Secret::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Secret::kNameFieldNumber;
-const int Secret::kTypeFieldNumber;
+const int Secret::kMountRequirementFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Secret::Secret()
@@ -302,7 +302,7 @@ Secret::Secret(const Secret& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  type_ = from.type_;
+  mount_requirement_ = from.mount_requirement_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.Secret)
 }
 
@@ -310,7 +310,7 @@ void Secret::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  mount_requirement_ = 0;
 }
 
 Secret::~Secret() {
@@ -338,7 +338,7 @@ void Secret::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  mount_requirement_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -371,11 +371,11 @@ const char* Secret::_InternalParse(const char* begin, const char* end, void* obj
         ptr += size;
         break;
       }
-      // .flyteidl.core.Secret.Type type = 2;
+      // .flyteidl.core.Secret.MountType mount_requirement = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::flyteidl::core::Secret_Type>(val));
+        msg->set_mount_requirement(static_cast<::flyteidl::core::Secret_MountType>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -428,14 +428,14 @@ bool Secret::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.Secret.Type type = 2;
+      // .flyteidl.core.Secret.MountType mount_requirement = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_type(static_cast< ::flyteidl::core::Secret_Type >(value));
+          set_mount_requirement(static_cast< ::flyteidl::core::Secret_MountType >(value));
         } else {
           goto handle_unusual;
         }
@@ -479,10 +479,10 @@ void Secret::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // .flyteidl.core.Secret.Type type = 2;
-  if (this->type() != 0) {
+  // .flyteidl.core.Secret.MountType mount_requirement = 2;
+  if (this->mount_requirement() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->type(), output);
+      2, this->mount_requirement(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -509,10 +509,10 @@ void Secret::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // .flyteidl.core.Secret.Type type = 2;
-  if (this->type() != 0) {
+  // .flyteidl.core.Secret.MountType mount_requirement = 2;
+  if (this->mount_requirement() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->type(), target);
+      2, this->mount_requirement(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -543,10 +543,10 @@ size_t Secret::ByteSizeLong() const {
         this->name());
   }
 
-  // .flyteidl.core.Secret.Type type = 2;
-  if (this->type() != 0) {
+  // .flyteidl.core.Secret.MountType mount_requirement = 2;
+  if (this->mount_requirement() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->mount_requirement());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -580,8 +580,8 @@ void Secret::MergeFrom(const Secret& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.type() != 0) {
-    set_type(from.type());
+  if (from.mount_requirement() != 0) {
+    set_mount_requirement(from.mount_requirement());
   }
 }
 
@@ -612,7 +612,7 @@ void Secret::InternalSwap(Secret* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(type_, other->type_);
+  swap(mount_requirement_, other->mount_requirement_);
 }
 
 ::google::protobuf::Metadata Secret::GetMetadata() const {

@@ -20,7 +20,7 @@ are passed through file mounts.
 
   {
     "name": "...",
-    "type": "..."
+    "mount_requirement": "..."
   }
 
 .. _api_field_flyteidl.core.Secret.name:
@@ -30,32 +30,34 @@ name
   of the secret management system to require case sensitivity.
   
   
-.. _api_field_flyteidl.core.Secret.type:
+.. _api_field_flyteidl.core.Secret.mount_requirement:
 
-type
-  (:ref:`flyteidl.core.Secret.Type <api_enum_flyteidl.core.Secret.Type>`) Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-  underlying key management system cannot mount it through files, the task will fail.
+mount_requirement
+  (:ref:`flyteidl.core.Secret.MountType <api_enum_flyteidl.core.Secret.MountType>`) mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+  if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+  will depend on the key management system.
+  +optional
   
   
 
-.. _api_enum_flyteidl.core.Secret.Type:
+.. _api_enum_flyteidl.core.Secret.MountType:
 
-Enum flyteidl.core.Secret.Type
-------------------------------
+Enum flyteidl.core.Secret.MountType
+-----------------------------------
 
-`[flyteidl.core.Secret.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L12>`_
+`[flyteidl.core.Secret.MountType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L12>`_
 
 
-.. _api_enum_value_flyteidl.core.Secret.Type.Symmetric:
+.. _api_enum_value_flyteidl.core.Secret.MountType.ENV_VAR:
 
-Symmetric
-  *(DEFAULT)* ⁣Symmetric indicates a shared secret (e.g. password).
+ENV_VAR
+  *(DEFAULT)* ⁣ENV_VAR indicates the secret needs to be mounted as an environment variable.
   
   
-.. _api_enum_value_flyteidl.core.Secret.Type.Asymmetric:
+.. _api_enum_value_flyteidl.core.Secret.MountType.FILE:
 
-Asymmetric
-  ⁣Asymmetric indicates a public-private key where the reference is to the private portion of the key.
+FILE
+  ⁣FILE indicates the secret needs to be mounted as a file.
   
   
 
@@ -64,7 +66,7 @@ Asymmetric
 flyteidl.core.OAuth2Client
 --------------------------
 
-`[flyteidl.core.OAuth2Client proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L30>`_
+`[flyteidl.core.OAuth2Client proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L32>`_
 
 OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.
 
@@ -95,7 +97,7 @@ client_secret
 flyteidl.core.Identity
 ----------------------
 
-`[flyteidl.core.Identity proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L41>`_
+`[flyteidl.core.Identity proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L43>`_
 
 Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the
 right identity for the execution environment.
@@ -134,7 +136,7 @@ oauth2_client
 flyteidl.core.OAuth2TokenRequest
 --------------------------------
 
-`[flyteidl.core.OAuth2TokenRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L58>`_
+`[flyteidl.core.OAuth2TokenRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L60>`_
 
 OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.
 FLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
@@ -193,7 +195,7 @@ token_endpoint
 Enum flyteidl.core.OAuth2TokenRequest.Type
 ------------------------------------------
 
-`[flyteidl.core.OAuth2TokenRequest.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L60>`_
+`[flyteidl.core.OAuth2TokenRequest.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L62>`_
 
 Type of the token requested.
 
@@ -209,7 +211,7 @@ CLIENT_CREDENTIALS
 flyteidl.core.SecurityContext
 -----------------------------
 
-`[flyteidl.core.SecurityContext proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L87>`_
+`[flyteidl.core.SecurityContext proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L89>`_
 
 SecurityContext holds security attributes that apply to tasks.
 

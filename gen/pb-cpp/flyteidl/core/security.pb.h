@@ -80,26 +80,26 @@ template<> ::flyteidl::core::SecurityContext* Arena::CreateMaybeMessage<::flytei
 namespace flyteidl {
 namespace core {
 
-enum Secret_Type {
-  Secret_Type_Symmetric = 0,
-  Secret_Type_Asymmetric = 1,
-  Secret_Type_Secret_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  Secret_Type_Secret_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum Secret_MountType {
+  Secret_MountType_ENV_VAR = 0,
+  Secret_MountType_FILE = 1,
+  Secret_MountType_Secret_MountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  Secret_MountType_Secret_MountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool Secret_Type_IsValid(int value);
-const Secret_Type Secret_Type_Type_MIN = Secret_Type_Symmetric;
-const Secret_Type Secret_Type_Type_MAX = Secret_Type_Asymmetric;
-const int Secret_Type_Type_ARRAYSIZE = Secret_Type_Type_MAX + 1;
+bool Secret_MountType_IsValid(int value);
+const Secret_MountType Secret_MountType_MountType_MIN = Secret_MountType_ENV_VAR;
+const Secret_MountType Secret_MountType_MountType_MAX = Secret_MountType_FILE;
+const int Secret_MountType_MountType_ARRAYSIZE = Secret_MountType_MountType_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Secret_Type_descriptor();
-inline const ::std::string& Secret_Type_Name(Secret_Type value) {
+const ::google::protobuf::EnumDescriptor* Secret_MountType_descriptor();
+inline const ::std::string& Secret_MountType_Name(Secret_MountType value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Secret_Type_descriptor(), value);
+    Secret_MountType_descriptor(), value);
 }
-inline bool Secret_Type_Parse(
-    const ::std::string& name, Secret_Type* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Secret_Type>(
-    Secret_Type_descriptor(), name, value);
+inline bool Secret_MountType_Parse(
+    const ::std::string& name, Secret_MountType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Secret_MountType>(
+    Secret_MountType_descriptor(), name, value);
 }
 enum OAuth2TokenRequest_Type {
   OAuth2TokenRequest_Type_CLIENT_CREDENTIALS = 0,
@@ -216,30 +216,30 @@ class Secret final :
 
   // nested types ----------------------------------------------------
 
-  typedef Secret_Type Type;
-  static const Type Symmetric =
-    Secret_Type_Symmetric;
-  static const Type Asymmetric =
-    Secret_Type_Asymmetric;
-  static inline bool Type_IsValid(int value) {
-    return Secret_Type_IsValid(value);
+  typedef Secret_MountType MountType;
+  static const MountType ENV_VAR =
+    Secret_MountType_ENV_VAR;
+  static const MountType FILE =
+    Secret_MountType_FILE;
+  static inline bool MountType_IsValid(int value) {
+    return Secret_MountType_IsValid(value);
   }
-  static const Type Type_MIN =
-    Secret_Type_Type_MIN;
-  static const Type Type_MAX =
-    Secret_Type_Type_MAX;
-  static const int Type_ARRAYSIZE =
-    Secret_Type_Type_ARRAYSIZE;
+  static const MountType MountType_MIN =
+    Secret_MountType_MountType_MIN;
+  static const MountType MountType_MAX =
+    Secret_MountType_MountType_MAX;
+  static const int MountType_ARRAYSIZE =
+    Secret_MountType_MountType_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
-  Type_descriptor() {
-    return Secret_Type_descriptor();
+  MountType_descriptor() {
+    return Secret_MountType_descriptor();
   }
-  static inline const ::std::string& Type_Name(Type value) {
-    return Secret_Type_Name(value);
+  static inline const ::std::string& MountType_Name(MountType value) {
+    return Secret_MountType_Name(value);
   }
-  static inline bool Type_Parse(const ::std::string& name,
-      Type* value) {
-    return Secret_Type_Parse(name, value);
+  static inline bool MountType_Parse(const ::std::string& name,
+      MountType* value) {
+    return Secret_MountType_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -258,11 +258,11 @@ class Secret final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // .flyteidl.core.Secret.Type type = 2;
-  void clear_type();
-  static const int kTypeFieldNumber = 2;
-  ::flyteidl::core::Secret_Type type() const;
-  void set_type(::flyteidl::core::Secret_Type value);
+  // .flyteidl.core.Secret.MountType mount_requirement = 2;
+  void clear_mount_requirement();
+  static const int kMountRequirementFieldNumber = 2;
+  ::flyteidl::core::Secret_MountType mount_requirement() const;
+  void set_mount_requirement(::flyteidl::core::Secret_MountType value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.Secret)
  private:
@@ -270,7 +270,7 @@ class Secret final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  int type_;
+  int mount_requirement_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fsecurity_2eproto;
 };
@@ -945,18 +945,18 @@ inline void Secret::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Secret.name)
 }
 
-// .flyteidl.core.Secret.Type type = 2;
-inline void Secret::clear_type() {
-  type_ = 0;
+// .flyteidl.core.Secret.MountType mount_requirement = 2;
+inline void Secret::clear_mount_requirement() {
+  mount_requirement_ = 0;
 }
-inline ::flyteidl::core::Secret_Type Secret::type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Secret.type)
-  return static_cast< ::flyteidl::core::Secret_Type >(type_);
+inline ::flyteidl::core::Secret_MountType Secret::mount_requirement() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Secret.mount_requirement)
+  return static_cast< ::flyteidl::core::Secret_MountType >(mount_requirement_);
 }
-inline void Secret::set_type(::flyteidl::core::Secret_Type value) {
+inline void Secret::set_mount_requirement(::flyteidl::core::Secret_MountType value) {
   
-  type_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.Secret.type)
+  mount_requirement_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.Secret.mount_requirement)
 }
 
 // -------------------------------------------------------------------
@@ -1591,10 +1591,10 @@ SecurityContext::tokens() const {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::core::Secret_Type> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::core::Secret_MountType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::Secret_Type>() {
-  return ::flyteidl::core::Secret_Type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::Secret_MountType>() {
+  return ::flyteidl::core::Secret_MountType_descriptor();
 }
 template <> struct is_proto_enum< ::flyteidl::core::OAuth2TokenRequest_Type> : ::std::true_type {};
 template <>

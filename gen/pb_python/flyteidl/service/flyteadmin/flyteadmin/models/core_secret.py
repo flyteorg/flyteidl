@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_secret_type import CoreSecretType  # noqa: F401,E501
+from flyteadmin.models.secret_mount_type import SecretMountType  # noqa: F401,E501
 
 
 class CoreSecret(object):
@@ -34,25 +34,25 @@ class CoreSecret(object):
     """
     swagger_types = {
         'name': 'str',
-        'type': 'CoreSecretType'
+        'mount_requirement': 'SecretMountType'
     }
 
     attribute_map = {
         'name': 'name',
-        'type': 'type'
+        'mount_requirement': 'mount_requirement'
     }
 
-    def __init__(self, name=None, type=None):  # noqa: E501
+    def __init__(self, name=None, mount_requirement=None):  # noqa: E501
         """CoreSecret - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
-        self._type = None
+        self._mount_requirement = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
-        if type is not None:
-            self.type = type
+        if mount_requirement is not None:
+            self.mount_requirement = mount_requirement
 
     @property
     def name(self):
@@ -78,27 +78,25 @@ class CoreSecret(object):
         self._name = name
 
     @property
-    def type(self):
-        """Gets the type of this CoreSecret.  # noqa: E501
+    def mount_requirement(self):
+        """Gets the mount_requirement of this CoreSecret.  # noqa: E501
 
-        Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the underlying key management system cannot mount it through files, the task will fail.  # noqa: E501
 
-        :return: The type of this CoreSecret.  # noqa: E501
-        :rtype: CoreSecretType
+        :return: The mount_requirement of this CoreSecret.  # noqa: E501
+        :rtype: SecretMountType
         """
-        return self._type
+        return self._mount_requirement
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this CoreSecret.
+    @mount_requirement.setter
+    def mount_requirement(self, mount_requirement):
+        """Sets the mount_requirement of this CoreSecret.
 
-        Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the underlying key management system cannot mount it through files, the task will fail.  # noqa: E501
 
-        :param type: The type of this CoreSecret.  # noqa: E501
-        :type: CoreSecretType
+        :param mount_requirement: The mount_requirement of this CoreSecret.  # noqa: E501
+        :type: SecretMountType
         """
 
-        self._type = type
+        self._mount_requirement = mount_requirement
 
     def to_dict(self):
         """Returns the model properties as a dict"""

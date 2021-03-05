@@ -20,32 +20,32 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/security.proto\x12\rflyteidl.core\"g\n\x06Secret\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.flyteidl.core.Secret.Type\"%\n\x04Type\x12\r\n\tSymmetric\x10\x00\x12\x0e\n\nAsymmetric\x10\x01\"O\n\x0cOAuth2Client\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12,\n\rclient_secret\x18\x02 \x01(\x0b\x32\x15.flyteidl.core.Secret\"m\n\x08Identity\x12\x10\n\x08iam_role\x18\x01 \x01(\t\x12\x1b\n\x13k8s_service_account\x18\x02 \x01(\t\x12\x32\n\roauth2_client\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\"\xdd\x01\n\x12OAuth2TokenRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.flyteidl.core.OAuth2TokenRequest.Type\x12+\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1e\n\x16idp_discovery_endpoint\x18\x04 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x05 \x01(\t\"\x1e\n\x04Type\x12\x16\n\x12\x43LIENT_CREDENTIALS\x10\x00\"\x95\x01\n\x0fSecurityContext\x12\'\n\x06run_as\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Identity\x12&\n\x07secrets\x18\x02 \x03(\x0b\x32\x15.flyteidl.core.Secret\x12\x31\n\x06tokens\x18\x03 \x03(\x0b\x32!.flyteidl.core.OAuth2TokenRequestB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/security.proto\x12\rflyteidl.core\"v\n\x06Secret\x12\x0c\n\x04name\x18\x01 \x01(\t\x12:\n\x11mount_requirement\x18\x02 \x01(\x0e\x32\x1f.flyteidl.core.Secret.MountType\"\"\n\tMountType\x12\x0b\n\x07\x45NV_VAR\x10\x00\x12\x08\n\x04\x46ILE\x10\x01\"O\n\x0cOAuth2Client\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12,\n\rclient_secret\x18\x02 \x01(\x0b\x32\x15.flyteidl.core.Secret\"m\n\x08Identity\x12\x10\n\x08iam_role\x18\x01 \x01(\t\x12\x1b\n\x13k8s_service_account\x18\x02 \x01(\t\x12\x32\n\roauth2_client\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\"\xdd\x01\n\x12OAuth2TokenRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.flyteidl.core.OAuth2TokenRequest.Type\x12+\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.OAuth2Client\x12\x1e\n\x16idp_discovery_endpoint\x18\x04 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x05 \x01(\t\"\x1e\n\x04Type\x12\x16\n\x12\x43LIENT_CREDENTIALS\x10\x00\"\x95\x01\n\x0fSecurityContext\x12\'\n\x06run_as\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Identity\x12&\n\x07secrets\x18\x02 \x03(\x0b\x32\x15.flyteidl.core.Secret\x12\x31\n\x06tokens\x18\x03 \x03(\x0b\x32!.flyteidl.core.OAuth2TokenRequestB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
 
 
-_SECRET_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='flyteidl.core.Secret.Type',
+_SECRET_MOUNTTYPE = _descriptor.EnumDescriptor(
+  name='MountType',
+  full_name='flyteidl.core.Secret.MountType',
   filename=None,
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='Symmetric', index=0, number=0,
+      name='ENV_VAR', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='Asymmetric', index=1, number=1,
+      name='FILE', index=1, number=1,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=113,
-  serialized_end=150,
+  serialized_start=131,
+  serialized_end=165,
 )
-_sym_db.RegisterEnumDescriptor(_SECRET_TYPE)
+_sym_db.RegisterEnumDescriptor(_SECRET_MOUNTTYPE)
 
 _OAUTH2TOKENREQUEST_TYPE = _descriptor.EnumDescriptor(
   name='Type',
@@ -60,8 +60,8 @@ _OAUTH2TOKENREQUEST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=536,
-  serialized_end=566,
+  serialized_start=551,
+  serialized_end=581,
 )
 _sym_db.RegisterEnumDescriptor(_OAUTH2TOKENREQUEST_TYPE)
 
@@ -81,7 +81,7 @@ _SECRET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='type', full_name='flyteidl.core.Secret.type', index=1,
+      name='mount_requirement', full_name='flyteidl.core.Secret.mount_requirement', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -92,7 +92,7 @@ _SECRET = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _SECRET_TYPE,
+    _SECRET_MOUNTTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -101,7 +101,7 @@ _SECRET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=47,
-  serialized_end=150,
+  serialized_end=165,
 )
 
 
@@ -138,8 +138,8 @@ _OAUTH2CLIENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=152,
-  serialized_end=231,
+  serialized_start=167,
+  serialized_end=246,
 )
 
 
@@ -183,8 +183,8 @@ _IDENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=233,
-  serialized_end=342,
+  serialized_start=248,
+  serialized_end=357,
 )
 
 
@@ -243,8 +243,8 @@ _OAUTH2TOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=345,
-  serialized_end=566,
+  serialized_start=360,
+  serialized_end=581,
 )
 
 
@@ -288,12 +288,12 @@ _SECURITYCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=718,
+  serialized_start=584,
+  serialized_end=733,
 )
 
-_SECRET.fields_by_name['type'].enum_type = _SECRET_TYPE
-_SECRET_TYPE.containing_type = _SECRET
+_SECRET.fields_by_name['mount_requirement'].enum_type = _SECRET_MOUNTTYPE
+_SECRET_MOUNTTYPE.containing_type = _SECRET
 _OAUTH2CLIENT.fields_by_name['client_secret'].message_type = _SECRET
 _IDENTITY.fields_by_name['oauth2_client'].message_type = _OAUTH2CLIENT
 _OAUTH2TOKENREQUEST.fields_by_name['type'].enum_type = _OAUTH2TOKENREQUEST_TYPE

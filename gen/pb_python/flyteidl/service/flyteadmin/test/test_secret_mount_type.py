@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_secret_type import CoreSecretType  # noqa: E501
+from flyteadmin.models.secret_mount_type import SecretMountType  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreSecretType(unittest.TestCase):
-    """CoreSecretType unit test stubs"""
+class TestSecretMountType(unittest.TestCase):
+    """SecretMountType unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreSecretType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreSecretType(self):
-        """Test CoreSecretType"""
+    def testSecretMountType(self):
+        """Test SecretMountType"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_secret_type.CoreSecretType()  # noqa: E501
+        # model = flyteadmin.models.secret_mount_type.SecretMountType()  # noqa: E501
         pass
 
 

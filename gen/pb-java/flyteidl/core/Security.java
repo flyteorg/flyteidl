@@ -40,22 +40,26 @@ public final class Security {
 
     /**
      * <pre>
-     * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-     * underlying key management system cannot mount it through files, the task will fail.
+     * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+     * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+     * will depend on the key management system.
+     * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.Type type = 2;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
      */
-    int getTypeValue();
+    int getMountRequirementValue();
     /**
      * <pre>
-     * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-     * underlying key management system cannot mount it through files, the task will fail.
+     * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+     * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+     * will depend on the key management system.
+     * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.Type type = 2;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
      */
-    flyteidl.core.Security.Secret.Type getType();
+    flyteidl.core.Security.Secret.MountType getMountRequirement();
   }
   /**
    * <pre>
@@ -79,7 +83,7 @@ public final class Security {
     }
     private Secret() {
       name_ = "";
-      type_ = 0;
+      mountRequirement_ = 0;
     }
 
     @java.lang.Override
@@ -115,7 +119,7 @@ public final class Security {
             case 16: {
               int rawValue = input.readEnum();
 
-              type_ = rawValue;
+              mountRequirement_ = rawValue;
               break;
             }
             default: {
@@ -151,45 +155,45 @@ public final class Security {
     }
 
     /**
-     * Protobuf enum {@code flyteidl.core.Secret.Type}
+     * Protobuf enum {@code flyteidl.core.Secret.MountType}
      */
-    public enum Type
+    public enum MountType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * Symmetric indicates a shared secret (e.g. password).
+       * ENV_VAR indicates the secret needs to be mounted as an environment variable.
        * </pre>
        *
-       * <code>Symmetric = 0;</code>
+       * <code>ENV_VAR = 0;</code>
        */
-      Symmetric(0),
+      ENV_VAR(0),
       /**
        * <pre>
-       * Asymmetric indicates a public-private key where the reference is to the private portion of the key.
+       * FILE indicates the secret needs to be mounted as a file.
        * </pre>
        *
-       * <code>Asymmetric = 1;</code>
+       * <code>FILE = 1;</code>
        */
-      Asymmetric(1),
+      FILE(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
        * <pre>
-       * Symmetric indicates a shared secret (e.g. password).
+       * ENV_VAR indicates the secret needs to be mounted as an environment variable.
        * </pre>
        *
-       * <code>Symmetric = 0;</code>
+       * <code>ENV_VAR = 0;</code>
        */
-      public static final int Symmetric_VALUE = 0;
+      public static final int ENV_VAR_VALUE = 0;
       /**
        * <pre>
-       * Asymmetric indicates a public-private key where the reference is to the private portion of the key.
+       * FILE indicates the secret needs to be mounted as a file.
        * </pre>
        *
-       * <code>Asymmetric = 1;</code>
+       * <code>FILE = 1;</code>
        */
-      public static final int Asymmetric_VALUE = 1;
+      public static final int FILE_VALUE = 1;
 
 
       public final int getNumber() {
@@ -204,27 +208,27 @@ public final class Security {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static Type valueOf(int value) {
+      public static MountType valueOf(int value) {
         return forNumber(value);
       }
 
-      public static Type forNumber(int value) {
+      public static MountType forNumber(int value) {
         switch (value) {
-          case 0: return Symmetric;
-          case 1: return Asymmetric;
+          case 0: return ENV_VAR;
+          case 1: return FILE;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+      public static com.google.protobuf.Internal.EnumLiteMap<MountType>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
+          MountType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MountType>() {
+              public MountType findValueByNumber(int number) {
+                return MountType.forNumber(number);
               }
             };
 
@@ -241,9 +245,9 @@ public final class Security {
         return flyteidl.core.Security.Secret.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final Type[] VALUES = values();
+      private static final MountType[] VALUES = values();
 
-      public static Type valueOf(
+      public static MountType valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -257,11 +261,11 @@ public final class Security {
 
       private final int value;
 
-      private Type(int value) {
+      private MountType(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.core.Secret.Type)
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.Secret.MountType)
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -308,31 +312,35 @@ public final class Security {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    public static final int MOUNT_REQUIREMENT_FIELD_NUMBER = 2;
+    private int mountRequirement_;
     /**
      * <pre>
-     * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-     * underlying key management system cannot mount it through files, the task will fail.
+     * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+     * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+     * will depend on the key management system.
+     * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.Type type = 2;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
      */
-    public int getTypeValue() {
-      return type_;
+    public int getMountRequirementValue() {
+      return mountRequirement_;
     }
     /**
      * <pre>
-     * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-     * underlying key management system cannot mount it through files, the task will fail.
+     * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+     * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+     * will depend on the key management system.
+     * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.Secret.Type type = 2;</code>
+     * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
      */
-    public flyteidl.core.Security.Secret.Type getType() {
+    public flyteidl.core.Security.Secret.MountType getMountRequirement() {
       @SuppressWarnings("deprecation")
-      flyteidl.core.Security.Secret.Type result = flyteidl.core.Security.Secret.Type.valueOf(type_);
-      return result == null ? flyteidl.core.Security.Secret.Type.UNRECOGNIZED : result;
+      flyteidl.core.Security.Secret.MountType result = flyteidl.core.Security.Secret.MountType.valueOf(mountRequirement_);
+      return result == null ? flyteidl.core.Security.Secret.MountType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -352,8 +360,8 @@ public final class Security {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (type_ != flyteidl.core.Security.Secret.Type.Symmetric.getNumber()) {
-        output.writeEnum(2, type_);
+      if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ENV_VAR.getNumber()) {
+        output.writeEnum(2, mountRequirement_);
       }
       unknownFields.writeTo(output);
     }
@@ -367,9 +375,9 @@ public final class Security {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (type_ != flyteidl.core.Security.Secret.Type.Symmetric.getNumber()) {
+      if (mountRequirement_ != flyteidl.core.Security.Secret.MountType.ENV_VAR.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, type_);
+          .computeEnumSize(2, mountRequirement_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -388,7 +396,7 @@ public final class Security {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (type_ != other.type_) return false;
+      if (mountRequirement_ != other.mountRequirement_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -402,8 +410,8 @@ public final class Security {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (37 * hash) + MOUNT_REQUIREMENT_FIELD_NUMBER;
+      hash = (53 * hash) + mountRequirement_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -547,7 +555,7 @@ public final class Security {
         super.clear();
         name_ = "";
 
-        type_ = 0;
+        mountRequirement_ = 0;
 
         return this;
       }
@@ -576,7 +584,7 @@ public final class Security {
       public flyteidl.core.Security.Secret buildPartial() {
         flyteidl.core.Security.Secret result = new flyteidl.core.Security.Secret(this);
         result.name_ = name_;
-        result.type_ = type_;
+        result.mountRequirement_ = mountRequirement_;
         onBuilt();
         return result;
       }
@@ -629,8 +637,8 @@ public final class Security {
           name_ = other.name_;
           onChanged();
         }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
+        if (other.mountRequirement_ != 0) {
+          setMountRequirementValue(other.getMountRequirementValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -755,72 +763,82 @@ public final class Security {
         return this;
       }
 
-      private int type_ = 0;
+      private int mountRequirement_ = 0;
       /**
        * <pre>
-       * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-       * underlying key management system cannot mount it through files, the task will fail.
+       * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+       * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+       * will depend on the key management system.
+       * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.Type type = 2;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
        */
-      public int getTypeValue() {
-        return type_;
+      public int getMountRequirementValue() {
+        return mountRequirement_;
       }
       /**
        * <pre>
-       * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-       * underlying key management system cannot mount it through files, the task will fail.
+       * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+       * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+       * will depend on the key management system.
+       * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.Type type = 2;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
        */
-      public Builder setTypeValue(int value) {
-        type_ = value;
+      public Builder setMountRequirementValue(int value) {
+        mountRequirement_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-       * underlying key management system cannot mount it through files, the task will fail.
+       * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+       * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+       * will depend on the key management system.
+       * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.Type type = 2;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
        */
-      public flyteidl.core.Security.Secret.Type getType() {
+      public flyteidl.core.Security.Secret.MountType getMountRequirement() {
         @SuppressWarnings("deprecation")
-        flyteidl.core.Security.Secret.Type result = flyteidl.core.Security.Secret.Type.valueOf(type_);
-        return result == null ? flyteidl.core.Security.Secret.Type.UNRECOGNIZED : result;
+        flyteidl.core.Security.Secret.MountType result = flyteidl.core.Security.Secret.MountType.valueOf(mountRequirement_);
+        return result == null ? flyteidl.core.Security.Secret.MountType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-       * underlying key management system cannot mount it through files, the task will fail.
+       * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+       * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+       * will depend on the key management system.
+       * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.Type type = 2;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
        */
-      public Builder setType(flyteidl.core.Security.Secret.Type value) {
+      public Builder setMountRequirement(flyteidl.core.Security.Secret.MountType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        type_ = value.getNumber();
+        mountRequirement_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the
-       * underlying key management system cannot mount it through files, the task will fail.
+       * mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
+       * if the underlying key management system cannot satisfy that requirement. If not provided, the default location
+       * will depend on the key management system.
+       * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.Secret.Type type = 2;</code>
+       * <code>.flyteidl.core.Secret.MountType mount_requirement = 2;</code>
        */
-      public Builder clearType() {
+      public Builder clearMountRequirement() {
         
-        type_ = 0;
+        mountRequirement_ = 0;
         onChanged();
         return this;
       }
@@ -6102,25 +6120,25 @@ public final class Security {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/core/security.proto\022\rflyteidl" +
-      ".core\"g\n\006Secret\022\014\n\004name\030\001 \001(\t\022(\n\004type\030\002 " +
-      "\001(\0162\032.flyteidl.core.Secret.Type\"%\n\004Type\022" +
-      "\r\n\tSymmetric\020\000\022\016\n\nAsymmetric\020\001\"O\n\014OAuth2" +
-      "Client\022\021\n\tclient_id\030\001 \001(\t\022,\n\rclient_secr" +
-      "et\030\002 \001(\0132\025.flyteidl.core.Secret\"m\n\010Ident" +
-      "ity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023k8s_service_acc" +
-      "ount\030\002 \001(\t\0222\n\roauth2_client\030\003 \001(\0132\033.flyt" +
-      "eidl.core.OAuth2Client\"\335\001\n\022OAuth2TokenRe" +
-      "quest\022\014\n\004name\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.flyt" +
-      "eidl.core.OAuth2TokenRequest.Type\022+\n\006cli" +
-      "ent\030\003 \001(\0132\033.flyteidl.core.OAuth2Client\022\036" +
-      "\n\026idp_discovery_endpoint\030\004 \001(\t\022\026\n\016token_" +
-      "endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n\022CLIENT_CREDENT" +
-      "IALS\020\000\"\225\001\n\017SecurityContext\022\'\n\006run_as\030\001 \001" +
-      "(\0132\027.flyteidl.core.Identity\022&\n\007secrets\030\002" +
-      " \003(\0132\025.flyteidl.core.Secret\0221\n\006tokens\030\003 " +
-      "\003(\0132!.flyteidl.core.OAuth2TokenRequestB6" +
-      "Z4github.com/flyteorg/flyteidl/gen/pb-go" +
-      "/flyteidl/coreb\006proto3"
+      ".core\"v\n\006Secret\022\014\n\004name\030\001 \001(\t\022:\n\021mount_r" +
+      "equirement\030\002 \001(\0162\037.flyteidl.core.Secret." +
+      "MountType\"\"\n\tMountType\022\013\n\007ENV_VAR\020\000\022\010\n\004F" +
+      "ILE\020\001\"O\n\014OAuth2Client\022\021\n\tclient_id\030\001 \001(\t" +
+      "\022,\n\rclient_secret\030\002 \001(\0132\025.flyteidl.core." +
+      "Secret\"m\n\010Identity\022\020\n\010iam_role\030\001 \001(\t\022\033\n\023" +
+      "k8s_service_account\030\002 \001(\t\0222\n\roauth2_clie" +
+      "nt\030\003 \001(\0132\033.flyteidl.core.OAuth2Client\"\335\001" +
+      "\n\022OAuth2TokenRequest\022\014\n\004name\030\001 \001(\t\0224\n\004ty" +
+      "pe\030\002 \001(\0162&.flyteidl.core.OAuth2TokenRequ" +
+      "est.Type\022+\n\006client\030\003 \001(\0132\033.flyteidl.core" +
+      ".OAuth2Client\022\036\n\026idp_discovery_endpoint\030" +
+      "\004 \001(\t\022\026\n\016token_endpoint\030\005 \001(\t\"\036\n\004Type\022\026\n" +
+      "\022CLIENT_CREDENTIALS\020\000\"\225\001\n\017SecurityContex" +
+      "t\022\'\n\006run_as\030\001 \001(\0132\027.flyteidl.core.Identi" +
+      "ty\022&\n\007secrets\030\002 \003(\0132\025.flyteidl.core.Secr" +
+      "et\0221\n\006tokens\030\003 \003(\0132!.flyteidl.core.OAuth" +
+      "2TokenRequestB6Z4github.com/flyteorg/fly" +
+      "teidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6139,7 +6157,7 @@ public final class Security {
     internal_static_flyteidl_core_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Secret_descriptor,
-        new java.lang.String[] { "Name", "Type", });
+        new java.lang.String[] { "Name", "MountRequirement", });
     internal_static_flyteidl_core_OAuth2Client_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_OAuth2Client_fieldAccessorTable = new

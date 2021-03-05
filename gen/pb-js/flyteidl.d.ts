@@ -4534,8 +4534,8 @@ export namespace flyteidl {
             /** Secret name */
             name?: (string|null);
 
-            /** Secret type */
-            type?: (flyteidl.core.Secret.Type|null);
+            /** Secret mountRequirement */
+            mountRequirement?: (flyteidl.core.Secret.MountType|null);
         }
 
         /** Represents a Secret. */
@@ -4550,8 +4550,8 @@ export namespace flyteidl {
             /** Secret name. */
             public name: string;
 
-            /** Secret type. */
-            public type: flyteidl.core.Secret.Type;
+            /** Secret mountRequirement. */
+            public mountRequirement: flyteidl.core.Secret.MountType;
 
             /**
              * Creates a new Secret instance using the specified properties.
@@ -4588,10 +4588,10 @@ export namespace flyteidl {
 
         namespace Secret {
 
-            /** Type enum. */
-            enum Type {
-                Symmetric = 0,
-                Asymmetric = 1
+            /** MountType enum. */
+            enum MountType {
+                ENV_VAR = 0,
+                FILE = 1
             }
         }
 

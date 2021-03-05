@@ -177,7 +177,6 @@ from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata
 from flyteadmin.models.core_scalar import CoreScalar
 from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
-from flyteadmin.models.core_secret_type import CoreSecretType
 from flyteadmin.models.core_security_context import CoreSecurityContext
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier
@@ -226,6 +225,7 @@ from flyteadmin.models.resources_resource_name import ResourcesResourceName
 from flyteadmin.models.runtime_metadata_runtime_type import RuntimeMetadataRuntimeType
 from flyteadmin.models.schema_column_schema_column_type import SchemaColumnSchemaColumnType
 from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
+from flyteadmin.models.secret_mount_type import SecretMountType
 from flyteadmin.models.sort_direction import SortDirection
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass
 from flyteadmin.models.task_log_message_format import TaskLogMessageFormat

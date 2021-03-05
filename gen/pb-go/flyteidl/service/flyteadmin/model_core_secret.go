@@ -13,6 +13,5 @@ package flyteadmin
 type CoreSecret struct {
 	// The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation of the secret management system to require case sensitivity.
 	Name string `json:"name,omitempty"`
-	// Type indicates the type of key requested. Asymmetric keys can not be passed through environment variables. If the underlying key management system cannot mount it through files, the task will fail.
-	Type_ *CoreSecretType `json:"type,omitempty"`
+	MountRequirement *SecretMountType `json:"mount_requirement,omitempty"`
 }
