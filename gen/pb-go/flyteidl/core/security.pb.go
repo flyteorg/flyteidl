@@ -240,9 +240,9 @@ func (m *Identity) GetOauth2Client() *OAuth2Client {
 }
 
 // OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.
-// _FLYTE_TOKEN_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
+// FLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
 // tokens are passed through environment variables.
-// _FLYTE_TOKEN_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens
+// FLYTE_TOKENS_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens
 // are passed through file mounts.
 type OAuth2TokenRequest struct {
 	// name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for

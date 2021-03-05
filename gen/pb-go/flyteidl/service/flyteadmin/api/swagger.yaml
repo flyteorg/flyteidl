@@ -23737,9 +23737,9 @@ definitions:
         title: "token_endpoint references the token issuance endpoint. If idp_discovery_endpoint\
           \ is not provided, this parameter is\nmandatory.\n+optional"
     description: "OAuth2TokenRequest encapsulates information needed to request an\
-      \ OAuth2 token.\n_FLYTE_TOKEN_ENV_PREFIX will be passed to indicate the prefix\
+      \ OAuth2 token.\nFLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix\
       \ of the environment variables that will be present if\ntokens are passed through\
-      \ environment variables.\n_FLYTE_TOKEN_PATH_PREFIX will be passed to indicate\
+      \ environment variables.\nFLYTE_TOKENS_PATH_PREFIX will be passed to indicate\
       \ the prefix of the path where secrets will be mounted if tokens\nare passed\
       \ through file mounts."
     example:

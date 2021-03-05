@@ -137,9 +137,9 @@ flyteidl.core.OAuth2TokenRequest
 `[flyteidl.core.OAuth2TokenRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L58>`_
 
 OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.
-_FLYTE_TOKEN_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
+FLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
 tokens are passed through environment variables.
-_FLYTE_TOKEN_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens
+FLYTE_TOKENS_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens
 are passed through file mounts.
 
 .. code-block:: json

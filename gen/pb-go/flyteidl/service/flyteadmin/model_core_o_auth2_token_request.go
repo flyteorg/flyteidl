@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// OAuth2TokenRequest encapsulates information needed to request an OAuth2 token. _FLYTE_TOKEN_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if tokens are passed through environment variables. _FLYTE_TOKEN_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens are passed through file mounts.
+// OAuth2TokenRequest encapsulates information needed to request an OAuth2 token. FLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if tokens are passed through environment variables. FLYTE_TOKENS_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens are passed through file mounts.
 type CoreOAuth2TokenRequest struct {
 	// name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for environment variables and as a filename for mounting tokens as files.
 	Name string `json:"name,omitempty"`
