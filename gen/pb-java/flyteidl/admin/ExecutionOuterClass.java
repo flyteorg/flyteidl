@@ -21189,8 +21189,8 @@ public final class ExecutionOuterClass {
       "\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022." +
       "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite" +
       "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl." +
-      "core.LiteralMapB3Z1github.com/lyft/flyte" +
-      "idl/gen/pb-go/flyteidl/adminb\006proto3"
+      "core.LiteralMapB7Z5github.com/flyteorg/f" +
+      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

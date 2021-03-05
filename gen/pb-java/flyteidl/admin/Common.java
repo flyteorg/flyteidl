@@ -19786,7 +19786,7 @@ public final class Common {
   /**
    * <pre>
    * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
-   * See https://github.com/lyft/flyte/issues/211 for more background information.
+   * See https://github.com/flyteorg/flyte/issues/211 for more background information.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.RawOutputDataConfig}
@@ -20067,7 +20067,7 @@ public final class Common {
     /**
      * <pre>
      * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
-     * See https://github.com/lyft/flyte/issues/211 for more background information.
+     * See https://github.com/flyteorg/flyte/issues/211 for more background information.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.RawOutputDataConfig}
@@ -20556,8 +20556,8 @@ public final class Common {
       "tput_location_prefix\030\001 \001(\t*\\\n\020NamedEntit" +
       "yState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED" +
       "_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002" +
-      "B3Z1github.com/lyft/flyteidl/gen/pb-go/f" +
-      "lyteidl/adminb\006proto3"
+      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

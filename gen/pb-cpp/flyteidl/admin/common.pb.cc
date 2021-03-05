@@ -822,13 +822,13 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "tput_location_prefix\030\001 \001(\t*\\\n\020NamedEntit"
   "yState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED"
   "_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002"
-  "B3Z1github.com/lyft/flyteidl/gen/pb-go/f"
-  "lyteidl/adminb\006proto3"
+  "B7Z5github.com/flyteorg/flyteidl/gen/pb-"
+  "go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2621,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2625,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {

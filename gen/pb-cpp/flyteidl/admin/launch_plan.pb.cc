@@ -492,13 +492,13 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto[] 
   "omain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001("
   "\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort"
   "*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACT"
-  "IVE\020\001B3Z1github.com/lyft/flyteidl/gen/pb"
-  "-go/flyteidl/adminb\006proto3"
+  "IVE\020\001B7Z5github.com/flyteorg/flyteidl/ge"
+  "n/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto,
-  "flyteidl/admin/launch_plan.proto", &assign_descriptors_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 2226,
+  "flyteidl/admin/launch_plan.proto", &assign_descriptors_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 2230,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2flaunch_5fplan_2eproto() {

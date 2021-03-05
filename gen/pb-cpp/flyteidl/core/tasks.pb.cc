@@ -402,13 +402,13 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "adingConfig.LiteralMapFormat\022.\n\013io_strat"
   "egy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020"
   "LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005"
-  "PROTO\020\002B2Z0github.com/lyft/flyteidl/gen/"
-  "pb-go/flyteidl/coreb\006proto3"
+  "PROTO\020\002B6Z4github.com/flyteorg/flyteidl/"
+  "gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2227,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2231,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {

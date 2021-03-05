@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package flyteidl.event;
 
-option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/event";
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event";
 
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
@@ -156,7 +156,7 @@ message TaskExecutionEvent {
 }
 
 // Holds metadata around how a task was executed.
-// TODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325).
+// TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
 message TaskExecutionMetadata {
     // Includes the broad cateogry of machine used for this specific task execution. 
     enum InstanceClass {

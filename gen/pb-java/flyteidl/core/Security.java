@@ -6118,9 +6118,9 @@ public final class Security {
       "IALS\020\000\"\225\001\n\017SecurityContext\022\'\n\006run_as\030\001 \001" +
       "(\0132\027.flyteidl.core.Identity\022&\n\007secrets\030\002" +
       " \003(\0132\025.flyteidl.core.Secret\0221\n\006tokens\030\003 " +
-      "\003(\0132!.flyteidl.core.OAuth2TokenRequestB2" +
-      "Z0github.com/lyft/flyteidl/gen/pb-go/fly" +
-      "teidl/coreb\006proto3"
+      "\003(\0132!.flyteidl.core.OAuth2TokenRequestB6" +
+      "Z4github.com/flyteorg/flyteidl/gen/pb-go" +
+      "/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

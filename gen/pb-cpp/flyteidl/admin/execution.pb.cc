@@ -690,13 +690,13 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022."
   "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite"
   "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl."
-  "core.LiteralMapB3Z1github.com/lyft/flyte"
-  "idl/gen/pb-go/flyteidl/adminb\006proto3"
+  "core.LiteralMapB7Z5github.com/flyteorg/f"
+  "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3316,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3320,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {

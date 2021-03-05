@@ -6023,8 +6023,8 @@ definitions:
         title: "Prefix for where offloaded data from user workflows will be written\n\
           e.g. s3://bucket/key or s3://bucket/"
     description: "Encapsulates user settings pertaining to offloaded data (i.e. Blobs,\
-      \ Schema, query data, etc.).\nSee https://github.com/lyft/flyte/issues/211 for\
-      \ more background information."
+      \ Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211\
+      \ for more background information."
     example:
       output_location_prefix: "output_location_prefix"
   adminSchedule:
@@ -25790,7 +25790,7 @@ definitions:
       instance_class:
         $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
-      \ Extend to include freeform fields (https://github.com/lyft/flyte/issues/325)."
+      \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
   eventWorkflowExecutionEvent:
     type: "object"
     properties:

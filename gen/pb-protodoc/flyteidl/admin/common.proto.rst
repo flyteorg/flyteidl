@@ -755,7 +755,7 @@ flyteidl.admin.RawOutputDataConfig
 `[flyteidl.admin.RawOutputDataConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L251>`_
 
 Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
-See https://github.com/lyft/flyte/issues/211 for more background information.
+See https://github.com/flyteorg/flyte/issues/211 for more background information.
 
 .. code-block:: json
 

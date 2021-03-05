@@ -4054,7 +4054,7 @@
           "title": "Prefix for where offloaded data from user workflows will be written\ne.g. s3://bucket/key or s3://bucket/"
         }
       },
-      "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/lyft/flyte/issues/211 for more background information."
+      "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211 for more background information."
     },
     "adminSchedule": {
       "type": "object",
@@ -5957,7 +5957,7 @@
           "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
         }
       },
-      "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/lyft/flyte/issues/325)."
+      "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     },
     "eventWorkflowExecutionEvent": {
       "type": "object",
