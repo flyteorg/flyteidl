@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 	"time"
-	
+
 	"github.com/go-test/deep"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
