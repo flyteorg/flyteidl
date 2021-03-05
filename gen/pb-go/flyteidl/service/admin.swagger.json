@@ -2744,6 +2744,33 @@
           "AdminService"
         ]
       }
+    },
+    "/api/version": {
+      "put": {
+        "description": "Get flyte admin version",
+        "operationId": "GetVersion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminVersion"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminGetVersionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -3355,6 +3382,10 @@
       ],
       "default": "MINUTE",
       "description": "Represents a frequency at which to run a schedule."
+    },
+    "adminGetVersionRequest": {
+      "type": "object",
+      "description": "Represents a get version request."
     },
     "adminLabels": {
       "type": "object",
@@ -4344,6 +4375,24 @@
         }
       },
       "description": "Represents a string url and associated metadata used throughout the platform."
+    },
+    "adminVersion": {
+      "type": "object",
+      "properties": {
+        "Build": {
+          "type": "string",
+          "title": "Specifies the GIT sha of the build"
+        },
+        "Version": {
+          "type": "string",
+          "title": "Version for the build, should follow a semver"
+        },
+        "BuildTime": {
+          "type": "string",
+          "title": "Build timestamp"
+        }
+      },
+      "description": "Represents a request structure to get version of flyteadmin."
     },
     "adminWorkflow": {
       "type": "object",
