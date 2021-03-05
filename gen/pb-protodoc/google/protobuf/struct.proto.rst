@@ -38,7 +38,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 google.protobuf.Struct
 ----------------------
 
-`[google.protobuf.Struct proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/struct.proto#L51>`_
+`[google.protobuf.Struct proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/struct.proto#L51>`_
 
 `Struct` represents a structured data value, consisting of fields
 which map to dynamically typed values. In some languages, `Struct`
@@ -68,7 +68,7 @@ fields
 google.protobuf.Value
 ---------------------
 
-`[google.protobuf.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/struct.proto#L62>`_
+`[google.protobuf.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/struct.proto#L62>`_
 
 `Value` represents a dynamically typed value which can be either
 null, a number, a string, a boolean, a recursive struct value, or a
@@ -155,7 +155,7 @@ list_value
 google.protobuf.ListValue
 -------------------------
 
-`[google.protobuf.ListValue proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/struct.proto#L92>`_
+`[google.protobuf.ListValue proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/struct.proto#L92>`_
 
 `ListValue` is a wrapper around a repeated field of values.
 
@@ -179,7 +179,7 @@ values
 Enum google.protobuf.NullValue
 ------------------------------
 
-`[google.protobuf.NullValue proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/struct.proto#L84>`_
+`[google.protobuf.NullValue proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/struct.proto#L84>`_
 
 `NullValue` is a singleton enumeration to represent the null value for the
 `Value` type union.
@@ -190,3 +190,5 @@ Enum google.protobuf.NullValue
 
 NULL_VALUE
   *(DEFAULT)* ⁣Null value.
+  
+  

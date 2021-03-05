@@ -8,7 +8,7 @@ workflow_attributes.proto
 flyteidl.admin.WorkflowAttributes
 ---------------------------------
 
-`[flyteidl.admin.WorkflowAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L7>`_
+`[flyteidl.admin.WorkflowAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L7>`_
 
 
 .. code-block:: json
@@ -50,7 +50,7 @@ matching_attributes
 flyteidl.admin.WorkflowAttributesUpdateRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesUpdateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L21>`_
+`[flyteidl.admin.WorkflowAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L21>`_
 
 Sets custom attributes for a project, domain and workflow combination.
 
@@ -72,7 +72,7 @@ attributes
 flyteidl.admin.WorkflowAttributesUpdateResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesUpdateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L26>`_
+`[flyteidl.admin.WorkflowAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L26>`_
 
 Purposefully empty, may be populated in the future.
 
@@ -88,7 +88,7 @@ Purposefully empty, may be populated in the future.
 flyteidl.admin.WorkflowAttributesGetRequest
 -------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesGetRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L29>`_
+`[flyteidl.admin.WorkflowAttributesGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L29>`_
 
 
 .. code-block:: json
@@ -130,7 +130,7 @@ resource_type
 flyteidl.admin.WorkflowAttributesGetResponse
 --------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesGetResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L42>`_
+`[flyteidl.admin.WorkflowAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L42>`_
 
 
 .. code-block:: json
@@ -151,7 +151,7 @@ attributes
 flyteidl.admin.WorkflowAttributesDeleteRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesDeleteRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L46>`_
+`[flyteidl.admin.WorkflowAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L46>`_
 
 
 .. code-block:: json
@@ -193,10 +193,13 @@ resource_type
 flyteidl.admin.WorkflowAttributesDeleteResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesDeleteResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L60>`_
+`[flyteidl.admin.WorkflowAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L60>`_
 
 Purposefully empty, may be populated in the future.
 
 .. code-block:: json
 
   {}
+
+
+

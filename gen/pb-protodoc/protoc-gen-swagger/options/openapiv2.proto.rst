@@ -8,7 +8,7 @@ openapiv2.proto
 grpc.gateway.protoc_gen_swagger.options.Swagger
 -----------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Swagger proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L13>`_
+`[grpc.gateway.protoc_gen_swagger.options.Swagger proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L13>`_
 
 `Swagger` is a representation of OpenAPI v2 specification's Swagger object.
 
@@ -93,7 +93,7 @@ external_docs
 Enum grpc.gateway.protoc_gen_swagger.options.Swagger.SwaggerScheme
 ------------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Swagger.SwaggerScheme proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L18>`_
+`[grpc.gateway.protoc_gen_swagger.options.Swagger.SwaggerScheme proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L18>`_
 
 
 .. _api_enum_value_grpc.gateway.protoc_gen_swagger.options.Swagger.SwaggerScheme.UNKNOWN:
@@ -127,7 +127,7 @@ WSS
 grpc.gateway.protoc_gen_swagger.options.Operation
 -------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Operation proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L48>`_
+`[grpc.gateway.protoc_gen_swagger.options.Operation proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L48>`_
 
 `Operation` is a representation of OpenAPI v2 specification's Operation object.
 
@@ -213,7 +213,7 @@ security
 grpc.gateway.protoc_gen_swagger.options.Response
 ------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Response proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L68>`_
+`[grpc.gateway.protoc_gen_swagger.options.Response proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L68>`_
 
 `Response` is a representation of OpenAPI v2 specification's Response object.
 
@@ -248,7 +248,7 @@ schema
 grpc.gateway.protoc_gen_swagger.options.Info
 --------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Info proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L86>`_
+`[grpc.gateway.protoc_gen_swagger.options.Info proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L86>`_
 
 `Info` is a representation of OpenAPI v2 specification's Info object.
 
@@ -304,7 +304,7 @@ version
 grpc.gateway.protoc_gen_swagger.options.Contact
 -----------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Contact proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L100>`_
+`[grpc.gateway.protoc_gen_swagger.options.Contact proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L100>`_
 
 `Contact` is a representation of OpenAPI v2 specification's Contact object.
 
@@ -342,7 +342,7 @@ email
 grpc.gateway.protoc_gen_swagger.options.License
 -----------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.License proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L110>`_
+`[grpc.gateway.protoc_gen_swagger.options.License proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L110>`_
 
 `License` is a representation of OpenAPI v2 specification's License object.
 
@@ -375,7 +375,7 @@ url
 grpc.gateway.protoc_gen_swagger.options.ExternalDocumentation
 -------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.ExternalDocumentation proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L123>`_
+`[grpc.gateway.protoc_gen_swagger.options.ExternalDocumentation proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L123>`_
 
 `ExternalDocumentation` is a representation of OpenAPI v2 specification's
 ExternalDocumentation object.
@@ -408,7 +408,7 @@ url
 grpc.gateway.protoc_gen_swagger.options.Schema
 ----------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Schema proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L133>`_
+`[grpc.gateway.protoc_gen_swagger.options.Schema proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L133>`_
 
 `Schema` is a representation of OpenAPI v2 specification's Schema object.
 
@@ -458,7 +458,7 @@ example
 grpc.gateway.protoc_gen_swagger.options.JSONSchema
 --------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.JSONSchema proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L154>`_
+`[grpc.gateway.protoc_gen_swagger.options.JSONSchema proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L154>`_
 
 `JSONSchema` represents properties from JSON Schema taken, and as used, in
 the OpenAPI v2 spec.
@@ -616,7 +616,7 @@ type
 Enum grpc.gateway.protoc_gen_swagger.options.JSONSchema.JSONSchemaSimpleTypes
 -----------------------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.JSONSchema.JSONSchemaSimpleTypes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L206>`_
+`[grpc.gateway.protoc_gen_swagger.options.JSONSchema.JSONSchemaSimpleTypes proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L206>`_
 
 
 .. _api_enum_value_grpc.gateway.protoc_gen_swagger.options.JSONSchema.JSONSchemaSimpleTypes.UNKNOWN:
@@ -665,7 +665,7 @@ STRING
 grpc.gateway.protoc_gen_swagger.options.Tag
 -------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Tag proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L233>`_
+`[grpc.gateway.protoc_gen_swagger.options.Tag proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L233>`_
 
 `Tag` is a representation of OpenAPI v2 specification's Tag object.
 
@@ -699,7 +699,7 @@ external_docs
 grpc.gateway.protoc_gen_swagger.options.SecurityDefinitions
 -----------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityDefinitions proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L257>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityDefinitions proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L257>`_
 
 `SecurityDefinitions` is a representation of OpenAPI v2 specification's
 Security Definitions object.
@@ -729,7 +729,7 @@ security
 grpc.gateway.protoc_gen_swagger.options.SecurityScheme
 ------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L271>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L271>`_
 
 `SecurityScheme` is a representation of OpenAPI v2 specification's
 Security Scheme object.
@@ -824,7 +824,7 @@ scopes
 Enum grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Type
 ----------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Type proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L274>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L274>`_
 
 Required. The type of the security scheme. Valid values are "basic",
 "apiKey" or "oauth2".
@@ -855,7 +855,7 @@ TYPE_OAUTH2
 Enum grpc.gateway.protoc_gen_swagger.options.SecurityScheme.In
 --------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.In proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L282>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.In proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L282>`_
 
 Required. The location of the API key. Valid values are "query" or "header".
 
@@ -880,7 +880,7 @@ IN_HEADER
 Enum grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Flow
 ----------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Flow proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L290>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityScheme.Flow proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L290>`_
 
 Required. The flow used by the OAuth2 security scheme. Valid values are
 "implicit", "password", "application" or "accessCode".
@@ -916,7 +916,7 @@ FLOW_ACCESS_CODE
 grpc.gateway.protoc_gen_swagger.options.SecurityRequirement
 -----------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityRequirement proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L343>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityRequirement proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L343>`_
 
 `SecurityRequirement` is a representation of OpenAPI v2 specification's
 Security Requirement object.
@@ -950,7 +950,7 @@ security_requirement
 grpc.gateway.protoc_gen_swagger.options.SecurityRequirement.SecurityRequirementValue
 ------------------------------------------------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.SecurityRequirement.SecurityRequirementValue proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L347>`_
+`[grpc.gateway.protoc_gen_swagger.options.SecurityRequirement.SecurityRequirementValue proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L347>`_
 
 If the security scheme is of type "oauth2", then the value is a list of
 scope names required for the execution. For other security scheme types,
@@ -976,7 +976,7 @@ scope
 grpc.gateway.protoc_gen_swagger.options.Scopes
 ----------------------------------------------
 
-`[grpc.gateway.protoc_gen_swagger.options.Scopes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L362>`_
+`[grpc.gateway.protoc_gen_swagger.options.Scopes proto] <https://github.com/lyft/flyteidl/blob/master/protos/protoc-gen-swagger/options/openapiv2.proto#L362>`_
 
 `Scopes` is a representation of OpenAPI v2 specification's Scopes object.
 
@@ -995,3 +995,6 @@ Lists the available scopes for an OAuth2 security scheme.
 scope
   (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Maps between a name of a scope to a short description of it (as the value
   of the property).
+  
+  
+

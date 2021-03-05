@@ -38,7 +38,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 google.protobuf.Duration
 ------------------------
 
-`[google.protobuf.Duration proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/google/protobuf/duration.proto#L102>`_
+`[google.protobuf.Duration proto] <https://github.com/lyft/flyteidl/blob/master/protos/google/protobuf/duration.proto#L102>`_
 
 A Duration represents a signed, fixed-length span of time represented
 as a count of seconds and fractions of seconds at nanosecond
@@ -125,3 +125,6 @@ nanos
   of one second or more, a non-zero value for the `nanos` field must be
   of the same sign as the `seconds` field. Must be from -999,999,999
   to +999,999,999 inclusive.
+  
+  
+

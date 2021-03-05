@@ -8,7 +8,7 @@ event.proto
 flyteidl.admin.EventErrorAlreadyInTerminalState
 -----------------------------------------------
 
-`[flyteidl.admin.EventErrorAlreadyInTerminalState proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L7>`_
+`[flyteidl.admin.EventErrorAlreadyInTerminalState proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L7>`_
 
 
 .. code-block:: json
@@ -29,7 +29,7 @@ current_phase
 flyteidl.admin.EventFailureReason
 ---------------------------------
 
-`[flyteidl.admin.EventFailureReason proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L11>`_
+`[flyteidl.admin.EventFailureReason proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L11>`_
 
 
 .. code-block:: json
@@ -51,7 +51,7 @@ already_in_terminal_state
 flyteidl.admin.WorkflowExecutionEventRequest
 --------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionEventRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L18>`_
+`[flyteidl.admin.WorkflowExecutionEventRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L18>`_
 
 Request to send a notification that a workflow execution event has occurred.
 
@@ -81,7 +81,7 @@ event
 flyteidl.admin.WorkflowExecutionEventResponse
 ---------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionEventResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L26>`_
+`[flyteidl.admin.WorkflowExecutionEventResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L26>`_
 
 
 .. code-block:: json
@@ -96,7 +96,7 @@ flyteidl.admin.WorkflowExecutionEventResponse
 flyteidl.admin.NodeExecutionEventRequest
 ----------------------------------------
 
-`[flyteidl.admin.NodeExecutionEventRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L31>`_
+`[flyteidl.admin.NodeExecutionEventRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L31>`_
 
 Request to send a notification that a node execution event has occurred.
 
@@ -126,7 +126,7 @@ event
 flyteidl.admin.NodeExecutionEventResponse
 -----------------------------------------
 
-`[flyteidl.admin.NodeExecutionEventResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L39>`_
+`[flyteidl.admin.NodeExecutionEventResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L39>`_
 
 
 .. code-block:: json
@@ -141,7 +141,7 @@ flyteidl.admin.NodeExecutionEventResponse
 flyteidl.admin.TaskExecutionEventRequest
 ----------------------------------------
 
-`[flyteidl.admin.TaskExecutionEventRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L44>`_
+`[flyteidl.admin.TaskExecutionEventRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L44>`_
 
 Request to send a notification that a task execution event has occurred.
 
@@ -171,9 +171,12 @@ event
 flyteidl.admin.TaskExecutionEventResponse
 -----------------------------------------
 
-`[flyteidl.admin.TaskExecutionEventResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L52>`_
+`[flyteidl.admin.TaskExecutionEventResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/event.proto#L52>`_
 
 
 .. code-block:: json
 
   {}
+
+
+

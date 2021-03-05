@@ -8,7 +8,7 @@ literals.proto
 flyteidl.core.Primitive
 -----------------------
 
-`[flyteidl.core.Primitive proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L12>`_
+`[flyteidl.core.Primitive proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L12>`_
 
 Primitive Types
 
@@ -90,7 +90,7 @@ duration
 flyteidl.core.Void
 ------------------
 
-`[flyteidl.core.Void proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L27>`_
+`[flyteidl.core.Void proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L27>`_
 
 Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally
 undefined since it can be assigned to a scalar of any LiteralType.
@@ -107,7 +107,7 @@ undefined since it can be assigned to a scalar of any LiteralType.
 flyteidl.core.Blob
 ------------------
 
-`[flyteidl.core.Blob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L32>`_
+`[flyteidl.core.Blob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L32>`_
 
 Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.
 There are no restrictions on how the uri is formatted since it will depend on how to interact with the store.
@@ -136,7 +136,7 @@ uri
 flyteidl.core.BlobMetadata
 --------------------------
 
-`[flyteidl.core.BlobMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L37>`_
+`[flyteidl.core.BlobMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L37>`_
 
 
 .. code-block:: json
@@ -157,7 +157,7 @@ type
 flyteidl.core.Binary
 --------------------
 
-`[flyteidl.core.Binary proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L43>`_
+`[flyteidl.core.Binary proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L43>`_
 
 A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.
 It's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data.
@@ -186,7 +186,7 @@ tag
 flyteidl.core.Schema
 --------------------
 
-`[flyteidl.core.Schema proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L49>`_
+`[flyteidl.core.Schema proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L49>`_
 
 A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
 
@@ -214,7 +214,7 @@ type
 flyteidl.core.Scalar
 --------------------
 
-`[flyteidl.core.Scalar proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L54>`_
+`[flyteidl.core.Scalar proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L54>`_
 
 
 .. code-block:: json
@@ -292,7 +292,7 @@ generic
 flyteidl.core.Literal
 ---------------------
 
-`[flyteidl.core.Literal proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L67>`_
+`[flyteidl.core.Literal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L67>`_
 
 A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
 
@@ -338,7 +338,7 @@ map
 flyteidl.core.LiteralCollection
 -------------------------------
 
-`[flyteidl.core.LiteralCollection proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L81>`_
+`[flyteidl.core.LiteralCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L81>`_
 
 A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 
@@ -360,7 +360,7 @@ literals
 flyteidl.core.LiteralMap
 ------------------------
 
-`[flyteidl.core.LiteralMap proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L86>`_
+`[flyteidl.core.LiteralMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L86>`_
 
 A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 
@@ -382,7 +382,7 @@ literals
 flyteidl.core.BindingDataCollection
 -----------------------------------
 
-`[flyteidl.core.BindingDataCollection proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L91>`_
+`[flyteidl.core.BindingDataCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L91>`_
 
 A collection of BindingData items.
 
@@ -404,7 +404,7 @@ bindings
 flyteidl.core.BindingDataMap
 ----------------------------
 
-`[flyteidl.core.BindingDataMap proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L96>`_
+`[flyteidl.core.BindingDataMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L96>`_
 
 A map of BindingData items.
 
@@ -426,7 +426,7 @@ bindings
 flyteidl.core.BindingData
 -------------------------
 
-`[flyteidl.core.BindingData proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L101>`_
+`[flyteidl.core.BindingData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L101>`_
 
 Specifies either a simple value or a reference to another output.
 
@@ -483,7 +483,7 @@ map
 flyteidl.core.Binding
 ---------------------
 
-`[flyteidl.core.Binding proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L119>`_
+`[flyteidl.core.Binding proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L119>`_
 
 An input/output binding of a variable to either static value or a node output.
 
@@ -513,7 +513,7 @@ binding
 flyteidl.core.KeyValuePair
 --------------------------
 
-`[flyteidl.core.KeyValuePair proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L128>`_
+`[flyteidl.core.KeyValuePair proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L128>`_
 
 A generic key value pair.
 
@@ -543,7 +543,7 @@ value
 flyteidl.core.RetryStrategy
 ---------------------------
 
-`[flyteidl.core.RetryStrategy proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L137>`_
+`[flyteidl.core.RetryStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L137>`_
 
 Retry strategy associated with an executable unit.
 
@@ -558,3 +558,6 @@ Retry strategy associated with an executable unit.
 retries
   (`uint32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Number of retries. Retries will be consumed when the job fails with a recoverable error.
   The number of retries must be less than or equals to 10.
+  
+  
+

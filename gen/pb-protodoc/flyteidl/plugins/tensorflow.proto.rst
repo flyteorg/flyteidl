@@ -8,7 +8,7 @@ tensorflow.proto
 flyteidl.plugins.DistributedTensorflowTrainingTask
 --------------------------------------------------
 
-`[flyteidl.plugins.DistributedTensorflowTrainingTask proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/tensorflow.proto#L7>`_
+`[flyteidl.plugins.DistributedTensorflowTrainingTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/tensorflow.proto#L7>`_
 
 Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
 
@@ -36,3 +36,5 @@ ps_replicas
 
 chief_replicas
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+

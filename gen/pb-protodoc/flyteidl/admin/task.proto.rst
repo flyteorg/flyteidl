@@ -8,7 +8,7 @@ task.proto
 flyteidl.admin.TaskCreateRequest
 --------------------------------
 
-`[flyteidl.admin.TaskCreateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L11>`_
+`[flyteidl.admin.TaskCreateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L11>`_
 
 Represents a request structure to create a revision of a task.
 
@@ -38,7 +38,7 @@ spec
 flyteidl.admin.TaskCreateResponse
 ---------------------------------
 
-`[flyteidl.admin.TaskCreateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L20>`_
+`[flyteidl.admin.TaskCreateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L20>`_
 
 Represents a response structure if task creation succeeds.
 
@@ -54,7 +54,7 @@ Represents a response structure if task creation succeeds.
 flyteidl.admin.Task
 -------------------
 
-`[flyteidl.admin.Task proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L27>`_
+`[flyteidl.admin.Task proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L27>`_
 
 Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks
 arranged to process workflow inputs and produce a deterministic set of outputs.
@@ -86,7 +86,7 @@ closure
 flyteidl.admin.TaskList
 -----------------------
 
-`[flyteidl.admin.TaskList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L37>`_
+`[flyteidl.admin.TaskList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L37>`_
 
 Represents a list of tasks returned from the admin.
 
@@ -117,7 +117,7 @@ token
 flyteidl.admin.TaskSpec
 -----------------------
 
-`[flyteidl.admin.TaskSpec proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L47>`_
+`[flyteidl.admin.TaskSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L47>`_
 
 Represents a structure that encapsulates the user-configured specification of the task.
 
@@ -140,7 +140,7 @@ template
 flyteidl.admin.TaskClosure
 --------------------------
 
-`[flyteidl.admin.TaskClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L54>`_
+`[flyteidl.admin.TaskClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/task.proto#L54>`_
 
 Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data
 and task metadata.
@@ -162,3 +162,6 @@ compiled_task
 
 created_at
   (:ref:`google.protobuf.Timestamp <api_msg_google.protobuf.Timestamp>`) Time at which the task was created.
+  
+  
+

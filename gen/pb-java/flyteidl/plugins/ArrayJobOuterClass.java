@@ -732,8 +732,8 @@ public final class ArrayJobOuterClass {
       "\n flyteidl/plugins/array_job.proto\022\020flyt" +
       "eidl.plugins\"D\n\010ArrayJob\022\023\n\013parallelism\030" +
       "\001 \001(\003\022\014\n\004size\030\002 \001(\003\022\025\n\rmin_successes\030\003 \001" +
-      "(\003B5Z3github.com/flyteorg/flyteidl/gen/pb-go" +
-      "/flyteidl/pluginsb\006proto3"
+      "(\003B9Z7github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

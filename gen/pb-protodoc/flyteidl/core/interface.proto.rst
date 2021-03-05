@@ -8,7 +8,7 @@ interface.proto
 flyteidl.core.Variable
 ----------------------
 
-`[flyteidl.core.Variable proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L10>`_
+`[flyteidl.core.Variable proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L10>`_
 
 Defines a strongly typed variable.
 
@@ -38,7 +38,7 @@ description
 flyteidl.core.VariableMap
 -------------------------
 
-`[flyteidl.core.VariableMap proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L19>`_
+`[flyteidl.core.VariableMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L19>`_
 
 A map of Variables
 
@@ -61,7 +61,7 @@ variables
 flyteidl.core.TypedInterface
 ----------------------------
 
-`[flyteidl.core.TypedInterface proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L25>`_
+`[flyteidl.core.TypedInterface proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L25>`_
 
 Defines strongly typed inputs and outputs.
 
@@ -89,7 +89,7 @@ outputs
 flyteidl.core.Parameter
 -----------------------
 
-`[flyteidl.core.Parameter proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L32>`_
+`[flyteidl.core.Parameter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L32>`_
 
 A parameter is used as input to a launch plan and has
 the special ability to have a default value or mark itself as required.
@@ -135,7 +135,7 @@ required
 flyteidl.core.ParameterMap
 --------------------------
 
-`[flyteidl.core.ParameterMap proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L47>`_
+`[flyteidl.core.ParameterMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/interface.proto#L47>`_
 
 A map of Parameters.
 
@@ -149,3 +149,6 @@ A map of Parameters.
 
 parameters
   (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, :ref:`flyteidl.core.Parameter <api_msg_flyteidl.core.Parameter>`>) Defines a map of parameter names to parameters.
+  
+  
+

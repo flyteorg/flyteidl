@@ -8,7 +8,7 @@ workflow_closure.proto
 flyteidl.core.WorkflowClosure
 -----------------------------
 
-`[flyteidl.core.WorkflowClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow_closure.proto#L10>`_
+`[flyteidl.core.WorkflowClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow_closure.proto#L10>`_
 
 Defines an enclosed package of workflow and tasks it references.
 
@@ -30,3 +30,6 @@ workflow
 tasks
   (:ref:`flyteidl.core.TaskTemplate <api_msg_flyteidl.core.TaskTemplate>`) ptional. A collection of tasks referenced by the workflow. Only needed if the workflow
   references tasks.
+  
+  
+

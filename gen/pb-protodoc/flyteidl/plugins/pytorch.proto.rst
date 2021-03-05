@@ -8,7 +8,7 @@ pytorch.proto
 flyteidl.plugins.DistributedPyTorchTrainingTask
 -----------------------------------------------
 
-`[flyteidl.plugins.DistributedPyTorchTrainingTask proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L7>`_
+`[flyteidl.plugins.DistributedPyTorchTrainingTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L7>`_
 
 Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
 
@@ -22,3 +22,6 @@ Custom proto for plugin that enables distributed training using https://github.c
 
 workers
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) number of worker replicas spawned in the cluster for this job
+  
+  
+

@@ -8,7 +8,7 @@ parameter_ranges.proto
 flyteidl.plugins.sagemaker.HyperparameterScalingType
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L9>`_
+`[flyteidl.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L9>`_
 
 HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
 For details, refer to: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
@@ -25,7 +25,7 @@ See examples of these scaling type, refer to: https://aws.amazon.com/blogs/machi
 Enum flyteidl.plugins.sagemaker.HyperparameterScalingType.Value
 ---------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterScalingType.Value proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L10>`_
+`[flyteidl.plugins.sagemaker.HyperparameterScalingType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L10>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.Value.AUTO:
@@ -54,7 +54,7 @@ REVERSELOGARITHMIC
 flyteidl.plugins.sagemaker.ContinuousParameterRange
 ---------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L21>`_
+`[flyteidl.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L21>`_
 
 ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
 users to specify the search space of a floating-point hyperparameter
@@ -90,7 +90,7 @@ scaling_type
 flyteidl.plugins.sagemaker.IntegerParameterRange
 ------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L30>`_
+`[flyteidl.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L30>`_
 
 IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
 users to specify the search space of an integer hyperparameter
@@ -126,7 +126,7 @@ scaling_type
 flyteidl.plugins.sagemaker.CategoricalParameterRange
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L39>`_
+`[flyteidl.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L39>`_
 
 ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
 users to specify the search space of a floating-point hyperparameter
@@ -150,7 +150,7 @@ values
 flyteidl.plugins.sagemaker.ParameterRangeOneOf
 ----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L48>`_
+`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L48>`_
 
 ParameterRangeOneOf describes a single ParameterRange, which is a one-of structure that can be one of
 the three possible types: ContinuousParameterRange, IntegerParameterRange, and CategoricalParameterRange.
@@ -196,7 +196,7 @@ categorical_parameter_range
 flyteidl.plugins.sagemaker.ParameterRanges
 ------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L58>`_
+`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L58>`_
 
 ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
 https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
@@ -211,3 +211,5 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ra
 
 parameter_range_map
   (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, :ref:`flyteidl.plugins.sagemaker.ParameterRangeOneOf <api_msg_flyteidl.plugins.sagemaker.ParameterRangeOneOf>`>) 
+  
+

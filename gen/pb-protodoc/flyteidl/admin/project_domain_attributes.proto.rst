@@ -8,7 +8,7 @@ project_domain_attributes.proto
 flyteidl.admin.ProjectDomainAttributes
 --------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L7>`_
+`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L7>`_
 
 
 .. code-block:: json
@@ -43,7 +43,7 @@ matching_attributes
 flyteidl.admin.ProjectDomainAttributesUpdateRequest
 ---------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L18>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L18>`_
 
 Sets custom attributes for a project-domain combination.
 
@@ -65,7 +65,7 @@ attributes
 flyteidl.admin.ProjectDomainAttributesUpdateResponse
 ----------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L23>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L23>`_
 
 Purposefully empty, may be populated in the future.
 
@@ -81,7 +81,7 @@ Purposefully empty, may be populated in the future.
 flyteidl.admin.ProjectDomainAttributesGetRequest
 ------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesGetRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L26>`_
+`[flyteidl.admin.ProjectDomainAttributesGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L26>`_
 
 
 .. code-block:: json
@@ -116,7 +116,7 @@ resource_type
 flyteidl.admin.ProjectDomainAttributesGetResponse
 -------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesGetResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L36>`_
+`[flyteidl.admin.ProjectDomainAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L36>`_
 
 
 .. code-block:: json
@@ -137,7 +137,7 @@ attributes
 flyteidl.admin.ProjectDomainAttributesDeleteRequest
 ---------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesDeleteRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L41>`_
+`[flyteidl.admin.ProjectDomainAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L41>`_
 
 
 .. code-block:: json
@@ -172,10 +172,13 @@ resource_type
 flyteidl.admin.ProjectDomainAttributesDeleteResponse
 ----------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesDeleteResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L52>`_
+`[flyteidl.admin.ProjectDomainAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L52>`_
 
 Purposefully empty, may be populated in the future.
 
 .. code-block:: json
 
   {}
+
+
+

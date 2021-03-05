@@ -8,7 +8,7 @@ workflow.proto
 flyteidl.core.IfBlock
 ---------------------
 
-`[flyteidl.core.IfBlock proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L15>`_
+`[flyteidl.core.IfBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L15>`_
 
 Defines a condition and the execution unit that should be executed if the condition is satisfied.
 
@@ -36,7 +36,7 @@ then_node
 flyteidl.core.IfElseBlock
 -------------------------
 
-`[flyteidl.core.IfElseBlock proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L22>`_
+`[flyteidl.core.IfElseBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L22>`_
 
 Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.
 If no conditions were satisfied, the else_node or the error will execute.
@@ -89,7 +89,7 @@ error
 flyteidl.core.BranchNode
 ------------------------
 
-`[flyteidl.core.BranchNode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L41>`_
+`[flyteidl.core.BranchNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L41>`_
 
 BranchNode is a special node that alter the flow of the workflow graph. It allows the control flow to branch at
 runtime based on a series of conditions that get evaluated on various parameters (e.g. inputs, primtives).
@@ -113,7 +113,7 @@ if_else
 flyteidl.core.TaskNode
 ----------------------
 
-`[flyteidl.core.TaskNode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L47>`_
+`[flyteidl.core.TaskNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L47>`_
 
 Refers to the task that the Node is to execute.
 
@@ -137,7 +137,7 @@ reference_id
 flyteidl.core.WorkflowNode
 --------------------------
 
-`[flyteidl.core.WorkflowNode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L55>`_
+`[flyteidl.core.WorkflowNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L55>`_
 
 Refers to a the workflow the node is to execute.
 
@@ -173,7 +173,7 @@ sub_workflow_ref
 flyteidl.core.NodeMetadata
 --------------------------
 
-`[flyteidl.core.NodeMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L66>`_
+`[flyteidl.core.NodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L66>`_
 
 Defines extra information about the Node.
 
@@ -218,7 +218,7 @@ interruptible
 flyteidl.core.Alias
 -------------------
 
-`[flyteidl.core.Alias proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L84>`_
+`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L84>`_
 
 Links a variable to an alias.
 
@@ -248,7 +248,7 @@ alias
 flyteidl.core.Node
 ------------------
 
-`[flyteidl.core.Node proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L94>`_
+`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L94>`_
 
 A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch
 node.
@@ -339,7 +339,7 @@ branch_node
 flyteidl.core.WorkflowMetadata
 ------------------------------
 
-`[flyteidl.core.WorkflowMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L131>`_
+`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L131>`_
 
 This is workflow layer metadata. These settings are only applicable to the workflow as a whole, and do not
 percolate down to child entities (like tasks) launched by the workflow.
@@ -369,7 +369,7 @@ on_failure
 Enum flyteidl.core.WorkflowMetadata.OnFailurePolicy
 ---------------------------------------------------
 
-`[flyteidl.core.WorkflowMetadata.OnFailurePolicy proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L136>`_
+`[flyteidl.core.WorkflowMetadata.OnFailurePolicy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L136>`_
 
 Failure Handling Strategy
 
@@ -396,7 +396,7 @@ FAIL_AFTER_EXECUTABLE_NODES_COMPLETE
 flyteidl.core.WorkflowMetadataDefaults
 --------------------------------------
 
-`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L159>`_
+`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L159>`_
 
 The difference between these settings and the WorkflowMetadata ones is that these are meant to be passed down to
 a workflow's underlying entities (like tasks). For instance, 'interruptible' has no meaning at the workflow layer, it
@@ -424,7 +424,7 @@ interruptible
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L166>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L166>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.
@@ -489,3 +489,6 @@ failure_node
 
 metadata_defaults
   (:ref:`flyteidl.core.WorkflowMetadataDefaults <api_msg_flyteidl.core.WorkflowMetadataDefaults>`) workflow defaults
+  
+  
+

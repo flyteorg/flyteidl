@@ -8,7 +8,7 @@ matchable_resource.proto
 flyteidl.admin.TaskResourceSpec
 -------------------------------
 
-`[flyteidl.admin.TaskResourceSpec proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L30>`_
+`[flyteidl.admin.TaskResourceSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L30>`_
 
 
 .. code-block:: json
@@ -47,7 +47,7 @@ storage
 flyteidl.admin.TaskResourceAttributes
 -------------------------------------
 
-`[flyteidl.admin.TaskResourceAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L40>`_
+`[flyteidl.admin.TaskResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L40>`_
 
 
 .. code-block:: json
@@ -74,7 +74,7 @@ limits
 flyteidl.admin.ClusterResourceAttributes
 ----------------------------------------
 
-`[flyteidl.admin.ClusterResourceAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L46>`_
+`[flyteidl.admin.ClusterResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L46>`_
 
 
 .. code-block:: json
@@ -98,7 +98,7 @@ attributes
 flyteidl.admin.ExecutionQueueAttributes
 ---------------------------------------
 
-`[flyteidl.admin.ExecutionQueueAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L53>`_
+`[flyteidl.admin.ExecutionQueueAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L53>`_
 
 
 .. code-block:: json
@@ -120,7 +120,7 @@ tags
 flyteidl.admin.ExecutionClusterLabel
 ------------------------------------
 
-`[flyteidl.admin.ExecutionClusterLabel proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L58>`_
+`[flyteidl.admin.ExecutionClusterLabel proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L58>`_
 
 
 .. code-block:: json
@@ -142,7 +142,7 @@ value
 flyteidl.admin.PluginOverride
 -----------------------------
 
-`[flyteidl.admin.PluginOverride proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L66>`_
+`[flyteidl.admin.PluginOverride proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L66>`_
 
 This MatchableAttribute configures selecting alternate plugin implementations for a given task type.
 In addition to an override implementation a selection of fallbacks can be provided or other modes
@@ -180,7 +180,7 @@ missing_plugin_behavior
 Enum flyteidl.admin.PluginOverride.MissingPluginBehavior
 --------------------------------------------------------
 
-`[flyteidl.admin.PluginOverride.MissingPluginBehavior proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L73>`_
+`[flyteidl.admin.PluginOverride.MissingPluginBehavior proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L73>`_
 
 
 .. _api_enum_value_flyteidl.admin.PluginOverride.MissingPluginBehavior.FAIL:
@@ -200,7 +200,7 @@ USE_DEFAULT
 flyteidl.admin.PluginOverrides
 ------------------------------
 
-`[flyteidl.admin.PluginOverrides proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L85>`_
+`[flyteidl.admin.PluginOverrides proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L85>`_
 
 
 .. code-block:: json
@@ -221,7 +221,7 @@ overrides
 flyteidl.admin.MatchingAttributes
 ---------------------------------
 
-`[flyteidl.admin.MatchingAttributes proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L90>`_
+`[flyteidl.admin.MatchingAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L90>`_
 
 Generic container for encapsulating all types of the above attributes messages.
 
@@ -291,7 +291,7 @@ plugin_overrides
 flyteidl.admin.MatchableAttributesConfiguration
 -----------------------------------------------
 
-`[flyteidl.admin.MatchableAttributesConfiguration proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L108>`_
+`[flyteidl.admin.MatchableAttributesConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L108>`_
 
 Represents a custom set of attributes applied for either a domain; a domain and project; or
 domain, project and workflow name.
@@ -338,7 +338,7 @@ launch_plan
 flyteidl.admin.ListMatchableAttributesRequest
 ---------------------------------------------
 
-`[flyteidl.admin.ListMatchableAttributesRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L121>`_
+`[flyteidl.admin.ListMatchableAttributesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L121>`_
 
 Request all matching resource attributes.
 
@@ -360,7 +360,7 @@ resource_type
 flyteidl.admin.ListMatchableAttributesResponse
 ----------------------------------------------
 
-`[flyteidl.admin.ListMatchableAttributesResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L126>`_
+`[flyteidl.admin.ListMatchableAttributesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L126>`_
 
 Response for a request for all matching resource attributes.
 
@@ -381,7 +381,7 @@ configurations
 Enum flyteidl.admin.MatchableResource
 -------------------------------------
 
-`[flyteidl.admin.MatchableResource proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L10>`_
+`[flyteidl.admin.MatchableResource proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L10>`_
 
 Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes
 based on matching tags.
@@ -420,3 +420,5 @@ QUALITY_OF_SERVICE_SPECIFICATION
 
 PLUGIN_OVERRIDE
   ⁣Selects configurable plugin implementation behavior for a given task type.
+  
+  

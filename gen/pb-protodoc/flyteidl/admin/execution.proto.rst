@@ -8,7 +8,7 @@ execution.proto
 flyteidl.admin.ExecutionCreateRequest
 -------------------------------------
 
-`[flyteidl.admin.ExecutionCreateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L13>`_
+`[flyteidl.admin.ExecutionCreateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L13>`_
 
 Request to launch an execution with the given project, domain and optionally name.
 
@@ -63,7 +63,7 @@ inputs
 flyteidl.admin.ExecutionRelaunchRequest
 ---------------------------------------
 
-`[flyteidl.admin.ExecutionRelaunchRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L35>`_
+`[flyteidl.admin.ExecutionRelaunchRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L35>`_
 
 Request to relaunch the referenced execution.
 
@@ -95,7 +95,7 @@ name
 flyteidl.admin.ExecutionCreateResponse
 --------------------------------------
 
-`[flyteidl.admin.ExecutionCreateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L47>`_
+`[flyteidl.admin.ExecutionCreateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L47>`_
 
 The unique identifier for a successfully created execution.
 If the name was *not* specified in the create request, this identifier will include a generated name.
@@ -118,7 +118,7 @@ id
 flyteidl.admin.WorkflowExecutionGetRequest
 ------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L52>`_
+`[flyteidl.admin.WorkflowExecutionGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L52>`_
 
 A message used to fetch a single workflow execution entity.
 
@@ -141,7 +141,7 @@ id
 flyteidl.admin.Execution
 ------------------------
 
-`[flyteidl.admin.Execution proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L60>`_
+`[flyteidl.admin.Execution proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L60>`_
 
 A workflow execution represents an instantiated workflow, including all inputs and additional
 metadata as well as computed results included state, outputs, and duration-based attributes.
@@ -180,7 +180,7 @@ closure
 flyteidl.admin.ExecutionList
 ----------------------------
 
-`[flyteidl.admin.ExecutionList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L72>`_
+`[flyteidl.admin.ExecutionList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L72>`_
 
 Used as a response for request to list executions.
 
@@ -210,7 +210,7 @@ token
 flyteidl.admin.LiteralMapBlob
 -----------------------------
 
-`[flyteidl.admin.LiteralMapBlob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L81>`_
+`[flyteidl.admin.LiteralMapBlob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L81>`_
 
 Input/output data can represented by actual values or a link to where values are stored
 
@@ -246,7 +246,7 @@ uri
 flyteidl.admin.AbortMetadata
 ----------------------------
 
-`[flyteidl.admin.AbortMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L91>`_
+`[flyteidl.admin.AbortMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L91>`_
 
 
 .. code-block:: json
@@ -275,7 +275,7 @@ principal
 flyteidl.admin.ExecutionClosure
 -------------------------------
 
-`[flyteidl.admin.ExecutionClosure proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L100>`_
+`[flyteidl.admin.ExecutionClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L100>`_
 
 Encapsulates the results of the Execution
 
@@ -398,7 +398,7 @@ workflow_id
 flyteidl.admin.SystemMetadata
 -----------------------------
 
-`[flyteidl.admin.SystemMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L146>`_
+`[flyteidl.admin.SystemMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L146>`_
 
 Represents system rather than user-facing metadata about an execution.
 
@@ -421,7 +421,7 @@ execution_cluster
 flyteidl.admin.ExecutionMetadata
 --------------------------------
 
-`[flyteidl.admin.ExecutionMetadata proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L154>`_
+`[flyteidl.admin.ExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L154>`_
 
 Represents attributes about an execution which are not required to launch the execution but are useful to record.
 These attributes are assigned at launch time and do not change.
@@ -493,7 +493,7 @@ system_metadata
 Enum flyteidl.admin.ExecutionMetadata.ExecutionMode
 ---------------------------------------------------
 
-`[flyteidl.admin.ExecutionMetadata.ExecutionMode proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L156>`_
+`[flyteidl.admin.ExecutionMetadata.ExecutionMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L156>`_
 
 The method by which this execution was launched.
 
@@ -533,7 +533,7 @@ CHILD_WORKFLOW
 flyteidl.admin.NotificationList
 -------------------------------
 
-`[flyteidl.admin.NotificationList proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L201>`_
+`[flyteidl.admin.NotificationList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L201>`_
 
 
 .. code-block:: json
@@ -554,7 +554,7 @@ notifications
 flyteidl.admin.ExecutionSpec
 ----------------------------
 
-`[flyteidl.admin.ExecutionSpec proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L207>`_
+`[flyteidl.admin.ExecutionSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L207>`_
 
 An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
 of an execution as it progresses across phase changes..
@@ -649,7 +649,7 @@ quality_of_service
 flyteidl.admin.ExecutionTerminateRequest
 ----------------------------------------
 
-`[flyteidl.admin.ExecutionTerminateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L251>`_
+`[flyteidl.admin.ExecutionTerminateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L251>`_
 
 Request to terminate an in-progress execution.  This action is irreversible.
 If an execution is already terminated, this request will simply be a no-op.
@@ -683,7 +683,7 @@ cause
 flyteidl.admin.ExecutionTerminateResponse
 -----------------------------------------
 
-`[flyteidl.admin.ExecutionTerminateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L259>`_
+`[flyteidl.admin.ExecutionTerminateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L259>`_
 
 
 .. code-block:: json
@@ -698,7 +698,7 @@ flyteidl.admin.ExecutionTerminateResponse
 flyteidl.admin.WorkflowExecutionGetDataRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetDataRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L264>`_
+`[flyteidl.admin.WorkflowExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L264>`_
 
 Request structure to fetch inputs and output urls for an execution.
 
@@ -721,7 +721,7 @@ id
 flyteidl.admin.WorkflowExecutionGetDataResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L270>`_
+`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L270>`_
 
 Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
 
@@ -756,3 +756,6 @@ full_inputs
 
 full_outputs
   (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are under a configured size threshold.
+  
+  
+

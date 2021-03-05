@@ -8,7 +8,7 @@ spark.proto
 flyteidl.plugins.SparkApplication
 ---------------------------------
 
-`[flyteidl.plugins.SparkApplication proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L6>`_
+`[flyteidl.plugins.SparkApplication proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L6>`_
 
 
 .. code-block:: json
@@ -22,7 +22,7 @@ flyteidl.plugins.SparkApplication
 Enum flyteidl.plugins.SparkApplication.Type
 -------------------------------------------
 
-`[flyteidl.plugins.SparkApplication.Type proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L7>`_
+`[flyteidl.plugins.SparkApplication.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L7>`_
 
 
 .. _api_enum_value_flyteidl.plugins.SparkApplication.Type.PYTHON:
@@ -51,7 +51,7 @@ R
 flyteidl.plugins.SparkJob
 -------------------------
 
-`[flyteidl.plugins.SparkJob proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L16>`_
+`[flyteidl.plugins.SparkJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/spark.proto#L16>`_
 
 Custom Proto for Spark Plugin.
 
@@ -95,3 +95,6 @@ hadoopConf
 
 executorPath
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+

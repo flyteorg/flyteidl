@@ -8,7 +8,7 @@ datacatalog.proto
 pb.lyft.datacatalog.Parameter
 -----------------------------
 
-`[pb.lyft.datacatalog.Parameter proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L7>`_
+`[pb.lyft.datacatalog.Parameter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L7>`_
 
 
 .. code-block:: json
@@ -35,7 +35,7 @@ value
 pb.lyft.datacatalog.Artifact
 ----------------------------
 
-`[pb.lyft.datacatalog.Artifact proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L33>`_
+`[pb.lyft.datacatalog.Artifact proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L33>`_
 
 Before jumping to message definition, lets go over the expected flow-
   An Artifact represents an unit-of-work identified by (task, version, inputs). This is
@@ -118,7 +118,7 @@ outputs
 pb.lyft.datacatalog.ArtifactId
 ------------------------------
 
-`[pb.lyft.datacatalog.ArtifactId proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L44>`_
+`[pb.lyft.datacatalog.ArtifactId proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L44>`_
 
 
 .. code-block:: json
@@ -151,7 +151,7 @@ inputs
 pb.lyft.datacatalog.GetRequest
 ------------------------------
 
-`[pb.lyft.datacatalog.GetRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L50>`_
+`[pb.lyft.datacatalog.GetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L50>`_
 
 
 .. code-block:: json
@@ -184,7 +184,7 @@ artifact_id
 pb.lyft.datacatalog.GetResponse
 -------------------------------
 
-`[pb.lyft.datacatalog.GetResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L57>`_
+`[pb.lyft.datacatalog.GetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L57>`_
 
 
 .. code-block:: json
@@ -205,7 +205,7 @@ artifact
 pb.lyft.datacatalog.IntFilter
 -----------------------------
 
-`[pb.lyft.datacatalog.IntFilter proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L67>`_
+`[pb.lyft.datacatalog.IntFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L67>`_
 
 
 .. code-block:: json
@@ -232,7 +232,7 @@ operator
 pb.lyft.datacatalog.IntRangeFilter
 ----------------------------------
 
-`[pb.lyft.datacatalog.IntRangeFilter proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L72>`_
+`[pb.lyft.datacatalog.IntRangeFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L72>`_
 
 
 .. code-block:: json
@@ -259,7 +259,7 @@ max
 pb.lyft.datacatalog.IntQueryKey
 -------------------------------
 
-`[pb.lyft.datacatalog.IntQueryKey proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L77>`_
+`[pb.lyft.datacatalog.IntQueryKey proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L77>`_
 
 
 .. code-block:: json
@@ -292,7 +292,7 @@ range
 pb.lyft.datacatalog.QueryRequest
 --------------------------------
 
-`[pb.lyft.datacatalog.QueryRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L86>`_
+`[pb.lyft.datacatalog.QueryRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L86>`_
 
 QueryRequest allows queries on a range of values for revision column and point queries on created_at
 and reference_id
@@ -339,7 +339,7 @@ reference_id
 pb.lyft.datacatalog.QueryResponse
 ---------------------------------
 
-`[pb.lyft.datacatalog.QueryResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L94>`_
+`[pb.lyft.datacatalog.QueryResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L94>`_
 
 
 .. code-block:: json
@@ -360,7 +360,7 @@ artifact
 pb.lyft.datacatalog.CreateRequest
 ---------------------------------
 
-`[pb.lyft.datacatalog.CreateRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L98>`_
+`[pb.lyft.datacatalog.CreateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L98>`_
 
 
 .. code-block:: json
@@ -399,7 +399,7 @@ outputs
 pb.lyft.datacatalog.CreateResponse
 ----------------------------------
 
-`[pb.lyft.datacatalog.CreateResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L105>`_
+`[pb.lyft.datacatalog.CreateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L105>`_
 
 
 .. code-block:: json
@@ -425,7 +425,7 @@ status
 Enum pb.lyft.datacatalog.CreateResponse.Status
 ----------------------------------------------
 
-`[pb.lyft.datacatalog.CreateResponse.Status proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L107>`_
+`[pb.lyft.datacatalog.CreateResponse.Status proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L107>`_
 
 
 .. _api_enum_value_pb.lyft.datacatalog.CreateResponse.Status.ALREADY_EXISTS:
@@ -444,7 +444,7 @@ CREATED
 pb.lyft.datacatalog.GenerateProvenanceRequest
 ---------------------------------------------
 
-`[pb.lyft.datacatalog.GenerateProvenanceRequest proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L114>`_
+`[pb.lyft.datacatalog.GenerateProvenanceRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L114>`_
 
 
 .. code-block:: json
@@ -465,7 +465,7 @@ id
 pb.lyft.datacatalog.GenerateProvenanceResponse
 ----------------------------------------------
 
-`[pb.lyft.datacatalog.GenerateProvenanceResponse proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L118>`_
+`[pb.lyft.datacatalog.GenerateProvenanceResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L118>`_
 
 
 .. code-block:: json
@@ -485,7 +485,7 @@ provenance
 Enum pb.lyft.datacatalog.QueryOperator
 --------------------------------------
 
-`[pb.lyft.datacatalog.QueryOperator proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L61>`_
+`[pb.lyft.datacatalog.QueryOperator proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L61>`_
 
 
 .. _api_enum_value_pb.lyft.datacatalog.QueryOperator.EQUAL:
@@ -502,3 +502,4 @@ GREATER_THAN
 
 LESSER_THAN
   ⁣
+  

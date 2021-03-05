@@ -8,7 +8,7 @@ presto.proto
 flyteidl.plugins.PrestoQuery
 ----------------------------
 
-`[flyteidl.plugins.PrestoQuery proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/presto.proto#L10>`_
+`[flyteidl.plugins.PrestoQuery proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/presto.proto#L10>`_
 
 This message works with the 'presto' task type in the SDK and is the object that will be in the 'custom' field
 of a Presto task's TaskTemplate
@@ -41,3 +41,5 @@ schema
 
 statement
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+

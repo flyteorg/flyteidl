@@ -8,7 +8,7 @@ waitable.proto
 flyteidl.plugins.Waitable
 -------------------------
 
-`[flyteidl.plugins.Waitable proto] <https://github.com/flyteorg/flyteidl/blob/master/protos/flyteidl/plugins/waitable.proto#L10>`_
+`[flyteidl.plugins.Waitable proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/waitable.proto#L10>`_
 
 Represents an Execution that was launched and could be waited on.
 
@@ -34,3 +34,5 @@ phase
 
 workflow_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
