@@ -4,10 +4,11 @@
 package coreutils
 
 import (
-	"github.com/go-test/deep"
 	"reflect"
 	"testing"
 	"time"
+	
+	"github.com/go-test/deep"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/flyteorg/flytestdlib/storage"

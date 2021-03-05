@@ -6,6 +6,7 @@ require (
 	github.com/antihax/optional v1.0.0
 	github.com/coreos/go-oidc v2.1.0+incompatible
 	github.com/flyteorg/flytestdlib v0.3.13
+	github.com/go-test/deep v1.0.7
 	github.com/golang/protobuf v1.4.3
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
