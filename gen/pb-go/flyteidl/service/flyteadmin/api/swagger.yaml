@@ -2419,7 +2419,8 @@ paths:
     put:
       tags:
       - "AdminService"
-      description: "Get flyte admin version"
+      description: "Retrieve the Version (including the Build  information) for FlyteAdmin\
+        \ service"
       operationId: "GetVersion"
       parameters:
       - in: "body"

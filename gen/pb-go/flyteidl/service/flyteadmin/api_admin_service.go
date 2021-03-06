@@ -2019,7 +2019,7 @@ func (a *AdminServiceApiService) GetTaskExecutionData(ctx context.Context, idNod
 
 /* 
 AdminServiceApiService
-Get flyte admin version
+Retrieve the Version (including the Build  information) for FlyteAdmin service
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
 

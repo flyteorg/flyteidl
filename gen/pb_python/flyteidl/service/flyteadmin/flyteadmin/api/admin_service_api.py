@@ -2380,7 +2380,7 @@ class AdminServiceApi(object):
     def get_version(self, body, **kwargs):  # noqa: E501
         """get_version  # noqa: E501
 
-        Get flyte admin version  # noqa: E501
+        Retrieve the Version (including the Build  information) for FlyteAdmin service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_version(body, async_req=True)
@@ -2402,7 +2402,7 @@ class AdminServiceApi(object):
     def get_version_with_http_info(self, body, **kwargs):  # noqa: E501
         """get_version  # noqa: E501
 
-        Get flyte admin version  # noqa: E501
+        Retrieve the Version (including the Build  information) for FlyteAdmin service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_version_with_http_info(body, async_req=True)
