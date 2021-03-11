@@ -22982,7 +22982,8 @@ definitions:
       config:
         type: "array"
         description: "Allows extra configs to be available for the container.\nTODO:\
-          \ elaborate on how configs will become available."
+          \ elaborate on how configs will become available.\nDeprecated, please use\
+          \ TaskTemplate.config instead."
         items:
           $ref: "#/definitions/coreKeyValuePair"
       ports:

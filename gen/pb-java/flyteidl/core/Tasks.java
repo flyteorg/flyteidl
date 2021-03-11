@@ -8407,6 +8407,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8417,6 +8418,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8426,6 +8428,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8435,6 +8438,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8445,6 +8449,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8953,6 +8958,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8964,6 +8970,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8976,6 +8983,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8987,6 +8995,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -8998,6 +9007,7 @@ public final class Tasks {
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
+     * Deprecated, please use TaskTemplate.config instead.
      * </pre>
      *
      * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10570,6 +10580,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10585,6 +10596,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10600,6 +10612,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10615,6 +10628,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10637,6 +10651,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10656,6 +10671,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10677,6 +10693,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10699,6 +10716,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10718,6 +10736,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10737,6 +10756,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10757,6 +10777,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10775,6 +10796,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10793,6 +10815,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10805,6 +10828,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10820,6 +10844,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10836,6 +10861,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10848,6 +10874,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
@@ -10861,6 +10888,7 @@ public final class Tasks {
        * <pre>
        * Allows extra configs to be available for the container.
        * TODO: elaborate on how configs will become available.
+       * Deprecated, please use TaskTemplate.config instead.
        * </pre>
        *
        * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>

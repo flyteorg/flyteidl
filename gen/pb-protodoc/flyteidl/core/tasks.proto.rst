@@ -398,6 +398,7 @@ env
 config
   (:ref:`flyteidl.core.KeyValuePair <api_msg_flyteidl.core.KeyValuePair>`) Allows extra configs to be available for the container.
   TODO: elaborate on how configs will become available.
+  Deprecated, please use TaskTemplate.config instead.
   
   
 .. _api_field_flyteidl.core.Container.ports:
@@ -427,7 +428,7 @@ data_config
 flyteidl.core.IOStrategy
 ------------------------
 
-`[flyteidl.core.IOStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L182>`_
+`[flyteidl.core.IOStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L183>`_
 
 Strategy to use when dealing with Blob, Schema, or multipart blob data (large datasets)
 
@@ -456,7 +457,7 @@ upload_mode
 Enum flyteidl.core.IOStrategy.DownloadMode
 ------------------------------------------
 
-`[flyteidl.core.IOStrategy.DownloadMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L184>`_
+`[flyteidl.core.IOStrategy.DownloadMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L185>`_
 
 Mode to use for downloading
 
@@ -484,7 +485,7 @@ DO_NOT_DOWNLOAD
 Enum flyteidl.core.IOStrategy.UploadMode
 ----------------------------------------
 
-`[flyteidl.core.IOStrategy.UploadMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L193>`_
+`[flyteidl.core.IOStrategy.UploadMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L194>`_
 
 Mode to use for uploading
 
@@ -512,7 +513,7 @@ DO_NOT_UPLOAD
 flyteidl.core.DataLoadingConfig
 -------------------------------
 
-`[flyteidl.core.DataLoadingConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L210>`_
+`[flyteidl.core.DataLoadingConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L211>`_
 
 This configuration allows executing raw containers in Flyte using the Flyte CoPilot system.
 Flyte CoPilot, eliminates the needs of flytekit or sdk inside the container. Any inputs required by the users container are side-loaded in the input_path
@@ -570,7 +571,7 @@ io_strategy
 Enum flyteidl.core.DataLoadingConfig.LiteralMapFormat
 -----------------------------------------------------
 
-`[flyteidl.core.DataLoadingConfig.LiteralMapFormat proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L215>`_
+`[flyteidl.core.DataLoadingConfig.LiteralMapFormat proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L216>`_
 
 LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers.
 If the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.

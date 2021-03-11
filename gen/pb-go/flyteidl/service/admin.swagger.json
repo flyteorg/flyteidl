@@ -4906,7 +4906,7 @@
           "items": {
             "$ref": "#/definitions/coreKeyValuePair"
           },
-          "description": "Allows extra configs to be available for the container.\nTODO: elaborate on how configs will become available."
+          "description": "Allows extra configs to be available for the container.\nTODO: elaborate on how configs will become available.\nDeprecated, please use TaskTemplate.config instead."
         },
         "ports": {
           "type": "array",

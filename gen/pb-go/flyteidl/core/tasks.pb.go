@@ -671,6 +671,7 @@ type Container struct {
 	Env []*KeyValuePair `protobuf:"bytes,5,rep,name=env,proto3" json:"env,omitempty"`
 	// Allows extra configs to be available for the container.
 	// TODO: elaborate on how configs will become available.
+	// Deprecated, please use TaskTemplate.config instead.
 	Config []*KeyValuePair `protobuf:"bytes,6,rep,name=config,proto3" json:"config,omitempty"` // Deprecated: Do not use.
 	// Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
 	// not supported on AWS Batch)
