@@ -4151,8 +4151,8 @@ export namespace flyteidl {
             /** TaskTemplate securityContext */
             securityContext?: (flyteidl.core.ISecurityContext|null);
 
-            /** TaskTemplate customConfig */
-            customConfig?: ({ [k: string]: string }|null);
+            /** TaskTemplate config */
+            config?: ({ [k: string]: string }|null);
         }
 
         /** Represents a TaskTemplate. */
@@ -4188,8 +4188,8 @@ export namespace flyteidl {
             /** TaskTemplate securityContext. */
             public securityContext?: (flyteidl.core.ISecurityContext|null);
 
-            /** TaskTemplate customConfig. */
-            public customConfig: { [k: string]: string };
+            /** TaskTemplate config. */
+            public config: { [k: string]: string };
 
             /** TaskTemplate target. */
             public target?: "container";

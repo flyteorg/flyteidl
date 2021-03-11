@@ -371,7 +371,7 @@ func (m *TaskTemplate) Validate() error {
 		}
 	}
 
-	// no validation rules for CustomConfig
+	// no validation rules for Config
 
 	switch m.Target.(type) {
 

@@ -5237,9 +5237,9 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
-    int getCustomConfigCount();
+    int getConfigCount();
     /**
      * <pre>
      * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
@@ -5247,16 +5247,16 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
-    boolean containsCustomConfig(
+    boolean containsConfig(
         java.lang.String key);
     /**
-     * Use {@link #getCustomConfigMap()} instead.
+     * Use {@link #getConfigMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String>
-    getCustomConfig();
+    getConfig();
     /**
      * <pre>
      * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
@@ -5264,10 +5264,10 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
-    getCustomConfigMap();
+    getConfigMap();
     /**
      * <pre>
      * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
@@ -5275,10 +5275,10 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    java.lang.String getCustomConfigOrDefault(
+    java.lang.String getConfigOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
@@ -5288,10 +5288,10 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    java.lang.String getCustomConfigOrThrow(
+    java.lang.String getConfigOrThrow(
         java.lang.String key);
 
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
@@ -5433,15 +5433,15 @@ public final class Tasks {
             }
             case 130: {
               if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                customConfig_ = com.google.protobuf.MapField.newMapField(
-                    CustomConfigDefaultEntryHolder.defaultEntry);
+                config_ = com.google.protobuf.MapField.newMapField(
+                    ConfigDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000100;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              customConfig__ = input.readMessage(
-                  CustomConfigDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              customConfig_.getMutableMap().put(
-                  customConfig__.getKey(), customConfig__.getValue());
+              config__ = input.readMessage(
+                  ConfigDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              config_.getMutableMap().put(
+                  config__.getKey(), config__.getValue());
               break;
             }
             default: {
@@ -5474,7 +5474,7 @@ public final class Tasks {
         int number) {
       switch (number) {
         case 16:
-          return internalGetCustomConfig();
+          return internalGetConfig();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -5778,31 +5778,31 @@ public final class Tasks {
       return getSecurityContext();
     }
 
-    public static final int CUSTOM_CONFIG_FIELD_NUMBER = 16;
-    private static final class CustomConfigDefaultEntryHolder {
+    public static final int CONFIG_FIELD_NUMBER = 16;
+    private static final class ConfigDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.core.Tasks.internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_descriptor, 
+                  flyteidl.core.Tasks.internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> customConfig_;
+        java.lang.String, java.lang.String> config_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetCustomConfig() {
-      if (customConfig_ == null) {
+    internalGetConfig() {
+      if (config_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            CustomConfigDefaultEntryHolder.defaultEntry);
+            ConfigDefaultEntryHolder.defaultEntry);
       }
-      return customConfig_;
+      return config_;
     }
 
-    public int getCustomConfigCount() {
-      return internalGetCustomConfig().getMap().size();
+    public int getConfigCount() {
+      return internalGetConfig().getMap().size();
     }
     /**
      * <pre>
@@ -5811,20 +5811,20 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    public boolean containsCustomConfig(
+    public boolean containsConfig(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetCustomConfig().getMap().containsKey(key);
+      return internalGetConfig().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getCustomConfigMap()} instead.
+     * Use {@link #getConfigMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getCustomConfig() {
-      return getCustomConfigMap();
+    public java.util.Map<java.lang.String, java.lang.String> getConfig() {
+      return getConfigMap();
     }
     /**
      * <pre>
@@ -5833,11 +5833,11 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    public java.util.Map<java.lang.String, java.lang.String> getCustomConfigMap() {
-      return internalGetCustomConfig().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
+      return internalGetConfig().getMap();
     }
     /**
      * <pre>
@@ -5846,15 +5846,15 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    public java.lang.String getCustomConfigOrDefault(
+    public java.lang.String getConfigOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCustomConfig().getMap();
+          internalGetConfig().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
@@ -5864,14 +5864,14 @@ public final class Tasks {
      * reserve the field numbers 1 through 15 for very frequently occurring message elements
      * </pre>
      *
-     * <code>map&lt;string, string&gt; custom_config = 16;</code>
+     * <code>map&lt;string, string&gt; config = 16;</code>
      */
 
-    public java.lang.String getCustomConfigOrThrow(
+    public java.lang.String getConfigOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCustomConfig().getMap();
+          internalGetConfig().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -5919,8 +5919,8 @@ public final class Tasks {
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
-          internalGetCustomConfig(),
-          CustomConfigDefaultEntryHolder.defaultEntry,
+          internalGetConfig(),
+          ConfigDefaultEntryHolder.defaultEntry,
           16);
       unknownFields.writeTo(output);
     }
@@ -5963,14 +5963,14 @@ public final class Tasks {
           .computeMessageSize(8, getSecurityContext());
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetCustomConfig().getMap().entrySet()) {
+           : internalGetConfig().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        customConfig__ = CustomConfigDefaultEntryHolder.defaultEntry.newBuilderForType()
+        config__ = ConfigDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(16, customConfig__);
+            .computeMessageSize(16, config__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6016,8 +6016,8 @@ public final class Tasks {
         if (!getSecurityContext()
             .equals(other.getSecurityContext())) return false;
       }
-      if (!internalGetCustomConfig().equals(
-          other.internalGetCustomConfig())) return false;
+      if (!internalGetConfig().equals(
+          other.internalGetConfig())) return false;
       if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 6:
@@ -6062,9 +6062,9 @@ public final class Tasks {
         hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityContext().hashCode();
       }
-      if (!internalGetCustomConfig().getMap().isEmpty()) {
-        hash = (37 * hash) + CUSTOM_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetCustomConfig().hashCode();
+      if (!internalGetConfig().getMap().isEmpty()) {
+        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetConfig().hashCode();
       }
       switch (targetCase_) {
         case 6:
@@ -6191,7 +6191,7 @@ public final class Tasks {
           int number) {
         switch (number) {
           case 16:
-            return internalGetCustomConfig();
+            return internalGetConfig();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -6202,7 +6202,7 @@ public final class Tasks {
           int number) {
         switch (number) {
           case 16:
-            return internalGetMutableCustomConfig();
+            return internalGetMutableConfig();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -6268,7 +6268,7 @@ public final class Tasks {
           securityContext_ = null;
           securityContextBuilder_ = null;
         }
-        internalGetMutableCustomConfig().clear();
+        internalGetMutableConfig().clear();
         targetCase_ = 0;
         target_ = null;
         return this;
@@ -6333,8 +6333,8 @@ public final class Tasks {
         } else {
           result.securityContext_ = securityContextBuilder_.build();
         }
-        result.customConfig_ = internalGetCustomConfig();
-        result.customConfig_.makeImmutable();
+        result.config_ = internalGetConfig();
+        result.config_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -6407,8 +6407,8 @@ public final class Tasks {
         if (other.hasSecurityContext()) {
           mergeSecurityContext(other.getSecurityContext());
         }
-        internalGetMutableCustomConfig().mergeFrom(
-            other.internalGetCustomConfig());
+        internalGetMutableConfig().mergeFrom(
+            other.internalGetConfig());
         switch (other.getTargetCase()) {
           case CONTAINER: {
             mergeContainer(other.getContainer());
@@ -7511,30 +7511,30 @@ public final class Tasks {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> customConfig_;
+          java.lang.String, java.lang.String> config_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetCustomConfig() {
-        if (customConfig_ == null) {
+      internalGetConfig() {
+        if (config_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              CustomConfigDefaultEntryHolder.defaultEntry);
+              ConfigDefaultEntryHolder.defaultEntry);
         }
-        return customConfig_;
+        return config_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableCustomConfig() {
+      internalGetMutableConfig() {
         onChanged();;
-        if (customConfig_ == null) {
-          customConfig_ = com.google.protobuf.MapField.newMapField(
-              CustomConfigDefaultEntryHolder.defaultEntry);
+        if (config_ == null) {
+          config_ = com.google.protobuf.MapField.newMapField(
+              ConfigDefaultEntryHolder.defaultEntry);
         }
-        if (!customConfig_.isMutable()) {
-          customConfig_ = customConfig_.copy();
+        if (!config_.isMutable()) {
+          config_ = config_.copy();
         }
-        return customConfig_;
+        return config_;
       }
 
-      public int getCustomConfigCount() {
-        return internalGetCustomConfig().getMap().size();
+      public int getConfigCount() {
+        return internalGetConfig().getMap().size();
       }
       /**
        * <pre>
@@ -7543,20 +7543,20 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public boolean containsCustomConfig(
+      public boolean containsConfig(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetCustomConfig().getMap().containsKey(key);
+        return internalGetConfig().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getCustomConfigMap()} instead.
+       * Use {@link #getConfigMap()} instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getCustomConfig() {
-        return getCustomConfigMap();
+      public java.util.Map<java.lang.String, java.lang.String> getConfig() {
+        return getConfigMap();
       }
       /**
        * <pre>
@@ -7565,11 +7565,11 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public java.util.Map<java.lang.String, java.lang.String> getCustomConfigMap() {
-        return internalGetCustomConfig().getMap();
+      public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
+        return internalGetConfig().getMap();
       }
       /**
        * <pre>
@@ -7578,15 +7578,15 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public java.lang.String getCustomConfigOrDefault(
+      public java.lang.String getConfigOrDefault(
           java.lang.String key,
           java.lang.String defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetCustomConfig().getMap();
+            internalGetConfig().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
@@ -7596,22 +7596,22 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public java.lang.String getCustomConfigOrThrow(
+      public java.lang.String getConfigOrThrow(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetCustomConfig().getMap();
+            internalGetConfig().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearCustomConfig() {
-        internalGetMutableCustomConfig().getMutableMap()
+      public Builder clearConfig() {
+        internalGetMutableConfig().getMutableMap()
             .clear();
         return this;
       }
@@ -7622,13 +7622,13 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public Builder removeCustomConfig(
+      public Builder removeConfig(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCustomConfig().getMutableMap()
+        internalGetMutableConfig().getMutableMap()
             .remove(key);
         return this;
       }
@@ -7637,8 +7637,8 @@ public final class Tasks {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
-      getMutableCustomConfig() {
-        return internalGetMutableCustomConfig().getMutableMap();
+      getMutableConfig() {
+        return internalGetMutableConfig().getMutableMap();
       }
       /**
        * <pre>
@@ -7647,14 +7647,14 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
-      public Builder putCustomConfig(
+      public Builder putConfig(
           java.lang.String key,
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCustomConfig().getMutableMap()
+        internalGetMutableConfig().getMutableMap()
             .put(key, value);
         return this;
       }
@@ -7665,12 +7665,12 @@ public final class Tasks {
        * reserve the field numbers 1 through 15 for very frequently occurring message elements
        * </pre>
        *
-       * <code>map&lt;string, string&gt; custom_config = 16;</code>
+       * <code>map&lt;string, string&gt; config = 16;</code>
        */
 
-      public Builder putAllCustomConfig(
+      public Builder putAllConfig(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableCustomConfig().getMutableMap()
+        internalGetMutableConfig().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -13837,10 +13837,10 @@ public final class Tasks {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_descriptor;
+    internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_fieldAccessorTable;
+      internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_ContainerPort_descriptor;
   private static final 
@@ -13893,7 +13893,7 @@ public final class Tasks {
       "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat" +
       "egy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprec" +
       "ated_error_message\030\007 \001(\t\022\027\n\rinterruptibl" +
-      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\326\003\n\014Tas" +
+      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\303\003\n\014Tas" +
       "kTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
       "entifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\013" +
       "2\033.flyteidl.core.TaskMetadata\0220\n\tinterfa" +
@@ -13902,33 +13902,33 @@ public final class Tasks {
       "\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Cont" +
       "ainerH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020se" +
       "curity_context\030\010 \001(\0132\036.flyteidl.core.Sec" +
-      "urityContext\022D\n\rcustom_config\030\020 \003(\0132-.fl" +
-      "yteidl.core.TaskTemplate.CustomConfigEnt" +
-      "ry\0323\n\021CustomConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContainerPo" +
-      "rt\022\026\n\016container_port\030\001 \001(\r\"\241\002\n\tContainer" +
-      "\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args" +
-      "\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.cor" +
-      "e.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core" +
-      ".KeyValuePair\022+\n\006config\030\006 \003(\0132\033.flyteidl" +
-      ".core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.flyt" +
-      "eidl.core.ContainerPort\0225\n\013data_config\030\t" +
-      " \001(\0132 .flyteidl.core.DataLoadingConfig\"\233" +
-      "\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.f" +
-      "lyteidl.core.IOStrategy.DownloadMode\0229\n\013" +
-      "upload_mode\030\002 \001(\0162$.flyteidl.core.IOStra" +
-      "tegy.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNL" +
-      "OAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_N" +
-      "OT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON" +
-      "_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLO" +
-      "AD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 " +
-      "\001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003" +
-      " \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.Dat" +
-      "aLoadingConfig.LiteralMapFormat\022.\n\013io_st" +
-      "rategy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"" +
-      "1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022" +
-      "\t\n\005PROTO\020\002B6Z4github.com/flyteorg/flytei" +
-      "dl/gen/pb-go/flyteidl/coreb\006proto3"
+      "urityContext\0227\n\006config\030\020 \003(\0132\'.flyteidl." +
+      "core.TaskTemplate.ConfigEntry\032-\n\013ConfigE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006" +
+      "target\"\'\n\rContainerPort\022\026\n\016container_por" +
+      "t\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007" +
+      "command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources" +
+      "\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003env\030" +
+      "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022+\n\006co" +
+      "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePair\022" +
+      "+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Container" +
+      "Port\0225\n\013data_config\030\t \001(\0132 .flyteidl.cor" +
+      "e.DataLoadingConfig\"\233\002\n\nIOStrategy\022=\n\rdo" +
+      "wnload_mode\030\001 \001(\0162&.flyteidl.core.IOStra" +
+      "tegy.DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$" +
+      ".flyteidl.core.IOStrategy.UploadMode\"L\n\014" +
+      "DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWN" +
+      "LOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUp" +
+      "loadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_E" +
+      "AGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadin" +
+      "gConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002" +
+      " \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(" +
+      "\01621.flyteidl.core.DataLoadingConfig.Lite" +
+      "ralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyt" +
+      "eidl.core.IOStrategy\"1\n\020LiteralMapFormat" +
+      "\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B6Z4githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13977,12 +13977,12 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
-        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "SecurityContext", "CustomConfig", "Target", });
-    internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_descriptor =
+        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "SecurityContext", "Config", "Target", });
+    internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor =
       internal_static_flyteidl_core_TaskTemplate_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_fieldAccessorTable = new
+    internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_TaskTemplate_CustomConfigEntry_descriptor,
+        internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
       getDescriptor().getMessageTypes().get(4);

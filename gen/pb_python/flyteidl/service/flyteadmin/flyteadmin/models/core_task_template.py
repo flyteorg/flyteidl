@@ -46,7 +46,7 @@ class CoreTaskTemplate(object):
         'container': 'CoreContainer',
         'task_type_version': 'int',
         'security_context': 'CoreSecurityContext',
-        'custom_config': 'dict(str, str)'
+        'config': 'dict(str, str)'
     }
 
     attribute_map = {
@@ -58,10 +58,10 @@ class CoreTaskTemplate(object):
         'container': 'container',
         'task_type_version': 'task_type_version',
         'security_context': 'security_context',
-        'custom_config': 'custom_config'
+        'config': 'config'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None, security_context=None, custom_config=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None, security_context=None, config=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -72,7 +72,7 @@ class CoreTaskTemplate(object):
         self._container = None
         self._task_type_version = None
         self._security_context = None
-        self._custom_config = None
+        self._config = None
         self.discriminator = None
 
         if id is not None:
@@ -91,8 +91,8 @@ class CoreTaskTemplate(object):
             self.task_type_version = task_type_version
         if security_context is not None:
             self.security_context = security_context
-        if custom_config is not None:
-            self.custom_config = custom_config
+        if config is not None:
+            self.config = config
 
     @property
     def id(self):
@@ -277,25 +277,25 @@ class CoreTaskTemplate(object):
         self._security_context = security_context
 
     @property
-    def custom_config(self):
-        """Gets the custom_config of this CoreTaskTemplate.  # noqa: E501
+    def config(self):
+        """Gets the config of this CoreTaskTemplate.  # noqa: E501
 
 
-        :return: The custom_config of this CoreTaskTemplate.  # noqa: E501
+        :return: The config of this CoreTaskTemplate.  # noqa: E501
         :rtype: dict(str, str)
         """
-        return self._custom_config
+        return self._config
 
-    @custom_config.setter
-    def custom_config(self, custom_config):
-        """Sets the custom_config of this CoreTaskTemplate.
+    @config.setter
+    def config(self, config):
+        """Sets the config of this CoreTaskTemplate.
 
 
-        :param custom_config: The custom_config of this CoreTaskTemplate.  # noqa: E501
+        :param config: The config of this CoreTaskTemplate.  # noqa: E501
         :type: dict(str, str)
         """
 
-        self._custom_config = custom_config
+        self._config = config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

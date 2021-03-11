@@ -87,9 +87,9 @@ extern TaskMetadataDefaultTypeInternal _TaskMetadata_default_instance_;
 class TaskTemplate;
 class TaskTemplateDefaultTypeInternal;
 extern TaskTemplateDefaultTypeInternal _TaskTemplate_default_instance_;
-class TaskTemplate_CustomConfigEntry_DoNotUse;
-class TaskTemplate_CustomConfigEntry_DoNotUseDefaultTypeInternal;
-extern TaskTemplate_CustomConfigEntry_DoNotUseDefaultTypeInternal _TaskTemplate_CustomConfigEntry_DoNotUse_default_instance_;
+class TaskTemplate_ConfigEntry_DoNotUse;
+class TaskTemplate_ConfigEntry_DoNotUseDefaultTypeInternal;
+extern TaskTemplate_ConfigEntry_DoNotUseDefaultTypeInternal _TaskTemplate_ConfigEntry_DoNotUse_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -103,7 +103,7 @@ template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
 template<> ::flyteidl::core::TaskMetadata* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata>(Arena*);
 template<> ::flyteidl::core::TaskTemplate* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate>(Arena*);
-template<> ::flyteidl::core::TaskTemplate_CustomConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate_CustomConfigEntry_DoNotUse>(Arena*);
+template<> ::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -880,7 +880,7 @@ class TaskMetadata final :
 };
 // -------------------------------------------------------------------
 
-class TaskTemplate_CustomConfigEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TaskTemplate_CustomConfigEntry_DoNotUse, 
+class TaskTemplate_ConfigEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TaskTemplate_ConfigEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -889,15 +889,15 @@ public:
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<TaskTemplate_CustomConfigEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<TaskTemplate_ConfigEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > SuperType;
-  TaskTemplate_CustomConfigEntry_DoNotUse();
-  TaskTemplate_CustomConfigEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const TaskTemplate_CustomConfigEntry_DoNotUse& other);
-  static const TaskTemplate_CustomConfigEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TaskTemplate_CustomConfigEntry_DoNotUse*>(&_TaskTemplate_CustomConfigEntry_DoNotUse_default_instance_); }
+  TaskTemplate_ConfigEntry_DoNotUse();
+  TaskTemplate_ConfigEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const TaskTemplate_ConfigEntry_DoNotUse& other);
+  static const TaskTemplate_ConfigEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TaskTemplate_ConfigEntry_DoNotUse*>(&_TaskTemplate_ConfigEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) final;
   ::google::protobuf::Metadata GetMetadata() const;
 };
@@ -1005,14 +1005,14 @@ class TaskTemplate final :
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> custom_config = 16;
-  int custom_config_size() const;
-  void clear_custom_config();
-  static const int kCustomConfigFieldNumber = 16;
+  // map<string, string> config = 16;
+  int config_size() const;
+  void clear_config();
+  static const int kConfigFieldNumber = 16;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
-      custom_config() const;
+      config() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_custom_config();
+      mutable_config();
 
   // string type = 2;
   void clear_type();
@@ -1100,11 +1100,11 @@ class TaskTemplate final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::MapField<
-      TaskTemplate_CustomConfigEntry_DoNotUse,
+      TaskTemplate_ConfigEntry_DoNotUse,
       ::std::string, ::std::string,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > custom_config_;
+      0 > config_;
   ::google::protobuf::internal::ArenaStringPtr type_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::core::TaskMetadata* metadata_;
@@ -2736,22 +2736,22 @@ inline void TaskTemplate::set_allocated_security_context(::flyteidl::core::Secur
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.security_context)
 }
 
-// map<string, string> custom_config = 16;
-inline int TaskTemplate::custom_config_size() const {
-  return custom_config_.size();
+// map<string, string> config = 16;
+inline int TaskTemplate::config_size() const {
+  return config_.size();
 }
-inline void TaskTemplate::clear_custom_config() {
-  custom_config_.Clear();
+inline void TaskTemplate::clear_config() {
+  config_.Clear();
 }
 inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-TaskTemplate::custom_config() const {
-  // @@protoc_insertion_point(field_map:flyteidl.core.TaskTemplate.custom_config)
-  return custom_config_.GetMap();
+TaskTemplate::config() const {
+  // @@protoc_insertion_point(field_map:flyteidl.core.TaskTemplate.config)
+  return config_.GetMap();
 }
 inline ::google::protobuf::Map< ::std::string, ::std::string >*
-TaskTemplate::mutable_custom_config() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskTemplate.custom_config)
-  return custom_config_.MutableMap();
+TaskTemplate::mutable_config() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskTemplate.config)
+  return config_.MutableMap();
 }
 
 inline bool TaskTemplate::has_target() const {

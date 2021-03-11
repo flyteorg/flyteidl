@@ -129,7 +129,7 @@ message TaskTemplate {
     // Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
     // to use as required.
     // reserve the field numbers 1 through 15 for very frequently occurring message elements
-    map<string, string> custom_config = 16;
+    map<string, string> config = 16;
 
 }
 

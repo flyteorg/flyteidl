@@ -6224,8 +6224,6 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
-            custom_config:
-              key: "custom_config"
             type: "type"
             interface:
               outputs:
@@ -6280,6 +6278,8 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -6400,8 +6400,6 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
-          custom_config:
-            key: "custom_config"
           type: "type"
           interface:
             outputs:
@@ -6456,6 +6454,8 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          config:
+            key: "config"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -6822,8 +6822,6 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
-              custom_config:
-                key: "custom_config"
               type: "type"
               interface:
                 outputs:
@@ -6878,6 +6876,8 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -6991,8 +6991,6 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
-              custom_config:
-                key: "custom_config"
               type: "type"
               interface:
                 outputs:
@@ -7047,6 +7045,8 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -8903,8 +8903,6 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
-              custom_config:
-                key: "custom_config"
               type: "type"
               interface:
                 outputs:
@@ -8959,6 +8957,8 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -9063,8 +9063,6 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
-              custom_config:
-                key: "custom_config"
               type: "type"
               interface:
                 outputs:
@@ -9119,6 +9117,8 @@ definitions:
                           dimensionality: {}
                           format: "format"
                         simple: {}
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -11848,8 +11848,6 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
-            custom_config:
-              key: "custom_config"
             type: "type"
             interface:
               outputs:
@@ -11904,6 +11902,8 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -12008,8 +12008,6 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
-            custom_config:
-              key: "custom_config"
             type: "type"
             interface:
               outputs:
@@ -12064,6 +12062,8 @@ definitions:
                         dimensionality: {}
                         format: "format"
                       simple: {}
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -14729,8 +14729,6 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
-                custom_config:
-                  key: "custom_config"
                 type: "type"
                 interface:
                   outputs:
@@ -14785,6 +14783,8 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -14889,8 +14889,6 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
-                custom_config:
-                  key: "custom_config"
                 type: "type"
                 interface:
                   outputs:
@@ -14945,6 +14943,8 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -17539,8 +17539,6 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
-                custom_config:
-                  key: "custom_config"
                 type: "type"
                 interface:
                   outputs:
@@ -17595,6 +17593,8 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -17699,8 +17699,6 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
-                custom_config:
-                  key: "custom_config"
                 type: "type"
                 interface:
                   outputs:
@@ -17755,6 +17753,8 @@ definitions:
                             dimensionality: {}
                             format: "format"
                           simple: {}
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -19156,8 +19156,6 @@ definitions:
           name: "name"
           project: "project"
           version: "version"
-        custom_config:
-          key: "custom_config"
         type: "type"
         interface:
           outputs:
@@ -19212,6 +19210,8 @@ definitions:
                     dimensionality: {}
                     format: "format"
                   simple: {}
+        config:
+          key: "config"
         security_context:
           run_as:
             iam_role: "iam_role"
@@ -21835,8 +21835,6 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
-          custom_config:
-            key: "custom_config"
           type: "type"
           interface:
             outputs:
@@ -21891,6 +21889,8 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          config:
+            key: "config"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -21995,8 +21995,6 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
-          custom_config:
-            key: "custom_config"
           type: "type"
           interface:
             outputs:
@@ -22051,6 +22049,8 @@ definitions:
                       dimensionality: {}
                       format: "format"
                     simple: {}
+          config:
+            key: "config"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -24505,7 +24505,7 @@ definitions:
         description: "security_context encapsulates security attributes requested\
           \ to run this task."
         $ref: "#/definitions/coreSecurityContext"
-      custom_config:
+      config:
         type: "object"
         title: "Metadata about the custom defined for this task. This is extensible\
           \ to allow various plugins in the system\nto use as required.\nreserve the\
@@ -24585,8 +24585,6 @@ definitions:
         name: "name"
         project: "project"
         version: "version"
-      custom_config:
-        key: "custom_config"
       type: "type"
       interface:
         outputs:
@@ -24641,6 +24639,8 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
+      config:
+        key: "config"
       security_context:
         run_as:
           iam_role: "iam_role"

@@ -249,7 +249,7 @@ Tasks are registered as a first step in the system.
     "container": "{...}",
     "task_type_version": "...",
     "security_context": "{...}",
-    "custom_config": "{...}"
+    "config": "{...}"
   }
 
 .. _api_field_flyteidl.core.TaskTemplate.id:
@@ -306,9 +306,9 @@ security_context
   (:ref:`flyteidl.core.SecurityContext <api_msg_flyteidl.core.SecurityContext>`) security_context encapsulates security attributes requested to run this task.
   
   
-.. _api_field_flyteidl.core.TaskTemplate.custom_config:
+.. _api_field_flyteidl.core.TaskTemplate.config:
 
-custom_config
+config
   (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
   to use as required.
   reserve the field numbers 1 through 15 for very frequently occurring message elements
