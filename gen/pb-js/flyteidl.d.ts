@@ -4150,6 +4150,9 @@ export namespace flyteidl {
 
             /** TaskTemplate securityContext */
             securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** TaskTemplate customConfig */
+            customConfig?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a TaskTemplate. */
@@ -4184,6 +4187,9 @@ export namespace flyteidl {
 
             /** TaskTemplate securityContext. */
             public securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** TaskTemplate customConfig. */
+            public customConfig?: (google.protobuf.IStruct|null);
 
             /** TaskTemplate target. */
             public target?: "container";

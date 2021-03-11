@@ -9851,6 +9851,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
+             * @property {google.protobuf.IStruct|null} [customConfig] TaskTemplate customConfig
              */
 
             /**
@@ -9932,6 +9933,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskTemplate.prototype.securityContext = null;
 
+            /**
+             * TaskTemplate customConfig.
+             * @member {google.protobuf.IStruct|null|undefined} customConfig
+             * @memberof flyteidl.core.TaskTemplate
+             * @instance
+             */
+            TaskTemplate.prototype.customConfig = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -9986,6 +9995,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 7, wireType 0 =*/56).int32(message.taskTypeVersion);
                 if (message.securityContext != null && message.hasOwnProperty("securityContext"))
                     $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.customConfig != null && message.hasOwnProperty("customConfig"))
+                    $root.google.protobuf.Struct.encode(message.customConfig, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -10030,6 +10041,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.securityContext = $root.flyteidl.core.SecurityContext.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.customConfig = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10089,6 +10103,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.SecurityContext.verify(message.securityContext);
                     if (error)
                         return "securityContext." + error;
+                }
+                if (message.customConfig != null && message.hasOwnProperty("customConfig")) {
+                    let error = $root.google.protobuf.Struct.verify(message.customConfig);
+                    if (error)
+                        return "customConfig." + error;
                 }
                 return null;
             };

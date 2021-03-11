@@ -45,7 +45,8 @@ class CoreTaskTemplate(object):
         'custom': 'ProtobufStruct',
         'container': 'CoreContainer',
         'task_type_version': 'int',
-        'security_context': 'CoreSecurityContext'
+        'security_context': 'CoreSecurityContext',
+        'custom_config': 'ProtobufStruct'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class CoreTaskTemplate(object):
         'custom': 'custom',
         'container': 'container',
         'task_type_version': 'task_type_version',
-        'security_context': 'security_context'
+        'security_context': 'security_context',
+        'custom_config': 'custom_config'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None, security_context=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, task_type_version=None, security_context=None, custom_config=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -70,6 +72,7 @@ class CoreTaskTemplate(object):
         self._container = None
         self._task_type_version = None
         self._security_context = None
+        self._custom_config = None
         self.discriminator = None
 
         if id is not None:
@@ -88,6 +91,8 @@ class CoreTaskTemplate(object):
             self.task_type_version = task_type_version
         if security_context is not None:
             self.security_context = security_context
+        if custom_config is not None:
+            self.custom_config = custom_config
 
     @property
     def id(self):
@@ -270,6 +275,27 @@ class CoreTaskTemplate(object):
         """
 
         self._security_context = security_context
+
+    @property
+    def custom_config(self):
+        """Gets the custom_config of this CoreTaskTemplate.  # noqa: E501
+
+
+        :return: The custom_config of this CoreTaskTemplate.  # noqa: E501
+        :rtype: ProtobufStruct
+        """
+        return self._custom_config
+
+    @custom_config.setter
+    def custom_config(self, custom_config):
+        """Sets the custom_config of this CoreTaskTemplate.
+
+
+        :param custom_config: The custom_config of this CoreTaskTemplate.  # noqa: E501
+        :type: ProtobufStruct
+        """
+
+        self._custom_config = custom_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

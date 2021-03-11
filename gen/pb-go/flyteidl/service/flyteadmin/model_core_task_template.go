@@ -26,4 +26,5 @@ type CoreTaskTemplate struct {
 	TaskTypeVersion int32 `json:"task_type_version,omitempty"`
 	// security_context encapsulates security attributes requested to run this task.
 	SecurityContext *CoreSecurityContext `json:"security_context,omitempty"`
+	CustomConfig *ProtobufStruct `json:"custom_config,omitempty"`
 }

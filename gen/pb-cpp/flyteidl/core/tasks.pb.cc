@@ -279,6 +279,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   offsetof(::flyteidl::core::TaskTemplateDefaultTypeInternal, container_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, task_type_version_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, security_context_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, custom_config_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, target_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ContainerPort, _internal_metadata_),
@@ -323,10 +324,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 14, -1, sizeof(::flyteidl::core::RuntimeMetadata)},
   { 22, -1, sizeof(::flyteidl::core::TaskMetadata)},
   { 35, -1, sizeof(::flyteidl::core::TaskTemplate)},
-  { 49, -1, sizeof(::flyteidl::core::ContainerPort)},
-  { 55, -1, sizeof(::flyteidl::core::Container)},
-  { 68, -1, sizeof(::flyteidl::core::IOStrategy)},
-  { 75, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
+  { 50, -1, sizeof(::flyteidl::core::ContainerPort)},
+  { 56, -1, sizeof(::flyteidl::core::Container)},
+  { 69, -1, sizeof(::flyteidl::core::IOStrategy)},
+  { 76, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -371,7 +372,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat"
   "egy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprec"
   "ated_error_message\030\007 \001(\t\022\027\n\rinterruptibl"
-  "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\333\002\n\014Tas"
+  "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\213\003\n\014Tas"
   "kTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id"
   "entifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\013"
   "2\033.flyteidl.core.TaskMetadata\0220\n\tinterfa"
@@ -380,35 +381,36 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Cont"
   "ainerH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020se"
   "curity_context\030\010 \001(\0132\036.flyteidl.core.Sec"
-  "urityContextB\010\n\006target\"\'\n\rContainerPort\022"
-  "\026\n\016container_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n"
-  "\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 "
-  "\003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core.R"
-  "esources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.Ke"
-  "yValuePair\022+\n\006config\030\006 \003(\0132\033.flyteidl.co"
-  "re.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.flyteid"
-  "l.core.ContainerPort\0225\n\013data_config\030\t \001("
-  "\0132 .flyteidl.core.DataLoadingConfig\"\233\002\n\n"
-  "IOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyt"
-  "eidl.core.IOStrategy.DownloadMode\0229\n\013upl"
-  "oad_mode\030\002 \001(\0162$.flyteidl.core.IOStrateg"
-  "y.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD"
-  "_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_"
-  "DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EX"
-  "IT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020"
-  "\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010"
-  "\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001("
-  "\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.DataLo"
-  "adingConfig.LiteralMapFormat\022.\n\013io_strat"
-  "egy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020"
-  "LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005"
-  "PROTO\020\002B6Z4github.com/flyteorg/flyteidl/"
-  "gen/pb-go/flyteidl/coreb\006proto3"
+  "urityContext\022.\n\rcustom_config\030\020 \001(\0132\027.go"
+  "ogle.protobuf.StructB\010\n\006target\"\'\n\rContai"
+  "nerPort\022\026\n\016container_port\030\001 \001(\r\"\241\002\n\tCont"
+  "ainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n"
+  "\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteid"
+  "l.core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl"
+  ".core.KeyValuePair\022+\n\006config\030\006 \003(\0132\033.fly"
+  "teidl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034"
+  ".flyteidl.core.ContainerPort\0225\n\013data_con"
+  "fig\030\t \001(\0132 .flyteidl.core.DataLoadingCon"
+  "fig\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001("
+  "\0162&.flyteidl.core.IOStrategy.DownloadMod"
+  "e\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.I"
+  "OStrategy.UploadMode\"L\n\014DownloadMode\022\022\n\016"
+  "DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n"
+  "\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLO"
+  "AD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT"
+  "_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabl"
+  "ed\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_p"
+  "ath\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.cor"
+  "e.DataLoadingConfig.LiteralMapFormat\022.\n\013"
+  "io_strategy\030\005 \001(\0132\031.flyteidl.core.IOStra"
+  "tegy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YA"
+  "ML\020\001\022\t\n\005PROTO\020\002B6Z4github.com/flyteorg/f"
+  "lyteidl/gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2231,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2279,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -2373,6 +2375,8 @@ void TaskTemplate::InitAsDefaultInstance() {
       ::flyteidl::core::Container::internal_default_instance());
   ::flyteidl::core::_TaskTemplate_default_instance_._instance.get_mutable()->security_context_ = const_cast< ::flyteidl::core::SecurityContext*>(
       ::flyteidl::core::SecurityContext::internal_default_instance());
+  ::flyteidl::core::_TaskTemplate_default_instance_._instance.get_mutable()->custom_config_ = const_cast< ::google::protobuf::Struct*>(
+      ::google::protobuf::Struct::internal_default_instance());
 }
 class TaskTemplate::HasBitSetters {
  public:
@@ -2382,6 +2386,7 @@ class TaskTemplate::HasBitSetters {
   static const ::google::protobuf::Struct& custom(const TaskTemplate* msg);
   static const ::flyteidl::core::Container& container(const TaskTemplate* msg);
   static const ::flyteidl::core::SecurityContext& security_context(const TaskTemplate* msg);
+  static const ::google::protobuf::Struct& custom_config(const TaskTemplate* msg);
 };
 
 const ::flyteidl::core::Identifier&
@@ -2407,6 +2412,10 @@ TaskTemplate::HasBitSetters::container(const TaskTemplate* msg) {
 const ::flyteidl::core::SecurityContext&
 TaskTemplate::HasBitSetters::security_context(const TaskTemplate* msg) {
   return *msg->security_context_;
+}
+const ::google::protobuf::Struct&
+TaskTemplate::HasBitSetters::custom_config(const TaskTemplate* msg) {
+  return *msg->custom_config_;
 }
 void TaskTemplate::clear_id() {
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
@@ -2446,6 +2455,12 @@ void TaskTemplate::clear_security_context() {
   }
   security_context_ = nullptr;
 }
+void TaskTemplate::clear_custom_config() {
+  if (GetArenaNoVirtual() == nullptr && custom_config_ != nullptr) {
+    delete custom_config_;
+  }
+  custom_config_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskTemplate::kIdFieldNumber;
 const int TaskTemplate::kTypeFieldNumber;
@@ -2455,6 +2470,7 @@ const int TaskTemplate::kCustomFieldNumber;
 const int TaskTemplate::kContainerFieldNumber;
 const int TaskTemplate::kTaskTypeVersionFieldNumber;
 const int TaskTemplate::kSecurityContextFieldNumber;
+const int TaskTemplate::kCustomConfigFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskTemplate::TaskTemplate()
@@ -2495,6 +2511,11 @@ TaskTemplate::TaskTemplate(const TaskTemplate& from)
   } else {
     security_context_ = nullptr;
   }
+  if (from.has_custom_config()) {
+    custom_config_ = new ::google::protobuf::Struct(*from.custom_config_);
+  } else {
+    custom_config_ = nullptr;
+  }
   task_type_version_ = from.task_type_version_;
   clear_has_target();
   switch (from.target_case()) {
@@ -2531,6 +2552,7 @@ void TaskTemplate::SharedDtor() {
   if (this != internal_default_instance()) delete interface_;
   if (this != internal_default_instance()) delete custom_;
   if (this != internal_default_instance()) delete security_context_;
+  if (this != internal_default_instance()) delete custom_config_;
   if (has_target()) {
     clear_target();
   }
@@ -2587,6 +2609,10 @@ void TaskTemplate::Clear() {
     delete security_context_;
   }
   security_context_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && custom_config_ != nullptr) {
+    delete custom_config_;
+  }
+  custom_config_ = nullptr;
   task_type_version_ = 0;
   clear_target();
   _internal_metadata_.Clear();
@@ -2706,6 +2732,19 @@ const char* TaskTemplate::_InternalParse(const char* begin, const char* end, voi
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // .google.protobuf.Struct custom_config = 16;
+      case 16: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 130) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Struct::_InternalParse;
+        object = msg->mutable_custom_config();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -2736,7 +2775,7 @@ bool TaskTemplate::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:flyteidl.core.TaskTemplate)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -2834,6 +2873,17 @@ bool TaskTemplate::MergePartialFromCodedStream(
         break;
       }
 
+      // .google.protobuf.Struct custom_config = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (130 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_custom_config()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2912,6 +2962,12 @@ void TaskTemplate::SerializeWithCachedSizes(
       8, HasBitSetters::security_context(this), output);
   }
 
+  // .google.protobuf.Struct custom_config = 16;
+  if (this->has_custom_config()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      16, HasBitSetters::custom_config(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2983,6 +3039,13 @@ void TaskTemplate::SerializeWithCachedSizes(
         8, HasBitSetters::security_context(this), target);
   }
 
+  // .google.protobuf.Struct custom_config = 16;
+  if (this->has_custom_config()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        16, HasBitSetters::custom_config(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -3044,6 +3107,13 @@ size_t TaskTemplate::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *security_context_);
+  }
+
+  // .google.protobuf.Struct custom_config = 16;
+  if (this->has_custom_config()) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *custom_config_);
   }
 
   // int32 task_type_version = 7;
@@ -3111,6 +3181,9 @@ void TaskTemplate::MergeFrom(const TaskTemplate& from) {
   if (from.has_security_context()) {
     mutable_security_context()->::flyteidl::core::SecurityContext::MergeFrom(from.security_context());
   }
+  if (from.has_custom_config()) {
+    mutable_custom_config()->::google::protobuf::Struct::MergeFrom(from.custom_config());
+  }
   if (from.task_type_version() != 0) {
     set_task_type_version(from.task_type_version());
   }
@@ -3157,6 +3230,7 @@ void TaskTemplate::InternalSwap(TaskTemplate* other) {
   swap(interface_, other->interface_);
   swap(custom_, other->custom_);
   swap(security_context_, other->security_context_);
+  swap(custom_config_, other->custom_config_);
   swap(task_type_version_, other->task_type_version_);
   swap(target_, other->target_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);

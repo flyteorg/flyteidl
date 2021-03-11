@@ -125,6 +125,12 @@ message TaskTemplate {
 
     // security_context encapsulates security attributes requested to run this task.
     SecurityContext security_context = 8;
+
+    // Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+    // to use as required.
+    // reserve the field numbers 1 through 15 for very frequently occurring message elements
+    google.protobuf.Struct custom_config = 16;
+
 }
 
 // ----------------- First class Plugins

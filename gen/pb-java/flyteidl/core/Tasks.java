@@ -5230,6 +5230,37 @@ public final class Tasks {
      */
     flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
 
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    boolean hasCustomConfig();
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    com.google.protobuf.Struct getCustomConfig();
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    com.google.protobuf.StructOrBuilder getCustomConfigOrBuilder();
+
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
   }
   /**
@@ -5363,6 +5394,19 @@ public final class Tasks {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(securityContext_);
                 securityContext_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 130: {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (customConfig_ != null) {
+                subBuilder = customConfig_.toBuilder();
+              }
+              customConfig_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(customConfig_);
+                customConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5688,6 +5732,45 @@ public final class Tasks {
       return getSecurityContext();
     }
 
+    public static final int CUSTOM_CONFIG_FIELD_NUMBER = 16;
+    private com.google.protobuf.Struct customConfig_;
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    public boolean hasCustomConfig() {
+      return customConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    public com.google.protobuf.Struct getCustomConfig() {
+      return customConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customConfig_;
+    }
+    /**
+     * <pre>
+     * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+     * to use as required.
+     * reserve the field numbers 1 through 15 for very frequently occurring message elements
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_config = 16;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getCustomConfigOrBuilder() {
+      return getCustomConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5725,6 +5808,9 @@ public final class Tasks {
       }
       if (securityContext_ != null) {
         output.writeMessage(8, getSecurityContext());
+      }
+      if (customConfig_ != null) {
+        output.writeMessage(16, getCustomConfig());
       }
       unknownFields.writeTo(output);
     }
@@ -5765,6 +5851,10 @@ public final class Tasks {
       if (securityContext_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getSecurityContext());
+      }
+      if (customConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getCustomConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5810,6 +5900,11 @@ public final class Tasks {
         if (!getSecurityContext()
             .equals(other.getSecurityContext())) return false;
       }
+      if (hasCustomConfig() != other.hasCustomConfig()) return false;
+      if (hasCustomConfig()) {
+        if (!getCustomConfig()
+            .equals(other.getCustomConfig())) return false;
+      }
       if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 6:
@@ -5853,6 +5948,10 @@ public final class Tasks {
       if (hasSecurityContext()) {
         hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityContext().hashCode();
+      }
+      if (hasCustomConfig()) {
+        hash = (37 * hash) + CUSTOM_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomConfig().hashCode();
       }
       switch (targetCase_) {
         case 6:
@@ -6034,6 +6133,12 @@ public final class Tasks {
           securityContext_ = null;
           securityContextBuilder_ = null;
         }
+        if (customConfigBuilder_ == null) {
+          customConfig_ = null;
+        } else {
+          customConfig_ = null;
+          customConfigBuilder_ = null;
+        }
         targetCase_ = 0;
         target_ = null;
         return this;
@@ -6095,6 +6200,11 @@ public final class Tasks {
           result.securityContext_ = securityContext_;
         } else {
           result.securityContext_ = securityContextBuilder_.build();
+        }
+        if (customConfigBuilder_ == null) {
+          result.customConfig_ = customConfig_;
+        } else {
+          result.customConfig_ = customConfigBuilder_.build();
         }
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -6166,6 +6276,9 @@ public final class Tasks {
         }
         if (other.hasSecurityContext()) {
           mergeSecurityContext(other.getSecurityContext());
+        }
+        if (other.hasCustomConfig()) {
+          mergeCustomConfig(other.getCustomConfig());
         }
         switch (other.getTargetCase()) {
           case CONTAINER: {
@@ -7265,6 +7378,177 @@ public final class Tasks {
           securityContext_ = null;
         }
         return securityContextBuilder_;
+      }
+
+      private com.google.protobuf.Struct customConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> customConfigBuilder_;
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public boolean hasCustomConfig() {
+        return customConfigBuilder_ != null || customConfig_ != null;
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public com.google.protobuf.Struct getCustomConfig() {
+        if (customConfigBuilder_ == null) {
+          return customConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customConfig_;
+        } else {
+          return customConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public Builder setCustomConfig(com.google.protobuf.Struct value) {
+        if (customConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          customConfig_ = value;
+          onChanged();
+        } else {
+          customConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public Builder setCustomConfig(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (customConfigBuilder_ == null) {
+          customConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          customConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public Builder mergeCustomConfig(com.google.protobuf.Struct value) {
+        if (customConfigBuilder_ == null) {
+          if (customConfig_ != null) {
+            customConfig_ =
+              com.google.protobuf.Struct.newBuilder(customConfig_).mergeFrom(value).buildPartial();
+          } else {
+            customConfig_ = value;
+          }
+          onChanged();
+        } else {
+          customConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public Builder clearCustomConfig() {
+        if (customConfigBuilder_ == null) {
+          customConfig_ = null;
+          onChanged();
+        } else {
+          customConfig_ = null;
+          customConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public com.google.protobuf.Struct.Builder getCustomConfigBuilder() {
+        
+        onChanged();
+        return getCustomConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getCustomConfigOrBuilder() {
+        if (customConfigBuilder_ != null) {
+          return customConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return customConfig_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : customConfig_;
+        }
+      }
+      /**
+       * <pre>
+       * Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+       * to use as required.
+       * reserve the field numbers 1 through 15 for very frequently occurring message elements
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_config = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getCustomConfigFieldBuilder() {
+        if (customConfigBuilder_ == null) {
+          customConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getCustomConfig(),
+                  getParentForChildren(),
+                  isClean());
+          customConfig_ = null;
+        }
+        return customConfigBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13480,7 +13764,7 @@ public final class Tasks {
       "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat" +
       "egy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprec" +
       "ated_error_message\030\007 \001(\t\022\027\n\rinterruptibl" +
-      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\333\002\n\014Tas" +
+      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\213\003\n\014Tas" +
       "kTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
       "entifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\013" +
       "2\033.flyteidl.core.TaskMetadata\0220\n\tinterfa" +
@@ -13489,30 +13773,31 @@ public final class Tasks {
       "\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Cont" +
       "ainerH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020se" +
       "curity_context\030\010 \001(\0132\036.flyteidl.core.Sec" +
-      "urityContextB\010\n\006target\"\'\n\rContainerPort\022" +
-      "\026\n\016container_port\030\001 \001(\r\"\241\002\n\tContainer\022\r\n" +
-      "\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 " +
-      "\003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core.R" +
-      "esources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.Ke" +
-      "yValuePair\022+\n\006config\030\006 \003(\0132\033.flyteidl.co" +
-      "re.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.flyteid" +
-      "l.core.ContainerPort\0225\n\013data_config\030\t \001(" +
-      "\0132 .flyteidl.core.DataLoadingConfig\"\233\002\n\n" +
-      "IOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyt" +
-      "eidl.core.IOStrategy.DownloadMode\0229\n\013upl" +
-      "oad_mode\030\002 \001(\0162$.flyteidl.core.IOStrateg" +
-      "y.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD" +
-      "_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_" +
-      "DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EX" +
-      "IT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020" +
-      "\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010" +
-      "\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(" +
-      "\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.DataLo" +
-      "adingConfig.LiteralMapFormat\022.\n\013io_strat" +
-      "egy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020" +
-      "LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005" +
-      "PROTO\020\002B6Z4github.com/flyteorg/flyteidl/" +
-      "gen/pb-go/flyteidl/coreb\006proto3"
+      "urityContext\022.\n\rcustom_config\030\020 \001(\0132\027.go" +
+      "ogle.protobuf.StructB\010\n\006target\"\'\n\rContai" +
+      "nerPort\022\026\n\016container_port\030\001 \001(\r\"\241\002\n\tCont" +
+      "ainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n" +
+      "\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteid" +
+      "l.core.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl" +
+      ".core.KeyValuePair\022+\n\006config\030\006 \003(\0132\033.fly" +
+      "teidl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034" +
+      ".flyteidl.core.ContainerPort\0225\n\013data_con" +
+      "fig\030\t \001(\0132 .flyteidl.core.DataLoadingCon" +
+      "fig\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(" +
+      "\0162&.flyteidl.core.IOStrategy.DownloadMod" +
+      "e\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.I" +
+      "OStrategy.UploadMode\"L\n\014DownloadMode\022\022\n\016" +
+      "DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n" +
+      "\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLO" +
+      "AD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT" +
+      "_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabl" +
+      "ed\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_p" +
+      "ath\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.cor" +
+      "e.DataLoadingConfig.LiteralMapFormat\022.\n\013" +
+      "io_strategy\030\005 \001(\0132\031.flyteidl.core.IOStra" +
+      "tegy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YA" +
+      "ML\020\001\022\t\n\005PROTO\020\002B6Z4github.com/flyteorg/f" +
+      "lyteidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13561,7 +13846,7 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
-        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "SecurityContext", "Target", });
+        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "TaskTypeVersion", "SecurityContext", "CustomConfig", "Target", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_ContainerPort_fieldAccessorTable = new

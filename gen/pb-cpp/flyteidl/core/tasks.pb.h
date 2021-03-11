@@ -1032,6 +1032,15 @@ class TaskTemplate final :
   ::flyteidl::core::SecurityContext* mutable_security_context();
   void set_allocated_security_context(::flyteidl::core::SecurityContext* security_context);
 
+  // .google.protobuf.Struct custom_config = 16;
+  bool has_custom_config() const;
+  void clear_custom_config();
+  static const int kCustomConfigFieldNumber = 16;
+  const ::google::protobuf::Struct& custom_config() const;
+  ::google::protobuf::Struct* release_custom_config();
+  ::google::protobuf::Struct* mutable_custom_config();
+  void set_allocated_custom_config(::google::protobuf::Struct* custom_config);
+
   // int32 task_type_version = 7;
   void clear_task_type_version();
   static const int kTaskTypeVersionFieldNumber = 7;
@@ -1064,6 +1073,7 @@ class TaskTemplate final :
   ::flyteidl::core::TypedInterface* interface_;
   ::google::protobuf::Struct* custom_;
   ::flyteidl::core::SecurityContext* security_context_;
+  ::google::protobuf::Struct* custom_config_;
   ::google::protobuf::int32 task_type_version_;
   union TargetUnion {
     TargetUnion() {}
@@ -2685,6 +2695,52 @@ inline void TaskTemplate::set_allocated_security_context(::flyteidl::core::Secur
   }
   security_context_ = security_context;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.security_context)
+}
+
+// .google.protobuf.Struct custom_config = 16;
+inline bool TaskTemplate::has_custom_config() const {
+  return this != internal_default_instance() && custom_config_ != nullptr;
+}
+inline const ::google::protobuf::Struct& TaskTemplate::custom_config() const {
+  const ::google::protobuf::Struct* p = custom_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.custom_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Struct*>(
+      &::google::protobuf::_Struct_default_instance_);
+}
+inline ::google::protobuf::Struct* TaskTemplate::release_custom_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.custom_config)
+  
+  ::google::protobuf::Struct* temp = custom_config_;
+  custom_config_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Struct* TaskTemplate::mutable_custom_config() {
+  
+  if (custom_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Struct>(GetArenaNoVirtual());
+    custom_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.custom_config)
+  return custom_config_;
+}
+inline void TaskTemplate::set_allocated_custom_config(::google::protobuf::Struct* custom_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(custom_config_);
+  }
+  if (custom_config) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(custom_config)->GetArena();
+    if (message_arena != submessage_arena) {
+      custom_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, custom_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  custom_config_ = custom_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.custom_config)
 }
 
 inline bool TaskTemplate::has_target() const {

@@ -6224,6 +6224,17 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
+            custom_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
             type: "type"
             interface:
               outputs:
@@ -6398,6 +6409,17 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
+          custom_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
           type: "type"
           interface:
             outputs:
@@ -6818,6 +6840,17 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+              custom_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
               type: "type"
               interface:
                 outputs:
@@ -6985,6 +7018,17 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+              custom_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
               type: "type"
               interface:
                 outputs:
@@ -8895,6 +8939,17 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+              custom_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
               type: "type"
               interface:
                 outputs:
@@ -9053,6 +9108,17 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+              custom_config:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
               type: "type"
               interface:
                 outputs:
@@ -11836,6 +11902,17 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
+            custom_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
             type: "type"
             interface:
               outputs:
@@ -11994,6 +12071,17 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
+            custom_config:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
             type: "type"
             interface:
               outputs:
@@ -14713,6 +14801,17 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+                custom_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
                 type: "type"
                 interface:
                   outputs:
@@ -14871,6 +14970,17 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+                custom_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
                 type: "type"
                 interface:
                   outputs:
@@ -17519,6 +17629,17 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+                custom_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
                 type: "type"
                 interface:
                   outputs:
@@ -17677,6 +17798,17 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+                custom_config:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
                 type: "type"
                 interface:
                   outputs:
@@ -19132,6 +19264,17 @@ definitions:
           name: "name"
           project: "project"
           version: "version"
+        custom_config:
+          fields:
+            key:
+              list_value:
+                values:
+                - null
+                - null
+              number_value: 6.027456183070403
+              string_value: "string_value"
+              null_value: {}
+              bool_value: true
         type: "type"
         interface:
           outputs:
@@ -21809,6 +21952,17 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
+          custom_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
           type: "type"
           interface:
             outputs:
@@ -21967,6 +22121,17 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
+          custom_config:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
           type: "type"
           interface:
             outputs:
@@ -24475,6 +24640,11 @@ definitions:
         description: "security_context encapsulates security attributes requested\
           \ to run this task."
         $ref: "#/definitions/coreSecurityContext"
+      custom_config:
+        title: "Metadata about the custom defined for this task. This is extensible\
+          \ to allow various plugins in the system\nto use as required.\nreserve the\
+          \ field numbers 1 through 15 for very frequently occurring message elements"
+        $ref: "#/definitions/protobufStruct"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -24548,6 +24718,17 @@ definitions:
         name: "name"
         project: "project"
         version: "version"
+      custom_config:
+        fields:
+          key:
+            list_value:
+              values:
+              - null
+              - null
+            number_value: 6.027456183070403
+            string_value: "string_value"
+            null_value: {}
+            bool_value: true
       type: "type"
       interface:
         outputs:
