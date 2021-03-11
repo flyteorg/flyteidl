@@ -1386,16 +1386,16 @@ class Container final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
       env() const;
 
-  // repeated .flyteidl.core.KeyValuePair config = 6;
-  int config_size() const;
-  void clear_config();
-  static const int kConfigFieldNumber = 6;
-  ::flyteidl::core::KeyValuePair* mutable_config(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
+  // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
+  PROTOBUF_DEPRECATED int config_size() const;
+  PROTOBUF_DEPRECATED void clear_config();
+  PROTOBUF_DEPRECATED static const int kConfigFieldNumber = 6;
+  PROTOBUF_DEPRECATED ::flyteidl::core::KeyValuePair* mutable_config(int index);
+  PROTOBUF_DEPRECATED ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
       mutable_config();
-  const ::flyteidl::core::KeyValuePair& config(int index) const;
-  ::flyteidl::core::KeyValuePair* add_config();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
+  PROTOBUF_DEPRECATED const ::flyteidl::core::KeyValuePair& config(int index) const;
+  PROTOBUF_DEPRECATED ::flyteidl::core::KeyValuePair* add_config();
+  PROTOBUF_DEPRECATED const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
       config() const;
 
   // repeated .flyteidl.core.ContainerPort ports = 7;
@@ -3054,7 +3054,7 @@ Container::env() const {
   return env_;
 }
 
-// repeated .flyteidl.core.KeyValuePair config = 6;
+// repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
 inline int Container::config_size() const {
   return config_.size();
 }

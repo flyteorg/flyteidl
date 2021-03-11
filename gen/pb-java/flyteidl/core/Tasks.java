@@ -8409,9 +8409,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    java.util.List<flyteidl.core.Literals.KeyValuePair> 
+    @java.lang.Deprecated java.util.List<flyteidl.core.Literals.KeyValuePair> 
         getConfigList();
     /**
      * <pre>
@@ -8419,27 +8419,27 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    flyteidl.core.Literals.KeyValuePair getConfig(int index);
+    @java.lang.Deprecated flyteidl.core.Literals.KeyValuePair getConfig(int index);
     /**
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    int getConfigCount();
+    @java.lang.Deprecated int getConfigCount();
     /**
      * <pre>
      * Allows extra configs to be available for the container.
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+    @java.lang.Deprecated java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
         getConfigOrBuilderList();
     /**
      * <pre>
@@ -8447,9 +8447,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
+    @java.lang.Deprecated flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
         int index);
 
     /**
@@ -8955,9 +8955,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    public java.util.List<flyteidl.core.Literals.KeyValuePair> getConfigList() {
+    @java.lang.Deprecated public java.util.List<flyteidl.core.Literals.KeyValuePair> getConfigList() {
       return config_;
     }
     /**
@@ -8966,9 +8966,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+    @java.lang.Deprecated public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
         getConfigOrBuilderList() {
       return config_;
     }
@@ -8978,9 +8978,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    public int getConfigCount() {
+    @java.lang.Deprecated public int getConfigCount() {
       return config_.size();
     }
     /**
@@ -8989,9 +8989,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    public flyteidl.core.Literals.KeyValuePair getConfig(int index) {
+    @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePair getConfig(int index) {
       return config_.get(index);
     }
     /**
@@ -9000,9 +9000,9 @@ public final class Tasks {
      * TODO: elaborate on how configs will become available.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
      */
-    public flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
+    @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
         int index) {
       return config_.get(index);
     }
@@ -10572,9 +10572,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public java.util.List<flyteidl.core.Literals.KeyValuePair> getConfigList() {
+      @java.lang.Deprecated public java.util.List<flyteidl.core.Literals.KeyValuePair> getConfigList() {
         if (configBuilder_ == null) {
           return java.util.Collections.unmodifiableList(config_);
         } else {
@@ -10587,9 +10587,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public int getConfigCount() {
+      @java.lang.Deprecated public int getConfigCount() {
         if (configBuilder_ == null) {
           return config_.size();
         } else {
@@ -10602,9 +10602,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.KeyValuePair getConfig(int index) {
+      @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePair getConfig(int index) {
         if (configBuilder_ == null) {
           return config_.get(index);
         } else {
@@ -10617,9 +10617,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder setConfig(
+      @java.lang.Deprecated public Builder setConfig(
           int index, flyteidl.core.Literals.KeyValuePair value) {
         if (configBuilder_ == null) {
           if (value == null) {
@@ -10639,9 +10639,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder setConfig(
+      @java.lang.Deprecated public Builder setConfig(
           int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
         if (configBuilder_ == null) {
           ensureConfigIsMutable();
@@ -10658,9 +10658,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder addConfig(flyteidl.core.Literals.KeyValuePair value) {
+      @java.lang.Deprecated public Builder addConfig(flyteidl.core.Literals.KeyValuePair value) {
         if (configBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10679,9 +10679,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder addConfig(
+      @java.lang.Deprecated public Builder addConfig(
           int index, flyteidl.core.Literals.KeyValuePair value) {
         if (configBuilder_ == null) {
           if (value == null) {
@@ -10701,9 +10701,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder addConfig(
+      @java.lang.Deprecated public Builder addConfig(
           flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
         if (configBuilder_ == null) {
           ensureConfigIsMutable();
@@ -10720,9 +10720,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder addConfig(
+      @java.lang.Deprecated public Builder addConfig(
           int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
         if (configBuilder_ == null) {
           ensureConfigIsMutable();
@@ -10739,9 +10739,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder addAllConfig(
+      @java.lang.Deprecated public Builder addAllConfig(
           java.lang.Iterable<? extends flyteidl.core.Literals.KeyValuePair> values) {
         if (configBuilder_ == null) {
           ensureConfigIsMutable();
@@ -10759,9 +10759,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder clearConfig() {
+      @java.lang.Deprecated public Builder clearConfig() {
         if (configBuilder_ == null) {
           config_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000020);
@@ -10777,9 +10777,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public Builder removeConfig(int index) {
+      @java.lang.Deprecated public Builder removeConfig(int index) {
         if (configBuilder_ == null) {
           ensureConfigIsMutable();
           config_.remove(index);
@@ -10795,9 +10795,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.KeyValuePair.Builder getConfigBuilder(
+      @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePair.Builder getConfigBuilder(
           int index) {
         return getConfigFieldBuilder().getBuilder(index);
       }
@@ -10807,9 +10807,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
+      @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePairOrBuilder getConfigOrBuilder(
           int index) {
         if (configBuilder_ == null) {
           return config_.get(index);  } else {
@@ -10822,9 +10822,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+      @java.lang.Deprecated public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
            getConfigOrBuilderList() {
         if (configBuilder_ != null) {
           return configBuilder_.getMessageOrBuilderList();
@@ -10838,9 +10838,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.KeyValuePair.Builder addConfigBuilder() {
+      @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePair.Builder addConfigBuilder() {
         return getConfigFieldBuilder().addBuilder(
             flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
       }
@@ -10850,9 +10850,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.KeyValuePair.Builder addConfigBuilder(
+      @java.lang.Deprecated public flyteidl.core.Literals.KeyValuePair.Builder addConfigBuilder(
           int index) {
         return getConfigFieldBuilder().addBuilder(
             index, flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
@@ -10863,9 +10863,9 @@ public final class Tasks {
        * TODO: elaborate on how configs will become available.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.KeyValuePair config = 6;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];</code>
        */
-      public java.util.List<flyteidl.core.Literals.KeyValuePair.Builder> 
+      @java.lang.Deprecated public java.util.List<flyteidl.core.Literals.KeyValuePair.Builder> 
            getConfigBuilderList() {
         return getConfigFieldBuilder().getBuilderList();
       }
@@ -13906,29 +13906,29 @@ public final class Tasks {
       "core.TaskTemplate.ConfigEntry\032-\n\013ConfigE" +
       "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006" +
       "target\"\'\n\rContainerPort\022\026\n\016container_por" +
-      "t\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007" +
+      "t\030\001 \001(\r\"\245\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007" +
       "command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources" +
       "\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003env\030" +
-      "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022+\n\006co" +
-      "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePair\022" +
-      "+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Container" +
-      "Port\0225\n\013data_config\030\t \001(\0132 .flyteidl.cor" +
-      "e.DataLoadingConfig\"\233\002\n\nIOStrategy\022=\n\rdo" +
-      "wnload_mode\030\001 \001(\0162&.flyteidl.core.IOStra" +
-      "tegy.DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$" +
-      ".flyteidl.core.IOStrategy.UploadMode\"L\n\014" +
-      "DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWN" +
-      "LOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUp" +
-      "loadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_E" +
-      "AGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadin" +
-      "gConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002" +
-      " \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(" +
-      "\01621.flyteidl.core.DataLoadingConfig.Lite" +
-      "ralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyt" +
-      "eidl.core.IOStrategy\"1\n\020LiteralMapFormat" +
-      "\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B6Z4githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/coreb\006proto3"
+      "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006co" +
+      "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePairB" +
+      "\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Conta" +
+      "inerPort\0225\n\013data_config\030\t \001(\0132 .flyteidl" +
+      ".core.DataLoadingConfig\"\233\002\n\nIOStrategy\022=" +
+      "\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core.IO" +
+      "Strategy.DownloadMode\0229\n\013upload_mode\030\002 \001" +
+      "(\0162$.flyteidl.core.IOStrategy.UploadMode" +
+      "\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017" +
+      "DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E" +
+      "\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLO" +
+      "AD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLo" +
+      "adingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_pa" +
+      "th\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030" +
+      "\004 \001(\01621.flyteidl.core.DataLoadingConfig." +
+      "LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031." +
+      "flyteidl.core.IOStrategy\"1\n\020LiteralMapFo" +
+      "rmat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B6Z4g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

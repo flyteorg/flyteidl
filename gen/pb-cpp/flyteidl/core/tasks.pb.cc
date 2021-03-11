@@ -416,34 +416,34 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "core.TaskTemplate.ConfigEntry\032-\n\013ConfigE"
   "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006"
   "target\"\'\n\rContainerPort\022\026\n\016container_por"
-  "t\030\001 \001(\r\"\241\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007"
+  "t\030\001 \001(\r\"\245\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007"
   "command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources"
   "\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003env\030"
-  "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022+\n\006co"
-  "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePair\022"
-  "+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Container"
-  "Port\0225\n\013data_config\030\t \001(\0132 .flyteidl.cor"
-  "e.DataLoadingConfig\"\233\002\n\nIOStrategy\022=\n\rdo"
-  "wnload_mode\030\001 \001(\0162&.flyteidl.core.IOStra"
-  "tegy.DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$"
-  ".flyteidl.core.IOStrategy.UploadMode\"L\n\014"
-  "DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWN"
-  "LOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUp"
-  "loadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_E"
-  "AGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadin"
-  "gConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002"
-  " \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001("
-  "\01621.flyteidl.core.DataLoadingConfig.Lite"
-  "ralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyt"
-  "eidl.core.IOStrategy\"1\n\020LiteralMapFormat"
-  "\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B6Z4githu"
-  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
-  "dl/coreb\006proto3"
+  "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006co"
+  "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePairB"
+  "\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Conta"
+  "inerPort\0225\n\013data_config\030\t \001(\0132 .flyteidl"
+  ".core.DataLoadingConfig\"\233\002\n\nIOStrategy\022="
+  "\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core.IO"
+  "Strategy.DownloadMode\0229\n\013upload_mode\030\002 \001"
+  "(\0162$.flyteidl.core.IOStrategy.UploadMode"
+  "\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017"
+  "DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E"
+  "\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLO"
+  "AD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLo"
+  "adingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_pa"
+  "th\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030"
+  "\004 \001(\01621.flyteidl.core.DataLoadingConfig."
+  "LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031."
+  "flyteidl.core.IOStrategy\"1\n\020LiteralMapFo"
+  "rmat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B6Z4g"
+  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
+  "yteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2335,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2339,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -3884,7 +3884,7 @@ const char* Container::_InternalParse(const char* begin, const char* end, void* 
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
         break;
       }
-      // repeated .flyteidl.core.KeyValuePair config = 6;
+      // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         do {
@@ -4032,7 +4032,7 @@ bool Container::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .flyteidl.core.KeyValuePair config = 6;
+      // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -4137,7 +4137,7 @@ void Container::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .flyteidl.core.KeyValuePair config = 6;
+  // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->config_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -4220,7 +4220,7 @@ void Container::SerializeWithCachedSizes(
         5, this->env(static_cast<int>(i)), target);
   }
 
-  // repeated .flyteidl.core.KeyValuePair config = 6;
+  // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->config_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -4291,7 +4291,7 @@ size_t Container::ByteSizeLong() const {
     }
   }
 
-  // repeated .flyteidl.core.KeyValuePair config = 6;
+  // repeated .flyteidl.core.KeyValuePair config = 6 [deprecated = true];
   {
     unsigned int count = static_cast<unsigned int>(this->config_size());
     total_size += 1UL * count;
