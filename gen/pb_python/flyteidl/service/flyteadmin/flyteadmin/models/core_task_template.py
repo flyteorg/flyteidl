@@ -46,7 +46,7 @@ class CoreTaskTemplate(object):
         'container': 'CoreContainer',
         'task_type_version': 'int',
         'security_context': 'CoreSecurityContext',
-        'custom_config': 'ProtobufStruct'
+        'custom_config': 'dict(str, str)'
     }
 
     attribute_map = {
@@ -282,7 +282,7 @@ class CoreTaskTemplate(object):
 
 
         :return: The custom_config of this CoreTaskTemplate.  # noqa: E501
-        :rtype: ProtobufStruct
+        :rtype: dict(str, str)
         """
         return self._custom_config
 
@@ -292,7 +292,7 @@ class CoreTaskTemplate(object):
 
 
         :param custom_config: The custom_config of this CoreTaskTemplate.  # noqa: E501
-        :type: ProtobufStruct
+        :type: dict(str, str)
         """
 
         self._custom_config = custom_config

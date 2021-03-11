@@ -309,7 +309,7 @@ security_context
 .. _api_field_flyteidl.core.TaskTemplate.custom_config:
 
 custom_config
-  (:ref:`google.protobuf.Struct <api_msg_google.protobuf.Struct>`) Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Metadata about the custom defined for this task. This is extensible to allow various plugins in the system
   to use as required.
   reserve the field numbers 1 through 15 for very frequently occurring message elements
   

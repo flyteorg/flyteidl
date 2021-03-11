@@ -9851,7 +9851,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
-             * @property {google.protobuf.IStruct|null} [customConfig] TaskTemplate customConfig
+             * @property {Object.<string,string>|null} [customConfig] TaskTemplate customConfig
              */
 
             /**
@@ -9863,6 +9863,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.ITaskTemplate=} [properties] Properties to set
              */
             function TaskTemplate(properties) {
+                this.customConfig = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -9935,11 +9936,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate customConfig.
-             * @member {google.protobuf.IStruct|null|undefined} customConfig
+             * @member {Object.<string,string>} customConfig
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
-            TaskTemplate.prototype.customConfig = null;
+            TaskTemplate.prototype.customConfig = $util.emptyObject;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -9996,7 +9997,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.securityContext != null && message.hasOwnProperty("securityContext"))
                     $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.customConfig != null && message.hasOwnProperty("customConfig"))
-                    $root.google.protobuf.Struct.encode(message.customConfig, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                    for (let keys = Object.keys(message.customConfig), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 16, wireType 2 =*/130).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.customConfig[keys[i]]).ldelim();
                 return writer;
             };
 
@@ -10014,7 +10016,7 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskTemplate.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskTemplate();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskTemplate(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -10043,7 +10045,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.securityContext = $root.flyteidl.core.SecurityContext.decode(reader, reader.uint32());
                         break;
                     case 16:
-                        message.customConfig = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        reader.skip().pos++;
+                        if (message.customConfig === $util.emptyObject)
+                            message.customConfig = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.customConfig[key] = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10105,9 +10112,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "securityContext." + error;
                 }
                 if (message.customConfig != null && message.hasOwnProperty("customConfig")) {
-                    let error = $root.google.protobuf.Struct.verify(message.customConfig);
-                    if (error)
-                        return "customConfig." + error;
+                    if (!$util.isObject(message.customConfig))
+                        return "customConfig: object expected";
+                    let key = Object.keys(message.customConfig);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.customConfig[key[i]]))
+                            return "customConfig: string{k:string} expected";
                 }
                 return null;
             };

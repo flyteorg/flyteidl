@@ -371,15 +371,7 @@ func (m *TaskTemplate) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetCustomConfig()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TaskTemplateValidationError{
-				field:  "CustomConfig",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for CustomConfig
 
 	switch m.Target.(type) {
 
