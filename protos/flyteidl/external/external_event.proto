@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package flyteidl.external;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/external";
+
+import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
+import "flyteidl/core/catalog.proto";
+import "flyteidl/core/workflow_closure.proto";
+import "flyteidl/core/compiler.proto";
+import "flyteidl/admin/event.proto";
+import "flyteidl/admin/common.proto";
+import "flyteidl/admin/execution.proto";
+import "flyteidl/admin/node_execution.proto";
+import "flyteidl/admin/task_execution.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+message WorkflowEventClosure {
+    flyteidl.core.ConnectionSet connections = 1;
+
+    flyteidl.core.LiteralMap computed_input = 2;
+
+    core.Identifier launch_plan        = 3;
+    flyteidl.admin.Annotations annotations = 4;
+    // parent_node_execution
+    flyteidl.admin.ExecutionMetadata metadata = 5;
+    flyteidl.admin.Labels label = 6;
+}
+
+message WorkflowEvent {
+   // Workflow execution id
+   flyteidl.admin.Execution execution = 1;
+
+   WorkflowEventClosure workflow_event_closure = 2;
+}
+
+message NodeEventClosure {
+    string spec_node_id = 1;
+    // Only available when the node is a task node and node is finished
+    oneof taskExecution {
+        flyteidl.admin.TaskExecution finalTaskExecution = 2;
+    }
+    flyteidl.core.Node spec_node = 3;
+    WorkflowEventClosure workflow_event_closure = 4;
+}
+
+
+message NodeEvent {
+    // Unique identifier for this node execution
+    flyteidl.admin.NodeExecution node_execution = 1;
+
+    NodeEventClosure node_event_closure = 2;
+}
+
+message TaskEvent {
+    flyteidl.admin.TaskExecution taskExecution = 1;
+
+}
+
+
+// Instead of creating a new envelope, we can also use the cloudEvent as the envelope
+message Event {
+    string id = 1;
+    string producer_id = 2;
+    google.protobuf.Timestamp occurred_at = 3;
+    oneof event {
+        WorkflowEvent workflowEvent = 4;
+        NodeEvent nodeEvent = 5;
+        TaskEvent taskEvent = 6;
+    }
+}
+
+
