@@ -162,6 +162,7 @@ message Container {
 
     // Allows extra configs to be available for the container.
     // TODO: elaborate on how configs will become available.
+    // Deprecated, please use TaskTemplate.config instead.
     repeated KeyValuePair config = 6 [deprecated = true];
 
     // Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
