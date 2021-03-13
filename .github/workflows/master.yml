@@ -1,0 +1,26 @@
+name: Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  bump-version:
+    name: Bump Version
+    runs-on: ubuntu-latest
+    needs: build-docker # Only to ensure it can successfully build
+    outputs:
+      version: ${{ steps.bump-version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - name: Bump version and push tag
+        id: bump-version
+        uses: anothrNick/github-tag-action@1.17.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
+
