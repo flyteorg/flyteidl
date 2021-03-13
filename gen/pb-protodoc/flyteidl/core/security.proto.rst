@@ -19,15 +19,23 @@ are passed through file mounts.
 .. code-block:: json
 
   {
-    "name": "...",
+    "key": "...",
+    "group": "...",
     "mount_requirement": "..."
   }
 
-.. _api_field_flyteidl.core.Secret.name:
+.. _api_field_flyteidl.core.Secret.key:
 
-name
+key
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
   of the secret management system to require case sensitivity.
+  +required
+  
+  
+.. _api_field_flyteidl.core.Secret.group:
+
+group
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The name of the secret group where to find the key referenced above.
   
   
 .. _api_field_flyteidl.core.Secret.mount_requirement:
@@ -48,10 +56,15 @@ Enum flyteidl.core.Secret.MountType
 `[flyteidl.core.Secret.MountType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L12>`_
 
 
+.. _api_enum_value_flyteidl.core.Secret.MountType.ANY:
+
+ANY
+  *(DEFAULT)* ⁣
+  
 .. _api_enum_value_flyteidl.core.Secret.MountType.ENV_VAR:
 
 ENV_VAR
-  *(DEFAULT)* ⁣ENV_VAR indicates the secret needs to be mounted as an environment variable.
+  ⁣ENV_VAR indicates the secret needs to be mounted as an environment variable.
   
   
 .. _api_enum_value_flyteidl.core.Secret.MountType.FILE:
@@ -66,7 +79,7 @@ FILE
 flyteidl.core.OAuth2Client
 --------------------------
 
-`[flyteidl.core.OAuth2Client proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L32>`_
+`[flyteidl.core.OAuth2Client proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L38>`_
 
 OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task.
 
@@ -97,7 +110,7 @@ client_secret
 flyteidl.core.Identity
 ----------------------
 
-`[flyteidl.core.Identity proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L43>`_
+`[flyteidl.core.Identity proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L49>`_
 
 Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the
 right identity for the execution environment.
@@ -136,7 +149,7 @@ oauth2_client
 flyteidl.core.OAuth2TokenRequest
 --------------------------------
 
-`[flyteidl.core.OAuth2TokenRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L60>`_
+`[flyteidl.core.OAuth2TokenRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L66>`_
 
 OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.
 FLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if
@@ -195,7 +208,7 @@ token_endpoint
 Enum flyteidl.core.OAuth2TokenRequest.Type
 ------------------------------------------
 
-`[flyteidl.core.OAuth2TokenRequest.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L62>`_
+`[flyteidl.core.OAuth2TokenRequest.Type proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L68>`_
 
 Type of the token requested.
 
@@ -211,7 +224,7 @@ CLIENT_CREDENTIALS
 flyteidl.core.SecurityContext
 -----------------------------
 
-`[flyteidl.core.SecurityContext proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L89>`_
+`[flyteidl.core.SecurityContext proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/security.proto#L95>`_
 
 SecurityContext holds security attributes that apply to tasks.
 

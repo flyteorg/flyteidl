@@ -2624,9 +2624,10 @@ definitions:
       \ an environment variable.\n - FILE: FILE indicates the secret needs to be mounted\
       \ as a file."
     enum:
+    - "ANY"
     - "ENV_VAR"
     - "FILE"
-    default: "ENV_VAR"
+    default: "ANY"
   SortDirection:
     type: "string"
     enum:
@@ -2921,7 +2922,8 @@ definitions:
             oauth2_client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             k8s_service_account: "k8s_service_account"
           tokens:
@@ -2930,7 +2932,8 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
@@ -2939,15 +2942,18 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
         labels:
           values:
             key: "values"
@@ -3257,7 +3263,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -3266,7 +3273,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -3275,15 +3283,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
           labels:
             values:
               key: "values"
@@ -3424,7 +3435,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -3433,7 +3445,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -3442,15 +3455,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
           labels:
             values:
               key: "values"
@@ -3649,7 +3665,8 @@ definitions:
           oauth2_client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           k8s_service_account: "k8s_service_account"
         tokens:
@@ -3658,7 +3675,8 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
@@ -3667,15 +3685,18 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
       labels:
         values:
           key: "values"
@@ -4019,7 +4040,8 @@ definitions:
             oauth2_client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             k8s_service_account: "k8s_service_account"
           tokens:
@@ -4028,7 +4050,8 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
@@ -4037,15 +4060,18 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
         labels:
           values:
             key: "values"
@@ -4468,7 +4494,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -4477,7 +4504,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -4486,15 +4514,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
           labels:
             values:
               key: "values"
@@ -4756,7 +4787,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -4765,7 +4797,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -4774,15 +4807,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
           labels:
             values:
               key: "values"
@@ -5028,7 +5064,8 @@ definitions:
           oauth2_client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           k8s_service_account: "k8s_service_account"
         tokens:
@@ -5037,7 +5074,8 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
@@ -5046,15 +5084,18 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
       labels:
         values:
           key: "values"
@@ -6286,7 +6327,8 @@ definitions:
                 oauth2_client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 k8s_service_account: "k8s_service_account"
               tokens:
@@ -6295,7 +6337,8 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
@@ -6304,15 +6347,18 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
   adminTaskClosure:
     type: "object"
     properties:
@@ -6462,7 +6508,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -6471,7 +6518,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -6480,15 +6528,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -6884,7 +6935,8 @@ definitions:
                   oauth2_client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   k8s_service_account: "k8s_service_account"
                 tokens:
@@ -6893,7 +6945,8 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
@@ -6902,15 +6955,18 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
       - id:
           domain: "domain"
           resource_type: {}
@@ -7053,7 +7109,8 @@ definitions:
                   oauth2_client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   k8s_service_account: "k8s_service_account"
                 tokens:
@@ -7062,7 +7119,8 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
@@ -7071,15 +7129,18 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -8965,7 +9026,8 @@ definitions:
                   oauth2_client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   k8s_service_account: "k8s_service_account"
                 tokens:
@@ -8974,7 +9036,8 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
@@ -8983,15 +9046,18 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
           - template:
               container:
                 args:
@@ -9125,7 +9191,8 @@ definitions:
                   oauth2_client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   k8s_service_account: "k8s_service_account"
                 tokens:
@@ -9134,7 +9201,8 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
@@ -9143,15 +9211,18 @@ definitions:
                   client:
                     client_secret:
                       mount_requirement: {}
-                      name: "name"
+                      key: "key"
+                      group: "group"
                     client_id: "client_id"
                   type: {}
                   token_endpoint: "token_endpoint"
                 secrets:
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 - mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
           primary:
             template:
               outputs:
@@ -11910,7 +11981,8 @@ definitions:
                 oauth2_client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 k8s_service_account: "k8s_service_account"
               tokens:
@@ -11919,7 +11991,8 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
@@ -11928,15 +12001,18 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
         - template:
             container:
               args:
@@ -12070,7 +12146,8 @@ definitions:
                 oauth2_client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 k8s_service_account: "k8s_service_account"
               tokens:
@@ -12079,7 +12156,8 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
@@ -12088,15 +12166,18 @@ definitions:
                 client:
                   client_secret:
                     mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   client_id: "client_id"
                 type: {}
                 token_endpoint: "token_endpoint"
               secrets:
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               - mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
         primary:
           template:
             outputs:
@@ -14791,7 +14872,8 @@ definitions:
                     oauth2_client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     k8s_service_account: "k8s_service_account"
                   tokens:
@@ -14800,7 +14882,8 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
@@ -14809,15 +14892,18 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
             - template:
                 container:
                   args:
@@ -14951,7 +15037,8 @@ definitions:
                     oauth2_client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     k8s_service_account: "k8s_service_account"
                   tokens:
@@ -14960,7 +15047,8 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
@@ -14969,15 +15057,18 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
             primary:
               template:
                 outputs:
@@ -17601,7 +17692,8 @@ definitions:
                     oauth2_client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     k8s_service_account: "k8s_service_account"
                   tokens:
@@ -17610,7 +17702,8 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
@@ -17619,15 +17712,18 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
             - template:
                 container:
                   args:
@@ -17761,7 +17857,8 @@ definitions:
                     oauth2_client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     k8s_service_account: "k8s_service_account"
                   tokens:
@@ -17770,7 +17867,8 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
@@ -17779,15 +17877,18 @@ definitions:
                     client:
                       client_secret:
                         mount_requirement: {}
-                        name: "name"
+                        key: "key"
+                        group: "group"
                       client_id: "client_id"
                     type: {}
                     token_endpoint: "token_endpoint"
                   secrets:
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
                   - mount_requirement: {}
-                    name: "name"
+                    key: "key"
+                    group: "group"
             primary:
               template:
                 outputs:
@@ -19218,7 +19319,8 @@ definitions:
             oauth2_client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             k8s_service_account: "k8s_service_account"
           tokens:
@@ -19227,7 +19329,8 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
@@ -19236,15 +19339,18 @@ definitions:
             client:
               client_secret:
                 mount_requirement: {}
-                name: "name"
+                key: "key"
+                group: "group"
               client_id: "client_id"
             type: {}
             token_endpoint: "token_endpoint"
           secrets:
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           - mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -21897,7 +22003,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -21906,7 +22013,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -21915,15 +22023,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
       - template:
           container:
             args:
@@ -22057,7 +22168,8 @@ definitions:
               oauth2_client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               k8s_service_account: "k8s_service_account"
             tokens:
@@ -22066,7 +22178,8 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
@@ -22075,15 +22188,18 @@ definitions:
               client:
                 client_secret:
                   mount_requirement: {}
-                  name: "name"
+                  key: "key"
+                  group: "group"
                 client_id: "client_id"
               type: {}
               token_endpoint: "token_endpoint"
             secrets:
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             - mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
       primary:
         template:
           outputs:
@@ -23198,7 +23314,8 @@ definitions:
       oauth2_client:
         client_secret:
           mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
         client_id: "client_id"
       k8s_service_account: "k8s_service_account"
   coreIfBlock:
@@ -23802,7 +23919,8 @@ definitions:
     example:
       client_secret:
         mount_requirement: {}
-        name: "name"
+        key: "key"
+        group: "group"
       client_id: "client_id"
   coreOAuth2TokenRequest:
     type: "object"
@@ -23840,7 +23958,8 @@ definitions:
       client:
         client_secret:
           mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
         client_id: "client_id"
       type: {}
       token_endpoint: "token_endpoint"
@@ -24257,11 +24376,15 @@ definitions:
   coreSecret:
     type: "object"
     properties:
-      name:
+      key:
         type: "string"
-        description: "The name of the secret to mount. This has to match an existing\
-          \ secret in the system. It's up to the implementation\nof the secret management\
-          \ system to require case sensitivity."
+        title: "The name of the secret to mount. This has to match an existing secret\
+          \ in the system. It's up to the implementation\nof the secret management\
+          \ system to require case sensitivity.\n+required"
+      group:
+        type: "string"
+        description: "The name of the secret group where to find the key referenced\
+          \ above."
       mount_requirement:
         title: "mount_requirement is optional. Indicates where the secret has to be\
           \ mounted. If provided, the execution will fail\nif the underlying key management\
@@ -24276,7 +24399,8 @@ definitions:
       \ if secrets\nare passed through file mounts."
     example:
       mount_requirement: {}
-      name: "name"
+      key: "key"
+      group: "group"
   coreSecurityContext:
     type: "object"
     properties:
@@ -24313,7 +24437,8 @@ definitions:
         oauth2_client:
           client_secret:
             mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           client_id: "client_id"
         k8s_service_account: "k8s_service_account"
       tokens:
@@ -24322,7 +24447,8 @@ definitions:
         client:
           client_secret:
             mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           client_id: "client_id"
         type: {}
         token_endpoint: "token_endpoint"
@@ -24331,15 +24457,18 @@ definitions:
         client:
           client_secret:
             mount_requirement: {}
-            name: "name"
+            key: "key"
+            group: "group"
           client_id: "client_id"
         type: {}
         token_endpoint: "token_endpoint"
       secrets:
       - mount_requirement: {}
-        name: "name"
+        key: "key"
+        group: "group"
       - mount_requirement: {}
-        name: "name"
+        key: "key"
+        group: "group"
   coreSimpleType:
     type: "string"
     description: "Define a set of simple types."
@@ -24648,7 +24777,8 @@ definitions:
           oauth2_client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           k8s_service_account: "k8s_service_account"
         tokens:
@@ -24657,7 +24787,8 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
@@ -24666,15 +24797,18 @@ definitions:
           client:
             client_secret:
               mount_requirement: {}
-              name: "name"
+              key: "key"
+              group: "group"
             client_id: "client_id"
           type: {}
           token_endpoint: "token_endpoint"
         secrets:
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
         - mount_requirement: {}
-          name: "name"
+          key: "key"
+          group: "group"
   coreTypedInterface:
     type: "object"
     properties:
