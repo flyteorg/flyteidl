@@ -40,3 +40,16 @@ install-piptools:
 .PHONY: doc-requirements.txt
 doc-requirements.txt: doc-requirements.in install-piptools
 	$(call PIP_COMPILE,doc-requirements.in)
+
+
+PLACEHOLDER := "__version__\ =\ \"develop\""
+
+.PHONY: update_version
+update_version:
+	# ensure the placeholder is there. If grep doesn't find the placeholder
+	# it exits with exit code 1 and github actions aborts the build.
+	grep "$(PLACEHOLDER)" "gen/__init__.py"
+	sed -i "s/$(PLACEHOLDER)/__version__ = \"${VERSION}\"/g" "gen/__init__.py"
+
+	grep "$(PLACEHOLDER)" "setup.py"
+	sed -i "s/$(PLACEHOLDER)/__version__ = \"${VERSION}\"/g" "setup.py"
