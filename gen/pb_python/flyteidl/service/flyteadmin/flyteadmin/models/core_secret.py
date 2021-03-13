@@ -84,7 +84,6 @@ class CoreSecret(object):
     def group(self):
         """Gets the group of this CoreSecret.  # noqa: E501
 
-        The name of the secret group where to find the key referenced above.  # noqa: E501
 
         :return: The group of this CoreSecret.  # noqa: E501
         :rtype: str
@@ -95,7 +94,6 @@ class CoreSecret(object):
     def group(self, group):
         """Sets the group of this CoreSecret.
 
-        The name of the secret group where to find the key referenced above.  # noqa: E501
 
         :param group: The group of this CoreSecret.  # noqa: E501
         :type: str

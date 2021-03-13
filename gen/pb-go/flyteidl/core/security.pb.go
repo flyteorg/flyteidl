@@ -23,6 +23,7 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 type Secret_MountType int32
 
 const (
+	// Default case, indicates the client can tolerate either mounting options.
 	Secret_ANY Secret_MountType = 0
 	// ENV_VAR indicates the secret needs to be mounted as an environment variable.
 	Secret_ENV_VAR Secret_MountType = 1
@@ -85,6 +86,7 @@ type Secret struct {
 	// +required
 	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	// The name of the secret group where to find the key referenced above.
+	// +optional
 	Group string `protobuf:"bytes,2,opt,name=group,proto3" json:"group,omitempty"`
 	// mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail
 	// if the underlying key management system cannot satisfy that requirement. If not provided, the default location
@@ -146,8 +148,10 @@ func (m *Secret) GetMountRequirement() Secret_MountType {
 type OAuth2Client struct {
 	// client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
 	// secret requested matches the client_id indicated here.
+	// +required
 	ClientId string `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
 	// client_secret is a reference to the secret used to authenticate the OAuth2 client.
+	// +required
 	ClientSecret         *Secret  `protobuf:"bytes,2,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -262,10 +266,13 @@ func (m *Identity) GetOauth2Client() *OAuth2Client {
 type OAuth2TokenRequest struct {
 	// name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
 	// environment variables and as a filename for mounting tokens as files.
+	// +required
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+	// +required
 	Type OAuth2TokenRequest_Type `protobuf:"varint,2,opt,name=type,proto3,enum=flyteidl.core.OAuth2TokenRequest_Type" json:"type,omitempty"`
 	// client references the client_id/secret to use to request the OAuth2 token.
+	// +required
 	Client *OAuth2Client `protobuf:"bytes,3,opt,name=client,proto3" json:"client,omitempty"`
 	// idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related
 	// information.

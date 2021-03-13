@@ -43,6 +43,7 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret group where to find the key referenced above.
+     * +optional
      * </pre>
      *
      * <code>string group = 2;</code>
@@ -51,6 +52,7 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret group where to find the key referenced above.
+     * +optional
      * </pre>
      *
      * <code>string group = 2;</code>
@@ -187,6 +189,10 @@ public final class Security {
     public enum MountType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       * Default case, indicates the client can tolerate either mounting options.
+       * </pre>
+       *
        * <code>ANY = 0;</code>
        */
       ANY(0),
@@ -210,6 +216,10 @@ public final class Security {
       ;
 
       /**
+       * <pre>
+       * Default case, indicates the client can tolerate either mounting options.
+       * </pre>
+       *
        * <code>ANY = 0;</code>
        */
       public static final int ANY_VALUE = 0;
@@ -355,6 +365,7 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret group where to find the key referenced above.
+     * +optional
      * </pre>
      *
      * <code>string group = 2;</code>
@@ -374,6 +385,7 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret group where to find the key referenced above.
+     * +optional
      * </pre>
      *
      * <code>string group = 2;</code>
@@ -869,6 +881,7 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret group where to find the key referenced above.
+       * +optional
        * </pre>
        *
        * <code>string group = 2;</code>
@@ -888,6 +901,7 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret group where to find the key referenced above.
+       * +optional
        * </pre>
        *
        * <code>string group = 2;</code>
@@ -908,6 +922,7 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret group where to find the key referenced above.
+       * +optional
        * </pre>
        *
        * <code>string group = 2;</code>
@@ -925,6 +940,7 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret group where to find the key referenced above.
+       * +optional
        * </pre>
        *
        * <code>string group = 2;</code>
@@ -938,6 +954,7 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret group where to find the key referenced above.
+       * +optional
        * </pre>
        *
        * <code>string group = 2;</code>
@@ -1094,6 +1111,7 @@ public final class Security {
      * <pre>
      * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
      * secret requested matches the client_id indicated here.
+     * +required
      * </pre>
      *
      * <code>string client_id = 1;</code>
@@ -1103,6 +1121,7 @@ public final class Security {
      * <pre>
      * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
      * secret requested matches the client_id indicated here.
+     * +required
      * </pre>
      *
      * <code>string client_id = 1;</code>
@@ -1113,6 +1132,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1121,6 +1141,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1129,6 +1150,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1236,6 +1258,7 @@ public final class Security {
      * <pre>
      * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
      * secret requested matches the client_id indicated here.
+     * +required
      * </pre>
      *
      * <code>string client_id = 1;</code>
@@ -1256,6 +1279,7 @@ public final class Security {
      * <pre>
      * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
      * secret requested matches the client_id indicated here.
+     * +required
      * </pre>
      *
      * <code>string client_id = 1;</code>
@@ -1279,6 +1303,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1289,6 +1314,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1299,6 +1325,7 @@ public final class Security {
     /**
      * <pre>
      * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1648,6 +1675,7 @@ public final class Security {
        * <pre>
        * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
        * secret requested matches the client_id indicated here.
+       * +required
        * </pre>
        *
        * <code>string client_id = 1;</code>
@@ -1668,6 +1696,7 @@ public final class Security {
        * <pre>
        * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
        * secret requested matches the client_id indicated here.
+       * +required
        * </pre>
        *
        * <code>string client_id = 1;</code>
@@ -1689,6 +1718,7 @@ public final class Security {
        * <pre>
        * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
        * secret requested matches the client_id indicated here.
+       * +required
        * </pre>
        *
        * <code>string client_id = 1;</code>
@@ -1707,6 +1737,7 @@ public final class Security {
        * <pre>
        * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
        * secret requested matches the client_id indicated here.
+       * +required
        * </pre>
        *
        * <code>string client_id = 1;</code>
@@ -1721,6 +1752,7 @@ public final class Security {
        * <pre>
        * client_id is the public id for the client to use. The system will not perform any pre-auth validation that the
        * secret requested matches the client_id indicated here.
+       * +required
        * </pre>
        *
        * <code>string client_id = 1;</code>
@@ -1743,6 +1775,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1753,6 +1786,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1767,6 +1801,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1787,6 +1822,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1805,6 +1841,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1827,6 +1864,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1845,6 +1883,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1857,6 +1896,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -1872,6 +1912,7 @@ public final class Security {
       /**
        * <pre>
        * client_secret is a reference to the secret used to authenticate the OAuth2 client.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Secret client_secret = 2;</code>
@@ -2987,6 +3028,7 @@ public final class Security {
      * <pre>
      * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
      * environment variables and as a filename for mounting tokens as files.
+     * +required
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2996,6 +3038,7 @@ public final class Security {
      * <pre>
      * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
      * environment variables and as a filename for mounting tokens as files.
+     * +required
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3006,6 +3049,7 @@ public final class Security {
     /**
      * <pre>
      * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -3014,6 +3058,7 @@ public final class Security {
     /**
      * <pre>
      * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -3023,6 +3068,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3031,6 +3077,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3039,6 +3086,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3316,6 +3364,7 @@ public final class Security {
      * <pre>
      * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
      * environment variables and as a filename for mounting tokens as files.
+     * +required
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3336,6 +3385,7 @@ public final class Security {
      * <pre>
      * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
      * environment variables and as a filename for mounting tokens as files.
+     * +required
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3359,6 +3409,7 @@ public final class Security {
     /**
      * <pre>
      * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -3369,6 +3420,7 @@ public final class Security {
     /**
      * <pre>
      * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -3384,6 +3436,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3394,6 +3447,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3404,6 +3458,7 @@ public final class Security {
     /**
      * <pre>
      * client references the client_id/secret to use to request the OAuth2 token.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -3899,6 +3954,7 @@ public final class Security {
        * <pre>
        * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
        * environment variables and as a filename for mounting tokens as files.
+       * +required
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3919,6 +3975,7 @@ public final class Security {
        * <pre>
        * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
        * environment variables and as a filename for mounting tokens as files.
+       * +required
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3940,6 +3997,7 @@ public final class Security {
        * <pre>
        * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
        * environment variables and as a filename for mounting tokens as files.
+       * +required
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3958,6 +4016,7 @@ public final class Security {
        * <pre>
        * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
        * environment variables and as a filename for mounting tokens as files.
+       * +required
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3972,6 +4031,7 @@ public final class Security {
        * <pre>
        * name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for
        * environment variables and as a filename for mounting tokens as files.
+       * +required
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3992,6 +4052,7 @@ public final class Security {
       /**
        * <pre>
        * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -4002,6 +4063,7 @@ public final class Security {
       /**
        * <pre>
        * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -4014,6 +4076,7 @@ public final class Security {
       /**
        * <pre>
        * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -4026,6 +4089,7 @@ public final class Security {
       /**
        * <pre>
        * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -4042,6 +4106,7 @@ public final class Security {
       /**
        * <pre>
        * type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2TokenRequest.Type type = 2;</code>
@@ -4059,6 +4124,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4069,6 +4135,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4083,6 +4150,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4103,6 +4171,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4121,6 +4190,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4143,6 +4213,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4161,6 +4232,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4173,6 +4245,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
@@ -4188,6 +4261,7 @@ public final class Security {
       /**
        * <pre>
        * client references the client_id/secret to use to request the OAuth2 token.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.OAuth2Client client = 3;</code>
