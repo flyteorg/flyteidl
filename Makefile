@@ -1,4 +1,5 @@
 #!/bin/bash
+
 export REPOSITORY=flyteidl
 include boilerplate/lyft/golang_test_targets/Makefile
 
@@ -41,12 +42,9 @@ install-piptools:
 doc-requirements.txt: doc-requirements.in install-piptools
 	$(call PIP_COMPILE,doc-requirements.in)
 
-
 PLACEHOLDER := "__version__\ =\ \"develop\""
 
 .PHONY: update_version
 update_version:
-	# ensure the placeholder is there. If grep doesn't find the placeholder
-	# it exits with exit code 1 and github actions aborts the build.
 	grep "$(PLACEHOLDER)" "setup.py"
 	sed -i "s/$(PLACEHOLDER)/__version__ = \"${VERSION}\"/g" "setup.py"
