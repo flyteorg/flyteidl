@@ -37,7 +37,7 @@ public final class Admin {
       "dmin/task_execution.proto\032\034flyteidl/admi" +
       "n/version.proto\032\033flyteidl/admin/common.p" +
       "roto\032,protoc-gen-swagger/options/annotat" +
-      "ions.proto2\245a\n\014AdminService\022\305\002\n\nCreateTa" +
+      "ions.proto2\242a\n\014AdminService\022\305\002\n\nCreateTa" +
       "sk\022!.flyteidl.admin.TaskCreateRequest\032\"." +
       "flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344\223" +
       "\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and reg" +
@@ -343,14 +343,14 @@ public final class Admin {
       "pdateResponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_en" +
       "tities/{resource_type}/{id.project}/{id." +
       "domain}/{id.name}:\001*\222A1\032/Update the fiel" +
-      "ds associated with a NamedEntity\022\277\001\n\nGet" +
+      "ds associated with a NamedEntity\022\274\001\n\nGet" +
       "Version\022!.flyteidl.admin.GetVersionReque" +
-      "st\032\".flyteidl.admin.GetVersionResponse\"j" +
-      "\202\323\344\223\002\021\032\014/api/version:\001*\222AP\032NRetrieve the" +
-      " Version (including the Build  informati" +
-      "on) for FlyteAdmin serviceB9Z7github.com" +
-      "/flyteorg/flyteidl/gen/pb-go/flyteidl/se" +
-      "rviceb\006proto3"
+      "st\032\".flyteidl.admin.GetVersionResponse\"g" +
+      "\202\323\344\223\002\016\022\014/api/version\222AP\032NRetrieve the Ve" +
+      "rsion (including the Build  information)" +
+      " for FlyteAdmin serviceB9Z7github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/servi" +
+      "ceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

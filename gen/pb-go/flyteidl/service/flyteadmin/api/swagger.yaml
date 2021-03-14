@@ -2416,19 +2416,13 @@ paths:
           schema:
             $ref: "#/definitions/adminWorkflow"
   /api/version:
-    put:
+    get:
       tags:
       - "AdminService"
       description: "Retrieve the Version (including the Build  information) for FlyteAdmin\
         \ service"
       operationId: "GetVersion"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/adminGetVersionRequest"
-        x-exportParamName: "Body"
+      parameters: []
       responses:
         200:
           description: "A successful response."
@@ -3741,9 +3735,6 @@ definitions:
     - "HOUR"
     - "DAY"
     default: "MINUTE"
-  adminGetVersionRequest:
-    type: "object"
-    title: "Empty request for GetVersion"
   adminGetVersionResponse:
     type: "object"
     properties:
