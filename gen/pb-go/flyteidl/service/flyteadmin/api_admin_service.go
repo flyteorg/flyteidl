@@ -2034,7 +2034,7 @@ func (a *AdminServiceApiService) GetVersion(ctx context.Context) (AdminGetVersio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/version"
+	localVarPath := a.client.cfg.BasePath + "/api/v1/version"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

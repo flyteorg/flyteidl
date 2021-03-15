@@ -2453,7 +2453,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/version', 'GET',
+            '/api/v1/version', 'GET',
             path_params,
             query_params,
             header_params,
