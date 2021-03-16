@@ -439,13 +439,20 @@ executions for a project namespace.
 .. code-block:: json
 
   {
-    "token": "..."
+    "allocation_token": "...",
+    "namespace": "..."
   }
 
-.. _api_field_flyteidl.event.ManagedResourceInfo.token:
+.. _api_field_flyteidl.event.ManagedResourceInfo.allocation_token:
 
-token
+allocation_token
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique resource ID used to identify this execution when allocating a token.
+  
+  
+.. _api_field_flyteidl.event.ManagedResourceInfo.namespace:
+
+namespace
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Namespace under which this task execution requested an allocation token.
   
   
 
@@ -455,7 +462,7 @@ token
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L176>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
 
 Holds metadata around how a task was executed.
 TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
@@ -492,7 +499,7 @@ managed_resource_info
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L178>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L181>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

@@ -169,7 +169,10 @@ message TaskExecutionEvent {
 // executions for a project namespace.
 message ManagedResourceInfo {
     // Unique resource ID used to identify this execution when allocating a token.
-    string token                         = 1;
+    string allocation_token               = 1;
+
+    // Namespace under which this task execution requested an allocation token.
+    string namespace                      = 2;
 }
 
 // Holds metadata around how a task was executed.

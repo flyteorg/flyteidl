@@ -11616,18 +11616,36 @@ public final class Event {
      * Unique resource ID used to identify this execution when allocating a token.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string allocation_token = 1;</code>
      */
-    java.lang.String getToken();
+    java.lang.String getAllocationToken();
     /**
      * <pre>
      * Unique resource ID used to identify this execution when allocating a token.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string allocation_token = 1;</code>
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getAllocationTokenBytes();
+
+    /**
+     * <pre>
+     * Namespace under which this task execution requested an allocation token.
+     * </pre>
+     *
+     * <code>string namespace = 2;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * Namespace under which this task execution requested an allocation token.
+     * </pre>
+     *
+     * <code>string namespace = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
   }
   /**
    * <pre>
@@ -11647,7 +11665,8 @@ public final class Event {
       super(builder);
     }
     private ManagedResourceInfo() {
-      token_ = "";
+      allocationToken_ = "";
+      namespace_ = "";
     }
 
     @java.lang.Override
@@ -11677,7 +11696,13 @@ public final class Event {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              allocationToken_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
               break;
             }
             default: {
@@ -11712,24 +11737,24 @@ public final class Event {
               flyteidl.event.Event.ManagedResourceInfo.class, flyteidl.event.Event.ManagedResourceInfo.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int ALLOCATION_TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object allocationToken_;
     /**
      * <pre>
      * Unique resource ID used to identify this execution when allocating a token.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string allocation_token = 1;</code>
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getAllocationToken() {
+      java.lang.Object ref = allocationToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        allocationToken_ = s;
         return s;
       }
     }
@@ -11738,16 +11763,58 @@ public final class Event {
      * Unique resource ID used to identify this execution when allocating a token.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string allocation_token = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getAllocationTokenBytes() {
+      java.lang.Object ref = allocationToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        allocationToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * Namespace under which this task execution requested an allocation token.
+     * </pre>
+     *
+     * <code>string namespace = 2;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Namespace under which this task execution requested an allocation token.
+     * </pre>
+     *
+     * <code>string namespace = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -11768,8 +11835,11 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (!getAllocationTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allocationToken_);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, namespace_);
       }
       unknownFields.writeTo(output);
     }
@@ -11780,8 +11850,11 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (!getAllocationTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, allocationToken_);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, namespace_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11798,8 +11871,10 @@ public final class Event {
       }
       flyteidl.event.Event.ManagedResourceInfo other = (flyteidl.event.Event.ManagedResourceInfo) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (!getAllocationToken()
+          .equals(other.getAllocationToken())) return false;
+      if (!getNamespace()
+          .equals(other.getNamespace())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11811,8 +11886,10 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + ALLOCATION_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getAllocationToken().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11951,7 +12028,9 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        allocationToken_ = "";
+
+        namespace_ = "";
 
         return this;
       }
@@ -11979,7 +12058,8 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.ManagedResourceInfo buildPartial() {
         flyteidl.event.Event.ManagedResourceInfo result = new flyteidl.event.Event.ManagedResourceInfo(this);
-        result.token_ = token_;
+        result.allocationToken_ = allocationToken_;
+        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -12028,8 +12108,12 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.ManagedResourceInfo other) {
         if (other == flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getAllocationToken().isEmpty()) {
+          allocationToken_ = other.allocationToken_;
+          onChanged();
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -12061,21 +12145,21 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object allocationToken_ = "";
       /**
        * <pre>
        * Unique resource ID used to identify this execution when allocating a token.
        * </pre>
        *
-       * <code>string token = 1;</code>
+       * <code>string allocation_token = 1;</code>
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getAllocationToken() {
+        java.lang.Object ref = allocationToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          allocationToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -12086,16 +12170,16 @@ public final class Event {
        * Unique resource ID used to identify this execution when allocating a token.
        * </pre>
        *
-       * <code>string token = 1;</code>
+       * <code>string allocation_token = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getAllocationTokenBytes() {
+        java.lang.Object ref = allocationToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          allocationToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -12106,15 +12190,15 @@ public final class Event {
        * Unique resource ID used to identify this execution when allocating a token.
        * </pre>
        *
-       * <code>string token = 1;</code>
+       * <code>string allocation_token = 1;</code>
        */
-      public Builder setToken(
+      public Builder setAllocationToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        allocationToken_ = value;
         onChanged();
         return this;
       }
@@ -12123,11 +12207,11 @@ public final class Event {
        * Unique resource ID used to identify this execution when allocating a token.
        * </pre>
        *
-       * <code>string token = 1;</code>
+       * <code>string allocation_token = 1;</code>
        */
-      public Builder clearToken() {
+      public Builder clearAllocationToken() {
         
-        token_ = getDefaultInstance().getToken();
+        allocationToken_ = getDefaultInstance().getAllocationToken();
         onChanged();
         return this;
       }
@@ -12136,16 +12220,105 @@ public final class Event {
        * Unique resource ID used to identify this execution when allocating a token.
        * </pre>
        *
-       * <code>string token = 1;</code>
+       * <code>string allocation_token = 1;</code>
        */
-      public Builder setTokenBytes(
+      public Builder setAllocationTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        allocationToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * Namespace under which this task execution requested an allocation token.
+       * </pre>
+       *
+       * <code>string namespace = 2;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace under which this task execution requested an allocation token.
+       * </pre>
+       *
+       * <code>string namespace = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Namespace under which this task execution requested an allocation token.
+       * </pre>
+       *
+       * <code>string namespace = 2;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace under which this task execution requested an allocation token.
+       * </pre>
+       *
+       * <code>string namespace = 2;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Namespace under which this task execution requested an allocation token.
+       * </pre>
+       *
+       * <code>string namespace = 2;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
         onChanged();
         return this;
       }
@@ -13627,16 +13800,17 @@ public final class Event {
       ".google.protobuf.Struct\022\025\n\rphase_version" +
       "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(" +
       "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
-      "kExecutionMetadataB\017\n\routput_result\"$\n\023M" +
-      "anagedResourceInfo\022\r\n\005token\030\001 \001(\t\"\361\001\n\025Ta" +
-      "skExecutionMetadata\022K\n\016instance_class\030\020 " +
-      "\001(\01623.flyteidl.event.TaskExecutionMetada" +
-      "ta.InstanceClass\022\026\n\016generated_name\030\001 \001(\t" +
-      "\022B\n\025managed_resource_info\030\002 \003(\0132#.flytei" +
-      "dl.event.ManagedResourceInfo\"/\n\rInstance" +
-      "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z" +
-      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/eventb\006proto3"
+      "kExecutionMetadataB\017\n\routput_result\"B\n\023M" +
+      "anagedResourceInfo\022\030\n\020allocation_token\030\001" +
+      " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\361\001\n\025TaskExecutio" +
+      "nMetadata\022K\n\016instance_class\030\020 \001(\01623.flyt" +
+      "eidl.event.TaskExecutionMetadata.Instanc" +
+      "eClass\022\026\n\016generated_name\030\001 \001(\t\022B\n\025manage" +
+      "d_resource_info\030\002 \003(\0132#.flyteidl.event.M" +
+      "anagedResourceInfo\"/\n\rInstanceClass\022\013\n\007D" +
+      "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e" +
+      "ventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13702,7 +13876,7 @@ public final class Event {
     internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ManagedResourceInfo_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { "AllocationToken", "Namespace", });
     internal_static_flyteidl_event_TaskExecutionMetadata_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new

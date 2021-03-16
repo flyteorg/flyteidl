@@ -31,44 +31,72 @@ class EventManagedResourceInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'token': 'str'
+        'allocation_token': 'str',
+        'namespace': 'str'
     }
 
     attribute_map = {
-        'token': 'token'
+        'allocation_token': 'allocation_token',
+        'namespace': 'namespace'
     }
 
-    def __init__(self, token=None):  # noqa: E501
+    def __init__(self, allocation_token=None, namespace=None):  # noqa: E501
         """EventManagedResourceInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._token = None
+        self._allocation_token = None
+        self._namespace = None
         self.discriminator = None
 
-        if token is not None:
-            self.token = token
+        if allocation_token is not None:
+            self.allocation_token = allocation_token
+        if namespace is not None:
+            self.namespace = namespace
 
     @property
-    def token(self):
-        """Gets the token of this EventManagedResourceInfo.  # noqa: E501
+    def allocation_token(self):
+        """Gets the allocation_token of this EventManagedResourceInfo.  # noqa: E501
 
         Unique resource ID used to identify this execution when allocating a token.  # noqa: E501
 
-        :return: The token of this EventManagedResourceInfo.  # noqa: E501
+        :return: The allocation_token of this EventManagedResourceInfo.  # noqa: E501
         :rtype: str
         """
-        return self._token
+        return self._allocation_token
 
-    @token.setter
-    def token(self, token):
-        """Sets the token of this EventManagedResourceInfo.
+    @allocation_token.setter
+    def allocation_token(self, allocation_token):
+        """Sets the allocation_token of this EventManagedResourceInfo.
 
         Unique resource ID used to identify this execution when allocating a token.  # noqa: E501
 
-        :param token: The token of this EventManagedResourceInfo.  # noqa: E501
+        :param allocation_token: The allocation_token of this EventManagedResourceInfo.  # noqa: E501
         :type: str
         """
 
-        self._token = token
+        self._allocation_token = allocation_token
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this EventManagedResourceInfo.  # noqa: E501
+
+        Namespace under which this task execution requested an allocation token.  # noqa: E501
+
+        :return: The namespace of this EventManagedResourceInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this EventManagedResourceInfo.
+
+        Namespace under which this task execution requested an allocation token.  # noqa: E501
+
+        :param namespace: The namespace of this EventManagedResourceInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     def to_dict(self):
         """Returns the model properties as a dict"""

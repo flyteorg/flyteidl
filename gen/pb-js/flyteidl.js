@@ -13871,7 +13871,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ManagedResourceInfo.
              * @memberof flyteidl.event
              * @interface IManagedResourceInfo
-             * @property {string|null} [token] ManagedResourceInfo token
+             * @property {string|null} [allocationToken] ManagedResourceInfo allocationToken
+             * @property {string|null} [namespace] ManagedResourceInfo namespace
              */
 
             /**
@@ -13890,12 +13891,20 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ManagedResourceInfo token.
-             * @member {string} token
+             * ManagedResourceInfo allocationToken.
+             * @member {string} allocationToken
              * @memberof flyteidl.event.ManagedResourceInfo
              * @instance
              */
-            ManagedResourceInfo.prototype.token = "";
+            ManagedResourceInfo.prototype.allocationToken = "";
+
+            /**
+             * ManagedResourceInfo namespace.
+             * @member {string} namespace
+             * @memberof flyteidl.event.ManagedResourceInfo
+             * @instance
+             */
+            ManagedResourceInfo.prototype.namespace = "";
 
             /**
              * Creates a new ManagedResourceInfo instance using the specified properties.
@@ -13921,8 +13930,10 @@ export const flyteidl = $root.flyteidl = (() => {
             ManagedResourceInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.token != null && message.hasOwnProperty("token"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
+                if (message.allocationToken != null && message.hasOwnProperty("allocationToken"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.allocationToken);
+                if (message.namespace != null && message.hasOwnProperty("namespace"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
                 return writer;
             };
 
@@ -13945,7 +13956,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.token = reader.string();
+                        message.allocationToken = reader.string();
+                        break;
+                    case 2:
+                        message.namespace = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13966,9 +13980,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ManagedResourceInfo.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.token != null && message.hasOwnProperty("token"))
-                    if (!$util.isString(message.token))
-                        return "token: string expected";
+                if (message.allocationToken != null && message.hasOwnProperty("allocationToken"))
+                    if (!$util.isString(message.allocationToken))
+                        return "allocationToken: string expected";
+                if (message.namespace != null && message.hasOwnProperty("namespace"))
+                    if (!$util.isString(message.namespace))
+                        return "namespace: string expected";
                 return null;
             };
 

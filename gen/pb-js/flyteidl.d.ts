@@ -5724,8 +5724,11 @@ export namespace flyteidl {
         /** Properties of a ManagedResourceInfo. */
         interface IManagedResourceInfo {
 
-            /** ManagedResourceInfo token */
-            token?: (string|null);
+            /** ManagedResourceInfo allocationToken */
+            allocationToken?: (string|null);
+
+            /** ManagedResourceInfo namespace */
+            namespace?: (string|null);
         }
 
         /** Represents a ManagedResourceInfo. */
@@ -5737,8 +5740,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.IManagedResourceInfo);
 
-            /** ManagedResourceInfo token. */
-            public token: string;
+            /** ManagedResourceInfo allocationToken. */
+            public allocationToken: string;
+
+            /** ManagedResourceInfo namespace. */
+            public namespace: string;
 
             /**
              * Creates a new ManagedResourceInfo instance using the specified properties.

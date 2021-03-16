@@ -327,7 +327,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fevent_2fevent_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::event::ManagedResourceInfo, token_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::ManagedResourceInfo, allocation_token_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::ManagedResourceInfo, namespace__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -346,7 +347,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 52, -1, sizeof(::flyteidl::event::ParentNodeExecutionMetadata)},
   { 58, -1, sizeof(::flyteidl::event::TaskExecutionEvent)},
   { 79, -1, sizeof(::flyteidl::event::ManagedResourceInfo)},
-  { 85, -1, sizeof(::flyteidl::event::TaskExecutionMetadata)},
+  { 86, -1, sizeof(::flyteidl::event::TaskExecutionMetadata)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -420,21 +421,22 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   ".google.protobuf.Struct\022\025\n\rphase_version"
   "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001("
   "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas"
-  "kExecutionMetadataB\017\n\routput_result\"$\n\023M"
-  "anagedResourceInfo\022\r\n\005token\030\001 \001(\t\"\361\001\n\025Ta"
-  "skExecutionMetadata\022K\n\016instance_class\030\020 "
-  "\001(\01623.flyteidl.event.TaskExecutionMetada"
-  "ta.InstanceClass\022\026\n\016generated_name\030\001 \001(\t"
-  "\022B\n\025managed_resource_info\030\002 \003(\0132#.flytei"
-  "dl.event.ManagedResourceInfo\"/\n\rInstance"
-  "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z"
-  "5github.com/flyteorg/flyteidl/gen/pb-go/"
-  "flyteidl/eventb\006proto3"
+  "kExecutionMetadataB\017\n\routput_result\"B\n\023M"
+  "anagedResourceInfo\022\030\n\020allocation_token\030\001"
+  " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\361\001\n\025TaskExecutio"
+  "nMetadata\022K\n\016instance_class\030\020 \001(\01623.flyt"
+  "eidl.event.TaskExecutionMetadata.Instanc"
+  "eClass\022\026\n\016generated_name\030\001 \001(\t\022B\n\025manage"
+  "d_resource_info\030\002 \003(\0132#.flyteidl.event.M"
+  "anagedResourceInfo\"/\n\rInstanceClass\022\013\n\007D"
+  "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co"
+  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e"
+  "ventb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fevent_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fevent_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto,
-  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2462,
+  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2492,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {
@@ -4951,7 +4953,8 @@ class ManagedResourceInfo::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ManagedResourceInfo::kTokenFieldNumber;
+const int ManagedResourceInfo::kAllocationTokenFieldNumber;
+const int ManagedResourceInfo::kNamespaceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ManagedResourceInfo::ManagedResourceInfo()
@@ -4963,9 +4966,13 @@ ManagedResourceInfo::ManagedResourceInfo(const ManagedResourceInfo& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.token().size() > 0) {
-    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  allocation_token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.allocation_token().size() > 0) {
+    allocation_token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.allocation_token_);
+  }
+  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.namespace_().size() > 0) {
+    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.ManagedResourceInfo)
 }
@@ -4973,7 +4980,8 @@ ManagedResourceInfo::ManagedResourceInfo(const ManagedResourceInfo& from)
 void ManagedResourceInfo::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ManagedResourceInfo_flyteidl_2fevent_2fevent_2eproto.base);
-  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  allocation_token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 ManagedResourceInfo::~ManagedResourceInfo() {
@@ -4982,7 +4990,8 @@ ManagedResourceInfo::~ManagedResourceInfo() {
 }
 
 void ManagedResourceInfo::SharedDtor() {
-  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  allocation_token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  namespace__.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void ManagedResourceInfo::SetCachedSize(int size) const {
@@ -5000,7 +5009,8 @@ void ManagedResourceInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  allocation_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -5017,13 +5027,29 @@ const char* ManagedResourceInfo::_InternalParse(const char* begin, const char* e
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string token = 1;
+      // string allocation_token = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.event.ManagedResourceInfo.token");
-        object = msg->mutable_token();
+        ctx->extra_parse_data().SetFieldName("flyteidl.event.ManagedResourceInfo.allocation_token");
+        object = msg->mutable_allocation_token();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string namespace = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.event.ManagedResourceInfo.namespace");
+        object = msg->mutable_namespace_();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -5067,15 +5093,30 @@ bool ManagedResourceInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string token = 1;
+      // string allocation_token = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_token()));
+                input, this->mutable_allocation_token()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->token().data(), static_cast<int>(this->token().length()),
+            this->allocation_token().data(), static_cast<int>(this->allocation_token().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.event.ManagedResourceInfo.token"));
+            "flyteidl.event.ManagedResourceInfo.allocation_token"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string namespace = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_namespace_()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.event.ManagedResourceInfo.namespace"));
         } else {
           goto handle_unusual;
         }
@@ -5109,14 +5150,24 @@ void ManagedResourceInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string token = 1;
-  if (this->token().size() > 0) {
+  // string allocation_token = 1;
+  if (this->allocation_token().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token().data(), static_cast<int>(this->token().length()),
+      this->allocation_token().data(), static_cast<int>(this->allocation_token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.event.ManagedResourceInfo.token");
+      "flyteidl.event.ManagedResourceInfo.allocation_token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->token(), output);
+      1, this->allocation_token(), output);
+  }
+
+  // string namespace = 2;
+  if (this->namespace_().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.event.ManagedResourceInfo.namespace");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->namespace_(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5132,15 +5183,26 @@ void ManagedResourceInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string token = 1;
-  if (this->token().size() > 0) {
+  // string allocation_token = 1;
+  if (this->allocation_token().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token().data(), static_cast<int>(this->token().length()),
+      this->allocation_token().data(), static_cast<int>(this->allocation_token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.event.ManagedResourceInfo.token");
+      "flyteidl.event.ManagedResourceInfo.allocation_token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->token(), target);
+        1, this->allocation_token(), target);
+  }
+
+  // string namespace = 2;
+  if (this->namespace_().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.event.ManagedResourceInfo.namespace");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->namespace_(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5164,11 +5226,18 @@ size_t ManagedResourceInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string token = 1;
-  if (this->token().size() > 0) {
+  // string allocation_token = 1;
+  if (this->allocation_token().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->token());
+        this->allocation_token());
+  }
+
+  // string namespace = 2;
+  if (this->namespace_().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->namespace_());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5198,9 +5267,13 @@ void ManagedResourceInfo::MergeFrom(const ManagedResourceInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.token().size() > 0) {
+  if (from.allocation_token().size() > 0) {
 
-    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+    allocation_token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.allocation_token_);
+  }
+  if (from.namespace_().size() > 0) {
+
+    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
   }
 }
 
@@ -5229,7 +5302,9 @@ void ManagedResourceInfo::Swap(ManagedResourceInfo* other) {
 void ManagedResourceInfo::InternalSwap(ManagedResourceInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  allocation_token_.Swap(&other->allocation_token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  namespace__.Swap(&other->namespace__, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

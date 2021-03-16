@@ -797,7 +797,9 @@ func (m *ManagedResourceInfo) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Token
+	// no validation rules for AllocationToken
+
+	// no validation rules for Namespace
 
 	return nil
 }

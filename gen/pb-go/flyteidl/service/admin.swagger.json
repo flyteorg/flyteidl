@@ -5883,9 +5883,13 @@
     "eventManagedResourceInfo": {
       "type": "object",
       "properties": {
-        "token": {
+        "allocation_token": {
           "type": "string",
           "description": "Unique resource ID used to identify this execution when allocating a token."
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Namespace under which this task execution requested an allocation token."
         }
       },
       "description": "This message holds task execution metadata specific to resource allocation used to manage concurrent\nexecutions for a project namespace."

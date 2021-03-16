@@ -1488,26 +1488,41 @@ class ManagedResourceInfo final :
 
   // accessors -------------------------------------------------------
 
-  // string token = 1;
-  void clear_token();
-  static const int kTokenFieldNumber = 1;
-  const ::std::string& token() const;
-  void set_token(const ::std::string& value);
+  // string allocation_token = 1;
+  void clear_allocation_token();
+  static const int kAllocationTokenFieldNumber = 1;
+  const ::std::string& allocation_token() const;
+  void set_allocation_token(const ::std::string& value);
   #if LANG_CXX11
-  void set_token(::std::string&& value);
+  void set_allocation_token(::std::string&& value);
   #endif
-  void set_token(const char* value);
-  void set_token(const char* value, size_t size);
-  ::std::string* mutable_token();
-  ::std::string* release_token();
-  void set_allocated_token(::std::string* token);
+  void set_allocation_token(const char* value);
+  void set_allocation_token(const char* value, size_t size);
+  ::std::string* mutable_allocation_token();
+  ::std::string* release_allocation_token();
+  void set_allocated_allocation_token(::std::string* allocation_token);
+
+  // string namespace = 2;
+  void clear_namespace_();
+  static const int kNamespaceFieldNumber = 2;
+  const ::std::string& namespace_() const;
+  void set_namespace_(const ::std::string& value);
+  #if LANG_CXX11
+  void set_namespace_(::std::string&& value);
+  #endif
+  void set_namespace_(const char* value);
+  void set_namespace_(const char* value, size_t size);
+  ::std::string* mutable_namespace_();
+  ::std::string* release_namespace_();
+  void set_allocated_namespace_(::std::string* namespace_);
 
   // @@protoc_insertion_point(class_scope:flyteidl.event.ManagedResourceInfo)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr token_;
+  ::google::protobuf::internal::ArenaStringPtr allocation_token_;
+  ::google::protobuf::internal::ArenaStringPtr namespace__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
 };
@@ -3561,57 +3576,110 @@ inline TaskExecutionEvent::OutputResultCase TaskExecutionEvent::output_result_ca
 
 // ManagedResourceInfo
 
-// string token = 1;
-inline void ManagedResourceInfo::clear_token() {
-  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string allocation_token = 1;
+inline void ManagedResourceInfo::clear_allocation_token() {
+  allocation_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ManagedResourceInfo::token() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.ManagedResourceInfo.token)
-  return token_.GetNoArena();
+inline const ::std::string& ManagedResourceInfo::allocation_token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ManagedResourceInfo.allocation_token)
+  return allocation_token_.GetNoArena();
 }
-inline void ManagedResourceInfo::set_token(const ::std::string& value) {
+inline void ManagedResourceInfo::set_allocation_token(const ::std::string& value) {
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.ManagedResourceInfo.token)
+  allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.ManagedResourceInfo.allocation_token)
 }
 #if LANG_CXX11
-inline void ManagedResourceInfo::set_token(::std::string&& value) {
+inline void ManagedResourceInfo::set_allocation_token(::std::string&& value) {
   
-  token_.SetNoArena(
+  allocation_token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ManagedResourceInfo.token)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ManagedResourceInfo.allocation_token)
 }
 #endif
-inline void ManagedResourceInfo::set_token(const char* value) {
+inline void ManagedResourceInfo::set_allocation_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.ManagedResourceInfo.token)
+  allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ManagedResourceInfo.allocation_token)
 }
-inline void ManagedResourceInfo::set_token(const char* value, size_t size) {
+inline void ManagedResourceInfo::set_allocation_token(const char* value, size_t size) {
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ManagedResourceInfo.token)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ManagedResourceInfo.allocation_token)
 }
-inline ::std::string* ManagedResourceInfo::mutable_token() {
+inline ::std::string* ManagedResourceInfo::mutable_allocation_token() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.ManagedResourceInfo.token)
-  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ManagedResourceInfo.allocation_token)
+  return allocation_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ManagedResourceInfo::release_token() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.ManagedResourceInfo.token)
+inline ::std::string* ManagedResourceInfo::release_allocation_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ManagedResourceInfo.allocation_token)
   
-  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return allocation_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ManagedResourceInfo::set_allocated_token(::std::string* token) {
-  if (token != nullptr) {
+inline void ManagedResourceInfo::set_allocated_allocation_token(::std::string* allocation_token) {
+  if (allocation_token != nullptr) {
     
   } else {
     
   }
-  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ManagedResourceInfo.token)
+  allocation_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), allocation_token);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ManagedResourceInfo.allocation_token)
+}
+
+// string namespace = 2;
+inline void ManagedResourceInfo::clear_namespace_() {
+  namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ManagedResourceInfo::namespace_() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ManagedResourceInfo.namespace)
+  return namespace__.GetNoArena();
+}
+inline void ManagedResourceInfo::set_namespace_(const ::std::string& value) {
+  
+  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.ManagedResourceInfo.namespace)
+}
+#if LANG_CXX11
+inline void ManagedResourceInfo::set_namespace_(::std::string&& value) {
+  
+  namespace__.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ManagedResourceInfo.namespace)
+}
+#endif
+inline void ManagedResourceInfo::set_namespace_(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ManagedResourceInfo.namespace)
+}
+inline void ManagedResourceInfo::set_namespace_(const char* value, size_t size) {
+  
+  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ManagedResourceInfo.namespace)
+}
+inline ::std::string* ManagedResourceInfo::mutable_namespace_() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ManagedResourceInfo.namespace)
+  return namespace__.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ManagedResourceInfo::release_namespace_() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ManagedResourceInfo.namespace)
+  
+  return namespace__.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ManagedResourceInfo::set_allocated_namespace_(::std::string* namespace_) {
+  if (namespace_ != nullptr) {
+    
+  } else {
+    
+  }
+  namespace__.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), namespace_);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ManagedResourceInfo.namespace)
 }
 
 // -------------------------------------------------------------------
