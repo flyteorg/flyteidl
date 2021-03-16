@@ -13999,7 +13999,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface ITaskExecutionMetadata
              * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
-             * @property {string|null} [generatedName] TaskExecutionMetadata generatedName
+             * @property {string|null} [resourceName] TaskExecutionMetadata resourceName
              * @property {Array.<flyteidl.event.IManagedResourceInfo>|null} [managedResourceInfo] TaskExecutionMetadata managedResourceInfo
              */
 
@@ -14028,12 +14028,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.prototype.instanceClass = 0;
 
             /**
-             * TaskExecutionMetadata generatedName.
-             * @member {string} generatedName
+             * TaskExecutionMetadata resourceName.
+             * @member {string} resourceName
              * @memberof flyteidl.event.TaskExecutionMetadata
              * @instance
              */
-            TaskExecutionMetadata.prototype.generatedName = "";
+            TaskExecutionMetadata.prototype.resourceName = "";
 
             /**
              * TaskExecutionMetadata managedResourceInfo.
@@ -14067,8 +14067,8 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.generatedName != null && message.hasOwnProperty("generatedName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.generatedName);
+                if (message.resourceName != null && message.hasOwnProperty("resourceName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.resourceName);
                 if (message.managedResourceInfo != null && message.managedResourceInfo.length)
                     for (let i = 0; i < message.managedResourceInfo.length; ++i)
                         $root.flyteidl.event.ManagedResourceInfo.encode(message.managedResourceInfo[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
@@ -14099,7 +14099,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.instanceClass = reader.int32();
                         break;
                     case 1:
-                        message.generatedName = reader.string();
+                        message.resourceName = reader.string();
                         break;
                     case 2:
                         if (!(message.managedResourceInfo && message.managedResourceInfo.length))
@@ -14133,9 +14133,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         break;
                     }
-                if (message.generatedName != null && message.hasOwnProperty("generatedName"))
-                    if (!$util.isString(message.generatedName))
-                        return "generatedName: string expected";
+                if (message.resourceName != null && message.hasOwnProperty("resourceName"))
+                    if (!$util.isString(message.resourceName))
+                        return "resourceName: string expected";
                 if (message.managedResourceInfo != null && message.hasOwnProperty("managedResourceInfo")) {
                     if (!Array.isArray(message.managedResourceInfo))
                         return "managedResourceInfo: array expected";

@@ -12390,21 +12390,21 @@ public final class Event {
 
     /**
      * <pre>
-     * Generated unique name for this task execution used by the backend.
+     * Unique name for this task execution used by the backend, may be generated.
      * </pre>
      *
-     * <code>string generated_name = 1;</code>
+     * <code>string resource_name = 1;</code>
      */
-    java.lang.String getGeneratedName();
+    java.lang.String getResourceName();
     /**
      * <pre>
-     * Generated unique name for this task execution used by the backend.
+     * Unique name for this task execution used by the backend, may be generated.
      * </pre>
      *
-     * <code>string generated_name = 1;</code>
+     * <code>string resource_name = 1;</code>
      */
     com.google.protobuf.ByteString
-        getGeneratedNameBytes();
+        getResourceNameBytes();
 
     /**
      * <pre>
@@ -12474,7 +12474,7 @@ public final class Event {
     }
     private TaskExecutionMetadata() {
       instanceClass_ = 0;
-      generatedName_ = "";
+      resourceName_ = "";
       managedResourceInfo_ = java.util.Collections.emptyList();
     }
 
@@ -12505,7 +12505,7 @@ public final class Event {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              generatedName_ = s;
+              resourceName_ = s;
               break;
             }
             case 18: {
@@ -12694,42 +12694,42 @@ public final class Event {
       return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
     }
 
-    public static final int GENERATED_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object generatedName_;
+    public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object resourceName_;
     /**
      * <pre>
-     * Generated unique name for this task execution used by the backend.
+     * Unique name for this task execution used by the backend, may be generated.
      * </pre>
      *
-     * <code>string generated_name = 1;</code>
+     * <code>string resource_name = 1;</code>
      */
-    public java.lang.String getGeneratedName() {
-      java.lang.Object ref = generatedName_;
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        generatedName_ = s;
+        resourceName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Generated unique name for this task execution used by the backend.
+     * Unique name for this task execution used by the backend, may be generated.
      * </pre>
      *
-     * <code>string generated_name = 1;</code>
+     * <code>string resource_name = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getGeneratedNameBytes() {
-      java.lang.Object ref = generatedName_;
+        getResourceNameBytes() {
+      java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        generatedName_ = b;
+        resourceName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -12810,8 +12810,8 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getGeneratedNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, generatedName_);
+      if (!getResourceNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
       }
       for (int i = 0; i < managedResourceInfo_.size(); i++) {
         output.writeMessage(2, managedResourceInfo_.get(i));
@@ -12828,8 +12828,8 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (!getGeneratedNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, generatedName_);
+      if (!getResourceNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
       }
       for (int i = 0; i < managedResourceInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -12855,8 +12855,8 @@ public final class Event {
       flyteidl.event.Event.TaskExecutionMetadata other = (flyteidl.event.Event.TaskExecutionMetadata) obj;
 
       if (instanceClass_ != other.instanceClass_) return false;
-      if (!getGeneratedName()
-          .equals(other.getGeneratedName())) return false;
+      if (!getResourceName()
+          .equals(other.getResourceName())) return false;
       if (!getManagedResourceInfoList()
           .equals(other.getManagedResourceInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -12872,8 +12872,8 @@ public final class Event {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INSTANCE_CLASS_FIELD_NUMBER;
       hash = (53 * hash) + instanceClass_;
-      hash = (37 * hash) + GENERATED_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getGeneratedName().hashCode();
+      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceName().hashCode();
       if (getManagedResourceInfoCount() > 0) {
         hash = (37 * hash) + MANAGED_RESOURCE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getManagedResourceInfoList().hashCode();
@@ -13019,7 +13019,7 @@ public final class Event {
         super.clear();
         instanceClass_ = 0;
 
-        generatedName_ = "";
+        resourceName_ = "";
 
         if (managedResourceInfoBuilder_ == null) {
           managedResourceInfo_ = java.util.Collections.emptyList();
@@ -13056,7 +13056,7 @@ public final class Event {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.instanceClass_ = instanceClass_;
-        result.generatedName_ = generatedName_;
+        result.resourceName_ = resourceName_;
         if (managedResourceInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             managedResourceInfo_ = java.util.Collections.unmodifiableList(managedResourceInfo_);
@@ -13118,8 +13118,8 @@ public final class Event {
         if (other.instanceClass_ != 0) {
           setInstanceClassValue(other.getInstanceClassValue());
         }
-        if (!other.getGeneratedName().isEmpty()) {
-          generatedName_ = other.generatedName_;
+        if (!other.getResourceName().isEmpty()) {
+          resourceName_ = other.resourceName_;
           onChanged();
         }
         if (managedResourceInfoBuilder_ == null) {
@@ -13223,21 +13223,21 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object generatedName_ = "";
+      private java.lang.Object resourceName_ = "";
       /**
        * <pre>
-       * Generated unique name for this task execution used by the backend.
+       * Unique name for this task execution used by the backend, may be generated.
        * </pre>
        *
-       * <code>string generated_name = 1;</code>
+       * <code>string resource_name = 1;</code>
        */
-      public java.lang.String getGeneratedName() {
-        java.lang.Object ref = generatedName_;
+      public java.lang.String getResourceName() {
+        java.lang.Object ref = resourceName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          generatedName_ = s;
+          resourceName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -13245,19 +13245,19 @@ public final class Event {
       }
       /**
        * <pre>
-       * Generated unique name for this task execution used by the backend.
+       * Unique name for this task execution used by the backend, may be generated.
        * </pre>
        *
-       * <code>string generated_name = 1;</code>
+       * <code>string resource_name = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getGeneratedNameBytes() {
-        java.lang.Object ref = generatedName_;
+          getResourceNameBytes() {
+        java.lang.Object ref = resourceName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          generatedName_ = b;
+          resourceName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -13265,49 +13265,49 @@ public final class Event {
       }
       /**
        * <pre>
-       * Generated unique name for this task execution used by the backend.
+       * Unique name for this task execution used by the backend, may be generated.
        * </pre>
        *
-       * <code>string generated_name = 1;</code>
+       * <code>string resource_name = 1;</code>
        */
-      public Builder setGeneratedName(
+      public Builder setResourceName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        generatedName_ = value;
+        resourceName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Generated unique name for this task execution used by the backend.
+       * Unique name for this task execution used by the backend, may be generated.
        * </pre>
        *
-       * <code>string generated_name = 1;</code>
+       * <code>string resource_name = 1;</code>
        */
-      public Builder clearGeneratedName() {
+      public Builder clearResourceName() {
         
-        generatedName_ = getDefaultInstance().getGeneratedName();
+        resourceName_ = getDefaultInstance().getResourceName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Generated unique name for this task execution used by the backend.
+       * Unique name for this task execution used by the backend, may be generated.
        * </pre>
        *
-       * <code>string generated_name = 1;</code>
+       * <code>string resource_name = 1;</code>
        */
-      public Builder setGeneratedNameBytes(
+      public Builder setResourceNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        generatedName_ = value;
+        resourceName_ = value;
         onChanged();
         return this;
       }
@@ -13802,15 +13802,15 @@ public final class Event {
       "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
       "kExecutionMetadataB\017\n\routput_result\"B\n\023M" +
       "anagedResourceInfo\022\030\n\020allocation_token\030\001" +
-      " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\361\001\n\025TaskExecutio" +
+      " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\360\001\n\025TaskExecutio" +
       "nMetadata\022K\n\016instance_class\030\020 \001(\01623.flyt" +
       "eidl.event.TaskExecutionMetadata.Instanc" +
-      "eClass\022\026\n\016generated_name\030\001 \001(\t\022B\n\025manage" +
-      "d_resource_info\030\002 \003(\0132#.flyteidl.event.M" +
-      "anagedResourceInfo\"/\n\rInstanceClass\022\013\n\007D" +
-      "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e" +
-      "ventb\006proto3"
+      "eClass\022\025\n\rresource_name\030\001 \001(\t\022B\n\025managed" +
+      "_resource_info\030\002 \003(\0132#.flyteidl.event.Ma" +
+      "nagedResourceInfo\"/\n\rInstanceClass\022\013\n\007DE" +
+      "FAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.com" +
+      "/flyteorg/flyteidl/gen/pb-go/flyteidl/ev" +
+      "entb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13882,7 +13882,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
-        new java.lang.String[] { "InstanceClass", "GeneratedName", "ManagedResourceInfo", });
+        new java.lang.String[] { "InstanceClass", "ResourceName", "ManagedResourceInfo", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

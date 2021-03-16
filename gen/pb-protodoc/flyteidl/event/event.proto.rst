@@ -471,7 +471,7 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 
   {
     "instance_class": "...",
-    "generated_name": "...",
+    "resource_name": "...",
     "managed_resource_info": []
   }
 
@@ -480,10 +480,10 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 instance_class
   (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceClass <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass>`) 
   
-.. _api_field_flyteidl.event.TaskExecutionMetadata.generated_name:
+.. _api_field_flyteidl.event.TaskExecutionMetadata.resource_name:
 
-generated_name
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Generated unique name for this task execution used by the backend.
+resource_name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique name for this task execution used by the backend, may be generated.
   
   
 .. _api_field_flyteidl.event.TaskExecutionMetadata.managed_resource_info:

@@ -5785,8 +5785,8 @@ export namespace flyteidl {
             /** TaskExecutionMetadata instanceClass */
             instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
 
-            /** TaskExecutionMetadata generatedName */
-            generatedName?: (string|null);
+            /** TaskExecutionMetadata resourceName */
+            resourceName?: (string|null);
 
             /** TaskExecutionMetadata managedResourceInfo */
             managedResourceInfo?: (flyteidl.event.IManagedResourceInfo[]|null);
@@ -5804,8 +5804,8 @@ export namespace flyteidl {
             /** TaskExecutionMetadata instanceClass. */
             public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
 
-            /** TaskExecutionMetadata generatedName. */
-            public generatedName: string;
+            /** TaskExecutionMetadata resourceName. */
+            public resourceName: string;
 
             /** TaskExecutionMetadata managedResourceInfo. */
             public managedResourceInfo: flyteidl.event.IManagedResourceInfo[];

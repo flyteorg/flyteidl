@@ -6604,7 +6604,7 @@ definitions:
           namespace: "namespace"
         - allocation_token: "allocation_token"
           namespace: "namespace"
-        generated_name: "generated_name"
+        resource_name: "resource_name"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
         fields:
@@ -6719,7 +6719,7 @@ definitions:
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            generated_name: "generated_name"
+            resource_name: "resource_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -6777,7 +6777,7 @@ definitions:
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            generated_name: "generated_name"
+            resource_name: "resource_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -26075,9 +26075,10 @@ definitions:
     properties:
       instance_class:
         $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
-      generated_name:
+      resource_name:
         type: "string"
-        description: "Generated unique name for this task execution used by the backend."
+        description: "Unique name for this task execution used by the backend, may\
+          \ be generated."
       managed_resource_info:
         type: "array"
         description: "Includes information about resource token allocation (if applicable).\n\
@@ -26094,7 +26095,7 @@ definitions:
         namespace: "namespace"
       - allocation_token: "allocation_token"
         namespace: "namespace"
-      generated_name: "generated_name"
+      resource_name: "resource_name"
   eventWorkflowExecutionEvent:
     type: "object"
     properties:
@@ -26241,7 +26242,7 @@ definitions:
             namespace: "namespace"
           - allocation_token: "allocation_token"
             namespace: "namespace"
-          generated_name: "generated_name"
+          resource_name: "resource_name"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:
           fields:

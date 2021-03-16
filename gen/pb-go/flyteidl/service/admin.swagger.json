@@ -6047,9 +6047,9 @@
         "instance_class": {
           "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
         },
-        "generated_name": {
+        "resource_name": {
           "type": "string",
-          "description": "Generated unique name for this task execution used by the backend."
+          "description": "Unique name for this task execution used by the backend, may be generated."
         },
         "managed_resource_info": {
           "type": "array",

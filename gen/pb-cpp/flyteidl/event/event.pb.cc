@@ -335,7 +335,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fevent_2fevent_2eproto::o
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, instance_class_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, generated_name_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, resource_name_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, managed_resource_info_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -423,20 +423,20 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas"
   "kExecutionMetadataB\017\n\routput_result\"B\n\023M"
   "anagedResourceInfo\022\030\n\020allocation_token\030\001"
-  " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\361\001\n\025TaskExecutio"
+  " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\360\001\n\025TaskExecutio"
   "nMetadata\022K\n\016instance_class\030\020 \001(\01623.flyt"
   "eidl.event.TaskExecutionMetadata.Instanc"
-  "eClass\022\026\n\016generated_name\030\001 \001(\t\022B\n\025manage"
-  "d_resource_info\030\002 \003(\0132#.flyteidl.event.M"
-  "anagedResourceInfo\"/\n\rInstanceClass\022\013\n\007D"
-  "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co"
-  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e"
-  "ventb\006proto3"
+  "eClass\022\025\n\rresource_name\030\001 \001(\t\022B\n\025managed"
+  "_resource_info\030\002 \003(\0132#.flyteidl.event.Ma"
+  "nagedResourceInfo\"/\n\rInstanceClass\022\013\n\007DE"
+  "FAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.com"
+  "/flyteorg/flyteidl/gen/pb-go/flyteidl/ev"
+  "entb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fevent_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fevent_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto,
-  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2492,
+  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2491,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {
@@ -5324,7 +5324,7 @@ class TaskExecutionMetadata::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskExecutionMetadata::kInstanceClassFieldNumber;
-const int TaskExecutionMetadata::kGeneratedNameFieldNumber;
+const int TaskExecutionMetadata::kResourceNameFieldNumber;
 const int TaskExecutionMetadata::kManagedResourceInfoFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -5338,9 +5338,9 @@ TaskExecutionMetadata::TaskExecutionMetadata(const TaskExecutionMetadata& from)
       _internal_metadata_(nullptr),
       managed_resource_info_(from.managed_resource_info_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  generated_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.generated_name().size() > 0) {
-    generated_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.generated_name_);
+  resource_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.resource_name().size() > 0) {
+    resource_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.resource_name_);
   }
   instance_class_ = from.instance_class_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.TaskExecutionMetadata)
@@ -5349,7 +5349,7 @@ TaskExecutionMetadata::TaskExecutionMetadata(const TaskExecutionMetadata& from)
 void TaskExecutionMetadata::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TaskExecutionMetadata_flyteidl_2fevent_2fevent_2eproto.base);
-  generated_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   instance_class_ = 0;
 }
 
@@ -5359,7 +5359,7 @@ TaskExecutionMetadata::~TaskExecutionMetadata() {
 }
 
 void TaskExecutionMetadata::SharedDtor() {
-  generated_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void TaskExecutionMetadata::SetCachedSize(int size) const {
@@ -5378,7 +5378,7 @@ void TaskExecutionMetadata::Clear() {
   (void) cached_has_bits;
 
   managed_resource_info_.Clear();
-  generated_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   instance_class_ = 0;
   _internal_metadata_.Clear();
 }
@@ -5396,13 +5396,13 @@ const char* TaskExecutionMetadata::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string generated_name = 1;
+      // string resource_name = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.event.TaskExecutionMetadata.generated_name");
-        object = msg->mutable_generated_name();
+        ctx->extra_parse_data().SetFieldName("flyteidl.event.TaskExecutionMetadata.resource_name");
+        object = msg->mutable_resource_name();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -5470,15 +5470,15 @@ bool TaskExecutionMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string generated_name = 1;
+      // string resource_name = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_generated_name()));
+                input, this->mutable_resource_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->generated_name().data(), static_cast<int>(this->generated_name().length()),
+            this->resource_name().data(), static_cast<int>(this->resource_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.event.TaskExecutionMetadata.generated_name"));
+            "flyteidl.event.TaskExecutionMetadata.resource_name"));
         } else {
           goto handle_unusual;
         }
@@ -5537,14 +5537,14 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string generated_name = 1;
-  if (this->generated_name().size() > 0) {
+  // string resource_name = 1;
+  if (this->resource_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->generated_name().data(), static_cast<int>(this->generated_name().length()),
+      this->resource_name().data(), static_cast<int>(this->resource_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.event.TaskExecutionMetadata.generated_name");
+      "flyteidl.event.TaskExecutionMetadata.resource_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->generated_name(), output);
+      1, this->resource_name(), output);
   }
 
   // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
@@ -5575,15 +5575,15 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string generated_name = 1;
-  if (this->generated_name().size() > 0) {
+  // string resource_name = 1;
+  if (this->resource_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->generated_name().data(), static_cast<int>(this->generated_name().length()),
+      this->resource_name().data(), static_cast<int>(this->resource_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.event.TaskExecutionMetadata.generated_name");
+      "flyteidl.event.TaskExecutionMetadata.resource_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->generated_name(), target);
+        1, this->resource_name(), target);
   }
 
   // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
@@ -5632,11 +5632,11 @@ size_t TaskExecutionMetadata::ByteSizeLong() const {
     }
   }
 
-  // string generated_name = 1;
-  if (this->generated_name().size() > 0) {
+  // string resource_name = 1;
+  if (this->resource_name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->generated_name());
+        this->resource_name());
   }
 
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
@@ -5673,9 +5673,9 @@ void TaskExecutionMetadata::MergeFrom(const TaskExecutionMetadata& from) {
   (void) cached_has_bits;
 
   managed_resource_info_.MergeFrom(from.managed_resource_info_);
-  if (from.generated_name().size() > 0) {
+  if (from.resource_name().size() > 0) {
 
-    generated_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.generated_name_);
+    resource_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.resource_name_);
   }
   if (from.instance_class() != 0) {
     set_instance_class(from.instance_class());
@@ -5708,7 +5708,7 @@ void TaskExecutionMetadata::InternalSwap(TaskExecutionMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&managed_resource_info_)->InternalSwap(CastToBase(&other->managed_resource_info_));
-  generated_name_.Swap(&other->generated_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  resource_name_.Swap(&other->resource_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(instance_class_, other->instance_class_);
 }

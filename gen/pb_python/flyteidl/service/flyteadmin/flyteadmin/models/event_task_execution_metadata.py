@@ -35,28 +35,28 @@ class EventTaskExecutionMetadata(object):
     """
     swagger_types = {
         'instance_class': 'TaskExecutionMetadataInstanceClass',
-        'generated_name': 'str',
+        'resource_name': 'str',
         'managed_resource_info': 'list[EventManagedResourceInfo]'
     }
 
     attribute_map = {
         'instance_class': 'instance_class',
-        'generated_name': 'generated_name',
+        'resource_name': 'resource_name',
         'managed_resource_info': 'managed_resource_info'
     }
 
-    def __init__(self, instance_class=None, generated_name=None, managed_resource_info=None):  # noqa: E501
+    def __init__(self, instance_class=None, resource_name=None, managed_resource_info=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._instance_class = None
-        self._generated_name = None
+        self._resource_name = None
         self._managed_resource_info = None
         self.discriminator = None
 
         if instance_class is not None:
             self.instance_class = instance_class
-        if generated_name is not None:
-            self.generated_name = generated_name
+        if resource_name is not None:
+            self.resource_name = resource_name
         if managed_resource_info is not None:
             self.managed_resource_info = managed_resource_info
 
@@ -82,27 +82,27 @@ class EventTaskExecutionMetadata(object):
         self._instance_class = instance_class
 
     @property
-    def generated_name(self):
-        """Gets the generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+    def resource_name(self):
+        """Gets the resource_name of this EventTaskExecutionMetadata.  # noqa: E501
 
-        Generated unique name for this task execution used by the backend.  # noqa: E501
+        Unique name for this task execution used by the backend, may be generated.  # noqa: E501
 
-        :return: The generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+        :return: The resource_name of this EventTaskExecutionMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._generated_name
+        return self._resource_name
 
-    @generated_name.setter
-    def generated_name(self, generated_name):
-        """Sets the generated_name of this EventTaskExecutionMetadata.
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this EventTaskExecutionMetadata.
 
-        Generated unique name for this task execution used by the backend.  # noqa: E501
+        Unique name for this task execution used by the backend, may be generated.  # noqa: E501
 
-        :param generated_name: The generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+        :param resource_name: The resource_name of this EventTaskExecutionMetadata.  # noqa: E501
         :type: str
         """
 
-        self._generated_name = generated_name
+        self._resource_name = resource_name
 
     @property
     def managed_resource_info(self):

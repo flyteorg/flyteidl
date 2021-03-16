@@ -188,8 +188,8 @@ message TaskExecutionMetadata {
     }
     InstanceClass instance_class = 16;
 
-    // Generated unique name for this task execution used by the backend.
-    string generated_name = 1;
+    // Unique name for this task execution used by the backend, may be generated.
+    string resource_name = 1;
 
     // Includes information about resource token allocation (if applicable).
     // This is a repeated field because a plugin can request multiple resource allocations during execution.

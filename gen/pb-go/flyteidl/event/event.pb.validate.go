@@ -870,7 +870,7 @@ func (m *TaskExecutionMetadata) Validate() error {
 
 	// no validation rules for InstanceClass
 
-	// no validation rules for GeneratedName
+	// no validation rules for ResourceName
 
 	for idx, item := range m.GetManagedResourceInfo() {
 		_, _ = idx, item
