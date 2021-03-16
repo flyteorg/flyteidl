@@ -483,7 +483,7 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		}
 	case *core.LiteralType_Simple:
 		newT := t.Type.(*core.LiteralType_Simple)
-		lv, err := MakeLiteralForSimpleType(newT.Simple, fmt.Sprintf("%s", v))
+		lv, err := MakeLiteralForSimpleType(newT.Simple, fmt.Sprintf("%v", v))
 		if err != nil {
 			return nil, err
 		}
