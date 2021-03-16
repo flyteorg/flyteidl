@@ -1634,6 +1634,18 @@ class TaskExecutionMetadata final :
 
   // accessors -------------------------------------------------------
 
+  // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+  int managed_resource_info_size() const;
+  void clear_managed_resource_info();
+  static const int kManagedResourceInfoFieldNumber = 2;
+  ::flyteidl::event::ManagedResourceInfo* mutable_managed_resource_info(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >*
+      mutable_managed_resource_info();
+  const ::flyteidl::event::ManagedResourceInfo& managed_resource_info(int index) const;
+  ::flyteidl::event::ManagedResourceInfo* add_managed_resource_info();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >&
+      managed_resource_info() const;
+
   // string generated_name = 1;
   void clear_generated_name();
   static const int kGeneratedNameFieldNumber = 1;
@@ -1648,15 +1660,6 @@ class TaskExecutionMetadata final :
   ::std::string* release_generated_name();
   void set_allocated_generated_name(::std::string* generated_name);
 
-  // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-  bool has_managed_resource_info() const;
-  void clear_managed_resource_info();
-  static const int kManagedResourceInfoFieldNumber = 2;
-  const ::flyteidl::event::ManagedResourceInfo& managed_resource_info() const;
-  ::flyteidl::event::ManagedResourceInfo* release_managed_resource_info();
-  ::flyteidl::event::ManagedResourceInfo* mutable_managed_resource_info();
-  void set_allocated_managed_resource_info(::flyteidl::event::ManagedResourceInfo* managed_resource_info);
-
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
   void clear_instance_class();
   static const int kInstanceClassFieldNumber = 16;
@@ -1668,8 +1671,8 @@ class TaskExecutionMetadata final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo > managed_resource_info_;
   ::google::protobuf::internal::ArenaStringPtr generated_name_;
-  ::flyteidl::event::ManagedResourceInfo* managed_resource_info_;
   int instance_class_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
@@ -3682,55 +3685,34 @@ inline void TaskExecutionMetadata::set_allocated_generated_name(::std::string* g
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.generated_name)
 }
 
-// .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-inline bool TaskExecutionMetadata::has_managed_resource_info() const {
-  return this != internal_default_instance() && managed_resource_info_ != nullptr;
+// repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+inline int TaskExecutionMetadata::managed_resource_info_size() const {
+  return managed_resource_info_.size();
 }
 inline void TaskExecutionMetadata::clear_managed_resource_info() {
-  if (GetArenaNoVirtual() == nullptr && managed_resource_info_ != nullptr) {
-    delete managed_resource_info_;
-  }
-  managed_resource_info_ = nullptr;
+  managed_resource_info_.Clear();
 }
-inline const ::flyteidl::event::ManagedResourceInfo& TaskExecutionMetadata::managed_resource_info() const {
-  const ::flyteidl::event::ManagedResourceInfo* p = managed_resource_info_;
-  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::event::ManagedResourceInfo*>(
-      &::flyteidl::event::_ManagedResourceInfo_default_instance_);
-}
-inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::release_managed_resource_info() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  
-  ::flyteidl::event::ManagedResourceInfo* temp = managed_resource_info_;
-  managed_resource_info_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::mutable_managed_resource_info() {
-  
-  if (managed_resource_info_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::event::ManagedResourceInfo>(GetArenaNoVirtual());
-    managed_resource_info_ = p;
-  }
+inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::mutable_managed_resource_info(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return managed_resource_info_;
+  return managed_resource_info_.Mutable(index);
 }
-inline void TaskExecutionMetadata::set_allocated_managed_resource_info(::flyteidl::event::ManagedResourceInfo* managed_resource_info) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete managed_resource_info_;
-  }
-  if (managed_resource_info) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      managed_resource_info = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, managed_resource_info, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  managed_resource_info_ = managed_resource_info;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >*
+TaskExecutionMetadata::mutable_managed_resource_info() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
+  return &managed_resource_info_;
+}
+inline const ::flyteidl::event::ManagedResourceInfo& TaskExecutionMetadata::managed_resource_info(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
+  return managed_resource_info_.Get(index);
+}
+inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::add_managed_resource_info() {
+  // @@protoc_insertion_point(field_add:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
+  return managed_resource_info_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >&
+TaskExecutionMetadata::managed_resource_info() const {
+  // @@protoc_insertion_point(field_list:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
+  return managed_resource_info_;
 }
 
 #ifdef __GNUC__

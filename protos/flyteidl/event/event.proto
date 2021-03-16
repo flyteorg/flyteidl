@@ -188,6 +188,7 @@ message TaskExecutionMetadata {
     // Generated unique name for this task execution used by the backend.
     string generated_name = 1;
 
-    // Includes information about how resource token allocation (if applicable).
-    ManagedResourceInfo managed_resource_info = 2;
+    // Includes information about resource token allocation (if applicable).
+    // This is a repeated field because a plugin can request multiple resource allocations during execution.
+    repeated ManagedResourceInfo managed_resource_info = 2;
 }

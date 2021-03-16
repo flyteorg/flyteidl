@@ -36,7 +36,7 @@ class EventTaskExecutionMetadata(object):
     swagger_types = {
         'instance_class': 'TaskExecutionMetadataInstanceClass',
         'generated_name': 'str',
-        'managed_resource_info': 'EventManagedResourceInfo'
+        'managed_resource_info': 'list[EventManagedResourceInfo]'
     }
 
     attribute_map = {
@@ -108,10 +108,10 @@ class EventTaskExecutionMetadata(object):
     def managed_resource_info(self):
         """Gets the managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
 
-        Includes information about how resource token allocation (if applicable).  # noqa: E501
+        Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.  # noqa: E501
 
         :return: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
-        :rtype: EventManagedResourceInfo
+        :rtype: list[EventManagedResourceInfo]
         """
         return self._managed_resource_info
 
@@ -119,10 +119,10 @@ class EventTaskExecutionMetadata(object):
     def managed_resource_info(self, managed_resource_info):
         """Sets the managed_resource_info of this EventTaskExecutionMetadata.
 
-        Includes information about how resource token allocation (if applicable).  # noqa: E501
+        Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.  # noqa: E501
 
         :param managed_resource_info: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
-        :type: EventManagedResourceInfo
+        :type: list[EventManagedResourceInfo]
         """
 
         self._managed_resource_info = managed_resource_info

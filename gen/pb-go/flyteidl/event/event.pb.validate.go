@@ -870,14 +870,19 @@ func (m *TaskExecutionMetadata) Validate() error {
 
 	// no validation rules for GeneratedName
 
-	if v, ok := interface{}(m.GetManagedResourceInfo()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TaskExecutionMetadataValidationError{
-				field:  "ManagedResourceInfo",
-				reason: "embedded message failed validation",
-				cause:  err,
+	for idx, item := range m.GetManagedResourceInfo() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskExecutionMetadataValidationError{
+					field:  fmt.Sprintf("ManagedResourceInfo[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
 			}
 		}
+
 	}
 
 	return nil

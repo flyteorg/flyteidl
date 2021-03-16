@@ -425,7 +425,7 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "skExecutionMetadata\022K\n\016instance_class\030\020 "
   "\001(\01623.flyteidl.event.TaskExecutionMetada"
   "ta.InstanceClass\022\026\n\016generated_name\030\001 \001(\t"
-  "\022B\n\025managed_resource_info\030\002 \001(\0132#.flytei"
+  "\022B\n\025managed_resource_info\030\002 \003(\0132#.flytei"
   "dl.event.ManagedResourceInfo\"/\n\rInstance"
   "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z"
   "5github.com/flyteorg/flyteidl/gen/pb-go/"
@@ -5242,18 +5242,11 @@ void ManagedResourceInfo::InternalSwap(ManagedResourceInfo* other) {
 // ===================================================================
 
 void TaskExecutionMetadata::InitAsDefaultInstance() {
-  ::flyteidl::event::_TaskExecutionMetadata_default_instance_._instance.get_mutable()->managed_resource_info_ = const_cast< ::flyteidl::event::ManagedResourceInfo*>(
-      ::flyteidl::event::ManagedResourceInfo::internal_default_instance());
 }
 class TaskExecutionMetadata::HasBitSetters {
  public:
-  static const ::flyteidl::event::ManagedResourceInfo& managed_resource_info(const TaskExecutionMetadata* msg);
 };
 
-const ::flyteidl::event::ManagedResourceInfo&
-TaskExecutionMetadata::HasBitSetters::managed_resource_info(const TaskExecutionMetadata* msg) {
-  return *msg->managed_resource_info_;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskExecutionMetadata::kInstanceClassFieldNumber;
 const int TaskExecutionMetadata::kGeneratedNameFieldNumber;
@@ -5267,16 +5260,12 @@ TaskExecutionMetadata::TaskExecutionMetadata()
 }
 TaskExecutionMetadata::TaskExecutionMetadata(const TaskExecutionMetadata& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      managed_resource_info_(from.managed_resource_info_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   generated_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.generated_name().size() > 0) {
     generated_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.generated_name_);
-  }
-  if (from.has_managed_resource_info()) {
-    managed_resource_info_ = new ::flyteidl::event::ManagedResourceInfo(*from.managed_resource_info_);
-  } else {
-    managed_resource_info_ = nullptr;
   }
   instance_class_ = from.instance_class_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.TaskExecutionMetadata)
@@ -5286,9 +5275,7 @@ void TaskExecutionMetadata::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TaskExecutionMetadata_flyteidl_2fevent_2fevent_2eproto.base);
   generated_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&managed_resource_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&instance_class_) -
-      reinterpret_cast<char*>(&managed_resource_info_)) + sizeof(instance_class_));
+  instance_class_ = 0;
 }
 
 TaskExecutionMetadata::~TaskExecutionMetadata() {
@@ -5298,7 +5285,6 @@ TaskExecutionMetadata::~TaskExecutionMetadata() {
 
 void TaskExecutionMetadata::SharedDtor() {
   generated_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete managed_resource_info_;
 }
 
 void TaskExecutionMetadata::SetCachedSize(int size) const {
@@ -5316,11 +5302,8 @@ void TaskExecutionMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  managed_resource_info_.Clear();
   generated_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && managed_resource_info_ != nullptr) {
-    delete managed_resource_info_;
-  }
-  managed_resource_info_ = nullptr;
   instance_class_ = 0;
   _internal_metadata_.Clear();
 }
@@ -5354,17 +5337,20 @@ const char* TaskExecutionMetadata::_InternalParse(const char* begin, const char*
         ptr += size;
         break;
       }
-      // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+      // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::event::ManagedResourceInfo::_InternalParse;
-        object = msg->mutable_managed_resource_info();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::event::ManagedResourceInfo::_InternalParse;
+          object = msg->add_managed_resource_info();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
       // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
@@ -5424,11 +5410,11 @@ bool TaskExecutionMetadata::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+      // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_managed_resource_info()));
+                input, add_managed_resource_info()));
         } else {
           goto handle_unusual;
         }
@@ -5486,10 +5472,13 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
       1, this->generated_name(), output);
   }
 
-  // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-  if (this->has_managed_resource_info()) {
+  // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->managed_resource_info_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::managed_resource_info(this), output);
+      2,
+      this->managed_resource_info(static_cast<int>(i)),
+      output);
   }
 
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
@@ -5522,11 +5511,12 @@ void TaskExecutionMetadata::SerializeWithCachedSizes(
         1, this->generated_name(), target);
   }
 
-  // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-  if (this->has_managed_resource_info()) {
+  // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->managed_resource_info_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::managed_resource_info(this), target);
+        2, this->managed_resource_info(static_cast<int>(i)), target);
   }
 
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
@@ -5556,18 +5546,22 @@ size_t TaskExecutionMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->managed_resource_info_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->managed_resource_info(static_cast<int>(i)));
+    }
+  }
+
   // string generated_name = 1;
   if (this->generated_name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->generated_name());
-  }
-
-  // .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-  if (this->has_managed_resource_info()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *managed_resource_info_);
   }
 
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
@@ -5603,12 +5597,10 @@ void TaskExecutionMetadata::MergeFrom(const TaskExecutionMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  managed_resource_info_.MergeFrom(from.managed_resource_info_);
   if (from.generated_name().size() > 0) {
 
     generated_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.generated_name_);
-  }
-  if (from.has_managed_resource_info()) {
-    mutable_managed_resource_info()->::flyteidl::event::ManagedResourceInfo::MergeFrom(from.managed_resource_info());
   }
   if (from.instance_class() != 0) {
     set_instance_class(from.instance_class());
@@ -5640,9 +5632,9 @@ void TaskExecutionMetadata::Swap(TaskExecutionMetadata* other) {
 void TaskExecutionMetadata::InternalSwap(TaskExecutionMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&managed_resource_info_)->InternalSwap(CastToBase(&other->managed_resource_info_));
   generated_name_.Swap(&other->generated_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(managed_resource_info_, other->managed_resource_info_);
   swap(instance_class_, other->instance_class_);
 }
 

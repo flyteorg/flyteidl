@@ -12235,28 +12235,52 @@ public final class Event {
 
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    boolean hasManagedResourceInfo();
+    java.util.List<flyteidl.event.Event.ManagedResourceInfo> 
+        getManagedResourceInfoList();
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo();
+    flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index);
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder();
+    int getManagedResourceInfoCount();
+    /**
+     * <pre>
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     */
+    java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
+        getManagedResourceInfoOrBuilderList();
+    /**
+     * <pre>
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     */
+    flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -12278,6 +12302,7 @@ public final class Event {
     private TaskExecutionMetadata() {
       instanceClass_ = 0;
       generatedName_ = "";
+      managedResourceInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -12311,16 +12336,12 @@ public final class Event {
               break;
             }
             case 18: {
-              flyteidl.event.Event.ManagedResourceInfo.Builder subBuilder = null;
-              if (managedResourceInfo_ != null) {
-                subBuilder = managedResourceInfo_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                managedResourceInfo_ = new java.util.ArrayList<flyteidl.event.Event.ManagedResourceInfo>();
+                mutable_bitField0_ |= 0x00000004;
               }
-              managedResourceInfo_ = input.readMessage(flyteidl.event.Event.ManagedResourceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(managedResourceInfo_);
-                managedResourceInfo_ = subBuilder.buildPartial();
-              }
-
+              managedResourceInfo_.add(
+                  input.readMessage(flyteidl.event.Event.ManagedResourceInfo.parser(), extensionRegistry));
               break;
             }
             case 128: {
@@ -12344,6 +12365,9 @@ public final class Event {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          managedResourceInfo_ = java.util.Collections.unmodifiableList(managedResourceInfo_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -12479,6 +12503,7 @@ public final class Event {
       // @@protoc_insertion_point(enum_scope:flyteidl.event.TaskExecutionMetadata.InstanceClass)
     }
 
+    private int bitField0_;
     public static final int INSTANCE_CLASS_FIELD_NUMBER = 16;
     private int instanceClass_;
     /**
@@ -12539,36 +12564,63 @@ public final class Event {
     }
 
     public static final int MANAGED_RESOURCE_INFO_FIELD_NUMBER = 2;
-    private flyteidl.event.Event.ManagedResourceInfo managedResourceInfo_;
+    private java.util.List<flyteidl.event.Event.ManagedResourceInfo> managedResourceInfo_;
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    public boolean hasManagedResourceInfo() {
-      return managedResourceInfo_ != null;
+    public java.util.List<flyteidl.event.Event.ManagedResourceInfo> getManagedResourceInfoList() {
+      return managedResourceInfo_;
     }
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo() {
-      return managedResourceInfo_ == null ? flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance() : managedResourceInfo_;
+    public java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
+        getManagedResourceInfoOrBuilderList() {
+      return managedResourceInfo_;
     }
     /**
      * <pre>
-     * Includes information about how resource token allocation (if applicable).
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
      */
-    public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder() {
-      return getManagedResourceInfo();
+    public int getManagedResourceInfoCount() {
+      return managedResourceInfo_.size();
+    }
+    /**
+     * <pre>
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     */
+    public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index) {
+      return managedResourceInfo_.get(index);
+    }
+    /**
+     * <pre>
+     * Includes information about resource token allocation (if applicable).
+     * This is a repeated field because a plugin can request multiple resource allocations during execution.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     */
+    public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+        int index) {
+      return managedResourceInfo_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -12588,8 +12640,8 @@ public final class Event {
       if (!getGeneratedNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, generatedName_);
       }
-      if (managedResourceInfo_ != null) {
-        output.writeMessage(2, getManagedResourceInfo());
+      for (int i = 0; i < managedResourceInfo_.size(); i++) {
+        output.writeMessage(2, managedResourceInfo_.get(i));
       }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         output.writeEnum(16, instanceClass_);
@@ -12606,9 +12658,9 @@ public final class Event {
       if (!getGeneratedNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, generatedName_);
       }
-      if (managedResourceInfo_ != null) {
+      for (int i = 0; i < managedResourceInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getManagedResourceInfo());
+          .computeMessageSize(2, managedResourceInfo_.get(i));
       }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -12632,11 +12684,8 @@ public final class Event {
       if (instanceClass_ != other.instanceClass_) return false;
       if (!getGeneratedName()
           .equals(other.getGeneratedName())) return false;
-      if (hasManagedResourceInfo() != other.hasManagedResourceInfo()) return false;
-      if (hasManagedResourceInfo()) {
-        if (!getManagedResourceInfo()
-            .equals(other.getManagedResourceInfo())) return false;
-      }
+      if (!getManagedResourceInfoList()
+          .equals(other.getManagedResourceInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12652,9 +12701,9 @@ public final class Event {
       hash = (53 * hash) + instanceClass_;
       hash = (37 * hash) + GENERATED_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getGeneratedName().hashCode();
-      if (hasManagedResourceInfo()) {
+      if (getManagedResourceInfoCount() > 0) {
         hash = (37 * hash) + MANAGED_RESOURCE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getManagedResourceInfo().hashCode();
+        hash = (53 * hash) + getManagedResourceInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -12789,6 +12838,7 @@ public final class Event {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getManagedResourceInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -12799,10 +12849,10 @@ public final class Event {
         generatedName_ = "";
 
         if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfo_ = null;
+          managedResourceInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          managedResourceInfo_ = null;
-          managedResourceInfoBuilder_ = null;
+          managedResourceInfoBuilder_.clear();
         }
         return this;
       }
@@ -12830,13 +12880,20 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.TaskExecutionMetadata buildPartial() {
         flyteidl.event.Event.TaskExecutionMetadata result = new flyteidl.event.Event.TaskExecutionMetadata(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.instanceClass_ = instanceClass_;
         result.generatedName_ = generatedName_;
         if (managedResourceInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            managedResourceInfo_ = java.util.Collections.unmodifiableList(managedResourceInfo_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
           result.managedResourceInfo_ = managedResourceInfo_;
         } else {
           result.managedResourceInfo_ = managedResourceInfoBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -12892,8 +12949,31 @@ public final class Event {
           generatedName_ = other.generatedName_;
           onChanged();
         }
-        if (other.hasManagedResourceInfo()) {
-          mergeManagedResourceInfo(other.getManagedResourceInfo());
+        if (managedResourceInfoBuilder_ == null) {
+          if (!other.managedResourceInfo_.isEmpty()) {
+            if (managedResourceInfo_.isEmpty()) {
+              managedResourceInfo_ = other.managedResourceInfo_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureManagedResourceInfoIsMutable();
+              managedResourceInfo_.addAll(other.managedResourceInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.managedResourceInfo_.isEmpty()) {
+            if (managedResourceInfoBuilder_.isEmpty()) {
+              managedResourceInfoBuilder_.dispose();
+              managedResourceInfoBuilder_ = null;
+              managedResourceInfo_ = other.managedResourceInfo_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              managedResourceInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getManagedResourceInfoFieldBuilder() : null;
+            } else {
+              managedResourceInfoBuilder_.addAllMessages(other.managedResourceInfo_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12923,6 +13003,7 @@ public final class Event {
         }
         return this;
       }
+      private int bitField0_;
 
       private int instanceClass_ = 0;
       /**
@@ -13058,152 +13139,329 @@ public final class Event {
         return this;
       }
 
-      private flyteidl.event.Event.ManagedResourceInfo managedResourceInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder> managedResourceInfoBuilder_;
-      /**
-       * <pre>
-       * Includes information about how resource token allocation (if applicable).
-       * </pre>
-       *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
-       */
-      public boolean hasManagedResourceInfo() {
-        return managedResourceInfoBuilder_ != null || managedResourceInfo_ != null;
+      private java.util.List<flyteidl.event.Event.ManagedResourceInfo> managedResourceInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureManagedResourceInfoIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          managedResourceInfo_ = new java.util.ArrayList<flyteidl.event.Event.ManagedResourceInfo>(managedResourceInfo_);
+          bitField0_ |= 0x00000004;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder> managedResourceInfoBuilder_;
+
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo() {
+      public java.util.List<flyteidl.event.Event.ManagedResourceInfo> getManagedResourceInfoList() {
         if (managedResourceInfoBuilder_ == null) {
-          return managedResourceInfo_ == null ? flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance() : managedResourceInfo_;
+          return java.util.Collections.unmodifiableList(managedResourceInfo_);
         } else {
-          return managedResourceInfoBuilder_.getMessage();
+          return managedResourceInfoBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      public Builder setManagedResourceInfo(flyteidl.event.Event.ManagedResourceInfo value) {
+      public int getManagedResourceInfoCount() {
+        if (managedResourceInfoBuilder_ == null) {
+          return managedResourceInfo_.size();
+        } else {
+          return managedResourceInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index) {
+        if (managedResourceInfoBuilder_ == null) {
+          return managedResourceInfo_.get(index);
+        } else {
+          return managedResourceInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public Builder setManagedResourceInfo(
+          int index, flyteidl.event.Event.ManagedResourceInfo value) {
         if (managedResourceInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          managedResourceInfo_ = value;
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.set(index, value);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.setMessage(value);
+          managedResourceInfoBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
       public Builder setManagedResourceInfo(
+          int index, flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
+        if (managedResourceInfoBuilder_ == null) {
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          managedResourceInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public Builder addManagedResourceInfo(flyteidl.event.Event.ManagedResourceInfo value) {
+        if (managedResourceInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.add(value);
+          onChanged();
+        } else {
+          managedResourceInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public Builder addManagedResourceInfo(
+          int index, flyteidl.event.Event.ManagedResourceInfo value) {
+        if (managedResourceInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.add(index, value);
+          onChanged();
+        } else {
+          managedResourceInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public Builder addManagedResourceInfo(
           flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
         if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfo_ = builderForValue.build();
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          managedResourceInfoBuilder_.setMessage(builderForValue.build());
+          managedResourceInfoBuilder_.addMessage(builderForValue.build());
         }
-
         return this;
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      public Builder mergeManagedResourceInfo(flyteidl.event.Event.ManagedResourceInfo value) {
+      public Builder addManagedResourceInfo(
+          int index, flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
         if (managedResourceInfoBuilder_ == null) {
-          if (managedResourceInfo_ != null) {
-            managedResourceInfo_ =
-              flyteidl.event.Event.ManagedResourceInfo.newBuilder(managedResourceInfo_).mergeFrom(value).buildPartial();
-          } else {
-            managedResourceInfo_ = value;
-          }
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          managedResourceInfoBuilder_.mergeFrom(value);
+          managedResourceInfoBuilder_.addMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public Builder addAllManagedResourceInfo(
+          java.lang.Iterable<? extends flyteidl.event.Event.ManagedResourceInfo> values) {
+        if (managedResourceInfoBuilder_ == null) {
+          ensureManagedResourceInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, managedResourceInfo_);
+          onChanged();
+        } else {
+          managedResourceInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
       public Builder clearManagedResourceInfo() {
         if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfo_ = null;
+          managedResourceInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          managedResourceInfo_ = null;
-          managedResourceInfoBuilder_ = null;
+          managedResourceInfoBuilder_.clear();
         }
-
         return this;
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo.Builder getManagedResourceInfoBuilder() {
-        
-        onChanged();
-        return getManagedResourceInfoFieldBuilder().getBuilder();
+      public Builder removeManagedResourceInfo(int index) {
+        if (managedResourceInfoBuilder_ == null) {
+          ensureManagedResourceInfoIsMutable();
+          managedResourceInfo_.remove(index);
+          onChanged();
+        } else {
+          managedResourceInfoBuilder_.remove(index);
+        }
+        return this;
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder() {
-        if (managedResourceInfoBuilder_ != null) {
-          return managedResourceInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return managedResourceInfo_ == null ?
-              flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance() : managedResourceInfo_;
+      public flyteidl.event.Event.ManagedResourceInfo.Builder getManagedResourceInfoBuilder(
+          int index) {
+        return getManagedResourceInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+          int index) {
+        if (managedResourceInfoBuilder_ == null) {
+          return managedResourceInfo_.get(index);  } else {
+          return managedResourceInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * Includes information about how resource token allocation (if applicable).
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>.flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
+           getManagedResourceInfoOrBuilderList() {
+        if (managedResourceInfoBuilder_ != null) {
+          return managedResourceInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(managedResourceInfo_);
+        }
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public flyteidl.event.Event.ManagedResourceInfo.Builder addManagedResourceInfoBuilder() {
+        return getManagedResourceInfoFieldBuilder().addBuilder(
+            flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public flyteidl.event.Event.ManagedResourceInfo.Builder addManagedResourceInfoBuilder(
+          int index) {
+        return getManagedResourceInfoFieldBuilder().addBuilder(
+            index, flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Includes information about resource token allocation (if applicable).
+       * This is a repeated field because a plugin can request multiple resource allocations during execution.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       */
+      public java.util.List<flyteidl.event.Event.ManagedResourceInfo.Builder> 
+           getManagedResourceInfoBuilderList() {
+        return getManagedResourceInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
           getManagedResourceInfoFieldBuilder() {
         if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          managedResourceInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder>(
-                  getManagedResourceInfo(),
+                  managedResourceInfo_,
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           managedResourceInfo_ = null;
@@ -13374,7 +13632,7 @@ public final class Event {
       "skExecutionMetadata\022K\n\016instance_class\030\020 " +
       "\001(\01623.flyteidl.event.TaskExecutionMetada" +
       "ta.InstanceClass\022\026\n\016generated_name\030\001 \001(\t" +
-      "\022B\n\025managed_resource_info\030\002 \001(\0132#.flytei" +
+      "\022B\n\025managed_resource_info\030\002 \003(\0132#.flytei" +
       "dl.event.ManagedResourceInfo\"/\n\rInstance" +
       "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z" +
       "5github.com/flyteorg/flyteidl/gen/pb-go/" +

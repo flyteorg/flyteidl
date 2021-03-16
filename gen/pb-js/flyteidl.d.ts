@@ -5783,7 +5783,7 @@ export namespace flyteidl {
             generatedName?: (string|null);
 
             /** TaskExecutionMetadata managedResourceInfo */
-            managedResourceInfo?: (flyteidl.event.IManagedResourceInfo|null);
+            managedResourceInfo?: (flyteidl.event.IManagedResourceInfo[]|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5802,7 +5802,7 @@ export namespace flyteidl {
             public generatedName: string;
 
             /** TaskExecutionMetadata managedResourceInfo. */
-            public managedResourceInfo?: (flyteidl.event.IManagedResourceInfo|null);
+            public managedResourceInfo: flyteidl.event.IManagedResourceInfo[];
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.

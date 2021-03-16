@@ -465,7 +465,7 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
   {
     "instance_class": "...",
     "generated_name": "...",
-    "managed_resource_info": "{...}"
+    "managed_resource_info": []
   }
 
 .. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
@@ -482,7 +482,8 @@ generated_name
 .. _api_field_flyteidl.event.TaskExecutionMetadata.managed_resource_info:
 
 managed_resource_info
-  (:ref:`flyteidl.event.ManagedResourceInfo <api_msg_flyteidl.event.ManagedResourceInfo>`) Includes information about how resource token allocation (if applicable).
+  (:ref:`flyteidl.event.ManagedResourceInfo <api_msg_flyteidl.event.ManagedResourceInfo>`) Includes information about resource token allocation (if applicable).
+  This is a repeated field because a plugin can request multiple resource allocations during execution.
   
   
 

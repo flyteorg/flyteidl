@@ -6048,8 +6048,11 @@
           "description": "Generated unique name for this task execution used by the backend."
         },
         "managed_resource_info": {
-          "$ref": "#/definitions/eventManagedResourceInfo",
-          "description": "Includes information about how resource token allocation (if applicable)."
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/eventManagedResourceInfo"
+          },
+          "description": "Includes information about resource token allocation (if applicable).\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
         }
       },
       "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."

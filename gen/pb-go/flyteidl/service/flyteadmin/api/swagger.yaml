@@ -6600,7 +6600,8 @@ definitions:
       metadata:
         instance_class: {}
         managed_resource_info:
-          token: "token"
+        - token: "token"
+        - token: "token"
         generated_name: "generated_name"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
@@ -6712,7 +6713,8 @@ definitions:
           metadata:
             instance_class: {}
             managed_resource_info:
-              token: "token"
+            - token: "token"
+            - token: "token"
             generated_name: "generated_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
@@ -6767,7 +6769,8 @@ definitions:
           metadata:
             instance_class: {}
             managed_resource_info:
-              token: "token"
+            - token: "token"
+            - token: "token"
             generated_name: "generated_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
@@ -26065,15 +26068,19 @@ definitions:
         type: "string"
         description: "Generated unique name for this task execution used by the backend."
       managed_resource_info:
-        description: "Includes information about how resource token allocation (if\
-          \ applicable)."
-        $ref: "#/definitions/eventManagedResourceInfo"
+        type: "array"
+        description: "Includes information about resource token allocation (if applicable).\n\
+          This is a repeated field because a plugin can request multiple resource\
+          \ allocations during execution."
+        items:
+          $ref: "#/definitions/eventManagedResourceInfo"
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
       \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:
       instance_class: {}
       managed_resource_info:
-        token: "token"
+      - token: "token"
+      - token: "token"
       generated_name: "generated_name"
   eventWorkflowExecutionEvent:
     type: "object"
@@ -26217,7 +26224,8 @@ definitions:
         metadata:
           instance_class: {}
           managed_resource_info:
-            token: "token"
+          - token: "token"
+          - token: "token"
           generated_name: "generated_name"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:
