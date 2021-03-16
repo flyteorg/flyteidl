@@ -6609,6 +6609,7 @@ definitions:
           external_ids:
           - "external_ids"
           - "external_ids"
+        plugin_identifier: "plugin_identifier"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
         fields:
@@ -6728,6 +6729,7 @@ definitions:
               external_ids:
               - "external_ids"
               - "external_ids"
+            plugin_identifier: "plugin_identifier"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -6790,6 +6792,7 @@ definitions:
               external_ids:
               - "external_ids"
               - "external_ids"
+            plugin_identifier: "plugin_identifier"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -26116,6 +26119,9 @@ definitions:
           \ allocations during execution."
         items:
           $ref: "#/definitions/eventResourcePoolInfo"
+      plugin_identifier:
+        type: "string"
+        description: "The identifier of the plugin used to execute this task."
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
       \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:
@@ -26130,6 +26136,7 @@ definitions:
         external_ids:
         - "external_ids"
         - "external_ids"
+      plugin_identifier: "plugin_identifier"
   eventWorkflowExecutionEvent:
     type: "object"
     properties:
@@ -26281,6 +26288,7 @@ definitions:
             external_ids:
             - "external_ids"
             - "external_ids"
+          plugin_identifier: "plugin_identifier"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:
           fields:

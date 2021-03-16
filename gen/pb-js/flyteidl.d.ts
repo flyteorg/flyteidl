@@ -5848,6 +5848,9 @@ export namespace flyteidl {
 
             /** TaskExecutionMetadata resourcePoolInfo */
             resourcePoolInfo?: (flyteidl.event.IResourcePoolInfo[]|null);
+
+            /** TaskExecutionMetadata pluginIdentifier */
+            pluginIdentifier?: (string|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5867,6 +5870,9 @@ export namespace flyteidl {
 
             /** TaskExecutionMetadata resourcePoolInfo. */
             public resourcePoolInfo: flyteidl.event.IResourcePoolInfo[];
+
+            /** TaskExecutionMetadata pluginIdentifier. */
+            public pluginIdentifier: string;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.

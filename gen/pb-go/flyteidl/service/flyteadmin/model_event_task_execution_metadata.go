@@ -16,4 +16,6 @@ type EventTaskExecutionMetadata struct {
 	ResourceIds *EventResourceIdentifiers `json:"resource_ids,omitempty"`
 	// Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.
 	ResourcePoolInfo []EventResourcePoolInfo `json:"resource_pool_info,omitempty"`
+	// The identifier of the plugin used to execute this task.
+	PluginIdentifier string `json:"plugin_identifier,omitempty"`
 }

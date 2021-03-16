@@ -37,21 +37,24 @@ class EventTaskExecutionMetadata(object):
     swagger_types = {
         'instance_class': 'TaskExecutionMetadataInstanceClass',
         'resource_ids': 'EventResourceIdentifiers',
-        'resource_pool_info': 'list[EventResourcePoolInfo]'
+        'resource_pool_info': 'list[EventResourcePoolInfo]',
+        'plugin_identifier': 'str'
     }
 
     attribute_map = {
         'instance_class': 'instance_class',
         'resource_ids': 'resource_ids',
-        'resource_pool_info': 'resource_pool_info'
+        'resource_pool_info': 'resource_pool_info',
+        'plugin_identifier': 'plugin_identifier'
     }
 
-    def __init__(self, instance_class=None, resource_ids=None, resource_pool_info=None):  # noqa: E501
+    def __init__(self, instance_class=None, resource_ids=None, resource_pool_info=None, plugin_identifier=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._instance_class = None
         self._resource_ids = None
         self._resource_pool_info = None
+        self._plugin_identifier = None
         self.discriminator = None
 
         if instance_class is not None:
@@ -60,6 +63,8 @@ class EventTaskExecutionMetadata(object):
             self.resource_ids = resource_ids
         if resource_pool_info is not None:
             self.resource_pool_info = resource_pool_info
+        if plugin_identifier is not None:
+            self.plugin_identifier = plugin_identifier
 
     @property
     def instance_class(self):
@@ -127,6 +132,29 @@ class EventTaskExecutionMetadata(object):
         """
 
         self._resource_pool_info = resource_pool_info
+
+    @property
+    def plugin_identifier(self):
+        """Gets the plugin_identifier of this EventTaskExecutionMetadata.  # noqa: E501
+
+        The identifier of the plugin used to execute this task.  # noqa: E501
+
+        :return: The plugin_identifier of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._plugin_identifier
+
+    @plugin_identifier.setter
+    def plugin_identifier(self, plugin_identifier):
+        """Sets the plugin_identifier of this EventTaskExecutionMetadata.
+
+        The identifier of the plugin used to execute this task.  # noqa: E501
+
+        :param plugin_identifier: The plugin_identifier of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._plugin_identifier = plugin_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

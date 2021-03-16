@@ -13316,6 +13316,24 @@ public final class Event {
      */
     flyteidl.event.Event.ResourcePoolInfoOrBuilder getResourcePoolInfoOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The identifier of the plugin used to execute this task.
+     * </pre>
+     *
+     * <code>string plugin_identifier = 3;</code>
+     */
+    java.lang.String getPluginIdentifier();
+    /**
+     * <pre>
+     * The identifier of the plugin used to execute this task.
+     * </pre>
+     *
+     * <code>string plugin_identifier = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPluginIdentifierBytes();
   }
   /**
    * <pre>
@@ -13337,6 +13355,7 @@ public final class Event {
     private TaskExecutionMetadata() {
       instanceClass_ = 0;
       resourcePoolInfo_ = java.util.Collections.emptyList();
+      pluginIdentifier_ = "";
     }
 
     @java.lang.Override
@@ -13383,6 +13402,12 @@ public final class Event {
               }
               resourcePoolInfo_.add(
                   input.readMessage(flyteidl.event.Event.ResourcePoolInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pluginIdentifier_ = s;
               break;
             }
             case 128: {
@@ -13655,6 +13680,48 @@ public final class Event {
       return resourcePoolInfo_.get(index);
     }
 
+    public static final int PLUGIN_IDENTIFIER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object pluginIdentifier_;
+    /**
+     * <pre>
+     * The identifier of the plugin used to execute this task.
+     * </pre>
+     *
+     * <code>string plugin_identifier = 3;</code>
+     */
+    public java.lang.String getPluginIdentifier() {
+      java.lang.Object ref = pluginIdentifier_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pluginIdentifier_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The identifier of the plugin used to execute this task.
+     * </pre>
+     *
+     * <code>string plugin_identifier = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPluginIdentifierBytes() {
+      java.lang.Object ref = pluginIdentifier_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pluginIdentifier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13675,6 +13742,9 @@ public final class Event {
       for (int i = 0; i < resourcePoolInfo_.size(); i++) {
         output.writeMessage(2, resourcePoolInfo_.get(i));
       }
+      if (!getPluginIdentifierBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pluginIdentifier_);
+      }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         output.writeEnum(16, instanceClass_);
       }
@@ -13694,6 +13764,9 @@ public final class Event {
       for (int i = 0; i < resourcePoolInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, resourcePoolInfo_.get(i));
+      }
+      if (!getPluginIdentifierBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pluginIdentifier_);
       }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -13722,6 +13795,8 @@ public final class Event {
       }
       if (!getResourcePoolInfoList()
           .equals(other.getResourcePoolInfoList())) return false;
+      if (!getPluginIdentifier()
+          .equals(other.getPluginIdentifier())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13743,6 +13818,8 @@ public final class Event {
         hash = (37 * hash) + RESOURCE_POOL_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getResourcePoolInfoList().hashCode();
       }
+      hash = (37 * hash) + PLUGIN_IDENTIFIER_FIELD_NUMBER;
+      hash = (53 * hash) + getPluginIdentifier().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13896,6 +13973,8 @@ public final class Event {
         } else {
           resourcePoolInfoBuilder_.clear();
         }
+        pluginIdentifier_ = "";
+
         return this;
       }
 
@@ -13939,6 +14018,7 @@ public final class Event {
         } else {
           result.resourcePoolInfo_ = resourcePoolInfoBuilder_.build();
         }
+        result.pluginIdentifier_ = pluginIdentifier_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -14019,6 +14099,10 @@ public final class Event {
               resourcePoolInfoBuilder_.addAllMessages(other.resourcePoolInfo_);
             }
           }
+        }
+        if (!other.getPluginIdentifier().isEmpty()) {
+          pluginIdentifier_ = other.pluginIdentifier_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14577,6 +14661,95 @@ public final class Event {
         }
         return resourcePoolInfoBuilder_;
       }
+
+      private java.lang.Object pluginIdentifier_ = "";
+      /**
+       * <pre>
+       * The identifier of the plugin used to execute this task.
+       * </pre>
+       *
+       * <code>string plugin_identifier = 3;</code>
+       */
+      public java.lang.String getPluginIdentifier() {
+        java.lang.Object ref = pluginIdentifier_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pluginIdentifier_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The identifier of the plugin used to execute this task.
+       * </pre>
+       *
+       * <code>string plugin_identifier = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPluginIdentifierBytes() {
+        java.lang.Object ref = pluginIdentifier_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pluginIdentifier_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The identifier of the plugin used to execute this task.
+       * </pre>
+       *
+       * <code>string plugin_identifier = 3;</code>
+       */
+      public Builder setPluginIdentifier(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pluginIdentifier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The identifier of the plugin used to execute this task.
+       * </pre>
+       *
+       * <code>string plugin_identifier = 3;</code>
+       */
+      public Builder clearPluginIdentifier() {
+        
+        pluginIdentifier_ = getDefaultInstance().getPluginIdentifier();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The identifier of the plugin used to execute this task.
+       * </pre>
+       *
+       * <code>string plugin_identifier = 3;</code>
+       */
+      public Builder setPluginIdentifierBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pluginIdentifier_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -14745,15 +14918,16 @@ public final class Event {
       "esourceIdentifiers\022\026\n\016generated_name\030\001 \001" +
       "(\t\022\024\n\014external_ids\030\002 \003(\t\"?\n\020ResourcePool" +
       "Info\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamesp" +
-      "ace\030\002 \001(\t\"\216\002\n\025TaskExecutionMetadata\022K\n\016i" +
+      "ace\030\002 \001(\t\"\251\002\n\025TaskExecutionMetadata\022K\n\016i" +
       "nstance_class\030\020 \001(\01623.flyteidl.event.Tas" +
       "kExecutionMetadata.InstanceClass\0229\n\014reso" +
       "urce_ids\030\001 \001(\0132#.flyteidl.event.Resource" +
       "Identifiers\022<\n\022resource_pool_info\030\002 \003(\0132" +
-      " .flyteidl.event.ResourcePoolInfo\"/\n\rIns" +
-      "tanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE" +
-      "\020\001B7Z5github.com/flyteorg/flyteidl/gen/p" +
-      "b-go/flyteidl/eventb\006proto3"
+      " .flyteidl.event.ResourcePoolInfo\022\031\n\021plu" +
+      "gin_identifier\030\003 \001(\t\"/\n\rInstanceClass\022\013\n" +
+      "\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14831,7 +15005,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
-        new java.lang.String[] { "InstanceClass", "ResourceIds", "ResourcePoolInfo", });
+        new java.lang.String[] { "InstanceClass", "ResourceIds", "ResourcePoolInfo", "PluginIdentifier", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

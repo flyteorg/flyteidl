@@ -1808,6 +1808,20 @@ class TaskExecutionMetadata final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo >&
       resource_pool_info() const;
 
+  // string plugin_identifier = 3;
+  void clear_plugin_identifier();
+  static const int kPluginIdentifierFieldNumber = 3;
+  const ::std::string& plugin_identifier() const;
+  void set_plugin_identifier(const ::std::string& value);
+  #if LANG_CXX11
+  void set_plugin_identifier(::std::string&& value);
+  #endif
+  void set_plugin_identifier(const char* value);
+  void set_plugin_identifier(const char* value, size_t size);
+  ::std::string* mutable_plugin_identifier();
+  ::std::string* release_plugin_identifier();
+  void set_allocated_plugin_identifier(::std::string* plugin_identifier);
+
   // .flyteidl.event.ResourceIdentifiers resource_ids = 1;
   bool has_resource_ids() const;
   void clear_resource_ids();
@@ -1829,6 +1843,7 @@ class TaskExecutionMetadata final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo > resource_pool_info_;
+  ::google::protobuf::internal::ArenaStringPtr plugin_identifier_;
   ::flyteidl::event::ResourceIdentifiers* resource_ids_;
   int instance_class_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -4047,6 +4062,59 @@ inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePo
 TaskExecutionMetadata::resource_pool_info() const {
   // @@protoc_insertion_point(field_list:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
   return resource_pool_info_;
+}
+
+// string plugin_identifier = 3;
+inline void TaskExecutionMetadata::clear_plugin_identifier() {
+  plugin_identifier_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskExecutionMetadata::plugin_identifier() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+  return plugin_identifier_.GetNoArena();
+}
+inline void TaskExecutionMetadata::set_plugin_identifier(const ::std::string& value) {
+  
+  plugin_identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+}
+#if LANG_CXX11
+inline void TaskExecutionMetadata::set_plugin_identifier(::std::string&& value) {
+  
+  plugin_identifier_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+}
+#endif
+inline void TaskExecutionMetadata::set_plugin_identifier(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  plugin_identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+}
+inline void TaskExecutionMetadata::set_plugin_identifier(const char* value, size_t size) {
+  
+  plugin_identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+}
+inline ::std::string* TaskExecutionMetadata::mutable_plugin_identifier() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+  return plugin_identifier_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskExecutionMetadata::release_plugin_identifier() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+  
+  return plugin_identifier_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskExecutionMetadata::set_allocated_plugin_identifier(::std::string* plugin_identifier) {
+  if (plugin_identifier != nullptr) {
+    
+  } else {
+    
+  }
+  plugin_identifier_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plugin_identifier);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
 }
 
 #ifdef __GNUC__

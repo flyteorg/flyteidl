@@ -6074,6 +6074,10 @@
             "$ref": "#/definitions/eventResourcePoolInfo"
           },
           "description": "Includes information about resource token allocation (if applicable).\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
+        },
+        "plugin_identifier": {
+          "type": "string",
+          "description": "The identifier of the plugin used to execute this task."
         }
       },
       "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."

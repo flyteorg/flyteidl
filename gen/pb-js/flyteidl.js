@@ -14136,6 +14136,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
              * @property {flyteidl.event.IResourceIdentifiers|null} [resourceIds] TaskExecutionMetadata resourceIds
              * @property {Array.<flyteidl.event.IResourcePoolInfo>|null} [resourcePoolInfo] TaskExecutionMetadata resourcePoolInfo
+             * @property {string|null} [pluginIdentifier] TaskExecutionMetadata pluginIdentifier
              */
 
             /**
@@ -14179,6 +14180,14 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.prototype.resourcePoolInfo = $util.emptyArray;
 
             /**
+             * TaskExecutionMetadata pluginIdentifier.
+             * @member {string} pluginIdentifier
+             * @memberof flyteidl.event.TaskExecutionMetadata
+             * @instance
+             */
+            TaskExecutionMetadata.prototype.pluginIdentifier = "";
+
+            /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.event.TaskExecutionMetadata
@@ -14207,6 +14216,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.resourcePoolInfo != null && message.resourcePoolInfo.length)
                     for (let i = 0; i < message.resourcePoolInfo.length; ++i)
                         $root.flyteidl.event.ResourcePoolInfo.encode(message.resourcePoolInfo[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.pluginIdentifier != null && message.hasOwnProperty("pluginIdentifier"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.pluginIdentifier);
                 if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
                     writer.uint32(/* id 16, wireType 0 =*/128).int32(message.instanceClass);
                 return writer;
@@ -14240,6 +14251,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.resourcePoolInfo && message.resourcePoolInfo.length))
                             message.resourcePoolInfo = [];
                         message.resourcePoolInfo.push($root.flyteidl.event.ResourcePoolInfo.decode(reader, reader.uint32()));
+                        break;
+                    case 3:
+                        message.pluginIdentifier = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14282,6 +14296,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "resourcePoolInfo." + error;
                     }
                 }
+                if (message.pluginIdentifier != null && message.hasOwnProperty("pluginIdentifier"))
+                    if (!$util.isString(message.pluginIdentifier))
+                        return "pluginIdentifier: string expected";
                 return null;
             };
 

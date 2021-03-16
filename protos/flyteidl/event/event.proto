@@ -204,4 +204,7 @@ message TaskExecutionMetadata {
     // Includes information about resource token allocation (if applicable).
     // This is a repeated field because a plugin can request multiple resource allocations during execution.
     repeated ResourcePoolInfo resource_pool_info = 2;
+
+    // The identifier of the plugin used to execute this task.
+    string plugin_identifier = 3;
 }

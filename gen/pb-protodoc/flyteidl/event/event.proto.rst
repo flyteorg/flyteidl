@@ -502,7 +502,8 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
   {
     "instance_class": "...",
     "resource_ids": "{...}",
-    "resource_pool_info": []
+    "resource_pool_info": [],
+    "plugin_identifier": "..."
   }
 
 .. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
@@ -521,6 +522,12 @@ resource_ids
 resource_pool_info
   (:ref:`flyteidl.event.ResourcePoolInfo <api_msg_flyteidl.event.ResourcePoolInfo>`) Includes information about resource token allocation (if applicable).
   This is a repeated field because a plugin can request multiple resource allocations during execution.
+  
+  
+.. _api_field_flyteidl.event.TaskExecutionMetadata.plugin_identifier:
+
+plugin_identifier
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The identifier of the plugin used to execute this task.
   
   
 

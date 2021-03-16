@@ -962,6 +962,8 @@ func (m *TaskExecutionMetadata) Validate() error {
 
 	}
 
+	// no validation rules for PluginIdentifier
+
 	return nil
 }
 
