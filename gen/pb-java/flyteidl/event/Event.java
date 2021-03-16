@@ -11607,8 +11607,863 @@ public final class Event {
 
   }
 
-  public interface ManagedResourceInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.event.ManagedResourceInfo)
+  public interface ResourceIdentifiersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.ResourceIdentifiers)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Unique, generated name for this task execution used by the backend.
+     * </pre>
+     *
+     * <code>string generated_name = 1;</code>
+     */
+    java.lang.String getGeneratedName();
+    /**
+     * <pre>
+     * Unique, generated name for this task execution used by the backend.
+     * </pre>
+     *
+     * <code>string generated_name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getGeneratedNameBytes();
+
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    java.util.List<java.lang.String>
+        getExternalIdsList();
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    int getExternalIdsCount();
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    java.lang.String getExternalIds(int index);
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getExternalIdsBytes(int index);
+  }
+  /**
+   * <pre>
+   * This message contains various identifiers for resources used for a specific task execution.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.ResourceIdentifiers}
+   */
+  public  static final class ResourceIdentifiers extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.ResourceIdentifiers)
+      ResourceIdentifiersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResourceIdentifiers.newBuilder() to construct.
+    private ResourceIdentifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResourceIdentifiers() {
+      generatedName_ = "";
+      externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResourceIdentifiers(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              generatedName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                externalIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              externalIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          externalIds_ = externalIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ResourceIdentifiers_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ResourceIdentifiers_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.ResourceIdentifiers.class, flyteidl.event.Event.ResourceIdentifiers.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int GENERATED_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object generatedName_;
+    /**
+     * <pre>
+     * Unique, generated name for this task execution used by the backend.
+     * </pre>
+     *
+     * <code>string generated_name = 1;</code>
+     */
+    public java.lang.String getGeneratedName() {
+      java.lang.Object ref = generatedName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        generatedName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unique, generated name for this task execution used by the backend.
+     * </pre>
+     *
+     * <code>string generated_name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGeneratedNameBytes() {
+      java.lang.Object ref = generatedName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        generatedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXTERNAL_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList externalIds_;
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getExternalIdsList() {
+      return externalIds_;
+    }
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    public int getExternalIdsCount() {
+      return externalIds_.size();
+    }
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    public java.lang.String getExternalIds(int index) {
+      return externalIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+     * </pre>
+     *
+     * <code>repeated string external_ids = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExternalIdsBytes(int index) {
+      return externalIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getGeneratedNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, generatedName_);
+      }
+      for (int i = 0; i < externalIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, externalIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getGeneratedNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, generatedName_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < externalIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(externalIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExternalIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.ResourceIdentifiers)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.ResourceIdentifiers other = (flyteidl.event.Event.ResourceIdentifiers) obj;
+
+      if (!getGeneratedName()
+          .equals(other.getGeneratedName())) return false;
+      if (!getExternalIdsList()
+          .equals(other.getExternalIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GENERATED_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getGeneratedName().hashCode();
+      if (getExternalIdsCount() > 0) {
+        hash = (37 * hash) + EXTERNAL_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getExternalIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ResourceIdentifiers parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.ResourceIdentifiers prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * This message contains various identifiers for resources used for a specific task execution.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.ResourceIdentifiers}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.ResourceIdentifiers)
+        flyteidl.event.Event.ResourceIdentifiersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourceIdentifiers_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourceIdentifiers_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.ResourceIdentifiers.class, flyteidl.event.Event.ResourceIdentifiers.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.ResourceIdentifiers.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        generatedName_ = "";
+
+        externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourceIdentifiers_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ResourceIdentifiers getDefaultInstanceForType() {
+        return flyteidl.event.Event.ResourceIdentifiers.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ResourceIdentifiers build() {
+        flyteidl.event.Event.ResourceIdentifiers result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ResourceIdentifiers buildPartial() {
+        flyteidl.event.Event.ResourceIdentifiers result = new flyteidl.event.Event.ResourceIdentifiers(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.generatedName_ = generatedName_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          externalIds_ = externalIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.externalIds_ = externalIds_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.ResourceIdentifiers) {
+          return mergeFrom((flyteidl.event.Event.ResourceIdentifiers)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.ResourceIdentifiers other) {
+        if (other == flyteidl.event.Event.ResourceIdentifiers.getDefaultInstance()) return this;
+        if (!other.getGeneratedName().isEmpty()) {
+          generatedName_ = other.generatedName_;
+          onChanged();
+        }
+        if (!other.externalIds_.isEmpty()) {
+          if (externalIds_.isEmpty()) {
+            externalIds_ = other.externalIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureExternalIdsIsMutable();
+            externalIds_.addAll(other.externalIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.ResourceIdentifiers parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.ResourceIdentifiers) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object generatedName_ = "";
+      /**
+       * <pre>
+       * Unique, generated name for this task execution used by the backend.
+       * </pre>
+       *
+       * <code>string generated_name = 1;</code>
+       */
+      public java.lang.String getGeneratedName() {
+        java.lang.Object ref = generatedName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          generatedName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique, generated name for this task execution used by the backend.
+       * </pre>
+       *
+       * <code>string generated_name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGeneratedNameBytes() {
+        java.lang.Object ref = generatedName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          generatedName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique, generated name for this task execution used by the backend.
+       * </pre>
+       *
+       * <code>string generated_name = 1;</code>
+       */
+      public Builder setGeneratedName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        generatedName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique, generated name for this task execution used by the backend.
+       * </pre>
+       *
+       * <code>string generated_name = 1;</code>
+       */
+      public Builder clearGeneratedName() {
+        
+        generatedName_ = getDefaultInstance().getGeneratedName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique, generated name for this task execution used by the backend.
+       * </pre>
+       *
+       * <code>string generated_name = 1;</code>
+       */
+      public Builder setGeneratedNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        generatedName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureExternalIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          externalIds_ = new com.google.protobuf.LazyStringArrayList(externalIds_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getExternalIdsList() {
+        return externalIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public int getExternalIdsCount() {
+        return externalIds_.size();
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public java.lang.String getExternalIds(int index) {
+        return externalIds_.get(index);
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExternalIdsBytes(int index) {
+        return externalIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public Builder setExternalIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExternalIdsIsMutable();
+        externalIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public Builder addExternalIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExternalIdsIsMutable();
+        externalIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public Builder addAllExternalIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureExternalIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, externalIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public Builder clearExternalIds() {
+        externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+       * </pre>
+       *
+       * <code>repeated string external_ids = 2;</code>
+       */
+      public Builder addExternalIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureExternalIdsIsMutable();
+        externalIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.ResourceIdentifiers)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.ResourceIdentifiers)
+    private static final flyteidl.event.Event.ResourceIdentifiers DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.ResourceIdentifiers();
+    }
+
+    public static flyteidl.event.Event.ResourceIdentifiers getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResourceIdentifiers>
+        PARSER = new com.google.protobuf.AbstractParser<ResourceIdentifiers>() {
+      @java.lang.Override
+      public ResourceIdentifiers parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResourceIdentifiers(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResourceIdentifiers> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResourceIdentifiers> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.ResourceIdentifiers getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResourcePoolInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.ResourcePoolInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -11653,18 +12508,18 @@ public final class Event {
    * executions for a project namespace.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.event.ManagedResourceInfo}
+   * Protobuf type {@code flyteidl.event.ResourcePoolInfo}
    */
-  public  static final class ManagedResourceInfo extends
+  public  static final class ResourcePoolInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.event.ManagedResourceInfo)
-      ManagedResourceInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.event.ResourcePoolInfo)
+      ResourcePoolInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ManagedResourceInfo.newBuilder() to construct.
-    private ManagedResourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ResourcePoolInfo.newBuilder() to construct.
+    private ResourcePoolInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ManagedResourceInfo() {
+    private ResourcePoolInfo() {
       allocationToken_ = "";
       namespace_ = "";
     }
@@ -11674,7 +12529,7 @@ public final class Event {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ManagedResourceInfo(
+    private ResourcePoolInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11726,15 +12581,15 @@ public final class Event {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_ManagedResourceInfo_descriptor;
+      return flyteidl.event.Event.internal_static_flyteidl_event_ResourcePoolInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.event.Event.internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable
+      return flyteidl.event.Event.internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.event.Event.ManagedResourceInfo.class, flyteidl.event.Event.ManagedResourceInfo.Builder.class);
+              flyteidl.event.Event.ResourcePoolInfo.class, flyteidl.event.Event.ResourcePoolInfo.Builder.class);
     }
 
     public static final int ALLOCATION_TOKEN_FIELD_NUMBER = 1;
@@ -11866,10 +12721,10 @@ public final class Event {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.event.Event.ManagedResourceInfo)) {
+      if (!(obj instanceof flyteidl.event.Event.ResourcePoolInfo)) {
         return super.equals(obj);
       }
-      flyteidl.event.Event.ManagedResourceInfo other = (flyteidl.event.Event.ManagedResourceInfo) obj;
+      flyteidl.event.Event.ResourcePoolInfo other = (flyteidl.event.Event.ResourcePoolInfo) obj;
 
       if (!getAllocationToken()
           .equals(other.getAllocationToken())) return false;
@@ -11895,69 +12750,69 @@ public final class Event {
       return hash;
     }
 
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(byte[] data)
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.event.Event.ResourcePoolInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseDelimitedFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.event.Event.ManagedResourceInfo parseFrom(
+    public static flyteidl.event.Event.ResourcePoolInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11970,7 +12825,7 @@ public final class Event {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.event.Event.ManagedResourceInfo prototype) {
+    public static Builder newBuilder(flyteidl.event.Event.ResourcePoolInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11991,26 +12846,26 @@ public final class Event {
      * executions for a project namespace.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.event.ManagedResourceInfo}
+     * Protobuf type {@code flyteidl.event.ResourcePoolInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.event.ManagedResourceInfo)
-        flyteidl.event.Event.ManagedResourceInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.ResourcePoolInfo)
+        flyteidl.event.Event.ResourcePoolInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_ManagedResourceInfo_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourcePoolInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.event.Event.ManagedResourceInfo.class, flyteidl.event.Event.ManagedResourceInfo.Builder.class);
+                flyteidl.event.Event.ResourcePoolInfo.class, flyteidl.event.Event.ResourcePoolInfo.Builder.class);
       }
 
-      // Construct using flyteidl.event.Event.ManagedResourceInfo.newBuilder()
+      // Construct using flyteidl.event.Event.ResourcePoolInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12038,17 +12893,17 @@ public final class Event {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.event.Event.internal_static_flyteidl_event_ManagedResourceInfo_descriptor;
+        return flyteidl.event.Event.internal_static_flyteidl_event_ResourcePoolInfo_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.ManagedResourceInfo getDefaultInstanceForType() {
-        return flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance();
+      public flyteidl.event.Event.ResourcePoolInfo getDefaultInstanceForType() {
+        return flyteidl.event.Event.ResourcePoolInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.ManagedResourceInfo build() {
-        flyteidl.event.Event.ManagedResourceInfo result = buildPartial();
+      public flyteidl.event.Event.ResourcePoolInfo build() {
+        flyteidl.event.Event.ResourcePoolInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12056,8 +12911,8 @@ public final class Event {
       }
 
       @java.lang.Override
-      public flyteidl.event.Event.ManagedResourceInfo buildPartial() {
-        flyteidl.event.Event.ManagedResourceInfo result = new flyteidl.event.Event.ManagedResourceInfo(this);
+      public flyteidl.event.Event.ResourcePoolInfo buildPartial() {
+        flyteidl.event.Event.ResourcePoolInfo result = new flyteidl.event.Event.ResourcePoolInfo(this);
         result.allocationToken_ = allocationToken_;
         result.namespace_ = namespace_;
         onBuilt();
@@ -12098,16 +12953,16 @@ public final class Event {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.event.Event.ManagedResourceInfo) {
-          return mergeFrom((flyteidl.event.Event.ManagedResourceInfo)other);
+        if (other instanceof flyteidl.event.Event.ResourcePoolInfo) {
+          return mergeFrom((flyteidl.event.Event.ResourcePoolInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.event.Event.ManagedResourceInfo other) {
-        if (other == flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.event.Event.ResourcePoolInfo other) {
+        if (other == flyteidl.event.Event.ResourcePoolInfo.getDefaultInstance()) return this;
         if (!other.getAllocationToken().isEmpty()) {
           allocationToken_ = other.allocationToken_;
           onChanged();
@@ -12131,11 +12986,11 @@ public final class Event {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.event.Event.ManagedResourceInfo parsedMessage = null;
+        flyteidl.event.Event.ResourcePoolInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.event.Event.ManagedResourceInfo) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.event.Event.ResourcePoolInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12335,41 +13190,41 @@ public final class Event {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.event.ManagedResourceInfo)
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.ResourcePoolInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.event.ManagedResourceInfo)
-    private static final flyteidl.event.Event.ManagedResourceInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.event.ResourcePoolInfo)
+    private static final flyteidl.event.Event.ResourcePoolInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.event.Event.ManagedResourceInfo();
+      DEFAULT_INSTANCE = new flyteidl.event.Event.ResourcePoolInfo();
     }
 
-    public static flyteidl.event.Event.ManagedResourceInfo getDefaultInstance() {
+    public static flyteidl.event.Event.ResourcePoolInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ManagedResourceInfo>
-        PARSER = new com.google.protobuf.AbstractParser<ManagedResourceInfo>() {
+    private static final com.google.protobuf.Parser<ResourcePoolInfo>
+        PARSER = new com.google.protobuf.AbstractParser<ResourcePoolInfo>() {
       @java.lang.Override
-      public ManagedResourceInfo parsePartialFrom(
+      public ResourcePoolInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ManagedResourceInfo(input, extensionRegistry);
+        return new ResourcePoolInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ManagedResourceInfo> parser() {
+    public static com.google.protobuf.Parser<ResourcePoolInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ManagedResourceInfo> getParserForType() {
+    public com.google.protobuf.Parser<ResourcePoolInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.event.Event.ManagedResourceInfo getDefaultInstanceForType() {
+    public flyteidl.event.Event.ResourcePoolInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12390,21 +13245,28 @@ public final class Event {
 
     /**
      * <pre>
-     * Unique name for this task execution used by the backend, may be generated.
+     * Contains various identifiers for resources used during execution.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
      */
-    java.lang.String getResourceName();
+    boolean hasResourceIds();
     /**
      * <pre>
-     * Unique name for this task execution used by the backend, may be generated.
+     * Contains various identifiers for resources used during execution.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceNameBytes();
+    flyteidl.event.Event.ResourceIdentifiers getResourceIds();
+    /**
+     * <pre>
+     * Contains various identifiers for resources used during execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+     */
+    flyteidl.event.Event.ResourceIdentifiersOrBuilder getResourceIdsOrBuilder();
 
     /**
      * <pre>
@@ -12412,47 +13274,47 @@ public final class Event {
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    java.util.List<flyteidl.event.Event.ManagedResourceInfo> 
-        getManagedResourceInfoList();
+    java.util.List<flyteidl.event.Event.ResourcePoolInfo> 
+        getResourcePoolInfoList();
     /**
      * <pre>
      * Includes information about resource token allocation (if applicable).
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index);
+    flyteidl.event.Event.ResourcePoolInfo getResourcePoolInfo(int index);
     /**
      * <pre>
      * Includes information about resource token allocation (if applicable).
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    int getManagedResourceInfoCount();
+    int getResourcePoolInfoCount();
     /**
      * <pre>
      * Includes information about resource token allocation (if applicable).
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
-        getManagedResourceInfoOrBuilderList();
+    java.util.List<? extends flyteidl.event.Event.ResourcePoolInfoOrBuilder> 
+        getResourcePoolInfoOrBuilderList();
     /**
      * <pre>
      * Includes information about resource token allocation (if applicable).
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+    flyteidl.event.Event.ResourcePoolInfoOrBuilder getResourcePoolInfoOrBuilder(
         int index);
   }
   /**
@@ -12474,8 +13336,7 @@ public final class Event {
     }
     private TaskExecutionMetadata() {
       instanceClass_ = 0;
-      resourceName_ = "";
-      managedResourceInfo_ = java.util.Collections.emptyList();
+      resourcePoolInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -12503,18 +13364,25 @@ public final class Event {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              flyteidl.event.Event.ResourceIdentifiers.Builder subBuilder = null;
+              if (resourceIds_ != null) {
+                subBuilder = resourceIds_.toBuilder();
+              }
+              resourceIds_ = input.readMessage(flyteidl.event.Event.ResourceIdentifiers.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resourceIds_);
+                resourceIds_ = subBuilder.buildPartial();
+              }
 
-              resourceName_ = s;
               break;
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                managedResourceInfo_ = new java.util.ArrayList<flyteidl.event.Event.ManagedResourceInfo>();
+                resourcePoolInfo_ = new java.util.ArrayList<flyteidl.event.Event.ResourcePoolInfo>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              managedResourceInfo_.add(
-                  input.readMessage(flyteidl.event.Event.ManagedResourceInfo.parser(), extensionRegistry));
+              resourcePoolInfo_.add(
+                  input.readMessage(flyteidl.event.Event.ResourcePoolInfo.parser(), extensionRegistry));
               break;
             }
             case 128: {
@@ -12539,7 +13407,7 @@ public final class Event {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          managedResourceInfo_ = java.util.Collections.unmodifiableList(managedResourceInfo_);
+          resourcePoolInfo_ = java.util.Collections.unmodifiableList(resourcePoolInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -12694,60 +13562,51 @@ public final class Event {
       return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
     }
 
-    public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object resourceName_;
+    public static final int RESOURCE_IDS_FIELD_NUMBER = 1;
+    private flyteidl.event.Event.ResourceIdentifiers resourceIds_;
     /**
      * <pre>
-     * Unique name for this task execution used by the backend, may be generated.
+     * Contains various identifiers for resources used during execution.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
      */
-    public java.lang.String getResourceName() {
-      java.lang.Object ref = resourceName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resourceName_ = s;
-        return s;
-      }
+    public boolean hasResourceIds() {
+      return resourceIds_ != null;
     }
     /**
      * <pre>
-     * Unique name for this task execution used by the backend, may be generated.
+     * Contains various identifiers for resources used during execution.
      * </pre>
      *
-     * <code>string resource_name = 1;</code>
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceNameBytes() {
-      java.lang.Object ref = resourceName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        resourceName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.event.Event.ResourceIdentifiers getResourceIds() {
+      return resourceIds_ == null ? flyteidl.event.Event.ResourceIdentifiers.getDefaultInstance() : resourceIds_;
+    }
+    /**
+     * <pre>
+     * Contains various identifiers for resources used during execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+     */
+    public flyteidl.event.Event.ResourceIdentifiersOrBuilder getResourceIdsOrBuilder() {
+      return getResourceIds();
     }
 
-    public static final int MANAGED_RESOURCE_INFO_FIELD_NUMBER = 2;
-    private java.util.List<flyteidl.event.Event.ManagedResourceInfo> managedResourceInfo_;
+    public static final int RESOURCE_POOL_INFO_FIELD_NUMBER = 2;
+    private java.util.List<flyteidl.event.Event.ResourcePoolInfo> resourcePoolInfo_;
     /**
      * <pre>
      * Includes information about resource token allocation (if applicable).
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    public java.util.List<flyteidl.event.Event.ManagedResourceInfo> getManagedResourceInfoList() {
-      return managedResourceInfo_;
+    public java.util.List<flyteidl.event.Event.ResourcePoolInfo> getResourcePoolInfoList() {
+      return resourcePoolInfo_;
     }
     /**
      * <pre>
@@ -12755,11 +13614,11 @@ public final class Event {
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    public java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
-        getManagedResourceInfoOrBuilderList() {
-      return managedResourceInfo_;
+    public java.util.List<? extends flyteidl.event.Event.ResourcePoolInfoOrBuilder> 
+        getResourcePoolInfoOrBuilderList() {
+      return resourcePoolInfo_;
     }
     /**
      * <pre>
@@ -12767,10 +13626,10 @@ public final class Event {
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    public int getManagedResourceInfoCount() {
-      return managedResourceInfo_.size();
+    public int getResourcePoolInfoCount() {
+      return resourcePoolInfo_.size();
     }
     /**
      * <pre>
@@ -12778,10 +13637,10 @@ public final class Event {
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index) {
-      return managedResourceInfo_.get(index);
+    public flyteidl.event.Event.ResourcePoolInfo getResourcePoolInfo(int index) {
+      return resourcePoolInfo_.get(index);
     }
     /**
      * <pre>
@@ -12789,11 +13648,11 @@ public final class Event {
      * This is a repeated field because a plugin can request multiple resource allocations during execution.
      * </pre>
      *
-     * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+     * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
      */
-    public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+    public flyteidl.event.Event.ResourcePoolInfoOrBuilder getResourcePoolInfoOrBuilder(
         int index) {
-      return managedResourceInfo_.get(index);
+      return resourcePoolInfo_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -12810,11 +13669,11 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getResourceNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
+      if (resourceIds_ != null) {
+        output.writeMessage(1, getResourceIds());
       }
-      for (int i = 0; i < managedResourceInfo_.size(); i++) {
-        output.writeMessage(2, managedResourceInfo_.get(i));
+      for (int i = 0; i < resourcePoolInfo_.size(); i++) {
+        output.writeMessage(2, resourcePoolInfo_.get(i));
       }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         output.writeEnum(16, instanceClass_);
@@ -12828,12 +13687,13 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (!getResourceNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
-      }
-      for (int i = 0; i < managedResourceInfo_.size(); i++) {
+      if (resourceIds_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, managedResourceInfo_.get(i));
+          .computeMessageSize(1, getResourceIds());
+      }
+      for (int i = 0; i < resourcePoolInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, resourcePoolInfo_.get(i));
       }
       if (instanceClass_ != flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -12855,10 +13715,13 @@ public final class Event {
       flyteidl.event.Event.TaskExecutionMetadata other = (flyteidl.event.Event.TaskExecutionMetadata) obj;
 
       if (instanceClass_ != other.instanceClass_) return false;
-      if (!getResourceName()
-          .equals(other.getResourceName())) return false;
-      if (!getManagedResourceInfoList()
-          .equals(other.getManagedResourceInfoList())) return false;
+      if (hasResourceIds() != other.hasResourceIds()) return false;
+      if (hasResourceIds()) {
+        if (!getResourceIds()
+            .equals(other.getResourceIds())) return false;
+      }
+      if (!getResourcePoolInfoList()
+          .equals(other.getResourcePoolInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12872,11 +13735,13 @@ public final class Event {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INSTANCE_CLASS_FIELD_NUMBER;
       hash = (53 * hash) + instanceClass_;
-      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceName().hashCode();
-      if (getManagedResourceInfoCount() > 0) {
-        hash = (37 * hash) + MANAGED_RESOURCE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getManagedResourceInfoList().hashCode();
+      if (hasResourceIds()) {
+        hash = (37 * hash) + RESOURCE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getResourceIds().hashCode();
+      }
+      if (getResourcePoolInfoCount() > 0) {
+        hash = (37 * hash) + RESOURCE_POOL_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getResourcePoolInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -13011,7 +13876,7 @@ public final class Event {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getManagedResourceInfoFieldBuilder();
+          getResourcePoolInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -13019,13 +13884,17 @@ public final class Event {
         super.clear();
         instanceClass_ = 0;
 
-        resourceName_ = "";
-
-        if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfo_ = java.util.Collections.emptyList();
+        if (resourceIdsBuilder_ == null) {
+          resourceIds_ = null;
+        } else {
+          resourceIds_ = null;
+          resourceIdsBuilder_ = null;
+        }
+        if (resourcePoolInfoBuilder_ == null) {
+          resourcePoolInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          managedResourceInfoBuilder_.clear();
+          resourcePoolInfoBuilder_.clear();
         }
         return this;
       }
@@ -13056,15 +13925,19 @@ public final class Event {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.instanceClass_ = instanceClass_;
-        result.resourceName_ = resourceName_;
-        if (managedResourceInfoBuilder_ == null) {
+        if (resourceIdsBuilder_ == null) {
+          result.resourceIds_ = resourceIds_;
+        } else {
+          result.resourceIds_ = resourceIdsBuilder_.build();
+        }
+        if (resourcePoolInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
-            managedResourceInfo_ = java.util.Collections.unmodifiableList(managedResourceInfo_);
+            resourcePoolInfo_ = java.util.Collections.unmodifiableList(resourcePoolInfo_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.managedResourceInfo_ = managedResourceInfo_;
+          result.resourcePoolInfo_ = resourcePoolInfo_;
         } else {
-          result.managedResourceInfo_ = managedResourceInfoBuilder_.build();
+          result.resourcePoolInfo_ = resourcePoolInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -13118,33 +13991,32 @@ public final class Event {
         if (other.instanceClass_ != 0) {
           setInstanceClassValue(other.getInstanceClassValue());
         }
-        if (!other.getResourceName().isEmpty()) {
-          resourceName_ = other.resourceName_;
-          onChanged();
+        if (other.hasResourceIds()) {
+          mergeResourceIds(other.getResourceIds());
         }
-        if (managedResourceInfoBuilder_ == null) {
-          if (!other.managedResourceInfo_.isEmpty()) {
-            if (managedResourceInfo_.isEmpty()) {
-              managedResourceInfo_ = other.managedResourceInfo_;
+        if (resourcePoolInfoBuilder_ == null) {
+          if (!other.resourcePoolInfo_.isEmpty()) {
+            if (resourcePoolInfo_.isEmpty()) {
+              resourcePoolInfo_ = other.resourcePoolInfo_;
               bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureManagedResourceInfoIsMutable();
-              managedResourceInfo_.addAll(other.managedResourceInfo_);
+              ensureResourcePoolInfoIsMutable();
+              resourcePoolInfo_.addAll(other.resourcePoolInfo_);
             }
             onChanged();
           }
         } else {
-          if (!other.managedResourceInfo_.isEmpty()) {
-            if (managedResourceInfoBuilder_.isEmpty()) {
-              managedResourceInfoBuilder_.dispose();
-              managedResourceInfoBuilder_ = null;
-              managedResourceInfo_ = other.managedResourceInfo_;
+          if (!other.resourcePoolInfo_.isEmpty()) {
+            if (resourcePoolInfoBuilder_.isEmpty()) {
+              resourcePoolInfoBuilder_.dispose();
+              resourcePoolInfoBuilder_ = null;
+              resourcePoolInfo_ = other.resourcePoolInfo_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              managedResourceInfoBuilder_ = 
+              resourcePoolInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getManagedResourceInfoFieldBuilder() : null;
+                   getResourcePoolInfoFieldBuilder() : null;
             } else {
-              managedResourceInfoBuilder_.addAllMessages(other.managedResourceInfo_);
+              resourcePoolInfoBuilder_.addAllMessages(other.resourcePoolInfo_);
             }
           }
         }
@@ -13223,106 +14095,170 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object resourceName_ = "";
+      private flyteidl.event.Event.ResourceIdentifiers resourceIds_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.ResourceIdentifiers, flyteidl.event.Event.ResourceIdentifiers.Builder, flyteidl.event.Event.ResourceIdentifiersOrBuilder> resourceIdsBuilder_;
       /**
        * <pre>
-       * Unique name for this task execution used by the backend, may be generated.
+       * Contains various identifiers for resources used during execution.
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
        */
-      public java.lang.String getResourceName() {
-        java.lang.Object ref = resourceName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          resourceName_ = s;
-          return s;
+      public boolean hasResourceIds() {
+        return resourceIdsBuilder_ != null || resourceIds_ != null;
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public flyteidl.event.Event.ResourceIdentifiers getResourceIds() {
+        if (resourceIdsBuilder_ == null) {
+          return resourceIds_ == null ? flyteidl.event.Event.ResourceIdentifiers.getDefaultInstance() : resourceIds_;
         } else {
-          return (java.lang.String) ref;
+          return resourceIdsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Unique name for this task execution used by the backend, may be generated.
+       * Contains various identifiers for resources used during execution.
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceNameBytes() {
-        java.lang.Object ref = resourceName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          resourceName_ = b;
-          return b;
+      public Builder setResourceIds(flyteidl.event.Event.ResourceIdentifiers value) {
+        if (resourceIdsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceIds_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          resourceIdsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public Builder setResourceIds(
+          flyteidl.event.Event.ResourceIdentifiers.Builder builderForValue) {
+        if (resourceIdsBuilder_ == null) {
+          resourceIds_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceIdsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public Builder mergeResourceIds(flyteidl.event.Event.ResourceIdentifiers value) {
+        if (resourceIdsBuilder_ == null) {
+          if (resourceIds_ != null) {
+            resourceIds_ =
+              flyteidl.event.Event.ResourceIdentifiers.newBuilder(resourceIds_).mergeFrom(value).buildPartial();
+          } else {
+            resourceIds_ = value;
+          }
+          onChanged();
+        } else {
+          resourceIdsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public Builder clearResourceIds() {
+        if (resourceIdsBuilder_ == null) {
+          resourceIds_ = null;
+          onChanged();
+        } else {
+          resourceIds_ = null;
+          resourceIdsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public flyteidl.event.Event.ResourceIdentifiers.Builder getResourceIdsBuilder() {
+        
+        onChanged();
+        return getResourceIdsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Contains various identifiers for resources used during execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
+       */
+      public flyteidl.event.Event.ResourceIdentifiersOrBuilder getResourceIdsOrBuilder() {
+        if (resourceIdsBuilder_ != null) {
+          return resourceIdsBuilder_.getMessageOrBuilder();
+        } else {
+          return resourceIds_ == null ?
+              flyteidl.event.Event.ResourceIdentifiers.getDefaultInstance() : resourceIds_;
         }
       }
       /**
        * <pre>
-       * Unique name for this task execution used by the backend, may be generated.
+       * Contains various identifiers for resources used during execution.
        * </pre>
        *
-       * <code>string resource_name = 1;</code>
+       * <code>.flyteidl.event.ResourceIdentifiers resource_ids = 1;</code>
        */
-      public Builder setResourceName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        resourceName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique name for this task execution used by the backend, may be generated.
-       * </pre>
-       *
-       * <code>string resource_name = 1;</code>
-       */
-      public Builder clearResourceName() {
-        
-        resourceName_ = getDefaultInstance().getResourceName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique name for this task execution used by the backend, may be generated.
-       * </pre>
-       *
-       * <code>string resource_name = 1;</code>
-       */
-      public Builder setResourceNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        resourceName_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.ResourceIdentifiers, flyteidl.event.Event.ResourceIdentifiers.Builder, flyteidl.event.Event.ResourceIdentifiersOrBuilder> 
+          getResourceIdsFieldBuilder() {
+        if (resourceIdsBuilder_ == null) {
+          resourceIdsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.event.Event.ResourceIdentifiers, flyteidl.event.Event.ResourceIdentifiers.Builder, flyteidl.event.Event.ResourceIdentifiersOrBuilder>(
+                  getResourceIds(),
+                  getParentForChildren(),
+                  isClean());
+          resourceIds_ = null;
+        }
+        return resourceIdsBuilder_;
       }
 
-      private java.util.List<flyteidl.event.Event.ManagedResourceInfo> managedResourceInfo_ =
+      private java.util.List<flyteidl.event.Event.ResourcePoolInfo> resourcePoolInfo_ =
         java.util.Collections.emptyList();
-      private void ensureManagedResourceInfoIsMutable() {
+      private void ensureResourcePoolInfoIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          managedResourceInfo_ = new java.util.ArrayList<flyteidl.event.Event.ManagedResourceInfo>(managedResourceInfo_);
+          resourcePoolInfo_ = new java.util.ArrayList<flyteidl.event.Event.ResourcePoolInfo>(resourcePoolInfo_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder> managedResourceInfoBuilder_;
+          flyteidl.event.Event.ResourcePoolInfo, flyteidl.event.Event.ResourcePoolInfo.Builder, flyteidl.event.Event.ResourcePoolInfoOrBuilder> resourcePoolInfoBuilder_;
 
       /**
        * <pre>
@@ -13330,13 +14266,13 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public java.util.List<flyteidl.event.Event.ManagedResourceInfo> getManagedResourceInfoList() {
-        if (managedResourceInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(managedResourceInfo_);
+      public java.util.List<flyteidl.event.Event.ResourcePoolInfo> getResourcePoolInfoList() {
+        if (resourcePoolInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(resourcePoolInfo_);
         } else {
-          return managedResourceInfoBuilder_.getMessageList();
+          return resourcePoolInfoBuilder_.getMessageList();
         }
       }
       /**
@@ -13345,13 +14281,13 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public int getManagedResourceInfoCount() {
-        if (managedResourceInfoBuilder_ == null) {
-          return managedResourceInfo_.size();
+      public int getResourcePoolInfoCount() {
+        if (resourcePoolInfoBuilder_ == null) {
+          return resourcePoolInfo_.size();
         } else {
-          return managedResourceInfoBuilder_.getCount();
+          return resourcePoolInfoBuilder_.getCount();
         }
       }
       /**
@@ -13360,13 +14296,13 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo getManagedResourceInfo(int index) {
-        if (managedResourceInfoBuilder_ == null) {
-          return managedResourceInfo_.get(index);
+      public flyteidl.event.Event.ResourcePoolInfo getResourcePoolInfo(int index) {
+        if (resourcePoolInfoBuilder_ == null) {
+          return resourcePoolInfo_.get(index);
         } else {
-          return managedResourceInfoBuilder_.getMessage(index);
+          return resourcePoolInfoBuilder_.getMessage(index);
         }
       }
       /**
@@ -13375,19 +14311,19 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder setManagedResourceInfo(
-          int index, flyteidl.event.Event.ManagedResourceInfo value) {
-        if (managedResourceInfoBuilder_ == null) {
+      public Builder setResourcePoolInfo(
+          int index, flyteidl.event.Event.ResourcePoolInfo value) {
+        if (resourcePoolInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.set(index, value);
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.set(index, value);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.setMessage(index, value);
+          resourcePoolInfoBuilder_.setMessage(index, value);
         }
         return this;
       }
@@ -13397,16 +14333,16 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder setManagedResourceInfo(
-          int index, flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
-        if (managedResourceInfoBuilder_ == null) {
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.set(index, builderForValue.build());
+      public Builder setResourcePoolInfo(
+          int index, flyteidl.event.Event.ResourcePoolInfo.Builder builderForValue) {
+        if (resourcePoolInfoBuilder_ == null) {
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.set(index, builderForValue.build());
           onChanged();
         } else {
-          managedResourceInfoBuilder_.setMessage(index, builderForValue.build());
+          resourcePoolInfoBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -13416,18 +14352,18 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder addManagedResourceInfo(flyteidl.event.Event.ManagedResourceInfo value) {
-        if (managedResourceInfoBuilder_ == null) {
+      public Builder addResourcePoolInfo(flyteidl.event.Event.ResourcePoolInfo value) {
+        if (resourcePoolInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.add(value);
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.add(value);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.addMessage(value);
+          resourcePoolInfoBuilder_.addMessage(value);
         }
         return this;
       }
@@ -13437,19 +14373,19 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder addManagedResourceInfo(
-          int index, flyteidl.event.Event.ManagedResourceInfo value) {
-        if (managedResourceInfoBuilder_ == null) {
+      public Builder addResourcePoolInfo(
+          int index, flyteidl.event.Event.ResourcePoolInfo value) {
+        if (resourcePoolInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.add(index, value);
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.add(index, value);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.addMessage(index, value);
+          resourcePoolInfoBuilder_.addMessage(index, value);
         }
         return this;
       }
@@ -13459,16 +14395,16 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder addManagedResourceInfo(
-          flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
-        if (managedResourceInfoBuilder_ == null) {
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.add(builderForValue.build());
+      public Builder addResourcePoolInfo(
+          flyteidl.event.Event.ResourcePoolInfo.Builder builderForValue) {
+        if (resourcePoolInfoBuilder_ == null) {
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          managedResourceInfoBuilder_.addMessage(builderForValue.build());
+          resourcePoolInfoBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -13478,16 +14414,16 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder addManagedResourceInfo(
-          int index, flyteidl.event.Event.ManagedResourceInfo.Builder builderForValue) {
-        if (managedResourceInfoBuilder_ == null) {
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.add(index, builderForValue.build());
+      public Builder addResourcePoolInfo(
+          int index, flyteidl.event.Event.ResourcePoolInfo.Builder builderForValue) {
+        if (resourcePoolInfoBuilder_ == null) {
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          managedResourceInfoBuilder_.addMessage(index, builderForValue.build());
+          resourcePoolInfoBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -13497,17 +14433,17 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder addAllManagedResourceInfo(
-          java.lang.Iterable<? extends flyteidl.event.Event.ManagedResourceInfo> values) {
-        if (managedResourceInfoBuilder_ == null) {
-          ensureManagedResourceInfoIsMutable();
+      public Builder addAllResourcePoolInfo(
+          java.lang.Iterable<? extends flyteidl.event.Event.ResourcePoolInfo> values) {
+        if (resourcePoolInfoBuilder_ == null) {
+          ensureResourcePoolInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, managedResourceInfo_);
+              values, resourcePoolInfo_);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.addAllMessages(values);
+          resourcePoolInfoBuilder_.addAllMessages(values);
         }
         return this;
       }
@@ -13517,15 +14453,15 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder clearManagedResourceInfo() {
-        if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfo_ = java.util.Collections.emptyList();
+      public Builder clearResourcePoolInfo() {
+        if (resourcePoolInfoBuilder_ == null) {
+          resourcePoolInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.clear();
+          resourcePoolInfoBuilder_.clear();
         }
         return this;
       }
@@ -13535,15 +14471,15 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public Builder removeManagedResourceInfo(int index) {
-        if (managedResourceInfoBuilder_ == null) {
-          ensureManagedResourceInfoIsMutable();
-          managedResourceInfo_.remove(index);
+      public Builder removeResourcePoolInfo(int index) {
+        if (resourcePoolInfoBuilder_ == null) {
+          ensureResourcePoolInfoIsMutable();
+          resourcePoolInfo_.remove(index);
           onChanged();
         } else {
-          managedResourceInfoBuilder_.remove(index);
+          resourcePoolInfoBuilder_.remove(index);
         }
         return this;
       }
@@ -13553,11 +14489,11 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo.Builder getManagedResourceInfoBuilder(
+      public flyteidl.event.Event.ResourcePoolInfo.Builder getResourcePoolInfoBuilder(
           int index) {
-        return getManagedResourceInfoFieldBuilder().getBuilder(index);
+        return getResourcePoolInfoFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
@@ -13565,13 +14501,13 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfoOrBuilder getManagedResourceInfoOrBuilder(
+      public flyteidl.event.Event.ResourcePoolInfoOrBuilder getResourcePoolInfoOrBuilder(
           int index) {
-        if (managedResourceInfoBuilder_ == null) {
-          return managedResourceInfo_.get(index);  } else {
-          return managedResourceInfoBuilder_.getMessageOrBuilder(index);
+        if (resourcePoolInfoBuilder_ == null) {
+          return resourcePoolInfo_.get(index);  } else {
+          return resourcePoolInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -13580,14 +14516,14 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public java.util.List<? extends flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
-           getManagedResourceInfoOrBuilderList() {
-        if (managedResourceInfoBuilder_ != null) {
-          return managedResourceInfoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends flyteidl.event.Event.ResourcePoolInfoOrBuilder> 
+           getResourcePoolInfoOrBuilderList() {
+        if (resourcePoolInfoBuilder_ != null) {
+          return resourcePoolInfoBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(managedResourceInfo_);
+          return java.util.Collections.unmodifiableList(resourcePoolInfo_);
         }
       }
       /**
@@ -13596,11 +14532,11 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo.Builder addManagedResourceInfoBuilder() {
-        return getManagedResourceInfoFieldBuilder().addBuilder(
-            flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance());
+      public flyteidl.event.Event.ResourcePoolInfo.Builder addResourcePoolInfoBuilder() {
+        return getResourcePoolInfoFieldBuilder().addBuilder(
+            flyteidl.event.Event.ResourcePoolInfo.getDefaultInstance());
       }
       /**
        * <pre>
@@ -13608,12 +14544,12 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public flyteidl.event.Event.ManagedResourceInfo.Builder addManagedResourceInfoBuilder(
+      public flyteidl.event.Event.ResourcePoolInfo.Builder addResourcePoolInfoBuilder(
           int index) {
-        return getManagedResourceInfoFieldBuilder().addBuilder(
-            index, flyteidl.event.Event.ManagedResourceInfo.getDefaultInstance());
+        return getResourcePoolInfoFieldBuilder().addBuilder(
+            index, flyteidl.event.Event.ResourcePoolInfo.getDefaultInstance());
       }
       /**
        * <pre>
@@ -13621,25 +14557,25 @@ public final class Event {
        * This is a repeated field because a plugin can request multiple resource allocations during execution.
        * </pre>
        *
-       * <code>repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;</code>
+       * <code>repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;</code>
        */
-      public java.util.List<flyteidl.event.Event.ManagedResourceInfo.Builder> 
-           getManagedResourceInfoBuilderList() {
-        return getManagedResourceInfoFieldBuilder().getBuilderList();
+      public java.util.List<flyteidl.event.Event.ResourcePoolInfo.Builder> 
+           getResourcePoolInfoBuilderList() {
+        return getResourcePoolInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder> 
-          getManagedResourceInfoFieldBuilder() {
-        if (managedResourceInfoBuilder_ == null) {
-          managedResourceInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.event.Event.ManagedResourceInfo, flyteidl.event.Event.ManagedResourceInfo.Builder, flyteidl.event.Event.ManagedResourceInfoOrBuilder>(
-                  managedResourceInfo_,
+          flyteidl.event.Event.ResourcePoolInfo, flyteidl.event.Event.ResourcePoolInfo.Builder, flyteidl.event.Event.ResourcePoolInfoOrBuilder> 
+          getResourcePoolInfoFieldBuilder() {
+        if (resourcePoolInfoBuilder_ == null) {
+          resourcePoolInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.event.Event.ResourcePoolInfo, flyteidl.event.Event.ResourcePoolInfo.Builder, flyteidl.event.Event.ResourcePoolInfoOrBuilder>(
+                  resourcePoolInfo_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
-          managedResourceInfo_ = null;
+          resourcePoolInfo_ = null;
         }
-        return managedResourceInfoBuilder_;
+        return resourcePoolInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13730,10 +14666,15 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_event_ManagedResourceInfo_descriptor;
+    internal_static_flyteidl_event_ResourceIdentifiers_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable;
+      internal_static_flyteidl_event_ResourceIdentifiers_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_ResourcePoolInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_TaskExecutionMetadata_descriptor;
   private static final 
@@ -13800,17 +14741,19 @@ public final class Event {
       ".google.protobuf.Struct\022\025\n\rphase_version" +
       "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(" +
       "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
-      "kExecutionMetadataB\017\n\routput_result\"B\n\023M" +
-      "anagedResourceInfo\022\030\n\020allocation_token\030\001" +
-      " \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\360\001\n\025TaskExecutio" +
-      "nMetadata\022K\n\016instance_class\030\020 \001(\01623.flyt" +
-      "eidl.event.TaskExecutionMetadata.Instanc" +
-      "eClass\022\025\n\rresource_name\030\001 \001(\t\022B\n\025managed" +
-      "_resource_info\030\002 \003(\0132#.flyteidl.event.Ma" +
-      "nagedResourceInfo\"/\n\rInstanceClass\022\013\n\007DE" +
-      "FAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.com" +
-      "/flyteorg/flyteidl/gen/pb-go/flyteidl/ev" +
-      "entb\006proto3"
+      "kExecutionMetadataB\017\n\routput_result\"C\n\023R" +
+      "esourceIdentifiers\022\026\n\016generated_name\030\001 \001" +
+      "(\t\022\024\n\014external_ids\030\002 \003(\t\"?\n\020ResourcePool" +
+      "Info\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamesp" +
+      "ace\030\002 \001(\t\"\216\002\n\025TaskExecutionMetadata\022K\n\016i" +
+      "nstance_class\030\020 \001(\01623.flyteidl.event.Tas" +
+      "kExecutionMetadata.InstanceClass\0229\n\014reso" +
+      "urce_ids\030\001 \001(\0132#.flyteidl.event.Resource" +
+      "Identifiers\022<\n\022resource_pool_info\030\002 \003(\0132" +
+      " .flyteidl.event.ResourcePoolInfo\"/\n\rIns" +
+      "tanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE" +
+      "\020\001B7Z5github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13871,18 +14814,24 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
         new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "OutputUri", "Error", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "OutputResult", });
-    internal_static_flyteidl_event_ManagedResourceInfo_descriptor =
+    internal_static_flyteidl_event_ResourceIdentifiers_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable = new
+    internal_static_flyteidl_event_ResourceIdentifiers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_event_ManagedResourceInfo_descriptor,
+        internal_static_flyteidl_event_ResourceIdentifiers_descriptor,
+        new java.lang.String[] { "GeneratedName", "ExternalIds", });
+    internal_static_flyteidl_event_ResourcePoolInfo_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_ResourcePoolInfo_descriptor,
         new java.lang.String[] { "AllocationToken", "Namespace", });
     internal_static_flyteidl_event_TaskExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
-        new java.lang.String[] { "InstanceClass", "ResourceName", "ManagedResourceInfo", });
+        new java.lang.String[] { "InstanceClass", "ResourceIds", "ResourcePoolInfo", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

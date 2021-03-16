@@ -16,7 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.event_managed_resource_info import EventManagedResourceInfo  # noqa: F401,E501
+from flyteadmin.models.event_resource_identifiers import EventResourceIdentifiers  # noqa: F401,E501
+from flyteadmin.models.event_resource_pool_info import EventResourcePoolInfo  # noqa: F401,E501
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass  # noqa: F401,E501
 
 
@@ -35,30 +36,30 @@ class EventTaskExecutionMetadata(object):
     """
     swagger_types = {
         'instance_class': 'TaskExecutionMetadataInstanceClass',
-        'resource_name': 'str',
-        'managed_resource_info': 'list[EventManagedResourceInfo]'
+        'resource_ids': 'EventResourceIdentifiers',
+        'resource_pool_info': 'list[EventResourcePoolInfo]'
     }
 
     attribute_map = {
         'instance_class': 'instance_class',
-        'resource_name': 'resource_name',
-        'managed_resource_info': 'managed_resource_info'
+        'resource_ids': 'resource_ids',
+        'resource_pool_info': 'resource_pool_info'
     }
 
-    def __init__(self, instance_class=None, resource_name=None, managed_resource_info=None):  # noqa: E501
+    def __init__(self, instance_class=None, resource_ids=None, resource_pool_info=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._instance_class = None
-        self._resource_name = None
-        self._managed_resource_info = None
+        self._resource_ids = None
+        self._resource_pool_info = None
         self.discriminator = None
 
         if instance_class is not None:
             self.instance_class = instance_class
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if managed_resource_info is not None:
-            self.managed_resource_info = managed_resource_info
+        if resource_ids is not None:
+            self.resource_ids = resource_ids
+        if resource_pool_info is not None:
+            self.resource_pool_info = resource_pool_info
 
     @property
     def instance_class(self):
@@ -82,50 +83,50 @@ class EventTaskExecutionMetadata(object):
         self._instance_class = instance_class
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this EventTaskExecutionMetadata.  # noqa: E501
+    def resource_ids(self):
+        """Gets the resource_ids of this EventTaskExecutionMetadata.  # noqa: E501
 
-        Unique name for this task execution used by the backend, may be generated.  # noqa: E501
+        Contains various identifiers for resources used during execution.  # noqa: E501
 
-        :return: The resource_name of this EventTaskExecutionMetadata.  # noqa: E501
-        :rtype: str
+        :return: The resource_ids of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: EventResourceIdentifiers
         """
-        return self._resource_name
+        return self._resource_ids
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this EventTaskExecutionMetadata.
+    @resource_ids.setter
+    def resource_ids(self, resource_ids):
+        """Sets the resource_ids of this EventTaskExecutionMetadata.
 
-        Unique name for this task execution used by the backend, may be generated.  # noqa: E501
+        Contains various identifiers for resources used during execution.  # noqa: E501
 
-        :param resource_name: The resource_name of this EventTaskExecutionMetadata.  # noqa: E501
-        :type: str
+        :param resource_ids: The resource_ids of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: EventResourceIdentifiers
         """
 
-        self._resource_name = resource_name
+        self._resource_ids = resource_ids
 
     @property
-    def managed_resource_info(self):
-        """Gets the managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
+    def resource_pool_info(self):
+        """Gets the resource_pool_info of this EventTaskExecutionMetadata.  # noqa: E501
 
         Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.  # noqa: E501
 
-        :return: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
-        :rtype: list[EventManagedResourceInfo]
+        :return: The resource_pool_info of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: list[EventResourcePoolInfo]
         """
-        return self._managed_resource_info
+        return self._resource_pool_info
 
-    @managed_resource_info.setter
-    def managed_resource_info(self, managed_resource_info):
-        """Sets the managed_resource_info of this EventTaskExecutionMetadata.
+    @resource_pool_info.setter
+    def resource_pool_info(self, resource_pool_info):
+        """Sets the resource_pool_info of this EventTaskExecutionMetadata.
 
         Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.  # noqa: E501
 
-        :param managed_resource_info: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
-        :type: list[EventManagedResourceInfo]
+        :param resource_pool_info: The resource_pool_info of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: list[EventResourcePoolInfo]
         """
 
-        self._managed_resource_info = managed_resource_info
+        self._resource_pool_info = resource_pool_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""

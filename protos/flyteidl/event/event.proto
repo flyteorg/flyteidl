@@ -164,10 +164,20 @@ message TaskExecutionEvent {
     TaskExecutionMetadata metadata        = 16;
 }
 
+// This message contains various identifiers for resources used for a specific task execution.
+message ResourceIdentifiers {
+
+    // Unique, generated name for this task execution used by the backend.
+    string generated_name = 1;
+
+    // Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+    repeated string external_ids = 2;
+}
+
 
 // This message holds task execution metadata specific to resource allocation used to manage concurrent
 // executions for a project namespace.
-message ManagedResourceInfo {
+message ResourcePoolInfo {
     // Unique resource ID used to identify this execution when allocating a token.
     string allocation_token               = 1;
 
@@ -188,10 +198,10 @@ message TaskExecutionMetadata {
     }
     InstanceClass instance_class = 16;
 
-    // Unique name for this task execution used by the backend, may be generated.
-    string resource_name = 1;
+    // Contains various identifiers for resources used during execution.
+    ResourceIdentifiers resource_ids = 1;
 
     // Includes information about resource token allocation (if applicable).
     // This is a repeated field because a plugin can request multiple resource allocations during execution.
-    repeated ManagedResourceInfo managed_resource_info = 2;
+    repeated ResourcePoolInfo resource_pool_info = 2;
 }

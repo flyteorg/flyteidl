@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_managed_resource_info import EventManagedResourceInfo  # noqa: E501
+from flyteadmin.models.event_resource_identifiers import EventResourceIdentifiers  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventManagedResourceInfo(unittest.TestCase):
-    """EventManagedResourceInfo unit test stubs"""
+class TestEventResourceIdentifiers(unittest.TestCase):
+    """EventResourceIdentifiers unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventManagedResourceInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventManagedResourceInfo(self):
-        """Test EventManagedResourceInfo"""
+    def testEventResourceIdentifiers(self):
+        """Test EventResourceIdentifiers"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_managed_resource_info.EventManagedResourceInfo()  # noqa: E501
+        # model = flyteadmin.models.event_resource_identifiers.EventResourceIdentifiers()  # noqa: E501
         pass
 
 

@@ -10,7 +10,7 @@
 package flyteadmin
 
 // This message holds task execution metadata specific to resource allocation used to manage concurrent executions for a project namespace.
-type EventManagedResourceInfo struct {
+type EventResourcePoolInfo struct {
 	// Unique resource ID used to identify this execution when allocating a token.
 	AllocationToken string `json:"allocation_token,omitempty"`
 	// Namespace under which this task execution requested an allocation token.

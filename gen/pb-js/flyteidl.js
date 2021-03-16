@@ -13865,25 +13865,26 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskExecutionEvent;
         })();
 
-        event.ManagedResourceInfo = (function() {
+        event.ResourceIdentifiers = (function() {
 
             /**
-             * Properties of a ManagedResourceInfo.
+             * Properties of a ResourceIdentifiers.
              * @memberof flyteidl.event
-             * @interface IManagedResourceInfo
-             * @property {string|null} [allocationToken] ManagedResourceInfo allocationToken
-             * @property {string|null} [namespace] ManagedResourceInfo namespace
+             * @interface IResourceIdentifiers
+             * @property {string|null} [generatedName] ResourceIdentifiers generatedName
+             * @property {Array.<string>|null} [externalIds] ResourceIdentifiers externalIds
              */
 
             /**
-             * Constructs a new ManagedResourceInfo.
+             * Constructs a new ResourceIdentifiers.
              * @memberof flyteidl.event
-             * @classdesc Represents a ManagedResourceInfo.
-             * @implements IManagedResourceInfo
+             * @classdesc Represents a ResourceIdentifiers.
+             * @implements IResourceIdentifiers
              * @constructor
-             * @param {flyteidl.event.IManagedResourceInfo=} [properties] Properties to set
+             * @param {flyteidl.event.IResourceIdentifiers=} [properties] Properties to set
              */
-            function ManagedResourceInfo(properties) {
+            function ResourceIdentifiers(properties) {
+                this.externalIds = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -13891,43 +13892,177 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ManagedResourceInfo allocationToken.
-             * @member {string} allocationToken
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * ResourceIdentifiers generatedName.
+             * @member {string} generatedName
+             * @memberof flyteidl.event.ResourceIdentifiers
              * @instance
              */
-            ManagedResourceInfo.prototype.allocationToken = "";
+            ResourceIdentifiers.prototype.generatedName = "";
 
             /**
-             * ManagedResourceInfo namespace.
-             * @member {string} namespace
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * ResourceIdentifiers externalIds.
+             * @member {Array.<string>} externalIds
+             * @memberof flyteidl.event.ResourceIdentifiers
              * @instance
              */
-            ManagedResourceInfo.prototype.namespace = "";
+            ResourceIdentifiers.prototype.externalIds = $util.emptyArray;
 
             /**
-             * Creates a new ManagedResourceInfo instance using the specified properties.
+             * Creates a new ResourceIdentifiers instance using the specified properties.
              * @function create
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * @memberof flyteidl.event.ResourceIdentifiers
              * @static
-             * @param {flyteidl.event.IManagedResourceInfo=} [properties] Properties to set
-             * @returns {flyteidl.event.ManagedResourceInfo} ManagedResourceInfo instance
+             * @param {flyteidl.event.IResourceIdentifiers=} [properties] Properties to set
+             * @returns {flyteidl.event.ResourceIdentifiers} ResourceIdentifiers instance
              */
-            ManagedResourceInfo.create = function create(properties) {
-                return new ManagedResourceInfo(properties);
+            ResourceIdentifiers.create = function create(properties) {
+                return new ResourceIdentifiers(properties);
             };
 
             /**
-             * Encodes the specified ManagedResourceInfo message. Does not implicitly {@link flyteidl.event.ManagedResourceInfo.verify|verify} messages.
+             * Encodes the specified ResourceIdentifiers message. Does not implicitly {@link flyteidl.event.ResourceIdentifiers.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * @memberof flyteidl.event.ResourceIdentifiers
              * @static
-             * @param {flyteidl.event.IManagedResourceInfo} message ManagedResourceInfo message or plain object to encode
+             * @param {flyteidl.event.IResourceIdentifiers} message ResourceIdentifiers message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ManagedResourceInfo.encode = function encode(message, writer) {
+            ResourceIdentifiers.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.generatedName != null && message.hasOwnProperty("generatedName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.generatedName);
+                if (message.externalIds != null && message.externalIds.length)
+                    for (let i = 0; i < message.externalIds.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.externalIds[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a ResourceIdentifiers message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.ResourceIdentifiers
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.ResourceIdentifiers} ResourceIdentifiers
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ResourceIdentifiers.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.ResourceIdentifiers();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.generatedName = reader.string();
+                        break;
+                    case 2:
+                        if (!(message.externalIds && message.externalIds.length))
+                            message.externalIds = [];
+                        message.externalIds.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ResourceIdentifiers message.
+             * @function verify
+             * @memberof flyteidl.event.ResourceIdentifiers
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ResourceIdentifiers.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.generatedName != null && message.hasOwnProperty("generatedName"))
+                    if (!$util.isString(message.generatedName))
+                        return "generatedName: string expected";
+                if (message.externalIds != null && message.hasOwnProperty("externalIds")) {
+                    if (!Array.isArray(message.externalIds))
+                        return "externalIds: array expected";
+                    for (let i = 0; i < message.externalIds.length; ++i)
+                        if (!$util.isString(message.externalIds[i]))
+                            return "externalIds: string[] expected";
+                }
+                return null;
+            };
+
+            return ResourceIdentifiers;
+        })();
+
+        event.ResourcePoolInfo = (function() {
+
+            /**
+             * Properties of a ResourcePoolInfo.
+             * @memberof flyteidl.event
+             * @interface IResourcePoolInfo
+             * @property {string|null} [allocationToken] ResourcePoolInfo allocationToken
+             * @property {string|null} [namespace] ResourcePoolInfo namespace
+             */
+
+            /**
+             * Constructs a new ResourcePoolInfo.
+             * @memberof flyteidl.event
+             * @classdesc Represents a ResourcePoolInfo.
+             * @implements IResourcePoolInfo
+             * @constructor
+             * @param {flyteidl.event.IResourcePoolInfo=} [properties] Properties to set
+             */
+            function ResourcePoolInfo(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ResourcePoolInfo allocationToken.
+             * @member {string} allocationToken
+             * @memberof flyteidl.event.ResourcePoolInfo
+             * @instance
+             */
+            ResourcePoolInfo.prototype.allocationToken = "";
+
+            /**
+             * ResourcePoolInfo namespace.
+             * @member {string} namespace
+             * @memberof flyteidl.event.ResourcePoolInfo
+             * @instance
+             */
+            ResourcePoolInfo.prototype.namespace = "";
+
+            /**
+             * Creates a new ResourcePoolInfo instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.ResourcePoolInfo
+             * @static
+             * @param {flyteidl.event.IResourcePoolInfo=} [properties] Properties to set
+             * @returns {flyteidl.event.ResourcePoolInfo} ResourcePoolInfo instance
+             */
+            ResourcePoolInfo.create = function create(properties) {
+                return new ResourcePoolInfo(properties);
+            };
+
+            /**
+             * Encodes the specified ResourcePoolInfo message. Does not implicitly {@link flyteidl.event.ResourcePoolInfo.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.ResourcePoolInfo
+             * @static
+             * @param {flyteidl.event.IResourcePoolInfo} message ResourcePoolInfo message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ResourcePoolInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.allocationToken != null && message.hasOwnProperty("allocationToken"))
@@ -13938,20 +14073,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a ManagedResourceInfo message from the specified reader or buffer.
+             * Decodes a ResourcePoolInfo message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * @memberof flyteidl.event.ResourcePoolInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.event.ManagedResourceInfo} ManagedResourceInfo
+             * @returns {flyteidl.event.ResourcePoolInfo} ResourcePoolInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ManagedResourceInfo.decode = function decode(reader, length) {
+            ResourcePoolInfo.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.ManagedResourceInfo();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.ResourcePoolInfo();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -13970,14 +14105,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a ManagedResourceInfo message.
+             * Verifies a ResourcePoolInfo message.
              * @function verify
-             * @memberof flyteidl.event.ManagedResourceInfo
+             * @memberof flyteidl.event.ResourcePoolInfo
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ManagedResourceInfo.verify = function verify(message) {
+            ResourcePoolInfo.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.allocationToken != null && message.hasOwnProperty("allocationToken"))
@@ -13989,7 +14124,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return ManagedResourceInfo;
+            return ResourcePoolInfo;
         })();
 
         event.TaskExecutionMetadata = (function() {
@@ -13999,8 +14134,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface ITaskExecutionMetadata
              * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
-             * @property {string|null} [resourceName] TaskExecutionMetadata resourceName
-             * @property {Array.<flyteidl.event.IManagedResourceInfo>|null} [managedResourceInfo] TaskExecutionMetadata managedResourceInfo
+             * @property {flyteidl.event.IResourceIdentifiers|null} [resourceIds] TaskExecutionMetadata resourceIds
+             * @property {Array.<flyteidl.event.IResourcePoolInfo>|null} [resourcePoolInfo] TaskExecutionMetadata resourcePoolInfo
              */
 
             /**
@@ -14012,7 +14147,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.event.ITaskExecutionMetadata=} [properties] Properties to set
              */
             function TaskExecutionMetadata(properties) {
-                this.managedResourceInfo = [];
+                this.resourcePoolInfo = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -14028,20 +14163,20 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.prototype.instanceClass = 0;
 
             /**
-             * TaskExecutionMetadata resourceName.
-             * @member {string} resourceName
+             * TaskExecutionMetadata resourceIds.
+             * @member {flyteidl.event.IResourceIdentifiers|null|undefined} resourceIds
              * @memberof flyteidl.event.TaskExecutionMetadata
              * @instance
              */
-            TaskExecutionMetadata.prototype.resourceName = "";
+            TaskExecutionMetadata.prototype.resourceIds = null;
 
             /**
-             * TaskExecutionMetadata managedResourceInfo.
-             * @member {Array.<flyteidl.event.IManagedResourceInfo>} managedResourceInfo
+             * TaskExecutionMetadata resourcePoolInfo.
+             * @member {Array.<flyteidl.event.IResourcePoolInfo>} resourcePoolInfo
              * @memberof flyteidl.event.TaskExecutionMetadata
              * @instance
              */
-            TaskExecutionMetadata.prototype.managedResourceInfo = $util.emptyArray;
+            TaskExecutionMetadata.prototype.resourcePoolInfo = $util.emptyArray;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
@@ -14067,11 +14202,11 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.resourceName != null && message.hasOwnProperty("resourceName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.resourceName);
-                if (message.managedResourceInfo != null && message.managedResourceInfo.length)
-                    for (let i = 0; i < message.managedResourceInfo.length; ++i)
-                        $root.flyteidl.event.ManagedResourceInfo.encode(message.managedResourceInfo[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.resourceIds != null && message.hasOwnProperty("resourceIds"))
+                    $root.flyteidl.event.ResourceIdentifiers.encode(message.resourceIds, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.resourcePoolInfo != null && message.resourcePoolInfo.length)
+                    for (let i = 0; i < message.resourcePoolInfo.length; ++i)
+                        $root.flyteidl.event.ResourcePoolInfo.encode(message.resourcePoolInfo[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
                     writer.uint32(/* id 16, wireType 0 =*/128).int32(message.instanceClass);
                 return writer;
@@ -14099,12 +14234,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.instanceClass = reader.int32();
                         break;
                     case 1:
-                        message.resourceName = reader.string();
+                        message.resourceIds = $root.flyteidl.event.ResourceIdentifiers.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        if (!(message.managedResourceInfo && message.managedResourceInfo.length))
-                            message.managedResourceInfo = [];
-                        message.managedResourceInfo.push($root.flyteidl.event.ManagedResourceInfo.decode(reader, reader.uint32()));
+                        if (!(message.resourcePoolInfo && message.resourcePoolInfo.length))
+                            message.resourcePoolInfo = [];
+                        message.resourcePoolInfo.push($root.flyteidl.event.ResourcePoolInfo.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14133,16 +14268,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         break;
                     }
-                if (message.resourceName != null && message.hasOwnProperty("resourceName"))
-                    if (!$util.isString(message.resourceName))
-                        return "resourceName: string expected";
-                if (message.managedResourceInfo != null && message.hasOwnProperty("managedResourceInfo")) {
-                    if (!Array.isArray(message.managedResourceInfo))
-                        return "managedResourceInfo: array expected";
-                    for (let i = 0; i < message.managedResourceInfo.length; ++i) {
-                        let error = $root.flyteidl.event.ManagedResourceInfo.verify(message.managedResourceInfo[i]);
+                if (message.resourceIds != null && message.hasOwnProperty("resourceIds")) {
+                    let error = $root.flyteidl.event.ResourceIdentifiers.verify(message.resourceIds);
+                    if (error)
+                        return "resourceIds." + error;
+                }
+                if (message.resourcePoolInfo != null && message.hasOwnProperty("resourcePoolInfo")) {
+                    if (!Array.isArray(message.resourcePoolInfo))
+                        return "resourcePoolInfo: array expected";
+                    for (let i = 0; i < message.resourcePoolInfo.length; ++i) {
+                        let error = $root.flyteidl.event.ResourcePoolInfo.verify(message.resourcePoolInfo[i]);
                         if (error)
-                            return "managedResourceInfo." + error;
+                            return "resourcePoolInfo." + error;
                     }
                 }
                 return null;

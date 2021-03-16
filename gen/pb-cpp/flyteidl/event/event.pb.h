@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[9]
+  static const ::google::protobuf::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,9 +56,6 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto();
 namespace flyteidl {
 namespace event {
-class ManagedResourceInfo;
-class ManagedResourceInfoDefaultTypeInternal;
-extern ManagedResourceInfoDefaultTypeInternal _ManagedResourceInfo_default_instance_;
 class NodeExecutionEvent;
 class NodeExecutionEventDefaultTypeInternal;
 extern NodeExecutionEventDefaultTypeInternal _NodeExecutionEvent_default_instance_;
@@ -68,6 +65,12 @@ extern ParentNodeExecutionMetadataDefaultTypeInternal _ParentNodeExecutionMetada
 class ParentTaskExecutionMetadata;
 class ParentTaskExecutionMetadataDefaultTypeInternal;
 extern ParentTaskExecutionMetadataDefaultTypeInternal _ParentTaskExecutionMetadata_default_instance_;
+class ResourceIdentifiers;
+class ResourceIdentifiersDefaultTypeInternal;
+extern ResourceIdentifiersDefaultTypeInternal _ResourceIdentifiers_default_instance_;
+class ResourcePoolInfo;
+class ResourcePoolInfoDefaultTypeInternal;
+extern ResourcePoolInfoDefaultTypeInternal _ResourcePoolInfo_default_instance_;
 class TaskExecutionEvent;
 class TaskExecutionEventDefaultTypeInternal;
 extern TaskExecutionEventDefaultTypeInternal _TaskExecutionEvent_default_instance_;
@@ -87,10 +90,11 @@ extern WorkflowNodeMetadataDefaultTypeInternal _WorkflowNodeMetadata_default_ins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::event::ManagedResourceInfo* Arena::CreateMaybeMessage<::flyteidl::event::ManagedResourceInfo>(Arena*);
 template<> ::flyteidl::event::NodeExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::NodeExecutionEvent>(Arena*);
 template<> ::flyteidl::event::ParentNodeExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::ParentNodeExecutionMetadata>(Arena*);
 template<> ::flyteidl::event::ParentTaskExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::ParentTaskExecutionMetadata>(Arena*);
+template<> ::flyteidl::event::ResourceIdentifiers* Arena::CreateMaybeMessage<::flyteidl::event::ResourceIdentifiers>(Arena*);
+template<> ::flyteidl::event::ResourcePoolInfo* Arena::CreateMaybeMessage<::flyteidl::event::ResourcePoolInfo>(Arena*);
 template<> ::flyteidl::event::TaskExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::TaskExecutionEvent>(Arena*);
 template<> ::flyteidl::event::TaskExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::TaskExecutionMetadata>(Arena*);
 template<> ::flyteidl::event::TaskNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::event::TaskNodeMetadata>(Arena*);
@@ -1393,25 +1397,25 @@ class TaskExecutionEvent final :
 };
 // -------------------------------------------------------------------
 
-class ManagedResourceInfo final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.ManagedResourceInfo) */ {
+class ResourceIdentifiers final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.ResourceIdentifiers) */ {
  public:
-  ManagedResourceInfo();
-  virtual ~ManagedResourceInfo();
+  ResourceIdentifiers();
+  virtual ~ResourceIdentifiers();
 
-  ManagedResourceInfo(const ManagedResourceInfo& from);
+  ResourceIdentifiers(const ResourceIdentifiers& from);
 
-  inline ManagedResourceInfo& operator=(const ManagedResourceInfo& from) {
+  inline ResourceIdentifiers& operator=(const ResourceIdentifiers& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  ManagedResourceInfo(ManagedResourceInfo&& from) noexcept
-    : ManagedResourceInfo() {
+  ResourceIdentifiers(ResourceIdentifiers&& from) noexcept
+    : ResourceIdentifiers() {
     *this = ::std::move(from);
   }
 
-  inline ManagedResourceInfo& operator=(ManagedResourceInfo&& from) noexcept {
+  inline ResourceIdentifiers& operator=(ResourceIdentifiers&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1423,34 +1427,34 @@ class ManagedResourceInfo final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const ManagedResourceInfo& default_instance();
+  static const ResourceIdentifiers& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ManagedResourceInfo* internal_default_instance() {
-    return reinterpret_cast<const ManagedResourceInfo*>(
-               &_ManagedResourceInfo_default_instance_);
+  static inline const ResourceIdentifiers* internal_default_instance() {
+    return reinterpret_cast<const ResourceIdentifiers*>(
+               &_ResourceIdentifiers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  void Swap(ManagedResourceInfo* other);
-  friend void swap(ManagedResourceInfo& a, ManagedResourceInfo& b) {
+  void Swap(ResourceIdentifiers* other);
+  friend void swap(ResourceIdentifiers& a, ResourceIdentifiers& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline ManagedResourceInfo* New() const final {
-    return CreateMaybeMessage<ManagedResourceInfo>(nullptr);
+  inline ResourceIdentifiers* New() const final {
+    return CreateMaybeMessage<ResourceIdentifiers>(nullptr);
   }
 
-  ManagedResourceInfo* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ManagedResourceInfo>(arena);
+  ResourceIdentifiers* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResourceIdentifiers>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ManagedResourceInfo& from);
-  void MergeFrom(const ManagedResourceInfo& from);
+  void CopyFrom(const ResourceIdentifiers& from);
+  void MergeFrom(const ResourceIdentifiers& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1472,7 +1476,150 @@ class ManagedResourceInfo final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ManagedResourceInfo* other);
+  void InternalSwap(ResourceIdentifiers* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string external_ids = 2;
+  int external_ids_size() const;
+  void clear_external_ids();
+  static const int kExternalIdsFieldNumber = 2;
+  const ::std::string& external_ids(int index) const;
+  ::std::string* mutable_external_ids(int index);
+  void set_external_ids(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_ids(int index, ::std::string&& value);
+  #endif
+  void set_external_ids(int index, const char* value);
+  void set_external_ids(int index, const char* value, size_t size);
+  ::std::string* add_external_ids();
+  void add_external_ids(const ::std::string& value);
+  #if LANG_CXX11
+  void add_external_ids(::std::string&& value);
+  #endif
+  void add_external_ids(const char* value);
+  void add_external_ids(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& external_ids() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_external_ids();
+
+  // string generated_name = 1;
+  void clear_generated_name();
+  static const int kGeneratedNameFieldNumber = 1;
+  const ::std::string& generated_name() const;
+  void set_generated_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_generated_name(::std::string&& value);
+  #endif
+  void set_generated_name(const char* value);
+  void set_generated_name(const char* value, size_t size);
+  ::std::string* mutable_generated_name();
+  ::std::string* release_generated_name();
+  void set_allocated_generated_name(::std::string* generated_name);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.event.ResourceIdentifiers)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> external_ids_;
+  ::google::protobuf::internal::ArenaStringPtr generated_name_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResourcePoolInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.ResourcePoolInfo) */ {
+ public:
+  ResourcePoolInfo();
+  virtual ~ResourcePoolInfo();
+
+  ResourcePoolInfo(const ResourcePoolInfo& from);
+
+  inline ResourcePoolInfo& operator=(const ResourcePoolInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ResourcePoolInfo(ResourcePoolInfo&& from) noexcept
+    : ResourcePoolInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline ResourcePoolInfo& operator=(ResourcePoolInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ResourcePoolInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ResourcePoolInfo* internal_default_instance() {
+    return reinterpret_cast<const ResourcePoolInfo*>(
+               &_ResourcePoolInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(ResourcePoolInfo* other);
+  friend void swap(ResourcePoolInfo& a, ResourcePoolInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResourcePoolInfo* New() const final {
+    return CreateMaybeMessage<ResourcePoolInfo>(nullptr);
+  }
+
+  ResourcePoolInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResourcePoolInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ResourcePoolInfo& from);
+  void MergeFrom(const ResourcePoolInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResourcePoolInfo* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1516,7 +1663,7 @@ class ManagedResourceInfo final :
   ::std::string* release_namespace_();
   void set_allocated_namespace_(::std::string* namespace_);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.event.ManagedResourceInfo)
+  // @@protoc_insertion_point(class_scope:flyteidl.event.ResourcePoolInfo)
  private:
   class HasBitSetters;
 
@@ -1566,7 +1713,7 @@ class TaskExecutionMetadata final :
                &_TaskExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(TaskExecutionMetadata* other);
   friend void swap(TaskExecutionMetadata& a, TaskExecutionMetadata& b) {
@@ -1649,31 +1796,26 @@ class TaskExecutionMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-  int managed_resource_info_size() const;
-  void clear_managed_resource_info();
-  static const int kManagedResourceInfoFieldNumber = 2;
-  ::flyteidl::event::ManagedResourceInfo* mutable_managed_resource_info(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >*
-      mutable_managed_resource_info();
-  const ::flyteidl::event::ManagedResourceInfo& managed_resource_info(int index) const;
-  ::flyteidl::event::ManagedResourceInfo* add_managed_resource_info();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >&
-      managed_resource_info() const;
+  // repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;
+  int resource_pool_info_size() const;
+  void clear_resource_pool_info();
+  static const int kResourcePoolInfoFieldNumber = 2;
+  ::flyteidl::event::ResourcePoolInfo* mutable_resource_pool_info(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo >*
+      mutable_resource_pool_info();
+  const ::flyteidl::event::ResourcePoolInfo& resource_pool_info(int index) const;
+  ::flyteidl::event::ResourcePoolInfo* add_resource_pool_info();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo >&
+      resource_pool_info() const;
 
-  // string resource_name = 1;
-  void clear_resource_name();
-  static const int kResourceNameFieldNumber = 1;
-  const ::std::string& resource_name() const;
-  void set_resource_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_resource_name(::std::string&& value);
-  #endif
-  void set_resource_name(const char* value);
-  void set_resource_name(const char* value, size_t size);
-  ::std::string* mutable_resource_name();
-  ::std::string* release_resource_name();
-  void set_allocated_resource_name(::std::string* resource_name);
+  // .flyteidl.event.ResourceIdentifiers resource_ids = 1;
+  bool has_resource_ids() const;
+  void clear_resource_ids();
+  static const int kResourceIdsFieldNumber = 1;
+  const ::flyteidl::event::ResourceIdentifiers& resource_ids() const;
+  ::flyteidl::event::ResourceIdentifiers* release_resource_ids();
+  ::flyteidl::event::ResourceIdentifiers* mutable_resource_ids();
+  void set_allocated_resource_ids(::flyteidl::event::ResourceIdentifiers* resource_ids);
 
   // .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
   void clear_instance_class();
@@ -1686,8 +1828,8 @@ class TaskExecutionMetadata final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo > managed_resource_info_;
-  ::google::protobuf::internal::ArenaStringPtr resource_name_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo > resource_pool_info_;
+  ::flyteidl::event::ResourceIdentifiers* resource_ids_;
   int instance_class_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
@@ -3574,112 +3716,238 @@ inline TaskExecutionEvent::OutputResultCase TaskExecutionEvent::output_result_ca
 }
 // -------------------------------------------------------------------
 
-// ManagedResourceInfo
+// ResourceIdentifiers
 
-// string allocation_token = 1;
-inline void ManagedResourceInfo::clear_allocation_token() {
-  allocation_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string generated_name = 1;
+inline void ResourceIdentifiers::clear_generated_name() {
+  generated_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ManagedResourceInfo::allocation_token() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.ManagedResourceInfo.allocation_token)
-  return allocation_token_.GetNoArena();
+inline const ::std::string& ResourceIdentifiers::generated_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ResourceIdentifiers.generated_name)
+  return generated_name_.GetNoArena();
 }
-inline void ManagedResourceInfo::set_allocation_token(const ::std::string& value) {
+inline void ResourceIdentifiers::set_generated_name(const ::std::string& value) {
   
-  allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.ManagedResourceInfo.allocation_token)
+  generated_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.ResourceIdentifiers.generated_name)
 }
 #if LANG_CXX11
-inline void ManagedResourceInfo::set_allocation_token(::std::string&& value) {
+inline void ResourceIdentifiers::set_generated_name(::std::string&& value) {
+  
+  generated_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ResourceIdentifiers.generated_name)
+}
+#endif
+inline void ResourceIdentifiers::set_generated_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  generated_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ResourceIdentifiers.generated_name)
+}
+inline void ResourceIdentifiers::set_generated_name(const char* value, size_t size) {
+  
+  generated_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ResourceIdentifiers.generated_name)
+}
+inline ::std::string* ResourceIdentifiers::mutable_generated_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ResourceIdentifiers.generated_name)
+  return generated_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ResourceIdentifiers::release_generated_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ResourceIdentifiers.generated_name)
+  
+  return generated_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ResourceIdentifiers::set_allocated_generated_name(::std::string* generated_name) {
+  if (generated_name != nullptr) {
+    
+  } else {
+    
+  }
+  generated_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), generated_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ResourceIdentifiers.generated_name)
+}
+
+// repeated string external_ids = 2;
+inline int ResourceIdentifiers::external_ids_size() const {
+  return external_ids_.size();
+}
+inline void ResourceIdentifiers::clear_external_ids() {
+  external_ids_.Clear();
+}
+inline const ::std::string& ResourceIdentifiers::external_ids(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ResourceIdentifiers.external_ids)
+  return external_ids_.Get(index);
+}
+inline ::std::string* ResourceIdentifiers::mutable_external_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ResourceIdentifiers.external_ids)
+  return external_ids_.Mutable(index);
+}
+inline void ResourceIdentifiers::set_external_ids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.ResourceIdentifiers.external_ids)
+  external_ids_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void ResourceIdentifiers::set_external_ids(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.ResourceIdentifiers.external_ids)
+  external_ids_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void ResourceIdentifiers::set_external_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  external_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+inline void ResourceIdentifiers::set_external_ids(int index, const char* value, size_t size) {
+  external_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+inline ::std::string* ResourceIdentifiers::add_external_ids() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.event.ResourceIdentifiers.external_ids)
+  return external_ids_.Add();
+}
+inline void ResourceIdentifiers::add_external_ids(const ::std::string& value) {
+  external_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+#if LANG_CXX11
+inline void ResourceIdentifiers::add_external_ids(::std::string&& value) {
+  external_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+#endif
+inline void ResourceIdentifiers::add_external_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  external_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+inline void ResourceIdentifiers::add_external_ids(const char* value, size_t size) {
+  external_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.event.ResourceIdentifiers.external_ids)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ResourceIdentifiers::external_ids() const {
+  // @@protoc_insertion_point(field_list:flyteidl.event.ResourceIdentifiers.external_ids)
+  return external_ids_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+ResourceIdentifiers::mutable_external_ids() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.event.ResourceIdentifiers.external_ids)
+  return &external_ids_;
+}
+
+// -------------------------------------------------------------------
+
+// ResourcePoolInfo
+
+// string allocation_token = 1;
+inline void ResourcePoolInfo::clear_allocation_token() {
+  allocation_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ResourcePoolInfo::allocation_token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ResourcePoolInfo.allocation_token)
+  return allocation_token_.GetNoArena();
+}
+inline void ResourcePoolInfo::set_allocation_token(const ::std::string& value) {
+  
+  allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.ResourcePoolInfo.allocation_token)
+}
+#if LANG_CXX11
+inline void ResourcePoolInfo::set_allocation_token(::std::string&& value) {
   
   allocation_token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ManagedResourceInfo.allocation_token)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ResourcePoolInfo.allocation_token)
 }
 #endif
-inline void ManagedResourceInfo::set_allocation_token(const char* value) {
+inline void ResourcePoolInfo::set_allocation_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.ManagedResourceInfo.allocation_token)
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ResourcePoolInfo.allocation_token)
 }
-inline void ManagedResourceInfo::set_allocation_token(const char* value, size_t size) {
+inline void ResourcePoolInfo::set_allocation_token(const char* value, size_t size) {
   
   allocation_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ManagedResourceInfo.allocation_token)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ResourcePoolInfo.allocation_token)
 }
-inline ::std::string* ManagedResourceInfo::mutable_allocation_token() {
+inline ::std::string* ResourcePoolInfo::mutable_allocation_token() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.ManagedResourceInfo.allocation_token)
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ResourcePoolInfo.allocation_token)
   return allocation_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ManagedResourceInfo::release_allocation_token() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.ManagedResourceInfo.allocation_token)
+inline ::std::string* ResourcePoolInfo::release_allocation_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ResourcePoolInfo.allocation_token)
   
   return allocation_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ManagedResourceInfo::set_allocated_allocation_token(::std::string* allocation_token) {
+inline void ResourcePoolInfo::set_allocated_allocation_token(::std::string* allocation_token) {
   if (allocation_token != nullptr) {
     
   } else {
     
   }
   allocation_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), allocation_token);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ManagedResourceInfo.allocation_token)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ResourcePoolInfo.allocation_token)
 }
 
 // string namespace = 2;
-inline void ManagedResourceInfo::clear_namespace_() {
+inline void ResourcePoolInfo::clear_namespace_() {
   namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ManagedResourceInfo::namespace_() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.ManagedResourceInfo.namespace)
+inline const ::std::string& ResourcePoolInfo::namespace_() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ResourcePoolInfo.namespace)
   return namespace__.GetNoArena();
 }
-inline void ManagedResourceInfo::set_namespace_(const ::std::string& value) {
+inline void ResourcePoolInfo::set_namespace_(const ::std::string& value) {
   
   namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_set:flyteidl.event.ResourcePoolInfo.namespace)
 }
 #if LANG_CXX11
-inline void ManagedResourceInfo::set_namespace_(::std::string&& value) {
+inline void ResourcePoolInfo::set_namespace_(::std::string&& value) {
   
   namespace__.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ResourcePoolInfo.namespace)
 }
 #endif
-inline void ManagedResourceInfo::set_namespace_(const char* value) {
+inline void ResourcePoolInfo::set_namespace_(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.ResourcePoolInfo.namespace)
 }
-inline void ManagedResourceInfo::set_namespace_(const char* value, size_t size) {
+inline void ResourcePoolInfo::set_namespace_(const char* value, size_t size) {
   
   namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ResourcePoolInfo.namespace)
 }
-inline ::std::string* ManagedResourceInfo::mutable_namespace_() {
+inline ::std::string* ResourcePoolInfo::mutable_namespace_() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ResourcePoolInfo.namespace)
   return namespace__.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ManagedResourceInfo::release_namespace_() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.ManagedResourceInfo.namespace)
+inline ::std::string* ResourcePoolInfo::release_namespace_() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ResourcePoolInfo.namespace)
   
   return namespace__.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ManagedResourceInfo::set_allocated_namespace_(::std::string* namespace_) {
+inline void ResourcePoolInfo::set_allocated_namespace_(::std::string* namespace_) {
   if (namespace_ != nullptr) {
     
   } else {
     
   }
   namespace__.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), namespace_);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ManagedResourceInfo.namespace)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ResourcePoolInfo.namespace)
 }
 
 // -------------------------------------------------------------------
@@ -3700,92 +3968,92 @@ inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExe
   // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_class)
 }
 
-// string resource_name = 1;
-inline void TaskExecutionMetadata::clear_resource_name() {
-  resource_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.event.ResourceIdentifiers resource_ids = 1;
+inline bool TaskExecutionMetadata::has_resource_ids() const {
+  return this != internal_default_instance() && resource_ids_ != nullptr;
 }
-inline const ::std::string& TaskExecutionMetadata::resource_name() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.resource_name)
-  return resource_name_.GetNoArena();
+inline void TaskExecutionMetadata::clear_resource_ids() {
+  if (GetArenaNoVirtual() == nullptr && resource_ids_ != nullptr) {
+    delete resource_ids_;
+  }
+  resource_ids_ = nullptr;
 }
-inline void TaskExecutionMetadata::set_resource_name(const ::std::string& value) {
+inline const ::flyteidl::event::ResourceIdentifiers& TaskExecutionMetadata::resource_ids() const {
+  const ::flyteidl::event::ResourceIdentifiers* p = resource_ids_;
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.resource_ids)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::event::ResourceIdentifiers*>(
+      &::flyteidl::event::_ResourceIdentifiers_default_instance_);
+}
+inline ::flyteidl::event::ResourceIdentifiers* TaskExecutionMetadata::release_resource_ids() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionMetadata.resource_ids)
   
-  resource_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.resource_name)
+  ::flyteidl::event::ResourceIdentifiers* temp = resource_ids_;
+  resource_ids_ = nullptr;
+  return temp;
 }
-#if LANG_CXX11
-inline void TaskExecutionMetadata::set_resource_name(::std::string&& value) {
+inline ::flyteidl::event::ResourceIdentifiers* TaskExecutionMetadata::mutable_resource_ids() {
   
-  resource_name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.TaskExecutionMetadata.resource_name)
+  if (resource_ids_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::event::ResourceIdentifiers>(GetArenaNoVirtual());
+    resource_ids_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.resource_ids)
+  return resource_ids_;
 }
-#endif
-inline void TaskExecutionMetadata::set_resource_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  resource_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.TaskExecutionMetadata.resource_name)
-}
-inline void TaskExecutionMetadata::set_resource_name(const char* value, size_t size) {
-  
-  resource_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.TaskExecutionMetadata.resource_name)
-}
-inline ::std::string* TaskExecutionMetadata::mutable_resource_name() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.resource_name)
-  return resource_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskExecutionMetadata::release_resource_name() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionMetadata.resource_name)
-  
-  return resource_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskExecutionMetadata::set_allocated_resource_name(::std::string* resource_name) {
-  if (resource_name != nullptr) {
+inline void TaskExecutionMetadata::set_allocated_resource_ids(::flyteidl::event::ResourceIdentifiers* resource_ids) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete resource_ids_;
+  }
+  if (resource_ids) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      resource_ids = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resource_ids, submessage_arena);
+    }
     
   } else {
     
   }
-  resource_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resource_name);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.resource_name)
+  resource_ids_ = resource_ids;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.resource_ids)
 }
 
-// repeated .flyteidl.event.ManagedResourceInfo managed_resource_info = 2;
-inline int TaskExecutionMetadata::managed_resource_info_size() const {
-  return managed_resource_info_.size();
+// repeated .flyteidl.event.ResourcePoolInfo resource_pool_info = 2;
+inline int TaskExecutionMetadata::resource_pool_info_size() const {
+  return resource_pool_info_.size();
 }
-inline void TaskExecutionMetadata::clear_managed_resource_info() {
-  managed_resource_info_.Clear();
+inline void TaskExecutionMetadata::clear_resource_pool_info() {
+  resource_pool_info_.Clear();
 }
-inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::mutable_managed_resource_info(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return managed_resource_info_.Mutable(index);
+inline ::flyteidl::event::ResourcePoolInfo* TaskExecutionMetadata::mutable_resource_pool_info(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
+  return resource_pool_info_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >*
-TaskExecutionMetadata::mutable_managed_resource_info() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return &managed_resource_info_;
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo >*
+TaskExecutionMetadata::mutable_resource_pool_info() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
+  return &resource_pool_info_;
 }
-inline const ::flyteidl::event::ManagedResourceInfo& TaskExecutionMetadata::managed_resource_info(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return managed_resource_info_.Get(index);
+inline const ::flyteidl::event::ResourcePoolInfo& TaskExecutionMetadata::resource_pool_info(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
+  return resource_pool_info_.Get(index);
 }
-inline ::flyteidl::event::ManagedResourceInfo* TaskExecutionMetadata::add_managed_resource_info() {
-  // @@protoc_insertion_point(field_add:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return managed_resource_info_.Add();
+inline ::flyteidl::event::ResourcePoolInfo* TaskExecutionMetadata::add_resource_pool_info() {
+  // @@protoc_insertion_point(field_add:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
+  return resource_pool_info_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ManagedResourceInfo >&
-TaskExecutionMetadata::managed_resource_info() const {
-  // @@protoc_insertion_point(field_list:flyteidl.event.TaskExecutionMetadata.managed_resource_info)
-  return managed_resource_info_;
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::event::ResourcePoolInfo >&
+TaskExecutionMetadata::resource_pool_info() const {
+  // @@protoc_insertion_point(field_list:flyteidl.event.TaskExecutionMetadata.resource_pool_info)
+  return resource_pool_info_;
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -6599,12 +6599,16 @@ definitions:
       reason: "reason"
       metadata:
         instance_class: {}
-        managed_resource_info:
+        resource_pool_info:
         - allocation_token: "allocation_token"
           namespace: "namespace"
         - allocation_token: "allocation_token"
           namespace: "namespace"
-        resource_name: "resource_name"
+        resource_ids:
+          generated_name: "generated_name"
+          external_ids:
+          - "external_ids"
+          - "external_ids"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
         fields:
@@ -6714,12 +6718,16 @@ definitions:
           reason: "reason"
           metadata:
             instance_class: {}
-            managed_resource_info:
+            resource_pool_info:
             - allocation_token: "allocation_token"
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            resource_name: "resource_name"
+            resource_ids:
+              generated_name: "generated_name"
+              external_ids:
+              - "external_ids"
+              - "external_ids"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -6772,12 +6780,16 @@ definitions:
           reason: "reason"
           metadata:
             instance_class: {}
-            managed_resource_info:
+            resource_pool_info:
             - allocation_token: "allocation_token"
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            resource_name: "resource_name"
+            resource_ids:
+              generated_name: "generated_name"
+              external_ids:
+              - "external_ids"
+              - "external_ids"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -25925,22 +25937,6 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
-  eventManagedResourceInfo:
-    type: "object"
-    properties:
-      allocation_token:
-        type: "string"
-        description: "Unique resource ID used to identify this execution when allocating\
-          \ a token."
-      namespace:
-        type: "string"
-        description: "Namespace under which this task execution requested an allocation\
-          \ token."
-    description: "This message holds task execution metadata specific to resource\
-      \ allocation used to manage concurrent\nexecutions for a project namespace."
-    example:
-      allocation_token: "allocation_token"
-      namespace: "namespace"
   eventNodeExecutionEvent:
     type: "object"
     properties:
@@ -26000,6 +25996,41 @@ definitions:
     properties:
       id:
         $ref: "#/definitions/coreTaskExecutionIdentifier"
+  eventResourceIdentifiers:
+    type: "object"
+    properties:
+      generated_name:
+        type: "string"
+        description: "Unique, generated name for this task execution used by the backend."
+      external_ids:
+        type: "array"
+        description: "Identifiers for external resources created by this task execution,\
+          \ for exaple Qubole query ID or presto query ids."
+        items:
+          type: "string"
+    description: "This message contains various identifiers for resources used for\
+      \ a specific task execution."
+    example:
+      generated_name: "generated_name"
+      external_ids:
+      - "external_ids"
+      - "external_ids"
+  eventResourcePoolInfo:
+    type: "object"
+    properties:
+      allocation_token:
+        type: "string"
+        description: "Unique resource ID used to identify this execution when allocating\
+          \ a token."
+      namespace:
+        type: "string"
+        description: "Namespace under which this task execution requested an allocation\
+          \ token."
+    description: "This message holds task execution metadata specific to resource\
+      \ allocation used to manage concurrent\nexecutions for a project namespace."
+    example:
+      allocation_token: "allocation_token"
+      namespace: "namespace"
   eventTaskExecutionEvent:
     type: "object"
     properties:
@@ -26075,27 +26106,30 @@ definitions:
     properties:
       instance_class:
         $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
-      resource_name:
-        type: "string"
-        description: "Unique name for this task execution used by the backend, may\
-          \ be generated."
-      managed_resource_info:
+      resource_ids:
+        description: "Contains various identifiers for resources used during execution."
+        $ref: "#/definitions/eventResourceIdentifiers"
+      resource_pool_info:
         type: "array"
         description: "Includes information about resource token allocation (if applicable).\n\
           This is a repeated field because a plugin can request multiple resource\
           \ allocations during execution."
         items:
-          $ref: "#/definitions/eventManagedResourceInfo"
+          $ref: "#/definitions/eventResourcePoolInfo"
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
       \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:
       instance_class: {}
-      managed_resource_info:
+      resource_pool_info:
       - allocation_token: "allocation_token"
         namespace: "namespace"
       - allocation_token: "allocation_token"
         namespace: "namespace"
-      resource_name: "resource_name"
+      resource_ids:
+        generated_name: "generated_name"
+        external_ids:
+        - "external_ids"
+        - "external_ids"
   eventWorkflowExecutionEvent:
     type: "object"
     properties:
@@ -26237,12 +26271,16 @@ definitions:
         reason: "reason"
         metadata:
           instance_class: {}
-          managed_resource_info:
+          resource_pool_info:
           - allocation_token: "allocation_token"
             namespace: "namespace"
           - allocation_token: "allocation_token"
             namespace: "namespace"
-          resource_name: "resource_name"
+          resource_ids:
+            generated_name: "generated_name"
+            external_ids:
+            - "external_ids"
+            - "external_ids"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:
           fields:

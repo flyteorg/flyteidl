@@ -5880,20 +5880,6 @@
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
     },
-    "eventManagedResourceInfo": {
-      "type": "object",
-      "properties": {
-        "allocation_token": {
-          "type": "string",
-          "description": "Unique resource ID used to identify this execution when allocating a token."
-        },
-        "namespace": {
-          "type": "string",
-          "description": "Namespace under which this task execution requested an allocation token."
-        }
-      },
-      "description": "This message holds task execution metadata specific to resource allocation used to manage concurrent\nexecutions for a project namespace."
-    },
     "eventNodeExecutionEvent": {
       "type": "object",
       "properties": {
@@ -5968,6 +5954,37 @@
           "$ref": "#/definitions/coreTaskExecutionIdentifier"
         }
       }
+    },
+    "eventResourceIdentifiers": {
+      "type": "object",
+      "properties": {
+        "generated_name": {
+          "type": "string",
+          "description": "Unique, generated name for this task execution used by the backend."
+        },
+        "external_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids."
+        }
+      },
+      "description": "This message contains various identifiers for resources used for a specific task execution."
+    },
+    "eventResourcePoolInfo": {
+      "type": "object",
+      "properties": {
+        "allocation_token": {
+          "type": "string",
+          "description": "Unique resource ID used to identify this execution when allocating a token."
+        },
+        "namespace": {
+          "type": "string",
+          "description": "Namespace under which this task execution requested an allocation token."
+        }
+      },
+      "description": "This message holds task execution metadata specific to resource allocation used to manage concurrent\nexecutions for a project namespace."
     },
     "eventTaskExecutionEvent": {
       "type": "object",
@@ -6047,14 +6064,14 @@
         "instance_class": {
           "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
         },
-        "resource_name": {
-          "type": "string",
-          "description": "Unique name for this task execution used by the backend, may be generated."
+        "resource_ids": {
+          "$ref": "#/definitions/eventResourceIdentifiers",
+          "description": "Contains various identifiers for resources used during execution."
         },
-        "managed_resource_info": {
+        "resource_pool_info": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/eventManagedResourceInfo"
+            "$ref": "#/definitions/eventResourcePoolInfo"
           },
           "description": "Includes information about resource token allocation (if applicable).\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
         }

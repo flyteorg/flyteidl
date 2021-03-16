@@ -789,24 +789,22 @@ var _ interface {
 	ErrorName() string
 } = TaskExecutionEventValidationError{}
 
-// Validate checks the field values on ManagedResourceInfo with the rules
+// Validate checks the field values on ResourceIdentifiers with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *ManagedResourceInfo) Validate() error {
+func (m *ResourceIdentifiers) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for AllocationToken
-
-	// no validation rules for Namespace
+	// no validation rules for GeneratedName
 
 	return nil
 }
 
-// ManagedResourceInfoValidationError is the validation error returned by
-// ManagedResourceInfo.Validate if the designated constraints aren't met.
-type ManagedResourceInfoValidationError struct {
+// ResourceIdentifiersValidationError is the validation error returned by
+// ResourceIdentifiers.Validate if the designated constraints aren't met.
+type ResourceIdentifiersValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -814,24 +812,24 @@ type ManagedResourceInfoValidationError struct {
 }
 
 // Field function returns field value.
-func (e ManagedResourceInfoValidationError) Field() string { return e.field }
+func (e ResourceIdentifiersValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ManagedResourceInfoValidationError) Reason() string { return e.reason }
+func (e ResourceIdentifiersValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ManagedResourceInfoValidationError) Cause() error { return e.cause }
+func (e ResourceIdentifiersValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ManagedResourceInfoValidationError) Key() bool { return e.key }
+func (e ResourceIdentifiersValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ManagedResourceInfoValidationError) ErrorName() string {
-	return "ManagedResourceInfoValidationError"
+func (e ResourceIdentifiersValidationError) ErrorName() string {
+	return "ResourceIdentifiersValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ManagedResourceInfoValidationError) Error() string {
+func (e ResourceIdentifiersValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -843,14 +841,14 @@ func (e ManagedResourceInfoValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sManagedResourceInfo.%s: %s%s",
+		"invalid %sResourceIdentifiers.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ManagedResourceInfoValidationError{}
+var _ error = ResourceIdentifiersValidationError{}
 
 var _ interface {
 	Field() string
@@ -858,7 +856,76 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ManagedResourceInfoValidationError{}
+} = ResourceIdentifiersValidationError{}
+
+// Validate checks the field values on ResourcePoolInfo with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ResourcePoolInfo) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for AllocationToken
+
+	// no validation rules for Namespace
+
+	return nil
+}
+
+// ResourcePoolInfoValidationError is the validation error returned by
+// ResourcePoolInfo.Validate if the designated constraints aren't met.
+type ResourcePoolInfoValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ResourcePoolInfoValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ResourcePoolInfoValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ResourcePoolInfoValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ResourcePoolInfoValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ResourcePoolInfoValidationError) ErrorName() string { return "ResourcePoolInfoValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ResourcePoolInfoValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sResourcePoolInfo.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ResourcePoolInfoValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ResourcePoolInfoValidationError{}
 
 // Validate checks the field values on TaskExecutionMetadata with the rules
 // defined in the proto definition for this message. If any rules are
@@ -870,15 +937,23 @@ func (m *TaskExecutionMetadata) Validate() error {
 
 	// no validation rules for InstanceClass
 
-	// no validation rules for ResourceName
+	if v, ok := interface{}(m.GetResourceIds()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionMetadataValidationError{
+				field:  "ResourceIds",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
-	for idx, item := range m.GetManagedResourceInfo() {
+	for idx, item := range m.GetResourcePoolInfo() {
 		_, _ = idx, item
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return TaskExecutionMetadataValidationError{
-					field:  fmt.Sprintf("ManagedResourceInfo[%v]", idx),
+					field:  fmt.Sprintf("ResourcePoolInfo[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

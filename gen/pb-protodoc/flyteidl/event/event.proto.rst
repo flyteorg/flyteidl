@@ -426,12 +426,42 @@ metadata
   
 
 
-.. _api_msg_flyteidl.event.ManagedResourceInfo:
+.. _api_msg_flyteidl.event.ResourceIdentifiers:
 
-flyteidl.event.ManagedResourceInfo
+flyteidl.event.ResourceIdentifiers
 ----------------------------------
 
-`[flyteidl.event.ManagedResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L169>`_
+`[flyteidl.event.ResourceIdentifiers proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L167>`_
+
+This message contains various identifiers for resources used for a specific task execution.
+
+.. code-block:: json
+
+  {
+    "generated_name": "...",
+    "external_ids": []
+  }
+
+.. _api_field_flyteidl.event.ResourceIdentifiers.generated_name:
+
+generated_name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique, generated name for this task execution used by the backend.
+  
+  
+.. _api_field_flyteidl.event.ResourceIdentifiers.external_ids:
+
+external_ids
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+  
+  
+
+
+.. _api_msg_flyteidl.event.ResourcePoolInfo:
+
+flyteidl.event.ResourcePoolInfo
+-------------------------------
+
+`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
 
 This message holds task execution metadata specific to resource allocation used to manage concurrent
 executions for a project namespace.
@@ -443,13 +473,13 @@ executions for a project namespace.
     "namespace": "..."
   }
 
-.. _api_field_flyteidl.event.ManagedResourceInfo.allocation_token:
+.. _api_field_flyteidl.event.ResourcePoolInfo.allocation_token:
 
 allocation_token
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique resource ID used to identify this execution when allocating a token.
   
   
-.. _api_field_flyteidl.event.ManagedResourceInfo.namespace:
+.. _api_field_flyteidl.event.ResourcePoolInfo.namespace:
 
 namespace
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Namespace under which this task execution requested an allocation token.
@@ -462,7 +492,7 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L189>`_
 
 Holds metadata around how a task was executed.
 TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
@@ -471,8 +501,8 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 
   {
     "instance_class": "...",
-    "resource_name": "...",
-    "managed_resource_info": []
+    "resource_ids": "{...}",
+    "resource_pool_info": []
   }
 
 .. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
@@ -480,16 +510,16 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 instance_class
   (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceClass <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass>`) 
   
-.. _api_field_flyteidl.event.TaskExecutionMetadata.resource_name:
+.. _api_field_flyteidl.event.TaskExecutionMetadata.resource_ids:
 
-resource_name
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique name for this task execution used by the backend, may be generated.
+resource_ids
+  (:ref:`flyteidl.event.ResourceIdentifiers <api_msg_flyteidl.event.ResourceIdentifiers>`) Contains various identifiers for resources used during execution.
   
   
-.. _api_field_flyteidl.event.TaskExecutionMetadata.managed_resource_info:
+.. _api_field_flyteidl.event.TaskExecutionMetadata.resource_pool_info:
 
-managed_resource_info
-  (:ref:`flyteidl.event.ManagedResourceInfo <api_msg_flyteidl.event.ManagedResourceInfo>`) Includes information about resource token allocation (if applicable).
+resource_pool_info
+  (:ref:`flyteidl.event.ResourcePoolInfo <api_msg_flyteidl.event.ResourcePoolInfo>`) Includes information about resource token allocation (if applicable).
   This is a repeated field because a plugin can request multiple resource allocations during execution.
   
   
@@ -499,7 +529,7 @@ managed_resource_info
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L181>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L191>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

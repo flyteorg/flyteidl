@@ -5721,58 +5721,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ManagedResourceInfo. */
-        interface IManagedResourceInfo {
+        /** Properties of a ResourceIdentifiers. */
+        interface IResourceIdentifiers {
 
-            /** ManagedResourceInfo allocationToken */
-            allocationToken?: (string|null);
+            /** ResourceIdentifiers generatedName */
+            generatedName?: (string|null);
 
-            /** ManagedResourceInfo namespace */
-            namespace?: (string|null);
+            /** ResourceIdentifiers externalIds */
+            externalIds?: (string[]|null);
         }
 
-        /** Represents a ManagedResourceInfo. */
-        class ManagedResourceInfo implements IManagedResourceInfo {
+        /** Represents a ResourceIdentifiers. */
+        class ResourceIdentifiers implements IResourceIdentifiers {
 
             /**
-             * Constructs a new ManagedResourceInfo.
+             * Constructs a new ResourceIdentifiers.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.event.IManagedResourceInfo);
+            constructor(properties?: flyteidl.event.IResourceIdentifiers);
 
-            /** ManagedResourceInfo allocationToken. */
-            public allocationToken: string;
+            /** ResourceIdentifiers generatedName. */
+            public generatedName: string;
 
-            /** ManagedResourceInfo namespace. */
-            public namespace: string;
+            /** ResourceIdentifiers externalIds. */
+            public externalIds: string[];
 
             /**
-             * Creates a new ManagedResourceInfo instance using the specified properties.
+             * Creates a new ResourceIdentifiers instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ManagedResourceInfo instance
+             * @returns ResourceIdentifiers instance
              */
-            public static create(properties?: flyteidl.event.IManagedResourceInfo): flyteidl.event.ManagedResourceInfo;
+            public static create(properties?: flyteidl.event.IResourceIdentifiers): flyteidl.event.ResourceIdentifiers;
 
             /**
-             * Encodes the specified ManagedResourceInfo message. Does not implicitly {@link flyteidl.event.ManagedResourceInfo.verify|verify} messages.
-             * @param message ManagedResourceInfo message or plain object to encode
+             * Encodes the specified ResourceIdentifiers message. Does not implicitly {@link flyteidl.event.ResourceIdentifiers.verify|verify} messages.
+             * @param message ResourceIdentifiers message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.event.IManagedResourceInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.event.IResourceIdentifiers, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a ManagedResourceInfo message from the specified reader or buffer.
+             * Decodes a ResourceIdentifiers message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ManagedResourceInfo
+             * @returns ResourceIdentifiers
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ManagedResourceInfo;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ResourceIdentifiers;
 
             /**
-             * Verifies a ManagedResourceInfo message.
+             * Verifies a ResourceIdentifiers message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ResourcePoolInfo. */
+        interface IResourcePoolInfo {
+
+            /** ResourcePoolInfo allocationToken */
+            allocationToken?: (string|null);
+
+            /** ResourcePoolInfo namespace */
+            namespace?: (string|null);
+        }
+
+        /** Represents a ResourcePoolInfo. */
+        class ResourcePoolInfo implements IResourcePoolInfo {
+
+            /**
+             * Constructs a new ResourcePoolInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.IResourcePoolInfo);
+
+            /** ResourcePoolInfo allocationToken. */
+            public allocationToken: string;
+
+            /** ResourcePoolInfo namespace. */
+            public namespace: string;
+
+            /**
+             * Creates a new ResourcePoolInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourcePoolInfo instance
+             */
+            public static create(properties?: flyteidl.event.IResourcePoolInfo): flyteidl.event.ResourcePoolInfo;
+
+            /**
+             * Encodes the specified ResourcePoolInfo message. Does not implicitly {@link flyteidl.event.ResourcePoolInfo.verify|verify} messages.
+             * @param message ResourcePoolInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.IResourcePoolInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourcePoolInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourcePoolInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ResourcePoolInfo;
+
+            /**
+             * Verifies a ResourcePoolInfo message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -5785,11 +5843,11 @@ export namespace flyteidl {
             /** TaskExecutionMetadata instanceClass */
             instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
 
-            /** TaskExecutionMetadata resourceName */
-            resourceName?: (string|null);
+            /** TaskExecutionMetadata resourceIds */
+            resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
 
-            /** TaskExecutionMetadata managedResourceInfo */
-            managedResourceInfo?: (flyteidl.event.IManagedResourceInfo[]|null);
+            /** TaskExecutionMetadata resourcePoolInfo */
+            resourcePoolInfo?: (flyteidl.event.IResourcePoolInfo[]|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5804,11 +5862,11 @@ export namespace flyteidl {
             /** TaskExecutionMetadata instanceClass. */
             public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
 
-            /** TaskExecutionMetadata resourceName. */
-            public resourceName: string;
+            /** TaskExecutionMetadata resourceIds. */
+            public resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
 
-            /** TaskExecutionMetadata managedResourceInfo. */
-            public managedResourceInfo: flyteidl.event.IManagedResourceInfo[];
+            /** TaskExecutionMetadata resourcePoolInfo. */
+            public resourcePoolInfo: flyteidl.event.IResourcePoolInfo[];
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
