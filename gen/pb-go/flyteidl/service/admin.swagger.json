@@ -4245,7 +4245,7 @@
           "type": "string",
           "description": "If there is an explanation for the most recent phase transition, the reason will capture it."
         },
-        "type": {
+        "task_type": {
           "type": "string",
           "description": "A predefined yet extensible Task type identifier."
         },
@@ -6026,7 +6026,7 @@
           "type": "string",
           "description": "If there is an explanation for this phase transition, the reason will capture it."
         },
-        "type": {
+        "task_type": {
           "type": "string",
           "description": "A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin\nthis type will be identical, but not all task executions necessarily use pre-registered definitions and this\ntype is useful to render the task in the UI, filter task executions, etc."
         },
@@ -6052,7 +6052,7 @@
           "description": "Includes information about how resource token allocation (if applicable)."
         }
       },
-      "title": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).\nNext ID to use:  3"
+      "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     },
     "eventWorkflowExecutionEvent": {
       "type": "object",

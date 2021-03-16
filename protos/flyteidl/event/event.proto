@@ -158,7 +158,7 @@ message TaskExecutionEvent {
     // A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
     // this type will be identical, but not all task executions necessarily use pre-registered definitions and this
     // type is useful to render the task in the UI, filter task executions, etc.
-    string type                           = 14;
+    string task_type                      = 14;
 
     // Metadata around how a task was executed.
     TaskExecutionMetadata metadata        = 16;
@@ -174,7 +174,6 @@ message ManagedResourceInfo {
 
 // Holds metadata around how a task was executed.
 // TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
-// Next ID to use:  3
 message TaskExecutionMetadata {
     // Includes the broad cateogry of machine used for this specific task execution. 
     enum InstanceClass {

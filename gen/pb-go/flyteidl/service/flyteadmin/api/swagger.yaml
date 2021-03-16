@@ -6586,7 +6586,7 @@ definitions:
         type: "string"
         description: "If there is an explanation for the most recent phase transition,\
           \ the reason will capture it."
-      type:
+      task_type:
         type: "string"
         description: "A predefined yet extensible Task type identifier."
       metadata:
@@ -6622,7 +6622,7 @@ definitions:
         kind: {}
         message: "message"
         error_uri: "error_uri"
-      type: "type"
+      task_type: "task_type"
       logs:
       - message_format: {}
         name: "name"
@@ -6734,7 +6734,7 @@ definitions:
             kind: {}
             message: "message"
             error_uri: "error_uri"
-          type: "type"
+          task_type: "task_type"
           logs:
           - message_format: {}
             name: "name"
@@ -6789,7 +6789,7 @@ definitions:
             kind: {}
             message: "message"
             error_uri: "error_uri"
-          type: "type"
+          task_type: "task_type"
           logs:
           - message_format: {}
             name: "name"
@@ -26044,7 +26044,7 @@ definitions:
         type: "string"
         description: "If there is an explanation for this phase transition, the reason\
           \ will capture it."
-      type:
+      task_type:
         type: "string"
         description: "A predefined yet extensible Task type identifier. If the task\
           \ definition is already registered in flyte admin\nthis type will be identical,\
@@ -26068,9 +26068,8 @@ definitions:
         description: "Includes information about how resource token allocation (if\
           \ applicable)."
         $ref: "#/definitions/eventManagedResourceInfo"
-    title: "Holds metadata around how a task was executed.\nTODO(katrogan): Extend\
-      \ to include freeform fields (https://github.com/flyteorg/flyte/issues/325).\n\
-      Next ID to use:  3"
+    description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
+      \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:
       instance_class: {}
       managed_resource_info:
@@ -26240,7 +26239,7 @@ definitions:
           kind: {}
           message: "message"
           error_uri: "error_uri"
-        type: "type"
+        task_type: "task_type"
         logs:
         - message_format: {}
           name: "name"

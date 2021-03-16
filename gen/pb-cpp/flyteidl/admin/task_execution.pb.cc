@@ -238,7 +238,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_5fexecution
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, updated_at_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, custom_info_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, reason_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, task_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, metadata_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionClosure, output_result_),
   ~0u,  // no _has_bits_
@@ -304,7 +304,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2ftask_5fexecution_2eproto
   "in.TaskExecutionClosure\022\021\n\tis_parent\030\004 \001"
   "(\010\"Z\n\021TaskExecutionList\0226\n\017task_executio"
   "ns\030\001 \003(\0132\035.flyteidl.admin.TaskExecution\022"
-  "\r\n\005token\030\002 \001(\t\"\210\004\n\024TaskExecutionClosure\022"
+  "\r\n\005token\030\002 \001(\t\"\215\004\n\024TaskExecutionClosure\022"
   "\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.f"
   "lyteidl.core.ExecutionErrorH\000\0221\n\005phase\030\003"
   " \001(\0162\".flyteidl.core.TaskExecution.Phase"
@@ -315,23 +315,23 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2ftask_5fexecution_2eproto
   ".protobuf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132"
   "\032.google.protobuf.Timestamp\022,\n\013custom_in"
   "fo\030\t \001(\0132\027.google.protobuf.Struct\022\016\n\006rea"
-  "son\030\n \001(\t\022\014\n\004type\030\013 \001(\t\0227\n\010metadata\030\020 \001("
-  "\0132%.flyteidl.event.TaskExecutionMetadata"
-  "B\017\n\routput_result\"Q\n\033TaskExecutionGetDat"
-  "aRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Tas"
-  "kExecutionIdentifier\"\322\001\n\034TaskExecutionGe"
-  "tDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl"
-  ".admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.flytei"
-  "dl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031."
-  "flyteidl.core.LiteralMap\022/\n\014full_outputs"
-  "\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5git"
-  "hub.com/flyteorg/flyteidl/gen/pb-go/flyt"
-  "eidl/adminb\006proto3"
+  "son\030\n \001(\t\022\021\n\ttask_type\030\013 \001(\t\0227\n\010metadata"
+  "\030\020 \001(\0132%.flyteidl.event.TaskExecutionMet"
+  "adataB\017\n\routput_result\"Q\n\033TaskExecutionG"
+  "etDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.cor"
+  "e.TaskExecutionIdentifier\"\322\001\n\034TaskExecut"
+  "ionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.fly"
+  "teidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.f"
+  "lyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001"
+  "(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_ou"
+  "tputs\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7"
+  "Z5github.com/flyteorg/flyteidl/gen/pb-go"
+  "/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2ftask_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2ftask_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2ftask_5fexecution_2eproto,
-  "flyteidl/admin/task_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2ftask_5fexecution_2eproto, 1698,
+  "flyteidl/admin/task_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2ftask_5fexecution_2eproto, 1703,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2ftask_5fexecution_2eproto() {
@@ -2174,7 +2174,7 @@ const int TaskExecutionClosure::kCreatedAtFieldNumber;
 const int TaskExecutionClosure::kUpdatedAtFieldNumber;
 const int TaskExecutionClosure::kCustomInfoFieldNumber;
 const int TaskExecutionClosure::kReasonFieldNumber;
-const int TaskExecutionClosure::kTypeFieldNumber;
+const int TaskExecutionClosure::kTaskTypeFieldNumber;
 const int TaskExecutionClosure::kMetadataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2192,9 +2192,9 @@ TaskExecutionClosure::TaskExecutionClosure(const TaskExecutionClosure& from)
   if (from.reason().size() > 0) {
     reason_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.type().size() > 0) {
-    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
+  task_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.task_type().size() > 0) {
+    task_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.task_type_);
   }
   if (from.has_started_at()) {
     started_at_ = new ::google::protobuf::Timestamp(*from.started_at_);
@@ -2248,7 +2248,7 @@ void TaskExecutionClosure::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TaskExecutionClosure_flyteidl_2fadmin_2ftask_5fexecution_2eproto.base);
   reason_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  task_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&started_at_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&phase_) -
       reinterpret_cast<char*>(&started_at_)) + sizeof(phase_));
@@ -2262,7 +2262,7 @@ TaskExecutionClosure::~TaskExecutionClosure() {
 
 void TaskExecutionClosure::SharedDtor() {
   reason_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  task_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete started_at_;
   if (this != internal_default_instance()) delete duration_;
   if (this != internal_default_instance()) delete created_at_;
@@ -2310,7 +2310,7 @@ void TaskExecutionClosure::Clear() {
 
   logs_.Clear();
   reason_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  task_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && started_at_ != nullptr) {
     delete started_at_;
   }
@@ -2487,13 +2487,13 @@ const char* TaskExecutionClosure::_InternalParse(const char* begin, const char* 
         ptr += size;
         break;
       }
-      // string type = 11;
+      // string task_type = 11;
       case 11: {
         if (static_cast<::google::protobuf::uint8>(tag) != 90) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.TaskExecutionClosure.type");
-        object = msg->mutable_type();
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.TaskExecutionClosure.task_type");
+        object = msg->mutable_task_type();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -2671,15 +2671,15 @@ bool TaskExecutionClosure::MergePartialFromCodedStream(
         break;
       }
 
-      // string type = 11;
+      // string task_type = 11;
       case 11: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (90 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_type()));
+                input, this->mutable_task_type()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->type().data(), static_cast<int>(this->type().length()),
+            this->task_type().data(), static_cast<int>(this->task_type().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.TaskExecutionClosure.type"));
+            "flyteidl.admin.TaskExecutionClosure.task_type"));
         } else {
           goto handle_unusual;
         }
@@ -2795,14 +2795,14 @@ void TaskExecutionClosure::SerializeWithCachedSizes(
       10, this->reason(), output);
   }
 
-  // string type = 11;
-  if (this->type().size() > 0) {
+  // string task_type = 11;
+  if (this->task_type().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
+      this->task_type().data(), static_cast<int>(this->task_type().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.TaskExecutionClosure.type");
+      "flyteidl.admin.TaskExecutionClosure.task_type");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      11, this->type(), output);
+      11, this->task_type(), output);
   }
 
   // .flyteidl.event.TaskExecutionMetadata metadata = 16;
@@ -2902,15 +2902,15 @@ void TaskExecutionClosure::SerializeWithCachedSizes(
         10, this->reason(), target);
   }
 
-  // string type = 11;
-  if (this->type().size() > 0) {
+  // string task_type = 11;
+  if (this->task_type().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
+      this->task_type().data(), static_cast<int>(this->task_type().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.TaskExecutionClosure.type");
+      "flyteidl.admin.TaskExecutionClosure.task_type");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        11, this->type(), target);
+        11, this->task_type(), target);
   }
 
   // .flyteidl.event.TaskExecutionMetadata metadata = 16;
@@ -2959,11 +2959,11 @@ size_t TaskExecutionClosure::ByteSizeLong() const {
         this->reason());
   }
 
-  // string type = 11;
-  if (this->type().size() > 0) {
+  // string task_type = 11;
+  if (this->task_type().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->type());
+        this->task_type());
   }
 
   // .google.protobuf.Timestamp started_at = 5;
@@ -3065,9 +3065,9 @@ void TaskExecutionClosure::MergeFrom(const TaskExecutionClosure& from) {
 
     reason_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
-  if (from.type().size() > 0) {
+  if (from.task_type().size() > 0) {
 
-    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
+    task_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.task_type_);
   }
   if (from.has_started_at()) {
     mutable_started_at()->::google::protobuf::Timestamp::MergeFrom(from.started_at());
@@ -3133,7 +3133,7 @@ void TaskExecutionClosure::InternalSwap(TaskExecutionClosure* other) {
   CastToBase(&logs_)->InternalSwap(CastToBase(&other->logs_));
   reason_.Swap(&other->reason_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  task_type_.Swap(&other->task_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(started_at_, other->started_at_);
   swap(duration_, other->duration_);

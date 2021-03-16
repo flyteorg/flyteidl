@@ -52,7 +52,7 @@ class EventTaskExecutionEvent(object):
         'custom_info': 'ProtobufStruct',
         'phase_version': 'int',
         'reason': 'str',
-        'type': 'str',
+        'task_type': 'str',
         'metadata': 'EventTaskExecutionMetadata'
     }
 
@@ -70,11 +70,11 @@ class EventTaskExecutionEvent(object):
         'custom_info': 'custom_info',
         'phase_version': 'phase_version',
         'reason': 'reason',
-        'type': 'type',
+        'task_type': 'task_type',
         'metadata': 'metadata'
     }
 
-    def __init__(self, task_id=None, parent_node_execution_id=None, retry_attempt=None, phase=None, producer_id=None, logs=None, occurred_at=None, input_uri=None, output_uri=None, error=None, custom_info=None, phase_version=None, reason=None, type=None, metadata=None):  # noqa: E501
+    def __init__(self, task_id=None, parent_node_execution_id=None, retry_attempt=None, phase=None, producer_id=None, logs=None, occurred_at=None, input_uri=None, output_uri=None, error=None, custom_info=None, phase_version=None, reason=None, task_type=None, metadata=None):  # noqa: E501
         """EventTaskExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._task_id = None
@@ -90,7 +90,7 @@ class EventTaskExecutionEvent(object):
         self._custom_info = None
         self._phase_version = None
         self._reason = None
-        self._type = None
+        self._task_type = None
         self._metadata = None
         self.discriminator = None
 
@@ -120,8 +120,8 @@ class EventTaskExecutionEvent(object):
             self.phase_version = phase_version
         if reason is not None:
             self.reason = reason
-        if type is not None:
-            self.type = type
+        if task_type is not None:
+            self.task_type = task_type
         if metadata is not None:
             self.metadata = metadata
 
@@ -413,27 +413,27 @@ class EventTaskExecutionEvent(object):
         self._reason = reason
 
     @property
-    def type(self):
-        """Gets the type of this EventTaskExecutionEvent.  # noqa: E501
+    def task_type(self):
+        """Gets the task_type of this EventTaskExecutionEvent.  # noqa: E501
 
         A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin this type will be identical, but not all task executions necessarily use pre-registered definitions and this type is useful to render the task in the UI, filter task executions, etc.  # noqa: E501
 
-        :return: The type of this EventTaskExecutionEvent.  # noqa: E501
+        :return: The task_type of this EventTaskExecutionEvent.  # noqa: E501
         :rtype: str
         """
-        return self._type
+        return self._task_type
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this EventTaskExecutionEvent.
+    @task_type.setter
+    def task_type(self, task_type):
+        """Sets the task_type of this EventTaskExecutionEvent.
 
         A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin this type will be identical, but not all task executions necessarily use pre-registered definitions and this type is useful to render the task in the UI, filter task executions, etc.  # noqa: E501
 
-        :param type: The type of this EventTaskExecutionEvent.  # noqa: E501
+        :param task_type: The task_type of this EventTaskExecutionEvent.  # noqa: E501
         :type: str
         """
 
-        self._type = type
+        self._task_type = task_type
 
     @property
     def metadata(self):

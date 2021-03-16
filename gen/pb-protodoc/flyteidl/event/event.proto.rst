@@ -315,7 +315,7 @@ Plugin specific execution event information. For tasks like Python, Hive, Spark,
     "custom_info": "{...}",
     "phase_version": "...",
     "reason": "...",
-    "type": "...",
+    "task_type": "...",
     "metadata": "{...}"
   }
 
@@ -410,9 +410,9 @@ reason
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) If there is an explanation for this phase transition, the reason will capture it.
   
   
-.. _api_field_flyteidl.event.TaskExecutionEvent.type:
+.. _api_field_flyteidl.event.TaskExecutionEvent.task_type:
 
-type
+task_type
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
   this type will be identical, but not all task executions necessarily use pre-registered definitions and this
   type is useful to render the task in the UI, filter task executions, etc.
@@ -455,11 +455,10 @@ token
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L177>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L176>`_
 
 Holds metadata around how a task was executed.
 TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
-Next ID to use:  3
 
 .. code-block:: json
 
@@ -492,7 +491,7 @@ managed_resource_info
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L178>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

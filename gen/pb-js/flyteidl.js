@@ -13481,7 +13481,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
              * @property {number|null} [phaseVersion] TaskExecutionEvent phaseVersion
              * @property {string|null} [reason] TaskExecutionEvent reason
-             * @property {string|null} [type] TaskExecutionEvent type
+             * @property {string|null} [taskType] TaskExecutionEvent taskType
              * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
              */
 
@@ -13606,12 +13606,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionEvent.prototype.reason = "";
 
             /**
-             * TaskExecutionEvent type.
-             * @member {string} type
+             * TaskExecutionEvent taskType.
+             * @member {string} taskType
              * @memberof flyteidl.event.TaskExecutionEvent
              * @instance
              */
-            TaskExecutionEvent.prototype.type = "";
+            TaskExecutionEvent.prototype.taskType = "";
 
             /**
              * TaskExecutionEvent metadata.
@@ -13686,8 +13686,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.phaseVersion);
                 if (message.reason != null && message.hasOwnProperty("reason"))
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.reason);
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.type);
+                if (message.taskType != null && message.hasOwnProperty("taskType"))
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.taskType);
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
@@ -13753,7 +13753,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.reason = reader.string();
                         break;
                     case 14:
-                        message.type = reader.string();
+                        message.taskType = reader.string();
                         break;
                     case 16:
                         message.metadata = $root.flyteidl.event.TaskExecutionMetadata.decode(reader, reader.uint32());
@@ -13851,9 +13851,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.reason != null && message.hasOwnProperty("reason"))
                     if (!$util.isString(message.reason))
                         return "reason: string expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    if (!$util.isString(message.type))
-                        return "type: string expected";
+                if (message.taskType != null && message.hasOwnProperty("taskType"))
+                    if (!$util.isString(message.taskType))
+                        return "taskType: string expected";
                 if (message.metadata != null && message.hasOwnProperty("metadata")) {
                     let error = $root.flyteidl.event.TaskExecutionMetadata.verify(message.metadata);
                     if (error)
@@ -30035,7 +30035,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [updatedAt] TaskExecutionClosure updatedAt
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionClosure customInfo
              * @property {string|null} [reason] TaskExecutionClosure reason
-             * @property {string|null} [type] TaskExecutionClosure type
+             * @property {string|null} [taskType] TaskExecutionClosure taskType
              * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionClosure metadata
              */
 
@@ -30136,12 +30136,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionClosure.prototype.reason = "";
 
             /**
-             * TaskExecutionClosure type.
-             * @member {string} type
+             * TaskExecutionClosure taskType.
+             * @member {string} taskType
              * @memberof flyteidl.admin.TaskExecutionClosure
              * @instance
              */
-            TaskExecutionClosure.prototype.type = "";
+            TaskExecutionClosure.prototype.taskType = "";
 
             /**
              * TaskExecutionClosure metadata.
@@ -30210,8 +30210,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.reason != null && message.hasOwnProperty("reason"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.reason);
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
+                if (message.taskType != null && message.hasOwnProperty("taskType"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskType);
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
@@ -30268,7 +30268,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.reason = reader.string();
                         break;
                     case 11:
-                        message.type = reader.string();
+                        message.taskType = reader.string();
                         break;
                     case 16:
                         message.metadata = $root.flyteidl.event.TaskExecutionMetadata.decode(reader, reader.uint32());
@@ -30359,9 +30359,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.reason != null && message.hasOwnProperty("reason"))
                     if (!$util.isString(message.reason))
                         return "reason: string expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    if (!$util.isString(message.type))
-                        return "type: string expected";
+                if (message.taskType != null && message.hasOwnProperty("taskType"))
+                    if (!$util.isString(message.taskType))
+                        return "taskType: string expected";
                 if (message.metadata != null && message.hasOwnProperty("metadata")) {
                     let error = $root.flyteidl.event.TaskExecutionMetadata.verify(message.metadata);
                     if (error)

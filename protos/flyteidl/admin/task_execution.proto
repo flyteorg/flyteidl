@@ -102,7 +102,7 @@ message TaskExecutionClosure {
     string reason                         = 10;
 
     // A predefined yet extensible Task type identifier.
-    string type                           = 11;
+    string task_type                      = 11;
 
     // Metadata around how a task was executed.
     event.TaskExecutionMetadata metadata  = 16;

@@ -180,7 +180,7 @@ Container for task execution details and results.
     "updated_at": "{...}",
     "custom_info": "{...}",
     "reason": "...",
-    "type": "...",
+    "task_type": "...",
     "metadata": "{...}"
   }
 
@@ -250,9 +250,9 @@ reason
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) If there is an explanation for the most recent phase transition, the reason will capture it.
   
   
-.. _api_field_flyteidl.admin.TaskExecutionClosure.type:
+.. _api_field_flyteidl.admin.TaskExecutionClosure.task_type:
 
-type
+task_type
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) A predefined yet extensible Task type identifier.
   
   

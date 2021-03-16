@@ -4513,18 +4513,18 @@ public final class TaskExecutionOuterClass {
      * A predefined yet extensible Task type identifier.
      * </pre>
      *
-     * <code>string type = 11;</code>
+     * <code>string task_type = 11;</code>
      */
-    java.lang.String getType();
+    java.lang.String getTaskType();
     /**
      * <pre>
      * A predefined yet extensible Task type identifier.
      * </pre>
      *
-     * <code>string type = 11;</code>
+     * <code>string task_type = 11;</code>
      */
     com.google.protobuf.ByteString
-        getTypeBytes();
+        getTaskTypeBytes();
 
     /**
      * <pre>
@@ -4573,7 +4573,7 @@ public final class TaskExecutionOuterClass {
       phase_ = 0;
       logs_ = java.util.Collections.emptyList();
       reason_ = "";
-      type_ = "";
+      taskType_ = "";
     }
 
     @java.lang.Override
@@ -4709,7 +4709,7 @@ public final class TaskExecutionOuterClass {
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              type_ = s;
+              taskType_ = s;
               break;
             }
             case 130: {
@@ -5175,24 +5175,24 @@ public final class TaskExecutionOuterClass {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 11;
-    private volatile java.lang.Object type_;
+    public static final int TASK_TYPE_FIELD_NUMBER = 11;
+    private volatile java.lang.Object taskType_;
     /**
      * <pre>
      * A predefined yet extensible Task type identifier.
      * </pre>
      *
-     * <code>string type = 11;</code>
+     * <code>string task_type = 11;</code>
      */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
+    public java.lang.String getTaskType() {
+      java.lang.Object ref = taskType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        type_ = s;
+        taskType_ = s;
         return s;
       }
     }
@@ -5201,16 +5201,16 @@ public final class TaskExecutionOuterClass {
      * A predefined yet extensible Task type identifier.
      * </pre>
      *
-     * <code>string type = 11;</code>
+     * <code>string task_type = 11;</code>
      */
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
+        getTaskTypeBytes() {
+      java.lang.Object ref = taskType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        type_ = b;
+        taskType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5294,8 +5294,8 @@ public final class TaskExecutionOuterClass {
       if (!getReasonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, reason_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, type_);
+      if (!getTaskTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, taskType_);
       }
       if (metadata_ != null) {
         output.writeMessage(16, getMetadata());
@@ -5347,8 +5347,8 @@ public final class TaskExecutionOuterClass {
       if (!getReasonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, reason_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, type_);
+      if (!getTaskTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, taskType_);
       }
       if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -5399,8 +5399,8 @@ public final class TaskExecutionOuterClass {
       }
       if (!getReason()
           .equals(other.getReason())) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
+      if (!getTaskType()
+          .equals(other.getTaskType())) return false;
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
         if (!getMetadata()
@@ -5458,8 +5458,8 @@ public final class TaskExecutionOuterClass {
       }
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskType().hashCode();
       if (hasMetadata()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
@@ -5654,7 +5654,7 @@ public final class TaskExecutionOuterClass {
         }
         reason_ = "";
 
-        type_ = "";
+        taskType_ = "";
 
         if (metadataBuilder_ == null) {
           metadata_ = null;
@@ -5738,7 +5738,7 @@ public final class TaskExecutionOuterClass {
           result.customInfo_ = customInfoBuilder_.build();
         }
         result.reason_ = reason_;
-        result.type_ = type_;
+        result.taskType_ = taskType_;
         if (metadataBuilder_ == null) {
           result.metadata_ = metadata_;
         } else {
@@ -5842,8 +5842,8 @@ public final class TaskExecutionOuterClass {
           reason_ = other.reason_;
           onChanged();
         }
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
+        if (!other.getTaskType().isEmpty()) {
+          taskType_ = other.taskType_;
           onChanged();
         }
         if (other.hasMetadata()) {
@@ -7412,21 +7412,21 @@ public final class TaskExecutionOuterClass {
         return this;
       }
 
-      private java.lang.Object type_ = "";
+      private java.lang.Object taskType_ = "";
       /**
        * <pre>
        * A predefined yet extensible Task type identifier.
        * </pre>
        *
-       * <code>string type = 11;</code>
+       * <code>string task_type = 11;</code>
        */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
+      public java.lang.String getTaskType() {
+        java.lang.Object ref = taskType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          type_ = s;
+          taskType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7437,16 +7437,16 @@ public final class TaskExecutionOuterClass {
        * A predefined yet extensible Task type identifier.
        * </pre>
        *
-       * <code>string type = 11;</code>
+       * <code>string task_type = 11;</code>
        */
       public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
+          getTaskTypeBytes() {
+        java.lang.Object ref = taskType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          type_ = b;
+          taskType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7457,15 +7457,15 @@ public final class TaskExecutionOuterClass {
        * A predefined yet extensible Task type identifier.
        * </pre>
        *
-       * <code>string type = 11;</code>
+       * <code>string task_type = 11;</code>
        */
-      public Builder setType(
+      public Builder setTaskType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        type_ = value;
+        taskType_ = value;
         onChanged();
         return this;
       }
@@ -7474,11 +7474,11 @@ public final class TaskExecutionOuterClass {
        * A predefined yet extensible Task type identifier.
        * </pre>
        *
-       * <code>string type = 11;</code>
+       * <code>string task_type = 11;</code>
        */
-      public Builder clearType() {
+      public Builder clearTaskType() {
         
-        type_ = getDefaultInstance().getType();
+        taskType_ = getDefaultInstance().getTaskType();
         onChanged();
         return this;
       }
@@ -7487,16 +7487,16 @@ public final class TaskExecutionOuterClass {
        * A predefined yet extensible Task type identifier.
        * </pre>
        *
-       * <code>string type = 11;</code>
+       * <code>string task_type = 11;</code>
        */
-      public Builder setTypeBytes(
+      public Builder setTaskTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        type_ = value;
+        taskType_ = value;
         onChanged();
         return this;
       }
@@ -9880,7 +9880,7 @@ public final class TaskExecutionOuterClass {
       "in.TaskExecutionClosure\022\021\n\tis_parent\030\004 \001" +
       "(\010\"Z\n\021TaskExecutionList\0226\n\017task_executio" +
       "ns\030\001 \003(\0132\035.flyteidl.admin.TaskExecution\022" +
-      "\r\n\005token\030\002 \001(\t\"\210\004\n\024TaskExecutionClosure\022" +
+      "\r\n\005token\030\002 \001(\t\"\215\004\n\024TaskExecutionClosure\022" +
       "\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.f" +
       "lyteidl.core.ExecutionErrorH\000\0221\n\005phase\030\003" +
       " \001(\0162\".flyteidl.core.TaskExecution.Phase" +
@@ -9891,18 +9891,18 @@ public final class TaskExecutionOuterClass {
       ".protobuf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132" +
       "\032.google.protobuf.Timestamp\022,\n\013custom_in" +
       "fo\030\t \001(\0132\027.google.protobuf.Struct\022\016\n\006rea" +
-      "son\030\n \001(\t\022\014\n\004type\030\013 \001(\t\0227\n\010metadata\030\020 \001(" +
-      "\0132%.flyteidl.event.TaskExecutionMetadata" +
-      "B\017\n\routput_result\"Q\n\033TaskExecutionGetDat" +
-      "aRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Tas" +
-      "kExecutionIdentifier\"\322\001\n\034TaskExecutionGe" +
-      "tDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl" +
-      ".admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031." +
-      "flyteidl.core.LiteralMap\022/\n\014full_outputs" +
-      "\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5git" +
-      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
-      "eidl/adminb\006proto3"
+      "son\030\n \001(\t\022\021\n\ttask_type\030\013 \001(\t\0227\n\010metadata" +
+      "\030\020 \001(\0132%.flyteidl.event.TaskExecutionMet" +
+      "adataB\017\n\routput_result\"Q\n\033TaskExecutionG" +
+      "etDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.cor" +
+      "e.TaskExecutionIdentifier\"\322\001\n\034TaskExecut" +
+      "ionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.fly" +
+      "teidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.f" +
+      "lyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001" +
+      "(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_ou" +
+      "tputs\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7" +
+      "Z5github.com/flyteorg/flyteidl/gen/pb-go" +
+      "/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9953,7 +9953,7 @@ public final class TaskExecutionOuterClass {
     internal_static_flyteidl_admin_TaskExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskExecutionClosure_descriptor,
-        new java.lang.String[] { "OutputUri", "Error", "Phase", "Logs", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "CustomInfo", "Reason", "Type", "Metadata", "OutputResult", });
+        new java.lang.String[] { "OutputUri", "Error", "Phase", "Logs", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "CustomInfo", "Reason", "TaskType", "Metadata", "OutputResult", });
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_fieldAccessorTable = new

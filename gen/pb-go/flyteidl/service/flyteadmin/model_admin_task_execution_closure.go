@@ -36,7 +36,7 @@ type AdminTaskExecutionClosure struct {
 	// If there is an explanation for the most recent phase transition, the reason will capture it.
 	Reason string `json:"reason,omitempty"`
 	// A predefined yet extensible Task type identifier.
-	Type_ string `json:"type,omitempty"`
+	TaskType string `json:"task_type,omitempty"`
 	// Metadata around how a task was executed.
 	Metadata *EventTaskExecutionMetadata `json:"metadata,omitempty"`
 }

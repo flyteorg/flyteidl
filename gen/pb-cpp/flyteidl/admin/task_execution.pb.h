@@ -781,19 +781,19 @@ class TaskExecutionClosure final :
   ::std::string* release_reason();
   void set_allocated_reason(::std::string* reason);
 
-  // string type = 11;
-  void clear_type();
-  static const int kTypeFieldNumber = 11;
-  const ::std::string& type() const;
-  void set_type(const ::std::string& value);
+  // string task_type = 11;
+  void clear_task_type();
+  static const int kTaskTypeFieldNumber = 11;
+  const ::std::string& task_type() const;
+  void set_task_type(const ::std::string& value);
   #if LANG_CXX11
-  void set_type(::std::string&& value);
+  void set_task_type(::std::string&& value);
   #endif
-  void set_type(const char* value);
-  void set_type(const char* value, size_t size);
-  ::std::string* mutable_type();
-  ::std::string* release_type();
-  void set_allocated_type(::std::string* type);
+  void set_task_type(const char* value);
+  void set_task_type(const char* value, size_t size);
+  ::std::string* mutable_task_type();
+  ::std::string* release_task_type();
+  void set_allocated_task_type(::std::string* task_type);
 
   // .google.protobuf.Timestamp started_at = 5;
   bool has_started_at() const;
@@ -895,7 +895,7 @@ class TaskExecutionClosure final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::TaskLog > logs_;
   ::google::protobuf::internal::ArenaStringPtr reason_;
-  ::google::protobuf::internal::ArenaStringPtr type_;
+  ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::Timestamp* started_at_;
   ::google::protobuf::Duration* duration_;
   ::google::protobuf::Timestamp* created_at_;
@@ -2152,57 +2152,57 @@ inline void TaskExecutionClosure::set_allocated_reason(::std::string* reason) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionClosure.reason)
 }
 
-// string type = 11;
-inline void TaskExecutionClosure::clear_type() {
-  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string task_type = 11;
+inline void TaskExecutionClosure::clear_task_type() {
+  task_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& TaskExecutionClosure::type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionClosure.type)
-  return type_.GetNoArena();
+inline const ::std::string& TaskExecutionClosure::task_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionClosure.task_type)
+  return task_type_.GetNoArena();
 }
-inline void TaskExecutionClosure::set_type(const ::std::string& value) {
+inline void TaskExecutionClosure::set_task_type(const ::std::string& value) {
   
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionClosure.type)
+  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionClosure.task_type)
 }
 #if LANG_CXX11
-inline void TaskExecutionClosure::set_type(::std::string&& value) {
+inline void TaskExecutionClosure::set_task_type(::std::string&& value) {
   
-  type_.SetNoArena(
+  task_type_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.TaskExecutionClosure.type)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.TaskExecutionClosure.task_type)
 }
 #endif
-inline void TaskExecutionClosure::set_type(const char* value) {
+inline void TaskExecutionClosure::set_task_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.TaskExecutionClosure.type)
+  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.TaskExecutionClosure.task_type)
 }
-inline void TaskExecutionClosure::set_type(const char* value, size_t size) {
+inline void TaskExecutionClosure::set_task_type(const char* value, size_t size) {
   
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.TaskExecutionClosure.type)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.TaskExecutionClosure.task_type)
 }
-inline ::std::string* TaskExecutionClosure::mutable_type() {
+inline ::std::string* TaskExecutionClosure::mutable_task_type() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionClosure.type)
-  return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionClosure.task_type)
+  return task_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* TaskExecutionClosure::release_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskExecutionClosure.type)
+inline ::std::string* TaskExecutionClosure::release_task_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskExecutionClosure.task_type)
   
-  return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return task_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void TaskExecutionClosure::set_allocated_type(::std::string* type) {
-  if (type != nullptr) {
+inline void TaskExecutionClosure::set_allocated_task_type(::std::string* task_type) {
+  if (task_type != nullptr) {
     
   } else {
     
   }
-  type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionClosure.type)
+  task_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), task_type);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionClosure.task_type)
 }
 
 // .flyteidl.event.TaskExecutionMetadata metadata = 16;

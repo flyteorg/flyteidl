@@ -5624,8 +5624,8 @@ export namespace flyteidl {
             /** TaskExecutionEvent reason */
             reason?: (string|null);
 
-            /** TaskExecutionEvent type */
-            type?: (string|null);
+            /** TaskExecutionEvent taskType */
+            taskType?: (string|null);
 
             /** TaskExecutionEvent metadata */
             metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
@@ -5679,8 +5679,8 @@ export namespace flyteidl {
             /** TaskExecutionEvent reason. */
             public reason: string;
 
-            /** TaskExecutionEvent type. */
-            public type: string;
+            /** TaskExecutionEvent taskType. */
+            public taskType: string;
 
             /** TaskExecutionEvent metadata. */
             public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
@@ -12650,8 +12650,8 @@ export namespace flyteidl {
             /** TaskExecutionClosure reason */
             reason?: (string|null);
 
-            /** TaskExecutionClosure type */
-            type?: (string|null);
+            /** TaskExecutionClosure taskType */
+            taskType?: (string|null);
 
             /** TaskExecutionClosure metadata */
             metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
@@ -12696,8 +12696,8 @@ export namespace flyteidl {
             /** TaskExecutionClosure reason. */
             public reason: string;
 
-            /** TaskExecutionClosure type. */
-            public type: string;
+            /** TaskExecutionClosure taskType. */
+            public taskType: string;
 
             /** TaskExecutionClosure metadata. */
             public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);

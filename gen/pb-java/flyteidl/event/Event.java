@@ -8113,9 +8113,9 @@ public final class Event {
      * type is useful to render the task in the UI, filter task executions, etc.
      * </pre>
      *
-     * <code>string type = 14;</code>
+     * <code>string task_type = 14;</code>
      */
-    java.lang.String getType();
+    java.lang.String getTaskType();
     /**
      * <pre>
      * A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
@@ -8123,10 +8123,10 @@ public final class Event {
      * type is useful to render the task in the UI, filter task executions, etc.
      * </pre>
      *
-     * <code>string type = 14;</code>
+     * <code>string task_type = 14;</code>
      */
     com.google.protobuf.ByteString
-        getTypeBytes();
+        getTaskTypeBytes();
 
     /**
      * <pre>
@@ -8177,7 +8177,7 @@ public final class Event {
       logs_ = java.util.Collections.emptyList();
       inputUri_ = "";
       reason_ = "";
-      type_ = "";
+      taskType_ = "";
     }
 
     @java.lang.Override
@@ -8322,7 +8322,7 @@ public final class Event {
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              type_ = s;
+              taskType_ = s;
               break;
             }
             case 130: {
@@ -8880,8 +8880,8 @@ public final class Event {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 14;
-    private volatile java.lang.Object type_;
+    public static final int TASK_TYPE_FIELD_NUMBER = 14;
+    private volatile java.lang.Object taskType_;
     /**
      * <pre>
      * A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
@@ -8889,17 +8889,17 @@ public final class Event {
      * type is useful to render the task in the UI, filter task executions, etc.
      * </pre>
      *
-     * <code>string type = 14;</code>
+     * <code>string task_type = 14;</code>
      */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
+    public java.lang.String getTaskType() {
+      java.lang.Object ref = taskType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        type_ = s;
+        taskType_ = s;
         return s;
       }
     }
@@ -8910,16 +8910,16 @@ public final class Event {
      * type is useful to render the task in the UI, filter task executions, etc.
      * </pre>
      *
-     * <code>string type = 14;</code>
+     * <code>string task_type = 14;</code>
      */
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
+        getTaskTypeBytes() {
+      java.lang.Object ref = taskType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        type_ = b;
+        taskType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9012,8 +9012,8 @@ public final class Event {
       if (!getReasonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, reason_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, type_);
+      if (!getTaskTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, taskType_);
       }
       if (metadata_ != null) {
         output.writeMessage(16, getMetadata());
@@ -9075,8 +9075,8 @@ public final class Event {
       if (!getReasonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, reason_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, type_);
+      if (!getTaskTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, taskType_);
       }
       if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -9130,8 +9130,8 @@ public final class Event {
           != other.getPhaseVersion()) return false;
       if (!getReason()
           .equals(other.getReason())) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
+      if (!getTaskType()
+          .equals(other.getTaskType())) return false;
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
         if (!getMetadata()
@@ -9193,8 +9193,8 @@ public final class Event {
       hash = (53 * hash) + getPhaseVersion();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskType().hashCode();
       if (hasMetadata()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
@@ -9391,7 +9391,7 @@ public final class Event {
 
         reason_ = "";
 
-        type_ = "";
+        taskType_ = "";
 
         if (metadataBuilder_ == null) {
           metadata_ = null;
@@ -9474,7 +9474,7 @@ public final class Event {
         }
         result.phaseVersion_ = phaseVersion_;
         result.reason_ = reason_;
-        result.type_ = type_;
+        result.taskType_ = taskType_;
         if (metadataBuilder_ == null) {
           result.metadata_ = metadata_;
         } else {
@@ -9589,8 +9589,8 @@ public final class Event {
           reason_ = other.reason_;
           onChanged();
         }
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
+        if (!other.getTaskType().isEmpty()) {
+          taskType_ = other.taskType_;
           onChanged();
         }
         if (other.hasMetadata()) {
@@ -11303,7 +11303,7 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object type_ = "";
+      private java.lang.Object taskType_ = "";
       /**
        * <pre>
        * A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
@@ -11311,15 +11311,15 @@ public final class Event {
        * type is useful to render the task in the UI, filter task executions, etc.
        * </pre>
        *
-       * <code>string type = 14;</code>
+       * <code>string task_type = 14;</code>
        */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
+      public java.lang.String getTaskType() {
+        java.lang.Object ref = taskType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          type_ = s;
+          taskType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11332,16 +11332,16 @@ public final class Event {
        * type is useful to render the task in the UI, filter task executions, etc.
        * </pre>
        *
-       * <code>string type = 14;</code>
+       * <code>string task_type = 14;</code>
        */
       public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
+          getTaskTypeBytes() {
+        java.lang.Object ref = taskType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          type_ = b;
+          taskType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -11354,15 +11354,15 @@ public final class Event {
        * type is useful to render the task in the UI, filter task executions, etc.
        * </pre>
        *
-       * <code>string type = 14;</code>
+       * <code>string task_type = 14;</code>
        */
-      public Builder setType(
+      public Builder setTaskType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        type_ = value;
+        taskType_ = value;
         onChanged();
         return this;
       }
@@ -11373,11 +11373,11 @@ public final class Event {
        * type is useful to render the task in the UI, filter task executions, etc.
        * </pre>
        *
-       * <code>string type = 14;</code>
+       * <code>string task_type = 14;</code>
        */
-      public Builder clearType() {
+      public Builder clearTaskType() {
         
-        type_ = getDefaultInstance().getType();
+        taskType_ = getDefaultInstance().getTaskType();
         onChanged();
         return this;
       }
@@ -11388,16 +11388,16 @@ public final class Event {
        * type is useful to render the task in the UI, filter task executions, etc.
        * </pre>
        *
-       * <code>string type = 14;</code>
+       * <code>string task_type = 14;</code>
        */
-      public Builder setTypeBytes(
+      public Builder setTaskTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        type_ = value;
+        taskType_ = value;
         onChanged();
         return this;
       }
@@ -12262,7 +12262,6 @@ public final class Event {
    * <pre>
    * Holds metadata around how a task was executed.
    * TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
-   * Next ID to use:  3
    * </pre>
    *
    * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -12756,7 +12755,6 @@ public final class Event {
      * <pre>
      * Holds metadata around how a task was executed.
      * TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
-     * Next ID to use:  3
      * </pre>
      *
      * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -13357,7 +13355,7 @@ public final class Event {
       "rentTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&." +
       "flyteidl.core.TaskExecutionIdentifier\".\n" +
       "\033ParentNodeExecutionMetadata\022\017\n\007node_id\030" +
-      "\001 \001(\t\"\306\004\n\022TaskExecutionEvent\022*\n\007task_id\030" +
+      "\001 \001(\t\"\313\004\n\022TaskExecutionEvent\022*\n\007task_id\030" +
       "\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030pare" +
       "nt_node_execution_id\030\002 \001(\0132&.flyteidl.co" +
       "re.NodeExecutionIdentifier\022\025\n\rretry_atte" +
@@ -13369,18 +13367,18 @@ public final class Event {
       "i\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core" +
       ".ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027" +
       ".google.protobuf.Struct\022\025\n\rphase_version" +
-      "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\014\n\004type\030\016 \001(\t\0227\n\010" +
-      "metadata\030\020 \001(\0132%.flyteidl.event.TaskExec" +
-      "utionMetadataB\017\n\routput_result\"$\n\023Manage" +
-      "dResourceInfo\022\r\n\005token\030\001 \001(\t\"\361\001\n\025TaskExe" +
-      "cutionMetadata\022K\n\016instance_class\030\020 \001(\01623" +
-      ".flyteidl.event.TaskExecutionMetadata.In" +
-      "stanceClass\022\026\n\016generated_name\030\001 \001(\t\022B\n\025m" +
-      "anaged_resource_info\030\002 \001(\0132#.flyteidl.ev" +
-      "ent.ManagedResourceInfo\"/\n\rInstanceClass" +
-      "\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5gith" +
-      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
-      "idl/eventb\006proto3"
+      "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(" +
+      "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
+      "kExecutionMetadataB\017\n\routput_result\"$\n\023M" +
+      "anagedResourceInfo\022\r\n\005token\030\001 \001(\t\"\361\001\n\025Ta" +
+      "skExecutionMetadata\022K\n\016instance_class\030\020 " +
+      "\001(\01623.flyteidl.event.TaskExecutionMetada" +
+      "ta.InstanceClass\022\026\n\016generated_name\030\001 \001(\t" +
+      "\022B\n\025managed_resource_info\030\002 \001(\0132#.flytei" +
+      "dl.event.ManagedResourceInfo\"/\n\rInstance" +
+      "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z" +
+      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
+      "flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13440,7 +13438,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
-        new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "OutputUri", "Error", "CustomInfo", "PhaseVersion", "Reason", "Type", "Metadata", "OutputResult", });
+        new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "OutputUri", "Error", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "OutputResult", });
     internal_static_flyteidl_event_ManagedResourceInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_event_ManagedResourceInfo_fieldAccessorTable = new
