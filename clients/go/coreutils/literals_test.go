@@ -366,3 +366,37 @@ func TestMakeLiteralForBlob(t *testing.T) {
 		})
 	}
 }
+
+func TestFoo(t *testing.T) {
+	t.Run("MapArrayOfStringsFail", func(t *testing.T) {
+		var collectionType *core.LiteralType
+		collectionType = &core.LiteralType{Type: &core.LiteralType_CollectionType{
+			CollectionType: &core.LiteralType{Type: &core.LiteralType_Simple{Simple: core.SimpleType_STRING}}}}
+		var literalType *core.LiteralType
+		literalType = &core.LiteralType{Type: &core.LiteralType_MapValueType{
+			MapValueType: collectionType}}
+		createList := func() interface{} {
+			return []interface{} {"world11", "world12"}
+		}
+		strArray := map[string]interface{} {"hello1": createList(), "hello2": createList()}
+		val, err := MakeLiteralForType(literalType, strArray)
+		assert.NoError(t, err)
+		literalVal11 := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
+			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: "world11"}}}}}}
+		literalVal12 := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
+			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: "world12"}}}}}}
+		literalCollection1 := []*core.Literal{literalVal11, literalVal12}
+		literalVal1 := &core.Literal{Value: &core.Literal_Collection{Collection: &core.LiteralCollection{Literals: literalCollection1}}}
+		literalVal21 := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
+			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: "world21"}}}}}}
+		literalVal22 := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
+			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: "world22"}}}}}}
+		literalCollection2 := []*core.Literal{literalVal21, literalVal22}
+		literalVal2 := &core.Literal{Value: &core.Literal_Collection{Collection: &core.LiteralCollection{Literals: literalCollection2}}}
+		literalMapVal := map[string]*core.Literal{"hello1":literalVal1, "hello2":literalVal2}
+		literalVal := &core.Literal{Value: &core.Literal_Map{Map: &core.LiteralMap{Literals: literalMapVal}}}
+		expectedVal, _ := ExtractFromLiteral(literalVal)
+		actualVal, _ := ExtractFromLiteral(val)
+		assert.Equal(t, expectedVal, actualVal)
+	})
+}
