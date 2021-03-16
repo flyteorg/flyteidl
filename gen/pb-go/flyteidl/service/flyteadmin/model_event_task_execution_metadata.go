@@ -11,11 +11,11 @@ package flyteadmin
 
 // Holds metadata around how a task was executed. TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
 type EventTaskExecutionMetadata struct {
-	InstanceClass *TaskExecutionMetadataInstanceClass `json:"instance_class,omitempty"`
 	// Contains various identifiers for resources used during execution.
 	ResourceIds *EventResourceIdentifiers `json:"resource_ids,omitempty"`
 	// Includes information about resource token allocation (if applicable). This is a repeated field because a plugin can request multiple resource allocations during execution.
 	ResourcePoolInfo []EventResourcePoolInfo `json:"resource_pool_info,omitempty"`
 	// The identifier of the plugin used to execute this task.
 	PluginIdentifier string `json:"plugin_identifier,omitempty"`
+	InstanceClass *TaskExecutionMetadataInstanceClass `json:"instance_class,omitempty"`
 }

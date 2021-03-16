@@ -35,57 +35,36 @@ class EventTaskExecutionMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'instance_class': 'TaskExecutionMetadataInstanceClass',
         'resource_ids': 'EventResourceIdentifiers',
         'resource_pool_info': 'list[EventResourcePoolInfo]',
-        'plugin_identifier': 'str'
+        'plugin_identifier': 'str',
+        'instance_class': 'TaskExecutionMetadataInstanceClass'
     }
 
     attribute_map = {
-        'instance_class': 'instance_class',
         'resource_ids': 'resource_ids',
         'resource_pool_info': 'resource_pool_info',
-        'plugin_identifier': 'plugin_identifier'
+        'plugin_identifier': 'plugin_identifier',
+        'instance_class': 'instance_class'
     }
 
-    def __init__(self, instance_class=None, resource_ids=None, resource_pool_info=None, plugin_identifier=None):  # noqa: E501
+    def __init__(self, resource_ids=None, resource_pool_info=None, plugin_identifier=None, instance_class=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._instance_class = None
         self._resource_ids = None
         self._resource_pool_info = None
         self._plugin_identifier = None
+        self._instance_class = None
         self.discriminator = None
 
-        if instance_class is not None:
-            self.instance_class = instance_class
         if resource_ids is not None:
             self.resource_ids = resource_ids
         if resource_pool_info is not None:
             self.resource_pool_info = resource_pool_info
         if plugin_identifier is not None:
             self.plugin_identifier = plugin_identifier
-
-    @property
-    def instance_class(self):
-        """Gets the instance_class of this EventTaskExecutionMetadata.  # noqa: E501
-
-
-        :return: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
-        :rtype: TaskExecutionMetadataInstanceClass
-        """
-        return self._instance_class
-
-    @instance_class.setter
-    def instance_class(self, instance_class):
-        """Sets the instance_class of this EventTaskExecutionMetadata.
-
-
-        :param instance_class: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
-        :type: TaskExecutionMetadataInstanceClass
-        """
-
-        self._instance_class = instance_class
+        if instance_class is not None:
+            self.instance_class = instance_class
 
     @property
     def resource_ids(self):
@@ -155,6 +134,27 @@ class EventTaskExecutionMetadata(object):
         """
 
         self._plugin_identifier = plugin_identifier
+
+    @property
+    def instance_class(self):
+        """Gets the instance_class of this EventTaskExecutionMetadata.  # noqa: E501
+
+
+        :return: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: TaskExecutionMetadataInstanceClass
+        """
+        return self._instance_class
+
+    @instance_class.setter
+    def instance_class(self, instance_class):
+        """Sets the instance_class of this EventTaskExecutionMetadata.
+
+
+        :param instance_class: The instance_class of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: TaskExecutionMetadataInstanceClass
+        """
+
+        self._instance_class = instance_class
 
     def to_dict(self):
         """Returns the model properties as a dict"""

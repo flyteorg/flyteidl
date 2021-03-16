@@ -393,7 +393,7 @@ class EventTaskExecutionEvent(object):
     def reason(self):
         """Gets the reason of this EventTaskExecutionEvent.  # noqa: E501
 
-        If there is an explanation for this phase transition, the reason will capture it.  # noqa: E501
+        An optional explanation for the phase transition.  # noqa: E501
 
         :return: The reason of this EventTaskExecutionEvent.  # noqa: E501
         :rtype: str
@@ -404,7 +404,7 @@ class EventTaskExecutionEvent(object):
     def reason(self, reason):
         """Sets the reason of this EventTaskExecutionEvent.
 
-        If there is an explanation for this phase transition, the reason will capture it.  # noqa: E501
+        An optional explanation for the phase transition.  # noqa: E501
 
         :param reason: The reason of this EventTaskExecutionEvent.  # noqa: E501
         :type: str

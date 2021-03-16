@@ -8090,7 +8090,7 @@ public final class Event {
 
     /**
      * <pre>
-     * If there is an explanation for this phase transition, the reason will capture it.
+     * An optional explanation for the phase transition.
      * </pre>
      *
      * <code>string reason = 13;</code>
@@ -8098,7 +8098,7 @@ public final class Event {
     java.lang.String getReason();
     /**
      * <pre>
-     * If there is an explanation for this phase transition, the reason will capture it.
+     * An optional explanation for the phase transition.
      * </pre>
      *
      * <code>string reason = 13;</code>
@@ -8842,7 +8842,7 @@ public final class Event {
     private volatile java.lang.Object reason_;
     /**
      * <pre>
-     * If there is an explanation for this phase transition, the reason will capture it.
+     * An optional explanation for the phase transition.
      * </pre>
      *
      * <code>string reason = 13;</code>
@@ -8861,7 +8861,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * If there is an explanation for this phase transition, the reason will capture it.
+     * An optional explanation for the phase transition.
      * </pre>
      *
      * <code>string reason = 13;</code>
@@ -11217,7 +11217,7 @@ public final class Event {
       private java.lang.Object reason_ = "";
       /**
        * <pre>
-       * If there is an explanation for this phase transition, the reason will capture it.
+       * An optional explanation for the phase transition.
        * </pre>
        *
        * <code>string reason = 13;</code>
@@ -11236,7 +11236,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * If there is an explanation for this phase transition, the reason will capture it.
+       * An optional explanation for the phase transition.
        * </pre>
        *
        * <code>string reason = 13;</code>
@@ -11256,7 +11256,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * If there is an explanation for this phase transition, the reason will capture it.
+       * An optional explanation for the phase transition.
        * </pre>
        *
        * <code>string reason = 13;</code>
@@ -11273,7 +11273,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * If there is an explanation for this phase transition, the reason will capture it.
+       * An optional explanation for the phase transition.
        * </pre>
        *
        * <code>string reason = 13;</code>
@@ -11286,7 +11286,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * If there is an explanation for this phase transition, the reason will capture it.
+       * An optional explanation for the phase transition.
        * </pre>
        *
        * <code>string reason = 13;</code>
@@ -13235,15 +13235,6 @@ public final class Event {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-     */
-    int getInstanceClassValue();
-    /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-     */
-    flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass();
-
-    /**
      * <pre>
      * Contains various identifiers for resources used during execution.
      * </pre>
@@ -13334,6 +13325,15 @@ public final class Event {
      */
     com.google.protobuf.ByteString
         getPluginIdentifierBytes();
+
+    /**
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+     */
+    int getInstanceClassValue();
+    /**
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+     */
+    flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass();
   }
   /**
    * <pre>
@@ -13353,9 +13353,9 @@ public final class Event {
       super(builder);
     }
     private TaskExecutionMetadata() {
-      instanceClass_ = 0;
       resourcePoolInfo_ = java.util.Collections.emptyList();
       pluginIdentifier_ = "";
+      instanceClass_ = 0;
     }
 
     @java.lang.Override
@@ -13396,9 +13396,9 @@ public final class Event {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 resourcePoolInfo_ = new java.util.ArrayList<flyteidl.event.Event.ResourcePoolInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               resourcePoolInfo_.add(
                   input.readMessage(flyteidl.event.Event.ResourcePoolInfo.parser(), extensionRegistry));
@@ -13431,7 +13431,7 @@ public final class Event {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           resourcePoolInfo_ = java.util.Collections.unmodifiableList(resourcePoolInfo_);
         }
         this.unknownFields = unknownFields.build();
@@ -13570,23 +13570,6 @@ public final class Event {
     }
 
     private int bitField0_;
-    public static final int INSTANCE_CLASS_FIELD_NUMBER = 16;
-    private int instanceClass_;
-    /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-     */
-    public int getInstanceClassValue() {
-      return instanceClass_;
-    }
-    /**
-     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-     */
-    public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
-      @SuppressWarnings("deprecation")
-      flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
-      return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
-    }
-
     public static final int RESOURCE_IDS_FIELD_NUMBER = 1;
     private flyteidl.event.Event.ResourceIdentifiers resourceIds_;
     /**
@@ -13722,6 +13705,23 @@ public final class Event {
       }
     }
 
+    public static final int INSTANCE_CLASS_FIELD_NUMBER = 16;
+    private int instanceClass_;
+    /**
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+     */
+    public int getInstanceClassValue() {
+      return instanceClass_;
+    }
+    /**
+     * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+     */
+    public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
+      @SuppressWarnings("deprecation")
+      flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
+      return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13787,7 +13787,6 @@ public final class Event {
       }
       flyteidl.event.Event.TaskExecutionMetadata other = (flyteidl.event.Event.TaskExecutionMetadata) obj;
 
-      if (instanceClass_ != other.instanceClass_) return false;
       if (hasResourceIds() != other.hasResourceIds()) return false;
       if (hasResourceIds()) {
         if (!getResourceIds()
@@ -13797,6 +13796,7 @@ public final class Event {
           .equals(other.getResourcePoolInfoList())) return false;
       if (!getPluginIdentifier()
           .equals(other.getPluginIdentifier())) return false;
+      if (instanceClass_ != other.instanceClass_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13808,8 +13808,6 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTANCE_CLASS_FIELD_NUMBER;
-      hash = (53 * hash) + instanceClass_;
       if (hasResourceIds()) {
         hash = (37 * hash) + RESOURCE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getResourceIds().hashCode();
@@ -13820,6 +13818,8 @@ public final class Event {
       }
       hash = (37 * hash) + PLUGIN_IDENTIFIER_FIELD_NUMBER;
       hash = (53 * hash) + getPluginIdentifier().hashCode();
+      hash = (37 * hash) + INSTANCE_CLASS_FIELD_NUMBER;
+      hash = (53 * hash) + instanceClass_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13959,8 +13959,6 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instanceClass_ = 0;
-
         if (resourceIdsBuilder_ == null) {
           resourceIds_ = null;
         } else {
@@ -13969,11 +13967,13 @@ public final class Event {
         }
         if (resourcePoolInfoBuilder_ == null) {
           resourcePoolInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           resourcePoolInfoBuilder_.clear();
         }
         pluginIdentifier_ = "";
+
+        instanceClass_ = 0;
 
         return this;
       }
@@ -14003,22 +14003,22 @@ public final class Event {
         flyteidl.event.Event.TaskExecutionMetadata result = new flyteidl.event.Event.TaskExecutionMetadata(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.instanceClass_ = instanceClass_;
         if (resourceIdsBuilder_ == null) {
           result.resourceIds_ = resourceIds_;
         } else {
           result.resourceIds_ = resourceIdsBuilder_.build();
         }
         if (resourcePoolInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             resourcePoolInfo_ = java.util.Collections.unmodifiableList(resourcePoolInfo_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.resourcePoolInfo_ = resourcePoolInfo_;
         } else {
           result.resourcePoolInfo_ = resourcePoolInfoBuilder_.build();
         }
         result.pluginIdentifier_ = pluginIdentifier_;
+        result.instanceClass_ = instanceClass_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -14068,9 +14068,6 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.TaskExecutionMetadata other) {
         if (other == flyteidl.event.Event.TaskExecutionMetadata.getDefaultInstance()) return this;
-        if (other.instanceClass_ != 0) {
-          setInstanceClassValue(other.getInstanceClassValue());
-        }
         if (other.hasResourceIds()) {
           mergeResourceIds(other.getResourceIds());
         }
@@ -14078,7 +14075,7 @@ public final class Event {
           if (!other.resourcePoolInfo_.isEmpty()) {
             if (resourcePoolInfo_.isEmpty()) {
               resourcePoolInfo_ = other.resourcePoolInfo_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureResourcePoolInfoIsMutable();
               resourcePoolInfo_.addAll(other.resourcePoolInfo_);
@@ -14091,7 +14088,7 @@ public final class Event {
               resourcePoolInfoBuilder_.dispose();
               resourcePoolInfoBuilder_ = null;
               resourcePoolInfo_ = other.resourcePoolInfo_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               resourcePoolInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getResourcePoolInfoFieldBuilder() : null;
@@ -14103,6 +14100,9 @@ public final class Event {
         if (!other.getPluginIdentifier().isEmpty()) {
           pluginIdentifier_ = other.pluginIdentifier_;
           onChanged();
+        }
+        if (other.instanceClass_ != 0) {
+          setInstanceClassValue(other.getInstanceClassValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14133,51 +14133,6 @@ public final class Event {
         return this;
       }
       private int bitField0_;
-
-      private int instanceClass_ = 0;
-      /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-       */
-      public int getInstanceClassValue() {
-        return instanceClass_;
-      }
-      /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-       */
-      public Builder setInstanceClassValue(int value) {
-        instanceClass_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-       */
-      public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
-        @SuppressWarnings("deprecation")
-        flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
-        return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-       */
-      public Builder setInstanceClass(flyteidl.event.Event.TaskExecutionMetadata.InstanceClass value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        instanceClass_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
-       */
-      public Builder clearInstanceClass() {
-        
-        instanceClass_ = 0;
-        onChanged();
-        return this;
-      }
 
       private flyteidl.event.Event.ResourceIdentifiers resourceIds_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -14335,9 +14290,9 @@ public final class Event {
       private java.util.List<flyteidl.event.Event.ResourcePoolInfo> resourcePoolInfo_ =
         java.util.Collections.emptyList();
       private void ensureResourcePoolInfoIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           resourcePoolInfo_ = new java.util.ArrayList<flyteidl.event.Event.ResourcePoolInfo>(resourcePoolInfo_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -14542,7 +14497,7 @@ public final class Event {
       public Builder clearResourcePoolInfo() {
         if (resourcePoolInfoBuilder_ == null) {
           resourcePoolInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           resourcePoolInfoBuilder_.clear();
@@ -14654,7 +14609,7 @@ public final class Event {
           resourcePoolInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               flyteidl.event.Event.ResourcePoolInfo, flyteidl.event.Event.ResourcePoolInfo.Builder, flyteidl.event.Event.ResourcePoolInfoOrBuilder>(
                   resourcePoolInfo_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           resourcePoolInfo_ = null;
@@ -14747,6 +14702,51 @@ public final class Event {
   checkByteStringIsUtf8(value);
         
         pluginIdentifier_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int instanceClass_ = 0;
+      /**
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+       */
+      public int getInstanceClassValue() {
+        return instanceClass_;
+      }
+      /**
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+       */
+      public Builder setInstanceClassValue(int value) {
+        instanceClass_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+       */
+      public flyteidl.event.Event.TaskExecutionMetadata.InstanceClass getInstanceClass() {
+        @SuppressWarnings("deprecation")
+        flyteidl.event.Event.TaskExecutionMetadata.InstanceClass result = flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.valueOf(instanceClass_);
+        return result == null ? flyteidl.event.Event.TaskExecutionMetadata.InstanceClass.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+       */
+      public Builder setInstanceClass(flyteidl.event.Event.TaskExecutionMetadata.InstanceClass value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        instanceClass_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;</code>
+       */
+      public Builder clearInstanceClass() {
+        
+        instanceClass_ = 0;
         onChanged();
         return this;
       }
@@ -14918,13 +14918,13 @@ public final class Event {
       "esourceIdentifiers\022\026\n\016generated_name\030\001 \001" +
       "(\t\022\024\n\014external_ids\030\002 \003(\t\"?\n\020ResourcePool" +
       "Info\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamesp" +
-      "ace\030\002 \001(\t\"\251\002\n\025TaskExecutionMetadata\022K\n\016i" +
-      "nstance_class\030\020 \001(\01623.flyteidl.event.Tas" +
-      "kExecutionMetadata.InstanceClass\0229\n\014reso" +
-      "urce_ids\030\001 \001(\0132#.flyteidl.event.Resource" +
-      "Identifiers\022<\n\022resource_pool_info\030\002 \003(\0132" +
-      " .flyteidl.event.ResourcePoolInfo\022\031\n\021plu" +
-      "gin_identifier\030\003 \001(\t\"/\n\rInstanceClass\022\013\n" +
+      "ace\030\002 \001(\t\"\251\002\n\025TaskExecutionMetadata\0229\n\014r" +
+      "esource_ids\030\001 \001(\0132#.flyteidl.event.Resou" +
+      "rceIdentifiers\022<\n\022resource_pool_info\030\002 \003" +
+      "(\0132 .flyteidl.event.ResourcePoolInfo\022\031\n\021" +
+      "plugin_identifier\030\003 \001(\t\022K\n\016instance_clas" +
+      "s\030\020 \001(\01623.flyteidl.event.TaskExecutionMe" +
+      "tadata.InstanceClass\"/\n\rInstanceClass\022\013\n" +
       "\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github." +
       "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
       "/eventb\006proto3"
@@ -15005,7 +15005,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
-        new java.lang.String[] { "InstanceClass", "ResourceIds", "ResourcePoolInfo", "PluginIdentifier", });
+        new java.lang.String[] { "ResourceIds", "ResourcePoolInfo", "PluginIdentifier", "InstanceClass", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

@@ -935,8 +935,6 @@ func (m *TaskExecutionMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for InstanceClass
-
 	if v, ok := interface{}(m.GetResourceIds()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return TaskExecutionMetadataValidationError{
@@ -963,6 +961,8 @@ func (m *TaskExecutionMetadata) Validate() error {
 	}
 
 	// no validation rules for PluginIdentifier
+
+	// no validation rules for InstanceClass
 
 	return nil
 }

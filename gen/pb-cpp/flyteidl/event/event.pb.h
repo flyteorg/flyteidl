@@ -3969,20 +3969,6 @@ inline void ResourcePoolInfo::set_allocated_namespace_(::std::string* namespace_
 
 // TaskExecutionMetadata
 
-// .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
-inline void TaskExecutionMetadata::clear_instance_class() {
-  instance_class_ = 0;
-}
-inline ::flyteidl::event::TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::instance_class() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.instance_class)
-  return static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceClass >(instance_class_);
-}
-inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExecutionMetadata_InstanceClass value) {
-  
-  instance_class_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_class)
-}
-
 // .flyteidl.event.ResourceIdentifiers resource_ids = 1;
 inline bool TaskExecutionMetadata::has_resource_ids() const {
   return this != internal_default_instance() && resource_ids_ != nullptr;
@@ -4115,6 +4101,20 @@ inline void TaskExecutionMetadata::set_allocated_plugin_identifier(::std::string
   }
   plugin_identifier_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plugin_identifier);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionMetadata.plugin_identifier)
+}
+
+// .flyteidl.event.TaskExecutionMetadata.InstanceClass instance_class = 16;
+inline void TaskExecutionMetadata::clear_instance_class() {
+  instance_class_ = 0;
+}
+inline ::flyteidl::event::TaskExecutionMetadata_InstanceClass TaskExecutionMetadata::instance_class() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionMetadata.instance_class)
+  return static_cast< ::flyteidl::event::TaskExecutionMetadata_InstanceClass >(instance_class_);
+}
+inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExecutionMetadata_InstanceClass value) {
+  
+  instance_class_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_class)
 }
 
 #ifdef __GNUC__

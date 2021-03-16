@@ -6045,7 +6045,7 @@
         },
         "reason": {
           "type": "string",
-          "description": "If there is an explanation for this phase transition, the reason will capture it."
+          "description": "An optional explanation for the phase transition."
         },
         "task_type": {
           "type": "string",
@@ -6061,9 +6061,6 @@
     "eventTaskExecutionMetadata": {
       "type": "object",
       "properties": {
-        "instance_class": {
-          "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
-        },
         "resource_ids": {
           "$ref": "#/definitions/eventResourceIdentifiers",
           "description": "Contains various identifiers for resources used during execution."
@@ -6078,6 +6075,9 @@
         "plugin_identifier": {
           "type": "string",
           "description": "The identifier of the plugin used to execute this task."
+        },
+        "instance_class": {
+          "$ref": "#/definitions/TaskExecutionMetadataInstanceClass"
         }
       },
       "description": "Holds metadata around how a task was executed.\nTODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."

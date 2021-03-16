@@ -407,7 +407,7 @@ phase_version
 .. _api_field_flyteidl.event.TaskExecutionEvent.reason:
 
 reason
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) If there is an explanation for this phase transition, the reason will capture it.
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) An optional explanation for the phase transition.
   
   
 .. _api_field_flyteidl.event.TaskExecutionEvent.task_type:
@@ -500,17 +500,12 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 .. code-block:: json
 
   {
-    "instance_class": "...",
     "resource_ids": "{...}",
     "resource_pool_info": [],
-    "plugin_identifier": "..."
+    "plugin_identifier": "...",
+    "instance_class": "..."
   }
 
-.. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
-
-instance_class
-  (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceClass <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass>`) 
-  
 .. _api_field_flyteidl.event.TaskExecutionMetadata.resource_ids:
 
 resource_ids
@@ -530,13 +525,18 @@ plugin_identifier
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The identifier of the plugin used to execute this task.
   
   
+.. _api_field_flyteidl.event.TaskExecutionMetadata.instance_class:
+
+instance_class
+  (:ref:`flyteidl.event.TaskExecutionMetadata.InstanceClass <api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass>`) 
+  
 
 .. _api_enum_flyteidl.event.TaskExecutionMetadata.InstanceClass:
 
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L191>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L202>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

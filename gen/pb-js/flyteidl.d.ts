@@ -5840,9 +5840,6 @@ export namespace flyteidl {
         /** Properties of a TaskExecutionMetadata. */
         interface ITaskExecutionMetadata {
 
-            /** TaskExecutionMetadata instanceClass */
-            instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
-
             /** TaskExecutionMetadata resourceIds */
             resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
 
@@ -5851,6 +5848,9 @@ export namespace flyteidl {
 
             /** TaskExecutionMetadata pluginIdentifier */
             pluginIdentifier?: (string|null);
+
+            /** TaskExecutionMetadata instanceClass */
+            instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5862,9 +5862,6 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.ITaskExecutionMetadata);
 
-            /** TaskExecutionMetadata instanceClass. */
-            public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
-
             /** TaskExecutionMetadata resourceIds. */
             public resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
 
@@ -5873,6 +5870,9 @@ export namespace flyteidl {
 
             /** TaskExecutionMetadata pluginIdentifier. */
             public pluginIdentifier: string;
+
+            /** TaskExecutionMetadata instanceClass. */
+            public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.

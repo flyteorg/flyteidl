@@ -26090,8 +26090,7 @@ definitions:
           \ when metadata changes across the duration of an individual phase."
       reason:
         type: "string"
-        description: "If there is an explanation for this phase transition, the reason\
-          \ will capture it."
+        description: "An optional explanation for the phase transition."
       task_type:
         type: "string"
         description: "A predefined yet extensible Task type identifier. If the task\
@@ -26107,8 +26106,6 @@ definitions:
   eventTaskExecutionMetadata:
     type: "object"
     properties:
-      instance_class:
-        $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
       resource_ids:
         description: "Contains various identifiers for resources used during execution."
         $ref: "#/definitions/eventResourceIdentifiers"
@@ -26122,6 +26119,8 @@ definitions:
       plugin_identifier:
         type: "string"
         description: "The identifier of the plugin used to execute this task."
+      instance_class:
+        $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
       \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:

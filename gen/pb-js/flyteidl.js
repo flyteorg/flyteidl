@@ -14133,10 +14133,10 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a TaskExecutionMetadata.
              * @memberof flyteidl.event
              * @interface ITaskExecutionMetadata
-             * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
              * @property {flyteidl.event.IResourceIdentifiers|null} [resourceIds] TaskExecutionMetadata resourceIds
              * @property {Array.<flyteidl.event.IResourcePoolInfo>|null} [resourcePoolInfo] TaskExecutionMetadata resourcePoolInfo
              * @property {string|null} [pluginIdentifier] TaskExecutionMetadata pluginIdentifier
+             * @property {flyteidl.event.TaskExecutionMetadata.InstanceClass|null} [instanceClass] TaskExecutionMetadata instanceClass
              */
 
             /**
@@ -14154,14 +14154,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * TaskExecutionMetadata instanceClass.
-             * @member {flyteidl.event.TaskExecutionMetadata.InstanceClass} instanceClass
-             * @memberof flyteidl.event.TaskExecutionMetadata
-             * @instance
-             */
-            TaskExecutionMetadata.prototype.instanceClass = 0;
 
             /**
              * TaskExecutionMetadata resourceIds.
@@ -14186,6 +14178,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskExecutionMetadata.prototype.pluginIdentifier = "";
+
+            /**
+             * TaskExecutionMetadata instanceClass.
+             * @member {flyteidl.event.TaskExecutionMetadata.InstanceClass} instanceClass
+             * @memberof flyteidl.event.TaskExecutionMetadata
+             * @instance
+             */
+            TaskExecutionMetadata.prototype.instanceClass = 0;
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
@@ -14241,9 +14241,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 16:
-                        message.instanceClass = reader.int32();
-                        break;
                     case 1:
                         message.resourceIds = $root.flyteidl.event.ResourceIdentifiers.decode(reader, reader.uint32());
                         break;
@@ -14254,6 +14251,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.pluginIdentifier = reader.string();
+                        break;
+                    case 16:
+                        message.instanceClass = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14274,14 +14274,6 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
-                    switch (message.instanceClass) {
-                    default:
-                        return "instanceClass: enum value expected";
-                    case 0:
-                    case 1:
-                        break;
-                    }
                 if (message.resourceIds != null && message.hasOwnProperty("resourceIds")) {
                     let error = $root.flyteidl.event.ResourceIdentifiers.verify(message.resourceIds);
                     if (error)
@@ -14299,6 +14291,14 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.pluginIdentifier != null && message.hasOwnProperty("pluginIdentifier"))
                     if (!$util.isString(message.pluginIdentifier))
                         return "pluginIdentifier: string expected";
+                if (message.instanceClass != null && message.hasOwnProperty("instanceClass"))
+                    switch (message.instanceClass) {
+                    default:
+                        return "instanceClass: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
 

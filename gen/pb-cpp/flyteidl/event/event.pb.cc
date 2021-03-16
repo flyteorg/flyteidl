@@ -362,10 +362,10 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fevent_2fevent_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, instance_class_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, resource_ids_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, resource_pool_info_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, plugin_identifier_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskExecutionMetadata, instance_class_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::event::WorkflowExecutionEvent)},
@@ -456,13 +456,13 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "esourceIdentifiers\022\026\n\016generated_name\030\001 \001"
   "(\t\022\024\n\014external_ids\030\002 \003(\t\"\?\n\020ResourcePool"
   "Info\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamesp"
-  "ace\030\002 \001(\t\"\251\002\n\025TaskExecutionMetadata\022K\n\016i"
-  "nstance_class\030\020 \001(\01623.flyteidl.event.Tas"
-  "kExecutionMetadata.InstanceClass\0229\n\014reso"
-  "urce_ids\030\001 \001(\0132#.flyteidl.event.Resource"
-  "Identifiers\022<\n\022resource_pool_info\030\002 \003(\0132"
-  " .flyteidl.event.ResourcePoolInfo\022\031\n\021plu"
-  "gin_identifier\030\003 \001(\t\"/\n\rInstanceClass\022\013\n"
+  "ace\030\002 \001(\t\"\251\002\n\025TaskExecutionMetadata\0229\n\014r"
+  "esource_ids\030\001 \001(\0132#.flyteidl.event.Resou"
+  "rceIdentifiers\022<\n\022resource_pool_info\030\002 \003"
+  "(\0132 .flyteidl.event.ResourcePoolInfo\022\031\n\021"
+  "plugin_identifier\030\003 \001(\t\022K\n\016instance_clas"
+  "s\030\020 \001(\01623.flyteidl.event.TaskExecutionMe"
+  "tadata.InstanceClass\"/\n\rInstanceClass\022\013\n"
   "\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github."
   "com/flyteorg/flyteidl/gen/pb-go/flyteidl"
   "/eventb\006proto3"
@@ -5729,10 +5729,10 @@ TaskExecutionMetadata::HasBitSetters::resource_ids(const TaskExecutionMetadata* 
   return *msg->resource_ids_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TaskExecutionMetadata::kInstanceClassFieldNumber;
 const int TaskExecutionMetadata::kResourceIdsFieldNumber;
 const int TaskExecutionMetadata::kResourcePoolInfoFieldNumber;
 const int TaskExecutionMetadata::kPluginIdentifierFieldNumber;
+const int TaskExecutionMetadata::kInstanceClassFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskExecutionMetadata::TaskExecutionMetadata()
