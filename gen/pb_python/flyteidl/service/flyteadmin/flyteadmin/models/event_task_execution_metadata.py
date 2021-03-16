@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.event_managed_resource_info import EventManagedResourceInfo  # noqa: F401,E501
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass  # noqa: F401,E501
 
 
@@ -33,21 +34,31 @@ class EventTaskExecutionMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'instance_class': 'TaskExecutionMetadataInstanceClass'
+        'instance_class': 'TaskExecutionMetadataInstanceClass',
+        'generated_name': 'str',
+        'managed_resource_info': 'EventManagedResourceInfo'
     }
 
     attribute_map = {
-        'instance_class': 'instance_class'
+        'instance_class': 'instance_class',
+        'generated_name': 'generated_name',
+        'managed_resource_info': 'managed_resource_info'
     }
 
-    def __init__(self, instance_class=None):  # noqa: E501
+    def __init__(self, instance_class=None, generated_name=None, managed_resource_info=None):  # noqa: E501
         """EventTaskExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._instance_class = None
+        self._generated_name = None
+        self._managed_resource_info = None
         self.discriminator = None
 
         if instance_class is not None:
             self.instance_class = instance_class
+        if generated_name is not None:
+            self.generated_name = generated_name
+        if managed_resource_info is not None:
+            self.managed_resource_info = managed_resource_info
 
     @property
     def instance_class(self):
@@ -69,6 +80,52 @@ class EventTaskExecutionMetadata(object):
         """
 
         self._instance_class = instance_class
+
+    @property
+    def generated_name(self):
+        """Gets the generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+
+        Generated unique name for this task execution used by the backend.  # noqa: E501
+
+        :return: The generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._generated_name
+
+    @generated_name.setter
+    def generated_name(self, generated_name):
+        """Sets the generated_name of this EventTaskExecutionMetadata.
+
+        Generated unique name for this task execution used by the backend.  # noqa: E501
+
+        :param generated_name: The generated_name of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._generated_name = generated_name
+
+    @property
+    def managed_resource_info(self):
+        """Gets the managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
+
+        Includes information about how resource token allocation (if applicable).  # noqa: E501
+
+        :return: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
+        :rtype: EventManagedResourceInfo
+        """
+        return self._managed_resource_info
+
+    @managed_resource_info.setter
+    def managed_resource_info(self, managed_resource_info):
+        """Sets the managed_resource_info of this EventTaskExecutionMetadata.
+
+        Includes information about how resource token allocation (if applicable).  # noqa: E501
+
+        :param managed_resource_info: The managed_resource_info of this EventTaskExecutionMetadata.  # noqa: E501
+        :type: EventManagedResourceInfo
+        """
+
+        self._managed_resource_info = managed_resource_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""

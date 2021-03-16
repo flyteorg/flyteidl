@@ -151,12 +151,30 @@ message TaskExecutionEvent {
     // The version field should be incremented when metadata changes across the duration of an individual phase.
     uint32 phase_version                  = 12;    
 
+    // If there is an explanation for this phase transition, the reason will capture it.
+    string reason                         = 13;
+
+
+    // A predefined yet extensible Task type identifier. If the task definition is already registered in flyte admin
+    // this type will be identical, but not all task executions necessarily use pre-registered definitions and this
+    // type is useful to render the task in the UI, filter task executions, etc.
+    string type                           = 14;
+
     // Metadata around how a task was executed.
     TaskExecutionMetadata metadata        = 16;
 }
 
+
+// This message holds task execution metadata specific to resource allocation used to manage concurrent
+// executions for a project namespace.
+message ManagedResourceInfo {
+    // Unique resource ID used to identify this execution when allocating a token.
+    string token                         = 1;
+}
+
 // Holds metadata around how a task was executed.
 // TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
+// Next ID to use:  3
 message TaskExecutionMetadata {
     // Includes the broad cateogry of machine used for this specific task execution. 
     enum InstanceClass {
@@ -167,4 +185,10 @@ message TaskExecutionMetadata {
         INTERRUPTIBLE = 1;
     }
     InstanceClass instance_class = 16;
+
+    // Generated unique name for this task execution used by the backend.
+    string generated_name = 1;
+
+    // Includes information about how resource token allocation (if applicable).
+    ManagedResourceInfo managed_resource_info = 2;
 }

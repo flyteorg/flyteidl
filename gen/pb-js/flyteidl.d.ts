@@ -5621,6 +5621,12 @@ export namespace flyteidl {
             /** TaskExecutionEvent phaseVersion */
             phaseVersion?: (number|null);
 
+            /** TaskExecutionEvent reason */
+            reason?: (string|null);
+
+            /** TaskExecutionEvent type */
+            type?: (string|null);
+
             /** TaskExecutionEvent metadata */
             metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
         }
@@ -5670,6 +5676,12 @@ export namespace flyteidl {
             /** TaskExecutionEvent phaseVersion. */
             public phaseVersion: number;
 
+            /** TaskExecutionEvent reason. */
+            public reason: string;
+
+            /** TaskExecutionEvent type. */
+            public type: string;
+
             /** TaskExecutionEvent metadata. */
             public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
 
@@ -5709,11 +5721,69 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a ManagedResourceInfo. */
+        interface IManagedResourceInfo {
+
+            /** ManagedResourceInfo token */
+            token?: (string|null);
+        }
+
+        /** Represents a ManagedResourceInfo. */
+        class ManagedResourceInfo implements IManagedResourceInfo {
+
+            /**
+             * Constructs a new ManagedResourceInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.IManagedResourceInfo);
+
+            /** ManagedResourceInfo token. */
+            public token: string;
+
+            /**
+             * Creates a new ManagedResourceInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ManagedResourceInfo instance
+             */
+            public static create(properties?: flyteidl.event.IManagedResourceInfo): flyteidl.event.ManagedResourceInfo;
+
+            /**
+             * Encodes the specified ManagedResourceInfo message. Does not implicitly {@link flyteidl.event.ManagedResourceInfo.verify|verify} messages.
+             * @param message ManagedResourceInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.IManagedResourceInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ManagedResourceInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ManagedResourceInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ManagedResourceInfo;
+
+            /**
+             * Verifies a ManagedResourceInfo message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskExecutionMetadata. */
         interface ITaskExecutionMetadata {
 
             /** TaskExecutionMetadata instanceClass */
             instanceClass?: (flyteidl.event.TaskExecutionMetadata.InstanceClass|null);
+
+            /** TaskExecutionMetadata generatedName */
+            generatedName?: (string|null);
+
+            /** TaskExecutionMetadata managedResourceInfo */
+            managedResourceInfo?: (flyteidl.event.IManagedResourceInfo|null);
         }
 
         /** Represents a TaskExecutionMetadata. */
@@ -5727,6 +5797,12 @@ export namespace flyteidl {
 
             /** TaskExecutionMetadata instanceClass. */
             public instanceClass: flyteidl.event.TaskExecutionMetadata.InstanceClass;
+
+            /** TaskExecutionMetadata generatedName. */
+            public generatedName: string;
+
+            /** TaskExecutionMetadata managedResourceInfo. */
+            public managedResourceInfo?: (flyteidl.event.IManagedResourceInfo|null);
 
             /**
              * Creates a new TaskExecutionMetadata instance using the specified properties.
