@@ -30034,6 +30034,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [createdAt] TaskExecutionClosure createdAt
              * @property {google.protobuf.ITimestamp|null} [updatedAt] TaskExecutionClosure updatedAt
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionClosure customInfo
+             * @property {string|null} [reason] TaskExecutionClosure reason
+             * @property {string|null} [type] TaskExecutionClosure type
+             * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionClosure metadata
              */
 
             /**
@@ -30124,6 +30127,30 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskExecutionClosure.prototype.customInfo = null;
 
+            /**
+             * TaskExecutionClosure reason.
+             * @member {string} reason
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.reason = "";
+
+            /**
+             * TaskExecutionClosure type.
+             * @member {string} type
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.type = "";
+
+            /**
+             * TaskExecutionClosure metadata.
+             * @member {flyteidl.event.ITaskExecutionMetadata|null|undefined} metadata
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.metadata = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -30181,6 +30208,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.updatedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.customInfo != null && message.hasOwnProperty("customInfo"))
                     $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.reason != null && message.hasOwnProperty("reason"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.reason);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -30230,6 +30263,15 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.customInfo = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.reason = reader.string();
+                        break;
+                    case 11:
+                        message.type = reader.string();
+                        break;
+                    case 16:
+                        message.metadata = $root.flyteidl.event.TaskExecutionMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -30313,6 +30355,17 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.Struct.verify(message.customInfo);
                     if (error)
                         return "customInfo." + error;
+                }
+                if (message.reason != null && message.hasOwnProperty("reason"))
+                    if (!$util.isString(message.reason))
+                        return "reason: string expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    if (!$util.isString(message.type))
+                        return "type: string expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.event.TaskExecutionMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
                 }
                 return null;
             };

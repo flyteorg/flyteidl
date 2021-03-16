@@ -4240,6 +4240,18 @@
         "custom_info": {
           "$ref": "#/definitions/protobufStruct",
           "description": "Custom data specific to the task plugin."
+        },
+        "reason": {
+          "type": "string",
+          "description": "If there is an explanation for the most recent phase transition, the reason will capture it."
+        },
+        "type": {
+          "type": "string",
+          "description": "A predefined yet extensible Task type identifier."
+        },
+        "metadata": {
+          "$ref": "#/definitions/eventTaskExecutionMetadata",
+          "description": "Metadata around how a task was executed."
         }
       },
       "description": "Container for task execution details and results."

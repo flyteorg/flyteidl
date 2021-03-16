@@ -12646,6 +12646,15 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure customInfo */
             customInfo?: (google.protobuf.IStruct|null);
+
+            /** TaskExecutionClosure reason */
+            reason?: (string|null);
+
+            /** TaskExecutionClosure type */
+            type?: (string|null);
+
+            /** TaskExecutionClosure metadata */
+            metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
         }
 
         /** Represents a TaskExecutionClosure. */
@@ -12683,6 +12692,15 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure customInfo. */
             public customInfo?: (google.protobuf.IStruct|null);
+
+            /** TaskExecutionClosure reason. */
+            public reason: string;
+
+            /** TaskExecutionClosure type. */
+            public type: string;
+
+            /** TaskExecutionClosure metadata. */
+            public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
 
             /** TaskExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");

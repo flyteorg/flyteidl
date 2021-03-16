@@ -6582,10 +6582,26 @@ definitions:
       custom_info:
         description: "Custom data specific to the task plugin."
         $ref: "#/definitions/protobufStruct"
+      reason:
+        type: "string"
+        description: "If there is an explanation for the most recent phase transition,\
+          \ the reason will capture it."
+      type:
+        type: "string"
+        description: "A predefined yet extensible Task type identifier."
+      metadata:
+        description: "Metadata around how a task was executed."
+        $ref: "#/definitions/eventTaskExecutionMetadata"
     description: "Container for task execution details and results."
     example:
       phase: {}
       duration: "duration"
+      reason: "reason"
+      metadata:
+        instance_class: {}
+        managed_resource_info:
+          token: "token"
+        generated_name: "generated_name"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
         fields:
@@ -6606,6 +6622,7 @@ definitions:
         kind: {}
         message: "message"
         error_uri: "error_uri"
+      type: "type"
       logs:
       - message_format: {}
         name: "name"
@@ -6691,6 +6708,12 @@ definitions:
         closure:
           phase: {}
           duration: "duration"
+          reason: "reason"
+          metadata:
+            instance_class: {}
+            managed_resource_info:
+              token: "token"
+            generated_name: "generated_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -6711,6 +6734,7 @@ definitions:
             kind: {}
             message: "message"
             error_uri: "error_uri"
+          type: "type"
           logs:
           - message_format: {}
             name: "name"
@@ -6739,6 +6763,12 @@ definitions:
         closure:
           phase: {}
           duration: "duration"
+          reason: "reason"
+          metadata:
+            instance_class: {}
+            managed_resource_info:
+              token: "token"
+            generated_name: "generated_name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
             fields:
@@ -6759,6 +6789,7 @@ definitions:
             kind: {}
             message: "message"
             error_uri: "error_uri"
+          type: "type"
           logs:
           - message_format: {}
             name: "name"
@@ -25894,6 +25925,8 @@ definitions:
           \ a token."
     description: "This message holds task execution metadata specific to resource\
       \ allocation used to manage concurrent\nexecutions for a project namespace."
+    example:
+      token: "token"
   eventNodeExecutionEvent:
     type: "object"
     properties:
@@ -26038,6 +26071,11 @@ definitions:
     title: "Holds metadata around how a task was executed.\nTODO(katrogan): Extend\
       \ to include freeform fields (https://github.com/flyteorg/flyte/issues/325).\n\
       Next ID to use:  3"
+    example:
+      instance_class: {}
+      managed_resource_info:
+        token: "token"
+      generated_name: "generated_name"
   eventWorkflowExecutionEvent:
     type: "object"
     properties:
@@ -26176,6 +26214,12 @@ definitions:
       closure:
         phase: {}
         duration: "duration"
+        reason: "reason"
+        metadata:
+          instance_class: {}
+          managed_resource_info:
+            token: "token"
+          generated_name: "generated_name"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:
           fields:
@@ -26196,6 +26240,7 @@ definitions:
           kind: {}
           message: "message"
           error_uri: "error_uri"
+        type: "type"
         logs:
         - message_format: {}
           name: "name"
