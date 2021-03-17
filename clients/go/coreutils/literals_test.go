@@ -515,4 +515,14 @@ func TestMakeLiteralForType(t *testing.T) {
 		actualVal, _ := ExtractFromLiteral(val)
 		assert.Equal(t, expectedVal, actualVal)
 	})
+
+	t.Run("UnsupportedType", func(t *testing.T) {
+		var literalType = &core.LiteralType{Type: &core.LiteralType_Schema{
+			Schema: &core.SchemaType{}}}
+		var schema interface{}
+		_, err := MakeLiteralForType(literalType, schema)
+		expectedErrorf := fmt.Errorf("unsupported type schema:<> ")
+		assert.Equal(t, expectedErrorf, err)
+
+	})
 }

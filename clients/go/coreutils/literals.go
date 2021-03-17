@@ -488,6 +488,9 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 			return nil, err
 		}
 		return lv, nil
+	default:
+		return nil, fmt.Errorf("unsupported type %s", t.String())
 	}
+
 	return l, nil
 }
