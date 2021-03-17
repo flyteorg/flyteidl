@@ -851,6 +851,9 @@ func (m *ResourcePoolInfo) GetNamespace() string {
 }
 
 // Holds metadata around how a task was executed.
+// As a task transitions across event phases during execution some attributes, such its generated name, generated external resources,
+// and more may grow in size but not change necessarily based on the phase transition that sparked the event update.
+// Metadata is a container for these attributes across the task execution lifecycle.
 type TaskExecutionMetadata struct {
 	// Unique, generated name for this task execution used by the backend.
 	GeneratedName string `protobuf:"bytes,1,opt,name=generated_name,json=generatedName,proto3" json:"generated_name,omitempty"`

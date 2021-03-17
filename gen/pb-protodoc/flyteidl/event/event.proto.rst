@@ -485,9 +485,12 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L185>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L188>`_
 
 Holds metadata around how a task was executed.
+As a task transitions across event phases during execution some attributes, such its generated name, generated external resources,
+and more may grow in size but not change necessarily based on the phase transition that sparked the event update.
+Metadata is a container for these attributes across the task execution lifecycle.
 
 .. code-block:: json
 
@@ -535,7 +538,7 @@ instance_class
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L201>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L204>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

@@ -26116,7 +26116,11 @@ definitions:
         description: "The identifier of the plugin used to execute this task."
       instance_class:
         $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
-    description: "Holds metadata around how a task was executed."
+    description: "Holds metadata around how a task was executed.\nAs a task transitions\
+      \ across event phases during execution some attributes, such its generated name,\
+      \ generated external resources,\nand more may grow in size but not change necessarily\
+      \ based on the phase transition that sparked the event update.\nMetadata is\
+      \ a container for these attributes across the task execution lifecycle."
     example:
       external_resources:
       - external_ids: "external_ids"
