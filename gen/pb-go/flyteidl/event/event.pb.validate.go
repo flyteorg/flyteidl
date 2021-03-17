@@ -789,22 +789,20 @@ var _ interface {
 	ErrorName() string
 } = TaskExecutionEventValidationError{}
 
-// Validate checks the field values on ResourceIdentifiers with the rules
+// Validate checks the field values on ExternalResourceInfo with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *ResourceIdentifiers) Validate() error {
+func (m *ExternalResourceInfo) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for GeneratedName
-
 	return nil
 }
 
-// ResourceIdentifiersValidationError is the validation error returned by
-// ResourceIdentifiers.Validate if the designated constraints aren't met.
-type ResourceIdentifiersValidationError struct {
+// ExternalResourceInfoValidationError is the validation error returned by
+// ExternalResourceInfo.Validate if the designated constraints aren't met.
+type ExternalResourceInfoValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -812,24 +810,24 @@ type ResourceIdentifiersValidationError struct {
 }
 
 // Field function returns field value.
-func (e ResourceIdentifiersValidationError) Field() string { return e.field }
+func (e ExternalResourceInfoValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ResourceIdentifiersValidationError) Reason() string { return e.reason }
+func (e ExternalResourceInfoValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ResourceIdentifiersValidationError) Cause() error { return e.cause }
+func (e ExternalResourceInfoValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ResourceIdentifiersValidationError) Key() bool { return e.key }
+func (e ExternalResourceInfoValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ResourceIdentifiersValidationError) ErrorName() string {
-	return "ResourceIdentifiersValidationError"
+func (e ExternalResourceInfoValidationError) ErrorName() string {
+	return "ExternalResourceInfoValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ResourceIdentifiersValidationError) Error() string {
+func (e ExternalResourceInfoValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -841,14 +839,14 @@ func (e ResourceIdentifiersValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sResourceIdentifiers.%s: %s%s",
+		"invalid %sExternalResourceInfo.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ResourceIdentifiersValidationError{}
+var _ error = ExternalResourceInfoValidationError{}
 
 var _ interface {
 	Field() string
@@ -856,7 +854,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ResourceIdentifiersValidationError{}
+} = ExternalResourceInfoValidationError{}
 
 // Validate checks the field values on ResourcePoolInfo with the rules defined
 // in the proto definition for this message. If any rules are violated, an
@@ -935,14 +933,21 @@ func (m *TaskExecutionMetadata) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetResourceIds()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TaskExecutionMetadataValidationError{
-				field:  "ResourceIds",
-				reason: "embedded message failed validation",
-				cause:  err,
+	// no validation rules for GeneratedName
+
+	for idx, item := range m.GetExternalResources() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskExecutionMetadataValidationError{
+					field:  fmt.Sprintf("ExternalResources[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
 			}
 		}
+
 	}
 
 	for idx, item := range m.GetResourcePoolInfo() {

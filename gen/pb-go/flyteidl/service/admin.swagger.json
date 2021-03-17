@@ -5880,6 +5880,19 @@
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
     },
+    "eventExternalResourceInfo": {
+      "type": "object",
+      "properties": {
+        "external_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids."
+        }
+      },
+      "description": "This message contains metadata about external resources produced or used by a specific task execution."
+    },
     "eventNodeExecutionEvent": {
       "type": "object",
       "properties": {
@@ -5954,23 +5967,6 @@
           "$ref": "#/definitions/coreTaskExecutionIdentifier"
         }
       }
-    },
-    "eventResourceIdentifiers": {
-      "type": "object",
-      "properties": {
-        "generated_name": {
-          "type": "string",
-          "description": "Unique, generated name for this task execution used by the backend."
-        },
-        "external_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids."
-        }
-      },
-      "description": "This message contains various identifiers for resources used for a specific task execution."
     },
     "eventResourcePoolInfo": {
       "type": "object",
@@ -6061,16 +6057,23 @@
     "eventTaskExecutionMetadata": {
       "type": "object",
       "properties": {
-        "resource_ids": {
-          "$ref": "#/definitions/eventResourceIdentifiers",
-          "description": "Contains various identifiers for resources used during execution."
+        "generated_name": {
+          "type": "string",
+          "description": "Unique, generated name for this task execution used by the backend."
+        },
+        "external_resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/eventExternalResourceInfo"
+          },
+          "description": "Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution."
         },
         "resource_pool_info": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/eventResourcePoolInfo"
           },
-          "description": "Includes information about resource token allocation (if applicable).\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
+          "description": "Includes additional data on concurrent resource management used during execution..\nThis is a repeated field because a plugin can request multiple resource allocations during execution."
         },
         "plugin_identifier": {
           "type": "string",

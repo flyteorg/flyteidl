@@ -426,32 +426,25 @@ metadata
   
 
 
-.. _api_msg_flyteidl.event.ResourceIdentifiers:
+.. _api_msg_flyteidl.event.ExternalResourceInfo:
 
-flyteidl.event.ResourceIdentifiers
-----------------------------------
+flyteidl.event.ExternalResourceInfo
+-----------------------------------
 
-`[flyteidl.event.ResourceIdentifiers proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L167>`_
+`[flyteidl.event.ExternalResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L167>`_
 
-This message contains various identifiers for resources used for a specific task execution.
+This message contains metadata about external resources produced or used by a specific task execution.
 
 .. code-block:: json
 
   {
-    "generated_name": "...",
     "external_ids": []
   }
 
-.. _api_field_flyteidl.event.ResourceIdentifiers.generated_name:
-
-generated_name
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique, generated name for this task execution used by the backend.
-  
-  
-.. _api_field_flyteidl.event.ResourceIdentifiers.external_ids:
+.. _api_field_flyteidl.event.ExternalResourceInfo.external_ids:
 
 external_ids
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
   
   
 
@@ -461,7 +454,7 @@ external_ids
 flyteidl.event.ResourcePoolInfo
 -------------------------------
 
-`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
+`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L176>`_
 
 This message holds task execution metadata specific to resource allocation used to manage concurrent
 executions for a project namespace.
@@ -492,7 +485,7 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L189>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L186>`_
 
 Holds metadata around how a task was executed.
 TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
@@ -500,22 +493,29 @@ TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/f
 .. code-block:: json
 
   {
-    "resource_ids": "{...}",
+    "generated_name": "...",
+    "external_resources": [],
     "resource_pool_info": [],
     "plugin_identifier": "...",
     "instance_class": "..."
   }
 
-.. _api_field_flyteidl.event.TaskExecutionMetadata.resource_ids:
+.. _api_field_flyteidl.event.TaskExecutionMetadata.generated_name:
 
-resource_ids
-  (:ref:`flyteidl.event.ResourceIdentifiers <api_msg_flyteidl.event.ResourceIdentifiers>`) Contains various identifiers for resources used during execution.
+generated_name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique, generated name for this task execution used by the backend.
+  
+  
+.. _api_field_flyteidl.event.TaskExecutionMetadata.external_resources:
+
+external_resources
+  (:ref:`flyteidl.event.ExternalResourceInfo <api_msg_flyteidl.event.ExternalResourceInfo>`) Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution.
   
   
 .. _api_field_flyteidl.event.TaskExecutionMetadata.resource_pool_info:
 
 resource_pool_info
-  (:ref:`flyteidl.event.ResourcePoolInfo <api_msg_flyteidl.event.ResourcePoolInfo>`) Includes information about resource token allocation (if applicable).
+  (:ref:`flyteidl.event.ResourcePoolInfo <api_msg_flyteidl.event.ResourcePoolInfo>`) Includes additional data on concurrent resource management used during execution..
   This is a repeated field because a plugin can request multiple resource allocations during execution.
   
   

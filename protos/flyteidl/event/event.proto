@@ -164,14 +164,11 @@ message TaskExecutionEvent {
     TaskExecutionMetadata metadata        = 16;
 }
 
-// This message contains various identifiers for resources used for a specific task execution.
-message ResourceIdentifiers {
+// This message contains metadata about external resources produced or used by a specific task execution.
+message ExternalResourceInfo {
 
-    // Unique, generated name for this task execution used by the backend.
-    string generated_name = 1;
-
-    // Identifiers for external resources created by this task execution, for exaple Qubole query ID or presto query ids.
-    repeated string external_ids = 2;
+    // Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+    repeated string external_ids = 1;
 }
 
 
@@ -189,15 +186,18 @@ message ResourcePoolInfo {
 // TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
 message TaskExecutionMetadata {
 
-    // Contains various identifiers for resources used during execution.
-    ResourceIdentifiers resource_ids = 1;
+    // Unique, generated name for this task execution used by the backend.
+    string generated_name = 1;
 
-    // Includes information about resource token allocation (if applicable).
+    // Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution.
+    repeated ExternalResourceInfo external_resources = 2;
+
+    // Includes additional data on concurrent resource management used during execution..
     // This is a repeated field because a plugin can request multiple resource allocations during execution.
-    repeated ResourcePoolInfo resource_pool_info = 2;
+    repeated ResourcePoolInfo resource_pool_info = 3;
 
     // The identifier of the plugin used to execute this task.
-    string plugin_identifier = 3;
+    string plugin_identifier = 4;
 
     // Includes the broad cateogry of machine used for this specific task execution. 
     enum InstanceClass {

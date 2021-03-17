@@ -6598,17 +6598,20 @@ definitions:
       duration: "duration"
       reason: "reason"
       metadata:
+        external_resources:
+        - external_ids:
+          - "external_ids"
+          - "external_ids"
+        - external_ids:
+          - "external_ids"
+          - "external_ids"
         instance_class: {}
         resource_pool_info:
         - allocation_token: "allocation_token"
           namespace: "namespace"
         - allocation_token: "allocation_token"
           namespace: "namespace"
-        resource_ids:
-          generated_name: "generated_name"
-          external_ids:
-          - "external_ids"
-          - "external_ids"
+        generated_name: "generated_name"
         plugin_identifier: "plugin_identifier"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       custom_info:
@@ -6718,17 +6721,20 @@ definitions:
           duration: "duration"
           reason: "reason"
           metadata:
+            external_resources:
+            - external_ids:
+              - "external_ids"
+              - "external_ids"
+            - external_ids:
+              - "external_ids"
+              - "external_ids"
             instance_class: {}
             resource_pool_info:
             - allocation_token: "allocation_token"
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            resource_ids:
-              generated_name: "generated_name"
-              external_ids:
-              - "external_ids"
-              - "external_ids"
+            generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
@@ -6781,17 +6787,20 @@ definitions:
           duration: "duration"
           reason: "reason"
           metadata:
+            external_resources:
+            - external_ids:
+              - "external_ids"
+              - "external_ids"
+            - external_ids:
+              - "external_ids"
+              - "external_ids"
             instance_class: {}
             resource_pool_info:
             - allocation_token: "allocation_token"
               namespace: "namespace"
             - allocation_token: "allocation_token"
               namespace: "namespace"
-            resource_ids:
-              generated_name: "generated_name"
-              external_ids:
-              - "external_ids"
-              - "external_ids"
+            generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           custom_info:
@@ -25940,6 +25949,21 @@ definitions:
                   dimensionality: {}
                   format: "format"
                 simple: {}
+  eventExternalResourceInfo:
+    type: "object"
+    properties:
+      external_ids:
+        type: "array"
+        description: "Identifiers for external resources created by this task execution,\
+          \ for example Qubole query ID or presto query ids."
+        items:
+          type: "string"
+    description: "This message contains metadata about external resources produced\
+      \ or used by a specific task execution."
+    example:
+      external_ids:
+      - "external_ids"
+      - "external_ids"
   eventNodeExecutionEvent:
     type: "object"
     properties:
@@ -25999,25 +26023,6 @@ definitions:
     properties:
       id:
         $ref: "#/definitions/coreTaskExecutionIdentifier"
-  eventResourceIdentifiers:
-    type: "object"
-    properties:
-      generated_name:
-        type: "string"
-        description: "Unique, generated name for this task execution used by the backend."
-      external_ids:
-        type: "array"
-        description: "Identifiers for external resources created by this task execution,\
-          \ for exaple Qubole query ID or presto query ids."
-        items:
-          type: "string"
-    description: "This message contains various identifiers for resources used for\
-      \ a specific task execution."
-    example:
-      generated_name: "generated_name"
-      external_ids:
-      - "external_ids"
-      - "external_ids"
   eventResourcePoolInfo:
     type: "object"
     properties:
@@ -26106,14 +26111,20 @@ definitions:
   eventTaskExecutionMetadata:
     type: "object"
     properties:
-      resource_ids:
-        description: "Contains various identifiers for resources used during execution."
-        $ref: "#/definitions/eventResourceIdentifiers"
+      generated_name:
+        type: "string"
+        description: "Unique, generated name for this task execution used by the backend."
+      external_resources:
+        type: "array"
+        description: "Additional data on external resources on other back-ends or\
+          \ platforms (e.g. Hive, Qubole, etc) launched by this task execution."
+        items:
+          $ref: "#/definitions/eventExternalResourceInfo"
       resource_pool_info:
         type: "array"
-        description: "Includes information about resource token allocation (if applicable).\n\
-          This is a repeated field because a plugin can request multiple resource\
-          \ allocations during execution."
+        description: "Includes additional data on concurrent resource management used\
+          \ during execution..\nThis is a repeated field because a plugin can request\
+          \ multiple resource allocations during execution."
         items:
           $ref: "#/definitions/eventResourcePoolInfo"
       plugin_identifier:
@@ -26124,17 +26135,20 @@ definitions:
     description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
       \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
     example:
+      external_resources:
+      - external_ids:
+        - "external_ids"
+        - "external_ids"
+      - external_ids:
+        - "external_ids"
+        - "external_ids"
       instance_class: {}
       resource_pool_info:
       - allocation_token: "allocation_token"
         namespace: "namespace"
       - allocation_token: "allocation_token"
         namespace: "namespace"
-      resource_ids:
-        generated_name: "generated_name"
-        external_ids:
-        - "external_ids"
-        - "external_ids"
+      generated_name: "generated_name"
       plugin_identifier: "plugin_identifier"
   eventWorkflowExecutionEvent:
     type: "object"
@@ -26276,17 +26290,20 @@ definitions:
         duration: "duration"
         reason: "reason"
         metadata:
+          external_resources:
+          - external_ids:
+            - "external_ids"
+            - "external_ids"
+          - external_ids:
+            - "external_ids"
+            - "external_ids"
           instance_class: {}
           resource_pool_info:
           - allocation_token: "allocation_token"
             namespace: "namespace"
           - allocation_token: "allocation_token"
             namespace: "namespace"
-          resource_ids:
-            generated_name: "generated_name"
-            external_ids:
-            - "external_ids"
-            - "external_ids"
+          generated_name: "generated_name"
           plugin_identifier: "plugin_identifier"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         custom_info:

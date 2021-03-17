@@ -5721,58 +5721,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ResourceIdentifiers. */
-        interface IResourceIdentifiers {
+        /** Properties of an ExternalResourceInfo. */
+        interface IExternalResourceInfo {
 
-            /** ResourceIdentifiers generatedName */
-            generatedName?: (string|null);
-
-            /** ResourceIdentifiers externalIds */
+            /** ExternalResourceInfo externalIds */
             externalIds?: (string[]|null);
         }
 
-        /** Represents a ResourceIdentifiers. */
-        class ResourceIdentifiers implements IResourceIdentifiers {
+        /** Represents an ExternalResourceInfo. */
+        class ExternalResourceInfo implements IExternalResourceInfo {
 
             /**
-             * Constructs a new ResourceIdentifiers.
+             * Constructs a new ExternalResourceInfo.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.event.IResourceIdentifiers);
+            constructor(properties?: flyteidl.event.IExternalResourceInfo);
 
-            /** ResourceIdentifiers generatedName. */
-            public generatedName: string;
-
-            /** ResourceIdentifiers externalIds. */
+            /** ExternalResourceInfo externalIds. */
             public externalIds: string[];
 
             /**
-             * Creates a new ResourceIdentifiers instance using the specified properties.
+             * Creates a new ExternalResourceInfo instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ResourceIdentifiers instance
+             * @returns ExternalResourceInfo instance
              */
-            public static create(properties?: flyteidl.event.IResourceIdentifiers): flyteidl.event.ResourceIdentifiers;
+            public static create(properties?: flyteidl.event.IExternalResourceInfo): flyteidl.event.ExternalResourceInfo;
 
             /**
-             * Encodes the specified ResourceIdentifiers message. Does not implicitly {@link flyteidl.event.ResourceIdentifiers.verify|verify} messages.
-             * @param message ResourceIdentifiers message or plain object to encode
+             * Encodes the specified ExternalResourceInfo message. Does not implicitly {@link flyteidl.event.ExternalResourceInfo.verify|verify} messages.
+             * @param message ExternalResourceInfo message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.event.IResourceIdentifiers, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.event.IExternalResourceInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a ResourceIdentifiers message from the specified reader or buffer.
+             * Decodes an ExternalResourceInfo message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ResourceIdentifiers
+             * @returns ExternalResourceInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ResourceIdentifiers;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ExternalResourceInfo;
 
             /**
-             * Verifies a ResourceIdentifiers message.
+             * Verifies an ExternalResourceInfo message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -5840,8 +5834,11 @@ export namespace flyteidl {
         /** Properties of a TaskExecutionMetadata. */
         interface ITaskExecutionMetadata {
 
-            /** TaskExecutionMetadata resourceIds */
-            resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
+            /** TaskExecutionMetadata generatedName */
+            generatedName?: (string|null);
+
+            /** TaskExecutionMetadata externalResources */
+            externalResources?: (flyteidl.event.IExternalResourceInfo[]|null);
 
             /** TaskExecutionMetadata resourcePoolInfo */
             resourcePoolInfo?: (flyteidl.event.IResourcePoolInfo[]|null);
@@ -5862,8 +5859,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.ITaskExecutionMetadata);
 
-            /** TaskExecutionMetadata resourceIds. */
-            public resourceIds?: (flyteidl.event.IResourceIdentifiers|null);
+            /** TaskExecutionMetadata generatedName. */
+            public generatedName: string;
+
+            /** TaskExecutionMetadata externalResources. */
+            public externalResources: flyteidl.event.IExternalResourceInfo[];
 
             /** TaskExecutionMetadata resourcePoolInfo. */
             public resourcePoolInfo: flyteidl.event.IResourcePoolInfo[];
