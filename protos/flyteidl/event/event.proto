@@ -167,8 +167,8 @@ message TaskExecutionEvent {
 // This message contains metadata about external resources produced or used by a specific task execution.
 message ExternalResourceInfo {
 
-    // Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-    repeated string external_ids = 1;
+    // Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
+    string external_ids = 1;
 }
 
 
@@ -183,7 +183,6 @@ message ResourcePoolInfo {
 }
 
 // Holds metadata around how a task was executed.
-// TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
 message TaskExecutionMetadata {
 
     // Unique, generated name for this task execution used by the backend.

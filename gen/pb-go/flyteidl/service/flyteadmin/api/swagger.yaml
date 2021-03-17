@@ -6599,12 +6599,8 @@ definitions:
       reason: "reason"
       metadata:
         external_resources:
-        - external_ids:
-          - "external_ids"
-          - "external_ids"
-        - external_ids:
-          - "external_ids"
-          - "external_ids"
+        - external_ids: "external_ids"
+        - external_ids: "external_ids"
         instance_class: {}
         resource_pool_info:
         - allocation_token: "allocation_token"
@@ -6722,12 +6718,8 @@ definitions:
           reason: "reason"
           metadata:
             external_resources:
-            - external_ids:
-              - "external_ids"
-              - "external_ids"
-            - external_ids:
-              - "external_ids"
-              - "external_ids"
+            - external_ids: "external_ids"
+            - external_ids: "external_ids"
             instance_class: {}
             resource_pool_info:
             - allocation_token: "allocation_token"
@@ -6788,12 +6780,8 @@ definitions:
           reason: "reason"
           metadata:
             external_resources:
-            - external_ids:
-              - "external_ids"
-              - "external_ids"
-            - external_ids:
-              - "external_ids"
-              - "external_ids"
+            - external_ids: "external_ids"
+            - external_ids: "external_ids"
             instance_class: {}
             resource_pool_info:
             - allocation_token: "allocation_token"
@@ -25953,17 +25941,13 @@ definitions:
     type: "object"
     properties:
       external_ids:
-        type: "array"
-        description: "Identifiers for external resources created by this task execution,\
+        type: "string"
+        description: "Identifier for an external resource created by this task execution,\
           \ for example Qubole query ID or presto query ids."
-        items:
-          type: "string"
     description: "This message contains metadata about external resources produced\
       \ or used by a specific task execution."
     example:
-      external_ids:
-      - "external_ids"
-      - "external_ids"
+      external_ids: "external_ids"
   eventNodeExecutionEvent:
     type: "object"
     properties:
@@ -26132,16 +26116,11 @@ definitions:
         description: "The identifier of the plugin used to execute this task."
       instance_class:
         $ref: "#/definitions/TaskExecutionMetadataInstanceClass"
-    description: "Holds metadata around how a task was executed.\nTODO(katrogan):\
-      \ Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325)."
+    description: "Holds metadata around how a task was executed."
     example:
       external_resources:
-      - external_ids:
-        - "external_ids"
-        - "external_ids"
-      - external_ids:
-        - "external_ids"
-        - "external_ids"
+      - external_ids: "external_ids"
+      - external_ids: "external_ids"
       instance_class: {}
       resource_pool_info:
       - allocation_token: "allocation_token"
@@ -26291,12 +26270,8 @@ definitions:
         reason: "reason"
         metadata:
           external_resources:
-          - external_ids:
-            - "external_ids"
-            - "external_ids"
-          - external_ids:
-            - "external_ids"
-            - "external_ids"
+          - external_ids: "external_ids"
+          - external_ids: "external_ids"
           instance_class: {}
           resource_pool_info:
           - allocation_token: "allocation_token"

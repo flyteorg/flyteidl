@@ -453,7 +453,7 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001("
   "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas"
   "kExecutionMetadataB\017\n\routput_result\",\n\024E"
-  "xternalResourceInfo\022\024\n\014external_ids\030\001 \003("
+  "xternalResourceInfo\022\024\n\014external_ids\030\001 \001("
   "\t\"\?\n\020ResourcePoolInfo\022\030\n\020allocation_toke"
   "n\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecu"
   "tionMetadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022"
@@ -4997,15 +4997,19 @@ ExternalResourceInfo::ExternalResourceInfo()
 }
 ExternalResourceInfo::ExternalResourceInfo(const ExternalResourceInfo& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      external_ids_(from.external_ids_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  external_ids_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_ids().size() > 0) {
+    external_ids_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_ids_);
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.ExternalResourceInfo)
 }
 
 void ExternalResourceInfo::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ExternalResourceInfo_flyteidl_2fevent_2fevent_2eproto.base);
+  external_ids_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 ExternalResourceInfo::~ExternalResourceInfo() {
@@ -5014,6 +5018,7 @@ ExternalResourceInfo::~ExternalResourceInfo() {
 }
 
 void ExternalResourceInfo::SharedDtor() {
+  external_ids_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void ExternalResourceInfo::SetCachedSize(int size) const {
@@ -5031,7 +5036,7 @@ void ExternalResourceInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  external_ids_.Clear();
+  external_ids_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -5048,23 +5053,20 @@ const char* ExternalResourceInfo::_InternalParse(const char* begin, const char* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated string external_ids = 1;
+      // string external_ids = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.event.ExternalResourceInfo.external_ids");
-          object = msg->add_external_ids();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.event.ExternalResourceInfo.external_ids");
+        object = msg->mutable_external_ids();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -5101,14 +5103,13 @@ bool ExternalResourceInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string external_ids = 1;
+      // string external_ids = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_external_ids()));
+                input, this->mutable_external_ids()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->external_ids(this->external_ids_size() - 1).data(),
-            static_cast<int>(this->external_ids(this->external_ids_size() - 1).length()),
+            this->external_ids().data(), static_cast<int>(this->external_ids().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.event.ExternalResourceInfo.external_ids"));
         } else {
@@ -5144,14 +5145,14 @@ void ExternalResourceInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string external_ids = 1;
-  for (int i = 0, n = this->external_ids_size(); i < n; i++) {
+  // string external_ids = 1;
+  if (this->external_ids().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->external_ids(i).data(), static_cast<int>(this->external_ids(i).length()),
+      this->external_ids().data(), static_cast<int>(this->external_ids().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.event.ExternalResourceInfo.external_ids");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->external_ids(i), output);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->external_ids(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5167,14 +5168,15 @@ void ExternalResourceInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string external_ids = 1;
-  for (int i = 0, n = this->external_ids_size(); i < n; i++) {
+  // string external_ids = 1;
+  if (this->external_ids().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->external_ids(i).data(), static_cast<int>(this->external_ids(i).length()),
+      this->external_ids().data(), static_cast<int>(this->external_ids().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.event.ExternalResourceInfo.external_ids");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->external_ids(i), target);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->external_ids(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5198,12 +5200,11 @@ size_t ExternalResourceInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string external_ids = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->external_ids_size());
-  for (int i = 0, n = this->external_ids_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->external_ids(i));
+  // string external_ids = 1;
+  if (this->external_ids().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_ids());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5233,7 +5234,10 @@ void ExternalResourceInfo::MergeFrom(const ExternalResourceInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  external_ids_.MergeFrom(from.external_ids_);
+  if (from.external_ids().size() > 0) {
+
+    external_ids_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_ids_);
+  }
 }
 
 void ExternalResourceInfo::CopyFrom(const ::google::protobuf::Message& from) {
@@ -5261,7 +5265,8 @@ void ExternalResourceInfo::Swap(ExternalResourceInfo* other) {
 void ExternalResourceInfo::InternalSwap(ExternalResourceInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  external_ids_.InternalSwap(CastToBase(&other->external_ids_));
+  external_ids_.Swap(&other->external_ids_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata ExternalResourceInfo::GetMetadata() const {

@@ -11613,38 +11613,21 @@ public final class Event {
 
     /**
      * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+     * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
      * </pre>
      *
-     * <code>repeated string external_ids = 1;</code>
+     * <code>string external_ids = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getExternalIdsList();
+    java.lang.String getExternalIds();
     /**
      * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+     * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
      * </pre>
      *
-     * <code>repeated string external_ids = 1;</code>
-     */
-    int getExternalIdsCount();
-    /**
-     * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-     * </pre>
-     *
-     * <code>repeated string external_ids = 1;</code>
-     */
-    java.lang.String getExternalIds(int index);
-    /**
-     * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-     * </pre>
-     *
-     * <code>repeated string external_ids = 1;</code>
+     * <code>string external_ids = 1;</code>
      */
     com.google.protobuf.ByteString
-        getExternalIdsBytes(int index);
+        getExternalIdsBytes();
   }
   /**
    * <pre>
@@ -11663,7 +11646,7 @@ public final class Event {
       super(builder);
     }
     private ExternalResourceInfo() {
-      externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      externalIds_ = "";
     }
 
     @java.lang.Override
@@ -11692,11 +11675,8 @@ public final class Event {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                externalIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              externalIds_.add(s);
+
+              externalIds_ = s;
               break;
             }
             default: {
@@ -11714,9 +11694,6 @@ public final class Event {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          externalIds_ = externalIds_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -11735,48 +11712,45 @@ public final class Event {
     }
 
     public static final int EXTERNAL_IDS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList externalIds_;
+    private volatile java.lang.Object externalIds_;
     /**
      * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+     * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
      * </pre>
      *
-     * <code>repeated string external_ids = 1;</code>
+     * <code>string external_ids = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getExternalIdsList() {
-      return externalIds_;
+    public java.lang.String getExternalIds() {
+      java.lang.Object ref = externalIds_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalIds_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+     * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
      * </pre>
      *
-     * <code>repeated string external_ids = 1;</code>
-     */
-    public int getExternalIdsCount() {
-      return externalIds_.size();
-    }
-    /**
-     * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-     * </pre>
-     *
-     * <code>repeated string external_ids = 1;</code>
-     */
-    public java.lang.String getExternalIds(int index) {
-      return externalIds_.get(index);
-    }
-    /**
-     * <pre>
-     * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-     * </pre>
-     *
-     * <code>repeated string external_ids = 1;</code>
+     * <code>string external_ids = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getExternalIdsBytes(int index) {
-      return externalIds_.getByteString(index);
+        getExternalIdsBytes() {
+      java.lang.Object ref = externalIds_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        externalIds_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11793,8 +11767,8 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < externalIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, externalIds_.getRaw(i));
+      if (!getExternalIdsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, externalIds_);
       }
       unknownFields.writeTo(output);
     }
@@ -11805,13 +11779,8 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < externalIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(externalIds_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getExternalIdsList().size();
+      if (!getExternalIdsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, externalIds_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11828,8 +11797,8 @@ public final class Event {
       }
       flyteidl.event.Event.ExternalResourceInfo other = (flyteidl.event.Event.ExternalResourceInfo) obj;
 
-      if (!getExternalIdsList()
-          .equals(other.getExternalIdsList())) return false;
+      if (!getExternalIds()
+          .equals(other.getExternalIds())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11841,10 +11810,8 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getExternalIdsCount() > 0) {
-        hash = (37 * hash) + EXTERNAL_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getExternalIdsList().hashCode();
-      }
+      hash = (37 * hash) + EXTERNAL_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalIds().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11982,8 +11949,8 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        externalIds_ = "";
+
         return this;
       }
 
@@ -12010,11 +11977,6 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.ExternalResourceInfo buildPartial() {
         flyteidl.event.Event.ExternalResourceInfo result = new flyteidl.event.Event.ExternalResourceInfo(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          externalIds_ = externalIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
         result.externalIds_ = externalIds_;
         onBuilt();
         return result;
@@ -12064,14 +12026,8 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.ExternalResourceInfo other) {
         if (other == flyteidl.event.Event.ExternalResourceInfo.getDefaultInstance()) return this;
-        if (!other.externalIds_.isEmpty()) {
-          if (externalIds_.isEmpty()) {
-            externalIds_ = other.externalIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureExternalIdsIsMutable();
-            externalIds_.addAll(other.externalIds_);
-          }
+        if (!other.getExternalIds().isEmpty()) {
+          externalIds_ = other.externalIds_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -12102,134 +12058,92 @@ public final class Event {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureExternalIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          externalIds_ = new com.google.protobuf.LazyStringArrayList(externalIds_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object externalIds_ = "";
       /**
        * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+       * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
        * </pre>
        *
-       * <code>repeated string external_ids = 1;</code>
+       * <code>string external_ids = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getExternalIdsList() {
-        return externalIds_.getUnmodifiableView();
+      public java.lang.String getExternalIds() {
+        java.lang.Object ref = externalIds_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          externalIds_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+       * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
        * </pre>
        *
-       * <code>repeated string external_ids = 1;</code>
-       */
-      public int getExternalIdsCount() {
-        return externalIds_.size();
-      }
-      /**
-       * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-       * </pre>
-       *
-       * <code>repeated string external_ids = 1;</code>
-       */
-      public java.lang.String getExternalIds(int index) {
-        return externalIds_.get(index);
-      }
-      /**
-       * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-       * </pre>
-       *
-       * <code>repeated string external_ids = 1;</code>
+       * <code>string external_ids = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getExternalIdsBytes(int index) {
-        return externalIds_.getByteString(index);
+          getExternalIdsBytes() {
+        java.lang.Object ref = externalIds_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          externalIds_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+       * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
        * </pre>
        *
-       * <code>repeated string external_ids = 1;</code>
+       * <code>string external_ids = 1;</code>
        */
       public Builder setExternalIds(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExternalIdsIsMutable();
-        externalIds_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-       * </pre>
-       *
-       * <code>repeated string external_ids = 1;</code>
-       */
-      public Builder addExternalIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureExternalIdsIsMutable();
-        externalIds_.add(value);
+  
+        externalIds_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+       * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
        * </pre>
        *
-       * <code>repeated string external_ids = 1;</code>
-       */
-      public Builder addAllExternalIds(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureExternalIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, externalIds_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-       * </pre>
-       *
-       * <code>repeated string external_ids = 1;</code>
+       * <code>string external_ids = 1;</code>
        */
       public Builder clearExternalIds() {
-        externalIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        externalIds_ = getDefaultInstance().getExternalIds();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+       * Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
        * </pre>
        *
-       * <code>repeated string external_ids = 1;</code>
+       * <code>string external_ids = 1;</code>
        */
-      public Builder addExternalIdsBytes(
+      public Builder setExternalIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureExternalIdsIsMutable();
-        externalIds_.add(value);
+        
+        externalIds_ = value;
         onChanged();
         return this;
       }
@@ -13199,7 +13113,6 @@ public final class Event {
   /**
    * <pre>
    * Holds metadata around how a task was executed.
-   * TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
    * </pre>
    *
    * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -13857,7 +13770,6 @@ public final class Event {
     /**
      * <pre>
      * Holds metadata around how a task was executed.
-     * TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
      * </pre>
      *
      * Protobuf type {@code flyteidl.event.TaskExecutionMetadata}
@@ -15137,7 +15049,7 @@ public final class Event {
       "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(" +
       "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
       "kExecutionMetadataB\017\n\routput_result\",\n\024E" +
-      "xternalResourceInfo\022\024\n\014external_ids\030\001 \003(" +
+      "xternalResourceInfo\022\024\n\014external_ids\030\001 \001(" +
       "\t\"?\n\020ResourcePoolInfo\022\030\n\020allocation_toke" +
       "n\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecu" +
       "tionMetadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022" +

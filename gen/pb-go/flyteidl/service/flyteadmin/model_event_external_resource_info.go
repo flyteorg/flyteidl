@@ -11,6 +11,6 @@ package flyteadmin
 
 // This message contains metadata about external resources produced or used by a specific task execution.
 type EventExternalResourceInfo struct {
-	// Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
-	ExternalIds []string `json:"external_ids,omitempty"`
+	// Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
+	ExternalIds string `json:"external_ids,omitempty"`
 }

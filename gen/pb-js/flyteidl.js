@@ -13871,7 +13871,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an ExternalResourceInfo.
              * @memberof flyteidl.event
              * @interface IExternalResourceInfo
-             * @property {Array.<string>|null} [externalIds] ExternalResourceInfo externalIds
+             * @property {string|null} [externalIds] ExternalResourceInfo externalIds
              */
 
             /**
@@ -13883,7 +13883,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.event.IExternalResourceInfo=} [properties] Properties to set
              */
             function ExternalResourceInfo(properties) {
-                this.externalIds = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -13892,11 +13891,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ExternalResourceInfo externalIds.
-             * @member {Array.<string>} externalIds
+             * @member {string} externalIds
              * @memberof flyteidl.event.ExternalResourceInfo
              * @instance
              */
-            ExternalResourceInfo.prototype.externalIds = $util.emptyArray;
+            ExternalResourceInfo.prototype.externalIds = "";
 
             /**
              * Creates a new ExternalResourceInfo instance using the specified properties.
@@ -13922,9 +13921,8 @@ export const flyteidl = $root.flyteidl = (() => {
             ExternalResourceInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.externalIds != null && message.externalIds.length)
-                    for (let i = 0; i < message.externalIds.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.externalIds[i]);
+                if (message.externalIds != null && message.hasOwnProperty("externalIds"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.externalIds);
                 return writer;
             };
 
@@ -13947,9 +13945,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.externalIds && message.externalIds.length))
-                            message.externalIds = [];
-                        message.externalIds.push(reader.string());
+                        message.externalIds = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13970,13 +13966,9 @@ export const flyteidl = $root.flyteidl = (() => {
             ExternalResourceInfo.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.externalIds != null && message.hasOwnProperty("externalIds")) {
-                    if (!Array.isArray(message.externalIds))
-                        return "externalIds: array expected";
-                    for (let i = 0; i < message.externalIds.length; ++i)
-                        if (!$util.isString(message.externalIds[i]))
-                            return "externalIds: string[] expected";
-                }
+                if (message.externalIds != null && message.hasOwnProperty("externalIds"))
+                    if (!$util.isString(message.externalIds))
+                        return "externalIds: string expected";
                 return null;
             };
 

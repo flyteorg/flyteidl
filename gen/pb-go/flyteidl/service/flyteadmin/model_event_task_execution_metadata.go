@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Holds metadata around how a task was executed. TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
+// Holds metadata around how a task was executed.
 type EventTaskExecutionMetadata struct {
 	// Unique, generated name for this task execution used by the backend.
 	GeneratedName string `json:"generated_name,omitempty"`

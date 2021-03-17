@@ -1492,34 +1492,26 @@ class ExternalResourceInfo final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string external_ids = 1;
-  int external_ids_size() const;
+  // string external_ids = 1;
   void clear_external_ids();
   static const int kExternalIdsFieldNumber = 1;
-  const ::std::string& external_ids(int index) const;
-  ::std::string* mutable_external_ids(int index);
-  void set_external_ids(int index, const ::std::string& value);
+  const ::std::string& external_ids() const;
+  void set_external_ids(const ::std::string& value);
   #if LANG_CXX11
-  void set_external_ids(int index, ::std::string&& value);
+  void set_external_ids(::std::string&& value);
   #endif
-  void set_external_ids(int index, const char* value);
-  void set_external_ids(int index, const char* value, size_t size);
-  ::std::string* add_external_ids();
-  void add_external_ids(const ::std::string& value);
-  #if LANG_CXX11
-  void add_external_ids(::std::string&& value);
-  #endif
-  void add_external_ids(const char* value);
-  void add_external_ids(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& external_ids() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_external_ids();
+  void set_external_ids(const char* value);
+  void set_external_ids(const char* value, size_t size);
+  ::std::string* mutable_external_ids();
+  ::std::string* release_external_ids();
+  void set_allocated_external_ids(::std::string* external_ids);
 
   // @@protoc_insertion_point(class_scope:flyteidl.event.ExternalResourceInfo)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> external_ids_;
+  ::google::protobuf::internal::ArenaStringPtr external_ids_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
 };
@@ -3736,73 +3728,57 @@ inline TaskExecutionEvent::OutputResultCase TaskExecutionEvent::output_result_ca
 
 // ExternalResourceInfo
 
-// repeated string external_ids = 1;
-inline int ExternalResourceInfo::external_ids_size() const {
-  return external_ids_.size();
-}
+// string external_ids = 1;
 inline void ExternalResourceInfo::clear_external_ids() {
-  external_ids_.Clear();
+  external_ids_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ExternalResourceInfo::external_ids(int index) const {
+inline const ::std::string& ExternalResourceInfo::external_ids() const {
   // @@protoc_insertion_point(field_get:flyteidl.event.ExternalResourceInfo.external_ids)
-  return external_ids_.Get(index);
+  return external_ids_.GetNoArena();
 }
-inline ::std::string* ExternalResourceInfo::mutable_external_ids(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.ExternalResourceInfo.external_ids)
-  return external_ids_.Mutable(index);
-}
-inline void ExternalResourceInfo::set_external_ids(int index, const ::std::string& value) {
+inline void ExternalResourceInfo::set_external_ids(const ::std::string& value) {
+  
+  external_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.event.ExternalResourceInfo.external_ids)
-  external_ids_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void ExternalResourceInfo::set_external_ids(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.event.ExternalResourceInfo.external_ids)
-  external_ids_.Mutable(index)->assign(std::move(value));
+inline void ExternalResourceInfo::set_external_ids(::std::string&& value) {
+  
+  external_ids_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.ExternalResourceInfo.external_ids)
 }
 #endif
-inline void ExternalResourceInfo::set_external_ids(int index, const char* value) {
+inline void ExternalResourceInfo::set_external_ids(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  external_ids_.Mutable(index)->assign(value);
+  
+  external_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.event.ExternalResourceInfo.external_ids)
 }
-inline void ExternalResourceInfo::set_external_ids(int index, const char* value, size_t size) {
-  external_ids_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
+inline void ExternalResourceInfo::set_external_ids(const char* value, size_t size) {
+  
+  external_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.event.ExternalResourceInfo.external_ids)
 }
-inline ::std::string* ExternalResourceInfo::add_external_ids() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.event.ExternalResourceInfo.external_ids)
-  return external_ids_.Add();
+inline ::std::string* ExternalResourceInfo::mutable_external_ids() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.ExternalResourceInfo.external_ids)
+  return external_ids_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ExternalResourceInfo::add_external_ids(const ::std::string& value) {
-  external_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.event.ExternalResourceInfo.external_ids)
+inline ::std::string* ExternalResourceInfo::release_external_ids() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.ExternalResourceInfo.external_ids)
+  
+  return external_ids_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-#if LANG_CXX11
-inline void ExternalResourceInfo::add_external_ids(::std::string&& value) {
-  external_ids_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.event.ExternalResourceInfo.external_ids)
-}
-#endif
-inline void ExternalResourceInfo::add_external_ids(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  external_ids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.event.ExternalResourceInfo.external_ids)
-}
-inline void ExternalResourceInfo::add_external_ids(const char* value, size_t size) {
-  external_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.event.ExternalResourceInfo.external_ids)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-ExternalResourceInfo::external_ids() const {
-  // @@protoc_insertion_point(field_list:flyteidl.event.ExternalResourceInfo.external_ids)
-  return external_ids_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-ExternalResourceInfo::mutable_external_ids() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.event.ExternalResourceInfo.external_ids)
-  return &external_ids_;
+inline void ExternalResourceInfo::set_allocated_external_ids(::std::string* external_ids) {
+  if (external_ids != nullptr) {
+    
+  } else {
+    
+  }
+  external_ids_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_ids);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ExternalResourceInfo.external_ids)
 }
 
 // -------------------------------------------------------------------

@@ -31,7 +31,7 @@ class EventExternalResourceInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'external_ids': 'list[str]'
+        'external_ids': 'str'
     }
 
     attribute_map = {
@@ -51,10 +51,10 @@ class EventExternalResourceInfo(object):
     def external_ids(self):
         """Gets the external_ids of this EventExternalResourceInfo.  # noqa: E501
 
-        Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.  # noqa: E501
+        Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.  # noqa: E501
 
         :return: The external_ids of this EventExternalResourceInfo.  # noqa: E501
-        :rtype: list[str]
+        :rtype: str
         """
         return self._external_ids
 
@@ -62,10 +62,10 @@ class EventExternalResourceInfo(object):
     def external_ids(self, external_ids):
         """Sets the external_ids of this EventExternalResourceInfo.
 
-        Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.  # noqa: E501
+        Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.  # noqa: E501
 
         :param external_ids: The external_ids of this EventExternalResourceInfo.  # noqa: E501
-        :type: list[str]
+        :type: str
         """
 
         self._external_ids = external_ids

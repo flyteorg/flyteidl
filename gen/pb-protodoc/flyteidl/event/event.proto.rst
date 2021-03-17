@@ -438,13 +438,13 @@ This message contains metadata about external resources produced or used by a sp
 .. code-block:: json
 
   {
-    "external_ids": []
+    "external_ids": "..."
   }
 
 .. _api_field_flyteidl.event.ExternalResourceInfo.external_ids:
 
 external_ids
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifiers for external resources created by this task execution, for example Qubole query ID or presto query ids.
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
   
   
 
@@ -485,10 +485,9 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L186>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L185>`_
 
 Holds metadata around how a task was executed.
-TODO(katrogan): Extend to include freeform fields (https://github.com/flyteorg/flyte/issues/325).
 
 .. code-block:: json
 
@@ -536,7 +535,7 @@ instance_class
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L202>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L201>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 
