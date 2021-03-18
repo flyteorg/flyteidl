@@ -5530,13 +5530,17 @@
     "coreSecret": {
       "type": "object",
       "properties": {
-        "key": {
-          "type": "string",
-          "title": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity.\n+required"
-        },
         "group": {
           "type": "string",
-          "title": "The name of the secret group where to find the key referenced above.\n+optional"
+          "title": "The name of the secret group where to find the key referenced above.\n+required"
+        },
+        "group_version": {
+          "type": "string",
+          "title": "The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones\nthat do not support it.\n+optional"
+        },
+        "key": {
+          "type": "string",
+          "title": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity.\n+optional"
         },
         "mount_requirement": {
           "$ref": "#/definitions/SecretMountType",
