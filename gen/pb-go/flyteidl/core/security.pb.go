@@ -81,7 +81,9 @@ func (OAuth2TokenRequest_Type) EnumDescriptor() ([]byte, []int) {
 // FLYTE_SECRETS_DEFAULT_DIR will be passed to indicate the prefix of the path where secrets will be mounted if secrets
 // are passed through file mounts.
 type Secret struct {
-	// The name of the secret group where to find the key referenced above.
+	// The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+	// the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+	// For AWS Secret Manager, this should be the name of the secret.
 	// +required
 	Group string `protobuf:"bytes,1,opt,name=group,proto3" json:"group,omitempty"`
 	// The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones
@@ -89,7 +91,8 @@ type Secret struct {
 	// +optional
 	GroupVersion string `protobuf:"bytes,2,opt,name=group_version,json=groupVersion,proto3" json:"group_version,omitempty"`
 	// The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-	// of the secret management system to require case sensitivity.
+	// of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+	// match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
 	// +optional
 	Key string `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
 	// mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail

@@ -20,7 +20,9 @@ public final class Security {
 
     /**
      * <pre>
-     * The name of the secret group where to find the key referenced above.
+     * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+     * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+     * For AWS Secret Manager, this should be the name of the secret.
      * +required
      * </pre>
      *
@@ -29,7 +31,9 @@ public final class Security {
     java.lang.String getGroup();
     /**
      * <pre>
-     * The name of the secret group where to find the key referenced above.
+     * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+     * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+     * For AWS Secret Manager, this should be the name of the secret.
      * +required
      * </pre>
      *
@@ -63,7 +67,8 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-     * of the secret management system to require case sensitivity.
+     * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+     * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
      * +optional
      * </pre>
      *
@@ -73,7 +78,8 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-     * of the secret management system to require case sensitivity.
+     * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+     * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
      * +optional
      * </pre>
      *
@@ -347,7 +353,9 @@ public final class Security {
     private volatile java.lang.Object group_;
     /**
      * <pre>
-     * The name of the secret group where to find the key referenced above.
+     * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+     * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+     * For AWS Secret Manager, this should be the name of the secret.
      * +required
      * </pre>
      *
@@ -367,7 +375,9 @@ public final class Security {
     }
     /**
      * <pre>
-     * The name of the secret group where to find the key referenced above.
+     * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+     * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+     * For AWS Secret Manager, this should be the name of the secret.
      * +required
      * </pre>
      *
@@ -438,7 +448,8 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-     * of the secret management system to require case sensitivity.
+     * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+     * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
      * +optional
      * </pre>
      *
@@ -459,7 +470,8 @@ public final class Security {
     /**
      * <pre>
      * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-     * of the secret management system to require case sensitivity.
+     * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+     * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
      * +optional
      * </pre>
      *
@@ -873,7 +885,9 @@ public final class Security {
       private java.lang.Object group_ = "";
       /**
        * <pre>
-       * The name of the secret group where to find the key referenced above.
+       * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+       * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+       * For AWS Secret Manager, this should be the name of the secret.
        * +required
        * </pre>
        *
@@ -893,7 +907,9 @@ public final class Security {
       }
       /**
        * <pre>
-       * The name of the secret group where to find the key referenced above.
+       * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+       * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+       * For AWS Secret Manager, this should be the name of the secret.
        * +required
        * </pre>
        *
@@ -914,7 +930,9 @@ public final class Security {
       }
       /**
        * <pre>
-       * The name of the secret group where to find the key referenced above.
+       * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+       * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+       * For AWS Secret Manager, this should be the name of the secret.
        * +required
        * </pre>
        *
@@ -932,7 +950,9 @@ public final class Security {
       }
       /**
        * <pre>
-       * The name of the secret group where to find the key referenced above.
+       * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+       * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+       * For AWS Secret Manager, this should be the name of the secret.
        * +required
        * </pre>
        *
@@ -946,7 +966,9 @@ public final class Security {
       }
       /**
        * <pre>
-       * The name of the secret group where to find the key referenced above.
+       * The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of
+       * the v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.
+       * For AWS Secret Manager, this should be the name of the secret.
        * +required
        * </pre>
        *
@@ -1067,7 +1089,8 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-       * of the secret management system to require case sensitivity.
+       * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+       * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
        * +optional
        * </pre>
        *
@@ -1088,7 +1111,8 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-       * of the secret management system to require case sensitivity.
+       * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+       * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
        * +optional
        * </pre>
        *
@@ -1110,7 +1134,8 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-       * of the secret management system to require case sensitivity.
+       * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+       * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
        * +optional
        * </pre>
        *
@@ -1129,7 +1154,8 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-       * of the secret management system to require case sensitivity.
+       * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+       * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
        * +optional
        * </pre>
        *
@@ -1144,7 +1170,8 @@ public final class Security {
       /**
        * <pre>
        * The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation
-       * of the secret management system to require case sensitivity.
+       * of the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should
+       * match one of the keys inside the secret. For AWS Secret Manager, it's ignored.
        * +optional
        * </pre>
        *
