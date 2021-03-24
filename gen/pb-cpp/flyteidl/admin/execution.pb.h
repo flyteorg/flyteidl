@@ -2090,15 +2090,6 @@ class ExecutionSpec final :
   ::flyteidl::admin::Annotations* mutable_annotations();
   void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
 
-  // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-  PROTOBUF_DEPRECATED bool has_auth_role() const;
-  PROTOBUF_DEPRECATED void clear_auth_role();
-  PROTOBUF_DEPRECATED static const int kAuthRoleFieldNumber = 9;
-  PROTOBUF_DEPRECATED const ::flyteidl::admin::AuthRole& auth_role() const;
-  PROTOBUF_DEPRECATED ::flyteidl::admin::AuthRole* release_auth_role();
-  PROTOBUF_DEPRECATED ::flyteidl::admin::AuthRole* mutable_auth_role();
-  PROTOBUF_DEPRECATED void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
-
   // .flyteidl.core.SecurityContext security_context = 10;
   bool has_security_context() const;
   void clear_security_context();
@@ -2107,6 +2098,15 @@ class ExecutionSpec final :
   ::flyteidl::core::SecurityContext* release_security_context();
   ::flyteidl::core::SecurityContext* mutable_security_context();
   void set_allocated_security_context(::flyteidl::core::SecurityContext* security_context);
+
+  // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_auth_role() const;
+  PROTOBUF_DEPRECATED void clear_auth_role();
+  PROTOBUF_DEPRECATED static const int kAuthRoleFieldNumber = 16;
+  PROTOBUF_DEPRECATED const ::flyteidl::admin::AuthRole& auth_role() const;
+  PROTOBUF_DEPRECATED ::flyteidl::admin::AuthRole* release_auth_role();
+  PROTOBUF_DEPRECATED ::flyteidl::admin::AuthRole* mutable_auth_role();
+  PROTOBUF_DEPRECATED void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
   // .flyteidl.core.QualityOfService quality_of_service = 17;
   bool has_quality_of_service() const;
@@ -2152,8 +2152,8 @@ class ExecutionSpec final :
   ::flyteidl::admin::ExecutionMetadata* metadata_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
-  ::flyteidl::admin::AuthRole* auth_role_;
   ::flyteidl::core::SecurityContext* security_context_;
+  ::flyteidl::admin::AuthRole* auth_role_;
   ::flyteidl::core::QualityOfService* quality_of_service_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
@@ -4816,7 +4816,7 @@ inline void ExecutionSpec::set_allocated_annotations(::flyteidl::admin::Annotati
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.annotations)
 }
 
-// .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
+// .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
 inline bool ExecutionSpec::has_auth_role() const {
   return this != internal_default_instance() && auth_role_ != nullptr;
 }

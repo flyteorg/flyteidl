@@ -20540,10 +20540,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.annotations != null && message.hasOwnProperty("annotations"))
                     $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.authRole != null && message.hasOwnProperty("authRole"))
-                    $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.securityContext != null && message.hasOwnProperty("securityContext"))
                     $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.authRole != null && message.hasOwnProperty("authRole"))
+                    $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
@@ -20588,7 +20588,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
                         break;
-                    case 9:
+                    case 16:
                         message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
                         break;
                     case 10:

@@ -674,7 +674,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "admin.NotificationListH\000\022\025\n\013disable_all\030"
   "\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin"
   ".Labels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl."
-  "admin.Annotations\022/\n\tauth_role\030\t \001(\0132\030.f"
+  "admin.Annotations\022/\n\tauth_role\030\020 \001(\0132\030.f"
   "lyteidl.admin.AuthRoleB\002\030\001\0228\n\020security_c"
   "ontext\030\n \001(\0132\036.flyteidl.core.SecurityCon"
   "text\022;\n\022quality_of_service\030\021 \001(\0132\037.flyte"
@@ -6402,15 +6402,15 @@ ExecutionSpec::ExecutionSpec(const ExecutionSpec& from)
   } else {
     annotations_ = nullptr;
   }
-  if (from.has_auth_role()) {
-    auth_role_ = new ::flyteidl::admin::AuthRole(*from.auth_role_);
-  } else {
-    auth_role_ = nullptr;
-  }
   if (from.has_security_context()) {
     security_context_ = new ::flyteidl::core::SecurityContext(*from.security_context_);
   } else {
     security_context_ = nullptr;
+  }
+  if (from.has_auth_role()) {
+    auth_role_ = new ::flyteidl::admin::AuthRole(*from.auth_role_);
+  } else {
+    auth_role_ = nullptr;
   }
   if (from.has_quality_of_service()) {
     quality_of_service_ = new ::flyteidl::core::QualityOfService(*from.quality_of_service_);
@@ -6454,8 +6454,8 @@ void ExecutionSpec::SharedDtor() {
   if (this != internal_default_instance()) delete metadata_;
   if (this != internal_default_instance()) delete labels_;
   if (this != internal_default_instance()) delete annotations_;
-  if (this != internal_default_instance()) delete auth_role_;
   if (this != internal_default_instance()) delete security_context_;
+  if (this != internal_default_instance()) delete auth_role_;
   if (this != internal_default_instance()) delete quality_of_service_;
   if (has_notification_overrides()) {
     clear_notification_overrides();
@@ -6516,14 +6516,14 @@ void ExecutionSpec::Clear() {
     delete annotations_;
   }
   annotations_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && auth_role_ != nullptr) {
-    delete auth_role_;
-  }
-  auth_role_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && security_context_ != nullptr) {
     delete security_context_;
   }
   security_context_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && auth_role_ != nullptr) {
+    delete auth_role_;
+  }
+  auth_role_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && quality_of_service_ != nullptr) {
     delete quality_of_service_;
   }
@@ -6630,19 +6630,6 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-      case 9: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::AuthRole::_InternalParse;
-        object = msg->mutable_auth_role();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
       // .flyteidl.core.SecurityContext security_context = 10;
       case 10: {
         if (static_cast<::google::protobuf::uint8>(tag) != 82) goto handle_unusual;
@@ -6650,6 +6637,19 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::SecurityContext::_InternalParse;
         object = msg->mutable_security_context();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+      case 16: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 130) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::AuthRole::_InternalParse;
+        object = msg->mutable_auth_role();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -6779,22 +6779,22 @@ bool ExecutionSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (74 & 0xFF)) {
+      // .flyteidl.core.SecurityContext security_context = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (82 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_auth_role()));
+               input, mutable_security_context()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .flyteidl.core.SecurityContext security_context = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (82 & 0xFF)) {
+      // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (130 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_security_context()));
+               input, mutable_auth_role()));
         } else {
           goto handle_unusual;
         }
@@ -6880,16 +6880,16 @@ void ExecutionSpec::SerializeWithCachedSizes(
       8, HasBitSetters::annotations(this), output);
   }
 
-  // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-  if (this->has_auth_role()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      9, HasBitSetters::auth_role(this), output);
-  }
-
   // .flyteidl.core.SecurityContext security_context = 10;
   if (this->has_security_context()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       10, HasBitSetters::security_context(this), output);
+  }
+
+  // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+  if (this->has_auth_role()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      16, HasBitSetters::auth_role(this), output);
   }
 
   // .flyteidl.core.QualityOfService quality_of_service = 17;
@@ -6958,18 +6958,18 @@ void ExecutionSpec::SerializeWithCachedSizes(
         8, HasBitSetters::annotations(this), target);
   }
 
-  // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-  if (this->has_auth_role()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        9, HasBitSetters::auth_role(this), target);
-  }
-
   // .flyteidl.core.SecurityContext security_context = 10;
   if (this->has_security_context()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         10, HasBitSetters::security_context(this), target);
+  }
+
+  // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+  if (this->has_auth_role()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        16, HasBitSetters::auth_role(this), target);
   }
 
   // .flyteidl.core.QualityOfService quality_of_service = 17;
@@ -7035,18 +7035,18 @@ size_t ExecutionSpec::ByteSizeLong() const {
         *annotations_);
   }
 
-  // .flyteidl.admin.AuthRole auth_role = 9 [deprecated = true];
-  if (this->has_auth_role()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *auth_role_);
-  }
-
   // .flyteidl.core.SecurityContext security_context = 10;
   if (this->has_security_context()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *security_context_);
+  }
+
+  // .flyteidl.admin.AuthRole auth_role = 16 [deprecated = true];
+  if (this->has_auth_role()) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *auth_role_);
   }
 
   // .flyteidl.core.QualityOfService quality_of_service = 17;
@@ -7115,11 +7115,11 @@ void ExecutionSpec::MergeFrom(const ExecutionSpec& from) {
   if (from.has_annotations()) {
     mutable_annotations()->::flyteidl::admin::Annotations::MergeFrom(from.annotations());
   }
-  if (from.has_auth_role()) {
-    mutable_auth_role()->::flyteidl::admin::AuthRole::MergeFrom(from.auth_role());
-  }
   if (from.has_security_context()) {
     mutable_security_context()->::flyteidl::core::SecurityContext::MergeFrom(from.security_context());
+  }
+  if (from.has_auth_role()) {
+    mutable_auth_role()->::flyteidl::admin::AuthRole::MergeFrom(from.auth_role());
   }
   if (from.has_quality_of_service()) {
     mutable_quality_of_service()->::flyteidl::core::QualityOfService::MergeFrom(from.quality_of_service());
@@ -7169,8 +7169,8 @@ void ExecutionSpec::InternalSwap(ExecutionSpec* other) {
   swap(metadata_, other->metadata_);
   swap(labels_, other->labels_);
   swap(annotations_, other->annotations_);
-  swap(auth_role_, other->auth_role_);
   swap(security_context_, other->security_context_);
+  swap(auth_role_, other->auth_role_);
   swap(quality_of_service_, other->quality_of_service_);
   swap(notification_overrides_, other->notification_overrides_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
