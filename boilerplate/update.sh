@@ -10,12 +10,10 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 OUT="$(mktemp -d)"
-git clone git@github.com:lyft/boilerplate.git "${OUT}"
+git clone git@github.com:samhita-alla/flyteidl.git "${OUT}"
 
 echo "Updating the update.sh script."
-cp "${OUT}/boilerplate/update.sh" "${DIR}/update.sh"
-echo ""
-
+# cp "${OUT}/boilerplate/update.sh" "${DIR}/update.sh"
 
 CONFIG_FILE="${DIR}/update.cfg"
 README="https://github.com/lyft/boilerplate/blob/master/Readme.rst"
@@ -33,6 +31,8 @@ if [ -z "$REPOSITORY" ]; then
   exit 1
 fi
 
+cat "$CONFIG_FILE"
+
 while read directory; do
   # TODO: Skip empty lines, whitespace only lines, and comment lines
   echo "***********************************************************************************"
@@ -40,9 +40,9 @@ while read directory; do
   echo "-----------------------------------------------------------------------------------"
   echo "syncing files from source."
   dir_path="${OUT}/boilerplate/${directory}"
-  rm -rf "${DIR}/${directory}"
-  mkdir -p $(dirname "${DIR}/${directory}")
-  cp -r "$dir_path" "${DIR}/${directory}"
+  # rm -rf "${DIR}/${directory}"
+  # mkdir -p $(dirname "${DIR}/${directory}")
+  # cp -r "$dir_path" "${DIR}/${directory}"
   if [ -f "${DIR}/${directory}/update.sh" ]; then
     echo "executing ${DIR}/${directory}/update.sh"
     "${DIR}/${directory}/update.sh"
