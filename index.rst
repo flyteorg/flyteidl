@@ -19,6 +19,7 @@ This specification is used to generate client stubs for `FlyteKit <https://flyte
    Getting Started <https://docs.flyte.org/en/latest/getting_started.html>
    Tutorials <https://flytecookbook.readthedocs.io>
    reference/index
+   Community <https://docs.flyte.org/en/latest/community/index.html>
 
 .. toctree::
    :maxdepth: 2
