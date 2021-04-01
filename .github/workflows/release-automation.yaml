@@ -1,0 +1,72 @@
+name: Publish NPM & PyPi Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+          apt-get install jq -y
+      - name: Autobump npm version
+        run: |
+          # from refs/tags/v1.2.3 get 1.2.3
+          VERSION=$(echo $GITHUB_REF | sed 's#.*/v##')
+          VERSION=$VERSION make update_npmversion
+        shell: bash
+      - run: npm install
+      - run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Autobump version PyPi
+        run: |
+          # from refs/tags/v1.2.3 get 1.2.3
+          VERSION=$(echo $GITHUB_REF | sed 's#.*/v##')
+          VERSION=$VERSION make update_pyversion
+        shell: bash
+      - name: Build and publish
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload dist/*
+
+      - name: Update flyteidl version in flyteadmin
+        run: |
+          WORKFLOW_ID=curl -sS https://api.github.com/repos/flyteorg/flyteadmin/actions/workflows | jq '.workflows[] | select(.path == ".github/workflows/release-automation.yml") | {id}' | jq .id
+          curl  -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/flyteorg/flyteadmin/actions/workflows/$WORKFLOW_ID/dispatches -H "Authorization: token ${{ secrets.FLYTE_BOT_PAT }}" -d '{"ref":"master"}'
+        shell: bash
+
+      - name: Update flyteidl version in flytepropeller
+        run: |
+          WORKFLOW_ID=curl -sS https://api.github.com/repos/flyteorg/flytepropeller/actions/workflows | jq '.workflows[] | select(.path == ".github/workflows/release-automation.yml") | {id}' | jq .id
+          curl  -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/flyteorg/flytepropeller/actions/workflows/$WORKFLOW_ID/dispatches -H "Authorization: token ${{ secrets.FLYTE_BOT_PAT }}" -d '{"ref":"master"}'
+        shell: bash
+
+      - name: Update flyteidl version in flyteconsole
+        run: |
+          WORKFLOW_ID=curl -sS https://api.github.com/repos/flyteorg/flyteconsole/actions/workflows | jq '.workflows[] | select(.path == ".github/workflows/release-automation.yml") | {id}' | jq .id
+          curl  -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/flyteorg/flyteconsole/actions/workflows/$WORKFLOW_ID/dispatches -H "Authorization: token ${{ secrets.FLYTE_BOT_PAT }}" -d '{"ref":"master"}'
+        shell: bash
+
+      - name: Update flyteidl version in flytekit
+        run: |
+          WORKFLOW_ID=curl -sS https://api.github.com/repos/flyteorg/flytekit/actions/workflows | jq '.workflows[] | select(.path == ".github/workflows/release-automation.yml") | {id}' | jq .id
+          curl  -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/flyteorg/flytekit/actions/workflows/$WORKFLOW_ID/dispatches -H "Authorization: token ${{ secrets.FLYTE_BOT_PAT }}" -d '{"ref":"master"}'
+        shell: bash
