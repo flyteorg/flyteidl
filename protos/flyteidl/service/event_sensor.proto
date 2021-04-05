@@ -1,0 +1,50 @@
+syntax = "proto3";
+package flyteidl.service;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
+
+import "google/api/annotations.proto";
+import "flyteidl/event/sensor.proto";
+import "flyteidl/event/sensor_state.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+service EventSensorService {
+
+  rpc ListEventTargets (flyteidl.event.EventTargetListRequest) returns (flyteidl.event.EventTargetList) {
+    option (google.api.http) = {
+      get: "/api/v1/targets/{event_type}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieve existing event target definitions."
+    };
+  }
+
+  // Enqueues an event target to be executed asynchronously.
+  rpc EventOccurred (flyteidl.event.EventOccurredRequest) returns (flyteidl.event.EventOccurredResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/occurred"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Notifies a downstream consumer that an event has occurred."
+    };
+  }
+
+  rpc GetEventSensorState (flyteidl.event.EventSensorStateGetRequest) returns (flyteidl.event.EventSensorStateGetResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/sensor_state/{event_type}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieve saved state for a specific event sensor type."
+    };
+  } 
+
+  rpc UpdateEventSensorState (flyteidl.event.EventSensorStateUpdateRequest) returns (flyteidl.event.EventSensorStateUpdateResponse) {
+    option (google.api.http) = {
+      put: "/api/v1/sensor_state/{event_type}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Update saved state for a specific event sensor type."
+    };
+  } 
+
+}

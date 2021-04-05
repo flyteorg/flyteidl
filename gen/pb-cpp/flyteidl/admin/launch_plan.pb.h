@@ -36,6 +36,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/interface.pb.h"
+#include "flyteidl/core/named_entity_identifier.pb.h"
 #include "flyteidl/core/security.pb.h"
 #include "flyteidl/admin/schedule.pb.h"
 #include "flyteidl/admin/common.pb.h"
@@ -1628,21 +1629,21 @@ class ActiveLaunchPlanRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.NamedEntityIdentifier id = 1;
+  // .flyteidl.core.NamedEntityIdentifier id = 1;
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 1;
-  const ::flyteidl::admin::NamedEntityIdentifier& id() const;
-  ::flyteidl::admin::NamedEntityIdentifier* release_id();
-  ::flyteidl::admin::NamedEntityIdentifier* mutable_id();
-  void set_allocated_id(::flyteidl::admin::NamedEntityIdentifier* id);
+  const ::flyteidl::core::NamedEntityIdentifier& id() const;
+  ::flyteidl::core::NamedEntityIdentifier* release_id();
+  ::flyteidl::core::NamedEntityIdentifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::NamedEntityIdentifier* id);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ActiveLaunchPlanRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::admin::NamedEntityIdentifier* id_;
+  ::flyteidl::core::NamedEntityIdentifier* id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -3270,33 +3271,33 @@ inline void LaunchPlanUpdateRequest::set_state(::flyteidl::admin::LaunchPlanStat
 
 // ActiveLaunchPlanRequest
 
-// .flyteidl.admin.NamedEntityIdentifier id = 1;
+// .flyteidl.core.NamedEntityIdentifier id = 1;
 inline bool ActiveLaunchPlanRequest::has_id() const {
   return this != internal_default_instance() && id_ != nullptr;
 }
-inline const ::flyteidl::admin::NamedEntityIdentifier& ActiveLaunchPlanRequest::id() const {
-  const ::flyteidl::admin::NamedEntityIdentifier* p = id_;
+inline const ::flyteidl::core::NamedEntityIdentifier& ActiveLaunchPlanRequest::id() const {
+  const ::flyteidl::core::NamedEntityIdentifier* p = id_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.ActiveLaunchPlanRequest.id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::NamedEntityIdentifier*>(
-      &::flyteidl::admin::_NamedEntityIdentifier_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NamedEntityIdentifier*>(
+      &::flyteidl::core::_NamedEntityIdentifier_default_instance_);
 }
-inline ::flyteidl::admin::NamedEntityIdentifier* ActiveLaunchPlanRequest::release_id() {
+inline ::flyteidl::core::NamedEntityIdentifier* ActiveLaunchPlanRequest::release_id() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.ActiveLaunchPlanRequest.id)
   
-  ::flyteidl::admin::NamedEntityIdentifier* temp = id_;
+  ::flyteidl::core::NamedEntityIdentifier* temp = id_;
   id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::NamedEntityIdentifier* ActiveLaunchPlanRequest::mutable_id() {
+inline ::flyteidl::core::NamedEntityIdentifier* ActiveLaunchPlanRequest::mutable_id() {
   
   if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::NamedEntityIdentifier>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::core::NamedEntityIdentifier>(GetArenaNoVirtual());
     id_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.ActiveLaunchPlanRequest.id)
   return id_;
 }
-inline void ActiveLaunchPlanRequest::set_allocated_id(::flyteidl::admin::NamedEntityIdentifier* id) {
+inline void ActiveLaunchPlanRequest::set_allocated_id(::flyteidl::core::NamedEntityIdentifier* id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);

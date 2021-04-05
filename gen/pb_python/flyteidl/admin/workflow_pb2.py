@@ -17,6 +17,10 @@ from flyteidl.core import compiler_pb2 as flyteidl_dot_core_dot_compiler__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 from flyteidl.core import workflow_pb2 as flyteidl_dot_core_dot_workflow__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+try:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl_dot_core_dot_named__entity__identifier__pb2
+except AttributeError:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl.core.named_entity_identifier_pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 

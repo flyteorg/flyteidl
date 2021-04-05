@@ -918,11 +918,18 @@ Retrieve the active launch plan version specified by input request filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
+ * @param optional nil or *GetActiveLaunchPlanOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
 
 @return AdminLaunchPlan
 */
-func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProject string, idDomain string, idName string) (AdminLaunchPlan, *http.Response, error) {
+
+type GetActiveLaunchPlanOpts struct { 
+	IdResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *GetActiveLaunchPlanOpts) (AdminLaunchPlan, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -941,6 +948,9 @@ func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProj
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1303,11 +1313,18 @@ Retrieve a NamedEntity object.
  * @param resourceType
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
+ * @param optional nil or *GetNamedEntityOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
 
 @return AdminNamedEntity
 */
-func (a *AdminServiceApiService) GetNamedEntity(ctx context.Context, resourceType string, idProject string, idDomain string, idName string) (AdminNamedEntity, *http.Response, error) {
+
+type GetNamedEntityOpts struct { 
+	IdResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetNamedEntity(ctx context.Context, resourceType string, idProject string, idDomain string, idName string, localVarOptionals *GetNamedEntityOpts) (AdminNamedEntity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1327,6 +1344,9 @@ func (a *AdminServiceApiService) GetNamedEntity(ctx context.Context, resourceTyp
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -2435,7 +2455,8 @@ Fetch existing workflow executions matching input filters.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param optional nil or *ListExecutionsOpts - Optional Parameters:
-     * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "IdName" (optional.String) -  User provided value for the resource.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -2446,6 +2467,7 @@ Fetch existing workflow executions matching input filters.
 */
 
 type ListExecutionsOpts struct { 
+	IdResourceType optional.String
 	IdName optional.String
 	Limit optional.Int64
 	Token optional.String
@@ -2472,6 +2494,9 @@ func (a *AdminServiceApiService) ListExecutions(ctx context.Context, idProject s
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.IdName.IsSet() {
 		localVarQueryParams.Add("id.name", parameterToString(localVarOptionals.IdName.Value(), ""))
 	}
@@ -2681,8 +2706,9 @@ Fetch existing launch plan definitions matching input filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
  * @param optional nil or *ListLaunchPlansOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -2693,6 +2719,7 @@ Fetch existing launch plan definitions matching input filters.
 */
 
 type ListLaunchPlansOpts struct { 
+	IdResourceType optional.String
 	Limit optional.Int64
 	Token optional.String
 	Filters optional.String
@@ -2719,6 +2746,9 @@ func (a *AdminServiceApiService) ListLaunchPlans(ctx context.Context, idProject 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
 		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
 	}
@@ -2805,7 +2835,8 @@ Fetch existing launch plan definitions matching input filters.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param optional nil or *ListLaunchPlans2Opts - Optional Parameters:
-     * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "IdName" (optional.String) -  User provided value for the resource.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -2816,6 +2847,7 @@ Fetch existing launch plan definitions matching input filters.
 */
 
 type ListLaunchPlans2Opts struct { 
+	IdResourceType optional.String
 	IdName optional.String
 	Limit optional.Int64
 	Token optional.String
@@ -2842,6 +2874,9 @@ func (a *AdminServiceApiService) ListLaunchPlans2(ctx context.Context, idProject
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.IdName.IsSet() {
 		localVarQueryParams.Add("id.name", parameterToString(localVarOptionals.IdName.Value(), ""))
 	}
@@ -3781,8 +3816,9 @@ Fetch existing task definitions matching input filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
  * @param optional nil or *ListTasksOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -3793,6 +3829,7 @@ Fetch existing task definitions matching input filters.
 */
 
 type ListTasksOpts struct { 
+	IdResourceType optional.String
 	Limit optional.Int64
 	Token optional.String
 	Filters optional.String
@@ -3819,6 +3856,9 @@ func (a *AdminServiceApiService) ListTasks(ctx context.Context, idProject string
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
 		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
 	}
@@ -3905,7 +3945,8 @@ Fetch existing task definitions matching input filters.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param optional nil or *ListTasks2Opts - Optional Parameters:
-     * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "IdName" (optional.String) -  User provided value for the resource.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -3916,6 +3957,7 @@ Fetch existing task definitions matching input filters.
 */
 
 type ListTasks2Opts struct { 
+	IdResourceType optional.String
 	IdName optional.String
 	Limit optional.Int64
 	Token optional.String
@@ -3942,6 +3984,9 @@ func (a *AdminServiceApiService) ListTasks2(ctx context.Context, idProject strin
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.IdName.IsSet() {
 		localVarQueryParams.Add("id.name", parameterToString(localVarOptionals.IdName.Value(), ""))
 	}
@@ -4151,8 +4196,9 @@ Fetch existing workflow definitions matching input filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
  * @param optional nil or *ListWorkflowsOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -4163,6 +4209,7 @@ Fetch existing workflow definitions matching input filters.
 */
 
 type ListWorkflowsOpts struct { 
+	IdResourceType optional.String
 	Limit optional.Int64
 	Token optional.String
 	Filters optional.String
@@ -4189,6 +4236,9 @@ func (a *AdminServiceApiService) ListWorkflows(ctx context.Context, idProject st
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
 		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
 	}
@@ -4275,7 +4325,8 @@ Fetch existing workflow definitions matching input filters.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param optional nil or *ListWorkflows2Opts - Optional Parameters:
-     * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "IdName" (optional.String) -  User provided value for the resource.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -4286,6 +4337,7 @@ Fetch existing workflow definitions matching input filters.
 */
 
 type ListWorkflows2Opts struct { 
+	IdResourceType optional.String
 	IdName optional.String
 	Limit optional.Int64
 	Token optional.String
@@ -4312,6 +4364,9 @@ func (a *AdminServiceApiService) ListWorkflows2(ctx context.Context, idProject s
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.IdName.IsSet() {
 		localVarQueryParams.Add("id.name", parameterToString(localVarOptionals.IdName.Value(), ""))
 	}
@@ -4775,7 +4830,7 @@ Update the fields associated with a NamedEntity
  * @param resourceType Resource type of the metadata to update
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param idName User provided value for the resource.
  * @param body
 
 @return AdminNamedEntityUpdateResponse

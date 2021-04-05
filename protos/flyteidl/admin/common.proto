@@ -6,20 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 // import "validate/validate.proto";
-
-// Encapsulation of fields that identifies a Flyte resource.
-// A resource can internally have multiple versions.
-message NamedEntityIdentifier {
-    // Name of the project the resource belongs to.
-    string project = 1;  // [(validate.rules).string.min_bytes = 1];
-    // Name of the domain the resource belongs to.
-    // A domain can be considered as a subset within a specific project.
-    string domain = 2;  // [(validate.rules).string.min_bytes = 1];
-    // User provided value for the resource.
-    // The combination of project + domain + name uniquely identifies the resource.
-    // +optional - in certain contexts - like 'List API', 'Launch plans'
-    string name = 3;
-}
+import public "flyteidl/core/named_entity_identifier.proto";
 
 // The status of the named entity is used to control its visibility in the UI.
 enum NamedEntityState {
@@ -47,7 +34,7 @@ message NamedEntityMetadata {
 // domain / name / resource type combination
 message NamedEntity {
     flyteidl.core.ResourceType resource_type = 1;
-    NamedEntityIdentifier id = 2;
+    flyteidl.core.NamedEntityIdentifier id = 2;
     NamedEntityMetadata metadata = 3;
 }
 
@@ -115,7 +102,7 @@ message NamedEntityListRequest {
 // Represents a list of NamedEntityIdentifiers.
 message NamedEntityIdentifierList {
     // A list of identifiers.
-    repeated NamedEntityIdentifier entities = 1;
+    repeated flyteidl.core.NamedEntityIdentifier entities = 1;
 
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query. If there are no more results, this value will be empty.
@@ -135,7 +122,7 @@ message NamedEntityList {
 // A request to retrieve the metadata associated with a NamedEntityIdentifier
 message NamedEntityGetRequest {
     flyteidl.core.ResourceType resource_type = 1;
-    NamedEntityIdentifier id = 2;
+    flyteidl.core.NamedEntityIdentifier id = 2;
 }
 
 // Request to set the referenced launch plan state to the configured value.
@@ -143,7 +130,7 @@ message NamedEntityUpdateRequest {
     // Resource type of the metadata to update
     flyteidl.core.ResourceType resource_type = 1;
     // Identifier of the metadata to update
-    NamedEntityIdentifier id = 2;
+    flyteidl.core.NamedEntityIdentifier id = 2;
 
     // Metadata object to set as the new value
     NamedEntityMetadata metadata = 3;
@@ -163,7 +150,7 @@ message ObjectGetRequest {
 // Resources include: Task, Workflow, LaunchPlan
 message ResourceListRequest {
     // id represents the unique identifier of the resource.
-    NamedEntityIdentifier id = 1;
+    flyteidl.core.NamedEntityIdentifier id = 1;
     // Indicates the number of resources to be returned.
     uint32 limit = 2;
     // In the case of multiple pages of results, this server-provided token can be used to fetch the next page

@@ -34,12 +34,30 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -501,11 +519,29 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdDomain"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "id.name"
         in: "query"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'."
+        description: "User provided value for the resource."
         required: false
         type: "string"
         x-exportParamName: "IdName"
@@ -739,11 +775,29 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdDomain"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "id.name"
         in: "query"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'."
+        description: "User provided value for the resource."
         required: false
         type: "string"
         x-exportParamName: "IdName"
@@ -819,12 +873,30 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "limit"
         in: "query"
         description: "Indicates the number of resources to be returned."
@@ -1048,12 +1120,30 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -1092,9 +1182,7 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
@@ -1792,11 +1880,29 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdDomain"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "id.name"
         in: "query"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'."
+        description: "User provided value for the resource."
         required: false
         type: "string"
         x-exportParamName: "IdName"
@@ -1872,12 +1978,30 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "limit"
         in: "query"
         description: "Indicates the number of resources to be returned."
@@ -2236,11 +2360,29 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdDomain"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "id.name"
         in: "query"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'."
+        description: "User provided value for the resource."
         required: false
         type: "string"
         x-exportParamName: "IdName"
@@ -2316,12 +2458,30 @@ paths:
         x-exportParamName: "IdDomain"
       - name: "id.name"
         in: "path"
-        description: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
+        description: "User provided value for the resource."
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "id.resource_type"
+        in: "query"
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
+          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
+          \ a compilation of multiple individual objects.\nEventually all Catalog\
+          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
+          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
+          \ manner to other Flyte objects"
+        required: false
+        type: "string"
+        default: "UNSPECIFIED"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
+        x-optionalDataType: "String"
       - name: "limit"
         in: "query"
         description: "Indicates the number of resources to be returned."
@@ -5403,7 +5563,7 @@ definitions:
       resource_type:
         $ref: "#/definitions/coreResourceType"
       id:
-        $ref: "#/definitions/adminNamedEntityIdentifier"
+        $ref: "#/definitions/coreNamedEntityIdentifier"
       metadata:
         $ref: "#/definitions/adminNamedEntityMetadata"
     title: "Describes information common to a NamedEntity, identified by a project\
@@ -5415,29 +5575,9 @@ definitions:
       resource_type: {}
       id:
         domain: "domain"
+        resource_type: {}
         name: "name"
         project: "project"
-  adminNamedEntityIdentifier:
-    type: "object"
-    properties:
-      project:
-        type: "string"
-        description: "Name of the project the resource belongs to."
-      domain:
-        type: "string"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-      name:
-        type: "string"
-        title: "User provided value for the resource.\nThe combination of project\
-          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
-          \ contexts - like 'List API', 'Launch plans'"
-    description: "Encapsulation of fields that identifies a Flyte resource.\nA resource\
-      \ can internally have multiple versions."
-    example:
-      domain: "domain"
-      name: "name"
-      project: "project"
   adminNamedEntityIdentifierList:
     type: "object"
     properties:
@@ -5445,7 +5585,7 @@ definitions:
         type: "array"
         description: "A list of identifiers."
         items:
-          $ref: "#/definitions/adminNamedEntityIdentifier"
+          $ref: "#/definitions/coreNamedEntityIdentifier"
       token:
         type: "string"
         description: "In the case of multiple pages of results, the server-provided\
@@ -5455,9 +5595,11 @@ definitions:
     example:
       entities:
       - domain: "domain"
+        resource_type: {}
         name: "name"
         project: "project"
       - domain: "domain"
+        resource_type: {}
         name: "name"
         project: "project"
       token: "token"
@@ -5483,6 +5625,7 @@ definitions:
         resource_type: {}
         id:
           domain: "domain"
+          resource_type: {}
           name: "name"
           project: "project"
       - metadata:
@@ -5491,6 +5634,7 @@ definitions:
         resource_type: {}
         id:
           domain: "domain"
+          resource_type: {}
           name: "name"
           project: "project"
       token: "token"
@@ -5527,7 +5671,7 @@ definitions:
         $ref: "#/definitions/coreResourceType"
       id:
         title: "Identifier of the metadata to update"
-        $ref: "#/definitions/adminNamedEntityIdentifier"
+        $ref: "#/definitions/coreNamedEntityIdentifier"
       metadata:
         title: "Metadata object to set as the new value"
         $ref: "#/definitions/adminNamedEntityMetadata"
@@ -23754,6 +23898,30 @@ definitions:
         dimensionality: {}
         format: "format"
       simple: {}
+  coreNamedEntityIdentifier:
+    type: "object"
+    properties:
+      resource_type:
+        description: "Identifies the specific type of resource that this identifer\
+          \ corresponds to."
+        $ref: "#/definitions/coreResourceType"
+      project:
+        type: "string"
+        description: "Name of the project the resource belongs to."
+      domain:
+        type: "string"
+        description: "Name of the domain the resource belongs to.\nA domain can be\
+          \ considered as a subset within a specific project."
+      name:
+        type: "string"
+        description: "User provided value for the resource."
+    description: "Encapsulation of fields that uniquely identifies a versioned Flyte\
+      \ resource."
+    example:
+      domain: "domain"
+      resource_type: {}
+      name: "name"
+      project: "project"
   coreNode:
     type: "object"
     properties:

@@ -9,11 +9,14 @@
 
 package flyteadmin
 
-// Encapsulation of fields that identifies a Flyte resource. A resource can internally have multiple versions.
-type AdminNamedEntityIdentifier struct {
+// Encapsulation of fields that uniquely identifies a versioned Flyte resource.
+type CoreNamedEntityIdentifier struct {
+	// Identifies the specific type of resource that this identifer corresponds to.
+	ResourceType *CoreResourceType `json:"resource_type,omitempty"`
 	// Name of the project the resource belongs to.
 	Project string `json:"project,omitempty"`
 	// Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
 	Domain string `json:"domain,omitempty"`
+	// User provided value for the resource.
 	Name string `json:"name,omitempty"`
 }

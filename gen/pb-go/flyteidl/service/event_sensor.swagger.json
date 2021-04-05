@@ -1,0 +1,1360 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "flyteidl/service/event_sensor.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/occurred": {
+      "get": {
+        "summary": "Enqueues an event target to be executed asynchronously.",
+        "description": "Notifies a downstream consumer that an event has occurred.",
+        "operationId": "EventOccurred",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/eventEventOccurredResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "execution_create_request.project",
+            "description": "Name of the project the execution belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.domain",
+            "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.name",
+            "description": "User provided value for the resource.\nIf none is provided the system will generate a unique string.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.launch_plan.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN",
+              "DATASET"
+            ],
+            "default": "UNSPECIFIED"
+          },
+          {
+            "name": "execution_create_request.spec.launch_plan.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.launch_plan.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.launch_plan.name",
+            "description": "User provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.launch_plan.version",
+            "description": "Specific version of the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.mode",
+            "description": " - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "MANUAL",
+              "SCHEDULED",
+              "SYSTEM",
+              "RELAUNCH",
+              "CHILD_WORKFLOW"
+            ],
+            "default": "MANUAL"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.principal",
+            "description": "Identifier of the entity that triggered this execution.\nFor systems using back-end authentication any value set here will be discarded in favor of the\nauthenticated user context.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.nesting",
+            "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.scheduled_at",
+            "description": "For scheduled executions, the requested time for execution for this specific schedule invocation.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.parent_node_execution.node_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.reference_execution.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.reference_execution.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.reference_execution.name",
+            "description": "User or system provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.metadata.system_metadata.execution_cluster",
+            "description": "Which execution cluster this execution ran on.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.disable_all",
+            "description": "This should be set to true if all notifications are intended to be disabled for this execution.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.iam_role",
+            "description": "iam_role references the fully qualified name of Identity \u0026 Access Management role to impersonate.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.k8s_service_account",
+            "description": "k8s_service_account references a kubernetes service account to impersonate.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_id",
+            "description": "client_id is the public id for the client to use. The system will not perform any pre-auth validation that the\nsecret requested matches the client_id indicated here.\n+required.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.group",
+            "description": "The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of\nthe v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.\nFor AWS Secret Manager, this should be the name of the secret.\n+required.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.group_version",
+            "description": "The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones\nthat do not support it.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.key",
+            "description": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should\nmatch one of the keys inside the secret. For AWS Secret Manager, it's ignored.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.mount_requirement",
+            "description": "mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail\nif the underlying key management system cannot satisfy that requirement. If not provided, the default location\nwill depend on the key management system.\n+optional.\n\n - ANY: Default case, indicates the client can tolerate either mounting options.\n - ENV_VAR: ENV_VAR indicates the secret needs to be mounted as an environment variable.\n - FILE: FILE indicates the secret needs to be mounted as a file.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ANY",
+              "ENV_VAR",
+              "FILE"
+            ],
+            "default": "ANY"
+          },
+          {
+            "name": "execution_create_request.spec.auth_role.assumable_iam_role",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.auth_role.kubernetes_service_account",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "execution_create_request.spec.quality_of_service.tier",
+            "description": " - UNDEFINED: Default: no quality of service specified.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNDEFINED",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ],
+            "default": "UNDEFINED"
+          },
+          {
+            "name": "execution_create_request.spec.quality_of_service.spec.queueing_budget",
+            "description": "Indicates how much queueing delay an execution can tolerate.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN",
+              "DATASET"
+            ],
+            "default": "UNSPECIFIED"
+          },
+          {
+            "name": "launch_plan.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan.name",
+            "description": "User provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan.version",
+            "description": "Specific version of the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventSensorService"
+        ]
+      }
+    },
+    "/api/v1/sensor_state/{event_type}": {
+      "get": {
+        "description": "Retrieve saved state for a specific event sensor type.",
+        "operationId": "GetEventSensorState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/eventEventSensorStateGetResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "event_type",
+            "description": "Indicates the event sensor type by unique name for which to fetch event sensor state.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventSensorService"
+        ]
+      },
+      "put": {
+        "description": "Update saved state for a specific event sensor type.",
+        "operationId": "UpdateEventSensorState",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/eventEventSensorStateUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "event_type",
+            "description": "Indicates the event sensor type by unique name for which to fetch event sensor state.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventSensorService"
+        ]
+      }
+    },
+    "/api/v1/targets/{event_type}": {
+      "get": {
+        "description": "Retrieve existing event target definitions.",
+        "operationId": "ListEventTargets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/eventEventTargetList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "event_type",
+            "description": "Indicates the event sensor type by unique name for which to fetch event targets.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventSensorService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "BlobTypeBlobDimensionality": {
+      "type": "string",
+      "enum": [
+        "SINGLE",
+        "MULTIPART"
+      ],
+      "default": "SINGLE"
+    },
+    "ExecutionMetadataExecutionMode": {
+      "type": "string",
+      "enum": [
+        "MANUAL",
+        "SCHEDULED",
+        "SYSTEM",
+        "RELAUNCH",
+        "CHILD_WORKFLOW"
+      ],
+      "default": "MANUAL",
+      "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution."
+    },
+    "QualityOfServiceTier": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "UNDEFINED",
+      "description": " - UNDEFINED: Default: no quality of service specified."
+    },
+    "RemoteFileEventAction": {
+      "type": "string",
+      "enum": [
+        "CREATE"
+      ],
+      "default": "CREATE",
+      "description": "Specifies what filetype action triggers the event.\n\n - CREATE: Trigger the event when a matching file has been created."
+    },
+    "SchemaColumnSchemaColumnType": {
+      "type": "string",
+      "enum": [
+        "INTEGER",
+        "FLOAT",
+        "STRING",
+        "BOOLEAN",
+        "DATETIME",
+        "DURATION"
+      ],
+      "default": "INTEGER"
+    },
+    "SchemaTypeSchemaColumn": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "A unique name -within the schema type- for the column"
+        },
+        "type": {
+          "$ref": "#/definitions/SchemaColumnSchemaColumnType",
+          "description": "The column type. This allows a limited set of types currently."
+        }
+      }
+    },
+    "SecretMountType": {
+      "type": "string",
+      "enum": [
+        "ANY",
+        "ENV_VAR",
+        "FILE"
+      ],
+      "default": "ANY",
+      "description": " - ANY: Default case, indicates the client can tolerate either mounting options.\n - ENV_VAR: ENV_VAR indicates the secret needs to be mounted as an environment variable.\n - FILE: FILE indicates the secret needs to be mounted as a file."
+    },
+    "adminAnnotations": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom annotations to be applied to the execution resource."
+        }
+      },
+      "description": "Annotation values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge annotations defined at registration and execution time."
+    },
+    "adminAuthRole": {
+      "type": "object",
+      "properties": {
+        "assumable_iam_role": {
+          "type": "string"
+        },
+        "kubernetes_service_account": {
+          "type": "string"
+        }
+      },
+      "title": "Defines permissions associated with executions.\nDeprecated, please use core.SecurityContext"
+    },
+    "adminEmailNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of email addresses recipients for this notification."
+        }
+      }
+    },
+    "adminExecutionCreateRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Name of the project the execution belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "title": "User provided value for the resource.\nIf none is provided the system will generate a unique string.\n+optional"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminExecutionSpec",
+          "description": "Additional fields necessary to launch the execution."
+        },
+        "inputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "The inputs required to start the execution. All required inputs must be\nincluded in this map. If not required and not provided, defaults apply."
+        }
+      },
+      "description": "Request to launch an execution with the given project, domain and optionally name."
+    },
+    "adminExecutionMetadata": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/definitions/ExecutionMetadataExecutionMode"
+        },
+        "principal": {
+          "type": "string",
+          "description": "Identifier of the entity that triggered this execution.\nFor systems using back-end authentication any value set here will be discarded in favor of the\nauthenticated user context."
+        },
+        "nesting": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
+        },
+        "scheduled_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "For scheduled executions, the requested time for execution for this specific schedule invocation."
+        },
+        "parent_node_execution": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "title": "Which subworkflow node launched this execution"
+        },
+        "reference_execution": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Optional, a reference workflow execution related to this execution.\nIn the case of a relaunch, this references the original workflow execution."
+        },
+        "system_metadata": {
+          "$ref": "#/definitions/adminSystemMetadata",
+          "description": "Optional, platform-specific metadata about the execution.\nIn this the future this may be gated behind an ACL or some sort of authorization."
+        }
+      },
+      "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."
+    },
+    "adminExecutionSpec": {
+      "type": "object",
+      "properties": {
+        "launch_plan": {
+          "$ref": "#/definitions/coreIdentifier",
+          "title": "Launch plan to be executed"
+        },
+        "inputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "Input values to be passed for the execution"
+        },
+        "metadata": {
+          "$ref": "#/definitions/adminExecutionMetadata",
+          "title": "Metadata for the execution"
+        },
+        "notifications": {
+          "$ref": "#/definitions/adminNotificationList",
+          "description": "List of notifications based on Execution status transitions\nWhen this list is not empty it is used rather than any notifications defined in the referenced launch plan.\nWhen this list is empty, the notifications defined for the launch plan will be applied."
+        },
+        "disable_all": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "This should be set to true if all notifications are intended to be disabled for this execution."
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Labels to apply to the execution resource."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Annotations to apply to the execution resource."
+        },
+        "security_context": {
+          "$ref": "#/definitions/coreSecurityContext",
+          "description": "Optional: security context override to apply this execution."
+        },
+        "auth_role": {
+          "$ref": "#/definitions/adminAuthRole",
+          "description": "Optional: auth override to apply this execution."
+        },
+        "quality_of_service": {
+          "$ref": "#/definitions/coreQualityOfService",
+          "description": "Indicates the runtime priority of the execution."
+        }
+      },
+      "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
+    },
+    "adminLabels": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom labels to be applied to the execution resource."
+        }
+      },
+      "description": "Label values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge labels defined at registration and execution time."
+    },
+    "adminNotification": {
+      "type": "object",
+      "properties": {
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreWorkflowExecutionPhase"
+          },
+          "description": "A list of phases to which users can associate the notifications to."
+        },
+        "email": {
+          "$ref": "#/definitions/adminEmailNotification",
+          "title": "option (validate.required) = true;"
+        },
+        "pager_duty": {
+          "$ref": "#/definitions/adminPagerDutyNotification"
+        },
+        "slack": {
+          "$ref": "#/definitions/adminSlackNotification"
+        }
+      },
+      "description": "Represents a structure for notifications based on execution status.\nThe Notification content is configured within Admin. Future iterations could\nexpose configuring notifications with custom content."
+    },
+    "adminNotificationList": {
+      "type": "object",
+      "properties": {
+        "notifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNotification"
+          }
+        }
+      }
+    },
+    "adminPagerDutyNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Currently, PagerDuty notifications leverage email to trigger a notification."
+        }
+      }
+    },
+    "adminSlackNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Currently, Slack notifications leverage email to trigger a notification."
+        }
+      }
+    },
+    "adminSystemMetadata": {
+      "type": "object",
+      "properties": {
+        "execution_cluster": {
+          "type": "string",
+          "description": "Which execution cluster this execution ran on."
+        }
+      },
+      "description": "Represents system rather than user-facing metadata about an execution."
+    },
+    "coreBinary": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "byte"
+        },
+        "tag": {
+          "type": "string"
+        }
+      },
+      "description": "A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.\nIt's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data."
+    },
+    "coreBlob": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/coreBlobMetadata"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "description": "Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.\nThere are no restrictions on how the uri is formatted since it will depend on how to interact with the store."
+    },
+    "coreBlobMetadata": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/coreBlobType"
+        }
+      }
+    },
+    "coreBlobType": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "title": "Format can be a free form string understood by SDK/UI etc like\ncsv, parquet etc"
+        },
+        "dimensionality": {
+          "$ref": "#/definitions/BlobTypeBlobDimensionality"
+        }
+      },
+      "title": "Defines type behavior for blob objects"
+    },
+    "coreError": {
+      "type": "object",
+      "properties": {
+        "failed_node_id": {
+          "type": "string",
+          "description": "The node id that threw the error."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message thrown."
+        }
+      },
+      "description": "Represents an error thrown from a node."
+    },
+    "coreIdentifier": {
+      "type": "object",
+      "properties": {
+        "resource_type": {
+          "$ref": "#/definitions/coreResourceType",
+          "description": "Identifies the specific type of resource that this identifer corresponds to."
+        },
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "description": "User provided value for the resource."
+        },
+        "version": {
+          "type": "string",
+          "description": "Specific version of the resource."
+        }
+      },
+      "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
+    },
+    "coreIdentity": {
+      "type": "object",
+      "properties": {
+        "iam_role": {
+          "type": "string",
+          "description": "iam_role references the fully qualified name of Identity \u0026 Access Management role to impersonate."
+        },
+        "k8s_service_account": {
+          "type": "string",
+          "description": "k8s_service_account references a kubernetes service account to impersonate."
+        },
+        "oauth2_client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "description": "oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when\nmaking external calls."
+        }
+      },
+      "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."
+    },
+    "coreLiteral": {
+      "type": "object",
+      "properties": {
+        "scalar": {
+          "$ref": "#/definitions/coreScalar",
+          "description": "A simple value."
+        },
+        "collection": {
+          "$ref": "#/definitions/coreLiteralCollection",
+          "description": "A collection of literals to allow nesting."
+        },
+        "map": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "A map of strings to literals."
+        }
+      },
+      "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
+    },
+    "coreLiteralCollection": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
+    },
+    "coreLiteralMap": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
+    },
+    "coreNamedEntityIdentifier": {
+      "type": "object",
+      "properties": {
+        "resource_type": {
+          "$ref": "#/definitions/coreResourceType",
+          "description": "Identifies the specific type of resource that this identifer corresponds to."
+        },
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "description": "User provided value for the resource."
+        }
+      },
+      "description": "Encapsulation of fields that uniquely identifies a versioned Flyte resource."
+    },
+    "coreNodeExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string"
+        },
+        "execution_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        }
+      },
+      "description": "Encapsulation of fields that identify a Flyte node execution entity."
+    },
+    "coreOAuth2Client": {
+      "type": "object",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "title": "client_id is the public id for the client to use. The system will not perform any pre-auth validation that the\nsecret requested matches the client_id indicated here.\n+required"
+        },
+        "client_secret": {
+          "$ref": "#/definitions/coreSecret",
+          "title": "client_secret is a reference to the secret used to authenticate the OAuth2 client.\n+required"
+        }
+      },
+      "description": "OAuth2Client encapsulates OAuth2 Client Credentials to be used when making calls on behalf of that task."
+    },
+    "coreOAuth2TokenRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "name indicates a unique id for the token request within this task token requests. It'll be used as a suffix for\nenvironment variables and as a filename for mounting tokens as files.\n+required"
+        },
+        "type": {
+          "$ref": "#/definitions/coreOAuth2TokenRequestType",
+          "title": "type indicates the type of the request to make. Defaults to CLIENT_CREDENTIALS.\n+required"
+        },
+        "client": {
+          "$ref": "#/definitions/coreOAuth2Client",
+          "title": "client references the client_id/secret to use to request the OAuth2 token.\n+required"
+        },
+        "idp_discovery_endpoint": {
+          "type": "string",
+          "title": "idp_discovery_endpoint references the discovery endpoint used to retrieve token endpoint and other related\ninformation.\n+optional"
+        },
+        "token_endpoint": {
+          "type": "string",
+          "title": "token_endpoint references the token issuance endpoint. If idp_discovery_endpoint is not provided, this parameter is\nmandatory.\n+optional"
+        }
+      },
+      "description": "OAuth2TokenRequest encapsulates information needed to request an OAuth2 token.\nFLYTE_TOKENS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\ntokens are passed through environment variables.\nFLYTE_TOKENS_PATH_PREFIX will be passed to indicate the prefix of the path where secrets will be mounted if tokens\nare passed through file mounts."
+    },
+    "coreOAuth2TokenRequestType": {
+      "type": "string",
+      "enum": [
+        "CLIENT_CREDENTIALS"
+      ],
+      "default": "CLIENT_CREDENTIALS",
+      "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
+    },
+    "corePrimitive": {
+      "type": "object",
+      "properties": {
+        "integer": {
+          "type": "string",
+          "format": "int64"
+        },
+        "float_value": {
+          "type": "number",
+          "format": "double"
+        },
+        "string_value": {
+          "type": "string"
+        },
+        "boolean": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration": {
+          "type": "string"
+        }
+      },
+      "title": "Primitive Types"
+    },
+    "coreQualityOfService": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "$ref": "#/definitions/QualityOfServiceTier"
+        },
+        "spec": {
+          "$ref": "#/definitions/coreQualityOfServiceSpec"
+        }
+      },
+      "description": "Indicates the priority of an execution."
+    },
+    "coreQualityOfServiceSpec": {
+      "type": "object",
+      "properties": {
+        "queueing_budget": {
+          "type": "string",
+          "description": "Indicates how much queueing delay an execution can tolerate."
+        }
+      },
+      "description": "Represents customized execution run-time attributes."
+    },
+    "coreResourceType": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "TASK",
+        "WORKFLOW",
+        "LAUNCH_PLAN",
+        "DATASET"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"
+    },
+    "coreScalar": {
+      "type": "object",
+      "properties": {
+        "primitive": {
+          "$ref": "#/definitions/corePrimitive"
+        },
+        "blob": {
+          "$ref": "#/definitions/coreBlob"
+        },
+        "binary": {
+          "$ref": "#/definitions/coreBinary"
+        },
+        "schema": {
+          "$ref": "#/definitions/flyteidlcoreSchema"
+        },
+        "none_type": {
+          "$ref": "#/definitions/coreVoid"
+        },
+        "error": {
+          "$ref": "#/definitions/coreError"
+        },
+        "generic": {
+          "$ref": "#/definitions/protobufStruct"
+        }
+      }
+    },
+    "coreSchemaType": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SchemaTypeSchemaColumn"
+          },
+          "description": "A list of ordered columns this schema comprises of."
+        }
+      },
+      "description": "Defines schema columns and types to strongly type-validate schemas interoperability."
+    },
+    "coreSecret": {
+      "type": "object",
+      "properties": {
+        "group": {
+          "type": "string",
+          "title": "The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of\nthe v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.\nFor AWS Secret Manager, this should be the name of the secret.\n+required"
+        },
+        "group_version": {
+          "type": "string",
+          "title": "The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones\nthat do not support it.\n+optional"
+        },
+        "key": {
+          "type": "string",
+          "title": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should\nmatch one of the keys inside the secret. For AWS Secret Manager, it's ignored.\n+optional"
+        },
+        "mount_requirement": {
+          "$ref": "#/definitions/SecretMountType",
+          "title": "mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail\nif the underlying key management system cannot satisfy that requirement. If not provided, the default location\nwill depend on the key management system.\n+optional"
+        }
+      },
+      "description": "Secret encapsulates information about the secret a task needs to proceed. An environment variable\nFLYTE_SECRETS_ENV_PREFIX will be passed to indicate the prefix of the environment variables that will be present if\nsecrets are passed through environment variables.\nFLYTE_SECRETS_DEFAULT_DIR will be passed to indicate the prefix of the path where secrets will be mounted if secrets\nare passed through file mounts."
+    },
+    "coreSecurityContext": {
+      "type": "object",
+      "properties": {
+        "run_as": {
+          "$ref": "#/definitions/coreIdentity",
+          "description": "run_as encapsulates the identity a pod should run as. If the task fills in multiple fields here, it'll be up to the\nbackend plugin to choose the appropriate identity for the execution engine the task will run on."
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSecret"
+          },
+          "description": "secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreOAuth2TokenRequest"
+          },
+          "description": "tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the\npod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS\nBatch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access\nto the secret) and to pass it to the remote execution engine."
+        }
+      },
+      "description": "SecurityContext holds security attributes that apply to tasks."
+    },
+    "coreVoid": {
+      "type": "object",
+      "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
+    },
+    "coreWorkflowExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "description": "User or system provided value for the resource."
+        }
+      },
+      "title": "Encapsulation of fields that uniquely identifies a Flyte workflow execution"
+    },
+    "coreWorkflowExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDING",
+        "SUCCEEDED",
+        "FAILING",
+        "FAILED",
+        "ABORTED",
+        "TIMED_OUT"
+      ],
+      "default": "UNDEFINED"
+    },
+    "eventCustomEvent": {
+      "type": "object",
+      "properties": {
+        "target_type": {
+          "type": "string",
+          "description": "Used to filter ListEventTarget queries by deployed sensors."
+        },
+        "custom_info": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "Custom, marshalled data that the event sensor of type knows how to parse.\nThis can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct."
+        }
+      },
+      "description": "Allow users to register event targets for custom event sensors they deploy on their\nown Flyte deployments."
+    },
+    "eventEventOccurredResponse": {
+      "type": "object",
+      "description": "Purposefully empty, may be populated in the future."
+    },
+    "eventEventSensorState": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "title": "Optionally offloaded state"
+        },
+        "custom_info": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "In-line custom state. This should be used when the saved state is small in size."
+        }
+      },
+      "description": "Defines custom state an event sensor of a specific type can durably persist."
+    },
+    "eventEventSensorStateGetResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/eventEventSensorState"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Event sensor provided timestamp for when this state was last specified."
+        }
+      },
+      "description": "Saved state for a specific event sensor type."
+    },
+    "eventEventSensorStateUpdateResponse": {
+      "type": "object",
+      "description": "Purposefully empty, may be populated in the future."
+    },
+    "eventEventTarget": {
+      "type": "object",
+      "properties": {
+        "workflow_event": {
+          "$ref": "#/definitions/eventWorkflowEvent"
+        },
+        "remote_file_event": {
+          "$ref": "#/definitions/eventRemoteFileEvent"
+        },
+        "custom_event": {
+          "$ref": "#/definitions/eventCustomEvent",
+          "description": "For extensible use-cases and custom defined event sensors deployed to users' Flyte deployments."
+        },
+        "launch_plan": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Identifies a launch plan to create a workflow execution when the above event occurs."
+        },
+        "event_timeout": {
+          "type": "string",
+          "title": "+optional"
+        },
+        "event_trigger_arg": {
+          "type": "string",
+          "description": "Optional, the event trigger will schedule the execution with an input whose name is\nthe value of event_trigger_arg. The input value is determined by the specific event.\nFor example, in the case of a RemoteFileEvent, the full file path will be substituted as the trigger arg value."
+        }
+      },
+      "description": "This messages defines an event which should trigger a corresponding target."
+    },
+    "eventEventTargetList": {
+      "type": "object",
+      "properties": {
+        "event_targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/eventEventTarget"
+          },
+          "description": "All event targets registered for an event type specified in an EventTargetListRequest."
+        },
+        "token": {
+          "type": "string",
+          "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
+        }
+      }
+    },
+    "eventFilePrefix": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "title": "Full"
+        },
+        "pattern": {
+          "type": "string",
+          "title": "Optional, pattern to match within the prefix\n+optional"
+        }
+      },
+      "description": "A file prefix defines a matchable prefix with an optional regex sub-pattern for which to trigger events.\nFor example, with just the prefix s3://my-s3-bucket/foo/ matches all files under the prefix\nBut with pattern \"*/bar/*.txt\", the file s3://my-s3-bucket/foo/1.txt would no longer match, whereas s3://my-s3-bucket/foo/2/bar/1.txt would."
+    },
+    "eventRemoteFileEvent": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The full file path which identifies the file."
+        },
+        "prefix": {
+          "$ref": "#/definitions/eventFilePrefix"
+        },
+        "action": {
+          "$ref": "#/definitions/RemoteFileEventAction"
+        }
+      },
+      "description": "Defines events triggered by the designated action performed on the specified file (or prefix)."
+    },
+    "eventWorkflowEvent": {
+      "type": "object",
+      "properties": {
+        "execution_identifier": {
+          "$ref": "#/definitions/coreIdentifier"
+        },
+        "named_entity_identifier": {
+          "$ref": "#/definitions/coreNamedEntityIdentifier"
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreWorkflowExecutionPhase"
+          }
+        }
+      },
+      "description": "This message is used to configure events triggered by a terminated workflow execution matching\none of the designated phases."
+    },
+    "flyteidlcoreSchema": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/coreSchemaType"
+        }
+      },
+      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
+    },
+    "protobufListValue": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufValue"
+          },
+          "description": "Repeated field of dynamically typed values."
+        }
+      },
+      "description": "`ListValue` is a wrapper around a repeated field of values.\n\nThe JSON representation for `ListValue` is JSON array."
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\n The JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
+    },
+    "protobufStruct": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/protobufValue"
+          },
+          "description": "Unordered map of dynamically typed values."
+        }
+      },
+      "description": "`Struct` represents a structured data value, consisting of fields\nwhich map to dynamically typed values. In some languages, `Struct`\nmight be supported by a native representation. For example, in\nscripting languages like JS a struct is represented as an\nobject. The details of that representation are described together\nwith the proto support for the language.\n\nThe JSON representation for `Struct` is JSON object."
+    },
+    "protobufValue": {
+      "type": "object",
+      "properties": {
+        "null_value": {
+          "$ref": "#/definitions/protobufNullValue",
+          "description": "Represents a null value."
+        },
+        "number_value": {
+          "type": "number",
+          "format": "double",
+          "description": "Represents a double value."
+        },
+        "string_value": {
+          "type": "string",
+          "description": "Represents a string value."
+        },
+        "bool_value": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Represents a boolean value."
+        },
+        "struct_value": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "Represents a structured value."
+        },
+        "list_value": {
+          "$ref": "#/definitions/protobufListValue",
+          "description": "Represents a repeated `Value`."
+        }
+      },
+      "description": "`Value` represents a dynamically typed value which can be either\nnull, a number, a string, a boolean, a recursive struct value, or a\nlist of values. A producer of value is expected to set one of that\nvariants, absence of any variant indicates an error.\n\nThe JSON representation for `Value` is JSON value."
+    }
+  }
+}

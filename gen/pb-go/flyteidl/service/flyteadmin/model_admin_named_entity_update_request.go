@@ -12,6 +12,6 @@ package flyteadmin
 // Request to set the referenced launch plan state to the configured value.
 type AdminNamedEntityUpdateRequest struct {
 	ResourceType *CoreResourceType `json:"resource_type,omitempty"`
-	Id *AdminNamedEntityIdentifier `json:"id,omitempty"`
+	Id *CoreNamedEntityIdentifier `json:"id,omitempty"`
 	Metadata *AdminNamedEntityMetadata `json:"metadata,omitempty"`
 }

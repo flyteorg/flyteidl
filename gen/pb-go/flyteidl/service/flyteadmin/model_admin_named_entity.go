@@ -11,6 +11,6 @@ package flyteadmin
 
 type AdminNamedEntity struct {
 	ResourceType *CoreResourceType `json:"resource_type,omitempty"`
-	Id *AdminNamedEntityIdentifier `json:"id,omitempty"`
+	Id *CoreNamedEntityIdentifier `json:"id,omitempty"`
 	Metadata *AdminNamedEntityMetadata `json:"metadata,omitempty"`
 }

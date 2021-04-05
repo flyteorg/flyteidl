@@ -55,7 +55,6 @@ from flyteadmin.models.admin_matchable_attributes_configuration import AdminMatc
 from flyteadmin.models.admin_matchable_resource import AdminMatchableResource
 from flyteadmin.models.admin_matching_attributes import AdminMatchingAttributes
 from flyteadmin.models.admin_named_entity import AdminNamedEntity
-from flyteadmin.models.admin_named_entity_identifier import AdminNamedEntityIdentifier
 from flyteadmin.models.admin_named_entity_identifier_list import AdminNamedEntityIdentifierList
 from flyteadmin.models.admin_named_entity_list import AdminNamedEntityList
 from flyteadmin.models.admin_named_entity_metadata import AdminNamedEntityMetadata
@@ -158,6 +157,7 @@ from flyteadmin.models.core_literal import CoreLiteral
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection
 from flyteadmin.models.core_literal_map import CoreLiteralMap
 from flyteadmin.models.core_literal_type import CoreLiteralType
+from flyteadmin.models.core_named_entity_identifier import CoreNamedEntityIdentifier
 from flyteadmin.models.core_node import CoreNode
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase

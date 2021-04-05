@@ -25,3 +25,5 @@ This refers to the interface for all the event messages exiting from the Flyte
 	:name: eventtoc
 
 	event.proto
+	sensor.proto
+	sensor_state.proto

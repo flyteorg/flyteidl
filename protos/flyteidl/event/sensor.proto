@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package flyteidl.event;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event";
+
+
+import "flyteidl/admin/execution.proto";
+import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
+import "flyteidl/core/named_entity_identifier.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
+
+// This message is used to configure events triggered by a terminated workflow execution matching
+// one of the designated phases.
+message WorkflowEvent {
+    // Specifies the upstream workflow whose completion triggers this event.
+    oneof id {
+        flyteidl.core.Identifier execution_identifier = 1;
+
+        flyteidl.core.NamedEntityIdentifier named_entity_identifier = 2;
+    }
+
+    repeated flyteidl.core.WorkflowExecution.Phase phases = 3;
+}
+
+// A file prefix defines a matchable prefix with an optional regex sub-pattern for which to trigger events.
+// For example, with just the prefix s3://my-s3-bucket/foo/ matches all files under the prefix
+// But with pattern "*/bar/*.txt", the file s3://my-s3-bucket/foo/1.txt would no longer match, whereas s3://my-s3-bucket/foo/2/bar/1.txt would.
+message FilePrefix {
+    // Full 
+    string prefix = 1;
+
+    // Optional, pattern to match within the prefix
+    // +optional
+    string pattern = 2;
+}
+
+// Defines events triggered by the designated action performed on the specified file (or prefix).
+message RemoteFileEvent {
+    oneof file {
+        // The full file path which identifies the file.
+        string path = 1;
+
+        FilePrefix prefix = 2;
+    }
+
+    // Specifies what filetype action triggers the event.
+    enum Action {
+        // Trigger the event when a matching file has been created.
+        CREATE = 0;
+    }
+    Action action = 3;
+}
+
+// Allow users to register event targets for custom event sensors they deploy on their
+// own Flyte deployments.
+message CustomEvent {
+    // Used to filter ListEventTarget queries by deployed sensors.
+    string target_type = 1;
+
+    // Custom, marshalled data that the event sensor of type knows how to parse.
+    // This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+    google.protobuf.Struct custom_info = 2;
+}
+
+// This messages defines an event which should trigger a corresponding target.
+message EventTarget {
+    oneof event {
+        WorkflowEvent workflow_event = 1;
+
+        RemoteFileEvent remote_file_event = 2;
+
+        // For extensible use-cases and custom defined event sensors deployed to users' Flyte deployments.
+        CustomEvent custom_event = 16;
+    }
+
+    oneof target {
+        // Identifies a launch plan to create a workflow execution when the above event occurs.
+        flyteidl.core.Identifier launch_plan = 3;
+    }
+
+    // +optional
+    google.protobuf.Duration event_timeout = 4;
+
+    // Optional, the event trigger will schedule the execution with an input whose name is
+    // the value of event_trigger_arg. The input value is determined by the specific event.
+    // For example, in the case of a RemoteFileEvent, the full file path will be substituted as the trigger arg value.
+    string event_trigger_arg = 5;
+}
+
+// A request to fetch event targets registered for a specific event type.
+message EventTargetListRequest {
+    // Indicates the event sensor type by unique name for which to fetch event targets.
+    string event_type = 1; 
+
+    // Indicates the number of resources to be returned.
+    uint32 limit = 2;
+
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query.
+    // +optional
+    string token = 3;
+}
+
+message EventTargetList {
+    // All event targets registered for an event type specified in an EventTargetListRequest.
+    repeated EventTarget event_targets = 1;
+
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query. If there are no more results, this value will be empty.
+    string token = 2;
+}
+
+// Notifies a downstream consumer that an event has occurred.
+message EventOccurredRequest {
+    oneof target {
+        // Specifies a workflow execution to be created.
+        flyteidl.admin.ExecutionCreateRequest execution_create_request = 1;
+    }
+
+    oneof reference {
+        // Specifies the launch plan reference that originally specified this event as a trigger.
+        flyteidl.core.Identifier launch_plan = 2;
+    }
+}
+
+// Purposefully empty, may be populated in the future.
+message EventOccurredResponse { }

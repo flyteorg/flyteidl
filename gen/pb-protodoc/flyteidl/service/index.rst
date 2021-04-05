@@ -11,3 +11,4 @@ service.
 	:name: servicetoc
 
 	admin.proto
+	event_sensor.proto

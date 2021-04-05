@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package flyteidl.core;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
+
+import "flyteidl/core/identifier.proto";
+
+// Encapsulation of fields that uniquely identifies a versioned Flyte resource.
+message NamedEntityIdentifier {
+    // Identifies the specific type of resource that this identifer corresponds to.
+    ResourceType resource_type  = 1;
+
+    // Name of the project the resource belongs to.
+    string project              = 2;
+
+    // Name of the domain the resource belongs to.
+    // A domain can be considered as a subset within a specific project.
+    string domain               = 3;
+
+    // User provided value for the resource.
+    string name                 = 4;
+}

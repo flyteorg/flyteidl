@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package flyteidl.event;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+// Defines custom state an event sensor of a specific type can durably persist.
+message EventSensorState {
+    oneof state {
+        // Optionally offloaded state
+        string uri = 1;
+        
+        // In-line custom state. This should be used when the saved state is small in size.
+        google.protobuf.Struct custom_info = 2;
+    }
+}
+
+// A request to fetch saved state for a specific event type.
+message EventSensorStateGetRequest {
+    // Indicates the event sensor type by unique name for which to fetch event sensor state.
+    string event_type = 1;
+}
+
+// Saved state for a specific event sensor type.
+message EventSensorStateGetResponse {
+    EventSensorState state = 1;
+
+    // Event sensor provided timestamp for when this state was last specified.
+    google.protobuf.Timestamp updated_at = 2;
+}
+
+// Updates saved state for a specific event sensor type.
+message EventSensorStateUpdateRequest {
+    // Indicates the event sensor type by unique name for which to fetch event sensor state.
+    string event_type = 1;
+
+    EventSensorState state = 2;
+   
+    // Event sensor provided timestamp for when this state was last specified.
+    google.protobuf.Timestamp updated_at = 3;
+}
+
+// Purposefully empty, may be populated in the future.
+message EventSensorStateUpdateResponse{ }

@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_named_entity_identifier import AdminNamedEntityIdentifier  # noqa: F401,E501
+from flyteadmin.models.core_named_entity_identifier import CoreNamedEntityIdentifier  # noqa: F401,E501
 
 
 class AdminNamedEntityIdentifierList(object):
@@ -33,7 +33,7 @@ class AdminNamedEntityIdentifierList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'entities': 'list[AdminNamedEntityIdentifier]',
+        'entities': 'list[CoreNamedEntityIdentifier]',
         'token': 'str'
     }
 
@@ -61,7 +61,7 @@ class AdminNamedEntityIdentifierList(object):
         A list of identifiers.  # noqa: E501
 
         :return: The entities of this AdminNamedEntityIdentifierList.  # noqa: E501
-        :rtype: list[AdminNamedEntityIdentifier]
+        :rtype: list[CoreNamedEntityIdentifier]
         """
         return self._entities
 
@@ -72,7 +72,7 @@ class AdminNamedEntityIdentifierList(object):
         A list of identifiers.  # noqa: E501
 
         :param entities: The entities of this AdminNamedEntityIdentifierList.  # noqa: E501
-        :type: list[AdminNamedEntityIdentifier]
+        :type: list[CoreNamedEntityIdentifier]
         """
 
         self._entities = entities

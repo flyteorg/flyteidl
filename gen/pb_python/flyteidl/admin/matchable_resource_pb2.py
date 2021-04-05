@@ -15,6 +15,10 @@ _sym_db = _symbol_database.Default()
 
 
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+try:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl_dot_core_dot_named__entity__identifier__pb2
+except AttributeError:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl.core.named_entity_identifier_pb2
 from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
 
 

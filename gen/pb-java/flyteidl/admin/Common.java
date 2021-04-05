@@ -149,974 +149,6 @@ public final class Common {
     // @@protoc_insertion_point(enum_scope:flyteidl.admin.NamedEntityState)
   }
 
-  public interface NamedEntityIdentifierOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.NamedEntityIdentifier)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Name of the project the resource belongs to.
-     * </pre>
-     *
-     * <code>string project = 1;</code>
-     */
-    java.lang.String getProject();
-    /**
-     * <pre>
-     * Name of the project the resource belongs to.
-     * </pre>
-     *
-     * <code>string project = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getProjectBytes();
-
-    /**
-     * <pre>
-     * Name of the domain the resource belongs to.
-     * A domain can be considered as a subset within a specific project.
-     * </pre>
-     *
-     * <code>string domain = 2;</code>
-     */
-    java.lang.String getDomain();
-    /**
-     * <pre>
-     * Name of the domain the resource belongs to.
-     * A domain can be considered as a subset within a specific project.
-     * </pre>
-     *
-     * <code>string domain = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDomainBytes();
-
-    /**
-     * <pre>
-     * User provided value for the resource.
-     * The combination of project + domain + name uniquely identifies the resource.
-     * +optional - in certain contexts - like 'List API', 'Launch plans'
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <pre>
-     * User provided value for the resource.
-     * The combination of project + domain + name uniquely identifies the resource.
-     * +optional - in certain contexts - like 'List API', 'Launch plans'
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-  }
-  /**
-   * <pre>
-   * Encapsulation of fields that identifies a Flyte resource.
-   * A resource can internally have multiple versions.
-   * </pre>
-   *
-   * Protobuf type {@code flyteidl.admin.NamedEntityIdentifier}
-   */
-  public  static final class NamedEntityIdentifier extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.NamedEntityIdentifier)
-      NamedEntityIdentifierOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use NamedEntityIdentifier.newBuilder() to construct.
-    private NamedEntityIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private NamedEntityIdentifier() {
-      project_ = "";
-      domain_ = "";
-      name_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NamedEntityIdentifier(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              domain_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.admin.Common.internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.admin.Common.internal_static_flyteidl_admin_NamedEntityIdentifier_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Common.NamedEntityIdentifier.class, flyteidl.admin.Common.NamedEntityIdentifier.Builder.class);
-    }
-
-    public static final int PROJECT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object project_;
-    /**
-     * <pre>
-     * Name of the project the resource belongs to.
-     * </pre>
-     *
-     * <code>string project = 1;</code>
-     */
-    public java.lang.String getProject() {
-      java.lang.Object ref = project_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        project_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Name of the project the resource belongs to.
-     * </pre>
-     *
-     * <code>string project = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getProjectBytes() {
-      java.lang.Object ref = project_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        project_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DOMAIN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object domain_;
-    /**
-     * <pre>
-     * Name of the domain the resource belongs to.
-     * A domain can be considered as a subset within a specific project.
-     * </pre>
-     *
-     * <code>string domain = 2;</code>
-     */
-    public java.lang.String getDomain() {
-      java.lang.Object ref = domain_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        domain_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Name of the domain the resource belongs to.
-     * A domain can be considered as a subset within a specific project.
-     * </pre>
-     *
-     * <code>string domain = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDomainBytes() {
-      java.lang.Object ref = domain_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        domain_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * User provided value for the resource.
-     * The combination of project + domain + name uniquely identifies the resource.
-     * +optional - in certain contexts - like 'List API', 'Launch plans'
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * User provided value for the resource.
-     * The combination of project + domain + name uniquely identifies the resource.
-     * +optional - in certain contexts - like 'List API', 'Launch plans'
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getProjectBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
-      }
-      if (!getDomainBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getProjectBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
-      }
-      if (!getDomainBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.admin.Common.NamedEntityIdentifier)) {
-        return super.equals(obj);
-      }
-      flyteidl.admin.Common.NamedEntityIdentifier other = (flyteidl.admin.Common.NamedEntityIdentifier) obj;
-
-      if (!getProject()
-          .equals(other.getProject())) return false;
-      if (!getDomain()
-          .equals(other.getDomain())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
-      hash = (53 * hash) + getProject().hashCode();
-      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
-      hash = (53 * hash) + getDomain().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.Common.NamedEntityIdentifier parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.admin.Common.NamedEntityIdentifier prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Encapsulation of fields that identifies a Flyte resource.
-     * A resource can internally have multiple versions.
-     * </pre>
-     *
-     * Protobuf type {@code flyteidl.admin.NamedEntityIdentifier}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.NamedEntityIdentifier)
-        flyteidl.admin.Common.NamedEntityIdentifierOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_NamedEntityIdentifier_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Common.NamedEntityIdentifier.class, flyteidl.admin.Common.NamedEntityIdentifier.Builder.class);
-      }
-
-      // Construct using flyteidl.admin.Common.NamedEntityIdentifier.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        project_ = "";
-
-        domain_ = "";
-
-        name_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.Common.NamedEntityIdentifier getDefaultInstanceForType() {
-        return flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.Common.NamedEntityIdentifier build() {
-        flyteidl.admin.Common.NamedEntityIdentifier result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.Common.NamedEntityIdentifier buildPartial() {
-        flyteidl.admin.Common.NamedEntityIdentifier result = new flyteidl.admin.Common.NamedEntityIdentifier(this);
-        result.project_ = project_;
-        result.domain_ = domain_;
-        result.name_ = name_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Common.NamedEntityIdentifier) {
-          return mergeFrom((flyteidl.admin.Common.NamedEntityIdentifier)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.admin.Common.NamedEntityIdentifier other) {
-        if (other == flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance()) return this;
-        if (!other.getProject().isEmpty()) {
-          project_ = other.project_;
-          onChanged();
-        }
-        if (!other.getDomain().isEmpty()) {
-          domain_ = other.domain_;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.admin.Common.NamedEntityIdentifier parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Common.NamedEntityIdentifier) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object project_ = "";
-      /**
-       * <pre>
-       * Name of the project the resource belongs to.
-       * </pre>
-       *
-       * <code>string project = 1;</code>
-       */
-      public java.lang.String getProject() {
-        java.lang.Object ref = project_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          project_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name of the project the resource belongs to.
-       * </pre>
-       *
-       * <code>string project = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getProjectBytes() {
-        java.lang.Object ref = project_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          project_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name of the project the resource belongs to.
-       * </pre>
-       *
-       * <code>string project = 1;</code>
-       */
-      public Builder setProject(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        project_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name of the project the resource belongs to.
-       * </pre>
-       *
-       * <code>string project = 1;</code>
-       */
-      public Builder clearProject() {
-        
-        project_ = getDefaultInstance().getProject();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name of the project the resource belongs to.
-       * </pre>
-       *
-       * <code>string project = 1;</code>
-       */
-      public Builder setProjectBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        project_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object domain_ = "";
-      /**
-       * <pre>
-       * Name of the domain the resource belongs to.
-       * A domain can be considered as a subset within a specific project.
-       * </pre>
-       *
-       * <code>string domain = 2;</code>
-       */
-      public java.lang.String getDomain() {
-        java.lang.Object ref = domain_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          domain_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name of the domain the resource belongs to.
-       * A domain can be considered as a subset within a specific project.
-       * </pre>
-       *
-       * <code>string domain = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDomainBytes() {
-        java.lang.Object ref = domain_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          domain_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name of the domain the resource belongs to.
-       * A domain can be considered as a subset within a specific project.
-       * </pre>
-       *
-       * <code>string domain = 2;</code>
-       */
-      public Builder setDomain(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        domain_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name of the domain the resource belongs to.
-       * A domain can be considered as a subset within a specific project.
-       * </pre>
-       *
-       * <code>string domain = 2;</code>
-       */
-      public Builder clearDomain() {
-        
-        domain_ = getDefaultInstance().getDomain();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name of the domain the resource belongs to.
-       * A domain can be considered as a subset within a specific project.
-       * </pre>
-       *
-       * <code>string domain = 2;</code>
-       */
-      public Builder setDomainBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        domain_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <pre>
-       * User provided value for the resource.
-       * The combination of project + domain + name uniquely identifies the resource.
-       * +optional - in certain contexts - like 'List API', 'Launch plans'
-       * </pre>
-       *
-       * <code>string name = 3;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * User provided value for the resource.
-       * The combination of project + domain + name uniquely identifies the resource.
-       * +optional - in certain contexts - like 'List API', 'Launch plans'
-       * </pre>
-       *
-       * <code>string name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * User provided value for the resource.
-       * The combination of project + domain + name uniquely identifies the resource.
-       * +optional - in certain contexts - like 'List API', 'Launch plans'
-       * </pre>
-       *
-       * <code>string name = 3;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User provided value for the resource.
-       * The combination of project + domain + name uniquely identifies the resource.
-       * +optional - in certain contexts - like 'List API', 'Launch plans'
-       * </pre>
-       *
-       * <code>string name = 3;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User provided value for the resource.
-       * The combination of project + domain + name uniquely identifies the resource.
-       * +optional - in certain contexts - like 'List API', 'Launch plans'
-       * </pre>
-       *
-       * <code>string name = 3;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.NamedEntityIdentifier)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.NamedEntityIdentifier)
-    private static final flyteidl.admin.Common.NamedEntityIdentifier DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Common.NamedEntityIdentifier();
-    }
-
-    public static flyteidl.admin.Common.NamedEntityIdentifier getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<NamedEntityIdentifier>
-        PARSER = new com.google.protobuf.AbstractParser<NamedEntityIdentifier>() {
-      @java.lang.Override
-      public NamedEntityIdentifier parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NamedEntityIdentifier(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<NamedEntityIdentifier> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<NamedEntityIdentifier> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.admin.Common.NamedEntityIdentifier getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface NamedEntityMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.NamedEntityMetadata)
       com.google.protobuf.MessageOrBuilder {
@@ -1864,17 +896,17 @@ public final class Common {
     flyteidl.core.IdentifierOuterClass.ResourceType getResourceType();
 
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     boolean hasId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getId();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder();
 
     /**
      * <code>.flyteidl.admin.NamedEntityMetadata metadata = 3;</code>
@@ -1941,11 +973,11 @@ public final class Common {
               break;
             }
             case 18: {
-              flyteidl.admin.Common.NamedEntityIdentifier.Builder subBuilder = null;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry);
+              id_ = input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(id_);
                 id_ = subBuilder.buildPartial();
@@ -2016,23 +1048,23 @@ public final class Common {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private flyteidl.admin.Common.NamedEntityIdentifier id_;
+    private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getId() {
-      return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
+      return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
@@ -2468,29 +1500,29 @@ public final class Common {
         return this;
       }
 
-      private flyteidl.admin.Common.NamedEntityIdentifier id_;
+      private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> idBuilder_;
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getId() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
         if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+          return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         } else {
           return idBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder setId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder setId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2504,10 +1536,10 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder setId(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
           onChanged();
@@ -2518,13 +1550,13 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder mergeId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder mergeId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (id_ != null) {
             id_ =
-              flyteidl.admin.Common.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
@@ -2536,7 +1568,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -2550,33 +1582,33 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getIdBuilder() {
         
         onChanged();
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
           return idBuilder_.getMessageOrBuilder();
         } else {
           return id_ == null ?
-              flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   getId(),
                   getParentForChildren(),
                   isClean());
@@ -6676,24 +5708,24 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    java.util.List<flyteidl.admin.Common.NamedEntityIdentifier> 
+    java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> 
         getEntitiesList();
     /**
      * <pre>
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getEntities(int index);
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getEntities(int index);
     /**
      * <pre>
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
     int getEntitiesCount();
     /**
@@ -6701,18 +5733,18 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    java.util.List<? extends flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+    java.util.List<? extends flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
         getEntitiesOrBuilderList();
     /**
      * <pre>
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
         int index);
 
     /**
@@ -6782,11 +5814,11 @@ public final class Common {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                entities_ = new java.util.ArrayList<flyteidl.admin.Common.NamedEntityIdentifier>();
+                entities_ = new java.util.ArrayList<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier>();
                 mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
-                  input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -6832,15 +5864,15 @@ public final class Common {
 
     private int bitField0_;
     public static final int ENTITIES_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.admin.Common.NamedEntityIdentifier> entities_;
+    private java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> entities_;
     /**
      * <pre>
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    public java.util.List<flyteidl.admin.Common.NamedEntityIdentifier> getEntitiesList() {
+    public java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> getEntitiesList() {
       return entities_;
     }
     /**
@@ -6848,9 +5880,9 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    public java.util.List<? extends flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+    public java.util.List<? extends flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
         getEntitiesOrBuilderList() {
       return entities_;
     }
@@ -6859,7 +5891,7 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
     public int getEntitiesCount() {
       return entities_.size();
@@ -6869,9 +5901,9 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getEntities(int index) {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getEntities(int index) {
       return entities_.get(index);
     }
     /**
@@ -6879,9 +5911,9 @@ public final class Common {
      * A list of identifiers.
      * </pre>
      *
-     * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+     * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
         int index) {
       return entities_.get(index);
     }
@@ -7295,26 +6327,26 @@ public final class Common {
       }
       private int bitField0_;
 
-      private java.util.List<flyteidl.admin.Common.NamedEntityIdentifier> entities_ =
+      private java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> entities_ =
         java.util.Collections.emptyList();
       private void ensureEntitiesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          entities_ = new java.util.ArrayList<flyteidl.admin.Common.NamedEntityIdentifier>(entities_);
+          entities_ = new java.util.ArrayList<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier>(entities_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> entitiesBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> entitiesBuilder_;
 
       /**
        * <pre>
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public java.util.List<flyteidl.admin.Common.NamedEntityIdentifier> getEntitiesList() {
+      public java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> getEntitiesList() {
         if (entitiesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(entities_);
         } else {
@@ -7326,7 +6358,7 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public int getEntitiesCount() {
         if (entitiesBuilder_ == null) {
@@ -7340,9 +6372,9 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getEntities(int index) {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getEntities(int index) {
         if (entitiesBuilder_ == null) {
           return entities_.get(index);
         } else {
@@ -7354,10 +6386,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder setEntities(
-          int index, flyteidl.admin.Common.NamedEntityIdentifier value) {
+          int index, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7375,10 +6407,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder setEntities(
-          int index, flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          int index, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.set(index, builderForValue.build());
@@ -7393,9 +6425,9 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public Builder addEntities(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder addEntities(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7413,10 +6445,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder addEntities(
-          int index, flyteidl.admin.Common.NamedEntityIdentifier value) {
+          int index, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (entitiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7434,10 +6466,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder addEntities(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.add(builderForValue.build());
@@ -7452,10 +6484,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder addEntities(
-          int index, flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          int index, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           entities_.add(index, builderForValue.build());
@@ -7470,10 +6502,10 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder addAllEntities(
-          java.lang.Iterable<? extends flyteidl.admin.Common.NamedEntityIdentifier> values) {
+          java.lang.Iterable<? extends flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier> values) {
         if (entitiesBuilder_ == null) {
           ensureEntitiesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7489,7 +6521,7 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder clearEntities() {
         if (entitiesBuilder_ == null) {
@@ -7506,7 +6538,7 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
       public Builder removeEntities(int index) {
         if (entitiesBuilder_ == null) {
@@ -7523,9 +6555,9 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getEntitiesBuilder(
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getEntitiesBuilder(
           int index) {
         return getEntitiesFieldBuilder().getBuilder(index);
       }
@@ -7534,9 +6566,9 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getEntitiesOrBuilder(
           int index) {
         if (entitiesBuilder_ == null) {
           return entities_.get(index);  } else {
@@ -7548,9 +6580,9 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public java.util.List<? extends flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+      public java.util.List<? extends flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
            getEntitiesOrBuilderList() {
         if (entitiesBuilder_ != null) {
           return entitiesBuilder_.getMessageOrBuilderList();
@@ -7563,41 +6595,41 @@ public final class Common {
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder addEntitiesBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder addEntitiesBuilder() {
         return getEntitiesFieldBuilder().addBuilder(
-            flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance());
+            flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance());
       }
       /**
        * <pre>
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder addEntitiesBuilder(
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder addEntitiesBuilder(
           int index) {
         return getEntitiesFieldBuilder().addBuilder(
-            index, flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance());
+            index, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance());
       }
       /**
        * <pre>
        * A list of identifiers.
        * </pre>
        *
-       * <code>repeated .flyteidl.admin.NamedEntityIdentifier entities = 1;</code>
+       * <code>repeated .flyteidl.core.NamedEntityIdentifier entities = 1;</code>
        */
-      public java.util.List<flyteidl.admin.Common.NamedEntityIdentifier.Builder> 
+      public java.util.List<flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder> 
            getEntitiesBuilderList() {
         return getEntitiesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getEntitiesFieldBuilder() {
         if (entitiesBuilder_ == null) {
           entitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   entities_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -8853,17 +7885,17 @@ public final class Common {
     flyteidl.core.IdentifierOuterClass.ResourceType getResourceType();
 
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     boolean hasId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getId();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder();
   }
   /**
    * <pre>
@@ -8916,11 +7948,11 @@ public final class Common {
               break;
             }
             case 18: {
-              flyteidl.admin.Common.NamedEntityIdentifier.Builder subBuilder = null;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry);
+              id_ = input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(id_);
                 id_ = subBuilder.buildPartial();
@@ -8978,23 +8010,23 @@ public final class Common {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private flyteidl.admin.Common.NamedEntityIdentifier id_;
+    private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getId() {
-      return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
+      return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
@@ -9378,29 +8410,29 @@ public final class Common {
         return this;
       }
 
-      private flyteidl.admin.Common.NamedEntityIdentifier id_;
+      private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> idBuilder_;
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getId() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
         if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+          return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         } else {
           return idBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder setId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder setId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9414,10 +8446,10 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder setId(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
           onChanged();
@@ -9428,13 +8460,13 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder mergeId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder mergeId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (id_ != null) {
             id_ =
-              flyteidl.admin.Common.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
@@ -9446,7 +8478,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -9460,33 +8492,33 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getIdBuilder() {
         
         onChanged();
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
           return idBuilder_.getMessageOrBuilder();
         } else {
           return id_ == null ?
-              flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   getId(),
                   getParentForChildren(),
                   isClean());
@@ -9573,7 +8605,7 @@ public final class Common {
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     boolean hasId();
     /**
@@ -9581,17 +8613,17 @@ public final class Common {
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getId();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId();
     /**
      * <pre>
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder();
 
     /**
      * <pre>
@@ -9669,11 +8701,11 @@ public final class Common {
               break;
             }
             case 18: {
-              flyteidl.admin.Common.NamedEntityIdentifier.Builder subBuilder = null;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry);
+              id_ = input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(id_);
                 id_ = subBuilder.buildPartial();
@@ -9752,13 +8784,13 @@ public final class Common {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private flyteidl.admin.Common.NamedEntityIdentifier id_;
+    private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
     /**
      * <pre>
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
     public boolean hasId() {
       return id_ != null;
@@ -9768,19 +8800,19 @@ public final class Common {
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getId() {
-      return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
+      return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
     }
     /**
      * <pre>
      * Identifier of the metadata to update
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
@@ -10247,15 +9279,15 @@ public final class Common {
         return this;
       }
 
-      private flyteidl.admin.Common.NamedEntityIdentifier id_;
+      private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
@@ -10265,11 +9297,11 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getId() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
         if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+          return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         } else {
           return idBuilder_.getMessage();
         }
@@ -10279,9 +9311,9 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder setId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder setId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10299,10 +9331,10 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder setId(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
           onChanged();
@@ -10317,13 +9349,13 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public Builder mergeId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder mergeId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (id_ != null) {
             id_ =
-              flyteidl.admin.Common.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
@@ -10339,7 +9371,7 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -10357,9 +9389,9 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getIdBuilder() {
         
         onChanged();
         return getIdFieldBuilder().getBuilder();
@@ -10369,14 +9401,14 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
           return idBuilder_.getMessageOrBuilder();
         } else {
           return id_ == null ?
-              flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         }
       }
       /**
@@ -10384,14 +9416,14 @@ public final class Common {
        * Identifier of the metadata to update
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 2;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   getId(),
                   getParentForChildren(),
                   isClean());
@@ -11707,7 +10739,7 @@ public final class Common {
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
@@ -11715,17 +10747,17 @@ public final class Common {
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getId();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId();
     /**
      * <pre>
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder();
 
     /**
      * <pre>
@@ -11855,11 +10887,11 @@ public final class Common {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.Common.NamedEntityIdentifier.Builder subBuilder = null;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry);
+              id_ = input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(id_);
                 id_ = subBuilder.buildPartial();
@@ -11930,13 +10962,13 @@ public final class Common {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private flyteidl.admin.Common.NamedEntityIdentifier id_;
+    private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
     /**
      * <pre>
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
@@ -11946,19 +10978,19 @@ public final class Common {
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getId() {
-      return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
+      return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
     }
     /**
      * <pre>
      * id represents the unique identifier of the resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
@@ -12504,15 +11536,15 @@ public final class Common {
         return this;
       }
 
-      private flyteidl.admin.Common.NamedEntityIdentifier id_;
+      private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
@@ -12522,11 +11554,11 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getId() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
         if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+          return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         } else {
           return idBuilder_.getMessage();
         }
@@ -12536,9 +11568,9 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public Builder setId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder setId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12556,10 +11588,10 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public Builder setId(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
           onChanged();
@@ -12574,13 +11606,13 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public Builder mergeId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder mergeId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (id_ != null) {
             id_ =
-              flyteidl.admin.Common.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
@@ -12596,7 +11628,7 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -12614,9 +11646,9 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getIdBuilder() {
         
         onChanged();
         return getIdFieldBuilder().getBuilder();
@@ -12626,14 +11658,14 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
           return idBuilder_.getMessageOrBuilder();
         } else {
           return id_ == null ?
-              flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         }
       }
       /**
@@ -12641,14 +11673,14 @@ public final class Common {
        * id represents the unique identifier of the resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   getId(),
                   getParentForChildren(),
                   isClean());
@@ -20364,11 +19396,6 @@ public final class Common {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_NamedEntityIdentifier_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_NamedEntityMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -20494,70 +19521,69 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/admin/common.proto\022\016flyteidl." +
       "admin\032\035flyteidl/core/execution.proto\032\036fl" +
-      "yteidl/core/identifier.proto\"F\n\025NamedEnt" +
-      "ityIdentifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain" +
-      "\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"[\n\023NamedEntityMetad" +
-      "ata\022\023\n\013description\030\001 \001(\t\022/\n\005state\030\002 \001(\0162" +
-      " .flyteidl.admin.NamedEntityState\"\253\001\n\013Na" +
-      "medEntity\0222\n\rresource_type\030\001 \001(\0162\033.flyte" +
-      "idl.core.ResourceType\0221\n\002id\030\002 \001(\0132%.flyt" +
-      "eidl.admin.NamedEntityIdentifier\0225\n\010meta" +
-      "data\030\003 \001(\0132#.flyteidl.admin.NamedEntityM" +
-      "etadata\"r\n\004Sort\022\013\n\003key\030\001 \001(\t\0221\n\tdirectio" +
-      "n\030\002 \001(\0162\036.flyteidl.admin.Sort.Direction\"" +
-      "*\n\tDirection\022\016\n\nDESCENDING\020\000\022\r\n\tASCENDIN" +
-      "G\020\001\"\231\001\n NamedEntityIdentifierListRequest" +
-      "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005lim" +
-      "it\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\013" +
-      "2\024.flyteidl.admin.Sort\022\017\n\007filters\030\006 \001(\t\"" +
-      "\303\001\n\026NamedEntityListRequest\0222\n\rresource_t" +
-      "ype\030\001 \001(\0162\033.flyteidl.core.ResourceType\022\017" +
-      "\n\007project\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\r\n\005limit" +
-      "\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007sort_by\030\006 \001(\0132\024" +
-      ".flyteidl.admin.Sort\022\017\n\007filters\030\007 \001(\t\"c\n" +
-      "\031NamedEntityIdentifierList\0227\n\010entities\030\001" +
-      " \003(\0132%.flyteidl.admin.NamedEntityIdentif" +
-      "ier\022\r\n\005token\030\002 \001(\t\"O\n\017NamedEntityList\022-\n" +
-      "\010entities\030\001 \003(\0132\033.flyteidl.admin.NamedEn" +
-      "tity\022\r\n\005token\030\002 \001(\t\"~\n\025NamedEntityGetReq" +
-      "uest\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.c" +
-      "ore.ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl." +
-      "admin.NamedEntityIdentifier\"\270\001\n\030NamedEnt" +
-      "ityUpdateRequest\0222\n\rresource_type\030\001 \001(\0162" +
-      "\033.flyteidl.core.ResourceType\0221\n\002id\030\002 \001(\013" +
-      "2%.flyteidl.admin.NamedEntityIdentifier\022" +
-      "5\n\010metadata\030\003 \001(\0132#.flyteidl.admin.Named" +
-      "EntityMetadata\"\033\n\031NamedEntityUpdateRespo" +
-      "nse\"9\n\020ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.fl" +
-      "yteidl.core.Identifier\"\236\001\n\023ResourceListR" +
-      "equest\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.Name" +
-      "dEntityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005toke" +
-      "n\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(" +
-      "\0132\024.flyteidl.admin.Sort\"-\n\021EmailNotifica" +
-      "tion\022\030\n\020recipients_email\030\001 \003(\t\"1\n\025PagerD" +
-      "utyNotification\022\030\n\020recipients_email\030\001 \003(" +
-      "\t\"-\n\021SlackNotification\022\030\n\020recipients_ema" +
-      "il\030\001 \003(\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(" +
-      "\0162&.flyteidl.core.WorkflowExecution.Phas" +
-      "e\0222\n\005email\030\002 \001(\0132!.flyteidl.admin.EmailN" +
-      "otificationH\000\022;\n\npager_duty\030\003 \001(\0132%.flyt" +
-      "eidl.admin.PagerDutyNotificationH\000\0222\n\005sl" +
-      "ack\030\004 \001(\0132!.flyteidl.admin.SlackNotifica" +
-      "tionH\000B\006\n\004type\"%\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r" +
-      "\n\005bytes\030\002 \001(\003\"k\n\006Labels\0222\n\006values\030\001 \003(\0132" +
-      "\".flyteidl.admin.Labels.ValuesEntry\032-\n\013V" +
-      "aluesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyt" +
-      "eidl.admin.Annotations.ValuesEntry\032-\n\013Va" +
-      "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"X\n\010AuthRole\022\034\n\022assumable_iam_role\030\001 \001(" +
-      "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH" +
-      "\000B\010\n\006method\"5\n\023RawOutputDataConfig\022\036\n\026ou" +
-      "tput_location_prefix\030\001 \001(\t*\\\n\020NamedEntit" +
-      "yState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED" +
-      "_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "yteidl/core/identifier.proto\032+flyteidl/c" +
+      "ore/named_entity_identifier.proto\"[\n\023Nam" +
+      "edEntityMetadata\022\023\n\013description\030\001 \001(\t\022/\n" +
+      "\005state\030\002 \001(\0162 .flyteidl.admin.NamedEntit" +
+      "yState\"\252\001\n\013NamedEntity\0222\n\rresource_type\030" +
+      "\001 \001(\0162\033.flyteidl.core.ResourceType\0220\n\002id" +
+      "\030\002 \001(\0132$.flyteidl.core.NamedEntityIdenti" +
+      "fier\0225\n\010metadata\030\003 \001(\0132#.flyteidl.admin." +
+      "NamedEntityMetadata\"r\n\004Sort\022\013\n\003key\030\001 \001(\t" +
+      "\0221\n\tdirection\030\002 \001(\0162\036.flyteidl.admin.Sor" +
+      "t.Direction\"*\n\tDirection\022\016\n\nDESCENDING\020\000" +
+      "\022\r\n\tASCENDING\020\001\"\231\001\n NamedEntityIdentifie" +
+      "rListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030" +
+      "\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007s" +
+      "ort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\022\017\n\007fi" +
+      "lters\030\006 \001(\t\"\303\001\n\026NamedEntityListRequest\0222" +
+      "\n\rresource_type\030\001 \001(\0162\033.flyteidl.core.Re" +
+      "sourceType\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030\003 " +
+      "\001(\t\022\r\n\005limit\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007sor" +
+      "t_by\030\006 \001(\0132\024.flyteidl.admin.Sort\022\017\n\007filt" +
+      "ers\030\007 \001(\t\"b\n\031NamedEntityIdentifierList\0226" +
+      "\n\010entities\030\001 \003(\0132$.flyteidl.core.NamedEn" +
+      "tityIdentifier\022\r\n\005token\030\002 \001(\t\"O\n\017NamedEn" +
+      "tityList\022-\n\010entities\030\001 \003(\0132\033.flyteidl.ad" +
+      "min.NamedEntity\022\r\n\005token\030\002 \001(\t\"}\n\025NamedE" +
+      "ntityGetRequest\0222\n\rresource_type\030\001 \001(\0162\033" +
+      ".flyteidl.core.ResourceType\0220\n\002id\030\002 \001(\0132" +
+      "$.flyteidl.core.NamedEntityIdentifier\"\267\001" +
+      "\n\030NamedEntityUpdateRequest\0222\n\rresource_t" +
+      "ype\030\001 \001(\0162\033.flyteidl.core.ResourceType\0220" +
+      "\n\002id\030\002 \001(\0132$.flyteidl.core.NamedEntityId" +
+      "entifier\0225\n\010metadata\030\003 \001(\0132#.flyteidl.ad" +
+      "min.NamedEntityMetadata\"\033\n\031NamedEntityUp" +
+      "dateResponse\"9\n\020ObjectGetRequest\022%\n\002id\030\001" +
+      " \001(\0132\031.flyteidl.core.Identifier\"\235\001\n\023Reso" +
+      "urceListRequest\0220\n\002id\030\001 \001(\0132$.flyteidl.c" +
+      "ore.NamedEntityIdentifier\022\r\n\005limit\030\002 \001(\r" +
+      "\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort" +
+      "_by\030\005 \001(\0132\024.flyteidl.admin.Sort\"-\n\021Email" +
+      "Notification\022\030\n\020recipients_email\030\001 \003(\t\"1" +
+      "\n\025PagerDutyNotification\022\030\n\020recipients_em" +
+      "ail\030\001 \003(\t\"-\n\021SlackNotification\022\030\n\020recipi" +
+      "ents_email\030\001 \003(\t\"\363\001\n\014Notification\0226\n\006pha" +
+      "ses\030\001 \003(\0162&.flyteidl.core.WorkflowExecut" +
+      "ion.Phase\0222\n\005email\030\002 \001(\0132!.flyteidl.admi" +
+      "n.EmailNotificationH\000\022;\n\npager_duty\030\003 \001(" +
+      "\0132%.flyteidl.admin.PagerDutyNotification" +
+      "H\000\0222\n\005slack\030\004 \001(\0132!.flyteidl.admin.Slack" +
+      "NotificationH\000B\006\n\004type\"%\n\007UrlBlob\022\013\n\003url" +
+      "\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003\"k\n\006Labels\0222\n\006value" +
+      "s\030\001 \003(\0132\".flyteidl.admin.Labels.ValuesEn" +
+      "try\032-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"u\n\013Annotations\0227\n\006values\030\001 \003(" +
+      "\0132\'.flyteidl.admin.Annotations.ValuesEnt" +
+      "ry\032-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"X\n\010AuthRole\022\034\n\022assumable_iam_r" +
+      "ole\030\001 \001(\tH\000\022$\n\032kubernetes_service_accoun" +
+      "t\030\002 \001(\tH\000B\010\n\006method\"5\n\023RawOutputDataConf" +
+      "ig\022\036\n\026output_location_prefix\030\001 \001(\t*\\\n\020Na" +
+      "medEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022" +
+      "\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GEN" +
+      "ERATED\020\002B7Z5github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/adminP\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20572,117 +19598,112 @@ public final class Common {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.NamedEntityIdentifierOuterClass.getDescriptor(),
         }, assigner);
-    internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_flyteidl_admin_NamedEntityIdentifier_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Name", });
     internal_static_flyteidl_admin_NamedEntityMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_admin_NamedEntityMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityMetadata_descriptor,
         new java.lang.String[] { "Description", "State", });
     internal_static_flyteidl_admin_NamedEntity_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_NamedEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntity_descriptor,
         new java.lang.String[] { "ResourceType", "Id", "Metadata", });
     internal_static_flyteidl_admin_Sort_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_Sort_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Sort_descriptor,
         new java.lang.String[] { "Key", "Direction", });
     internal_static_flyteidl_admin_NamedEntityIdentifierListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_NamedEntityIdentifierListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityIdentifierListRequest_descriptor,
         new java.lang.String[] { "Project", "Domain", "Limit", "Token", "SortBy", "Filters", });
     internal_static_flyteidl_admin_NamedEntityListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_NamedEntityListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityListRequest_descriptor,
         new java.lang.String[] { "ResourceType", "Project", "Domain", "Limit", "Token", "SortBy", "Filters", });
     internal_static_flyteidl_admin_NamedEntityIdentifierList_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_NamedEntityIdentifierList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityIdentifierList_descriptor,
         new java.lang.String[] { "Entities", "Token", });
     internal_static_flyteidl_admin_NamedEntityList_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_NamedEntityList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityList_descriptor,
         new java.lang.String[] { "Entities", "Token", });
     internal_static_flyteidl_admin_NamedEntityGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_NamedEntityGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityGetRequest_descriptor,
         new java.lang.String[] { "ResourceType", "Id", });
     internal_static_flyteidl_admin_NamedEntityUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_NamedEntityUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityUpdateRequest_descriptor,
         new java.lang.String[] { "ResourceType", "Id", "Metadata", });
     internal_static_flyteidl_admin_NamedEntityUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_NamedEntityUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NamedEntityUpdateResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_ObjectGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_ObjectGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ObjectGetRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_ResourceListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_admin_ResourceListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ResourceListRequest_descriptor,
         new java.lang.String[] { "Id", "Limit", "Token", "Filters", "SortBy", });
     internal_static_flyteidl_admin_EmailNotification_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_admin_EmailNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_EmailNotification_descriptor,
         new java.lang.String[] { "RecipientsEmail", });
     internal_static_flyteidl_admin_PagerDutyNotification_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_PagerDutyNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_PagerDutyNotification_descriptor,
         new java.lang.String[] { "RecipientsEmail", });
     internal_static_flyteidl_admin_SlackNotification_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_SlackNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SlackNotification_descriptor,
         new java.lang.String[] { "RecipientsEmail", });
     internal_static_flyteidl_admin_Notification_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_admin_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Notification_descriptor,
         new java.lang.String[] { "Phases", "Email", "PagerDuty", "Slack", "Type", });
     internal_static_flyteidl_admin_UrlBlob_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_admin_UrlBlob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_UrlBlob_descriptor,
         new java.lang.String[] { "Url", "Bytes", });
     internal_static_flyteidl_admin_Labels_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_admin_Labels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Labels_descriptor,
@@ -20694,7 +19715,7 @@ public final class Common {
         internal_static_flyteidl_admin_Labels_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Annotations_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_admin_Annotations_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Annotations_descriptor,
@@ -20706,19 +19727,20 @@ public final class Common {
         internal_static_flyteidl_admin_Annotations_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_AuthRole_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_flyteidl_admin_AuthRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuthRole_descriptor,
         new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", "Method", });
     internal_static_flyteidl_admin_RawOutputDataConfig_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_admin_RawOutputDataConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_RawOutputDataConfig_descriptor,
         new java.lang.String[] { "OutputLocationPrefix", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.NamedEntityIdentifierOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

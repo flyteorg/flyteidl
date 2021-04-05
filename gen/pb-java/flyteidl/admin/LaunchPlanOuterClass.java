@@ -11496,17 +11496,17 @@ public final class LaunchPlanOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifier getId();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId();
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder();
   }
   /**
    * <pre>
@@ -11552,11 +11552,11 @@ public final class LaunchPlanOuterClass {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.Common.NamedEntityIdentifier.Builder subBuilder = null;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder subBuilder = null;
               if (id_ != null) {
                 subBuilder = id_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.admin.Common.NamedEntityIdentifier.parser(), extensionRegistry);
+              id_ = input.readMessage(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(id_);
                 id_ = subBuilder.buildPartial();
@@ -11597,23 +11597,23 @@ public final class LaunchPlanOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private flyteidl.admin.Common.NamedEntityIdentifier id_;
+    private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifier getId() {
-      return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
+      return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
     }
     /**
-     * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+     * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
      */
-    public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+    public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
@@ -11936,29 +11936,29 @@ public final class LaunchPlanOuterClass {
         return this;
       }
 
-      private flyteidl.admin.Common.NamedEntityIdentifier id_;
+      private flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> idBuilder_;
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier getId() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier getId() {
         if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+          return id_ == null ? flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         } else {
           return idBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public Builder setId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder setId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11972,10 +11972,10 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public Builder setId(
-          flyteidl.admin.Common.NamedEntityIdentifier.Builder builderForValue) {
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
           onChanged();
@@ -11986,13 +11986,13 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public Builder mergeId(flyteidl.admin.Common.NamedEntityIdentifier value) {
+      public Builder mergeId(flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier value) {
         if (idBuilder_ == null) {
           if (id_ != null) {
             id_ =
-              flyteidl.admin.Common.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
@@ -12004,7 +12004,7 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       public Builder clearId() {
         if (idBuilder_ == null) {
@@ -12018,33 +12018,33 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder getIdBuilder() {
         
         onChanged();
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
-      public flyteidl.admin.Common.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
+      public flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getIdOrBuilder() {
         if (idBuilder_ != null) {
           return idBuilder_.getMessageOrBuilder();
         } else {
           return id_ == null ?
-              flyteidl.admin.Common.NamedEntityIdentifier.getDefaultInstance() : id_;
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.getDefaultInstance() : id_;
         }
       }
       /**
-       * <code>.flyteidl.admin.NamedEntityIdentifier id = 1;</code>
+       * <code>.flyteidl.core.NamedEntityIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder> 
+          flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder> 
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.NamedEntityIdentifier, flyteidl.admin.Common.NamedEntityIdentifier.Builder, flyteidl.admin.Common.NamedEntityIdentifierOrBuilder>(
+              flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifier.Builder, flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder>(
                   getId(),
                   getParentForChildren(),
                   isClean());
@@ -13486,58 +13486,59 @@ public final class LaunchPlanOuterClass {
       "eidl.admin\032\035flyteidl/core/execution.prot" +
       "o\032\034flyteidl/core/literals.proto\032\036flyteid" +
       "l/core/identifier.proto\032\035flyteidl/core/i" +
-      "nterface.proto\032\034flyteidl/core/security.p" +
-      "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
-      "teidl/admin/common.proto\032\037google/protobu" +
-      "f/timestamp.proto\"n\n\027LaunchPlanCreateReq" +
-      "uest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
-      "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
-      "hPlanSpec\"\032\n\030LaunchPlanCreateResponse\"\225\001" +
-      "\n\nLaunchPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
-      ".Identifier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.adm" +
-      "in.LaunchPlanSpec\0222\n\007closure\030\003 \001(\0132!.fly" +
-      "teidl.admin.LaunchPlanClosure\"Q\n\016LaunchP" +
-      "lanList\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl" +
-      ".admin.LaunchPlan\022\r\n\005token\030\002 \001(\t\"T\n\004Auth" +
-      "\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022$\n\032kubern" +
-      "etes_service_account\030\002 \001(\tH\000B\010\n\006method\"\344" +
-      "\004\n\016LaunchPlanSpec\022.\n\013workflow_id\030\001 \001(\0132\031" +
-      ".flyteidl.core.Identifier\022;\n\017entity_meta" +
-      "data\030\002 \001(\0132\".flyteidl.admin.LaunchPlanMe" +
-      "tadata\0223\n\016default_inputs\030\003 \001(\0132\033.flyteid" +
-      "l.core.ParameterMap\022/\n\014fixed_inputs\030\004 \001(" +
-      "\0132\031.flyteidl.core.LiteralMap\022\020\n\004role\030\005 \001" +
-      "(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.flyteidl.admin." +
-      "Labels\0220\n\013annotations\030\007 \001(\0132\033.flyteidl.a" +
-      "dmin.Annotations\022&\n\004auth\030\010 \001(\0132\024.flyteid" +
-      "l.admin.AuthB\002\030\001\022/\n\tauth_role\030\t \001(\0132\030.fl" +
-      "yteidl.admin.AuthRoleB\002\030\001\0228\n\020security_co" +
-      "ntext\030\n \001(\0132\036.flyteidl.core.SecurityCont" +
-      "ext\022;\n\022quality_of_service\030\020 \001(\0132\037.flytei" +
-      "dl.core.QualityOfService\022C\n\026raw_output_d" +
-      "ata_config\030\021 \001(\0132#.flyteidl.admin.RawOut" +
-      "putDataConfig\"\217\002\n\021LaunchPlanClosure\022.\n\005s" +
-      "tate\030\001 \001(\0162\037.flyteidl.admin.LaunchPlanSt" +
-      "ate\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteidl." +
-      "core.ParameterMap\0224\n\020expected_outputs\030\003 " +
-      "\001(\0132\032.flyteidl.core.VariableMap\022.\n\ncreat" +
-      "ed_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022" +
-      ".\n\nupdated_at\030\005 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\"u\n\022LaunchPlanMetadata\022*\n\010schedul" +
-      "e\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rnot" +
-      "ifications\030\002 \003(\0132\034.flyteidl.admin.Notifi" +
-      "cation\"p\n\027LaunchPlanUpdateRequest\022%\n\002id\030" +
-      "\001 \001(\0132\031.flyteidl.core.Identifier\022.\n\005stat" +
-      "e\030\002 \001(\0162\037.flyteidl.admin.LaunchPlanState" +
-      "\"\032\n\030LaunchPlanUpdateResponse\"L\n\027ActiveLa" +
-      "unchPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl.a" +
-      "dmin.NamedEntityIdentifier\"\203\001\n\033ActiveLau" +
-      "nchPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006d" +
-      "omain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(" +
-      "\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort" +
-      "*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACT" +
-      "IVE\020\001B7Z5github.com/flyteorg/flyteidl/ge" +
-      "n/pb-go/flyteidl/adminb\006proto3"
+      "nterface.proto\032+flyteidl/core/named_enti" +
+      "ty_identifier.proto\032\034flyteidl/core/secur" +
+      "ity.proto\032\035flyteidl/admin/schedule.proto" +
+      "\032\033flyteidl/admin/common.proto\032\037google/pr" +
+      "otobuf/timestamp.proto\"n\n\027LaunchPlanCrea" +
+      "teRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin." +
+      "LaunchPlanSpec\"\032\n\030LaunchPlanCreateRespon" +
+      "se\"\225\001\n\nLaunchPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl" +
+      ".core.Identifier\022,\n\004spec\030\002 \001(\0132\036.flyteid" +
+      "l.admin.LaunchPlanSpec\0222\n\007closure\030\003 \001(\0132" +
+      "!.flyteidl.admin.LaunchPlanClosure\"Q\n\016La" +
+      "unchPlanList\0220\n\014launch_plans\030\001 \003(\0132\032.fly" +
+      "teidl.admin.LaunchPlan\022\r\n\005token\030\002 \001(\t\"T\n" +
+      "\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022$\n\032k" +
+      "ubernetes_service_account\030\002 \001(\tH\000B\010\n\006met" +
+      "hod\"\344\004\n\016LaunchPlanSpec\022.\n\013workflow_id\030\001 " +
+      "\001(\0132\031.flyteidl.core.Identifier\022;\n\017entity" +
+      "_metadata\030\002 \001(\0132\".flyteidl.admin.LaunchP" +
+      "lanMetadata\0223\n\016default_inputs\030\003 \001(\0132\033.fl" +
+      "yteidl.core.ParameterMap\022/\n\014fixed_inputs" +
+      "\030\004 \001(\0132\031.flyteidl.core.LiteralMap\022\020\n\004rol" +
+      "e\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.flyteidl.a" +
+      "dmin.Labels\0220\n\013annotations\030\007 \001(\0132\033.flyte" +
+      "idl.admin.Annotations\022&\n\004auth\030\010 \001(\0132\024.fl" +
+      "yteidl.admin.AuthB\002\030\001\022/\n\tauth_role\030\t \001(\013" +
+      "2\030.flyteidl.admin.AuthRoleB\002\030\001\0228\n\020securi" +
+      "ty_context\030\n \001(\0132\036.flyteidl.core.Securit" +
+      "yContext\022;\n\022quality_of_service\030\020 \001(\0132\037.f" +
+      "lyteidl.core.QualityOfService\022C\n\026raw_out" +
+      "put_data_config\030\021 \001(\0132#.flyteidl.admin.R" +
+      "awOutputDataConfig\"\217\002\n\021LaunchPlanClosure" +
+      "\022.\n\005state\030\001 \001(\0162\037.flyteidl.admin.LaunchP" +
+      "lanState\0224\n\017expected_inputs\030\002 \001(\0132\033.flyt" +
+      "eidl.core.ParameterMap\0224\n\020expected_outpu" +
+      "ts\030\003 \001(\0132\032.flyteidl.core.VariableMap\022.\n\n" +
+      "created_at\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022.\n\nupdated_at\030\005 \001(\0132\032.google.protob" +
+      "uf.Timestamp\"u\n\022LaunchPlanMetadata\022*\n\010sc" +
+      "hedule\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223" +
+      "\n\rnotifications\030\002 \003(\0132\034.flyteidl.admin.N" +
+      "otification\"p\n\027LaunchPlanUpdateRequest\022%" +
+      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022.\n" +
+      "\005state\030\002 \001(\0162\037.flyteidl.admin.LaunchPlan" +
+      "State\"\032\n\030LaunchPlanUpdateResponse\"K\n\027Act" +
+      "iveLaunchPlanRequest\0220\n\002id\030\001 \001(\0132$.flyte" +
+      "idl.core.NamedEntityIdentifier\"\203\001\n\033Activ" +
+      "eLaunchPlanListRequest\022\017\n\007project\030\001 \001(\t\022" +
+      "\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030" +
+      "\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin." +
+      "Sort*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n" +
+      "\006ACTIVE\020\001B7Z5github.com/flyteorg/flyteid" +
+      "l/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13554,6 +13555,7 @@ public final class LaunchPlanOuterClass {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
+          flyteidl.core.NamedEntityIdentifierOuterClass.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
@@ -13635,6 +13637,7 @@ public final class LaunchPlanOuterClass {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
+    flyteidl.core.NamedEntityIdentifierOuterClass.getDescriptor();
     flyteidl.core.Security.getDescriptor();
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();

@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_named_entity_identifier import AdminNamedEntityIdentifier  # noqa: F401,E501
 from flyteadmin.models.admin_named_entity_metadata import AdminNamedEntityMetadata  # noqa: F401,E501
+from flyteadmin.models.core_named_entity_identifier import CoreNamedEntityIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_resource_type import CoreResourceType  # noqa: F401,E501
 
 
@@ -36,7 +36,7 @@ class AdminNamedEntityUpdateRequest(object):
     """
     swagger_types = {
         'resource_type': 'CoreResourceType',
-        'id': 'AdminNamedEntityIdentifier',
+        'id': 'CoreNamedEntityIdentifier',
         'metadata': 'AdminNamedEntityMetadata'
     }
 
@@ -88,7 +88,7 @@ class AdminNamedEntityUpdateRequest(object):
 
 
         :return: The id of this AdminNamedEntityUpdateRequest.  # noqa: E501
-        :rtype: AdminNamedEntityIdentifier
+        :rtype: CoreNamedEntityIdentifier
         """
         return self._id
 
@@ -98,7 +98,7 @@ class AdminNamedEntityUpdateRequest(object):
 
 
         :param id: The id of this AdminNamedEntityUpdateRequest.  # noqa: E501
-        :type: AdminNamedEntityIdentifier
+        :type: CoreNamedEntityIdentifier
         """
 
         self._id = id

@@ -976,7 +976,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminLaunchPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1000,13 +1001,14 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminLaunchPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'id_resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1045,6 +1047,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
 
         header_params = {}
 
@@ -1449,7 +1453,8 @@ class AdminServiceApi(object):
         :param str resource_type: (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminNamedEntity
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1474,13 +1479,14 @@ class AdminServiceApi(object):
         :param str resource_type: (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminNamedEntity
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name']  # noqa: E501
+        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name', 'id_resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1525,6 +1531,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
 
         header_params = {}
 
@@ -2849,7 +2857,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -2878,7 +2887,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -2889,7 +2899,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_resource_type', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2922,6 +2932,8 @@ class AdminServiceApi(object):
             path_params['id.domain'] = params['id_domain']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'id_name' in params:
             query_params.append(('id.name', params['id_name']))  # noqa: E501
         if 'limit' in params:
@@ -3107,7 +3119,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3136,7 +3149,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3147,7 +3161,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'id_resource_type', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3186,6 +3200,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'token' in params:
@@ -3242,7 +3258,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3271,7 +3288,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3282,7 +3300,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_resource_type', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3315,6 +3333,8 @@ class AdminServiceApi(object):
             path_params['id.domain'] = params['id_domain']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'id_name' in params:
             query_params.append(('id.name', params['id_name']))  # noqa: E501
         if 'limit' in params:
@@ -4310,7 +4330,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4339,7 +4360,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4350,7 +4372,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'id_resource_type', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4389,6 +4411,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'token' in params:
@@ -4445,7 +4469,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4474,7 +4499,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4485,7 +4511,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_resource_type', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4518,6 +4544,8 @@ class AdminServiceApi(object):
             path_params['id.domain'] = params['id_domain']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'id_name' in params:
             query_params.append(('id.name', params['id_name']))  # noqa: E501
         if 'limit' in params:
@@ -4703,7 +4731,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4732,7 +4761,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4743,7 +4773,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'id_resource_type', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4782,6 +4812,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'token' in params:
@@ -4838,7 +4870,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4867,7 +4900,8 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+        :param str id_name: User provided value for the resource.
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -4878,7 +4912,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_resource_type', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4911,6 +4945,8 @@ class AdminServiceApi(object):
             path_params['id.domain'] = params['id_domain']  # noqa: E501
 
         query_params = []
+        if 'id_resource_type' in params:
+            query_params.append(('id.resource_type', params['id_resource_type']))  # noqa: E501
         if 'id_name' in params:
             query_params.append(('id.name', params['id_name']))  # noqa: E501
         if 'limit' in params:
@@ -5422,7 +5458,7 @@ class AdminServiceApi(object):
         :param str resource_type: Resource type of the metadata to update (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
         :param AdminNamedEntityUpdateRequest body: (required)
         :return: AdminNamedEntityUpdateResponse
                  If the method is called asynchronously,
@@ -5448,7 +5484,7 @@ class AdminServiceApi(object):
         :param str resource_type: Resource type of the metadata to update (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param str id_name: User provided value for the resource. (required)
         :param AdminNamedEntityUpdateRequest body: (required)
         :return: AdminNamedEntityUpdateResponse
                  If the method is called asynchronously,

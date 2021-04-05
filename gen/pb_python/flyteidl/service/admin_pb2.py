@@ -27,6 +27,10 @@ from flyteidl.admin import node_execution_pb2 as flyteidl_dot_admin_dot_node__ex
 from flyteidl.admin import task_execution_pb2 as flyteidl_dot_admin_dot_task__execution__pb2
 from flyteidl.admin import version_pb2 as flyteidl_dot_admin_dot_version__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+try:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl_dot_core_dot_named__entity__identifier__pb2
+except AttributeError:
+  flyteidl_dot_core_dot_named__entity__identifier__pb2 = flyteidl_dot_admin_dot_common__pb2.flyteidl.core.named_entity_identifier_pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
 
 
