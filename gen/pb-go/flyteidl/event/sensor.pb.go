@@ -56,7 +56,8 @@ type WorkflowEvent struct {
 	// Types that are valid to be assigned to Id:
 	//	*WorkflowEvent_ExecutionIdentifier
 	//	*WorkflowEvent_NamedEntityIdentifier
-	Id                   isWorkflowEvent_Id             `protobuf_oneof:"id"`
+	Id isWorkflowEvent_Id `protobuf_oneof:"id"`
+	// Specifies terminal workflow phases for which this event should fire.
 	Phases               []core.WorkflowExecution_Phase `protobuf:"varint,3,rep,packed,name=phases,proto3,enum=flyteidl.core.WorkflowExecution_Phase" json:"phases,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                       `json:"-"`
 	XXX_unrecognized     []byte                         `json:"-"`
@@ -144,7 +145,7 @@ func (*WorkflowEvent) XXX_OneofWrappers() []interface{} {
 // For example, with just the prefix s3://my-s3-bucket/foo/ matches all files under the prefix
 // But with pattern "*/bar/*.txt", the file s3://my-s3-bucket/foo/1.txt would no longer match, whereas s3://my-s3-bucket/foo/2/bar/1.txt would.
 type FilePrefix struct {
-	// Full
+	// The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
 	Prefix string `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
 	// Optional, pattern to match within the prefix
 	// +optional
@@ -287,8 +288,7 @@ func (*RemoteFileEvent) XXX_OneofWrappers() []interface{} {
 type CustomEvent struct {
 	// Used to filter ListEventTarget queries by deployed sensors.
 	TargetType string `protobuf:"bytes,1,opt,name=target_type,json=targetType,proto3" json:"target_type,omitempty"`
-	// Custom, marshalled data that the event sensor of type knows how to parse.
-	// This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+	// Custom, marshalled user-defined data that the event sensor of type knows how to parse.
 	CustomInfo           *_struct.Struct `protobuf:"bytes,2,opt,name=custom_info,json=customInfo,proto3" json:"custom_info,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`

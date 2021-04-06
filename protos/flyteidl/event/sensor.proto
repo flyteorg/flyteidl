@@ -22,6 +22,7 @@ message WorkflowEvent {
         flyteidl.core.NamedEntityIdentifier named_entity_identifier = 2;
     }
 
+    // Specifies terminal workflow phases for which this event should fire.
     repeated flyteidl.core.WorkflowExecution.Phase phases = 3;
 }
 
@@ -29,7 +30,7 @@ message WorkflowEvent {
 // For example, with just the prefix s3://my-s3-bucket/foo/ matches all files under the prefix
 // But with pattern "*/bar/*.txt", the file s3://my-s3-bucket/foo/1.txt would no longer match, whereas s3://my-s3-bucket/foo/2/bar/1.txt would.
 message FilePrefix {
-    // Full 
+    // The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
     string prefix = 1;
 
     // Optional, pattern to match within the prefix
@@ -60,8 +61,7 @@ message CustomEvent {
     // Used to filter ListEventTarget queries by deployed sensors.
     string target_type = 1;
 
-    // Custom, marshalled data that the event sensor of type knows how to parse.
-    // This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+    // Custom, marshalled user-defined data that the event sensor of type knows how to parse.
     google.protobuf.Struct custom_info = 2;
 }
 

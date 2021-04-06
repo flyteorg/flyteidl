@@ -45,23 +45,43 @@ public final class Sensor {
     flyteidl.core.NamedEntityIdentifierOuterClass.NamedEntityIdentifierOrBuilder getNamedEntityIdentifierOrBuilder();
 
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     java.util.List<flyteidl.core.Execution.WorkflowExecution.Phase> getPhasesList();
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     int getPhasesCount();
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     flyteidl.core.Execution.WorkflowExecution.Phase getPhases(int index);
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     java.util.List<java.lang.Integer>
     getPhasesValueList();
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     int getPhasesValue(int index);
@@ -303,6 +323,10 @@ public final class Sensor {
               }
             };
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     public java.util.List<flyteidl.core.Execution.WorkflowExecution.Phase> getPhasesList() {
@@ -310,18 +334,30 @@ public final class Sensor {
           java.lang.Integer, flyteidl.core.Execution.WorkflowExecution.Phase>(phases_, phases_converter_);
     }
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     public int getPhasesCount() {
       return phases_.size();
     }
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     public flyteidl.core.Execution.WorkflowExecution.Phase getPhases(int index) {
       return phases_converter_.convert(phases_.get(index));
     }
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     public java.util.List<java.lang.Integer>
@@ -329,6 +365,10 @@ public final class Sensor {
       return phases_;
     }
     /**
+     * <pre>
+     * Specifies terminal workflow phases for which this event should fire.
+     * </pre>
+     *
      * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
      */
     public int getPhasesValue(int index) {
@@ -1037,6 +1077,10 @@ public final class Sensor {
         }
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public java.util.List<flyteidl.core.Execution.WorkflowExecution.Phase> getPhasesList() {
@@ -1044,18 +1088,30 @@ public final class Sensor {
             java.lang.Integer, flyteidl.core.Execution.WorkflowExecution.Phase>(phases_, phases_converter_);
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public int getPhasesCount() {
         return phases_.size();
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public flyteidl.core.Execution.WorkflowExecution.Phase getPhases(int index) {
         return phases_converter_.convert(phases_.get(index));
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder setPhases(
@@ -1069,6 +1125,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder addPhases(flyteidl.core.Execution.WorkflowExecution.Phase value) {
@@ -1081,6 +1141,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder addAllPhases(
@@ -1093,6 +1157,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder clearPhases() {
@@ -1102,6 +1170,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public java.util.List<java.lang.Integer>
@@ -1109,12 +1181,20 @@ public final class Sensor {
         return java.util.Collections.unmodifiableList(phases_);
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public int getPhasesValue(int index) {
         return phases_.get(index);
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder setPhasesValue(
@@ -1125,6 +1205,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder addPhasesValue(int value) {
@@ -1134,6 +1218,10 @@ public final class Sensor {
         return this;
       }
       /**
+       * <pre>
+       * Specifies terminal workflow phases for which this event should fire.
+       * </pre>
+       *
        * <code>repeated .flyteidl.core.WorkflowExecution.Phase phases = 3;</code>
        */
       public Builder addAllPhasesValue(
@@ -1204,7 +1292,7 @@ public final class Sensor {
 
     /**
      * <pre>
-     * Full 
+     * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
      * </pre>
      *
      * <code>string prefix = 1;</code>
@@ -1212,7 +1300,7 @@ public final class Sensor {
     java.lang.String getPrefix();
     /**
      * <pre>
-     * Full 
+     * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
      * </pre>
      *
      * <code>string prefix = 1;</code>
@@ -1335,7 +1423,7 @@ public final class Sensor {
     private volatile java.lang.Object prefix_;
     /**
      * <pre>
-     * Full 
+     * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
      * </pre>
      *
      * <code>string prefix = 1;</code>
@@ -1354,7 +1442,7 @@ public final class Sensor {
     }
     /**
      * <pre>
-     * Full 
+     * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
      * </pre>
      *
      * <code>string prefix = 1;</code>
@@ -1745,7 +1833,7 @@ public final class Sensor {
       private java.lang.Object prefix_ = "";
       /**
        * <pre>
-       * Full 
+       * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
        * </pre>
        *
        * <code>string prefix = 1;</code>
@@ -1764,7 +1852,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Full 
+       * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
        * </pre>
        *
        * <code>string prefix = 1;</code>
@@ -1784,7 +1872,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Full 
+       * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
        * </pre>
        *
        * <code>string prefix = 1;</code>
@@ -1801,7 +1889,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Full 
+       * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
        * </pre>
        *
        * <code>string prefix = 1;</code>
@@ -1814,7 +1902,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Full 
+       * The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
        * </pre>
        *
        * <code>string prefix = 1;</code>
@@ -3101,8 +3189,7 @@ public final class Sensor {
 
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3110,8 +3197,7 @@ public final class Sensor {
     boolean hasCustomInfo();
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3119,8 +3205,7 @@ public final class Sensor {
     com.google.protobuf.Struct getCustomInfo();
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3269,8 +3354,7 @@ public final class Sensor {
     private com.google.protobuf.Struct customInfo_;
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3280,8 +3364,7 @@ public final class Sensor {
     }
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3291,8 +3374,7 @@ public final class Sensor {
     }
     /**
      * <pre>
-     * Custom, marshalled data that the event sensor of type knows how to parse.
-     * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+     * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
      * </pre>
      *
      * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3732,8 +3814,7 @@ public final class Sensor {
           com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> customInfoBuilder_;
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3743,8 +3824,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3758,8 +3838,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3779,8 +3858,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3798,8 +3876,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3821,8 +3898,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3840,8 +3916,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3853,8 +3928,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>
@@ -3869,8 +3943,7 @@ public final class Sensor {
       }
       /**
        * <pre>
-       * Custom, marshalled data that the event sensor of type knows how to parse.
-       * This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+       * Custom, marshalled user-defined data that the event sensor of type knows how to parse.
        * </pre>
        *
        * <code>.google.protobuf.Struct custom_info = 2;</code>

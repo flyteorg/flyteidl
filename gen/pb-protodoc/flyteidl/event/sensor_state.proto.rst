@@ -111,7 +111,7 @@ Updates saved state for a specific event sensor type.
 .. _api_field_flyteidl.event.EventSensorStateUpdateRequest.event_type:
 
 event_type
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Indicates the event sensor type by unique name for which to fetch event sensor state.
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Indicates the event sensor type by unique name for which to update event sensor state.
   
   
 .. _api_field_flyteidl.event.EventSensorStateUpdateRequest.state:

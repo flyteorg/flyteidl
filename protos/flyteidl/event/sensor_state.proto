@@ -34,7 +34,7 @@ message EventSensorStateGetResponse {
 
 // Updates saved state for a specific event sensor type.
 message EventSensorStateUpdateRequest {
-    // Indicates the event sensor type by unique name for which to fetch event sensor state.
+    // Indicates the event sensor type by unique name for which to update event sensor state.
     string event_type = 1;
 
     EventSensorState state = 2;

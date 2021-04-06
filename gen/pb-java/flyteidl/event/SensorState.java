@@ -2446,7 +2446,7 @@ public final class SensorState {
 
     /**
      * <pre>
-     * Indicates the event sensor type by unique name for which to fetch event sensor state.
+     * Indicates the event sensor type by unique name for which to update event sensor state.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -2454,7 +2454,7 @@ public final class SensorState {
     java.lang.String getEventType();
     /**
      * <pre>
-     * Indicates the event sensor type by unique name for which to fetch event sensor state.
+     * Indicates the event sensor type by unique name for which to update event sensor state.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -2612,7 +2612,7 @@ public final class SensorState {
     private volatile java.lang.Object eventType_;
     /**
      * <pre>
-     * Indicates the event sensor type by unique name for which to fetch event sensor state.
+     * Indicates the event sensor type by unique name for which to update event sensor state.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -2631,7 +2631,7 @@ public final class SensorState {
     }
     /**
      * <pre>
-     * Indicates the event sensor type by unique name for which to fetch event sensor state.
+     * Indicates the event sensor type by unique name for which to update event sensor state.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -3073,7 +3073,7 @@ public final class SensorState {
       private java.lang.Object eventType_ = "";
       /**
        * <pre>
-       * Indicates the event sensor type by unique name for which to fetch event sensor state.
+       * Indicates the event sensor type by unique name for which to update event sensor state.
        * </pre>
        *
        * <code>string event_type = 1;</code>
@@ -3092,7 +3092,7 @@ public final class SensorState {
       }
       /**
        * <pre>
-       * Indicates the event sensor type by unique name for which to fetch event sensor state.
+       * Indicates the event sensor type by unique name for which to update event sensor state.
        * </pre>
        *
        * <code>string event_type = 1;</code>
@@ -3112,7 +3112,7 @@ public final class SensorState {
       }
       /**
        * <pre>
-       * Indicates the event sensor type by unique name for which to fetch event sensor state.
+       * Indicates the event sensor type by unique name for which to update event sensor state.
        * </pre>
        *
        * <code>string event_type = 1;</code>
@@ -3129,7 +3129,7 @@ public final class SensorState {
       }
       /**
        * <pre>
-       * Indicates the event sensor type by unique name for which to fetch event sensor state.
+       * Indicates the event sensor type by unique name for which to update event sensor state.
        * </pre>
        *
        * <code>string event_type = 1;</code>
@@ -3142,7 +3142,7 @@ public final class SensorState {
       }
       /**
        * <pre>
-       * Indicates the event sensor type by unique name for which to fetch event sensor state.
+       * Indicates the event sensor type by unique name for which to update event sensor state.
        * </pre>
        *
        * <code>string event_type = 1;</code>

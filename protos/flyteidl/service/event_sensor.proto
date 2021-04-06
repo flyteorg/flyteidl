@@ -22,7 +22,7 @@ service EventSensorService {
   // Enqueues an event target to be executed asynchronously.
   rpc EventOccurred (flyteidl.event.EventOccurredRequest) returns (flyteidl.event.EventOccurredResponse) {
     option (google.api.http) = {
-      get: "/api/v1/occurred"
+      post: "/api/v1/occurred"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Notifies a downstream consumer that an event has occurred."

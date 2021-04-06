@@ -35,7 +35,7 @@ public final class EventSensor {
       "eve existing event target definitions.\022\265" +
       "\001\n\rEventOccurred\022$.flyteidl.event.EventO" +
       "ccurredRequest\032%.flyteidl.event.EventOcc" +
-      "urredResponse\"W\202\323\344\223\002\022\022\020/api/v1/occurred\222" +
+      "urredResponse\"W\202\323\344\223\002\022\"\020/api/v1/occurred\222" +
       "A<\032:Notifies a downstream consumer that " +
       "an event has occurred.\022\324\001\n\023GetEventSenso" +
       "rState\022*.flyteidl.event.EventSensorState" +

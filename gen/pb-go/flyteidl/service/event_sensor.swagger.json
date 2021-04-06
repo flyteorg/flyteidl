@@ -16,7 +16,7 @@
   ],
   "paths": {
     "/api/v1/occurred": {
-      "get": {
+      "post": {
         "summary": "Enqueues an event target to be executed asynchronously.",
         "description": "Notifies a downstream consumer that an event has occurred.",
         "operationId": "EventOccurred",
@@ -28,304 +28,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "execution_create_request.project",
-            "description": "Name of the project the execution belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.domain",
-            "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.name",
-            "description": "User provided value for the resource.\nIf none is provided the system will generate a unique string.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.launch_plan.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN",
-              "DATASET"
-            ],
-            "default": "UNSPECIFIED"
-          },
-          {
-            "name": "execution_create_request.spec.launch_plan.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.launch_plan.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.launch_plan.name",
-            "description": "User provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.launch_plan.version",
-            "description": "Specific version of the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.mode",
-            "description": " - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "MANUAL",
-              "SCHEDULED",
-              "SYSTEM",
-              "RELAUNCH",
-              "CHILD_WORKFLOW"
-            ],
-            "default": "MANUAL"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.principal",
-            "description": "Identifier of the entity that triggered this execution.\nFor systems using back-end authentication any value set here will be discarded in favor of the\nauthenticated user context.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.nesting",
-            "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.scheduled_at",
-            "description": "For scheduled executions, the requested time for execution for this specific schedule invocation.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.parent_node_execution.node_id",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.parent_node_execution.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.reference_execution.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.reference_execution.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.reference_execution.name",
-            "description": "User or system provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.metadata.system_metadata.execution_cluster",
-            "description": "Which execution cluster this execution ran on.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.disable_all",
-            "description": "This should be set to true if all notifications are intended to be disabled for this execution.",
-            "in": "query",
-            "required": false,
-            "type": "boolean",
-            "format": "boolean"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.iam_role",
-            "description": "iam_role references the fully qualified name of Identity \u0026 Access Management role to impersonate.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.k8s_service_account",
-            "description": "k8s_service_account references a kubernetes service account to impersonate.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_id",
-            "description": "client_id is the public id for the client to use. The system will not perform any pre-auth validation that the\nsecret requested matches the client_id indicated here.\n+required.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.group",
-            "description": "The name of the secret group where to find the key referenced below. For K8s secrets, this should be the name of\nthe v1/secret object. For Confidant, this should be the Credential name. For Vault, this should be the secret name.\nFor AWS Secret Manager, this should be the name of the secret.\n+required.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.group_version",
-            "description": "The group version to fetch. This is not supported in all secret management systems. It'll be ignored for the ones\nthat do not support it.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.key",
-            "description": "The name of the secret to mount. This has to match an existing secret in the system. It's up to the implementation\nof the secret management system to require case sensitivity. For K8s secrets, Confidant and Vault, this should\nmatch one of the keys inside the secret. For AWS Secret Manager, it's ignored.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.security_context.run_as.oauth2_client.client_secret.mount_requirement",
-            "description": "mount_requirement is optional. Indicates where the secret has to be mounted. If provided, the execution will fail\nif the underlying key management system cannot satisfy that requirement. If not provided, the default location\nwill depend on the key management system.\n+optional.\n\n - ANY: Default case, indicates the client can tolerate either mounting options.\n - ENV_VAR: ENV_VAR indicates the secret needs to be mounted as an environment variable.\n - FILE: FILE indicates the secret needs to be mounted as a file.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "ANY",
-              "ENV_VAR",
-              "FILE"
-            ],
-            "default": "ANY"
-          },
-          {
-            "name": "execution_create_request.spec.auth_role.assumable_iam_role",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.auth_role.kubernetes_service_account",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_create_request.spec.quality_of_service.tier",
-            "description": " - UNDEFINED: Default: no quality of service specified.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNDEFINED",
-              "HIGH",
-              "MEDIUM",
-              "LOW"
-            ],
-            "default": "UNDEFINED"
-          },
-          {
-            "name": "execution_create_request.spec.quality_of_service.spec.queueing_budget",
-            "description": "Indicates how much queueing delay an execution can tolerate.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "launch_plan.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN",
-              "DATASET"
-            ],
-            "default": "UNSPECIFIED"
-          },
-          {
-            "name": "launch_plan.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "launch_plan.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "launch_plan.name",
-            "description": "User provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "launch_plan.version",
-            "description": "Specific version of the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
         "tags": [
           "EventSensorService"
         ]
@@ -370,7 +72,7 @@
         "parameters": [
           {
             "name": "event_type",
-            "description": "Indicates the event sensor type by unique name for which to fetch event sensor state.",
+            "description": "Indicates the event sensor type by unique name for which to update event sensor state.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1145,7 +847,7 @@
         },
         "custom_info": {
           "$ref": "#/definitions/protobufStruct",
-          "description": "Custom, marshalled data that the event sensor of type knows how to parse.\nThis can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct."
+          "description": "Custom, marshalled user-defined data that the event sensor of type knows how to parse."
         }
       },
       "description": "Allow users to register event targets for custom event sensors they deploy on their\nown Flyte deployments."
@@ -1235,7 +937,7 @@
       "properties": {
         "prefix": {
           "type": "string",
-          "title": "Full"
+          "description": "The primary prefix under which to observe file changes (optionally matching a pattern, if specified below)."
         },
         "pattern": {
           "type": "string",
@@ -1273,7 +975,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/coreWorkflowExecutionPhase"
-          }
+          },
+          "description": "Specifies terminal workflow phases for which this event should fire."
         }
       },
       "description": "This message is used to configure events triggered by a terminated workflow execution matching\none of the designated phases."

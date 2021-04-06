@@ -195,7 +195,7 @@ func (m *EventSensorStateGetResponse) GetUpdatedAt() *timestamp.Timestamp {
 
 // Updates saved state for a specific event sensor type.
 type EventSensorStateUpdateRequest struct {
-	// Indicates the event sensor type by unique name for which to fetch event sensor state.
+	// Indicates the event sensor type by unique name for which to update event sensor state.
 	EventType string            `protobuf:"bytes,1,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
 	State     *EventSensorState `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
 	// Event sensor provided timestamp for when this state was last specified.

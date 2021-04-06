@@ -42,7 +42,8 @@ named_entity_identifier
 .. _api_field_flyteidl.event.WorkflowEvent.phases:
 
 phases
-  (:ref:`flyteidl.core.WorkflowExecution.Phase <api_enum_flyteidl.core.WorkflowExecution.Phase>`) 
+  (:ref:`flyteidl.core.WorkflowExecution.Phase <api_enum_flyteidl.core.WorkflowExecution.Phase>`) Specifies terminal workflow phases for which this event should fire.
+  
   
 
 
@@ -51,7 +52,7 @@ phases
 flyteidl.event.FilePrefix
 -------------------------
 
-`[flyteidl.event.FilePrefix proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L30>`_
+`[flyteidl.event.FilePrefix proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L31>`_
 
 A file prefix defines a matchable prefix with an optional regex sub-pattern for which to trigger events.
 For example, with just the prefix s3://my-s3-bucket/foo/ matches all files under the prefix
@@ -67,7 +68,7 @@ But with pattern "*/bar/*.txt", the file s3://my-s3-bucket/foo/1.txt would no lo
 .. _api_field_flyteidl.event.FilePrefix.prefix:
 
 prefix
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Full 
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The primary prefix under which to observe file changes (optionally matching a pattern, if specified below).
   
   
 .. _api_field_flyteidl.event.FilePrefix.pattern:
@@ -84,7 +85,7 @@ pattern
 flyteidl.event.RemoteFileEvent
 ------------------------------
 
-`[flyteidl.event.RemoteFileEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L40>`_
+`[flyteidl.event.RemoteFileEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L41>`_
 
 Defines events triggered by the designated action performed on the specified file (or prefix).
 
@@ -124,7 +125,7 @@ action
 Enum flyteidl.event.RemoteFileEvent.Action
 ------------------------------------------
 
-`[flyteidl.event.RemoteFileEvent.Action proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L49>`_
+`[flyteidl.event.RemoteFileEvent.Action proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L50>`_
 
 Specifies what filetype action triggers the event.
 
@@ -140,7 +141,7 @@ CREATE
 flyteidl.event.CustomEvent
 --------------------------
 
-`[flyteidl.event.CustomEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L58>`_
+`[flyteidl.event.CustomEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/sensor.proto#L59>`_
 
 Allow users to register event targets for custom event sensors they deploy on their
 own Flyte deployments.
@@ -161,8 +162,7 @@ target_type
 .. _api_field_flyteidl.event.CustomEvent.custom_info:
 
 custom_info
-  (:ref:`google.protobuf.Struct <api_msg_google.protobuf.Struct>`) Custom, marshalled data that the event sensor of type knows how to parse.
-  This can be a marshalled WorkflowEvent, RemoteFileEvent or user-defined struct.
+  (:ref:`google.protobuf.Struct <api_msg_google.protobuf.Struct>`) Custom, marshalled user-defined data that the event sensor of type knows how to parse.
   
   
 
