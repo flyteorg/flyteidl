@@ -2,6 +2,7 @@ package datacatalog
 
 import (
 	"context"
+
 	"github.com/flyteorg/flytestdlib/logger"
 )
 

@@ -4,10 +4,11 @@ import (
 	"context"
 	"crypto/x509"
 	"fmt"
-	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
 	"sync"
 	"time"
+
+	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
 
 	"github.com/flyteorg/flytestdlib/logger"
 	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
