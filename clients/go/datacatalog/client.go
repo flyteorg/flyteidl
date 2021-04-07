@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	once            = sync.Once{}
+	once                  = sync.Once{}
 	dataCatalogConnection *grpc.ClientConn
 )
 
@@ -60,7 +60,7 @@ func NewDataCatalogConnection(ctx context.Context, cfg Config) (*grpc.ClientConn
 
 // Create an AdminClient with a shared Admin connection for the process
 func InitializeDataCatalogClient(ctx context.Context, cfg Config) (datacatalog.DataCatalogClient,
-	error)  {
+	error) {
 	once.Do(func() {
 		var err error
 		dataCatalogConnection, err = NewDataCatalogConnection(ctx, cfg)

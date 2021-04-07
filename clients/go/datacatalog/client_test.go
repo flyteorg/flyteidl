@@ -32,4 +32,3 @@ func TestInitializeMockDataCatalogClient(t *testing.T) {
 	c := InitializeMockDataCatalogClient()
 	assert.NotNil(t, c)
 }
-

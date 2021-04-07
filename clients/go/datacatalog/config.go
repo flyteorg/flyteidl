@@ -9,18 +9,16 @@ import (
 
 const ConfigSectionKey = "data-catalog"
 
-
 var (
-	defaultConfig = &Config{
-	}
+	defaultConfig = &Config{}
 
 	//TODO: Add this section when everybody has migrated
 	//configSection = config.MustRegisterSection(ConfigSectionKey, defaultConfig)
 )
 
 type Config struct {
-	Endpoint    string          `json:"endpoint" pflag:"\"\", Endpoint for catalog service"`
-	Insecure    bool            `json:"insecure" pflag:"false, Use insecure grpc connection"`
+	Endpoint string `json:"endpoint" pflag:"\"\", Endpoint for catalog service"`
+	Insecure bool   `json:"insecure" pflag:"false, Use insecure grpc connection"`
 }
 
 func GetConfig(ctx context.Context) *Config {
