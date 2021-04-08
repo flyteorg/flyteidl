@@ -17,6 +17,31 @@ import (
 	"google.golang.org/grpc/credentials"
 )
 
+/*
+This package provides a basic wrapper for the data catalog client. There are two ways to
+create a data catalog client:
+1. Add a config section in the config file, like:
+```
+data-catalog:
+	endpoint: localhost:8089
+	inscure: true
+```
+Then in your application you can create a data catalog client like this:
+```
+client := datacatalog.InitializeDataCatalogClientFromConfig(ctx)
+client.GetArtifact(ctx, getArtifactRequest)
+```
+2. Call InitializeDataCatalogClient directly and fill the config in your application
+```
+cfg := datacatalog.Config{
+    Endpoint: "localhost:8089",
+    Insecure: false,
+}
+client := datacatalog.InitializeDataCatalogClient(ctx, cfg)
+client.GetArtifact(ctx, request)
+```
+*/
+
 var (
 	once                  = sync.Once{}
 	dataCatalogConnection *grpc.ClientConn
