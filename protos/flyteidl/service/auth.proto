@@ -1,0 +1,71 @@
+syntax = "proto3";
+package flyteidl.service;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
+
+import "google/api/annotations.proto";
+import "flyteidl/admin/project.proto";
+import "flyteidl/admin/project_domain_attributes.proto";
+import "flyteidl/admin/task.proto";
+import "flyteidl/admin/workflow.proto";
+import "flyteidl/admin/workflow_attributes.proto";
+import "flyteidl/admin/launch_plan.proto";
+import "flyteidl/admin/event.proto";
+import "flyteidl/admin/execution.proto";
+import "flyteidl/admin/matchable_resource.proto";
+import "flyteidl/admin/node_execution.proto";
+import "flyteidl/admin/task_execution.proto";
+import "flyteidl/admin/version.proto";
+import "flyteidl/admin/common.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+message OAuth2MetadataRequest {}
+message OAuth2MetadataResponse {}
+message OIdCMetadataRequest{}
+message OIdCMetadataResponse{}
+message UserInfoRequest{}
+message UserInfoResponse{}
+message FlyteClientRequest{}
+message FlyteClientResponse{}
+
+// The following defines an RPC service that is also served over HTTP via grpc-gateway.
+// Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
+service AuthService {
+  // Anonymously accessible
+  rpc OAuth2Metadata (OAuth2MetadataRequest) returns (OAuth2MetadataResponse) {
+    option (google.api.http) = {
+      get: "/.well-known/oauth-authorization-server"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible."
+    };
+  }
+
+  rpc OIdCMetadata (OIdCMetadataRequest) returns (OIdCMetadataResponse) {
+    option (google.api.http) = {
+      get: "/.well-known/openid-configuration"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieves OpenID Connect metadata. This endpoint is anonymously accessible."
+    };
+  }
+
+  rpc FlyteClient (FlyteClientRequest) returns (FlyteClientResponse) {
+    option (google.api.http) = {
+      get: "/config/v1/flyte_client"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieves public flyte client info. This endpoint is anonymously accessible."
+    };
+  }
+
+  rpc UserInfo (UserInfoRequest) returns (UserInfoResponse) {
+    option (google.api.http) = {
+      get: "/me"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieves user info"
+    };
+  }
+}
+
