@@ -20,13 +20,43 @@ import "flyteidl/admin/common.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
 message OAuth2MetadataRequest {}
-message OAuth2MetadataResponse {}
-message OIdCMetadataRequest{}
-message OIdCMetadataResponse{}
-message UserInfoRequest{}
-message UserInfoResponse{}
-message FlyteClientRequest{}
-message FlyteClientResponse{}
+
+// OAuth2MetadataResponse defines an RFC-Compliant response for /.well-known/oauth-authorization-server metadata
+// as defined in https://tools.ietf.org/html/rfc8414
+message OAuth2MetadataResponse {
+  string issuer = 1;
+  string authorization_endpoint = 2;
+  string token_endpoint = 3;
+  repeated string response_types_supported = 4;
+  repeated string scopes_supported = 5;
+  repeated string token_endpoint_auth_methods_supported = 6;
+  string jwks_uri = 7;
+  repeated string code_challenge_methods_supported = 8;
+  repeated string grant_types_supported = 9;
+}
+
+message UserInfoRequest {}
+
+// See the OpenID Connect spec at https://openid.net/specs/openid-connect-core-1_0.html#UserInfoResponse for more information.
+message UserInfoResponse {
+  string subject = 1;
+  string name = 2;
+  string preferred_username = 3;
+  string given_name = 4;
+  string family_name = 5;
+  string email = 6;
+  string picture = 7;
+}
+
+message FlyteClientRequest {}
+
+// FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users.
+message FlyteClientResponse {
+  string client_id = 1;
+  string redirect_uri = 2;
+  repeated string scopes = 3;
+  string authorization_metadata_key = 4;
+}
 
 // The following defines an RPC service that is also served over HTTP via grpc-gateway.
 // Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
@@ -38,15 +68,6 @@ service AuthService {
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible."
-    };
-  }
-
-  rpc OIdCMetadata (OIdCMetadataRequest) returns (OIdCMetadataResponse) {
-    option (google.api.http) = {
-      get: "/.well-known/openid-configuration"
-    };
-    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Retrieves OpenID Connect metadata. This endpoint is anonymously accessible."
     };
   }
 
