@@ -14812,6 +14812,489 @@ export namespace flyteidl {
              */
             type GetVersionCallback = (error: (Error|null), response?: flyteidl.admin.GetVersionResponse) => void;
         }
+
+        /** Properties of a OAuth2MetadataRequest. */
+        interface IOAuth2MetadataRequest {
+        }
+
+        /** Represents a OAuth2MetadataRequest. */
+        class OAuth2MetadataRequest implements IOAuth2MetadataRequest {
+
+            /**
+             * Constructs a new OAuth2MetadataRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IOAuth2MetadataRequest);
+
+            /**
+             * Creates a new OAuth2MetadataRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns OAuth2MetadataRequest instance
+             */
+            public static create(properties?: flyteidl.service.IOAuth2MetadataRequest): flyteidl.service.OAuth2MetadataRequest;
+
+            /**
+             * Encodes the specified OAuth2MetadataRequest message. Does not implicitly {@link flyteidl.service.OAuth2MetadataRequest.verify|verify} messages.
+             * @param message OAuth2MetadataRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IOAuth2MetadataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a OAuth2MetadataRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OAuth2MetadataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.OAuth2MetadataRequest;
+
+            /**
+             * Verifies a OAuth2MetadataRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a OAuth2MetadataResponse. */
+        interface IOAuth2MetadataResponse {
+
+            /** OAuth2MetadataResponse issuer */
+            issuer?: (string|null);
+
+            /** OAuth2MetadataResponse authorizationEndpoint */
+            authorizationEndpoint?: (string|null);
+
+            /** OAuth2MetadataResponse tokenEndpoint */
+            tokenEndpoint?: (string|null);
+
+            /** OAuth2MetadataResponse responseTypesSupported */
+            responseTypesSupported?: (string[]|null);
+
+            /** OAuth2MetadataResponse scopesSupported */
+            scopesSupported?: (string[]|null);
+
+            /** OAuth2MetadataResponse tokenEndpointAuthMethodsSupported */
+            tokenEndpointAuthMethodsSupported?: (string[]|null);
+
+            /** OAuth2MetadataResponse jwksUri */
+            jwksUri?: (string|null);
+
+            /** OAuth2MetadataResponse codeChallengeMethodsSupported */
+            codeChallengeMethodsSupported?: (string[]|null);
+
+            /** OAuth2MetadataResponse grantTypesSupported */
+            grantTypesSupported?: (string[]|null);
+        }
+
+        /** Represents a OAuth2MetadataResponse. */
+        class OAuth2MetadataResponse implements IOAuth2MetadataResponse {
+
+            /**
+             * Constructs a new OAuth2MetadataResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IOAuth2MetadataResponse);
+
+            /** OAuth2MetadataResponse issuer. */
+            public issuer: string;
+
+            /** OAuth2MetadataResponse authorizationEndpoint. */
+            public authorizationEndpoint: string;
+
+            /** OAuth2MetadataResponse tokenEndpoint. */
+            public tokenEndpoint: string;
+
+            /** OAuth2MetadataResponse responseTypesSupported. */
+            public responseTypesSupported: string[];
+
+            /** OAuth2MetadataResponse scopesSupported. */
+            public scopesSupported: string[];
+
+            /** OAuth2MetadataResponse tokenEndpointAuthMethodsSupported. */
+            public tokenEndpointAuthMethodsSupported: string[];
+
+            /** OAuth2MetadataResponse jwksUri. */
+            public jwksUri: string;
+
+            /** OAuth2MetadataResponse codeChallengeMethodsSupported. */
+            public codeChallengeMethodsSupported: string[];
+
+            /** OAuth2MetadataResponse grantTypesSupported. */
+            public grantTypesSupported: string[];
+
+            /**
+             * Creates a new OAuth2MetadataResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns OAuth2MetadataResponse instance
+             */
+            public static create(properties?: flyteidl.service.IOAuth2MetadataResponse): flyteidl.service.OAuth2MetadataResponse;
+
+            /**
+             * Encodes the specified OAuth2MetadataResponse message. Does not implicitly {@link flyteidl.service.OAuth2MetadataResponse.verify|verify} messages.
+             * @param message OAuth2MetadataResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IOAuth2MetadataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a OAuth2MetadataResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OAuth2MetadataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.OAuth2MetadataResponse;
+
+            /**
+             * Verifies a OAuth2MetadataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a UserInfoRequest. */
+        interface IUserInfoRequest {
+        }
+
+        /** Represents a UserInfoRequest. */
+        class UserInfoRequest implements IUserInfoRequest {
+
+            /**
+             * Constructs a new UserInfoRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IUserInfoRequest);
+
+            /**
+             * Creates a new UserInfoRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UserInfoRequest instance
+             */
+            public static create(properties?: flyteidl.service.IUserInfoRequest): flyteidl.service.UserInfoRequest;
+
+            /**
+             * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
+             * @param message UserInfoRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IUserInfoRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a UserInfoRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UserInfoRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoRequest;
+
+            /**
+             * Verifies a UserInfoRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a UserInfoResponse. */
+        interface IUserInfoResponse {
+
+            /** UserInfoResponse subject */
+            subject?: (string|null);
+
+            /** UserInfoResponse name */
+            name?: (string|null);
+
+            /** UserInfoResponse preferredUsername */
+            preferredUsername?: (string|null);
+
+            /** UserInfoResponse givenName */
+            givenName?: (string|null);
+
+            /** UserInfoResponse familyName */
+            familyName?: (string|null);
+
+            /** UserInfoResponse email */
+            email?: (string|null);
+
+            /** UserInfoResponse picture */
+            picture?: (string|null);
+        }
+
+        /** Represents a UserInfoResponse. */
+        class UserInfoResponse implements IUserInfoResponse {
+
+            /**
+             * Constructs a new UserInfoResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IUserInfoResponse);
+
+            /** UserInfoResponse subject. */
+            public subject: string;
+
+            /** UserInfoResponse name. */
+            public name: string;
+
+            /** UserInfoResponse preferredUsername. */
+            public preferredUsername: string;
+
+            /** UserInfoResponse givenName. */
+            public givenName: string;
+
+            /** UserInfoResponse familyName. */
+            public familyName: string;
+
+            /** UserInfoResponse email. */
+            public email: string;
+
+            /** UserInfoResponse picture. */
+            public picture: string;
+
+            /**
+             * Creates a new UserInfoResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UserInfoResponse instance
+             */
+            public static create(properties?: flyteidl.service.IUserInfoResponse): flyteidl.service.UserInfoResponse;
+
+            /**
+             * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
+             * @param message UserInfoResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IUserInfoResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a UserInfoResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UserInfoResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoResponse;
+
+            /**
+             * Verifies a UserInfoResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FlyteClientRequest. */
+        interface IFlyteClientRequest {
+        }
+
+        /** Represents a FlyteClientRequest. */
+        class FlyteClientRequest implements IFlyteClientRequest {
+
+            /**
+             * Constructs a new FlyteClientRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IFlyteClientRequest);
+
+            /**
+             * Creates a new FlyteClientRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FlyteClientRequest instance
+             */
+            public static create(properties?: flyteidl.service.IFlyteClientRequest): flyteidl.service.FlyteClientRequest;
+
+            /**
+             * Encodes the specified FlyteClientRequest message. Does not implicitly {@link flyteidl.service.FlyteClientRequest.verify|verify} messages.
+             * @param message FlyteClientRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IFlyteClientRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FlyteClientRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FlyteClientRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteClientRequest;
+
+            /**
+             * Verifies a FlyteClientRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FlyteClientResponse. */
+        interface IFlyteClientResponse {
+
+            /** FlyteClientResponse clientId */
+            clientId?: (string|null);
+
+            /** FlyteClientResponse redirectUri */
+            redirectUri?: (string|null);
+
+            /** FlyteClientResponse scopes */
+            scopes?: (string[]|null);
+
+            /** FlyteClientResponse authorizationMetadataKey */
+            authorizationMetadataKey?: (string|null);
+        }
+
+        /** Represents a FlyteClientResponse. */
+        class FlyteClientResponse implements IFlyteClientResponse {
+
+            /**
+             * Constructs a new FlyteClientResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IFlyteClientResponse);
+
+            /** FlyteClientResponse clientId. */
+            public clientId: string;
+
+            /** FlyteClientResponse redirectUri. */
+            public redirectUri: string;
+
+            /** FlyteClientResponse scopes. */
+            public scopes: string[];
+
+            /** FlyteClientResponse authorizationMetadataKey. */
+            public authorizationMetadataKey: string;
+
+            /**
+             * Creates a new FlyteClientResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FlyteClientResponse instance
+             */
+            public static create(properties?: flyteidl.service.IFlyteClientResponse): flyteidl.service.FlyteClientResponse;
+
+            /**
+             * Encodes the specified FlyteClientResponse message. Does not implicitly {@link flyteidl.service.FlyteClientResponse.verify|verify} messages.
+             * @param message FlyteClientResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IFlyteClientResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FlyteClientResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FlyteClientResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteClientResponse;
+
+            /**
+             * Verifies a FlyteClientResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Represents an AuthService */
+        class AuthService extends $protobuf.rpc.Service {
+
+            /**
+             * Constructs a new AuthService service.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             */
+            constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+            /**
+             * Creates new AuthService service using the specified rpc implementation.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             * @returns RPC service. Useful where requests and/or responses are streamed.
+             */
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthService;
+
+            /**
+             * Calls OAuth2Metadata.
+             * @param request OAuth2MetadataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
+             */
+            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest, callback: flyteidl.service.AuthService.OAuth2MetadataCallback): void;
+
+            /**
+             * Calls OAuth2Metadata.
+             * @param request OAuth2MetadataRequest message or plain object
+             * @returns Promise
+             */
+            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest): Promise<flyteidl.service.OAuth2MetadataResponse>;
+
+            /**
+             * Calls FlyteClient.
+             * @param request FlyteClientRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and FlyteClientResponse
+             */
+            public flyteClient(request: flyteidl.service.IFlyteClientRequest, callback: flyteidl.service.AuthService.FlyteClientCallback): void;
+
+            /**
+             * Calls FlyteClient.
+             * @param request FlyteClientRequest message or plain object
+             * @returns Promise
+             */
+            public flyteClient(request: flyteidl.service.IFlyteClientRequest): Promise<flyteidl.service.FlyteClientResponse>;
+
+            /**
+             * Calls UserInfo.
+             * @param request UserInfoRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and UserInfoResponse
+             */
+            public userInfo(request: flyteidl.service.IUserInfoRequest, callback: flyteidl.service.AuthService.UserInfoCallback): void;
+
+            /**
+             * Calls UserInfo.
+             * @param request UserInfoRequest message or plain object
+             * @returns Promise
+             */
+            public userInfo(request: flyteidl.service.IUserInfoRequest): Promise<flyteidl.service.UserInfoResponse>;
+        }
+
+        namespace AuthService {
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#oAuth2Metadata}.
+             * @param error Error, if any
+             * @param [response] OAuth2MetadataResponse
+             */
+            type OAuth2MetadataCallback = (error: (Error|null), response?: flyteidl.service.OAuth2MetadataResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#flyteClient}.
+             * @param error Error, if any
+             * @param [response] FlyteClientResponse
+             */
+            type FlyteClientCallback = (error: (Error|null), response?: flyteidl.service.FlyteClientResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#userInfo}.
+             * @param error Error, if any
+             * @param [response] UserInfoResponse
+             */
+            type UserInfoCallback = (error: (Error|null), response?: flyteidl.service.UserInfoResponse) => void;
+        }
     }
 }
 

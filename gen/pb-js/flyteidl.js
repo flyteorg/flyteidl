@@ -34406,6 +34406,1086 @@ export const flyteidl = $root.flyteidl = (() => {
             return AdminService;
         })();
 
+        service.OAuth2MetadataRequest = (function() {
+
+            /**
+             * Properties of a OAuth2MetadataRequest.
+             * @memberof flyteidl.service
+             * @interface IOAuth2MetadataRequest
+             */
+
+            /**
+             * Constructs a new OAuth2MetadataRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a OAuth2MetadataRequest.
+             * @implements IOAuth2MetadataRequest
+             * @constructor
+             * @param {flyteidl.service.IOAuth2MetadataRequest=} [properties] Properties to set
+             */
+            function OAuth2MetadataRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new OAuth2MetadataRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.OAuth2MetadataRequest
+             * @static
+             * @param {flyteidl.service.IOAuth2MetadataRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.OAuth2MetadataRequest} OAuth2MetadataRequest instance
+             */
+            OAuth2MetadataRequest.create = function create(properties) {
+                return new OAuth2MetadataRequest(properties);
+            };
+
+            /**
+             * Encodes the specified OAuth2MetadataRequest message. Does not implicitly {@link flyteidl.service.OAuth2MetadataRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.OAuth2MetadataRequest
+             * @static
+             * @param {flyteidl.service.IOAuth2MetadataRequest} message OAuth2MetadataRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OAuth2MetadataRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a OAuth2MetadataRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.OAuth2MetadataRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.OAuth2MetadataRequest} OAuth2MetadataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OAuth2MetadataRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.OAuth2MetadataRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a OAuth2MetadataRequest message.
+             * @function verify
+             * @memberof flyteidl.service.OAuth2MetadataRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OAuth2MetadataRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return OAuth2MetadataRequest;
+        })();
+
+        service.OAuth2MetadataResponse = (function() {
+
+            /**
+             * Properties of a OAuth2MetadataResponse.
+             * @memberof flyteidl.service
+             * @interface IOAuth2MetadataResponse
+             * @property {string|null} [issuer] OAuth2MetadataResponse issuer
+             * @property {string|null} [authorizationEndpoint] OAuth2MetadataResponse authorizationEndpoint
+             * @property {string|null} [tokenEndpoint] OAuth2MetadataResponse tokenEndpoint
+             * @property {Array.<string>|null} [responseTypesSupported] OAuth2MetadataResponse responseTypesSupported
+             * @property {Array.<string>|null} [scopesSupported] OAuth2MetadataResponse scopesSupported
+             * @property {Array.<string>|null} [tokenEndpointAuthMethodsSupported] OAuth2MetadataResponse tokenEndpointAuthMethodsSupported
+             * @property {string|null} [jwksUri] OAuth2MetadataResponse jwksUri
+             * @property {Array.<string>|null} [codeChallengeMethodsSupported] OAuth2MetadataResponse codeChallengeMethodsSupported
+             * @property {Array.<string>|null} [grantTypesSupported] OAuth2MetadataResponse grantTypesSupported
+             */
+
+            /**
+             * Constructs a new OAuth2MetadataResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a OAuth2MetadataResponse.
+             * @implements IOAuth2MetadataResponse
+             * @constructor
+             * @param {flyteidl.service.IOAuth2MetadataResponse=} [properties] Properties to set
+             */
+            function OAuth2MetadataResponse(properties) {
+                this.responseTypesSupported = [];
+                this.scopesSupported = [];
+                this.tokenEndpointAuthMethodsSupported = [];
+                this.codeChallengeMethodsSupported = [];
+                this.grantTypesSupported = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OAuth2MetadataResponse issuer.
+             * @member {string} issuer
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.issuer = "";
+
+            /**
+             * OAuth2MetadataResponse authorizationEndpoint.
+             * @member {string} authorizationEndpoint
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.authorizationEndpoint = "";
+
+            /**
+             * OAuth2MetadataResponse tokenEndpoint.
+             * @member {string} tokenEndpoint
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.tokenEndpoint = "";
+
+            /**
+             * OAuth2MetadataResponse responseTypesSupported.
+             * @member {Array.<string>} responseTypesSupported
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.responseTypesSupported = $util.emptyArray;
+
+            /**
+             * OAuth2MetadataResponse scopesSupported.
+             * @member {Array.<string>} scopesSupported
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.scopesSupported = $util.emptyArray;
+
+            /**
+             * OAuth2MetadataResponse tokenEndpointAuthMethodsSupported.
+             * @member {Array.<string>} tokenEndpointAuthMethodsSupported
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.tokenEndpointAuthMethodsSupported = $util.emptyArray;
+
+            /**
+             * OAuth2MetadataResponse jwksUri.
+             * @member {string} jwksUri
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.jwksUri = "";
+
+            /**
+             * OAuth2MetadataResponse codeChallengeMethodsSupported.
+             * @member {Array.<string>} codeChallengeMethodsSupported
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.codeChallengeMethodsSupported = $util.emptyArray;
+
+            /**
+             * OAuth2MetadataResponse grantTypesSupported.
+             * @member {Array.<string>} grantTypesSupported
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @instance
+             */
+            OAuth2MetadataResponse.prototype.grantTypesSupported = $util.emptyArray;
+
+            /**
+             * Creates a new OAuth2MetadataResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @static
+             * @param {flyteidl.service.IOAuth2MetadataResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.OAuth2MetadataResponse} OAuth2MetadataResponse instance
+             */
+            OAuth2MetadataResponse.create = function create(properties) {
+                return new OAuth2MetadataResponse(properties);
+            };
+
+            /**
+             * Encodes the specified OAuth2MetadataResponse message. Does not implicitly {@link flyteidl.service.OAuth2MetadataResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @static
+             * @param {flyteidl.service.IOAuth2MetadataResponse} message OAuth2MetadataResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OAuth2MetadataResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.issuer != null && message.hasOwnProperty("issuer"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.issuer);
+                if (message.authorizationEndpoint != null && message.hasOwnProperty("authorizationEndpoint"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.authorizationEndpoint);
+                if (message.tokenEndpoint != null && message.hasOwnProperty("tokenEndpoint"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.tokenEndpoint);
+                if (message.responseTypesSupported != null && message.responseTypesSupported.length)
+                    for (let i = 0; i < message.responseTypesSupported.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.responseTypesSupported[i]);
+                if (message.scopesSupported != null && message.scopesSupported.length)
+                    for (let i = 0; i < message.scopesSupported.length; ++i)
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.scopesSupported[i]);
+                if (message.tokenEndpointAuthMethodsSupported != null && message.tokenEndpointAuthMethodsSupported.length)
+                    for (let i = 0; i < message.tokenEndpointAuthMethodsSupported.length; ++i)
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.tokenEndpointAuthMethodsSupported[i]);
+                if (message.jwksUri != null && message.hasOwnProperty("jwksUri"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.jwksUri);
+                if (message.codeChallengeMethodsSupported != null && message.codeChallengeMethodsSupported.length)
+                    for (let i = 0; i < message.codeChallengeMethodsSupported.length; ++i)
+                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.codeChallengeMethodsSupported[i]);
+                if (message.grantTypesSupported != null && message.grantTypesSupported.length)
+                    for (let i = 0; i < message.grantTypesSupported.length; ++i)
+                        writer.uint32(/* id 9, wireType 2 =*/74).string(message.grantTypesSupported[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a OAuth2MetadataResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.OAuth2MetadataResponse} OAuth2MetadataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OAuth2MetadataResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.OAuth2MetadataResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.issuer = reader.string();
+                        break;
+                    case 2:
+                        message.authorizationEndpoint = reader.string();
+                        break;
+                    case 3:
+                        message.tokenEndpoint = reader.string();
+                        break;
+                    case 4:
+                        if (!(message.responseTypesSupported && message.responseTypesSupported.length))
+                            message.responseTypesSupported = [];
+                        message.responseTypesSupported.push(reader.string());
+                        break;
+                    case 5:
+                        if (!(message.scopesSupported && message.scopesSupported.length))
+                            message.scopesSupported = [];
+                        message.scopesSupported.push(reader.string());
+                        break;
+                    case 6:
+                        if (!(message.tokenEndpointAuthMethodsSupported && message.tokenEndpointAuthMethodsSupported.length))
+                            message.tokenEndpointAuthMethodsSupported = [];
+                        message.tokenEndpointAuthMethodsSupported.push(reader.string());
+                        break;
+                    case 7:
+                        message.jwksUri = reader.string();
+                        break;
+                    case 8:
+                        if (!(message.codeChallengeMethodsSupported && message.codeChallengeMethodsSupported.length))
+                            message.codeChallengeMethodsSupported = [];
+                        message.codeChallengeMethodsSupported.push(reader.string());
+                        break;
+                    case 9:
+                        if (!(message.grantTypesSupported && message.grantTypesSupported.length))
+                            message.grantTypesSupported = [];
+                        message.grantTypesSupported.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a OAuth2MetadataResponse message.
+             * @function verify
+             * @memberof flyteidl.service.OAuth2MetadataResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OAuth2MetadataResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.issuer != null && message.hasOwnProperty("issuer"))
+                    if (!$util.isString(message.issuer))
+                        return "issuer: string expected";
+                if (message.authorizationEndpoint != null && message.hasOwnProperty("authorizationEndpoint"))
+                    if (!$util.isString(message.authorizationEndpoint))
+                        return "authorizationEndpoint: string expected";
+                if (message.tokenEndpoint != null && message.hasOwnProperty("tokenEndpoint"))
+                    if (!$util.isString(message.tokenEndpoint))
+                        return "tokenEndpoint: string expected";
+                if (message.responseTypesSupported != null && message.hasOwnProperty("responseTypesSupported")) {
+                    if (!Array.isArray(message.responseTypesSupported))
+                        return "responseTypesSupported: array expected";
+                    for (let i = 0; i < message.responseTypesSupported.length; ++i)
+                        if (!$util.isString(message.responseTypesSupported[i]))
+                            return "responseTypesSupported: string[] expected";
+                }
+                if (message.scopesSupported != null && message.hasOwnProperty("scopesSupported")) {
+                    if (!Array.isArray(message.scopesSupported))
+                        return "scopesSupported: array expected";
+                    for (let i = 0; i < message.scopesSupported.length; ++i)
+                        if (!$util.isString(message.scopesSupported[i]))
+                            return "scopesSupported: string[] expected";
+                }
+                if (message.tokenEndpointAuthMethodsSupported != null && message.hasOwnProperty("tokenEndpointAuthMethodsSupported")) {
+                    if (!Array.isArray(message.tokenEndpointAuthMethodsSupported))
+                        return "tokenEndpointAuthMethodsSupported: array expected";
+                    for (let i = 0; i < message.tokenEndpointAuthMethodsSupported.length; ++i)
+                        if (!$util.isString(message.tokenEndpointAuthMethodsSupported[i]))
+                            return "tokenEndpointAuthMethodsSupported: string[] expected";
+                }
+                if (message.jwksUri != null && message.hasOwnProperty("jwksUri"))
+                    if (!$util.isString(message.jwksUri))
+                        return "jwksUri: string expected";
+                if (message.codeChallengeMethodsSupported != null && message.hasOwnProperty("codeChallengeMethodsSupported")) {
+                    if (!Array.isArray(message.codeChallengeMethodsSupported))
+                        return "codeChallengeMethodsSupported: array expected";
+                    for (let i = 0; i < message.codeChallengeMethodsSupported.length; ++i)
+                        if (!$util.isString(message.codeChallengeMethodsSupported[i]))
+                            return "codeChallengeMethodsSupported: string[] expected";
+                }
+                if (message.grantTypesSupported != null && message.hasOwnProperty("grantTypesSupported")) {
+                    if (!Array.isArray(message.grantTypesSupported))
+                        return "grantTypesSupported: array expected";
+                    for (let i = 0; i < message.grantTypesSupported.length; ++i)
+                        if (!$util.isString(message.grantTypesSupported[i]))
+                            return "grantTypesSupported: string[] expected";
+                }
+                return null;
+            };
+
+            return OAuth2MetadataResponse;
+        })();
+
+        service.UserInfoRequest = (function() {
+
+            /**
+             * Properties of a UserInfoRequest.
+             * @memberof flyteidl.service
+             * @interface IUserInfoRequest
+             */
+
+            /**
+             * Constructs a new UserInfoRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a UserInfoRequest.
+             * @implements IUserInfoRequest
+             * @constructor
+             * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
+             */
+            function UserInfoRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new UserInfoRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.UserInfoRequest
+             * @static
+             * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest instance
+             */
+            UserInfoRequest.create = function create(properties) {
+                return new UserInfoRequest(properties);
+            };
+
+            /**
+             * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.UserInfoRequest
+             * @static
+             * @param {flyteidl.service.IUserInfoRequest} message UserInfoRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            UserInfoRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a UserInfoRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.UserInfoRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            UserInfoRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a UserInfoRequest message.
+             * @function verify
+             * @memberof flyteidl.service.UserInfoRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            UserInfoRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return UserInfoRequest;
+        })();
+
+        service.UserInfoResponse = (function() {
+
+            /**
+             * Properties of a UserInfoResponse.
+             * @memberof flyteidl.service
+             * @interface IUserInfoResponse
+             * @property {string|null} [subject] UserInfoResponse subject
+             * @property {string|null} [name] UserInfoResponse name
+             * @property {string|null} [preferredUsername] UserInfoResponse preferredUsername
+             * @property {string|null} [givenName] UserInfoResponse givenName
+             * @property {string|null} [familyName] UserInfoResponse familyName
+             * @property {string|null} [email] UserInfoResponse email
+             * @property {string|null} [picture] UserInfoResponse picture
+             */
+
+            /**
+             * Constructs a new UserInfoResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a UserInfoResponse.
+             * @implements IUserInfoResponse
+             * @constructor
+             * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
+             */
+            function UserInfoResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * UserInfoResponse subject.
+             * @member {string} subject
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.subject = "";
+
+            /**
+             * UserInfoResponse name.
+             * @member {string} name
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.name = "";
+
+            /**
+             * UserInfoResponse preferredUsername.
+             * @member {string} preferredUsername
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.preferredUsername = "";
+
+            /**
+             * UserInfoResponse givenName.
+             * @member {string} givenName
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.givenName = "";
+
+            /**
+             * UserInfoResponse familyName.
+             * @member {string} familyName
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.familyName = "";
+
+            /**
+             * UserInfoResponse email.
+             * @member {string} email
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.email = "";
+
+            /**
+             * UserInfoResponse picture.
+             * @member {string} picture
+             * @memberof flyteidl.service.UserInfoResponse
+             * @instance
+             */
+            UserInfoResponse.prototype.picture = "";
+
+            /**
+             * Creates a new UserInfoResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.UserInfoResponse
+             * @static
+             * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse instance
+             */
+            UserInfoResponse.create = function create(properties) {
+                return new UserInfoResponse(properties);
+            };
+
+            /**
+             * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.UserInfoResponse
+             * @static
+             * @param {flyteidl.service.IUserInfoResponse} message UserInfoResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            UserInfoResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.subject != null && message.hasOwnProperty("subject"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.subject);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.preferredUsername);
+                if (message.givenName != null && message.hasOwnProperty("givenName"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.givenName);
+                if (message.familyName != null && message.hasOwnProperty("familyName"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.familyName);
+                if (message.email != null && message.hasOwnProperty("email"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.email);
+                if (message.picture != null && message.hasOwnProperty("picture"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.picture);
+                return writer;
+            };
+
+            /**
+             * Decodes a UserInfoResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.UserInfoResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            UserInfoResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.subject = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.preferredUsername = reader.string();
+                        break;
+                    case 4:
+                        message.givenName = reader.string();
+                        break;
+                    case 5:
+                        message.familyName = reader.string();
+                        break;
+                    case 6:
+                        message.email = reader.string();
+                        break;
+                    case 7:
+                        message.picture = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a UserInfoResponse message.
+             * @function verify
+             * @memberof flyteidl.service.UserInfoResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            UserInfoResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.subject != null && message.hasOwnProperty("subject"))
+                    if (!$util.isString(message.subject))
+                        return "subject: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
+                    if (!$util.isString(message.preferredUsername))
+                        return "preferredUsername: string expected";
+                if (message.givenName != null && message.hasOwnProperty("givenName"))
+                    if (!$util.isString(message.givenName))
+                        return "givenName: string expected";
+                if (message.familyName != null && message.hasOwnProperty("familyName"))
+                    if (!$util.isString(message.familyName))
+                        return "familyName: string expected";
+                if (message.email != null && message.hasOwnProperty("email"))
+                    if (!$util.isString(message.email))
+                        return "email: string expected";
+                if (message.picture != null && message.hasOwnProperty("picture"))
+                    if (!$util.isString(message.picture))
+                        return "picture: string expected";
+                return null;
+            };
+
+            return UserInfoResponse;
+        })();
+
+        service.FlyteClientRequest = (function() {
+
+            /**
+             * Properties of a FlyteClientRequest.
+             * @memberof flyteidl.service
+             * @interface IFlyteClientRequest
+             */
+
+            /**
+             * Constructs a new FlyteClientRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a FlyteClientRequest.
+             * @implements IFlyteClientRequest
+             * @constructor
+             * @param {flyteidl.service.IFlyteClientRequest=} [properties] Properties to set
+             */
+            function FlyteClientRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new FlyteClientRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.FlyteClientRequest
+             * @static
+             * @param {flyteidl.service.IFlyteClientRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.FlyteClientRequest} FlyteClientRequest instance
+             */
+            FlyteClientRequest.create = function create(properties) {
+                return new FlyteClientRequest(properties);
+            };
+
+            /**
+             * Encodes the specified FlyteClientRequest message. Does not implicitly {@link flyteidl.service.FlyteClientRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.FlyteClientRequest
+             * @static
+             * @param {flyteidl.service.IFlyteClientRequest} message FlyteClientRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FlyteClientRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a FlyteClientRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.FlyteClientRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.FlyteClientRequest} FlyteClientRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FlyteClientRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteClientRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FlyteClientRequest message.
+             * @function verify
+             * @memberof flyteidl.service.FlyteClientRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FlyteClientRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return FlyteClientRequest;
+        })();
+
+        service.FlyteClientResponse = (function() {
+
+            /**
+             * Properties of a FlyteClientResponse.
+             * @memberof flyteidl.service
+             * @interface IFlyteClientResponse
+             * @property {string|null} [clientId] FlyteClientResponse clientId
+             * @property {string|null} [redirectUri] FlyteClientResponse redirectUri
+             * @property {Array.<string>|null} [scopes] FlyteClientResponse scopes
+             * @property {string|null} [authorizationMetadataKey] FlyteClientResponse authorizationMetadataKey
+             */
+
+            /**
+             * Constructs a new FlyteClientResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a FlyteClientResponse.
+             * @implements IFlyteClientResponse
+             * @constructor
+             * @param {flyteidl.service.IFlyteClientResponse=} [properties] Properties to set
+             */
+            function FlyteClientResponse(properties) {
+                this.scopes = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FlyteClientResponse clientId.
+             * @member {string} clientId
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @instance
+             */
+            FlyteClientResponse.prototype.clientId = "";
+
+            /**
+             * FlyteClientResponse redirectUri.
+             * @member {string} redirectUri
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @instance
+             */
+            FlyteClientResponse.prototype.redirectUri = "";
+
+            /**
+             * FlyteClientResponse scopes.
+             * @member {Array.<string>} scopes
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @instance
+             */
+            FlyteClientResponse.prototype.scopes = $util.emptyArray;
+
+            /**
+             * FlyteClientResponse authorizationMetadataKey.
+             * @member {string} authorizationMetadataKey
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @instance
+             */
+            FlyteClientResponse.prototype.authorizationMetadataKey = "";
+
+            /**
+             * Creates a new FlyteClientResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @static
+             * @param {flyteidl.service.IFlyteClientResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.FlyteClientResponse} FlyteClientResponse instance
+             */
+            FlyteClientResponse.create = function create(properties) {
+                return new FlyteClientResponse(properties);
+            };
+
+            /**
+             * Encodes the specified FlyteClientResponse message. Does not implicitly {@link flyteidl.service.FlyteClientResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @static
+             * @param {flyteidl.service.IFlyteClientResponse} message FlyteClientResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FlyteClientResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.clientId);
+                if (message.redirectUri != null && message.hasOwnProperty("redirectUri"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.redirectUri);
+                if (message.scopes != null && message.scopes.length)
+                    for (let i = 0; i < message.scopes.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.scopes[i]);
+                if (message.authorizationMetadataKey != null && message.hasOwnProperty("authorizationMetadataKey"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.authorizationMetadataKey);
+                return writer;
+            };
+
+            /**
+             * Decodes a FlyteClientResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.FlyteClientResponse} FlyteClientResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FlyteClientResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteClientResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.clientId = reader.string();
+                        break;
+                    case 2:
+                        message.redirectUri = reader.string();
+                        break;
+                    case 3:
+                        if (!(message.scopes && message.scopes.length))
+                            message.scopes = [];
+                        message.scopes.push(reader.string());
+                        break;
+                    case 4:
+                        message.authorizationMetadataKey = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FlyteClientResponse message.
+             * @function verify
+             * @memberof flyteidl.service.FlyteClientResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FlyteClientResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (!$util.isString(message.clientId))
+                        return "clientId: string expected";
+                if (message.redirectUri != null && message.hasOwnProperty("redirectUri"))
+                    if (!$util.isString(message.redirectUri))
+                        return "redirectUri: string expected";
+                if (message.scopes != null && message.hasOwnProperty("scopes")) {
+                    if (!Array.isArray(message.scopes))
+                        return "scopes: array expected";
+                    for (let i = 0; i < message.scopes.length; ++i)
+                        if (!$util.isString(message.scopes[i]))
+                            return "scopes: string[] expected";
+                }
+                if (message.authorizationMetadataKey != null && message.hasOwnProperty("authorizationMetadataKey"))
+                    if (!$util.isString(message.authorizationMetadataKey))
+                        return "authorizationMetadataKey: string expected";
+                return null;
+            };
+
+            return FlyteClientResponse;
+        })();
+
+        service.AuthService = (function() {
+
+            /**
+             * Constructs a new AuthService service.
+             * @memberof flyteidl.service
+             * @classdesc Represents an AuthService
+             * @extends $protobuf.rpc.Service
+             * @constructor
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             */
+            function AuthService(rpcImpl, requestDelimited, responseDelimited) {
+                $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+            }
+
+            (AuthService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AuthService;
+
+            /**
+             * Creates new AuthService service using the specified rpc implementation.
+             * @function create
+             * @memberof flyteidl.service.AuthService
+             * @static
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             * @returns {AuthService} RPC service. Useful where requests and/or responses are streamed.
+             */
+            AuthService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                return new this(rpcImpl, requestDelimited, responseDelimited);
+            };
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#oAuth2Metadata}.
+             * @memberof flyteidl.service.AuthService
+             * @typedef OAuth2MetadataCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.OAuth2MetadataResponse} [response] OAuth2MetadataResponse
+             */
+
+            /**
+             * Calls OAuth2Metadata.
+             * @function oAuth2Metadata
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
+             * @param {flyteidl.service.AuthService.OAuth2MetadataCallback} callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AuthService.prototype.oAuth2Metadata = function oAuth2Metadata(request, callback) {
+                return this.rpcCall(oAuth2Metadata, $root.flyteidl.service.OAuth2MetadataRequest, $root.flyteidl.service.OAuth2MetadataResponse, request, callback);
+            }, "name", { value: "OAuth2Metadata" });
+
+            /**
+             * Calls OAuth2Metadata.
+             * @function oAuth2Metadata
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
+             * @returns {Promise<flyteidl.service.OAuth2MetadataResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#flyteClient}.
+             * @memberof flyteidl.service.AuthService
+             * @typedef FlyteClientCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.FlyteClientResponse} [response] FlyteClientResponse
+             */
+
+            /**
+             * Calls FlyteClient.
+             * @function flyteClient
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
+             * @param {flyteidl.service.AuthService.FlyteClientCallback} callback Node-style callback called with the error, if any, and FlyteClientResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AuthService.prototype.flyteClient = function flyteClient(request, callback) {
+                return this.rpcCall(flyteClient, $root.flyteidl.service.FlyteClientRequest, $root.flyteidl.service.FlyteClientResponse, request, callback);
+            }, "name", { value: "FlyteClient" });
+
+            /**
+             * Calls FlyteClient.
+             * @function flyteClient
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
+             * @returns {Promise<flyteidl.service.FlyteClientResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthService#userInfo}.
+             * @memberof flyteidl.service.AuthService
+             * @typedef UserInfoCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.UserInfoResponse} [response] UserInfoResponse
+             */
+
+            /**
+             * Calls UserInfo.
+             * @function userInfo
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
+             * @param {flyteidl.service.AuthService.UserInfoCallback} callback Node-style callback called with the error, if any, and UserInfoResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AuthService.prototype.userInfo = function userInfo(request, callback) {
+                return this.rpcCall(userInfo, $root.flyteidl.service.UserInfoRequest, $root.flyteidl.service.UserInfoResponse, request, callback);
+            }, "name", { value: "UserInfo" });
+
+            /**
+             * Calls UserInfo.
+             * @function userInfo
+             * @memberof flyteidl.service.AuthService
+             * @instance
+             * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
+             * @returns {Promise<flyteidl.service.UserInfoResponse>} Promise
+             * @variation 2
+             */
+
+            return AuthService;
+        })();
+
         return service;
     })();
 
