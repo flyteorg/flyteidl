@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/flyteorg/flytestdlib/config"
+
 	"github.com/stretchr/testify/assert"
 )
 
@@ -20,6 +21,12 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 		assert.NotNil(t, InitializeAdminClient(ctx, Config{
 			Endpoint: config.URL{URL: *u},
 		}))
+	})
+
+	t.Run("legal-from-config", func(t *testing.T) {
+		authClient, err := InitializeAdminClientFromConfig(ctx)
+		assert.NoError(t, err)
+		assert.NotNil(t, authClient)
 	})
 
 	t.Run("illegal", func(t *testing.T) {
@@ -44,4 +51,27 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	}
 	opts := GetAdditionalAdminClientConfigOptions(adminServiceConfig)
 	assert.Equal(t, 2, len(opts))
+}
+
+func TestInitializeAndGetAuthClient(t *testing.T) {
+	ctx := context.TODO()
+	t.Run("legal", func(t *testing.T) {
+		u, err := url.Parse("http://localhost:8089")
+		assert.NoError(t, err)
+		assert.NotNil(t, InitializeAuthClient(ctx, Config{
+			Endpoint: config.URL{URL: *u},
+		}))
+	})
+
+	t.Run("legal-from-config", func(t *testing.T) {
+		authClient, err := InitializeAuthClientFromConfig(ctx)
+		assert.NoError(t, err)
+		assert.NotNil(t, authClient)
+	})
+
+	t.Run("illegal", func(t *testing.T) {
+		adminConnection = nil
+		once = sync.Once{}
+		assert.NotNil(t, InitializeAuthClient(ctx, Config{}))
+	})
 }

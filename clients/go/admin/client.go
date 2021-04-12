@@ -13,6 +13,7 @@ import (
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
+
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
@@ -29,6 +30,11 @@ var (
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
 	return service.NewAdminServiceClient(conn)
+}
+
+func NewAuthClient(ctx context.Context, conn *grpc.ClientConn) service.AuthServiceClient {
+	logger.Infof(ctx, "Initialized Auth client")
+	return service.NewAuthServiceClient(conn)
 }
 
 func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
@@ -142,6 +148,27 @@ func InitializeAdminClient(ctx context.Context, cfg Config) service.AdminService
 	})
 
 	return NewAdminClient(ctx, adminConnection)
+}
+
+// Create an AuthServiceClient with a shared Admin connection for the process
+func InitializeAuthClient(ctx context.Context, cfg Config) service.AuthServiceClient {
+	once.Do(func() {
+		var err error
+		adminConnection, err = NewAdminConnection(ctx, cfg)
+		if err != nil {
+			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
+		}
+	})
+
+	return NewAuthClient(ctx, adminConnection)
+}
+
+func InitializeAuthClientFromConfig(ctx context.Context) (service.AuthServiceClient, error) {
+	cfg := GetConfig(ctx)
+	if cfg == nil {
+		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
+	}
+	return InitializeAuthClient(ctx, *cfg), nil
 }
 
 func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceClient, error) {
