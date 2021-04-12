@@ -150,8 +150,8 @@ func InitializeAdminClient(ctx context.Context, cfg Config) service.AdminService
 	return NewAdminClient(ctx, adminConnection)
 }
 
-// Create an AuthServiceClient with a shared Admin connection for the process
-func InitializeAuthClient(ctx context.Context, cfg Config) service.AuthServiceClient {
+// Create an AdminClient and AuthServiceClient with a shared Admin connection for the process
+func InitializeClients(ctx context.Context, cfg Config) (service.AdminServiceClient, service.AuthServiceClient) {
 	once.Do(func() {
 		var err error
 		adminConnection, err = NewAdminConnection(ctx, cfg)
@@ -159,16 +159,7 @@ func InitializeAuthClient(ctx context.Context, cfg Config) service.AuthServiceCl
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
 	})
-
-	return NewAuthClient(ctx, adminConnection)
-}
-
-func InitializeAuthClientFromConfig(ctx context.Context) (service.AuthServiceClient, error) {
-	cfg := GetConfig(ctx)
-	if cfg == nil {
-		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
-	}
-	return InitializeAuthClient(ctx, *cfg), nil
+	return NewAdminClient(ctx, adminConnection), NewAuthClient(ctx, adminConnection)
 }
 
 func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceClient, error) {
@@ -177,6 +168,15 @@ func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceC
 		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
 	}
 	return InitializeAdminClient(ctx, *cfg), nil
+}
+
+func InitializeClientsFromConfig(ctx context.Context) (service.AdminServiceClient, service.AuthServiceClient, error) {
+	cfg := GetConfig(ctx)
+	if cfg == nil {
+		return nil, nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
+	}
+	adminClient, authClient := InitializeClients(ctx, *cfg)
+	return adminClient, authClient, nil
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {
