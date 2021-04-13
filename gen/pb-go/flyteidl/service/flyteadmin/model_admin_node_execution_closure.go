@@ -29,4 +29,5 @@ type AdminNodeExecutionClosure struct {
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	WorkflowNodeMetadata *FlyteidladminWorkflowNodeMetadata `json:"workflow_node_metadata,omitempty"`
 	TaskNodeMetadata *FlyteidladminTaskNodeMetadata `json:"task_node_metadata,omitempty"`
+	DynamicWorkflowNodeMetadata *FlyteidladminDynamicWorkflowNodeMetadata `json:"dynamic_workflow_node_metadata,omitempty"`
 }

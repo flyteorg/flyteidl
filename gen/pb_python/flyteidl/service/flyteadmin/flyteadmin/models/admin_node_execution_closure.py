@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase  # noqa: F401,E501
+from flyteadmin.models.flyteidladmin_dynamic_workflow_node_metadata import FlyteidladminDynamicWorkflowNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidladmin_task_node_metadata import FlyteidladminTaskNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidladmin_workflow_node_metadata import FlyteidladminWorkflowNodeMetadata  # noqa: F401,E501
 
@@ -44,7 +45,8 @@ class AdminNodeExecutionClosure(object):
         'created_at': 'datetime',
         'updated_at': 'datetime',
         'workflow_node_metadata': 'FlyteidladminWorkflowNodeMetadata',
-        'task_node_metadata': 'FlyteidladminTaskNodeMetadata'
+        'task_node_metadata': 'FlyteidladminTaskNodeMetadata',
+        'dynamic_workflow_node_metadata': 'FlyteidladminDynamicWorkflowNodeMetadata'
     }
 
     attribute_map = {
@@ -56,10 +58,11 @@ class AdminNodeExecutionClosure(object):
         'created_at': 'created_at',
         'updated_at': 'updated_at',
         'workflow_node_metadata': 'workflow_node_metadata',
-        'task_node_metadata': 'task_node_metadata'
+        'task_node_metadata': 'task_node_metadata',
+        'dynamic_workflow_node_metadata': 'dynamic_workflow_node_metadata'
     }
 
-    def __init__(self, output_uri=None, error=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, workflow_node_metadata=None, task_node_metadata=None):  # noqa: E501
+    def __init__(self, output_uri=None, error=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, workflow_node_metadata=None, task_node_metadata=None, dynamic_workflow_node_metadata=None):  # noqa: E501
         """AdminNodeExecutionClosure - a model defined in Swagger"""  # noqa: E501
 
         self._output_uri = None
@@ -71,6 +74,7 @@ class AdminNodeExecutionClosure(object):
         self._updated_at = None
         self._workflow_node_metadata = None
         self._task_node_metadata = None
+        self._dynamic_workflow_node_metadata = None
         self.discriminator = None
 
         if output_uri is not None:
@@ -91,6 +95,8 @@ class AdminNodeExecutionClosure(object):
             self.workflow_node_metadata = workflow_node_metadata
         if task_node_metadata is not None:
             self.task_node_metadata = task_node_metadata
+        if dynamic_workflow_node_metadata is not None:
+            self.dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
 
     @property
     def output_uri(self):
@@ -290,6 +296,27 @@ class AdminNodeExecutionClosure(object):
         """
 
         self._task_node_metadata = task_node_metadata
+
+    @property
+    def dynamic_workflow_node_metadata(self):
+        """Gets the dynamic_workflow_node_metadata of this AdminNodeExecutionClosure.  # noqa: E501
+
+
+        :return: The dynamic_workflow_node_metadata of this AdminNodeExecutionClosure.  # noqa: E501
+        :rtype: FlyteidladminDynamicWorkflowNodeMetadata
+        """
+        return self._dynamic_workflow_node_metadata
+
+    @dynamic_workflow_node_metadata.setter
+    def dynamic_workflow_node_metadata(self, dynamic_workflow_node_metadata):
+        """Sets the dynamic_workflow_node_metadata of this AdminNodeExecutionClosure.
+
+
+        :param dynamic_workflow_node_metadata: The dynamic_workflow_node_metadata of this AdminNodeExecutionClosure.  # noqa: E501
+        :type: FlyteidladminDynamicWorkflowNodeMetadata
+        """
+
+        self._dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

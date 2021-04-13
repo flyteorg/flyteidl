@@ -8,7 +8,7 @@ event.proto
 flyteidl.event.WorkflowExecutionEvent
 -------------------------------------
 
-`[flyteidl.event.WorkflowExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L12>`_
+`[flyteidl.event.WorkflowExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L13>`_
 
 
 .. code-block:: json
@@ -72,7 +72,7 @@ error
 flyteidl.event.NodeExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.NodeExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L35>`_
+`[flyteidl.event.NodeExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L36>`_
 
 
 .. code-block:: json
@@ -87,6 +87,7 @@ flyteidl.event.NodeExecutionEvent
     "error": "{...}",
     "workflow_node_metadata": "{...}",
     "task_node_metadata": "{...}",
+    "dynamic_workflow_node_metadata": "{...}",
     "parent_task_metadata": "{...}",
     "parent_node_metadata": "{...}",
     "retry_group": "...",
@@ -150,7 +151,7 @@ workflow_node_metadata
   on the node type
   
   
-  Only one of :ref:`workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.workflow_node_metadata>`, :ref:`task_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata>` may be set.
+  Only one of :ref:`workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.workflow_node_metadata>`, :ref:`task_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata>`, :ref:`dynamic_workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.dynamic_workflow_node_metadata>` may be set.
   
 .. _api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata:
 
@@ -160,7 +161,17 @@ task_node_metadata
   on the node type
   
   
-  Only one of :ref:`workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.workflow_node_metadata>`, :ref:`task_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata>` may be set.
+  Only one of :ref:`workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.workflow_node_metadata>`, :ref:`task_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata>`, :ref:`dynamic_workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.dynamic_workflow_node_metadata>` may be set.
+  
+.. _api_field_flyteidl.event.NodeExecutionEvent.dynamic_workflow_node_metadata:
+
+dynamic_workflow_node_metadata
+  (:ref:`flyteidl.event.DynamicWorkflowNodeMetadata <api_msg_flyteidl.event.DynamicWorkflowNodeMetadata>`) 
+  Additional metadata to do with this event's node target based
+  on the node type
+  
+  
+  Only one of :ref:`workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.workflow_node_metadata>`, :ref:`task_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.task_node_metadata>`, :ref:`dynamic_workflow_node_metadata <api_field_flyteidl.event.NodeExecutionEvent.dynamic_workflow_node_metadata>` may be set.
   
 .. _api_field_flyteidl.event.NodeExecutionEvent.parent_task_metadata:
 
@@ -200,7 +211,7 @@ node_name
 flyteidl.event.WorkflowNodeMetadata
 -----------------------------------
 
-`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L84>`_
+`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L86>`_
 
 For Workflow Nodes we need to send information about the workflow that's launched
 
@@ -222,7 +233,7 @@ execution_id
 flyteidl.event.TaskNodeMetadata
 -------------------------------
 
-`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L88>`_
+`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L90>`_
 
 
 .. code-block:: json
@@ -246,12 +257,42 @@ catalog_key
   
 
 
+.. _api_msg_flyteidl.event.DynamicWorkflowNodeMetadata:
+
+flyteidl.event.DynamicWorkflowNodeMetadata
+------------------------------------------
+
+`[flyteidl.event.DynamicWorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L98>`_
+
+For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+
+.. code-block:: json
+
+  {
+    "id": "{...}",
+    "compiled_workflow": "{...}"
+  }
+
+.. _api_field_flyteidl.event.DynamicWorkflowNodeMetadata.id:
+
+id
+  (:ref:`flyteidl.core.Identifier <api_msg_flyteidl.core.Identifier>`) id represents the unique identifier of the workflow.
+  
+  
+.. _api_field_flyteidl.event.DynamicWorkflowNodeMetadata.compiled_workflow:
+
+compiled_workflow
+  (:ref:`flyteidl.core.CompiledWorkflowClosure <api_msg_flyteidl.core.CompiledWorkflowClosure>`) Represents the compiled representation of the embedded dynamic workflow.
+  
+  
+
+
 .. _api_msg_flyteidl.event.ParentTaskExecutionMetadata:
 
 flyteidl.event.ParentTaskExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L96>`_
+`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L106>`_
 
 
 .. code-block:: json
@@ -272,7 +313,7 @@ id
 flyteidl.event.ParentNodeExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L100>`_
+`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L110>`_
 
 
 .. code-block:: json
@@ -295,7 +336,7 @@ node_id
 flyteidl.event.TaskExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L107>`_
+`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L117>`_
 
 Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 
@@ -431,7 +472,7 @@ metadata
 flyteidl.event.ExternalResourceInfo
 -----------------------------------
 
-`[flyteidl.event.ExternalResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L167>`_
+`[flyteidl.event.ExternalResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L177>`_
 
 This message contains metadata about external resources produced or used by a specific task execution.
 
@@ -454,7 +495,7 @@ external_id
 flyteidl.event.ResourcePoolInfo
 -------------------------------
 
-`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L176>`_
+`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L186>`_
 
 This message holds task execution metadata specific to resource allocation used to manage concurrent
 executions for a project namespace.
@@ -485,7 +526,7 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L188>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L198>`_
 
 Holds metadata around how a task was executed.
 As a task transitions across event phases during execution some attributes, such its generated name, generated external resources,
@@ -538,7 +579,7 @@ instance_class
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L204>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L214>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 

@@ -3812,6 +3812,9 @@
         },
         "task_node_metadata": {
           "$ref": "#/definitions/flyteidladminTaskNodeMetadata"
+        },
+        "dynamic_workflow_node_metadata": {
+          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
         }
       },
       "description": "Container for node execution details and results."
@@ -5930,6 +5933,9 @@
         "task_node_metadata": {
           "$ref": "#/definitions/flyteidleventTaskNodeMetadata"
         },
+        "dynamic_workflow_node_metadata": {
+          "$ref": "#/definitions/flyteidleventDynamicWorkflowNodeMetadata"
+        },
         "parent_task_metadata": {
           "$ref": "#/definitions/eventParentTaskExecutionMetadata",
           "description": "[To be deprecated] Specifies which task (if any) launched this node."
@@ -6115,6 +6121,20 @@
         }
       }
     },
+    "flyteidladminDynamicWorkflowNodeMetadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "id represents the unique identifier of the workflow."
+        },
+        "compiled_workflow": {
+          "$ref": "#/definitions/coreCompiledWorkflowClosure",
+          "description": "Represents the compiled representation of the embedded dynamic workflow."
+        }
+      },
+      "description": "For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated."
+    },
     "flyteidladminNodeExecution": {
       "type": "object",
       "properties": {
@@ -6194,6 +6214,20 @@
         }
       },
       "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
+    },
+    "flyteidleventDynamicWorkflowNodeMetadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "id represents the unique identifier of the workflow."
+        },
+        "compiled_workflow": {
+          "$ref": "#/definitions/coreCompiledWorkflowClosure",
+          "description": "Represents the compiled representation of the embedded dynamic workflow."
+        }
+      },
+      "description": "For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated."
     },
     "flyteidleventTaskNodeMetadata": {
       "type": "object",

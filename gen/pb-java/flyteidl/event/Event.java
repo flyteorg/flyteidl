@@ -1936,6 +1936,19 @@ public final class Event {
     flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder();
 
     /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    boolean hasDynamicWorkflowNodeMetadata();
+    /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    flyteidl.event.Event.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata();
+    /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder();
+
+    /**
      * <pre>
      * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
@@ -2226,6 +2239,20 @@ public final class Event {
               targetMetadataCase_ = 14;
               break;
             }
+            case 122: {
+              flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder subBuilder = null;
+              if (targetMetadataCase_ == 15) {
+                subBuilder = ((flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_).toBuilder();
+              }
+              targetMetadata_ =
+                  input.readMessage(flyteidl.event.Event.DynamicWorkflowNodeMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_);
+                targetMetadata_ = subBuilder.buildPartial();
+              }
+              targetMetadataCase_ = 15;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2302,6 +2329,7 @@ public final class Event {
         implements com.google.protobuf.Internal.EnumLite {
       WORKFLOW_NODE_METADATA(8),
       TASK_NODE_METADATA(14),
+      DYNAMIC_WORKFLOW_NODE_METADATA(15),
       TARGETMETADATA_NOT_SET(0);
       private final int value;
       private TargetMetadataCase(int value) {
@@ -2319,6 +2347,7 @@ public final class Event {
         switch (value) {
           case 8: return WORKFLOW_NODE_METADATA;
           case 14: return TASK_NODE_METADATA;
+          case 15: return DYNAMIC_WORKFLOW_NODE_METADATA;
           case 0: return TARGETMETADATA_NOT_SET;
           default: return null;
         }
@@ -2639,6 +2668,32 @@ public final class Event {
       return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
     }
 
+    public static final int DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER = 15;
+    /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    public boolean hasDynamicWorkflowNodeMetadata() {
+      return targetMetadataCase_ == 15;
+    }
+    /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    public flyteidl.event.Event.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
+      if (targetMetadataCase_ == 15) {
+         return (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_;
+      }
+      return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+     */
+    public flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
+      if (targetMetadataCase_ == 15) {
+         return (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_;
+      }
+      return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+    }
+
     public static final int PARENT_TASK_METADATA_FIELD_NUMBER = 9;
     private flyteidl.event.Event.ParentTaskExecutionMetadata parentTaskMetadata_;
     /**
@@ -2889,6 +2944,9 @@ public final class Event {
       if (targetMetadataCase_ == 14) {
         output.writeMessage(14, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
       }
+      if (targetMetadataCase_ == 15) {
+        output.writeMessage(15, (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2947,6 +3005,10 @@ public final class Event {
       if (targetMetadataCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
+      }
+      if (targetMetadataCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3017,6 +3079,10 @@ public final class Event {
           if (!getTaskNodeMetadata()
               .equals(other.getTaskNodeMetadata())) return false;
           break;
+        case 15:
+          if (!getDynamicWorkflowNodeMetadata()
+              .equals(other.getDynamicWorkflowNodeMetadata())) return false;
+          break;
         case 0:
         default:
       }
@@ -3079,6 +3145,10 @@ public final class Event {
         case 14:
           hash = (37 * hash) + TASK_NODE_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getTaskNodeMetadata().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getDynamicWorkflowNodeMetadata().hashCode();
           break;
         case 0:
         default:
@@ -3319,6 +3389,13 @@ public final class Event {
             result.targetMetadata_ = taskNodeMetadataBuilder_.build();
           }
         }
+        if (targetMetadataCase_ == 15) {
+          if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+            result.targetMetadata_ = targetMetadata_;
+          } else {
+            result.targetMetadata_ = dynamicWorkflowNodeMetadataBuilder_.build();
+          }
+        }
         if (parentTaskMetadataBuilder_ == null) {
           result.parentTaskMetadata_ = parentTaskMetadata_;
         } else {
@@ -3439,6 +3516,10 @@ public final class Event {
           }
           case TASK_NODE_METADATA: {
             mergeTaskNodeMetadata(other.getTaskNodeMetadata());
+            break;
+          }
+          case DYNAMIC_WORKFLOW_NODE_METADATA: {
+            mergeDynamicWorkflowNodeMetadata(other.getDynamicWorkflowNodeMetadata());
             break;
           }
           case TARGETMETADATA_NOT_SET: {
@@ -4569,6 +4650,142 @@ public final class Event {
         targetMetadataCase_ = 14;
         onChanged();;
         return taskNodeMetadataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.DynamicWorkflowNodeMetadata, flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder, flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowNodeMetadataBuilder_;
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public boolean hasDynamicWorkflowNodeMetadata() {
+        return targetMetadataCase_ == 15;
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 15) {
+            return (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_;
+          }
+          return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+        } else {
+          if (targetMetadataCase_ == 15) {
+            return dynamicWorkflowNodeMetadataBuilder_.getMessage();
+          }
+          return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public Builder setDynamicWorkflowNodeMetadata(flyteidl.event.Event.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetMetadata_ = value;
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadataBuilder_.setMessage(value);
+        }
+        targetMetadataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public Builder setDynamicWorkflowNodeMetadata(
+          flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder builderForValue) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          targetMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        targetMetadataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public Builder mergeDynamicWorkflowNodeMetadata(flyteidl.event.Event.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 15 &&
+              targetMetadata_ != flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance()) {
+            targetMetadata_ = flyteidl.event.Event.DynamicWorkflowNodeMetadata.newBuilder((flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            targetMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetMetadataCase_ == 15) {
+            dynamicWorkflowNodeMetadataBuilder_.mergeFrom(value);
+          }
+          dynamicWorkflowNodeMetadataBuilder_.setMessage(value);
+        }
+        targetMetadataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public Builder clearDynamicWorkflowNodeMetadata() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 15) {
+            targetMetadataCase_ = 0;
+            targetMetadata_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetMetadataCase_ == 15) {
+            targetMetadataCase_ = 0;
+            targetMetadata_ = null;
+          }
+          dynamicWorkflowNodeMetadataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder getDynamicWorkflowNodeMetadataBuilder() {
+        return getDynamicWorkflowNodeMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
+        if ((targetMetadataCase_ == 15) && (dynamicWorkflowNodeMetadataBuilder_ != null)) {
+          return dynamicWorkflowNodeMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetMetadataCase_ == 15) {
+            return (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_;
+          }
+          return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.DynamicWorkflowNodeMetadata, flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder, flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder> 
+          getDynamicWorkflowNodeMetadataFieldBuilder() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (!(targetMetadataCase_ == 15)) {
+            targetMetadata_ = flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+          }
+          dynamicWorkflowNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.event.Event.DynamicWorkflowNodeMetadata, flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder, flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder>(
+                  (flyteidl.event.Event.DynamicWorkflowNodeMetadata) targetMetadata_,
+                  getParentForChildren(),
+                  isClean());
+          targetMetadata_ = null;
+        }
+        targetMetadataCase_ = 15;
+        onChanged();;
+        return dynamicWorkflowNodeMetadataBuilder_;
       }
 
       private flyteidl.event.Event.ParentTaskExecutionMetadata parentTaskMetadata_;
@@ -6606,6 +6823,934 @@ public final class Event {
 
     @java.lang.Override
     public flyteidl.event.Event.TaskNodeMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DynamicWorkflowNodeMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.DynamicWorkflowNodeMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.Identifier getId();
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    boolean hasCompiledWorkflow();
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    flyteidl.core.Compiler.CompiledWorkflowClosure getCompiledWorkflow();
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder getCompiledWorkflowOrBuilder();
+  }
+  /**
+   * <pre>
+   * For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.DynamicWorkflowNodeMetadata}
+   */
+  public  static final class DynamicWorkflowNodeMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.DynamicWorkflowNodeMetadata)
+      DynamicWorkflowNodeMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DynamicWorkflowNodeMetadata.newBuilder() to construct.
+    private DynamicWorkflowNodeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DynamicWorkflowNodeMetadata() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DynamicWorkflowNodeMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.core.Compiler.CompiledWorkflowClosure.Builder subBuilder = null;
+              if (compiledWorkflow_ != null) {
+                subBuilder = compiledWorkflow_.toBuilder();
+              }
+              compiledWorkflow_ = input.readMessage(flyteidl.core.Compiler.CompiledWorkflowClosure.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(compiledWorkflow_);
+                compiledWorkflow_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.DynamicWorkflowNodeMetadata.class, flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.Identifier id_;
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.Identifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <pre>
+     * id represents the unique identifier of the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    public static final int COMPILED_WORKFLOW_FIELD_NUMBER = 2;
+    private flyteidl.core.Compiler.CompiledWorkflowClosure compiledWorkflow_;
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    public boolean hasCompiledWorkflow() {
+      return compiledWorkflow_ != null;
+    }
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    public flyteidl.core.Compiler.CompiledWorkflowClosure getCompiledWorkflow() {
+      return compiledWorkflow_ == null ? flyteidl.core.Compiler.CompiledWorkflowClosure.getDefaultInstance() : compiledWorkflow_;
+    }
+    /**
+     * <pre>
+     * Represents the compiled representation of the embedded dynamic workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+     */
+    public flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder getCompiledWorkflowOrBuilder() {
+      return getCompiledWorkflow();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      if (compiledWorkflow_ != null) {
+        output.writeMessage(2, getCompiledWorkflow());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      if (compiledWorkflow_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getCompiledWorkflow());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.DynamicWorkflowNodeMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.DynamicWorkflowNodeMetadata other = (flyteidl.event.Event.DynamicWorkflowNodeMetadata) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (hasCompiledWorkflow() != other.hasCompiledWorkflow()) return false;
+      if (hasCompiledWorkflow()) {
+        if (!getCompiledWorkflow()
+            .equals(other.getCompiledWorkflow())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      if (hasCompiledWorkflow()) {
+        hash = (37 * hash) + COMPILED_WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getCompiledWorkflow().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.DynamicWorkflowNodeMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.DynamicWorkflowNodeMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.DynamicWorkflowNodeMetadata)
+        flyteidl.event.Event.DynamicWorkflowNodeMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.DynamicWorkflowNodeMetadata.class, flyteidl.event.Event.DynamicWorkflowNodeMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.DynamicWorkflowNodeMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        if (compiledWorkflowBuilder_ == null) {
+          compiledWorkflow_ = null;
+        } else {
+          compiledWorkflow_ = null;
+          compiledWorkflowBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadata getDefaultInstanceForType() {
+        return flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadata build() {
+        flyteidl.event.Event.DynamicWorkflowNodeMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.DynamicWorkflowNodeMetadata buildPartial() {
+        flyteidl.event.Event.DynamicWorkflowNodeMetadata result = new flyteidl.event.Event.DynamicWorkflowNodeMetadata(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        if (compiledWorkflowBuilder_ == null) {
+          result.compiledWorkflow_ = compiledWorkflow_;
+        } else {
+          result.compiledWorkflow_ = compiledWorkflowBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.DynamicWorkflowNodeMetadata) {
+          return mergeFrom((flyteidl.event.Event.DynamicWorkflowNodeMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.DynamicWorkflowNodeMetadata other) {
+        if (other == flyteidl.event.Event.DynamicWorkflowNodeMetadata.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        if (other.hasCompiledWorkflow()) {
+          mergeCompiledWorkflow(other.getCompiledWorkflow());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.DynamicWorkflowNodeMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.DynamicWorkflowNodeMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.Identifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> idBuilder_;
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.Identifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <pre>
+       * id represents the unique identifier of the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+
+      private flyteidl.core.Compiler.CompiledWorkflowClosure compiledWorkflow_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Compiler.CompiledWorkflowClosure, flyteidl.core.Compiler.CompiledWorkflowClosure.Builder, flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder> compiledWorkflowBuilder_;
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public boolean hasCompiledWorkflow() {
+        return compiledWorkflowBuilder_ != null || compiledWorkflow_ != null;
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public flyteidl.core.Compiler.CompiledWorkflowClosure getCompiledWorkflow() {
+        if (compiledWorkflowBuilder_ == null) {
+          return compiledWorkflow_ == null ? flyteidl.core.Compiler.CompiledWorkflowClosure.getDefaultInstance() : compiledWorkflow_;
+        } else {
+          return compiledWorkflowBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public Builder setCompiledWorkflow(flyteidl.core.Compiler.CompiledWorkflowClosure value) {
+        if (compiledWorkflowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          compiledWorkflow_ = value;
+          onChanged();
+        } else {
+          compiledWorkflowBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public Builder setCompiledWorkflow(
+          flyteidl.core.Compiler.CompiledWorkflowClosure.Builder builderForValue) {
+        if (compiledWorkflowBuilder_ == null) {
+          compiledWorkflow_ = builderForValue.build();
+          onChanged();
+        } else {
+          compiledWorkflowBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public Builder mergeCompiledWorkflow(flyteidl.core.Compiler.CompiledWorkflowClosure value) {
+        if (compiledWorkflowBuilder_ == null) {
+          if (compiledWorkflow_ != null) {
+            compiledWorkflow_ =
+              flyteidl.core.Compiler.CompiledWorkflowClosure.newBuilder(compiledWorkflow_).mergeFrom(value).buildPartial();
+          } else {
+            compiledWorkflow_ = value;
+          }
+          onChanged();
+        } else {
+          compiledWorkflowBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public Builder clearCompiledWorkflow() {
+        if (compiledWorkflowBuilder_ == null) {
+          compiledWorkflow_ = null;
+          onChanged();
+        } else {
+          compiledWorkflow_ = null;
+          compiledWorkflowBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public flyteidl.core.Compiler.CompiledWorkflowClosure.Builder getCompiledWorkflowBuilder() {
+        
+        onChanged();
+        return getCompiledWorkflowFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      public flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder getCompiledWorkflowOrBuilder() {
+        if (compiledWorkflowBuilder_ != null) {
+          return compiledWorkflowBuilder_.getMessageOrBuilder();
+        } else {
+          return compiledWorkflow_ == null ?
+              flyteidl.core.Compiler.CompiledWorkflowClosure.getDefaultInstance() : compiledWorkflow_;
+        }
+      }
+      /**
+       * <pre>
+       * Represents the compiled representation of the embedded dynamic workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Compiler.CompiledWorkflowClosure, flyteidl.core.Compiler.CompiledWorkflowClosure.Builder, flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder> 
+          getCompiledWorkflowFieldBuilder() {
+        if (compiledWorkflowBuilder_ == null) {
+          compiledWorkflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Compiler.CompiledWorkflowClosure, flyteidl.core.Compiler.CompiledWorkflowClosure.Builder, flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder>(
+                  getCompiledWorkflow(),
+                  getParentForChildren(),
+                  isClean());
+          compiledWorkflow_ = null;
+        }
+        return compiledWorkflowBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.DynamicWorkflowNodeMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.DynamicWorkflowNodeMetadata)
+    private static final flyteidl.event.Event.DynamicWorkflowNodeMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.DynamicWorkflowNodeMetadata();
+    }
+
+    public static flyteidl.event.Event.DynamicWorkflowNodeMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DynamicWorkflowNodeMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<DynamicWorkflowNodeMetadata>() {
+      @java.lang.Override
+      public DynamicWorkflowNodeMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DynamicWorkflowNodeMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DynamicWorkflowNodeMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DynamicWorkflowNodeMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.DynamicWorkflowNodeMetadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14964,6 +16109,11 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -15003,71 +16153,77 @@ public final class Event {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/event/event.proto\022\016flyteidl.e" +
-      "vent\032\035flyteidl/core/execution.proto\032\036fly" +
-      "teidl/core/identifier.proto\032\033flyteidl/co" +
-      "re/catalog.proto\032\037google/protobuf/timest" +
-      "amp.proto\032\034google/protobuf/struct.proto\"" +
-      "\256\002\n\026WorkflowExecutionEvent\022@\n\014execution_" +
-      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
-      "onIdentifier\022\023\n\013producer_id\030\002 \001(\t\0225\n\005pha" +
-      "se\030\003 \001(\0162&.flyteidl.core.WorkflowExecuti" +
-      "on.Phase\022/\n\013occurred_at\030\004 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022\024\n\noutput_uri\030\005 \001(\tH\000\022" +
-      ".\n\005error\030\006 \001(\0132\035.flyteidl.core.Execution" +
-      "ErrorH\000B\017\n\routput_result\"\232\005\n\022NodeExecuti" +
-      "onEvent\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Node" +
-      "ExecutionIdentifier\022\023\n\013producer_id\030\002 \001(\t" +
-      "\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExec" +
-      "ution.Phase\022/\n\013occurred_at\030\004 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022\021\n\tinput_uri\030\005 \001(\t\022" +
-      "\024\n\noutput_uri\030\006 \001(\tH\000\022.\n\005error\030\007 \001(\0132\035.f" +
-      "lyteidl.core.ExecutionErrorH\000\022F\n\026workflo" +
-      "w_node_metadata\030\010 \001(\0132$.flyteidl.event.W" +
-      "orkflowNodeMetadataH\001\022>\n\022task_node_metad" +
-      "ata\030\016 \001(\0132 .flyteidl.event.TaskNodeMetad" +
-      "ataH\001\022I\n\024parent_task_metadata\030\t \001(\0132+.fl" +
-      "yteidl.event.ParentTaskExecutionMetadata" +
-      "\022I\n\024parent_node_metadata\030\n \001(\0132+.flyteid" +
-      "l.event.ParentNodeExecutionMetadata\022\023\n\013r" +
-      "etry_group\030\013 \001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021" +
-      "\n\tnode_name\030\r \001(\tB\017\n\routput_resultB\021\n\017ta" +
-      "rget_metadata\"X\n\024WorkflowNodeMetadata\022@\n" +
-      "\014execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\"\200\001\n\020TaskNodeMeta" +
-      "data\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.co" +
-      "re.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001" +
-      "(\0132\036.flyteidl.core.CatalogMetadata\"Q\n\033Pa" +
-      "rentTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&." +
-      "flyteidl.core.TaskExecutionIdentifier\".\n" +
-      "\033ParentNodeExecutionMetadata\022\017\n\007node_id\030" +
-      "\001 \001(\t\"\313\004\n\022TaskExecutionEvent\022*\n\007task_id\030" +
-      "\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030pare" +
-      "nt_node_execution_id\030\002 \001(\0132&.flyteidl.co" +
-      "re.NodeExecutionIdentifier\022\025\n\rretry_atte" +
-      "mpt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core" +
-      ".TaskExecution.Phase\022\023\n\013producer_id\030\005 \001(" +
-      "\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\022" +
-      "/\n\013occurred_at\030\007 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_ur" +
-      "i\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core" +
-      ".ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027" +
-      ".google.protobuf.Struct\022\025\n\rphase_version" +
-      "\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(" +
-      "\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Tas" +
-      "kExecutionMetadataB\017\n\routput_result\"+\n\024E" +
-      "xternalResourceInfo\022\023\n\013external_id\030\001 \001(\t" +
-      "\"?\n\020ResourcePoolInfo\022\030\n\020allocation_token" +
-      "\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecut" +
-      "ionMetadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022e" +
-      "xternal_resources\030\002 \003(\0132$.flyteidl.event" +
-      ".ExternalResourceInfo\022<\n\022resource_pool_i" +
-      "nfo\030\003 \003(\0132 .flyteidl.event.ResourcePoolI" +
-      "nfo\022\031\n\021plugin_identifier\030\004 \001(\t\022K\n\016instan" +
-      "ce_class\030\020 \001(\01623.flyteidl.event.TaskExec" +
-      "utionMetadata.InstanceClass\"/\n\rInstanceC" +
-      "lass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/eventb\006proto3"
+      "vent\032\034flyteidl/core/compiler.proto\032\035flyt" +
+      "eidl/core/execution.proto\032\036flyteidl/core" +
+      "/identifier.proto\032\033flyteidl/core/catalog" +
+      ".proto\032\037google/protobuf/timestamp.proto\032" +
+      "\034google/protobuf/struct.proto\"\256\002\n\026Workfl" +
+      "owExecutionEvent\022@\n\014execution_id\030\001 \001(\0132*" +
+      ".flyteidl.core.WorkflowExecutionIdentifi" +
+      "er\022\023\n\013producer_id\030\002 \001(\t\0225\n\005phase\030\003 \001(\0162&" +
+      ".flyteidl.core.WorkflowExecution.Phase\022/" +
+      "\n\013occurred_at\030\004 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022\024\n\noutput_uri\030\005 \001(\tH\000\022.\n\005error\030\006" +
+      " \001(\0132\035.flyteidl.core.ExecutionErrorH\000B\017\n" +
+      "\routput_result\"\361\005\n\022NodeExecutionEvent\0222\n" +
+      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
+      "dentifier\022\023\n\013producer_id\030\002 \001(\t\0221\n\005phase\030" +
+      "\003 \001(\0162\".flyteidl.core.NodeExecution.Phas" +
+      "e\022/\n\013occurred_at\030\004 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022\021\n\tinput_uri\030\005 \001(\t\022\024\n\noutput_" +
+      "uri\030\006 \001(\tH\000\022.\n\005error\030\007 \001(\0132\035.flyteidl.co" +
+      "re.ExecutionErrorH\000\022F\n\026workflow_node_met" +
+      "adata\030\010 \001(\0132$.flyteidl.event.WorkflowNod" +
+      "eMetadataH\001\022>\n\022task_node_metadata\030\016 \001(\0132" +
+      " .flyteidl.event.TaskNodeMetadataH\001\022U\n\036d" +
+      "ynamic_workflow_node_metadata\030\017 \001(\0132+.fl" +
+      "yteidl.event.DynamicWorkflowNodeMetadata" +
+      "H\001\022I\n\024parent_task_metadata\030\t \001(\0132+.flyte" +
+      "idl.event.ParentTaskExecutionMetadata\022I\n" +
+      "\024parent_node_metadata\030\n \001(\0132+.flyteidl.e" +
+      "vent.ParentNodeExecutionMetadata\022\023\n\013retr" +
+      "y_group\030\013 \001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021\n\tn" +
+      "ode_name\030\r \001(\tB\017\n\routput_resultB\021\n\017targe" +
+      "t_metadata\"X\n\024WorkflowNodeMetadata\022@\n\014ex" +
+      "ecution_id\030\001 \001(\0132*.flyteidl.core.Workflo" +
+      "wExecutionIdentifier\"\200\001\n\020TaskNodeMetadat" +
+      "a\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.core." +
+      "CatalogCacheStatus\0223\n\013catalog_key\030\002 \001(\0132" +
+      "\036.flyteidl.core.CatalogMetadata\"\207\001\n\033Dyna" +
+      "micWorkflowNodeMetadata\022%\n\002id\030\001 \001(\0132\031.fl" +
+      "yteidl.core.Identifier\022A\n\021compiled_workf" +
+      "low\030\002 \001(\0132&.flyteidl.core.CompiledWorkfl" +
+      "owClosure\"Q\n\033ParentTaskExecutionMetadata" +
+      "\0222\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecuti" +
+      "onIdentifier\".\n\033ParentNodeExecutionMetad" +
+      "ata\022\017\n\007node_id\030\001 \001(\t\"\313\004\n\022TaskExecutionEv" +
+      "ent\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
+      "ntifier\022H\n\030parent_node_execution_id\030\002 \001(" +
+      "\0132&.flyteidl.core.NodeExecutionIdentifie" +
+      "r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162" +
+      "\".flyteidl.core.TaskExecution.Phase\022\023\n\013p" +
+      "roducer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteid" +
+      "l.core.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022\021\n\tinput_uri\030\010 \001" +
+      "(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132" +
+      "\035.flyteidl.core.ExecutionErrorH\000\022,\n\013cust" +
+      "om_info\030\013 \001(\0132\027.google.protobuf.Struct\022\025" +
+      "\n\rphase_version\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n" +
+      "\ttask_type\030\016 \001(\t\0227\n\010metadata\030\020 \001(\0132%.fly" +
+      "teidl.event.TaskExecutionMetadataB\017\n\rout" +
+      "put_result\"+\n\024ExternalResourceInfo\022\023\n\013ex" +
+      "ternal_id\030\001 \001(\t\"?\n\020ResourcePoolInfo\022\030\n\020a" +
+      "llocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t" +
+      "\"\310\002\n\025TaskExecutionMetadata\022\026\n\016generated_" +
+      "name\030\001 \001(\t\022@\n\022external_resources\030\002 \003(\0132$" +
+      ".flyteidl.event.ExternalResourceInfo\022<\n\022" +
+      "resource_pool_info\030\003 \003(\0132 .flyteidl.even" +
+      "t.ResourcePoolInfo\022\031\n\021plugin_identifier\030" +
+      "\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.flyteidl" +
+      ".event.TaskExecutionMetadata.InstanceCla" +
+      "ss\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTE" +
+      "RRUPTIBLE\020\001B7Z5github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15080,6 +16236,7 @@ public final class Event {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.core.Compiler.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Catalog.getDescriptor(),
@@ -15097,7 +16254,7 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "TaskNodeMetadata", "DynamicWorkflowNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
@@ -15110,42 +16267,49 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskNodeMetadata_descriptor,
         new java.lang.String[] { "CacheStatus", "CatalogKey", });
-    internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
+    internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor,
+        new java.lang.String[] { "Id", "CompiledWorkflow", });
+    internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
         new java.lang.String[] { "NodeId", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
         new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "OutputUri", "Error", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "OutputResult", });
     internal_static_flyteidl_event_ExternalResourceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_event_ExternalResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ExternalResourceInfo_descriptor,
         new java.lang.String[] { "ExternalId", });
     internal_static_flyteidl_event_ResourcePoolInfo_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ResourcePoolInfo_descriptor,
         new java.lang.String[] { "AllocationToken", "Namespace", });
     internal_static_flyteidl_event_TaskExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
         new java.lang.String[] { "GeneratedName", "ExternalResources", "ResourcePoolInfo", "PluginIdentifier", "InstanceClass", });
+    flyteidl.core.Compiler.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

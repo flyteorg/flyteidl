@@ -21,6 +21,7 @@ from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionId
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase  # noqa: F401,E501
 from flyteadmin.models.event_parent_node_execution_metadata import EventParentNodeExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata  # noqa: F401,E501
+from flyteadmin.models.flyteidlevent_dynamic_workflow_node_metadata import FlyteidleventDynamicWorkflowNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata  # noqa: F401,E501
 
@@ -48,6 +49,7 @@ class EventNodeExecutionEvent(object):
         'error': 'CoreExecutionError',
         'workflow_node_metadata': 'FlyteidleventWorkflowNodeMetadata',
         'task_node_metadata': 'FlyteidleventTaskNodeMetadata',
+        'dynamic_workflow_node_metadata': 'FlyteidleventDynamicWorkflowNodeMetadata',
         'parent_task_metadata': 'EventParentTaskExecutionMetadata',
         'parent_node_metadata': 'EventParentNodeExecutionMetadata',
         'retry_group': 'str',
@@ -65,6 +67,7 @@ class EventNodeExecutionEvent(object):
         'error': 'error',
         'workflow_node_metadata': 'workflow_node_metadata',
         'task_node_metadata': 'task_node_metadata',
+        'dynamic_workflow_node_metadata': 'dynamic_workflow_node_metadata',
         'parent_task_metadata': 'parent_task_metadata',
         'parent_node_metadata': 'parent_node_metadata',
         'retry_group': 'retry_group',
@@ -72,7 +75,7 @@ class EventNodeExecutionEvent(object):
         'node_name': 'node_name'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, dynamic_workflow_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -84,6 +87,7 @@ class EventNodeExecutionEvent(object):
         self._error = None
         self._workflow_node_metadata = None
         self._task_node_metadata = None
+        self._dynamic_workflow_node_metadata = None
         self._parent_task_metadata = None
         self._parent_node_metadata = None
         self._retry_group = None
@@ -109,6 +113,8 @@ class EventNodeExecutionEvent(object):
             self.workflow_node_metadata = workflow_node_metadata
         if task_node_metadata is not None:
             self.task_node_metadata = task_node_metadata
+        if dynamic_workflow_node_metadata is not None:
+            self.dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
         if parent_task_metadata is not None:
             self.parent_task_metadata = parent_task_metadata
         if parent_node_metadata is not None:
@@ -312,6 +318,27 @@ class EventNodeExecutionEvent(object):
         """
 
         self._task_node_metadata = task_node_metadata
+
+    @property
+    def dynamic_workflow_node_metadata(self):
+        """Gets the dynamic_workflow_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The dynamic_workflow_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: FlyteidleventDynamicWorkflowNodeMetadata
+        """
+        return self._dynamic_workflow_node_metadata
+
+    @dynamic_workflow_node_metadata.setter
+    def dynamic_workflow_node_metadata(self, dynamic_workflow_node_metadata):
+        """Sets the dynamic_workflow_node_metadata of this EventNodeExecutionEvent.
+
+
+        :param dynamic_workflow_node_metadata: The dynamic_workflow_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :type: FlyteidleventDynamicWorkflowNodeMetadata
+        """
+
+        self._dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
 
     @property
     def parent_task_metadata(self):
