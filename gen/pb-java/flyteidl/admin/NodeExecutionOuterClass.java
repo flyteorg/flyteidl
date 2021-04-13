@@ -7068,19 +7068,6 @@ public final class NodeExecutionOuterClass {
      */
     flyteidl.admin.NodeExecutionOuterClass.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder();
 
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    boolean hasDynamicWorkflowNodeMetadata();
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata();
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder();
-
     public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionClosure.OutputResultCase getOutputResultCase();
 
     public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionClosure.TargetMetadataCase getTargetMetadataCase();
@@ -7235,20 +7222,6 @@ public final class NodeExecutionOuterClass {
               targetMetadataCase_ = 9;
               break;
             }
-            case 130: {
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder subBuilder = null;
-              if (targetMetadataCase_ == 16) {
-                subBuilder = ((flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_).toBuilder();
-              }
-              targetMetadata_ =
-                  input.readMessage(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_);
-                targetMetadata_ = subBuilder.buildPartial();
-              }
-              targetMetadataCase_ = 16;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7325,7 +7298,6 @@ public final class NodeExecutionOuterClass {
         implements com.google.protobuf.Internal.EnumLite {
       WORKFLOW_NODE_METADATA(8),
       TASK_NODE_METADATA(9),
-      DYNAMIC_WORKFLOW_NODE_METADATA(16),
       TARGETMETADATA_NOT_SET(0);
       private final int value;
       private TargetMetadataCase(int value) {
@@ -7343,7 +7315,6 @@ public final class NodeExecutionOuterClass {
         switch (value) {
           case 8: return WORKFLOW_NODE_METADATA;
           case 9: return TASK_NODE_METADATA;
-          case 16: return DYNAMIC_WORKFLOW_NODE_METADATA;
           case 0: return TARGETMETADATA_NOT_SET;
           default: return null;
         }
@@ -7649,32 +7620,6 @@ public final class NodeExecutionOuterClass {
       return flyteidl.admin.NodeExecutionOuterClass.TaskNodeMetadata.getDefaultInstance();
     }
 
-    public static final int DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER = 16;
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    public boolean hasDynamicWorkflowNodeMetadata() {
-      return targetMetadataCase_ == 16;
-    }
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
-      if (targetMetadataCase_ == 16) {
-         return (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_;
-      }
-      return flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-    }
-    /**
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-     */
-    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
-      if (targetMetadataCase_ == 16) {
-         return (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_;
-      }
-      return flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7715,9 +7660,6 @@ public final class NodeExecutionOuterClass {
       }
       if (targetMetadataCase_ == 9) {
         output.writeMessage(9, (flyteidl.admin.NodeExecutionOuterClass.TaskNodeMetadata) targetMetadata_);
-      }
-      if (targetMetadataCase_ == 16) {
-        output.writeMessage(16, (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_);
       }
       unknownFields.writeTo(output);
     }
@@ -7762,10 +7704,6 @@ public final class NodeExecutionOuterClass {
       if (targetMetadataCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, (flyteidl.admin.NodeExecutionOuterClass.TaskNodeMetadata) targetMetadata_);
-      }
-      if (targetMetadataCase_ == 16) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7826,10 +7764,6 @@ public final class NodeExecutionOuterClass {
           if (!getTaskNodeMetadata()
               .equals(other.getTaskNodeMetadata())) return false;
           break;
-        case 16:
-          if (!getDynamicWorkflowNodeMetadata()
-              .equals(other.getDynamicWorkflowNodeMetadata())) return false;
-          break;
         case 0:
         default:
       }
@@ -7882,10 +7816,6 @@ public final class NodeExecutionOuterClass {
         case 9:
           hash = (37 * hash) + TASK_NODE_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getTaskNodeMetadata().hashCode();
-          break;
-        case 16:
-          hash = (37 * hash) + DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER;
-          hash = (53 * hash) + getDynamicWorkflowNodeMetadata().hashCode();
           break;
         case 0:
         default:
@@ -8128,13 +8058,6 @@ public final class NodeExecutionOuterClass {
             result.targetMetadata_ = taskNodeMetadataBuilder_.build();
           }
         }
-        if (targetMetadataCase_ == 16) {
-          if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-            result.targetMetadata_ = targetMetadata_;
-          } else {
-            result.targetMetadata_ = dynamicWorkflowNodeMetadataBuilder_.build();
-          }
-        }
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
         onBuilt();
@@ -8222,10 +8145,6 @@ public final class NodeExecutionOuterClass {
           }
           case TASK_NODE_METADATA: {
             mergeTaskNodeMetadata(other.getTaskNodeMetadata());
-            break;
-          }
-          case DYNAMIC_WORKFLOW_NODE_METADATA: {
-            mergeDynamicWorkflowNodeMetadata(other.getDynamicWorkflowNodeMetadata());
             break;
           }
           case TARGETMETADATA_NOT_SET: {
@@ -9491,142 +9410,6 @@ public final class NodeExecutionOuterClass {
         onChanged();;
         return taskNodeMetadataBuilder_;
       }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowNodeMetadataBuilder_;
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public boolean hasDynamicWorkflowNodeMetadata() {
-        return targetMetadataCase_ == 16;
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 16) {
-            return (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_;
-          }
-          return flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-        } else {
-          if (targetMetadataCase_ == 16) {
-            return dynamicWorkflowNodeMetadataBuilder_.getMessage();
-          }
-          return flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public Builder setDynamicWorkflowNodeMetadata(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          targetMetadata_ = value;
-          onChanged();
-        } else {
-          dynamicWorkflowNodeMetadataBuilder_.setMessage(value);
-        }
-        targetMetadataCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public Builder setDynamicWorkflowNodeMetadata(
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder builderForValue) {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          targetMetadata_ = builderForValue.build();
-          onChanged();
-        } else {
-          dynamicWorkflowNodeMetadataBuilder_.setMessage(builderForValue.build());
-        }
-        targetMetadataCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public Builder mergeDynamicWorkflowNodeMetadata(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 16 &&
-              targetMetadata_ != flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance()) {
-            targetMetadata_ = flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.newBuilder((flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            targetMetadata_ = value;
-          }
-          onChanged();
-        } else {
-          if (targetMetadataCase_ == 16) {
-            dynamicWorkflowNodeMetadataBuilder_.mergeFrom(value);
-          }
-          dynamicWorkflowNodeMetadataBuilder_.setMessage(value);
-        }
-        targetMetadataCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public Builder clearDynamicWorkflowNodeMetadata() {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 16) {
-            targetMetadataCase_ = 0;
-            targetMetadata_ = null;
-            onChanged();
-          }
-        } else {
-          if (targetMetadataCase_ == 16) {
-            targetMetadataCase_ = 0;
-            targetMetadata_ = null;
-          }
-          dynamicWorkflowNodeMetadataBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder getDynamicWorkflowNodeMetadataBuilder() {
-        return getDynamicWorkflowNodeMetadataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
-        if ((targetMetadataCase_ == 16) && (dynamicWorkflowNodeMetadataBuilder_ != null)) {
-          return dynamicWorkflowNodeMetadataBuilder_.getMessageOrBuilder();
-        } else {
-          if (targetMetadataCase_ == 16) {
-            return (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_;
-          }
-          return flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> 
-          getDynamicWorkflowNodeMetadataFieldBuilder() {
-        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
-          if (!(targetMetadataCase_ == 16)) {
-            targetMetadata_ = flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance();
-          }
-          dynamicWorkflowNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder>(
-                  (flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata) targetMetadata_,
-                  getParentForChildren(),
-                  isClean());
-          targetMetadata_ = null;
-        }
-        targetMetadataCase_ = 16;
-        onChanged();;
-        return dynamicWorkflowNodeMetadataBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10339,6 +10122,31 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.core.CatalogMetadata catalog_key = 2;</code>
      */
     flyteidl.core.Catalog.CatalogMetadataOrBuilder getCatalogKeyOrBuilder();
+
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    boolean hasDynamicWorkflowNodeMetadata();
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata();
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder();
   }
   /**
    * <pre>
@@ -10399,6 +10207,19 @@ public final class NodeExecutionOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(catalogKey_);
                 catalogKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 130: {
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder subBuilder = null;
+              if (dynamicWorkflowNodeMetadata_ != null) {
+                subBuilder = dynamicWorkflowNodeMetadata_.toBuilder();
+              }
+              dynamicWorkflowNodeMetadata_ = input.readMessage(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dynamicWorkflowNodeMetadata_);
+                dynamicWorkflowNodeMetadata_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10493,6 +10314,39 @@ public final class NodeExecutionOuterClass {
       return getCatalogKey();
     }
 
+    public static final int DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER = 16;
+    private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflowNodeMetadata_;
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    public boolean hasDynamicWorkflowNodeMetadata() {
+      return dynamicWorkflowNodeMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
+      return dynamicWorkflowNodeMetadata_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflowNodeMetadata_;
+    }
+    /**
+     * <pre>
+     * In the case this task launched a dynamic workflow we capture its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+     */
+    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
+      return getDynamicWorkflowNodeMetadata();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10513,6 +10367,9 @@ public final class NodeExecutionOuterClass {
       if (catalogKey_ != null) {
         output.writeMessage(2, getCatalogKey());
       }
+      if (dynamicWorkflowNodeMetadata_ != null) {
+        output.writeMessage(16, getDynamicWorkflowNodeMetadata());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10529,6 +10386,10 @@ public final class NodeExecutionOuterClass {
       if (catalogKey_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCatalogKey());
+      }
+      if (dynamicWorkflowNodeMetadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getDynamicWorkflowNodeMetadata());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10551,6 +10412,11 @@ public final class NodeExecutionOuterClass {
         if (!getCatalogKey()
             .equals(other.getCatalogKey())) return false;
       }
+      if (hasDynamicWorkflowNodeMetadata() != other.hasDynamicWorkflowNodeMetadata()) return false;
+      if (hasDynamicWorkflowNodeMetadata()) {
+        if (!getDynamicWorkflowNodeMetadata()
+            .equals(other.getDynamicWorkflowNodeMetadata())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10567,6 +10433,10 @@ public final class NodeExecutionOuterClass {
       if (hasCatalogKey()) {
         hash = (37 * hash) + CATALOG_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getCatalogKey().hashCode();
+      }
+      if (hasDynamicWorkflowNodeMetadata()) {
+        hash = (37 * hash) + DYNAMIC_WORKFLOW_NODE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getDynamicWorkflowNodeMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10713,6 +10583,12 @@ public final class NodeExecutionOuterClass {
           catalogKey_ = null;
           catalogKeyBuilder_ = null;
         }
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          dynamicWorkflowNodeMetadata_ = null;
+        } else {
+          dynamicWorkflowNodeMetadata_ = null;
+          dynamicWorkflowNodeMetadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -10744,6 +10620,11 @@ public final class NodeExecutionOuterClass {
           result.catalogKey_ = catalogKey_;
         } else {
           result.catalogKey_ = catalogKeyBuilder_.build();
+        }
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          result.dynamicWorkflowNodeMetadata_ = dynamicWorkflowNodeMetadata_;
+        } else {
+          result.dynamicWorkflowNodeMetadata_ = dynamicWorkflowNodeMetadataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10798,6 +10679,9 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasCatalogKey()) {
           mergeCatalogKey(other.getCatalogKey());
+        }
+        if (other.hasDynamicWorkflowNodeMetadata()) {
+          mergeDynamicWorkflowNodeMetadata(other.getDynamicWorkflowNodeMetadata());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11044,6 +10928,159 @@ public final class NodeExecutionOuterClass {
           catalogKey_ = null;
         }
         return catalogKeyBuilder_;
+      }
+
+      private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflowNodeMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowNodeMetadataBuilder_;
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public boolean hasDynamicWorkflowNodeMetadata() {
+        return dynamicWorkflowNodeMetadataBuilder_ != null || dynamicWorkflowNodeMetadata_ != null;
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflowNodeMetadata() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          return dynamicWorkflowNodeMetadata_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflowNodeMetadata_;
+        } else {
+          return dynamicWorkflowNodeMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public Builder setDynamicWorkflowNodeMetadata(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dynamicWorkflowNodeMetadata_ = value;
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public Builder setDynamicWorkflowNodeMetadata(
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder builderForValue) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          dynamicWorkflowNodeMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public Builder mergeDynamicWorkflowNodeMetadata(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          if (dynamicWorkflowNodeMetadata_ != null) {
+            dynamicWorkflowNodeMetadata_ =
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.newBuilder(dynamicWorkflowNodeMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            dynamicWorkflowNodeMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public Builder clearDynamicWorkflowNodeMetadata() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          dynamicWorkflowNodeMetadata_ = null;
+          onChanged();
+        } else {
+          dynamicWorkflowNodeMetadata_ = null;
+          dynamicWorkflowNodeMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder getDynamicWorkflowNodeMetadataBuilder() {
+        
+        onChanged();
+        return getDynamicWorkflowNodeMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowNodeMetadataOrBuilder() {
+        if (dynamicWorkflowNodeMetadataBuilder_ != null) {
+          return dynamicWorkflowNodeMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return dynamicWorkflowNodeMetadata_ == null ?
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflowNodeMetadata_;
+        }
+      }
+      /**
+       * <pre>
+       * In the case this task launched a dynamic workflow we capture its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> 
+          getDynamicWorkflowNodeMetadataFieldBuilder() {
+        if (dynamicWorkflowNodeMetadataBuilder_ == null) {
+          dynamicWorkflowNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder>(
+                  getDynamicWorkflowNodeMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          dynamicWorkflowNodeMetadata_ = null;
+        }
+        return dynamicWorkflowNodeMetadataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14234,7 +14271,7 @@ public final class NodeExecutionOuterClass {
       "ent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(\t\"Z\n\021" +
       "NodeExecutionList\0226\n\017node_executions\030\001 \003" +
       "(\0132\035.flyteidl.admin.NodeExecution\022\r\n\005tok" +
-      "en\030\002 \001(\t\"\317\004\n\024NodeExecutionClosure\022\024\n\nout" +
+      "en\030\002 \001(\t\"\370\003\n\024NodeExecutionClosure\022\024\n\nout" +
       "put_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.flyteid" +
       "l.core.ExecutionErrorH\000\0221\n\005phase\030\003 \001(\0162\"" +
       ".flyteidl.core.NodeExecution.Phase\022.\n\nst" +
@@ -14245,29 +14282,28 @@ public final class NodeExecutionOuterClass {
       "ogle.protobuf.Timestamp\022F\n\026workflow_node" +
       "_metadata\030\010 \001(\0132$.flyteidl.admin.Workflo" +
       "wNodeMetadataH\001\022>\n\022task_node_metadata\030\t " +
-      "\001(\0132 .flyteidl.admin.TaskNodeMetadataH\001\022" +
-      "U\n\036dynamic_workflow_node_metadata\030\020 \001(\0132" +
-      "+.flyteidl.admin.DynamicWorkflowNodeMeta" +
-      "dataH\001B\017\n\routput_resultB\021\n\017target_metada" +
-      "ta\"W\n\024WorkflowNodeMetadata\022?\n\013executionI" +
-      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
-      "nIdentifier\"\200\001\n\020TaskNodeMetadata\0227\n\014cach" +
-      "e_status\030\001 \001(\0162!.flyteidl.core.CatalogCa" +
-      "cheStatus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteid" +
-      "l.core.CatalogMetadata\"\207\001\n\033DynamicWorkfl" +
-      "owNodeMetadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.co" +
-      "re.Identifier\022A\n\021compiled_workflow\030\002 \001(\013" +
-      "2&.flyteidl.core.CompiledWorkflowClosure" +
-      "\"Q\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001 " +
-      "\001(\0132&.flyteidl.core.NodeExecutionIdentif" +
-      "ier\"\322\001\n\034NodeExecutionGetDataResponse\022\'\n\006" +
-      "inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n" +
-      "\007outputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022" +
-      ".\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lit" +
-      "eralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapB7Z5github.com/flyteorg/" +
-      "flyteidl/gen/pb-go/flyteidl/adminb\006proto" +
-      "3"
+      "\001(\0132 .flyteidl.admin.TaskNodeMetadataH\001B" +
+      "\017\n\routput_resultB\021\n\017target_metadata\"W\n\024W" +
+      "orkflowNodeMetadata\022?\n\013executionId\030\001 \001(\013" +
+      "2*.flyteidl.core.WorkflowExecutionIdenti" +
+      "fier\"\325\001\n\020TaskNodeMetadata\0227\n\014cache_statu" +
+      "s\030\001 \001(\0162!.flyteidl.core.CatalogCacheStat" +
+      "us\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl.core." +
+      "CatalogMetadata\022S\n\036dynamic_workflow_node" +
+      "_metadata\030\020 \001(\0132+.flyteidl.admin.Dynamic" +
+      "WorkflowNodeMetadata\"\207\001\n\033DynamicWorkflow" +
+      "NodeMetadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
+      ".Identifier\022A\n\021compiled_workflow\030\002 \001(\0132&" +
+      ".flyteidl.core.CompiledWorkflowClosure\"Q" +
+      "\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001 \001(" +
+      "\0132&.flyteidl.core.NodeExecutionIdentifie" +
+      "r\"\322\001\n\034NodeExecutionGetDataResponse\022\'\n\006in" +
+      "puts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n\007o" +
+      "utputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob\022.\n" +
+      "\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Liter" +
+      "alMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.c" +
+      "ore.LiteralMapB7Z5github.com/flyteorg/fl" +
+      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14330,7 +14366,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionClosure_descriptor,
-        new java.lang.String[] { "OutputUri", "Error", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "WorkflowNodeMetadata", "TaskNodeMetadata", "DynamicWorkflowNodeMetadata", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "OutputUri", "Error", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "WorkflowNodeMetadata", "TaskNodeMetadata", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_admin_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_WorkflowNodeMetadata_fieldAccessorTable = new
@@ -14342,7 +14378,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_TaskNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskNodeMetadata_descriptor,
-        new java.lang.String[] { "CacheStatus", "CatalogKey", });
+        new java.lang.String[] { "CacheStatus", "CatalogKey", "DynamicWorkflowNodeMetadata", });
     internal_static_flyteidl_admin_DynamicWorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_DynamicWorkflowNodeMetadata_fieldAccessorTable = new

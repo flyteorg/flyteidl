@@ -137,7 +137,6 @@ message NodeExecutionClosure {
     oneof target_metadata {
         WorkflowNodeMetadata workflow_node_metadata = 8;
         TaskNodeMetadata task_node_metadata = 9;
-        DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
     }
 }
 
@@ -152,6 +151,9 @@ message TaskNodeMetadata {
     core.CatalogCacheStatus cache_status = 1;
     // This structure carries the catalog artifact information
     core.CatalogMetadata catalog_key = 2;
+
+    // In the case this task launched a dynamic workflow we capture its structure here.
+    DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
 }
 
 // For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.

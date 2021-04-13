@@ -261,18 +261,6 @@ func (m *NodeExecutionEvent) Validate() error {
 			}
 		}
 
-	case *NodeExecutionEvent_DynamicWorkflowNodeMetadata:
-
-		if v, ok := interface{}(m.GetDynamicWorkflowNodeMetadata()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return NodeExecutionEventValidationError{
-					field:  "DynamicWorkflowNodeMetadata",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	return nil
@@ -425,6 +413,16 @@ func (m *TaskNodeMetadata) Validate() error {
 		if err := v.Validate(); err != nil {
 			return TaskNodeMetadataValidationError{
 				field:  "CatalogKey",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetDynamicWorkflowNodeMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskNodeMetadataValidationError{
+				field:  "DynamicWorkflowNodeMetadata",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

@@ -3812,9 +3812,6 @@
         },
         "task_node_metadata": {
           "$ref": "#/definitions/flyteidladminTaskNodeMetadata"
-        },
-        "dynamic_workflow_node_metadata": {
-          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
         }
       },
       "description": "Container for node execution details and results."
@@ -5933,9 +5930,6 @@
         "task_node_metadata": {
           "$ref": "#/definitions/flyteidleventTaskNodeMetadata"
         },
-        "dynamic_workflow_node_metadata": {
-          "$ref": "#/definitions/flyteidleventDynamicWorkflowNodeMetadata"
-        },
         "parent_task_metadata": {
           "$ref": "#/definitions/eventParentTaskExecutionMetadata",
           "description": "[To be deprecated] Specifies which task (if any) launched this node."
@@ -6190,6 +6184,10 @@
         "catalog_key": {
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
+        },
+        "dynamic_workflow_node_metadata": {
+          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
+          "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
       },
       "title": "Metadata for the case in which the node is a TaskNode"
@@ -6239,6 +6237,10 @@
         "catalog_key": {
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
+        },
+        "dynamic_workflow_node_metadata": {
+          "$ref": "#/definitions/flyteidleventDynamicWorkflowNodeMetadata",
+          "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
       }
     },

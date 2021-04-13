@@ -25,7 +25,6 @@ type EventNodeExecutionEvent struct {
 	Error_ *CoreExecutionError `json:"error,omitempty"`
 	WorkflowNodeMetadata *FlyteidleventWorkflowNodeMetadata `json:"workflow_node_metadata,omitempty"`
 	TaskNodeMetadata *FlyteidleventTaskNodeMetadata `json:"task_node_metadata,omitempty"`
-	DynamicWorkflowNodeMetadata *FlyteidleventDynamicWorkflowNodeMetadata `json:"dynamic_workflow_node_metadata,omitempty"`
 	// [To be deprecated] Specifies which task (if any) launched this node.
 	ParentTaskMetadata *EventParentTaskExecutionMetadata `json:"parent_task_metadata,omitempty"`
 	// Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.

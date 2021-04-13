@@ -5268,9 +5268,6 @@ export namespace flyteidl {
             /** NodeExecutionEvent taskNodeMetadata */
             taskNodeMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
 
-            /** NodeExecutionEvent dynamicWorkflowNodeMetadata */
-            dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
-
             /** NodeExecutionEvent parentTaskMetadata */
             parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
 
@@ -5323,9 +5320,6 @@ export namespace flyteidl {
             /** NodeExecutionEvent taskNodeMetadata. */
             public taskNodeMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
 
-            /** NodeExecutionEvent dynamicWorkflowNodeMetadata. */
-            public dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
-
             /** NodeExecutionEvent parentTaskMetadata. */
             public parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
 
@@ -5345,7 +5339,7 @@ export namespace flyteidl {
             public outputResult?: ("outputUri"|"error");
 
             /** NodeExecutionEvent targetMetadata. */
-            public targetMetadata?: ("workflowNodeMetadata"|"taskNodeMetadata"|"dynamicWorkflowNodeMetadata");
+            public targetMetadata?: ("workflowNodeMetadata"|"taskNodeMetadata");
 
             /**
              * Creates a new NodeExecutionEvent instance using the specified properties.
@@ -5440,6 +5434,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata dynamicWorkflowNodeMetadata */
+            dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
         }
 
         /** Represents a TaskNodeMetadata. */
@@ -5456,6 +5453,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata dynamicWorkflowNodeMetadata. */
+            public dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.
@@ -10982,9 +10982,6 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure taskNodeMetadata */
             taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
-
-            /** NodeExecutionClosure dynamicWorkflowNodeMetadata */
-            dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -11023,14 +11020,11 @@ export namespace flyteidl {
             /** NodeExecutionClosure taskNodeMetadata. */
             public taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
 
-            /** NodeExecutionClosure dynamicWorkflowNodeMetadata. */
-            public dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
-
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");
 
             /** NodeExecutionClosure targetMetadata. */
-            public targetMetadata?: ("workflowNodeMetadata"|"taskNodeMetadata"|"dynamicWorkflowNodeMetadata");
+            public targetMetadata?: ("workflowNodeMetadata"|"taskNodeMetadata");
 
             /**
              * Creates a new NodeExecutionClosure instance using the specified properties.
@@ -11125,6 +11119,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata dynamicWorkflowNodeMetadata */
+            dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
         }
 
         /** Represents a TaskNodeMetadata. */
@@ -11141,6 +11138,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata dynamicWorkflowNodeMetadata. */
+            public dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.
