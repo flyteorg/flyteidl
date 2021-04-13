@@ -334,7 +334,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fevent_2fevent_2eproto::o
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskNodeMetadata, cache_status_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskNodeMetadata, catalog_key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskNodeMetadata, dynamic_workflow_node_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::event::TaskNodeMetadata, dynamic_workflow_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::event::DynamicWorkflowNodeMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -466,51 +466,51 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "e\030\r \001(\tB\017\n\routput_resultB\021\n\017target_metad"
   "ata\"X\n\024WorkflowNodeMetadata\022@\n\014execution"
   "_id\030\001 \001(\0132*.flyteidl.core.WorkflowExecut"
-  "ionIdentifier\"\325\001\n\020TaskNodeMetadata\0227\n\014ca"
+  "ionIdentifier\"\307\001\n\020TaskNodeMetadata\0227\n\014ca"
   "che_status\030\001 \001(\0162!.flyteidl.core.Catalog"
   "CacheStatus\0223\n\013catalog_key\030\002 \001(\0132\036.flyte"
-  "idl.core.CatalogMetadata\022S\n\036dynamic_work"
-  "flow_node_metadata\030\020 \001(\0132+.flyteidl.even"
-  "t.DynamicWorkflowNodeMetadata\"\207\001\n\033Dynami"
-  "cWorkflowNodeMetadata\022%\n\002id\030\001 \001(\0132\031.flyt"
-  "eidl.core.Identifier\022A\n\021compiled_workflo"
-  "w\030\002 \001(\0132&.flyteidl.core.CompiledWorkflow"
-  "Closure\"Q\n\033ParentTaskExecutionMetadata\0222"
-  "\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecution"
-  "Identifier\".\n\033ParentNodeExecutionMetadat"
-  "a\022\017\n\007node_id\030\001 \001(\t\"\313\004\n\022TaskExecutionEven"
-  "t\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Ident"
-  "ifier\022H\n\030parent_node_execution_id\030\002 \001(\0132"
-  "&.flyteidl.core.NodeExecutionIdentifier\022"
-  "\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\"."
-  "flyteidl.core.TaskExecution.Phase\022\023\n\013pro"
-  "ducer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl."
-  "core.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.goog"
-  "le.protobuf.Timestamp\022\021\n\tinput_uri\030\010 \001(\t"
-  "\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035."
-  "flyteidl.core.ExecutionErrorH\000\022,\n\013custom"
-  "_info\030\013 \001(\0132\027.google.protobuf.Struct\022\025\n\r"
-  "phase_version\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\tt"
-  "ask_type\030\016 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyte"
-  "idl.event.TaskExecutionMetadataB\017\n\routpu"
-  "t_result\"+\n\024ExternalResourceInfo\022\023\n\013exte"
-  "rnal_id\030\001 \001(\t\"\?\n\020ResourcePoolInfo\022\030\n\020all"
-  "ocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310"
-  "\002\n\025TaskExecutionMetadata\022\026\n\016generated_na"
-  "me\030\001 \001(\t\022@\n\022external_resources\030\002 \003(\0132$.f"
-  "lyteidl.event.ExternalResourceInfo\022<\n\022re"
-  "source_pool_info\030\003 \003(\0132 .flyteidl.event."
-  "ResourcePoolInfo\022\031\n\021plugin_identifier\030\004 "
-  "\001(\t\022K\n\016instance_class\030\020 \001(\01623.flyteidl.e"
-  "vent.TaskExecutionMetadata.InstanceClass"
-  "\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERR"
-  "UPTIBLE\020\001B7Z5github.com/flyteorg/flyteid"
-  "l/gen/pb-go/flyteidl/eventb\006proto3"
+  "idl.core.CatalogMetadata\022E\n\020dynamic_work"
+  "flow\030\020 \001(\0132+.flyteidl.event.DynamicWorkf"
+  "lowNodeMetadata\"\207\001\n\033DynamicWorkflowNodeM"
+  "etadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden"
+  "tifier\022A\n\021compiled_workflow\030\002 \001(\0132&.flyt"
+  "eidl.core.CompiledWorkflowClosure\"Q\n\033Par"
+  "entTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&.f"
+  "lyteidl.core.TaskExecutionIdentifier\".\n\033"
+  "ParentNodeExecutionMetadata\022\017\n\007node_id\030\001"
+  " \001(\t\"\313\004\n\022TaskExecutionEvent\022*\n\007task_id\030\001"
+  " \001(\0132\031.flyteidl.core.Identifier\022H\n\030paren"
+  "t_node_execution_id\030\002 \001(\0132&.flyteidl.cor"
+  "e.NodeExecutionIdentifier\022\025\n\rretry_attem"
+  "pt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core."
+  "TaskExecution.Phase\022\023\n\013producer_id\030\005 \001(\t"
+  "\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\022/"
+  "\n\013occurred_at\030\007 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_uri"
+  "\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core."
+  "ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027."
+  "google.protobuf.Struct\022\025\n\rphase_version\030"
+  "\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t"
+  "\0227\n\010metadata\030\020 \001(\0132%.flyteidl.event.Task"
+  "ExecutionMetadataB\017\n\routput_result\"+\n\024Ex"
+  "ternalResourceInfo\022\023\n\013external_id\030\001 \001(\t\""
+  "\?\n\020ResourcePoolInfo\022\030\n\020allocation_token\030"
+  "\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecuti"
+  "onMetadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022ex"
+  "ternal_resources\030\002 \003(\0132$.flyteidl.event."
+  "ExternalResourceInfo\022<\n\022resource_pool_in"
+  "fo\030\003 \003(\0132 .flyteidl.event.ResourcePoolIn"
+  "fo\022\031\n\021plugin_identifier\030\004 \001(\t\022K\n\016instanc"
+  "e_class\030\020 \001(\01623.flyteidl.event.TaskExecu"
+  "tionMetadata.InstanceClass\"/\n\rInstanceCl"
+  "ass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5g"
+  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
+  "yteidl/eventb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fevent_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fevent_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto,
-  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2874,
+  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2860,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {
@@ -2829,13 +2829,13 @@ void WorkflowNodeMetadata::InternalSwap(WorkflowNodeMetadata* other) {
 void TaskNodeMetadata::InitAsDefaultInstance() {
   ::flyteidl::event::_TaskNodeMetadata_default_instance_._instance.get_mutable()->catalog_key_ = const_cast< ::flyteidl::core::CatalogMetadata*>(
       ::flyteidl::core::CatalogMetadata::internal_default_instance());
-  ::flyteidl::event::_TaskNodeMetadata_default_instance_._instance.get_mutable()->dynamic_workflow_node_metadata_ = const_cast< ::flyteidl::event::DynamicWorkflowNodeMetadata*>(
+  ::flyteidl::event::_TaskNodeMetadata_default_instance_._instance.get_mutable()->dynamic_workflow_ = const_cast< ::flyteidl::event::DynamicWorkflowNodeMetadata*>(
       ::flyteidl::event::DynamicWorkflowNodeMetadata::internal_default_instance());
 }
 class TaskNodeMetadata::HasBitSetters {
  public:
   static const ::flyteidl::core::CatalogMetadata& catalog_key(const TaskNodeMetadata* msg);
-  static const ::flyteidl::event::DynamicWorkflowNodeMetadata& dynamic_workflow_node_metadata(const TaskNodeMetadata* msg);
+  static const ::flyteidl::event::DynamicWorkflowNodeMetadata& dynamic_workflow(const TaskNodeMetadata* msg);
 };
 
 const ::flyteidl::core::CatalogMetadata&
@@ -2843,8 +2843,8 @@ TaskNodeMetadata::HasBitSetters::catalog_key(const TaskNodeMetadata* msg) {
   return *msg->catalog_key_;
 }
 const ::flyteidl::event::DynamicWorkflowNodeMetadata&
-TaskNodeMetadata::HasBitSetters::dynamic_workflow_node_metadata(const TaskNodeMetadata* msg) {
-  return *msg->dynamic_workflow_node_metadata_;
+TaskNodeMetadata::HasBitSetters::dynamic_workflow(const TaskNodeMetadata* msg) {
+  return *msg->dynamic_workflow_;
 }
 void TaskNodeMetadata::clear_catalog_key() {
   if (GetArenaNoVirtual() == nullptr && catalog_key_ != nullptr) {
@@ -2855,7 +2855,7 @@ void TaskNodeMetadata::clear_catalog_key() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskNodeMetadata::kCacheStatusFieldNumber;
 const int TaskNodeMetadata::kCatalogKeyFieldNumber;
-const int TaskNodeMetadata::kDynamicWorkflowNodeMetadataFieldNumber;
+const int TaskNodeMetadata::kDynamicWorkflowFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskNodeMetadata::TaskNodeMetadata()
@@ -2872,10 +2872,10 @@ TaskNodeMetadata::TaskNodeMetadata(const TaskNodeMetadata& from)
   } else {
     catalog_key_ = nullptr;
   }
-  if (from.has_dynamic_workflow_node_metadata()) {
-    dynamic_workflow_node_metadata_ = new ::flyteidl::event::DynamicWorkflowNodeMetadata(*from.dynamic_workflow_node_metadata_);
+  if (from.has_dynamic_workflow()) {
+    dynamic_workflow_ = new ::flyteidl::event::DynamicWorkflowNodeMetadata(*from.dynamic_workflow_);
   } else {
-    dynamic_workflow_node_metadata_ = nullptr;
+    dynamic_workflow_ = nullptr;
   }
   cache_status_ = from.cache_status_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.event.TaskNodeMetadata)
@@ -2896,7 +2896,7 @@ TaskNodeMetadata::~TaskNodeMetadata() {
 
 void TaskNodeMetadata::SharedDtor() {
   if (this != internal_default_instance()) delete catalog_key_;
-  if (this != internal_default_instance()) delete dynamic_workflow_node_metadata_;
+  if (this != internal_default_instance()) delete dynamic_workflow_;
 }
 
 void TaskNodeMetadata::SetCachedSize(int size) const {
@@ -2918,10 +2918,10 @@ void TaskNodeMetadata::Clear() {
     delete catalog_key_;
   }
   catalog_key_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && dynamic_workflow_node_metadata_ != nullptr) {
-    delete dynamic_workflow_node_metadata_;
+  if (GetArenaNoVirtual() == nullptr && dynamic_workflow_ != nullptr) {
+    delete dynamic_workflow_;
   }
-  dynamic_workflow_node_metadata_ = nullptr;
+  dynamic_workflow_ = nullptr;
   cache_status_ = 0;
   _internal_metadata_.Clear();
 }
@@ -2960,13 +2960,13 @@ const char* TaskNodeMetadata::_InternalParse(const char* begin, const char* end,
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
+      // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
       case 16: {
         if (static_cast<::google::protobuf::uint8>(tag) != 130) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::event::DynamicWorkflowNodeMetadata::_InternalParse;
-        object = msg->mutable_dynamic_workflow_node_metadata();
+        object = msg->mutable_dynamic_workflow();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -3028,11 +3028,11 @@ bool TaskNodeMetadata::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
+      // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
       case 16: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (130 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_dynamic_workflow_node_metadata()));
+               input, mutable_dynamic_workflow()));
         } else {
           goto handle_unusual;
         }
@@ -3078,10 +3078,10 @@ void TaskNodeMetadata::SerializeWithCachedSizes(
       2, HasBitSetters::catalog_key(this), output);
   }
 
-  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
-  if (this->has_dynamic_workflow_node_metadata()) {
+  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
+  if (this->has_dynamic_workflow()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16, HasBitSetters::dynamic_workflow_node_metadata(this), output);
+      16, HasBitSetters::dynamic_workflow(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3110,11 +3110,11 @@ void TaskNodeMetadata::SerializeWithCachedSizes(
         2, HasBitSetters::catalog_key(this), target);
   }
 
-  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
-  if (this->has_dynamic_workflow_node_metadata()) {
+  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
+  if (this->has_dynamic_workflow()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        16, HasBitSetters::dynamic_workflow_node_metadata(this), target);
+        16, HasBitSetters::dynamic_workflow(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3145,11 +3145,11 @@ size_t TaskNodeMetadata::ByteSizeLong() const {
         *catalog_key_);
   }
 
-  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
-  if (this->has_dynamic_workflow_node_metadata()) {
+  // .flyteidl.event.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
+  if (this->has_dynamic_workflow()) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *dynamic_workflow_node_metadata_);
+        *dynamic_workflow_);
   }
 
   // .flyteidl.core.CatalogCacheStatus cache_status = 1;
@@ -3188,8 +3188,8 @@ void TaskNodeMetadata::MergeFrom(const TaskNodeMetadata& from) {
   if (from.has_catalog_key()) {
     mutable_catalog_key()->::flyteidl::core::CatalogMetadata::MergeFrom(from.catalog_key());
   }
-  if (from.has_dynamic_workflow_node_metadata()) {
-    mutable_dynamic_workflow_node_metadata()->::flyteidl::event::DynamicWorkflowNodeMetadata::MergeFrom(from.dynamic_workflow_node_metadata());
+  if (from.has_dynamic_workflow()) {
+    mutable_dynamic_workflow()->::flyteidl::event::DynamicWorkflowNodeMetadata::MergeFrom(from.dynamic_workflow());
   }
   if (from.cache_status() != 0) {
     set_cache_status(from.cache_status());
@@ -3222,7 +3222,7 @@ void TaskNodeMetadata::InternalSwap(TaskNodeMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(catalog_key_, other->catalog_key_);
-  swap(dynamic_workflow_node_metadata_, other->dynamic_workflow_node_metadata_);
+  swap(dynamic_workflow_, other->dynamic_workflow_);
   swap(cache_status_, other->cache_status_);
 }
 

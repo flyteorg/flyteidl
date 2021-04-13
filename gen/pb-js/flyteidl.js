@@ -13127,7 +13127,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskNodeMetadata
              * @property {flyteidl.core.CatalogCacheStatus|null} [cacheStatus] TaskNodeMetadata cacheStatus
              * @property {flyteidl.core.ICatalogMetadata|null} [catalogKey] TaskNodeMetadata catalogKey
-             * @property {flyteidl.event.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflowNodeMetadata] TaskNodeMetadata dynamicWorkflowNodeMetadata
+             * @property {flyteidl.event.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] TaskNodeMetadata dynamicWorkflow
              */
 
             /**
@@ -13162,12 +13162,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskNodeMetadata.prototype.catalogKey = null;
 
             /**
-             * TaskNodeMetadata dynamicWorkflowNodeMetadata.
-             * @member {flyteidl.event.IDynamicWorkflowNodeMetadata|null|undefined} dynamicWorkflowNodeMetadata
+             * TaskNodeMetadata dynamicWorkflow.
+             * @member {flyteidl.event.IDynamicWorkflowNodeMetadata|null|undefined} dynamicWorkflow
              * @memberof flyteidl.event.TaskNodeMetadata
              * @instance
              */
-            TaskNodeMetadata.prototype.dynamicWorkflowNodeMetadata = null;
+            TaskNodeMetadata.prototype.dynamicWorkflow = null;
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.
@@ -13197,8 +13197,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.cacheStatus);
                 if (message.catalogKey != null && message.hasOwnProperty("catalogKey"))
                     $root.flyteidl.core.CatalogMetadata.encode(message.catalogKey, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.dynamicWorkflowNodeMetadata != null && message.hasOwnProperty("dynamicWorkflowNodeMetadata"))
-                    $root.flyteidl.event.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflowNodeMetadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow"))
+                    $root.flyteidl.event.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflow, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -13227,7 +13227,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.catalogKey = $root.flyteidl.core.CatalogMetadata.decode(reader, reader.uint32());
                         break;
                     case 16:
-                        message.dynamicWorkflowNodeMetadata = $root.flyteidl.event.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
+                        message.dynamicWorkflow = $root.flyteidl.event.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13265,10 +13265,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "catalogKey." + error;
                 }
-                if (message.dynamicWorkflowNodeMetadata != null && message.hasOwnProperty("dynamicWorkflowNodeMetadata")) {
-                    let error = $root.flyteidl.event.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflowNodeMetadata);
+                if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow")) {
+                    let error = $root.flyteidl.event.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflow);
                     if (error)
-                        return "dynamicWorkflowNodeMetadata." + error;
+                        return "dynamicWorkflow." + error;
                 }
                 return null;
             };
@@ -26638,7 +26638,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskNodeMetadata
              * @property {flyteidl.core.CatalogCacheStatus|null} [cacheStatus] TaskNodeMetadata cacheStatus
              * @property {flyteidl.core.ICatalogMetadata|null} [catalogKey] TaskNodeMetadata catalogKey
-             * @property {flyteidl.admin.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflowNodeMetadata] TaskNodeMetadata dynamicWorkflowNodeMetadata
+             * @property {flyteidl.admin.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] TaskNodeMetadata dynamicWorkflow
              */
 
             /**
@@ -26673,12 +26673,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskNodeMetadata.prototype.catalogKey = null;
 
             /**
-             * TaskNodeMetadata dynamicWorkflowNodeMetadata.
-             * @member {flyteidl.admin.IDynamicWorkflowNodeMetadata|null|undefined} dynamicWorkflowNodeMetadata
+             * TaskNodeMetadata dynamicWorkflow.
+             * @member {flyteidl.admin.IDynamicWorkflowNodeMetadata|null|undefined} dynamicWorkflow
              * @memberof flyteidl.admin.TaskNodeMetadata
              * @instance
              */
-            TaskNodeMetadata.prototype.dynamicWorkflowNodeMetadata = null;
+            TaskNodeMetadata.prototype.dynamicWorkflow = null;
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.
@@ -26708,8 +26708,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.cacheStatus);
                 if (message.catalogKey != null && message.hasOwnProperty("catalogKey"))
                     $root.flyteidl.core.CatalogMetadata.encode(message.catalogKey, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.dynamicWorkflowNodeMetadata != null && message.hasOwnProperty("dynamicWorkflowNodeMetadata"))
-                    $root.flyteidl.admin.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflowNodeMetadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow"))
+                    $root.flyteidl.admin.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflow, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -26738,7 +26738,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.catalogKey = $root.flyteidl.core.CatalogMetadata.decode(reader, reader.uint32());
                         break;
                     case 16:
-                        message.dynamicWorkflowNodeMetadata = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
+                        message.dynamicWorkflow = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -26776,10 +26776,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "catalogKey." + error;
                 }
-                if (message.dynamicWorkflowNodeMetadata != null && message.hasOwnProperty("dynamicWorkflowNodeMetadata")) {
-                    let error = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflowNodeMetadata);
+                if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow")) {
+                    let error = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflow);
                     if (error)
-                        return "dynamicWorkflowNodeMetadata." + error;
+                        return "dynamicWorkflow." + error;
                 }
                 return null;
             };

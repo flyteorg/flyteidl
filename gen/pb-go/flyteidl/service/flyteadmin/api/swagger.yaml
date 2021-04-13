@@ -5601,7 +5601,7 @@ definitions:
           artifact_tag:
             name: "name"
             artifact_id: "artifact_id"
-        dynamic_workflow_node_metadata:
+        dynamic_workflow:
           compiled_workflow:
             sub_workflows:
             - template:
@@ -8541,7 +8541,7 @@ definitions:
               artifact_tag:
                 name: "name"
                 artifact_id: "artifact_id"
-            dynamic_workflow_node_metadata:
+            dynamic_workflow:
               compiled_workflow:
                 sub_workflows:
                 - template:
@@ -11424,7 +11424,7 @@ definitions:
               artifact_tag:
                 name: "name"
                 artifact_id: "artifact_id"
-            dynamic_workflow_node_metadata:
+            dynamic_workflow:
               compiled_workflow:
                 sub_workflows:
                 - template:
@@ -37688,7 +37688,7 @@ definitions:
             artifact_tag:
               name: "name"
               artifact_id: "artifact_id"
-          dynamic_workflow_node_metadata:
+          dynamic_workflow:
             compiled_workflow:
               sub_workflows:
               - template:
@@ -40618,7 +40618,7 @@ definitions:
       catalog_key:
         title: "This structure carries the catalog artifact information"
         $ref: "#/definitions/coreCatalogMetadata"
-      dynamic_workflow_node_metadata:
+      dynamic_workflow:
         description: "In the case this task launched a dynamic workflow we capture\
           \ its structure here."
         $ref: "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
@@ -40648,7 +40648,7 @@ definitions:
         artifact_tag:
           name: "name"
           artifact_id: "artifact_id"
-      dynamic_workflow_node_metadata:
+      dynamic_workflow:
         compiled_workflow:
           sub_workflows:
           - template:
@@ -43527,7 +43527,7 @@ definitions:
       catalog_key:
         title: "This structure carries the catalog artifact information"
         $ref: "#/definitions/coreCatalogMetadata"
-      dynamic_workflow_node_metadata:
+      dynamic_workflow:
         description: "In the case this task launched a dynamic workflow we capture\
           \ its structure here."
         $ref: "#/definitions/flyteidleventDynamicWorkflowNodeMetadata"

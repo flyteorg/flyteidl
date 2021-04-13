@@ -230,7 +230,7 @@ flyteidl.event.TaskNodeMetadata
   {
     "cache_status": "...",
     "catalog_key": "{...}",
-    "dynamic_workflow_node_metadata": "{...}"
+    "dynamic_workflow": "{...}"
   }
 
 .. _api_field_flyteidl.event.TaskNodeMetadata.cache_status:
@@ -245,9 +245,9 @@ catalog_key
   (:ref:`flyteidl.core.CatalogMetadata <api_msg_flyteidl.core.CatalogMetadata>`) This structure carries the catalog artifact information
   
   
-.. _api_field_flyteidl.event.TaskNodeMetadata.dynamic_workflow_node_metadata:
+.. _api_field_flyteidl.event.TaskNodeMetadata.dynamic_workflow:
 
-dynamic_workflow_node_metadata
+dynamic_workflow
   (:ref:`flyteidl.event.DynamicWorkflowNodeMetadata <api_msg_flyteidl.event.DynamicWorkflowNodeMetadata>`) In the case this task launched a dynamic workflow we capture its structure here.
   
   

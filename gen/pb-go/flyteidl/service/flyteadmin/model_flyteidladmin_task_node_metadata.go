@@ -14,5 +14,5 @@ type FlyteidladminTaskNodeMetadata struct {
 	CacheStatus *CoreCatalogCacheStatus `json:"cache_status,omitempty"`
 	CatalogKey *CoreCatalogMetadata `json:"catalog_key,omitempty"`
 	// In the case this task launched a dynamic workflow we capture its structure here.
-	DynamicWorkflowNodeMetadata *FlyteidladminDynamicWorkflowNodeMetadata `json:"dynamic_workflow_node_metadata,omitempty"`
+	DynamicWorkflow *FlyteidladminDynamicWorkflowNodeMetadata `json:"dynamic_workflow,omitempty"`
 }

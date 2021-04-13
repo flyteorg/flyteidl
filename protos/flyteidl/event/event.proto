@@ -94,7 +94,7 @@ message TaskNodeMetadata {
     core.CatalogMetadata catalog_key = 2;
 
     // In the case this task launched a dynamic workflow we capture its structure here.
-    DynamicWorkflowNodeMetadata dynamic_workflow_node_metadata = 16;
+    DynamicWorkflowNodeMetadata dynamic_workflow = 16;
 }
 
 // For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.

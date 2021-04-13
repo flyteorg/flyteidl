@@ -5435,8 +5435,8 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
-            /** TaskNodeMetadata dynamicWorkflowNodeMetadata */
-            dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
+            /** TaskNodeMetadata dynamicWorkflow */
+            dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
         }
 
         /** Represents a TaskNodeMetadata. */
@@ -5454,8 +5454,8 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
-            /** TaskNodeMetadata dynamicWorkflowNodeMetadata. */
-            public dynamicWorkflowNodeMetadata?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
+            /** TaskNodeMetadata dynamicWorkflow. */
+            public dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.
@@ -11120,8 +11120,8 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
-            /** TaskNodeMetadata dynamicWorkflowNodeMetadata */
-            dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+            /** TaskNodeMetadata dynamicWorkflow */
+            dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
         }
 
         /** Represents a TaskNodeMetadata. */
@@ -11139,8 +11139,8 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
-            /** TaskNodeMetadata dynamicWorkflowNodeMetadata. */
-            public dynamicWorkflowNodeMetadata?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+            /** TaskNodeMetadata dynamicWorkflow. */
+            public dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
 
             /**
              * Creates a new TaskNodeMetadata instance using the specified properties.

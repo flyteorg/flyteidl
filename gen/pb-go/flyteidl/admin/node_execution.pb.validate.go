@@ -815,10 +815,10 @@ func (m *TaskNodeMetadata) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetDynamicWorkflowNodeMetadata()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetDynamicWorkflow()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return TaskNodeMetadataValidationError{
-				field:  "DynamicWorkflowNodeMetadata",
+				field:  "DynamicWorkflow",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

@@ -37,29 +37,29 @@ class FlyteidleventTaskNodeMetadata(object):
     swagger_types = {
         'cache_status': 'CoreCatalogCacheStatus',
         'catalog_key': 'CoreCatalogMetadata',
-        'dynamic_workflow_node_metadata': 'FlyteidleventDynamicWorkflowNodeMetadata'
+        'dynamic_workflow': 'FlyteidleventDynamicWorkflowNodeMetadata'
     }
 
     attribute_map = {
         'cache_status': 'cache_status',
         'catalog_key': 'catalog_key',
-        'dynamic_workflow_node_metadata': 'dynamic_workflow_node_metadata'
+        'dynamic_workflow': 'dynamic_workflow'
     }
 
-    def __init__(self, cache_status=None, catalog_key=None, dynamic_workflow_node_metadata=None):  # noqa: E501
+    def __init__(self, cache_status=None, catalog_key=None, dynamic_workflow=None):  # noqa: E501
         """FlyteidleventTaskNodeMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._cache_status = None
         self._catalog_key = None
-        self._dynamic_workflow_node_metadata = None
+        self._dynamic_workflow = None
         self.discriminator = None
 
         if cache_status is not None:
             self.cache_status = cache_status
         if catalog_key is not None:
             self.catalog_key = catalog_key
-        if dynamic_workflow_node_metadata is not None:
-            self.dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
+        if dynamic_workflow is not None:
+            self.dynamic_workflow = dynamic_workflow
 
     @property
     def cache_status(self):
@@ -106,27 +106,27 @@ class FlyteidleventTaskNodeMetadata(object):
         self._catalog_key = catalog_key
 
     @property
-    def dynamic_workflow_node_metadata(self):
-        """Gets the dynamic_workflow_node_metadata of this FlyteidleventTaskNodeMetadata.  # noqa: E501
+    def dynamic_workflow(self):
+        """Gets the dynamic_workflow of this FlyteidleventTaskNodeMetadata.  # noqa: E501
 
         In the case this task launched a dynamic workflow we capture its structure here.  # noqa: E501
 
-        :return: The dynamic_workflow_node_metadata of this FlyteidleventTaskNodeMetadata.  # noqa: E501
+        :return: The dynamic_workflow of this FlyteidleventTaskNodeMetadata.  # noqa: E501
         :rtype: FlyteidleventDynamicWorkflowNodeMetadata
         """
-        return self._dynamic_workflow_node_metadata
+        return self._dynamic_workflow
 
-    @dynamic_workflow_node_metadata.setter
-    def dynamic_workflow_node_metadata(self, dynamic_workflow_node_metadata):
-        """Sets the dynamic_workflow_node_metadata of this FlyteidleventTaskNodeMetadata.
+    @dynamic_workflow.setter
+    def dynamic_workflow(self, dynamic_workflow):
+        """Sets the dynamic_workflow of this FlyteidleventTaskNodeMetadata.
 
         In the case this task launched a dynamic workflow we capture its structure here.  # noqa: E501
 
-        :param dynamic_workflow_node_metadata: The dynamic_workflow_node_metadata of this FlyteidleventTaskNodeMetadata.  # noqa: E501
+        :param dynamic_workflow: The dynamic_workflow of this FlyteidleventTaskNodeMetadata.  # noqa: E501
         :type: FlyteidleventDynamicWorkflowNodeMetadata
         """
 
-        self._dynamic_workflow_node_metadata = dynamic_workflow_node_metadata
+        self._dynamic_workflow = dynamic_workflow
 
     def to_dict(self):
         """Returns the model properties as a dict"""

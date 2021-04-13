@@ -6185,7 +6185,7 @@
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
         },
-        "dynamic_workflow_node_metadata": {
+        "dynamic_workflow": {
           "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
           "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
@@ -6238,7 +6238,7 @@
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
         },
-        "dynamic_workflow_node_metadata": {
+        "dynamic_workflow": {
           "$ref": "#/definitions/flyteidleventDynamicWorkflowNodeMetadata",
           "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
