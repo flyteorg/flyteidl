@@ -53,20 +53,23 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	assert.Equal(t, 2, len(opts))
 }
 
-func TestInitializeAndGetClients(t *testing.T) {
+func TestInitializeClients(t *testing.T) {
 	ctx := context.TODO()
 	t.Run("legal", func(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
-		aClient, auClient := InitializeClients(ctx, Config{Endpoint: config.URL{URL: *u}})
-		assert.NotNil(t, aClient)
-		assert.NotNil(t, auClient)
+		clientSet, err := InitializeClients(ctx, Config{Endpoint: config.URL{URL: *u}})
+		assert.NotNil(t, clientSet)
+		assert.NotNil(t, clientSet.AdminClient())
+		assert.NotNil(t, clientSet.AuthClient())
+		assert.Nil(t, err)
 	})
 
 	t.Run("legal-from-config", func(t *testing.T) {
-		aClient, auClient, err := InitializeClientsFromConfig(ctx)
+		clientSet, err := InitializeClientsFromConfig(ctx)
 		assert.NoError(t, err)
-		assert.NotNil(t, aClient)
-		assert.NotNil(t, auClient)
+		assert.NotNil(t, clientSet)
+		assert.NotNil(t, clientSet.AuthClient())
+		assert.NotNil(t, clientSet.AdminClient())
 	})
 }

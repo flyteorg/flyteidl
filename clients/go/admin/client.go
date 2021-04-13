@@ -27,6 +27,22 @@ var (
 	adminConnection *grpc.ClientConn
 )
 
+// Clientset contains the clients exposed to communicate with various admin services.
+type Clientset struct {
+	adminServiceClient service.AdminServiceClient
+	authServiceClient  service.AuthServiceClient
+}
+
+// AdminClient retrieves the AdminServiceClient
+func (c *Clientset) AdminClient() service.AdminServiceClient {
+	return c.adminServiceClient
+}
+
+// AuthClient retrieves the AuthServiceClient
+func (c *Clientset) AuthClient() service.AuthServiceClient {
+	return c.authServiceClient
+}
+
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
 	return service.NewAdminServiceClient(conn)
@@ -151,7 +167,7 @@ func InitializeAdminClient(ctx context.Context, cfg Config) service.AdminService
 }
 
 // Create an AdminClient and AuthServiceClient with a shared Admin connection for the process
-func InitializeClients(ctx context.Context, cfg Config) (service.AdminServiceClient, service.AuthServiceClient) {
+func InitializeClients(ctx context.Context, cfg Config) (*Clientset, error) {
 	once.Do(func() {
 		var err error
 		adminConnection, err = NewAdminConnection(ctx, cfg)
@@ -159,7 +175,10 @@ func InitializeClients(ctx context.Context, cfg Config) (service.AdminServiceCli
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
 	})
-	return NewAdminClient(ctx, adminConnection), NewAuthClient(ctx, adminConnection)
+	var cs Clientset
+	cs.adminServiceClient = NewAdminClient(ctx, adminConnection)
+	cs.authServiceClient = NewAuthClient(ctx, adminConnection)
+	return &cs, nil
 }
 
 func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceClient, error) {
@@ -170,13 +189,12 @@ func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceC
 	return InitializeAdminClient(ctx, *cfg), nil
 }
 
-func InitializeClientsFromConfig(ctx context.Context) (service.AdminServiceClient, service.AuthServiceClient, error) {
+func InitializeClientsFromConfig(ctx context.Context) (*Clientset, error) {
 	cfg := GetConfig(ctx)
 	if cfg == nil {
-		return nil, nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
+		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
 	}
-	adminClient, authClient := InitializeClients(ctx, *cfg)
-	return adminClient, authClient, nil
+	return InitializeClients(ctx, *cfg)
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {
