@@ -41,6 +41,13 @@ func TestInitializeMockAdminClient(t *testing.T) {
 	assert.NotNil(t, c)
 }
 
+func TestInitializeMockClientset(t *testing.T) {
+	c := InitializeMockClientset()
+	assert.NotNil(t, c)
+	assert.NotNil(t, c.adminServiceClient)
+	assert.NotNil(t, c.authServiceClient)
+}
+
 func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := Config{

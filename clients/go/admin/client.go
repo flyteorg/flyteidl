@@ -201,3 +201,8 @@ func InitializeMockAdminClient() service.AdminServiceClient {
 	logger.Infof(context.TODO(), "Initialized Mock Admin client")
 	return &mocks.AdminServiceClient{}
 }
+
+func InitializeMockClientset() *Clientset {
+	logger.Infof(context.TODO(), "Initialized Mock Clientset")
+	return &Clientset{adminServiceClient: &mocks.AdminServiceClient{}, authServiceClient: &mocks.AuthServiceClient{}}
+}
