@@ -29,18 +29,18 @@ var (
 
 // Clientset contains the clients exposed to communicate with various admin services.
 type Clientset struct {
-	adminServiceClient service.AdminServiceClient
-	authServiceClient  service.AuthServiceClient
+	AdminServiceClient service.AdminServiceClient
+	AuthServiceClient  service.AuthServiceClient
 }
 
 // AdminClient retrieves the AdminServiceClient
 func (c *Clientset) AdminClient() service.AdminServiceClient {
-	return c.adminServiceClient
+	return c.AdminServiceClient
 }
 
 // AuthClient retrieves the AuthServiceClient
 func (c *Clientset) AuthClient() service.AuthServiceClient {
-	return c.authServiceClient
+	return c.AuthServiceClient
 }
 
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
@@ -176,8 +176,8 @@ func InitializeClients(ctx context.Context, cfg Config) (*Clientset, error) {
 		}
 	})
 	var cs Clientset
-	cs.adminServiceClient = NewAdminClient(ctx, adminConnection)
-	cs.authServiceClient = NewAuthClient(ctx, adminConnection)
+	cs.AdminServiceClient = NewAdminClient(ctx, adminConnection)
+	cs.AuthServiceClient = NewAuthClient(ctx, adminConnection)
 	return &cs, nil
 }
 
@@ -204,5 +204,5 @@ func InitializeMockAdminClient() service.AdminServiceClient {
 
 func InitializeMockClientset() *Clientset {
 	logger.Infof(context.TODO(), "Initialized Mock Clientset")
-	return &Clientset{adminServiceClient: &mocks.AdminServiceClient{}, authServiceClient: &mocks.AuthServiceClient{}}
+	return &Clientset{AdminServiceClient: &mocks.AdminServiceClient{}, AuthServiceClient: &mocks.AuthServiceClient{}}
 }

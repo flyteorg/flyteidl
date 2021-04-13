@@ -44,8 +44,8 @@ func TestInitializeMockAdminClient(t *testing.T) {
 func TestInitializeMockClientset(t *testing.T) {
 	c := InitializeMockClientset()
 	assert.NotNil(t, c)
-	assert.NotNil(t, c.adminServiceClient)
-	assert.NotNil(t, c.authServiceClient)
+	assert.NotNil(t, c.AdminServiceClient)
+	assert.NotNil(t, c.AuthServiceClient)
 }
 
 func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
