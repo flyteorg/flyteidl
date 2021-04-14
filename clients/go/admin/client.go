@@ -34,12 +34,12 @@ type Clientset struct {
 }
 
 // AdminClient retrieves the AdminServiceClient
-func (c *Clientset) AdminClient() service.AdminServiceClient {
+func (c Clientset) AdminClient() service.AdminServiceClient {
 	return c.AdminServiceClient
 }
 
 // AuthClient retrieves the AuthServiceClient
-func (c *Clientset) AuthClient() service.AuthServiceClient {
+func (c Clientset) AuthClient() service.AuthServiceClient {
 	return c.AuthServiceClient
 }
 
