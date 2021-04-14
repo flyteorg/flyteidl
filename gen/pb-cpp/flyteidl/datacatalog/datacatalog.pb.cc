@@ -93,6 +93,14 @@ class ListDatasetsResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ListDatasetsResponse> _instance;
 } _ListDatasetsResponse_default_instance_;
+class GetOrReserveArtifactRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GetOrReserveArtifactRequest> _instance;
+} _GetOrReserveArtifactRequest_default_instance_;
+class GetOrReserveArtifactResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GetOrReserveArtifactResponse> _instance;
+} _GetOrReserveArtifactResponse_default_instance_;
 class DatasetDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Dataset> _instance;
@@ -379,6 +387,37 @@ static void InitDefaultsListDatasetsResponse_flyteidl_2fdatacatalog_2fdatacatalo
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListDatasetsResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
       &scc_info_Dataset_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
 
+static void InitDefaultsGetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datacatalog::_GetOrReserveArtifactRequest_default_instance_;
+    new (ptr) ::datacatalog::GetOrReserveArtifactRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datacatalog::GetOrReserveArtifactRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsGetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
+      &scc_info_DatasetID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsGetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datacatalog::_GetOrReserveArtifactResponse_default_instance_;
+    new (ptr) ::datacatalog::GetOrReserveArtifactResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datacatalog::GetOrReserveArtifactResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
+      &scc_info_Artifact_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
+
 static void InitDefaultsDataset_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -634,6 +673,8 @@ void InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ListArtifactsResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ListDatasetsRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ListDatasetsResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Dataset_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Partition_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_DatasetID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
@@ -652,8 +693,8 @@ void InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_PaginationOptions_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[30];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[3];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[32];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[4];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fdatacatalog_2fdatacatalog_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -746,6 +787,21 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fdatacatalog_2fdatacatalo
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::datacatalog::ListDatasetsResponse, datasets_),
   PROTOBUF_FIELD_OFFSET(::datacatalog::ListDatasetsResponse, next_token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, dataset_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, tag_name_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, expire_at_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, artifact_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, reservation_status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::datacatalog::Dataset, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -893,22 +949,24 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 68, -1, sizeof(::datacatalog::ListArtifactsResponse)},
   { 75, -1, sizeof(::datacatalog::ListDatasetsRequest)},
   { 82, -1, sizeof(::datacatalog::ListDatasetsResponse)},
-  { 89, -1, sizeof(::datacatalog::Dataset)},
-  { 97, -1, sizeof(::datacatalog::Partition)},
-  { 104, -1, sizeof(::datacatalog::DatasetID)},
-  { 114, -1, sizeof(::datacatalog::Artifact)},
-  { 126, -1, sizeof(::datacatalog::ArtifactData)},
-  { 133, -1, sizeof(::datacatalog::Tag)},
-  { 141, 148, sizeof(::datacatalog::Metadata_KeyMapEntry_DoNotUse)},
-  { 150, -1, sizeof(::datacatalog::Metadata)},
-  { 156, -1, sizeof(::datacatalog::FilterExpression)},
-  { 162, -1, sizeof(::datacatalog::SinglePropertyFilter)},
-  { 173, -1, sizeof(::datacatalog::ArtifactPropertyFilter)},
-  { 180, -1, sizeof(::datacatalog::TagPropertyFilter)},
-  { 187, -1, sizeof(::datacatalog::PartitionPropertyFilter)},
-  { 194, -1, sizeof(::datacatalog::KeyValuePair)},
-  { 201, -1, sizeof(::datacatalog::DatasetPropertyFilter)},
-  { 211, -1, sizeof(::datacatalog::PaginationOptions)},
+  { 89, -1, sizeof(::datacatalog::GetOrReserveArtifactRequest)},
+  { 97, -1, sizeof(::datacatalog::GetOrReserveArtifactResponse)},
+  { 104, -1, sizeof(::datacatalog::Dataset)},
+  { 112, -1, sizeof(::datacatalog::Partition)},
+  { 119, -1, sizeof(::datacatalog::DatasetID)},
+  { 129, -1, sizeof(::datacatalog::Artifact)},
+  { 141, -1, sizeof(::datacatalog::ArtifactData)},
+  { 148, -1, sizeof(::datacatalog::Tag)},
+  { 156, 163, sizeof(::datacatalog::Metadata_KeyMapEntry_DoNotUse)},
+  { 165, -1, sizeof(::datacatalog::Metadata)},
+  { 171, -1, sizeof(::datacatalog::FilterExpression)},
+  { 177, -1, sizeof(::datacatalog::SinglePropertyFilter)},
+  { 188, -1, sizeof(::datacatalog::ArtifactPropertyFilter)},
+  { 195, -1, sizeof(::datacatalog::TagPropertyFilter)},
+  { 202, -1, sizeof(::datacatalog::PartitionPropertyFilter)},
+  { 209, -1, sizeof(::datacatalog::KeyValuePair)},
+  { 216, -1, sizeof(::datacatalog::DatasetPropertyFilter)},
+  { 226, -1, sizeof(::datacatalog::PaginationOptions)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -926,6 +984,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ListArtifactsResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ListDatasetsRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ListDatasetsResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrReserveArtifactRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrReserveArtifactResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_Dataset_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_Partition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_DatasetID_default_instance_),
@@ -947,7 +1007,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = {
   {}, AddDescriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, "flyteidl/datacatalog/datacatalog.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fdatacatalog_2fdatacatalog_2eproto::offsets,
-  file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 30, file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, file_level_service_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto,
+  file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 32, file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, file_level_service_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[] =
@@ -979,73 +1039,84 @@ const char descriptor_table_protodef_flyteidl_2fdatacatalog_2fdatacatalog_2eprot
   "ination\030\002 \001(\0132\036.datacatalog.PaginationOp"
   "tions\"R\n\024ListDatasetsResponse\022&\n\010dataset"
   "s\030\001 \003(\0132\024.datacatalog.Dataset\022\022\n\nnext_to"
-  "ken\030\002 \001(\t\"m\n\007Dataset\022\"\n\002id\030\001 \001(\0132\026.datac"
-  "atalog.DatasetID\022\'\n\010metadata\030\002 \001(\0132\025.dat"
-  "acatalog.Metadata\022\025\n\rpartitionKeys\030\003 \003(\t"
-  "\"\'\n\tPartition\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-  "\t\"Y\n\tDatasetID\022\017\n\007project\030\001 \001(\t\022\014\n\004name\030"
-  "\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014"
-  "\n\004UUID\030\005 \001(\t\"\215\002\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'\n"
-  "\007dataset\030\002 \001(\0132\026.datacatalog.DatasetID\022\'"
-  "\n\004data\030\003 \003(\0132\031.datacatalog.ArtifactData\022"
-  "\'\n\010metadata\030\004 \001(\0132\025.datacatalog.Metadata"
-  "\022*\n\npartitions\030\005 \003(\0132\026.datacatalog.Parti"
-  "tion\022\036\n\004tags\030\006 \003(\0132\020.datacatalog.Tag\022.\n\n"
-  "created_at\030\007 \001(\0132\032.google.protobuf.Times"
-  "tamp\"C\n\014ArtifactData\022\014\n\004name\030\001 \001(\t\022%\n\005va"
-  "lue\030\002 \001(\0132\026.flyteidl.core.Literal\"Q\n\003Tag"
-  "\022\014\n\004name\030\001 \001(\t\022\023\n\013artifact_id\030\002 \001(\t\022\'\n\007d"
-  "ataset\030\003 \001(\0132\026.datacatalog.DatasetID\"m\n\010"
-  "Metadata\0222\n\007key_map\030\001 \003(\0132!.datacatalog."
-  "Metadata.KeyMapEntry\032-\n\013KeyMapEntry\022\013\n\003k"
-  "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\020FilterExp"
-  "ression\0222\n\007filters\030\001 \003(\0132!.datacatalog.S"
-  "inglePropertyFilter\"\211\003\n\024SinglePropertyFi"
-  "lter\0224\n\ntag_filter\030\001 \001(\0132\036.datacatalog.T"
-  "agPropertyFilterH\000\022@\n\020partition_filter\030\002"
-  " \001(\0132$.datacatalog.PartitionPropertyFilt"
-  "erH\000\022>\n\017artifact_filter\030\003 \001(\0132#.datacata"
-  "log.ArtifactPropertyFilterH\000\022<\n\016dataset_"
-  "filter\030\004 \001(\0132\".datacatalog.DatasetProper"
-  "tyFilterH\000\022F\n\010operator\030\n \001(\01624.datacatal"
-  "og.SinglePropertyFilter.ComparisonOperat"
-  "or\" \n\022ComparisonOperator\022\n\n\006EQUALS\020\000B\021\n\017"
-  "property_filter\";\n\026ArtifactPropertyFilte"
-  "r\022\025\n\013artifact_id\030\001 \001(\tH\000B\n\n\010property\"3\n\021"
-  "TagPropertyFilter\022\022\n\010tag_name\030\001 \001(\tH\000B\n\n"
-  "\010property\"S\n\027PartitionPropertyFilter\022,\n\007"
-  "key_val\030\001 \001(\0132\031.datacatalog.KeyValuePair"
-  "H\000B\n\n\010property\"*\n\014KeyValuePair\022\013\n\003key\030\001 "
-  "\001(\t\022\r\n\005value\030\002 \001(\t\"k\n\025DatasetPropertyFil"
-  "ter\022\021\n\007project\030\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022\020"
-  "\n\006domain\030\003 \001(\tH\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010p"
-  "roperty\"\361\001\n\021PaginationOptions\022\r\n\005limit\030\001"
-  " \001(\r\022\r\n\005token\030\002 \001(\t\0227\n\007sortKey\030\003 \001(\0162&.d"
-  "atacatalog.PaginationOptions.SortKey\022;\n\t"
-  "sortOrder\030\004 \001(\0162(.datacatalog.Pagination"
-  "Options.SortOrder\"*\n\tSortOrder\022\016\n\nDESCEN"
-  "DING\020\000\022\r\n\tASCENDING\020\001\"\034\n\007SortKey\022\021\n\rCREA"
-  "TION_TIME\020\0002\321\004\n\013DataCatalog\022V\n\rCreateDat"
-  "aset\022!.datacatalog.CreateDatasetRequest\032"
-  "\".datacatalog.CreateDatasetResponse\022M\n\nG"
-  "etDataset\022\036.datacatalog.GetDatasetReques"
-  "t\032\037.datacatalog.GetDatasetResponse\022Y\n\016Cr"
-  "eateArtifact\022\".datacatalog.CreateArtifac"
-  "tRequest\032#.datacatalog.CreateArtifactRes"
-  "ponse\022P\n\013GetArtifact\022\037.datacatalog.GetAr"
-  "tifactRequest\032 .datacatalog.GetArtifactR"
-  "esponse\022A\n\006AddTag\022\032.datacatalog.AddTagRe"
-  "quest\032\033.datacatalog.AddTagResponse\022V\n\rLi"
-  "stArtifacts\022!.datacatalog.ListArtifactsR"
-  "equest\032\".datacatalog.ListArtifactsRespon"
-  "se\022S\n\014ListDatasets\022 .datacatalog.ListDat"
-  "asetsRequest\032!.datacatalog.ListDatasetsR"
-  "esponseb\006proto3"
+  "ken\030\002 \001(\t\"\212\001\n\033GetOrReserveArtifactReques"
+  "t\022*\n\ndataset_id\030\001 \001(\0132\026.datacatalog.Data"
+  "setID\022\020\n\010tag_name\030\002 \001(\t\022-\n\texpire_at\030\003 \001"
+  "(\0132\032.google.protobuf.Timestamp\"\203\001\n\034GetOr"
+  "ReserveArtifactResponse\022\'\n\010artifact\030\001 \001("
+  "\0132\025.datacatalog.Artifact\022:\n\022reservation_"
+  "status\030\002 \001(\0162\036.datacatalog.ReservationSt"
+  "atus\"m\n\007Dataset\022\"\n\002id\030\001 \001(\0132\026.datacatalo"
+  "g.DatasetID\022\'\n\010metadata\030\002 \001(\0132\025.datacata"
+  "log.Metadata\022\025\n\rpartitionKeys\030\003 \003(\t\"\'\n\tP"
+  "artition\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"Y\n\t"
+  "DatasetID\022\017\n\007project\030\001 \001(\t\022\014\n\004name\030\002 \001(\t"
+  "\022\016\n\006domain\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004UUI"
+  "D\030\005 \001(\t\"\215\002\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'\n\007data"
+  "set\030\002 \001(\0132\026.datacatalog.DatasetID\022\'\n\004dat"
+  "a\030\003 \003(\0132\031.datacatalog.ArtifactData\022\'\n\010me"
+  "tadata\030\004 \001(\0132\025.datacatalog.Metadata\022*\n\np"
+  "artitions\030\005 \003(\0132\026.datacatalog.Partition\022"
+  "\036\n\004tags\030\006 \003(\0132\020.datacatalog.Tag\022.\n\ncreat"
+  "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\""
+  "C\n\014ArtifactData\022\014\n\004name\030\001 \001(\t\022%\n\005value\030\002"
+  " \001(\0132\026.flyteidl.core.Literal\"Q\n\003Tag\022\014\n\004n"
+  "ame\030\001 \001(\t\022\023\n\013artifact_id\030\002 \001(\t\022\'\n\007datase"
+  "t\030\003 \001(\0132\026.datacatalog.DatasetID\"m\n\010Metad"
+  "ata\0222\n\007key_map\030\001 \003(\0132!.datacatalog.Metad"
+  "ata.KeyMapEntry\032-\n\013KeyMapEntry\022\013\n\003key\030\001 "
+  "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\020FilterExpressi"
+  "on\0222\n\007filters\030\001 \003(\0132!.datacatalog.Single"
+  "PropertyFilter\"\211\003\n\024SinglePropertyFilter\022"
+  "4\n\ntag_filter\030\001 \001(\0132\036.datacatalog.TagPro"
+  "pertyFilterH\000\022@\n\020partition_filter\030\002 \001(\0132"
+  "$.datacatalog.PartitionPropertyFilterH\000\022"
+  ">\n\017artifact_filter\030\003 \001(\0132#.datacatalog.A"
+  "rtifactPropertyFilterH\000\022<\n\016dataset_filte"
+  "r\030\004 \001(\0132\".datacatalog.DatasetPropertyFil"
+  "terH\000\022F\n\010operator\030\n \001(\01624.datacatalog.Si"
+  "nglePropertyFilter.ComparisonOperator\" \n"
+  "\022ComparisonOperator\022\n\n\006EQUALS\020\000B\021\n\017prope"
+  "rty_filter\";\n\026ArtifactPropertyFilter\022\025\n\013"
+  "artifact_id\030\001 \001(\tH\000B\n\n\010property\"3\n\021TagPr"
+  "opertyFilter\022\022\n\010tag_name\030\001 \001(\tH\000B\n\n\010prop"
+  "erty\"S\n\027PartitionPropertyFilter\022,\n\007key_v"
+  "al\030\001 \001(\0132\031.datacatalog.KeyValuePairH\000B\n\n"
+  "\010property\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r"
+  "\n\005value\030\002 \001(\t\"k\n\025DatasetPropertyFilter\022\021"
+  "\n\007project\030\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022\020\n\006dom"
+  "ain\030\003 \001(\tH\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010proper"
+  "ty\"\361\001\n\021PaginationOptions\022\r\n\005limit\030\001 \001(\r\022"
+  "\r\n\005token\030\002 \001(\t\0227\n\007sortKey\030\003 \001(\0162&.dataca"
+  "talog.PaginationOptions.SortKey\022;\n\tsortO"
+  "rder\030\004 \001(\0162(.datacatalog.PaginationOptio"
+  "ns.SortOrder\"*\n\tSortOrder\022\016\n\nDESCENDING\020"
+  "\000\022\r\n\tASCENDING\020\001\"\034\n\007SortKey\022\021\n\rCREATION_"
+  "TIME\020\000*,\n\021ReservationStatus\022\013\n\007SUCCESS\020\000"
+  "\022\n\n\006FAILED\020\0012\276\005\n\013DataCatalog\022V\n\rCreateDa"
+  "taset\022!.datacatalog.CreateDatasetRequest"
+  "\032\".datacatalog.CreateDatasetResponse\022M\n\n"
+  "GetDataset\022\036.datacatalog.GetDatasetReque"
+  "st\032\037.datacatalog.GetDatasetResponse\022Y\n\016C"
+  "reateArtifact\022\".datacatalog.CreateArtifa"
+  "ctRequest\032#.datacatalog.CreateArtifactRe"
+  "sponse\022P\n\013GetArtifact\022\037.datacatalog.GetA"
+  "rtifactRequest\032 .datacatalog.GetArtifact"
+  "Response\022A\n\006AddTag\022\032.datacatalog.AddTagR"
+  "equest\032\033.datacatalog.AddTagResponse\022V\n\rL"
+  "istArtifacts\022!.datacatalog.ListArtifacts"
+  "Request\032\".datacatalog.ListArtifactsRespo"
+  "nse\022S\n\014ListDatasets\022 .datacatalog.ListDa"
+  "tasetsRequest\032!.datacatalog.ListDatasets"
+  "Response\022k\n\024GetOrReserveArtifact\022(.datac"
+  "atalog.GetOrReserveArtifactRequest\032).dat"
+  "acatalog.GetOrReserveArtifactResponseb\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = {
   false, InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 
   descriptor_table_protodef_flyteidl_2fdatacatalog_2fdatacatalog_2eproto,
-  "flyteidl/datacatalog/datacatalog.proto", &assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 3575,
+  "flyteidl/datacatalog/datacatalog.proto", &assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 4005,
 };
 
 void AddDescriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
@@ -1119,6 +1190,20 @@ const PaginationOptions_SortKey PaginationOptions::SortKey_MIN;
 const PaginationOptions_SortKey PaginationOptions::SortKey_MAX;
 const int PaginationOptions::SortKey_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* ReservationStatus_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[3];
+}
+bool ReservationStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -5434,6 +5519,780 @@ void ListDatasetsResponse::InternalSwap(ListDatasetsResponse* other) {
 
 // ===================================================================
 
+void GetOrReserveArtifactRequest::InitAsDefaultInstance() {
+  ::datacatalog::_GetOrReserveArtifactRequest_default_instance_._instance.get_mutable()->dataset_id_ = const_cast< ::datacatalog::DatasetID*>(
+      ::datacatalog::DatasetID::internal_default_instance());
+  ::datacatalog::_GetOrReserveArtifactRequest_default_instance_._instance.get_mutable()->expire_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
+}
+class GetOrReserveArtifactRequest::HasBitSetters {
+ public:
+  static const ::datacatalog::DatasetID& dataset_id(const GetOrReserveArtifactRequest* msg);
+  static const ::google::protobuf::Timestamp& expire_at(const GetOrReserveArtifactRequest* msg);
+};
+
+const ::datacatalog::DatasetID&
+GetOrReserveArtifactRequest::HasBitSetters::dataset_id(const GetOrReserveArtifactRequest* msg) {
+  return *msg->dataset_id_;
+}
+const ::google::protobuf::Timestamp&
+GetOrReserveArtifactRequest::HasBitSetters::expire_at(const GetOrReserveArtifactRequest* msg) {
+  return *msg->expire_at_;
+}
+void GetOrReserveArtifactRequest::clear_expire_at() {
+  if (GetArenaNoVirtual() == nullptr && expire_at_ != nullptr) {
+    delete expire_at_;
+  }
+  expire_at_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GetOrReserveArtifactRequest::kDatasetIdFieldNumber;
+const int GetOrReserveArtifactRequest::kTagNameFieldNumber;
+const int GetOrReserveArtifactRequest::kExpireAtFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetOrReserveArtifactRequest::GetOrReserveArtifactRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datacatalog.GetOrReserveArtifactRequest)
+}
+GetOrReserveArtifactRequest::GetOrReserveArtifactRequest(const GetOrReserveArtifactRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  tag_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.tag_name().size() > 0) {
+    tag_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tag_name_);
+  }
+  if (from.has_dataset_id()) {
+    dataset_id_ = new ::datacatalog::DatasetID(*from.dataset_id_);
+  } else {
+    dataset_id_ = nullptr;
+  }
+  if (from.has_expire_at()) {
+    expire_at_ = new ::google::protobuf::Timestamp(*from.expire_at_);
+  } else {
+    expire_at_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrReserveArtifactRequest)
+}
+
+void GetOrReserveArtifactRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  tag_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&dataset_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&expire_at_) -
+      reinterpret_cast<char*>(&dataset_id_)) + sizeof(expire_at_));
+}
+
+GetOrReserveArtifactRequest::~GetOrReserveArtifactRequest() {
+  // @@protoc_insertion_point(destructor:datacatalog.GetOrReserveArtifactRequest)
+  SharedDtor();
+}
+
+void GetOrReserveArtifactRequest::SharedDtor() {
+  tag_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete dataset_id_;
+  if (this != internal_default_instance()) delete expire_at_;
+}
+
+void GetOrReserveArtifactRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetOrReserveArtifactRequest& GetOrReserveArtifactRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetOrReserveArtifactRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrReserveArtifactRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  tag_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && dataset_id_ != nullptr) {
+    delete dataset_id_;
+  }
+  dataset_id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && expire_at_ != nullptr) {
+    delete expire_at_;
+  }
+  expire_at_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* GetOrReserveArtifactRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<GetOrReserveArtifactRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .datacatalog.DatasetID dataset_id = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::datacatalog::DatasetID::_InternalParse;
+        object = msg->mutable_dataset_id();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string tag_name = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("datacatalog.GetOrReserveArtifactRequest.tag_name");
+        object = msg->mutable_tag_name();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .google.protobuf.Timestamp expire_at = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
+        object = msg->mutable_expire_at();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool GetOrReserveArtifactRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:datacatalog.GetOrReserveArtifactRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .datacatalog.DatasetID dataset_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_dataset_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string tag_name = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_tag_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tag_name().data(), static_cast<int>(this->tag_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "datacatalog.GetOrReserveArtifactRequest.tag_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Timestamp expire_at = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expire_at()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:datacatalog.GetOrReserveArtifactRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrReserveArtifactRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void GetOrReserveArtifactRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrReserveArtifactRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .datacatalog.DatasetID dataset_id = 1;
+  if (this->has_dataset_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::dataset_id(this), output);
+  }
+
+  // string tag_name = 2;
+  if (this->tag_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tag_name().data(), static_cast<int>(this->tag_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "datacatalog.GetOrReserveArtifactRequest.tag_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->tag_name(), output);
+  }
+
+  // .google.protobuf.Timestamp expire_at = 3;
+  if (this->has_expire_at()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::expire_at(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrReserveArtifactRequest)
+}
+
+::google::protobuf::uint8* GetOrReserveArtifactRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrReserveArtifactRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .datacatalog.DatasetID dataset_id = 1;
+  if (this->has_dataset_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::dataset_id(this), target);
+  }
+
+  // string tag_name = 2;
+  if (this->tag_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tag_name().data(), static_cast<int>(this->tag_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "datacatalog.GetOrReserveArtifactRequest.tag_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->tag_name(), target);
+  }
+
+  // .google.protobuf.Timestamp expire_at = 3;
+  if (this->has_expire_at()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::expire_at(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrReserveArtifactRequest)
+  return target;
+}
+
+size_t GetOrReserveArtifactRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrReserveArtifactRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string tag_name = 2;
+  if (this->tag_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->tag_name());
+  }
+
+  // .datacatalog.DatasetID dataset_id = 1;
+  if (this->has_dataset_id()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *dataset_id_);
+  }
+
+  // .google.protobuf.Timestamp expire_at = 3;
+  if (this->has_expire_at()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *expire_at_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetOrReserveArtifactRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrReserveArtifactRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetOrReserveArtifactRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<GetOrReserveArtifactRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrReserveArtifactRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrReserveArtifactRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetOrReserveArtifactRequest::MergeFrom(const GetOrReserveArtifactRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrReserveArtifactRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.tag_name().size() > 0) {
+
+    tag_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tag_name_);
+  }
+  if (from.has_dataset_id()) {
+    mutable_dataset_id()->::datacatalog::DatasetID::MergeFrom(from.dataset_id());
+  }
+  if (from.has_expire_at()) {
+    mutable_expire_at()->::google::protobuf::Timestamp::MergeFrom(from.expire_at());
+  }
+}
+
+void GetOrReserveArtifactRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrReserveArtifactRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetOrReserveArtifactRequest::CopyFrom(const GetOrReserveArtifactRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrReserveArtifactRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetOrReserveArtifactRequest::IsInitialized() const {
+  return true;
+}
+
+void GetOrReserveArtifactRequest::Swap(GetOrReserveArtifactRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetOrReserveArtifactRequest::InternalSwap(GetOrReserveArtifactRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  tag_name_.Swap(&other->tag_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(dataset_id_, other->dataset_id_);
+  swap(expire_at_, other->expire_at_);
+}
+
+::google::protobuf::Metadata GetOrReserveArtifactRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
+  return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void GetOrReserveArtifactResponse::InitAsDefaultInstance() {
+  ::datacatalog::_GetOrReserveArtifactResponse_default_instance_._instance.get_mutable()->artifact_ = const_cast< ::datacatalog::Artifact*>(
+      ::datacatalog::Artifact::internal_default_instance());
+}
+class GetOrReserveArtifactResponse::HasBitSetters {
+ public:
+  static const ::datacatalog::Artifact& artifact(const GetOrReserveArtifactResponse* msg);
+};
+
+const ::datacatalog::Artifact&
+GetOrReserveArtifactResponse::HasBitSetters::artifact(const GetOrReserveArtifactResponse* msg) {
+  return *msg->artifact_;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GetOrReserveArtifactResponse::kArtifactFieldNumber;
+const int GetOrReserveArtifactResponse::kReservationStatusFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetOrReserveArtifactResponse::GetOrReserveArtifactResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:datacatalog.GetOrReserveArtifactResponse)
+}
+GetOrReserveArtifactResponse::GetOrReserveArtifactResponse(const GetOrReserveArtifactResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_artifact()) {
+    artifact_ = new ::datacatalog::Artifact(*from.artifact_);
+  } else {
+    artifact_ = nullptr;
+  }
+  reservation_status_ = from.reservation_status_;
+  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrReserveArtifactResponse)
+}
+
+void GetOrReserveArtifactResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::memset(&artifact_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reservation_status_) -
+      reinterpret_cast<char*>(&artifact_)) + sizeof(reservation_status_));
+}
+
+GetOrReserveArtifactResponse::~GetOrReserveArtifactResponse() {
+  // @@protoc_insertion_point(destructor:datacatalog.GetOrReserveArtifactResponse)
+  SharedDtor();
+}
+
+void GetOrReserveArtifactResponse::SharedDtor() {
+  if (this != internal_default_instance()) delete artifact_;
+}
+
+void GetOrReserveArtifactResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetOrReserveArtifactResponse& GetOrReserveArtifactResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetOrReserveArtifactResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrReserveArtifactResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && artifact_ != nullptr) {
+    delete artifact_;
+  }
+  artifact_ = nullptr;
+  reservation_status_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* GetOrReserveArtifactResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<GetOrReserveArtifactResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .datacatalog.Artifact artifact = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::datacatalog::Artifact::_InternalParse;
+        object = msg->mutable_artifact();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .datacatalog.ReservationStatus reservation_status = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reservation_status(static_cast<::datacatalog::ReservationStatus>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool GetOrReserveArtifactResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:datacatalog.GetOrReserveArtifactResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .datacatalog.Artifact artifact = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_artifact()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .datacatalog.ReservationStatus reservation_status = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reservation_status(static_cast< ::datacatalog::ReservationStatus >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:datacatalog.GetOrReserveArtifactResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrReserveArtifactResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void GetOrReserveArtifactResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrReserveArtifactResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .datacatalog.Artifact artifact = 1;
+  if (this->has_artifact()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::artifact(this), output);
+  }
+
+  // .datacatalog.ReservationStatus reservation_status = 2;
+  if (this->reservation_status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->reservation_status(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrReserveArtifactResponse)
+}
+
+::google::protobuf::uint8* GetOrReserveArtifactResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrReserveArtifactResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .datacatalog.Artifact artifact = 1;
+  if (this->has_artifact()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::artifact(this), target);
+  }
+
+  // .datacatalog.ReservationStatus reservation_status = 2;
+  if (this->reservation_status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->reservation_status(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrReserveArtifactResponse)
+  return target;
+}
+
+size_t GetOrReserveArtifactResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrReserveArtifactResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .datacatalog.Artifact artifact = 1;
+  if (this->has_artifact()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *artifact_);
+  }
+
+  // .datacatalog.ReservationStatus reservation_status = 2;
+  if (this->reservation_status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reservation_status());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetOrReserveArtifactResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrReserveArtifactResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetOrReserveArtifactResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<GetOrReserveArtifactResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrReserveArtifactResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrReserveArtifactResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetOrReserveArtifactResponse::MergeFrom(const GetOrReserveArtifactResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrReserveArtifactResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_artifact()) {
+    mutable_artifact()->::datacatalog::Artifact::MergeFrom(from.artifact());
+  }
+  if (from.reservation_status() != 0) {
+    set_reservation_status(from.reservation_status());
+  }
+}
+
+void GetOrReserveArtifactResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrReserveArtifactResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetOrReserveArtifactResponse::CopyFrom(const GetOrReserveArtifactResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrReserveArtifactResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetOrReserveArtifactResponse::IsInitialized() const {
+  return true;
+}
+
+void GetOrReserveArtifactResponse::Swap(GetOrReserveArtifactResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetOrReserveArtifactResponse::InternalSwap(GetOrReserveArtifactResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(artifact_, other->artifact_);
+  swap(reservation_status_, other->reservation_status_);
+}
+
+::google::protobuf::Metadata GetOrReserveArtifactResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
+  return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Dataset::InitAsDefaultInstance() {
   ::datacatalog::_Dataset_default_instance_._instance.get_mutable()->id_ = const_cast< ::datacatalog::DatasetID*>(
       ::datacatalog::DatasetID::internal_default_instance());
@@ -8319,7 +9178,7 @@ void Metadata_KeyMapEntry_DoNotUse::MergeFrom(const Metadata_KeyMapEntry_DoNotUs
 }
 ::google::protobuf::Metadata Metadata_KeyMapEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
-  return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[20];
+  return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[22];
 }
 void Metadata_KeyMapEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -12029,6 +12888,12 @@ template<> PROTOBUF_NOINLINE ::datacatalog::ListDatasetsRequest* Arena::CreateMa
 }
 template<> PROTOBUF_NOINLINE ::datacatalog::ListDatasetsResponse* Arena::CreateMaybeMessage< ::datacatalog::ListDatasetsResponse >(Arena* arena) {
   return Arena::CreateInternal< ::datacatalog::ListDatasetsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datacatalog::GetOrReserveArtifactRequest* Arena::CreateMaybeMessage< ::datacatalog::GetOrReserveArtifactRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::datacatalog::GetOrReserveArtifactRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::datacatalog::GetOrReserveArtifactResponse* Arena::CreateMaybeMessage< ::datacatalog::GetOrReserveArtifactResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::datacatalog::GetOrReserveArtifactResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::datacatalog::Dataset* Arena::CreateMaybeMessage< ::datacatalog::Dataset >(Arena* arena) {
   return Arena::CreateInternal< ::datacatalog::Dataset >(arena);

@@ -1134,6 +1134,176 @@ var _ interface {
 	ErrorName() string
 } = ListDatasetsResponseValidationError{}
 
+// Validate checks the field values on GetOrReserveArtifactRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *GetOrReserveArtifactRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetDatasetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrReserveArtifactRequestValidationError{
+				field:  "DatasetId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for TagName
+
+	if v, ok := interface{}(m.GetExpireAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrReserveArtifactRequestValidationError{
+				field:  "ExpireAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// GetOrReserveArtifactRequestValidationError is the validation error returned
+// by GetOrReserveArtifactRequest.Validate if the designated constraints
+// aren't met.
+type GetOrReserveArtifactRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e GetOrReserveArtifactRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e GetOrReserveArtifactRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e GetOrReserveArtifactRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e GetOrReserveArtifactRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e GetOrReserveArtifactRequestValidationError) ErrorName() string {
+	return "GetOrReserveArtifactRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e GetOrReserveArtifactRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sGetOrReserveArtifactRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = GetOrReserveArtifactRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = GetOrReserveArtifactRequestValidationError{}
+
+// Validate checks the field values on GetOrReserveArtifactResponse with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *GetOrReserveArtifactResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetArtifact()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrReserveArtifactResponseValidationError{
+				field:  "Artifact",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for ReservationStatus
+
+	return nil
+}
+
+// GetOrReserveArtifactResponseValidationError is the validation error returned
+// by GetOrReserveArtifactResponse.Validate if the designated constraints
+// aren't met.
+type GetOrReserveArtifactResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e GetOrReserveArtifactResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e GetOrReserveArtifactResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e GetOrReserveArtifactResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e GetOrReserveArtifactResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e GetOrReserveArtifactResponseValidationError) ErrorName() string {
+	return "GetOrReserveArtifactResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e GetOrReserveArtifactResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sGetOrReserveArtifactResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = GetOrReserveArtifactResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = GetOrReserveArtifactResponseValidationError{}
+
 // Validate checks the field values on Dataset with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Dataset) Validate() error {

@@ -256,6 +256,54 @@ func (_m *DataCatalogClient) GetDataset(ctx context.Context, in *datacatalog.Get
 	return r0, r1
 }
 
+type DataCatalogClient_GetOrReserveArtifact struct {
+	*mock.Call
+}
+
+func (_m DataCatalogClient_GetOrReserveArtifact) Return(_a0 *datacatalog.GetOrReserveArtifactResponse, _a1 error) *DataCatalogClient_GetOrReserveArtifact {
+	return &DataCatalogClient_GetOrReserveArtifact{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *DataCatalogClient) OnGetOrReserveArtifact(ctx context.Context, in *datacatalog.GetOrReserveArtifactRequest, opts ...grpc.CallOption) *DataCatalogClient_GetOrReserveArtifact {
+	c := _m.On("GetOrReserveArtifact", ctx, in, opts)
+	return &DataCatalogClient_GetOrReserveArtifact{Call: c}
+}
+
+func (_m *DataCatalogClient) OnGetOrReserveArtifactMatch(matchers ...interface{}) *DataCatalogClient_GetOrReserveArtifact {
+	c := _m.On("GetOrReserveArtifact", matchers...)
+	return &DataCatalogClient_GetOrReserveArtifact{Call: c}
+}
+
+// GetOrReserveArtifact provides a mock function with given fields: ctx, in, opts
+func (_m *DataCatalogClient) GetOrReserveArtifact(ctx context.Context, in *datacatalog.GetOrReserveArtifactRequest, opts ...grpc.CallOption) (*datacatalog.GetOrReserveArtifactResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *datacatalog.GetOrReserveArtifactResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *datacatalog.GetOrReserveArtifactRequest, ...grpc.CallOption) *datacatalog.GetOrReserveArtifactResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*datacatalog.GetOrReserveArtifactResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *datacatalog.GetOrReserveArtifactRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type DataCatalogClient_ListArtifacts struct {
 	*mock.Call
 }

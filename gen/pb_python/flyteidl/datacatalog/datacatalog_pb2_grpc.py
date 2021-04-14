@@ -52,6 +52,11 @@ class DataCatalogStub(object):
         request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsRequest.SerializeToString,
         response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsResponse.FromString,
         )
+    self.GetOrReserveArtifact = channel.unary_unary(
+        '/datacatalog.DataCatalog/GetOrReserveArtifact',
+        request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.FromString,
+        )
 
 
 class DataCatalogServicer(object):
@@ -112,6 +117,17 @@ class DataCatalogServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetOrReserveArtifact(self, request, context):
+    """Get an artifact and the corresponding data. If the artifact does not exist,
+    try to reserve a spot for populating the artifact. We may have multiple
+    concurrent tasks with the same signature and the same input that try to populate
+    the same artifact at the same time. Thus with reservation, only one task
+    can run at a time.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DataCatalogServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -149,6 +165,11 @@ def add_DataCatalogServicer_to_server(servicer, server):
           servicer.ListDatasets,
           request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsRequest.FromString,
           response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsResponse.SerializeToString,
+      ),
+      'GetOrReserveArtifact': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrReserveArtifact,
+          request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.FromString,
+          response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

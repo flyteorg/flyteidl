@@ -109,6 +109,18 @@ class DataCatalog final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ListDatasetsResponse>> PrepareAsyncListDatasets(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ListDatasetsResponse>>(PrepareAsyncListDatasetsRaw(context, request, cq));
     }
+    // Get an artifact and the corresponding data. If the artifact does not exist,
+    // try to reserve a spot for populating the artifact. We may have multiple
+    // concurrent tasks with the same signature and the same input that try to populate
+    // the same artifact at the same time. Thus with reservation, only one task
+    // can run at a time.
+    virtual ::grpc::Status GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::datacatalog::GetOrReserveArtifactResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>> AsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>>(AsyncGetOrReserveArtifactRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>> PrepareAsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>>(PrepareAsyncGetOrReserveArtifactRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -149,6 +161,15 @@ class DataCatalog final {
       virtual void ListDatasets(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ListDatasetsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListDatasets(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListDatasets(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ListDatasetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Get an artifact and the corresponding data. If the artifact does not exist,
+      // try to reserve a spot for populating the artifact. We may have multiple
+      // concurrent tasks with the same signature and the same input that try to populate
+      // the same artifact at the same time. Thus with reservation, only one task
+      // can run at a time.
+      virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -166,6 +187,8 @@ class DataCatalog final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ListArtifactsResponse>* PrepareAsyncListArtifactsRaw(::grpc::ClientContext* context, const ::datacatalog::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ListDatasetsResponse>* AsyncListDatasetsRaw(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ListDatasetsResponse>* PrepareAsyncListDatasetsRaw(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>* AsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>* PrepareAsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -219,6 +242,13 @@ class DataCatalog final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::ListDatasetsResponse>> PrepareAsyncListDatasets(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::ListDatasetsResponse>>(PrepareAsyncListDatasetsRaw(context, request, cq));
     }
+    ::grpc::Status GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::datacatalog::GetOrReserveArtifactResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>> AsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>>(AsyncGetOrReserveArtifactRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>> PrepareAsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>>(PrepareAsyncGetOrReserveArtifactRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -250,6 +280,10 @@ class DataCatalog final {
       void ListDatasets(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ListDatasetsResponse* response, std::function<void(::grpc::Status)>) override;
       void ListDatasets(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListDatasets(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ListDatasetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -275,6 +309,8 @@ class DataCatalog final {
     ::grpc::ClientAsyncResponseReader< ::datacatalog::ListArtifactsResponse>* PrepareAsyncListArtifactsRaw(::grpc::ClientContext* context, const ::datacatalog::ListArtifactsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::datacatalog::ListDatasetsResponse>* AsyncListDatasetsRaw(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::datacatalog::ListDatasetsResponse>* PrepareAsyncListDatasetsRaw(::grpc::ClientContext* context, const ::datacatalog::ListDatasetsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>* AsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>* PrepareAsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateDataset_;
     const ::grpc::internal::RpcMethod rpcmethod_GetDataset_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateArtifact_;
@@ -282,6 +318,7 @@ class DataCatalog final {
     const ::grpc::internal::RpcMethod rpcmethod_AddTag_;
     const ::grpc::internal::RpcMethod rpcmethod_ListArtifacts_;
     const ::grpc::internal::RpcMethod rpcmethod_ListDatasets_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOrReserveArtifact_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -305,6 +342,12 @@ class DataCatalog final {
     virtual ::grpc::Status ListArtifacts(::grpc::ServerContext* context, const ::datacatalog::ListArtifactsRequest* request, ::datacatalog::ListArtifactsResponse* response);
     // Return a paginated list of datasets
     virtual ::grpc::Status ListDatasets(::grpc::ServerContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response);
+    // Get an artifact and the corresponding data. If the artifact does not exist,
+    // try to reserve a spot for populating the artifact. We may have multiple
+    // concurrent tasks with the same signature and the same input that try to populate
+    // the same artifact at the same time. Thus with reservation, only one task
+    // can run at a time.
+    virtual ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateDataset : public BaseClass {
@@ -446,7 +489,27 @@ class DataCatalog final {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateDataset<WithAsyncMethod_GetDataset<WithAsyncMethod_CreateArtifact<WithAsyncMethod_GetArtifact<WithAsyncMethod_AddTag<WithAsyncMethod_ListArtifacts<WithAsyncMethod_ListDatasets<Service > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetOrReserveArtifact() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrReserveArtifact(::grpc::ServerContext* context, ::datacatalog::GetOrReserveArtifactRequest* request, ::grpc::ServerAsyncResponseWriter< ::datacatalog::GetOrReserveArtifactResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateDataset<WithAsyncMethod_GetDataset<WithAsyncMethod_CreateArtifact<WithAsyncMethod_GetArtifact<WithAsyncMethod_AddTag<WithAsyncMethod_ListArtifacts<WithAsyncMethod_ListDatasets<WithAsyncMethod_GetOrReserveArtifact<Service > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateDataset : public BaseClass {
    private:
@@ -664,7 +727,38 @@ class DataCatalog final {
     }
     virtual void ListDatasets(::grpc::ServerContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_CreateDataset<ExperimentalWithCallbackMethod_GetDataset<ExperimentalWithCallbackMethod_CreateArtifact<ExperimentalWithCallbackMethod_GetArtifact<ExperimentalWithCallbackMethod_AddTag<ExperimentalWithCallbackMethod_ListArtifacts<ExperimentalWithCallbackMethod_ListDatasets<Service > > > > > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetOrReserveArtifact() {
+      ::grpc::Service::experimental().MarkMethodCallback(7,
+        new ::grpc::internal::CallbackUnaryHandler< ::datacatalog::GetOrReserveArtifactRequest, ::datacatalog::GetOrReserveArtifactResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::datacatalog::GetOrReserveArtifactRequest* request,
+                 ::datacatalog::GetOrReserveArtifactResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetOrReserveArtifact(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_GetOrReserveArtifact(
+        ::grpc::experimental::MessageAllocator< ::datacatalog::GetOrReserveArtifactRequest, ::datacatalog::GetOrReserveArtifactResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::datacatalog::GetOrReserveArtifactRequest, ::datacatalog::GetOrReserveArtifactResponse>*>(
+          ::grpc::Service::experimental().GetHandler(7))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  typedef ExperimentalWithCallbackMethod_CreateDataset<ExperimentalWithCallbackMethod_GetDataset<ExperimentalWithCallbackMethod_CreateArtifact<ExperimentalWithCallbackMethod_GetArtifact<ExperimentalWithCallbackMethod_AddTag<ExperimentalWithCallbackMethod_ListArtifacts<ExperimentalWithCallbackMethod_ListDatasets<ExperimentalWithCallbackMethod_GetOrReserveArtifact<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateDataset : public BaseClass {
    private:
@@ -780,6 +874,23 @@ class DataCatalog final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListDatasets(::grpc::ServerContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetOrReserveArtifact() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -922,6 +1033,26 @@ class DataCatalog final {
     }
     void RequestListDatasets(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetOrReserveArtifact() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrReserveArtifact(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1100,6 +1231,31 @@ class DataCatalog final {
     virtual void ListDatasets(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetOrReserveArtifact() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(7,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetOrReserveArtifact(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetOrReserveArtifact(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateDataset : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1239,9 +1395,29 @@ class DataCatalog final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListDatasets(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datacatalog::ListDatasetsRequest,::datacatalog::ListDatasetsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateDataset<WithStreamedUnaryMethod_GetDataset<WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_ListDatasets<Service > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetOrReserveArtifact : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetOrReserveArtifact() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler< ::datacatalog::GetOrReserveArtifactRequest, ::datacatalog::GetOrReserveArtifactResponse>(std::bind(&WithStreamedUnaryMethod_GetOrReserveArtifact<BaseClass>::StreamedGetOrReserveArtifact, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetOrReserveArtifact() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetOrReserveArtifact(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::datacatalog::GetOrReserveArtifactRequest,::datacatalog::GetOrReserveArtifactResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateDataset<WithStreamedUnaryMethod_GetDataset<WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_ListDatasets<WithStreamedUnaryMethod_GetOrReserveArtifact<Service > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateDataset<WithStreamedUnaryMethod_GetDataset<WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_ListDatasets<Service > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateDataset<WithStreamedUnaryMethod_GetDataset<WithStreamedUnaryMethod_CreateArtifact<WithStreamedUnaryMethod_GetArtifact<WithStreamedUnaryMethod_AddTag<WithStreamedUnaryMethod_ListArtifacts<WithStreamedUnaryMethod_ListDatasets<WithStreamedUnaryMethod_GetOrReserveArtifact<Service > > > > > > > > StreamedService;
 };
 
 }  // namespace datacatalog

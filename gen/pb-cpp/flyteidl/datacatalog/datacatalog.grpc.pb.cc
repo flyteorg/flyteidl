@@ -26,6 +26,7 @@ static const char* DataCatalog_method_names[] = {
   "/datacatalog.DataCatalog/AddTag",
   "/datacatalog.DataCatalog/ListArtifacts",
   "/datacatalog.DataCatalog/ListDatasets",
+  "/datacatalog.DataCatalog/GetOrReserveArtifact",
 };
 
 std::unique_ptr< DataCatalog::Stub> DataCatalog::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,6 +43,7 @@ DataCatalog::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_AddTag_(DataCatalog_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListArtifacts_(DataCatalog_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListDatasets_(DataCatalog_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrReserveArtifact_(DataCatalog_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status DataCatalog::Stub::CreateDataset(::grpc::ClientContext* context, const ::datacatalog::CreateDatasetRequest& request, ::datacatalog::CreateDatasetResponse* response) {
@@ -240,6 +242,34 @@ void DataCatalog::Stub::experimental_async::ListDatasets(::grpc::ClientContext* 
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::ListDatasetsResponse>::Create(channel_.get(), cq, rpcmethod_ListDatasets_, context, request, false);
 }
 
+::grpc::Status DataCatalog::Stub::GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::datacatalog::GetOrReserveArtifactResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrReserveArtifact_, context, request, response);
+}
+
+void DataCatalog::Stub::experimental_async::GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrReserveArtifact_, context, request, response, std::move(f));
+}
+
+void DataCatalog::Stub::experimental_async::GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrReserveArtifact_, context, request, response, std::move(f));
+}
+
+void DataCatalog::Stub::experimental_async::GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrReserveArtifact_, context, request, response, reactor);
+}
+
+void DataCatalog::Stub::experimental_async::GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrReserveArtifact_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>* DataCatalog::Stub::AsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::GetOrReserveArtifactResponse>::Create(channel_.get(), cq, rpcmethod_GetOrReserveArtifact_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::datacatalog::GetOrReserveArtifactResponse>* DataCatalog::Stub::PrepareAsyncGetOrReserveArtifactRaw(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::GetOrReserveArtifactResponse>::Create(channel_.get(), cq, rpcmethod_GetOrReserveArtifact_, context, request, false);
+}
+
 DataCatalog::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataCatalog_method_names[0],
@@ -276,6 +306,11 @@ DataCatalog::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< DataCatalog::Service, ::datacatalog::ListDatasetsRequest, ::datacatalog::ListDatasetsResponse>(
           std::mem_fn(&DataCatalog::Service::ListDatasets), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      DataCatalog_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< DataCatalog::Service, ::datacatalog::GetOrReserveArtifactRequest, ::datacatalog::GetOrReserveArtifactResponse>(
+          std::mem_fn(&DataCatalog::Service::GetOrReserveArtifact), this)));
 }
 
 DataCatalog::Service::~Service() {
@@ -324,6 +359,13 @@ DataCatalog::Service::~Service() {
 }
 
 ::grpc::Status DataCatalog::Service::ListDatasets(::grpc::ServerContext* context, const ::datacatalog::ListDatasetsRequest* request, ::datacatalog::ListDatasetsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status DataCatalog::Service::GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response) {
   (void) context;
   (void) request;
   (void) response;
