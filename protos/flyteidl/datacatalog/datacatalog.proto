@@ -13,6 +13,7 @@ service DataCatalog {
     rpc AddTag (AddTagRequest) returns (AddTagResponse);
     rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse);
     rpc ListDatasets (ListDatasetsRequest) returns (ListDatasetsResponse);
+    rpc AcquireArtifactLease (AcquireArtifactLeaseRequest) returns (AcquireArtifactLeaseResponse);
 }
 
 message CreateDatasetRequest {
@@ -91,6 +92,16 @@ message ListDatasetsResponse {
     repeated Dataset datasets = 1;
     // Token to use to request the next page, pass this into the next requests PaginationOptions
     string next_token = 2;
+}
+
+message AcquireArtifactLeaseRequest {
+    DatasetID dataset_id = 2;
+    string tag_name = 3;
+    google.protobuf.Timestamp expire_at = 4;
+}
+
+message AcquireArtifactLeaseResponse {
+
 }
 
 message Dataset {
