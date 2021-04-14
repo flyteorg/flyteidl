@@ -13,7 +13,8 @@ service DataCatalog {
     rpc AddTag (AddTagRequest) returns (AddTagResponse);
     rpc ListArtifacts (ListArtifactsRequest) returns (ListArtifactsResponse);
     rpc ListDatasets (ListDatasetsRequest) returns (ListDatasetsResponse);
-    rpc AcquireArtifactLease (AcquireArtifactLeaseRequest) returns (AcquireArtifactLeaseResponse);
+    rpc AcquireLease (AcquireLeaseRequest) returns (AcquireLeaseResponse);
+    rpc GetLeaseInfo (GetLeaseInfoRequest) returns (GetLeaseInfoResponse);
 }
 
 message CreateDatasetRequest {
@@ -94,14 +95,24 @@ message ListDatasetsResponse {
     string next_token = 2;
 }
 
-message AcquireArtifactLeaseRequest {
+message AcquireLeaseRequest {
     DatasetID dataset_id = 2;
     string tag_name = 3;
     google.protobuf.Timestamp expire_at = 4;
+    google.protobuf.Timestamp prev_expire_at = 5;
 }
 
-message AcquireArtifactLeaseResponse {
+message AcquireLeaseResponse {
 
+}
+
+message GetLeaseInfoRequest {
+    DatasetID dataset_id = 2;
+    string tag_name = 3;
+}
+
+message GetLeaseInfoResponse {
+    ArtifactLease artifact_lease = 1;
 }
 
 message Dataset {
@@ -146,6 +157,12 @@ message Tag {
 
 message Metadata {
     map<string, string> key_map = 1; // key map is a dictionary of key/val strings that represent metadata
+}
+
+message ArtifactLease {
+    DatasetID dataset = 1;
+    string tag_name = 2;
+    google.protobuf.Timestamp expire_at = 3;
 }
 
 // Filter expression that is composed of a combination of single filters
