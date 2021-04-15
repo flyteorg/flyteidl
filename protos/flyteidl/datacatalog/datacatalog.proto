@@ -39,7 +39,7 @@ service DataCatalog {
     // try to reserve a spot for populating the artifact. We may have multiple
     // concurrent tasks with the same signature and the same input that try to populate
     // the same artifact at the same time. Thus with reservation, only one task
-    // can run at a time.
+    // can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
     rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
 }
 
