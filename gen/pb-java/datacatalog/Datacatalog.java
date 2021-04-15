@@ -10268,7 +10268,8 @@ public final class Datacatalog {
 
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -10276,7 +10277,8 @@ public final class Datacatalog {
     boolean hasTimeout();
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -10284,7 +10286,8 @@ public final class Datacatalog {
     com.google.protobuf.Duration getTimeout();
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -10458,7 +10461,8 @@ public final class Datacatalog {
     private com.google.protobuf.Duration timeout_;
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -10468,7 +10472,8 @@ public final class Datacatalog {
     }
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -10478,7 +10483,8 @@ public final class Datacatalog {
     }
     /**
      * <pre>
-     * How long you can occupy the spot.
+     * Minimum duration to wait from the time when the original reservation
+     * was made to consider that the original reservation has been timed-out.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11044,7 +11050,8 @@ public final class Datacatalog {
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> timeoutBuilder_;
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11054,7 +11061,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11068,7 +11076,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11088,7 +11097,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11106,7 +11116,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11128,7 +11139,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11146,7 +11158,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11158,7 +11171,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>
@@ -11173,7 +11187,8 @@ public final class Datacatalog {
       }
       /**
        * <pre>
-       * How long you can occupy the spot.
+       * Minimum duration to wait from the time when the original reservation
+       * was made to consider that the original reservation has been timed-out.
        * </pre>
        *
        * <code>.google.protobuf.Duration timeout = 3;</code>

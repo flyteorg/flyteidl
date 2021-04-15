@@ -778,7 +778,8 @@ func (m *ListDatasetsResponse) GetNextToken() string {
 type GetOrReserveArtifactRequest struct {
 	DatasetId *DatasetID `protobuf:"bytes,1,opt,name=dataset_id,json=datasetId,proto3" json:"dataset_id,omitempty"`
 	TagName   string     `protobuf:"bytes,2,opt,name=tag_name,json=tagName,proto3" json:"tag_name,omitempty"`
-	// How long you can occupy the spot.
+	// Minimum duration to wait from the time when the original reservation
+	// was made to consider that the original reservation has been timed-out.
 	Timeout              *duration.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
@@ -2138,7 +2139,7 @@ type DataCatalogClient interface {
 	// try to reserve a spot for populating the artifact. We may have multiple
 	// concurrent tasks with the same signature and the same input that try to populate
 	// the same artifact at the same time. Thus with reservation, only one task
-	// can run at a time.
+	// can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
 	GetOrReserveArtifact(ctx context.Context, in *GetOrReserveArtifactRequest, opts ...grpc.CallOption) (*GetOrReserveArtifactResponse, error)
 }
 
@@ -2244,7 +2245,7 @@ type DataCatalogServer interface {
 	// try to reserve a spot for populating the artifact. We may have multiple
 	// concurrent tasks with the same signature and the same input that try to populate
 	// the same artifact at the same time. Thus with reservation, only one task
-	// can run at a time.
+	// can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
 	GetOrReserveArtifact(context.Context, *GetOrReserveArtifactRequest) (*GetOrReserveArtifactResponse, error)
 }
 

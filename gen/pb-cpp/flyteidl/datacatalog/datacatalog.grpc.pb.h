@@ -113,7 +113,7 @@ class DataCatalog final {
     // try to reserve a spot for populating the artifact. We may have multiple
     // concurrent tasks with the same signature and the same input that try to populate
     // the same artifact at the same time. Thus with reservation, only one task
-    // can run at a time.
+    // can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
     virtual ::grpc::Status GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::datacatalog::GetOrReserveArtifactResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>> AsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>>(AsyncGetOrReserveArtifactRaw(context, request, cq));
@@ -165,7 +165,7 @@ class DataCatalog final {
       // try to reserve a spot for populating the artifact. We may have multiple
       // concurrent tasks with the same signature and the same input that try to populate
       // the same artifact at the same time. Thus with reservation, only one task
-      // can run at a time.
+      // can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -346,7 +346,7 @@ class DataCatalog final {
     // try to reserve a spot for populating the artifact. We may have multiple
     // concurrent tasks with the same signature and the same input that try to populate
     // the same artifact at the same time. Thus with reservation, only one task
-    // can run at a time.
+    // can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
     virtual ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response);
   };
   template <class BaseClass>
