@@ -9,6 +9,8 @@ import (
 	"strings"
 	"sync"
 
+	"google.golang.org/grpc/backoff"
+
 	"github.com/coreos/go-oidc"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
@@ -55,10 +57,11 @@ func NewAuthClient(ctx context.Context, conn *grpc.ClientConn) service.AuthServi
 
 func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	opts := make([]grpc.DialOption, 0, 2)
-	backoffConfig := grpc.BackoffConfig{
+	backoffConfig := backoff.Config{
 		MaxDelay: cfg.MaxBackoffDelay.Duration,
 	}
-	opts = append(opts, grpc.WithBackoffConfig(backoffConfig))
+
+	opts = append(opts, grpc.WithConnectParams(grpc.ConnectParams{Backoff: backoffConfig}))
 
 	timeoutDialOption := grpc_retry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
 	maxRetriesOption := grpc_retry.WithMax(uint(cfg.MaxRetries))
@@ -98,18 +101,26 @@ func getTokenEndpointFromAuthServer(ctx context.Context, authorizationServer str
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin.
 // It will first attempt to retrieve the token endpoint by making a metadata call. If that fails, but the token endpoint
 // is set in the config, that will be used instead.
-func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOption, error) {
-	var tokenURL string
-	tokenURL, err := getTokenEndpointFromAuthServer(ctx, cfg.AuthorizationServerURL)
-	if err != nil || tokenURL == "" {
-		logger.Infof(ctx, "No token URL found from configuration Issuer, looking for token endpoint directly")
+func getAuthenticationDialOption(ctx context.Context, cfg Config, dialOpts []grpc.DialOption) (grpc.DialOption, error) {
+	conn, err := grpc.Dial(cfg.Endpoint.String(), dialOpts...)
+	if err != nil {
+		return nil, err
+	}
+
+	tempClient := NewAuthClient(ctx, conn)
+	tokenURL := cfg.TokenURL
+	if len(tokenURL) == 0 {
+		metadata, err := tempClient.OAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
 		if err != nil {
-			logger.Errorf(ctx, "Err is %s", err)
+			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
 		}
-		tokenURL = cfg.TokenURL
-		if tokenURL == "" {
-			return nil, errors.New("no token endpoint could be found")
-		}
+
+		tokenURL = metadata.TokenEndpoint
+	}
+
+	clientMetadata, err := tempClient.FlyteClient(ctx, &service.FlyteClientRequest{})
+	if err != nil {
+		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
 
 	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
@@ -117,21 +128,27 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOpti
 		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 		return nil, err
 	}
+
 	secret := strings.TrimSpace(string(secretBytes))
+
+	scopes := cfg.Scopes
+	if len(scopes) == 0 {
+		scopes = clientMetadata.Scopes
+	}
 
 	ccConfig := clientcredentials.Config{
 		ClientID:     cfg.ClientID,
 		ClientSecret: secret,
 		TokenURL:     tokenURL,
-		Scopes:       cfg.Scopes,
+		Scopes:       scopes,
 	}
 	tSource := ccConfig.TokenSource(ctx)
-	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.AuthorizationHeader)
+	oauthTokenSource := NewCustomHeaderTokenSource(tSource, clientMetadata.AuthorizationMetadataKey)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
 func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
-	var opts []grpc.DialOption
+	opts := GetAdditionalAdminClientConfigOptions(cfg)
 
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
@@ -141,7 +158,7 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 		if cfg.UseAuth {
 			logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-			jwtDialOption, err := getAuthenticationDialOption(ctx, cfg)
+			jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, opts)
 			if err != nil {
 				return nil, err
 			}
@@ -149,7 +166,6 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		}
 	}
 
-	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
