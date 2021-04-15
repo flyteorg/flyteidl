@@ -3,6 +3,7 @@ syntax = "proto3";
 package datacatalog;
 
 import "flyteidl/core/literals.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
 /*
@@ -157,20 +158,36 @@ message ListDatasetsResponse {
     string next_token = 2;
 }
 
+// Get the Artifact or try to reserve a spot if the Artifact does not exist.
 message GetOrReserveArtifactRequest {
     DatasetID dataset_id = 1;
     string tag_name = 2;
-    google.protobuf.Timestamp expire_at = 3;
+
+    // How long you can occupy the spot.
+    google.protobuf.Duration timeout = 3;
 }
 
-enum ReservationStatus {
-    SUCCESS = 0;
-    FAILED = 1;
+// Whether we successfully reserve a spot.
+message ReservationStatus {
+    enum State {
+        // Acquired the reservation successfully.
+        ACQUIRED = 0;
+
+        // Someone else already took reservation
+        // and it is not available to you.
+        ALREADY_IN_PROGRESS = 1;
+    };
+
+    State state = 1;
+    Metadata metadata = 2;
 }
 
+// Response to get artifact or reserve spot.
 message GetOrReserveArtifactResponse {
-    Artifact artifact = 1;
-    ReservationStatus reservation_status = 2;
+    oneof value {
+        Artifact artifact = 1;
+        ReservationStatus reservation_status = 2;
+    }
 }
 
 /*

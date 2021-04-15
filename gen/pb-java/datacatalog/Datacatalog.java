@@ -14,104 +14,6 @@ public final class Datacatalog {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code datacatalog.ReservationStatus}
-   */
-  public enum ReservationStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>SUCCESS = 0;</code>
-     */
-    SUCCESS(0),
-    /**
-     * <code>FAILED = 1;</code>
-     */
-    FAILED(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>SUCCESS = 0;</code>
-     */
-    public static final int SUCCESS_VALUE = 0;
-    /**
-     * <code>FAILED = 1;</code>
-     */
-    public static final int FAILED_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ReservationStatus valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ReservationStatus forNumber(int value) {
-      switch (value) {
-        case 0: return SUCCESS;
-        case 1: return FAILED;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ReservationStatus>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ReservationStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ReservationStatus>() {
-            public ReservationStatus findValueByNumber(int number) {
-              return ReservationStatus.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return datacatalog.Datacatalog.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ReservationStatus[] VALUES = values();
-
-    public static ReservationStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ReservationStatus(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:datacatalog.ReservationStatus)
-  }
-
   public interface CreateDatasetRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datacatalog.CreateDatasetRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -10365,19 +10267,35 @@ public final class Datacatalog {
         getTagNameBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    boolean hasExpireAt();
+    boolean hasTimeout();
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    com.google.protobuf.Timestamp getExpireAt();
+    com.google.protobuf.Duration getTimeout();
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getExpireAtOrBuilder();
+    com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
   }
   /**
+   * <pre>
+   * Get the Artifact or try to reserve a spot if the Artifact does not exist.
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.GetOrReserveArtifactRequest}
    */
   public  static final class GetOrReserveArtifactRequest extends
@@ -10437,14 +10355,14 @@ public final class Datacatalog {
               break;
             }
             case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expireAt_ != null) {
-                subBuilder = expireAt_.toBuilder();
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
               }
-              expireAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              timeout_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(expireAt_);
-                expireAt_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10536,25 +10454,37 @@ public final class Datacatalog {
       }
     }
 
-    public static final int EXPIRE_AT_FIELD_NUMBER = 3;
-    private com.google.protobuf.Timestamp expireAt_;
+    public static final int TIMEOUT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Duration timeout_;
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    public boolean hasExpireAt() {
-      return expireAt_ != null;
+    public boolean hasTimeout() {
+      return timeout_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    public com.google.protobuf.Timestamp getExpireAt() {
-      return expireAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireAt_;
+    public com.google.protobuf.Duration getTimeout() {
+      return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
     }
     /**
-     * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+     * <pre>
+     * How long you can occupy the spot.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 3;</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getExpireAtOrBuilder() {
-      return getExpireAt();
+    public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+      return getTimeout();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10577,8 +10507,8 @@ public final class Datacatalog {
       if (!getTagNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tagName_);
       }
-      if (expireAt_ != null) {
-        output.writeMessage(3, getExpireAt());
+      if (timeout_ != null) {
+        output.writeMessage(3, getTimeout());
       }
       unknownFields.writeTo(output);
     }
@@ -10596,9 +10526,9 @@ public final class Datacatalog {
       if (!getTagNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tagName_);
       }
-      if (expireAt_ != null) {
+      if (timeout_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getExpireAt());
+          .computeMessageSize(3, getTimeout());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10622,10 +10552,10 @@ public final class Datacatalog {
       }
       if (!getTagName()
           .equals(other.getTagName())) return false;
-      if (hasExpireAt() != other.hasExpireAt()) return false;
-      if (hasExpireAt()) {
-        if (!getExpireAt()
-            .equals(other.getExpireAt())) return false;
+      if (hasTimeout() != other.hasTimeout()) return false;
+      if (hasTimeout()) {
+        if (!getTimeout()
+            .equals(other.getTimeout())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -10644,9 +10574,9 @@ public final class Datacatalog {
       }
       hash = (37 * hash) + TAG_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getTagName().hashCode();
-      if (hasExpireAt()) {
-        hash = (37 * hash) + EXPIRE_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getExpireAt().hashCode();
+      if (hasTimeout()) {
+        hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeout().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10744,6 +10674,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Get the Artifact or try to reserve a spot if the Artifact does not exist.
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.GetOrReserveArtifactRequest}
      */
     public static final class Builder extends
@@ -10789,11 +10723,11 @@ public final class Datacatalog {
         }
         tagName_ = "";
 
-        if (expireAtBuilder_ == null) {
-          expireAt_ = null;
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
         } else {
-          expireAt_ = null;
-          expireAtBuilder_ = null;
+          timeout_ = null;
+          timeoutBuilder_ = null;
         }
         return this;
       }
@@ -10827,10 +10761,10 @@ public final class Datacatalog {
           result.datasetId_ = datasetIdBuilder_.build();
         }
         result.tagName_ = tagName_;
-        if (expireAtBuilder_ == null) {
-          result.expireAt_ = expireAt_;
+        if (timeoutBuilder_ == null) {
+          result.timeout_ = timeout_;
         } else {
-          result.expireAt_ = expireAtBuilder_.build();
+          result.timeout_ = timeoutBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10887,8 +10821,8 @@ public final class Datacatalog {
           tagName_ = other.tagName_;
           onChanged();
         }
-        if (other.hasExpireAt()) {
-          mergeExpireAt(other.getExpireAt());
+        if (other.hasTimeout()) {
+          mergeTimeout(other.getTimeout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11105,121 +11039,157 @@ public final class Datacatalog {
         return this;
       }
 
-      private com.google.protobuf.Timestamp expireAt_;
+      private com.google.protobuf.Duration timeout_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireAtBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> timeoutBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public boolean hasExpireAt() {
-        return expireAtBuilder_ != null || expireAt_ != null;
+      public boolean hasTimeout() {
+        return timeoutBuilder_ != null || timeout_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public com.google.protobuf.Timestamp getExpireAt() {
-        if (expireAtBuilder_ == null) {
-          return expireAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireAt_;
+      public com.google.protobuf.Duration getTimeout() {
+        if (timeoutBuilder_ == null) {
+          return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
         } else {
-          return expireAtBuilder_.getMessage();
+          return timeoutBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public Builder setExpireAt(com.google.protobuf.Timestamp value) {
-        if (expireAtBuilder_ == null) {
+      public Builder setTimeout(com.google.protobuf.Duration value) {
+        if (timeoutBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          expireAt_ = value;
+          timeout_ = value;
           onChanged();
         } else {
-          expireAtBuilder_.setMessage(value);
+          timeoutBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public Builder setExpireAt(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (expireAtBuilder_ == null) {
-          expireAt_ = builderForValue.build();
+      public Builder setTimeout(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (timeoutBuilder_ == null) {
+          timeout_ = builderForValue.build();
           onChanged();
         } else {
-          expireAtBuilder_.setMessage(builderForValue.build());
+          timeoutBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public Builder mergeExpireAt(com.google.protobuf.Timestamp value) {
-        if (expireAtBuilder_ == null) {
-          if (expireAt_ != null) {
-            expireAt_ =
-              com.google.protobuf.Timestamp.newBuilder(expireAt_).mergeFrom(value).buildPartial();
+      public Builder mergeTimeout(com.google.protobuf.Duration value) {
+        if (timeoutBuilder_ == null) {
+          if (timeout_ != null) {
+            timeout_ =
+              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
           } else {
-            expireAt_ = value;
+            timeout_ = value;
           }
           onChanged();
         } else {
-          expireAtBuilder_.mergeFrom(value);
+          timeoutBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public Builder clearExpireAt() {
-        if (expireAtBuilder_ == null) {
-          expireAt_ = null;
+      public Builder clearTimeout() {
+        if (timeoutBuilder_ == null) {
+          timeout_ = null;
           onChanged();
         } else {
-          expireAt_ = null;
-          expireAtBuilder_ = null;
+          timeout_ = null;
+          timeoutBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getExpireAtBuilder() {
+      public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
         
         onChanged();
-        return getExpireAtFieldBuilder().getBuilder();
+        return getTimeoutFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpireAtOrBuilder() {
-        if (expireAtBuilder_ != null) {
-          return expireAtBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+        if (timeoutBuilder_ != null) {
+          return timeoutBuilder_.getMessageOrBuilder();
         } else {
-          return expireAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : expireAt_;
+          return timeout_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : timeout_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp expire_at = 3;</code>
+       * <pre>
+       * How long you can occupy the spot.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration timeout = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getExpireAtFieldBuilder() {
-        if (expireAtBuilder_ == null) {
-          expireAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getExpireAt(),
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getTimeoutFieldBuilder() {
+        if (timeoutBuilder_ == null) {
+          timeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getTimeout(),
                   getParentForChildren(),
                   isClean());
-          expireAt_ = null;
+          timeout_ = null;
         }
-        return expireAtBuilder_;
+        return timeoutBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11274,6 +11244,830 @@ public final class Datacatalog {
 
   }
 
+  public interface ReservationStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datacatalog.ReservationStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+     */
+    int getStateValue();
+    /**
+     * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+     */
+    datacatalog.Datacatalog.ReservationStatus.State getState();
+
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    datacatalog.Datacatalog.Metadata getMetadata();
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    datacatalog.Datacatalog.MetadataOrBuilder getMetadataOrBuilder();
+  }
+  /**
+   * <pre>
+   * Whether we successfully reserve a spot.
+   * </pre>
+   *
+   * Protobuf type {@code datacatalog.ReservationStatus}
+   */
+  public  static final class ReservationStatus extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datacatalog.ReservationStatus)
+      ReservationStatusOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReservationStatus.newBuilder() to construct.
+    private ReservationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReservationStatus() {
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReservationStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            case 18: {
+              datacatalog.Datacatalog.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(datacatalog.Datacatalog.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return datacatalog.Datacatalog.internal_static_datacatalog_ReservationStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return datacatalog.Datacatalog.internal_static_datacatalog_ReservationStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              datacatalog.Datacatalog.ReservationStatus.class, datacatalog.Datacatalog.ReservationStatus.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code datacatalog.ReservationStatus.State}
+     */
+    public enum State
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * Acquired the reservation successfully.
+       * </pre>
+       *
+       * <code>ACQUIRED = 0;</code>
+       */
+      ACQUIRED(0),
+      /**
+       * <pre>
+       * Someone else already took reservation
+       * and it is not available to you.
+       * </pre>
+       *
+       * <code>ALREADY_IN_PROGRESS = 1;</code>
+       */
+      ALREADY_IN_PROGRESS(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * Acquired the reservation successfully.
+       * </pre>
+       *
+       * <code>ACQUIRED = 0;</code>
+       */
+      public static final int ACQUIRED_VALUE = 0;
+      /**
+       * <pre>
+       * Someone else already took reservation
+       * and it is not available to you.
+       * </pre>
+       *
+       * <code>ALREADY_IN_PROGRESS = 1;</code>
+       */
+      public static final int ALREADY_IN_PROGRESS_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0: return ACQUIRED;
+          case 1: return ALREADY_IN_PROGRESS;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          State> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<State>() {
+              public State findValueByNumber(int number) {
+                return State.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return datacatalog.Datacatalog.ReservationStatus.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:datacatalog.ReservationStatus.State)
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_;
+    /**
+     * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+     */
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+     */
+    public datacatalog.Datacatalog.ReservationStatus.State getState() {
+      @SuppressWarnings("deprecation")
+      datacatalog.Datacatalog.ReservationStatus.State result = datacatalog.Datacatalog.ReservationStatus.State.valueOf(state_);
+      return result == null ? datacatalog.Datacatalog.ReservationStatus.State.UNRECOGNIZED : result;
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 2;
+    private datacatalog.Datacatalog.Metadata metadata_;
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    public datacatalog.Datacatalog.Metadata getMetadata() {
+      return metadata_ == null ? datacatalog.Datacatalog.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.datacatalog.Metadata metadata = 2;</code>
+     */
+    public datacatalog.Datacatalog.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (state_ != datacatalog.Datacatalog.ReservationStatus.State.ACQUIRED.getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (metadata_ != null) {
+        output.writeMessage(2, getMetadata());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_ != datacatalog.Datacatalog.ReservationStatus.State.ACQUIRED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, state_);
+      }
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getMetadata());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof datacatalog.Datacatalog.ReservationStatus)) {
+        return super.equals(obj);
+      }
+      datacatalog.Datacatalog.ReservationStatus other = (datacatalog.Datacatalog.ReservationStatus) obj;
+
+      if (state_ != other.state_) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static datacatalog.Datacatalog.ReservationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(datacatalog.Datacatalog.ReservationStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Whether we successfully reserve a spot.
+     * </pre>
+     *
+     * Protobuf type {@code datacatalog.ReservationStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datacatalog.ReservationStatus)
+        datacatalog.Datacatalog.ReservationStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return datacatalog.Datacatalog.internal_static_datacatalog_ReservationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return datacatalog.Datacatalog.internal_static_datacatalog_ReservationStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                datacatalog.Datacatalog.ReservationStatus.class, datacatalog.Datacatalog.ReservationStatus.Builder.class);
+      }
+
+      // Construct using datacatalog.Datacatalog.ReservationStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        state_ = 0;
+
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return datacatalog.Datacatalog.internal_static_datacatalog_ReservationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public datacatalog.Datacatalog.ReservationStatus getDefaultInstanceForType() {
+        return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public datacatalog.Datacatalog.ReservationStatus build() {
+        datacatalog.Datacatalog.ReservationStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public datacatalog.Datacatalog.ReservationStatus buildPartial() {
+        datacatalog.Datacatalog.ReservationStatus result = new datacatalog.Datacatalog.ReservationStatus(this);
+        result.state_ = state_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof datacatalog.Datacatalog.ReservationStatus) {
+          return mergeFrom((datacatalog.Datacatalog.ReservationStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(datacatalog.Datacatalog.ReservationStatus other) {
+        if (other == datacatalog.Datacatalog.ReservationStatus.getDefaultInstance()) return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        datacatalog.Datacatalog.ReservationStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (datacatalog.Datacatalog.ReservationStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int state_ = 0;
+      /**
+       * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+       */
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+       */
+      public datacatalog.Datacatalog.ReservationStatus.State getState() {
+        @SuppressWarnings("deprecation")
+        datacatalog.Datacatalog.ReservationStatus.State result = datacatalog.Datacatalog.ReservationStatus.State.valueOf(state_);
+        return result == null ? datacatalog.Datacatalog.ReservationStatus.State.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+       */
+      public Builder setState(datacatalog.Datacatalog.ReservationStatus.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus.State state = 1;</code>
+       */
+      public Builder clearState() {
+        
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private datacatalog.Datacatalog.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          datacatalog.Datacatalog.Metadata, datacatalog.Datacatalog.Metadata.Builder, datacatalog.Datacatalog.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public datacatalog.Datacatalog.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? datacatalog.Datacatalog.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public Builder setMetadata(datacatalog.Datacatalog.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public Builder setMetadata(
+          datacatalog.Datacatalog.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public Builder mergeMetadata(datacatalog.Datacatalog.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              datacatalog.Datacatalog.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public datacatalog.Datacatalog.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      public datacatalog.Datacatalog.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              datacatalog.Datacatalog.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.datacatalog.Metadata metadata = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          datacatalog.Datacatalog.Metadata, datacatalog.Datacatalog.Metadata.Builder, datacatalog.Datacatalog.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              datacatalog.Datacatalog.Metadata, datacatalog.Datacatalog.Metadata.Builder, datacatalog.Datacatalog.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datacatalog.ReservationStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:datacatalog.ReservationStatus)
+    private static final datacatalog.Datacatalog.ReservationStatus DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new datacatalog.Datacatalog.ReservationStatus();
+    }
+
+    public static datacatalog.Datacatalog.ReservationStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReservationStatus>
+        PARSER = new com.google.protobuf.AbstractParser<ReservationStatus>() {
+      @java.lang.Override
+      public ReservationStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReservationStatus(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReservationStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReservationStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public datacatalog.Datacatalog.ReservationStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetOrReserveArtifactResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datacatalog.GetOrReserveArtifactResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -11294,13 +12088,23 @@ public final class Datacatalog {
     /**
      * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
      */
-    int getReservationStatusValue();
+    boolean hasReservationStatus();
     /**
      * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
      */
     datacatalog.Datacatalog.ReservationStatus getReservationStatus();
+    /**
+     * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+     */
+    datacatalog.Datacatalog.ReservationStatusOrBuilder getReservationStatusOrBuilder();
+
+    public datacatalog.Datacatalog.GetOrReserveArtifactResponse.ValueCase getValueCase();
   }
   /**
+   * <pre>
+   * Response to get artifact or reserve spot.
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.GetOrReserveArtifactResponse}
    */
   public  static final class GetOrReserveArtifactResponse extends
@@ -11313,7 +12117,6 @@ public final class Datacatalog {
       super(builder);
     }
     private GetOrReserveArtifactResponse() {
-      reservationStatus_ = 0;
     }
 
     @java.lang.Override
@@ -11342,21 +12145,30 @@ public final class Datacatalog {
               break;
             case 10: {
               datacatalog.Datacatalog.Artifact.Builder subBuilder = null;
-              if (artifact_ != null) {
-                subBuilder = artifact_.toBuilder();
+              if (valueCase_ == 1) {
+                subBuilder = ((datacatalog.Datacatalog.Artifact) value_).toBuilder();
               }
-              artifact_ = input.readMessage(datacatalog.Datacatalog.Artifact.parser(), extensionRegistry);
+              value_ =
+                  input.readMessage(datacatalog.Datacatalog.Artifact.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(artifact_);
-                artifact_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((datacatalog.Datacatalog.Artifact) value_);
+                value_ = subBuilder.buildPartial();
               }
-
+              valueCase_ = 1;
               break;
             }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              reservationStatus_ = rawValue;
+            case 18: {
+              datacatalog.Datacatalog.ReservationStatus.Builder subBuilder = null;
+              if (valueCase_ == 2) {
+                subBuilder = ((datacatalog.Datacatalog.ReservationStatus) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(datacatalog.Datacatalog.ReservationStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((datacatalog.Datacatalog.ReservationStatus) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 2;
               break;
             }
             default: {
@@ -11391,42 +12203,94 @@ public final class Datacatalog {
               datacatalog.Datacatalog.GetOrReserveArtifactResponse.class, datacatalog.Datacatalog.GetOrReserveArtifactResponse.Builder.class);
     }
 
+    private int valueCase_ = 0;
+    private java.lang.Object value_;
+    public enum ValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      ARTIFACT(1),
+      RESERVATION_STATUS(2),
+      VALUE_NOT_SET(0);
+      private final int value;
+      private ValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ValueCase forNumber(int value) {
+        switch (value) {
+          case 1: return ARTIFACT;
+          case 2: return RESERVATION_STATUS;
+          case 0: return VALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ValueCase
+    getValueCase() {
+      return ValueCase.forNumber(
+          valueCase_);
+    }
+
     public static final int ARTIFACT_FIELD_NUMBER = 1;
-    private datacatalog.Datacatalog.Artifact artifact_;
     /**
      * <code>.datacatalog.Artifact artifact = 1;</code>
      */
     public boolean hasArtifact() {
-      return artifact_ != null;
+      return valueCase_ == 1;
     }
     /**
      * <code>.datacatalog.Artifact artifact = 1;</code>
      */
     public datacatalog.Datacatalog.Artifact getArtifact() {
-      return artifact_ == null ? datacatalog.Datacatalog.Artifact.getDefaultInstance() : artifact_;
+      if (valueCase_ == 1) {
+         return (datacatalog.Datacatalog.Artifact) value_;
+      }
+      return datacatalog.Datacatalog.Artifact.getDefaultInstance();
     }
     /**
      * <code>.datacatalog.Artifact artifact = 1;</code>
      */
     public datacatalog.Datacatalog.ArtifactOrBuilder getArtifactOrBuilder() {
-      return getArtifact();
+      if (valueCase_ == 1) {
+         return (datacatalog.Datacatalog.Artifact) value_;
+      }
+      return datacatalog.Datacatalog.Artifact.getDefaultInstance();
     }
 
     public static final int RESERVATION_STATUS_FIELD_NUMBER = 2;
-    private int reservationStatus_;
     /**
      * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
      */
-    public int getReservationStatusValue() {
-      return reservationStatus_;
+    public boolean hasReservationStatus() {
+      return valueCase_ == 2;
     }
     /**
      * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
      */
     public datacatalog.Datacatalog.ReservationStatus getReservationStatus() {
-      @SuppressWarnings("deprecation")
-      datacatalog.Datacatalog.ReservationStatus result = datacatalog.Datacatalog.ReservationStatus.valueOf(reservationStatus_);
-      return result == null ? datacatalog.Datacatalog.ReservationStatus.UNRECOGNIZED : result;
+      if (valueCase_ == 2) {
+         return (datacatalog.Datacatalog.ReservationStatus) value_;
+      }
+      return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+    }
+    /**
+     * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+     */
+    public datacatalog.Datacatalog.ReservationStatusOrBuilder getReservationStatusOrBuilder() {
+      if (valueCase_ == 2) {
+         return (datacatalog.Datacatalog.ReservationStatus) value_;
+      }
+      return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11443,11 +12307,11 @@ public final class Datacatalog {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (artifact_ != null) {
-        output.writeMessage(1, getArtifact());
+      if (valueCase_ == 1) {
+        output.writeMessage(1, (datacatalog.Datacatalog.Artifact) value_);
       }
-      if (reservationStatus_ != datacatalog.Datacatalog.ReservationStatus.SUCCESS.getNumber()) {
-        output.writeEnum(2, reservationStatus_);
+      if (valueCase_ == 2) {
+        output.writeMessage(2, (datacatalog.Datacatalog.ReservationStatus) value_);
       }
       unknownFields.writeTo(output);
     }
@@ -11458,13 +12322,13 @@ public final class Datacatalog {
       if (size != -1) return size;
 
       size = 0;
-      if (artifact_ != null) {
+      if (valueCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getArtifact());
+          .computeMessageSize(1, (datacatalog.Datacatalog.Artifact) value_);
       }
-      if (reservationStatus_ != datacatalog.Datacatalog.ReservationStatus.SUCCESS.getNumber()) {
+      if (valueCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, reservationStatus_);
+          .computeMessageSize(2, (datacatalog.Datacatalog.ReservationStatus) value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11481,12 +12345,19 @@ public final class Datacatalog {
       }
       datacatalog.Datacatalog.GetOrReserveArtifactResponse other = (datacatalog.Datacatalog.GetOrReserveArtifactResponse) obj;
 
-      if (hasArtifact() != other.hasArtifact()) return false;
-      if (hasArtifact()) {
-        if (!getArtifact()
-            .equals(other.getArtifact())) return false;
+      if (!getValueCase().equals(other.getValueCase())) return false;
+      switch (valueCase_) {
+        case 1:
+          if (!getArtifact()
+              .equals(other.getArtifact())) return false;
+          break;
+        case 2:
+          if (!getReservationStatus()
+              .equals(other.getReservationStatus())) return false;
+          break;
+        case 0:
+        default:
       }
-      if (reservationStatus_ != other.reservationStatus_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11498,12 +12369,18 @@ public final class Datacatalog {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasArtifact()) {
-        hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
-        hash = (53 * hash) + getArtifact().hashCode();
+      switch (valueCase_) {
+        case 1:
+          hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
+          hash = (53 * hash) + getArtifact().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + RESERVATION_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getReservationStatus().hashCode();
+          break;
+        case 0:
+        default:
       }
-      hash = (37 * hash) + RESERVATION_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + reservationStatus_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11600,6 +12477,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Response to get artifact or reserve spot.
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.GetOrReserveArtifactResponse}
      */
     public static final class Builder extends
@@ -11637,14 +12518,8 @@ public final class Datacatalog {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (artifactBuilder_ == null) {
-          artifact_ = null;
-        } else {
-          artifact_ = null;
-          artifactBuilder_ = null;
-        }
-        reservationStatus_ = 0;
-
+        valueCase_ = 0;
+        value_ = null;
         return this;
       }
 
@@ -11671,12 +12546,21 @@ public final class Datacatalog {
       @java.lang.Override
       public datacatalog.Datacatalog.GetOrReserveArtifactResponse buildPartial() {
         datacatalog.Datacatalog.GetOrReserveArtifactResponse result = new datacatalog.Datacatalog.GetOrReserveArtifactResponse(this);
-        if (artifactBuilder_ == null) {
-          result.artifact_ = artifact_;
-        } else {
-          result.artifact_ = artifactBuilder_.build();
+        if (valueCase_ == 1) {
+          if (artifactBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = artifactBuilder_.build();
+          }
         }
-        result.reservationStatus_ = reservationStatus_;
+        if (valueCase_ == 2) {
+          if (reservationStatusBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = reservationStatusBuilder_.build();
+          }
+        }
+        result.valueCase_ = valueCase_;
         onBuilt();
         return result;
       }
@@ -11725,11 +12609,18 @@ public final class Datacatalog {
 
       public Builder mergeFrom(datacatalog.Datacatalog.GetOrReserveArtifactResponse other) {
         if (other == datacatalog.Datacatalog.GetOrReserveArtifactResponse.getDefaultInstance()) return this;
-        if (other.hasArtifact()) {
-          mergeArtifact(other.getArtifact());
-        }
-        if (other.reservationStatus_ != 0) {
-          setReservationStatusValue(other.getReservationStatusValue());
+        switch (other.getValueCase()) {
+          case ARTIFACT: {
+            mergeArtifact(other.getArtifact());
+            break;
+          }
+          case RESERVATION_STATUS: {
+            mergeReservationStatus(other.getReservationStatus());
+            break;
+          }
+          case VALUE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11759,24 +12650,44 @@ public final class Datacatalog {
         }
         return this;
       }
+      private int valueCase_ = 0;
+      private java.lang.Object value_;
+      public ValueCase
+          getValueCase() {
+        return ValueCase.forNumber(
+            valueCase_);
+      }
 
-      private datacatalog.Datacatalog.Artifact artifact_;
+      public Builder clearValue() {
+        valueCase_ = 0;
+        value_ = null;
+        onChanged();
+        return this;
+      }
+
+
       private com.google.protobuf.SingleFieldBuilderV3<
           datacatalog.Datacatalog.Artifact, datacatalog.Datacatalog.Artifact.Builder, datacatalog.Datacatalog.ArtifactOrBuilder> artifactBuilder_;
       /**
        * <code>.datacatalog.Artifact artifact = 1;</code>
        */
       public boolean hasArtifact() {
-        return artifactBuilder_ != null || artifact_ != null;
+        return valueCase_ == 1;
       }
       /**
        * <code>.datacatalog.Artifact artifact = 1;</code>
        */
       public datacatalog.Datacatalog.Artifact getArtifact() {
         if (artifactBuilder_ == null) {
-          return artifact_ == null ? datacatalog.Datacatalog.Artifact.getDefaultInstance() : artifact_;
+          if (valueCase_ == 1) {
+            return (datacatalog.Datacatalog.Artifact) value_;
+          }
+          return datacatalog.Datacatalog.Artifact.getDefaultInstance();
         } else {
-          return artifactBuilder_.getMessage();
+          if (valueCase_ == 1) {
+            return artifactBuilder_.getMessage();
+          }
+          return datacatalog.Datacatalog.Artifact.getDefaultInstance();
         }
       }
       /**
@@ -11787,12 +12698,12 @@ public final class Datacatalog {
           if (value == null) {
             throw new NullPointerException();
           }
-          artifact_ = value;
+          value_ = value;
           onChanged();
         } else {
           artifactBuilder_.setMessage(value);
         }
-
+        valueCase_ = 1;
         return this;
       }
       /**
@@ -11801,12 +12712,12 @@ public final class Datacatalog {
       public Builder setArtifact(
           datacatalog.Datacatalog.Artifact.Builder builderForValue) {
         if (artifactBuilder_ == null) {
-          artifact_ = builderForValue.build();
+          value_ = builderForValue.build();
           onChanged();
         } else {
           artifactBuilder_.setMessage(builderForValue.build());
         }
-
+        valueCase_ = 1;
         return this;
       }
       /**
@@ -11814,17 +12725,21 @@ public final class Datacatalog {
        */
       public Builder mergeArtifact(datacatalog.Datacatalog.Artifact value) {
         if (artifactBuilder_ == null) {
-          if (artifact_ != null) {
-            artifact_ =
-              datacatalog.Datacatalog.Artifact.newBuilder(artifact_).mergeFrom(value).buildPartial();
+          if (valueCase_ == 1 &&
+              value_ != datacatalog.Datacatalog.Artifact.getDefaultInstance()) {
+            value_ = datacatalog.Datacatalog.Artifact.newBuilder((datacatalog.Datacatalog.Artifact) value_)
+                .mergeFrom(value).buildPartial();
           } else {
-            artifact_ = value;
+            value_ = value;
           }
           onChanged();
         } else {
-          artifactBuilder_.mergeFrom(value);
+          if (valueCase_ == 1) {
+            artifactBuilder_.mergeFrom(value);
+          }
+          artifactBuilder_.setMessage(value);
         }
-
+        valueCase_ = 1;
         return this;
       }
       /**
@@ -11832,32 +12747,37 @@ public final class Datacatalog {
        */
       public Builder clearArtifact() {
         if (artifactBuilder_ == null) {
-          artifact_ = null;
-          onChanged();
+          if (valueCase_ == 1) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
         } else {
-          artifact_ = null;
-          artifactBuilder_ = null;
+          if (valueCase_ == 1) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          artifactBuilder_.clear();
         }
-
         return this;
       }
       /**
        * <code>.datacatalog.Artifact artifact = 1;</code>
        */
       public datacatalog.Datacatalog.Artifact.Builder getArtifactBuilder() {
-        
-        onChanged();
         return getArtifactFieldBuilder().getBuilder();
       }
       /**
        * <code>.datacatalog.Artifact artifact = 1;</code>
        */
       public datacatalog.Datacatalog.ArtifactOrBuilder getArtifactOrBuilder() {
-        if (artifactBuilder_ != null) {
+        if ((valueCase_ == 1) && (artifactBuilder_ != null)) {
           return artifactBuilder_.getMessageOrBuilder();
         } else {
-          return artifact_ == null ?
-              datacatalog.Datacatalog.Artifact.getDefaultInstance() : artifact_;
+          if (valueCase_ == 1) {
+            return (datacatalog.Datacatalog.Artifact) value_;
+          }
+          return datacatalog.Datacatalog.Artifact.getDefaultInstance();
         }
       }
       /**
@@ -11867,59 +12787,155 @@ public final class Datacatalog {
           datacatalog.Datacatalog.Artifact, datacatalog.Datacatalog.Artifact.Builder, datacatalog.Datacatalog.ArtifactOrBuilder> 
           getArtifactFieldBuilder() {
         if (artifactBuilder_ == null) {
+          if (!(valueCase_ == 1)) {
+            value_ = datacatalog.Datacatalog.Artifact.getDefaultInstance();
+          }
           artifactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               datacatalog.Datacatalog.Artifact, datacatalog.Datacatalog.Artifact.Builder, datacatalog.Datacatalog.ArtifactOrBuilder>(
-                  getArtifact(),
+                  (datacatalog.Datacatalog.Artifact) value_,
                   getParentForChildren(),
                   isClean());
-          artifact_ = null;
+          value_ = null;
         }
+        valueCase_ = 1;
+        onChanged();;
         return artifactBuilder_;
       }
 
-      private int reservationStatus_ = 0;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          datacatalog.Datacatalog.ReservationStatus, datacatalog.Datacatalog.ReservationStatus.Builder, datacatalog.Datacatalog.ReservationStatusOrBuilder> reservationStatusBuilder_;
       /**
        * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
        */
-      public int getReservationStatusValue() {
-        return reservationStatus_;
-      }
-      /**
-       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
-       */
-      public Builder setReservationStatusValue(int value) {
-        reservationStatus_ = value;
-        onChanged();
-        return this;
+      public boolean hasReservationStatus() {
+        return valueCase_ == 2;
       }
       /**
        * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
        */
       public datacatalog.Datacatalog.ReservationStatus getReservationStatus() {
-        @SuppressWarnings("deprecation")
-        datacatalog.Datacatalog.ReservationStatus result = datacatalog.Datacatalog.ReservationStatus.valueOf(reservationStatus_);
-        return result == null ? datacatalog.Datacatalog.ReservationStatus.UNRECOGNIZED : result;
+        if (reservationStatusBuilder_ == null) {
+          if (valueCase_ == 2) {
+            return (datacatalog.Datacatalog.ReservationStatus) value_;
+          }
+          return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+        } else {
+          if (valueCase_ == 2) {
+            return reservationStatusBuilder_.getMessage();
+          }
+          return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+        }
       }
       /**
        * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
        */
       public Builder setReservationStatus(datacatalog.Datacatalog.ReservationStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (reservationStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          reservationStatusBuilder_.setMessage(value);
         }
-        
-        reservationStatus_ = value.getNumber();
-        onChanged();
+        valueCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+       */
+      public Builder setReservationStatus(
+          datacatalog.Datacatalog.ReservationStatus.Builder builderForValue) {
+        if (reservationStatusBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          reservationStatusBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+       */
+      public Builder mergeReservationStatus(datacatalog.Datacatalog.ReservationStatus value) {
+        if (reservationStatusBuilder_ == null) {
+          if (valueCase_ == 2 &&
+              value_ != datacatalog.Datacatalog.ReservationStatus.getDefaultInstance()) {
+            value_ = datacatalog.Datacatalog.ReservationStatus.newBuilder((datacatalog.Datacatalog.ReservationStatus) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 2) {
+            reservationStatusBuilder_.mergeFrom(value);
+          }
+          reservationStatusBuilder_.setMessage(value);
+        }
+        valueCase_ = 2;
         return this;
       }
       /**
        * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
        */
       public Builder clearReservationStatus() {
-        
-        reservationStatus_ = 0;
-        onChanged();
+        if (reservationStatusBuilder_ == null) {
+          if (valueCase_ == 2) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 2) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          reservationStatusBuilder_.clear();
+        }
         return this;
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+       */
+      public datacatalog.Datacatalog.ReservationStatus.Builder getReservationStatusBuilder() {
+        return getReservationStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+       */
+      public datacatalog.Datacatalog.ReservationStatusOrBuilder getReservationStatusOrBuilder() {
+        if ((valueCase_ == 2) && (reservationStatusBuilder_ != null)) {
+          return reservationStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 2) {
+            return (datacatalog.Datacatalog.ReservationStatus) value_;
+          }
+          return datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.datacatalog.ReservationStatus reservation_status = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          datacatalog.Datacatalog.ReservationStatus, datacatalog.Datacatalog.ReservationStatus.Builder, datacatalog.Datacatalog.ReservationStatusOrBuilder> 
+          getReservationStatusFieldBuilder() {
+        if (reservationStatusBuilder_ == null) {
+          if (!(valueCase_ == 2)) {
+            value_ = datacatalog.Datacatalog.ReservationStatus.getDefaultInstance();
+          }
+          reservationStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              datacatalog.Datacatalog.ReservationStatus, datacatalog.Datacatalog.ReservationStatus.Builder, datacatalog.Datacatalog.ReservationStatusOrBuilder>(
+                  (datacatalog.Datacatalog.ReservationStatus) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 2;
+        onChanged();;
+        return reservationStatusBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -27499,6 +28515,11 @@ public final class Datacatalog {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datacatalog_GetOrReserveArtifactRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_datacatalog_ReservationStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_datacatalog_ReservationStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datacatalog_GetOrReserveArtifactResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -27594,87 +28615,91 @@ public final class Datacatalog {
     java.lang.String[] descriptorData = {
       "\n&flyteidl/datacatalog/datacatalog.proto" +
       "\022\013datacatalog\032\034flyteidl/core/literals.pr" +
-      "oto\032\037google/protobuf/timestamp.proto\"=\n\024" +
-      "CreateDatasetRequest\022%\n\007dataset\030\001 \001(\0132\024." +
-      "datacatalog.Dataset\"\027\n\025CreateDatasetResp" +
-      "onse\"<\n\021GetDatasetRequest\022\'\n\007dataset\030\001 \001" +
-      "(\0132\026.datacatalog.DatasetID\";\n\022GetDataset" +
-      "Response\022%\n\007dataset\030\001 \001(\0132\024.datacatalog." +
-      "Dataset\"x\n\022GetArtifactRequest\022\'\n\007dataset" +
-      "\030\001 \001(\0132\026.datacatalog.DatasetID\022\025\n\013artifa" +
-      "ct_id\030\002 \001(\tH\000\022\022\n\010tag_name\030\003 \001(\tH\000B\016\n\014que" +
-      "ry_handle\">\n\023GetArtifactResponse\022\'\n\010arti" +
-      "fact\030\001 \001(\0132\025.datacatalog.Artifact\"@\n\025Cre" +
-      "ateArtifactRequest\022\'\n\010artifact\030\001 \001(\0132\025.d" +
-      "atacatalog.Artifact\"\030\n\026CreateArtifactRes" +
-      "ponse\".\n\rAddTagRequest\022\035\n\003tag\030\001 \001(\0132\020.da" +
-      "tacatalog.Tag\"\020\n\016AddTagResponse\"\242\001\n\024List" +
-      "ArtifactsRequest\022\'\n\007dataset\030\001 \001(\0132\026.data" +
-      "catalog.DatasetID\022-\n\006filter\030\002 \001(\0132\035.data" +
-      "catalog.FilterExpression\0222\n\npagination\030\003" +
-      " \001(\0132\036.datacatalog.PaginationOptions\"U\n\025" +
-      "ListArtifactsResponse\022(\n\tartifacts\030\001 \003(\013" +
-      "2\025.datacatalog.Artifact\022\022\n\nnext_token\030\002 " +
-      "\001(\t\"x\n\023ListDatasetsRequest\022-\n\006filter\030\001 \001" +
-      "(\0132\035.datacatalog.FilterExpression\0222\n\npag" +
-      "ination\030\002 \001(\0132\036.datacatalog.PaginationOp" +
-      "tions\"R\n\024ListDatasetsResponse\022&\n\010dataset" +
-      "s\030\001 \003(\0132\024.datacatalog.Dataset\022\022\n\nnext_to" +
-      "ken\030\002 \001(\t\"\212\001\n\033GetOrReserveArtifactReques" +
-      "t\022*\n\ndataset_id\030\001 \001(\0132\026.datacatalog.Data" +
-      "setID\022\020\n\010tag_name\030\002 \001(\t\022-\n\texpire_at\030\003 \001" +
-      "(\0132\032.google.protobuf.Timestamp\"\203\001\n\034GetOr" +
-      "ReserveArtifactResponse\022\'\n\010artifact\030\001 \001(" +
-      "\0132\025.datacatalog.Artifact\022:\n\022reservation_" +
-      "status\030\002 \001(\0162\036.datacatalog.ReservationSt" +
-      "atus\"m\n\007Dataset\022\"\n\002id\030\001 \001(\0132\026.datacatalo" +
-      "g.DatasetID\022\'\n\010metadata\030\002 \001(\0132\025.datacata" +
-      "log.Metadata\022\025\n\rpartitionKeys\030\003 \003(\t\"\'\n\tP" +
-      "artition\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"Y\n\t" +
-      "DatasetID\022\017\n\007project\030\001 \001(\t\022\014\n\004name\030\002 \001(\t" +
-      "\022\016\n\006domain\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004UUI" +
-      "D\030\005 \001(\t\"\215\002\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'\n\007data" +
-      "set\030\002 \001(\0132\026.datacatalog.DatasetID\022\'\n\004dat" +
-      "a\030\003 \003(\0132\031.datacatalog.ArtifactData\022\'\n\010me" +
-      "tadata\030\004 \001(\0132\025.datacatalog.Metadata\022*\n\np" +
-      "artitions\030\005 \003(\0132\026.datacatalog.Partition\022" +
-      "\036\n\004tags\030\006 \003(\0132\020.datacatalog.Tag\022.\n\ncreat" +
-      "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\"" +
-      "C\n\014ArtifactData\022\014\n\004name\030\001 \001(\t\022%\n\005value\030\002" +
-      " \001(\0132\026.flyteidl.core.Literal\"Q\n\003Tag\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\023\n\013artifact_id\030\002 \001(\t\022\'\n\007datase" +
-      "t\030\003 \001(\0132\026.datacatalog.DatasetID\"m\n\010Metad" +
-      "ata\0222\n\007key_map\030\001 \003(\0132!.datacatalog.Metad" +
-      "ata.KeyMapEntry\032-\n\013KeyMapEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\020FilterExpressi" +
-      "on\0222\n\007filters\030\001 \003(\0132!.datacatalog.Single" +
-      "PropertyFilter\"\211\003\n\024SinglePropertyFilter\022" +
-      "4\n\ntag_filter\030\001 \001(\0132\036.datacatalog.TagPro" +
-      "pertyFilterH\000\022@\n\020partition_filter\030\002 \001(\0132" +
-      "$.datacatalog.PartitionPropertyFilterH\000\022" +
-      ">\n\017artifact_filter\030\003 \001(\0132#.datacatalog.A" +
-      "rtifactPropertyFilterH\000\022<\n\016dataset_filte" +
-      "r\030\004 \001(\0132\".datacatalog.DatasetPropertyFil" +
-      "terH\000\022F\n\010operator\030\n \001(\01624.datacatalog.Si" +
-      "nglePropertyFilter.ComparisonOperator\" \n" +
-      "\022ComparisonOperator\022\n\n\006EQUALS\020\000B\021\n\017prope" +
-      "rty_filter\";\n\026ArtifactPropertyFilter\022\025\n\013" +
-      "artifact_id\030\001 \001(\tH\000B\n\n\010property\"3\n\021TagPr" +
-      "opertyFilter\022\022\n\010tag_name\030\001 \001(\tH\000B\n\n\010prop" +
-      "erty\"S\n\027PartitionPropertyFilter\022,\n\007key_v" +
-      "al\030\001 \001(\0132\031.datacatalog.KeyValuePairH\000B\n\n" +
-      "\010property\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t\"k\n\025DatasetPropertyFilter\022\021" +
-      "\n\007project\030\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022\020\n\006dom" +
-      "ain\030\003 \001(\tH\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010proper" +
-      "ty\"\361\001\n\021PaginationOptions\022\r\n\005limit\030\001 \001(\r\022" +
-      "\r\n\005token\030\002 \001(\t\0227\n\007sortKey\030\003 \001(\0162&.dataca" +
-      "talog.PaginationOptions.SortKey\022;\n\tsortO" +
-      "rder\030\004 \001(\0162(.datacatalog.PaginationOptio" +
-      "ns.SortOrder\"*\n\tSortOrder\022\016\n\nDESCENDING\020" +
-      "\000\022\r\n\tASCENDING\020\001\"\034\n\007SortKey\022\021\n\rCREATION_" +
-      "TIME\020\000*,\n\021ReservationStatus\022\013\n\007SUCCESS\020\000" +
-      "\022\n\n\006FAILED\020\0012\276\005\n\013DataCatalog\022V\n\rCreateDa" +
+      "oto\032\036google/protobuf/duration.proto\032\037goo" +
+      "gle/protobuf/timestamp.proto\"=\n\024CreateDa" +
+      "tasetRequest\022%\n\007dataset\030\001 \001(\0132\024.datacata" +
+      "log.Dataset\"\027\n\025CreateDatasetResponse\"<\n\021" +
+      "GetDatasetRequest\022\'\n\007dataset\030\001 \001(\0132\026.dat" +
+      "acatalog.DatasetID\";\n\022GetDatasetResponse" +
+      "\022%\n\007dataset\030\001 \001(\0132\024.datacatalog.Dataset\"" +
+      "x\n\022GetArtifactRequest\022\'\n\007dataset\030\001 \001(\0132\026" +
+      ".datacatalog.DatasetID\022\025\n\013artifact_id\030\002 " +
+      "\001(\tH\000\022\022\n\010tag_name\030\003 \001(\tH\000B\016\n\014query_handl" +
+      "e\">\n\023GetArtifactResponse\022\'\n\010artifact\030\001 \001" +
+      "(\0132\025.datacatalog.Artifact\"@\n\025CreateArtif" +
+      "actRequest\022\'\n\010artifact\030\001 \001(\0132\025.datacatal" +
+      "og.Artifact\"\030\n\026CreateArtifactResponse\".\n" +
+      "\rAddTagRequest\022\035\n\003tag\030\001 \001(\0132\020.datacatalo" +
+      "g.Tag\"\020\n\016AddTagResponse\"\242\001\n\024ListArtifact" +
+      "sRequest\022\'\n\007dataset\030\001 \001(\0132\026.datacatalog." +
+      "DatasetID\022-\n\006filter\030\002 \001(\0132\035.datacatalog." +
+      "FilterExpression\0222\n\npagination\030\003 \001(\0132\036.d" +
+      "atacatalog.PaginationOptions\"U\n\025ListArti" +
+      "factsResponse\022(\n\tartifacts\030\001 \003(\0132\025.datac" +
+      "atalog.Artifact\022\022\n\nnext_token\030\002 \001(\t\"x\n\023L" +
+      "istDatasetsRequest\022-\n\006filter\030\001 \001(\0132\035.dat" +
+      "acatalog.FilterExpression\0222\n\npagination\030" +
+      "\002 \001(\0132\036.datacatalog.PaginationOptions\"R\n" +
+      "\024ListDatasetsResponse\022&\n\010datasets\030\001 \003(\0132" +
+      "\024.datacatalog.Dataset\022\022\n\nnext_token\030\002 \001(" +
+      "\t\"\207\001\n\033GetOrReserveArtifactRequest\022*\n\ndat" +
+      "aset_id\030\001 \001(\0132\026.datacatalog.DatasetID\022\020\n" +
+      "\010tag_name\030\002 \001(\t\022*\n\007timeout\030\003 \001(\0132\031.googl" +
+      "e.protobuf.Duration\"\241\001\n\021ReservationStatu" +
+      "s\0223\n\005state\030\001 \001(\0162$.datacatalog.Reservati" +
+      "onStatus.State\022\'\n\010metadata\030\002 \001(\0132\025.datac" +
+      "atalog.Metadata\".\n\005State\022\014\n\010ACQUIRED\020\000\022\027" +
+      "\n\023ALREADY_IN_PROGRESS\020\001\"\220\001\n\034GetOrReserve" +
+      "ArtifactResponse\022)\n\010artifact\030\001 \001(\0132\025.dat" +
+      "acatalog.ArtifactH\000\022<\n\022reservation_statu" +
+      "s\030\002 \001(\0132\036.datacatalog.ReservationStatusH" +
+      "\000B\007\n\005value\"m\n\007Dataset\022\"\n\002id\030\001 \001(\0132\026.data" +
+      "catalog.DatasetID\022\'\n\010metadata\030\002 \001(\0132\025.da" +
+      "tacatalog.Metadata\022\025\n\rpartitionKeys\030\003 \003(" +
+      "\t\"\'\n\tPartition\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t\"Y\n\tDatasetID\022\017\n\007project\030\001 \001(\t\022\014\n\004name" +
+      "\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022" +
+      "\014\n\004UUID\030\005 \001(\t\"\215\002\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'" +
+      "\n\007dataset\030\002 \001(\0132\026.datacatalog.DatasetID\022" +
+      "\'\n\004data\030\003 \003(\0132\031.datacatalog.ArtifactData" +
+      "\022\'\n\010metadata\030\004 \001(\0132\025.datacatalog.Metadat" +
+      "a\022*\n\npartitions\030\005 \003(\0132\026.datacatalog.Part" +
+      "ition\022\036\n\004tags\030\006 \003(\0132\020.datacatalog.Tag\022.\n" +
+      "\ncreated_at\030\007 \001(\0132\032.google.protobuf.Time" +
+      "stamp\"C\n\014ArtifactData\022\014\n\004name\030\001 \001(\t\022%\n\005v" +
+      "alue\030\002 \001(\0132\026.flyteidl.core.Literal\"Q\n\003Ta" +
+      "g\022\014\n\004name\030\001 \001(\t\022\023\n\013artifact_id\030\002 \001(\t\022\'\n\007" +
+      "dataset\030\003 \001(\0132\026.datacatalog.DatasetID\"m\n" +
+      "\010Metadata\0222\n\007key_map\030\001 \003(\0132!.datacatalog" +
+      ".Metadata.KeyMapEntry\032-\n\013KeyMapEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\020FilterEx" +
+      "pression\0222\n\007filters\030\001 \003(\0132!.datacatalog." +
+      "SinglePropertyFilter\"\211\003\n\024SinglePropertyF" +
+      "ilter\0224\n\ntag_filter\030\001 \001(\0132\036.datacatalog." +
+      "TagPropertyFilterH\000\022@\n\020partition_filter\030" +
+      "\002 \001(\0132$.datacatalog.PartitionPropertyFil" +
+      "terH\000\022>\n\017artifact_filter\030\003 \001(\0132#.datacat" +
+      "alog.ArtifactPropertyFilterH\000\022<\n\016dataset" +
+      "_filter\030\004 \001(\0132\".datacatalog.DatasetPrope" +
+      "rtyFilterH\000\022F\n\010operator\030\n \001(\01624.datacata" +
+      "log.SinglePropertyFilter.ComparisonOpera" +
+      "tor\" \n\022ComparisonOperator\022\n\n\006EQUALS\020\000B\021\n" +
+      "\017property_filter\";\n\026ArtifactPropertyFilt" +
+      "er\022\025\n\013artifact_id\030\001 \001(\tH\000B\n\n\010property\"3\n" +
+      "\021TagPropertyFilter\022\022\n\010tag_name\030\001 \001(\tH\000B\n" +
+      "\n\010property\"S\n\027PartitionPropertyFilter\022,\n" +
+      "\007key_val\030\001 \001(\0132\031.datacatalog.KeyValuePai" +
+      "rH\000B\n\n\010property\"*\n\014KeyValuePair\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t\"k\n\025DatasetPropertyFi" +
+      "lter\022\021\n\007project\030\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022" +
+      "\020\n\006domain\030\003 \001(\tH\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010" +
+      "property\"\361\001\n\021PaginationOptions\022\r\n\005limit\030" +
+      "\001 \001(\r\022\r\n\005token\030\002 \001(\t\0227\n\007sortKey\030\003 \001(\0162&." +
+      "datacatalog.PaginationOptions.SortKey\022;\n" +
+      "\tsortOrder\030\004 \001(\0162(.datacatalog.Paginatio" +
+      "nOptions.SortOrder\"*\n\tSortOrder\022\016\n\nDESCE" +
+      "NDING\020\000\022\r\n\tASCENDING\020\001\"\034\n\007SortKey\022\021\n\rCRE" +
+      "ATION_TIME\020\0002\276\005\n\013DataCatalog\022V\n\rCreateDa" +
       "taset\022!.datacatalog.CreateDatasetRequest" +
       "\032\".datacatalog.CreateDatasetResponse\022M\n\n" +
       "GetDataset\022\036.datacatalog.GetDatasetReque" +
@@ -27706,6 +28731,7 @@ public final class Datacatalog {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Literals.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_datacatalog_CreateDatasetRequest_descriptor =
@@ -27797,51 +28823,57 @@ public final class Datacatalog {
     internal_static_datacatalog_GetOrReserveArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_GetOrReserveArtifactRequest_descriptor,
-        new java.lang.String[] { "DatasetId", "TagName", "ExpireAt", });
-    internal_static_datacatalog_GetOrReserveArtifactResponse_descriptor =
+        new java.lang.String[] { "DatasetId", "TagName", "Timeout", });
+    internal_static_datacatalog_ReservationStatus_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_datacatalog_ReservationStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datacatalog_ReservationStatus_descriptor,
+        new java.lang.String[] { "State", "Metadata", });
+    internal_static_datacatalog_GetOrReserveArtifactResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_datacatalog_GetOrReserveArtifactResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_GetOrReserveArtifactResponse_descriptor,
-        new java.lang.String[] { "Artifact", "ReservationStatus", });
+        new java.lang.String[] { "Artifact", "ReservationStatus", "Value", });
     internal_static_datacatalog_Dataset_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_datacatalog_Dataset_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_Dataset_descriptor,
         new java.lang.String[] { "Id", "Metadata", "PartitionKeys", });
     internal_static_datacatalog_Partition_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_datacatalog_Partition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_Partition_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_datacatalog_DatasetID_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_datacatalog_DatasetID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_DatasetID_descriptor,
         new java.lang.String[] { "Project", "Name", "Domain", "Version", "UUID", });
     internal_static_datacatalog_Artifact_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_datacatalog_Artifact_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_Artifact_descriptor,
         new java.lang.String[] { "Id", "Dataset", "Data", "Metadata", "Partitions", "Tags", "CreatedAt", });
     internal_static_datacatalog_ArtifactData_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_datacatalog_ArtifactData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_ArtifactData_descriptor,
         new java.lang.String[] { "Name", "Value", });
     internal_static_datacatalog_Tag_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_datacatalog_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_Tag_descriptor,
         new java.lang.String[] { "Name", "ArtifactId", "Dataset", });
     internal_static_datacatalog_Metadata_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_datacatalog_Metadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_Metadata_descriptor,
@@ -27853,54 +28885,55 @@ public final class Datacatalog {
         internal_static_datacatalog_Metadata_KeyMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_datacatalog_FilterExpression_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_datacatalog_FilterExpression_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_FilterExpression_descriptor,
         new java.lang.String[] { "Filters", });
     internal_static_datacatalog_SinglePropertyFilter_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_datacatalog_SinglePropertyFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_SinglePropertyFilter_descriptor,
         new java.lang.String[] { "TagFilter", "PartitionFilter", "ArtifactFilter", "DatasetFilter", "Operator", "PropertyFilter", });
     internal_static_datacatalog_ArtifactPropertyFilter_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_datacatalog_ArtifactPropertyFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_ArtifactPropertyFilter_descriptor,
         new java.lang.String[] { "ArtifactId", "Property", });
     internal_static_datacatalog_TagPropertyFilter_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_datacatalog_TagPropertyFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_TagPropertyFilter_descriptor,
         new java.lang.String[] { "TagName", "Property", });
     internal_static_datacatalog_PartitionPropertyFilter_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_datacatalog_PartitionPropertyFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_PartitionPropertyFilter_descriptor,
         new java.lang.String[] { "KeyVal", "Property", });
     internal_static_datacatalog_KeyValuePair_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_datacatalog_KeyValuePair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_KeyValuePair_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_datacatalog_DatasetPropertyFilter_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_datacatalog_DatasetPropertyFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_DatasetPropertyFilter_descriptor,
         new java.lang.String[] { "Project", "Name", "Domain", "Version", "Property", });
     internal_static_datacatalog_PaginationOptions_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_datacatalog_PaginationOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datacatalog_PaginationOptions_descriptor,
         new java.lang.String[] { "Limit", "Token", "SortKey", "SortOrder", });
     flyteidl.core.Literals.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
