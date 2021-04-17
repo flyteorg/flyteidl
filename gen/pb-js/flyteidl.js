@@ -12629,6 +12629,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [retryGroup] NodeExecutionEvent retryGroup
              * @property {string|null} [specNodeId] NodeExecutionEvent specNodeId
              * @property {string|null} [nodeName] NodeExecutionEvent nodeName
+             * @property {number|null} [phaseVersion] NodeExecutionEvent phaseVersion
              */
 
             /**
@@ -12758,6 +12759,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.nodeName = "";
 
+            /**
+             * NodeExecutionEvent phaseVersion.
+             * @member {number} phaseVersion
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.phaseVersion = 0;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -12835,6 +12844,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.nodeName);
                 if (message.taskNodeMetadata != null && message.hasOwnProperty("taskNodeMetadata"))
                     $root.flyteidl.event.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+                if (message.phaseVersion != null && message.hasOwnProperty("phaseVersion"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.phaseVersion);
                 return writer;
             };
 
@@ -12897,6 +12908,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 13:
                         message.nodeName = reader.string();
+                        break;
+                    case 15:
+                        message.phaseVersion = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13001,6 +13015,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nodeName != null && message.hasOwnProperty("nodeName"))
                     if (!$util.isString(message.nodeName))
                         return "nodeName: string expected";
+                if (message.phaseVersion != null && message.hasOwnProperty("phaseVersion"))
+                    if (!$util.isInteger(message.phaseVersion))
+                        return "phaseVersion: integer expected";
                 return null;
             };
 

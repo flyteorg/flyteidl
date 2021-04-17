@@ -545,6 +545,12 @@ class NodeExecutionEvent final :
   ::flyteidl::core::NodeExecution_Phase phase() const;
   void set_phase(::flyteidl::core::NodeExecution_Phase value);
 
+  // uint32 phase_version = 15;
+  void clear_phase_version();
+  static const int kPhaseVersionFieldNumber = 15;
+  ::google::protobuf::uint32 phase_version() const;
+  void set_phase_version(::google::protobuf::uint32 value);
+
   // string output_uri = 6;
   private:
   bool has_output_uri() const;
@@ -618,6 +624,7 @@ class NodeExecutionEvent final :
   ::flyteidl::event::ParentTaskExecutionMetadata* parent_task_metadata_;
   ::flyteidl::event::ParentNodeExecutionMetadata* parent_node_metadata_;
   int phase_;
+  ::google::protobuf::uint32 phase_version_;
   union OutputResultUnion {
     OutputResultUnion() {}
     ::google::protobuf::internal::ArenaStringPtr output_uri_;
@@ -2972,6 +2979,20 @@ inline void NodeExecutionEvent::set_allocated_node_name(::std::string* node_name
   }
   node_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), node_name);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.node_name)
+}
+
+// uint32 phase_version = 15;
+inline void NodeExecutionEvent::clear_phase_version() {
+  phase_version_ = 0u;
+}
+inline ::google::protobuf::uint32 NodeExecutionEvent::phase_version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.phase_version)
+  return phase_version_;
+}
+inline void NodeExecutionEvent::set_phase_version(::google::protobuf::uint32 value) {
+  
+  phase_version_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.phase_version)
 }
 
 inline bool NodeExecutionEvent::has_output_result() const {

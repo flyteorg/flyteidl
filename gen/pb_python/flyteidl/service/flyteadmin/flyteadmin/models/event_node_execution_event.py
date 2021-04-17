@@ -52,7 +52,8 @@ class EventNodeExecutionEvent(object):
         'parent_node_metadata': 'EventParentNodeExecutionMetadata',
         'retry_group': 'str',
         'spec_node_id': 'str',
-        'node_name': 'str'
+        'node_name': 'str',
+        'phase_version': 'int'
     }
 
     attribute_map = {
@@ -69,10 +70,11 @@ class EventNodeExecutionEvent(object):
         'parent_node_metadata': 'parent_node_metadata',
         'retry_group': 'retry_group',
         'spec_node_id': 'spec_node_id',
-        'node_name': 'node_name'
+        'node_name': 'node_name',
+        'phase_version': 'phase_version'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None, phase_version=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -89,6 +91,7 @@ class EventNodeExecutionEvent(object):
         self._retry_group = None
         self._spec_node_id = None
         self._node_name = None
+        self._phase_version = None
         self.discriminator = None
 
         if id is not None:
@@ -119,6 +122,8 @@ class EventNodeExecutionEvent(object):
             self.spec_node_id = spec_node_id
         if node_name is not None:
             self.node_name = node_name
+        if phase_version is not None:
+            self.phase_version = phase_version
 
     @property
     def id(self):
@@ -421,6 +426,29 @@ class EventNodeExecutionEvent(object):
         """
 
         self._node_name = node_name
+
+    @property
+    def phase_version(self):
+        """Gets the phase_version of this EventNodeExecutionEvent.  # noqa: E501
+
+        Some phases, like RUNNING, can send multiple events with changed metadata (dynamic workflow closures, etc) that should be recorded regardless of the lack of phase change. The version field should be incremented when target metadata or other values change across the duration of an individual phase.  # noqa: E501
+
+        :return: The phase_version of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._phase_version
+
+    @phase_version.setter
+    def phase_version(self, phase_version):
+        """Sets the phase_version of this EventNodeExecutionEvent.
+
+        Some phases, like RUNNING, can send multiple events with changed metadata (dynamic workflow closures, etc) that should be recorded regardless of the lack of phase change. The version field should be incremented when target metadata or other values change across the duration of an individual phase.  # noqa: E501
+
+        :param phase_version: The phase_version of this EventNodeExecutionEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._phase_version = phase_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

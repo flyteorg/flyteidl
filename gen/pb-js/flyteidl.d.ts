@@ -5282,6 +5282,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent nodeName */
             nodeName?: (string|null);
+
+            /** NodeExecutionEvent phaseVersion */
+            phaseVersion?: (number|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -5334,6 +5337,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent nodeName. */
             public nodeName: string;
+
+            /** NodeExecutionEvent phaseVersion. */
+            public phaseVersion: number;
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error");

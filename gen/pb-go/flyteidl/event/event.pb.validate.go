@@ -216,6 +216,8 @@ func (m *NodeExecutionEvent) Validate() error {
 
 	// no validation rules for NodeName
 
+	// no validation rules for PhaseVersion
+
 	switch m.OutputResult.(type) {
 
 	case *NodeExecutionEvent_OutputUri:

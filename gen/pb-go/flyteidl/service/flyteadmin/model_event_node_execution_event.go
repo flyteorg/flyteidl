@@ -32,4 +32,6 @@ type EventNodeExecutionEvent struct {
 	RetryGroup string `json:"retry_group,omitempty"`
 	SpecNodeId string `json:"spec_node_id,omitempty"`
 	NodeName string `json:"node_name,omitempty"`
+	// Some phases, like RUNNING, can send multiple events with changed metadata (dynamic workflow closures, etc) that should be recorded regardless of the lack of phase change. The version field should be incremented when target metadata or other values change across the duration of an individual phase.
+	PhaseVersion int64 `json:"phase_version,omitempty"`
 }

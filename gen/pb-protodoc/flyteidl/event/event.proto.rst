@@ -91,7 +91,8 @@ flyteidl.event.NodeExecutionEvent
     "parent_node_metadata": "{...}",
     "retry_group": "...",
     "spec_node_id": "...",
-    "node_name": "..."
+    "node_name": "...",
+    "phase_version": "..."
   }
 
 .. _api_field_flyteidl.event.NodeExecutionEvent.id:
@@ -193,6 +194,14 @@ node_name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Friendly readable name for the node
   
   
+.. _api_field_flyteidl.event.NodeExecutionEvent.phase_version:
+
+phase_version
+  (`uint32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Some phases, like RUNNING, can send multiple events with changed metadata (dynamic workflow closures, etc)
+  that should be recorded regardless of the lack of phase change.
+  The version field should be incremented when target metadata or other values change across the duration of an individual phase.
+  
+  
 
 
 .. _api_msg_flyteidl.event.WorkflowNodeMetadata:
@@ -200,7 +209,7 @@ node_name
 flyteidl.event.WorkflowNodeMetadata
 -----------------------------------
 
-`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L85>`_
+`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L90>`_
 
 For Workflow Nodes we need to send information about the workflow that's launched
 
@@ -222,7 +231,7 @@ execution_id
 flyteidl.event.TaskNodeMetadata
 -------------------------------
 
-`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L89>`_
+`[flyteidl.event.TaskNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L94>`_
 
 
 .. code-block:: json
@@ -258,7 +267,7 @@ dynamic_workflow
 flyteidl.event.DynamicWorkflowNodeMetadata
 ------------------------------------------
 
-`[flyteidl.event.DynamicWorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L100>`_
+`[flyteidl.event.DynamicWorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L105>`_
 
 For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
 
@@ -288,7 +297,7 @@ compiled_workflow
 flyteidl.event.ParentTaskExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L108>`_
+`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L113>`_
 
 
 .. code-block:: json
@@ -309,7 +318,7 @@ id
 flyteidl.event.ParentNodeExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L112>`_
+`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L117>`_
 
 
 .. code-block:: json
@@ -332,7 +341,7 @@ node_id
 flyteidl.event.TaskExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L119>`_
+`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L124>`_
 
 Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 
@@ -468,7 +477,7 @@ metadata
 flyteidl.event.ExternalResourceInfo
 -----------------------------------
 
-`[flyteidl.event.ExternalResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L179>`_
+`[flyteidl.event.ExternalResourceInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L184>`_
 
 This message contains metadata about external resources produced or used by a specific task execution.
 
@@ -491,7 +500,7 @@ external_id
 flyteidl.event.ResourcePoolInfo
 -------------------------------
 
-`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L188>`_
+`[flyteidl.event.ResourcePoolInfo proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L193>`_
 
 This message holds task execution metadata specific to resource allocation used to manage concurrent
 executions for a project namespace.
@@ -522,7 +531,7 @@ namespace
 flyteidl.event.TaskExecutionMetadata
 ------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L200>`_
+`[flyteidl.event.TaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L205>`_
 
 Holds metadata around how a task was executed.
 As a task transitions across event phases during execution some attributes, such its generated name, generated external resources,
@@ -575,7 +584,7 @@ instance_class
 Enum flyteidl.event.TaskExecutionMetadata.InstanceClass
 -------------------------------------------------------
 
-`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L216>`_
+`[flyteidl.event.TaskExecutionMetadata.InstanceClass proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L221>`_
 
 Includes the broad cateogry of machine used for this specific task execution. 
 
