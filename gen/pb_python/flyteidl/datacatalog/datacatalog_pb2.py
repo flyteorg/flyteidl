@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='datacatalog',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n&flyteidl/datacatalog/datacatalog.proto\x12\x0b\x64\x61tacatalog\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x14\x43reateDatasetRequest\x12%\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x14.datacatalog.Dataset\"\x17\n\x15\x43reateDatasetResponse\"<\n\x11GetDatasetRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\";\n\x12GetDatasetResponse\x12%\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x14.datacatalog.Dataset\"x\n\x12GetArtifactRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\x15\n\x0b\x61rtifact_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08tag_name\x18\x03 \x01(\tH\x00\x42\x0e\n\x0cquery_handle\">\n\x13GetArtifactResponse\x12\'\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.Artifact\"@\n\x15\x43reateArtifactRequest\x12\'\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.Artifact\"\x18\n\x16\x43reateArtifactResponse\".\n\rAddTagRequest\x12\x1d\n\x03tag\x18\x01 \x01(\x0b\x32\x10.datacatalog.Tag\"\x10\n\x0e\x41\x64\x64TagResponse\"\xa2\x01\n\x14ListArtifactsRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12-\n\x06\x66ilter\x18\x02 \x01(\x0b\x32\x1d.datacatalog.FilterExpression\x12\x32\n\npagination\x18\x03 \x01(\x0b\x32\x1e.datacatalog.PaginationOptions\"U\n\x15ListArtifactsResponse\x12(\n\tartifacts\x18\x01 \x03(\x0b\x32\x15.datacatalog.Artifact\x12\x12\n\nnext_token\x18\x02 \x01(\t\"x\n\x13ListDatasetsRequest\x12-\n\x06\x66ilter\x18\x01 \x01(\x0b\x32\x1d.datacatalog.FilterExpression\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x1e.datacatalog.PaginationOptions\"R\n\x14ListDatasetsResponse\x12&\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\x14.datacatalog.Dataset\x12\x12\n\nnext_token\x18\x02 \x01(\t\"\x87\x01\n\x1bGetOrReserveArtifactRequest\x12*\n\ndataset_id\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\x10\n\x08tag_name\x18\x02 \x01(\t\x12*\n\x07timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xa1\x01\n\x11ReservationStatus\x12\x33\n\x05state\x18\x01 \x01(\x0e\x32$.datacatalog.ReservationStatus.State\x12\'\n\x08metadata\x18\x02 \x01(\x0b\x32\x15.datacatalog.Metadata\".\n\x05State\x12\x0c\n\x08\x41\x43QUIRED\x10\x00\x12\x17\n\x13\x41LREADY_IN_PROGRESS\x10\x01\"\x90\x01\n\x1cGetOrReserveArtifactResponse\x12)\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.ArtifactH\x00\x12<\n\x12reservation_status\x18\x02 \x01(\x0b\x32\x1e.datacatalog.ReservationStatusH\x00\x42\x07\n\x05value\"m\n\x07\x44\x61taset\x12\"\n\x02id\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\'\n\x08metadata\x18\x02 \x01(\x0b\x32\x15.datacatalog.Metadata\x12\x15\n\rpartitionKeys\x18\x03 \x03(\t\"\'\n\tPartition\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"Y\n\tDatasetID\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0c\n\x04UUID\x18\x05 \x01(\t\"\x8d\x02\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\'\n\x07\x64\x61taset\x18\x02 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.datacatalog.ArtifactData\x12\'\n\x08metadata\x18\x04 \x01(\x0b\x32\x15.datacatalog.Metadata\x12*\n\npartitions\x18\x05 \x03(\x0b\x32\x16.datacatalog.Partition\x12\x1e\n\x04tags\x18\x06 \x03(\x0b\x32\x10.datacatalog.Tag\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x0c\x41rtifactData\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"Q\n\x03Tag\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x61rtifact_id\x18\x02 \x01(\t\x12\'\n\x07\x64\x61taset\x18\x03 \x01(\x0b\x32\x16.datacatalog.DatasetID\"m\n\x08Metadata\x12\x32\n\x07key_map\x18\x01 \x03(\x0b\x32!.datacatalog.Metadata.KeyMapEntry\x1a-\n\x0bKeyMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"F\n\x10\x46ilterExpression\x12\x32\n\x07\x66ilters\x18\x01 \x03(\x0b\x32!.datacatalog.SinglePropertyFilter\"\x89\x03\n\x14SinglePropertyFilter\x12\x34\n\ntag_filter\x18\x01 \x01(\x0b\x32\x1e.datacatalog.TagPropertyFilterH\x00\x12@\n\x10partition_filter\x18\x02 \x01(\x0b\x32$.datacatalog.PartitionPropertyFilterH\x00\x12>\n\x0f\x61rtifact_filter\x18\x03 \x01(\x0b\x32#.datacatalog.ArtifactPropertyFilterH\x00\x12<\n\x0e\x64\x61taset_filter\x18\x04 \x01(\x0b\x32\".datacatalog.DatasetPropertyFilterH\x00\x12\x46\n\x08operator\x18\n \x01(\x0e\x32\x34.datacatalog.SinglePropertyFilter.ComparisonOperator\" \n\x12\x43omparisonOperator\x12\n\n\x06\x45QUALS\x10\x00\x42\x11\n\x0fproperty_filter\";\n\x16\x41rtifactPropertyFilter\x12\x15\n\x0b\x61rtifact_id\x18\x01 \x01(\tH\x00\x42\n\n\x08property\"3\n\x11TagPropertyFilter\x12\x12\n\x08tag_name\x18\x01 \x01(\tH\x00\x42\n\n\x08property\"S\n\x17PartitionPropertyFilter\x12,\n\x07key_val\x18\x01 \x01(\x0b\x32\x19.datacatalog.KeyValuePairH\x00\x42\n\n\x08property\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"k\n\x15\x44\x61tasetPropertyFilter\x12\x11\n\x07project\x18\x01 \x01(\tH\x00\x12\x0e\n\x04name\x18\x02 \x01(\tH\x00\x12\x10\n\x06\x64omain\x18\x03 \x01(\tH\x00\x12\x11\n\x07version\x18\x04 \x01(\tH\x00\x42\n\n\x08property\"\xf1\x01\n\x11PaginationOptions\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x37\n\x07sortKey\x18\x03 \x01(\x0e\x32&.datacatalog.PaginationOptions.SortKey\x12;\n\tsortOrder\x18\x04 \x01(\x0e\x32(.datacatalog.PaginationOptions.SortOrder\"*\n\tSortOrder\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x1c\n\x07SortKey\x12\x11\n\rCREATION_TIME\x10\x00\x32\xbe\x05\n\x0b\x44\x61taCatalog\x12V\n\rCreateDataset\x12!.datacatalog.CreateDatasetRequest\x1a\".datacatalog.CreateDatasetResponse\x12M\n\nGetDataset\x12\x1e.datacatalog.GetDatasetRequest\x1a\x1f.datacatalog.GetDatasetResponse\x12Y\n\x0e\x43reateArtifact\x12\".datacatalog.CreateArtifactRequest\x1a#.datacatalog.CreateArtifactResponse\x12P\n\x0bGetArtifact\x12\x1f.datacatalog.GetArtifactRequest\x1a .datacatalog.GetArtifactResponse\x12\x41\n\x06\x41\x64\x64Tag\x12\x1a.datacatalog.AddTagRequest\x1a\x1b.datacatalog.AddTagResponse\x12V\n\rListArtifacts\x12!.datacatalog.ListArtifactsRequest\x1a\".datacatalog.ListArtifactsResponse\x12S\n\x0cListDatasets\x12 .datacatalog.ListDatasetsRequest\x1a!.datacatalog.ListDatasetsResponse\x12k\n\x14GetOrReserveArtifact\x12(.datacatalog.GetOrReserveArtifactRequest\x1a).datacatalog.GetOrReserveArtifactResponseb\x06proto3')
+  serialized_pb=_b('\n&flyteidl/datacatalog/datacatalog.proto\x12\x0b\x64\x61tacatalog\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x14\x43reateDatasetRequest\x12%\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x14.datacatalog.Dataset\"\x17\n\x15\x43reateDatasetResponse\"<\n\x11GetDatasetRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\";\n\x12GetDatasetResponse\x12%\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x14.datacatalog.Dataset\"x\n\x12GetArtifactRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\x15\n\x0b\x61rtifact_id\x18\x02 \x01(\tH\x00\x12\x12\n\x08tag_name\x18\x03 \x01(\tH\x00\x42\x0e\n\x0cquery_handle\">\n\x13GetArtifactResponse\x12\'\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.Artifact\"@\n\x15\x43reateArtifactRequest\x12\'\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.Artifact\"\x18\n\x16\x43reateArtifactResponse\".\n\rAddTagRequest\x12\x1d\n\x03tag\x18\x01 \x01(\x0b\x32\x10.datacatalog.Tag\"\x10\n\x0e\x41\x64\x64TagResponse\"\xa2\x01\n\x14ListArtifactsRequest\x12\'\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12-\n\x06\x66ilter\x18\x02 \x01(\x0b\x32\x1d.datacatalog.FilterExpression\x12\x32\n\npagination\x18\x03 \x01(\x0b\x32\x1e.datacatalog.PaginationOptions\"U\n\x15ListArtifactsResponse\x12(\n\tartifacts\x18\x01 \x03(\x0b\x32\x15.datacatalog.Artifact\x12\x12\n\nnext_token\x18\x02 \x01(\t\"x\n\x13ListDatasetsRequest\x12-\n\x06\x66ilter\x18\x01 \x01(\x0b\x32\x1d.datacatalog.FilterExpression\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x1e.datacatalog.PaginationOptions\"R\n\x14ListDatasetsResponse\x12&\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\x14.datacatalog.Dataset\x12\x12\n\nnext_token\x18\x02 \x01(\t\"m\n\x1bGetOrReserveArtifactRequest\x12*\n\ndataset_id\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\x10\n\x08tag_name\x18\x02 \x01(\t\x12\x10\n\x08owner_id\x18\x03 \x01(\t\"\xb3\x01\n\x11ReservationStatus\x12\x33\n\x05state\x18\x01 \x01(\x0e\x32$.datacatalog.ReservationStatus.State\x12\'\n\x08metadata\x18\x02 \x01(\x0b\x32\x15.datacatalog.Metadata\x12\x10\n\x08owner_id\x18\x03 \x01(\t\".\n\x05State\x12\x0c\n\x08\x41\x43QUIRED\x10\x00\x12\x17\n\x13\x41LREADY_IN_PROGRESS\x10\x01\"\x90\x01\n\x1cGetOrReserveArtifactResponse\x12)\n\x08\x61rtifact\x18\x01 \x01(\x0b\x32\x15.datacatalog.ArtifactH\x00\x12<\n\x12reservation_status\x18\x02 \x01(\x0b\x32\x1e.datacatalog.ReservationStatusH\x00\x42\x07\n\x05value\"j\n\x18\x45xtendReservationRequest\x12*\n\ndataset_id\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\x10\n\x08tag_name\x18\x02 \x01(\t\x12\x10\n\x08owner_id\x18\x03 \x01(\t\"\x1b\n\x19\x45xtendReservationResponse\"m\n\x07\x44\x61taset\x12\"\n\x02id\x18\x01 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\'\n\x08metadata\x18\x02 \x01(\x0b\x32\x15.datacatalog.Metadata\x12\x15\n\rpartitionKeys\x18\x03 \x03(\t\"\'\n\tPartition\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"Y\n\tDatasetID\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x0c\n\x04UUID\x18\x05 \x01(\t\"\x8d\x02\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\'\n\x07\x64\x61taset\x18\x02 \x01(\x0b\x32\x16.datacatalog.DatasetID\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.datacatalog.ArtifactData\x12\'\n\x08metadata\x18\x04 \x01(\x0b\x32\x15.datacatalog.Metadata\x12*\n\npartitions\x18\x05 \x03(\x0b\x32\x16.datacatalog.Partition\x12\x1e\n\x04tags\x18\x06 \x03(\x0b\x32\x10.datacatalog.Tag\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x0c\x41rtifactData\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"Q\n\x03Tag\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x61rtifact_id\x18\x02 \x01(\t\x12\'\n\x07\x64\x61taset\x18\x03 \x01(\x0b\x32\x16.datacatalog.DatasetID\"m\n\x08Metadata\x12\x32\n\x07key_map\x18\x01 \x03(\x0b\x32!.datacatalog.Metadata.KeyMapEntry\x1a-\n\x0bKeyMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"F\n\x10\x46ilterExpression\x12\x32\n\x07\x66ilters\x18\x01 \x03(\x0b\x32!.datacatalog.SinglePropertyFilter\"\x89\x03\n\x14SinglePropertyFilter\x12\x34\n\ntag_filter\x18\x01 \x01(\x0b\x32\x1e.datacatalog.TagPropertyFilterH\x00\x12@\n\x10partition_filter\x18\x02 \x01(\x0b\x32$.datacatalog.PartitionPropertyFilterH\x00\x12>\n\x0f\x61rtifact_filter\x18\x03 \x01(\x0b\x32#.datacatalog.ArtifactPropertyFilterH\x00\x12<\n\x0e\x64\x61taset_filter\x18\x04 \x01(\x0b\x32\".datacatalog.DatasetPropertyFilterH\x00\x12\x46\n\x08operator\x18\n \x01(\x0e\x32\x34.datacatalog.SinglePropertyFilter.ComparisonOperator\" \n\x12\x43omparisonOperator\x12\n\n\x06\x45QUALS\x10\x00\x42\x11\n\x0fproperty_filter\";\n\x16\x41rtifactPropertyFilter\x12\x15\n\x0b\x61rtifact_id\x18\x01 \x01(\tH\x00\x42\n\n\x08property\"3\n\x11TagPropertyFilter\x12\x12\n\x08tag_name\x18\x01 \x01(\tH\x00\x42\n\n\x08property\"S\n\x17PartitionPropertyFilter\x12,\n\x07key_val\x18\x01 \x01(\x0b\x32\x19.datacatalog.KeyValuePairH\x00\x42\n\n\x08property\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"k\n\x15\x44\x61tasetPropertyFilter\x12\x11\n\x07project\x18\x01 \x01(\tH\x00\x12\x0e\n\x04name\x18\x02 \x01(\tH\x00\x12\x10\n\x06\x64omain\x18\x03 \x01(\tH\x00\x12\x11\n\x07version\x18\x04 \x01(\tH\x00\x42\n\n\x08property\"\xf1\x01\n\x11PaginationOptions\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x37\n\x07sortKey\x18\x03 \x01(\x0e\x32&.datacatalog.PaginationOptions.SortKey\x12;\n\tsortOrder\x18\x04 \x01(\x0e\x32(.datacatalog.PaginationOptions.SortOrder\"*\n\tSortOrder\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x1c\n\x07SortKey\x12\x11\n\rCREATION_TIME\x10\x00\x32\xa2\x06\n\x0b\x44\x61taCatalog\x12V\n\rCreateDataset\x12!.datacatalog.CreateDatasetRequest\x1a\".datacatalog.CreateDatasetResponse\x12M\n\nGetDataset\x12\x1e.datacatalog.GetDatasetRequest\x1a\x1f.datacatalog.GetDatasetResponse\x12Y\n\x0e\x43reateArtifact\x12\".datacatalog.CreateArtifactRequest\x1a#.datacatalog.CreateArtifactResponse\x12P\n\x0bGetArtifact\x12\x1f.datacatalog.GetArtifactRequest\x1a .datacatalog.GetArtifactResponse\x12\x41\n\x06\x41\x64\x64Tag\x12\x1a.datacatalog.AddTagRequest\x1a\x1b.datacatalog.AddTagResponse\x12V\n\rListArtifacts\x12!.datacatalog.ListArtifactsRequest\x1a\".datacatalog.ListArtifactsResponse\x12S\n\x0cListDatasets\x12 .datacatalog.ListDatasetsRequest\x1a!.datacatalog.ListDatasetsResponse\x12k\n\x14GetOrReserveArtifact\x12(.datacatalog.GetOrReserveArtifactRequest\x1a).datacatalog.GetOrReserveArtifactResponse\x12\x62\n\x11\x45xtendReservation\x12%.datacatalog.ExtendReservationRequest\x1a&.datacatalog.ExtendReservationResponseb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _RESERVATIONSTATUS_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1417,
-  serialized_end=1463,
+  serialized_start=1408,
+  serialized_end=1454,
 )
 _sym_db.RegisterEnumDescriptor(_RESERVATIONSTATUS_STATE)
 
@@ -64,8 +64,8 @@ _SINGLEPROPERTYFILTER_COMPARISONOPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2805,
-  serialized_end=2837,
+  serialized_start=2933,
+  serialized_end=2965,
 )
 _sym_db.RegisterEnumDescriptor(_SINGLEPROPERTYFILTER_COMPARISONOPERATOR)
 
@@ -86,8 +86,8 @@ _PAGINATIONOPTIONS_SORTORDER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3380,
-  serialized_end=3422,
+  serialized_start=3508,
+  serialized_end=3550,
 )
 _sym_db.RegisterEnumDescriptor(_PAGINATIONOPTIONS_SORTORDER)
 
@@ -104,8 +104,8 @@ _PAGINATIONOPTIONS_SORTKEY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3424,
-  serialized_end=3452,
+  serialized_start=3552,
+  serialized_end=3580,
 )
 _sym_db.RegisterEnumDescriptor(_PAGINATIONOPTIONS_SORTKEY)
 
@@ -597,9 +597,9 @@ _GETORRESERVEARTIFACTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timeout', full_name='datacatalog.GetOrReserveArtifactRequest.timeout', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='owner_id', full_name='datacatalog.GetOrReserveArtifactRequest.owner_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -615,8 +615,8 @@ _GETORRESERVEARTIFACTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1299,
+  serialized_start=1163,
+  serialized_end=1272,
 )
 
 
@@ -641,6 +641,13 @@ _RESERVATIONSTATUS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='owner_id', full_name='datacatalog.ReservationStatus.owner_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -654,8 +661,8 @@ _RESERVATIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1302,
-  serialized_end=1463,
+  serialized_start=1275,
+  serialized_end=1454,
 )
 
 
@@ -695,8 +702,77 @@ _GETORRESERVEARTIFACTRESPONSE = _descriptor.Descriptor(
       name='value', full_name='datacatalog.GetOrReserveArtifactResponse.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1466,
-  serialized_end=1610,
+  serialized_start=1457,
+  serialized_end=1601,
+)
+
+
+_EXTENDRESERVATIONREQUEST = _descriptor.Descriptor(
+  name='ExtendReservationRequest',
+  full_name='datacatalog.ExtendReservationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dataset_id', full_name='datacatalog.ExtendReservationRequest.dataset_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tag_name', full_name='datacatalog.ExtendReservationRequest.tag_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='owner_id', full_name='datacatalog.ExtendReservationRequest.owner_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1603,
+  serialized_end=1709,
+)
+
+
+_EXTENDRESERVATIONRESPONSE = _descriptor.Descriptor(
+  name='ExtendReservationResponse',
+  full_name='datacatalog.ExtendReservationResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1711,
+  serialized_end=1738,
 )
 
 
@@ -740,8 +816,8 @@ _DATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1612,
-  serialized_end=1721,
+  serialized_start=1740,
+  serialized_end=1849,
 )
 
 
@@ -778,8 +854,8 @@ _PARTITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1723,
-  serialized_end=1762,
+  serialized_start=1851,
+  serialized_end=1890,
 )
 
 
@@ -837,8 +913,8 @@ _DATASETID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1764,
-  serialized_end=1853,
+  serialized_start=1892,
+  serialized_end=1981,
 )
 
 
@@ -910,8 +986,8 @@ _ARTIFACT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1856,
-  serialized_end=2125,
+  serialized_start=1984,
+  serialized_end=2253,
 )
 
 
@@ -948,8 +1024,8 @@ _ARTIFACTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2127,
-  serialized_end=2194,
+  serialized_start=2255,
+  serialized_end=2322,
 )
 
 
@@ -993,8 +1069,8 @@ _TAG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2196,
-  serialized_end=2277,
+  serialized_start=2324,
+  serialized_end=2405,
 )
 
 
@@ -1031,8 +1107,8 @@ _METADATA_KEYMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2343,
-  serialized_end=2388,
+  serialized_start=2471,
+  serialized_end=2516,
 )
 
 _METADATA = _descriptor.Descriptor(
@@ -1061,8 +1137,8 @@ _METADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2279,
-  serialized_end=2388,
+  serialized_start=2407,
+  serialized_end=2516,
 )
 
 
@@ -1092,8 +1168,8 @@ _FILTEREXPRESSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2390,
-  serialized_end=2460,
+  serialized_start=2518,
+  serialized_end=2588,
 )
 
 
@@ -1155,8 +1231,8 @@ _SINGLEPROPERTYFILTER = _descriptor.Descriptor(
       name='property_filter', full_name='datacatalog.SinglePropertyFilter.property_filter',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2463,
-  serialized_end=2856,
+  serialized_start=2591,
+  serialized_end=2984,
 )
 
 
@@ -1189,8 +1265,8 @@ _ARTIFACTPROPERTYFILTER = _descriptor.Descriptor(
       name='property', full_name='datacatalog.ArtifactPropertyFilter.property',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2858,
-  serialized_end=2917,
+  serialized_start=2986,
+  serialized_end=3045,
 )
 
 
@@ -1223,8 +1299,8 @@ _TAGPROPERTYFILTER = _descriptor.Descriptor(
       name='property', full_name='datacatalog.TagPropertyFilter.property',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2919,
-  serialized_end=2970,
+  serialized_start=3047,
+  serialized_end=3098,
 )
 
 
@@ -1257,8 +1333,8 @@ _PARTITIONPROPERTYFILTER = _descriptor.Descriptor(
       name='property', full_name='datacatalog.PartitionPropertyFilter.property',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2972,
-  serialized_end=3055,
+  serialized_start=3100,
+  serialized_end=3183,
 )
 
 
@@ -1295,8 +1371,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3057,
-  serialized_end=3099,
+  serialized_start=3185,
+  serialized_end=3227,
 )
 
 
@@ -1350,8 +1426,8 @@ _DATASETPROPERTYFILTER = _descriptor.Descriptor(
       name='property', full_name='datacatalog.DatasetPropertyFilter.property',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=3101,
-  serialized_end=3208,
+  serialized_start=3229,
+  serialized_end=3336,
 )
 
 
@@ -1404,8 +1480,8 @@ _PAGINATIONOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3211,
-  serialized_end=3452,
+  serialized_start=3339,
+  serialized_end=3580,
 )
 
 _CREATEDATASETREQUEST.fields_by_name['dataset'].message_type = _DATASET
@@ -1429,7 +1505,6 @@ _LISTDATASETSREQUEST.fields_by_name['filter'].message_type = _FILTEREXPRESSION
 _LISTDATASETSREQUEST.fields_by_name['pagination'].message_type = _PAGINATIONOPTIONS
 _LISTDATASETSRESPONSE.fields_by_name['datasets'].message_type = _DATASET
 _GETORRESERVEARTIFACTREQUEST.fields_by_name['dataset_id'].message_type = _DATASETID
-_GETORRESERVEARTIFACTREQUEST.fields_by_name['timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _RESERVATIONSTATUS.fields_by_name['state'].enum_type = _RESERVATIONSTATUS_STATE
 _RESERVATIONSTATUS.fields_by_name['metadata'].message_type = _METADATA
 _RESERVATIONSTATUS_STATE.containing_type = _RESERVATIONSTATUS
@@ -1441,6 +1516,7 @@ _GETORRESERVEARTIFACTRESPONSE.fields_by_name['artifact'].containing_oneof = _GET
 _GETORRESERVEARTIFACTRESPONSE.oneofs_by_name['value'].fields.append(
   _GETORRESERVEARTIFACTRESPONSE.fields_by_name['reservation_status'])
 _GETORRESERVEARTIFACTRESPONSE.fields_by_name['reservation_status'].containing_oneof = _GETORRESERVEARTIFACTRESPONSE.oneofs_by_name['value']
+_EXTENDRESERVATIONREQUEST.fields_by_name['dataset_id'].message_type = _DATASETID
 _DATASET.fields_by_name['id'].message_type = _DATASETID
 _DATASET.fields_by_name['metadata'].message_type = _METADATA
 _ARTIFACT.fields_by_name['dataset'].message_type = _DATASETID
@@ -1515,6 +1591,8 @@ DESCRIPTOR.message_types_by_name['ListDatasetsResponse'] = _LISTDATASETSRESPONSE
 DESCRIPTOR.message_types_by_name['GetOrReserveArtifactRequest'] = _GETORRESERVEARTIFACTREQUEST
 DESCRIPTOR.message_types_by_name['ReservationStatus'] = _RESERVATIONSTATUS
 DESCRIPTOR.message_types_by_name['GetOrReserveArtifactResponse'] = _GETORRESERVEARTIFACTRESPONSE
+DESCRIPTOR.message_types_by_name['ExtendReservationRequest'] = _EXTENDRESERVATIONREQUEST
+DESCRIPTOR.message_types_by_name['ExtendReservationResponse'] = _EXTENDRESERVATIONRESPONSE
 DESCRIPTOR.message_types_by_name['Dataset'] = _DATASET
 DESCRIPTOR.message_types_by_name['Partition'] = _PARTITION
 DESCRIPTOR.message_types_by_name['DatasetID'] = _DATASETID
@@ -1651,6 +1729,20 @@ GetOrReserveArtifactResponse = _reflection.GeneratedProtocolMessageType('GetOrRe
   ))
 _sym_db.RegisterMessage(GetOrReserveArtifactResponse)
 
+ExtendReservationRequest = _reflection.GeneratedProtocolMessageType('ExtendReservationRequest', (_message.Message,), dict(
+  DESCRIPTOR = _EXTENDRESERVATIONREQUEST,
+  __module__ = 'flyteidl.datacatalog.datacatalog_pb2'
+  # @@protoc_insertion_point(class_scope:datacatalog.ExtendReservationRequest)
+  ))
+_sym_db.RegisterMessage(ExtendReservationRequest)
+
+ExtendReservationResponse = _reflection.GeneratedProtocolMessageType('ExtendReservationResponse', (_message.Message,), dict(
+  DESCRIPTOR = _EXTENDRESERVATIONRESPONSE,
+  __module__ = 'flyteidl.datacatalog.datacatalog_pb2'
+  # @@protoc_insertion_point(class_scope:datacatalog.ExtendReservationResponse)
+  ))
+_sym_db.RegisterMessage(ExtendReservationResponse)
+
 Dataset = _reflection.GeneratedProtocolMessageType('Dataset', (_message.Message,), dict(
   DESCRIPTOR = _DATASET,
   __module__ = 'flyteidl.datacatalog.datacatalog_pb2'
@@ -1773,8 +1865,8 @@ _DATACATALOG = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3455,
-  serialized_end=4157,
+  serialized_start=3583,
+  serialized_end=4385,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateDataset',
@@ -1846,6 +1938,15 @@ _DATACATALOG = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETORRESERVEARTIFACTREQUEST,
     output_type=_GETORRESERVEARTIFACTRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ExtendReservation',
+    full_name='datacatalog.DataCatalog.ExtendReservation',
+    index=8,
+    containing_service=None,
+    input_type=_EXTENDRESERVATIONREQUEST,
+    output_type=_EXTENDRESERVATIONRESPONSE,
     serialized_options=None,
   ),
 ])

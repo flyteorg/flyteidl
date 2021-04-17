@@ -57,6 +57,11 @@ class DataCatalogStub(object):
         request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.SerializeToString,
         response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.FromString,
         )
+    self.ExtendReservation = channel.unary_unary(
+        '/datacatalog.DataCatalog/ExtendReservation',
+        request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationResponse.FromString,
+        )
 
 
 class DataCatalogServicer(object):
@@ -119,10 +124,29 @@ class DataCatalogServicer(object):
 
   def GetOrReserveArtifact(self, request, context):
     """Get an artifact and the corresponding data. If the artifact does not exist,
-    try to reserve a spot for populating the artifact. We may have multiple
-    concurrent tasks with the same signature and the same input that try to populate
-    the same artifact at the same time. Thus with reservation, only one task
-    can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
+    try to reserve a spot for populating the artifact.
+
+    Once you preserve a spot, you should call ExtendReservation API periodically
+    to extend the reservation. Otherwise, the reservation can expire and other
+    tasks may take the spot.
+
+    Note: We may have multiple concurrent tasks with the same signature
+    and the same input that try to populate the same artifact at the same time.
+    Thus with reservation, only one task can run at a time, until the reservation
+    expire.
+
+    Note: If the task A does not extend the reservation in time and the reservation
+    may expire. Another task B may take over the reservation and now we have two tasks
+    A and B running in parallel. So a third task C may get the Artifact from A or B,
+    whoever is the last writer.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ExtendReservation(self, request, context):
+    """Extend the reservation to keep it from expire. If the reservation expire,
+    other tasks can take over the reservation by calling GetOrReserveArtifact.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -170,6 +194,11 @@ def add_DataCatalogServicer_to_server(servicer, server):
           servicer.GetOrReserveArtifact,
           request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.FromString,
           response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.SerializeToString,
+      ),
+      'ExtendReservation': grpc.unary_unary_rpc_method_handler(
+          servicer.ExtendReservation,
+          request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationRequest.FromString,
+          response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

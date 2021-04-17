@@ -36,11 +36,26 @@ service DataCatalog {
     rpc ListDatasets (ListDatasetsRequest) returns (ListDatasetsResponse);
 
     // Get an artifact and the corresponding data. If the artifact does not exist,
-    // try to reserve a spot for populating the artifact. We may have multiple
-    // concurrent tasks with the same signature and the same input that try to populate
-    // the same artifact at the same time. Thus with reservation, only one task
-    // can run at a time, until the timeout period. Once the timeout has elapsed, another task (Random order) may start executing and a new-timeout duration will be applied from this tasks start time. If the first task completes after the second task has started, a third task may receive the artifact from the first task and the second task may override this artifact. As currently the last writer wins!
+    // try to reserve a spot for populating the artifact.
+    //
+    // Once you preserve a spot, you should call ExtendReservation API periodically
+    // to extend the reservation. Otherwise, the reservation can expire and other
+    // tasks may take the spot.
+    //
+    // Note: We may have multiple concurrent tasks with the same signature
+    // and the same input that try to populate the same artifact at the same time.
+    // Thus with reservation, only one task can run at a time, until the reservation
+    // expire.
+    //
+    // Note: If the task A does not extend the reservation in time and the reservation
+    // may expire. Another task B may take over the reservation and now we have two tasks
+    // A and B running in parallel. So a third task C may get the Artifact from A or B,
+    // whoever is the last writer.
     rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
+
+    // Extend the reservation to keep it from expire. If the reservation expire,
+    // other tasks can take over the reservation by calling GetOrReserveArtifact.
+    rpc ExtendReservation (ExtendReservationRequest) returns (ExtendReservationResponse);
 }
 
 /*
@@ -162,10 +177,7 @@ message ListDatasetsResponse {
 message GetOrReserveArtifactRequest {
     DatasetID dataset_id = 1;
     string tag_name = 2;
-
-    // Minimum duration to wait from the time when the original reservation
-    // was made to consider that the original reservation has been timed-out.
-    google.protobuf.Duration timeout = 3;
+    string owner_id = 3;
 }
 
 // Whether we successfully reserve a spot.
@@ -181,6 +193,7 @@ message ReservationStatus {
 
     State state = 1;
     Metadata metadata = 2;
+    string owner_id = 3;
 }
 
 // Response to get artifact or reserve spot.
@@ -189,6 +202,16 @@ message GetOrReserveArtifactResponse {
         Artifact artifact = 1;
         ReservationStatus reservation_status = 2;
     }
+}
+
+message ExtendReservationRequest {
+    DatasetID dataset_id = 1;
+    string tag_name = 2;
+    string owner_id = 3;
+}
+
+message ExtendReservationResponse {
+
 }
 
 /*

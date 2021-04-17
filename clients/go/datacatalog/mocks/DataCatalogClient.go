@@ -160,6 +160,54 @@ func (_m *DataCatalogClient) CreateDataset(ctx context.Context, in *datacatalog.
 	return r0, r1
 }
 
+type DataCatalogClient_ExtendReservation struct {
+	*mock.Call
+}
+
+func (_m DataCatalogClient_ExtendReservation) Return(_a0 *datacatalog.ExtendReservationResponse, _a1 error) *DataCatalogClient_ExtendReservation {
+	return &DataCatalogClient_ExtendReservation{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *DataCatalogClient) OnExtendReservation(ctx context.Context, in *datacatalog.ExtendReservationRequest, opts ...grpc.CallOption) *DataCatalogClient_ExtendReservation {
+	c := _m.On("ExtendReservation", ctx, in, opts)
+	return &DataCatalogClient_ExtendReservation{Call: c}
+}
+
+func (_m *DataCatalogClient) OnExtendReservationMatch(matchers ...interface{}) *DataCatalogClient_ExtendReservation {
+	c := _m.On("ExtendReservation", matchers...)
+	return &DataCatalogClient_ExtendReservation{Call: c}
+}
+
+// ExtendReservation provides a mock function with given fields: ctx, in, opts
+func (_m *DataCatalogClient) ExtendReservation(ctx context.Context, in *datacatalog.ExtendReservationRequest, opts ...grpc.CallOption) (*datacatalog.ExtendReservationResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *datacatalog.ExtendReservationResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *datacatalog.ExtendReservationRequest, ...grpc.CallOption) *datacatalog.ExtendReservationResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*datacatalog.ExtendReservationResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *datacatalog.ExtendReservationRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type DataCatalogClient_GetArtifact struct {
 	*mock.Call
 }
