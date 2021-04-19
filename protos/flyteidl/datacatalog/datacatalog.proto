@@ -48,9 +48,9 @@ service DataCatalog {
     // expires.
     //
     // Note: If the task A does not extend the reservation in time and the reservation
-    // may expire. Another task B may take over the reservation and now we have two tasks
+    // expires, another task B may take over the reservation and now we have two tasks
     // A and B running in parallel. So a third task C may get the Artifact from A or B,
-    // whoever is the last writer.
+    // whichever writes last.
     rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
 
     // Extend the reservation to keep it from expire. If the reservation expire,
