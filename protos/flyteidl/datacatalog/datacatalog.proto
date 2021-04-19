@@ -50,7 +50,7 @@ message CreateDatasetResponse {
 }
 
 /*
- * Request message for retrieving a Dataset. The Dataset is retrieved by it's unique identifier
+ * Request message for retrieving a Dataset. The Dataset is retrieved by its unique identifier
  * which is a combination of several fields.
  */
 message GetDatasetRequest {
@@ -160,7 +160,7 @@ message Dataset {
 }
 
 /*
- * An artifact could have multiple partitions and each partition can have an arbitrary string key/value pair
+ * An artifact could have multiple partitions and each partition could have an arbitrary string key/value pair
  */
 message Partition {
     string key = 1;
@@ -200,8 +200,8 @@ message ArtifactData {
 }
 
 /*
- * Tag message that is unique to a Dataset. It is associated to a single artifact and
- * can be retrieved by name later.
+ * Tag message that is unique to a Dataset. It is associated with a single artifact and
+ * can later be retrieved by name.
  */
 message Tag {
     string name = 1;        // Name of tag
