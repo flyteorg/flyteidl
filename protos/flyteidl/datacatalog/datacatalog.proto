@@ -45,7 +45,7 @@ service DataCatalog {
     // Note: We may have multiple concurrent tasks with the same signature
     // and the same input that try to populate the same artifact at the same time.
     // Thus with reservation, only one task can run at a time, until the reservation
-    // expire.
+    // expires.
     //
     // Note: If the task A does not extend the reservation in time and the reservation
     // may expire. Another task B may take over the reservation and now we have two tasks
