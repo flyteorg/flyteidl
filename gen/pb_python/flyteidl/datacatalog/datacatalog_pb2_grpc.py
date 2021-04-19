@@ -137,8 +137,8 @@ class DataCatalogServicer(object):
     Thus with reservation, only one task can run at a time, until the reservation
     expires.
 
-    Note: If the task A does not extend the reservation in time and the reservation
-    expires, another task B may take over the reservation and now we have two tasks
+    Note: If task A does not extend the reservation in time and the reservation
+    expires, another task B may take over the reservation, resulting in two tasks
     A and B running in parallel. So a third task C may get the Artifact from A or B,
     whichever writes last.
     """
