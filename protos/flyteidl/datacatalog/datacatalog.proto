@@ -188,8 +188,7 @@ message ReservationStatus {
         // Acquired the reservation successfully.
         ACQUIRED = 0;
 
-        // Someone else already took reservation
-        // and it is not available to you.
+        // Indicates an existing active reservation exist for a different owner_id.
         ALREADY_IN_PROGRESS = 1;
     };
 
