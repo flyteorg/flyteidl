@@ -42,6 +42,8 @@ service DataCatalog {
     // to extend the reservation. Otherwise, the reservation can expire and other
     // tasks may take the spot.
     //
+    // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+    //
     // Note: We may have multiple concurrent tasks with the same signature
     // and the same input that try to populate the same artifact at the same time.
     // Thus with reservation, only one task can run at a time, until the reservation
