@@ -32,8 +32,7 @@ type ReservationStatus_State int32
 const (
 	// Acquired the reservation successfully.
 	ReservationStatus_ACQUIRED ReservationStatus_State = 0
-	// Someone else already took reservation
-	// and it is not available to you.
+	// Indicates an existing active reservation exist for a different owner_id.
 	ReservationStatus_ALREADY_IN_PROGRESS ReservationStatus_State = 1
 )
 
@@ -2238,17 +2237,19 @@ type DataCatalogClient interface {
 	// to extend the reservation. Otherwise, the reservation can expire and other
 	// tasks may take the spot.
 	//
+	// If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+	//
 	// Note: We may have multiple concurrent tasks with the same signature
 	// and the same input that try to populate the same artifact at the same time.
 	// Thus with reservation, only one task can run at a time, until the reservation
-	// expire.
+	// expires.
 	//
 	// Note: If the task A does not extend the reservation in time and the reservation
-	// may expire. Another task B may take over the reservation and now we have two tasks
+	// expires, another task B may take over the reservation and now we have two tasks
 	// A and B running in parallel. So a third task C may get the Artifact from A or B,
-	// whoever is the last writer.
+	// whichever writes last.
 	GetOrReserveArtifact(ctx context.Context, in *GetOrReserveArtifactRequest, opts ...grpc.CallOption) (*GetOrReserveArtifactResponse, error)
-	// Extend the reservation to keep it from expire. If the reservation expire,
+	// Extend the reservation to keep it from expiring. If the reservation expires,
 	// other tasks can take over the reservation by calling GetOrReserveArtifact.
 	ExtendReservation(ctx context.Context, in *ExtendReservationRequest, opts ...grpc.CallOption) (*ExtendReservationResponse, error)
 }
@@ -2367,17 +2368,19 @@ type DataCatalogServer interface {
 	// to extend the reservation. Otherwise, the reservation can expire and other
 	// tasks may take the spot.
 	//
+	// If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+	//
 	// Note: We may have multiple concurrent tasks with the same signature
 	// and the same input that try to populate the same artifact at the same time.
 	// Thus with reservation, only one task can run at a time, until the reservation
-	// expire.
+	// expires.
 	//
 	// Note: If the task A does not extend the reservation in time and the reservation
-	// may expire. Another task B may take over the reservation and now we have two tasks
+	// expires, another task B may take over the reservation and now we have two tasks
 	// A and B running in parallel. So a third task C may get the Artifact from A or B,
-	// whoever is the last writer.
+	// whichever writes last.
 	GetOrReserveArtifact(context.Context, *GetOrReserveArtifactRequest) (*GetOrReserveArtifactResponse, error)
-	// Extend the reservation to keep it from expire. If the reservation expire,
+	// Extend the reservation to keep it from expiring. If the reservation expires,
 	// other tasks can take over the reservation by calling GetOrReserveArtifact.
 	ExtendReservation(context.Context, *ExtendReservationRequest) (*ExtendReservationResponse, error)
 }

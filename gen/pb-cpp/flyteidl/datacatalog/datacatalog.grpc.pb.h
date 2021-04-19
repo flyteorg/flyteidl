@@ -116,15 +116,17 @@ class DataCatalog final {
     // to extend the reservation. Otherwise, the reservation can expire and other
     // tasks may take the spot.
     //
+    // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+    //
     // Note: We may have multiple concurrent tasks with the same signature
     // and the same input that try to populate the same artifact at the same time.
     // Thus with reservation, only one task can run at a time, until the reservation
-    // expire.
+    // expires.
     //
     // Note: If the task A does not extend the reservation in time and the reservation
-    // may expire. Another task B may take over the reservation and now we have two tasks
+    // expires, another task B may take over the reservation and now we have two tasks
     // A and B running in parallel. So a third task C may get the Artifact from A or B,
-    // whoever is the last writer.
+    // whichever writes last.
     virtual ::grpc::Status GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::datacatalog::GetOrReserveArtifactResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>> AsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>>(AsyncGetOrReserveArtifactRaw(context, request, cq));
@@ -132,7 +134,7 @@ class DataCatalog final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>> PrepareAsyncGetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::GetOrReserveArtifactResponse>>(PrepareAsyncGetOrReserveArtifactRaw(context, request, cq));
     }
-    // Extend the reservation to keep it from expire. If the reservation expire,
+    // Extend the reservation to keep it from expiring. If the reservation expires,
     // other tasks can take over the reservation by calling GetOrReserveArtifact.
     virtual ::grpc::Status ExtendReservation(::grpc::ClientContext* context, const ::datacatalog::ExtendReservationRequest& request, ::datacatalog::ExtendReservationResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::datacatalog::ExtendReservationResponse>> AsyncExtendReservation(::grpc::ClientContext* context, const ::datacatalog::ExtendReservationRequest& request, ::grpc::CompletionQueue* cq) {
@@ -188,20 +190,22 @@ class DataCatalog final {
       // to extend the reservation. Otherwise, the reservation can expire and other
       // tasks may take the spot.
       //
+      // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+      //
       // Note: We may have multiple concurrent tasks with the same signature
       // and the same input that try to populate the same artifact at the same time.
       // Thus with reservation, only one task can run at a time, until the reservation
-      // expire.
+      // expires.
       //
       // Note: If the task A does not extend the reservation in time and the reservation
-      // may expire. Another task B may take over the reservation and now we have two tasks
+      // expires, another task B may take over the reservation and now we have two tasks
       // A and B running in parallel. So a third task C may get the Artifact from A or B,
-      // whoever is the last writer.
+      // whichever writes last.
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetOrReserveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::GetOrReserveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      // Extend the reservation to keep it from expire. If the reservation expire,
+      // Extend the reservation to keep it from expiring. If the reservation expires,
       // other tasks can take over the reservation by calling GetOrReserveArtifact.
       virtual void ExtendReservation(::grpc::ClientContext* context, const ::datacatalog::ExtendReservationRequest* request, ::datacatalog::ExtendReservationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ExtendReservation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ExtendReservationResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -402,17 +406,19 @@ class DataCatalog final {
     // to extend the reservation. Otherwise, the reservation can expire and other
     // tasks may take the spot.
     //
+    // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+    //
     // Note: We may have multiple concurrent tasks with the same signature
     // and the same input that try to populate the same artifact at the same time.
     // Thus with reservation, only one task can run at a time, until the reservation
-    // expire.
+    // expires.
     //
     // Note: If the task A does not extend the reservation in time and the reservation
-    // may expire. Another task B may take over the reservation and now we have two tasks
+    // expires, another task B may take over the reservation and now we have two tasks
     // A and B running in parallel. So a third task C may get the Artifact from A or B,
-    // whoever is the last writer.
+    // whichever writes last.
     virtual ::grpc::Status GetOrReserveArtifact(::grpc::ServerContext* context, const ::datacatalog::GetOrReserveArtifactRequest* request, ::datacatalog::GetOrReserveArtifactResponse* response);
-    // Extend the reservation to keep it from expire. If the reservation expire,
+    // Extend the reservation to keep it from expiring. If the reservation expires,
     // other tasks can take over the reservation by calling GetOrReserveArtifact.
     virtual ::grpc::Status ExtendReservation(::grpc::ServerContext* context, const ::datacatalog::ExtendReservationRequest* request, ::datacatalog::ExtendReservationResponse* response);
   };

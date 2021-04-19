@@ -130,22 +130,24 @@ class DataCatalogServicer(object):
     to extend the reservation. Otherwise, the reservation can expire and other
     tasks may take the spot.
 
+    If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
+
     Note: We may have multiple concurrent tasks with the same signature
     and the same input that try to populate the same artifact at the same time.
     Thus with reservation, only one task can run at a time, until the reservation
-    expire.
+    expires.
 
     Note: If the task A does not extend the reservation in time and the reservation
-    may expire. Another task B may take over the reservation and now we have two tasks
+    expires, another task B may take over the reservation and now we have two tasks
     A and B running in parallel. So a third task C may get the Artifact from A or B,
-    whoever is the last writer.
+    whichever writes last.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ExtendReservation(self, request, context):
-    """Extend the reservation to keep it from expire. If the reservation expire,
+    """Extend the reservation to keep it from expiring. If the reservation expires,
     other tasks can take over the reservation by calling GetOrReserveArtifact.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)

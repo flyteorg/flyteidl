@@ -11280,8 +11280,7 @@ public final class Datacatalog {
       ACQUIRED(0),
       /**
        * <pre>
-       * Someone else already took reservation
-       * and it is not available to you.
+       * Indicates an existing active reservation exist for a different owner_id.
        * </pre>
        *
        * <code>ALREADY_IN_PROGRESS = 1;</code>
@@ -11300,8 +11299,7 @@ public final class Datacatalog {
       public static final int ACQUIRED_VALUE = 0;
       /**
        * <pre>
-       * Someone else already took reservation
-       * and it is not available to you.
+       * Indicates an existing active reservation exist for a different owner_id.
        * </pre>
        *
        * <code>ALREADY_IN_PROGRESS = 1;</code>
