@@ -447,3 +447,51 @@ func (_m *DataCatalogClient) ListDatasets(ctx context.Context, in *datacatalog.L
 
 	return r0, r1
 }
+
+type DataCatalogClient_ReleaseReservation struct {
+	*mock.Call
+}
+
+func (_m DataCatalogClient_ReleaseReservation) Return(_a0 *datacatalog.ReleaseReservationResponse, _a1 error) *DataCatalogClient_ReleaseReservation {
+	return &DataCatalogClient_ReleaseReservation{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *DataCatalogClient) OnReleaseReservation(ctx context.Context, in *datacatalog.ReleaseReservationRequest, opts ...grpc.CallOption) *DataCatalogClient_ReleaseReservation {
+	c := _m.On("ReleaseReservation", ctx, in, opts)
+	return &DataCatalogClient_ReleaseReservation{Call: c}
+}
+
+func (_m *DataCatalogClient) OnReleaseReservationMatch(matchers ...interface{}) *DataCatalogClient_ReleaseReservation {
+	c := _m.On("ReleaseReservation", matchers...)
+	return &DataCatalogClient_ReleaseReservation{Call: c}
+}
+
+// ReleaseReservation provides a mock function with given fields: ctx, in, opts
+func (_m *DataCatalogClient) ReleaseReservation(ctx context.Context, in *datacatalog.ReleaseReservationRequest, opts ...grpc.CallOption) (*datacatalog.ReleaseReservationResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *datacatalog.ReleaseReservationResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *datacatalog.ReleaseReservationRequest, ...grpc.CallOption) *datacatalog.ReleaseReservationResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*datacatalog.ReleaseReservationResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *datacatalog.ReleaseReservationRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}

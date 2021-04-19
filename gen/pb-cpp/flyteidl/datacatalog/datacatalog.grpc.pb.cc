@@ -28,6 +28,7 @@ static const char* DataCatalog_method_names[] = {
   "/datacatalog.DataCatalog/ListDatasets",
   "/datacatalog.DataCatalog/GetOrReserveArtifact",
   "/datacatalog.DataCatalog/ExtendReservation",
+  "/datacatalog.DataCatalog/ReleaseReservation",
 };
 
 std::unique_ptr< DataCatalog::Stub> DataCatalog::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -46,6 +47,7 @@ DataCatalog::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_ListDatasets_(DataCatalog_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetOrReserveArtifact_(DataCatalog_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ExtendReservation_(DataCatalog_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ReleaseReservation_(DataCatalog_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status DataCatalog::Stub::CreateDataset(::grpc::ClientContext* context, const ::datacatalog::CreateDatasetRequest& request, ::datacatalog::CreateDatasetResponse* response) {
@@ -300,6 +302,34 @@ void DataCatalog::Stub::experimental_async::ExtendReservation(::grpc::ClientCont
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::ExtendReservationResponse>::Create(channel_.get(), cq, rpcmethod_ExtendReservation_, context, request, false);
 }
 
+::grpc::Status DataCatalog::Stub::ReleaseReservation(::grpc::ClientContext* context, const ::datacatalog::ReleaseReservationRequest& request, ::datacatalog::ReleaseReservationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ReleaseReservation_, context, request, response);
+}
+
+void DataCatalog::Stub::experimental_async::ReleaseReservation(::grpc::ClientContext* context, const ::datacatalog::ReleaseReservationRequest* request, ::datacatalog::ReleaseReservationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ReleaseReservation_, context, request, response, std::move(f));
+}
+
+void DataCatalog::Stub::experimental_async::ReleaseReservation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ReleaseReservationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ReleaseReservation_, context, request, response, std::move(f));
+}
+
+void DataCatalog::Stub::experimental_async::ReleaseReservation(::grpc::ClientContext* context, const ::datacatalog::ReleaseReservationRequest* request, ::datacatalog::ReleaseReservationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ReleaseReservation_, context, request, response, reactor);
+}
+
+void DataCatalog::Stub::experimental_async::ReleaseReservation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::datacatalog::ReleaseReservationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ReleaseReservation_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::datacatalog::ReleaseReservationResponse>* DataCatalog::Stub::AsyncReleaseReservationRaw(::grpc::ClientContext* context, const ::datacatalog::ReleaseReservationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::ReleaseReservationResponse>::Create(channel_.get(), cq, rpcmethod_ReleaseReservation_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::datacatalog::ReleaseReservationResponse>* DataCatalog::Stub::PrepareAsyncReleaseReservationRaw(::grpc::ClientContext* context, const ::datacatalog::ReleaseReservationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::datacatalog::ReleaseReservationResponse>::Create(channel_.get(), cq, rpcmethod_ReleaseReservation_, context, request, false);
+}
+
 DataCatalog::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataCatalog_method_names[0],
@@ -346,6 +376,11 @@ DataCatalog::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< DataCatalog::Service, ::datacatalog::ExtendReservationRequest, ::datacatalog::ExtendReservationResponse>(
           std::mem_fn(&DataCatalog::Service::ExtendReservation), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      DataCatalog_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< DataCatalog::Service, ::datacatalog::ReleaseReservationRequest, ::datacatalog::ReleaseReservationResponse>(
+          std::mem_fn(&DataCatalog::Service::ReleaseReservation), this)));
 }
 
 DataCatalog::Service::~Service() {
@@ -408,6 +443,13 @@ DataCatalog::Service::~Service() {
 }
 
 ::grpc::Status DataCatalog::Service::ExtendReservation(::grpc::ServerContext* context, const ::datacatalog::ExtendReservationRequest* request, ::datacatalog::ExtendReservationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status DataCatalog::Service::ReleaseReservation(::grpc::ServerContext* context, const ::datacatalog::ReleaseReservationRequest* request, ::datacatalog::ReleaseReservationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

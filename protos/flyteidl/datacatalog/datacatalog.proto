@@ -58,6 +58,10 @@ service DataCatalog {
     // Extend the reservation to keep it from expiring. If the reservation expires,
     // other tasks can take over the reservation by calling GetOrReserveArtifact.
     rpc ExtendReservation (ExtendReservationRequest) returns (ExtendReservationResponse);
+
+    // Release the reservation when the task holding the spot fails so that the other tasks
+    // can grab the spot.
+    rpc ReleaseReservation (ReleaseReservationRequest) returns (ReleaseReservationResponse);
 }
 
 /*
@@ -212,6 +216,16 @@ message ExtendReservationRequest {
 }
 
 message ExtendReservationResponse {
+
+}
+
+message ReleaseReservationRequest {
+    DatasetID dataset_id = 1;
+    string tag_name = 2;
+    string owner_id = 3;
+}
+
+message ReleaseReservationResponse {
 
 }
 

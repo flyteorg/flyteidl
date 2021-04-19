@@ -62,6 +62,11 @@ class DataCatalogStub(object):
         request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationRequest.SerializeToString,
         response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationResponse.FromString,
         )
+    self.ReleaseReservation = channel.unary_unary(
+        '/datacatalog.DataCatalog/ReleaseReservation',
+        request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ReleaseReservationRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ReleaseReservationResponse.FromString,
+        )
 
 
 class DataCatalogServicer(object):
@@ -154,6 +159,14 @@ class DataCatalogServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ReleaseReservation(self, request, context):
+    """Release the reservation when the task holding the spot fails so that the other tasks
+    can grab the spot.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DataCatalogServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -201,6 +214,11 @@ def add_DataCatalogServicer_to_server(servicer, server):
           servicer.ExtendReservation,
           request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationRequest.FromString,
           response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ExtendReservationResponse.SerializeToString,
+      ),
+      'ReleaseReservation': grpc.unary_unary_rpc_method_handler(
+          servicer.ReleaseReservation,
+          request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ReleaseReservationRequest.FromString,
+          response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ReleaseReservationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
