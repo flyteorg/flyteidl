@@ -53,7 +53,7 @@ service DataCatalog {
     // whichever writes last.
     rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
 
-    // Extend the reservation to keep it from expire. If the reservation expire,
+    // Extend the reservation to keep it from expiring. If the reservation expires,
     // other tasks can take over the reservation by calling GetOrReserveArtifact.
     rpc ExtendReservation (ExtendReservationRequest) returns (ExtendReservationResponse);
 }
