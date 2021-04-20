@@ -37,7 +37,7 @@ type Config struct {
 	// Deprecated. This will now be discovered through admin's anonymously accessible metadata.
 	DeprecatedAuthorizationServerURL string `json:"authorizationServerUrl" pflag:",This is the URL to your IdP's authorization server. It'll default to Endpoint"`
 	// If not provided, it'll be discovered through admin's anonymously accessible metadata endpoint.
-	TokenURL string `json:"tokenUrl" pflag:",OPTIONAL: Your IdP's token endpoint."`
+	TokenURL string `json:"tokenUrl" pflag:",OPTIONAL: Your IdP's token endpoint. It'll be discovered from flyte admin's OAuth Metadata endpoint if not provided."`
 
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
 	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
@@ -58,10 +58,6 @@ var (
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {
 		if newValue.(*Config).MaxRetries < 0 {
 			logger.Panicf(ctx, "Admin configuration given with negative gRPC retry value.")
-		}
-
-		if newValue.(*Config).UseAuth {
-			logger.Warnf(ctx, "Admin client config has authentication ON with server %s", newValue.(*Config).DeprecatedAuthorizationServerURL)
 		}
 	})
 )
