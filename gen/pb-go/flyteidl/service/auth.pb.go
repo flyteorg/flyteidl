@@ -61,18 +61,31 @@ var xxx_messageInfo_OAuth2MetadataRequest proto.InternalMessageInfo
 // OAuth2MetadataResponse defines an RFC-Compliant response for /.well-known/oauth-authorization-server metadata
 // as defined in https://tools.ietf.org/html/rfc8414
 type OAuth2MetadataResponse struct {
-	Issuer                            string   `protobuf:"bytes,1,opt,name=issuer,proto3" json:"issuer,omitempty"`
-	AuthorizationEndpoint             string   `protobuf:"bytes,2,opt,name=authorization_endpoint,json=authorizationEndpoint,proto3" json:"authorization_endpoint,omitempty"`
-	TokenEndpoint                     string   `protobuf:"bytes,3,opt,name=token_endpoint,json=tokenEndpoint,proto3" json:"token_endpoint,omitempty"`
-	ResponseTypesSupported            []string `protobuf:"bytes,4,rep,name=response_types_supported,json=responseTypesSupported,proto3" json:"response_types_supported,omitempty"`
-	ScopesSupported                   []string `protobuf:"bytes,5,rep,name=scopes_supported,json=scopesSupported,proto3" json:"scopes_supported,omitempty"`
+	// Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+	// issuer.
+	Issuer string `protobuf:"bytes,1,opt,name=issuer,proto3" json:"issuer,omitempty"`
+	// URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+	// supported that use the authorization endpoint.
+	AuthorizationEndpoint string `protobuf:"bytes,2,opt,name=authorization_endpoint,json=authorizationEndpoint,proto3" json:"authorization_endpoint,omitempty"`
+	// URL of the authorization server's token endpoint [RFC6749].
+	TokenEndpoint string `protobuf:"bytes,3,opt,name=token_endpoint,json=tokenEndpoint,proto3" json:"token_endpoint,omitempty"`
+	// JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+	ResponseTypesSupported []string `protobuf:"bytes,4,rep,name=response_types_supported,json=responseTypesSupported,proto3" json:"response_types_supported,omitempty"`
+	// JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+	ScopesSupported []string `protobuf:"bytes,5,rep,name=scopes_supported,json=scopesSupported,proto3" json:"scopes_supported,omitempty"`
+	// JSON array containing a list of client authentication methods supported by this token endpoint.
 	TokenEndpointAuthMethodsSupported []string `protobuf:"bytes,6,rep,name=token_endpoint_auth_methods_supported,json=tokenEndpointAuthMethodsSupported,proto3" json:"token_endpoint_auth_methods_supported,omitempty"`
-	JwksUri                           string   `protobuf:"bytes,7,opt,name=jwks_uri,json=jwksUri,proto3" json:"jwks_uri,omitempty"`
-	CodeChallengeMethodsSupported     []string `protobuf:"bytes,8,rep,name=code_challenge_methods_supported,json=codeChallengeMethodsSupported,proto3" json:"code_challenge_methods_supported,omitempty"`
-	GrantTypesSupported               []string `protobuf:"bytes,9,rep,name=grant_types_supported,json=grantTypesSupported,proto3" json:"grant_types_supported,omitempty"`
-	XXX_NoUnkeyedLiteral              struct{} `json:"-"`
-	XXX_unrecognized                  []byte   `json:"-"`
-	XXX_sizecache                     int32    `json:"-"`
+	// URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+	// client uses to validate signatures from the authorization server.
+	JwksUri string `protobuf:"bytes,7,opt,name=jwks_uri,json=jwksUri,proto3" json:"jwks_uri,omitempty"`
+	// JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+	// this authorization server.
+	CodeChallengeMethodsSupported []string `protobuf:"bytes,8,rep,name=code_challenge_methods_supported,json=codeChallengeMethodsSupported,proto3" json:"code_challenge_methods_supported,omitempty"`
+	// JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+	GrantTypesSupported  []string `protobuf:"bytes,9,rep,name=grant_types_supported,json=grantTypesSupported,proto3" json:"grant_types_supported,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *OAuth2MetadataResponse) Reset()         { *m = OAuth2MetadataResponse{} }
@@ -196,12 +209,20 @@ var xxx_messageInfo_UserInfoRequest proto.InternalMessageInfo
 
 // See the OpenID Connect spec at https://openid.net/specs/openid-connect-core-1_0.html#UserInfoResponse for more information.
 type UserInfoResponse struct {
-	Subject              string   `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
-	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	PreferredUsername    string   `protobuf:"bytes,3,opt,name=preferred_username,json=preferredUsername,proto3" json:"preferred_username,omitempty"`
-	GivenName            string   `protobuf:"bytes,4,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
-	FamilyName           string   `protobuf:"bytes,5,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
-	Email                string   `protobuf:"bytes,6,opt,name=email,proto3" json:"email,omitempty"`
+	// Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+	// by the Client.
+	Subject string `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+	// Full name
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	// Shorthand name by which the End-User wishes to be referred to
+	PreferredUsername string `protobuf:"bytes,3,opt,name=preferred_username,json=preferredUsername,proto3" json:"preferred_username,omitempty"`
+	// Given name(s) or first name(s)
+	GivenName string `protobuf:"bytes,4,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
+	// Surname(s) or last name(s)
+	FamilyName string `protobuf:"bytes,5,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
+	// Preferred e-mail address
+	Email string `protobuf:"bytes,6,opt,name=email,proto3" json:"email,omitempty"`
+	// Profile picture URL
 	Picture              string   `protobuf:"bytes,7,opt,name=picture,proto3" json:"picture,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -315,9 +336,14 @@ var xxx_messageInfo_FlyteClientRequest proto.InternalMessageInfo
 
 // FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users.
 type FlyteClientResponse struct {
-	ClientId                 string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	RedirectUri              string   `protobuf:"bytes,2,opt,name=redirect_uri,json=redirectUri,proto3" json:"redirect_uri,omitempty"`
-	Scopes                   []string `protobuf:"bytes,3,rep,name=scopes,proto3" json:"scopes,omitempty"`
+	// client_id to use when initiating OAuth2 authorization requests.
+	ClientId string `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	// redirect uri to use when initiating OAuth2 authorization requests.
+	RedirectUri string `protobuf:"bytes,2,opt,name=redirect_uri,json=redirectUri,proto3" json:"redirect_uri,omitempty"`
+	// scopes to request when initiating OAuth2 authorization requests.
+	Scopes []string `protobuf:"bytes,3,rep,name=scopes,proto3" json:"scopes,omitempty"`
+	// Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+	// default http `Authorization` header.
 	AuthorizationMetadataKey string   `protobuf:"bytes,4,opt,name=authorization_metadata_key,json=authorizationMetadataKey,proto3" json:"authorization_metadata_key,omitempty"`
 	XXX_NoUnkeyedLiteral     struct{} `json:"-"`
 	XXX_unrecognized         []byte   `json:"-"`
@@ -463,9 +489,12 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type AuthServiceClient interface {
-	// Anonymously accessible
+	// Anonymously accessible. Retrieves local or external oauth authorization server metadata.
 	OAuth2Metadata(ctx context.Context, in *OAuth2MetadataRequest, opts ...grpc.CallOption) (*OAuth2MetadataResponse, error)
+	// Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+	// requests.
 	FlyteClient(ctx context.Context, in *FlyteClientRequest, opts ...grpc.CallOption) (*FlyteClientResponse, error)
+	// Retrieves user information about the currently logged in user.
 	UserInfo(ctx context.Context, in *UserInfoRequest, opts ...grpc.CallOption) (*UserInfoResponse, error)
 }
 
@@ -506,9 +535,12 @@ func (c *authServiceClient) UserInfo(ctx context.Context, in *UserInfoRequest, o
 
 // AuthServiceServer is the server API for AuthService service.
 type AuthServiceServer interface {
-	// Anonymously accessible
+	// Anonymously accessible. Retrieves local or external oauth authorization server metadata.
 	OAuth2Metadata(context.Context, *OAuth2MetadataRequest) (*OAuth2MetadataResponse, error)
+	// Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+	// requests.
 	FlyteClient(context.Context, *FlyteClientRequest) (*FlyteClientResponse, error)
+	// Retrieves user information about the currently logged in user.
 	UserInfo(context.Context, *UserInfoRequest) (*UserInfoResponse, error)
 }
 

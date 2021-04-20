@@ -17,7 +17,7 @@
   "paths": {
     "/.well-known/oauth-authorization-server": {
       "get": {
-        "summary": "Anonymously accessible",
+        "summary": "Anonymously accessible. Retrieves local or external oauth authorization server metadata.",
         "description": "Retrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible.",
         "operationId": "OAuth2Metadata",
         "responses": {
@@ -35,6 +35,7 @@
     },
     "/config/v1/flyte_client": {
       "get": {
+        "summary": "Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization\nrequests.",
         "description": "Retrieves public flyte client info. This endpoint is anonymously accessible.",
         "operationId": "FlyteClient",
         "responses": {
@@ -52,6 +53,7 @@
     },
     "/me": {
       "get": {
+        "summary": "Retrieves user information about the currently logged in user.",
         "description": "Retrieves user info",
         "operationId": "UserInfo",
         "responses": {
@@ -73,19 +75,23 @@
       "type": "object",
       "properties": {
         "client_id": {
-          "type": "string"
+          "type": "string",
+          "description": "client_id to use when initiating OAuth2 authorization requests."
         },
         "redirect_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "redirect uri to use when initiating OAuth2 authorization requests."
         },
         "scopes": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "scopes to request when initiating OAuth2 authorization requests."
         },
         "authorization_metadata_key": {
-          "type": "string"
+          "type": "string",
+          "description": "Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the\ndefault http `Authorization` header."
         }
       },
       "description": "FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users."
@@ -94,46 +100,55 @@
       "type": "object",
       "properties": {
         "issuer": {
-          "type": "string"
+          "type": "string",
+          "description": "Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external\nissuer."
         },
         "authorization_endpoint": {
-          "type": "string"
+          "type": "string",
+          "description": "URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are\nsupported that use the authorization endpoint."
         },
         "token_endpoint": {
-          "type": "string"
+          "type": "string",
+          "description": "URL of the authorization server's token endpoint [RFC6749]."
         },
         "response_types_supported": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "JSON array containing a list of the OAuth 2.0 \"response_type\" values that this authorization server supports."
         },
         "scopes_supported": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "JSON array containing a list of the OAuth 2.0 [RFC6749] \"scope\" values that this authorization server supports."
         },
         "token_endpoint_auth_methods_supported": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "JSON array containing a list of client authentication methods supported by this token endpoint."
         },
         "jwks_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the\nclient uses to validate signatures from the authorization server."
         },
         "code_challenge_methods_supported": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by\nthis authorization server."
         },
         "grant_types_supported": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports."
         }
       },
       "title": "OAuth2MetadataResponse defines an RFC-Compliant response for /.well-known/oauth-authorization-server metadata\nas defined in https://tools.ietf.org/html/rfc8414"
@@ -142,25 +157,32 @@
       "type": "object",
       "properties": {
         "subject": {
-          "type": "string"
+          "type": "string",
+          "description": "Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed\nby the Client."
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "Full name"
         },
         "preferred_username": {
-          "type": "string"
+          "type": "string",
+          "title": "Shorthand name by which the End-User wishes to be referred to"
         },
         "given_name": {
-          "type": "string"
+          "type": "string",
+          "title": "Given name(s) or first name(s)"
         },
         "family_name": {
-          "type": "string"
+          "type": "string",
+          "title": "Surname(s) or last name(s)"
         },
         "email": {
-          "type": "string"
+          "type": "string",
+          "title": "Preferred e-mail address"
         },
         "picture": {
-          "type": "string"
+          "type": "string",
+          "title": "Profile picture URL"
         }
       },
       "description": "See the OpenID Connect spec at https://openid.net/specs/openid-connect-core-1_0.html#UserInfoResponse for more information."
