@@ -42,14 +42,6 @@ func TestLiveAdminClient(t *testing.T) {
 	fmt.Printf("Response: %v\n", resp)
 }
 
-func TestGetTokenEndpoint(t *testing.T) {
-	ctx := context.Background()
-
-	endpoint, err := getTokenEndpointFromAuthServer(ctx, "https://flyte-staging.lyft.net")
-	assert.NoError(t, err)
-	assert.NotEmpty(t, endpoint)
-}
-
 func TestGetDialOption(t *testing.T) {
 	ctx := context.Background()
 

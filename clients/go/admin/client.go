@@ -2,16 +2,13 @@ package admin
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"io/ioutil"
-	"net/http"
 	"strings"
 	"sync"
 
 	"google.golang.org/grpc/backoff"
 
-	"github.com/coreos/go-oidc"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
@@ -77,25 +74,6 @@ func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
 
 	return opts
-}
-
-// This function assumes that the authorization server supports the OAuth metadata standard, and uses the oidc
-// library to retrieve the token endpoint.
-func getTokenEndpointFromAuthServer(ctx context.Context, authorizationServer string) (string, error) {
-	if authorizationServer == "" {
-		logger.Errorf(ctx, "Attempting to construct provider with empty authorizationServer")
-		return "", errors.New("cannot get token URL from empty authorizationServer")
-	}
-
-	oidcCtx := oidc.ClientContext(ctx, &http.Client{})
-	provider, err := oidc.NewProvider(oidcCtx, authorizationServer)
-	if err != nil {
-		logger.Errorf(ctx, "Error when constructing new OIDC Provider")
-		return "", err
-	}
-	logger.Infof(ctx, "Constructing Admin client with token endpoint %s", provider.Endpoint().TokenURL)
-
-	return provider.Endpoint().TokenURL, nil
 }
 
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin.
