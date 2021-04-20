@@ -50,7 +50,7 @@ class AuthService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Anonymously accessible
+    // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
     virtual ::grpc::Status OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> AsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(AsyncOAuth2MetadataRaw(context, request, cq));
@@ -58,6 +58,8 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> PrepareAsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(PrepareAsyncOAuth2MetadataRaw(context, request, cq));
     }
+    // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+    // requests.
     virtual ::grpc::Status FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::flyteidl::service::FlyteClientResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>> AsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>>(AsyncFlyteClientRaw(context, request, cq));
@@ -65,6 +67,7 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>> PrepareAsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>>(PrepareAsyncFlyteClientRaw(context, request, cq));
     }
+    // Retrieves user information about the currently logged in user.
     virtual ::grpc::Status UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>> AsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>>(AsyncUserInfoRaw(context, request, cq));
@@ -75,15 +78,18 @@ class AuthService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      // Anonymously accessible
+      // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
       virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+      // requests.
       virtual void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Retrieves user information about the currently logged in user.
       virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -164,9 +170,12 @@ class AuthService final {
    public:
     Service();
     virtual ~Service();
-    // Anonymously accessible
+    // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
     virtual ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response);
+    // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+    // requests.
     virtual ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response);
+    // Retrieves user information about the currently logged in user.
     virtual ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response);
   };
   template <class BaseClass>

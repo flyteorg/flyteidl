@@ -430,135 +430,257 @@ public final class Auth {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+     * issuer.
+     * </pre>
+     *
      * <code>string issuer = 1;</code>
      */
     java.lang.String getIssuer();
     /**
+     * <pre>
+     * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+     * issuer.
+     * </pre>
+     *
      * <code>string issuer = 1;</code>
      */
     com.google.protobuf.ByteString
         getIssuerBytes();
 
     /**
+     * <pre>
+     * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+     * supported that use the authorization endpoint.
+     * </pre>
+     *
      * <code>string authorization_endpoint = 2;</code>
      */
     java.lang.String getAuthorizationEndpoint();
     /**
+     * <pre>
+     * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+     * supported that use the authorization endpoint.
+     * </pre>
+     *
      * <code>string authorization_endpoint = 2;</code>
      */
     com.google.protobuf.ByteString
         getAuthorizationEndpointBytes();
 
     /**
+     * <pre>
+     * URL of the authorization server's token endpoint [RFC6749].
+     * </pre>
+     *
      * <code>string token_endpoint = 3;</code>
      */
     java.lang.String getTokenEndpoint();
     /**
+     * <pre>
+     * URL of the authorization server's token endpoint [RFC6749].
+     * </pre>
+     *
      * <code>string token_endpoint = 3;</code>
      */
     com.google.protobuf.ByteString
         getTokenEndpointBytes();
 
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     java.util.List<java.lang.String>
         getResponseTypesSupportedList();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     int getResponseTypesSupportedCount();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     java.lang.String getResponseTypesSupported(int index);
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     com.google.protobuf.ByteString
         getResponseTypesSupportedBytes(int index);
 
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     java.util.List<java.lang.String>
         getScopesSupportedList();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     int getScopesSupportedCount();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     java.lang.String getScopesSupported(int index);
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     com.google.protobuf.ByteString
         getScopesSupportedBytes(int index);
 
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     java.util.List<java.lang.String>
         getTokenEndpointAuthMethodsSupportedList();
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     int getTokenEndpointAuthMethodsSupportedCount();
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     java.lang.String getTokenEndpointAuthMethodsSupported(int index);
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     com.google.protobuf.ByteString
         getTokenEndpointAuthMethodsSupportedBytes(int index);
 
     /**
+     * <pre>
+     * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+     * client uses to validate signatures from the authorization server.
+     * </pre>
+     *
      * <code>string jwks_uri = 7;</code>
      */
     java.lang.String getJwksUri();
     /**
+     * <pre>
+     * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+     * client uses to validate signatures from the authorization server.
+     * </pre>
+     *
      * <code>string jwks_uri = 7;</code>
      */
     com.google.protobuf.ByteString
         getJwksUriBytes();
 
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     java.util.List<java.lang.String>
         getCodeChallengeMethodsSupportedList();
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     int getCodeChallengeMethodsSupportedCount();
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     java.lang.String getCodeChallengeMethodsSupported(int index);
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     com.google.protobuf.ByteString
         getCodeChallengeMethodsSupportedBytes(int index);
 
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     java.util.List<java.lang.String>
         getGrantTypesSupportedList();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     int getGrantTypesSupportedCount();
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     java.lang.String getGrantTypesSupported(int index);
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     com.google.protobuf.ByteString
@@ -737,6 +859,11 @@ public final class Auth {
     public static final int ISSUER_FIELD_NUMBER = 1;
     private volatile java.lang.Object issuer_;
     /**
+     * <pre>
+     * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+     * issuer.
+     * </pre>
+     *
      * <code>string issuer = 1;</code>
      */
     public java.lang.String getIssuer() {
@@ -752,6 +879,11 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+     * issuer.
+     * </pre>
+     *
      * <code>string issuer = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -771,6 +903,11 @@ public final class Auth {
     public static final int AUTHORIZATION_ENDPOINT_FIELD_NUMBER = 2;
     private volatile java.lang.Object authorizationEndpoint_;
     /**
+     * <pre>
+     * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+     * supported that use the authorization endpoint.
+     * </pre>
+     *
      * <code>string authorization_endpoint = 2;</code>
      */
     public java.lang.String getAuthorizationEndpoint() {
@@ -786,6 +923,11 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+     * supported that use the authorization endpoint.
+     * </pre>
+     *
      * <code>string authorization_endpoint = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -805,6 +947,10 @@ public final class Auth {
     public static final int TOKEN_ENDPOINT_FIELD_NUMBER = 3;
     private volatile java.lang.Object tokenEndpoint_;
     /**
+     * <pre>
+     * URL of the authorization server's token endpoint [RFC6749].
+     * </pre>
+     *
      * <code>string token_endpoint = 3;</code>
      */
     public java.lang.String getTokenEndpoint() {
@@ -820,6 +966,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * URL of the authorization server's token endpoint [RFC6749].
+     * </pre>
+     *
      * <code>string token_endpoint = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -839,6 +989,10 @@ public final class Auth {
     public static final int RESPONSE_TYPES_SUPPORTED_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList responseTypesSupported_;
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -846,18 +1000,30 @@ public final class Auth {
       return responseTypesSupported_;
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     public int getResponseTypesSupportedCount() {
       return responseTypesSupported_.size();
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     public java.lang.String getResponseTypesSupported(int index) {
       return responseTypesSupported_.get(index);
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string response_types_supported = 4;</code>
      */
     public com.google.protobuf.ByteString
@@ -868,6 +1034,10 @@ public final class Auth {
     public static final int SCOPES_SUPPORTED_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList scopesSupported_;
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -875,18 +1045,30 @@ public final class Auth {
       return scopesSupported_;
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     public int getScopesSupportedCount() {
       return scopesSupported_.size();
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     public java.lang.String getScopesSupported(int index) {
       return scopesSupported_.get(index);
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string scopes_supported = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -897,6 +1079,10 @@ public final class Auth {
     public static final int TOKEN_ENDPOINT_AUTH_METHODS_SUPPORTED_FIELD_NUMBER = 6;
     private com.google.protobuf.LazyStringList tokenEndpointAuthMethodsSupported_;
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -904,18 +1090,30 @@ public final class Auth {
       return tokenEndpointAuthMethodsSupported_;
     }
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     public int getTokenEndpointAuthMethodsSupportedCount() {
       return tokenEndpointAuthMethodsSupported_.size();
     }
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     public java.lang.String getTokenEndpointAuthMethodsSupported(int index) {
       return tokenEndpointAuthMethodsSupported_.get(index);
     }
     /**
+     * <pre>
+     * JSON array containing a list of client authentication methods supported by this token endpoint.
+     * </pre>
+     *
      * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
      */
     public com.google.protobuf.ByteString
@@ -926,6 +1124,11 @@ public final class Auth {
     public static final int JWKS_URI_FIELD_NUMBER = 7;
     private volatile java.lang.Object jwksUri_;
     /**
+     * <pre>
+     * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+     * client uses to validate signatures from the authorization server.
+     * </pre>
+     *
      * <code>string jwks_uri = 7;</code>
      */
     public java.lang.String getJwksUri() {
@@ -941,6 +1144,11 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+     * client uses to validate signatures from the authorization server.
+     * </pre>
+     *
      * <code>string jwks_uri = 7;</code>
      */
     public com.google.protobuf.ByteString
@@ -960,6 +1168,11 @@ public final class Auth {
     public static final int CODE_CHALLENGE_METHODS_SUPPORTED_FIELD_NUMBER = 8;
     private com.google.protobuf.LazyStringList codeChallengeMethodsSupported_;
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -967,18 +1180,33 @@ public final class Auth {
       return codeChallengeMethodsSupported_;
     }
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     public int getCodeChallengeMethodsSupportedCount() {
       return codeChallengeMethodsSupported_.size();
     }
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     public java.lang.String getCodeChallengeMethodsSupported(int index) {
       return codeChallengeMethodsSupported_.get(index);
     }
     /**
+     * <pre>
+     * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+     * this authorization server.
+     * </pre>
+     *
      * <code>repeated string code_challenge_methods_supported = 8;</code>
      */
     public com.google.protobuf.ByteString
@@ -989,6 +1217,10 @@ public final class Auth {
     public static final int GRANT_TYPES_SUPPORTED_FIELD_NUMBER = 9;
     private com.google.protobuf.LazyStringList grantTypesSupported_;
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -996,18 +1228,30 @@ public final class Auth {
       return grantTypesSupported_;
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     public int getGrantTypesSupportedCount() {
       return grantTypesSupported_.size();
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     public java.lang.String getGrantTypesSupported(int index) {
       return grantTypesSupported_.get(index);
     }
     /**
+     * <pre>
+     * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+     * </pre>
+     *
      * <code>repeated string grant_types_supported = 9;</code>
      */
     public com.google.protobuf.ByteString
@@ -1549,6 +1793,11 @@ public final class Auth {
 
       private java.lang.Object issuer_ = "";
       /**
+       * <pre>
+       * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+       * issuer.
+       * </pre>
+       *
        * <code>string issuer = 1;</code>
        */
       public java.lang.String getIssuer() {
@@ -1564,6 +1813,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+       * issuer.
+       * </pre>
+       *
        * <code>string issuer = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1580,6 +1834,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+       * issuer.
+       * </pre>
+       *
        * <code>string issuer = 1;</code>
        */
       public Builder setIssuer(
@@ -1593,6 +1852,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+       * issuer.
+       * </pre>
+       *
        * <code>string issuer = 1;</code>
        */
       public Builder clearIssuer() {
@@ -1602,6 +1866,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external
+       * issuer.
+       * </pre>
+       *
        * <code>string issuer = 1;</code>
        */
       public Builder setIssuerBytes(
@@ -1618,6 +1887,11 @@ public final class Auth {
 
       private java.lang.Object authorizationEndpoint_ = "";
       /**
+       * <pre>
+       * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+       * supported that use the authorization endpoint.
+       * </pre>
+       *
        * <code>string authorization_endpoint = 2;</code>
        */
       public java.lang.String getAuthorizationEndpoint() {
@@ -1633,6 +1907,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+       * supported that use the authorization endpoint.
+       * </pre>
+       *
        * <code>string authorization_endpoint = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1649,6 +1928,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+       * supported that use the authorization endpoint.
+       * </pre>
+       *
        * <code>string authorization_endpoint = 2;</code>
        */
       public Builder setAuthorizationEndpoint(
@@ -1662,6 +1946,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+       * supported that use the authorization endpoint.
+       * </pre>
+       *
        * <code>string authorization_endpoint = 2;</code>
        */
       public Builder clearAuthorizationEndpoint() {
@@ -1671,6 +1960,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are
+       * supported that use the authorization endpoint.
+       * </pre>
+       *
        * <code>string authorization_endpoint = 2;</code>
        */
       public Builder setAuthorizationEndpointBytes(
@@ -1687,6 +1981,10 @@ public final class Auth {
 
       private java.lang.Object tokenEndpoint_ = "";
       /**
+       * <pre>
+       * URL of the authorization server's token endpoint [RFC6749].
+       * </pre>
+       *
        * <code>string token_endpoint = 3;</code>
        */
       public java.lang.String getTokenEndpoint() {
@@ -1702,6 +2000,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's token endpoint [RFC6749].
+       * </pre>
+       *
        * <code>string token_endpoint = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -1718,6 +2020,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's token endpoint [RFC6749].
+       * </pre>
+       *
        * <code>string token_endpoint = 3;</code>
        */
       public Builder setTokenEndpoint(
@@ -1731,6 +2037,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's token endpoint [RFC6749].
+       * </pre>
+       *
        * <code>string token_endpoint = 3;</code>
        */
       public Builder clearTokenEndpoint() {
@@ -1740,6 +2050,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's token endpoint [RFC6749].
+       * </pre>
+       *
        * <code>string token_endpoint = 3;</code>
        */
       public Builder setTokenEndpointBytes(
@@ -1762,6 +2076,10 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1769,18 +2087,30 @@ public final class Auth {
         return responseTypesSupported_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public int getResponseTypesSupportedCount() {
         return responseTypesSupported_.size();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public java.lang.String getResponseTypesSupported(int index) {
         return responseTypesSupported_.get(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public com.google.protobuf.ByteString
@@ -1788,6 +2118,10 @@ public final class Auth {
         return responseTypesSupported_.getByteString(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public Builder setResponseTypesSupported(
@@ -1801,6 +2135,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public Builder addResponseTypesSupported(
@@ -1814,6 +2152,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public Builder addAllResponseTypesSupported(
@@ -1825,6 +2167,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public Builder clearResponseTypesSupported() {
@@ -1834,6 +2180,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string response_types_supported = 4;</code>
        */
       public Builder addResponseTypesSupportedBytes(
@@ -1856,6 +2206,10 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1863,18 +2217,30 @@ public final class Auth {
         return scopesSupported_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public int getScopesSupportedCount() {
         return scopesSupported_.size();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public java.lang.String getScopesSupported(int index) {
         return scopesSupported_.get(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -1882,6 +2248,10 @@ public final class Auth {
         return scopesSupported_.getByteString(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public Builder setScopesSupported(
@@ -1895,6 +2265,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public Builder addScopesSupported(
@@ -1908,6 +2282,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public Builder addAllScopesSupported(
@@ -1919,6 +2297,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public Builder clearScopesSupported() {
@@ -1928,6 +2310,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string scopes_supported = 5;</code>
        */
       public Builder addScopesSupportedBytes(
@@ -1950,6 +2336,10 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1957,18 +2347,30 @@ public final class Auth {
         return tokenEndpointAuthMethodsSupported_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public int getTokenEndpointAuthMethodsSupportedCount() {
         return tokenEndpointAuthMethodsSupported_.size();
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public java.lang.String getTokenEndpointAuthMethodsSupported(int index) {
         return tokenEndpointAuthMethodsSupported_.get(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public com.google.protobuf.ByteString
@@ -1976,6 +2378,10 @@ public final class Auth {
         return tokenEndpointAuthMethodsSupported_.getByteString(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public Builder setTokenEndpointAuthMethodsSupported(
@@ -1989,6 +2395,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public Builder addTokenEndpointAuthMethodsSupported(
@@ -2002,6 +2412,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public Builder addAllTokenEndpointAuthMethodsSupported(
@@ -2013,6 +2427,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public Builder clearTokenEndpointAuthMethodsSupported() {
@@ -2022,6 +2440,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of client authentication methods supported by this token endpoint.
+       * </pre>
+       *
        * <code>repeated string token_endpoint_auth_methods_supported = 6;</code>
        */
       public Builder addTokenEndpointAuthMethodsSupportedBytes(
@@ -2038,6 +2460,11 @@ public final class Auth {
 
       private java.lang.Object jwksUri_ = "";
       /**
+       * <pre>
+       * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+       * client uses to validate signatures from the authorization server.
+       * </pre>
+       *
        * <code>string jwks_uri = 7;</code>
        */
       public java.lang.String getJwksUri() {
@@ -2053,6 +2480,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+       * client uses to validate signatures from the authorization server.
+       * </pre>
+       *
        * <code>string jwks_uri = 7;</code>
        */
       public com.google.protobuf.ByteString
@@ -2069,6 +2501,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+       * client uses to validate signatures from the authorization server.
+       * </pre>
+       *
        * <code>string jwks_uri = 7;</code>
        */
       public Builder setJwksUri(
@@ -2082,6 +2519,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+       * client uses to validate signatures from the authorization server.
+       * </pre>
+       *
        * <code>string jwks_uri = 7;</code>
        */
       public Builder clearJwksUri() {
@@ -2091,6 +2533,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the
+       * client uses to validate signatures from the authorization server.
+       * </pre>
+       *
        * <code>string jwks_uri = 7;</code>
        */
       public Builder setJwksUriBytes(
@@ -2113,6 +2560,11 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -2120,18 +2572,33 @@ public final class Auth {
         return codeChallengeMethodsSupported_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public int getCodeChallengeMethodsSupportedCount() {
         return codeChallengeMethodsSupported_.size();
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public java.lang.String getCodeChallengeMethodsSupported(int index) {
         return codeChallengeMethodsSupported_.get(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public com.google.protobuf.ByteString
@@ -2139,6 +2606,11 @@ public final class Auth {
         return codeChallengeMethodsSupported_.getByteString(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public Builder setCodeChallengeMethodsSupported(
@@ -2152,6 +2624,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public Builder addCodeChallengeMethodsSupported(
@@ -2165,6 +2642,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public Builder addAllCodeChallengeMethodsSupported(
@@ -2176,6 +2658,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public Builder clearCodeChallengeMethodsSupported() {
@@ -2185,6 +2672,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by
+       * this authorization server.
+       * </pre>
+       *
        * <code>repeated string code_challenge_methods_supported = 8;</code>
        */
       public Builder addCodeChallengeMethodsSupportedBytes(
@@ -2207,6 +2699,10 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -2214,18 +2710,30 @@ public final class Auth {
         return grantTypesSupported_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public int getGrantTypesSupportedCount() {
         return grantTypesSupported_.size();
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public java.lang.String getGrantTypesSupported(int index) {
         return grantTypesSupported_.get(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public com.google.protobuf.ByteString
@@ -2233,6 +2741,10 @@ public final class Auth {
         return grantTypesSupported_.getByteString(index);
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public Builder setGrantTypesSupported(
@@ -2246,6 +2758,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public Builder addGrantTypesSupported(
@@ -2259,6 +2775,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public Builder addAllGrantTypesSupported(
@@ -2270,6 +2790,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public Builder clearGrantTypesSupported() {
@@ -2279,6 +2803,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports.
+       * </pre>
+       *
        * <code>repeated string grant_types_supported = 9;</code>
        */
       public Builder addGrantTypesSupportedBytes(
@@ -2761,70 +3289,128 @@ public final class Auth {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+     * by the Client.
+     * </pre>
+     *
      * <code>string subject = 1;</code>
      */
     java.lang.String getSubject();
     /**
+     * <pre>
+     * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+     * by the Client.
+     * </pre>
+     *
      * <code>string subject = 1;</code>
      */
     com.google.protobuf.ByteString
         getSubjectBytes();
 
     /**
+     * <pre>
+     * Full name
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     java.lang.String getName();
     /**
+     * <pre>
+     * Full name
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
+     * <pre>
+     * Shorthand name by which the End-User wishes to be referred to
+     * </pre>
+     *
      * <code>string preferred_username = 3;</code>
      */
     java.lang.String getPreferredUsername();
     /**
+     * <pre>
+     * Shorthand name by which the End-User wishes to be referred to
+     * </pre>
+     *
      * <code>string preferred_username = 3;</code>
      */
     com.google.protobuf.ByteString
         getPreferredUsernameBytes();
 
     /**
+     * <pre>
+     * Given name(s) or first name(s)
+     * </pre>
+     *
      * <code>string given_name = 4;</code>
      */
     java.lang.String getGivenName();
     /**
+     * <pre>
+     * Given name(s) or first name(s)
+     * </pre>
+     *
      * <code>string given_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getGivenNameBytes();
 
     /**
+     * <pre>
+     * Surname(s) or last name(s)
+     * </pre>
+     *
      * <code>string family_name = 5;</code>
      */
     java.lang.String getFamilyName();
     /**
+     * <pre>
+     * Surname(s) or last name(s)
+     * </pre>
+     *
      * <code>string family_name = 5;</code>
      */
     com.google.protobuf.ByteString
         getFamilyNameBytes();
 
     /**
+     * <pre>
+     * Preferred e-mail address
+     * </pre>
+     *
      * <code>string email = 6;</code>
      */
     java.lang.String getEmail();
     /**
+     * <pre>
+     * Preferred e-mail address
+     * </pre>
+     *
      * <code>string email = 6;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
+     * <pre>
+     * Profile picture URL
+     * </pre>
+     *
      * <code>string picture = 7;</code>
      */
     java.lang.String getPicture();
     /**
+     * <pre>
+     * Profile picture URL
+     * </pre>
+     *
      * <code>string picture = 7;</code>
      */
     com.google.protobuf.ByteString
@@ -2957,6 +3543,11 @@ public final class Auth {
     public static final int SUBJECT_FIELD_NUMBER = 1;
     private volatile java.lang.Object subject_;
     /**
+     * <pre>
+     * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+     * by the Client.
+     * </pre>
+     *
      * <code>string subject = 1;</code>
      */
     public java.lang.String getSubject() {
@@ -2972,6 +3563,11 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+     * by the Client.
+     * </pre>
+     *
      * <code>string subject = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -2991,6 +3587,10 @@ public final class Auth {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
+     * <pre>
+     * Full name
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public java.lang.String getName() {
@@ -3006,6 +3606,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Full name
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -3025,6 +3629,10 @@ public final class Auth {
     public static final int PREFERRED_USERNAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object preferredUsername_;
     /**
+     * <pre>
+     * Shorthand name by which the End-User wishes to be referred to
+     * </pre>
+     *
      * <code>string preferred_username = 3;</code>
      */
     public java.lang.String getPreferredUsername() {
@@ -3040,6 +3648,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Shorthand name by which the End-User wishes to be referred to
+     * </pre>
+     *
      * <code>string preferred_username = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -3059,6 +3671,10 @@ public final class Auth {
     public static final int GIVEN_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object givenName_;
     /**
+     * <pre>
+     * Given name(s) or first name(s)
+     * </pre>
+     *
      * <code>string given_name = 4;</code>
      */
     public java.lang.String getGivenName() {
@@ -3074,6 +3690,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Given name(s) or first name(s)
+     * </pre>
+     *
      * <code>string given_name = 4;</code>
      */
     public com.google.protobuf.ByteString
@@ -3093,6 +3713,10 @@ public final class Auth {
     public static final int FAMILY_NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object familyName_;
     /**
+     * <pre>
+     * Surname(s) or last name(s)
+     * </pre>
+     *
      * <code>string family_name = 5;</code>
      */
     public java.lang.String getFamilyName() {
@@ -3108,6 +3732,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Surname(s) or last name(s)
+     * </pre>
+     *
      * <code>string family_name = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -3127,6 +3755,10 @@ public final class Auth {
     public static final int EMAIL_FIELD_NUMBER = 6;
     private volatile java.lang.Object email_;
     /**
+     * <pre>
+     * Preferred e-mail address
+     * </pre>
+     *
      * <code>string email = 6;</code>
      */
     public java.lang.String getEmail() {
@@ -3142,6 +3774,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Preferred e-mail address
+     * </pre>
+     *
      * <code>string email = 6;</code>
      */
     public com.google.protobuf.ByteString
@@ -3161,6 +3797,10 @@ public final class Auth {
     public static final int PICTURE_FIELD_NUMBER = 7;
     private volatile java.lang.Object picture_;
     /**
+     * <pre>
+     * Profile picture URL
+     * </pre>
+     *
      * <code>string picture = 7;</code>
      */
     public java.lang.String getPicture() {
@@ -3176,6 +3816,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Profile picture URL
+     * </pre>
+     *
      * <code>string picture = 7;</code>
      */
     public com.google.protobuf.ByteString
@@ -3602,6 +4246,11 @@ public final class Auth {
 
       private java.lang.Object subject_ = "";
       /**
+       * <pre>
+       * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+       * by the Client.
+       * </pre>
+       *
        * <code>string subject = 1;</code>
        */
       public java.lang.String getSubject() {
@@ -3617,6 +4266,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+       * by the Client.
+       * </pre>
+       *
        * <code>string subject = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -3633,6 +4287,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+       * by the Client.
+       * </pre>
+       *
        * <code>string subject = 1;</code>
        */
       public Builder setSubject(
@@ -3646,6 +4305,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+       * by the Client.
+       * </pre>
+       *
        * <code>string subject = 1;</code>
        */
       public Builder clearSubject() {
@@ -3655,6 +4319,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Locally unique and never reassigned identifier within the Issuer for the End-User, which is intended to be consumed
+       * by the Client.
+       * </pre>
+       *
        * <code>string subject = 1;</code>
        */
       public Builder setSubjectBytes(
@@ -3671,6 +4340,10 @@ public final class Auth {
 
       private java.lang.Object name_ = "";
       /**
+       * <pre>
+       * Full name
+       * </pre>
+       *
        * <code>string name = 2;</code>
        */
       public java.lang.String getName() {
@@ -3686,6 +4359,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Full name
+       * </pre>
+       *
        * <code>string name = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -3702,6 +4379,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Full name
+       * </pre>
+       *
        * <code>string name = 2;</code>
        */
       public Builder setName(
@@ -3715,6 +4396,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Full name
+       * </pre>
+       *
        * <code>string name = 2;</code>
        */
       public Builder clearName() {
@@ -3724,6 +4409,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Full name
+       * </pre>
+       *
        * <code>string name = 2;</code>
        */
       public Builder setNameBytes(
@@ -3740,6 +4429,10 @@ public final class Auth {
 
       private java.lang.Object preferredUsername_ = "";
       /**
+       * <pre>
+       * Shorthand name by which the End-User wishes to be referred to
+       * </pre>
+       *
        * <code>string preferred_username = 3;</code>
        */
       public java.lang.String getPreferredUsername() {
@@ -3755,6 +4448,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Shorthand name by which the End-User wishes to be referred to
+       * </pre>
+       *
        * <code>string preferred_username = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -3771,6 +4468,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Shorthand name by which the End-User wishes to be referred to
+       * </pre>
+       *
        * <code>string preferred_username = 3;</code>
        */
       public Builder setPreferredUsername(
@@ -3784,6 +4485,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Shorthand name by which the End-User wishes to be referred to
+       * </pre>
+       *
        * <code>string preferred_username = 3;</code>
        */
       public Builder clearPreferredUsername() {
@@ -3793,6 +4498,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Shorthand name by which the End-User wishes to be referred to
+       * </pre>
+       *
        * <code>string preferred_username = 3;</code>
        */
       public Builder setPreferredUsernameBytes(
@@ -3809,6 +4518,10 @@ public final class Auth {
 
       private java.lang.Object givenName_ = "";
       /**
+       * <pre>
+       * Given name(s) or first name(s)
+       * </pre>
+       *
        * <code>string given_name = 4;</code>
        */
       public java.lang.String getGivenName() {
@@ -3824,6 +4537,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Given name(s) or first name(s)
+       * </pre>
+       *
        * <code>string given_name = 4;</code>
        */
       public com.google.protobuf.ByteString
@@ -3840,6 +4557,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Given name(s) or first name(s)
+       * </pre>
+       *
        * <code>string given_name = 4;</code>
        */
       public Builder setGivenName(
@@ -3853,6 +4574,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Given name(s) or first name(s)
+       * </pre>
+       *
        * <code>string given_name = 4;</code>
        */
       public Builder clearGivenName() {
@@ -3862,6 +4587,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Given name(s) or first name(s)
+       * </pre>
+       *
        * <code>string given_name = 4;</code>
        */
       public Builder setGivenNameBytes(
@@ -3878,6 +4607,10 @@ public final class Auth {
 
       private java.lang.Object familyName_ = "";
       /**
+       * <pre>
+       * Surname(s) or last name(s)
+       * </pre>
+       *
        * <code>string family_name = 5;</code>
        */
       public java.lang.String getFamilyName() {
@@ -3893,6 +4626,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Surname(s) or last name(s)
+       * </pre>
+       *
        * <code>string family_name = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -3909,6 +4646,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Surname(s) or last name(s)
+       * </pre>
+       *
        * <code>string family_name = 5;</code>
        */
       public Builder setFamilyName(
@@ -3922,6 +4663,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Surname(s) or last name(s)
+       * </pre>
+       *
        * <code>string family_name = 5;</code>
        */
       public Builder clearFamilyName() {
@@ -3931,6 +4676,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Surname(s) or last name(s)
+       * </pre>
+       *
        * <code>string family_name = 5;</code>
        */
       public Builder setFamilyNameBytes(
@@ -3947,6 +4696,10 @@ public final class Auth {
 
       private java.lang.Object email_ = "";
       /**
+       * <pre>
+       * Preferred e-mail address
+       * </pre>
+       *
        * <code>string email = 6;</code>
        */
       public java.lang.String getEmail() {
@@ -3962,6 +4715,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Preferred e-mail address
+       * </pre>
+       *
        * <code>string email = 6;</code>
        */
       public com.google.protobuf.ByteString
@@ -3978,6 +4735,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Preferred e-mail address
+       * </pre>
+       *
        * <code>string email = 6;</code>
        */
       public Builder setEmail(
@@ -3991,6 +4752,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Preferred e-mail address
+       * </pre>
+       *
        * <code>string email = 6;</code>
        */
       public Builder clearEmail() {
@@ -4000,6 +4765,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Preferred e-mail address
+       * </pre>
+       *
        * <code>string email = 6;</code>
        */
       public Builder setEmailBytes(
@@ -4016,6 +4785,10 @@ public final class Auth {
 
       private java.lang.Object picture_ = "";
       /**
+       * <pre>
+       * Profile picture URL
+       * </pre>
+       *
        * <code>string picture = 7;</code>
        */
       public java.lang.String getPicture() {
@@ -4031,6 +4804,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Profile picture URL
+       * </pre>
+       *
        * <code>string picture = 7;</code>
        */
       public com.google.protobuf.ByteString
@@ -4047,6 +4824,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Profile picture URL
+       * </pre>
+       *
        * <code>string picture = 7;</code>
        */
       public Builder setPicture(
@@ -4060,6 +4841,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Profile picture URL
+       * </pre>
+       *
        * <code>string picture = 7;</code>
        */
       public Builder clearPicture() {
@@ -4069,6 +4854,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Profile picture URL
+       * </pre>
+       *
        * <code>string picture = 7;</code>
        */
       public Builder setPictureBytes(
@@ -4551,49 +5340,91 @@ public final class Auth {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * client_id to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string client_id = 1;</code>
      */
     java.lang.String getClientId();
     /**
+     * <pre>
+     * client_id to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string client_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getClientIdBytes();
 
     /**
+     * <pre>
+     * redirect uri to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string redirect_uri = 2;</code>
      */
     java.lang.String getRedirectUri();
     /**
+     * <pre>
+     * redirect uri to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string redirect_uri = 2;</code>
      */
     com.google.protobuf.ByteString
         getRedirectUriBytes();
 
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     java.util.List<java.lang.String>
         getScopesList();
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     int getScopesCount();
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     java.lang.String getScopes(int index);
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     com.google.protobuf.ByteString
         getScopesBytes(int index);
 
     /**
+     * <pre>
+     * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+     * default http `Authorization` header.
+     * </pre>
+     *
      * <code>string authorization_metadata_key = 4;</code>
      */
     java.lang.String getAuthorizationMetadataKey();
     /**
+     * <pre>
+     * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+     * default http `Authorization` header.
+     * </pre>
+     *
      * <code>string authorization_metadata_key = 4;</code>
      */
     com.google.protobuf.ByteString
@@ -4712,6 +5543,10 @@ public final class Auth {
     public static final int CLIENT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object clientId_;
     /**
+     * <pre>
+     * client_id to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string client_id = 1;</code>
      */
     public java.lang.String getClientId() {
@@ -4727,6 +5562,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * client_id to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string client_id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -4746,6 +5585,10 @@ public final class Auth {
     public static final int REDIRECT_URI_FIELD_NUMBER = 2;
     private volatile java.lang.Object redirectUri_;
     /**
+     * <pre>
+     * redirect uri to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string redirect_uri = 2;</code>
      */
     public java.lang.String getRedirectUri() {
@@ -4761,6 +5604,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * redirect uri to use when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>string redirect_uri = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -4780,6 +5627,10 @@ public final class Auth {
     public static final int SCOPES_FIELD_NUMBER = 3;
     private com.google.protobuf.LazyStringList scopes_;
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -4787,18 +5638,30 @@ public final class Auth {
       return scopes_;
     }
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     public int getScopesCount() {
       return scopes_.size();
     }
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
     }
     /**
+     * <pre>
+     * scopes to request when initiating OAuth2 authorization requests.
+     * </pre>
+     *
      * <code>repeated string scopes = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -4809,6 +5672,11 @@ public final class Auth {
     public static final int AUTHORIZATION_METADATA_KEY_FIELD_NUMBER = 4;
     private volatile java.lang.Object authorizationMetadataKey_;
     /**
+     * <pre>
+     * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+     * default http `Authorization` header.
+     * </pre>
+     *
      * <code>string authorization_metadata_key = 4;</code>
      */
     public java.lang.String getAuthorizationMetadataKey() {
@@ -4824,6 +5692,11 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+     * default http `Authorization` header.
+     * </pre>
+     *
      * <code>string authorization_metadata_key = 4;</code>
      */
     public com.google.protobuf.ByteString
@@ -5220,6 +6093,10 @@ public final class Auth {
 
       private java.lang.Object clientId_ = "";
       /**
+       * <pre>
+       * client_id to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string client_id = 1;</code>
        */
       public java.lang.String getClientId() {
@@ -5235,6 +6112,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * client_id to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string client_id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -5251,6 +6132,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * client_id to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string client_id = 1;</code>
        */
       public Builder setClientId(
@@ -5264,6 +6149,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * client_id to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string client_id = 1;</code>
        */
       public Builder clearClientId() {
@@ -5273,6 +6162,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * client_id to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string client_id = 1;</code>
        */
       public Builder setClientIdBytes(
@@ -5289,6 +6182,10 @@ public final class Auth {
 
       private java.lang.Object redirectUri_ = "";
       /**
+       * <pre>
+       * redirect uri to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string redirect_uri = 2;</code>
        */
       public java.lang.String getRedirectUri() {
@@ -5304,6 +6201,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * redirect uri to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string redirect_uri = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -5320,6 +6221,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * redirect uri to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string redirect_uri = 2;</code>
        */
       public Builder setRedirectUri(
@@ -5333,6 +6238,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * redirect uri to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string redirect_uri = 2;</code>
        */
       public Builder clearRedirectUri() {
@@ -5342,6 +6251,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * redirect uri to use when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>string redirect_uri = 2;</code>
        */
       public Builder setRedirectUriBytes(
@@ -5364,6 +6277,10 @@ public final class Auth {
          }
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -5371,18 +6288,30 @@ public final class Auth {
         return scopes_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public int getScopesCount() {
         return scopes_.size();
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public java.lang.String getScopes(int index) {
         return scopes_.get(index);
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -5390,6 +6319,10 @@ public final class Auth {
         return scopes_.getByteString(index);
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public Builder setScopes(
@@ -5403,6 +6336,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public Builder addScopes(
@@ -5416,6 +6353,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public Builder addAllScopes(
@@ -5427,6 +6368,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public Builder clearScopes() {
@@ -5436,6 +6381,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * scopes to request when initiating OAuth2 authorization requests.
+       * </pre>
+       *
        * <code>repeated string scopes = 3;</code>
        */
       public Builder addScopesBytes(
@@ -5452,6 +6401,11 @@ public final class Auth {
 
       private java.lang.Object authorizationMetadataKey_ = "";
       /**
+       * <pre>
+       * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+       * default http `Authorization` header.
+       * </pre>
+       *
        * <code>string authorization_metadata_key = 4;</code>
        */
       public java.lang.String getAuthorizationMetadataKey() {
@@ -5467,6 +6421,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+       * default http `Authorization` header.
+       * </pre>
+       *
        * <code>string authorization_metadata_key = 4;</code>
        */
       public com.google.protobuf.ByteString
@@ -5483,6 +6442,11 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+       * default http `Authorization` header.
+       * </pre>
+       *
        * <code>string authorization_metadata_key = 4;</code>
        */
       public Builder setAuthorizationMetadataKey(
@@ -5496,6 +6460,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+       * default http `Authorization` header.
+       * </pre>
+       *
        * <code>string authorization_metadata_key = 4;</code>
        */
       public Builder clearAuthorizationMetadataKey() {
@@ -5505,6 +6474,11 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
+       * default http `Authorization` header.
+       * </pre>
+       *
        * <code>string authorization_metadata_key = 4;</code>
        */
       public Builder setAuthorizationMetadataKeyBytes(

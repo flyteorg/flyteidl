@@ -38,22 +38,23 @@ class AuthServiceServicer(object):
   """
 
   def OAuth2Metadata(self, request, context):
-    """Anonymously accessible
+    """Anonymously accessible. Retrieves local or external oauth authorization server metadata.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def FlyteClient(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
+    requests.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def UserInfo(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves user information about the currently logged in user.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
