@@ -3851,6 +3851,10 @@
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "Optional, full_outputs will only be populated if they are under a configured size threshold."
+        },
+        "dynamic_workflow": {
+          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
+          "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
       },
       "description": "Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution."
@@ -6184,10 +6188,6 @@
         "catalog_key": {
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
-        },
-        "dynamic_workflow": {
-          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
-          "description": "In the case this task launched a dynamic workflow we capture its structure here."
         }
       },
       "title": "Metadata for the case in which the node is a TaskNode"

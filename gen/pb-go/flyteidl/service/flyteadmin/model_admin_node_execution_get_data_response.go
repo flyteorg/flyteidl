@@ -19,4 +19,6 @@ type AdminNodeExecutionGetDataResponse struct {
 	FullInputs *CoreLiteralMap `json:"full_inputs,omitempty"`
 	// Optional, full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs *CoreLiteralMap `json:"full_outputs,omitempty"`
+	// In the case this task launched a dynamic workflow we capture its structure here.
+	DynamicWorkflow *FlyteidladminDynamicWorkflowNodeMetadata `json:"dynamic_workflow,omitempty"`
 }
