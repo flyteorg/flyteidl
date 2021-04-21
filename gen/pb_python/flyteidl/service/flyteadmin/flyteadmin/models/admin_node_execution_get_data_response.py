@@ -167,7 +167,7 @@ class AdminNodeExecutionGetDataResponse(object):
     def dynamic_workflow(self):
         """Gets the dynamic_workflow of this AdminNodeExecutionGetDataResponse.  # noqa: E501
 
-        In the case this node yielded a task which launched a dynamic workflow, we return its structure here.  # noqa: E501
+        Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.  # noqa: E501
 
         :return: The dynamic_workflow of this AdminNodeExecutionGetDataResponse.  # noqa: E501
         :rtype: FlyteidladminDynamicWorkflowNodeMetadata
@@ -178,7 +178,7 @@ class AdminNodeExecutionGetDataResponse(object):
     def dynamic_workflow(self, dynamic_workflow):
         """Sets the dynamic_workflow of this AdminNodeExecutionGetDataResponse.
 
-        In the case this node yielded a task which launched a dynamic workflow, we return its structure here.  # noqa: E501
+        Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.  # noqa: E501
 
         :param dynamic_workflow: The dynamic_workflow of this AdminNodeExecutionGetDataResponse.  # noqa: E501
         :type: FlyteidladminDynamicWorkflowNodeMetadata

@@ -5640,8 +5640,9 @@ definitions:
           \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
       dynamic_workflow:
-        description: "In the case this node yielded a task which launched a dynamic\
-          \ workflow, we return its structure here."
+        description: "Optional Workflow closure for a dynamically generated workflow,\
+          \ in the case this node yields a dynamic workflow we return its structure\
+          \ here."
         $ref: "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
     description: "Response structure for NodeExecutionGetDataRequest which contains\
       \ inputs and outputs for a node execution."

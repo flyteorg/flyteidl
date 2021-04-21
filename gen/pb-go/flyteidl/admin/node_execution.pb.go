@@ -785,7 +785,7 @@ type NodeExecutionGetDataResponse struct {
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
 	// Optional, full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
-	// In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+	// Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
 	DynamicWorkflow      *DynamicWorkflowNodeMetadata `protobuf:"bytes,16,opt,name=dynamic_workflow,json=dynamicWorkflow,proto3" json:"dynamic_workflow,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                     `json:"-"`
 	XXX_unrecognized     []byte                       `json:"-"`

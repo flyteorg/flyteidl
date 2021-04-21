@@ -12589,7 +12589,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -12597,7 +12597,7 @@ public final class NodeExecutionOuterClass {
     boolean hasDynamicWorkflow();
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -12605,7 +12605,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow();
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -12888,7 +12888,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -12898,7 +12898,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -12908,7 +12908,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
      * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -13973,7 +13973,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowBuilder_;
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -13983,7 +13983,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -13997,7 +13997,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14017,7 +14017,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14035,7 +14035,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14057,7 +14057,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14075,7 +14075,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14087,7 +14087,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
@@ -14102,7 +14102,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
        * </pre>
        *
        * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>

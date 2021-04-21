@@ -507,7 +507,7 @@ full_outputs
 .. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.dynamic_workflow:
 
 dynamic_workflow
-  (:ref:`flyteidl.admin.DynamicWorkflowNodeMetadata <api_msg_flyteidl.admin.DynamicWorkflowNodeMetadata>`) In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
+  (:ref:`flyteidl.admin.DynamicWorkflowNodeMetadata <api_msg_flyteidl.admin.DynamicWorkflowNodeMetadata>`) Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
   
   
 
