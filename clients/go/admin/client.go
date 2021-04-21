@@ -126,7 +126,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config, dialOpts []grp
 }
 
 func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
-	opts := GetAdditionalAdminClientConfigOptions(cfg)
+	opts := make([]grpc.DialOption, 0, 10)
 
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
@@ -138,12 +138,15 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 
 	if cfg.UseAuth {
 		logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-		jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, opts)
+		jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, append(opts, GetAdditionalAdminClientConfigOptions(cfg)...))
 		if err != nil {
 			return nil, err
 		}
+
 		opts = append(opts, jwtDialOption)
 	}
+
+	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)
 
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
