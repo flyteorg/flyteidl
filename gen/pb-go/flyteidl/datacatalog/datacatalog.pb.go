@@ -966,6 +966,7 @@ func (*GetOrReserveArtifactResponse) XXX_OneofWrappers() []interface{} {
 	}
 }
 
+// Request to extend reservation
 type ExtendReservationRequest struct {
 	DatasetId            *DatasetID `protobuf:"bytes,1,opt,name=dataset_id,json=datasetId,proto3" json:"dataset_id,omitempty"`
 	TagName              string     `protobuf:"bytes,2,opt,name=tag_name,json=tagName,proto3" json:"tag_name,omitempty"`
@@ -1021,6 +1022,7 @@ func (m *ExtendReservationRequest) GetOwnerId() string {
 	return ""
 }
 
+// Response to extend reservation
 type ExtendReservationResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -1052,6 +1054,7 @@ func (m *ExtendReservationResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ExtendReservationResponse proto.InternalMessageInfo
 
+// Request to release reservation
 type ReleaseReservationRequest struct {
 	DatasetId            *DatasetID `protobuf:"bytes,1,opt,name=dataset_id,json=datasetId,proto3" json:"dataset_id,omitempty"`
 	TagName              string     `protobuf:"bytes,2,opt,name=tag_name,json=tagName,proto3" json:"tag_name,omitempty"`
@@ -1107,6 +1110,7 @@ func (m *ReleaseReservationRequest) GetOwnerId() string {
 	return ""
 }
 
+// Response to release reservation
 type ReleaseReservationResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

@@ -492,8 +492,9 @@ reservation_status
 datacatalog.ExtendReservationRequest
 ------------------------------------
 
-`[datacatalog.ExtendReservationRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L211>`_
+`[datacatalog.ExtendReservationRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L212>`_
 
+Request to extend reservation
 
 .. code-block:: json
 
@@ -525,8 +526,9 @@ owner_id
 datacatalog.ExtendReservationResponse
 -------------------------------------
 
-`[datacatalog.ExtendReservationResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L217>`_
+`[datacatalog.ExtendReservationResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L219>`_
 
+Response to extend reservation
 
 .. code-block:: json
 
@@ -540,8 +542,9 @@ datacatalog.ExtendReservationResponse
 datacatalog.ReleaseReservationRequest
 -------------------------------------
 
-`[datacatalog.ReleaseReservationRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L221>`_
+`[datacatalog.ReleaseReservationRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L224>`_
 
+Request to release reservation
 
 .. code-block:: json
 
@@ -573,8 +576,9 @@ owner_id
 datacatalog.ReleaseReservationResponse
 --------------------------------------
 
-`[datacatalog.ReleaseReservationResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L227>`_
+`[datacatalog.ReleaseReservationResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L231>`_
 
+Response to release reservation
 
 .. code-block:: json
 
@@ -588,7 +592,7 @@ datacatalog.ReleaseReservationResponse
 datacatalog.Dataset
 -------------------
 
-`[datacatalog.Dataset proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L234>`_
+`[datacatalog.Dataset proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L238>`_
 
 
 Dataset message. It is uniquely identified by DatasetID.
@@ -623,7 +627,7 @@ partitionKeys
 datacatalog.Partition
 ---------------------
 
-`[datacatalog.Partition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L243>`_
+`[datacatalog.Partition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L247>`_
 
 
 An artifact could have multiple partitions and each partition can have an arbitrary string key/value pair
@@ -652,7 +656,7 @@ value
 datacatalog.DatasetID
 ---------------------
 
-`[datacatalog.DatasetID proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L251>`_
+`[datacatalog.DatasetID proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L255>`_
 
 
 DatasetID message that is composed of several string fields.
@@ -699,7 +703,7 @@ UUID
 datacatalog.Artifact
 --------------------
 
-`[datacatalog.Artifact proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L262>`_
+`[datacatalog.Artifact proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L266>`_
 
 
 Artifact message. It is composed of several string fields.
@@ -758,7 +762,7 @@ created_at
 datacatalog.ArtifactData
 ------------------------
 
-`[datacatalog.ArtifactData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L275>`_
+`[datacatalog.ArtifactData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L279>`_
 
 
 ArtifactData that belongs to an artifact
@@ -787,7 +791,7 @@ value
 datacatalog.Tag
 ---------------
 
-`[datacatalog.Tag proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L284>`_
+`[datacatalog.Tag proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L288>`_
 
 
 Tag message that is unique to a Dataset. It is associated to a single artifact and
@@ -823,7 +827,7 @@ dataset
 datacatalog.Metadata
 --------------------
 
-`[datacatalog.Metadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L293>`_
+`[datacatalog.Metadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L297>`_
 
 
 Metadata representation for artifacts and datasets
@@ -846,7 +850,7 @@ key_map
 datacatalog.FilterExpression
 ----------------------------
 
-`[datacatalog.FilterExpression proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L298>`_
+`[datacatalog.FilterExpression proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L302>`_
 
 Filter expression that is composed of a combination of single filters
 
@@ -868,7 +872,7 @@ filters
 datacatalog.SinglePropertyFilter
 --------------------------------
 
-`[datacatalog.SinglePropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L303>`_
+`[datacatalog.SinglePropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L307>`_
 
 A single property to filter on.
 
@@ -925,7 +929,7 @@ operator
 Enum datacatalog.SinglePropertyFilter.ComparisonOperator
 --------------------------------------------------------
 
-`[datacatalog.SinglePropertyFilter.ComparisonOperator proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L312>`_
+`[datacatalog.SinglePropertyFilter.ComparisonOperator proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L316>`_
 
 as use-cases come up we can add more operators, ex: gte, like, not eq etc.
 
@@ -940,7 +944,7 @@ EQUALS
 datacatalog.ArtifactPropertyFilter
 ----------------------------------
 
-`[datacatalog.ArtifactPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L321>`_
+`[datacatalog.ArtifactPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L325>`_
 
 Artifact properties we can filter by
 
@@ -964,7 +968,7 @@ artifact_id
 datacatalog.TagPropertyFilter
 -----------------------------
 
-`[datacatalog.TagPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L329>`_
+`[datacatalog.TagPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L333>`_
 
 Tag properties we can filter by
 
@@ -987,7 +991,7 @@ tag_name
 datacatalog.PartitionPropertyFilter
 -----------------------------------
 
-`[datacatalog.PartitionPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L336>`_
+`[datacatalog.PartitionPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L340>`_
 
 Partition properties we can filter by
 
@@ -1010,7 +1014,7 @@ key_val
 datacatalog.KeyValuePair
 ------------------------
 
-`[datacatalog.KeyValuePair proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L342>`_
+`[datacatalog.KeyValuePair proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L346>`_
 
 
 .. code-block:: json
@@ -1037,7 +1041,7 @@ value
 datacatalog.DatasetPropertyFilter
 ---------------------------------
 
-`[datacatalog.DatasetPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L348>`_
+`[datacatalog.DatasetPropertyFilter proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L352>`_
 
 Dataset properties we can filter by
 
@@ -1089,7 +1093,7 @@ version
 datacatalog.PaginationOptions
 -----------------------------
 
-`[datacatalog.PaginationOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L358>`_
+`[datacatalog.PaginationOptions proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L362>`_
 
 Pagination options for making list requests
 
@@ -1132,7 +1136,7 @@ sortOrder
 Enum datacatalog.PaginationOptions.SortOrder
 --------------------------------------------
 
-`[datacatalog.PaginationOptions.SortOrder proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L372>`_
+`[datacatalog.PaginationOptions.SortOrder proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L376>`_
 
 
 .. _api_enum_value_datacatalog.PaginationOptions.SortOrder.DESCENDING:
@@ -1151,7 +1155,7 @@ ASCENDING
 Enum datacatalog.PaginationOptions.SortKey
 ------------------------------------------
 
-`[datacatalog.PaginationOptions.SortKey proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L377>`_
+`[datacatalog.PaginationOptions.SortKey proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/datacatalog/datacatalog.proto#L381>`_
 
 
 .. _api_enum_value_datacatalog.PaginationOptions.SortKey.CREATION_TIME:

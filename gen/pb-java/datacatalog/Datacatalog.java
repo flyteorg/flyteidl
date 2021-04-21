@@ -13046,6 +13046,10 @@ public final class Datacatalog {
         getOwnerIdBytes();
   }
   /**
+   * <pre>
+   * Request to extend reservation
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.ExtendReservationRequest}
    */
   public  static final class ExtendReservationRequest extends
@@ -13413,6 +13417,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Request to extend reservation
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.ExtendReservationRequest}
      */
     public static final class Builder extends
@@ -13893,6 +13901,10 @@ public final class Datacatalog {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Response to extend reservation
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.ExtendReservationResponse}
    */
   public  static final class ExtendReservationResponse extends
@@ -14107,6 +14119,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Response to extend reservation
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.ExtendReservationResponse}
      */
     public static final class Builder extends
@@ -14337,6 +14353,10 @@ public final class Datacatalog {
         getOwnerIdBytes();
   }
   /**
+   * <pre>
+   * Request to release reservation
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.ReleaseReservationRequest}
    */
   public  static final class ReleaseReservationRequest extends
@@ -14704,6 +14724,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Request to release reservation
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.ReleaseReservationRequest}
      */
     public static final class Builder extends
@@ -15184,6 +15208,10 @@ public final class Datacatalog {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Response to release reservation
+   * </pre>
+   *
    * Protobuf type {@code datacatalog.ReleaseReservationResponse}
    */
   public  static final class ReleaseReservationResponse extends
@@ -15398,6 +15426,10 @@ public final class Datacatalog {
       return builder;
     }
     /**
+     * <pre>
+     * Response to release reservation
+     * </pre>
+     *
      * Protobuf type {@code datacatalog.ReleaseReservationResponse}
      */
     public static final class Builder extends
