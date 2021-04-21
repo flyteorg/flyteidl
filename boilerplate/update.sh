@@ -10,7 +10,7 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 OUT="$(mktemp -d)"
-git clone git@github.com:lyft/boilerplate.git "${OUT}"
+git clone git@github.com:flyteorg/boilerplate.git "${OUT}"
 
 echo "Updating the update.sh script."
 cp "${OUT}/boilerplate/update.sh" "${DIR}/update.sh"
