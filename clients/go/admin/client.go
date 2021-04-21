@@ -134,14 +134,15 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
 		creds := credentials.NewClientTLSFromCert(nil, "")
 		opts = append(opts, grpc.WithTransportCredentials(creds))
-		if cfg.UseAuth {
-			logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-			jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, opts)
-			if err != nil {
-				return nil, err
-			}
-			opts = append(opts, jwtDialOption)
+	}
+
+	if cfg.UseAuth {
+		logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
+		jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, opts)
+		if err != nil {
+			return nil, err
 		}
+		opts = append(opts, jwtDialOption)
 	}
 
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
