@@ -684,7 +684,7 @@ func (m *TaskNodeMetadata) GetCatalogKey() *core.CatalogMetadata {
 	return nil
 }
 
-// For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+// For dynamic workflow nodes we capture information about the dynamic workflow definition that gets generated.
 type DynamicWorkflowNodeMetadata struct {
 	// id represents the unique identifier of the workflow.
 	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -785,7 +785,7 @@ type NodeExecutionGetDataResponse struct {
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
 	// Optional, full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
-	// In the case this task launched a dynamic workflow we capture its structure here.
+	// In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
 	DynamicWorkflow      *DynamicWorkflowNodeMetadata `protobuf:"bytes,16,opt,name=dynamic_workflow,json=dynamicWorkflow,proto3" json:"dynamic_workflow,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                     `json:"-"`
 	XXX_unrecognized     []byte                       `json:"-"`

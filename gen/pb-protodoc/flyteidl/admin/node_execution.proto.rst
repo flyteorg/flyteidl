@@ -415,7 +415,7 @@ flyteidl.admin.DynamicWorkflowNodeMetadata
 
 `[flyteidl.admin.DynamicWorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L156>`_
 
-For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+For dynamic workflow nodes we capture information about the dynamic workflow definition that gets generated.
 
 .. code-block:: json
 
@@ -507,7 +507,7 @@ full_outputs
 .. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.dynamic_workflow:
 
 dynamic_workflow
-  (:ref:`flyteidl.admin.DynamicWorkflowNodeMetadata <api_msg_flyteidl.admin.DynamicWorkflowNodeMetadata>`) In the case this task launched a dynamic workflow we capture its structure here.
+  (:ref:`flyteidl.admin.DynamicWorkflowNodeMetadata <api_msg_flyteidl.admin.DynamicWorkflowNodeMetadata>`) In the case this node yielded a task which launched a dynamic workflow, we return its structure here.
   
   
 

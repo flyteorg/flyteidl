@@ -5640,8 +5640,8 @@ definitions:
           \ a configured size threshold."
         $ref: "#/definitions/coreLiteralMap"
       dynamic_workflow:
-        description: "In the case this task launched a dynamic workflow we capture\
-          \ its structure here."
+        description: "In the case this node yielded a task which launched a dynamic\
+          \ workflow, we return its structure here."
         $ref: "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
     description: "Response structure for NodeExecutionGetDataRequest which contains\
       \ inputs and outputs for a node execution."
@@ -29137,7 +29137,7 @@ definitions:
         description: "Represents the compiled representation of the embedded dynamic\
           \ workflow."
         $ref: "#/definitions/coreCompiledWorkflowClosure"
-    description: "For dynamic workflow nodes we send information about the dynamic\
+    description: "For dynamic workflow nodes we capture information about the dynamic\
       \ workflow definition that gets generated."
     example:
       compiled_workflow:
