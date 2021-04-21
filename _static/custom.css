@@ -39,15 +39,6 @@ h6 {
   border: transparent;
 }
 
-.sphx-glr-thumbcontainer {
-    background-color: transparent;
-    border: transparent;
-}
-
-.sphx-glr-thumbcontainer:hover {
-    border: transparent;
-}
-
 div.sphx-glr-download a {
   color: white;
   background-color: #9d68e4cf;
