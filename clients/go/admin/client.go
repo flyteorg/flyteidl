@@ -7,8 +7,6 @@ import (
 	"strings"
 	"sync"
 
-	"google.golang.org/grpc/backoff"
-
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
@@ -54,11 +52,10 @@ func NewAuthClient(ctx context.Context, conn *grpc.ClientConn) service.AuthServi
 
 func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	opts := make([]grpc.DialOption, 0, 2)
-	backoffConfig := backoff.Config{
+	backoffConfig := grpc.BackoffConfig{
 		MaxDelay: cfg.MaxBackoffDelay.Duration,
 	}
-
-	opts = append(opts, grpc.WithConnectParams(grpc.ConnectParams{Backoff: backoffConfig}))
+	opts = append(opts, grpc.WithBackoffConfig(backoffConfig))
 
 	timeoutDialOption := grpc_retry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
 	maxRetriesOption := grpc_retry.WithMax(uint(cfg.MaxRetries))
