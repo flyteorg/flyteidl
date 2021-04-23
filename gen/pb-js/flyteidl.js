@@ -35652,41 +35652,41 @@ export const flyteidl = $root.flyteidl = (() => {
             return FlyteClientResponse;
         })();
 
-        service.AuthService = (function() {
+        service.AuthMetadataService = (function() {
 
             /**
-             * Constructs a new AuthService service.
+             * Constructs a new AuthMetadataService service.
              * @memberof flyteidl.service
-             * @classdesc Represents an AuthService
+             * @classdesc Represents an AuthMetadataService
              * @extends $protobuf.rpc.Service
              * @constructor
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
              * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
              * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
              */
-            function AuthService(rpcImpl, requestDelimited, responseDelimited) {
+            function AuthMetadataService(rpcImpl, requestDelimited, responseDelimited) {
                 $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
             }
 
-            (AuthService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AuthService;
+            (AuthMetadataService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = AuthMetadataService;
 
             /**
-             * Creates new AuthService service using the specified rpc implementation.
+             * Creates new AuthMetadataService service using the specified rpc implementation.
              * @function create
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.AuthMetadataService
              * @static
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
              * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
              * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-             * @returns {AuthService} RPC service. Useful where requests and/or responses are streamed.
+             * @returns {AuthMetadataService} RPC service. Useful where requests and/or responses are streamed.
              */
-            AuthService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+            AuthMetadataService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
                 return new this(rpcImpl, requestDelimited, responseDelimited);
             };
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthService#oAuth2Metadata}.
-             * @memberof flyteidl.service.AuthService
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#oAuth2Metadata}.
+             * @memberof flyteidl.service.AuthMetadataService
              * @typedef OAuth2MetadataCallback
              * @type {function}
              * @param {Error|null} error Error, if any
@@ -35696,21 +35696,21 @@ export const flyteidl = $root.flyteidl = (() => {
             /**
              * Calls OAuth2Metadata.
              * @function oAuth2Metadata
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
-             * @param {flyteidl.service.AuthService.OAuth2MetadataCallback} callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
+             * @param {flyteidl.service.AuthMetadataService.OAuth2MetadataCallback} callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AuthService.prototype.oAuth2Metadata = function oAuth2Metadata(request, callback) {
+            Object.defineProperty(AuthMetadataService.prototype.oAuth2Metadata = function oAuth2Metadata(request, callback) {
                 return this.rpcCall(oAuth2Metadata, $root.flyteidl.service.OAuth2MetadataRequest, $root.flyteidl.service.OAuth2MetadataResponse, request, callback);
             }, "name", { value: "OAuth2Metadata" });
 
             /**
              * Calls OAuth2Metadata.
              * @function oAuth2Metadata
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
              * @returns {Promise<flyteidl.service.OAuth2MetadataResponse>} Promise
@@ -35718,8 +35718,8 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthService#flyteClient}.
-             * @memberof flyteidl.service.AuthService
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#flyteClient}.
+             * @memberof flyteidl.service.AuthMetadataService
              * @typedef FlyteClientCallback
              * @type {function}
              * @param {Error|null} error Error, if any
@@ -35729,30 +35729,65 @@ export const flyteidl = $root.flyteidl = (() => {
             /**
              * Calls FlyteClient.
              * @function flyteClient
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
-             * @param {flyteidl.service.AuthService.FlyteClientCallback} callback Node-style callback called with the error, if any, and FlyteClientResponse
+             * @param {flyteidl.service.AuthMetadataService.FlyteClientCallback} callback Node-style callback called with the error, if any, and FlyteClientResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AuthService.prototype.flyteClient = function flyteClient(request, callback) {
+            Object.defineProperty(AuthMetadataService.prototype.flyteClient = function flyteClient(request, callback) {
                 return this.rpcCall(flyteClient, $root.flyteidl.service.FlyteClientRequest, $root.flyteidl.service.FlyteClientResponse, request, callback);
             }, "name", { value: "FlyteClient" });
 
             /**
              * Calls FlyteClient.
              * @function flyteClient
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
              * @returns {Promise<flyteidl.service.FlyteClientResponse>} Promise
              * @variation 2
              */
 
+            return AuthMetadataService;
+        })();
+
+        service.IdentityService = (function() {
+
             /**
-             * Callback as used by {@link flyteidl.service.AuthService#userInfo}.
-             * @memberof flyteidl.service.AuthService
+             * Constructs a new IdentityService service.
+             * @memberof flyteidl.service
+             * @classdesc Represents an IdentityService
+             * @extends $protobuf.rpc.Service
+             * @constructor
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             */
+            function IdentityService(rpcImpl, requestDelimited, responseDelimited) {
+                $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+            }
+
+            (IdentityService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = IdentityService;
+
+            /**
+             * Creates new IdentityService service using the specified rpc implementation.
+             * @function create
+             * @memberof flyteidl.service.IdentityService
+             * @static
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             * @returns {IdentityService} RPC service. Useful where requests and/or responses are streamed.
+             */
+            IdentityService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                return new this(rpcImpl, requestDelimited, responseDelimited);
+            };
+
+            /**
+             * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
+             * @memberof flyteidl.service.IdentityService
              * @typedef UserInfoCallback
              * @type {function}
              * @param {Error|null} error Error, if any
@@ -35762,28 +35797,28 @@ export const flyteidl = $root.flyteidl = (() => {
             /**
              * Calls UserInfo.
              * @function userInfo
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.IdentityService
              * @instance
              * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
-             * @param {flyteidl.service.AuthService.UserInfoCallback} callback Node-style callback called with the error, if any, and UserInfoResponse
+             * @param {flyteidl.service.IdentityService.UserInfoCallback} callback Node-style callback called with the error, if any, and UserInfoResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AuthService.prototype.userInfo = function userInfo(request, callback) {
+            Object.defineProperty(IdentityService.prototype.userInfo = function userInfo(request, callback) {
                 return this.rpcCall(userInfo, $root.flyteidl.service.UserInfoRequest, $root.flyteidl.service.UserInfoResponse, request, callback);
             }, "name", { value: "UserInfo" });
 
             /**
              * Calls UserInfo.
              * @function userInfo
-             * @memberof flyteidl.service.AuthService
+             * @memberof flyteidl.service.IdentityService
              * @instance
              * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
              * @returns {Promise<flyteidl.service.UserInfoResponse>} Promise
              * @variation 2
              */
 
-            return AuthService;
+            return IdentityService;
         })();
 
         return service;

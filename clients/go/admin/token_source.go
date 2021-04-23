@@ -27,10 +27,11 @@ func (ts CustomHeaderTokenSource) GetRequestMetadata(ctx context.Context, uri ..
 	}, nil
 }
 
-// Even though Admin is capable of serving authentication without SSL, we're going to require it here. That is, this module's
-// canonical Admin client will only do auth over SSL.
+// RequireTransportSecurity returns whether this credentials class requires TLS/SSL. OAuth uses Bearer tokens that are
+// susceptible to MITM (Man-In-The-Middle) attacks that are mitigated by TLS/SSL. We return false here to make it easier
+// to setup auth. However, in a production environment, TLS for Auth is a requirement.
 func (ts CustomHeaderTokenSource) RequireTransportSecurity() bool {
-	return true
+	return false
 }
 
 func NewCustomHeaderTokenSource(source oauth2.TokenSource, customHeader string) CustomHeaderTokenSource {

@@ -70,3 +70,7 @@ func GetConfig(ctx context.Context) *Config {
 	logger.Warnf(ctx, "Failed to retrieve config section [%v].", configSectionKey)
 	return nil
 }
+
+func SetConfig(cfg *Config) error {
+	return configSection.SetConfig(cfg)
+}

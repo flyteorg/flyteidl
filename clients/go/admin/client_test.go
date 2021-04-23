@@ -7,6 +7,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/flyteorg/flytestdlib/logger"
+
 	"github.com/flyteorg/flytestdlib/config"
 
 	"github.com/stretchr/testify/assert"
@@ -18,7 +20,7 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 	t.Run("legal", func(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
-		assert.NotNil(t, InitializeAdminClient(ctx, Config{
+		assert.NotNil(t, InitializeAdminClient(ctx, &Config{
 			Endpoint: config.URL{URL: *u},
 		}))
 	})
@@ -30,9 +32,8 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 	})
 
 	t.Run("illegal", func(t *testing.T) {
-		adminConnection = nil
 		once = sync.Once{}
-		assert.NotNil(t, InitializeAdminClient(ctx, Config{}))
+		assert.NotNil(t, InitializeAdminClient(ctx, &Config{}))
 	})
 }
 
@@ -44,13 +45,13 @@ func TestInitializeMockAdminClient(t *testing.T) {
 func TestInitializeMockClientset(t *testing.T) {
 	c := InitializeMockClientset()
 	assert.NotNil(t, c)
-	assert.NotNil(t, c.AdminServiceClient)
-	assert.NotNil(t, c.AuthServiceClient)
+	assert.NotNil(t, c.adminServiceClient)
+	assert.NotNil(t, c.authMetadataServiceClient)
 }
 
 func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	u, _ := url.Parse("localhost:8089")
-	adminServiceConfig := Config{
+	adminServiceConfig := &Config{
 		Endpoint:              config.URL{URL: *u},
 		UseInsecureConnection: true,
 		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
@@ -65,18 +66,46 @@ func TestInitializeClients(t *testing.T) {
 	t.Run("legal", func(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
-		clientSet, err := InitializeClients(ctx, Config{Endpoint: config.URL{URL: *u}})
+		clientSet, err := InitializeClients(ctx, &Config{Endpoint: config.URL{URL: *u}})
+		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AdminClient())
-		assert.NotNil(t, clientSet.AuthClient())
-		assert.Nil(t, err)
+		assert.NotNil(t, clientSet.AuthMetadataClient())
+		assert.NotNil(t, clientSet.IdentityClient())
 	})
 
 	t.Run("legal-from-config", func(t *testing.T) {
 		clientSet, err := InitializeClientsFromConfig(ctx)
 		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
-		assert.NotNil(t, clientSet.AuthClient())
+		assert.NotNil(t, clientSet.AuthMetadataClient())
 		assert.NotNil(t, clientSet.AdminClient())
 	})
+}
+
+func ExampleInitializeClients() {
+	// Create an AuthClient
+	ctx := context.Background()
+	cfg := GetConfig(ctx)
+	client, err := InitializeAuthMetadataClient(ctx, cfg)
+	if err != nil {
+		logger.Fatalf(ctx, "failed to initialize auth metadata client. Error: %v", err)
+	}
+
+	// To use 2-legged (aka service) OAuth2:
+	opts, err := NewServiceAuthDialOptions(ctx, cfg, client)
+	if err != nil {
+		logger.Fatalf(ctx, "failed to build service auth dial option. Error: %v", err)
+	}
+
+	// Initialize ClientSet from config
+	clientSet, err := InitializeClients(ctx, cfg, opts...)
+	if err != nil {
+		logger.Fatalf(ctx, "failed to innitialize clientset from config. Error: %v", err)
+	}
+
+	// Access and use the desired client:
+	_ = clientSet.AdminClient()
+	_ = clientSet.AuthMetadataClient()
+	_ = clientSet.IdentityClient()
 }

@@ -19,144 +19,163 @@
 namespace flyteidl {
 namespace service {
 
-static const char* AuthService_method_names[] = {
-  "/flyteidl.service.AuthService/OAuth2Metadata",
-  "/flyteidl.service.AuthService/FlyteClient",
-  "/flyteidl.service.AuthService/UserInfo",
+static const char* AuthMetadataService_method_names[] = {
+  "/flyteidl.service.AuthMetadataService/OAuth2Metadata",
+  "/flyteidl.service.AuthMetadataService/FlyteClient",
 };
 
-std::unique_ptr< AuthService::Stub> AuthService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< AuthMetadataService::Stub> AuthMetadataService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< AuthService::Stub> stub(new AuthService::Stub(channel));
+  std::unique_ptr< AuthMetadataService::Stub> stub(new AuthMetadataService::Stub(channel));
   return stub;
 }
 
-AuthService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_OAuth2Metadata_(AuthService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FlyteClient_(AuthService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UserInfo_(AuthService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+AuthMetadataService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_OAuth2Metadata_(AuthMetadataService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FlyteClient_(AuthMetadataService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status AuthService::Stub::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) {
+::grpc::Status AuthMetadataService::Stub::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_OAuth2Metadata_, context, request, response);
 }
 
-void AuthService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)> f) {
+void AuthMetadataService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_OAuth2Metadata_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)> f) {
+void AuthMetadataService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_OAuth2Metadata_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AuthMetadataService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_OAuth2Metadata_, context, request, response, reactor);
 }
 
-void AuthService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AuthMetadataService::Stub::experimental_async::OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_OAuth2Metadata_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AuthService::Stub::AsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AuthMetadataService::Stub::AsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::OAuth2MetadataResponse>::Create(channel_.get(), cq, rpcmethod_OAuth2Metadata_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AuthService::Stub::PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AuthMetadataService::Stub::PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::OAuth2MetadataResponse>::Create(channel_.get(), cq, rpcmethod_OAuth2Metadata_, context, request, false);
 }
 
-::grpc::Status AuthService::Stub::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::flyteidl::service::FlyteClientResponse* response) {
+::grpc::Status AuthMetadataService::Stub::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::flyteidl::service::FlyteClientResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_FlyteClient_, context, request, response);
 }
 
-void AuthService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)> f) {
+void AuthMetadataService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FlyteClient_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)> f) {
+void AuthMetadataService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FlyteClient_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AuthMetadataService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FlyteClient_, context, request, response, reactor);
 }
 
-void AuthService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AuthMetadataService::Stub::experimental_async::FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FlyteClient_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AuthService::Stub::AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AuthMetadataService::Stub::AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::FlyteClientResponse>::Create(channel_.get(), cq, rpcmethod_FlyteClient_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AuthService::Stub::PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AuthMetadataService::Stub::PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::FlyteClientResponse>::Create(channel_.get(), cq, rpcmethod_FlyteClient_, context, request, false);
 }
 
-::grpc::Status AuthService::Stub::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) {
+AuthMetadataService::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AuthMetadataService_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AuthMetadataService::Service, ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>(
+          std::mem_fn(&AuthMetadataService::Service::OAuth2Metadata), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AuthMetadataService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AuthMetadataService::Service, ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>(
+          std::mem_fn(&AuthMetadataService::Service::FlyteClient), this)));
+}
+
+AuthMetadataService::Service::~Service() {
+}
+
+::grpc::Status AuthMetadataService::Service::OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AuthMetadataService::Service::FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* IdentityService_method_names[] = {
+  "/flyteidl.service.IdentityService/UserInfo",
+};
+
+std::unique_ptr< IdentityService::Stub> IdentityService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< IdentityService::Stub> stub(new IdentityService::Stub(channel));
+  return stub;
+}
+
+IdentityService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_UserInfo_(IdentityService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status IdentityService::Stub::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UserInfo_, context, request, response);
 }
 
-void AuthService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)> f) {
+void IdentityService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UserInfo_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)> f) {
+void IdentityService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UserInfo_, context, request, response, std::move(f));
 }
 
-void AuthService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void IdentityService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UserInfo_, context, request, response, reactor);
 }
 
-void AuthService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void IdentityService::Stub::experimental_async::UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UserInfo_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* AuthService::Stub::AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* IdentityService::Stub::AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::UserInfoResponse>::Create(channel_.get(), cq, rpcmethod_UserInfo_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* AuthService::Stub::PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* IdentityService::Stub::PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::UserInfoResponse>::Create(channel_.get(), cq, rpcmethod_UserInfo_, context, request, false);
 }
 
-AuthService::Service::Service() {
+IdentityService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AuthService_method_names[0],
+      IdentityService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AuthService::Service, ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>(
-          std::mem_fn(&AuthService::Service::OAuth2Metadata), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AuthService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AuthService::Service, ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>(
-          std::mem_fn(&AuthService::Service::FlyteClient), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AuthService_method_names[2],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AuthService::Service, ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>(
-          std::mem_fn(&AuthService::Service::UserInfo), this)));
+      new ::grpc::internal::RpcMethodHandler< IdentityService::Service, ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>(
+          std::mem_fn(&IdentityService::Service::UserInfo), this)));
 }
 
-AuthService::Service::~Service() {
+IdentityService::Service::~Service() {
 }
 
-::grpc::Status AuthService::Service::OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status AuthService::Service::FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status AuthService::Service::UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) {
+::grpc::Status IdentityService::Service::UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) {
   (void) context;
   (void) request;
   (void) response;

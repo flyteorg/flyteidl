@@ -6614,23 +6614,24 @@ public final class Auth {
       "quest\"r\n\023FlyteClientResponse\022\021\n\tclient_i" +
       "d\030\001 \001(\t\022\024\n\014redirect_uri\030\002 \001(\t\022\016\n\006scopes\030" +
       "\003 \003(\t\022\"\n\032authorization_metadata_key\030\004 \001(" +
-      "\t2\311\004\n\013AuthService\022\362\001\n\016OAuth2Metadata\022\'.f" +
-      "lyteidl.service.OAuth2MetadataRequest\032(." +
-      "flyteidl.service.OAuth2MetadataResponse\"" +
-      "\214\001\202\323\344\223\002)\022\'/.well-known/oauth-authorizati" +
-      "on-server\222AZ\032XRetrieves OAuth2 authoriza" +
-      "tion server metadata. This endpoint is a" +
-      "nonymously accessible.\022\314\001\n\013FlyteClient\022$" +
-      ".flyteidl.service.FlyteClientRequest\032%.f" +
-      "lyteidl.service.FlyteClientResponse\"p\202\323\344" +
-      "\223\002\031\022\027/config/v1/flyte_client\222AN\032LRetriev" +
-      "es public flyte client info. This endpoi" +
-      "nt is anonymously accessible.\022v\n\010UserInf" +
-      "o\022!.flyteidl.service.UserInfoRequest\032\".f" +
-      "lyteidl.service.UserInfoResponse\"#\202\323\344\223\002\005" +
-      "\022\003/me\222A\025\032\023Retrieves user infoB9Z7github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/serviceb\006proto3"
+      "\t2\331\003\n\023AuthMetadataService\022\362\001\n\016OAuth2Meta" +
+      "data\022\'.flyteidl.service.OAuth2MetadataRe" +
+      "quest\032(.flyteidl.service.OAuth2MetadataR" +
+      "esponse\"\214\001\202\323\344\223\002)\022\'/.well-known/oauth-aut" +
+      "horization-server\222AZ\032XRetrieves OAuth2 a" +
+      "uthorization server metadata. This endpo" +
+      "int is anonymously accessible.\022\314\001\n\013Flyte" +
+      "Client\022$.flyteidl.service.FlyteClientReq" +
+      "uest\032%.flyteidl.service.FlyteClientRespo" +
+      "nse\"p\202\323\344\223\002\031\022\027/config/v1/flyte_client\222AN\032" +
+      "LRetrieves public flyte client info. Thi" +
+      "s endpoint is anonymously accessible.2\211\001" +
+      "\n\017IdentityService\022v\n\010UserInfo\022!.flyteidl" +
+      ".service.UserInfoRequest\032\".flyteidl.serv" +
+      "ice.UserInfoResponse\"#\202\323\344\223\002\005\022\003/me\222A\025\032\023Re" +
+      "trieves user infoB9Z7github.com/flyteorg" +
+      "/flyteidl/gen/pb-go/flyteidl/serviceb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

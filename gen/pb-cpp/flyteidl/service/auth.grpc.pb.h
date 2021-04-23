@@ -42,10 +42,11 @@ namespace service {
 
 // The following defines an RPC service that is also served over HTTP via grpc-gateway.
 // Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
-class AuthService final {
+// RPCs defined in this service must be anonymously accessible.
+class AuthMetadataService final {
  public:
   static constexpr char const* service_full_name() {
-    return "flyteidl.service.AuthService";
+    return "flyteidl.service.AuthMetadataService";
   }
   class StubInterface {
    public:
@@ -67,14 +68,6 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>> PrepareAsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>>(PrepareAsyncFlyteClientRaw(context, request, cq));
     }
-    // Retrieves user information about the currently logged in user.
-    virtual ::grpc::Status UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>> AsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>>(AsyncUserInfoRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>> PrepareAsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>>(PrepareAsyncUserInfoRaw(context, request, cq));
-    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -89,11 +82,6 @@ class AuthService final {
       virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      // Retrieves user information about the currently logged in user.
-      virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -101,8 +89,6 @@ class AuthService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>* AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>* PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>* AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>* PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -121,13 +107,6 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>> PrepareAsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>>(PrepareAsyncFlyteClientRaw(context, request, cq));
     }
-    ::grpc::Status UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>> AsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>>(AsyncUserInfoRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>> PrepareAsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>>(PrepareAsyncUserInfoRaw(context, request, cq));
-    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -139,10 +118,6 @@ class AuthService final {
       void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) override;
       void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -158,11 +133,8 @@ class AuthService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_OAuth2Metadata_;
     const ::grpc::internal::RpcMethod rpcmethod_FlyteClient_;
-    const ::grpc::internal::RpcMethod rpcmethod_UserInfo_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -175,8 +147,6 @@ class AuthService final {
     // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
     // requests.
     virtual ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response);
-    // Retrieves user information about the currently logged in user.
-    virtual ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_OAuth2Metadata : public BaseClass {
@@ -218,27 +188,7 @@ class AuthService final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  template <class BaseClass>
-  class WithAsyncMethod_UserInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_UserInfo() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_UserInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestUserInfo(::grpc::ServerContext* context, ::flyteidl::service::UserInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::UserInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_OAuth2Metadata<WithAsyncMethod_FlyteClient<WithAsyncMethod_UserInfo<Service > > > AsyncService;
+  typedef WithAsyncMethod_OAuth2Metadata<WithAsyncMethod_FlyteClient<Service > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_OAuth2Metadata : public BaseClass {
    private:
@@ -301,38 +251,7 @@ class AuthService final {
     }
     virtual void FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_UserInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithCallbackMethod_UserInfo() {
-      ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>(
-          [this](::grpc::ServerContext* context,
-                 const ::flyteidl::service::UserInfoRequest* request,
-                 ::flyteidl::service::UserInfoResponse* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->UserInfo(context, request, response, controller);
-                 }));
-    }
-    void SetMessageAllocatorFor_UserInfo(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>*>(
-          ::grpc::Service::experimental().GetHandler(2))
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_UserInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  typedef ExperimentalWithCallbackMethod_OAuth2Metadata<ExperimentalWithCallbackMethod_FlyteClient<ExperimentalWithCallbackMethod_UserInfo<Service > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_OAuth2Metadata<ExperimentalWithCallbackMethod_FlyteClient<Service > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_OAuth2Metadata : public BaseClass {
    private:
@@ -363,23 +282,6 @@ class AuthService final {
     }
     // disable synchronous version of this method
     ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_UserInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_UserInfo() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_UserInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -422,26 +324,6 @@ class AuthService final {
     }
     void RequestFlyteClient(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_UserInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_UserInfo() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_UserInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestUserInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -495,31 +377,6 @@ class AuthService final {
     virtual void FlyteClient(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_UserInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    ExperimentalWithRawCallbackMethod_UserInfo() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(2,
-        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::ServerContext* context,
-                 const ::grpc::ByteBuffer* request,
-                 ::grpc::ByteBuffer* response,
-                 ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->UserInfo(context, request, response, controller);
-                 }));
-    }
-    ~ExperimentalWithRawCallbackMethod_UserInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual void UserInfo(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_OAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -559,13 +416,205 @@ class AuthService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedFlyteClient(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::FlyteClientRequest,::flyteidl::service::FlyteClientResponse>* server_unary_streamer) = 0;
   };
+  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<Service > > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<Service > > StreamedService;
+};
+
+// IdentityService defines an RPC Service that interacts with user/app identities.
+class IdentityService final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "flyteidl.service.IdentityService";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    // Retrieves user information about the currently logged in user.
+    virtual ::grpc::Status UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>> AsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>>(AsyncUserInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>> PrepareAsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>>(PrepareAsyncUserInfoRaw(context, request, cq));
+    }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      // Retrieves user information about the currently logged in user.
+      virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+    };
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>* AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::UserInfoResponse>* PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    ::grpc::Status UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::flyteidl::service::UserInfoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>> AsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>>(AsyncUserInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>> PrepareAsyncUserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>>(PrepareAsyncUserInfoRaw(context, request, cq));
+    }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      void UserInfo(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UserInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* AsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::UserInfoResponse>* PrepareAsyncUserInfoRaw(::grpc::ClientContext* context, const ::flyteidl::service::UserInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_UserInfo_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    // Retrieves user information about the currently logged in user.
+    virtual ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UserInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UserInfo() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_UserInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUserInfo(::grpc::ServerContext* context, ::flyteidl::service::UserInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::UserInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_UserInfo<Service > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_UserInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_UserInfo() {
+      ::grpc::Service::experimental().MarkMethodCallback(0,
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::flyteidl::service::UserInfoRequest* request,
+                 ::flyteidl::service::UserInfoResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->UserInfo(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_UserInfo(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>*>(
+          ::grpc::Service::experimental().GetHandler(0))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_UserInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  typedef ExperimentalWithCallbackMethod_UserInfo<Service > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_UserInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UserInfo() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_UserInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UserInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UserInfo() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_UserInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUserInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_UserInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_UserInfo() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(0,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->UserInfo(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_UserInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UserInfo(::grpc::ServerContext* context, const ::flyteidl::service::UserInfoRequest* request, ::flyteidl::service::UserInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void UserInfo(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UserInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UserInfo() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::UserInfoRequest, ::flyteidl::service::UserInfoResponse>(std::bind(&WithStreamedUnaryMethod_UserInfo<BaseClass>::StreamedUserInfo, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UserInfo() override {
@@ -579,9 +628,9 @@ class AuthService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUserInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::UserInfoRequest,::flyteidl::service::UserInfoResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<WithStreamedUnaryMethod_UserInfo<Service > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_UserInfo<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<WithStreamedUnaryMethod_UserInfo<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_UserInfo<Service > StreamedService;
 };
 
 }  // namespace service

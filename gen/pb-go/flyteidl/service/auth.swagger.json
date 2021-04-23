@@ -29,7 +29,7 @@
           }
         },
         "tags": [
-          "AuthService"
+          "AuthMetadataService"
         ]
       }
     },
@@ -47,13 +47,13 @@
           }
         },
         "tags": [
-          "AuthService"
+          "AuthMetadataService"
         ]
       }
     },
     "/me": {
       "get": {
-        "summary": "Retrieves user information about the currently logged in user.",
+        "summary": "Anonymously accessible. Retrieves local or external oauth authorization server metadata.",
         "description": "Retrieves user info",
         "operationId": "UserInfo",
         "responses": {
@@ -65,7 +65,7 @@
           }
         },
         "tags": [
-          "AuthService"
+          "IdentityService"
         ]
       }
     }

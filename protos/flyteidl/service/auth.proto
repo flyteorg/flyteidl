@@ -100,7 +100,8 @@ message FlyteClientResponse {
 
 // The following defines an RPC service that is also served over HTTP via grpc-gateway.
 // Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
-service AuthService {
+// RPCs defined in this service must be anonymously accessible.
+service AuthMetadataService {
   // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
   rpc OAuth2Metadata (OAuth2MetadataRequest) returns (OAuth2MetadataResponse) {
     option (google.api.http) = {
@@ -121,7 +122,10 @@ service AuthService {
       description: "Retrieves public flyte client info. This endpoint is anonymously accessible."
     };
   }
+}
 
+// IdentityService defines an RPC Service that interacts with user/app identities.
+service IdentityService {
   // Retrieves user information about the currently logged in user.
   rpc UserInfo (UserInfoRequest) returns (UserInfoResponse) {
     option (google.api.http) = {

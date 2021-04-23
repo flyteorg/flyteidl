@@ -4,9 +4,10 @@ import grpc
 from flyteidl.service import auth_pb2 as flyteidl_dot_service_dot_auth__pb2
 
 
-class AuthServiceStub(object):
+class AuthMetadataServiceStub(object):
   """The following defines an RPC service that is also served over HTTP via grpc-gateway.
   Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
+  RPCs defined in this service must be anonymously accessible.
   """
 
   def __init__(self, channel):
@@ -16,25 +17,21 @@ class AuthServiceStub(object):
       channel: A grpc.Channel.
     """
     self.OAuth2Metadata = channel.unary_unary(
-        '/flyteidl.service.AuthService/OAuth2Metadata',
+        '/flyteidl.service.AuthMetadataService/OAuth2Metadata',
         request_serializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataResponse.FromString,
         )
     self.FlyteClient = channel.unary_unary(
-        '/flyteidl.service.AuthService/FlyteClient',
+        '/flyteidl.service.AuthMetadataService/FlyteClient',
         request_serializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientResponse.FromString,
         )
-    self.UserInfo = channel.unary_unary(
-        '/flyteidl.service.AuthService/UserInfo',
-        request_serializer=flyteidl_dot_service_dot_auth__pb2.UserInfoRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_service_dot_auth__pb2.UserInfoResponse.FromString,
-        )
 
 
-class AuthServiceServicer(object):
+class AuthMetadataServiceServicer(object):
   """The following defines an RPC service that is also served over HTTP via grpc-gateway.
   Standard response codes for both are defined here: https://github.com/grpc-ecosystem/grpc-gateway/blob/master/runtime/errors.go
+  RPCs defined in this service must be anonymously accessible.
   """
 
   def OAuth2Metadata(self, request, context):
@@ -52,15 +49,8 @@ class AuthServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UserInfo(self, request, context):
-    """Retrieves user information about the currently logged in user.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
-
-def add_AuthServiceServicer_to_server(servicer, server):
+def add_AuthMetadataServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'OAuth2Metadata': grpc.unary_unary_rpc_method_handler(
           servicer.OAuth2Metadata,
@@ -72,6 +62,43 @@ def add_AuthServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientRequest.FromString,
           response_serializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientResponse.SerializeToString,
       ),
+  }
+  generic_handler = grpc.method_handlers_generic_handler(
+      'flyteidl.service.AuthMetadataService', rpc_method_handlers)
+  server.add_generic_rpc_handlers((generic_handler,))
+
+
+class IdentityServiceStub(object):
+  """IdentityService defines an RPC Service that interacts with user/app identities.
+  """
+
+  def __init__(self, channel):
+    """Constructor.
+
+    Args:
+      channel: A grpc.Channel.
+    """
+    self.UserInfo = channel.unary_unary(
+        '/flyteidl.service.IdentityService/UserInfo',
+        request_serializer=flyteidl_dot_service_dot_auth__pb2.UserInfoRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_service_dot_auth__pb2.UserInfoResponse.FromString,
+        )
+
+
+class IdentityServiceServicer(object):
+  """IdentityService defines an RPC Service that interacts with user/app identities.
+  """
+
+  def UserInfo(self, request, context):
+    """Retrieves user information about the currently logged in user.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+
+def add_IdentityServiceServicer_to_server(servicer, server):
+  rpc_method_handlers = {
       'UserInfo': grpc.unary_unary_rpc_method_handler(
           servicer.UserInfo,
           request_deserializer=flyteidl_dot_service_dot_auth__pb2.UserInfoRequest.FromString,
@@ -79,5 +106,5 @@ def add_AuthServiceServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'flyteidl.service.AuthService', rpc_method_handlers)
+      'flyteidl.service.IdentityService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

@@ -22,35 +22,41 @@ import (
 var (
 	once            = sync.Once{}
 	adminConnection *grpc.ClientConn
+
+	// A new connection just for auth metadata service since it will be used to retrieve auth
+	// related information that's needed to initialize the Clientset.
+	onceAuthMetadata       = sync.Once{}
+	authMetadataConnection *grpc.ClientConn
 )
 
 // Clientset contains the clients exposed to communicate with various admin services.
 type Clientset struct {
-	AdminServiceClient service.AdminServiceClient
-	AuthServiceClient  service.AuthServiceClient
+	adminServiceClient        service.AdminServiceClient
+	authMetadataServiceClient service.AuthMetadataServiceClient
+	identityServiceClient     service.IdentityServiceClient
 }
 
 // AdminClient retrieves the AdminServiceClient
 func (c Clientset) AdminClient() service.AdminServiceClient {
-	return c.AdminServiceClient
+	return c.adminServiceClient
 }
 
 // AuthClient retrieves the AuthServiceClient
-func (c Clientset) AuthClient() service.AuthServiceClient {
-	return c.AuthServiceClient
+func (c Clientset) AuthMetadataClient() service.AuthMetadataServiceClient {
+	return c.authMetadataServiceClient
+}
+
+func (c Clientset) IdentityClient() service.IdentityServiceClient {
+	return c.identityServiceClient
 }
 
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
+
 	return service.NewAdminServiceClient(conn)
 }
 
-func NewAuthClient(ctx context.Context, conn *grpc.ClientConn) service.AuthServiceClient {
-	logger.Infof(ctx, "Initialized Auth client")
-	return service.NewAuthServiceClient(conn)
-}
-
-func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
+func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 	opts := make([]grpc.DialOption, 0, 2)
 	backoffConfig := grpc.BackoffConfig{
 		MaxDelay: cfg.MaxBackoffDelay.Duration,
@@ -76,16 +82,10 @@ func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin.
 // It will first attempt to retrieve the token endpoint by making a metadata call. If that fails, but the token endpoint
 // is set in the config, that will be used instead.
-func getAuthenticationDialOption(ctx context.Context, cfg Config, dialOpts []grpc.DialOption) (grpc.DialOption, error) {
-	conn, err := grpc.Dial(cfg.Endpoint.String(), dialOpts...)
-	if err != nil {
-		return nil, err
-	}
-
-	tempClient := NewAuthClient(ctx, conn)
+func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
 	tokenURL := cfg.TokenURL
 	if len(tokenURL) == 0 {
-		metadata, err := tempClient.OAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
+		metadata, err := authClient.OAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
 		if err != nil {
 			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
 		}
@@ -93,7 +93,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config, dialOpts []grp
 		tokenURL = metadata.TokenEndpoint
 	}
 
-	clientMetadata, err := tempClient.FlyteClient(ctx, &service.FlyteClientRequest{})
+	clientMetadata, err := authClient.FlyteClient(ctx, &service.FlyteClientRequest{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
@@ -117,13 +117,44 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config, dialOpts []grp
 		TokenURL:     tokenURL,
 		Scopes:       scopes,
 	}
+
 	tSource := ccConfig.TokenSource(ctx)
 	oauthTokenSource := NewCustomHeaderTokenSource(tSource, clientMetadata.AuthorizationMetadataKey)
+	grpc.PerRPCCredentials(oauthTokenSource)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
-func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
-	opts := make([]grpc.DialOption, 0, 10)
+// InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
+func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client service.AuthMetadataServiceClient, err error) {
+	onceAuthMetadata.Do(func() {
+		authMetadataConnection, err = NewAdminConnection(ctx, cfg)
+	})
+
+	if err != nil {
+		return nil, fmt.Errorf("failed to initialize admin connection. Error: %w", err)
+	}
+
+	return service.NewAuthMetadataServiceClient(authMetadataConnection), nil
+}
+
+func NewServiceAuthDialOptions(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) ([]grpc.DialOption, error) {
+	if cfg.UseAuth {
+		logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
+		opt, err := getAuthenticationDialOption(ctx, cfg, authClient)
+		if err != nil {
+			return nil, err
+		}
+
+		return []grpc.DialOption{opt}, nil
+	}
+
+	return nil, nil
+}
+
+func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
+	if opts == nil {
+		opts = make([]grpc.DialOption, 0, 10)
+	}
 
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
@@ -133,63 +164,56 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 	}
 
-	if cfg.UseAuth {
-		logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-		jwtDialOption, err := getAuthenticationDialOption(ctx, cfg, append(opts, GetAdditionalAdminClientConfigOptions(cfg)...))
-		if err != nil {
-			return nil, err
-		}
-
-		opts = append(opts, jwtDialOption)
-	}
-
 	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)
 
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
 // Create an AdminClient with a shared Admin connection for the process
-func InitializeAdminClient(ctx context.Context, cfg Config) service.AdminServiceClient {
-	once.Do(func() {
-		var err error
-		adminConnection, err = NewAdminConnection(ctx, cfg)
-		if err != nil {
-			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
-		}
-	})
+func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOption) service.AdminServiceClient {
+	set, err := InitializeClients(ctx, cfg, opts...)
+	if err != nil {
+		logger.Panicf(ctx, "Failed to initialize client. Error: %v", err)
+		return nil
+	}
 
-	return NewAdminClient(ctx, adminConnection)
+	return set.AdminClient()
 }
 
-// Create an AdminClient and AuthServiceClient with a shared Admin connection for the process
-func InitializeClients(ctx context.Context, cfg Config) (*Clientset, error) {
+// InitializeClients creates an AdminClient and AuthServiceClient with a shared Admin connection for the process.
+// Note that if called with different cfg/dialoptions, it will not
+func InitializeClients(ctx context.Context, cfg *Config, opts ...grpc.DialOption) (*Clientset, error) {
 	once.Do(func() {
 		var err error
-		adminConnection, err = NewAdminConnection(ctx, cfg)
+		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
 	})
+
 	var cs Clientset
-	cs.AdminServiceClient = NewAdminClient(ctx, adminConnection)
-	cs.AuthServiceClient = NewAuthClient(ctx, adminConnection)
+	cs.adminServiceClient = NewAdminClient(ctx, adminConnection)
+	cs.authMetadataServiceClient = service.NewAuthMetadataServiceClient(adminConnection)
+	cs.identityServiceClient = service.NewIdentityServiceClient(adminConnection)
 	return &cs, nil
 }
 
-func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceClient, error) {
+func InitializeAdminClientFromConfig(ctx context.Context, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
 	cfg := GetConfig(ctx)
 	if cfg == nil {
 		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
 	}
-	return InitializeAdminClient(ctx, *cfg), nil
+
+	return InitializeAdminClient(ctx, cfg, opts...), nil
 }
 
-func InitializeClientsFromConfig(ctx context.Context) (*Clientset, error) {
+func InitializeClientsFromConfig(ctx context.Context, opts ...grpc.DialOption) (*Clientset, error) {
 	cfg := GetConfig(ctx)
 	if cfg == nil {
 		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
 	}
-	return InitializeClients(ctx, *cfg)
+
+	return InitializeClients(ctx, cfg, opts...)
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {
@@ -199,5 +223,9 @@ func InitializeMockAdminClient() service.AdminServiceClient {
 
 func InitializeMockClientset() *Clientset {
 	logger.Infof(context.TODO(), "Initialized Mock Clientset")
-	return &Clientset{AdminServiceClient: &mocks.AdminServiceClient{}, AuthServiceClient: &mocks.AuthServiceClient{}}
+	return &Clientset{
+		adminServiceClient:        &mocks.AdminServiceClient{},
+		authMetadataServiceClient: &mocks.AuthMetadataServiceClient{},
+		identityServiceClient:     &mocks.IdentityServiceClient{},
+	}
 }

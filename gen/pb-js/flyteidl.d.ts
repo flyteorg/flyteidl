@@ -15337,11 +15337,11 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Represents an AuthService */
-        class AuthService extends $protobuf.rpc.Service {
+        /** Represents an AuthMetadataService */
+        class AuthMetadataService extends $protobuf.rpc.Service {
 
             /**
-             * Constructs a new AuthService service.
+             * Constructs a new AuthMetadataService service.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
@@ -15349,20 +15349,20 @@ export namespace flyteidl {
             constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
             /**
-             * Creates new AuthService service using the specified rpc implementation.
+             * Creates new AuthMetadataService service using the specified rpc implementation.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
              * @returns RPC service. Useful where requests and/or responses are streamed.
              */
-            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthService;
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthMetadataService;
 
             /**
              * Calls OAuth2Metadata.
              * @param request OAuth2MetadataRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
              */
-            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest, callback: flyteidl.service.AuthService.OAuth2MetadataCallback): void;
+            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest, callback: flyteidl.service.AuthMetadataService.OAuth2MetadataCallback): void;
 
             /**
              * Calls OAuth2Metadata.
@@ -15376,7 +15376,7 @@ export namespace flyteidl {
              * @param request FlyteClientRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and FlyteClientResponse
              */
-            public flyteClient(request: flyteidl.service.IFlyteClientRequest, callback: flyteidl.service.AuthService.FlyteClientCallback): void;
+            public flyteClient(request: flyteidl.service.IFlyteClientRequest, callback: flyteidl.service.AuthMetadataService.FlyteClientCallback): void;
 
             /**
              * Calls FlyteClient.
@@ -15384,13 +15384,51 @@ export namespace flyteidl {
              * @returns Promise
              */
             public flyteClient(request: flyteidl.service.IFlyteClientRequest): Promise<flyteidl.service.FlyteClientResponse>;
+        }
+
+        namespace AuthMetadataService {
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#oAuth2Metadata}.
+             * @param error Error, if any
+             * @param [response] OAuth2MetadataResponse
+             */
+            type OAuth2MetadataCallback = (error: (Error|null), response?: flyteidl.service.OAuth2MetadataResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#flyteClient}.
+             * @param error Error, if any
+             * @param [response] FlyteClientResponse
+             */
+            type FlyteClientCallback = (error: (Error|null), response?: flyteidl.service.FlyteClientResponse) => void;
+        }
+
+        /** Represents an IdentityService */
+        class IdentityService extends $protobuf.rpc.Service {
+
+            /**
+             * Constructs a new IdentityService service.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             */
+            constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+            /**
+             * Creates new IdentityService service using the specified rpc implementation.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             * @returns RPC service. Useful where requests and/or responses are streamed.
+             */
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): IdentityService;
 
             /**
              * Calls UserInfo.
              * @param request UserInfoRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and UserInfoResponse
              */
-            public userInfo(request: flyteidl.service.IUserInfoRequest, callback: flyteidl.service.AuthService.UserInfoCallback): void;
+            public userInfo(request: flyteidl.service.IUserInfoRequest, callback: flyteidl.service.IdentityService.UserInfoCallback): void;
 
             /**
              * Calls UserInfo.
@@ -15400,24 +15438,10 @@ export namespace flyteidl {
             public userInfo(request: flyteidl.service.IUserInfoRequest): Promise<flyteidl.service.UserInfoResponse>;
         }
 
-        namespace AuthService {
+        namespace IdentityService {
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthService#oAuth2Metadata}.
-             * @param error Error, if any
-             * @param [response] OAuth2MetadataResponse
-             */
-            type OAuth2MetadataCallback = (error: (Error|null), response?: flyteidl.service.OAuth2MetadataResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AuthService#flyteClient}.
-             * @param error Error, if any
-             * @param [response] FlyteClientResponse
-             */
-            type FlyteClientCallback = (error: (Error|null), response?: flyteidl.service.FlyteClientResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AuthService#userInfo}.
+             * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
              * @param error Error, if any
              * @param [response] UserInfoResponse
              */
