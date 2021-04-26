@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 
+	"google.golang.org/grpc"
+
 	admin2 "github.com/flyteorg/flyteidl/clients/go/admin"
 
 	"github.com/flyteorg/flyteidl/clients/go/events/errors"
@@ -82,6 +84,29 @@ func (s *adminEventSink) Close() error {
 	return nil
 }
 
+func initializeAdminClientFromConfig(ctx context.Context) (client service.AdminServiceClient, err error) {
+	cfg := admin2.GetConfig(ctx)
+	var opts []grpc.DialOption
+	if cfg.UseAuth {
+		authMetadataClient, err := admin2.InitializeAuthMetadataClient(ctx, cfg)
+		if err != nil {
+			return nil, fmt.Errorf("failed to initialize auth metadata client. Error: %w", err)
+		}
+
+		opts, err = admin2.NewServiceAuthDialOptions(ctx, cfg, authMetadataClient)
+		if err != nil {
+			return nil, fmt.Errorf("failed to build service auth dial options. Error: %w", err)
+		}
+	}
+
+	clients, err := admin2.InitializeClients(ctx, cfg, opts...)
+	if err != nil {
+		return nil, fmt.Errorf("failed to initialize clientset. Error: %w", err)
+	}
+
+	return clients.AdminClient(), nil
+}
+
 func ConstructEventSink(ctx context.Context, config *Config) (EventSink, error) {
 	switch config.Type {
 	case EventSinkLog:
@@ -89,10 +114,11 @@ func ConstructEventSink(ctx context.Context, config *Config) (EventSink, error) 
 	case EventSinkFile:
 		return NewFileSink(config.FilePath)
 	case EventSinkAdmin:
-		adminClient, err := admin2.InitializeAdminClientFromConfig(ctx)
+		adminClient, err := initializeAdminClientFromConfig(ctx)
 		if err != nil {
 			return nil, err
 		}
+
 		return NewAdminEventSink(ctx, adminClient, config)
 	default:
 		return NewStdoutSink()
