@@ -78,9 +78,8 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 	return opts
 }
 
-// This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin.
-// It will first attempt to retrieve the token endpoint by making a metadata call. If that fails, but the token endpoint
-// is set in the config, that will be used instead.
+// This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin. If
+// the token endpoint is set in the config, that will be used, otherwise it'll attempt to make a metadata call.
 func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
 	tokenURL := cfg.TokenURL
 	if len(tokenURL) == 0 {
@@ -119,7 +118,6 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient se
 
 	tSource := ccConfig.TokenSource(ctx)
 	oauthTokenSource := NewCustomHeaderTokenSource(tSource, clientMetadata.AuthorizationMetadataKey)
-	grpc.PerRPCCredentials(oauthTokenSource)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
