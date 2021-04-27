@@ -135,17 +135,13 @@ func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client serv
 }
 
 func NewServiceAuthDialOptions(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) ([]grpc.DialOption, error) {
-	if cfg.UseAuth {
-		logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-		opt, err := getAuthenticationDialOption(ctx, cfg, authClient)
-		if err != nil {
-			return nil, err
-		}
-
-		return []grpc.DialOption{opt}, nil
+	logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
+	opt, err := getAuthenticationDialOption(ctx, cfg, authClient)
+	if err != nil {
+		return nil, err
 	}
 
-	return nil, nil
+	return []grpc.DialOption{opt}, nil
 }
 
 func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
@@ -182,8 +178,19 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 // Note that if called with different cfg/dialoptions, it will not
 func InitializeClients(ctx context.Context, cfg *Config, opts ...grpc.DialOption) (*Clientset, error) {
 	once.Do(func() {
-		var err error
-		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
+		authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
+		if err != nil {
+			logger.Panicf(ctx, "failed to initialize Auth Metadata Client. Error: %v", err)
+		}
+
+		// If auth is enabled, this endpoint will return the required information to use to authenticate, otherwise,
+		// start the client without authentication.
+		authOpts, err := NewServiceAuthDialOptions(ctx, cfg, authMetadataClient)
+		if err != nil {
+			logger.Warnf(ctx, "Starting an unauthenticated client because: %v", err)
+		}
+
+		adminConnection, err = NewAdminConnection(ctx, cfg, append(opts, authOpts...)...)
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
