@@ -25,6 +25,7 @@ type Config struct {
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 
+	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
@@ -32,7 +33,7 @@ type Config struct {
 
 	// There are two ways to get the token URL. If the authorization server url is provided, the client will try to use RFC 8414 to
 	// try to get the token URL. Or it can be specified directly through TokenURL config.
-	// Deprecated. This will now be discovered through admin's anonymously accessible metadata.
+	// Deprecated: This will now be discovered through admin's anonymously accessible metadata.
 	DeprecatedAuthorizationServerURL string `json:"authorizationServerUrl" pflag:",This is the URL to your IdP's authorization server. It'll default to Endpoint"`
 	// If not provided, it'll be discovered through admin's anonymously accessible metadata endpoint.
 	TokenURL string `json:"tokenUrl" pflag:",OPTIONAL: Your IdP's token endpoint. It'll be discovered from flyte admin's OAuth Metadata endpoint if not provided."`
@@ -40,7 +41,7 @@ type Config struct {
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
 	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
 	// because things might be running in a service mesh (like Envoy) that already uses the default 'authorization' header
-	// Deprecated. It will automatically be discovered through an anonymously accessible auth metadata service.
+	// Deprecated: It will automatically be discovered through an anonymously accessible auth metadata service.
 	DeprecatedAuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
 }
 
