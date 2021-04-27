@@ -25,9 +25,7 @@ type Config struct {
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 
-	// Auth can only be used if also running with a secure connection. If UseInsecureConnection is set to true, none
-	// of the following options will even be referenced.
-	UseAuth              bool     `json:"useAuth" pflag:",Whether or not to try to authenticate with options below"`
+	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
 	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
