@@ -117,7 +117,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient se
 	}
 
 	tSource := ccConfig.TokenSource(ctx)
-	oauthTokenSource := NewCustomHeaderTokenSource(tSource, clientMetadata.AuthorizationMetadataKey)
+	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
@@ -146,7 +146,9 @@ func NewServiceAuthDialOptions(ctx context.Context, cfg *Config, authClient serv
 
 func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
 	if opts == nil {
-		opts = make([]grpc.DialOption, 0, 10)
+		// Initialize opts list to the potential number of options we will add. Initialization optimizes memory
+		// allocation.
+		opts = make([]grpc.DialOption, 0, 5)
 	}
 
 	if cfg.UseInsecureConnection {

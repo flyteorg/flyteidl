@@ -12,6 +12,7 @@ import (
 type CustomHeaderTokenSource struct {
 	oauth2.TokenSource
 	customHeader string
+	insecure     bool
 }
 
 const DefaultAuthorizationHeader = "authorization"
@@ -28,19 +29,22 @@ func (ts CustomHeaderTokenSource) GetRequestMetadata(ctx context.Context, uri ..
 }
 
 // RequireTransportSecurity returns whether this credentials class requires TLS/SSL. OAuth uses Bearer tokens that are
-// susceptible to MITM (Man-In-The-Middle) attacks that are mitigated by TLS/SSL. We return false here to make it easier
-// to setup auth. However, in a production environment, TLS for Auth is a requirement.
+// susceptible to MITM (Man-In-The-Middle) attacks that are mitigated by TLS/SSL. We may return false here to make it
+// easier to setup auth. However, in a production environment, TLS for OAuth2 is a requirement.
+// see also: https://tools.ietf.org/html/rfc6749#section-3.1
 func (ts CustomHeaderTokenSource) RequireTransportSecurity() bool {
-	return false
+	return !ts.insecure
 }
 
-func NewCustomHeaderTokenSource(source oauth2.TokenSource, customHeader string) CustomHeaderTokenSource {
+func NewCustomHeaderTokenSource(source oauth2.TokenSource, insecure bool, customHeader string) CustomHeaderTokenSource {
 	header := DefaultAuthorizationHeader
 	if customHeader != "" {
 		header = customHeader
 	}
+
 	return CustomHeaderTokenSource{
 		TokenSource:  source,
 		customHeader: header,
+		insecure:     insecure,
 	}
 }
