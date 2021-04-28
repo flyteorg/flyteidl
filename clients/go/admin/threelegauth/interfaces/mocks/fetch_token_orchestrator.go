@@ -62,12 +62,12 @@ type FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt struct {
 	*mock.Call
 }
 
-func (_m FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt) Return(_a0 *oauth2.Token) *FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt {
-	return &FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt{Call: _m.Call.Return(_a0)}
+func (_m FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt) Return(_a0 *oauth2.Token, _a1 error) *FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt {
+	return &FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *FetchTokenOrchestrator) OnFetchTokenFromCacheOrRefreshIt(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) *FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt {
-	c := _m.On("FetchTokenFromCacheOrRefreshIt", ctx, authMetadataClient)
+func (_m *FetchTokenOrchestrator) OnFetchTokenFromCacheOrRefreshIt(ctx context.Context) *FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt {
+	c := _m.On("FetchTokenFromCacheOrRefreshIt", ctx)
 	return &FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt{Call: c}
 }
 
@@ -76,28 +76,35 @@ func (_m *FetchTokenOrchestrator) OnFetchTokenFromCacheOrRefreshItMatch(matchers
 	return &FetchTokenOrchestrator_FetchTokenFromCacheOrRefreshIt{Call: c}
 }
 
-// FetchTokenFromCacheOrRefreshIt provides a mock function with given fields: ctx, authMetadataClient
-func (_m *FetchTokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) *oauth2.Token {
-	ret := _m.Called(ctx, authMetadataClient)
+// FetchTokenFromCacheOrRefreshIt provides a mock function with given fields: ctx
+func (_m *FetchTokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (*oauth2.Token, error) {
+	ret := _m.Called(ctx)
 
 	var r0 *oauth2.Token
-	if rf, ok := ret.Get(0).(func(context.Context, service.AuthMetadataServiceClient) *oauth2.Token); ok {
-		r0 = rf(ctx, authMetadataClient)
+	if rf, ok := ret.Get(0).(func(context.Context) *oauth2.Token); ok {
+		r0 = rf(ctx)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).(*oauth2.Token)
 		}
 	}
 
-	return r0
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
 }
 
 type FetchTokenOrchestrator_RefreshTheToken struct {
 	*mock.Call
 }
 
-func (_m FetchTokenOrchestrator_RefreshTheToken) Return(_a0 *oauth2.Token) *FetchTokenOrchestrator_RefreshTheToken {
-	return &FetchTokenOrchestrator_RefreshTheToken{Call: _m.Call.Return(_a0)}
+func (_m FetchTokenOrchestrator_RefreshTheToken) Return(_a0 *oauth2.Token, _a1 error) *FetchTokenOrchestrator_RefreshTheToken {
+	return &FetchTokenOrchestrator_RefreshTheToken{Call: _m.Call.Return(_a0, _a1)}
 }
 
 func (_m *FetchTokenOrchestrator) OnRefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) *FetchTokenOrchestrator_RefreshTheToken {
@@ -111,7 +118,7 @@ func (_m *FetchTokenOrchestrator) OnRefreshTheTokenMatch(matchers ...interface{}
 }
 
 // RefreshTheToken provides a mock function with given fields: ctx, clientConf, token
-func (_m *FetchTokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) *oauth2.Token {
+func (_m *FetchTokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) (*oauth2.Token, error) {
 	ret := _m.Called(ctx, clientConf, token)
 
 	var r0 *oauth2.Token
@@ -123,5 +130,12 @@ func (_m *FetchTokenOrchestrator) RefreshTheToken(ctx context.Context, clientCon
 		}
 	}
 
-	return r0
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *oauth2.Config, *oauth2.Token) error); ok {
+		r1 = rf(ctx, clientConf, token)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
 }

@@ -148,7 +148,11 @@ func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMet
 // Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
 func getThreeLeggedAuthTokenSource(ctx context.Context, authClient service.AuthMetadataServiceClient) (oauth2.TokenSource, error) {
 	var err error
-	authToken := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, authClient)
+	// explicitly ignore error while fetching token from cache.
+	authToken, err := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	if err != nil {
+		logger.Warnf(ctx, "failed fetching from cache due to %v", err)
+	}
 	if authToken == nil {
 		// Fetch using auth flow
 		if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {

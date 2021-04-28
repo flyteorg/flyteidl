@@ -22,13 +22,14 @@ const (
 type TokenOrchestrator struct {
 }
 
-func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) *oauth2.Token {
+func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) (*oauth2.Token, error) {
 	ts := clientConf.TokenSource(ctx, token)
 	var refreshedToken *oauth2.Token
 	var err error
 	refreshedToken, err = ts.Token()
 	if err != nil {
 		logger.Warnf(ctx, "failed to refresh the token due to %v and will be doing reauth", err)
+		return nil, err
 	}
 	if refreshedToken != nil {
 		logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
@@ -36,22 +37,28 @@ func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oaut
 		if refreshedToken.AccessToken != token.AccessToken {
 			if err = defaultCacheProvider.SaveToken(ctx, *refreshedToken); err != nil {
 				logger.Errorf(ctx, "unable to save the new token due to %v", err)
+				return nil, err
 			}
 		}
 	}
-	return refreshedToken
+	return refreshedToken, nil
 }
 
-// FetchTokenFromCacheOrRefreshIt Fetch token from cache or refresh it
-func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) *oauth2.Token {
-	if token, err := defaultCacheProvider.GetToken(ctx); err == nil {
-		refreshedToken := f.RefreshTheToken(ctx, clientConf, token)
-		if !refreshedToken.Valid() {
-			return nil
+// FetchTokenFromCacheOrRefreshIt Fetch token from cache or refresh it. ignore the error while fetching from cache
+func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (*oauth2.Token, error) {
+	var err error
+	var tokenFromCache *oauth2.Token
+	if tokenFromCache, err = defaultCacheProvider.GetToken(ctx); err == nil {
+		var refreshedToken *oauth2.Token
+		if refreshedToken, err = f.RefreshTheToken(ctx, clientConf, tokenFromCache); err != nil {
+			return nil, err
 		}
-		return token
+		if refreshedToken == nil || !refreshedToken.Valid() {
+			return nil, fmt.Errorf("invalid token")
+		}
+		return tokenFromCache, nil
 	}
-	return nil
+	return nil, err
 }
 
 func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) (*oauth2.Token, error) {

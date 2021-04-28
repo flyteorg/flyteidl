@@ -176,7 +176,7 @@ func TestGetAuthenticationDialOptionThreeLegAuth(t *testing.T) {
 		var tokenData oauth2.Token
 		err := json.Unmarshal(plan, &tokenData)
 		assert.Nil(t, err)
-		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(&tokenData)
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(&tokenData, nil)
 		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
 		assert.NotNil(t, dialOption)
 		assert.Nil(t, err)
@@ -188,7 +188,7 @@ func TestGetAuthenticationDialOptionThreeLegAuth(t *testing.T) {
 		var tokenData oauth2.Token
 		err := json.Unmarshal(plan, &tokenData)
 		assert.Nil(t, err)
-		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil)
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil, nil)
 		mockTokenOrchestrator.OnFetchTokenFromAuthFlowMatch(mock.Anything, mock.Anything).Return(&tokenData, nil)
 		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
 		assert.NotNil(t, dialOption)
@@ -197,7 +197,7 @@ func TestGetAuthenticationDialOptionThreeLegAuth(t *testing.T) {
 	t.Run("illegal", func(t *testing.T) {
 		mockTokenOrchestrator := &mcokauthinterfaces.FetchTokenOrchestrator{}
 		defaultTokenOrchestrator = mockTokenOrchestrator
-		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil)
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil, nil)
 		mockTokenOrchestrator.OnFetchTokenFromAuthFlowMatch(mock.Anything, mock.Anything).Return(nil, fmt.Errorf("fail"))
 		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
 		assert.Nil(t, dialOption)
