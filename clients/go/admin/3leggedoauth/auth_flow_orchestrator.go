@@ -83,7 +83,7 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context, a
 				return nil
 			}
 			return f.RefreshTheToken(ctx, clientConf, token)
-		} else if token.Expiry.Add(-ExpiryBeforeTime).After(time.Now()) {
+		} else if token.Expiry.Add(-ExpiryBeforeTime).Before(time.Now()) {
 			return nil
 		}
 		return token
