@@ -8,9 +8,9 @@ import (
 	"fmt"
 )
 
-const _AuthTypeName = "CLIENTSECRETTHREELEGGEDAUTH"
+const _AuthTypeName = "ClientSecretPkce"
 
-var _AuthTypeIndex = [...]uint8{0, 12, 27}
+var _AuthTypeIndex = [...]uint8{0, 12, 16}
 
 func (i AuthType) String() string {
 	if i >= AuthType(len(_AuthTypeIndex)-1) {
@@ -23,7 +23,7 @@ var _AuthTypeValues = []AuthType{0, 1}
 
 var _AuthTypeNameToValueMap = map[string]AuthType{
 	_AuthTypeName[0:12]:  0,
-	_AuthTypeName[12:27]: 1,
+	_AuthTypeName[12:16]: 1,
 }
 
 // AuthTypeString retrieves an enum value from the enum constants string name.

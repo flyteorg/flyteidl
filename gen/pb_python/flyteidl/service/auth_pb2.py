@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n\x1b\x66lyteidl/service/auth.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1c\x66lyteidl/admin/project.proto\x1a.flyteidl/admin/project_domain_attributes.proto\x1a\x19\x66lyteidl/admin/task.proto\x1a\x1d\x66lyteidl/admin/workflow.proto\x1a(flyteidl/admin/workflow_attributes.proto\x1a flyteidl/admin/launch_plan.proto\x1a\x1a\x66lyteidl/admin/event.proto\x1a\x1e\x66lyteidl/admin/execution.proto\x1a\'flyteidl/admin/matchable_resource.proto\x1a#flyteidl/admin/node_execution.proto\x1a#flyteidl/admin/task_execution.proto\x1a\x1c\x66lyteidl/admin/version.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a,protoc-gen-swagger/options/annotations.proto\"\x17\n\x15OAuth2MetadataRequest\"\xa6\x02\n\x16OAuth2MetadataResponse\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x1e\n\x16\x61uthorization_endpoint\x18\x02 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x03 \x01(\t\x12 \n\x18response_types_supported\x18\x04 \x03(\t\x12\x18\n\x10scopes_supported\x18\x05 \x03(\t\x12-\n%token_endpoint_auth_methods_supported\x18\x06 \x03(\t\x12\x10\n\x08jwks_uri\x18\x07 \x01(\t\x12(\n code_challenge_methods_supported\x18\x08 \x03(\t\x12\x1d\n\x15grant_types_supported\x18\t \x03(\t\"\x14\n\x12\x46lyteClientRequest\"r\n\x13\x46lyteClientResponse\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x14\n\x0credirect_uri\x18\x02 \x01(\t\x12\x0e\n\x06scopes\x18\x03 \x03(\t\x12\"\n\x1a\x61uthorization_metadata_key\x18\x04 \x01(\t2\xd9\x03\n\x13\x41uthMetadataService\x12\xf2\x01\n\x0eOAuth2Metadata\x12\'.flyteidl.service.OAuth2MetadataRequest\x1a(.flyteidl.service.OAuth2MetadataResponse\"\x8c\x01\x82\xd3\xe4\x93\x02)\x12\'/.well-known/oauth-authorization-server\x92\x41Z\x1aXRetrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible.\x12\xcc\x01\n\x0b\x46lyteClient\x12$.flyteidl.service.FlyteClientRequest\x1a%.flyteidl.service.FlyteClientResponse\"p\x82\xd3\xe4\x93\x02\x19\x12\x17/config/v1/flyte_client\x92\x41N\x1aLRetrieves public flyte client info. This endpoint is anonymously accessible.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/service/auth.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1c\x66lyteidl/admin/project.proto\x1a.flyteidl/admin/project_domain_attributes.proto\x1a\x19\x66lyteidl/admin/task.proto\x1a\x1d\x66lyteidl/admin/workflow.proto\x1a(flyteidl/admin/workflow_attributes.proto\x1a flyteidl/admin/launch_plan.proto\x1a\x1a\x66lyteidl/admin/event.proto\x1a\x1e\x66lyteidl/admin/execution.proto\x1a\'flyteidl/admin/matchable_resource.proto\x1a#flyteidl/admin/node_execution.proto\x1a#flyteidl/admin/task_execution.proto\x1a\x1c\x66lyteidl/admin/version.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a,protoc-gen-swagger/options/annotations.proto\"\x17\n\x15OAuth2MetadataRequest\"\xa6\x02\n\x16OAuth2MetadataResponse\x12\x0e\n\x06issuer\x18\x01 \x01(\t\x12\x1e\n\x16\x61uthorization_endpoint\x18\x02 \x01(\t\x12\x16\n\x0etoken_endpoint\x18\x03 \x01(\t\x12 \n\x18response_types_supported\x18\x04 \x03(\t\x12\x18\n\x10scopes_supported\x18\x05 \x03(\t\x12-\n%token_endpoint_auth_methods_supported\x18\x06 \x03(\t\x12\x10\n\x08jwks_uri\x18\x07 \x01(\t\x12(\n code_challenge_methods_supported\x18\x08 \x03(\t\x12\x1d\n\x15grant_types_supported\x18\t \x03(\t\"\x1f\n\x1dPublicClientAuthConfigRequest\"}\n\x1ePublicClientAuthConfigResponse\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x14\n\x0credirect_uri\x18\x02 \x01(\t\x12\x0e\n\x06scopes\x18\x03 \x03(\t\x12\"\n\x1a\x61uthorization_metadata_key\x18\x04 \x01(\t2\xfc\x03\n\x13\x41uthMetadataService\x12\xf5\x01\n\x11GetOAuth2Metadata\x12\'.flyteidl.service.OAuth2MetadataRequest\x1a(.flyteidl.service.OAuth2MetadataResponse\"\x8c\x01\x82\xd3\xe4\x93\x02)\x12\'/.well-known/oauth-authorization-server\x92\x41Z\x1aXRetrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible.\x12\xec\x01\n\x15GetPublicClientConfig\x12/.flyteidl.service.PublicClientAuthConfigRequest\x1a\x30.flyteidl.service.PublicClientAuthConfigResponse\"p\x82\xd3\xe4\x93\x02\x19\x12\x17/config/v1/flyte_client\x92\x41N\x1aLRetrieves public flyte client info. This endpoint is anonymously accessible.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_project__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_project__domain__attributes__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_task__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_workflow__attributes__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_launch__plan__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_event__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_node__execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_task__execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_version__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -153,9 +153,9 @@ _OAUTH2METADATARESPONSE = _descriptor.Descriptor(
 )
 
 
-_FLYTECLIENTREQUEST = _descriptor.Descriptor(
-  name='FlyteClientRequest',
-  full_name='flyteidl.service.FlyteClientRequest',
+_PUBLICCLIENTAUTHCONFIGREQUEST = _descriptor.Descriptor(
+  name='PublicClientAuthConfigRequest',
+  full_name='flyteidl.service.PublicClientAuthConfigRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -173,40 +173,40 @@ _FLYTECLIENTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=893,
-  serialized_end=913,
+  serialized_end=924,
 )
 
 
-_FLYTECLIENTRESPONSE = _descriptor.Descriptor(
-  name='FlyteClientResponse',
-  full_name='flyteidl.service.FlyteClientResponse',
+_PUBLICCLIENTAUTHCONFIGRESPONSE = _descriptor.Descriptor(
+  name='PublicClientAuthConfigResponse',
+  full_name='flyteidl.service.PublicClientAuthConfigResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='flyteidl.service.FlyteClientResponse.client_id', index=0,
+      name='client_id', full_name='flyteidl.service.PublicClientAuthConfigResponse.client_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='redirect_uri', full_name='flyteidl.service.FlyteClientResponse.redirect_uri', index=1,
+      name='redirect_uri', full_name='flyteidl.service.PublicClientAuthConfigResponse.redirect_uri', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='scopes', full_name='flyteidl.service.FlyteClientResponse.scopes', index=2,
+      name='scopes', full_name='flyteidl.service.PublicClientAuthConfigResponse.scopes', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='authorization_metadata_key', full_name='flyteidl.service.FlyteClientResponse.authorization_metadata_key', index=3,
+      name='authorization_metadata_key', full_name='flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -224,14 +224,14 @@ _FLYTECLIENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=915,
-  serialized_end=1029,
+  serialized_start=926,
+  serialized_end=1051,
 )
 
 DESCRIPTOR.message_types_by_name['OAuth2MetadataRequest'] = _OAUTH2METADATAREQUEST
 DESCRIPTOR.message_types_by_name['OAuth2MetadataResponse'] = _OAUTH2METADATARESPONSE
-DESCRIPTOR.message_types_by_name['FlyteClientRequest'] = _FLYTECLIENTREQUEST
-DESCRIPTOR.message_types_by_name['FlyteClientResponse'] = _FLYTECLIENTRESPONSE
+DESCRIPTOR.message_types_by_name['PublicClientAuthConfigRequest'] = _PUBLICCLIENTAUTHCONFIGREQUEST
+DESCRIPTOR.message_types_by_name['PublicClientAuthConfigResponse'] = _PUBLICCLIENTAUTHCONFIGRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 OAuth2MetadataRequest = _reflection.GeneratedProtocolMessageType('OAuth2MetadataRequest', (_message.Message,), dict(
@@ -248,19 +248,19 @@ OAuth2MetadataResponse = _reflection.GeneratedProtocolMessageType('OAuth2Metadat
   ))
 _sym_db.RegisterMessage(OAuth2MetadataResponse)
 
-FlyteClientRequest = _reflection.GeneratedProtocolMessageType('FlyteClientRequest', (_message.Message,), dict(
-  DESCRIPTOR = _FLYTECLIENTREQUEST,
+PublicClientAuthConfigRequest = _reflection.GeneratedProtocolMessageType('PublicClientAuthConfigRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PUBLICCLIENTAUTHCONFIGREQUEST,
   __module__ = 'flyteidl.service.auth_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigRequest)
   ))
-_sym_db.RegisterMessage(FlyteClientRequest)
+_sym_db.RegisterMessage(PublicClientAuthConfigRequest)
 
-FlyteClientResponse = _reflection.GeneratedProtocolMessageType('FlyteClientResponse', (_message.Message,), dict(
-  DESCRIPTOR = _FLYTECLIENTRESPONSE,
+PublicClientAuthConfigResponse = _reflection.GeneratedProtocolMessageType('PublicClientAuthConfigResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PUBLICCLIENTAUTHCONFIGRESPONSE,
   __module__ = 'flyteidl.service.auth_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientResponse)
+  # @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigResponse)
   ))
-_sym_db.RegisterMessage(FlyteClientResponse)
+_sym_db.RegisterMessage(PublicClientAuthConfigResponse)
 
 
 DESCRIPTOR._options = None
@@ -271,12 +271,12 @@ _AUTHMETADATASERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1032,
-  serialized_end=1505,
+  serialized_start=1054,
+  serialized_end=1562,
   methods=[
   _descriptor.MethodDescriptor(
-    name='OAuth2Metadata',
-    full_name='flyteidl.service.AuthMetadataService.OAuth2Metadata',
+    name='GetOAuth2Metadata',
+    full_name='flyteidl.service.AuthMetadataService.GetOAuth2Metadata',
     index=0,
     containing_service=None,
     input_type=_OAUTH2METADATAREQUEST,
@@ -284,12 +284,12 @@ _AUTHMETADATASERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\002)\022\'/.well-known/oauth-authorization-server\222AZ\032XRetrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible.'),
   ),
   _descriptor.MethodDescriptor(
-    name='FlyteClient',
-    full_name='flyteidl.service.AuthMetadataService.FlyteClient',
+    name='GetPublicClientConfig',
+    full_name='flyteidl.service.AuthMetadataService.GetPublicClientConfig',
     index=1,
     containing_service=None,
-    input_type=_FLYTECLIENTREQUEST,
-    output_type=_FLYTECLIENTRESPONSE,
+    input_type=_PUBLICCLIENTAUTHCONFIGREQUEST,
+    output_type=_PUBLICCLIENTAUTHCONFIGRESPONSE,
     serialized_options=_b('\202\323\344\223\002\031\022\027/config/v1/flyte_client\222AN\032LRetrieves public flyte client info. This endpoint is anonymously accessible.'),
   ),
 ])

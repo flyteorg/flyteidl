@@ -14,67 +14,26 @@ type AuthMetadataServiceServer struct {
 	mock.Mock
 }
 
-type AuthMetadataServiceServer_FlyteClient struct {
+type AuthMetadataServiceServer_GetOAuth2Metadata struct {
 	*mock.Call
 }
 
-func (_m AuthMetadataServiceServer_FlyteClient) Return(_a0 *service.FlyteClientResponse, _a1 error) *AuthMetadataServiceServer_FlyteClient {
-	return &AuthMetadataServiceServer_FlyteClient{Call: _m.Call.Return(_a0, _a1)}
+func (_m AuthMetadataServiceServer_GetOAuth2Metadata) Return(_a0 *service.OAuth2MetadataResponse, _a1 error) *AuthMetadataServiceServer_GetOAuth2Metadata {
+	return &AuthMetadataServiceServer_GetOAuth2Metadata{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *AuthMetadataServiceServer) OnFlyteClient(_a0 context.Context, _a1 *service.FlyteClientRequest) *AuthMetadataServiceServer_FlyteClient {
-	c := _m.On("FlyteClient", _a0, _a1)
-	return &AuthMetadataServiceServer_FlyteClient{Call: c}
+func (_m *AuthMetadataServiceServer) OnGetOAuth2Metadata(_a0 context.Context, _a1 *service.OAuth2MetadataRequest) *AuthMetadataServiceServer_GetOAuth2Metadata {
+	c := _m.On("GetOAuth2Metadata", _a0, _a1)
+	return &AuthMetadataServiceServer_GetOAuth2Metadata{Call: c}
 }
 
-func (_m *AuthMetadataServiceServer) OnFlyteClientMatch(matchers ...interface{}) *AuthMetadataServiceServer_FlyteClient {
-	c := _m.On("FlyteClient", matchers...)
-	return &AuthMetadataServiceServer_FlyteClient{Call: c}
+func (_m *AuthMetadataServiceServer) OnGetOAuth2MetadataMatch(matchers ...interface{}) *AuthMetadataServiceServer_GetOAuth2Metadata {
+	c := _m.On("GetOAuth2Metadata", matchers...)
+	return &AuthMetadataServiceServer_GetOAuth2Metadata{Call: c}
 }
 
-// FlyteClient provides a mock function with given fields: _a0, _a1
-func (_m *AuthMetadataServiceServer) FlyteClient(_a0 context.Context, _a1 *service.FlyteClientRequest) (*service.FlyteClientResponse, error) {
-	ret := _m.Called(_a0, _a1)
-
-	var r0 *service.FlyteClientResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *service.FlyteClientRequest) *service.FlyteClientResponse); ok {
-		r0 = rf(_a0, _a1)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*service.FlyteClientResponse)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *service.FlyteClientRequest) error); ok {
-		r1 = rf(_a0, _a1)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-type AuthMetadataServiceServer_OAuth2Metadata struct {
-	*mock.Call
-}
-
-func (_m AuthMetadataServiceServer_OAuth2Metadata) Return(_a0 *service.OAuth2MetadataResponse, _a1 error) *AuthMetadataServiceServer_OAuth2Metadata {
-	return &AuthMetadataServiceServer_OAuth2Metadata{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AuthMetadataServiceServer) OnOAuth2Metadata(_a0 context.Context, _a1 *service.OAuth2MetadataRequest) *AuthMetadataServiceServer_OAuth2Metadata {
-	c := _m.On("OAuth2Metadata", _a0, _a1)
-	return &AuthMetadataServiceServer_OAuth2Metadata{Call: c}
-}
-
-func (_m *AuthMetadataServiceServer) OnOAuth2MetadataMatch(matchers ...interface{}) *AuthMetadataServiceServer_OAuth2Metadata {
-	c := _m.On("OAuth2Metadata", matchers...)
-	return &AuthMetadataServiceServer_OAuth2Metadata{Call: c}
-}
-
-// OAuth2Metadata provides a mock function with given fields: _a0, _a1
-func (_m *AuthMetadataServiceServer) OAuth2Metadata(_a0 context.Context, _a1 *service.OAuth2MetadataRequest) (*service.OAuth2MetadataResponse, error) {
+// GetOAuth2Metadata provides a mock function with given fields: _a0, _a1
+func (_m *AuthMetadataServiceServer) GetOAuth2Metadata(_a0 context.Context, _a1 *service.OAuth2MetadataRequest) (*service.OAuth2MetadataResponse, error) {
 	ret := _m.Called(_a0, _a1)
 
 	var r0 *service.OAuth2MetadataResponse
@@ -88,6 +47,47 @@ func (_m *AuthMetadataServiceServer) OAuth2Metadata(_a0 context.Context, _a1 *se
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *service.OAuth2MetadataRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+type AuthMetadataServiceServer_GetPublicClientConfig struct {
+	*mock.Call
+}
+
+func (_m AuthMetadataServiceServer_GetPublicClientConfig) Return(_a0 *service.PublicClientAuthConfigResponse, _a1 error) *AuthMetadataServiceServer_GetPublicClientConfig {
+	return &AuthMetadataServiceServer_GetPublicClientConfig{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AuthMetadataServiceServer) OnGetPublicClientConfig(_a0 context.Context, _a1 *service.PublicClientAuthConfigRequest) *AuthMetadataServiceServer_GetPublicClientConfig {
+	c := _m.On("GetPublicClientConfig", _a0, _a1)
+	return &AuthMetadataServiceServer_GetPublicClientConfig{Call: c}
+}
+
+func (_m *AuthMetadataServiceServer) OnGetPublicClientConfigMatch(matchers ...interface{}) *AuthMetadataServiceServer_GetPublicClientConfig {
+	c := _m.On("GetPublicClientConfig", matchers...)
+	return &AuthMetadataServiceServer_GetPublicClientConfig{Call: c}
+}
+
+// GetPublicClientConfig provides a mock function with given fields: _a0, _a1
+func (_m *AuthMetadataServiceServer) GetPublicClientConfig(_a0 context.Context, _a1 *service.PublicClientAuthConfigRequest) (*service.PublicClientAuthConfigResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *service.PublicClientAuthConfigResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *service.PublicClientAuthConfigRequest) *service.PublicClientAuthConfigResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*service.PublicClientAuthConfigResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *service.PublicClientAuthConfigRequest) error); ok {
 		r1 = rf(_a0, _a1)
 	} else {
 		r1 = ret.Error(1)

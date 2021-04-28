@@ -2873,23 +2873,23 @@ public final class Auth {
 
   }
 
-  public interface FlyteClientRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteClientRequest)
+  public interface PublicClientAuthConfigRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.PublicClientAuthConfigRequest)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * Protobuf type {@code flyteidl.service.FlyteClientRequest}
+   * Protobuf type {@code flyteidl.service.PublicClientAuthConfigRequest}
    */
-  public  static final class FlyteClientRequest extends
+  public  static final class PublicClientAuthConfigRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteClientRequest)
-      FlyteClientRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.service.PublicClientAuthConfigRequest)
+      PublicClientAuthConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FlyteClientRequest.newBuilder() to construct.
-    private FlyteClientRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PublicClientAuthConfigRequest.newBuilder() to construct.
+    private PublicClientAuthConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FlyteClientRequest() {
+    private PublicClientAuthConfigRequest() {
     }
 
     @java.lang.Override
@@ -2897,7 +2897,7 @@ public final class Auth {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FlyteClientRequest(
+    private PublicClientAuthConfigRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2936,15 +2936,15 @@ public final class Auth {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientRequest_descriptor;
+      return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientRequest_fieldAccessorTable
+      return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.service.Auth.FlyteClientRequest.class, flyteidl.service.Auth.FlyteClientRequest.Builder.class);
+              flyteidl.service.Auth.PublicClientAuthConfigRequest.class, flyteidl.service.Auth.PublicClientAuthConfigRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2980,10 +2980,10 @@ public final class Auth {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.service.Auth.FlyteClientRequest)) {
+      if (!(obj instanceof flyteidl.service.Auth.PublicClientAuthConfigRequest)) {
         return super.equals(obj);
       }
-      flyteidl.service.Auth.FlyteClientRequest other = (flyteidl.service.Auth.FlyteClientRequest) obj;
+      flyteidl.service.Auth.PublicClientAuthConfigRequest other = (flyteidl.service.Auth.PublicClientAuthConfigRequest) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3001,69 +3001,69 @@ public final class Auth {
       return hash;
     }
 
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(byte[] data)
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(java.io.InputStream input)
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseDelimitedFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientRequest parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3076,7 +3076,7 @@ public final class Auth {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.service.Auth.FlyteClientRequest prototype) {
+    public static Builder newBuilder(flyteidl.service.Auth.PublicClientAuthConfigRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3092,26 +3092,26 @@ public final class Auth {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.service.FlyteClientRequest}
+     * Protobuf type {@code flyteidl.service.PublicClientAuthConfigRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteClientRequest)
-        flyteidl.service.Auth.FlyteClientRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.PublicClientAuthConfigRequest)
+        flyteidl.service.Auth.PublicClientAuthConfigRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientRequest_descriptor;
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientRequest_fieldAccessorTable
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.service.Auth.FlyteClientRequest.class, flyteidl.service.Auth.FlyteClientRequest.Builder.class);
+                flyteidl.service.Auth.PublicClientAuthConfigRequest.class, flyteidl.service.Auth.PublicClientAuthConfigRequest.Builder.class);
       }
 
-      // Construct using flyteidl.service.Auth.FlyteClientRequest.newBuilder()
+      // Construct using flyteidl.service.Auth.PublicClientAuthConfigRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3135,17 +3135,17 @@ public final class Auth {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientRequest_descriptor;
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientRequest getDefaultInstanceForType() {
-        return flyteidl.service.Auth.FlyteClientRequest.getDefaultInstance();
+      public flyteidl.service.Auth.PublicClientAuthConfigRequest getDefaultInstanceForType() {
+        return flyteidl.service.Auth.PublicClientAuthConfigRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientRequest build() {
-        flyteidl.service.Auth.FlyteClientRequest result = buildPartial();
+      public flyteidl.service.Auth.PublicClientAuthConfigRequest build() {
+        flyteidl.service.Auth.PublicClientAuthConfigRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3153,8 +3153,8 @@ public final class Auth {
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientRequest buildPartial() {
-        flyteidl.service.Auth.FlyteClientRequest result = new flyteidl.service.Auth.FlyteClientRequest(this);
+      public flyteidl.service.Auth.PublicClientAuthConfigRequest buildPartial() {
+        flyteidl.service.Auth.PublicClientAuthConfigRequest result = new flyteidl.service.Auth.PublicClientAuthConfigRequest(this);
         onBuilt();
         return result;
       }
@@ -3193,16 +3193,16 @@ public final class Auth {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Auth.FlyteClientRequest) {
-          return mergeFrom((flyteidl.service.Auth.FlyteClientRequest)other);
+        if (other instanceof flyteidl.service.Auth.PublicClientAuthConfigRequest) {
+          return mergeFrom((flyteidl.service.Auth.PublicClientAuthConfigRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.service.Auth.FlyteClientRequest other) {
-        if (other == flyteidl.service.Auth.FlyteClientRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.service.Auth.PublicClientAuthConfigRequest other) {
+        if (other == flyteidl.service.Auth.PublicClientAuthConfigRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3218,11 +3218,11 @@ public final class Auth {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.service.Auth.FlyteClientRequest parsedMessage = null;
+        flyteidl.service.Auth.PublicClientAuthConfigRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Auth.FlyteClientRequest) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.service.Auth.PublicClientAuthConfigRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3244,48 +3244,48 @@ public final class Auth {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteClientRequest)
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.PublicClientAuthConfigRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientRequest)
-    private static final flyteidl.service.Auth.FlyteClientRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigRequest)
+    private static final flyteidl.service.Auth.PublicClientAuthConfigRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.service.Auth.FlyteClientRequest();
+      DEFAULT_INSTANCE = new flyteidl.service.Auth.PublicClientAuthConfigRequest();
     }
 
-    public static flyteidl.service.Auth.FlyteClientRequest getDefaultInstance() {
+    public static flyteidl.service.Auth.PublicClientAuthConfigRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FlyteClientRequest>
-        PARSER = new com.google.protobuf.AbstractParser<FlyteClientRequest>() {
+    private static final com.google.protobuf.Parser<PublicClientAuthConfigRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PublicClientAuthConfigRequest>() {
       @java.lang.Override
-      public FlyteClientRequest parsePartialFrom(
+      public PublicClientAuthConfigRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FlyteClientRequest(input, extensionRegistry);
+        return new PublicClientAuthConfigRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FlyteClientRequest> parser() {
+    public static com.google.protobuf.Parser<PublicClientAuthConfigRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FlyteClientRequest> getParserForType() {
+    public com.google.protobuf.Parser<PublicClientAuthConfigRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.service.Auth.FlyteClientRequest getDefaultInstanceForType() {
+    public flyteidl.service.Auth.PublicClientAuthConfigRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface FlyteClientResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteClientResponse)
+  public interface PublicClientAuthConfigResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.PublicClientAuthConfigResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3384,18 +3384,18 @@ public final class Auth {
    * FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.service.FlyteClientResponse}
+   * Protobuf type {@code flyteidl.service.PublicClientAuthConfigResponse}
    */
-  public  static final class FlyteClientResponse extends
+  public  static final class PublicClientAuthConfigResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteClientResponse)
-      FlyteClientResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.service.PublicClientAuthConfigResponse)
+      PublicClientAuthConfigResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FlyteClientResponse.newBuilder() to construct.
-    private FlyteClientResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PublicClientAuthConfigResponse.newBuilder() to construct.
+    private PublicClientAuthConfigResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FlyteClientResponse() {
+    private PublicClientAuthConfigResponse() {
       clientId_ = "";
       redirectUri_ = "";
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -3407,7 +3407,7 @@ public final class Auth {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FlyteClientResponse(
+    private PublicClientAuthConfigResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3477,15 +3477,15 @@ public final class Auth {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientResponse_descriptor;
+      return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientResponse_fieldAccessorTable
+      return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.service.Auth.FlyteClientResponse.class, flyteidl.service.Auth.FlyteClientResponse.Builder.class);
+              flyteidl.service.Auth.PublicClientAuthConfigResponse.class, flyteidl.service.Auth.PublicClientAuthConfigResponse.Builder.class);
     }
 
     private int bitField0_;
@@ -3724,10 +3724,10 @@ public final class Auth {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.service.Auth.FlyteClientResponse)) {
+      if (!(obj instanceof flyteidl.service.Auth.PublicClientAuthConfigResponse)) {
         return super.equals(obj);
       }
-      flyteidl.service.Auth.FlyteClientResponse other = (flyteidl.service.Auth.FlyteClientResponse) obj;
+      flyteidl.service.Auth.PublicClientAuthConfigResponse other = (flyteidl.service.Auth.PublicClientAuthConfigResponse) obj;
 
       if (!getClientId()
           .equals(other.getClientId())) return false;
@@ -3763,69 +3763,69 @@ public final class Auth {
       return hash;
     }
 
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(byte[] data)
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(java.io.InputStream input)
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseDelimitedFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Auth.FlyteClientResponse parseFrom(
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3838,7 +3838,7 @@ public final class Auth {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.service.Auth.FlyteClientResponse prototype) {
+    public static Builder newBuilder(flyteidl.service.Auth.PublicClientAuthConfigResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3858,26 +3858,26 @@ public final class Auth {
      * FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.service.FlyteClientResponse}
+     * Protobuf type {@code flyteidl.service.PublicClientAuthConfigResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteClientResponse)
-        flyteidl.service.Auth.FlyteClientResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.PublicClientAuthConfigResponse)
+        flyteidl.service.Auth.PublicClientAuthConfigResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientResponse_descriptor;
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientResponse_fieldAccessorTable
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.service.Auth.FlyteClientResponse.class, flyteidl.service.Auth.FlyteClientResponse.Builder.class);
+                flyteidl.service.Auth.PublicClientAuthConfigResponse.class, flyteidl.service.Auth.PublicClientAuthConfigResponse.Builder.class);
       }
 
-      // Construct using flyteidl.service.Auth.FlyteClientResponse.newBuilder()
+      // Construct using flyteidl.service.Auth.PublicClientAuthConfigResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3909,17 +3909,17 @@ public final class Auth {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.service.Auth.internal_static_flyteidl_service_FlyteClientResponse_descriptor;
+        return flyteidl.service.Auth.internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientResponse getDefaultInstanceForType() {
-        return flyteidl.service.Auth.FlyteClientResponse.getDefaultInstance();
+      public flyteidl.service.Auth.PublicClientAuthConfigResponse getDefaultInstanceForType() {
+        return flyteidl.service.Auth.PublicClientAuthConfigResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientResponse build() {
-        flyteidl.service.Auth.FlyteClientResponse result = buildPartial();
+      public flyteidl.service.Auth.PublicClientAuthConfigResponse build() {
+        flyteidl.service.Auth.PublicClientAuthConfigResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3927,8 +3927,8 @@ public final class Auth {
       }
 
       @java.lang.Override
-      public flyteidl.service.Auth.FlyteClientResponse buildPartial() {
-        flyteidl.service.Auth.FlyteClientResponse result = new flyteidl.service.Auth.FlyteClientResponse(this);
+      public flyteidl.service.Auth.PublicClientAuthConfigResponse buildPartial() {
+        flyteidl.service.Auth.PublicClientAuthConfigResponse result = new flyteidl.service.Auth.PublicClientAuthConfigResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.clientId_ = clientId_;
@@ -3978,16 +3978,16 @@ public final class Auth {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Auth.FlyteClientResponse) {
-          return mergeFrom((flyteidl.service.Auth.FlyteClientResponse)other);
+        if (other instanceof flyteidl.service.Auth.PublicClientAuthConfigResponse) {
+          return mergeFrom((flyteidl.service.Auth.PublicClientAuthConfigResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.service.Auth.FlyteClientResponse other) {
-        if (other == flyteidl.service.Auth.FlyteClientResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.service.Auth.PublicClientAuthConfigResponse other) {
+        if (other == flyteidl.service.Auth.PublicClientAuthConfigResponse.getDefaultInstance()) return this;
         if (!other.getClientId().isEmpty()) {
           clientId_ = other.clientId_;
           onChanged();
@@ -4025,11 +4025,11 @@ public final class Auth {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.service.Auth.FlyteClientResponse parsedMessage = null;
+        flyteidl.service.Auth.PublicClientAuthConfigResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Auth.FlyteClientResponse) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.service.Auth.PublicClientAuthConfigResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4454,41 +4454,41 @@ public final class Auth {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteClientResponse)
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.PublicClientAuthConfigResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientResponse)
-    private static final flyteidl.service.Auth.FlyteClientResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigResponse)
+    private static final flyteidl.service.Auth.PublicClientAuthConfigResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.service.Auth.FlyteClientResponse();
+      DEFAULT_INSTANCE = new flyteidl.service.Auth.PublicClientAuthConfigResponse();
     }
 
-    public static flyteidl.service.Auth.FlyteClientResponse getDefaultInstance() {
+    public static flyteidl.service.Auth.PublicClientAuthConfigResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FlyteClientResponse>
-        PARSER = new com.google.protobuf.AbstractParser<FlyteClientResponse>() {
+    private static final com.google.protobuf.Parser<PublicClientAuthConfigResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PublicClientAuthConfigResponse>() {
       @java.lang.Override
-      public FlyteClientResponse parsePartialFrom(
+      public PublicClientAuthConfigResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FlyteClientResponse(input, extensionRegistry);
+        return new PublicClientAuthConfigResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FlyteClientResponse> parser() {
+    public static com.google.protobuf.Parser<PublicClientAuthConfigResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FlyteClientResponse> getParserForType() {
+    public com.google.protobuf.Parser<PublicClientAuthConfigResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.service.Auth.FlyteClientResponse getDefaultInstanceForType() {
+    public flyteidl.service.Auth.PublicClientAuthConfigResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4505,15 +4505,15 @@ public final class Auth {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_service_OAuth2MetadataResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_FlyteClientRequest_descriptor;
+    internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_FlyteClientRequest_fieldAccessorTable;
+      internal_static_flyteidl_service_PublicClientAuthConfigRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_FlyteClientResponse_descriptor;
+    internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_FlyteClientResponse_fieldAccessorTable;
+      internal_static_flyteidl_service_PublicClientAuthConfigResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4545,24 +4545,25 @@ public final class Auth {
       "en_endpoint_auth_methods_supported\030\006 \003(\t" +
       "\022\020\n\010jwks_uri\030\007 \001(\t\022(\n code_challenge_met" +
       "hods_supported\030\010 \003(\t\022\035\n\025grant_types_supp" +
-      "orted\030\t \003(\t\"\024\n\022FlyteClientRequest\"r\n\023Fly" +
-      "teClientResponse\022\021\n\tclient_id\030\001 \001(\t\022\024\n\014r" +
-      "edirect_uri\030\002 \001(\t\022\016\n\006scopes\030\003 \003(\t\022\"\n\032aut" +
-      "horization_metadata_key\030\004 \001(\t2\331\003\n\023AuthMe" +
-      "tadataService\022\362\001\n\016OAuth2Metadata\022\'.flyte" +
-      "idl.service.OAuth2MetadataRequest\032(.flyt" +
-      "eidl.service.OAuth2MetadataResponse\"\214\001\202\323" +
-      "\344\223\002)\022\'/.well-known/oauth-authorization-s" +
-      "erver\222AZ\032XRetrieves OAuth2 authorization" +
-      " server metadata. This endpoint is anony" +
-      "mously accessible.\022\314\001\n\013FlyteClient\022$.fly" +
-      "teidl.service.FlyteClientRequest\032%.flyte" +
-      "idl.service.FlyteClientResponse\"p\202\323\344\223\002\031\022" +
-      "\027/config/v1/flyte_client\222AN\032LRetrieves p" +
-      "ublic flyte client info. This endpoint i" +
-      "s anonymously accessible.B9Z7github.com/" +
-      "flyteorg/flyteidl/gen/pb-go/flyteidl/ser" +
-      "viceb\006proto3"
+      "orted\030\t \003(\t\"\037\n\035PublicClientAuthConfigReq" +
+      "uest\"}\n\036PublicClientAuthConfigResponse\022\021" +
+      "\n\tclient_id\030\001 \001(\t\022\024\n\014redirect_uri\030\002 \001(\t\022" +
+      "\016\n\006scopes\030\003 \003(\t\022\"\n\032authorization_metadat" +
+      "a_key\030\004 \001(\t2\374\003\n\023AuthMetadataService\022\365\001\n\021" +
+      "GetOAuth2Metadata\022\'.flyteidl.service.OAu" +
+      "th2MetadataRequest\032(.flyteidl.service.OA" +
+      "uth2MetadataResponse\"\214\001\202\323\344\223\002)\022\'/.well-kn" +
+      "own/oauth-authorization-server\222AZ\032XRetri" +
+      "eves OAuth2 authorization server metadat" +
+      "a. This endpoint is anonymously accessib" +
+      "le.\022\354\001\n\025GetPublicClientConfig\022/.flyteidl" +
+      ".service.PublicClientAuthConfigRequest\0320" +
+      ".flyteidl.service.PublicClientAuthConfig" +
+      "Response\"p\202\323\344\223\002\031\022\027/config/v1/flyte_clien" +
+      "t\222AN\032LRetrieves public flyte client info" +
+      ". This endpoint is anonymously accessibl" +
+      "e.B9Z7github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4603,17 +4604,17 @@ public final class Auth {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_OAuth2MetadataResponse_descriptor,
         new java.lang.String[] { "Issuer", "AuthorizationEndpoint", "TokenEndpoint", "ResponseTypesSupported", "ScopesSupported", "TokenEndpointAuthMethodsSupported", "JwksUri", "CodeChallengeMethodsSupported", "GrantTypesSupported", });
-    internal_static_flyteidl_service_FlyteClientRequest_descriptor =
+    internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_service_FlyteClientRequest_fieldAccessorTable = new
+    internal_static_flyteidl_service_PublicClientAuthConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_FlyteClientRequest_descriptor,
+        internal_static_flyteidl_service_PublicClientAuthConfigRequest_descriptor,
         new java.lang.String[] { });
-    internal_static_flyteidl_service_FlyteClientResponse_descriptor =
+    internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_flyteidl_service_FlyteClientResponse_fieldAccessorTable = new
+    internal_static_flyteidl_service_PublicClientAuthConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_FlyteClientResponse_descriptor,
+        internal_static_flyteidl_service_PublicClientAuthConfigResponse_descriptor,
         new java.lang.String[] { "ClientId", "RedirectUri", "Scopes", "AuthorizationMetadataKey", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

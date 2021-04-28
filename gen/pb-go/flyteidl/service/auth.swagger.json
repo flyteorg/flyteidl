@@ -19,7 +19,7 @@
       "get": {
         "summary": "Anonymously accessible. Retrieves local or external oauth authorization server metadata.",
         "description": "Retrieves OAuth2 authorization server metadata. This endpoint is anonymously accessible.",
-        "operationId": "OAuth2Metadata",
+        "operationId": "GetOAuth2Metadata",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -37,12 +37,12 @@
       "get": {
         "summary": "Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization\nrequests.",
         "description": "Retrieves public flyte client info. This endpoint is anonymously accessible.",
-        "operationId": "FlyteClient",
+        "operationId": "GetPublicClientConfig",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceFlyteClientResponse"
+              "$ref": "#/definitions/servicePublicClientAuthConfigResponse"
             }
           }
         },
@@ -53,31 +53,6 @@
     }
   },
   "definitions": {
-    "serviceFlyteClientResponse": {
-      "type": "object",
-      "properties": {
-        "client_id": {
-          "type": "string",
-          "description": "client_id to use when initiating OAuth2 authorization requests."
-        },
-        "redirect_uri": {
-          "type": "string",
-          "description": "redirect uri to use when initiating OAuth2 authorization requests."
-        },
-        "scopes": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "scopes to request when initiating OAuth2 authorization requests."
-        },
-        "authorization_metadata_key": {
-          "type": "string",
-          "description": "Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the\ndefault http `Authorization` header."
-        }
-      },
-      "description": "FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users."
-    },
     "serviceOAuth2MetadataResponse": {
       "type": "object",
       "properties": {
@@ -134,6 +109,31 @@
         }
       },
       "title": "OAuth2MetadataResponse defines an RFC-Compliant response for /.well-known/oauth-authorization-server metadata\nas defined in https://tools.ietf.org/html/rfc8414"
+    },
+    "servicePublicClientAuthConfigResponse": {
+      "type": "object",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "client_id to use when initiating OAuth2 authorization requests."
+        },
+        "redirect_uri": {
+          "type": "string",
+          "description": "redirect uri to use when initiating OAuth2 authorization requests."
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "scopes to request when initiating OAuth2 authorization requests."
+        },
+        "authorization_metadata_key": {
+          "type": "string",
+          "description": "Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the\ndefault http `Authorization` header."
+        }
+      },
+      "description": "FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users."
     }
   }
 }

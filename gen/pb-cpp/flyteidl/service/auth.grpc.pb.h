@@ -52,72 +52,72 @@ class AuthMetadataService final {
    public:
     virtual ~StubInterface() {}
     // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
-    virtual ::grpc::Status OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> AsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(AsyncOAuth2MetadataRaw(context, request, cq));
+    virtual ::grpc::Status GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> AsyncGetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(AsyncGetOAuth2MetadataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> PrepareAsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(PrepareAsyncOAuth2MetadataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>> PrepareAsyncGetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>>(PrepareAsyncGetOAuth2MetadataRaw(context, request, cq));
     }
     // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
     // requests.
-    virtual ::grpc::Status FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::flyteidl::service::FlyteClientResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>> AsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>>(AsyncFlyteClientRaw(context, request, cq));
+    virtual ::grpc::Status GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::flyteidl::service::PublicClientAuthConfigResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>> AsyncGetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>>(AsyncGetPublicClientConfigRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>> PrepareAsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>>(PrepareAsyncFlyteClientRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>> PrepareAsyncGetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>>(PrepareAsyncGetPublicClientConfigRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
-      virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
       // requests.
-      virtual void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPublicClientConfig(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPublicClientConfig(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>* AsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>* AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::FlyteClientResponse>* PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>* AsyncGetOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncGetOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>* AsyncGetPublicClientConfigRaw(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::PublicClientAuthConfigResponse>* PrepareAsyncGetPublicClientConfigRaw(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>> AsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>>(AsyncOAuth2MetadataRaw(context, request, cq));
+    ::grpc::Status GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::flyteidl::service::OAuth2MetadataResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>> AsyncGetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>>(AsyncGetOAuth2MetadataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>> PrepareAsyncOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>>(PrepareAsyncOAuth2MetadataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>> PrepareAsyncGetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>>(PrepareAsyncGetOAuth2MetadataRaw(context, request, cq));
     }
-    ::grpc::Status FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::flyteidl::service::FlyteClientResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>> AsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>>(AsyncFlyteClientRaw(context, request, cq));
+    ::grpc::Status GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>> AsyncGetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>>(AsyncGetPublicClientConfigRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>> PrepareAsyncFlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>>(PrepareAsyncFlyteClientRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>> PrepareAsyncGetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>>(PrepareAsyncGetPublicClientConfigRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) override;
-      void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) override;
-      void OAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void OAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) override;
-      void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, std::function<void(::grpc::Status)>) override;
-      void FlyteClient(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void FlyteClient(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOAuth2Metadata(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOAuth2Metadata(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPublicClientConfig(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPublicClientConfig(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetPublicClientConfig(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -129,12 +129,12 @@ class AuthMetadataService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* AsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::FlyteClientResponse>* PrepareAsyncFlyteClientRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteClientRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_OAuth2Metadata_;
-    const ::grpc::internal::RpcMethod rpcmethod_FlyteClient_;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* AsyncGetOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::OAuth2MetadataResponse>* PrepareAsyncGetOAuth2MetadataRaw(::grpc::ClientContext* context, const ::flyteidl::service::OAuth2MetadataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>* AsyncGetPublicClientConfigRaw(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::PublicClientAuthConfigResponse>* PrepareAsyncGetPublicClientConfigRaw(::grpc::ClientContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOAuth2Metadata_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetPublicClientConfig_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -143,282 +143,282 @@ class AuthMetadataService final {
     Service();
     virtual ~Service();
     // Anonymously accessible. Retrieves local or external oauth authorization server metadata.
-    virtual ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response);
+    virtual ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response);
     // Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
     // requests.
-    virtual ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response);
+    virtual ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_OAuth2Metadata : public BaseClass {
+  class WithAsyncMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_OAuth2Metadata() {
+    WithAsyncMethod_GetOAuth2Metadata() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_OAuth2Metadata() override {
+    ~WithAsyncMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestOAuth2Metadata(::grpc::ServerContext* context, ::flyteidl::service::OAuth2MetadataRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::OAuth2MetadataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetOAuth2Metadata(::grpc::ServerContext* context, ::flyteidl::service::OAuth2MetadataRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::OAuth2MetadataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_FlyteClient : public BaseClass {
+  class WithAsyncMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_FlyteClient() {
+    WithAsyncMethod_GetPublicClientConfig() {
       ::grpc::Service::MarkMethodAsync(1);
     }
-    ~WithAsyncMethod_FlyteClient() override {
+    ~WithAsyncMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFlyteClient(::grpc::ServerContext* context, ::flyteidl::service::FlyteClientRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::FlyteClientResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetPublicClientConfig(::grpc::ServerContext* context, ::flyteidl::service::PublicClientAuthConfigRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::PublicClientAuthConfigResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_OAuth2Metadata<WithAsyncMethod_FlyteClient<Service > > AsyncService;
+  typedef WithAsyncMethod_GetOAuth2Metadata<WithAsyncMethod_GetPublicClientConfig<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_OAuth2Metadata : public BaseClass {
+  class ExperimentalWithCallbackMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_OAuth2Metadata() {
+    ExperimentalWithCallbackMethod_GetOAuth2Metadata() {
       ::grpc::Service::experimental().MarkMethodCallback(0,
         new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>(
           [this](::grpc::ServerContext* context,
                  const ::flyteidl::service::OAuth2MetadataRequest* request,
                  ::flyteidl::service::OAuth2MetadataResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->OAuth2Metadata(context, request, response, controller);
+                   return this->GetOAuth2Metadata(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_OAuth2Metadata(
+    void SetMessageAllocatorFor_GetOAuth2Metadata(
         ::grpc::experimental::MessageAllocator< ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>* allocator) {
       static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>*>(
           ::grpc::Service::experimental().GetHandler(0))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_OAuth2Metadata() override {
+    ~ExperimentalWithCallbackMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_FlyteClient : public BaseClass {
+  class ExperimentalWithCallbackMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_FlyteClient() {
+    ExperimentalWithCallbackMethod_GetPublicClientConfig() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::PublicClientAuthConfigRequest, ::flyteidl::service::PublicClientAuthConfigResponse>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::service::FlyteClientRequest* request,
-                 ::flyteidl::service::FlyteClientResponse* response,
+                 const ::flyteidl::service::PublicClientAuthConfigRequest* request,
+                 ::flyteidl::service::PublicClientAuthConfigResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->FlyteClient(context, request, response, controller);
+                   return this->GetPublicClientConfig(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_FlyteClient(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>*>(
+    void SetMessageAllocatorFor_GetPublicClientConfig(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::service::PublicClientAuthConfigRequest, ::flyteidl::service::PublicClientAuthConfigResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::PublicClientAuthConfigRequest, ::flyteidl::service::PublicClientAuthConfigResponse>*>(
           ::grpc::Service::experimental().GetHandler(1))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_FlyteClient() override {
+    ~ExperimentalWithCallbackMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_OAuth2Metadata<ExperimentalWithCallbackMethod_FlyteClient<Service > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_GetOAuth2Metadata<ExperimentalWithCallbackMethod_GetPublicClientConfig<Service > > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_OAuth2Metadata : public BaseClass {
+  class WithGenericMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_OAuth2Metadata() {
+    WithGenericMethod_GetOAuth2Metadata() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_OAuth2Metadata() override {
+    ~WithGenericMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_FlyteClient : public BaseClass {
+  class WithGenericMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_FlyteClient() {
+    WithGenericMethod_GetPublicClientConfig() {
       ::grpc::Service::MarkMethodGeneric(1);
     }
-    ~WithGenericMethod_FlyteClient() override {
+    ~WithGenericMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithRawMethod_OAuth2Metadata : public BaseClass {
+  class WithRawMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_OAuth2Metadata() {
+    WithRawMethod_GetOAuth2Metadata() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_OAuth2Metadata() override {
+    ~WithRawMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestOAuth2Metadata(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetOAuth2Metadata(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_FlyteClient : public BaseClass {
+  class WithRawMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_FlyteClient() {
+    WithRawMethod_GetPublicClientConfig() {
       ::grpc::Service::MarkMethodRaw(1);
     }
-    ~WithRawMethod_FlyteClient() override {
+    ~WithRawMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFlyteClient(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetPublicClientConfig(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_OAuth2Metadata : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_OAuth2Metadata() {
+    ExperimentalWithRawCallbackMethod_GetOAuth2Metadata() {
       ::grpc::Service::experimental().MarkMethodRawCallback(0,
         new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->OAuth2Metadata(context, request, response, controller);
+                   this->GetOAuth2Metadata(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_OAuth2Metadata() override {
+    ~ExperimentalWithRawCallbackMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void OAuth2Metadata(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetOAuth2Metadata(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_FlyteClient : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_FlyteClient() {
+    ExperimentalWithRawCallbackMethod_GetPublicClientConfig() {
       ::grpc::Service::experimental().MarkMethodRawCallback(1,
         new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->FlyteClient(context, request, response, controller);
+                   this->GetPublicClientConfig(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_FlyteClient() override {
+    ~ExperimentalWithRawCallbackMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void FlyteClient(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetPublicClientConfig(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_OAuth2Metadata : public BaseClass {
+  class WithStreamedUnaryMethod_GetOAuth2Metadata : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_OAuth2Metadata() {
+    WithStreamedUnaryMethod_GetOAuth2Metadata() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>(std::bind(&WithStreamedUnaryMethod_OAuth2Metadata<BaseClass>::StreamedOAuth2Metadata, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::OAuth2MetadataRequest, ::flyteidl::service::OAuth2MetadataResponse>(std::bind(&WithStreamedUnaryMethod_GetOAuth2Metadata<BaseClass>::StreamedGetOAuth2Metadata, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_OAuth2Metadata() override {
+    ~WithStreamedUnaryMethod_GetOAuth2Metadata() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status OAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
+    ::grpc::Status GetOAuth2Metadata(::grpc::ServerContext* context, const ::flyteidl::service::OAuth2MetadataRequest* request, ::flyteidl::service::OAuth2MetadataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedOAuth2Metadata(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::OAuth2MetadataRequest,::flyteidl::service::OAuth2MetadataResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetOAuth2Metadata(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::OAuth2MetadataRequest,::flyteidl::service::OAuth2MetadataResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_FlyteClient : public BaseClass {
+  class WithStreamedUnaryMethod_GetPublicClientConfig : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_FlyteClient() {
+    WithStreamedUnaryMethod_GetPublicClientConfig() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::FlyteClientRequest, ::flyteidl::service::FlyteClientResponse>(std::bind(&WithStreamedUnaryMethod_FlyteClient<BaseClass>::StreamedFlyteClient, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::PublicClientAuthConfigRequest, ::flyteidl::service::PublicClientAuthConfigResponse>(std::bind(&WithStreamedUnaryMethod_GetPublicClientConfig<BaseClass>::StreamedGetPublicClientConfig, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_FlyteClient() override {
+    ~WithStreamedUnaryMethod_GetPublicClientConfig() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status FlyteClient(::grpc::ServerContext* context, const ::flyteidl::service::FlyteClientRequest* request, ::flyteidl::service::FlyteClientResponse* response) override {
+    ::grpc::Status GetPublicClientConfig(::grpc::ServerContext* context, const ::flyteidl::service::PublicClientAuthConfigRequest* request, ::flyteidl::service::PublicClientAuthConfigResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedFlyteClient(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::FlyteClientRequest,::flyteidl::service::FlyteClientResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPublicClientConfig(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::PublicClientAuthConfigRequest,::flyteidl::service::PublicClientAuthConfigResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<Service > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetOAuth2Metadata<WithStreamedUnaryMethod_GetPublicClientConfig<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_OAuth2Metadata<WithStreamedUnaryMethod_FlyteClient<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetOAuth2Metadata<WithStreamedUnaryMethod_GetPublicClientConfig<Service > > StreamedService;
 };
 
 }  // namespace service

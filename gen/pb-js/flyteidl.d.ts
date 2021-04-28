@@ -15088,116 +15088,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a FlyteClientRequest. */
-        interface IFlyteClientRequest {
+        /** Properties of a PublicClientAuthConfigRequest. */
+        interface IPublicClientAuthConfigRequest {
         }
 
-        /** Represents a FlyteClientRequest. */
-        class FlyteClientRequest implements IFlyteClientRequest {
+        /** Represents a PublicClientAuthConfigRequest. */
+        class PublicClientAuthConfigRequest implements IPublicClientAuthConfigRequest {
 
             /**
-             * Constructs a new FlyteClientRequest.
+             * Constructs a new PublicClientAuthConfigRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.service.IFlyteClientRequest);
+            constructor(properties?: flyteidl.service.IPublicClientAuthConfigRequest);
 
             /**
-             * Creates a new FlyteClientRequest instance using the specified properties.
+             * Creates a new PublicClientAuthConfigRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns FlyteClientRequest instance
+             * @returns PublicClientAuthConfigRequest instance
              */
-            public static create(properties?: flyteidl.service.IFlyteClientRequest): flyteidl.service.FlyteClientRequest;
+            public static create(properties?: flyteidl.service.IPublicClientAuthConfigRequest): flyteidl.service.PublicClientAuthConfigRequest;
 
             /**
-             * Encodes the specified FlyteClientRequest message. Does not implicitly {@link flyteidl.service.FlyteClientRequest.verify|verify} messages.
-             * @param message FlyteClientRequest message or plain object to encode
+             * Encodes the specified PublicClientAuthConfigRequest message. Does not implicitly {@link flyteidl.service.PublicClientAuthConfigRequest.verify|verify} messages.
+             * @param message PublicClientAuthConfigRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.service.IFlyteClientRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.service.IPublicClientAuthConfigRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a FlyteClientRequest message from the specified reader or buffer.
+             * Decodes a PublicClientAuthConfigRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns FlyteClientRequest
+             * @returns PublicClientAuthConfigRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteClientRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.PublicClientAuthConfigRequest;
 
             /**
-             * Verifies a FlyteClientRequest message.
+             * Verifies a PublicClientAuthConfigRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a FlyteClientResponse. */
-        interface IFlyteClientResponse {
+        /** Properties of a PublicClientAuthConfigResponse. */
+        interface IPublicClientAuthConfigResponse {
 
-            /** FlyteClientResponse clientId */
+            /** PublicClientAuthConfigResponse clientId */
             clientId?: (string|null);
 
-            /** FlyteClientResponse redirectUri */
+            /** PublicClientAuthConfigResponse redirectUri */
             redirectUri?: (string|null);
 
-            /** FlyteClientResponse scopes */
+            /** PublicClientAuthConfigResponse scopes */
             scopes?: (string[]|null);
 
-            /** FlyteClientResponse authorizationMetadataKey */
+            /** PublicClientAuthConfigResponse authorizationMetadataKey */
             authorizationMetadataKey?: (string|null);
         }
 
-        /** Represents a FlyteClientResponse. */
-        class FlyteClientResponse implements IFlyteClientResponse {
+        /** Represents a PublicClientAuthConfigResponse. */
+        class PublicClientAuthConfigResponse implements IPublicClientAuthConfigResponse {
 
             /**
-             * Constructs a new FlyteClientResponse.
+             * Constructs a new PublicClientAuthConfigResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.service.IFlyteClientResponse);
+            constructor(properties?: flyteidl.service.IPublicClientAuthConfigResponse);
 
-            /** FlyteClientResponse clientId. */
+            /** PublicClientAuthConfigResponse clientId. */
             public clientId: string;
 
-            /** FlyteClientResponse redirectUri. */
+            /** PublicClientAuthConfigResponse redirectUri. */
             public redirectUri: string;
 
-            /** FlyteClientResponse scopes. */
+            /** PublicClientAuthConfigResponse scopes. */
             public scopes: string[];
 
-            /** FlyteClientResponse authorizationMetadataKey. */
+            /** PublicClientAuthConfigResponse authorizationMetadataKey. */
             public authorizationMetadataKey: string;
 
             /**
-             * Creates a new FlyteClientResponse instance using the specified properties.
+             * Creates a new PublicClientAuthConfigResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns FlyteClientResponse instance
+             * @returns PublicClientAuthConfigResponse instance
              */
-            public static create(properties?: flyteidl.service.IFlyteClientResponse): flyteidl.service.FlyteClientResponse;
+            public static create(properties?: flyteidl.service.IPublicClientAuthConfigResponse): flyteidl.service.PublicClientAuthConfigResponse;
 
             /**
-             * Encodes the specified FlyteClientResponse message. Does not implicitly {@link flyteidl.service.FlyteClientResponse.verify|verify} messages.
-             * @param message FlyteClientResponse message or plain object to encode
+             * Encodes the specified PublicClientAuthConfigResponse message. Does not implicitly {@link flyteidl.service.PublicClientAuthConfigResponse.verify|verify} messages.
+             * @param message PublicClientAuthConfigResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.service.IFlyteClientResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.service.IPublicClientAuthConfigResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a FlyteClientResponse message from the specified reader or buffer.
+             * Decodes a PublicClientAuthConfigResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns FlyteClientResponse
+             * @returns PublicClientAuthConfigResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteClientResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.PublicClientAuthConfigResponse;
 
             /**
-             * Verifies a FlyteClientResponse message.
+             * Verifies a PublicClientAuthConfigResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -15225,49 +15225,49 @@ export namespace flyteidl {
             public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): AuthMetadataService;
 
             /**
-             * Calls OAuth2Metadata.
+             * Calls GetOAuth2Metadata.
              * @param request OAuth2MetadataRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
              */
-            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest, callback: flyteidl.service.AuthMetadataService.OAuth2MetadataCallback): void;
+            public getOAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest, callback: flyteidl.service.AuthMetadataService.GetOAuth2MetadataCallback): void;
 
             /**
-             * Calls OAuth2Metadata.
+             * Calls GetOAuth2Metadata.
              * @param request OAuth2MetadataRequest message or plain object
              * @returns Promise
              */
-            public oAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest): Promise<flyteidl.service.OAuth2MetadataResponse>;
+            public getOAuth2Metadata(request: flyteidl.service.IOAuth2MetadataRequest): Promise<flyteidl.service.OAuth2MetadataResponse>;
 
             /**
-             * Calls FlyteClient.
-             * @param request FlyteClientRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and FlyteClientResponse
+             * Calls GetPublicClientConfig.
+             * @param request PublicClientAuthConfigRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and PublicClientAuthConfigResponse
              */
-            public flyteClient(request: flyteidl.service.IFlyteClientRequest, callback: flyteidl.service.AuthMetadataService.FlyteClientCallback): void;
+            public getPublicClientConfig(request: flyteidl.service.IPublicClientAuthConfigRequest, callback: flyteidl.service.AuthMetadataService.GetPublicClientConfigCallback): void;
 
             /**
-             * Calls FlyteClient.
-             * @param request FlyteClientRequest message or plain object
+             * Calls GetPublicClientConfig.
+             * @param request PublicClientAuthConfigRequest message or plain object
              * @returns Promise
              */
-            public flyteClient(request: flyteidl.service.IFlyteClientRequest): Promise<flyteidl.service.FlyteClientResponse>;
+            public getPublicClientConfig(request: flyteidl.service.IPublicClientAuthConfigRequest): Promise<flyteidl.service.PublicClientAuthConfigResponse>;
         }
 
         namespace AuthMetadataService {
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthMetadataService#oAuth2Metadata}.
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#getOAuth2Metadata}.
              * @param error Error, if any
              * @param [response] OAuth2MetadataResponse
              */
-            type OAuth2MetadataCallback = (error: (Error|null), response?: flyteidl.service.OAuth2MetadataResponse) => void;
+            type GetOAuth2MetadataCallback = (error: (Error|null), response?: flyteidl.service.OAuth2MetadataResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthMetadataService#flyteClient}.
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#getPublicClientConfig}.
              * @param error Error, if any
-             * @param [response] FlyteClientResponse
+             * @param [response] PublicClientAuthConfigResponse
              */
-            type FlyteClientCallback = (error: (Error|null), response?: flyteidl.service.FlyteClientResponse) => void;
+            type GetPublicClientConfigCallback = (error: (Error|null), response?: flyteidl.service.PublicClientAuthConfigResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */

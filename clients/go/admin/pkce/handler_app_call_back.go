@@ -1,4 +1,4 @@
-package threelegauth
+package pkce
 
 import (
 	"context"
@@ -8,9 +8,12 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func callbackHandler(c oauth2.Config) func(rw http.ResponseWriter, req *http.Request) {
+func getAuthServerCallbackHandler(c *oauth2.Config, server *http.Server, codeVerifier string, errorChannel chan error,
+	tokenChannel chan *oauth2.Token, stateString string) func(rw http.ResponseWriter, req *http.Request) {
+
 	return func(rw http.ResponseWriter, req *http.Request) {
-		codeVerifier := resetPKCE()
+		defer server.Close()
+
 		_, _ = rw.Write([]byte(`<h1>Flyte Authentication</h1>`))
 		rw.Header().Set("Content-Type", "text/html; charset=utf-8")
 		if req.URL.Query().Get("error") != "" {

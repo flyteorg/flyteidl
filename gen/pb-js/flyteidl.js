@@ -35089,23 +35089,23 @@ export const flyteidl = $root.flyteidl = (() => {
             return OAuth2MetadataResponse;
         })();
 
-        service.FlyteClientRequest = (function() {
+        service.PublicClientAuthConfigRequest = (function() {
 
             /**
-             * Properties of a FlyteClientRequest.
+             * Properties of a PublicClientAuthConfigRequest.
              * @memberof flyteidl.service
-             * @interface IFlyteClientRequest
+             * @interface IPublicClientAuthConfigRequest
              */
 
             /**
-             * Constructs a new FlyteClientRequest.
+             * Constructs a new PublicClientAuthConfigRequest.
              * @memberof flyteidl.service
-             * @classdesc Represents a FlyteClientRequest.
-             * @implements IFlyteClientRequest
+             * @classdesc Represents a PublicClientAuthConfigRequest.
+             * @implements IPublicClientAuthConfigRequest
              * @constructor
-             * @param {flyteidl.service.IFlyteClientRequest=} [properties] Properties to set
+             * @param {flyteidl.service.IPublicClientAuthConfigRequest=} [properties] Properties to set
              */
-            function FlyteClientRequest(properties) {
+            function PublicClientAuthConfigRequest(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -35113,47 +35113,47 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * Creates a new FlyteClientRequest instance using the specified properties.
+             * Creates a new PublicClientAuthConfigRequest instance using the specified properties.
              * @function create
-             * @memberof flyteidl.service.FlyteClientRequest
+             * @memberof flyteidl.service.PublicClientAuthConfigRequest
              * @static
-             * @param {flyteidl.service.IFlyteClientRequest=} [properties] Properties to set
-             * @returns {flyteidl.service.FlyteClientRequest} FlyteClientRequest instance
+             * @param {flyteidl.service.IPublicClientAuthConfigRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.PublicClientAuthConfigRequest} PublicClientAuthConfigRequest instance
              */
-            FlyteClientRequest.create = function create(properties) {
-                return new FlyteClientRequest(properties);
+            PublicClientAuthConfigRequest.create = function create(properties) {
+                return new PublicClientAuthConfigRequest(properties);
             };
 
             /**
-             * Encodes the specified FlyteClientRequest message. Does not implicitly {@link flyteidl.service.FlyteClientRequest.verify|verify} messages.
+             * Encodes the specified PublicClientAuthConfigRequest message. Does not implicitly {@link flyteidl.service.PublicClientAuthConfigRequest.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.service.FlyteClientRequest
+             * @memberof flyteidl.service.PublicClientAuthConfigRequest
              * @static
-             * @param {flyteidl.service.IFlyteClientRequest} message FlyteClientRequest message or plain object to encode
+             * @param {flyteidl.service.IPublicClientAuthConfigRequest} message PublicClientAuthConfigRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            FlyteClientRequest.encode = function encode(message, writer) {
+            PublicClientAuthConfigRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 return writer;
             };
 
             /**
-             * Decodes a FlyteClientRequest message from the specified reader or buffer.
+             * Decodes a PublicClientAuthConfigRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.service.FlyteClientRequest
+             * @memberof flyteidl.service.PublicClientAuthConfigRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.service.FlyteClientRequest} FlyteClientRequest
+             * @returns {flyteidl.service.PublicClientAuthConfigRequest} PublicClientAuthConfigRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            FlyteClientRequest.decode = function decode(reader, length) {
+            PublicClientAuthConfigRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteClientRequest();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.PublicClientAuthConfigRequest();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -35166,43 +35166,43 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a FlyteClientRequest message.
+             * Verifies a PublicClientAuthConfigRequest message.
              * @function verify
-             * @memberof flyteidl.service.FlyteClientRequest
+             * @memberof flyteidl.service.PublicClientAuthConfigRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            FlyteClientRequest.verify = function verify(message) {
+            PublicClientAuthConfigRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 return null;
             };
 
-            return FlyteClientRequest;
+            return PublicClientAuthConfigRequest;
         })();
 
-        service.FlyteClientResponse = (function() {
+        service.PublicClientAuthConfigResponse = (function() {
 
             /**
-             * Properties of a FlyteClientResponse.
+             * Properties of a PublicClientAuthConfigResponse.
              * @memberof flyteidl.service
-             * @interface IFlyteClientResponse
-             * @property {string|null} [clientId] FlyteClientResponse clientId
-             * @property {string|null} [redirectUri] FlyteClientResponse redirectUri
-             * @property {Array.<string>|null} [scopes] FlyteClientResponse scopes
-             * @property {string|null} [authorizationMetadataKey] FlyteClientResponse authorizationMetadataKey
+             * @interface IPublicClientAuthConfigResponse
+             * @property {string|null} [clientId] PublicClientAuthConfigResponse clientId
+             * @property {string|null} [redirectUri] PublicClientAuthConfigResponse redirectUri
+             * @property {Array.<string>|null} [scopes] PublicClientAuthConfigResponse scopes
+             * @property {string|null} [authorizationMetadataKey] PublicClientAuthConfigResponse authorizationMetadataKey
              */
 
             /**
-             * Constructs a new FlyteClientResponse.
+             * Constructs a new PublicClientAuthConfigResponse.
              * @memberof flyteidl.service
-             * @classdesc Represents a FlyteClientResponse.
-             * @implements IFlyteClientResponse
+             * @classdesc Represents a PublicClientAuthConfigResponse.
+             * @implements IPublicClientAuthConfigResponse
              * @constructor
-             * @param {flyteidl.service.IFlyteClientResponse=} [properties] Properties to set
+             * @param {flyteidl.service.IPublicClientAuthConfigResponse=} [properties] Properties to set
              */
-            function FlyteClientResponse(properties) {
+            function PublicClientAuthConfigResponse(properties) {
                 this.scopes = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -35211,59 +35211,59 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * FlyteClientResponse clientId.
+             * PublicClientAuthConfigResponse clientId.
              * @member {string} clientId
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @instance
              */
-            FlyteClientResponse.prototype.clientId = "";
+            PublicClientAuthConfigResponse.prototype.clientId = "";
 
             /**
-             * FlyteClientResponse redirectUri.
+             * PublicClientAuthConfigResponse redirectUri.
              * @member {string} redirectUri
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @instance
              */
-            FlyteClientResponse.prototype.redirectUri = "";
+            PublicClientAuthConfigResponse.prototype.redirectUri = "";
 
             /**
-             * FlyteClientResponse scopes.
+             * PublicClientAuthConfigResponse scopes.
              * @member {Array.<string>} scopes
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @instance
              */
-            FlyteClientResponse.prototype.scopes = $util.emptyArray;
+            PublicClientAuthConfigResponse.prototype.scopes = $util.emptyArray;
 
             /**
-             * FlyteClientResponse authorizationMetadataKey.
+             * PublicClientAuthConfigResponse authorizationMetadataKey.
              * @member {string} authorizationMetadataKey
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @instance
              */
-            FlyteClientResponse.prototype.authorizationMetadataKey = "";
+            PublicClientAuthConfigResponse.prototype.authorizationMetadataKey = "";
 
             /**
-             * Creates a new FlyteClientResponse instance using the specified properties.
+             * Creates a new PublicClientAuthConfigResponse instance using the specified properties.
              * @function create
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @static
-             * @param {flyteidl.service.IFlyteClientResponse=} [properties] Properties to set
-             * @returns {flyteidl.service.FlyteClientResponse} FlyteClientResponse instance
+             * @param {flyteidl.service.IPublicClientAuthConfigResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.PublicClientAuthConfigResponse} PublicClientAuthConfigResponse instance
              */
-            FlyteClientResponse.create = function create(properties) {
-                return new FlyteClientResponse(properties);
+            PublicClientAuthConfigResponse.create = function create(properties) {
+                return new PublicClientAuthConfigResponse(properties);
             };
 
             /**
-             * Encodes the specified FlyteClientResponse message. Does not implicitly {@link flyteidl.service.FlyteClientResponse.verify|verify} messages.
+             * Encodes the specified PublicClientAuthConfigResponse message. Does not implicitly {@link flyteidl.service.PublicClientAuthConfigResponse.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @static
-             * @param {flyteidl.service.IFlyteClientResponse} message FlyteClientResponse message or plain object to encode
+             * @param {flyteidl.service.IPublicClientAuthConfigResponse} message PublicClientAuthConfigResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            FlyteClientResponse.encode = function encode(message, writer) {
+            PublicClientAuthConfigResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
@@ -35279,20 +35279,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a FlyteClientResponse message from the specified reader or buffer.
+             * Decodes a PublicClientAuthConfigResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.service.FlyteClientResponse} FlyteClientResponse
+             * @returns {flyteidl.service.PublicClientAuthConfigResponse} PublicClientAuthConfigResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            FlyteClientResponse.decode = function decode(reader, length) {
+            PublicClientAuthConfigResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteClientResponse();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.PublicClientAuthConfigResponse();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -35319,14 +35319,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a FlyteClientResponse message.
+             * Verifies a PublicClientAuthConfigResponse message.
              * @function verify
-             * @memberof flyteidl.service.FlyteClientResponse
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            FlyteClientResponse.verify = function verify(message) {
+            PublicClientAuthConfigResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
@@ -35348,7 +35348,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return FlyteClientResponse;
+            return PublicClientAuthConfigResponse;
         })();
 
         service.AuthMetadataService = (function() {
@@ -35384,31 +35384,31 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthMetadataService#oAuth2Metadata}.
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#getOAuth2Metadata}.
              * @memberof flyteidl.service.AuthMetadataService
-             * @typedef OAuth2MetadataCallback
+             * @typedef GetOAuth2MetadataCallback
              * @type {function}
              * @param {Error|null} error Error, if any
              * @param {flyteidl.service.OAuth2MetadataResponse} [response] OAuth2MetadataResponse
              */
 
             /**
-             * Calls OAuth2Metadata.
-             * @function oAuth2Metadata
+             * Calls GetOAuth2Metadata.
+             * @function getOAuth2Metadata
              * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
-             * @param {flyteidl.service.AuthMetadataService.OAuth2MetadataCallback} callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
+             * @param {flyteidl.service.AuthMetadataService.GetOAuth2MetadataCallback} callback Node-style callback called with the error, if any, and OAuth2MetadataResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AuthMetadataService.prototype.oAuth2Metadata = function oAuth2Metadata(request, callback) {
-                return this.rpcCall(oAuth2Metadata, $root.flyteidl.service.OAuth2MetadataRequest, $root.flyteidl.service.OAuth2MetadataResponse, request, callback);
-            }, "name", { value: "OAuth2Metadata" });
+            Object.defineProperty(AuthMetadataService.prototype.getOAuth2Metadata = function getOAuth2Metadata(request, callback) {
+                return this.rpcCall(getOAuth2Metadata, $root.flyteidl.service.OAuth2MetadataRequest, $root.flyteidl.service.OAuth2MetadataResponse, request, callback);
+            }, "name", { value: "GetOAuth2Metadata" });
 
             /**
-             * Calls OAuth2Metadata.
-             * @function oAuth2Metadata
+             * Calls GetOAuth2Metadata.
+             * @function getOAuth2Metadata
              * @memberof flyteidl.service.AuthMetadataService
              * @instance
              * @param {flyteidl.service.IOAuth2MetadataRequest} request OAuth2MetadataRequest message or plain object
@@ -35417,35 +35417,35 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
-             * Callback as used by {@link flyteidl.service.AuthMetadataService#flyteClient}.
+             * Callback as used by {@link flyteidl.service.AuthMetadataService#getPublicClientConfig}.
              * @memberof flyteidl.service.AuthMetadataService
-             * @typedef FlyteClientCallback
+             * @typedef GetPublicClientConfigCallback
              * @type {function}
              * @param {Error|null} error Error, if any
-             * @param {flyteidl.service.FlyteClientResponse} [response] FlyteClientResponse
+             * @param {flyteidl.service.PublicClientAuthConfigResponse} [response] PublicClientAuthConfigResponse
              */
 
             /**
-             * Calls FlyteClient.
-             * @function flyteClient
+             * Calls GetPublicClientConfig.
+             * @function getPublicClientConfig
              * @memberof flyteidl.service.AuthMetadataService
              * @instance
-             * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
-             * @param {flyteidl.service.AuthMetadataService.FlyteClientCallback} callback Node-style callback called with the error, if any, and FlyteClientResponse
+             * @param {flyteidl.service.IPublicClientAuthConfigRequest} request PublicClientAuthConfigRequest message or plain object
+             * @param {flyteidl.service.AuthMetadataService.GetPublicClientConfigCallback} callback Node-style callback called with the error, if any, and PublicClientAuthConfigResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AuthMetadataService.prototype.flyteClient = function flyteClient(request, callback) {
-                return this.rpcCall(flyteClient, $root.flyteidl.service.FlyteClientRequest, $root.flyteidl.service.FlyteClientResponse, request, callback);
-            }, "name", { value: "FlyteClient" });
+            Object.defineProperty(AuthMetadataService.prototype.getPublicClientConfig = function getPublicClientConfig(request, callback) {
+                return this.rpcCall(getPublicClientConfig, $root.flyteidl.service.PublicClientAuthConfigRequest, $root.flyteidl.service.PublicClientAuthConfigResponse, request, callback);
+            }, "name", { value: "GetPublicClientConfig" });
 
             /**
-             * Calls FlyteClient.
-             * @function flyteClient
+             * Calls GetPublicClientConfig.
+             * @function getPublicClientConfig
              * @memberof flyteidl.service.AuthMetadataService
              * @instance
-             * @param {flyteidl.service.IFlyteClientRequest} request FlyteClientRequest message or plain object
-             * @returns {Promise<flyteidl.service.FlyteClientResponse>} Promise
+             * @param {flyteidl.service.IPublicClientAuthConfigRequest} request PublicClientAuthConfigRequest message or plain object
+             * @returns {Promise<flyteidl.service.PublicClientAuthConfigResponse>} Promise
              * @variation 2
              */
 

@@ -102,12 +102,12 @@ grant_types_supported
   
 
 
-.. _api_msg_flyteidl.service.FlyteClientRequest:
+.. _api_msg_flyteidl.service.PublicClientAuthConfigRequest:
 
-flyteidl.service.FlyteClientRequest
------------------------------------
+flyteidl.service.PublicClientAuthConfigRequest
+----------------------------------------------
 
-`[flyteidl.service.FlyteClientRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/service/auth.proto#L58>`_
+`[flyteidl.service.PublicClientAuthConfigRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/service/auth.proto#L58>`_
 
 
 .. code-block:: json
@@ -117,12 +117,12 @@ flyteidl.service.FlyteClientRequest
 
 
 
-.. _api_msg_flyteidl.service.FlyteClientResponse:
+.. _api_msg_flyteidl.service.PublicClientAuthConfigResponse:
 
-flyteidl.service.FlyteClientResponse
-------------------------------------
+flyteidl.service.PublicClientAuthConfigResponse
+-----------------------------------------------
 
-`[flyteidl.service.FlyteClientResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/service/auth.proto#L61>`_
+`[flyteidl.service.PublicClientAuthConfigResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/service/auth.proto#L61>`_
 
 FlyteClientResponse encapsulates public information that flyte clients (CLIs... etc.) can use to authenticate users.
 
@@ -135,25 +135,25 @@ FlyteClientResponse encapsulates public information that flyte clients (CLIs... 
     "authorization_metadata_key": "..."
   }
 
-.. _api_field_flyteidl.service.FlyteClientResponse.client_id:
+.. _api_field_flyteidl.service.PublicClientAuthConfigResponse.client_id:
 
 client_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) client_id to use when initiating OAuth2 authorization requests.
   
   
-.. _api_field_flyteidl.service.FlyteClientResponse.redirect_uri:
+.. _api_field_flyteidl.service.PublicClientAuthConfigResponse.redirect_uri:
 
 redirect_uri
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) redirect uri to use when initiating OAuth2 authorization requests.
   
   
-.. _api_field_flyteidl.service.FlyteClientResponse.scopes:
+.. _api_field_flyteidl.service.PublicClientAuthConfigResponse.scopes:
 
 scopes
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) scopes to request when initiating OAuth2 authorization requests.
   
   
-.. _api_field_flyteidl.service.FlyteClientResponse.authorization_metadata_key:
+.. _api_field_flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key:
 
 authorization_metadata_key
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
