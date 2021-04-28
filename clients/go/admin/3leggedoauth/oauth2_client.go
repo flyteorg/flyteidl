@@ -83,10 +83,10 @@ func state(n int) string {
 }
 
 type DefaultHeaderTokenSource struct {
-	FlyteCtlToken *oauth2.Token
+	DefaultHeaderToken *oauth2.Token
 }
 
 func (ts *DefaultHeaderTokenSource) Token() (*oauth2.Token, error) {
-	t := ts.FlyteCtlToken
+	t := ts.DefaultHeaderToken
 	return t, nil
 }

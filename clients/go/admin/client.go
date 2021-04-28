@@ -50,7 +50,7 @@ func (c Clientset) AdminClient() service.AdminServiceClient {
 	return c.adminServiceClient
 }
 
-// AuthServiceClient retrieves the AuthServiceClient
+// AuthMetadataClient retrieves the AuthMetadataServiceClient
 func (c Clientset) AuthMetadataClient() service.AuthMetadataServiceClient {
 	return c.authMetadataServiceClient
 }
@@ -100,50 +100,63 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient se
 
 		tokenURL = metadata.TokenEndpoint
 	}
-
 	clientMetadata, err := authClient.FlyteClient(ctx, &service.FlyteClientRequest{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
 	var tSource oauth2.TokenSource
 	if cfg.MustAuthTypeConfig() == AuthTypeCLIENTSECRET {
-		secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+		tSource, err = getClientCredentialsTokenSource(ctx, cfg, clientMetadata, tokenURL)
 		if err != nil {
-			logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 			return nil, err
 		}
-
-		secret := strings.TrimSpace(string(secretBytes))
-
-		scopes := cfg.Scopes
-		if len(scopes) == 0 {
-			scopes = clientMetadata.Scopes
+	} else if cfg.MustAuthTypeConfig() == AuthTypeTHREELEGGEDAUTH {
+		tSource, err = getThreeLeggedAuthTokenSource(ctx, authClient)
+		if err != nil {
+			return nil, err
 		}
-
-		ccConfig := clientcredentials.Config{
-			ClientID:     cfg.ClientID,
-			ClientSecret: secret,
-			TokenURL:     tokenURL,
-			Scopes:       scopes,
-		}
-
-		tSource = ccConfig.TokenSource(ctx)
 	} else {
-		authToken := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, authClient)
-		if authToken == nil {
-			// Fetch using auth flow
-			if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {
-				logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
-				return nil, err
-			}
-		}
-		tSource = &_leggedoauth.DefaultHeaderTokenSource{
-			FlyteCtlToken: authToken,
-		}
+		return nil, fmt.Errorf("unsupported type %v", cfg.AuthType)
 	}
-
 	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+}
+
+// Returns the client credentials token source to be used eg by flytepropeller to communicate with admin/ by CI
+func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMetadata *service.FlyteClientResponse, tokenURL string) (oauth2.TokenSource, error) {
+	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+	if err != nil {
+		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
+		return nil, err
+	}
+	secret := strings.TrimSpace(string(secretBytes))
+	scopes := cfg.Scopes
+	if len(scopes) == 0 {
+		scopes = clientMetadata.Scopes
+	}
+	ccConfig := clientcredentials.Config{
+		ClientID:     cfg.ClientID,
+		ClientSecret: secret,
+		TokenURL:     tokenURL,
+		Scopes:       scopes,
+	}
+	return ccConfig.TokenSource(ctx), nil
+}
+
+// Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
+func getThreeLeggedAuthTokenSource(ctx context.Context, authClient service.AuthMetadataServiceClient) (oauth2.TokenSource, error) {
+	var err error
+	authToken := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, authClient)
+	if authToken == nil {
+		// Fetch using auth flow
+		if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {
+			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
+			return nil, err
+		}
+	}
+	return &_leggedoauth.DefaultHeaderTokenSource{
+		DefaultHeaderToken: authToken,
+	}, nil
 }
 
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
