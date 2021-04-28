@@ -2,15 +2,23 @@ package admin
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"net/url"
 	"sync"
 	"testing"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	mcokauthinterfaces "github.com/flyteorg/flyteidl/clients/go/admin/threelegauth/interfaces/mocks"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
 
-	"github.com/flyteorg/flytestdlib/config"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
+	"golang.org/x/oauth2"
 )
 
 func TestInitializeAndGetAdminClient(t *testing.T) {
@@ -70,6 +78,130 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AuthMetadataClient())
 		assert.NotNil(t, clientSet.AdminClient())
+	})
+}
+
+func TestGetAuthenticationDialOptionClientSecret(t *testing.T) {
+	ctx := context.Background()
+
+	u, _ := url.Parse("localhost:8089")
+	adminServiceConfig := &Config{
+		ClientSecretLocation:  "testdata/secret_key",
+		Endpoint:              config.URL{URL: *u},
+		UseInsecureConnection: true,
+		AuthType:              "CLIENTSECRET",
+		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+	}
+	t.Run("legal", func(t *testing.T) {
+		metatdata := &service.OAuth2MetadataResponse{
+			TokenEndpoint:   "/token",
+			ScopesSupported: []string{"code", "all"},
+		}
+		clientMetatadata := &service.FlyteClientResponse{
+			AuthorizationMetadataKey: "flyte_authorization",
+		}
+		mockAuthClient := new(mocks.AuthMetadataServiceClient)
+		mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+		mockAuthClient.OnFlyteClientMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.NotNil(t, dialOption)
+		assert.Nil(t, err)
+	})
+	t.Run("error during oauth2Metatdata", func(t *testing.T) {
+		mockAuthClient := new(mocks.AuthMetadataServiceClient)
+		mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(nil, fmt.Errorf("failed"))
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.Nil(t, dialOption)
+		assert.NotNil(t, err)
+	})
+	t.Run("error during flyte client", func(t *testing.T) {
+		metatdata := &service.OAuth2MetadataResponse{
+			TokenEndpoint:   "/token",
+			ScopesSupported: []string{"code", "all"},
+		}
+		mockAuthClient := new(mocks.AuthMetadataServiceClient)
+		mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+		mockAuthClient.OnFlyteClientMatch(mock.Anything, mock.Anything).Return(nil, fmt.Errorf("failed"))
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.Nil(t, dialOption)
+		assert.NotNil(t, err)
+	})
+	incorrectSecretLocConfig := &Config{
+		ClientSecretLocation:  "testdata/secret_key_invalid",
+		Endpoint:              config.URL{URL: *u},
+		UseInsecureConnection: true,
+		AuthType:              "CLIENTSECRET",
+		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+	}
+	t.Run("incorrect client secret loc", func(t *testing.T) {
+		metatdata := &service.OAuth2MetadataResponse{
+			TokenEndpoint:   "/token",
+			ScopesSupported: []string{"code", "all"},
+		}
+		clientMetatadata := &service.FlyteClientResponse{
+			AuthorizationMetadataKey: "flyte_authorization",
+		}
+		mockAuthClient := new(mocks.AuthMetadataServiceClient)
+		mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+		mockAuthClient.OnFlyteClientMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
+		dialOption, err := getAuthenticationDialOption(ctx, incorrectSecretLocConfig, mockAuthClient)
+		assert.Nil(t, dialOption)
+		assert.NotNil(t, err)
+	})
+}
+
+func TestGetAuthenticationDialOptionThreeLegAuth(t *testing.T) {
+	ctx := context.Background()
+	mockAuthClient := new(mocks.AuthMetadataServiceClient)
+	u, _ := url.Parse("localhost:8089")
+	adminServiceConfig := &Config{
+		Endpoint:              config.URL{URL: *u},
+		UseInsecureConnection: true,
+		AuthType:              "THREELEGGEDAUTH",
+		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+	}
+	metatdata := &service.OAuth2MetadataResponse{
+		TokenEndpoint:   "/token",
+		ScopesSupported: []string{"code", "all"},
+	}
+	clientMetatadata := &service.FlyteClientResponse{
+		AuthorizationMetadataKey: "flyte_authorization",
+	}
+	mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+	mockAuthClient.OnFlyteClientMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
+	t.Run("legal from cache", func(t *testing.T) {
+		mockTokenOrchestrator := &mcokauthinterfaces.FetchTokenOrchestrator{}
+		defaultTokenOrchestrator = mockTokenOrchestrator
+		plan, _ := ioutil.ReadFile("threelegauth/testdata/token.json")
+		var tokenData oauth2.Token
+		err := json.Unmarshal(plan, &tokenData)
+		assert.Nil(t, err)
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(&tokenData, nil)
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.NotNil(t, dialOption)
+		assert.Nil(t, err)
+	})
+	t.Run("legal from auth flow", func(t *testing.T) {
+		mockTokenOrchestrator := &mcokauthinterfaces.FetchTokenOrchestrator{}
+		defaultTokenOrchestrator = mockTokenOrchestrator
+		plan, _ := ioutil.ReadFile("threelegauth/testdata/token.json")
+		var tokenData oauth2.Token
+		err := json.Unmarshal(plan, &tokenData)
+		assert.Nil(t, err)
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil, nil)
+		mockTokenOrchestrator.OnFetchTokenFromAuthFlowMatch(mock.Anything, mock.Anything).Return(&tokenData, nil)
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.NotNil(t, dialOption)
+		assert.Nil(t, err)
+	})
+	t.Run("illegal", func(t *testing.T) {
+		mockTokenOrchestrator := &mcokauthinterfaces.FetchTokenOrchestrator{}
+		defaultTokenOrchestrator = mockTokenOrchestrator
+		mockTokenOrchestrator.OnFetchTokenFromCacheOrRefreshItMatch(mock.Anything, mock.Anything).Return(nil, nil)
+		mockTokenOrchestrator.OnFetchTokenFromAuthFlowMatch(mock.Anything, mock.Anything).Return(nil, fmt.Errorf("fail"))
+		dialOption, err := getAuthenticationDialOption(ctx, adminServiceConfig, mockAuthClient)
+		assert.Nil(t, dialOption)
+		assert.NotNil(t, err)
 	})
 }
 
