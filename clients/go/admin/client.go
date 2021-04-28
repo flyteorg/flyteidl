@@ -8,11 +8,15 @@ import (
 	"sync"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	leggedoauth "github.com/flyteorg/flyteidl/clients/go/admin/threelegauth"
+	"github.com/flyteorg/flyteidl/clients/go/admin/threelegauth/interfaces"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
+
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -28,6 +32,14 @@ var (
 	authMetadataConnection *grpc.ClientConn
 )
 
+var (
+	defaultTokenOrchestrator = NewTokenOrchestrator()
+)
+
+func NewTokenOrchestrator() interfaces.FetchTokenOrchestrator {
+	return leggedoauth.TokenOrchestrator{}
+}
+
 // Clientset contains the clients exposed to communicate with various admin services.
 type Clientset struct {
 	adminServiceClient        service.AdminServiceClient
@@ -40,7 +52,7 @@ func (c Clientset) AdminClient() service.AdminServiceClient {
 	return c.adminServiceClient
 }
 
-// AuthServiceClient retrieves the AuthServiceClient
+// AuthMetadataClient retrieves the AuthMetadataServiceClient
 func (c Clientset) AuthMetadataClient() service.AuthMetadataServiceClient {
 	return c.authMetadataServiceClient
 }
@@ -90,35 +102,67 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient se
 
 		tokenURL = metadata.TokenEndpoint
 	}
-
 	clientMetadata, err := authClient.FlyteClient(ctx, &service.FlyteClientRequest{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
+	var tSource oauth2.TokenSource
+	if cfg.MustAuthTypeConfig() == AuthTypeCLIENTSECRET {
+		tSource, err = getClientCredentialsTokenSource(ctx, cfg, clientMetadata, tokenURL)
+		if err != nil {
+			return nil, err
+		}
+	} else if cfg.MustAuthTypeConfig() == AuthTypeTHREELEGGEDAUTH {
+		tSource, err = getThreeLeggedAuthTokenSource(ctx, authClient)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		return nil, fmt.Errorf("unsupported type %v", cfg.AuthType)
+	}
+	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
+	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+}
 
+// Returns the client credentials token source to be used eg by flytepropeller to communicate with admin/ by CI
+func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMetadata *service.FlyteClientResponse, tokenURL string) (oauth2.TokenSource, error) {
 	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
 	if err != nil {
 		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 		return nil, err
 	}
-
 	secret := strings.TrimSpace(string(secretBytes))
-
 	scopes := cfg.Scopes
 	if len(scopes) == 0 {
 		scopes = clientMetadata.Scopes
 	}
-
 	ccConfig := clientcredentials.Config{
 		ClientID:     cfg.ClientID,
 		ClientSecret: secret,
 		TokenURL:     tokenURL,
 		Scopes:       scopes,
 	}
+	return ccConfig.TokenSource(ctx), nil
+}
 
-	tSource := ccConfig.TokenSource(ctx)
-	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
-	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+// Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
+func getThreeLeggedAuthTokenSource(ctx context.Context, authClient service.AuthMetadataServiceClient) (oauth2.TokenSource, error) {
+	var err error
+	// explicitly ignore error while fetching token from cache.
+	authToken, err := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	if err != nil {
+		logger.Warnf(ctx, "failed fetching from cache due to %v", err)
+	}
+	if authToken == nil {
+		// Fetch using auth flow
+		if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {
+			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
+			return nil, err
+		}
+	}
+	return &leggedoauth.DefaultHeaderTokenSource{
+		DefaultHeaderToken: authToken,
+	}, nil
 }
 
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
