@@ -2,7 +2,6 @@ package _leggedoauth
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -17,14 +16,13 @@ import (
 
 const (
 	Timeout     = 15 * time.Second
-	ExpiryBeforeTime = time.Minute
-	RefreshTime = 5 * time.Minute
+	RefreshTime = 12* 60 * time.Minute
 )
 
 type TokenOrchestrator struct {
 }
 
-// This is a copy of oauth2.internal.tokenJSON as its not accesible outside.
+// This is a copy of oauth2.internal.tokenJSON as it's not accesible outside.
 // This class is required since the json data returned by admin is in this internal format and requires to be converted to
 // the oauth2.Token format
 
@@ -43,35 +41,19 @@ func (e *tokenJSON) expiry() (t time.Time) {
 }
 
 func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oauth2.Config, token *oauth2.Token) *oauth2.Token {
-	// ClientSecret is empty here. Basic auth is only needed to refresh the token.
-	client := newBasicClient(clientConf.ClientID, clientConf.ClientSecret)
-	payload := url.Values{
-		"grant_type":    {"refresh_token"},
-		"refresh_token": {token.RefreshToken},
-		"scope":         {"all", "offline"},
-	}
-	_, body, err := client.Post(clientConf.Endpoint.TokenURL, payload)
+	ts := clientConf.TokenSource(ctx, token)
+	var refreshedToken *oauth2.Token
+	var err error
+	refreshedToken, err = ts.Token()
 	if err != nil {
-		logger.Errorf(ctx, "could not refresh token with expiry at %v due to %v", token.Expiry, err)
-		return nil
-	}
-	var internalToken tokenJSON
-	if err = json.Unmarshal([]byte(body), &internalToken); err != nil {
-		return nil
-	}
-	refreshedToken := oauth2.Token{
-		AccessToken:  internalToken.AccessToken,
-		TokenType:    internalToken.TokenType,
-		RefreshToken: internalToken.RefreshToken,
-		Expiry:       internalToken.expiry(),
+		logger.Warnf(ctx, "failed to refresh the token due to %v and will be doing reauth", err)
 	}
 	logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
 		token.Expiry, refreshedToken.Expiry)
-
-	if err = defaultCacheProvider.SaveToken(ctx, refreshedToken); err != nil {
-		logger.Errorf(ctx, "unable to save the refreshed token due to %v", err)
+	if err = defaultCacheProvider.SaveToken(ctx, *refreshedToken); err != nil {
+		logger.Errorf(ctx, "unable to save the new token due to %v", err)
 	}
-	return &refreshedToken
+	return refreshedToken
 }
 
 // FetchTokenFromCacheOrRefreshIt Fetch token from cache or refresh it
@@ -83,7 +65,7 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context, a
 				return nil
 			}
 			return f.RefreshTheToken(ctx, clientConf, token)
-		} else if token.Expiry.Add(-ExpiryBeforeTime).Before(time.Now()) {
+		} else if !token.Valid() {
 			return nil
 		}
 		return token
