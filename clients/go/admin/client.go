@@ -3,19 +3,21 @@ package admin
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
-	"strings"
-	"sync"
-
+	_leggedoauth "github.com/flyteorg/flyteidl/clients/go/admin/3leggedoauth"
+	"github.com/flyteorg/flyteidl/clients/go/admin/3leggedoauth/interfaces"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"io/ioutil"
+	"strings"
+	"sync"
 )
 
 var (
@@ -27,6 +29,14 @@ var (
 	onceAuthMetadata       = sync.Once{}
 	authMetadataConnection *grpc.ClientConn
 )
+
+var (
+	defaultTokenOrchestrator = NewTokenOrchestrator()
+)
+
+func NewTokenOrchestrator() interfaces.FetchTokenOrchestrator {
+	return _leggedoauth.TokenOrchestrator{}
+}
 
 // Clientset contains the clients exposed to communicate with various admin services.
 type Clientset struct {
@@ -95,28 +105,43 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient se
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
+	var tSource oauth2.TokenSource
+	if cfg.MustAuthTypeConfig() == AuthTypeCLIENTSECRET {
+		secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+		if err != nil {
+			logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
+			return nil, err
+		}
 
-	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
-	if err != nil {
-		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
-		return nil, err
+		secret := strings.TrimSpace(string(secretBytes))
+
+		scopes := cfg.Scopes
+		if len(scopes) == 0 {
+			scopes = clientMetadata.Scopes
+		}
+
+		ccConfig := clientcredentials.Config{
+			ClientID:     cfg.ClientID,
+			ClientSecret: secret,
+			TokenURL:     tokenURL,
+			Scopes:       scopes,
+		}
+
+		tSource = ccConfig.TokenSource(ctx)
+	} else {
+		authToken := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, authClient)
+		if authToken == nil {
+			// Fetch using auth flow
+			if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {
+				logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
+				return nil, err
+			}
+		}
+		tSource = &_leggedoauth.DefaultHeaderTokenSource{
+			FlyteCtlToken: authToken,
+		}
 	}
 
-	secret := strings.TrimSpace(string(secretBytes))
-
-	scopes := cfg.Scopes
-	if len(scopes) == 0 {
-		scopes = clientMetadata.Scopes
-	}
-
-	ccConfig := clientcredentials.Config{
-		ClientID:     cfg.ClientID,
-		ClientSecret: secret,
-		TokenURL:     tokenURL,
-		Scopes:       scopes,
-	}
-
-	tSource := ccConfig.TokenSource(ctx)
 	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }

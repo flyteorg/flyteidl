@@ -2,7 +2,9 @@ package admin
 
 import (
 	"context"
+	"fmt"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/flyteorg/flytestdlib/config"
@@ -18,6 +20,22 @@ const (
 
 var DefaultClientSecretLocation = filepath.Join(string(filepath.Separator), "etc", "secrets", "client_secret")
 
+//go:generate enumer --type=AuthType -json -yaml -trimprefix=AuthType
+type AuthType uint8
+
+const (
+	AuthTypeCLIENTSECRET AuthType = iota
+	AuthTypeTHREELEGGEDAUTH
+)
+
+func SupportedAuthTypes() []string {
+	var v []string
+	for _, o := range AuthTypeValues() {
+		v = append(v, o.String())
+	}
+	return v
+}
+
 type Config struct {
 	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
 	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection."`
@@ -25,6 +43,7 @@ type Config struct {
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 
+	AuthType string `json:"authType" pflag:",type of authorization used for communicating with admin"`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
@@ -51,6 +70,7 @@ var (
 		PerRetryTimeout:      config.Duration{Duration: 15 * time.Second},
 		MaxRetries:           4,
 		ClientID:             DefaultClientID,
+		AuthType:             "CLIENTSECRET",
 		ClientSecretLocation: DefaultClientSecretLocation,
 	}
 
@@ -60,6 +80,20 @@ var (
 		}
 	})
 )
+
+// AuthTypeConfig will return auth type configuration passed in by the client
+func (cfg Config) AuthTypeConfig() (AuthType, error) {
+	return AuthTypeString(strings.ToUpper(cfg.AuthType))
+}
+
+// MustAuthTypeConfig will validate the supported auth types and return right auth type to use
+func (cfg Config) MustAuthTypeConfig() AuthType {
+	f, err := cfg.AuthTypeConfig()
+	if err != nil {
+		panic(fmt.Sprintf("unsupported authtype format [%s], supported types %s", cfg.AuthType, SupportedAuthTypes()))
+	}
+	return f
+}
 
 func GetConfig(ctx context.Context) *Config {
 	if c, ok := configSection.GetConfig().(*Config); ok {
