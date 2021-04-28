@@ -3,10 +3,11 @@ package threelegauth
 import (
 	"context"
 	"encoding/json"
-	"github.com/stretchr/testify/assert"
-	"golang.org/x/oauth2"
 	"io/ioutil"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"golang.org/x/oauth2"
 )
 
 func TestRefreshTheToken(t *testing.T) {
