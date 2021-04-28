@@ -1,4 +1,4 @@
-package threelegauth
+package pkce
 
 import (
 	"errors"
@@ -6,7 +6,6 @@ import (
 	"net/url"
 	"strings"
 	"testing"
-	"time"
 
 	"github.com/stretchr/testify/assert"
 	testhttp "github.com/stretchr/testify/http"
@@ -19,18 +18,12 @@ var (
 	callBackFn func(rw http.ResponseWriter, req *http.Request)
 )
 
-const TestTimeout = 5 * time.Second
-
-func HandleAppCallBackSetup(t *testing.T) {
-	// Since we are using channels, its crucial that the tests dont hang , hence adding a timeout channel
-	go func() {
-		time.Sleep(TestTimeout)
-		timeoutChannel <- true
-	}()
-	var testAuthConfig oauth2.Config
+func HandleAppCallBackSetup(t *testing.T, state string) (tokenChannel chan *oauth2.Token, errorChannel chan error) {
+	var testAuthConfig *oauth2.Config
 	errorChannel = make(chan error, 1)
-	testAuthConfig = oauth2.Config{}
-	callBackFn = callbackHandler(testAuthConfig)
+	tokenChannel = make(chan *oauth2.Token)
+	testAuthConfig = &oauth2.Config{}
+	callBackFn = getAuthServerCallbackHandler(testAuthConfig, &http.Server{}, "", errorChannel, tokenChannel, state)
 	assert.NotNil(t, callBackFn)
 	req = &http.Request{
 		Method: http.MethodGet,
@@ -42,10 +35,11 @@ func HandleAppCallBackSetup(t *testing.T) {
 		},
 	}
 	rw = &testhttp.TestResponseWriter{}
+	return
 }
 
 func TestHandleAppCallBackWithErrorInRequest(t *testing.T) {
-	HandleAppCallBackSetup(t)
+	tokenChannel, errorChannel := HandleAppCallBackSetup(t, "")
 	req = &http.Request{
 		Method: http.MethodGet,
 		URL: &url.URL{
@@ -62,15 +56,13 @@ func TestHandleAppCallBackWithErrorInRequest(t *testing.T) {
 		assert.NotNil(t, errorValue)
 		assert.True(t, strings.Contains(rw.Output, "invalid_request"))
 		assert.Equal(t, errors.New("error on callback during authorization due to invalid_request"), errorValue)
-	case <-timeoutChannel:
-		assert.Fail(t, "timeout occurred")
 	case <-tokenChannel:
 		assert.Fail(t, "received a token for a failed test")
 	}
 }
 
 func TestHandleAppCallBackWithCodeNotFound(t *testing.T) {
-	HandleAppCallBackSetup(t)
+	tokenChannel, errorChannel := HandleAppCallBackSetup(t, "")
 	req = &http.Request{
 		Method: http.MethodGet,
 		URL: &url.URL{
@@ -87,16 +79,13 @@ func TestHandleAppCallBackWithCodeNotFound(t *testing.T) {
 		assert.NotNil(t, errorValue)
 		assert.True(t, strings.Contains(rw.Output, "Could not find the authorize code"))
 		assert.Equal(t, errors.New("could not find the authorize code"), errorValue)
-	case <-timeoutChannel:
-		assert.Fail(t, "timeout occurred")
 	case <-tokenChannel:
 		assert.Fail(t, "received a token for a failed test")
 	}
 }
 
 func TestHandleAppCallBackCsrfAttach(t *testing.T) {
-	HandleAppCallBackSetup(t)
-	stateString = "realStateString"
+	tokenChannel, errorChannel := HandleAppCallBackSetup(t, "the real state")
 	req = &http.Request{
 		Method: http.MethodGet,
 		URL: &url.URL{
@@ -113,16 +102,13 @@ func TestHandleAppCallBackCsrfAttach(t *testing.T) {
 		assert.NotNil(t, errorValue)
 		assert.True(t, strings.Contains(rw.Output, "Sorry we can't serve your request"))
 		assert.Equal(t, errors.New("possibly a csrf attack"), errorValue)
-	case <-timeoutChannel:
-		assert.Fail(t, "timeout occurred")
 	case <-tokenChannel:
 		assert.Fail(t, "received a token for a failed test")
 	}
 }
 
 func TestHandleAppCallBackFailedTokenExchange(t *testing.T) {
-	HandleAppCallBackSetup(t)
-	stateString = "realStateString"
+	tokenChannel, errorChannel := HandleAppCallBackSetup(t, "realStateString")
 	req = &http.Request{
 		Method: http.MethodGet,
 		URL: &url.URL{
@@ -139,8 +125,6 @@ func TestHandleAppCallBackFailedTokenExchange(t *testing.T) {
 	case errorValue = <-errorChannel:
 		assert.NotNil(t, errorValue)
 		assert.True(t, strings.Contains(errorValue.Error(), "error while exchanging auth code due"))
-	case <-timeoutChannel:
-		assert.Fail(t, "timeout occurred")
 	case <-tokenChannel:
 		assert.Fail(t, "received a token for a failed test")
 	}

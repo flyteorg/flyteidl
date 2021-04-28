@@ -1,4 +1,4 @@
-package threelegauth
+package pkce
 
 import (
 	"context"
@@ -17,16 +17,18 @@ import (
 
 func TestRefreshTheToken(t *testing.T) {
 	ctx := context.Background()
-	orchestrator := TokenOrchestrator{}
 	clientConf := &oauth2.Config{
 		ClientID: "dummyClient",
+	}
+	orchestrator := TokenOrchestrator{
+		clientConfig: clientConf,
 	}
 	plan, _ := ioutil.ReadFile("testdata/token.json")
 	var tokenData oauth2.Token
 	err := json.Unmarshal(plan, &tokenData)
 	assert.Nil(t, err)
 	t.Run("bad url in config", func(t *testing.T) {
-		refreshedToken, err := orchestrator.RefreshTheToken(ctx, clientConf, &tokenData)
+		refreshedToken, err := orchestrator.RefreshToken(ctx, &tokenData)
 		assert.Nil(t, refreshedToken)
 		assert.NotNil(t, err)
 	})
@@ -34,7 +36,20 @@ func TestRefreshTheToken(t *testing.T) {
 
 func TestFetchFromCache(t *testing.T) {
 	ctx := context.Background()
-	orchestrator := TokenOrchestrator{}
+	metatdata := &service.OAuth2MetadataResponse{
+		TokenEndpoint:   "/token",
+		ScopesSupported: []string{"code", "all"},
+	}
+	clientMetatadata := &service.PublicClientAuthConfigResponse{
+		AuthorizationMetadataKey: "flyte_authorization",
+		RedirectUri:              "http://localhost:8089/redirect",
+	}
+	mockAuthClient := new(mocks.AuthMetadataServiceClient)
+	mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+	mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
+	orchestrator, err := NewTokenOrchestrator(ctx, &TokenCacheInMemoryProvider{}, mockAuthClient)
+	assert.NoError(t, err)
+
 	keyring.MockInit()
 	t.Run("no token in cache", func(t *testing.T) {
 		refreshedToken, err := orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
@@ -45,21 +60,23 @@ func TestFetchFromCache(t *testing.T) {
 
 func TestFetchFromAuthFlow(t *testing.T) {
 	ctx := context.Background()
-	orchestrator := TokenOrchestrator{}
 	keyring.MockInit()
 	t.Run("fetch from auth flow", func(t *testing.T) {
 		metatdata := &service.OAuth2MetadataResponse{
 			TokenEndpoint:   "/token",
 			ScopesSupported: []string{"code", "all"},
 		}
-		clientMetatadata := &service.FlyteClientResponse{
+		clientMetatadata := &service.PublicClientAuthConfigResponse{
 			AuthorizationMetadataKey: "flyte_authorization",
 			RedirectUri:              "http://localhost:8089/redirect",
 		}
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
-		mockAuthClient.OnOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
-		mockAuthClient.OnFlyteClientMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
-		refreshedToken, err := orchestrator.FetchTokenFromAuthFlow(ctx, mockAuthClient)
+		mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
+		mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
+		tokenCache := &TokenCacheInMemoryProvider{}
+		orchestrator, err := NewTokenOrchestrator(ctx, tokenCache, mockAuthClient)
+		assert.NoError(t, err)
+		refreshedToken, err := orchestrator.FetchTokenFromAuthFlow(ctx)
 		assert.Nil(t, refreshedToken)
 		assert.NotNil(t, err)
 	})

@@ -1,4 +1,4 @@
-package threelegauth
+package pkce
 
 import (
 	"context"
@@ -14,7 +14,7 @@ import (
 func TestGenerateClientConfig(t *testing.T) {
 	ctx := context.Background()
 	mockAuthClient := new(mocks.AuthMetadataServiceClient)
-	flyteClientResp := &service.FlyteClientResponse{
+	flyteClientResp := &service.PublicClientAuthConfigResponse{
 		ClientId:    "dummyClient",
 		RedirectUri: "dummyRedirectUri",
 		Scopes:      []string{"dummyScopes"},
@@ -25,9 +25,9 @@ func TestGenerateClientConfig(t *testing.T) {
 		TokenEndpoint:                 "dummyTokenEndpoint",
 		CodeChallengeMethodsSupported: []string{"dummyCodeChallenege"},
 	}
-	mockAuthClient.OnFlyteClientMatch(ctx, mock.Anything).Return(flyteClientResp, nil)
-	mockAuthClient.OnOAuth2MetadataMatch(ctx, mock.Anything).Return(oauthMetaDataResp, nil)
-	oauthConfig, err := GenerateClientConfig(ctx, mockAuthClient)
+	mockAuthClient.OnGetPublicClientConfigMatch(ctx, mock.Anything).Return(flyteClientResp, nil)
+	mockAuthClient.OnGetOAuth2MetadataMatch(ctx, mock.Anything).Return(oauthMetaDataResp, nil)
+	oauthConfig, err := BuildClientConfig(ctx, mockAuthClient)
 	assert.Nil(t, err)
 	assert.NotNil(t, oauthConfig)
 	assert.Equal(t, "dummyClient", oauthConfig.ClientID)

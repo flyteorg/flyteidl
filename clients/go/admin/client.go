@@ -8,14 +8,13 @@ import (
 	"sync"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
-	leggedoauth "github.com/flyteorg/flyteidl/clients/go/admin/threelegauth"
-	"github.com/flyteorg/flyteidl/clients/go/admin/threelegauth/interfaces"
+	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 
-	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
-	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	grpcMiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
+	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
@@ -31,14 +30,6 @@ var (
 	onceAuthMetadata       = sync.Once{}
 	authMetadataConnection *grpc.ClientConn
 )
-
-var (
-	defaultTokenOrchestrator = NewTokenOrchestrator()
-)
-
-func NewTokenOrchestrator() interfaces.FetchTokenOrchestrator {
-	return leggedoauth.TokenOrchestrator{}
-}
 
 // Clientset contains the clients exposed to communicate with various admin services.
 type Clientset struct {
@@ -63,7 +54,6 @@ func (c Clientset) IdentityClient() service.IdentityServiceClient {
 
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
-
 	return service.NewAdminServiceClient(conn)
 }
 
@@ -72,14 +62,15 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 	backoffConfig := grpc.BackoffConfig{
 		MaxDelay: cfg.MaxBackoffDelay.Duration,
 	}
+
 	opts = append(opts, grpc.WithBackoffConfig(backoffConfig))
 
-	timeoutDialOption := grpc_retry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
-	maxRetriesOption := grpc_retry.WithMax(uint(cfg.MaxRetries))
+	timeoutDialOption := grpcRetry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
+	maxRetriesOption := grpcRetry.WithMax(uint(cfg.MaxRetries))
 
-	retryInterceptor := grpc_retry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
-	finalUnaryInterceptor := grpc_middleware.ChainUnaryClient(
-		grpc_prometheus.UnaryClientInterceptor,
+	retryInterceptor := grpcRetry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
+	finalUnaryInterceptor := grpcMiddleware.ChainUnaryClient(
+		grpcPrometheus.UnaryClientInterceptor,
 		retryInterceptor,
 	)
 
@@ -92,50 +83,62 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin. If
 // the token endpoint is set in the config, that will be used, otherwise it'll attempt to make a metadata call.
-func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
+func getAuthenticationDialOption(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) (
+	grpc.DialOption, error) {
+
 	tokenURL := cfg.TokenURL
 	if len(tokenURL) == 0 {
-		metadata, err := authClient.OAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
+		metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
 		if err != nil {
 			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
 		}
 
 		tokenURL = metadata.TokenEndpoint
 	}
-	clientMetadata, err := authClient.FlyteClient(ctx, &service.FlyteClientRequest{})
+
+	clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
+
 	var tSource oauth2.TokenSource
-	if cfg.MustAuthTypeConfig() == AuthTypeCLIENTSECRET {
+	if cfg.AuthType == AuthTypeClientSecret {
 		tSource, err = getClientCredentialsTokenSource(ctx, cfg, clientMetadata, tokenURL)
 		if err != nil {
 			return nil, err
 		}
-	} else if cfg.MustAuthTypeConfig() == AuthTypeTHREELEGGEDAUTH {
-		tSource, err = getThreeLeggedAuthTokenSource(ctx, authClient)
+	} else if cfg.AuthType == AuthTypePkce {
+		tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, buildTokenCache(cfg.TokenCacheType), authClient)
+		if err != nil {
+			return nil, err
+		}
+
+		tSource, err = getPkceAuthTokenSource(ctx, tokenOrchestrator)
 		if err != nil {
 			return nil, err
 		}
 	} else {
 		return nil, fmt.Errorf("unsupported type %v", cfg.AuthType)
 	}
+
 	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
 // Returns the client credentials token source to be used eg by flytepropeller to communicate with admin/ by CI
-func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMetadata *service.FlyteClientResponse, tokenURL string) (oauth2.TokenSource, error) {
+func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMetadata *service.PublicClientAuthConfigResponse, tokenURL string) (oauth2.TokenSource, error) {
 	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
 	if err != nil {
 		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 		return nil, err
 	}
+
 	secret := strings.TrimSpace(string(secretBytes))
 	scopes := cfg.Scopes
 	if len(scopes) == 0 {
 		scopes = clientMetadata.Scopes
 	}
+
 	ccConfig := clientcredentials.Config{
 		ClientID:     cfg.ClientID,
 		ClientSecret: secret,
@@ -145,22 +148,35 @@ func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMet
 	return ccConfig.TokenSource(ctx), nil
 }
 
-// Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
-func getThreeLeggedAuthTokenSource(ctx context.Context, authClient service.AuthMetadataServiceClient) (oauth2.TokenSource, error) {
-	var err error
-	// explicitly ignore error while fetching token from cache.
-	authToken, err := defaultTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
-	if err != nil {
-		logger.Warnf(ctx, "failed fetching from cache due to %v", err)
+func buildTokenCache(cacheType TokenCacheType) pkce.TokenCache {
+	switch cacheType {
+	case TokenCacheTypeInMemory:
+		return &pkce.TokenCacheInMemoryProvider{}
+	default:
+		return pkce.TokenCacheProvider{
+			ServiceUser: "flyte-client",
+			ServiceName: "flyteadmin",
+		}
 	}
+}
+
+// Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
+func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrchestrator) (oauth2.TokenSource, error) {
+	// explicitly ignore error while fetching token from cache.
+	authToken, err := tokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	if err != nil {
+		logger.Warnf(ctx, "Failed fetching from cache. Will restart the flow. Error: %v", err)
+	}
+
 	if authToken == nil {
 		// Fetch using auth flow
-		if authToken, err = defaultTokenOrchestrator.FetchTokenFromAuthFlow(ctx, authClient); err != nil {
+		if authToken, err = tokenOrchestrator.FetchTokenFromAuthFlow(ctx); err != nil {
 			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
 			return nil, err
 		}
 	}
-	return &leggedoauth.DefaultHeaderTokenSource{
+
+	return &pkce.DefaultHeaderTokenSource{
 		DefaultHeaderToken: authToken,
 	}, nil
 }
@@ -176,16 +192,6 @@ func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client serv
 	}
 
 	return service.NewAuthMetadataServiceClient(authMetadataConnection), nil
-}
-
-func NewServiceAuthDialOptions(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) ([]grpc.DialOption, error) {
-	logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientID)
-	opt, err := getAuthenticationDialOption(ctx, cfg, authClient)
-	if err != nil {
-		return nil, err
-	}
-
-	return []grpc.DialOption{opt}, nil
 }
 
 func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
@@ -229,14 +235,18 @@ func InitializeClients(ctx context.Context, cfg *Config, opts ...grpc.DialOption
 			logger.Panicf(ctx, "failed to initialize Auth Metadata Client. Error: %v", err)
 		}
 
-		// If auth is enabled, this endpoint will return the required information to use to authenticate, otherwise,
+		// If auth is enabled, this call will return the required information to use to authenticate, otherwise,
 		// start the client without authentication.
-		authOpts, err := NewServiceAuthDialOptions(ctx, cfg, authMetadataClient)
+		opt, err := getAuthenticationDialOption(ctx, cfg, authMetadataClient)
 		if err != nil {
 			logger.Warnf(ctx, "Starting an unauthenticated client because: %v", err)
 		}
 
-		adminConnection, err = NewAdminConnection(ctx, cfg, append(opts, authOpts...)...)
+		if opt != nil {
+			opts = append(opts, opt)
+		}
+
+		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}

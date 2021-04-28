@@ -26,14 +26,14 @@ class OAuth2MetadataResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<OAuth2MetadataResponse> _instance;
 } _OAuth2MetadataResponse_default_instance_;
-class FlyteClientRequestDefaultTypeInternal {
+class PublicClientAuthConfigRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FlyteClientRequest> _instance;
-} _FlyteClientRequest_default_instance_;
-class FlyteClientResponseDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<PublicClientAuthConfigRequest> _instance;
+} _PublicClientAuthConfigRequest_default_instance_;
+class PublicClientAuthConfigResponseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FlyteClientResponse> _instance;
-} _FlyteClientResponse_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<PublicClientAuthConfigResponse> _instance;
+} _PublicClientAuthConfigResponse_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 static void InitDefaultsOAuth2MetadataRequest_flyteidl_2fservice_2fauth_2eproto() {
@@ -64,39 +64,39 @@ static void InitDefaultsOAuth2MetadataResponse_flyteidl_2fservice_2fauth_2eproto
 ::google::protobuf::internal::SCCInfo<0> scc_info_OAuth2MetadataResponse_flyteidl_2fservice_2fauth_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsOAuth2MetadataResponse_flyteidl_2fservice_2fauth_2eproto}, {}};
 
-static void InitDefaultsFlyteClientRequest_flyteidl_2fservice_2fauth_2eproto() {
+static void InitDefaultsPublicClientAuthConfigRequest_flyteidl_2fservice_2fauth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::service::_FlyteClientRequest_default_instance_;
-    new (ptr) ::flyteidl::service::FlyteClientRequest();
+    void* ptr = &::flyteidl::service::_PublicClientAuthConfigRequest_default_instance_;
+    new (ptr) ::flyteidl::service::PublicClientAuthConfigRequest();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::service::FlyteClientRequest::InitAsDefaultInstance();
+  ::flyteidl::service::PublicClientAuthConfigRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FlyteClientRequest_flyteidl_2fservice_2fauth_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFlyteClientRequest_flyteidl_2fservice_2fauth_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_PublicClientAuthConfigRequest_flyteidl_2fservice_2fauth_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPublicClientAuthConfigRequest_flyteidl_2fservice_2fauth_2eproto}, {}};
 
-static void InitDefaultsFlyteClientResponse_flyteidl_2fservice_2fauth_2eproto() {
+static void InitDefaultsPublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::service::_FlyteClientResponse_default_instance_;
-    new (ptr) ::flyteidl::service::FlyteClientResponse();
+    void* ptr = &::flyteidl::service::_PublicClientAuthConfigResponse_default_instance_;
+    new (ptr) ::flyteidl::service::PublicClientAuthConfigResponse();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::service::FlyteClientResponse::InitAsDefaultInstance();
+  ::flyteidl::service::PublicClientAuthConfigResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FlyteClientResponse_flyteidl_2fservice_2fauth_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFlyteClientResponse_flyteidl_2fservice_2fauth_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_PublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto}, {}};
 
 void InitDefaults_flyteidl_2fservice_2fauth_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_OAuth2MetadataRequest_flyteidl_2fservice_2fauth_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_OAuth2MetadataResponse_flyteidl_2fservice_2fauth_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FlyteClientRequest_flyteidl_2fservice_2fauth_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FlyteClientResponse_flyteidl_2fservice_2fauth_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PublicClientAuthConfigRequest_flyteidl_2fservice_2fauth_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fservice_2fauth_2eproto[4];
@@ -124,32 +124,32 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fauth_2eproto::
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::OAuth2MetadataResponse, code_challenge_methods_supported_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::OAuth2MetadataResponse, grant_types_supported_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientResponse, client_id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientResponse, redirect_uri_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientResponse, scopes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::service::FlyteClientResponse, authorization_metadata_key_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigResponse, client_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigResponse, redirect_uri_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigResponse, scopes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::PublicClientAuthConfigResponse, authorization_metadata_key_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::service::OAuth2MetadataRequest)},
   { 5, -1, sizeof(::flyteidl::service::OAuth2MetadataResponse)},
-  { 19, -1, sizeof(::flyteidl::service::FlyteClientRequest)},
-  { 24, -1, sizeof(::flyteidl::service::FlyteClientResponse)},
+  { 19, -1, sizeof(::flyteidl::service::PublicClientAuthConfigRequest)},
+  { 24, -1, sizeof(::flyteidl::service::PublicClientAuthConfigResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_OAuth2MetadataRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_OAuth2MetadataResponse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_FlyteClientRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_FlyteClientResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_PublicClientAuthConfigRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_PublicClientAuthConfigResponse_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fservice_2fauth_2eproto = {
@@ -181,29 +181,30 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fauth_2eproto[] =
   "en_endpoint_auth_methods_supported\030\006 \003(\t"
   "\022\020\n\010jwks_uri\030\007 \001(\t\022(\n code_challenge_met"
   "hods_supported\030\010 \003(\t\022\035\n\025grant_types_supp"
-  "orted\030\t \003(\t\"\024\n\022FlyteClientRequest\"r\n\023Fly"
-  "teClientResponse\022\021\n\tclient_id\030\001 \001(\t\022\024\n\014r"
-  "edirect_uri\030\002 \001(\t\022\016\n\006scopes\030\003 \003(\t\022\"\n\032aut"
-  "horization_metadata_key\030\004 \001(\t2\331\003\n\023AuthMe"
-  "tadataService\022\362\001\n\016OAuth2Metadata\022\'.flyte"
-  "idl.service.OAuth2MetadataRequest\032(.flyt"
-  "eidl.service.OAuth2MetadataResponse\"\214\001\202\323"
-  "\344\223\002)\022\'/.well-known/oauth-authorization-s"
-  "erver\222AZ\032XRetrieves OAuth2 authorization"
-  " server metadata. This endpoint is anony"
-  "mously accessible.\022\314\001\n\013FlyteClient\022$.fly"
-  "teidl.service.FlyteClientRequest\032%.flyte"
-  "idl.service.FlyteClientResponse\"p\202\323\344\223\002\031\022"
-  "\027/config/v1/flyte_client\222AN\032LRetrieves p"
-  "ublic flyte client info. This endpoint i"
-  "s anonymously accessible.B9Z7github.com/"
-  "flyteorg/flyteidl/gen/pb-go/flyteidl/ser"
-  "viceb\006proto3"
+  "orted\030\t \003(\t\"\037\n\035PublicClientAuthConfigReq"
+  "uest\"}\n\036PublicClientAuthConfigResponse\022\021"
+  "\n\tclient_id\030\001 \001(\t\022\024\n\014redirect_uri\030\002 \001(\t\022"
+  "\016\n\006scopes\030\003 \003(\t\022\"\n\032authorization_metadat"
+  "a_key\030\004 \001(\t2\374\003\n\023AuthMetadataService\022\365\001\n\021"
+  "GetOAuth2Metadata\022\'.flyteidl.service.OAu"
+  "th2MetadataRequest\032(.flyteidl.service.OA"
+  "uth2MetadataResponse\"\214\001\202\323\344\223\002)\022\'/.well-kn"
+  "own/oauth-authorization-server\222AZ\032XRetri"
+  "eves OAuth2 authorization server metadat"
+  "a. This endpoint is anonymously accessib"
+  "le.\022\354\001\n\025GetPublicClientConfig\022/.flyteidl"
+  ".service.PublicClientAuthConfigRequest\0320"
+  ".flyteidl.service.PublicClientAuthConfig"
+  "Response\"p\202\323\344\223\002\031\022\027/config/v1/flyte_clien"
+  "t\222AN\032LRetrieves public flyte client info"
+  ". This endpoint is anonymously accessibl"
+  "e.B9Z7github.com/flyteorg/flyteidl/gen/p"
+  "b-go/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fauth_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fauth_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fauth_2eproto,
-  "flyteidl/service/auth.proto", &assign_descriptors_table_flyteidl_2fservice_2fauth_2eproto, 1572,
+  "flyteidl/service/auth.proto", &assign_descriptors_table_flyteidl_2fservice_2fauth_2eproto, 1629,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fauth_2eproto() {
@@ -1300,49 +1301,49 @@ void OAuth2MetadataResponse::InternalSwap(OAuth2MetadataResponse* other) {
 
 // ===================================================================
 
-void FlyteClientRequest::InitAsDefaultInstance() {
+void PublicClientAuthConfigRequest::InitAsDefaultInstance() {
 }
-class FlyteClientRequest::HasBitSetters {
+class PublicClientAuthConfigRequest::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-FlyteClientRequest::FlyteClientRequest()
+PublicClientAuthConfigRequest::PublicClientAuthConfigRequest()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(constructor:flyteidl.service.PublicClientAuthConfigRequest)
 }
-FlyteClientRequest::FlyteClientRequest(const FlyteClientRequest& from)
+PublicClientAuthConfigRequest::PublicClientAuthConfigRequest(const PublicClientAuthConfigRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.PublicClientAuthConfigRequest)
 }
 
-void FlyteClientRequest::SharedCtor() {
+void PublicClientAuthConfigRequest::SharedCtor() {
 }
 
-FlyteClientRequest::~FlyteClientRequest() {
-  // @@protoc_insertion_point(destructor:flyteidl.service.FlyteClientRequest)
+PublicClientAuthConfigRequest::~PublicClientAuthConfigRequest() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.PublicClientAuthConfigRequest)
   SharedDtor();
 }
 
-void FlyteClientRequest::SharedDtor() {
+void PublicClientAuthConfigRequest::SharedDtor() {
 }
 
-void FlyteClientRequest::SetCachedSize(int size) const {
+void PublicClientAuthConfigRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FlyteClientRequest& FlyteClientRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_FlyteClientRequest_flyteidl_2fservice_2fauth_2eproto.base);
+const PublicClientAuthConfigRequest& PublicClientAuthConfigRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_PublicClientAuthConfigRequest_flyteidl_2fservice_2fauth_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void FlyteClientRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.service.FlyteClientRequest)
+void PublicClientAuthConfigRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.PublicClientAuthConfigRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1351,9 +1352,9 @@ void FlyteClientRequest::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FlyteClientRequest::_InternalParse(const char* begin, const char* end, void* object,
+const char* PublicClientAuthConfigRequest::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<FlyteClientRequest*>(object);
+  auto msg = static_cast<PublicClientAuthConfigRequest*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1379,11 +1380,11 @@ const char* FlyteClientRequest::_InternalParse(const char* begin, const char* en
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool FlyteClientRequest::MergePartialFromCodedStream(
+bool PublicClientAuthConfigRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(parse_start:flyteidl.service.PublicClientAuthConfigRequest)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1396,18 +1397,18 @@ bool FlyteClientRequest::MergePartialFromCodedStream(
           input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(parse_success:flyteidl.service.PublicClientAuthConfigRequest)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.PublicClientAuthConfigRequest)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void FlyteClientRequest::SerializeWithCachedSizes(
+void PublicClientAuthConfigRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.PublicClientAuthConfigRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1415,12 +1416,12 @@ void FlyteClientRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.PublicClientAuthConfigRequest)
 }
 
-::google::protobuf::uint8* FlyteClientRequest::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* PublicClientAuthConfigRequest::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.PublicClientAuthConfigRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1428,12 +1429,12 @@ void FlyteClientRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.PublicClientAuthConfigRequest)
   return target;
 }
 
-size_t FlyteClientRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.FlyteClientRequest)
+size_t PublicClientAuthConfigRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.PublicClientAuthConfigRequest)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1450,23 +1451,23 @@ size_t FlyteClientRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void FlyteClientRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.FlyteClientRequest)
+void PublicClientAuthConfigRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.PublicClientAuthConfigRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const FlyteClientRequest* source =
-      ::google::protobuf::DynamicCastToGenerated<FlyteClientRequest>(
+  const PublicClientAuthConfigRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<PublicClientAuthConfigRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.PublicClientAuthConfigRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.PublicClientAuthConfigRequest)
     MergeFrom(*source);
   }
 }
 
-void FlyteClientRequest::MergeFrom(const FlyteClientRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.FlyteClientRequest)
+void PublicClientAuthConfigRequest::MergeFrom(const PublicClientAuthConfigRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.PublicClientAuthConfigRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1474,34 +1475,34 @@ void FlyteClientRequest::MergeFrom(const FlyteClientRequest& from) {
 
 }
 
-void FlyteClientRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.FlyteClientRequest)
+void PublicClientAuthConfigRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.PublicClientAuthConfigRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void FlyteClientRequest::CopyFrom(const FlyteClientRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.FlyteClientRequest)
+void PublicClientAuthConfigRequest::CopyFrom(const PublicClientAuthConfigRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.PublicClientAuthConfigRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool FlyteClientRequest::IsInitialized() const {
+bool PublicClientAuthConfigRequest::IsInitialized() const {
   return true;
 }
 
-void FlyteClientRequest::Swap(FlyteClientRequest* other) {
+void PublicClientAuthConfigRequest::Swap(PublicClientAuthConfigRequest* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void FlyteClientRequest::InternalSwap(FlyteClientRequest* other) {
+void PublicClientAuthConfigRequest::InternalSwap(PublicClientAuthConfigRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FlyteClientRequest::GetMetadata() const {
+::google::protobuf::Metadata PublicClientAuthConfigRequest::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fauth_2eproto);
   return ::file_level_metadata_flyteidl_2fservice_2fauth_2eproto[kIndexInFileMessages];
 }
@@ -1509,25 +1510,25 @@ void FlyteClientRequest::InternalSwap(FlyteClientRequest* other) {
 
 // ===================================================================
 
-void FlyteClientResponse::InitAsDefaultInstance() {
+void PublicClientAuthConfigResponse::InitAsDefaultInstance() {
 }
-class FlyteClientResponse::HasBitSetters {
+class PublicClientAuthConfigResponse::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FlyteClientResponse::kClientIdFieldNumber;
-const int FlyteClientResponse::kRedirectUriFieldNumber;
-const int FlyteClientResponse::kScopesFieldNumber;
-const int FlyteClientResponse::kAuthorizationMetadataKeyFieldNumber;
+const int PublicClientAuthConfigResponse::kClientIdFieldNumber;
+const int PublicClientAuthConfigResponse::kRedirectUriFieldNumber;
+const int PublicClientAuthConfigResponse::kScopesFieldNumber;
+const int PublicClientAuthConfigResponse::kAuthorizationMetadataKeyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-FlyteClientResponse::FlyteClientResponse()
+PublicClientAuthConfigResponse::PublicClientAuthConfigResponse()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(constructor:flyteidl.service.PublicClientAuthConfigResponse)
 }
-FlyteClientResponse::FlyteClientResponse(const FlyteClientResponse& from)
+PublicClientAuthConfigResponse::PublicClientAuthConfigResponse(const PublicClientAuthConfigResponse& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
       scopes_(from.scopes_) {
@@ -1544,39 +1545,39 @@ FlyteClientResponse::FlyteClientResponse(const FlyteClientResponse& from)
   if (from.authorization_metadata_key().size() > 0) {
     authorization_metadata_key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.authorization_metadata_key_);
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.PublicClientAuthConfigResponse)
 }
 
-void FlyteClientResponse::SharedCtor() {
+void PublicClientAuthConfigResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_FlyteClientResponse_flyteidl_2fservice_2fauth_2eproto.base);
+      &scc_info_PublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto.base);
   client_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   redirect_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   authorization_metadata_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-FlyteClientResponse::~FlyteClientResponse() {
-  // @@protoc_insertion_point(destructor:flyteidl.service.FlyteClientResponse)
+PublicClientAuthConfigResponse::~PublicClientAuthConfigResponse() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.PublicClientAuthConfigResponse)
   SharedDtor();
 }
 
-void FlyteClientResponse::SharedDtor() {
+void PublicClientAuthConfigResponse::SharedDtor() {
   client_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   redirect_uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   authorization_metadata_key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void FlyteClientResponse::SetCachedSize(int size) const {
+void PublicClientAuthConfigResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FlyteClientResponse& FlyteClientResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_FlyteClientResponse_flyteidl_2fservice_2fauth_2eproto.base);
+const PublicClientAuthConfigResponse& PublicClientAuthConfigResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_PublicClientAuthConfigResponse_flyteidl_2fservice_2fauth_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void FlyteClientResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.service.FlyteClientResponse)
+void PublicClientAuthConfigResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.PublicClientAuthConfigResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1589,9 +1590,9 @@ void FlyteClientResponse::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FlyteClientResponse::_InternalParse(const char* begin, const char* end, void* object,
+const char* PublicClientAuthConfigResponse::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<FlyteClientResponse*>(object);
+  auto msg = static_cast<PublicClientAuthConfigResponse*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1606,7 +1607,7 @@ const char* FlyteClientResponse::_InternalParse(const char* begin, const char* e
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.FlyteClientResponse.client_id");
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.PublicClientAuthConfigResponse.client_id");
         object = msg->mutable_client_id();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1622,7 +1623,7 @@ const char* FlyteClientResponse::_InternalParse(const char* begin, const char* e
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.FlyteClientResponse.redirect_uri");
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.PublicClientAuthConfigResponse.redirect_uri");
         object = msg->mutable_redirect_uri();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1639,7 +1640,7 @@ const char* FlyteClientResponse::_InternalParse(const char* begin, const char* e
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.service.FlyteClientResponse.scopes");
+          ctx->extra_parse_data().SetFieldName("flyteidl.service.PublicClientAuthConfigResponse.scopes");
           object = msg->add_scopes();
           if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
             parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1657,7 +1658,7 @@ const char* FlyteClientResponse::_InternalParse(const char* begin, const char* e
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.FlyteClientResponse.authorization_metadata_key");
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key");
         object = msg->mutable_authorization_metadata_key();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1692,11 +1693,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool FlyteClientResponse::MergePartialFromCodedStream(
+bool PublicClientAuthConfigResponse::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(parse_start:flyteidl.service.PublicClientAuthConfigResponse)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1710,7 +1711,7 @@ bool FlyteClientResponse::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->client_id().data(), static_cast<int>(this->client_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.FlyteClientResponse.client_id"));
+            "flyteidl.service.PublicClientAuthConfigResponse.client_id"));
         } else {
           goto handle_unusual;
         }
@@ -1725,7 +1726,7 @@ bool FlyteClientResponse::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->redirect_uri().data(), static_cast<int>(this->redirect_uri().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.FlyteClientResponse.redirect_uri"));
+            "flyteidl.service.PublicClientAuthConfigResponse.redirect_uri"));
         } else {
           goto handle_unusual;
         }
@@ -1741,7 +1742,7 @@ bool FlyteClientResponse::MergePartialFromCodedStream(
             this->scopes(this->scopes_size() - 1).data(),
             static_cast<int>(this->scopes(this->scopes_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.FlyteClientResponse.scopes"));
+            "flyteidl.service.PublicClientAuthConfigResponse.scopes"));
         } else {
           goto handle_unusual;
         }
@@ -1756,7 +1757,7 @@ bool FlyteClientResponse::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->authorization_metadata_key().data(), static_cast<int>(this->authorization_metadata_key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.FlyteClientResponse.authorization_metadata_key"));
+            "flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key"));
         } else {
           goto handle_unusual;
         }
@@ -1775,18 +1776,18 @@ bool FlyteClientResponse::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(parse_success:flyteidl.service.PublicClientAuthConfigResponse)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.PublicClientAuthConfigResponse)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void FlyteClientResponse::SerializeWithCachedSizes(
+void PublicClientAuthConfigResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.PublicClientAuthConfigResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1795,7 +1796,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->client_id().data(), static_cast<int>(this->client_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.client_id");
+      "flyteidl.service.PublicClientAuthConfigResponse.client_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->client_id(), output);
   }
@@ -1805,7 +1806,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->redirect_uri().data(), static_cast<int>(this->redirect_uri().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.redirect_uri");
+      "flyteidl.service.PublicClientAuthConfigResponse.redirect_uri");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->redirect_uri(), output);
   }
@@ -1815,7 +1816,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->scopes(i).data(), static_cast<int>(this->scopes(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.scopes");
+      "flyteidl.service.PublicClientAuthConfigResponse.scopes");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       3, this->scopes(i), output);
   }
@@ -1825,7 +1826,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->authorization_metadata_key().data(), static_cast<int>(this->authorization_metadata_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.authorization_metadata_key");
+      "flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->authorization_metadata_key(), output);
   }
@@ -1834,12 +1835,12 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.PublicClientAuthConfigResponse)
 }
 
-::google::protobuf::uint8* FlyteClientResponse::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* PublicClientAuthConfigResponse::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.PublicClientAuthConfigResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1848,7 +1849,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->client_id().data(), static_cast<int>(this->client_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.client_id");
+      "flyteidl.service.PublicClientAuthConfigResponse.client_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->client_id(), target);
@@ -1859,7 +1860,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->redirect_uri().data(), static_cast<int>(this->redirect_uri().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.redirect_uri");
+      "flyteidl.service.PublicClientAuthConfigResponse.redirect_uri");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->redirect_uri(), target);
@@ -1870,7 +1871,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->scopes(i).data(), static_cast<int>(this->scopes(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.scopes");
+      "flyteidl.service.PublicClientAuthConfigResponse.scopes");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(3, this->scopes(i), target);
   }
@@ -1880,7 +1881,7 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->authorization_metadata_key().data(), static_cast<int>(this->authorization_metadata_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.FlyteClientResponse.authorization_metadata_key");
+      "flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->authorization_metadata_key(), target);
@@ -1890,12 +1891,12 @@ void FlyteClientResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.PublicClientAuthConfigResponse)
   return target;
 }
 
-size_t FlyteClientResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.FlyteClientResponse)
+size_t PublicClientAuthConfigResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.PublicClientAuthConfigResponse)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1941,23 +1942,23 @@ size_t FlyteClientResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void FlyteClientResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.FlyteClientResponse)
+void PublicClientAuthConfigResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.PublicClientAuthConfigResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const FlyteClientResponse* source =
-      ::google::protobuf::DynamicCastToGenerated<FlyteClientResponse>(
+  const PublicClientAuthConfigResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<PublicClientAuthConfigResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.PublicClientAuthConfigResponse)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.PublicClientAuthConfigResponse)
     MergeFrom(*source);
   }
 }
 
-void FlyteClientResponse::MergeFrom(const FlyteClientResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.FlyteClientResponse)
+void PublicClientAuthConfigResponse::MergeFrom(const PublicClientAuthConfigResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.PublicClientAuthConfigResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1978,29 +1979,29 @@ void FlyteClientResponse::MergeFrom(const FlyteClientResponse& from) {
   }
 }
 
-void FlyteClientResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.FlyteClientResponse)
+void PublicClientAuthConfigResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.PublicClientAuthConfigResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void FlyteClientResponse::CopyFrom(const FlyteClientResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.FlyteClientResponse)
+void PublicClientAuthConfigResponse::CopyFrom(const PublicClientAuthConfigResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.PublicClientAuthConfigResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool FlyteClientResponse::IsInitialized() const {
+bool PublicClientAuthConfigResponse::IsInitialized() const {
   return true;
 }
 
-void FlyteClientResponse::Swap(FlyteClientResponse* other) {
+void PublicClientAuthConfigResponse::Swap(PublicClientAuthConfigResponse* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void FlyteClientResponse::InternalSwap(FlyteClientResponse* other) {
+void PublicClientAuthConfigResponse::InternalSwap(PublicClientAuthConfigResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   scopes_.InternalSwap(CastToBase(&other->scopes_));
@@ -2012,7 +2013,7 @@ void FlyteClientResponse::InternalSwap(FlyteClientResponse* other) {
     GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata FlyteClientResponse::GetMetadata() const {
+::google::protobuf::Metadata PublicClientAuthConfigResponse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fauth_2eproto);
   return ::file_level_metadata_flyteidl_2fservice_2fauth_2eproto[kIndexInFileMessages];
 }
@@ -2029,11 +2030,11 @@ template<> PROTOBUF_NOINLINE ::flyteidl::service::OAuth2MetadataRequest* Arena::
 template<> PROTOBUF_NOINLINE ::flyteidl::service::OAuth2MetadataResponse* Arena::CreateMaybeMessage< ::flyteidl::service::OAuth2MetadataResponse >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::service::OAuth2MetadataResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::service::FlyteClientRequest* Arena::CreateMaybeMessage< ::flyteidl::service::FlyteClientRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::service::FlyteClientRequest >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::service::PublicClientAuthConfigRequest* Arena::CreateMaybeMessage< ::flyteidl::service::PublicClientAuthConfigRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::PublicClientAuthConfigRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::service::FlyteClientResponse* Arena::CreateMaybeMessage< ::flyteidl::service::FlyteClientResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::service::FlyteClientResponse >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::service::PublicClientAuthConfigResponse* Arena::CreateMaybeMessage< ::flyteidl::service::PublicClientAuthConfigResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::PublicClientAuthConfigResponse >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

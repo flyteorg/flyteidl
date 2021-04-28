@@ -65,26 +65,26 @@ struct TableStruct_flyteidl_2fservice_2fauth_2eproto {
 void AddDescriptors_flyteidl_2fservice_2fauth_2eproto();
 namespace flyteidl {
 namespace service {
-class FlyteClientRequest;
-class FlyteClientRequestDefaultTypeInternal;
-extern FlyteClientRequestDefaultTypeInternal _FlyteClientRequest_default_instance_;
-class FlyteClientResponse;
-class FlyteClientResponseDefaultTypeInternal;
-extern FlyteClientResponseDefaultTypeInternal _FlyteClientResponse_default_instance_;
 class OAuth2MetadataRequest;
 class OAuth2MetadataRequestDefaultTypeInternal;
 extern OAuth2MetadataRequestDefaultTypeInternal _OAuth2MetadataRequest_default_instance_;
 class OAuth2MetadataResponse;
 class OAuth2MetadataResponseDefaultTypeInternal;
 extern OAuth2MetadataResponseDefaultTypeInternal _OAuth2MetadataResponse_default_instance_;
+class PublicClientAuthConfigRequest;
+class PublicClientAuthConfigRequestDefaultTypeInternal;
+extern PublicClientAuthConfigRequestDefaultTypeInternal _PublicClientAuthConfigRequest_default_instance_;
+class PublicClientAuthConfigResponse;
+class PublicClientAuthConfigResponseDefaultTypeInternal;
+extern PublicClientAuthConfigResponseDefaultTypeInternal _PublicClientAuthConfigResponse_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::service::FlyteClientRequest* Arena::CreateMaybeMessage<::flyteidl::service::FlyteClientRequest>(Arena*);
-template<> ::flyteidl::service::FlyteClientResponse* Arena::CreateMaybeMessage<::flyteidl::service::FlyteClientResponse>(Arena*);
 template<> ::flyteidl::service::OAuth2MetadataRequest* Arena::CreateMaybeMessage<::flyteidl::service::OAuth2MetadataRequest>(Arena*);
 template<> ::flyteidl::service::OAuth2MetadataResponse* Arena::CreateMaybeMessage<::flyteidl::service::OAuth2MetadataResponse>(Arena*);
+template<> ::flyteidl::service::PublicClientAuthConfigRequest* Arena::CreateMaybeMessage<::flyteidl::service::PublicClientAuthConfigRequest>(Arena*);
+template<> ::flyteidl::service::PublicClientAuthConfigResponse* Arena::CreateMaybeMessage<::flyteidl::service::PublicClientAuthConfigResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -477,25 +477,25 @@ class OAuth2MetadataResponse final :
 };
 // -------------------------------------------------------------------
 
-class FlyteClientRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteClientRequest) */ {
+class PublicClientAuthConfigRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.PublicClientAuthConfigRequest) */ {
  public:
-  FlyteClientRequest();
-  virtual ~FlyteClientRequest();
+  PublicClientAuthConfigRequest();
+  virtual ~PublicClientAuthConfigRequest();
 
-  FlyteClientRequest(const FlyteClientRequest& from);
+  PublicClientAuthConfigRequest(const PublicClientAuthConfigRequest& from);
 
-  inline FlyteClientRequest& operator=(const FlyteClientRequest& from) {
+  inline PublicClientAuthConfigRequest& operator=(const PublicClientAuthConfigRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  FlyteClientRequest(FlyteClientRequest&& from) noexcept
-    : FlyteClientRequest() {
+  PublicClientAuthConfigRequest(PublicClientAuthConfigRequest&& from) noexcept
+    : PublicClientAuthConfigRequest() {
     *this = ::std::move(from);
   }
 
-  inline FlyteClientRequest& operator=(FlyteClientRequest&& from) noexcept {
+  inline PublicClientAuthConfigRequest& operator=(PublicClientAuthConfigRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -507,34 +507,34 @@ class FlyteClientRequest final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const FlyteClientRequest& default_instance();
+  static const PublicClientAuthConfigRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FlyteClientRequest* internal_default_instance() {
-    return reinterpret_cast<const FlyteClientRequest*>(
-               &_FlyteClientRequest_default_instance_);
+  static inline const PublicClientAuthConfigRequest* internal_default_instance() {
+    return reinterpret_cast<const PublicClientAuthConfigRequest*>(
+               &_PublicClientAuthConfigRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(FlyteClientRequest* other);
-  friend void swap(FlyteClientRequest& a, FlyteClientRequest& b) {
+  void Swap(PublicClientAuthConfigRequest* other);
+  friend void swap(PublicClientAuthConfigRequest& a, PublicClientAuthConfigRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FlyteClientRequest* New() const final {
-    return CreateMaybeMessage<FlyteClientRequest>(nullptr);
+  inline PublicClientAuthConfigRequest* New() const final {
+    return CreateMaybeMessage<PublicClientAuthConfigRequest>(nullptr);
   }
 
-  FlyteClientRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FlyteClientRequest>(arena);
+  PublicClientAuthConfigRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PublicClientAuthConfigRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FlyteClientRequest& from);
-  void MergeFrom(const FlyteClientRequest& from);
+  void CopyFrom(const PublicClientAuthConfigRequest& from);
+  void MergeFrom(const PublicClientAuthConfigRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -556,7 +556,7 @@ class FlyteClientRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FlyteClientRequest* other);
+  void InternalSwap(PublicClientAuthConfigRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -572,7 +572,7 @@ class FlyteClientRequest final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientRequest)
+  // @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigRequest)
  private:
   class HasBitSetters;
 
@@ -582,25 +582,25 @@ class FlyteClientRequest final :
 };
 // -------------------------------------------------------------------
 
-class FlyteClientResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteClientResponse) */ {
+class PublicClientAuthConfigResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.PublicClientAuthConfigResponse) */ {
  public:
-  FlyteClientResponse();
-  virtual ~FlyteClientResponse();
+  PublicClientAuthConfigResponse();
+  virtual ~PublicClientAuthConfigResponse();
 
-  FlyteClientResponse(const FlyteClientResponse& from);
+  PublicClientAuthConfigResponse(const PublicClientAuthConfigResponse& from);
 
-  inline FlyteClientResponse& operator=(const FlyteClientResponse& from) {
+  inline PublicClientAuthConfigResponse& operator=(const PublicClientAuthConfigResponse& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  FlyteClientResponse(FlyteClientResponse&& from) noexcept
-    : FlyteClientResponse() {
+  PublicClientAuthConfigResponse(PublicClientAuthConfigResponse&& from) noexcept
+    : PublicClientAuthConfigResponse() {
     *this = ::std::move(from);
   }
 
-  inline FlyteClientResponse& operator=(FlyteClientResponse&& from) noexcept {
+  inline PublicClientAuthConfigResponse& operator=(PublicClientAuthConfigResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -612,34 +612,34 @@ class FlyteClientResponse final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const FlyteClientResponse& default_instance();
+  static const PublicClientAuthConfigResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FlyteClientResponse* internal_default_instance() {
-    return reinterpret_cast<const FlyteClientResponse*>(
-               &_FlyteClientResponse_default_instance_);
+  static inline const PublicClientAuthConfigResponse* internal_default_instance() {
+    return reinterpret_cast<const PublicClientAuthConfigResponse*>(
+               &_PublicClientAuthConfigResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  void Swap(FlyteClientResponse* other);
-  friend void swap(FlyteClientResponse& a, FlyteClientResponse& b) {
+  void Swap(PublicClientAuthConfigResponse* other);
+  friend void swap(PublicClientAuthConfigResponse& a, PublicClientAuthConfigResponse& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FlyteClientResponse* New() const final {
-    return CreateMaybeMessage<FlyteClientResponse>(nullptr);
+  inline PublicClientAuthConfigResponse* New() const final {
+    return CreateMaybeMessage<PublicClientAuthConfigResponse>(nullptr);
   }
 
-  FlyteClientResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FlyteClientResponse>(arena);
+  PublicClientAuthConfigResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PublicClientAuthConfigResponse>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FlyteClientResponse& from);
-  void MergeFrom(const FlyteClientResponse& from);
+  void CopyFrom(const PublicClientAuthConfigResponse& from);
+  void MergeFrom(const PublicClientAuthConfigResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -661,7 +661,7 @@ class FlyteClientResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FlyteClientResponse* other);
+  void InternalSwap(PublicClientAuthConfigResponse* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -741,7 +741,7 @@ class FlyteClientResponse final :
   ::std::string* release_authorization_metadata_key();
   void set_allocated_authorization_metadata_key(::std::string* authorization_metadata_key);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteClientResponse)
+  // @@protoc_insertion_point(class_scope:flyteidl.service.PublicClientAuthConfigResponse)
  private:
   class HasBitSetters;
 
@@ -1327,238 +1327,238 @@ OAuth2MetadataResponse::mutable_grant_types_supported() {
 
 // -------------------------------------------------------------------
 
-// FlyteClientRequest
+// PublicClientAuthConfigRequest
 
 // -------------------------------------------------------------------
 
-// FlyteClientResponse
+// PublicClientAuthConfigResponse
 
 // string client_id = 1;
-inline void FlyteClientResponse::clear_client_id() {
+inline void PublicClientAuthConfigResponse::clear_client_id() {
   client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& FlyteClientResponse::client_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteClientResponse.client_id)
+inline const ::std::string& PublicClientAuthConfigResponse::client_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.PublicClientAuthConfigResponse.client_id)
   return client_id_.GetNoArena();
 }
-inline void FlyteClientResponse::set_client_id(const ::std::string& value) {
+inline void PublicClientAuthConfigResponse::set_client_id(const ::std::string& value) {
   
   client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_set:flyteidl.service.PublicClientAuthConfigResponse.client_id)
 }
 #if LANG_CXX11
-inline void FlyteClientResponse::set_client_id(::std::string&& value) {
+inline void PublicClientAuthConfigResponse::set_client_id(::std::string&& value) {
   
   client_id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.PublicClientAuthConfigResponse.client_id)
 }
 #endif
-inline void FlyteClientResponse::set_client_id(const char* value) {
+inline void PublicClientAuthConfigResponse::set_client_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.PublicClientAuthConfigResponse.client_id)
 }
-inline void FlyteClientResponse::set_client_id(const char* value, size_t size) {
+inline void PublicClientAuthConfigResponse::set_client_id(const char* value, size_t size) {
   
   client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.PublicClientAuthConfigResponse.client_id)
 }
-inline ::std::string* FlyteClientResponse::mutable_client_id() {
+inline ::std::string* PublicClientAuthConfigResponse::mutable_client_id() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PublicClientAuthConfigResponse.client_id)
   return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* FlyteClientResponse::release_client_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteClientResponse.client_id)
+inline ::std::string* PublicClientAuthConfigResponse::release_client_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.PublicClientAuthConfigResponse.client_id)
   
   return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void FlyteClientResponse::set_allocated_client_id(::std::string* client_id) {
+inline void PublicClientAuthConfigResponse::set_allocated_client_id(::std::string* client_id) {
   if (client_id != nullptr) {
     
   } else {
     
   }
   client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteClientResponse.client_id)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.PublicClientAuthConfigResponse.client_id)
 }
 
 // string redirect_uri = 2;
-inline void FlyteClientResponse::clear_redirect_uri() {
+inline void PublicClientAuthConfigResponse::clear_redirect_uri() {
   redirect_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& FlyteClientResponse::redirect_uri() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteClientResponse.redirect_uri)
+inline const ::std::string& PublicClientAuthConfigResponse::redirect_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
   return redirect_uri_.GetNoArena();
 }
-inline void FlyteClientResponse::set_redirect_uri(const ::std::string& value) {
+inline void PublicClientAuthConfigResponse::set_redirect_uri(const ::std::string& value) {
   
   redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_set:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
 }
 #if LANG_CXX11
-inline void FlyteClientResponse::set_redirect_uri(::std::string&& value) {
+inline void PublicClientAuthConfigResponse::set_redirect_uri(::std::string&& value) {
   
   redirect_uri_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
 }
 #endif
-inline void FlyteClientResponse::set_redirect_uri(const char* value) {
+inline void PublicClientAuthConfigResponse::set_redirect_uri(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
 }
-inline void FlyteClientResponse::set_redirect_uri(const char* value, size_t size) {
+inline void PublicClientAuthConfigResponse::set_redirect_uri(const char* value, size_t size) {
   
   redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
 }
-inline ::std::string* FlyteClientResponse::mutable_redirect_uri() {
+inline ::std::string* PublicClientAuthConfigResponse::mutable_redirect_uri() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
   return redirect_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* FlyteClientResponse::release_redirect_uri() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteClientResponse.redirect_uri)
+inline ::std::string* PublicClientAuthConfigResponse::release_redirect_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
   
   return redirect_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void FlyteClientResponse::set_allocated_redirect_uri(::std::string* redirect_uri) {
+inline void PublicClientAuthConfigResponse::set_allocated_redirect_uri(::std::string* redirect_uri) {
   if (redirect_uri != nullptr) {
     
   } else {
     
   }
   redirect_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), redirect_uri);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteClientResponse.redirect_uri)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.PublicClientAuthConfigResponse.redirect_uri)
 }
 
 // repeated string scopes = 3;
-inline int FlyteClientResponse::scopes_size() const {
+inline int PublicClientAuthConfigResponse::scopes_size() const {
   return scopes_.size();
 }
-inline void FlyteClientResponse::clear_scopes() {
+inline void PublicClientAuthConfigResponse::clear_scopes() {
   scopes_.Clear();
 }
-inline const ::std::string& FlyteClientResponse::scopes(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteClientResponse.scopes)
+inline const ::std::string& PublicClientAuthConfigResponse::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   return scopes_.Get(index);
 }
-inline ::std::string* FlyteClientResponse::mutable_scopes(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteClientResponse.scopes)
+inline ::std::string* PublicClientAuthConfigResponse::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   return scopes_.Mutable(index);
 }
-inline void FlyteClientResponse::set_scopes(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteClientResponse.scopes)
+inline void PublicClientAuthConfigResponse::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   scopes_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void FlyteClientResponse::set_scopes(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteClientResponse.scopes)
+inline void PublicClientAuthConfigResponse::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   scopes_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void FlyteClientResponse::set_scopes(int index, const char* value) {
+inline void PublicClientAuthConfigResponse::set_scopes(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   scopes_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
-inline void FlyteClientResponse::set_scopes(int index, const char* value, size_t size) {
+inline void PublicClientAuthConfigResponse::set_scopes(int index, const char* value, size_t size) {
   scopes_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
-inline ::std::string* FlyteClientResponse::add_scopes() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.service.FlyteClientResponse.scopes)
+inline ::std::string* PublicClientAuthConfigResponse::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   return scopes_.Add();
 }
-inline void FlyteClientResponse::add_scopes(const ::std::string& value) {
+inline void PublicClientAuthConfigResponse::add_scopes(const ::std::string& value) {
   scopes_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_add:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
 #if LANG_CXX11
-inline void FlyteClientResponse::add_scopes(::std::string&& value) {
+inline void PublicClientAuthConfigResponse::add_scopes(::std::string&& value) {
   scopes_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_add:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
 #endif
-inline void FlyteClientResponse::add_scopes(const char* value) {
+inline void PublicClientAuthConfigResponse::add_scopes(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   scopes_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_add_char:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
-inline void FlyteClientResponse::add_scopes(const char* value, size_t size) {
+inline void PublicClientAuthConfigResponse::add_scopes(const char* value, size_t size) {
   scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.service.FlyteClientResponse.scopes)
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.service.PublicClientAuthConfigResponse.scopes)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-FlyteClientResponse::scopes() const {
-  // @@protoc_insertion_point(field_list:flyteidl.service.FlyteClientResponse.scopes)
+PublicClientAuthConfigResponse::scopes() const {
+  // @@protoc_insertion_point(field_list:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   return scopes_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
-FlyteClientResponse::mutable_scopes() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.FlyteClientResponse.scopes)
+PublicClientAuthConfigResponse::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.PublicClientAuthConfigResponse.scopes)
   return &scopes_;
 }
 
 // string authorization_metadata_key = 4;
-inline void FlyteClientResponse::clear_authorization_metadata_key() {
+inline void PublicClientAuthConfigResponse::clear_authorization_metadata_key() {
   authorization_metadata_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& FlyteClientResponse::authorization_metadata_key() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+inline const ::std::string& PublicClientAuthConfigResponse::authorization_metadata_key() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
   return authorization_metadata_key_.GetNoArena();
 }
-inline void FlyteClientResponse::set_authorization_metadata_key(const ::std::string& value) {
+inline void PublicClientAuthConfigResponse::set_authorization_metadata_key(const ::std::string& value) {
   
   authorization_metadata_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_set:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
 }
 #if LANG_CXX11
-inline void FlyteClientResponse::set_authorization_metadata_key(::std::string&& value) {
+inline void PublicClientAuthConfigResponse::set_authorization_metadata_key(::std::string&& value) {
   
   authorization_metadata_key_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
 }
 #endif
-inline void FlyteClientResponse::set_authorization_metadata_key(const char* value) {
+inline void PublicClientAuthConfigResponse::set_authorization_metadata_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   authorization_metadata_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
 }
-inline void FlyteClientResponse::set_authorization_metadata_key(const char* value, size_t size) {
+inline void PublicClientAuthConfigResponse::set_authorization_metadata_key(const char* value, size_t size) {
   
   authorization_metadata_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
 }
-inline ::std::string* FlyteClientResponse::mutable_authorization_metadata_key() {
+inline ::std::string* PublicClientAuthConfigResponse::mutable_authorization_metadata_key() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
   return authorization_metadata_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* FlyteClientResponse::release_authorization_metadata_key() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+inline ::std::string* PublicClientAuthConfigResponse::release_authorization_metadata_key() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
   
   return authorization_metadata_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void FlyteClientResponse::set_allocated_authorization_metadata_key(::std::string* authorization_metadata_key) {
+inline void PublicClientAuthConfigResponse::set_allocated_authorization_metadata_key(::std::string* authorization_metadata_key) {
   if (authorization_metadata_key != nullptr) {
     
   } else {
     
   }
   authorization_metadata_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), authorization_metadata_key);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteClientResponse.authorization_metadata_key)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.PublicClientAuthConfigResponse.authorization_metadata_key)
 }
 
 #ifdef __GNUC__

@@ -16,15 +16,15 @@ class AuthMetadataServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.OAuth2Metadata = channel.unary_unary(
-        '/flyteidl.service.AuthMetadataService/OAuth2Metadata',
+    self.GetOAuth2Metadata = channel.unary_unary(
+        '/flyteidl.service.AuthMetadataService/GetOAuth2Metadata',
         request_serializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataResponse.FromString,
         )
-    self.FlyteClient = channel.unary_unary(
-        '/flyteidl.service.AuthMetadataService/FlyteClient',
-        request_serializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientResponse.FromString,
+    self.GetPublicClientConfig = channel.unary_unary(
+        '/flyteidl.service.AuthMetadataService/GetPublicClientConfig',
+        request_serializer=flyteidl_dot_service_dot_auth__pb2.PublicClientAuthConfigRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_service_dot_auth__pb2.PublicClientAuthConfigResponse.FromString,
         )
 
 
@@ -34,14 +34,14 @@ class AuthMetadataServiceServicer(object):
   RPCs defined in this service must be anonymously accessible.
   """
 
-  def OAuth2Metadata(self, request, context):
+  def GetOAuth2Metadata(self, request, context):
     """Anonymously accessible. Retrieves local or external oauth authorization server metadata.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def FlyteClient(self, request, context):
+  def GetPublicClientConfig(self, request, context):
     """Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization
     requests.
     """
@@ -52,15 +52,15 @@ class AuthMetadataServiceServicer(object):
 
 def add_AuthMetadataServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'OAuth2Metadata': grpc.unary_unary_rpc_method_handler(
-          servicer.OAuth2Metadata,
+      'GetOAuth2Metadata': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOAuth2Metadata,
           request_deserializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataRequest.FromString,
           response_serializer=flyteidl_dot_service_dot_auth__pb2.OAuth2MetadataResponse.SerializeToString,
       ),
-      'FlyteClient': grpc.unary_unary_rpc_method_handler(
-          servicer.FlyteClient,
-          request_deserializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientRequest.FromString,
-          response_serializer=flyteidl_dot_service_dot_auth__pb2.FlyteClientResponse.SerializeToString,
+      'GetPublicClientConfig': grpc.unary_unary_rpc_method_handler(
+          servicer.GetPublicClientConfig,
+          request_deserializer=flyteidl_dot_service_dot_auth__pb2.PublicClientAuthConfigRequest.FromString,
+          response_serializer=flyteidl_dot_service_dot_auth__pb2.PublicClientAuthConfigResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
