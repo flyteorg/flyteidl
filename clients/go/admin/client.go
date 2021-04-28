@@ -3,11 +3,16 @@ package admin
 import (
 	"context"
 	"fmt"
-	_leggedoauth "github.com/flyteorg/flyteidl/clients/go/admin/3leggedoauth"
-	"github.com/flyteorg/flyteidl/clients/go/admin/3leggedoauth/interfaces"
+	"io/ioutil"
+	"strings"
+	"sync"
+
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	leggedoauth "github.com/flyteorg/flyteidl/clients/go/admin/threelegauth"
+	"github.com/flyteorg/flyteidl/clients/go/admin/threelegauth/interfaces"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
+
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
@@ -15,9 +20,6 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	"io/ioutil"
-	"strings"
-	"sync"
 )
 
 var (
@@ -35,7 +37,7 @@ var (
 )
 
 func NewTokenOrchestrator() interfaces.FetchTokenOrchestrator {
-	return _leggedoauth.TokenOrchestrator{}
+	return leggedoauth.TokenOrchestrator{}
 }
 
 // Clientset contains the clients exposed to communicate with various admin services.
@@ -154,7 +156,7 @@ func getThreeLeggedAuthTokenSource(ctx context.Context, authClient service.AuthM
 			return nil, err
 		}
 	}
-	return &_leggedoauth.DefaultHeaderTokenSource{
+	return &leggedoauth.DefaultHeaderTokenSource{
 		DefaultHeaderToken: authToken,
 	}, nil
 }

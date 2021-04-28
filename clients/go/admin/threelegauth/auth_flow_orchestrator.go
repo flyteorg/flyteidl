@@ -1,4 +1,4 @@
-package _leggedoauth
+package threelegauth
 
 import (
 	"context"
@@ -16,7 +16,7 @@ import (
 
 const (
 	Timeout     = 15 * time.Second
-	RefreshTime = 12* 60 * time.Minute
+	RefreshTime = 5 * time.Minute
 )
 
 type TokenOrchestrator struct {
@@ -30,11 +30,13 @@ func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oaut
 	if err != nil {
 		logger.Warnf(ctx, "failed to refresh the token due to %v and will be doing reauth", err)
 	}
-	logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
-		token.Expiry, refreshedToken.Expiry)
-	if refreshedToken.AccessToken != token.AccessToken {
-		if err = defaultCacheProvider.SaveToken(ctx, *refreshedToken); err != nil {
-			logger.Errorf(ctx, "unable to save the new token due to %v", err)
+	if refreshedToken != nil {
+		logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
+			token.Expiry, refreshedToken.Expiry)
+		if refreshedToken.AccessToken != token.AccessToken {
+			if err = defaultCacheProvider.SaveToken(ctx, *refreshedToken); err != nil {
+				logger.Errorf(ctx, "unable to save the new token due to %v", err)
+			}
 		}
 	}
 	return refreshedToken
@@ -43,13 +45,8 @@ func (f TokenOrchestrator) RefreshTheToken(ctx context.Context, clientConf *oaut
 // FetchTokenFromCacheOrRefreshIt Fetch token from cache or refresh it
 func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) *oauth2.Token {
 	if token, err := defaultCacheProvider.GetToken(ctx); err == nil {
-		if token.Expiry.Add(-RefreshTime).Before(time.Now()) {
-			// Generate the client config by fetching the discovery endpoint data from admin.
-			if clientConf, err = GenerateClientConfig(ctx, authMetadataClient); err != nil {
-				return nil
-			}
-			return f.RefreshTheToken(ctx, clientConf, token)
-		} else if !token.Valid() {
+		refreshedToken := f.RefreshTheToken(ctx, clientConf, token)
+		if !refreshedToken.Valid() {
 			return nil
 		}
 		return token

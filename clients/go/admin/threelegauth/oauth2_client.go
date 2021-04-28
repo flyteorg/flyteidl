@@ -1,4 +1,4 @@
-package _leggedoauth
+package threelegauth
 
 import (
 	"crypto/rand"
