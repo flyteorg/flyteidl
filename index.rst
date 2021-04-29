@@ -17,8 +17,9 @@ This specification is used to generate client stubs for `FlyteKit <https://flyte
    :hidden:
 
    Getting Started <https://docs.flyte.org/en/latest/getting_started.html>
-   Cookbook <https://flytecookbook.readthedocs.io>
-   Concepts <https://docs.flyte.org/en/latest/concepts/core.html>
+   User Guide <https://docs.flyte.org/projects/cookbook/en/latest/user_guide.html>
+   Tutorials <https://docs.flyte.org/projects/cookbook/en/latest/tutorials.html>
+   Concepts <https://docs.flyte.org/en/latest/basics/flyte_ui.html>
    reference/index
    Community <https://docs.flyte.org/en/latest/community/index.html>
 
