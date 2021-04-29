@@ -8,9 +8,9 @@ import (
 	"fmt"
 )
 
-const _TokenCacheTypeName = "KeyringInMemory"
+const _TokenCacheTypeName = "InMemory"
 
-var _TokenCacheTypeIndex = [...]uint8{0, 7, 15}
+var _TokenCacheTypeIndex = [...]uint8{0, 8}
 
 func (i TokenCacheType) String() string {
 	if i >= TokenCacheType(len(_TokenCacheTypeIndex)-1) {
@@ -19,11 +19,10 @@ func (i TokenCacheType) String() string {
 	return _TokenCacheTypeName[_TokenCacheTypeIndex[i]:_TokenCacheTypeIndex[i+1]]
 }
 
-var _TokenCacheTypeValues = []TokenCacheType{0, 1}
+var _TokenCacheTypeValues = []TokenCacheType{0}
 
 var _TokenCacheTypeNameToValueMap = map[string]TokenCacheType{
-	_TokenCacheTypeName[0:7]:  0,
-	_TokenCacheTypeName[7:15]: 1,
+	_TokenCacheTypeName[0:8]: 0,
 }
 
 // TokenCacheTypeString retrieves an enum value from the enum constants string name.

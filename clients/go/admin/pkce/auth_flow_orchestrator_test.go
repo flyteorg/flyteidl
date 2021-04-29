@@ -11,7 +11,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/zalando/go-keyring"
 	"golang.org/x/oauth2"
 )
 
@@ -50,7 +49,6 @@ func TestFetchFromCache(t *testing.T) {
 	orchestrator, err := NewTokenOrchestrator(ctx, &TokenCacheInMemoryProvider{}, mockAuthClient)
 	assert.NoError(t, err)
 
-	keyring.MockInit()
 	t.Run("no token in cache", func(t *testing.T) {
 		refreshedToken, err := orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
 		assert.Nil(t, refreshedToken)
@@ -60,7 +58,6 @@ func TestFetchFromCache(t *testing.T) {
 
 func TestFetchFromAuthFlow(t *testing.T) {
 	ctx := context.Background()
-	keyring.MockInit()
 	t.Run("fetch from auth flow", func(t *testing.T) {
 		metatdata := &service.OAuth2MetadataResponse{
 			TokenEndpoint:   "/token",
