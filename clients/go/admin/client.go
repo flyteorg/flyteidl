@@ -153,7 +153,7 @@ func buildTokenCache(cacheType TokenCacheType) pkce.TokenCache {
 	case TokenCacheTypeInMemory:
 		return &pkce.TokenCacheInMemoryProvider{}
 	default:
-		return pkce.TokenCacheProvider{
+		return pkce.TokenCacheKeyringProvider{
 			ServiceUser: "flyte-client",
 			ServiceName: "flyteadmin",
 		}

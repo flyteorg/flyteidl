@@ -12,7 +12,7 @@ import (
 
 func TestSaveAndGetToken(t *testing.T) {
 	keyring.MockInit()
-	tokenCacheProvider := TokenCacheProvider{
+	tokenCacheProvider := TokenCacheKeyringProvider{
 		ServiceUser: "testServiceUser",
 		ServiceName: "testServiceName",
 	}
@@ -51,7 +51,7 @@ func TestSaveAndGetToken(t *testing.T) {
 		assert.NoError(t, err)
 		err = tokenCacheProvider.SaveToken(&tokenData)
 		assert.NoError(t, err)
-		tokenCacheProvider2 := TokenCacheProvider{
+		tokenCacheProvider2 := TokenCacheKeyringProvider{
 			ServiceUser: "testServiceUser2",
 			ServiceName: "testServiceName2",
 		}

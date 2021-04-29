@@ -8,13 +8,13 @@ import (
 	"golang.org/x/oauth2"
 )
 
-// TokenCacheProvider wraps the logic to save and retrieve tokens from the OS's keyring implementation.
-type TokenCacheProvider struct {
+// TokenCacheKeyringProvider wraps the logic to save and retrieve tokens from the OS's keyring implementation.
+type TokenCacheKeyringProvider struct {
 	ServiceName string
 	ServiceUser string
 }
 
-func (t TokenCacheProvider) SaveToken(token *oauth2.Token) error {
+func (t TokenCacheKeyringProvider) SaveToken(token *oauth2.Token) error {
 	var tokenBytes []byte
 	if token.AccessToken == "" {
 		return fmt.Errorf("cannot save empty token with expiration %v", token.Expiry)
@@ -33,7 +33,7 @@ func (t TokenCacheProvider) SaveToken(token *oauth2.Token) error {
 	return nil
 }
 
-func (t TokenCacheProvider) GetToken() (*oauth2.Token, error) {
+func (t TokenCacheKeyringProvider) GetToken() (*oauth2.Token, error) {
 	// get saved token
 	tokenJSON, err := keyring.Get(t.ServiceName, t.ServiceUser)
 	if len(tokenJSON) == 0 {
