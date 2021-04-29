@@ -12,7 +12,7 @@ func getAuthServerCallbackHandler(c *oauth2.Config, server *http.Server, codeVer
 	tokenChannel chan *oauth2.Token, stateString string) func(rw http.ResponseWriter, req *http.Request) {
 
 	return func(rw http.ResponseWriter, req *http.Request) {
-		defer server.Close()
+		//defer server.Close()
 
 		_, _ = rw.Write([]byte(`<h1>Flyte Authentication</h1>`))
 		rw.Header().Set("Content-Type", "text/html; charset=utf-8")
