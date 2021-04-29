@@ -84,7 +84,7 @@ func (s *adminEventSink) Close() error {
 
 func initializeAdminClientFromConfig(ctx context.Context) (client service.AdminServiceClient, err error) {
 	cfg := admin2.GetConfig(ctx)
-	clients, err := admin2.initializeClients(ctx, cfg, nil)
+	clients, err := admin2.NewClientsetBuilder().WithConfig(cfg).Build(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("failed to initialize clientset. Error: %w", err)
 	}
