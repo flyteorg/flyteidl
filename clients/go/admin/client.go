@@ -38,47 +38,6 @@ type Clientset struct {
 	identityServiceClient     service.IdentityServiceClient
 }
 
-// ClientsetBuilder is used to build the clientset. This allows custom token cache implementations to be plugged in.
-type ClientsetBuilder struct {
-	ctx        context.Context
-	config     *Config
-	tokenCache pkce.TokenCache
-}
-
-// ClientSetBuilder is constructor function to be used by the clients in interacting with the builder
-func ClientSetBuilder() *ClientsetBuilder {
-	return &ClientsetBuilder{}
-}
-
-// WithContext provides the context to be used for constructing the clientset
-func (cb *ClientsetBuilder) WithContext(ctx context.Context) *ClientsetBuilder {
-	cb.ctx = ctx
-	return cb
-}
-
-// WithConfig provides the admin config to be used for constructing the clientset
-func (cb *ClientsetBuilder) WithConfig(config *Config) *ClientsetBuilder {
-	cb.config = config
-	return cb
-}
-
-// WithTokenCache allows pluggable token cache implemetations. eg; flytectl uses keyring as tokenCache
-func (cb *ClientsetBuilder) WithTokenCache(tokenCache pkce.TokenCache) *ClientsetBuilder {
-	cb.tokenCache = tokenCache
-	return cb
-}
-
-// Build the clientset using the current state of the ClientsetBuilder
-func (cb *ClientsetBuilder) Build() (*Clientset, error) {
-	if cb.ctx == nil {
-		return nil, fmt.Errorf("context must be provided for building the clientset")
-	}
-	if cb.config == nil {
-		return InitializeClientsFromConfig(cb.ctx, cb.tokenCache)
-	}
-	return InitializeClients(cb.ctx, cb.config, cb.tokenCache)
-}
-
 // AdminClient retrieves the AdminServiceClient
 func (c Clientset) AdminClient() service.AdminServiceClient {
 	return c.adminServiceClient
@@ -124,8 +83,8 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin. If
 // the token endpoint is set in the config, that will be used, otherwise it'll attempt to make a metadata call.
-func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, authClient service.AuthMetadataServiceClient) (
-	grpc.DialOption, error) {
+func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache,
+	authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
 
 	tokenURL := cfg.TokenURL
 	if len(tokenURL) == 0 {
@@ -149,9 +108,6 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenCache pk
 			return nil, err
 		}
 	} else if cfg.AuthType == AuthTypePkce {
-		if tokenCache == nil {
-			tokenCache = buildTokenCache(cfg.TokenCacheType)
-		}
 		tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, tokenCache, authClient)
 		if err != nil {
 			return nil, err
@@ -170,7 +126,9 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenCache pk
 }
 
 // Returns the client credentials token source to be used eg by flytepropeller to communicate with admin/ by CI
-func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMetadata *service.PublicClientAuthConfigResponse, tokenURL string) (oauth2.TokenSource, error) {
+func getClientCredentialsTokenSource(ctx context.Context, cfg *Config,
+	clientMetadata *service.PublicClientAuthConfigResponse, tokenURL string) (oauth2.TokenSource, error) {
+
 	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
 	if err != nil {
 		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
@@ -189,15 +147,8 @@ func getClientCredentialsTokenSource(ctx context.Context, cfg *Config, clientMet
 		TokenURL:     tokenURL,
 		Scopes:       scopes,
 	}
-	return ccConfig.TokenSource(ctx), nil
-}
 
-func buildTokenCache(cacheType TokenCacheType) pkce.TokenCache {
-	switch cacheType {
-	case TokenCacheTypeInMemory:
-		return &pkce.TokenCacheInMemoryProvider{}
-	}
-	return &pkce.TokenCacheInMemoryProvider{}
+	return ccConfig.TokenSource(ctx), nil
 }
 
 // Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
@@ -255,9 +206,9 @@ func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption)
 }
 
 // Create an AdminClient with a shared Admin connection for the process
-// Deprecated: Please use InitializeClients instead.
+// Deprecated: Please use initializeClients instead.
 func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOption) service.AdminServiceClient {
-	set, err := InitializeClients(ctx, cfg, nil, opts...)
+	set, err := initializeClients(ctx, cfg, nil, opts...)
 	if err != nil {
 		logger.Panicf(ctx, "Failed to initialize client. Error: %v", err)
 		return nil
@@ -266,9 +217,9 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 	return set.AdminClient()
 }
 
-// InitializeClients creates an AdminClient and AuthServiceClient with a shared Admin connection for the process.
+// initializeClients creates an AdminClient and AuthServiceClient with a shared Admin connection for the process.
 // Note that if called with different cfg/dialoptions, it will not
-func InitializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
+func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
 	once.Do(func() {
 		authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
 		if err != nil {
@@ -299,23 +250,14 @@ func InitializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 	return &cs, nil
 }
 
-// Deprecated: Please use InitializeClientsFromConfig instead.
+// Deprecated: Please use NewClientsetBuilder() instead.
 func InitializeAdminClientFromConfig(ctx context.Context, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
-	clientSet, err := InitializeClientsFromConfig(ctx, tokenCache, opts...)
+	clientSet, err := initializeClients(ctx, GetConfig(ctx), tokenCache, opts...)
 	if err != nil {
 		return nil, err
 	}
 
 	return clientSet.AdminClient(), nil
-}
-
-func InitializeClientsFromConfig(ctx context.Context, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
-	cfg := GetConfig(ctx)
-	if cfg == nil {
-		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
-	}
-
-	return InitializeClients(ctx, cfg, tokenCache, opts...)
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {

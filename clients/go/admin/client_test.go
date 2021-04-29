@@ -66,7 +66,7 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	t.Run("legal", func(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
-		clientSet, err := ClientSetBuilder().WithContext(ctx).WithConfig(&Config{Endpoint: config.URL{URL: *u}}).Build()
+		clientSet, err := ClientSetBuilder().WithConfig(&Config{Endpoint: config.URL{URL: *u}}).Build(ctx)
 		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AdminClient())
@@ -75,7 +75,7 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	})
 
 	t.Run("legal-from-config", func(t *testing.T) {
-		clientSet, err := InitializeClientsFromConfig(ctx, nil)
+		clientSet, err := initializeClients(ctx, &Config{}, nil)
 		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AuthMetadataClient())
@@ -253,7 +253,7 @@ func ExampleInitializeClients() {
 	}
 
 	// Initialize ClientSet from config
-	clientSet, err := InitializeClients(ctx, cfg, nil, opts)
+	clientSet, err := initializeClients(ctx, cfg, nil, opts)
 	if err != nil {
 		logger.Fatalf(ctx, "failed to innitialize clientset from config. Error: %v", err)
 	}

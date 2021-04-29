@@ -28,20 +28,12 @@ const (
 	AuthTypePkce
 )
 
-//go:generate enumer --type=TokenCacheType -json -yaml -trimprefix=TokenCacheType
-type TokenCacheType uint8
-
-const (
-	TokenCacheTypeInMemory TokenCacheType = iota
-)
-
 type Config struct {
 	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
 	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection."`
 	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
-	TokenCacheType        TokenCacheType  `json:"tokenCacheType" pflag:"-,Specifies the token cache type."`
 	AuthType              AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
@@ -71,7 +63,6 @@ var (
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,
-		TokenCacheType:       TokenCacheTypeInMemory,
 	}
 
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {
