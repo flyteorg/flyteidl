@@ -117,8 +117,8 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	serveMux := http.NewServeMux()
 	server := &http.Server{Addr: redirectURL.Host, Handler: serveMux}
 	// Register the call back handler
-	serveMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.clientConfig, server, pkceCodeVerifier,
-		errorChannel, tokenChannel, stateString)) // the oauth2 callback endpoint
+	serveMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.clientConfig, pkceCodeVerifier,
+		tokenChannel, errorChannel, stateString)) // the oauth2 callback endpoint
 	defer server.Close()
 
 	go func() {

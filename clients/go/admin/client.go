@@ -167,8 +167,8 @@ func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 		}
 	}
 
-	return &pkce.DefaultHeaderTokenSource{
-		DefaultHeaderToken: authToken,
+	return &pkce.SimpleTokenSource{
+		CachedToken: authToken,
 	}, nil
 }
 

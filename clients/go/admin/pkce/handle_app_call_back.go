@@ -8,8 +8,8 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func getAuthServerCallbackHandler(c *oauth2.Config, server *http.Server, codeVerifier string, errorChannel chan error,
-	tokenChannel chan *oauth2.Token, stateString string) func(rw http.ResponseWriter, req *http.Request) {
+func getAuthServerCallbackHandler(c *oauth2.Config, codeVerifier string, tokenChannel chan *oauth2.Token,
+	errorChannel chan error, stateString string) func(rw http.ResponseWriter, req *http.Request) {
 
 	return func(rw http.ResponseWriter, req *http.Request) {
 		_, _ = rw.Write([]byte(`<h1>Flyte Authentication</h1>`))

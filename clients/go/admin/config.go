@@ -1,3 +1,7 @@
+// Initializes an Admin Client that exposes all implemented services by FlyteAdmin server. The library supports different
+// authentication flows (see AuthType). It initializes the grpc connection once and reuses it. The gRPC connection is
+// sticky (it hogs one server and keeps the connection alive). For better load balancing against the server, place a
+// proxy service in between instead.
 package admin
 
 import (

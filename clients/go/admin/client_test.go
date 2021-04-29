@@ -237,25 +237,13 @@ func Test_getPkceAuthTokenSource(t *testing.T) {
 	})
 }
 
-func ExampleInitializeClients() {
-	// Create an AuthClient
+func ExampleClientSetBuilder() {
 	ctx := context.Background()
-	cfg := GetConfig(ctx)
-	client, err := InitializeAuthMetadataClient(ctx, cfg)
+	// Create a client set that initializes the connection with flyte admin and sets up Auth (if needed).
+	// See AuthType for a list of supported authentication types.
+	clientSet, err := NewClientsetBuilder().WithConfig(GetConfig(ctx)).Build(ctx)
 	if err != nil {
-		logger.Fatalf(ctx, "failed to initialize auth metadata client. Error: %v", err)
-	}
-
-	// To use 2-legged (aka service) OAuth2:
-	opts, err := getAuthenticationDialOption(ctx, cfg, nil, client)
-	if err != nil {
-		logger.Fatalf(ctx, "failed to build service auth dial option. Error: %v", err)
-	}
-
-	// Initialize ClientSet from config
-	clientSet, err := initializeClients(ctx, cfg, nil, opts)
-	if err != nil {
-		logger.Fatalf(ctx, "failed to innitialize clientset from config. Error: %v", err)
+		logger.Fatalf(ctx, "failed to initialize clientSet from config. Error: %v", err)
 	}
 
 	// Access and use the desired client:

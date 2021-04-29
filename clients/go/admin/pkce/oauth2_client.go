@@ -3,18 +3,16 @@
 package pkce
 
 import (
-	"crypto/rand"
 	"crypto/sha256"
 	"encoding/base64"
-	"math/big"
 
 	"golang.org/x/oauth2"
+	rand2 "k8s.io/apimachinery/pkg/util/rand"
 )
 
 // The following sets up the requirements for generating a standards compliant PKCE code verifier.
 const codeVerifierLenMin = 43
 const codeVerifierLenMax = 128
-const allowedLetters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ._~"
 
 // generateCodeVerifier provides an easy way to generate an n-length randomised
 // code verifier.
@@ -23,21 +21,16 @@ func generateCodeVerifier(n int) string {
 	if n < codeVerifierLenMin {
 		n = codeVerifierLenMin
 	}
+
 	if n > codeVerifierLenMax {
 		n = codeVerifierLenMax
 	}
+
 	return randomString(n)
 }
 
 func randomString(length int) string {
-	// Randomly choose some allowed characters...
-	b := make([]byte, length)
-	for i := range b {
-		// ensure we use non-deterministic random ints.
-		j, _ := rand.Int(rand.Reader, big.NewInt(int64(len(allowedLetters))))
-		b[i] = allowedLetters[j.Int64()]
-	}
-	return string(b)
+	return rand2.String(length)
 }
 
 // generateCodeChallenge returns a standards compliant PKCE S(HA)256 code
@@ -55,11 +48,12 @@ func state(n int) string {
 	return base64.RawURLEncoding.EncodeToString([]byte(data))
 }
 
-type DefaultHeaderTokenSource struct {
-	DefaultHeaderToken *oauth2.Token
+// SimpleTokenSource defines a simple token source that caches a token in memory.
+type SimpleTokenSource struct {
+	CachedToken *oauth2.Token
 }
 
-func (ts *DefaultHeaderTokenSource) Token() (*oauth2.Token, error) {
-	t := ts.DefaultHeaderToken
+func (ts *SimpleTokenSource) Token() (*oauth2.Token, error) {
+	t := ts.CachedToken
 	return t, nil
 }
