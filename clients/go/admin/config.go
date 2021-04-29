@@ -32,8 +32,7 @@ const (
 type TokenCacheType uint8
 
 const (
-	TokenCacheTypeKeyring TokenCacheType = iota
-	TokenCacheTypeInMemory
+	TokenCacheTypeInMemory TokenCacheType = iota
 )
 
 type Config struct {
@@ -72,7 +71,7 @@ var (
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,
-		TokenCacheType:       TokenCacheTypeKeyring,
+		TokenCacheType:       TokenCacheTypeInMemory,
 	}
 
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {
