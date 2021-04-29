@@ -38,38 +38,45 @@ type Clientset struct {
 	identityServiceClient     service.IdentityServiceClient
 }
 
+// ClientsetBuilder is used to build the clientset. This allows custom token cache implementations to be plugged in.
 type ClientsetBuilder struct {
-	ctx         context.Context
-	config      *Config
-	tokenCache  pkce.TokenCache
-	dialOptions []grpc.DialOption
+	ctx        context.Context
+	config     *Config
+	tokenCache pkce.TokenCache
 }
 
+// ClientSetBuilder is constructor function to be used by the clients in interacting with the builder
 func ClientSetBuilder() *ClientsetBuilder {
 	return &ClientsetBuilder{}
 }
+
+// WithContext provides the context to be used for constructing the clientset
 func (cb *ClientsetBuilder) WithContext(ctx context.Context) *ClientsetBuilder {
 	cb.ctx = ctx
 	return cb
 }
 
+// WithConfig provides the admin config to be used for constructing the clientset
 func (cb *ClientsetBuilder) WithConfig(config *Config) *ClientsetBuilder {
 	cb.config = config
 	return cb
 }
 
+// WithTokenCache allows pluggable token cache implemetations. eg; flytectl uses keyring as tokenCache
 func (cb *ClientsetBuilder) WithTokenCache(tokenCache pkce.TokenCache) *ClientsetBuilder {
 	cb.tokenCache = tokenCache
 	return cb
 }
 
-func (cb *ClientsetBuilder) WithDialOptions(dialOptions []grpc.DialOption) *ClientsetBuilder {
-	cb.dialOptions = dialOptions
-	return cb
-}
-
+// Build the clientset using the current state of the ClientsetBuilder
 func (cb *ClientsetBuilder) Build() (*Clientset, error) {
-	return InitializeClients(cb.ctx, cb.config, cb.tokenCache, cb.dialOptions...)
+	if cb.ctx == nil {
+		return nil, fmt.Errorf("context must be provided for building the clientset")
+	}
+	if cb.config == nil {
+		return InitializeClientsFromConfig(cb.ctx, cb.tokenCache)
+	}
+	return InitializeClients(cb.ctx, cb.config, cb.tokenCache)
 }
 
 // AdminClient retrieves the AdminServiceClient
@@ -293,8 +300,8 @@ func InitializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 }
 
 // Deprecated: Please use InitializeClientsFromConfig instead.
-func InitializeAdminClientFromConfig(ctx context.Context, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
-	clientSet, err := InitializeClientsFromConfig(ctx, opts...)
+func InitializeAdminClientFromConfig(ctx context.Context, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
+	clientSet, err := InitializeClientsFromConfig(ctx, tokenCache, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -302,13 +309,13 @@ func InitializeAdminClientFromConfig(ctx context.Context, opts ...grpc.DialOptio
 	return clientSet.AdminClient(), nil
 }
 
-func InitializeClientsFromConfig(ctx context.Context, opts ...grpc.DialOption) (*Clientset, error) {
+func InitializeClientsFromConfig(ctx context.Context, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
 	cfg := GetConfig(ctx)
 	if cfg == nil {
 		return nil, fmt.Errorf("retrieved Nil config for [%s] key", configSectionKey)
 	}
 
-	return InitializeClients(ctx, cfg, nil, opts...)
+	return InitializeClients(ctx, cfg, tokenCache, opts...)
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {
