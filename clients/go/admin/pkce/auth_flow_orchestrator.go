@@ -114,10 +114,10 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	urlToOpen := f.clientConfig.AuthCodeURL(stateString) + "&nonce=" + nonces + "&code_challenge=" +
 		pkceCodeChallenge + "&code_challenge_method=S256"
 
-	serverMux := http.NewServeMux()
-	server := &http.Server{Addr: redirectURL.Host, Handler: serverMux}
+	serveMux := http.NewServeMux()
+	server := &http.Server{Addr: redirectURL.Host, Handler: serveMux}
 	// Register the call back handler
-	serverMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.clientConfig, server, pkceCodeVerifier,
+	serveMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.clientConfig, server, pkceCodeVerifier,
 		errorChannel, tokenChannel, stateString)) // the oauth2 callback endpoint
 
 	go func() {
