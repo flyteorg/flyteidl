@@ -35,7 +35,7 @@ message OAuth2MetadataResponse {
     // URL of the authorization server's token endpoint [RFC6749].
     string token_endpoint = 3;
 
-    // JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+    // Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
     repeated string response_types_supported = 4;
 
     // JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.

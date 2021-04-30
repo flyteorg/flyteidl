@@ -46,7 +46,7 @@ func TestFetchFromCache(t *testing.T) {
 	mockAuthClient := new(mocks.AuthMetadataServiceClient)
 	mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 	mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
-	orchestrator, err := NewTokenOrchestrator(ctx, &TokenCacheInMemoryProvider{}, mockAuthClient)
+	orchestrator, err := NewTokenOrchestrator(ctx, Config{}, &TokenCacheInMemoryProvider{}, mockAuthClient)
 	assert.NoError(t, err)
 
 	t.Run("no token in cache", func(t *testing.T) {
@@ -67,11 +67,12 @@ func TestFetchFromAuthFlow(t *testing.T) {
 			AuthorizationMetadataKey: "flyte_authorization",
 			RedirectUri:              "http://localhost:8089/redirect",
 		}
+
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
 		mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 		mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
 		tokenCache := &TokenCacheInMemoryProvider{}
-		orchestrator, err := NewTokenOrchestrator(ctx, tokenCache, mockAuthClient)
+		orchestrator, err := NewTokenOrchestrator(ctx, Config{}, tokenCache, mockAuthClient)
 		assert.NoError(t, err)
 		refreshedToken, err := orchestrator.FetchTokenFromAuthFlow(ctx)
 		assert.Nil(t, refreshedToken)

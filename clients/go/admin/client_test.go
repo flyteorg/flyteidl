@@ -227,7 +227,7 @@ func Test_getPkceAuthTokenSource(t *testing.T) {
 		tokenCache := &pkce.TokenCacheInMemoryProvider{}
 		assert.NoError(t, tokenCache.SaveToken(&tokenData))
 
-		orchestrator, err := pkce.NewTokenOrchestrator(ctx, tokenCache, mockAuthClient)
+		orchestrator, err := pkce.NewTokenOrchestrator(ctx, pkce.Config{}, tokenCache, mockAuthClient)
 		assert.NoError(t, err)
 
 		http.DefaultServeMux = http.NewServeMux()

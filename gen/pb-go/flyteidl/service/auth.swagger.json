@@ -73,7 +73,7 @@
           "items": {
             "type": "string"
           },
-          "description": "JSON array containing a list of the OAuth 2.0 \"response_type\" values that this authorization server supports."
+          "description": "Array containing a list of the OAuth 2.0 \"response_type\" values that this authorization server supports."
         },
         "scopes_supported": {
           "type": "array",

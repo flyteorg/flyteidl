@@ -108,7 +108,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenCache pk
 			return nil, err
 		}
 	} else if cfg.AuthType == AuthTypePkce {
-		tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, tokenCache, authClient)
+		tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, cfg.PkceConfig, tokenCache, authClient)
 		if err != nil {
 			return nil, err
 		}
@@ -217,8 +217,8 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 	return set.AdminClient()
 }
 
-// initializeClients creates an AdminClient and AuthServiceClient with a shared Admin connection for the process.
-// Note that if called with different cfg/dialoptions, it will not
+// initializeClients creates an AdminClient, AuthServiceClient and IdentityServiceClient with a shared Admin connection
+// for the process. Note that if called with different cfg/dialoptions, it will not refresh the connection.
 func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
 	once.Do(func() {
 		authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)

@@ -20,4 +20,5 @@ require (
 	google.golang.org/genproto v0.0.0-20210126160654-44e461bb6506
 	google.golang.org/grpc v1.35.0
 	k8s.io/api v0.20.2
+	k8s.io/apimachinery v0.20.2
 )

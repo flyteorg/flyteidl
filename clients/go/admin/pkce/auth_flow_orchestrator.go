@@ -14,14 +14,10 @@ import (
 	"golang.org/x/oauth2"
 )
 
-const (
-	Timeout     = 15 * time.Second
-	RefreshTime = 5 * time.Minute
-)
-
 // TokenOrchestrator implements the main logic to initiate Pkce flow to issue access token and refresh token as well as
 // refreshing the access token if a refresh token is present.
 type TokenOrchestrator struct {
+	cfg          Config
 	clientConfig *oauth2.Config
 	tokenCache   TokenCache
 }
@@ -51,7 +47,8 @@ func (f TokenOrchestrator) RefreshToken(ctx context.Context, token *oauth2.Token
 	return refreshedToken, nil
 }
 
-// FetchTokenFromCacheOrRefreshIt Fetch token from cache or refresh it. ignore the error while fetching from cache
+// FetchTokenFromCacheOrRefreshIt fetches the token from cache and refreshes it if it'll expire within the
+// Config.TokenRefreshGracePeriod period.
 func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (token *oauth2.Token, err error) {
 	token, err = f.tokenCache.GetToken()
 	if err != nil {
@@ -63,7 +60,7 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (
 	}
 
 	// If token doesn't need to be refreshed, return it.
-	if token.Expiry.Add(RefreshTime).Before(time.Now()) {
+	if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
 		return token, nil
 	}
 
@@ -133,7 +130,7 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		return nil, err
 	}
 
-	ctx, cancelNow := context.WithTimeout(ctx, Timeout)
+	ctx, cancelNow := context.WithTimeout(ctx, f.cfg.BrowserSessionTimeout.Duration)
 	defer cancelNow()
 
 	var token *oauth2.Token
@@ -153,13 +150,14 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 
 // NewTokenOrchestrator creates a new TokenOrchestrator that implements the main logic to initiate Pkce flow to issue
 // access token and refresh token as well as refreshing the access token if a refresh token is present.
-func NewTokenOrchestrator(ctx context.Context, tokenCache TokenCache, authMetadataClient service.AuthMetadataServiceClient) (TokenOrchestrator, error) {
+func NewTokenOrchestrator(ctx context.Context, cfg Config, tokenCache TokenCache, authMetadataClient service.AuthMetadataServiceClient) (TokenOrchestrator, error) {
 	clientConf, err := BuildClientConfig(ctx, authMetadataClient)
 	if err != nil {
 		return TokenOrchestrator{}, err
 	}
 
 	return TokenOrchestrator{
+		cfg:          cfg,
 		clientConfig: clientConf,
 		tokenCache:   tokenCache,
 	}, nil

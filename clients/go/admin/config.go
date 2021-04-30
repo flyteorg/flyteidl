@@ -9,6 +9,8 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
+
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
 )
@@ -57,6 +59,8 @@ type Config struct {
 	// because things might be running in a service mesh (like Envoy) that already uses the default 'authorization' header
 	// Deprecated: It will automatically be discovered through an anonymously accessible auth metadata service.
 	DeprecatedAuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
+
+	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
 }
 
 var (
@@ -67,6 +71,10 @@ var (
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,
+		PkceConfig: pkce.Config{
+			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
+			BrowserSessionTimeout:   config.Duration{Duration: 15 * time.Second},
+		},
 	}
 
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {

@@ -65,7 +65,7 @@ token_endpoint
 .. _api_field_flyteidl.service.OAuth2MetadataResponse.response_types_supported:
 
 response_types_supported
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
   
   
 .. _api_field_flyteidl.service.OAuth2MetadataResponse.scopes_supported:

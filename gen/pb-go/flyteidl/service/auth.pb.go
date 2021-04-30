@@ -69,7 +69,7 @@ type OAuth2MetadataResponse struct {
 	AuthorizationEndpoint string `protobuf:"bytes,2,opt,name=authorization_endpoint,json=authorizationEndpoint,proto3" json:"authorization_endpoint,omitempty"`
 	// URL of the authorization server's token endpoint [RFC6749].
 	TokenEndpoint string `protobuf:"bytes,3,opt,name=token_endpoint,json=tokenEndpoint,proto3" json:"token_endpoint,omitempty"`
-	// JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+	// Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
 	ResponseTypesSupported []string `protobuf:"bytes,4,rep,name=response_types_supported,json=responseTypesSupported,proto3" json:"response_types_supported,omitempty"`
 	// JSON array containing a list of the OAuth 2.0 [RFC6749] "scope" values that this authorization server supports.
 	ScopesSupported []string `protobuf:"bytes,5,rep,name=scopes_supported,json=scopesSupported,proto3" json:"scopes_supported,omitempty"`

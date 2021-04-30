@@ -489,7 +489,7 @@ public final class Auth {
 
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -498,7 +498,7 @@ public final class Auth {
         getResponseTypesSupportedList();
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -506,7 +506,7 @@ public final class Auth {
     int getResponseTypesSupportedCount();
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -514,7 +514,7 @@ public final class Auth {
     java.lang.String getResponseTypesSupported(int index);
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -990,7 +990,7 @@ public final class Auth {
     private com.google.protobuf.LazyStringList responseTypesSupported_;
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -1001,7 +1001,7 @@ public final class Auth {
     }
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -1011,7 +1011,7 @@ public final class Auth {
     }
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -1021,7 +1021,7 @@ public final class Auth {
     }
     /**
      * <pre>
-     * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+     * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
      * </pre>
      *
      * <code>repeated string response_types_supported = 4;</code>
@@ -2077,7 +2077,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2088,7 +2088,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2098,7 +2098,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2108,7 +2108,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2119,7 +2119,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2136,7 +2136,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2153,7 +2153,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2168,7 +2168,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
@@ -2181,7 +2181,7 @@ public final class Auth {
       }
       /**
        * <pre>
-       * JSON array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
+       * Array containing a list of the OAuth 2.0 "response_type" values that this authorization server supports.
        * </pre>
        *
        * <code>repeated string response_types_supported = 4;</code>
