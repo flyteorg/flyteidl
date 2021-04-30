@@ -72,8 +72,8 @@ var (
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,
 		PkceConfig: pkce.Config{
-			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
-			BrowserSessionTimeout:   config.Duration{Duration: 15 * time.Second},
+			TokenRefreshDelta:     config.Duration{Duration: -5 * time.Minute},
+			BrowserSessionTimeout: config.Duration{Duration: 15 * time.Second},
 		},
 	}
 

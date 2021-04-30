@@ -5,10 +5,13 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"testing"
+	"time"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/config"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"golang.org/x/oauth2"
@@ -46,7 +49,8 @@ func TestFetchFromCache(t *testing.T) {
 	mockAuthClient := new(mocks.AuthMetadataServiceClient)
 	mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 	mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
-	orchestrator, err := NewTokenOrchestrator(ctx, Config{}, &TokenCacheInMemoryProvider{}, mockAuthClient)
+	tokenCacheProvider := &TokenCacheInMemoryProvider{}
+	orchestrator, err := NewTokenOrchestrator(ctx, Config{TokenRefreshDelta: config.Duration{Duration: time.Second}}, tokenCacheProvider, mockAuthClient)
 	assert.NoError(t, err)
 
 	t.Run("no token in cache", func(t *testing.T) {
@@ -54,6 +58,71 @@ func TestFetchFromCache(t *testing.T) {
 		assert.Nil(t, refreshedToken)
 		assert.NotNil(t, err)
 	})
+
+	// Returns the same token from cache
+	t.Run("access token valid and refresh token valid", func(t *testing.T) {
+		currTime := time.Now()
+		tokenExpiry := currTime.Add(time.Minute)
+		refreshTokenExpiry := currTime.Add(2 * time.Minute)
+		accesToken := CreateToken(tokenExpiry)
+		refreshToken := CreateToken(refreshTokenExpiry)
+		token := &oauth2.Token{
+			AccessToken:  accesToken,
+			RefreshToken: refreshToken,
+			Expiry:       refreshTokenExpiry,
+			TokenType:    "bearer",
+		}
+		_ = tokenCacheProvider.SaveToken(token)
+		refreshedToken, err := orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+		assert.NotNil(t, refreshedToken)
+		assert.Equal(t, refreshedToken, token)
+		assert.Nil(t, err)
+	})
+
+	t.Run("access token expired and refresh token valid will try refresh", func(t *testing.T) {
+		currTime := time.Now()
+		tokenExpiry := currTime.Add(-time.Minute)
+		refreshTokenExpiry := currTime.Add(time.Minute)
+		accesToken := CreateToken(tokenExpiry)
+		refreshToken := CreateToken(refreshTokenExpiry)
+		token := &oauth2.Token{
+			AccessToken:  accesToken,
+			RefreshToken: refreshToken,
+			Expiry:       refreshTokenExpiry,
+			TokenType:    "bearer",
+		}
+		_ = tokenCacheProvider.SaveToken(token)
+		refreshedToken, err := orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+		assert.Nil(t, refreshedToken)
+		assert.NotNil(t, err)
+	})
+
+	t.Run("access token expired and refresh token expired will return nil", func(t *testing.T) {
+		currTime := time.Now()
+		tokenExpiry := currTime.Add(-2 * time.Minute)
+		refreshTokenExpiry := currTime.Add(-time.Minute)
+		accesToken := CreateToken(tokenExpiry)
+		refreshToken := CreateToken(refreshTokenExpiry)
+		token := &oauth2.Token{
+			AccessToken:  accesToken,
+			RefreshToken: refreshToken,
+			Expiry:       refreshTokenExpiry,
+			TokenType:    "bearer",
+		}
+		_ = tokenCacheProvider.SaveToken(token)
+		refreshedToken, err := orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+		assert.Nil(t, refreshedToken)
+		assert.NotNil(t, err)
+	})
+}
+
+func CreateToken(expiryTime time.Time) string {
+	atClaims := jwt.MapClaims{}
+	atClaims["authorized"] = true
+	atClaims["user_id"] = 1
+	atClaims["exp"] = expiryTime.Unix()
+	tokenString, _ := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims).SigningString()
+	return tokenString
 }
 
 func TestFetchFromAuthFlow(t *testing.T) {

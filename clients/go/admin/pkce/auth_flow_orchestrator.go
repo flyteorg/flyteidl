@@ -12,6 +12,7 @@ import (
 
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/jws"
 )
 
 // TokenOrchestrator implements the main logic to initiate Pkce flow to issue access token and refresh token as well as
@@ -36,19 +37,13 @@ func (f TokenOrchestrator) RefreshToken(ctx context.Context, token *oauth2.Token
 	if refreshedToken != nil {
 		logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
 			token.Expiry, refreshedToken.Expiry)
-		if refreshedToken.AccessToken != token.AccessToken {
-			if err = f.tokenCache.SaveToken(refreshedToken); err != nil {
-				logger.Errorf(ctx, "unable to save the new token due to %v", err)
-				return nil, err
-			}
-		}
 	}
 
 	return refreshedToken, nil
 }
 
 // FetchTokenFromCacheOrRefreshIt fetches the token from cache and refreshes it if it'll expire within the
-// Config.TokenRefreshGracePeriod period.
+// Config.TokenRefreshDelta period.
 func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (token *oauth2.Token, err error) {
 	token, err = f.tokenCache.GetToken()
 	if err != nil {
@@ -58,12 +53,38 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (
 	if !token.Valid() {
 		return nil, fmt.Errorf("token from cache is invalid")
 	}
+	/* We need to get access tokens expiry as the Expiry on the oauth2.token is refresh Token expiry which is longer.
+	   This is inorder to solve the following scenario.
+	   1] Client requests access token and refresh token both in the same request
+	   2] Auth server issue:
+		  a) access token with expiry of 30 mins
+	      b) refresh token with expiry of 60 mins
+	   3] The combined access token has the expiry for refresh token
+	      {
+			access_token 	: "acces_token...."
+			refresh_token 	: "refresh_toke..."
+			expiry 			: <refresh_token_expiry"
+	      }
+	   4] When the check happens on the expiry it will assume access token is valid whereas it may not be and
+	      admin server will throw an error that the token is expired.
 
+	*/
+	var decodedAccessToken *jws.ClaimSet
+	if decodedAccessToken, err = jws.Decode(token.AccessToken); err != nil {
+		// Ignoring the error until aud is fixed to be returned as a string instead of an array.
+		// Current state
+		// "aud": [
+		//    "http://flyteadmin:8088"
+		//  ],
+		logger.Errorf(ctx, "unable to decode access token due to %v", err)
+	}
+	accessTokenExpiry := time.Unix(decodedAccessToken.Exp, 0)
 	// If token doesn't need to be refreshed, return it.
-	if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
+	if time.Now().Before(accessTokenExpiry.Add(f.cfg.TokenRefreshDelta.Duration)) {
 		return token, nil
 	}
-
+	// Force change the expiry to refresh.
+	token.Expiry = time.Now().Add(-1 * time.Minute)
 	token, err = f.RefreshToken(ctx, token)
 	if err != nil {
 		return nil, fmt.Errorf("failed to refresh token using cached token. Error: %w", err)

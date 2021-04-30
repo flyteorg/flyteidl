@@ -18,6 +18,7 @@ import (
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"golang.org/x/oauth2"
@@ -171,15 +172,21 @@ func TestGetAuthenticationDialOptionPkce(t *testing.T) {
 		RedirectUri:              "http://localhost:54545/callback",
 	}
 	http.DefaultServeMux = http.NewServeMux()
-	plan, _ := ioutil.ReadFile("pkce/testdata/token.json")
-	var tokenData oauth2.Token
-	err := json.Unmarshal(plan, &tokenData)
-	assert.NoError(t, err)
-	tokenData.Expiry = time.Now().Add(time.Minute)
+	currTime := time.Now()
+	tokenExpiry := currTime.Add(time.Minute)
+	refreshTokenExpiry := currTime.Add(2 * time.Minute)
+	accesToken := CreateToken(tokenExpiry)
+	refreshToken := CreateToken(refreshTokenExpiry)
+	token := &oauth2.Token{
+		AccessToken:  accesToken,
+		RefreshToken: refreshToken,
+		Expiry:       refreshTokenExpiry,
+		TokenType:    "bearer",
+	}
 	t.Run("cache hit", func(t *testing.T) {
 		mockTokenCache := new(pkcemocks.TokenCache)
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
-		mockTokenCache.OnGetTokenMatch().Return(&tokenData, nil)
+		mockTokenCache.OnGetTokenMatch().Return(token, nil)
 		mockTokenCache.OnSaveTokenMatch(mock.Anything).Return(nil)
 		mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 		mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
@@ -187,11 +194,11 @@ func TestGetAuthenticationDialOptionPkce(t *testing.T) {
 		assert.NotNil(t, dialOption)
 		assert.Nil(t, err)
 	})
-	tokenData.Expiry = time.Now().Add(-time.Minute)
 	t.Run("cache miss auth failure", func(t *testing.T) {
+		token.Expiry = time.Now().Add(-time.Minute * 30)
 		mockTokenCache := new(pkcemocks.TokenCache)
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
-		mockTokenCache.OnGetTokenMatch().Return(&tokenData, nil)
+		mockTokenCache.OnGetTokenMatch().Return(token, nil)
 		mockTokenCache.OnSaveTokenMatch(mock.Anything).Return(nil)
 		mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 		mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
@@ -250,4 +257,14 @@ func ExampleClientSetBuilder() {
 	_ = clientSet.AdminClient()
 	_ = clientSet.AuthMetadataClient()
 	_ = clientSet.IdentityClient()
+}
+
+// TODO : remove this once this is moved to common util
+func CreateToken(expiryTime time.Time) string {
+	atClaims := jwt.MapClaims{}
+	atClaims["authorized"] = true
+	atClaims["user_id"] = 1
+	atClaims["exp"] = expiryTime.Unix()
+	tokenString, _ := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims).SigningString()
+	return tokenString
 }
