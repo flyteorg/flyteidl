@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#NOOP 
+
 export REPOSITORY=flyteidl
 include boilerplate/lyft/golang_test_targets/Makefile
 
