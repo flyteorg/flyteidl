@@ -6,6 +6,7 @@ package admin
 
 import (
 	"context"
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"path/filepath"
 	"time"
 
@@ -35,11 +36,7 @@ const (
 )
 
 type Config struct {
-	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
-	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection."`
-	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
-	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
-	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
+	clientutils.ClientBaseConfig
 	AuthType              AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
@@ -65,9 +62,11 @@ type Config struct {
 
 var (
 	defaultConfig = Config{
-		MaxBackoffDelay:      config.Duration{Duration: 8 * time.Second},
-		PerRetryTimeout:      config.Duration{Duration: 15 * time.Second},
-		MaxRetries:           4,
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			MaxBackoffDelay: config.Duration{Duration: 8 * time.Second},
+			PerRetryTimeout: config.Duration{Duration: 15 * time.Second},
+			MaxRetries:      4,
+		},
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,

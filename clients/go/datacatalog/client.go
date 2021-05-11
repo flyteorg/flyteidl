@@ -55,7 +55,7 @@ func InitializeDataCatalogClient(ctx context.Context, cfg Config) (datacatalog.D
 	once.Do(func() {
 		var err error
 		dataCatalogConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.Config{
+			&clientutils.ClientBaseConfig{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,

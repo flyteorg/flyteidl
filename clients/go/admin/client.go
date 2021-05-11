@@ -148,7 +148,7 @@ func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client service.AuthMetadataServiceClient, err error) {
 	onceAuthMetadata.Do(func() {
 		authMetadataConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.Config{
+			&clientutils.ClientBaseConfig{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,
@@ -197,7 +197,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		}
 
 		adminConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.Config{
+			&clientutils.ClientBaseConfig{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,

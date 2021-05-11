@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc/credentials"
 )
 
-type Config struct {
+type ClientBaseConfig struct {
 	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
 	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection."`
 	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
@@ -18,7 +18,7 @@ type Config struct {
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 }
 
-func GetAdditionalClientConfigOptions(cfg *Config) []grpc.DialOption {
+func GetAdditionalClientConfigOptions(cfg *ClientBaseConfig) []grpc.DialOption {
 	opts := make([]grpc.DialOption, 0, 2)
 	backoffConfig := grpc.BackoffConfig{
 		MaxDelay: cfg.MaxBackoffDelay.Duration,
@@ -42,7 +42,7 @@ func GetAdditionalClientConfigOptions(cfg *Config) []grpc.DialOption {
 	return opts
 }
 
-func NewConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
+func NewConnection(_ context.Context, cfg *ClientBaseConfig, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
 	if opts == nil {
 		// Initialize opts list to the potential number of options we will add. Initialization optimizes memory
 		// allocation.
