@@ -2,6 +2,8 @@ package datacatalog
 
 import (
 	"context"
+	"github.com/flyteorg/flytestdlib/config"
+	"net/url"
 	"sync"
 	"testing"
 
@@ -12,10 +14,10 @@ func TestInitializeAndGetDataCatalogClient(t *testing.T) {
 
 	ctx := context.TODO()
 	t.Run("legal", func(t *testing.T) {
-		url := "http://localhost:8089"
+		u, _ := url.Parse("localhost:8089")
 		client, err := InitializeDataCatalogClient(ctx, Config{
-			Endpoint: url,
-			Insecure: false,
+			Endpoint: config.URL{URL: *u},
+			UseInsecureConnection: false,
 		})
 		assert.NotNil(t, client)
 		assert.NoError(t, err)
