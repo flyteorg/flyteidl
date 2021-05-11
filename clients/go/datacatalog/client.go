@@ -1,22 +1,3 @@
-package datacatalog
-
-import (
-	"context"
-	"crypto/x509"
-	"fmt"
-	"sync"
-	"time"
-
-	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
-
-	"github.com/flyteorg/flytestdlib/logger"
-	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-)
-
 /*
 This package provides a basic wrapper for the data catalog client. There are two ways to
 create a data catalog client:
@@ -41,6 +22,24 @@ client := datacatalog.InitializeDataCatalogClient(ctx, cfg)
 client.GetArtifact(ctx, request)
 ```
 */
+package datacatalog
+
+import (
+	"context"
+	"crypto/x509"
+	"fmt"
+	"sync"
+	"time"
+
+	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
+
+	"github.com/flyteorg/flytestdlib/logger"
+	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/credentials"
+)
 
 var (
 	once                  = sync.Once{}
