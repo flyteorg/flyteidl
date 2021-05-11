@@ -103,14 +103,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("DefaultValue", func(t *testing.T) {
 			// Test that default value is set properly
 			if vString, err := cmdFlags.GetString("endpoint"); err == nil {
-				assert.Equal(t, string(defaultConfig.Endpoint), vString)
+				assert.Equal(t, string(defaultConfig.Endpoint.String()), vString)
 			} else {
 				assert.FailNow(t, err.Error())
 			}
 		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := "1"
+			testValue := defaultConfig.Endpoint.String()
 
 			cmdFlags.Set("endpoint", testValue)
 			if vString, err := cmdFlags.GetString("endpoint"); err == nil {
@@ -125,7 +125,7 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("DefaultValue", func(t *testing.T) {
 			// Test that default value is set properly
 			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
-				assert.Equal(t, bool(defaultConfig.Insecure), vBool)
+				assert.Equal(t, bool(defaultConfig.UseInsecureConnection), vBool)
 			} else {
 				assert.FailNow(t, err.Error())
 			}
@@ -136,7 +136,73 @@ func TestConfig_SetFlags(t *testing.T) {
 
 			cmdFlags.Set("insecure", testValue)
 			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.Insecure)
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.UseInsecureConnection)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_maxBackoffDelay", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("maxBackoffDelay"); err == nil {
+				assert.Equal(t, string(defaultConfig.MaxBackoffDelay.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.MaxBackoffDelay.String()
+
+			cmdFlags.Set("maxBackoffDelay", testValue)
+			if vString, err := cmdFlags.GetString("maxBackoffDelay"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.MaxBackoffDelay)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_perRetryTimeout", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("perRetryTimeout"); err == nil {
+				assert.Equal(t, string(defaultConfig.PerRetryTimeout.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.PerRetryTimeout.String()
+
+			cmdFlags.Set("perRetryTimeout", testValue)
+			if vString, err := cmdFlags.GetString("perRetryTimeout"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.PerRetryTimeout)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_maxRetries", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vInt, err := cmdFlags.GetInt("maxRetries"); err == nil {
+				assert.Equal(t, int(defaultConfig.MaxRetries), vInt)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("maxRetries", testValue)
+			if vInt, err := cmdFlags.GetInt("maxRetries"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.MaxRetries)
 
 			} else {
 				assert.FailNow(t, err.Error())

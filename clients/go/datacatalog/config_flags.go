@@ -41,7 +41,10 @@ func (Config) mustMarshalJSON(v json.Marshaler) string {
 // flags is json-name.json-sub-name... etc.
 func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags := pflag.NewFlagSet("Config", pflag.ExitOnError)
-	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "endpoint"), defaultConfig.Endpoint, " Endpoint for catalog service")
-	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "insecure"), defaultConfig.Insecure, " Use insecure grpc connection")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "endpoint"), defaultConfig.Endpoint.String(), "For admin types,  specify where the uri of the service is located.")
+	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "insecure"), defaultConfig.UseInsecureConnection, "Use insecure connection.")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "maxBackoffDelay"), defaultConfig.MaxBackoffDelay.String(), "Max delay for grpc backoff")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "perRetryTimeout"), defaultConfig.PerRetryTimeout.String(), "gRPC per retry timeout")
+	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "maxRetries"), defaultConfig.MaxRetries, "Max number of gRPC retries")
 	return cmdFlags
 }

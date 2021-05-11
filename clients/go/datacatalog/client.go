@@ -26,19 +26,14 @@ package datacatalog
 
 import (
 	"context"
-	"crypto/x509"
 	"fmt"
-	"sync"
-	"time"
-
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
+	"sync"
 
 	"github.com/flyteorg/flytestdlib/logger"
-	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
 )
 
 var (
@@ -54,41 +49,19 @@ func NewDataCatalogClient(ctx context.Context, conn *grpc.ClientConn) (datacatal
 	return datacatalog.NewDataCatalogClient(conn), nil
 }
 
-func NewDataCatalogConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
-	var opts []grpc.DialOption
-
-	grpcOptions := []grpcRetry.CallOption{
-		grpcRetry.WithBackoff(grpcRetry.BackoffLinear(100 * time.Millisecond)),
-		grpcRetry.WithCodes(codes.DeadlineExceeded, codes.Unavailable, codes.Canceled),
-		grpcRetry.WithMax(5),
-	}
-
-	if cfg.Insecure {
-		logger.Debug(ctx, "Establishing insecure connection to DataCatalog")
-		opts = append(opts, grpc.WithInsecure())
-	} else {
-		logger.Debug(ctx, "Establishing secure connection to DataCatalog")
-		pool, err := x509.SystemCertPool()
-		if err != nil {
-			return nil, err
-		}
-
-		creds := credentials.NewClientTLSFromCert(pool, "")
-		opts = append(opts, grpc.WithTransportCredentials(creds))
-	}
-
-	retryInterceptor := grpc.WithUnaryInterceptor(grpcRetry.UnaryClientInterceptor(grpcOptions...))
-
-	opts = append(opts, retryInterceptor)
-	return grpc.Dial(cfg.Endpoint, opts...)
-}
-
 // Create an AdminClient with a shared Admin connection for the process
 func InitializeDataCatalogClient(ctx context.Context, cfg Config) (datacatalog.DataCatalogClient,
 	error) {
 	once.Do(func() {
 		var err error
-		dataCatalogConnection, err = NewDataCatalogConnection(ctx, cfg)
+		dataCatalogConnection, err = clientutils.NewConnection(ctx,
+			&clientutils.Config{
+				Endpoint:              cfg.Endpoint,
+				UseInsecureConnection: cfg.UseInsecureConnection,
+				MaxBackoffDelay:       cfg.MaxBackoffDelay,
+				PerRetryTimeout:       cfg.PerRetryTimeout,
+				MaxRetries:            cfg.MaxRetries,
+			})
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}

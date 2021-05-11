@@ -3,22 +3,18 @@ package admin
 import (
 	"context"
 	"fmt"
+	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/logger"
 	"io/ioutil"
 	"strings"
 	"sync"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
-	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
-	"github.com/flyteorg/flytestdlib/logger"
-
-	grpcMiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
-	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
 )
 
 var (
@@ -55,30 +51,6 @@ func (c Clientset) IdentityClient() service.IdentityServiceClient {
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
 	return service.NewAdminServiceClient(conn)
-}
-
-func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
-	opts := make([]grpc.DialOption, 0, 2)
-	backoffConfig := grpc.BackoffConfig{
-		MaxDelay: cfg.MaxBackoffDelay.Duration,
-	}
-
-	opts = append(opts, grpc.WithBackoffConfig(backoffConfig))
-
-	timeoutDialOption := grpcRetry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
-	maxRetriesOption := grpcRetry.WithMax(uint(cfg.MaxRetries))
-
-	retryInterceptor := grpcRetry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
-	finalUnaryInterceptor := grpcMiddleware.ChainUnaryClient(
-		grpcPrometheus.UnaryClientInterceptor,
-		retryInterceptor,
-	)
-
-	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
-	// ever has those endpoints
-	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
-
-	return opts
 }
 
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin. If
@@ -175,7 +147,14 @@ func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
 func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client service.AuthMetadataServiceClient, err error) {
 	onceAuthMetadata.Do(func() {
-		authMetadataConnection, err = NewAdminConnection(ctx, cfg)
+		authMetadataConnection, err = clientutils.NewConnection(ctx,
+			&clientutils.Config{
+				Endpoint:              cfg.Endpoint,
+				UseInsecureConnection: cfg.UseInsecureConnection,
+				MaxBackoffDelay:       cfg.MaxBackoffDelay,
+				PerRetryTimeout:       cfg.PerRetryTimeout,
+				MaxRetries:            cfg.MaxRetries,
+			})
 	})
 
 	if err != nil {
@@ -183,26 +162,6 @@ func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client serv
 	}
 
 	return service.NewAuthMetadataServiceClient(authMetadataConnection), nil
-}
-
-func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
-	if opts == nil {
-		// Initialize opts list to the potential number of options we will add. Initialization optimizes memory
-		// allocation.
-		opts = make([]grpc.DialOption, 0, 5)
-	}
-
-	if cfg.UseInsecureConnection {
-		opts = append(opts, grpc.WithInsecure())
-	} else {
-		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
-		creds := credentials.NewClientTLSFromCert(nil, "")
-		opts = append(opts, grpc.WithTransportCredentials(creds))
-	}
-
-	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)
-
-	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
 // Create an AdminClient with a shared Admin connection for the process
@@ -237,7 +196,14 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 			opts = append(opts, opt)
 		}
 
-		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
+		adminConnection, err = clientutils.NewConnection(ctx,
+			&clientutils.Config{
+				Endpoint:              cfg.Endpoint,
+				UseInsecureConnection: cfg.UseInsecureConnection,
+				MaxBackoffDelay:       cfg.MaxBackoffDelay,
+				PerRetryTimeout:       cfg.PerRetryTimeout,
+				MaxRetries:            cfg.MaxRetries,
+			}, opts...)
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
