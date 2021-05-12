@@ -2,6 +2,7 @@ package admin
 
 import (
 	"context"
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"reflect"
 	"testing"
 
@@ -11,7 +12,9 @@ import (
 
 func TestClientsetBuilder_Build(t *testing.T) {
 	cb := NewClientsetBuilder().WithConfig(&Config{
-		UseInsecureConnection: true,
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			UseInsecureConnection: true,
+		},
 	}).WithTokenCache(&pkce.TokenCacheInMemoryProvider{})
 	_, err := cb.Build(context.Background())
 	assert.NoError(t, err)

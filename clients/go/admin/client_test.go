@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -30,7 +31,9 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
 		assert.NotNil(t, InitializeAdminClient(ctx, &Config{
-			Endpoint: config.URL{URL: *u},
+			ClientBaseConfig: clientutils.ClientBaseConfig{
+				Endpoint: config.URL{URL: *u},
+			},
 		}))
 	})
 
@@ -55,9 +58,11 @@ func TestInitializeMockAdminClient(t *testing.T) {
 func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := &Config{
-		Endpoint:              config.URL{URL: *u},
-		UseInsecureConnection: true,
-		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: true,
+			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		},
 	}
 
 	assert.NoError(t, SetConfig(adminServiceConfig))
@@ -66,7 +71,8 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	t.Run("legal", func(t *testing.T) {
 		u, err := url.Parse("http://localhost:8089")
 		assert.NoError(t, err)
-		clientSet, err := ClientSetBuilder().WithConfig(&Config{Endpoint: config.URL{URL: *u}}).Build(ctx)
+		clientSet, err := ClientSetBuilder().WithConfig(&Config{ClientBaseConfig: clientutils.
+			ClientBaseConfig{Endpoint: config.URL{URL: *u}}}).Build(ctx)
 		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AdminClient())
@@ -88,11 +94,13 @@ func TestGetAuthenticationDialOptionClientSecret(t *testing.T) {
 
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := &Config{
-		ClientSecretLocation:  "testdata/secret_key",
-		Endpoint:              config.URL{URL: *u},
-		UseInsecureConnection: true,
-		AuthType:              AuthTypeClientSecret,
-		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		ClientSecretLocation: "testdata/secret_key",
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: true,
+			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		},
+		AuthType: AuthTypeClientSecret,
 	}
 	t.Run("legal", func(t *testing.T) {
 		metatdata := &service.OAuth2MetadataResponse{
@@ -129,11 +137,13 @@ func TestGetAuthenticationDialOptionClientSecret(t *testing.T) {
 		assert.NotNil(t, err)
 	})
 	incorrectSecretLocConfig := &Config{
-		ClientSecretLocation:  "testdata/secret_key_invalid",
-		Endpoint:              config.URL{URL: *u},
-		UseInsecureConnection: true,
-		AuthType:              AuthTypeClientSecret,
-		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		ClientSecretLocation: "testdata/secret_key_invalid",
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: true,
+		},
+		AuthType: AuthTypeClientSecret,
 	}
 	t.Run("incorrect client secret loc", func(t *testing.T) {
 		metatdata := &service.OAuth2MetadataResponse{
@@ -157,10 +167,12 @@ func TestGetAuthenticationDialOptionPkce(t *testing.T) {
 
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := &Config{
-		Endpoint:              config.URL{URL: *u},
-		UseInsecureConnection: true,
-		AuthType:              AuthTypePkce,
-		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		ClientBaseConfig: clientutils.ClientBaseConfig{
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: true,
+			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		},
+		AuthType: AuthTypePkce,
 	}
 	metatdata := &service.OAuth2MetadataResponse{
 		TokenEndpoint:   "http://localhost:8089/token",
