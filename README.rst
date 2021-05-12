@@ -2,12 +2,12 @@
 Flyte IDL
 ================
 This is one of the core repositories of Flyte and contains the Specification of
-the Flyte Lanugage. The Specification is maintained using Googles fantastic
-Protcol buffers library. The code and docs are auto-generated.
+the Flyte Language. The Specification is maintained using Google's fantastic
+Protocol buffers library. The code and docs are auto-generated.
 
-* [flyte.org](https://flyte.org)
-* [Flyte Docs](http://flyte.readthedocs.org/)
-* [FlyteIDL Docs](http://flyteidl.readthedocs.org)
+* `flyte.org <https://flyte.org>`_
+* `Flyte Docs <http://flyte.readthedocs.org/>`_
+* `FlyteIDL Docs <http://flyteidl.readthedocs.org>`_
 
 Generate Code from protobuf
 ----------------------------
