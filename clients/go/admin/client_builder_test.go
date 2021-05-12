@@ -2,9 +2,10 @@ package admin
 
 import (
 	"context"
-	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"reflect"
 	"testing"
+
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/stretchr/testify/assert"

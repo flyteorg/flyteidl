@@ -2,6 +2,7 @@ package datacatalog
 
 import (
 	"context"
+
 	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flytestdlib/logger"
 )

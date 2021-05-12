@@ -6,9 +6,10 @@ package admin
 
 import (
 	"context"
-	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"path/filepath"
 	"time"
+
+	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 
@@ -37,7 +38,7 @@ const (
 
 type Config struct {
 	clientutils.ClientBaseConfig
-	AuthType              AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
+	AuthType AuthType `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`

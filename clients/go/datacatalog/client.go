@@ -27,10 +27,11 @@ package datacatalog
 import (
 	"context"
 	"fmt"
+	"sync"
+
 	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
-	"sync"
 
 	"github.com/flyteorg/flytestdlib/logger"
 	"google.golang.org/grpc"
