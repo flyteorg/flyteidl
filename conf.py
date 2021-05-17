@@ -17,6 +17,8 @@ import re
 import sys
 
 sys.path.insert(0, os.path.abspath("gen/pb-protodoc/"))
+import recommonmark
+from recommonmark.transform import AutoStructify
 
 
 # -- Project information -----------------------------------------------------
@@ -48,6 +50,8 @@ extensions = [
     "sphinx-prompt",
     "sphinx_copybutton",
     "sphinx_search.extension",
+    "recommonmark",
+    "sphinx_markdown_tables",
 ]
 
 # build the templated autosummary files
@@ -64,8 +68,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = "index"
@@ -189,3 +192,12 @@ texinfo_documents = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
 }
+
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        'auto_toc_tree_section': 'Contents',
+        'enable_math': False,
+        'enable_inline_math': False,
+        'enable_eval_rst': True,
+    }, True)
+    app.add_transform(AutoStructify)
