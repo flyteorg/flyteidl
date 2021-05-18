@@ -17,7 +17,7 @@ import "flyteidl/admin/task_execution.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
 
-message WorkflowEventClosure {
+message ExecutionEventClosure {
     flyteidl.core.ConnectionSet connections = 1;
 
     flyteidl.core.LiteralMap computed_input = 2;
@@ -33,7 +33,7 @@ message WorkflowEvent {
    // Workflow execution id
    flyteidl.admin.Execution execution = 1;
 
-   WorkflowEventClosure workflow_event_closure = 2;
+   ExecutionEventClosure workflow_event_closure = 2;
 }
 
 message NodeEventClosure {
@@ -43,7 +43,7 @@ message NodeEventClosure {
         flyteidl.admin.TaskExecution finalTaskExecution = 2;
     }
     flyteidl.core.Node spec_node = 3;
-    WorkflowEventClosure workflow_event_closure = 4;
+    ExecutionEventClosure workflow_event_closure = 4;
 }
 
 
