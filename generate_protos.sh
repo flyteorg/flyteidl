@@ -53,7 +53,7 @@ ls -d protos/docs/event/* | grep -v index.md | xargs rm
 # Use the list to generate the MD files required for sphinx conversion
 docker run --rm -v $(pwd)/protos/docs/event:/out -v  $(pwd)/protos:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,event.md -I=protos `echo $event_proto_files`
 
-# Get list of proto files in event directory. Fix the sidecar issue which requires k8s.io/api/core/v1 for documentation
+# Get list of proto files in plugins directory. Fix the sidecar issue which requires k8s.io/api/core/v1 for documentation
 plugins_proto_files=`ls protos/flyteidl/plugins/*.proto | grep -v sidecar| xargs`
 # Remove any currently generated file
 ls -d protos/docs/plugins/* |grep -v index.md| xargs rm

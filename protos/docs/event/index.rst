@@ -1,6 +1,7 @@
+##############################################
 
 Flyte Internal and External Eventing interface
-==============================================
+##############################################
 
 This section contains all the protocol buffer definitions for Internal and
 External Eventing system.
@@ -17,4 +18,9 @@ Flyte External Eventing - Event Egress
 This refers to the interface for all the event messages exiting from the Flyte
 **control plane** and delivered on the configured pubsub channel.
 
-* [Event](event)
+.. toctree::
+	:maxdepth: 1
+	:caption: event
+	:name: eventtoc
+
+	event
