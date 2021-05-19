@@ -17,6 +17,9 @@
     - [HiveQueryCollection](#flyteidl.plugins.HiveQueryCollection)
     - [QuboleHiveJob](#flyteidl.plugins.QuboleHiveJob)
   
+- [flyteidl/plugins/sidecar.proto](#flyteidl/plugins/sidecar.proto)
+    - [SidecarJob](#flyteidl.plugins.SidecarJob)
+  
 - [flyteidl/plugins/spark.proto](#flyteidl/plugins/spark.proto)
     - [SparkApplication](#flyteidl.plugins.SparkApplication)
     - [SparkJob](#flyteidl.plugins.SparkJob)
@@ -188,6 +191,40 @@ of a hive task&#39;s TaskTemplate
 | query_collection | [HiveQueryCollection](#flyteidl.plugins.HiveQueryCollection) |  | **Deprecated.**  |
 | tags | [string](#string) | repeated |  |
 | query | [HiveQuery](#flyteidl.plugins.HiveQuery) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="flyteidl/plugins/sidecar.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## flyteidl/plugins/sidecar.proto
+
+
+
+<a name="flyteidl.plugins.SidecarJob"></a>
+
+### SidecarJob
+A sidecar job brings up the desired pod_spec.
+The plugin executor is responsible for keeping the pod alive until the primary container terminates
+or the task itself times out.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pod_spec | [k8s.io.api.core.v1.PodSpec](#k8s.io.api.core.v1.PodSpec) |  |  |
+| primary_container_name | [string](#string) |  |  |
 
 
 

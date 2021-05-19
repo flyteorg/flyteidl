@@ -15,3 +15,4 @@ and documentation of all these entities.
 	docs/datacatalog/index
 	docs/event/index
 	docs/plugins/index
+	docs/service/index
