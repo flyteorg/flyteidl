@@ -15,8 +15,8 @@
 import os
 import re
 import sys
+import subprocess
 
-sys.path.insert(0, os.path.abspath("gen/pb-protodoc/"))
 import recommonmark
 from recommonmark.transform import AutoStructify
 
@@ -31,6 +31,9 @@ author = "Flyte"
 release = re.sub('^v', '', os.popen('git describe').read().strip())
 version = release
 
+# Project and scripts directories
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+post_process_docs_file=os.path.join(PROJECT_DIR, "scripts", "post_process_docs.sh")
 
 # -- General configuration ---------------------------------------------------
 
@@ -192,6 +195,9 @@ texinfo_documents = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
 }
+def build_finished_handler(app, exception):
+    process = subprocess.Popen([post_process_docs_file])
+    process.wait()
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
@@ -201,3 +207,4 @@ def setup(app):
         'enable_eval_rst': True,
     }, True)
     app.add_transform(AutoStructify)
+    app.connect('build-finished', build_finished_handler)
