@@ -15,6 +15,7 @@
 import os
 import re
 import sys
+import subprocess
 
 import recommonmark
 import sphinx_fontawesome
@@ -197,6 +198,9 @@ texinfo_documents = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
 }
+def build_finished_handler(app, exception):
+    process = subprocess.Popen([post_process_docs_file])
+    process.wait()
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
@@ -206,3 +210,4 @@ def setup(app):
         'enable_eval_rst': True,
     }, True)
     app.add_transform(AutoStructify)
+    app.connect('build-finished', build_finished_handler)
