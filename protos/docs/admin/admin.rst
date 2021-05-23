@@ -941,8 +941,8 @@ These attributes are assigned at launch time and do not change.
    "nesting", ":ref:`ref_uint32`", "", "Indicates the nestedness of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1."
    "scheduled_at", ":ref:`ref_google.protobuf.Timestamp`", "", "For scheduled executions, the requested time for execution for this specific schedule invocation."
    "parent_node_execution", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Which subworkflow node launched this execution"
-   "reference_execution", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Optional a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution."
-   "system_metadata", ":ref:`ref_flyteidl.admin.SystemMetadata`", "", "Optional platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization."
+   "reference_execution", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution."
+   "system_metadata", ":ref:`ref_flyteidl.admin.SystemMetadata`", "", "Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization."
 
 
 

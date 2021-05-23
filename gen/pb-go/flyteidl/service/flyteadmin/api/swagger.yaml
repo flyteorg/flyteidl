@@ -3511,12 +3511,12 @@ definitions:
         title: "Which subworkflow node launched this execution"
         $ref: "#/definitions/coreNodeExecutionIdentifier"
       reference_execution:
-        description: "Optional a reference workflow execution related to this execution.\n\
+        description: "Optional, a reference workflow execution related to this execution.\n\
           In the case of a relaunch, this references the original workflow execution."
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
       system_metadata:
-        description: "Optional platform-specific metadata about the execution.\nIn\
-          \ this the future this may be gated behind an ACL or some sort of authorization."
+        description: "Optional, platform-specific metadata about the execution.\n\
+          In this the future this may be gated behind an ACL or some sort of authorization."
         $ref: "#/definitions/adminSystemMetadata"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
