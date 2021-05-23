@@ -26,7 +26,10 @@ Follow the steps to build and use the protoc-gen-doc
 
 ---
 **NOTE**
-Make sure protoc-gen-doc is available on PATH variable for protoc to pick up the plugin
+Make sure protoc-gen-doc is available on PATH variable for protoc to pick up the plugin.
 ---
 
 The protoc-gen-doc will now be available for protoc
+Following is an example from `generate_protos.sh` file which helps in generating the core documentation from its proto files
+
+````protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=protos `echo $core_proto_files````
