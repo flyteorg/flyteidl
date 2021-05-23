@@ -47,7 +47,7 @@ datacatalog_proto_files=`ls protos/flyteidl/datacatalog/*.proto |xargs`
 ls -d protos/docs/datacatalog/* | grep -v index.rst | xargs rm
 # Use the list to generate the MD files required for sphinx conversion
 #docker run --rm -v $(pwd)/protos/docs/datacatalog:/out -v  $(pwd)/protos:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,datacatalog.md -I=protos `echo $datacatalog_proto_files`
-protoc --doc_out=protos/docs/datacatalog --doc_opt=restructuredtext,datacatlog.rst -I=protos `echo $datacatalog_proto_files`
+protoc --doc_out=protos/docs/datacatalog --doc_opt=restructuredtext,datacatalog.rst -I=protos `echo $datacatalog_proto_files`
 
 # Get list of proto files in event directory
 event_proto_files=`ls protos/flyteidl/event/*.proto |xargs`
