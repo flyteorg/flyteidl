@@ -8,19 +8,26 @@ Each module in protos has same named module under the docs also.
 eg : protos/flyteidl/core has same named doc structure placing it index and other documentation files in protos/docs/core
 
 ## Docs Generation
-Currently pseudomuto/protoc-gen-doc is being used for generating the MD files which are placed in protos/docs and corresponding folder based on the module
+Relies on protoc plugin pseudomuto/protoc-gen-doc for generating the docs.
+Currently pseudomuto/protoc-gen-doc is being used for generating the RST files which are placed in protos/docs and corresponding folder based on the module.
+Until this code is checkedin https://github.com/pseudomuto/protoc-gen-doc/pull/440, use the branch to build the protoc-gen-doc executable
+Follow the steps to build and use the protoc-gen-doc 
+* Clone the git repo protoc-gen-doc 
+  ``git clone https://github.com/paweld2/protoc-gen-doc.git``
 
-protoc-gen-doc generates a single MD file if we include all the protos and doesn't provide a way to split these.
-The MD files are then fed as input to sphinx for html doc generation
-Inorder to modularize this and not have one single huge html file the MD files are being generated per module(eg :core,admin,plugin)
-But due to this process if there references in html/md files which don't exist in the same file then they lead to broken links.
+* Run the following command to make the distributions for various environments. 
+    ``make dist``
 
-eg: If we generate admin docs through this process , they would generate admin.md file in protos/docs/admin folder but if they reference docs from core 
-like for flyteidl.core.ResourceType	then they would try to find it in the same MD/html file which wont be available
+* Untar the executable from the distribution. eg for darwin
+   ``tar -xvf protoc-gen-doc-1.4.1.darwin-amd64.go1.16.3.tar.gz``
 
-Inorder to fix this issue an additional post build step has been added to fix such links.
-Check conf.py for sphinx to see build-finished event handler
+* Copy the executable into your GOPATH/bin
+   ``cp protoc-gen-doc-1.4.1.darwin-amd64.go1.16.3/protoc-gen-doc $GOPATH/bin/``
 
-Note : The plan is to move to generating RST file instead of MD files once this PR is checkedin https://github.com/pseudomuto/protoc-gen-doc/pull/440#issuecomment-845678919
-which would simplify the doc generation further
+---
+**NOTE**
+Make sure protoc-gen-doc is available on PATH variable for protoc to pick up the plugin
+---
 
+The protoc-gen-doc will now be available for protoc
+Following is an example on how to generate docs using this plugin locally
