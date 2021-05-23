@@ -95,7 +95,9 @@ EmailNotification
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "recipients_email", ":ref:`ref_string`", "repeated", "The list of email addresses recipients for this notification."
+   "recipients_email", ":ref:`ref_string`", "repeated", "The list of email addresses recipients for this notification.
+
+[(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];"
 
 
 
@@ -208,9 +210,13 @@ A resource can internally have multiple versions.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "project", ":ref:`ref_string`", "", "Name of the project the resource belongs to."
-   "domain", ":ref:`ref_string`", "", "Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project."
-   "name", ":ref:`ref_string`", "", "User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'"
+   "project", ":ref:`ref_string`", "", "Name of the project the resource belongs to.
+
+[(validate.rules).string.min_bytes = 1];"
+   "domain", ":ref:`ref_string`", "", "Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+
+[(validate.rules).string.min_bytes = 1];"
+   "name", ":ref:`ref_string`", "", "User provided value for the resource. The combination of project &#43; domain &#43; name uniquely identifies the resource. &#43;optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;"
 
 
 
@@ -253,12 +259,16 @@ Represents a request structure to list identifiers.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers."
-   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project."
+   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers.
+
+[(validate.rules).string.min_bytes = 1];"
+   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project.
+
+[(validate.rules).string.min_bytes = 1];"
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. &#43;optional"
 
 
 
@@ -302,12 +312,16 @@ Represents a request structure to list NamedEntity objects
    :widths: auto
 
    "resource_type", ":ref:`ref_flyteidl.core.ResourceType`", "", ""
-   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers."
-   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project."
+   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers.
+
+[(validate.rules).string.min_bytes = 1];"
+   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project.
+
+[(validate.rules).string.min_bytes = 1];"
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. &#43;optional"
 
 
 
@@ -328,7 +342,7 @@ NamedEntityMetadata
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "description", ":ref:`ref_string`", "", "Common description across all versions of the entity +optional"
+   "description", ":ref:`ref_string`", "", "Common description across all versions of the entity &#43;optional"
    "state", ":ref:`ref_flyteidl.admin.NamedEntityState`", "", "Shared state across all version of the entity At this point in time, only workflow entities can have their state archived."
 
 
@@ -390,7 +404,7 @@ expose configuring notifications with custom content.
    :widths: auto
 
    "phases", ":ref:`ref_flyteidl.core.WorkflowExecution.Phase`", "repeated", "A list of phases to which users can associate the notifications to."
-   "email", ":ref:`ref_flyteidl.admin.EmailNotification`", "", ""
+   "email", ":ref:`ref_flyteidl.admin.EmailNotification`", "", "option (validate.required) = true;"
    "pager_duty", ":ref:`ref_flyteidl.admin.PagerDutyNotification`", "", ""
    "slack", ":ref:`ref_flyteidl.admin.SlackNotification`", "", ""
 
@@ -434,7 +448,9 @@ PagerDutyNotification
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "recipients_email", ":ref:`ref_string`", "repeated", "Currently, PagerDuty notifications leverage email to trigger a notification."
+   "recipients_email", ":ref:`ref_string`", "repeated", "Currently, PagerDuty notifications leverage email to trigger a notification.
+
+[(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];"
 
 
 
@@ -480,9 +496,9 @@ Resources include: Task, Workflow, LaunchPlan
 
    "id", ":ref:`ref_flyteidl.admin.NamedEntityIdentifier`", "", "id represents the unique identifier of the resource."
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
 
 
 
@@ -503,7 +519,9 @@ SlackNotification
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "recipients_email", ":ref:`ref_string`", "repeated", "Currently, Slack notifications leverage email to trigger a notification."
+   "recipients_email", ":ref:`ref_string`", "repeated", "Currently, Slack notifications leverage email to trigger a notification.
+
+[(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];"
 
 
 
@@ -525,7 +543,7 @@ Species sort ordering in a list request.
    :widths: auto
 
    "key", ":ref:`ref_string`", "", "Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty."
-   "direction", ":ref:`ref_flyteidl.admin.Sort.Direction`", "", "Indicates the direction to apply sort key for response values. +optional"
+   "direction", ":ref:`ref_flyteidl.admin.Sort.Direction`", "", "Indicates the direction to apply sort key for response values. &#43;optional"
 
 
 
@@ -553,7 +571,7 @@ Represents a string url and associated metadata used throughout the platform.
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -570,7 +588,7 @@ The status of the named entity is used to control its visibility in the UI.
 
    "NAMED_ENTITY_ACTIVE", "0", "By default, all named entities are considered active and under development."
    "NAMED_ENTITY_ARCHIVED", "1", "Archived named entities are no longer visible in the UI."
-   "SYSTEM_GENERATED", "2", "System generated entities that aren't explicitly created or managed by a user."
+   "SYSTEM_GENERATED", "2", "System generated entities that aren&#39;t explicitly created or managed by a user."
 
 
 
@@ -588,11 +606,11 @@ Sort.Direction
    "DESCENDING", "0", ""
    "ASCENDING", "1", ""
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -754,13 +772,13 @@ a placeholder for now
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -868,7 +886,7 @@ Request to launch an execution with the given project, domain and optionally nam
 
    "project", ":ref:`ref_string`", "", "Name of the project the execution belongs to."
    "domain", ":ref:`ref_string`", "", "Name of the domain the execution belongs to. A domain can be considered as a subset within a specific project."
-   "name", ":ref:`ref_string`", "", "User provided value for the resource. If none is provided the system will generate a unique string. +optional"
+   "name", ":ref:`ref_string`", "", "User provided value for the resource. If none is provided the system will generate a unique string. &#43;optional"
    "spec", ":ref:`ref_flyteidl.admin.ExecutionSpec`", "", "Additional fields necessary to launch the execution."
    "inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "The inputs required to start the execution. All required inputs must be included in this map. If not required and not provided, defaults apply."
 
@@ -936,9 +954,9 @@ These attributes are assigned at launch time and do not change.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "mode", ":ref:`ref_flyteidl.admin.ExecutionMetadata.ExecutionMode`", "", ""
+   "mode", ":ref:`ref_flyteidl.admin.ExecutionMetadata.ExecutionMode`", "", "[(validate.rules).enum.defined_only = true];"
    "principal", ":ref:`ref_string`", "", "Identifier of the entity that triggered this execution. For systems using back-end authentication any value set here will be discarded in favor of the authenticated user context."
-   "nesting", ":ref:`ref_uint32`", "", "Indicates the nestedness of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1."
+   "nesting", ":ref:`ref_uint32`", "", "Indicates the &#34;nestedness&#34; of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k &#43; 1."
    "scheduled_at", ":ref:`ref_google.protobuf.Timestamp`", "", "For scheduled executions, the requested time for execution for this specific schedule invocation."
    "parent_node_execution", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Which subworkflow node launched this execution"
    "reference_execution", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution."
@@ -964,7 +982,7 @@ Request to relaunch the referenced execution.
    :widths: auto
 
    "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the workflow execution to relaunch."
-   "name", ":ref:`ref_string`", "", "User provided value for the relaunched execution. If none is provided the system will generate a unique string. +optional"
+   "name", ":ref:`ref_string`", "", "User provided value for the relaunched execution. If none is provided the system will generate a unique string. &#43;optional"
 
 
 
@@ -1011,7 +1029,7 @@ ExecutionTerminateRequest
 Request to terminate an in-progress execution.  This action is irreversible.
 If an execution is already terminated, this request will simply be a no-op.
 This request will fail if it references a non-existent execution.
-If the request succeeds the phase "ABORTED" will be recorded for the termination
+If the request succeeds the phase &#34;ABORTED&#34; will be recorded for the termination
 with the optional cause added to the output_result.
 
 
@@ -1171,7 +1189,7 @@ A message used to fetch a single workflow execution entity.
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -1192,11 +1210,11 @@ The method by which this execution was launched.
    "RELAUNCH", "3", "This execution was launched with identical inputs as a previous execution."
    "CHILD_WORKFLOW", "4", "This execution was triggered by another execution."
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -1223,11 +1241,15 @@ Represents a request structure to list active launch plans within a project/doma
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers."
-   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project."
+   "project", ":ref:`ref_string`", "", "Name of the project that contains the identifiers.
+
+[(validate.rules).string.min_bytes = 1];"
+   "domain", ":ref:`ref_string`", "", "Name of the domain the identifiers belongs to within the project.
+
+[(validate.rules).string.min_bytes = 1];"
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
 
 
 
@@ -1287,7 +1309,7 @@ LaunchPlan
 A LaunchPlan provides the capability to templatize workflow executions.
 Launch plans simplify associating one or more schedules, inputs and notifications with your workflows.
 Launch plans can be shared and used to trigger executions with predefined inputs even when a workflow
-definition doesn't necessarily have a default value for said input.
+definition doesn&#39;t necessarily have a default value for said input.
 
 
 
@@ -1481,7 +1503,7 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -1503,11 +1525,11 @@ group will be observed and trigger executions at a defined cadence.
    "INACTIVE", "0", ""
    "ACTIVE", "1", ""
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -1790,7 +1812,7 @@ TaskResourceSpec
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -1829,11 +1851,11 @@ PluginOverride.MissingPluginBehavior
    "FAIL", "0", ""
    "USE_DEFAULT", "1", "Uses the system-configured default implementation."
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -1940,9 +1962,9 @@ Represents a request structure to retrieve a list of node execution entities lau
 
    "task_execution_id", ":ref:`ref_flyteidl.core.TaskExecutionIdentifier`", "", "Indicates the node execution to filter by."
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
 
 
 
@@ -2054,10 +2076,10 @@ Represents a request structure to retrieve a list of node execution entities.
 
    "workflow_execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Indicates the workflow execution to filter by."
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
-   "unique_parent_id", ":ref:`ref_string`", "", "Unique identifier of the parent node in the execution +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
+   "unique_parent_id", ":ref:`ref_string`", "", "Unique identifier of the parent node in the execution &#43;optional"
 
 
 
@@ -2129,13 +2151,13 @@ Metadata for a WorkflowNode
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2156,7 +2178,7 @@ EmailMessage
 
 Represents the Email object that is sent to a publisher/subscriber
 to forward the notification.
-Note: This is internal to Admin and doesn't need to be exposed to other components.
+Note: This is internal to Admin and doesn&#39;t need to be exposed to other components.
 
 
 
@@ -2164,22 +2186,30 @@ Note: This is internal to Admin and doesn't need to be exposed to other componen
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "recipients_email", ":ref:`ref_string`", "repeated", "The list of email addresses to receive an email with the content populated in the other fields. Currently, each email recipient will receive its own email. This populates the TO field."
-   "sender_email", ":ref:`ref_string`", "", "The email of the sender. This populates the FROM field."
-   "subject_line", ":ref:`ref_string`", "", "The content of the subject line. This populates the SUBJECT field."
-   "body", ":ref:`ref_string`", "", "The content of the email body. This populates the BODY field."
+   "recipients_email", ":ref:`ref_string`", "repeated", "The list of email addresses to receive an email with the content populated in the other fields. Currently, each email recipient will receive its own email. This populates the TO field.
+
+[(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];"
+   "sender_email", ":ref:`ref_string`", "", "The email of the sender. This populates the FROM field.
+
+[(validate.rules).string.email = true];"
+   "subject_line", ":ref:`ref_string`", "", "The content of the subject line. This populates the SUBJECT field.
+
+[(validate.rules).string.min_len = 1];"
+   "body", ":ref:`ref_string`", "", "The content of the email body. This populates the BODY field.
+
+[(validate.rules).string.min_len = 1];"
 
 
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2199,7 +2229,7 @@ Domain
 ------------------------------------------------------------------
 
 Namespace within a project commonly used to differentiate between different service instances.
-e.g. "production", "development", etc.
+e.g. &#34;production&#34;, &#34;development&#34;, etc.
 
 
 
@@ -2256,9 +2286,9 @@ ProjectListRequest
    :widths: auto
 
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of projects to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. &#43;optional"
 
 
 
@@ -2335,7 +2365,7 @@ Projects
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -2352,13 +2382,13 @@ The state of the project is used to control its visibility in the UI and validit
 
    "ACTIVE", "0", "By default, all projects are considered active."
    "ARCHIVED", "1", "Archived projects are no longer visible in the UI and no longer valid."
-   "SYSTEM_GENERATED", "2", "System generated projects that aren't explicitly created or managed by a user."
+   "SYSTEM_GENERATED", "2", "System generated projects that aren&#39;t explicitly created or managed by a user."
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2509,13 +2539,13 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2556,7 +2586,7 @@ CronSchedule
 FixedRate
 ------------------------------------------------------------------
 
-Option for schedules run at a certain frequency e.g. every 2 minutes.
+Option for schedules run at a certain frequency, e.g. every 2 minutes.
 
 
 
@@ -2586,7 +2616,7 @@ Defines complete set of information required to trigger an execution on a schedu
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "cron_expression", ":ref:`ref_string`", "", "**Deprecated.** Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *"
+   "cron_expression", ":ref:`ref_string`", "", "**Deprecated.** Uses AWS syntax: &#34;Minutes Hours Day-of-month Month Day-of-week Year&#34; e.g. for a schedule that runs every 15 minutes: &#34;0/15 * * * ? *&#34;"
    "rate", ":ref:`ref_flyteidl.admin.FixedRate`", "", ""
    "cron_schedule", ":ref:`ref_flyteidl.admin.CronSchedule`", "", ""
    "kickoff_time_input_arg", ":ref:`ref_string`", "", "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
@@ -2595,7 +2625,7 @@ Defines complete set of information required to trigger an execution on a schedu
 
 
 
- <!-- end messages -->
+ 
 
 
 
@@ -2614,11 +2644,11 @@ Represents a frequency at which to run a schedule.
    "HOUR", "1", ""
    "DAY", "2", ""
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2758,13 +2788,13 @@ Represents a structure that encapsulates the user-configured specification of th
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -2939,21 +2969,21 @@ Represents a request structure to retrieve a list of task execution entities.
 
    "node_execution_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Indicates the node execution to filter by."
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
-   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
-   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering for returned list. +optional"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. &#43;optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; &#43;optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering for returned list. &#43;optional"
 
 
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -3023,13 +3053,13 @@ Provides Version information for a component
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -3161,19 +3191,19 @@ Represents a structure that encapsulates the specification of the workflow.
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
-   "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
+   "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn&#39;t have any knowledge of other workflows - ie, it doesn&#39;t reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
 
 
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
 
@@ -3327,12 +3357,244 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
- <!-- end services -->
+ 
 
 
+
+.. _ref_scala_types:
+
+Scalar Value Types
+==================
+
+
+
+.. _ref_double:
+
+double
+-----------------------------
+
+
+
+.. csv-table:: double language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "double", "double", "double", "float", "float64", "double", "float", "Float"
+
+
+
+.. _ref_float:
+
+float
+-----------------------------
+
+
+
+.. csv-table:: float language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "float", "float", "float", "float", "float32", "float", "float", "Float"
+
+
+
+.. _ref_int32:
+
+int32
+-----------------------------
+
+Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.
+
+.. csv-table:: int32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "int32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_int64:
+
+int64
+-----------------------------
+
+Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.
+
+.. csv-table:: int64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "int64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_uint32:
+
+uint32
+-----------------------------
+
+Uses variable-length encoding.
+
+.. csv-table:: uint32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "uint32", "uint32", "int", "int/long", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_uint64:
+
+uint64
+-----------------------------
+
+Uses variable-length encoding.
+
+.. csv-table:: uint64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "uint64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sint32:
+
+sint32
+-----------------------------
+
+Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.
+
+.. csv-table:: sint32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sint32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sint64:
+
+sint64
+-----------------------------
+
+Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.
+
+.. csv-table:: sint64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sint64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_fixed32:
+
+fixed32
+-----------------------------
+
+Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+
+.. csv-table:: fixed32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "fixed32", "uint32", "int", "int", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_fixed64:
+
+fixed64
+-----------------------------
+
+Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
+
+.. csv-table:: fixed64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "fixed64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum"
+
+
+
+.. _ref_sfixed32:
+
+sfixed32
+-----------------------------
+
+Always four bytes.
+
+.. csv-table:: sfixed32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sfixed32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sfixed64:
+
+sfixed64
+-----------------------------
+
+Always eight bytes.
+
+.. csv-table:: sfixed64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sfixed64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_bool:
+
+bool
+-----------------------------
+
+
+
+.. csv-table:: bool language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "bool", "bool", "boolean", "boolean", "bool", "bool", "boolean", "TrueClass/FalseClass"
+
+
+
+.. _ref_string:
+
+string
+-----------------------------
+
+A string must always contain UTF-8 encoded or 7-bit ASCII text.
+
+.. csv-table:: string language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "string", "string", "String", "str/unicode", "string", "string", "string", "String (UTF-8)"
+
+
+
+.. _ref_bytes:
+
+bytes
+-----------------------------
+
+May contain any arbitrary sequence of bytes.
+
+.. csv-table:: bytes language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "bytes", "string", "ByteString", "str", "[]byte", "ByteString", "string", "String (ASCII-8BIT)"
+
+ 

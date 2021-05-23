@@ -12,11 +12,11 @@ flyteidl/service/admin.proto
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
 
 
@@ -77,7 +77,7 @@ Standard response codes for both are defined here: https://github.com/grpc-ecosy
    "GetNamedEntity", ":ref:`ref_flyteidl.admin.NamedEntityGetRequest`", ":ref:`ref_flyteidl.admin.NamedEntity`", ""
    "UpdateNamedEntity", ":ref:`ref_flyteidl.admin.NamedEntityUpdateRequest`", ":ref:`ref_flyteidl.admin.NamedEntityUpdateResponse`", ""
    "GetVersion", ":ref:`ref_flyteidl.admin.GetVersionRequest`", ":ref:`ref_flyteidl.admin.GetVersionResponse`", ""
- <!-- end services -->
+ 
 
 
 
@@ -120,12 +120,12 @@ as defined in https://tools.ietf.org/html/rfc8414
    :widths: auto
 
    "issuer", ":ref:`ref_string`", "", "Defines the issuer string in all JWT tokens this server issues. The issuer can be admin itself or an external issuer."
-   "authorization_endpoint", ":ref:`ref_string`", "", "URL of the authorization server's authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are supported that use the authorization endpoint."
-   "token_endpoint", ":ref:`ref_string`", "", "URL of the authorization server's token endpoint [RFC6749]."
-   "response_types_supported", ":ref:`ref_string`", "repeated", "Array containing a list of the OAuth 2.0 response_type values that this authorization server supports."
-   "scopes_supported", ":ref:`ref_string`", "repeated", "JSON array containing a list of the OAuth 2.0 [RFC6749] scope values that this authorization server supports."
+   "authorization_endpoint", ":ref:`ref_string`", "", "URL of the authorization server&#39;s authorization endpoint [RFC6749]. This is REQUIRED unless no grant types are supported that use the authorization endpoint."
+   "token_endpoint", ":ref:`ref_string`", "", "URL of the authorization server&#39;s token endpoint [RFC6749]."
+   "response_types_supported", ":ref:`ref_string`", "repeated", "Array containing a list of the OAuth 2.0 &#34;response_type&#34; values that this authorization server supports."
+   "scopes_supported", ":ref:`ref_string`", "repeated", "JSON array containing a list of the OAuth 2.0 [RFC6749] &#34;scope&#34; values that this authorization server supports."
    "token_endpoint_auth_methods_supported", ":ref:`ref_string`", "repeated", "JSON array containing a list of client authentication methods supported by this token endpoint."
-   "jwks_uri", ":ref:`ref_string`", "", "URL of the authorization server's JWK Set [JWK] document. The referenced document contains the signing key(s) the client uses to validate signatures from the authorization server."
+   "jwks_uri", ":ref:`ref_string`", "", "URL of the authorization server&#39;s JWK Set [JWK] document. The referenced document contains the signing key(s) the client uses to validate signatures from the authorization server."
    "code_challenge_methods_supported", ":ref:`ref_string`", "repeated", "JSON array containing a list of Proof Key for Code Exchange (PKCE) [RFC7636] code challenge methods supported by this authorization server."
    "grant_types_supported", ":ref:`ref_string`", "repeated", "JSON array containing a list of the OAuth 2.0 grant type values that this authorization server supports."
 
@@ -171,11 +171,11 @@ FlyteClientResponse encapsulates public information that flyte clients (CLIs... 
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
 
 
@@ -194,7 +194,7 @@ RPCs defined in this service must be anonymously accessible.
 
    "GetOAuth2Metadata", ":ref:`ref_flyteidl.service.OAuth2MetadataRequest`", ":ref:`ref_flyteidl.service.OAuth2MetadataResponse`", "Anonymously accessible. Retrieves local or external oauth authorization server metadata."
    "GetPublicClientConfig", ":ref:`ref_flyteidl.service.PublicClientAuthConfigRequest`", ":ref:`ref_flyteidl.service.PublicClientAuthConfigResponse`", "Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization requests."
- <!-- end services -->
+ 
 
 
 
@@ -247,11 +247,11 @@ See the OpenID Connect spec at https://openid.net/specs/openid-connect-core-1_0.
 
 
 
- <!-- end messages -->
+ 
 
- <!-- end enums -->
+ 
 
- <!-- end HasExtensions -->
+ 
 
 
 
@@ -267,6 +267,238 @@ IdentityService defines an RPC Service that interacts with user/app identities.
    :widths: auto
 
    "UserInfo", ":ref:`ref_flyteidl.service.UserInfoRequest`", ":ref:`ref_flyteidl.service.UserInfoResponse`", "Retrieves user information about the currently logged in user."
- <!-- end services -->
+ 
 
 
+
+.. _ref_scala_types:
+
+Scalar Value Types
+==================
+
+
+
+.. _ref_double:
+
+double
+-----------------------------
+
+
+
+.. csv-table:: double language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "double", "double", "double", "float", "float64", "double", "float", "Float"
+
+
+
+.. _ref_float:
+
+float
+-----------------------------
+
+
+
+.. csv-table:: float language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "float", "float", "float", "float", "float32", "float", "float", "Float"
+
+
+
+.. _ref_int32:
+
+int32
+-----------------------------
+
+Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.
+
+.. csv-table:: int32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "int32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_int64:
+
+int64
+-----------------------------
+
+Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.
+
+.. csv-table:: int64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "int64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_uint32:
+
+uint32
+-----------------------------
+
+Uses variable-length encoding.
+
+.. csv-table:: uint32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "uint32", "uint32", "int", "int/long", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_uint64:
+
+uint64
+-----------------------------
+
+Uses variable-length encoding.
+
+.. csv-table:: uint64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "uint64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sint32:
+
+sint32
+-----------------------------
+
+Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.
+
+.. csv-table:: sint32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sint32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sint64:
+
+sint64
+-----------------------------
+
+Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.
+
+.. csv-table:: sint64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sint64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_fixed32:
+
+fixed32
+-----------------------------
+
+Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+
+.. csv-table:: fixed32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "fixed32", "uint32", "int", "int", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_fixed64:
+
+fixed64
+-----------------------------
+
+Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
+
+.. csv-table:: fixed64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "fixed64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum"
+
+
+
+.. _ref_sfixed32:
+
+sfixed32
+-----------------------------
+
+Always four bytes.
+
+.. csv-table:: sfixed32 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sfixed32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
+
+
+
+.. _ref_sfixed64:
+
+sfixed64
+-----------------------------
+
+Always eight bytes.
+
+.. csv-table:: sfixed64 language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "sfixed64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
+
+
+
+.. _ref_bool:
+
+bool
+-----------------------------
+
+
+
+.. csv-table:: bool language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "bool", "bool", "boolean", "boolean", "bool", "bool", "boolean", "TrueClass/FalseClass"
+
+
+
+.. _ref_string:
+
+string
+-----------------------------
+
+A string must always contain UTF-8 encoded or 7-bit ASCII text.
+
+.. csv-table:: string language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "string", "string", "String", "str/unicode", "string", "string", "string", "String (UTF-8)"
+
+
+
+.. _ref_bytes:
+
+bytes
+-----------------------------
+
+May contain any arbitrary sequence of bytes.
+
+.. csv-table:: bytes language representation
+   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
+   :widths: auto
+
+   "bytes", "string", "ByteString", "str", "[]byte", "ByteString", "string", "String (ASCII-8BIT)"
+
+ 
