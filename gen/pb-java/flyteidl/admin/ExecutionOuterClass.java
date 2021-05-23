@@ -11867,18 +11867,10 @@ public final class ExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * [(validate.rules).enum.defined_only = true];
-     * </pre>
-     *
      * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
      */
     int getModeValue();
     /**
-     * <pre>
-     * [(validate.rules).enum.defined_only = true];
-     * </pre>
-     *
      * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
      */
     flyteidl.admin.ExecutionOuterClass.ExecutionMetadata.ExecutionMode getMode();
@@ -11907,7 +11899,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Indicates the "nestedness" of this execution.
+     * Indicates the nestedness of this execution.
      * If a user launches a workflow execution, the default nesting is 0.
      * If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1
      * Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -11970,7 +11962,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -11979,7 +11971,7 @@ public final class ExecutionOuterClass {
     boolean hasReferenceExecution();
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -11988,7 +11980,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getReferenceExecution();
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -11998,7 +11990,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -12007,7 +11999,7 @@ public final class ExecutionOuterClass {
     boolean hasSystemMetadata();
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -12016,7 +12008,7 @@ public final class ExecutionOuterClass {
     flyteidl.admin.ExecutionOuterClass.SystemMetadata getSystemMetadata();
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -12343,20 +12335,12 @@ public final class ExecutionOuterClass {
     public static final int MODE_FIELD_NUMBER = 1;
     private int mode_;
     /**
-     * <pre>
-     * [(validate.rules).enum.defined_only = true];
-     * </pre>
-     *
      * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
      */
     public int getModeValue() {
       return mode_;
     }
     /**
-     * <pre>
-     * [(validate.rules).enum.defined_only = true];
-     * </pre>
-     *
      * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
      */
     public flyteidl.admin.ExecutionOuterClass.ExecutionMetadata.ExecutionMode getMode() {
@@ -12415,7 +12399,7 @@ public final class ExecutionOuterClass {
     private int nesting_;
     /**
      * <pre>
-     * Indicates the "nestedness" of this execution.
+     * Indicates the nestedness of this execution.
      * If a user launches a workflow execution, the default nesting is 0.
      * If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1
      * Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -12498,7 +12482,7 @@ public final class ExecutionOuterClass {
     private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier referenceExecution_;
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -12509,7 +12493,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -12520,7 +12504,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, a reference workflow execution related to this execution.
+     * Optional a reference workflow execution related to this execution.
      * In the case of a relaunch, this references the original workflow execution.
      * </pre>
      *
@@ -12534,7 +12518,7 @@ public final class ExecutionOuterClass {
     private flyteidl.admin.ExecutionOuterClass.SystemMetadata systemMetadata_;
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -12545,7 +12529,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -12556,7 +12540,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, platform-specific metadata about the execution.
+     * Optional platform-specific metadata about the execution.
      * In this the future this may be gated behind an ACL or some sort of authorization.
      * </pre>
      *
@@ -13028,20 +13012,12 @@ public final class ExecutionOuterClass {
 
       private int mode_ = 0;
       /**
-       * <pre>
-       * [(validate.rules).enum.defined_only = true];
-       * </pre>
-       *
        * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
        */
       public int getModeValue() {
         return mode_;
       }
       /**
-       * <pre>
-       * [(validate.rules).enum.defined_only = true];
-       * </pre>
-       *
        * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
        */
       public Builder setModeValue(int value) {
@@ -13050,10 +13026,6 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * [(validate.rules).enum.defined_only = true];
-       * </pre>
-       *
        * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
        */
       public flyteidl.admin.ExecutionOuterClass.ExecutionMetadata.ExecutionMode getMode() {
@@ -13062,10 +13034,6 @@ public final class ExecutionOuterClass {
         return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionMetadata.ExecutionMode.UNRECOGNIZED : result;
       }
       /**
-       * <pre>
-       * [(validate.rules).enum.defined_only = true];
-       * </pre>
-       *
        * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
        */
       public Builder setMode(flyteidl.admin.ExecutionOuterClass.ExecutionMetadata.ExecutionMode value) {
@@ -13078,10 +13046,6 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * [(validate.rules).enum.defined_only = true];
-       * </pre>
-       *
        * <code>.flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;</code>
        */
       public Builder clearMode() {
@@ -13193,7 +13157,7 @@ public final class ExecutionOuterClass {
       private int nesting_ ;
       /**
        * <pre>
-       * Indicates the "nestedness" of this execution.
+       * Indicates the nestedness of this execution.
        * If a user launches a workflow execution, the default nesting is 0.
        * If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1
        * Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -13207,7 +13171,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Indicates the "nestedness" of this execution.
+       * Indicates the nestedness of this execution.
        * If a user launches a workflow execution, the default nesting is 0.
        * If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1
        * Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -13224,7 +13188,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Indicates the "nestedness" of this execution.
+       * Indicates the nestedness of this execution.
        * If a user launches a workflow execution, the default nesting is 0.
        * If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =&gt; 1
        * Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -13551,7 +13515,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> referenceExecutionBuilder_;
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13562,7 +13526,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13577,7 +13541,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13598,7 +13562,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13617,7 +13581,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13640,7 +13604,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13659,7 +13623,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13672,7 +13636,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13688,7 +13652,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, a reference workflow execution related to this execution.
+       * Optional a reference workflow execution related to this execution.
        * In the case of a relaunch, this references the original workflow execution.
        * </pre>
        *
@@ -13713,7 +13677,7 @@ public final class ExecutionOuterClass {
           flyteidl.admin.ExecutionOuterClass.SystemMetadata, flyteidl.admin.ExecutionOuterClass.SystemMetadata.Builder, flyteidl.admin.ExecutionOuterClass.SystemMetadataOrBuilder> systemMetadataBuilder_;
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13724,7 +13688,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13739,7 +13703,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13760,7 +13724,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13779,7 +13743,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13802,7 +13766,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13821,7 +13785,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13834,7 +13798,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *
@@ -13850,7 +13814,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, platform-specific metadata about the execution.
+       * Optional platform-specific metadata about the execution.
        * In this the future this may be gated behind an ACL or some sort of authorization.
        * </pre>
        *

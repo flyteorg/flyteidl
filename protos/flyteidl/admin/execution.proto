@@ -171,14 +171,14 @@ message ExecutionMetadata {
         // This execution was triggered by another execution.
         CHILD_WORKFLOW = 4;
     }
-    ExecutionMode mode = 1; // [(validate.rules).enum.defined_only = true];
+    ExecutionMode mode = 1;
 
     // Identifier of the entity that triggered this execution.
     // For systems using back-end authentication any value set here will be discarded in favor of the
     // authenticated user context.
     string principal = 2;
 
-    // Indicates the "nestedness" of this execution.
+    // Indicates the nestedness of this execution.
     // If a user launches a workflow execution, the default nesting is 0.
     // If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
     // Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -191,11 +191,11 @@ message ExecutionMetadata {
     // Which subworkflow node launched this execution
     core.NodeExecutionIdentifier parent_node_execution = 5;
 
-    // Optional, a reference workflow execution related to this execution.
+    // Optional a reference workflow execution related to this execution.
     // In the case of a relaunch, this references the original workflow execution.
     core.WorkflowExecutionIdentifier reference_execution = 16;
 
-    // Optional, platform-specific metadata about the execution.
+    // Optional platform-specific metadata about the execution.
     // In this the future this may be gated behind an ACL or some sort of authorization.
     SystemMetadata system_metadata = 17;
 }

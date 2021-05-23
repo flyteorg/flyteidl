@@ -759,7 +759,7 @@ type ExecutionMetadata struct {
 	// For systems using back-end authentication any value set here will be discarded in favor of the
 	// authenticated user context.
 	Principal string `protobuf:"bytes,2,opt,name=principal,proto3" json:"principal,omitempty"`
-	// Indicates the "nestedness" of this execution.
+	// Indicates the nestedness of this execution.
 	// If a user launches a workflow execution, the default nesting is 0.
 	// If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
 	// Generally, if workflow at nesting level k launches a workflow then the child workflow will have
@@ -769,10 +769,10 @@ type ExecutionMetadata struct {
 	ScheduledAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=scheduled_at,json=scheduledAt,proto3" json:"scheduled_at,omitempty"`
 	// Which subworkflow node launched this execution
 	ParentNodeExecution *core.NodeExecutionIdentifier `protobuf:"bytes,5,opt,name=parent_node_execution,json=parentNodeExecution,proto3" json:"parent_node_execution,omitempty"`
-	// Optional, a reference workflow execution related to this execution.
+	// Optional a reference workflow execution related to this execution.
 	// In the case of a relaunch, this references the original workflow execution.
 	ReferenceExecution *core.WorkflowExecutionIdentifier `protobuf:"bytes,16,opt,name=reference_execution,json=referenceExecution,proto3" json:"reference_execution,omitempty"`
-	// Optional, platform-specific metadata about the execution.
+	// Optional platform-specific metadata about the execution.
 	// In this the future this may be gated behind an ACL or some sort of authorization.
 	SystemMetadata       *SystemMetadata `protobuf:"bytes,17,opt,name=system_metadata,json=systemMetadata,proto3" json:"system_metadata,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`

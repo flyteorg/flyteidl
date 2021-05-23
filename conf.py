@@ -15,7 +15,6 @@
 import os
 import re
 import sys
-import subprocess
 
 import recommonmark
 from recommonmark.transform import AutoStructify
@@ -30,10 +29,6 @@ author = "Flyte"
 # The full version, including alpha/beta/rc tags
 release = re.sub('^v', '', os.popen('git describe').read().strip())
 version = release
-
-# Project and scripts directories
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-post_process_docs_file=os.path.join(PROJECT_DIR, "scripts", "post_process_docs.sh")
 
 # -- General configuration ---------------------------------------------------
 
@@ -71,7 +66,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
 # The master toctree document.
 master_doc = "index"
@@ -86,7 +81,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', 'tmp/doc_gen_deps', 'gen/*/*/*/*/*', 'boilerplate', 'pull_request_template.md', 'README.rst', 'reference/*', 'CODE_OF_CONDUCT.md']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', 'tmp/doc_gen_deps', 'gen/*/*/*/*/*', 'CODE_OF_CONDUCT.md', 'pull_request_template.md', 'boilerplate']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "tango"
@@ -195,9 +190,6 @@ texinfo_documents = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
 }
-def build_finished_handler(app, exception):
-    process = subprocess.Popen([post_process_docs_file])
-    process.wait()
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
@@ -207,4 +199,3 @@ def setup(app):
         'enable_eval_rst': True,
     }, True)
     app.add_transform(AutoStructify)
-    app.connect('build-finished', build_finished_handler)

@@ -130,7 +130,7 @@ class AdminExecutionMetadata(object):
     def nesting(self):
         """Gets the nesting of this AdminExecutionMetadata.  # noqa: E501
 
-        Indicates the \"nestedness\" of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1.  # noqa: E501
+        Indicates the nestedness of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1.  # noqa: E501
 
         :return: The nesting of this AdminExecutionMetadata.  # noqa: E501
         :rtype: int
@@ -141,7 +141,7 @@ class AdminExecutionMetadata(object):
     def nesting(self, nesting):
         """Sets the nesting of this AdminExecutionMetadata.
 
-        Indicates the \"nestedness\" of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1.  # noqa: E501
+        Indicates the nestedness of this execution. If a user launches a workflow execution, the default nesting is 0. If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1 Generally, if workflow at nesting level k launches a workflow then the child workflow will have nesting = k + 1.  # noqa: E501
 
         :param nesting: The nesting of this AdminExecutionMetadata.  # noqa: E501
         :type: int
@@ -197,7 +197,7 @@ class AdminExecutionMetadata(object):
     def reference_execution(self):
         """Gets the reference_execution of this AdminExecutionMetadata.  # noqa: E501
 
-        Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
+        Optional a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
 
         :return: The reference_execution of this AdminExecutionMetadata.  # noqa: E501
         :rtype: CoreWorkflowExecutionIdentifier
@@ -208,7 +208,7 @@ class AdminExecutionMetadata(object):
     def reference_execution(self, reference_execution):
         """Sets the reference_execution of this AdminExecutionMetadata.
 
-        Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
+        Optional a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
 
         :param reference_execution: The reference_execution of this AdminExecutionMetadata.  # noqa: E501
         :type: CoreWorkflowExecutionIdentifier
@@ -220,7 +220,7 @@ class AdminExecutionMetadata(object):
     def system_metadata(self):
         """Gets the system_metadata of this AdminExecutionMetadata.  # noqa: E501
 
-        Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
+        Optional platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
 
         :return: The system_metadata of this AdminExecutionMetadata.  # noqa: E501
         :rtype: AdminSystemMetadata
@@ -231,7 +231,7 @@ class AdminExecutionMetadata(object):
     def system_metadata(self, system_metadata):
         """Sets the system_metadata of this AdminExecutionMetadata.
 
-        Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
+        Optional platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
 
         :param system_metadata: The system_metadata of this AdminExecutionMetadata.  # noqa: E501
         :type: AdminSystemMetadata

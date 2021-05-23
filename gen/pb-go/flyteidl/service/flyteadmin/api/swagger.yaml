@@ -3497,7 +3497,7 @@ definitions:
       nesting:
         type: "integer"
         format: "int64"
-        description: "Indicates the \"nestedness\" of this execution.\nIf a user launches\
+        description: "Indicates the nestedness of this execution.\nIf a user launches\
           \ a workflow execution, the default nesting is 0.\nIf this execution further\
           \ launches a workflow (child workflow), the nesting level is incremented\
           \ by 0 => 1\nGenerally, if workflow at nesting level k launches a workflow\
@@ -3511,12 +3511,12 @@ definitions:
         title: "Which subworkflow node launched this execution"
         $ref: "#/definitions/coreNodeExecutionIdentifier"
       reference_execution:
-        description: "Optional, a reference workflow execution related to this execution.\n\
+        description: "Optional a reference workflow execution related to this execution.\n\
           In the case of a relaunch, this references the original workflow execution."
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
       system_metadata:
-        description: "Optional, platform-specific metadata about the execution.\n\
-          In this the future this may be gated behind an ACL or some sort of authorization."
+        description: "Optional platform-specific metadata about the execution.\nIn\
+          \ this the future this may be gated behind an ACL or some sort of authorization."
         $ref: "#/definitions/adminSystemMetadata"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
@@ -3743,7 +3743,7 @@ definitions:
         format: "int64"
       unit:
         $ref: "#/definitions/adminFixedRateUnit"
-    description: "Option for schedules run at a certain frequency, e.g. every 2 minutes."
+    description: "Option for schedules run at a certain frequency e.g. every 2 minutes."
     example:
       unit: {}
       value: 0
@@ -8640,7 +8640,6 @@ definitions:
         items:
           $ref: "#/definitions/coreWorkflowExecutionPhase"
       email:
-        title: "option (validate.required) = true;"
         $ref: "#/definitions/adminEmailNotification"
       pager_duty:
         $ref: "#/definitions/adminPagerDutyNotification"
@@ -8983,8 +8982,8 @@ definitions:
     properties:
       cron_expression:
         type: "string"
-        title: "Uses AWS syntax: \"Minutes Hours Day-of-month Month Day-of-week Year\"\
-          \ne.g. for a schedule that runs every 15 minutes: \"0/15 * * * ? *\""
+        title: "Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year\n\
+          e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *"
       rate:
         $ref: "#/definitions/adminFixedRate"
       cron_schedule:

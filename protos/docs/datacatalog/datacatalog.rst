@@ -371,7 +371,7 @@ and metadata associated with the artifact.
 GetDatasetRequest
 ------------------------------------------------------------------
 
-Request message for retrieving a Dataset. The Dataset is retrieved by it&#39;s unique identifier
+Request message for retrieving a Dataset. The Dataset is retrieved by it's unique identifier
 which is a combination of several fields.
 
 
@@ -804,7 +804,7 @@ Tag properties we can filter by
 
 
 
- 
+ <!-- end messages -->
 
 
 
@@ -868,9 +868,9 @@ as use-cases come up we can add more operators, ex: gte, like, not eq etc.
 
    "EQUALS", "0", ""
 
- 
+ <!-- end enums -->
 
- 
+ <!-- end HasExtensions -->
 
 
 
@@ -894,249 +894,9 @@ Artifacts are associated with a Dataset, and can be tagged for retrieval.
    "AddTag", ":ref:`ref_datacatalog.AddTagRequest`", ":ref:`ref_datacatalog.AddTagResponse`", "Associate a tag with an artifact. Tags are unique within a Dataset."
    "ListArtifacts", ":ref:`ref_datacatalog.ListArtifactsRequest`", ":ref:`ref_datacatalog.ListArtifactsResponse`", "Return a paginated list of artifacts"
    "ListDatasets", ":ref:`ref_datacatalog.ListDatasetsRequest`", ":ref:`ref_datacatalog.ListDatasetsResponse`", "Return a paginated list of datasets"
-   "GetOrReserveArtifact", ":ref:`ref_datacatalog.GetOrReserveArtifactRequest`", ":ref:`ref_datacatalog.GetOrReserveArtifactResponse`", "Get an artifact and the corresponding data. If the artifact does not exist, try to reserve a spot for populating the artifact.
-
-Once you preserve a spot, you should call ExtendReservation API periodically to extend the reservation. Otherwise, the reservation can expire and other tasks may take the spot.
-
-If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
-
-Note: We may have multiple concurrent tasks with the same signature and the same input that try to populate the same artifact at the same time. Thus with reservation, only one task can run at a time, until the reservation expires.
-
-Note: If task A does not extend the reservation in time and the reservation expires, another task B may take over the reservation, resulting in two tasks A and B running in parallel. So a third task C may get the Artifact from A or B, whichever writes last."
+   "GetOrReserveArtifact", ":ref:`ref_datacatalog.GetOrReserveArtifactRequest`", ":ref:`ref_datacatalog.GetOrReserveArtifactResponse`", "Get an artifact and the corresponding data. If the artifact does not exist, try to reserve a spot for populating the artifact. Once you preserve a spot, you should call ExtendReservation API periodically to extend the reservation. Otherwise, the reservation can expire and other tasks may take the spot. If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency). Note: We may have multiple concurrent tasks with the same signature and the same input that try to populate the same artifact at the same time. Thus with reservation, only one task can run at a time, until the reservation expires. Note: If task A does not extend the reservation in time and the reservation expires, another task B may take over the reservation, resulting in two tasks A and B running in parallel. So a third task C may get the Artifact from A or B, whichever writes last."
    "ExtendReservation", ":ref:`ref_datacatalog.ExtendReservationRequest`", ":ref:`ref_datacatalog.ExtendReservationResponse`", "Extend the reservation to keep it from expiring. If the reservation expires, other tasks can take over the reservation by calling GetOrReserveArtifact."
    "ReleaseReservation", ":ref:`ref_datacatalog.ReleaseReservationRequest`", ":ref:`ref_datacatalog.ReleaseReservationResponse`", "Release the reservation when the task holding the spot fails so that the other tasks can grab the spot."
- 
+ <!-- end services -->
 
 
-
-.. _ref_scala_types:
-
-Scalar Value Types
-==================
-
-
-
-.. _ref_double:
-
-double
------------------------------
-
-
-
-.. csv-table:: double language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "double", "double", "double", "float", "float64", "double", "float", "Float"
-
-
-
-.. _ref_float:
-
-float
------------------------------
-
-
-
-.. csv-table:: float language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "float", "float", "float", "float", "float32", "float", "float", "Float"
-
-
-
-.. _ref_int32:
-
-int32
------------------------------
-
-Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.
-
-.. csv-table:: int32 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "int32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_int64:
-
-int64
------------------------------
-
-Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.
-
-.. csv-table:: int64 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "int64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
-
-
-
-.. _ref_uint32:
-
-uint32
------------------------------
-
-Uses variable-length encoding.
-
-.. csv-table:: uint32 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "uint32", "uint32", "int", "int/long", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_uint64:
-
-uint64
------------------------------
-
-Uses variable-length encoding.
-
-.. csv-table:: uint64 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "uint64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_sint32:
-
-sint32
------------------------------
-
-Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.
-
-.. csv-table:: sint32 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "sint32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_sint64:
-
-sint64
------------------------------
-
-Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.
-
-.. csv-table:: sint64 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "sint64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
-
-
-
-.. _ref_fixed32:
-
-fixed32
------------------------------
-
-Always four bytes. More efficient than uint32 if values are often greater than 2^28.
-
-.. csv-table:: fixed32 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "fixed32", "uint32", "int", "int", "uint32", "uint", "integer", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_fixed64:
-
-fixed64
------------------------------
-
-Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
-
-.. csv-table:: fixed64 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "fixed64", "uint64", "long", "int/long", "uint64", "ulong", "integer/string", "Bignum"
-
-
-
-.. _ref_sfixed32:
-
-sfixed32
------------------------------
-
-Always four bytes.
-
-.. csv-table:: sfixed32 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "sfixed32", "int32", "int", "int", "int32", "int", "integer", "Bignum or Fixnum (as required)"
-
-
-
-.. _ref_sfixed64:
-
-sfixed64
------------------------------
-
-Always eight bytes.
-
-.. csv-table:: sfixed64 language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "sfixed64", "int64", "long", "int/long", "int64", "long", "integer/string", "Bignum"
-
-
-
-.. _ref_bool:
-
-bool
------------------------------
-
-
-
-.. csv-table:: bool language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "bool", "bool", "boolean", "boolean", "bool", "bool", "boolean", "TrueClass/FalseClass"
-
-
-
-.. _ref_string:
-
-string
------------------------------
-
-A string must always contain UTF-8 encoded or 7-bit ASCII text.
-
-.. csv-table:: string language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "string", "string", "String", "str/unicode", "string", "string", "string", "String (UTF-8)"
-
-
-
-.. _ref_bytes:
-
-bytes
------------------------------
-
-May contain any arbitrary sequence of bytes.
-
-.. csv-table:: bytes language representation
-   :header: ".proto Type", "C++", "Java", "Python", "Go", "C#", "PHP", "Ruby"
-   :widths: auto
-
-   "bytes", "string", "ByteString", "str", "[]byte", "ByteString", "string", "String (ASCII-8BIT)"
-
- 
