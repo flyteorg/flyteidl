@@ -30,4 +30,3 @@ Make sure protoc-gen-doc is available on PATH variable for protoc to pick up the
 ---
 
 The protoc-gen-doc will now be available for protoc
-Following is an example on how to generate docs using this plugin locally
