@@ -14,7 +14,9 @@ message SidecarJob {
 
     string primary_container_name       = 2;
 
+    // Pod annotations
     map<string, string> annotations = 3;
 
+    // Pod labels
     map<string, string> labels = 4;
 }
