@@ -111,10 +111,10 @@ html_theme_options = {
         "color-brand-content": "#9D68E4",
     },
     # custom flyteorg furo theme options
-    "github_repo": "flytesnacks",
+    "github_repo": "flyteidl",
     "github_username": "flyteorg",
     "github_commit": "master",
-    "docs_path": "cookbook/docs",  # path to documentation source
+    "docs_path": ".",  # path to documentation source
 }
 
 html_context = {
