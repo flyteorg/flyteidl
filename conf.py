@@ -17,6 +17,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.abspath("gen/pb-protodoc/"))
+import sphinx_fontawesome
 import recommonmark
 from recommonmark.transform import AutoStructify
 
@@ -52,6 +53,7 @@ extensions = [
     "sphinx_search.extension",
     "recommonmark",
     "sphinx_markdown_tables",
+    "sphinx_fontawesome",
 ]
 
 # build the templated autosummary files
