@@ -53,32 +53,11 @@ Currently pseudomuto/protoc-gen-doc is being used for generating the RST files w
 Until this code is checkedin https://github.com/pseudomuto/protoc-gen-doc/pull/440, use the branch to build the protoc-gen-doc executable
 Follow the steps to build and use the protoc-gen-doc
 
-#. Clone the git repo protoc-gen-doc
+#. This will install all the tooling including protoc-gen-doc plugin for protoc used for documentation
 
    .. prompt:: bash
 
-     git clone https://github.com/paweld2/protoc-gen-doc.git
-
-#. Run the following command to make the distributions for various environments.
-
-   .. prompt:: bash
-
-     make dist
-
-#. Untar the executable from the distribution. eg for darwin
-
-   .. prompt:: bash
-
-     tar -xvf protoc-gen-doc-1.4.1.darwin-amd64.go1.16.3.tar.gz
-
-#. Copy the executable into your GOPATH/bin
-
-   .. prompt:: bash
-
-     cp protoc-gen-doc-1.4.1.darwin-amd64.go1.16.3/protoc-gen-doc $GOPATH/bin/
-
-
-   .. note:: Make sure protoc-gen-doc is available on PATH variable for protoc to pick up the plugin.
+      make download_tooling
 
 #. The protoc-gen-doc will now be available for protoc.Following is an example from `generate_protos.sh` file which helps in generating the core documentation from its proto files
 
