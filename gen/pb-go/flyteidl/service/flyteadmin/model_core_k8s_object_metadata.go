@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Metadata for building a kubernetes pod when a task is executed.
+// Metadata for building a kubernetes object when a task is executed.
 type CoreK8sObjectMetadata struct {
 	// Optional labels to add to the pod definition.
 	Labels map[string]string `json:"labels,omitempty"`

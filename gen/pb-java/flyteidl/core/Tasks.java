@@ -14088,6 +14088,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14096,6 +14099,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14104,6 +14110,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14249,6 +14258,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14259,6 +14271,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14269,6 +14284,9 @@ public final class Tasks {
     /**
      * <pre>
      * Defines the primary pod spec created when a task is executed.
+     * This should be a JSON-marshalled pod spec, which can be defined in 
+     * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+     * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
      * </pre>
      *
      * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14785,6 +14803,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14795,6 +14816,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14809,6 +14833,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14829,6 +14856,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14847,6 +14877,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14869,6 +14902,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14887,6 +14923,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14899,6 +14938,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -14914,6 +14956,9 @@ public final class Tasks {
       /**
        * <pre>
        * Defines the primary pod spec created when a task is executed.
+       * This should be a JSON-marshalled pod spec, which can be defined in 
+       * - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+       * - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
        * </pre>
        *
        * <code>.google.protobuf.Struct pod_spec = 2;</code>
@@ -15098,7 +15143,7 @@ public final class Tasks {
   }
   /**
    * <pre>
-   * Metadata for building a kubernetes pod when a task is executed.
+   * Metadata for building a kubernetes object when a task is executed.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.K8sObjectMetadata}
@@ -15585,7 +15630,7 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * Metadata for building a kubernetes pod when a task is executed.
+     * Metadata for building a kubernetes object when a task is executed.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.K8sObjectMetadata}

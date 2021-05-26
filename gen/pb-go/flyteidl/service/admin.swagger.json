@@ -5108,7 +5108,7 @@
           "description": "Optional annotations to add to the pod definition."
         }
       },
-      "description": "Metadata for building a kubernetes pod when a task is executed."
+      "description": "Metadata for building a kubernetes object when a task is executed."
     },
     "coreK8sPod": {
       "type": "object",
@@ -5119,7 +5119,7 @@
         },
         "pod_spec": {
           "$ref": "#/definitions/protobufStruct",
-          "description": "Defines the primary pod spec created when a task is executed."
+          "title": "Defines the primary pod spec created when a task is executed.\nThis should be a JSON-marshalled pod spec, which can be defined in \n- go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936\n- python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py"
         }
       },
       "description": "Defines a pod spec and additional pod metadata that is created when a task is executed."

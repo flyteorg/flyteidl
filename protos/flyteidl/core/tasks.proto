@@ -246,10 +246,13 @@ message K8sPod {
    K8sObjectMetadata metadata = 1;
 
    // Defines the primary pod spec created when a task is executed.
+   // This should be a JSON-marshalled pod spec, which can be defined in 
+   // - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+   // - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
    google.protobuf.Struct pod_spec = 2;
 }
 
-// Metadata for building a kubernetes pod when a task is executed.
+// Metadata for building a kubernetes object when a task is executed.
 message K8sObjectMetadata {
 
   // Optional labels to add to the pod definition.

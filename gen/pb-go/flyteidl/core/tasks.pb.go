@@ -927,6 +927,9 @@ type K8SPod struct {
 	// Contains additional metadata for building a kubernetes pod.
 	Metadata *K8SObjectMetadata `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// Defines the primary pod spec created when a task is executed.
+	// This should be a JSON-marshalled pod spec, which can be defined in
+	// - go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936
+	// - python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py
 	PodSpec              *_struct.Struct `protobuf:"bytes,2,opt,name=pod_spec,json=podSpec,proto3" json:"pod_spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
@@ -972,7 +975,7 @@ func (m *K8SPod) GetPodSpec() *_struct.Struct {
 	return nil
 }
 
-// Metadata for building a kubernetes pod when a task is executed.
+// Metadata for building a kubernetes object when a task is executed.
 type K8SObjectMetadata struct {
 	// Optional labels to add to the pod definition.
 	Labels map[string]string `protobuf:"bytes,1,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`

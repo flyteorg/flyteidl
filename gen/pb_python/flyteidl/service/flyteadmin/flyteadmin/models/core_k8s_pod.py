@@ -82,7 +82,6 @@ class CoreK8sPod(object):
     def pod_spec(self):
         """Gets the pod_spec of this CoreK8sPod.  # noqa: E501
 
-        Defines the primary pod spec created when a task is executed.  # noqa: E501
 
         :return: The pod_spec of this CoreK8sPod.  # noqa: E501
         :rtype: ProtobufStruct
@@ -93,7 +92,6 @@ class CoreK8sPod(object):
     def pod_spec(self, pod_spec):
         """Sets the pod_spec of this CoreK8sPod.
 
-        Defines the primary pod spec created when a task is executed.  # noqa: E501
 
         :param pod_spec: The pod_spec of this CoreK8sPod.  # noqa: E501
         :type: ProtobufStruct

@@ -13,6 +13,5 @@ package flyteadmin
 type CoreK8sPod struct {
 	// Contains additional metadata for building a kubernetes pod.
 	Metadata *CoreK8sObjectMetadata `json:"metadata,omitempty"`
-	// Defines the primary pod spec created when a task is executed.
 	PodSpec *ProtobufStruct `json:"pod_spec,omitempty"`
 }
