@@ -60,10 +60,8 @@ message LaunchPlanList {
 // Defines permissions associated with executions created by this launch plan spec.
 // Deprecated.
 message Auth {
-    oneof method {
-        string assumable_iam_role = 1;
-        string kubernetes_service_account = 2;
-    }
+    string assumable_iam_role = 1;
+    string kubernetes_service_account = 2;
 }
 
 // User-provided launch plan definition and configuration values.
