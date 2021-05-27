@@ -10,3 +10,5 @@ require (
 )
 
 replace github.com/vektra/mockery => github.com/enghabu/mockery v0.0.0-20191009061720-9d0c8670c2f0
+
+replace github.com/pseudomuto/protoc-gen-doc => github.com/paweld2/protoc-gen-doc v1.4.2-0.20210329170919-e6b3293482d4

@@ -1,7 +1,10 @@
 git+git://github.com/flyteorg/furo@main
 readthedocs-sphinx-search
+recommonmark
 sphinx
 sphinx-prompt
 sphinx-material
 sphinx-code-include
 sphinx-copybutton
+sphinx_markdown_tables
+sphinx_fontawesome

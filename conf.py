@@ -16,7 +16,9 @@ import os
 import re
 import sys
 
-sys.path.insert(0, os.path.abspath("gen/pb-protodoc/"))
+import recommonmark
+import sphinx_fontawesome
+from recommonmark.transform import AutoStructify
 
 
 # -- Project information -----------------------------------------------------
@@ -28,7 +30,6 @@ author = "Flyte"
 # The full version, including alpha/beta/rc tags
 release = re.sub('^v', '', os.popen('git describe').read().strip())
 version = release
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -48,6 +49,9 @@ extensions = [
     "sphinx-prompt",
     "sphinx_copybutton",
     "sphinx_search.extension",
+    "recommonmark",
+    "sphinx_markdown_tables",
+    "sphinx_fontawesome",
 ]
 
 # build the templated autosummary files
@@ -64,8 +68,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = ['.rst']
 
 # The master toctree document.
 master_doc = "index"
@@ -80,7 +83,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', 'tmp/doc_gen_deps', 'gen/*/*/*/*/*', 'CODE_OF_CONDUCT.md', 'pull_request_template.md', 'boilerplate']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "tango"
@@ -105,6 +108,11 @@ html_theme_options = {
         "color-brand-primary": "#9D68E4",
         "color-brand-content": "#9D68E4",
     },
+    # custom flyteorg furo theme options
+    "github_repo": "flyteidl",
+    "github_username": "flyteorg",
+    "github_commit": "master",
+    "docs_path": ".",  # path to documentation source
 }
 
 html_context = {
@@ -189,3 +197,12 @@ texinfo_documents = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/{.major}".format(sys.version_info), None),
 }
+
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        'auto_toc_tree_section': 'Contents',
+        'enable_math': False,
+        'enable_inline_math': False,
+        'enable_eval_rst': True,
+    }, True)
+    app.add_transform(AutoStructify)

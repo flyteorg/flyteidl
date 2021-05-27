@@ -3248,7 +3248,7 @@
         "nesting": {
           "type": "integer",
           "format": "int64",
-          "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
+          "description": "Indicates the nestedness of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
         },
         "scheduled_at": {
           "type": "string",
@@ -3371,7 +3371,7 @@
           "$ref": "#/definitions/adminFixedRateUnit"
         }
       },
-      "description": "Option for schedules run at a certain frequency, e.g. every 2 minutes."
+      "description": "Option for schedules run at a certain frequency e.g. every 2 minutes."
     },
     "adminFixedRateUnit": {
       "type": "string",
@@ -3905,8 +3905,7 @@
           "description": "A list of phases to which users can associate the notifications to."
         },
         "email": {
-          "$ref": "#/definitions/adminEmailNotification",
-          "title": "option (validate.required) = true;"
+          "$ref": "#/definitions/adminEmailNotification"
         },
         "pager_duty": {
           "$ref": "#/definitions/adminPagerDutyNotification"
@@ -4102,7 +4101,7 @@
       "properties": {
         "cron_expression": {
           "type": "string",
-          "title": "Uses AWS syntax: \"Minutes Hours Day-of-month Month Day-of-week Year\"\ne.g. for a schedule that runs every 15 minutes: \"0/15 * * * ? *\""
+          "title": "Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year\ne.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *"
         },
         "rate": {
           "$ref": "#/definitions/adminFixedRate"
@@ -5091,6 +5090,40 @@
       },
       "description": "Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.\nIf no conditions were satisfied, the else_node or the error will execute."
     },
+    "coreK8sObjectMetadata": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Optional labels to add to the pod definition."
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Optional annotations to add to the pod definition."
+        }
+      },
+      "description": "Metadata for building a kubernetes object when a task is executed."
+    },
+    "coreK8sPod": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/coreK8sObjectMetadata",
+          "description": "Contains additional metadata for building a kubernetes pod."
+        },
+        "pod_spec": {
+          "$ref": "#/definitions/protobufStruct",
+          "title": "Defines the primary pod spec created when a task is executed.\nThis should be a JSON-marshalled pod spec, which can be defined in \n- go, using: https://github.com/kubernetes/api/blob/release-1.21/core/v1/types.go#L2936\n- python: using https://github.com/kubernetes-client/python/blob/release-19.0/kubernetes/client/models/v1_pod_spec.py"
+        }
+      },
+      "description": "Defines a pod spec and additional pod metadata that is created when a task is executed."
+    },
     "coreKeyValuePair": {
       "type": "object",
       "properties": {
@@ -5714,6 +5747,9 @@
         },
         "container": {
           "$ref": "#/definitions/coreContainer"
+        },
+        "k8s_pod": {
+          "$ref": "#/definitions/coreK8sPod"
         },
         "task_type_version": {
           "type": "integer",
