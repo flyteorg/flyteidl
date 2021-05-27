@@ -3458,20 +3458,36 @@ public final class LaunchPlanOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string assumable_iam_role = 1;</code>
      */
     java.lang.String getAssumableIamRole();
     /**
+     * <pre>
+     * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string assumable_iam_role = 1;</code>
      */
     com.google.protobuf.ByteString
         getAssumableIamRoleBytes();
 
     /**
+     * <pre>
+     * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string kubernetes_service_account = 2;</code>
      */
     java.lang.String getKubernetesServiceAccount();
     /**
+     * <pre>
+     * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string kubernetes_service_account = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -3480,6 +3496,7 @@ public final class LaunchPlanOuterClass {
   /**
    * <pre>
    * Defines permissions associated with executions created by this launch plan spec.
+   * Use either of these roles when they have permissions required by your workflow execution.
    * Deprecated.
    * </pre>
    *
@@ -3570,6 +3587,10 @@ public final class LaunchPlanOuterClass {
     public static final int ASSUMABLE_IAM_ROLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object assumableIamRole_;
     /**
+     * <pre>
+     * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string assumable_iam_role = 1;</code>
      */
     public java.lang.String getAssumableIamRole() {
@@ -3585,6 +3606,10 @@ public final class LaunchPlanOuterClass {
       }
     }
     /**
+     * <pre>
+     * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string assumable_iam_role = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -3604,6 +3629,10 @@ public final class LaunchPlanOuterClass {
     public static final int KUBERNETES_SERVICE_ACCOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object kubernetesServiceAccount_;
     /**
+     * <pre>
+     * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string kubernetes_service_account = 2;</code>
      */
     public java.lang.String getKubernetesServiceAccount() {
@@ -3619,6 +3648,10 @@ public final class LaunchPlanOuterClass {
       }
     }
     /**
+     * <pre>
+     * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+     * </pre>
+     *
      * <code>string kubernetes_service_account = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -3802,6 +3835,7 @@ public final class LaunchPlanOuterClass {
     /**
      * <pre>
      * Defines permissions associated with executions created by this launch plan spec.
+     * Use either of these roles when they have permissions required by your workflow execution.
      * Deprecated.
      * </pre>
      *
@@ -3961,6 +3995,10 @@ public final class LaunchPlanOuterClass {
 
       private java.lang.Object assumableIamRole_ = "";
       /**
+       * <pre>
+       * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string assumable_iam_role = 1;</code>
        */
       public java.lang.String getAssumableIamRole() {
@@ -3976,6 +4014,10 @@ public final class LaunchPlanOuterClass {
         }
       }
       /**
+       * <pre>
+       * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string assumable_iam_role = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -3992,6 +4034,10 @@ public final class LaunchPlanOuterClass {
         }
       }
       /**
+       * <pre>
+       * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string assumable_iam_role = 1;</code>
        */
       public Builder setAssumableIamRole(
@@ -4005,6 +4051,10 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string assumable_iam_role = 1;</code>
        */
       public Builder clearAssumableIamRole() {
@@ -4014,6 +4064,10 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string assumable_iam_role = 1;</code>
        */
       public Builder setAssumableIamRoleBytes(
@@ -4030,6 +4084,10 @@ public final class LaunchPlanOuterClass {
 
       private java.lang.Object kubernetesServiceAccount_ = "";
       /**
+       * <pre>
+       * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string kubernetes_service_account = 2;</code>
        */
       public java.lang.String getKubernetesServiceAccount() {
@@ -4045,6 +4103,10 @@ public final class LaunchPlanOuterClass {
         }
       }
       /**
+       * <pre>
+       * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string kubernetes_service_account = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -4061,6 +4123,10 @@ public final class LaunchPlanOuterClass {
         }
       }
       /**
+       * <pre>
+       * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string kubernetes_service_account = 2;</code>
        */
       public Builder setKubernetesServiceAccount(
@@ -4074,6 +4140,10 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string kubernetes_service_account = 2;</code>
        */
       public Builder clearKubernetesServiceAccount() {
@@ -4083,6 +4153,10 @@ public final class LaunchPlanOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
+       * </pre>
+       *
        * <code>string kubernetes_service_account = 2;</code>
        */
       public Builder setKubernetesServiceAccountBytes(

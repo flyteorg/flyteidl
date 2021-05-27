@@ -245,9 +245,12 @@ func (m *LaunchPlanList) GetToken() string {
 }
 
 // Defines permissions associated with executions created by this launch plan spec.
+// Use either of these roles when they have permissions required by your workflow execution.
 // Deprecated.
 type Auth struct {
-	AssumableIamRole         string   `protobuf:"bytes,1,opt,name=assumable_iam_role,json=assumableIamRole,proto3" json:"assumable_iam_role,omitempty"`
+	// Defines an optional iam role which will be used for tasks run in executions created with this launch plan.
+	AssumableIamRole string `protobuf:"bytes,1,opt,name=assumable_iam_role,json=assumableIamRole,proto3" json:"assumable_iam_role,omitempty"`
+	// Defines an optional kubernetes service account which will be used for tasks run in executions created with this launch plan.
 	KubernetesServiceAccount string   `protobuf:"bytes,2,opt,name=kubernetes_service_account,json=kubernetesServiceAccount,proto3" json:"kubernetes_service_account,omitempty"`
 	XXX_NoUnkeyedLiteral     struct{} `json:"-"`
 	XXX_unrecognized         []byte   `json:"-"`
