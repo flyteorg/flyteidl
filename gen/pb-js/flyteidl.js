@@ -9852,6 +9852,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IStruct|null} [custom] TaskTemplate custom
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              * @property {flyteidl.core.IK8sPod|null} [k8sPod] TaskTemplate k8sPod
+             * @property {flyteidl.core.ITaskTemplate|null} [subTask] TaskTemplate subTask
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
              * @property {Object.<string,string>|null} [config] TaskTemplate config
@@ -9930,6 +9931,14 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskTemplate.prototype.k8sPod = null;
 
             /**
+             * TaskTemplate subTask.
+             * @member {flyteidl.core.ITaskTemplate|null|undefined} subTask
+             * @memberof flyteidl.core.TaskTemplate
+             * @instance
+             */
+            TaskTemplate.prototype.subTask = null;
+
+            /**
              * TaskTemplate taskTypeVersion.
              * @member {number} taskTypeVersion
              * @memberof flyteidl.core.TaskTemplate
@@ -9958,12 +9967,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate target.
-             * @member {"container"|"k8sPod"|undefined} target
+             * @member {"container"|"k8sPod"|"subTask"|undefined} target
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
             Object.defineProperty(TaskTemplate.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["container", "k8sPod"]),
+                get: $util.oneOfGetter($oneOfFields = ["container", "k8sPod", "subTask"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -10012,6 +10021,8 @@ export const flyteidl = $root.flyteidl = (() => {
                         writer.uint32(/* id 16, wireType 2 =*/130).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.config[keys[i]]).ldelim();
                 if (message.k8sPod != null && message.hasOwnProperty("k8sPod"))
                     $root.flyteidl.core.K8sPod.encode(message.k8sPod, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                if (message.subTask != null && message.hasOwnProperty("subTask"))
+                    $root.flyteidl.core.TaskTemplate.encode(message.subTask, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
 
@@ -10053,6 +10064,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 17:
                         message.k8sPod = $root.flyteidl.core.K8sPod.decode(reader, reader.uint32());
+                        break;
+                    case 18:
+                        message.subTask = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
                         break;
                     case 7:
                         message.taskTypeVersion = reader.int32();
@@ -10127,6 +10141,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.K8sPod.verify(message.k8sPod);
                         if (error)
                             return "k8sPod." + error;
+                    }
+                }
+                if (message.subTask != null && message.hasOwnProperty("subTask")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.TaskTemplate.verify(message.subTask);
+                        if (error)
+                            return "subTask." + error;
                     }
                 }
                 if (message.taskTypeVersion != null && message.hasOwnProperty("taskTypeVersion"))

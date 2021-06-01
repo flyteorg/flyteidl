@@ -955,6 +955,7 @@ class TaskTemplate final :
   enum TargetCase {
     kContainer = 6,
     kK8SPod = 17,
+    kSubTask = 18,
     TARGET_NOT_SET = 0,
   };
 
@@ -1114,6 +1115,15 @@ class TaskTemplate final :
   ::flyteidl::core::K8sPod* mutable_k8s_pod();
   void set_allocated_k8s_pod(::flyteidl::core::K8sPod* k8s_pod);
 
+  // .flyteidl.core.TaskTemplate sub_task = 18;
+  bool has_sub_task() const;
+  void clear_sub_task();
+  static const int kSubTaskFieldNumber = 18;
+  const ::flyteidl::core::TaskTemplate& sub_task() const;
+  ::flyteidl::core::TaskTemplate* release_sub_task();
+  ::flyteidl::core::TaskTemplate* mutable_sub_task();
+  void set_allocated_sub_task(::flyteidl::core::TaskTemplate* sub_task);
+
   void clear_target();
   TargetCase target_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskTemplate)
@@ -1121,6 +1131,7 @@ class TaskTemplate final :
   class HasBitSetters;
   void set_has_container();
   void set_has_k8s_pod();
+  void set_has_sub_task();
 
   inline bool has_target() const;
   inline void clear_has_target();
@@ -1143,6 +1154,7 @@ class TaskTemplate final :
     TargetUnion() {}
     ::flyteidl::core::Container* container_;
     ::flyteidl::core::K8sPod* k8s_pod_;
+    ::flyteidl::core::TaskTemplate* sub_task_;
   } target_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -3053,6 +3065,47 @@ inline ::flyteidl::core::K8sPod* TaskTemplate::mutable_k8s_pod() {
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.k8s_pod)
   return target_.k8s_pod_;
+}
+
+// .flyteidl.core.TaskTemplate sub_task = 18;
+inline bool TaskTemplate::has_sub_task() const {
+  return target_case() == kSubTask;
+}
+inline void TaskTemplate::set_has_sub_task() {
+  _oneof_case_[0] = kSubTask;
+}
+inline void TaskTemplate::clear_sub_task() {
+  if (has_sub_task()) {
+    delete target_.sub_task_;
+    clear_has_target();
+  }
+}
+inline ::flyteidl::core::TaskTemplate* TaskTemplate::release_sub_task() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.sub_task)
+  if (has_sub_task()) {
+    clear_has_target();
+      ::flyteidl::core::TaskTemplate* temp = target_.sub_task_;
+    target_.sub_task_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::TaskTemplate& TaskTemplate::sub_task() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.sub_task)
+  return has_sub_task()
+      ? *target_.sub_task_
+      : *reinterpret_cast< ::flyteidl::core::TaskTemplate*>(&::flyteidl::core::_TaskTemplate_default_instance_);
+}
+inline ::flyteidl::core::TaskTemplate* TaskTemplate::mutable_sub_task() {
+  if (!has_sub_task()) {
+    clear_target();
+    set_has_sub_task();
+    target_.sub_task_ = CreateMaybeMessage< ::flyteidl::core::TaskTemplate >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.sub_task)
+  return target_.sub_task_;
 }
 
 // int32 task_type_version = 7;

@@ -5211,6 +5211,31 @@ public final class Tasks {
 
     /**
      * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    boolean hasSubTask();
+    /**
+     * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    flyteidl.core.Tasks.TaskTemplate getSubTask();
+    /**
+     * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    flyteidl.core.Tasks.TaskTemplateOrBuilder getSubTaskOrBuilder();
+
+    /**
+     * <pre>
      * This can be used to customize task handling at execution time for the same task type.
      * </pre>
      *
@@ -5445,10 +5470,10 @@ public final class Tasks {
               break;
             }
             case 130: {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 config_ = com.google.protobuf.MapField.newMapField(
                     ConfigDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               config__ = input.readMessage(
@@ -5469,6 +5494,20 @@ public final class Tasks {
                 target_ = subBuilder.buildPartial();
               }
               targetCase_ = 17;
+              break;
+            }
+            case 146: {
+              flyteidl.core.Tasks.TaskTemplate.Builder subBuilder = null;
+              if (targetCase_ == 18) {
+                subBuilder = ((flyteidl.core.Tasks.TaskTemplate) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(flyteidl.core.Tasks.TaskTemplate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Tasks.TaskTemplate) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 18;
               break;
             }
             default: {
@@ -5522,6 +5561,7 @@ public final class Tasks {
         implements com.google.protobuf.Internal.EnumLite {
       CONTAINER(6),
       K8S_POD(17),
+      SUB_TASK(18),
       TARGET_NOT_SET(0);
       private final int value;
       private TargetCase(int value) {
@@ -5539,6 +5579,7 @@ public final class Tasks {
         switch (value) {
           case 6: return CONTAINER;
           case 17: return K8S_POD;
+          case 18: return SUB_TASK;
           case 0: return TARGET_NOT_SET;
           default: return null;
         }
@@ -5787,6 +5828,44 @@ public final class Tasks {
       return flyteidl.core.Tasks.K8sPod.getDefaultInstance();
     }
 
+    public static final int SUB_TASK_FIELD_NUMBER = 18;
+    /**
+     * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    public boolean hasSubTask() {
+      return targetCase_ == 18;
+    }
+    /**
+     * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    public flyteidl.core.Tasks.TaskTemplate getSubTask() {
+      if (targetCase_ == 18) {
+         return (flyteidl.core.Tasks.TaskTemplate) target_;
+      }
+      return flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+     */
+    public flyteidl.core.Tasks.TaskTemplateOrBuilder getSubTaskOrBuilder() {
+      if (targetCase_ == 18) {
+         return (flyteidl.core.Tasks.TaskTemplate) target_;
+      }
+      return flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+    }
+
     public static final int TASK_TYPE_VERSION_FIELD_NUMBER = 7;
     private int taskTypeVersion_;
     /**
@@ -5980,6 +6059,9 @@ public final class Tasks {
       if (targetCase_ == 17) {
         output.writeMessage(17, (flyteidl.core.Tasks.K8sPod) target_);
       }
+      if (targetCase_ == 18) {
+        output.writeMessage(18, (flyteidl.core.Tasks.TaskTemplate) target_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6033,6 +6115,10 @@ public final class Tasks {
       if (targetCase_ == 17) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, (flyteidl.core.Tasks.K8sPod) target_);
+      }
+      if (targetCase_ == 18) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, (flyteidl.core.Tasks.TaskTemplate) target_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6090,6 +6176,10 @@ public final class Tasks {
           if (!getK8SPod()
               .equals(other.getK8SPod())) return false;
           break;
+        case 18:
+          if (!getSubTask()
+              .equals(other.getSubTask())) return false;
+          break;
         case 0:
         default:
       }
@@ -6140,6 +6230,10 @@ public final class Tasks {
         case 17:
           hash = (37 * hash) + K8S_POD_FIELD_NUMBER;
           hash = (53 * hash) + getK8SPod().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + SUB_TASK_FIELD_NUMBER;
+          hash = (53 * hash) + getSubTask().hashCode();
           break;
         case 0:
         default:
@@ -6404,6 +6498,13 @@ public final class Tasks {
             result.target_ = k8SPodBuilder_.build();
           }
         }
+        if (targetCase_ == 18) {
+          if (subTaskBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = subTaskBuilder_.build();
+          }
+        }
         result.taskTypeVersion_ = taskTypeVersion_;
         if (securityContextBuilder_ == null) {
           result.securityContext_ = securityContext_;
@@ -6493,6 +6594,10 @@ public final class Tasks {
           }
           case K8S_POD: {
             mergeK8SPod(other.getK8SPod());
+            break;
+          }
+          case SUB_TASK: {
+            mergeSubTask(other.getSubTask());
             break;
           }
           case TARGET_NOT_SET: {
@@ -7534,6 +7639,178 @@ public final class Tasks {
         targetCase_ = 17;
         onChanged();;
         return k8SPodBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> subTaskBuilder_;
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public boolean hasSubTask() {
+        return targetCase_ == 18;
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplate getSubTask() {
+        if (subTaskBuilder_ == null) {
+          if (targetCase_ == 18) {
+            return (flyteidl.core.Tasks.TaskTemplate) target_;
+          }
+          return flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+        } else {
+          if (targetCase_ == 18) {
+            return subTaskBuilder_.getMessage();
+          }
+          return flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public Builder setSubTask(flyteidl.core.Tasks.TaskTemplate value) {
+        if (subTaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          target_ = value;
+          onChanged();
+        } else {
+          subTaskBuilder_.setMessage(value);
+        }
+        targetCase_ = 18;
+        return this;
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public Builder setSubTask(
+          flyteidl.core.Tasks.TaskTemplate.Builder builderForValue) {
+        if (subTaskBuilder_ == null) {
+          target_ = builderForValue.build();
+          onChanged();
+        } else {
+          subTaskBuilder_.setMessage(builderForValue.build());
+        }
+        targetCase_ = 18;
+        return this;
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public Builder mergeSubTask(flyteidl.core.Tasks.TaskTemplate value) {
+        if (subTaskBuilder_ == null) {
+          if (targetCase_ == 18 &&
+              target_ != flyteidl.core.Tasks.TaskTemplate.getDefaultInstance()) {
+            target_ = flyteidl.core.Tasks.TaskTemplate.newBuilder((flyteidl.core.Tasks.TaskTemplate) target_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            target_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetCase_ == 18) {
+            subTaskBuilder_.mergeFrom(value);
+          }
+          subTaskBuilder_.setMessage(value);
+        }
+        targetCase_ = 18;
+        return this;
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public Builder clearSubTask() {
+        if (subTaskBuilder_ == null) {
+          if (targetCase_ == 18) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetCase_ == 18) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          subTaskBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplate.Builder getSubTaskBuilder() {
+        return getSubTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplateOrBuilder getSubTaskOrBuilder() {
+        if ((targetCase_ == 18) && (subTaskBuilder_ != null)) {
+          return subTaskBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetCase_ == 18) {
+            return (flyteidl.core.Tasks.TaskTemplate) target_;
+          }
+          return flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskTemplate sub_task = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> 
+          getSubTaskFieldBuilder() {
+        if (subTaskBuilder_ == null) {
+          if (!(targetCase_ == 18)) {
+            target_ = flyteidl.core.Tasks.TaskTemplate.getDefaultInstance();
+          }
+          subTaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder>(
+                  (flyteidl.core.Tasks.TaskTemplate) target_,
+                  getParentForChildren(),
+                  isClean());
+          target_ = null;
+        }
+        targetCase_ = 18;
+        onChanged();;
+        return subTaskBuilder_;
       }
 
       private int taskTypeVersion_ ;
@@ -16267,7 +16544,7 @@ public final class Tasks {
       "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat" +
       "egy\022\031\n\021discovery_version\030\006 \001(\t\022 \n\030deprec" +
       "ated_error_message\030\007 \001(\t\022\027\n\rinterruptibl" +
-      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\355\003\n\014Tas" +
+      "e\030\010 \001(\010H\000B\025\n\023interruptible_value\"\236\004\n\014Tas" +
       "kTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
       "entifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(\013" +
       "2\033.flyteidl.core.TaskMetadata\0220\n\tinterfa" +
@@ -16275,44 +16552,45 @@ public final class Tasks {
       "\'\n\006custom\030\005 \001(\0132\027.google.protobuf.Struct" +
       "\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Cont" +
       "ainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl.core" +
-      ".K8sPodH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020" +
-      "security_context\030\010 \001(\0132\036.flyteidl.core.S" +
-      "ecurityContext\0227\n\006config\030\020 \003(\0132\'.flyteid" +
-      "l.core.TaskTemplate.ConfigEntry\032-\n\013Confi" +
-      "gEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010" +
-      "\n\006target\"\'\n\rContainerPort\022\026\n\016container_p" +
-      "ort\030\001 \001(\r\"\245\002\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017" +
-      "\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresourc" +
-      "es\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003en" +
-      "v\030\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006" +
-      "config\030\006 \003(\0132\033.flyteidl.core.KeyValuePai" +
-      "rB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Con" +
-      "tainerPort\0225\n\013data_config\030\t \001(\0132 .flytei" +
-      "dl.core.DataLoadingConfig\"\233\002\n\nIOStrategy" +
-      "\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core." +
-      "IOStrategy.DownloadMode\0229\n\013upload_mode\030\002" +
-      " \001(\0162$.flyteidl.core.IOStrategy.UploadMo" +
-      "de\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023" +
-      "\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002" +
-      "\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UP" +
-      "LOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021Data" +
-      "LoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_" +
-      "path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006forma" +
-      "t\030\004 \001(\01621.flyteidl.core.DataLoadingConfi" +
-      "g.LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\0132" +
-      "\031.flyteidl.core.IOStrategy\"1\n\020LiteralMap" +
-      "Format\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n" +
-      "\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.cor" +
-      "e.K8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027." +
-      "google.protobuf.Struct\"\374\001\n\021K8sObjectMeta" +
-      "data\022<\n\006labels\030\001 \003(\0132,.flyteidl.core.K8s" +
-      "ObjectMetadata.LabelsEntry\022F\n\013annotation" +
-      "s\030\002 \003(\01321.flyteidl.core.K8sObjectMetadat" +
-      "a.AnnotationsEntry\032-\n\013LabelsEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotations" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z" +
-      "4github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/coreb\006proto3"
+      ".K8sPodH\000\022/\n\010sub_task\030\022 \001(\0132\033.flyteidl.c" +
+      "ore.TaskTemplateH\000\022\031\n\021task_type_version\030" +
+      "\007 \001(\005\0228\n\020security_context\030\010 \001(\0132\036.flytei" +
+      "dl.core.SecurityContext\0227\n\006config\030\020 \003(\0132" +
+      "\'.flyteidl.core.TaskTemplate.ConfigEntry" +
+      "\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\t:\0028\001B\010\n\006target\"\'\n\rContainerPort\022\026\n\016co" +
+      "ntainer_port\030\001 \001(\r\"\245\002\n\tContainer\022\r\n\005imag" +
+      "e\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+" +
+      "\n\tresources\030\004 \001(\0132\030.flyteidl.core.Resour" +
+      "ces\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyValu" +
+      "ePair\022/\n\006config\030\006 \003(\0132\033.flyteidl.core.Ke" +
+      "yValuePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl" +
+      ".core.ContainerPort\0225\n\013data_config\030\t \001(\013" +
+      "2 .flyteidl.core.DataLoadingConfig\"\233\002\n\nI" +
+      "OStrategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyte" +
+      "idl.core.IOStrategy.DownloadMode\0229\n\013uplo" +
+      "ad_mode\030\002 \001(\0162$.flyteidl.core.IOStrategy" +
+      ".UploadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_" +
+      "EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_D" +
+      "OWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXI" +
+      "T\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002" +
+      "\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022" +
+      "\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t" +
+      "\022A\n\006format\030\004 \001(\01621.flyteidl.core.DataLoa" +
+      "dingConfig.LiteralMapFormat\022.\n\013io_strate" +
+      "gy\030\005 \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020L" +
+      "iteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005P" +
+      "ROTO\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .fly" +
+      "teidl.core.K8sObjectMetadata\022)\n\010pod_spec" +
+      "\030\002 \001(\0132\027.google.protobuf.Struct\"\374\001\n\021K8sO" +
+      "bjectMetadata\022<\n\006labels\030\001 \003(\0132,.flyteidl" +
+      ".core.K8sObjectMetadata.LabelsEntry\022F\n\013a" +
+      "nnotations\030\002 \003(\01321.flyteidl.core.K8sObje" +
+      "ctMetadata.AnnotationsEntry\032-\n\013LabelsEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020An" +
+      "notationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001B6Z4github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16361,7 +16639,7 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
-        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "K8SPod", "TaskTypeVersion", "SecurityContext", "Config", "Target", });
+        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "K8SPod", "SubTask", "TaskTypeVersion", "SecurityContext", "Config", "Target", });
     internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor =
       internal_static_flyteidl_core_TaskTemplate_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable = new

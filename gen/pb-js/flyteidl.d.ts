@@ -4149,6 +4149,9 @@ export namespace flyteidl {
             /** TaskTemplate k8sPod */
             k8sPod?: (flyteidl.core.IK8sPod|null);
 
+            /** TaskTemplate subTask */
+            subTask?: (flyteidl.core.ITaskTemplate|null);
+
             /** TaskTemplate taskTypeVersion */
             taskTypeVersion?: (number|null);
 
@@ -4189,6 +4192,9 @@ export namespace flyteidl {
             /** TaskTemplate k8sPod. */
             public k8sPod?: (flyteidl.core.IK8sPod|null);
 
+            /** TaskTemplate subTask. */
+            public subTask?: (flyteidl.core.ITaskTemplate|null);
+
             /** TaskTemplate taskTypeVersion. */
             public taskTypeVersion: number;
 
@@ -4199,7 +4205,7 @@ export namespace flyteidl {
             public config: { [k: string]: string };
 
             /** TaskTemplate target. */
-            public target?: ("container"|"k8sPod");
+            public target?: ("container"|"k8sPod"|"subTask");
 
             /**
              * Creates a new TaskTemplate instance using the specified properties.
