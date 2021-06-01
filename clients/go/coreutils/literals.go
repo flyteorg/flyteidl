@@ -11,9 +11,9 @@ import (
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/flyteorg/flytestdlib/storage"
 
-	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/ptypes"
 	structpb "github.com/golang/protobuf/ptypes/struct"
+	gateway "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/pkg/errors"
 )
 
@@ -350,7 +350,10 @@ func MakeLiteralForSimpleType(t core.SimpleType, s string) (*core.Literal, error
 	switch t {
 	case core.SimpleType_STRUCT:
 		st := &structpb.Struct{}
-		err := jsonpb.UnmarshalString(s, st)
+		// Using grpc gateway probobuf unmarshaller which allows unmarshalling non-proto fields.
+		// https://github.com/grpc-ecosystem/grpc-gateway/blob/9f29462311efebda32dfbba90afe20c05e88fe52/runtime/marshal_jsonpb.go#L186
+		jsonUnMarshaller := gateway.JSONPb{}
+		err := jsonUnMarshaller.Unmarshal([]byte(s), st)
 		if err != nil {
 			return nil, errors.Wrapf(err, "failed to load generic type as json.")
 		}
@@ -483,7 +486,20 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		}
 	case *core.LiteralType_Simple:
 		newT := t.Type.(*core.LiteralType_Simple)
-		lv, err := MakeLiteralForSimpleType(newT.Simple, fmt.Sprintf("%v", v))
+		strValue := fmt.Sprintf("%v", v)
+		if newT.Simple == core.SimpleType_STRUCT {
+			if _, isValueStringType := v.(string); !isValueStringType {
+				// Using grpc gateway probobuf marshaller which allows marshalling non-proto fields.
+				// https://github.com/grpc-ecosystem/grpc-gateway/blob/9f29462311efebda32dfbba90afe20c05e88fe52/runtime/marshal_jsonpb.go#L33
+				jsonMarshaller := gateway.JSONPb{}
+				byteValue, err := jsonMarshaller.Marshal(v)
+				if err != nil {
+					return nil, fmt.Errorf("unable to marshal to yaml string for struct value %v", v)
+				}
+				strValue = string(byteValue)
+			}
+		}
+		lv, err := MakeLiteralForSimpleType(newT.Simple, strValue)
 		if err != nil {
 			return nil, err
 		}

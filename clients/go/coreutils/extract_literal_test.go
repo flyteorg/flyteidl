@@ -106,7 +106,10 @@ func TestFetchLiteral(t *testing.T) {
 	})
 
 	t.Run("Generic", func(t *testing.T) {
-		literalVal := "{\"x\": 1, \"y\":\"ystringvalue\"}"
+		literalVal := map[string]interface{}{
+			"x": 1,
+			"y": "ystringvalue",
+		}
 		var literalType = &core.LiteralType{Type: &core.LiteralType_Simple{Simple: core.SimpleType_STRUCT}}
 		lit, err := MakeLiteralForType(literalType, literalVal)
 		assert.NoError(t, err)
