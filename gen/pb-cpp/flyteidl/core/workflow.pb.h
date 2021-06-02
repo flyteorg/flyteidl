@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fcore_2fworkflow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[11]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -61,6 +61,9 @@ namespace core {
 class Alias;
 class AliasDefaultTypeInternal;
 extern AliasDefaultTypeInternal _Alias_default_instance_;
+class ArrayNode;
+class ArrayNodeDefaultTypeInternal;
+extern ArrayNodeDefaultTypeInternal _ArrayNode_default_instance_;
 class BranchNode;
 class BranchNodeDefaultTypeInternal;
 extern BranchNodeDefaultTypeInternal _BranchNode_default_instance_;
@@ -96,6 +99,7 @@ extern WorkflowTemplateDefaultTypeInternal _WorkflowTemplate_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::core::Alias* Arena::CreateMaybeMessage<::flyteidl::core::Alias>(Arena*);
+template<> ::flyteidl::core::ArrayNode* Arena::CreateMaybeMessage<::flyteidl::core::ArrayNode>(Arena*);
 template<> ::flyteidl::core::BranchNode* Arena::CreateMaybeMessage<::flyteidl::core::BranchNode>(Arena*);
 template<> ::flyteidl::core::IfBlock* Arena::CreateMaybeMessage<::flyteidl::core::IfBlock>(Arena*);
 template<> ::flyteidl::core::IfElseBlock* Arena::CreateMaybeMessage<::flyteidl::core::IfElseBlock>(Arena*);
@@ -814,6 +818,142 @@ class WorkflowNode final :
 };
 // -------------------------------------------------------------------
 
+class ArrayNode final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.ArrayNode) */ {
+ public:
+  ArrayNode();
+  virtual ~ArrayNode();
+
+  ArrayNode(const ArrayNode& from);
+
+  inline ArrayNode& operator=(const ArrayNode& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ArrayNode(ArrayNode&& from) noexcept
+    : ArrayNode() {
+    *this = ::std::move(from);
+  }
+
+  inline ArrayNode& operator=(ArrayNode&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ArrayNode& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ArrayNode* internal_default_instance() {
+    return reinterpret_cast<const ArrayNode*>(
+               &_ArrayNode_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(ArrayNode* other);
+  friend void swap(ArrayNode& a, ArrayNode& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ArrayNode* New() const final {
+    return CreateMaybeMessage<ArrayNode>(nullptr);
+  }
+
+  ArrayNode* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ArrayNode>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ArrayNode& from);
+  void MergeFrom(const ArrayNode& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ArrayNode* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.Identifier task_reference = 1;
+  bool has_task_reference() const;
+  void clear_task_reference();
+  static const int kTaskReferenceFieldNumber = 1;
+  const ::flyteidl::core::Identifier& task_reference() const;
+  ::flyteidl::core::Identifier* release_task_reference();
+  ::flyteidl::core::Identifier* mutable_task_reference();
+  void set_allocated_task_reference(::flyteidl::core::Identifier* task_reference);
+
+  // int64 parallelism = 2;
+  void clear_parallelism();
+  static const int kParallelismFieldNumber = 2;
+  ::google::protobuf::int64 parallelism() const;
+  void set_parallelism(::google::protobuf::int64 value);
+
+  // int64 size = 3;
+  void clear_size();
+  static const int kSizeFieldNumber = 3;
+  ::google::protobuf::int64 size() const;
+  void set_size(::google::protobuf::int64 value);
+
+  // float min_success_ratio = 4;
+  void clear_min_success_ratio();
+  static const int kMinSuccessRatioFieldNumber = 4;
+  float min_success_ratio() const;
+  void set_min_success_ratio(float value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.ArrayNode)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::Identifier* task_reference_;
+  ::google::protobuf::int64 parallelism_;
+  ::google::protobuf::int64 size_;
+  float min_success_ratio_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
+};
+// -------------------------------------------------------------------
+
 class NodeMetadata final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.NodeMetadata) */ {
  public:
@@ -857,7 +997,7 @@ class NodeMetadata final :
                &_NodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(NodeMetadata* other);
   friend void swap(NodeMetadata& a, NodeMetadata& b) {
@@ -1018,7 +1158,7 @@ class Alias final :
                &_Alias_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(Alias* other);
   friend void swap(Alias& a, Alias& b) {
@@ -1160,7 +1300,7 @@ class Node final :
                &_Node_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Node* other);
   friend void swap(Node& a, Node& b) {
@@ -1382,7 +1522,7 @@ class WorkflowMetadata final :
                &_WorkflowMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(WorkflowMetadata* other);
   friend void swap(WorkflowMetadata& a, WorkflowMetadata& b) {
@@ -1530,7 +1670,7 @@ class WorkflowMetadataDefaults final :
                &_WorkflowMetadataDefaults_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(WorkflowMetadataDefaults* other);
   friend void swap(WorkflowMetadataDefaults& a, WorkflowMetadataDefaults& b) {
@@ -1642,7 +1782,7 @@ class WorkflowTemplate final :
                &_WorkflowTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(WorkflowTemplate* other);
   friend void swap(WorkflowTemplate& a, WorkflowTemplate& b) {
@@ -2246,6 +2386,97 @@ inline void WorkflowNode::clear_has_reference() {
 inline WorkflowNode::ReferenceCase WorkflowNode::reference_case() const {
   return WorkflowNode::ReferenceCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// ArrayNode
+
+// .flyteidl.core.Identifier task_reference = 1;
+inline bool ArrayNode::has_task_reference() const {
+  return this != internal_default_instance() && task_reference_ != nullptr;
+}
+inline const ::flyteidl::core::Identifier& ArrayNode::task_reference() const {
+  const ::flyteidl::core::Identifier* p = task_reference_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.task_reference)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
+      &::flyteidl::core::_Identifier_default_instance_);
+}
+inline ::flyteidl::core::Identifier* ArrayNode::release_task_reference() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ArrayNode.task_reference)
+  
+  ::flyteidl::core::Identifier* temp = task_reference_;
+  task_reference_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Identifier* ArrayNode::mutable_task_reference() {
+  
+  if (task_reference_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
+    task_reference_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ArrayNode.task_reference)
+  return task_reference_;
+}
+inline void ArrayNode::set_allocated_task_reference(::flyteidl::core::Identifier* task_reference) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_reference_);
+  }
+  if (task_reference) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      task_reference = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_reference, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  task_reference_ = task_reference;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArrayNode.task_reference)
+}
+
+// int64 parallelism = 2;
+inline void ArrayNode::clear_parallelism() {
+  parallelism_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ArrayNode::parallelism() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.parallelism)
+  return parallelism_;
+}
+inline void ArrayNode::set_parallelism(::google::protobuf::int64 value) {
+  
+  parallelism_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.parallelism)
+}
+
+// int64 size = 3;
+inline void ArrayNode::clear_size() {
+  size_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ArrayNode::size() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.size)
+  return size_;
+}
+inline void ArrayNode::set_size(::google::protobuf::int64 value) {
+  
+  size_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.size)
+}
+
+// float min_success_ratio = 4;
+inline void ArrayNode::clear_min_success_ratio() {
+  min_success_ratio_ = 0;
+}
+inline float ArrayNode::min_success_ratio() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.min_success_ratio)
+  return min_success_ratio_;
+}
+inline void ArrayNode::set_min_success_ratio(float value) {
+  
+  min_success_ratio_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.min_success_ratio)
+}
+
 // -------------------------------------------------------------------
 
 // NodeMetadata
@@ -3296,6 +3527,8 @@ inline void WorkflowTemplate::set_allocated_metadata_defaults(::flyteidl::core::
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

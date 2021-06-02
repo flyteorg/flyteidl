@@ -5755,10 +5755,6 @@
         "k8s_pod": {
           "$ref": "#/definitions/coreK8sPod"
         },
-        "sub_task": {
-          "$ref": "#/definitions/coreTaskTemplate",
-          "description": "For meta tasks like map tasks, this defines the sub task that is yielded and executed n times."
-        },
         "task_type_version": {
           "type": "integer",
           "format": "int32",

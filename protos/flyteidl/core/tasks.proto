@@ -119,8 +119,6 @@ message TaskTemplate {
     oneof target {
         Container container = 6;
         K8sPod k8s_pod = 17;
-        // For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.
-        TaskTemplate sub_task = 18;
     }
 
     // This can be used to customize task handling at execution time for the same task type.

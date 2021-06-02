@@ -2382,6 +2382,169 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowNode;
         })();
 
+        core.ArrayNode = (function() {
+
+            /**
+             * Properties of an ArrayNode.
+             * @memberof flyteidl.core
+             * @interface IArrayNode
+             * @property {flyteidl.core.IIdentifier|null} [taskReference] ArrayNode taskReference
+             * @property {Long|null} [parallelism] ArrayNode parallelism
+             * @property {Long|null} [size] ArrayNode size
+             * @property {number|null} [minSuccessRatio] ArrayNode minSuccessRatio
+             */
+
+            /**
+             * Constructs a new ArrayNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents an ArrayNode.
+             * @implements IArrayNode
+             * @constructor
+             * @param {flyteidl.core.IArrayNode=} [properties] Properties to set
+             */
+            function ArrayNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ArrayNode taskReference.
+             * @member {flyteidl.core.IIdentifier|null|undefined} taskReference
+             * @memberof flyteidl.core.ArrayNode
+             * @instance
+             */
+            ArrayNode.prototype.taskReference = null;
+
+            /**
+             * ArrayNode parallelism.
+             * @member {Long} parallelism
+             * @memberof flyteidl.core.ArrayNode
+             * @instance
+             */
+            ArrayNode.prototype.parallelism = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ArrayNode size.
+             * @member {Long} size
+             * @memberof flyteidl.core.ArrayNode
+             * @instance
+             */
+            ArrayNode.prototype.size = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ArrayNode minSuccessRatio.
+             * @member {number} minSuccessRatio
+             * @memberof flyteidl.core.ArrayNode
+             * @instance
+             */
+            ArrayNode.prototype.minSuccessRatio = 0;
+
+            /**
+             * Creates a new ArrayNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ArrayNode
+             * @static
+             * @param {flyteidl.core.IArrayNode=} [properties] Properties to set
+             * @returns {flyteidl.core.ArrayNode} ArrayNode instance
+             */
+            ArrayNode.create = function create(properties) {
+                return new ArrayNode(properties);
+            };
+
+            /**
+             * Encodes the specified ArrayNode message. Does not implicitly {@link flyteidl.core.ArrayNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ArrayNode
+             * @static
+             * @param {flyteidl.core.IArrayNode} message ArrayNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ArrayNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskReference != null && message.hasOwnProperty("taskReference"))
+                    $root.flyteidl.core.Identifier.encode(message.taskReference, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.parallelism != null && message.hasOwnProperty("parallelism"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.parallelism);
+                if (message.size != null && message.hasOwnProperty("size"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.size);
+                if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
+                    writer.uint32(/* id 4, wireType 5 =*/37).float(message.minSuccessRatio);
+                return writer;
+            };
+
+            /**
+             * Decodes an ArrayNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ArrayNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ArrayNode} ArrayNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ArrayNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArrayNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskReference = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.parallelism = reader.int64();
+                        break;
+                    case 3:
+                        message.size = reader.int64();
+                        break;
+                    case 4:
+                        message.minSuccessRatio = reader.float();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ArrayNode message.
+             * @function verify
+             * @memberof flyteidl.core.ArrayNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ArrayNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskReference != null && message.hasOwnProperty("taskReference")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.taskReference);
+                    if (error)
+                        return "taskReference." + error;
+                }
+                if (message.parallelism != null && message.hasOwnProperty("parallelism"))
+                    if (!$util.isInteger(message.parallelism) && !(message.parallelism && $util.isInteger(message.parallelism.low) && $util.isInteger(message.parallelism.high)))
+                        return "parallelism: integer|Long expected";
+                if (message.size != null && message.hasOwnProperty("size"))
+                    if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
+                        return "size: integer|Long expected";
+                if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
+                    if (typeof message.minSuccessRatio !== "number")
+                        return "minSuccessRatio: number expected";
+                return null;
+            };
+
+            return ArrayNode;
+        })();
+
         core.NodeMetadata = (function() {
 
             /**
@@ -9852,7 +10015,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IStruct|null} [custom] TaskTemplate custom
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              * @property {flyteidl.core.IK8sPod|null} [k8sPod] TaskTemplate k8sPod
-             * @property {flyteidl.core.ITaskTemplate|null} [subTask] TaskTemplate subTask
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
              * @property {Object.<string,string>|null} [config] TaskTemplate config
@@ -9931,14 +10093,6 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskTemplate.prototype.k8sPod = null;
 
             /**
-             * TaskTemplate subTask.
-             * @member {flyteidl.core.ITaskTemplate|null|undefined} subTask
-             * @memberof flyteidl.core.TaskTemplate
-             * @instance
-             */
-            TaskTemplate.prototype.subTask = null;
-
-            /**
              * TaskTemplate taskTypeVersion.
              * @member {number} taskTypeVersion
              * @memberof flyteidl.core.TaskTemplate
@@ -9967,12 +10121,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate target.
-             * @member {"container"|"k8sPod"|"subTask"|undefined} target
+             * @member {"container"|"k8sPod"|undefined} target
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
             Object.defineProperty(TaskTemplate.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["container", "k8sPod", "subTask"]),
+                get: $util.oneOfGetter($oneOfFields = ["container", "k8sPod"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -10021,8 +10175,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         writer.uint32(/* id 16, wireType 2 =*/130).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.config[keys[i]]).ldelim();
                 if (message.k8sPod != null && message.hasOwnProperty("k8sPod"))
                     $root.flyteidl.core.K8sPod.encode(message.k8sPod, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                if (message.subTask != null && message.hasOwnProperty("subTask"))
-                    $root.flyteidl.core.TaskTemplate.encode(message.subTask, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
 
@@ -10064,9 +10216,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 17:
                         message.k8sPod = $root.flyteidl.core.K8sPod.decode(reader, reader.uint32());
-                        break;
-                    case 18:
-                        message.subTask = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
                         break;
                     case 7:
                         message.taskTypeVersion = reader.int32();
@@ -10141,16 +10290,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.K8sPod.verify(message.k8sPod);
                         if (error)
                             return "k8sPod." + error;
-                    }
-                }
-                if (message.subTask != null && message.hasOwnProperty("subTask")) {
-                    if (properties.target === 1)
-                        return "target: multiple values";
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.TaskTemplate.verify(message.subTask);
-                        if (error)
-                            return "subTask." + error;
                     }
                 }
                 if (message.taskTypeVersion != null && message.hasOwnProperty("taskTypeVersion"))

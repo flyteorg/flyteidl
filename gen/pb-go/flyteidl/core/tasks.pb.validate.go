@@ -399,18 +399,6 @@ func (m *TaskTemplate) Validate() error {
 			}
 		}
 
-	case *TaskTemplate_SubTask:
-
-		if v, ok := interface{}(m.GetSubTask()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return TaskTemplateValidationError{
-					field:  "SubTask",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	return nil

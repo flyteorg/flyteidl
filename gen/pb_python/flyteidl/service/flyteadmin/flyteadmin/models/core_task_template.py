@@ -21,7 +21,6 @@ from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_k8s_pod import CoreK8sPod  # noqa: F401,E501
 from flyteadmin.models.core_security_context import CoreSecurityContext  # noqa: F401,E501
 from flyteadmin.models.core_task_metadata import CoreTaskMetadata  # noqa: F401,E501
-from flyteadmin.models.core_task_template import CoreTaskTemplate  # noqa: F401,E501
 from flyteadmin.models.core_typed_interface import CoreTypedInterface  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
@@ -47,7 +46,6 @@ class CoreTaskTemplate(object):
         'custom': 'ProtobufStruct',
         'container': 'CoreContainer',
         'k8s_pod': 'CoreK8sPod',
-        'sub_task': 'CoreTaskTemplate',
         'task_type_version': 'int',
         'security_context': 'CoreSecurityContext',
         'config': 'dict(str, str)'
@@ -61,13 +59,12 @@ class CoreTaskTemplate(object):
         'custom': 'custom',
         'container': 'container',
         'k8s_pod': 'k8s_pod',
-        'sub_task': 'sub_task',
         'task_type_version': 'task_type_version',
         'security_context': 'security_context',
         'config': 'config'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, sub_task=None, task_type_version=None, security_context=None, config=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, task_type_version=None, security_context=None, config=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -77,7 +74,6 @@ class CoreTaskTemplate(object):
         self._custom = None
         self._container = None
         self._k8s_pod = None
-        self._sub_task = None
         self._task_type_version = None
         self._security_context = None
         self._config = None
@@ -97,8 +93,6 @@ class CoreTaskTemplate(object):
             self.container = container
         if k8s_pod is not None:
             self.k8s_pod = k8s_pod
-        if sub_task is not None:
-            self.sub_task = sub_task
         if task_type_version is not None:
             self.task_type_version = task_type_version
         if security_context is not None:
@@ -262,29 +256,6 @@ class CoreTaskTemplate(object):
         """
 
         self._k8s_pod = k8s_pod
-
-    @property
-    def sub_task(self):
-        """Gets the sub_task of this CoreTaskTemplate.  # noqa: E501
-
-        For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.  # noqa: E501
-
-        :return: The sub_task of this CoreTaskTemplate.  # noqa: E501
-        :rtype: CoreTaskTemplate
-        """
-        return self._sub_task
-
-    @sub_task.setter
-    def sub_task(self, sub_task):
-        """Sets the sub_task of this CoreTaskTemplate.
-
-        For meta tasks like map tasks, this defines the sub task that is yielded and executed n times.  # noqa: E501
-
-        :param sub_task: The sub_task of this CoreTaskTemplate.  # noqa: E501
-        :type: CoreTaskTemplate
-        """
-
-        self._sub_task = sub_task
 
     @property
     def task_type_version(self):

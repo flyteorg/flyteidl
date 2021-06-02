@@ -5087,6 +5087,955 @@ public final class Workflow {
 
   }
 
+  public interface ArrayNodeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.ArrayNode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    boolean hasTaskReference();
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.Identifier getTaskReference();
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskReferenceOrBuilder();
+
+    /**
+     * <pre>
+     * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
+     * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
+     * running instances might be more. This has to be a positive number if assigned. Default value is size.
+     * </pre>
+     *
+     * <code>int64 parallelism = 2;</code>
+     */
+    long getParallelism();
+
+    /**
+     * <pre>
+     * Defines the number of instances to launch at most. This number should match the size of the input if the job
+     * requires processing of all input data. This has to be a positive number.
+     * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
+     * </pre>
+     *
+     * <code>int64 size = 3;</code>
+     */
+    long getSize();
+
+    /**
+     * <pre>
+     * The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions
+     * so that this node can be marked successful.
+     * </pre>
+     *
+     * <code>float min_success_ratio = 4;</code>
+     */
+    float getMinSuccessRatio();
+  }
+  /**
+   * <pre>
+   * Configures an array job in which the node executes a task in parallel across a range of inputs.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.ArrayNode}
+   */
+  public  static final class ArrayNode extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.ArrayNode)
+      ArrayNodeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ArrayNode.newBuilder() to construct.
+    private ArrayNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ArrayNode() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ArrayNode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
+              if (taskReference_ != null) {
+                subBuilder = taskReference_.toBuilder();
+              }
+              taskReference_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(taskReference_);
+                taskReference_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              parallelism_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              size_ = input.readInt64();
+              break;
+            }
+            case 37: {
+
+              minSuccessRatio_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_ArrayNode_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_ArrayNode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Workflow.ArrayNode.class, flyteidl.core.Workflow.ArrayNode.Builder.class);
+    }
+
+    public static final int TASK_REFERENCE_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.Identifier taskReference_;
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    public boolean hasTaskReference() {
+      return taskReference_ != null;
+    }
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.Identifier getTaskReference() {
+      return taskReference_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskReference_;
+    }
+    /**
+     * <pre>
+     * Reference to a registered task which should be called in parallel during node execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskReferenceOrBuilder() {
+      return getTaskReference();
+    }
+
+    public static final int PARALLELISM_FIELD_NUMBER = 2;
+    private long parallelism_;
+    /**
+     * <pre>
+     * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
+     * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
+     * running instances might be more. This has to be a positive number if assigned. Default value is size.
+     * </pre>
+     *
+     * <code>int64 parallelism = 2;</code>
+     */
+    public long getParallelism() {
+      return parallelism_;
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 3;
+    private long size_;
+    /**
+     * <pre>
+     * Defines the number of instances to launch at most. This number should match the size of the input if the job
+     * requires processing of all input data. This has to be a positive number.
+     * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
+     * </pre>
+     *
+     * <code>int64 size = 3;</code>
+     */
+    public long getSize() {
+      return size_;
+    }
+
+    public static final int MIN_SUCCESS_RATIO_FIELD_NUMBER = 4;
+    private float minSuccessRatio_;
+    /**
+     * <pre>
+     * The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions
+     * so that this node can be marked successful.
+     * </pre>
+     *
+     * <code>float min_success_ratio = 4;</code>
+     */
+    public float getMinSuccessRatio() {
+      return minSuccessRatio_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (taskReference_ != null) {
+        output.writeMessage(1, getTaskReference());
+      }
+      if (parallelism_ != 0L) {
+        output.writeInt64(2, parallelism_);
+      }
+      if (size_ != 0L) {
+        output.writeInt64(3, size_);
+      }
+      if (minSuccessRatio_ != 0F) {
+        output.writeFloat(4, minSuccessRatio_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (taskReference_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTaskReference());
+      }
+      if (parallelism_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, parallelism_);
+      }
+      if (size_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, size_);
+      }
+      if (minSuccessRatio_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, minSuccessRatio_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Workflow.ArrayNode)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Workflow.ArrayNode other = (flyteidl.core.Workflow.ArrayNode) obj;
+
+      if (hasTaskReference() != other.hasTaskReference()) return false;
+      if (hasTaskReference()) {
+        if (!getTaskReference()
+            .equals(other.getTaskReference())) return false;
+      }
+      if (getParallelism()
+          != other.getParallelism()) return false;
+      if (getSize()
+          != other.getSize()) return false;
+      if (java.lang.Float.floatToIntBits(getMinSuccessRatio())
+          != java.lang.Float.floatToIntBits(
+              other.getMinSuccessRatio())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTaskReference()) {
+        hash = (37 * hash) + TASK_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskReference().hashCode();
+      }
+      hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getParallelism());
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSize());
+      hash = (37 * hash) + MIN_SUCCESS_RATIO_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMinSuccessRatio());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ArrayNode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Workflow.ArrayNode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Configures an array job in which the node executes a task in parallel across a range of inputs.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.ArrayNode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.ArrayNode)
+        flyteidl.core.Workflow.ArrayNodeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ArrayNode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ArrayNode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Workflow.ArrayNode.class, flyteidl.core.Workflow.ArrayNode.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Workflow.ArrayNode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (taskReferenceBuilder_ == null) {
+          taskReference_ = null;
+        } else {
+          taskReference_ = null;
+          taskReferenceBuilder_ = null;
+        }
+        parallelism_ = 0L;
+
+        size_ = 0L;
+
+        minSuccessRatio_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ArrayNode_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ArrayNode getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ArrayNode build() {
+        flyteidl.core.Workflow.ArrayNode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ArrayNode buildPartial() {
+        flyteidl.core.Workflow.ArrayNode result = new flyteidl.core.Workflow.ArrayNode(this);
+        if (taskReferenceBuilder_ == null) {
+          result.taskReference_ = taskReference_;
+        } else {
+          result.taskReference_ = taskReferenceBuilder_.build();
+        }
+        result.parallelism_ = parallelism_;
+        result.size_ = size_;
+        result.minSuccessRatio_ = minSuccessRatio_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Workflow.ArrayNode) {
+          return mergeFrom((flyteidl.core.Workflow.ArrayNode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Workflow.ArrayNode other) {
+        if (other == flyteidl.core.Workflow.ArrayNode.getDefaultInstance()) return this;
+        if (other.hasTaskReference()) {
+          mergeTaskReference(other.getTaskReference());
+        }
+        if (other.getParallelism() != 0L) {
+          setParallelism(other.getParallelism());
+        }
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
+        }
+        if (other.getMinSuccessRatio() != 0F) {
+          setMinSuccessRatio(other.getMinSuccessRatio());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Workflow.ArrayNode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Workflow.ArrayNode) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.Identifier taskReference_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> taskReferenceBuilder_;
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public boolean hasTaskReference() {
+        return taskReferenceBuilder_ != null || taskReference_ != null;
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.Identifier getTaskReference() {
+        if (taskReferenceBuilder_ == null) {
+          return taskReference_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskReference_;
+        } else {
+          return taskReferenceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public Builder setTaskReference(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (taskReferenceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          taskReference_ = value;
+          onChanged();
+        } else {
+          taskReferenceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public Builder setTaskReference(
+          flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
+        if (taskReferenceBuilder_ == null) {
+          taskReference_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskReferenceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public Builder mergeTaskReference(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (taskReferenceBuilder_ == null) {
+          if (taskReference_ != null) {
+            taskReference_ =
+              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(taskReference_).mergeFrom(value).buildPartial();
+          } else {
+            taskReference_ = value;
+          }
+          onChanged();
+        } else {
+          taskReferenceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public Builder clearTaskReference() {
+        if (taskReferenceBuilder_ == null) {
+          taskReference_ = null;
+          onChanged();
+        } else {
+          taskReference_ = null;
+          taskReferenceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getTaskReferenceBuilder() {
+        
+        onChanged();
+        return getTaskReferenceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskReferenceOrBuilder() {
+        if (taskReferenceBuilder_ != null) {
+          return taskReferenceBuilder_.getMessageOrBuilder();
+        } else {
+          return taskReference_ == null ?
+              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskReference_;
+        }
+      }
+      /**
+       * <pre>
+       * Reference to a registered task which should be called in parallel during node execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier task_reference = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
+          getTaskReferenceFieldBuilder() {
+        if (taskReferenceBuilder_ == null) {
+          taskReferenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
+                  getTaskReference(),
+                  getParentForChildren(),
+                  isClean());
+          taskReference_ = null;
+        }
+        return taskReferenceBuilder_;
+      }
+
+      private long parallelism_ ;
+      /**
+       * <pre>
+       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
+       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
+       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * </pre>
+       *
+       * <code>int64 parallelism = 2;</code>
+       */
+      public long getParallelism() {
+        return parallelism_;
+      }
+      /**
+       * <pre>
+       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
+       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
+       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * </pre>
+       *
+       * <code>int64 parallelism = 2;</code>
+       */
+      public Builder setParallelism(long value) {
+        
+        parallelism_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
+       * optimistic restriction and that, due to network partitioning or other failures, the actual number of currently
+       * running instances might be more. This has to be a positive number if assigned. Default value is size.
+       * </pre>
+       *
+       * <code>int64 parallelism = 2;</code>
+       */
+      public Builder clearParallelism() {
+        
+        parallelism_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long size_ ;
+      /**
+       * <pre>
+       * Defines the number of instances to launch at most. This number should match the size of the input if the job
+       * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
+       * </pre>
+       *
+       * <code>int64 size = 3;</code>
+       */
+      public long getSize() {
+        return size_;
+      }
+      /**
+       * <pre>
+       * Defines the number of instances to launch at most. This number should match the size of the input if the job
+       * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
+       * </pre>
+       *
+       * <code>int64 size = 3;</code>
+       */
+      public Builder setSize(long value) {
+        
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines the number of instances to launch at most. This number should match the size of the input if the job
+       * requires processing of all input data. This has to be a positive number.
+       * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
+       * </pre>
+       *
+       * <code>int64 size = 3;</code>
+       */
+      public Builder clearSize() {
+        
+        size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private float minSuccessRatio_ ;
+      /**
+       * <pre>
+       * The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions
+       * so that this node can be marked successful.
+       * </pre>
+       *
+       * <code>float min_success_ratio = 4;</code>
+       */
+      public float getMinSuccessRatio() {
+        return minSuccessRatio_;
+      }
+      /**
+       * <pre>
+       * The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions
+       * so that this node can be marked successful.
+       * </pre>
+       *
+       * <code>float min_success_ratio = 4;</code>
+       */
+      public Builder setMinSuccessRatio(float value) {
+        
+        minSuccessRatio_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions
+       * so that this node can be marked successful.
+       * </pre>
+       *
+       * <code>float min_success_ratio = 4;</code>
+       */
+      public Builder clearMinSuccessRatio() {
+        
+        minSuccessRatio_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.ArrayNode)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.ArrayNode)
+    private static final flyteidl.core.Workflow.ArrayNode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.ArrayNode();
+    }
+
+    public static flyteidl.core.Workflow.ArrayNode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ArrayNode>
+        PARSER = new com.google.protobuf.AbstractParser<ArrayNode>() {
+      @java.lang.Override
+      public ArrayNode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ArrayNode(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ArrayNode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ArrayNode> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Workflow.ArrayNode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NodeMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.NodeMetadata)
       com.google.protobuf.MessageOrBuilder {
@@ -14521,6 +15470,11 @@ public final class Workflow {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_WorkflowNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_ArrayNode_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_ArrayNode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_NodeMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14579,38 +15533,41 @@ public final class Workflow {
       "nce\"\207\001\n\014WorkflowNode\0223\n\016launchplan_ref\030\001" +
       " \001(\0132\031.flyteidl.core.IdentifierH\000\0225\n\020sub" +
       "_workflow_ref\030\002 \001(\0132\031.flyteidl.core.Iden" +
-      "tifierH\000B\013\n\treference\"\247\001\n\014NodeMetadata\022\014" +
-      "\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.p" +
-      "rotobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyt" +
-      "eidl.core.RetryStrategy\022\027\n\rinterruptible" +
-      "\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005Alias" +
-      "\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n" +
-      "\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.c" +
-      "ore.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyte" +
-      "idl.core.Binding\022\031\n\021upstream_node_ids\030\004 " +
-      "\003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyteidl.c" +
-      "ore.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl." +
-      "core.TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033" +
-      ".flyteidl.core.WorkflowNodeH\000\0220\n\013branch_" +
-      "node\030\010 \001(\0132\031.flyteidl.core.BranchNodeH\000B" +
-      "\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022qualit" +
-      "y_of_service\030\001 \001(\0132\037.flyteidl.core.Quali" +
-      "tyOfService\022C\n\non_failure\030\002 \001(\0162/.flytei" +
-      "dl.core.WorkflowMetadata.OnFailurePolicy" +
-      "\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020" +
-      "\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLET" +
-      "E\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinter" +
-      "ruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002i" +
-      "d\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010me" +
-      "tadata\030\002 \001(\0132\037.flyteidl.core.WorkflowMet" +
-      "adata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core" +
-      ".TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteid" +
-      "l.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl." +
-      "core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.fly" +
-      "teidl.core.Node\022B\n\021metadata_defaults\030\007 \001" +
-      "(\0132\'.flyteidl.core.WorkflowMetadataDefau" +
-      "ltsB6Z4github.com/flyteorg/flyteidl/gen/" +
-      "pb-go/flyteidl/coreb\006proto3"
+      "tifierH\000B\013\n\treference\"|\n\tArrayNode\0221\n\016ta" +
+      "sk_reference\030\001 \001(\0132\031.flyteidl.core.Ident" +
+      "ifier\022\023\n\013parallelism\030\002 \001(\003\022\014\n\004size\030\003 \001(\003" +
+      "\022\031\n\021min_success_ratio\030\004 \001(\002\"\247\001\n\014NodeMeta" +
+      "data\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.go" +
+      "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132" +
+      "\034.flyteidl.core.RetryStrategy\022\027\n\rinterru" +
+      "ptible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n" +
+      "\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004N" +
+      "ode\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyt" +
+      "eidl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026" +
+      ".flyteidl.core.Binding\022\031\n\021upstream_node_" +
+      "ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyt" +
+      "eidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.fly" +
+      "teidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007" +
+      " \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013b" +
+      "ranch_node\030\010 \001(\0132\031.flyteidl.core.BranchN" +
+      "odeH\000B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022" +
+      "quality_of_service\030\001 \001(\0132\037.flyteidl.core" +
+      ".QualityOfService\022C\n\non_failure\030\002 \001(\0162/." +
+      "flyteidl.core.WorkflowMetadata.OnFailure" +
+      "Policy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDI" +
+      "ATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_C" +
+      "OMPLETE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n" +
+      "\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplat" +
+      "e\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
+      "\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workf" +
+      "lowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteid" +
+      "l.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.f" +
+      "lyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fly" +
+      "teidl.core.Binding\022)\n\014failure_node\030\006 \001(\013" +
+      "2\023.flyteidl.core.Node\022B\n\021metadata_defaul" +
+      "ts\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadat" +
+      "aDefaultsB6Z4github.com/flyteorg/flyteid" +
+      "l/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14661,38 +15618,44 @@ public final class Workflow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowNode_descriptor,
         new java.lang.String[] { "LaunchplanRef", "SubWorkflowRef", "Reference", });
-    internal_static_flyteidl_core_NodeMetadata_descriptor =
+    internal_static_flyteidl_core_ArrayNode_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_core_ArrayNode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_ArrayNode_descriptor,
+        new java.lang.String[] { "TaskReference", "Parallelism", "Size", "MinSuccessRatio", });
+    internal_static_flyteidl_core_NodeMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
         new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "InterruptibleValue", });
     internal_static_flyteidl_core_Alias_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Alias_descriptor,
         new java.lang.String[] { "Var", "Alias", });
     internal_static_flyteidl_core_Node_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Node_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "Target", });
     internal_static_flyteidl_core_WorkflowMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
         new java.lang.String[] { "QualityOfService", "OnFailure", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor,
         new java.lang.String[] { "Interruptible", });
     internal_static_flyteidl_core_WorkflowTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowTemplate_descriptor,
