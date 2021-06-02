@@ -34,31 +34,31 @@ class CoreArrayNode(object):
     """
     swagger_types = {
         'task_reference': 'CoreIdentifier',
-        'parallelism': 'str',
+        'concurrency': 'str',
         'size': 'str',
         'min_success_ratio': 'float'
     }
 
     attribute_map = {
         'task_reference': 'task_reference',
-        'parallelism': 'parallelism',
+        'concurrency': 'concurrency',
         'size': 'size',
         'min_success_ratio': 'min_success_ratio'
     }
 
-    def __init__(self, task_reference=None, parallelism=None, size=None, min_success_ratio=None):  # noqa: E501
+    def __init__(self, task_reference=None, concurrency=None, size=None, min_success_ratio=None):  # noqa: E501
         """CoreArrayNode - a model defined in Swagger"""  # noqa: E501
 
         self._task_reference = None
-        self._parallelism = None
+        self._concurrency = None
         self._size = None
         self._min_success_ratio = None
         self.discriminator = None
 
         if task_reference is not None:
             self.task_reference = task_reference
-        if parallelism is not None:
-            self.parallelism = parallelism
+        if concurrency is not None:
+            self.concurrency = concurrency
         if size is not None:
             self.size = size
         if min_success_ratio is not None:
@@ -88,27 +88,27 @@ class CoreArrayNode(object):
         self._task_reference = task_reference
 
     @property
-    def parallelism(self):
-        """Gets the parallelism of this CoreArrayNode.  # noqa: E501
+    def concurrency(self):
+        """Gets the concurrency of this CoreArrayNode.  # noqa: E501
 
         Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
-        :return: The parallelism of this CoreArrayNode.  # noqa: E501
+        :return: The concurrency of this CoreArrayNode.  # noqa: E501
         :rtype: str
         """
-        return self._parallelism
+        return self._concurrency
 
-    @parallelism.setter
-    def parallelism(self, parallelism):
-        """Sets the parallelism of this CoreArrayNode.
+    @concurrency.setter
+    def concurrency(self, concurrency):
+        """Sets the concurrency of this CoreArrayNode.
 
         Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.  # noqa: E501
 
-        :param parallelism: The parallelism of this CoreArrayNode.  # noqa: E501
+        :param concurrency: The concurrency of this CoreArrayNode.  # noqa: E501
         :type: str
         """
 
-        self._parallelism = parallelism
+        self._concurrency = concurrency
 
     @property
     def size(self):

@@ -14,7 +14,7 @@ type CoreArrayNode struct {
 	// Reference to a registered task which should be called in parallel during node execution.
 	TaskReference *CoreIdentifier `json:"task_reference,omitempty"`
 	// Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an optimistic restriction and that, due to network partitioning or other failures, the actual number of currently running instances might be more. This has to be a positive number if assigned. Default value is size.
-	Parallelism string `json:"parallelism,omitempty"`
+	Concurrency string `json:"concurrency,omitempty"`
 	// Defines the number of instances to launch at most. This number should match the size of the input if the job requires processing of all input data. This has to be a positive number. In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
 	Size string `json:"size,omitempty"`
 	// The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions so that this node can be marked successful.

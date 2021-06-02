@@ -1003,8 +1003,8 @@ export namespace flyteidl {
             /** ArrayNode taskReference */
             taskReference?: (flyteidl.core.IIdentifier|null);
 
-            /** ArrayNode parallelism */
-            parallelism?: (Long|null);
+            /** ArrayNode concurrency */
+            concurrency?: (Long|null);
 
             /** ArrayNode size */
             size?: (Long|null);
@@ -1025,8 +1025,8 @@ export namespace flyteidl {
             /** ArrayNode taskReference. */
             public taskReference?: (flyteidl.core.IIdentifier|null);
 
-            /** ArrayNode parallelism. */
-            public parallelism: Long;
+            /** ArrayNode concurrency. */
+            public concurrency: Long;
 
             /** ArrayNode size. */
             public size: Long;

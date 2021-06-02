@@ -922,11 +922,11 @@ class ArrayNode final :
   ::flyteidl::core::Identifier* mutable_task_reference();
   void set_allocated_task_reference(::flyteidl::core::Identifier* task_reference);
 
-  // int64 parallelism = 2;
-  void clear_parallelism();
-  static const int kParallelismFieldNumber = 2;
-  ::google::protobuf::int64 parallelism() const;
-  void set_parallelism(::google::protobuf::int64 value);
+  // int64 concurrency = 2;
+  void clear_concurrency();
+  static const int kConcurrencyFieldNumber = 2;
+  ::google::protobuf::int64 concurrency() const;
+  void set_concurrency(::google::protobuf::int64 value);
 
   // int64 size = 3;
   void clear_size();
@@ -946,7 +946,7 @@ class ArrayNode final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::Identifier* task_reference_;
-  ::google::protobuf::int64 parallelism_;
+  ::google::protobuf::int64 concurrency_;
   ::google::protobuf::int64 size_;
   float min_success_ratio_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -2447,18 +2447,18 @@ inline void ArrayNode::set_allocated_task_reference(::flyteidl::core::Identifier
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ArrayNode.task_reference)
 }
 
-// int64 parallelism = 2;
-inline void ArrayNode::clear_parallelism() {
-  parallelism_ = PROTOBUF_LONGLONG(0);
+// int64 concurrency = 2;
+inline void ArrayNode::clear_concurrency() {
+  concurrency_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 ArrayNode::parallelism() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.parallelism)
-  return parallelism_;
+inline ::google::protobuf::int64 ArrayNode::concurrency() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ArrayNode.concurrency)
+  return concurrency_;
 }
-inline void ArrayNode::set_parallelism(::google::protobuf::int64 value) {
+inline void ArrayNode::set_concurrency(::google::protobuf::int64 value) {
   
-  parallelism_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.parallelism)
+  concurrency_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.ArrayNode.concurrency)
 }
 
 // int64 size = 3;

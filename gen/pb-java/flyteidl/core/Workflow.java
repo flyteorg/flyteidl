@@ -5123,9 +5123,9 @@ public final class Workflow {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 2;</code>
+     * <code>int64 concurrency = 2;</code>
      */
-    long getParallelism();
+    long getConcurrency();
 
     /**
      * <pre>
@@ -5206,7 +5206,7 @@ public final class Workflow {
             }
             case 16: {
 
-              parallelism_ = input.readInt64();
+              concurrency_ = input.readInt64();
               break;
             }
             case 24: {
@@ -5284,8 +5284,8 @@ public final class Workflow {
       return getTaskReference();
     }
 
-    public static final int PARALLELISM_FIELD_NUMBER = 2;
-    private long parallelism_;
+    public static final int CONCURRENCY_FIELD_NUMBER = 2;
+    private long concurrency_;
     /**
      * <pre>
      * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
@@ -5293,10 +5293,10 @@ public final class Workflow {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 2;</code>
+     * <code>int64 concurrency = 2;</code>
      */
-    public long getParallelism() {
-      return parallelism_;
+    public long getConcurrency() {
+      return concurrency_;
     }
 
     public static final int SIZE_FIELD_NUMBER = 3;
@@ -5345,8 +5345,8 @@ public final class Workflow {
       if (taskReference_ != null) {
         output.writeMessage(1, getTaskReference());
       }
-      if (parallelism_ != 0L) {
-        output.writeInt64(2, parallelism_);
+      if (concurrency_ != 0L) {
+        output.writeInt64(2, concurrency_);
       }
       if (size_ != 0L) {
         output.writeInt64(3, size_);
@@ -5367,9 +5367,9 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTaskReference());
       }
-      if (parallelism_ != 0L) {
+      if (concurrency_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, parallelism_);
+          .computeInt64Size(2, concurrency_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -5399,8 +5399,8 @@ public final class Workflow {
         if (!getTaskReference()
             .equals(other.getTaskReference())) return false;
       }
-      if (getParallelism()
-          != other.getParallelism()) return false;
+      if (getConcurrency()
+          != other.getConcurrency()) return false;
       if (getSize()
           != other.getSize()) return false;
       if (java.lang.Float.floatToIntBits(getMinSuccessRatio())
@@ -5421,9 +5421,9 @@ public final class Workflow {
         hash = (37 * hash) + TASK_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getTaskReference().hashCode();
       }
-      hash = (37 * hash) + PARALLELISM_FIELD_NUMBER;
+      hash = (37 * hash) + CONCURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getParallelism());
+          getConcurrency());
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -5573,7 +5573,7 @@ public final class Workflow {
           taskReference_ = null;
           taskReferenceBuilder_ = null;
         }
-        parallelism_ = 0L;
+        concurrency_ = 0L;
 
         size_ = 0L;
 
@@ -5610,7 +5610,7 @@ public final class Workflow {
         } else {
           result.taskReference_ = taskReferenceBuilder_.build();
         }
-        result.parallelism_ = parallelism_;
+        result.concurrency_ = concurrency_;
         result.size_ = size_;
         result.minSuccessRatio_ = minSuccessRatio_;
         onBuilt();
@@ -5664,8 +5664,8 @@ public final class Workflow {
         if (other.hasTaskReference()) {
           mergeTaskReference(other.getTaskReference());
         }
-        if (other.getParallelism() != 0L) {
-          setParallelism(other.getParallelism());
+        if (other.getConcurrency() != 0L) {
+          setConcurrency(other.getConcurrency());
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
@@ -5855,7 +5855,7 @@ public final class Workflow {
         return taskReferenceBuilder_;
       }
 
-      private long parallelism_ ;
+      private long concurrency_ ;
       /**
        * <pre>
        * Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an
@@ -5863,10 +5863,10 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>int64 concurrency = 2;</code>
        */
-      public long getParallelism() {
-        return parallelism_;
+      public long getConcurrency() {
+        return concurrency_;
       }
       /**
        * <pre>
@@ -5875,11 +5875,11 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>int64 concurrency = 2;</code>
        */
-      public Builder setParallelism(long value) {
+      public Builder setConcurrency(long value) {
         
-        parallelism_ = value;
+        concurrency_ = value;
         onChanged();
         return this;
       }
@@ -5890,11 +5890,11 @@ public final class Workflow {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 2;</code>
+       * <code>int64 concurrency = 2;</code>
        */
-      public Builder clearParallelism() {
+      public Builder clearConcurrency() {
         
-        parallelism_ = 0L;
+        concurrency_ = 0L;
         onChanged();
         return this;
       }
@@ -15812,7 +15812,7 @@ public final class Workflow {
       "_workflow_ref\030\002 \001(\0132\031.flyteidl.core.Iden" +
       "tifierH\000B\013\n\treference\"|\n\tArrayNode\0221\n\016ta" +
       "sk_reference\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifier\022\023\n\013parallelism\030\002 \001(\003\022\014\n\004size\030\003 \001(\003" +
+      "ifier\022\023\n\013concurrency\030\002 \001(\003\022\014\n\004size\030\003 \001(\003" +
       "\022\031\n\021min_success_ratio\030\004 \001(\002\"\247\001\n\014NodeMeta" +
       "data\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.go" +
       "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132" +
@@ -15902,7 +15902,7 @@ public final class Workflow {
     internal_static_flyteidl_core_ArrayNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ArrayNode_descriptor,
-        new java.lang.String[] { "TaskReference", "Parallelism", "Size", "MinSuccessRatio", });
+        new java.lang.String[] { "TaskReference", "Concurrency", "Size", "MinSuccessRatio", });
     internal_static_flyteidl_core_NodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new

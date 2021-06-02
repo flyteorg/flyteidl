@@ -2389,7 +2389,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IArrayNode
              * @property {flyteidl.core.IIdentifier|null} [taskReference] ArrayNode taskReference
-             * @property {Long|null} [parallelism] ArrayNode parallelism
+             * @property {Long|null} [concurrency] ArrayNode concurrency
              * @property {Long|null} [size] ArrayNode size
              * @property {number|null} [minSuccessRatio] ArrayNode minSuccessRatio
              */
@@ -2418,12 +2418,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ArrayNode.prototype.taskReference = null;
 
             /**
-             * ArrayNode parallelism.
-             * @member {Long} parallelism
+             * ArrayNode concurrency.
+             * @member {Long} concurrency
              * @memberof flyteidl.core.ArrayNode
              * @instance
              */
-            ArrayNode.prototype.parallelism = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            ArrayNode.prototype.concurrency = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * ArrayNode size.
@@ -2467,8 +2467,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.taskReference != null && message.hasOwnProperty("taskReference"))
                     $root.flyteidl.core.Identifier.encode(message.taskReference, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.parallelism != null && message.hasOwnProperty("parallelism"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.parallelism);
+                if (message.concurrency != null && message.hasOwnProperty("concurrency"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.concurrency);
                 if (message.size != null && message.hasOwnProperty("size"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.size);
                 if (message.minSuccessRatio != null && message.hasOwnProperty("minSuccessRatio"))
@@ -2498,7 +2498,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.taskReference = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.parallelism = reader.int64();
+                        message.concurrency = reader.int64();
                         break;
                     case 3:
                         message.size = reader.int64();
@@ -2530,9 +2530,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "taskReference." + error;
                 }
-                if (message.parallelism != null && message.hasOwnProperty("parallelism"))
-                    if (!$util.isInteger(message.parallelism) && !(message.parallelism && $util.isInteger(message.parallelism.low) && $util.isInteger(message.parallelism.high)))
-                        return "parallelism: integer|Long expected";
+                if (message.concurrency != null && message.hasOwnProperty("concurrency"))
+                    if (!$util.isInteger(message.concurrency) && !(message.concurrency && $util.isInteger(message.concurrency.low) && $util.isInteger(message.concurrency.high)))
+                        return "concurrency: integer|Long expected";
                 if (message.size != null && message.hasOwnProperty("size"))
                     if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
                         return "size: integer|Long expected";

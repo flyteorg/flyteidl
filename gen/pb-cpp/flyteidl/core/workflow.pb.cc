@@ -319,7 +319,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArrayNode, task_reference_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArrayNode, parallelism_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArrayNode, concurrency_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArrayNode, size_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ArrayNode, min_success_ratio_),
   ~0u,  // no _has_bits_
@@ -439,7 +439,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "_workflow_ref\030\002 \001(\0132\031.flyteidl.core.Iden"
   "tifierH\000B\013\n\treference\"|\n\tArrayNode\0221\n\016ta"
   "sk_reference\030\001 \001(\0132\031.flyteidl.core.Ident"
-  "ifier\022\023\n\013parallelism\030\002 \001(\003\022\014\n\004size\030\003 \001(\003"
+  "ifier\022\023\n\013concurrency\030\002 \001(\003\022\014\n\004size\030\003 \001(\003"
   "\022\031\n\021min_success_ratio\030\004 \001(\002\"\247\001\n\014NodeMeta"
   "data\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.go"
   "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132"
@@ -2495,7 +2495,7 @@ void ArrayNode::clear_task_reference() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ArrayNode::kTaskReferenceFieldNumber;
-const int ArrayNode::kParallelismFieldNumber;
+const int ArrayNode::kConcurrencyFieldNumber;
 const int ArrayNode::kSizeFieldNumber;
 const int ArrayNode::kMinSuccessRatioFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2514,9 +2514,9 @@ ArrayNode::ArrayNode(const ArrayNode& from)
   } else {
     task_reference_ = nullptr;
   }
-  ::memcpy(&parallelism_, &from.parallelism_,
+  ::memcpy(&concurrency_, &from.concurrency_,
     static_cast<size_t>(reinterpret_cast<char*>(&min_success_ratio_) -
-    reinterpret_cast<char*>(&parallelism_)) + sizeof(min_success_ratio_));
+    reinterpret_cast<char*>(&concurrency_)) + sizeof(min_success_ratio_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.ArrayNode)
 }
 
@@ -2556,9 +2556,9 @@ void ArrayNode::Clear() {
     delete task_reference_;
   }
   task_reference_ = nullptr;
-  ::memset(&parallelism_, 0, static_cast<size_t>(
+  ::memset(&concurrency_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&min_success_ratio_) -
-      reinterpret_cast<char*>(&parallelism_)) + sizeof(min_success_ratio_));
+      reinterpret_cast<char*>(&concurrency_)) + sizeof(min_success_ratio_));
   _internal_metadata_.Clear();
 }
 
@@ -2588,10 +2588,10 @@ const char* ArrayNode::_InternalParse(const char* begin, const char* end, void* 
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // int64 parallelism = 2;
+      // int64 concurrency = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_parallelism(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_concurrency(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -2650,13 +2650,13 @@ bool ArrayNode::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 parallelism = 2;
+      // int64 concurrency = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &parallelism_)));
+                 input, &concurrency_)));
         } else {
           goto handle_unusual;
         }
@@ -2722,9 +2722,9 @@ void ArrayNode::SerializeWithCachedSizes(
       1, HasBitSetters::task_reference(this), output);
   }
 
-  // int64 parallelism = 2;
-  if (this->parallelism() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->parallelism(), output);
+  // int64 concurrency = 2;
+  if (this->concurrency() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->concurrency(), output);
   }
 
   // int64 size = 3;
@@ -2757,9 +2757,9 @@ void ArrayNode::SerializeWithCachedSizes(
         1, HasBitSetters::task_reference(this), target);
   }
 
-  // int64 parallelism = 2;
-  if (this->parallelism() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->parallelism(), target);
+  // int64 concurrency = 2;
+  if (this->concurrency() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->concurrency(), target);
   }
 
   // int64 size = 3;
@@ -2800,11 +2800,11 @@ size_t ArrayNode::ByteSizeLong() const {
         *task_reference_);
   }
 
-  // int64 parallelism = 2;
-  if (this->parallelism() != 0) {
+  // int64 concurrency = 2;
+  if (this->concurrency() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->parallelism());
+        this->concurrency());
   }
 
   // int64 size = 3;
@@ -2849,8 +2849,8 @@ void ArrayNode::MergeFrom(const ArrayNode& from) {
   if (from.has_task_reference()) {
     mutable_task_reference()->::flyteidl::core::Identifier::MergeFrom(from.task_reference());
   }
-  if (from.parallelism() != 0) {
-    set_parallelism(from.parallelism());
+  if (from.concurrency() != 0) {
+    set_concurrency(from.concurrency());
   }
   if (from.size() != 0) {
     set_size(from.size());
@@ -2886,7 +2886,7 @@ void ArrayNode::InternalSwap(ArrayNode* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(task_reference_, other->task_reference_);
-  swap(parallelism_, other->parallelism_);
+  swap(concurrency_, other->concurrency_);
   swap(size_, other->size_);
   swap(min_success_ratio_, other->min_success_ratio_);
 }

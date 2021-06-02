@@ -502,7 +502,7 @@ func (m *ArrayNode) Validate() error {
 		}
 	}
 
-	// no validation rules for Parallelism
+	// no validation rules for Concurrency
 
 	// no validation rules for Size
 

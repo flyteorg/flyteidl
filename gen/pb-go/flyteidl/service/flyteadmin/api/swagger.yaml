@@ -5860,8 +5860,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -6085,8 +6085,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -6309,8 +6309,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -6716,8 +6716,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -6941,8 +6941,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -7165,8 +7165,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -7948,8 +7948,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -8173,8 +8173,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -8397,8 +8397,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -10574,8 +10574,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -10799,8 +10799,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -11023,8 +11023,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -11430,8 +11430,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -11655,8 +11655,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -11879,8 +11879,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -12662,8 +12662,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -12887,8 +12887,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -13111,8 +13111,8 @@ definitions:
                     project: "project"
                     version: "version"
                   size: "size"
-                  parallelism: "parallelism"
                   min_success_ratio: 6.0274563
+                  concurrency: "concurrency"
                 metadata:
                   retries:
                     retries: 0
@@ -13663,8 +13663,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -13888,8 +13888,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -14112,8 +14112,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -14519,8 +14519,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -14744,8 +14744,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -14968,8 +14968,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -15751,8 +15751,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -15976,8 +15976,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -16200,8 +16200,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -16688,8 +16688,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -16913,8 +16913,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -17137,8 +17137,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -17544,8 +17544,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -17769,8 +17769,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -17993,8 +17993,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -18776,8 +18776,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -19001,8 +19001,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -19225,8 +19225,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -19642,8 +19642,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -19867,8 +19867,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -20091,8 +20091,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -20498,8 +20498,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -20723,8 +20723,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -20947,8 +20947,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -21730,8 +21730,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -21955,8 +21955,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -22179,8 +22179,8 @@ definitions:
                       project: "project"
                       version: "version"
                     size: "size"
-                    parallelism: "parallelism"
                     min_success_ratio: 6.0274563
+                    concurrency: "concurrency"
                   metadata:
                     retries:
                       retries: 0
@@ -22432,7 +22432,7 @@ definitions:
         description: "Reference to a registered task which should be called in parallel\
           \ during node execution."
         $ref: "#/definitions/coreIdentifier"
-      parallelism:
+      concurrency:
         type: "string"
         format: "int64"
         description: "Defines the minimum number of instances to bring up concurrently\
@@ -22464,8 +22464,8 @@ definitions:
         project: "project"
         version: "version"
       size: "size"
-      parallelism: "parallelism"
       min_success_ratio: 6.0274563
+      concurrency: "concurrency"
   coreBinary:
     type: "object"
     properties:
@@ -23297,8 +23297,8 @@ definitions:
               project: "project"
               version: "version"
             size: "size"
-            parallelism: "parallelism"
             min_success_ratio: 6.0274563
+            concurrency: "concurrency"
           metadata:
             retries:
               retries: 0
@@ -23522,8 +23522,8 @@ definitions:
               project: "project"
               version: "version"
             size: "size"
-            parallelism: "parallelism"
             min_success_ratio: 6.0274563
+            concurrency: "concurrency"
           metadata:
             retries:
               retries: 0
@@ -23746,8 +23746,8 @@ definitions:
               project: "project"
               version: "version"
             size: "size"
-            parallelism: "parallelism"
             min_success_ratio: 6.0274563
+            concurrency: "concurrency"
           metadata:
             retries:
               retries: 0
@@ -24180,8 +24180,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -24405,8 +24405,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -24629,8 +24629,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -25036,8 +25036,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -25261,8 +25261,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -25485,8 +25485,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -26268,8 +26268,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -26493,8 +26493,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -26717,8 +26717,8 @@ definitions:
                 project: "project"
                 version: "version"
               size: "size"
-              parallelism: "parallelism"
               min_success_ratio: 6.0274563
+              concurrency: "concurrency"
             metadata:
               retries:
                 retries: 0
@@ -27679,8 +27679,8 @@ definitions:
           project: "project"
           version: "version"
         size: "size"
-        parallelism: "parallelism"
         min_success_ratio: 6.0274563
+        concurrency: "concurrency"
       metadata:
         retries:
           retries: 0
@@ -29281,8 +29281,8 @@ definitions:
             project: "project"
             version: "version"
           size: "size"
-          parallelism: "parallelism"
           min_success_ratio: 6.0274563
+          concurrency: "concurrency"
         metadata:
           retries:
             retries: 0
@@ -29506,8 +29506,8 @@ definitions:
             project: "project"
             version: "version"
           size: "size"
-          parallelism: "parallelism"
           min_success_ratio: 6.0274563
+          concurrency: "concurrency"
         metadata:
           retries:
             retries: 0
@@ -29730,8 +29730,8 @@ definitions:
             project: "project"
             version: "version"
           size: "size"
-          parallelism: "parallelism"
           min_success_ratio: 6.0274563
+          concurrency: "concurrency"
         metadata:
           retries:
             retries: 0
@@ -30360,8 +30360,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -30585,8 +30585,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -30809,8 +30809,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -31216,8 +31216,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -31441,8 +31441,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -31665,8 +31665,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -32448,8 +32448,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -32673,8 +32673,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
@@ -32897,8 +32897,8 @@ definitions:
                   project: "project"
                   version: "version"
                 size: "size"
-                parallelism: "parallelism"
                 min_success_ratio: 6.0274563
+                concurrency: "concurrency"
               metadata:
                 retries:
                   retries: 0
