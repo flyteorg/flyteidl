@@ -814,6 +814,18 @@ func (m *Node) Validate() error {
 			}
 		}
 
+	case *Node_ArrayNode:
+
+		if v, ok := interface{}(m.GetArrayNode()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NodeValidationError{
+					field:  "ArrayNode",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil

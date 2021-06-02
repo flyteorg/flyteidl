@@ -144,6 +144,9 @@ message Node {
 
         // Information about the branch node to evaluate in this node.
         BranchNode branch_node = 8;
+
+        // Information about the array job to evaluate in this node.
+        ArrayNode array_node = 16;
     }
 }
 

@@ -5852,6 +5852,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -6067,6 +6077,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -6281,6 +6301,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -6678,6 +6708,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -6893,6 +6933,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -7107,6 +7157,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -7349,8 +7409,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -7371,7 +7431,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -7536,8 +7596,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -7558,7 +7618,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -7880,6 +7940,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -8095,6 +8165,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -8309,6 +8389,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -9134,8 +9224,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -9156,7 +9246,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -9337,8 +9427,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -9359,7 +9449,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -9838,8 +9928,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -9860,7 +9950,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -10034,8 +10124,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -10056,7 +10146,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -10476,6 +10566,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -10691,6 +10791,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -10905,6 +11015,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11302,6 +11422,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11517,6 +11647,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11731,6 +11871,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11973,8 +12123,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -11995,7 +12145,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -12160,8 +12310,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -12182,7 +12332,7 @@ definitions:
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -12504,6 +12654,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -12719,6 +12879,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -12933,6 +13103,16 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  task_reference:
+                    domain: "domain"
+                    resource_type: {}
+                    name: "name"
+                    project: "project"
+                    version: "version"
+                  size: "size"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -13475,6 +13655,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -13690,6 +13880,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -13904,6 +14104,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -14301,6 +14511,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -14516,6 +14736,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -14730,6 +14960,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -14972,8 +15212,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -14994,7 +15234,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -15159,8 +15399,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -15181,7 +15421,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -15503,6 +15743,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -15718,6 +15968,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -15932,6 +16192,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -16410,6 +16680,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -16625,6 +16905,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -16839,6 +17129,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -17236,6 +17536,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -17451,6 +17761,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -17665,6 +17985,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -17907,8 +18237,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -17929,7 +18259,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -18094,8 +18424,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -18116,7 +18446,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -18438,6 +18768,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -18653,6 +18993,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -18867,6 +19217,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -19274,6 +19634,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -19489,6 +19859,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -19703,6 +20083,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -20100,6 +20490,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -20315,6 +20715,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -20529,6 +20939,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -20771,8 +21191,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -20793,7 +21213,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -20958,8 +21378,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -20980,7 +21400,7 @@ definitions:
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -21302,6 +21722,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -21517,6 +21947,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -21731,6 +22171,16 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    task_reference:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    size: "size"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -21975,6 +22425,47 @@ definitions:
     example:
       var: "var"
       alias: "alias"
+  coreArrayNode:
+    type: "object"
+    properties:
+      task_reference:
+        description: "Reference to a registered task which should be called in parallel\
+          \ during node execution."
+        $ref: "#/definitions/coreIdentifier"
+      parallelism:
+        type: "string"
+        format: "int64"
+        description: "Defines the minimum number of instances to bring up concurrently\
+          \ at any given point. Note that this is an\noptimistic restriction and that,\
+          \ due to network partitioning or other failures, the actual number of currently\n\
+          running instances might be more. This has to be a positive number if assigned.\
+          \ Default value is size."
+      size:
+        type: "string"
+        format: "int64"
+        description: "Defines the number of instances to launch at most. This number\
+          \ should match the size of the input if the job\nrequires processing of\
+          \ all input data. This has to be a positive number.\nIn the case this is\
+          \ not defined, the back-end will determine the size at run-time by reading\
+          \ the inputs."
+      min_success_ratio:
+        type: "number"
+        format: "float"
+        description: "The min_success_ratio can instead be used to determine the number\
+          \ of individual successfully-completed task executions\nso that this node\
+          \ can be marked successful."
+    description: "Configures an array job in which the node executes a task in parallel\
+      \ across a range of inputs."
+    example:
+      task_reference:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
+      size: "size"
+      parallelism: "parallelism"
+      min_success_ratio: 6.0274563
   coreBinary:
     type: "object"
     properties:
@@ -22442,8 +22933,8 @@ definitions:
           - value: "value"
             key: "key"
           ports:
-          - container_port: 6
-          - container_port: 6
+          - container_port: 1
+          - container_port: 1
           config:
           - value: "value"
             key: "key"
@@ -22464,7 +22955,7 @@ definitions:
           deprecated_error_message: "deprecated_error_message"
           interruptible: true
           timeout: "timeout"
-        task_type_version: 1
+        task_type_version: 5
         custom:
           fields:
             key:
@@ -22798,6 +23289,16 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            task_reference:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
+            size: "size"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -23013,6 +23514,16 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            task_reference:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
+            size: "size"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -23227,6 +23738,16 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            task_reference:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
+            size: "size"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -23651,6 +24172,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -23866,6 +24397,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -24080,6 +24621,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -24477,6 +25028,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -24692,6 +25253,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -24906,6 +25477,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -25148,8 +25729,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -25170,7 +25751,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -25335,8 +25916,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -25357,7 +25938,7 @@ definitions:
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -25679,6 +26260,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -25894,6 +26485,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -26108,6 +26709,16 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              task_reference:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              size: "size"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -26441,8 +27052,8 @@ definitions:
       - value: "value"
         key: "key"
       ports:
-      - container_port: 6
-      - container_port: 6
+      - container_port: 1
+      - container_port: 1
       config:
       - value: "value"
         key: "key"
@@ -26461,7 +27072,7 @@ definitions:
           \ be a valid port number, 0 < x < 65536."
     description: "Defines port properties for a container."
     example:
-      container_port: 6
+      container_port: 1
   coreDataLoadingConfig:
     type: "object"
     properties:
@@ -26978,6 +27589,9 @@ definitions:
       branch_node:
         description: "Information about the branch node to evaluate in this node."
         $ref: "#/definitions/coreBranchNode"
+      array_node:
+        description: "Information about the array job to evaluate in this node."
+        $ref: "#/definitions/coreArrayNode"
     description: "A Workflow graph Node. One unit of execution in the graph. Each\
       \ node can be linked to a Task, a Workflow or a branch\nnode."
     example:
@@ -27057,6 +27671,16 @@ definitions:
                     integer: "integer"
                   var: "var"
                 operator: {}
+      array_node:
+        task_reference:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
+        size: "size"
+        parallelism: "parallelism"
+        min_success_ratio: 6.0274563
       metadata:
         retries:
           retries: 0
@@ -28037,8 +28661,8 @@ definitions:
         - value: "value"
           key: "key"
         ports:
-        - container_port: 6
-        - container_port: 6
+        - container_port: 1
+        - container_port: 1
         config:
         - value: "value"
           key: "key"
@@ -28059,7 +28683,7 @@ definitions:
         deprecated_error_message: "deprecated_error_message"
         interruptible: true
         timeout: "timeout"
-      task_type_version: 1
+      task_type_version: 5
       custom:
         fields:
           key:
@@ -28649,6 +29273,16 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          task_reference:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
+          size: "size"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -28864,6 +29498,16 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          task_reference:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
+          size: "size"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -29078,6 +29722,16 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          task_reference:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
+          size: "size"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -29698,6 +30352,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -29913,6 +30577,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -30127,6 +30801,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -30524,6 +31208,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -30739,6 +31433,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -30953,6 +31657,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -31195,8 +31909,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -31217,7 +31931,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -31382,8 +32096,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -31404,7 +32118,7 @@ definitions:
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -31726,6 +32440,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -31941,6 +32665,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -32155,6 +32889,16 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                task_reference:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                size: "size"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0

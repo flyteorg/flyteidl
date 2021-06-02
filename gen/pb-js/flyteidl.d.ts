@@ -1224,6 +1224,9 @@ export namespace flyteidl {
 
             /** Node branchNode */
             branchNode?: (flyteidl.core.IBranchNode|null);
+
+            /** Node arrayNode */
+            arrayNode?: (flyteidl.core.IArrayNode|null);
         }
 
         /** Represents a Node. */
@@ -1259,8 +1262,11 @@ export namespace flyteidl {
             /** Node branchNode. */
             public branchNode?: (flyteidl.core.IBranchNode|null);
 
+            /** Node arrayNode. */
+            public arrayNode?: (flyteidl.core.IArrayNode|null);
+
             /** Node target. */
-            public target?: ("taskNode"|"workflowNode"|"branchNode");
+            public target?: ("taskNode"|"workflowNode"|"branchNode"|"arrayNode");
 
             /**
              * Creates a new Node instance using the specified properties.

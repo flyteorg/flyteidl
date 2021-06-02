@@ -230,6 +230,7 @@ Class | Method | HTTP request | Description
  - [ConjunctionExpressionLogicalOperator](docs/ConjunctionExpressionLogicalOperator.md)
  - [ConnectionSetIdList](docs/ConnectionSetIdList.md)
  - [CoreAlias](docs/CoreAlias.md)
+ - [CoreArrayNode](docs/CoreArrayNode.md)
  - [CoreBinary](docs/CoreBinary.md)
  - [CoreBinding](docs/CoreBinding.md)
  - [CoreBindingData](docs/CoreBindingData.md)

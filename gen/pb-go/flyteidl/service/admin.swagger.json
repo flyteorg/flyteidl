@@ -4604,6 +4604,31 @@
       },
       "description": "Links a variable to an alias."
     },
+    "coreArrayNode": {
+      "type": "object",
+      "properties": {
+        "task_reference": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Reference to a registered task which should be called in parallel during node execution."
+        },
+        "parallelism": {
+          "type": "string",
+          "format": "int64",
+          "description": "Defines the minimum number of instances to bring up concurrently at any given point. Note that this is an\noptimistic restriction and that, due to network partitioning or other failures, the actual number of currently\nrunning instances might be more. This has to be a positive number if assigned. Default value is size."
+        },
+        "size": {
+          "type": "string",
+          "format": "int64",
+          "description": "Defines the number of instances to launch at most. This number should match the size of the input if the job\nrequires processing of all input data. This has to be a positive number.\nIn the case this is not defined, the back-end will determine the size at run-time by reading the inputs."
+        },
+        "min_success_ratio": {
+          "type": "number",
+          "format": "float",
+          "description": "The min_success_ratio can instead be used to determine the number of individual successfully-completed task executions\nso that this node can be marked successful."
+        }
+      },
+      "description": "Configures an array job in which the node executes a task in parallel across a range of inputs."
+    },
     "coreBinary": {
       "type": "object",
       "properties": {
@@ -5257,6 +5282,10 @@
         "branch_node": {
           "$ref": "#/definitions/coreBranchNode",
           "description": "Information about the branch node to evaluate in this node."
+        },
+        "array_node": {
+          "$ref": "#/definitions/coreArrayNode",
+          "description": "Information about the array job to evaluate in this node."
         }
       },
       "description": "A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch\nnode."

@@ -2868,6 +2868,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ITaskNode|null} [taskNode] Node taskNode
              * @property {flyteidl.core.IWorkflowNode|null} [workflowNode] Node workflowNode
              * @property {flyteidl.core.IBranchNode|null} [branchNode] Node branchNode
+             * @property {flyteidl.core.IArrayNode|null} [arrayNode] Node arrayNode
              */
 
             /**
@@ -2952,17 +2953,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Node.prototype.branchNode = null;
 
+            /**
+             * Node arrayNode.
+             * @member {flyteidl.core.IArrayNode|null|undefined} arrayNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.arrayNode = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Node target.
-             * @member {"taskNode"|"workflowNode"|"branchNode"|undefined} target
+             * @member {"taskNode"|"workflowNode"|"branchNode"|"arrayNode"|undefined} target
              * @memberof flyteidl.core.Node
              * @instance
              */
             Object.defineProperty(Node.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode"]),
+                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "arrayNode"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -3009,6 +3018,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.WorkflowNode.encode(message.workflowNode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.branchNode != null && message.hasOwnProperty("branchNode"))
                     $root.flyteidl.core.BranchNode.encode(message.branchNode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.arrayNode != null && message.hasOwnProperty("arrayNode"))
+                    $root.flyteidl.core.ArrayNode.encode(message.arrayNode, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -3059,6 +3070,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.branchNode = $root.flyteidl.core.BranchNode.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.arrayNode = $root.flyteidl.core.ArrayNode.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3139,6 +3153,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.BranchNode.verify(message.branchNode);
                         if (error)
                             return "branchNode." + error;
+                    }
+                }
+                if (message.arrayNode != null && message.hasOwnProperty("arrayNode")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.ArrayNode.verify(message.arrayNode);
+                        if (error)
+                            return "arrayNode." + error;
                     }
                 }
                 return null;

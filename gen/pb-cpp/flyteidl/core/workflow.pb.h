@@ -1291,6 +1291,7 @@ class Node final :
     kTaskNode = 6,
     kWorkflowNode = 7,
     kBranchNode = 8,
+    kArrayNode = 16,
     TARGET_NOT_SET = 0,
   };
 
@@ -1453,6 +1454,15 @@ class Node final :
   ::flyteidl::core::BranchNode* mutable_branch_node();
   void set_allocated_branch_node(::flyteidl::core::BranchNode* branch_node);
 
+  // .flyteidl.core.ArrayNode array_node = 16;
+  bool has_array_node() const;
+  void clear_array_node();
+  static const int kArrayNodeFieldNumber = 16;
+  const ::flyteidl::core::ArrayNode& array_node() const;
+  ::flyteidl::core::ArrayNode* release_array_node();
+  ::flyteidl::core::ArrayNode* mutable_array_node();
+  void set_allocated_array_node(::flyteidl::core::ArrayNode* array_node);
+
   void clear_target();
   TargetCase target_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.Node)
@@ -1461,6 +1471,7 @@ class Node final :
   void set_has_task_node();
   void set_has_workflow_node();
   void set_has_branch_node();
+  void set_has_array_node();
 
   inline bool has_target() const;
   inline void clear_has_target();
@@ -1476,6 +1487,7 @@ class Node final :
     ::flyteidl::core::TaskNode* task_node_;
     ::flyteidl::core::WorkflowNode* workflow_node_;
     ::flyteidl::core::BranchNode* branch_node_;
+    ::flyteidl::core::ArrayNode* array_node_;
   } target_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -3128,6 +3140,47 @@ inline ::flyteidl::core::BranchNode* Node::mutable_branch_node() {
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.Node.branch_node)
   return target_.branch_node_;
+}
+
+// .flyteidl.core.ArrayNode array_node = 16;
+inline bool Node::has_array_node() const {
+  return target_case() == kArrayNode;
+}
+inline void Node::set_has_array_node() {
+  _oneof_case_[0] = kArrayNode;
+}
+inline void Node::clear_array_node() {
+  if (has_array_node()) {
+    delete target_.array_node_;
+    clear_has_target();
+  }
+}
+inline ::flyteidl::core::ArrayNode* Node::release_array_node() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Node.array_node)
+  if (has_array_node()) {
+    clear_has_target();
+      ::flyteidl::core::ArrayNode* temp = target_.array_node_;
+    target_.array_node_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::ArrayNode& Node::array_node() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Node.array_node)
+  return has_array_node()
+      ? *target_.array_node_
+      : *reinterpret_cast< ::flyteidl::core::ArrayNode*>(&::flyteidl::core::_ArrayNode_default_instance_);
+}
+inline ::flyteidl::core::ArrayNode* Node::mutable_array_node() {
+  if (!has_array_node()) {
+    clear_target();
+    set_has_array_node();
+    target_.array_node_ = CreateMaybeMessage< ::flyteidl::core::ArrayNode >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Node.array_node)
+  return target_.array_node_;
 }
 
 inline bool Node::has_target() const {

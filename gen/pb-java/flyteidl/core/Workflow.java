@@ -8319,6 +8319,31 @@ public final class Workflow {
      */
     flyteidl.core.Workflow.BranchNodeOrBuilder getBranchNodeOrBuilder();
 
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    boolean hasArrayNode();
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    flyteidl.core.Workflow.ArrayNode getArrayNode();
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    flyteidl.core.Workflow.ArrayNodeOrBuilder getArrayNodeOrBuilder();
+
     public flyteidl.core.Workflow.Node.TargetCase getTargetCase();
   }
   /**
@@ -8457,6 +8482,20 @@ public final class Workflow {
               targetCase_ = 8;
               break;
             }
+            case 130: {
+              flyteidl.core.Workflow.ArrayNode.Builder subBuilder = null;
+              if (targetCase_ == 16) {
+                subBuilder = ((flyteidl.core.Workflow.ArrayNode) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(flyteidl.core.Workflow.ArrayNode.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Workflow.ArrayNode) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 16;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8506,6 +8545,7 @@ public final class Workflow {
       TASK_NODE(6),
       WORKFLOW_NODE(7),
       BRANCH_NODE(8),
+      ARRAY_NODE(16),
       TARGET_NOT_SET(0);
       private final int value;
       private TargetCase(int value) {
@@ -8524,6 +8564,7 @@ public final class Workflow {
           case 6: return TASK_NODE;
           case 7: return WORKFLOW_NODE;
           case 8: return BRANCH_NODE;
+          case 16: return ARRAY_NODE;
           case 0: return TARGET_NOT_SET;
           default: return null;
         }
@@ -8908,6 +8949,44 @@ public final class Workflow {
       return flyteidl.core.Workflow.BranchNode.getDefaultInstance();
     }
 
+    public static final int ARRAY_NODE_FIELD_NUMBER = 16;
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    public boolean hasArrayNode() {
+      return targetCase_ == 16;
+    }
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    public flyteidl.core.Workflow.ArrayNode getArrayNode() {
+      if (targetCase_ == 16) {
+         return (flyteidl.core.Workflow.ArrayNode) target_;
+      }
+      return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Information about the array job to evaluate in this node.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+     */
+    public flyteidl.core.Workflow.ArrayNodeOrBuilder getArrayNodeOrBuilder() {
+      if (targetCase_ == 16) {
+         return (flyteidl.core.Workflow.ArrayNode) target_;
+      }
+      return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8945,6 +9024,9 @@ public final class Workflow {
       }
       if (targetCase_ == 8) {
         output.writeMessage(8, (flyteidl.core.Workflow.BranchNode) target_);
+      }
+      if (targetCase_ == 16) {
+        output.writeMessage(16, (flyteidl.core.Workflow.ArrayNode) target_);
       }
       unknownFields.writeTo(output);
     }
@@ -8990,6 +9072,10 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, (flyteidl.core.Workflow.BranchNode) target_);
       }
+      if (targetCase_ == 16) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, (flyteidl.core.Workflow.ArrayNode) target_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9031,6 +9117,10 @@ public final class Workflow {
         case 8:
           if (!getBranchNode()
               .equals(other.getBranchNode())) return false;
+          break;
+        case 16:
+          if (!getArrayNode()
+              .equals(other.getArrayNode())) return false;
           break;
         case 0:
         default:
@@ -9076,6 +9166,10 @@ public final class Workflow {
         case 8:
           hash = (37 * hash) + BRANCH_NODE_FIELD_NUMBER;
           hash = (53 * hash) + getBranchNode().hashCode();
+          break;
+        case 16:
+          hash = (37 * hash) + ARRAY_NODE_FIELD_NUMBER;
+          hash = (53 * hash) + getArrayNode().hashCode();
           break;
         case 0:
         default:
@@ -9322,6 +9416,13 @@ public final class Workflow {
             result.target_ = branchNodeBuilder_.build();
           }
         }
+        if (targetCase_ == 16) {
+          if (arrayNodeBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = arrayNodeBuilder_.build();
+          }
+        }
         result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -9452,6 +9553,10 @@ public final class Workflow {
           }
           case BRANCH_NODE: {
             mergeBranchNode(other.getBranchNode());
+            break;
+          }
+          case ARRAY_NODE: {
+            mergeArrayNode(other.getArrayNode());
             break;
           }
           case TARGET_NOT_SET: {
@@ -11090,6 +11195,178 @@ public final class Workflow {
         targetCase_ = 8;
         onChanged();;
         return branchNodeBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.ArrayNode, flyteidl.core.Workflow.ArrayNode.Builder, flyteidl.core.Workflow.ArrayNodeOrBuilder> arrayNodeBuilder_;
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public boolean hasArrayNode() {
+        return targetCase_ == 16;
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public flyteidl.core.Workflow.ArrayNode getArrayNode() {
+        if (arrayNodeBuilder_ == null) {
+          if (targetCase_ == 16) {
+            return (flyteidl.core.Workflow.ArrayNode) target_;
+          }
+          return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+        } else {
+          if (targetCase_ == 16) {
+            return arrayNodeBuilder_.getMessage();
+          }
+          return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public Builder setArrayNode(flyteidl.core.Workflow.ArrayNode value) {
+        if (arrayNodeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          target_ = value;
+          onChanged();
+        } else {
+          arrayNodeBuilder_.setMessage(value);
+        }
+        targetCase_ = 16;
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public Builder setArrayNode(
+          flyteidl.core.Workflow.ArrayNode.Builder builderForValue) {
+        if (arrayNodeBuilder_ == null) {
+          target_ = builderForValue.build();
+          onChanged();
+        } else {
+          arrayNodeBuilder_.setMessage(builderForValue.build());
+        }
+        targetCase_ = 16;
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public Builder mergeArrayNode(flyteidl.core.Workflow.ArrayNode value) {
+        if (arrayNodeBuilder_ == null) {
+          if (targetCase_ == 16 &&
+              target_ != flyteidl.core.Workflow.ArrayNode.getDefaultInstance()) {
+            target_ = flyteidl.core.Workflow.ArrayNode.newBuilder((flyteidl.core.Workflow.ArrayNode) target_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            target_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetCase_ == 16) {
+            arrayNodeBuilder_.mergeFrom(value);
+          }
+          arrayNodeBuilder_.setMessage(value);
+        }
+        targetCase_ = 16;
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public Builder clearArrayNode() {
+        if (arrayNodeBuilder_ == null) {
+          if (targetCase_ == 16) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetCase_ == 16) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          arrayNodeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public flyteidl.core.Workflow.ArrayNode.Builder getArrayNodeBuilder() {
+        return getArrayNodeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      public flyteidl.core.Workflow.ArrayNodeOrBuilder getArrayNodeOrBuilder() {
+        if ((targetCase_ == 16) && (arrayNodeBuilder_ != null)) {
+          return arrayNodeBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetCase_ == 16) {
+            return (flyteidl.core.Workflow.ArrayNode) target_;
+          }
+          return flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Information about the array job to evaluate in this node.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ArrayNode array_node = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.ArrayNode, flyteidl.core.Workflow.ArrayNode.Builder, flyteidl.core.Workflow.ArrayNodeOrBuilder> 
+          getArrayNodeFieldBuilder() {
+        if (arrayNodeBuilder_ == null) {
+          if (!(targetCase_ == 16)) {
+            target_ = flyteidl.core.Workflow.ArrayNode.getDefaultInstance();
+          }
+          arrayNodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Workflow.ArrayNode, flyteidl.core.Workflow.ArrayNode.Builder, flyteidl.core.Workflow.ArrayNodeOrBuilder>(
+                  (flyteidl.core.Workflow.ArrayNode) target_,
+                  getParentForChildren(),
+                  isClean());
+          target_ = null;
+        }
+        targetCase_ = 16;
+        onChanged();;
+        return arrayNodeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15541,7 +15818,7 @@ public final class Workflow {
       "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132" +
       "\034.flyteidl.core.RetryStrategy\022\027\n\rinterru" +
       "ptible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n" +
-      "\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004N" +
+      "\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\202\003\n\004N" +
       "ode\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyt" +
       "eidl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026" +
       ".flyteidl.core.Binding\022\031\n\021upstream_node_" +
@@ -15550,24 +15827,26 @@ public final class Workflow {
       "teidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007" +
       " \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013b" +
       "ranch_node\030\010 \001(\0132\031.flyteidl.core.BranchN" +
-      "odeH\000B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022" +
-      "quality_of_service\030\001 \001(\0132\037.flyteidl.core" +
-      ".QualityOfService\022C\n\non_failure\030\002 \001(\0162/." +
-      "flyteidl.core.WorkflowMetadata.OnFailure" +
-      "Policy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDI" +
-      "ATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_C" +
-      "OMPLETE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n" +
-      "\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplat" +
-      "e\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workf" +
-      "lowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteid" +
-      "l.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.f" +
-      "lyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fly" +
-      "teidl.core.Binding\022)\n\014failure_node\030\006 \001(\013" +
-      "2\023.flyteidl.core.Node\022B\n\021metadata_defaul" +
-      "ts\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadat" +
-      "aDefaultsB6Z4github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/coreb\006proto3"
+      "odeH\000\022.\n\narray_node\030\020 \001(\0132\030.flyteidl.cor" +
+      "e.ArrayNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMeta" +
+      "data\022;\n\022quality_of_service\030\001 \001(\0132\037.flyte" +
+      "idl.core.QualityOfService\022C\n\non_failure\030" +
+      "\002 \001(\0162/.flyteidl.core.WorkflowMetadata.O" +
+      "nFailurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAI" +
+      "L_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE" +
+      "_NODES_COMPLETE\020\001\"1\n\030WorkflowMetadataDef" +
+      "aults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020Workflo" +
+      "wTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.co" +
+      "re.WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035" +
+      ".flyteidl.core.TypedInterface\022\"\n\005nodes\030\004" +
+      " \003(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003" +
+      "(\0132\026.flyteidl.core.Binding\022)\n\014failure_no" +
+      "de\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadat" +
+      "a_defaults\030\007 \001(\0132\'.flyteidl.core.Workflo" +
+      "wMetadataDefaultsB6Z4github.com/flyteorg" +
+      "/flyteidl/gen/pb-go/flyteidl/coreb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15641,7 +15920,7 @@ public final class Workflow {
     internal_static_flyteidl_core_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Node_descriptor,
-        new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "Target", });
+        new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "ArrayNode", "Target", });
     internal_static_flyteidl_core_WorkflowMetadata_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
