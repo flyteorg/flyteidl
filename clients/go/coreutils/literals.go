@@ -2,7 +2,6 @@
 package coreutils
 
 import (
-	"encoding/json"
 	"fmt"
 	"reflect"
 	"strconv"
@@ -16,6 +15,7 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	structpb "github.com/golang/protobuf/ptypes/struct"
 	"github.com/pkg/errors"
+	googlestructpb "google.golang.org/protobuf/types/known/structpb"
 )
 
 func MakePrimitive(v interface{}) (*core.Primitive, error) {
@@ -389,6 +389,26 @@ func MakeLiteralForSimpleType(t core.SimpleType, s string) (*core.Literal, error
 	}, nil
 }
 
+func MakeLiteralForStructType(t core.SimpleType, v interface{}) (*core.Literal, error) {
+	if mapOfInterfaces, isValueMapOfInterfaces := v.(map[string]interface{}); isValueMapOfInterfaces {
+		scalar := &core.Scalar{}
+		var st  *googlestructpb.Struct
+		var err error
+		if st, err = googlestructpb.NewStruct(mapOfInterfaces); err != nil {
+			return nil, err
+		}
+		scalar.Value = &core.Scalar_Generic{
+			Generic:st,
+		}
+		return  &core.Literal{
+			Value: &core.Literal_Scalar{
+				Scalar: scalar,
+			},
+		}, nil
+	}
+	return nil, fmt.Errorf("unsupported conversion from %T to structpb", v)
+}
+
 func MustMakeLiteral(v interface{}) *core.Literal {
 	p, err := MakeLiteral(v)
 	if err != nil {
@@ -485,15 +505,10 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 	case *core.LiteralType_Simple:
 		newT := t.Type.(*core.LiteralType_Simple)
 		strValue := fmt.Sprintf("%v", v)
-		if newT.Simple == core.SimpleType_STRUCT {
-			if _, isValueStringType := v.(string); !isValueStringType {
-				byteValue, err := json.Marshal(v)
-				if err != nil {
-					return nil, fmt.Errorf("unable to marshal to json string for struct value %v", v)
-				}
-				strValue = string(byteValue)
-			}
+		if newT.Simple == core.SimpleType_STRUCT && reflect.TypeOf(v).Kind() != reflect.String {
+			return MakeLiteralForStructType(newT.Simple, v)
 		}
+		// Otherwise follow the regular path
 		lv, err := MakeLiteralForSimpleType(newT.Simple, strValue)
 		if err != nil {
 			return nil, err
