@@ -489,7 +489,7 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 			if _, isValueStringType := v.(string); !isValueStringType {
 				byteValue, err := json.Marshal(v)
 				if err != nil {
-					return nil, fmt.Errorf("unable to marshal to yaml string for struct value %v", v)
+					return nil, fmt.Errorf("unable to marshal to json string for struct value %v", v)
 				}
 				strValue = string(byteValue)
 			}
