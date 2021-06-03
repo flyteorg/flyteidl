@@ -392,15 +392,15 @@ func MakeLiteralForSimpleType(t core.SimpleType, s string) (*core.Literal, error
 func MakeLiteralForStructType(t core.SimpleType, v interface{}) (*core.Literal, error) {
 	if mapOfInterfaces, isValueMapOfInterfaces := v.(map[string]interface{}); isValueMapOfInterfaces {
 		scalar := &core.Scalar{}
-		var st  *googlestructpb.Struct
+		var st *googlestructpb.Struct
 		var err error
 		if st, err = googlestructpb.NewStruct(mapOfInterfaces); err != nil {
 			return nil, err
 		}
 		scalar.Value = &core.Scalar_Generic{
-			Generic:st,
+			Generic: st,
 		}
-		return  &core.Literal{
+		return &core.Literal{
 			Value: &core.Literal_Scalar{
 				Scalar: scalar,
 			},
