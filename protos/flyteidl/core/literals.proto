@@ -75,7 +75,53 @@ message Literal {
 
         // A map of strings to literals.
         LiteralMap map = 3;
+
+        // Supported Dense Vectors: Dense vectors are compact representation of slices or arrays of a univariate type
+        // Only some type are supported in dense vector representations. For other types, please use LiteralCollection
+
+        // DenseVector of type Int32
+        Int32Vector int32_vector = 4;
+        // DenseVector of type Int64
+        Int64Vector int_vector = 5;
+        // DenseVector of type float (32bit precision)
+        FloatVector float_vector = 6;
+        // DenseVector of type Double (64bit precision)
+        DoubleVector double_vector = 7;
+        // DenseVector of type Bool
+        BoolVector bool_vector = 8;
+        // DenseVector of type string
+        StringVector str_vector = 9;
     }
+}
+
+// Represents a list of Strings
+message StringVector {
+    repeated string values = 1;
+}
+
+// represents a list of ints of 32 bit precision
+message Int32Vector {
+    repeated int32 values = 1;
+}
+
+// represents a list of ints of 64 bit precision
+message Int64Vector {
+    repeated int64 values = 1;
+}
+
+// represents a list of floats (floating point of 32 bit precision)
+message FloatVector {
+    repeated float values = 1;
+}
+
+// represents a list of double (floating point of 64 bit precision)
+message DoubleVector {
+    repeated double values = 1;
+}
+
+// represents a list of booleans
+message BoolVector {
+    repeated bool values = 1;
 }
 
 // A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
@@ -83,7 +129,7 @@ message LiteralCollection {
     repeated Literal literals = 1;
 }
 
-// A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
+// A map of literals. This is a workaround since oneofs in proto messages cannot contain a map field.
 message LiteralMap {
     map<string, Literal> literals = 1;
 }
