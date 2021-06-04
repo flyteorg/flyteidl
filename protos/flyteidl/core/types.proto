@@ -56,6 +56,14 @@ message BlobType {
     BlobDimensionality dimensionality = 2;
 }
 
+// Enables declaring enum types, with predefined string values
+message EnumType {
+    // Predefined set of enum values
+    repeated string values = 1;
+    // default value for the enum type
+    string default_value = 2;
+}
+
 // Defines a strong type to allow type checking between interfaces.
 message LiteralType {
     oneof type {
@@ -73,6 +81,9 @@ message LiteralType {
 
         // A blob might have specialized implementation details depending on associated metadata.
         BlobType blob = 5;
+
+        // Defines an enum with pre-defined string values.
+        EnumType enum = 6;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
