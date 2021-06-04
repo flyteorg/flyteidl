@@ -3845,6 +3845,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
@@ -3922,6 +3927,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
               required: true
       spec:
@@ -4060,6 +4070,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
               required: true
         security_context:
@@ -4161,6 +4176,11 @@ definitions:
               blob:
                 dimensionality: {}
                 format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+                default_value: "default_value"
               simple: {}
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4238,6 +4258,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
             required: true
   adminLaunchPlanCreateRequest:
@@ -4304,6 +4329,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4381,6 +4411,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
                 required: true
         spec:
@@ -4519,6 +4554,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
                 required: true
           security_context:
@@ -4602,6 +4642,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4679,6 +4724,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
                 required: true
         spec:
@@ -4817,6 +4867,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
                 required: true
           security_context:
@@ -5099,6 +5154,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
             required: true
       security_context:
@@ -6471,6 +6531,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -6497,6 +6562,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -7297,6 +7367,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7323,6 +7398,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -7451,6 +7531,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7477,6 +7562,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -7638,6 +7728,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7664,6 +7759,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -8499,6 +8599,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -8525,6 +8630,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -9240,6 +9350,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -9266,6 +9381,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -9443,6 +9563,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -9469,6 +9594,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -9944,6 +10074,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -9970,6 +10105,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -10140,6 +10280,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -10166,6 +10311,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -11099,6 +11249,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -11125,6 +11280,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -11925,6 +12085,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -11951,6 +12116,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -12079,6 +12249,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -12105,6 +12280,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -12266,6 +12446,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -12292,6 +12477,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -13127,6 +13317,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -13153,6 +13348,11 @@ definitions:
                         blob:
                           dimensionality: {}
                           format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -14102,6 +14302,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -14128,6 +14333,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -14928,6 +15138,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -14954,6 +15169,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -15082,6 +15302,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -15108,6 +15333,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -15269,6 +15499,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -15295,6 +15530,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -16130,6 +16370,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -16156,6 +16401,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -17049,6 +17299,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -17075,6 +17330,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -17875,6 +18135,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -17901,6 +18166,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -18029,6 +18299,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -18055,6 +18330,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -18216,6 +18496,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -18242,6 +18527,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -19077,6 +19367,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -19103,6 +19398,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -19913,6 +20213,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -19939,6 +20244,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -20739,6 +21049,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -20765,6 +21080,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -20893,6 +21213,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -20919,6 +21244,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -21080,6 +21410,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -21106,6 +21441,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -21941,6 +22281,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -21967,6 +22312,11 @@ definitions:
                           blob:
                             dimensionality: {}
                             format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -22564,6 +22914,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
           inputs:
             variables:
@@ -22590,6 +22945,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
         config:
           key: "config"
@@ -23437,6 +23797,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
           inputs:
             variables:
@@ -23463,6 +23828,11 @@ definitions:
                   blob:
                     dimensionality: {}
                     format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                    default_value: "default_value"
                   simple: {}
       connections:
         upstream:
@@ -24290,6 +24660,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -24316,6 +24691,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -25116,6 +25496,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25142,6 +25527,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -25270,6 +25660,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25296,6 +25691,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -25457,6 +25857,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25483,6 +25888,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -26318,6 +26728,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -26344,6 +26759,11 @@ definitions:
                     blob:
                       dimensionality: {}
                       format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -26546,6 +26966,23 @@ definitions:
       output_path: "output_path"
       enabled: true
       input_path: "input_path"
+  coreEnumType:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        title: "Predefined set of enum values"
+        items:
+          type: "string"
+      default_value:
+        type: "string"
+        title: "default value for the enum type"
+    title: "Enables declaring enum types, with predefined string values"
+    example:
+      values:
+      - "values"
+      - "values"
+      default_value: "default_value"
   coreError:
     type: "object"
     properties:
@@ -26945,6 +27382,9 @@ definitions:
         description: "A blob might have specialized implementation details depending\
           \ on associated metadata."
         $ref: "#/definitions/coreBlobType"
+      enum_type:
+        description: "Defines an enum with pre-defined string values."
+        $ref: "#/definitions/coreEnumType"
       metadata:
         description: "This field contains type metadata that is descriptive of the\
           \ type, but is NOT considered in type-checking.  This might be used by\n\
@@ -26973,6 +27413,11 @@ definitions:
       blob:
         dimensionality: {}
         format: "format"
+      enum_type:
+        values:
+        - "values"
+        - "values"
+        default_value: "default_value"
       simple: {}
   coreNode:
     type: "object"
@@ -27474,6 +27919,11 @@ definitions:
           blob:
             dimensionality: {}
             format: "format"
+          enum_type:
+            values:
+            - "values"
+            - "values"
+            default_value: "default_value"
           simple: {}
       required: true
   coreParameterMap:
@@ -27558,6 +28008,11 @@ definitions:
               blob:
                 dimensionality: {}
                 format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+                default_value: "default_value"
               simple: {}
           required: true
   corePrimitive:
@@ -28159,6 +28614,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
         inputs:
           variables:
@@ -28185,6 +28645,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
       config:
         key: "config"
@@ -28265,6 +28730,11 @@ definitions:
               blob:
                 dimensionality: {}
                 format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+                default_value: "default_value"
               simple: {}
       inputs:
         variables:
@@ -28291,6 +28761,11 @@ definitions:
               blob:
                 dimensionality: {}
                 format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+                default_value: "default_value"
               simple: {}
   coreVariable:
     type: "object"
@@ -28325,6 +28800,11 @@ definitions:
         blob:
           dimensionality: {}
           format: "format"
+        enum_type:
+          values:
+          - "values"
+          - "values"
+          default_value: "default_value"
         simple: {}
   coreVariableMap:
     type: "object"
@@ -28360,6 +28840,11 @@ definitions:
             blob:
               dimensionality: {}
               format: "format"
+            enum_type:
+              values:
+              - "values"
+              - "values"
+              default_value: "default_value"
             simple: {}
   coreVoid:
     type: "object"
@@ -29288,6 +29773,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
         inputs:
           variables:
@@ -29314,6 +29804,11 @@ definitions:
                 blob:
                   dimensionality: {}
                   format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                  default_value: "default_value"
                 simple: {}
   eventExternalResourceInfo:
     type: "object"
@@ -30337,6 +30832,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -30363,6 +30863,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -31163,6 +31668,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -31189,6 +31699,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -31317,6 +31832,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -31343,6 +31863,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -31504,6 +32029,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -31530,6 +32060,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -32365,6 +32900,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -32391,6 +32931,11 @@ definitions:
                       blob:
                         dimensionality: {}
                         format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:

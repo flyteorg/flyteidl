@@ -15,7 +15,7 @@ type AdminExecutionCreateRequest struct {
 	Project string `json:"project,omitempty"`
 	// Name of the domain the execution belongs to. A domain can be considered as a subset within a specific project.
 	Domain string `json:"domain,omitempty"`
-	Name string `json:"name,omitempty"`
+	Name   string `json:"name,omitempty"`
 	// Additional fields necessary to launch the execution.
 	Spec *AdminExecutionSpec `json:"spec,omitempty"`
 	// The inputs required to start the execution. All required inputs must be included in this map. If not required and not provided, defaults apply.

@@ -9,9 +9,7 @@
 
 package flyteadmin
 
-// Refers to a the workflow the node is to execute.
-type CoreWorkflowNode struct {
-	// A globally unique identifier for the launch plan.
-	LaunchplanRef  *CoreIdentifier `json:"launchplan_ref,omitempty"`
-	SubWorkflowRef *CoreIdentifier `json:"sub_workflow_ref,omitempty"`
+type CoreEnumType struct {
+	Values       []string `json:"values,omitempty"`
+	DefaultValue string   `json:"default_value,omitempty"`
 }

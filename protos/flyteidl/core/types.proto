@@ -83,7 +83,7 @@ message LiteralType {
         BlobType blob = 5;
 
         // Defines an enum with pre-defined string values.
-        EnumType enum = 6;
+        EnumType enum_type = 7;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by

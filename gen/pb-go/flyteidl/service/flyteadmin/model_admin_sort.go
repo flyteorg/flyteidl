@@ -12,6 +12,6 @@ package flyteadmin
 // Species sort ordering in a list request.
 type AdminSort struct {
 	// Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-	Key string `json:"key,omitempty"`
+	Key       string         `json:"key,omitempty"`
 	Direction *SortDirection `json:"direction,omitempty"`
 }
