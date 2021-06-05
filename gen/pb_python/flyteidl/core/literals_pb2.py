@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\xb4\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x42\x07\n\x05value\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\xdc\x01\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\xb4\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x42\x07\n\x05value\"\xd2\x03\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12\x32\n\x0cint32_vector\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.Int32VectorH\x00\x12\x30\n\nint_vector\x18\x05 \x01(\x0b\x32\x1a.flyteidl.core.Int64VectorH\x00\x12\x32\n\x0c\x66loat_vector\x18\x06 \x01(\x0b\x32\x1a.flyteidl.core.FloatVectorH\x00\x12\x34\n\rdouble_vector\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.DoubleVectorH\x00\x12\x30\n\x0b\x62ool_vector\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BoolVectorH\x00\x12\x31\n\nstr_vector\x18\t \x01(\x0b\x32\x1b.flyteidl.core.StringVectorH\x00\x42\x07\n\x05value\"(\n\tOffloaded\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0e\n\x06\x66ormat\x18\x02 \x01(\t\"K\n\x0cStringVector\x12\x0e\n\x06values\x18\x01 \x03(\t\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"J\n\x0bInt32Vector\x12\x0e\n\x06values\x18\x01 \x03(\x05\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"J\n\x0bInt64Vector\x12\x0e\n\x06values\x18\x01 \x03(\x03\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"J\n\x0b\x46loatVector\x12\x0e\n\x06values\x18\x01 \x03(\x02\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"K\n\x0c\x44oubleVector\x12\x0e\n\x06values\x18\x01 \x03(\x01\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"I\n\nBoolVector\x12\x0e\n\x06values\x18\x01 \x03(\x08\x12+\n\toffloaded\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Offloaded\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\xdc\x01\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
 
@@ -373,6 +373,48 @@ _LITERAL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='int32_vector', full_name='flyteidl.core.Literal.int32_vector', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='int_vector', full_name='flyteidl.core.Literal.int_vector', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='float_vector', full_name='flyteidl.core.Literal.float_vector', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='double_vector', full_name='flyteidl.core.Literal.double_vector', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bool_vector', full_name='flyteidl.core.Literal.bool_vector', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='str_vector', full_name='flyteidl.core.Literal.str_vector', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -389,7 +431,273 @@ _LITERAL = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=917,
-  serialized_end=1074,
+  serialized_end=1383,
+)
+
+
+_OFFLOADED = _descriptor.Descriptor(
+  name='Offloaded',
+  full_name='flyteidl.core.Offloaded',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uri', full_name='flyteidl.core.Offloaded.uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='format', full_name='flyteidl.core.Offloaded.format', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1385,
+  serialized_end=1425,
+)
+
+
+_STRINGVECTOR = _descriptor.Descriptor(
+  name='StringVector',
+  full_name='flyteidl.core.StringVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.StringVector.values', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.StringVector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1427,
+  serialized_end=1502,
+)
+
+
+_INT32VECTOR = _descriptor.Descriptor(
+  name='Int32Vector',
+  full_name='flyteidl.core.Int32Vector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.Int32Vector.values', index=0,
+      number=1, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.Int32Vector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1504,
+  serialized_end=1578,
+)
+
+
+_INT64VECTOR = _descriptor.Descriptor(
+  name='Int64Vector',
+  full_name='flyteidl.core.Int64Vector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.Int64Vector.values', index=0,
+      number=1, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.Int64Vector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1580,
+  serialized_end=1654,
+)
+
+
+_FLOATVECTOR = _descriptor.Descriptor(
+  name='FloatVector',
+  full_name='flyteidl.core.FloatVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.FloatVector.values', index=0,
+      number=1, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.FloatVector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1656,
+  serialized_end=1730,
+)
+
+
+_DOUBLEVECTOR = _descriptor.Descriptor(
+  name='DoubleVector',
+  full_name='flyteidl.core.DoubleVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.DoubleVector.values', index=0,
+      number=1, type=1, cpp_type=5, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.DoubleVector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1732,
+  serialized_end=1807,
+)
+
+
+_BOOLVECTOR = _descriptor.Descriptor(
+  name='BoolVector',
+  full_name='flyteidl.core.BoolVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.core.BoolVector.values', index=0,
+      number=1, type=8, cpp_type=7, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offloaded', full_name='flyteidl.core.BoolVector.offloaded', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1809,
+  serialized_end=1882,
 )
 
 
@@ -419,8 +727,8 @@ _LITERALCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1137,
+  serialized_start=1884,
+  serialized_end=1945,
 )
 
 
@@ -457,8 +765,8 @@ _LITERALMAP_LITERALSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1213,
-  serialized_end=1284,
+  serialized_start=2021,
+  serialized_end=2092,
 )
 
 _LITERALMAP = _descriptor.Descriptor(
@@ -487,8 +795,8 @@ _LITERALMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1140,
-  serialized_end=1284,
+  serialized_start=1948,
+  serialized_end=2092,
 )
 
 
@@ -518,8 +826,8 @@ _BINDINGDATACOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1286,
-  serialized_end=1355,
+  serialized_start=2094,
+  serialized_end=2163,
 )
 
 
@@ -556,8 +864,8 @@ _BINDINGDATAMAP_BINDINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1439,
-  serialized_end=1514,
+  serialized_start=2247,
+  serialized_end=2322,
 )
 
 _BINDINGDATAMAP = _descriptor.Descriptor(
@@ -586,8 +894,8 @@ _BINDINGDATAMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1358,
-  serialized_end=1514,
+  serialized_start=2166,
+  serialized_end=2322,
 )
 
 
@@ -641,8 +949,8 @@ _BINDINGDATA = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.BindingData.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1517,
-  serialized_end=1737,
+  serialized_start=2325,
+  serialized_end=2545,
 )
 
 
@@ -679,8 +987,8 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1739,
-  serialized_end=1806,
+  serialized_start=2547,
+  serialized_end=2614,
 )
 
 
@@ -717,8 +1025,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1808,
-  serialized_end=1850,
+  serialized_start=2616,
+  serialized_end=2658,
 )
 
 
@@ -748,8 +1056,8 @@ _RETRYSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1852,
-  serialized_end=1884,
+  serialized_start=2660,
+  serialized_end=2692,
 )
 
 _PRIMITIVE.fields_by_name['datetime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -806,6 +1114,12 @@ _SCALAR.fields_by_name['generic'].containing_oneof = _SCALAR.oneofs_by_name['val
 _LITERAL.fields_by_name['scalar'].message_type = _SCALAR
 _LITERAL.fields_by_name['collection'].message_type = _LITERALCOLLECTION
 _LITERAL.fields_by_name['map'].message_type = _LITERALMAP
+_LITERAL.fields_by_name['int32_vector'].message_type = _INT32VECTOR
+_LITERAL.fields_by_name['int_vector'].message_type = _INT64VECTOR
+_LITERAL.fields_by_name['float_vector'].message_type = _FLOATVECTOR
+_LITERAL.fields_by_name['double_vector'].message_type = _DOUBLEVECTOR
+_LITERAL.fields_by_name['bool_vector'].message_type = _BOOLVECTOR
+_LITERAL.fields_by_name['str_vector'].message_type = _STRINGVECTOR
 _LITERAL.oneofs_by_name['value'].fields.append(
   _LITERAL.fields_by_name['scalar'])
 _LITERAL.fields_by_name['scalar'].containing_oneof = _LITERAL.oneofs_by_name['value']
@@ -815,6 +1129,30 @@ _LITERAL.fields_by_name['collection'].containing_oneof = _LITERAL.oneofs_by_name
 _LITERAL.oneofs_by_name['value'].fields.append(
   _LITERAL.fields_by_name['map'])
 _LITERAL.fields_by_name['map'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['int32_vector'])
+_LITERAL.fields_by_name['int32_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['int_vector'])
+_LITERAL.fields_by_name['int_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['float_vector'])
+_LITERAL.fields_by_name['float_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['double_vector'])
+_LITERAL.fields_by_name['double_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['bool_vector'])
+_LITERAL.fields_by_name['bool_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_LITERAL.oneofs_by_name['value'].fields.append(
+  _LITERAL.fields_by_name['str_vector'])
+_LITERAL.fields_by_name['str_vector'].containing_oneof = _LITERAL.oneofs_by_name['value']
+_STRINGVECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
+_INT32VECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
+_INT64VECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
+_FLOATVECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
+_DOUBLEVECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
+_BOOLVECTOR.fields_by_name['offloaded'].message_type = _OFFLOADED
 _LITERALCOLLECTION.fields_by_name['literals'].message_type = _LITERAL
 _LITERALMAP_LITERALSENTRY.fields_by_name['value'].message_type = _LITERAL
 _LITERALMAP_LITERALSENTRY.containing_type = _LITERALMAP
@@ -848,6 +1186,13 @@ DESCRIPTOR.message_types_by_name['Binary'] = _BINARY
 DESCRIPTOR.message_types_by_name['Schema'] = _SCHEMA
 DESCRIPTOR.message_types_by_name['Scalar'] = _SCALAR
 DESCRIPTOR.message_types_by_name['Literal'] = _LITERAL
+DESCRIPTOR.message_types_by_name['Offloaded'] = _OFFLOADED
+DESCRIPTOR.message_types_by_name['StringVector'] = _STRINGVECTOR
+DESCRIPTOR.message_types_by_name['Int32Vector'] = _INT32VECTOR
+DESCRIPTOR.message_types_by_name['Int64Vector'] = _INT64VECTOR
+DESCRIPTOR.message_types_by_name['FloatVector'] = _FLOATVECTOR
+DESCRIPTOR.message_types_by_name['DoubleVector'] = _DOUBLEVECTOR
+DESCRIPTOR.message_types_by_name['BoolVector'] = _BOOLVECTOR
 DESCRIPTOR.message_types_by_name['LiteralCollection'] = _LITERALCOLLECTION
 DESCRIPTOR.message_types_by_name['LiteralMap'] = _LITERALMAP
 DESCRIPTOR.message_types_by_name['BindingDataCollection'] = _BINDINGDATACOLLECTION
@@ -913,6 +1258,55 @@ Literal = _reflection.GeneratedProtocolMessageType('Literal', (_message.Message,
   # @@protoc_insertion_point(class_scope:flyteidl.core.Literal)
   ))
 _sym_db.RegisterMessage(Literal)
+
+Offloaded = _reflection.GeneratedProtocolMessageType('Offloaded', (_message.Message,), dict(
+  DESCRIPTOR = _OFFLOADED,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Offloaded)
+  ))
+_sym_db.RegisterMessage(Offloaded)
+
+StringVector = _reflection.GeneratedProtocolMessageType('StringVector', (_message.Message,), dict(
+  DESCRIPTOR = _STRINGVECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.StringVector)
+  ))
+_sym_db.RegisterMessage(StringVector)
+
+Int32Vector = _reflection.GeneratedProtocolMessageType('Int32Vector', (_message.Message,), dict(
+  DESCRIPTOR = _INT32VECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Int32Vector)
+  ))
+_sym_db.RegisterMessage(Int32Vector)
+
+Int64Vector = _reflection.GeneratedProtocolMessageType('Int64Vector', (_message.Message,), dict(
+  DESCRIPTOR = _INT64VECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Int64Vector)
+  ))
+_sym_db.RegisterMessage(Int64Vector)
+
+FloatVector = _reflection.GeneratedProtocolMessageType('FloatVector', (_message.Message,), dict(
+  DESCRIPTOR = _FLOATVECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.FloatVector)
+  ))
+_sym_db.RegisterMessage(FloatVector)
+
+DoubleVector = _reflection.GeneratedProtocolMessageType('DoubleVector', (_message.Message,), dict(
+  DESCRIPTOR = _DOUBLEVECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.DoubleVector)
+  ))
+_sym_db.RegisterMessage(DoubleVector)
+
+BoolVector = _reflection.GeneratedProtocolMessageType('BoolVector', (_message.Message,), dict(
+  DESCRIPTOR = _BOOLVECTOR,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.BoolVector)
+  ))
+_sym_db.RegisterMessage(BoolVector)
 
 LiteralCollection = _reflection.GeneratedProtocolMessageType('LiteralCollection', (_message.Message,), dict(
   DESCRIPTOR = _LITERALCOLLECTION,

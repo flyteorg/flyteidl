@@ -94,34 +94,53 @@ message Literal {
     }
 }
 
+message Offloaded {
+    // URI of the offloaded vector. Of the form s3://...
+    string uri = 1;
+    // Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+    string format = 2;
+}
+
 // Represents a list of Strings
 message StringVector {
     repeated string values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // represents a list of ints of 32 bit precision
 message Int32Vector {
     repeated int32 values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // represents a list of ints of 64 bit precision
 message Int64Vector {
     repeated int64 values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // represents a list of floats (floating point of 32 bit precision)
 message FloatVector {
     repeated float values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // represents a list of double (floating point of 64 bit precision)
 message DoubleVector {
     repeated double values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // represents a list of booleans
 message BoolVector {
     repeated bool values = 1;
+    // Optionally offload the vector
+    Offloaded offloaded = 2;
 }
 
 // A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.

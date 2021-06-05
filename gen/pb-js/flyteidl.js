@@ -5246,6 +5246,12 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
              * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
              * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
+             * @property {flyteidl.core.IInt32Vector|null} [int32Vector] Literal int32Vector
+             * @property {flyteidl.core.IInt64Vector|null} [intVector] Literal intVector
+             * @property {flyteidl.core.IFloatVector|null} [floatVector] Literal floatVector
+             * @property {flyteidl.core.IDoubleVector|null} [doubleVector] Literal doubleVector
+             * @property {flyteidl.core.IBoolVector|null} [boolVector] Literal boolVector
+             * @property {flyteidl.core.IStringVector|null} [strVector] Literal strVector
              */
 
             /**
@@ -5287,17 +5293,65 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Literal.prototype.map = null;
 
+            /**
+             * Literal int32Vector.
+             * @member {flyteidl.core.IInt32Vector|null|undefined} int32Vector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.int32Vector = null;
+
+            /**
+             * Literal intVector.
+             * @member {flyteidl.core.IInt64Vector|null|undefined} intVector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.intVector = null;
+
+            /**
+             * Literal floatVector.
+             * @member {flyteidl.core.IFloatVector|null|undefined} floatVector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.floatVector = null;
+
+            /**
+             * Literal doubleVector.
+             * @member {flyteidl.core.IDoubleVector|null|undefined} doubleVector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.doubleVector = null;
+
+            /**
+             * Literal boolVector.
+             * @member {flyteidl.core.IBoolVector|null|undefined} boolVector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.boolVector = null;
+
+            /**
+             * Literal strVector.
+             * @member {flyteidl.core.IStringVector|null|undefined} strVector
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.strVector = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Literal value.
-             * @member {"scalar"|"collection"|"map"|undefined} value
+             * @member {"scalar"|"collection"|"map"|"int32Vector"|"intVector"|"floatVector"|"doubleVector"|"boolVector"|"strVector"|undefined} value
              * @memberof flyteidl.core.Literal
              * @instance
              */
             Object.defineProperty(Literal.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map"]),
+                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "int32Vector", "intVector", "floatVector", "doubleVector", "boolVector", "strVector"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5331,6 +5385,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.map != null && message.hasOwnProperty("map"))
                     $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.int32Vector != null && message.hasOwnProperty("int32Vector"))
+                    $root.flyteidl.core.Int32Vector.encode(message.int32Vector, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.intVector != null && message.hasOwnProperty("intVector"))
+                    $root.flyteidl.core.Int64Vector.encode(message.intVector, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.floatVector != null && message.hasOwnProperty("floatVector"))
+                    $root.flyteidl.core.FloatVector.encode(message.floatVector, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.doubleVector != null && message.hasOwnProperty("doubleVector"))
+                    $root.flyteidl.core.DoubleVector.encode(message.doubleVector, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.boolVector != null && message.hasOwnProperty("boolVector"))
+                    $root.flyteidl.core.BoolVector.encode(message.boolVector, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.strVector != null && message.hasOwnProperty("strVector"))
+                    $root.flyteidl.core.StringVector.encode(message.strVector, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -5360,6 +5426,24 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.int32Vector = $root.flyteidl.core.Int32Vector.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.intVector = $root.flyteidl.core.Int64Vector.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.floatVector = $root.flyteidl.core.FloatVector.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.doubleVector = $root.flyteidl.core.DoubleVector.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.boolVector = $root.flyteidl.core.BoolVector.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.strVector = $root.flyteidl.core.StringVector.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5409,10 +5493,1059 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "map." + error;
                     }
                 }
+                if (message.int32Vector != null && message.hasOwnProperty("int32Vector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Int32Vector.verify(message.int32Vector);
+                        if (error)
+                            return "int32Vector." + error;
+                    }
+                }
+                if (message.intVector != null && message.hasOwnProperty("intVector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Int64Vector.verify(message.intVector);
+                        if (error)
+                            return "intVector." + error;
+                    }
+                }
+                if (message.floatVector != null && message.hasOwnProperty("floatVector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.FloatVector.verify(message.floatVector);
+                        if (error)
+                            return "floatVector." + error;
+                    }
+                }
+                if (message.doubleVector != null && message.hasOwnProperty("doubleVector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.DoubleVector.verify(message.doubleVector);
+                        if (error)
+                            return "doubleVector." + error;
+                    }
+                }
+                if (message.boolVector != null && message.hasOwnProperty("boolVector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.BoolVector.verify(message.boolVector);
+                        if (error)
+                            return "boolVector." + error;
+                    }
+                }
+                if (message.strVector != null && message.hasOwnProperty("strVector")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.StringVector.verify(message.strVector);
+                        if (error)
+                            return "strVector." + error;
+                    }
+                }
                 return null;
             };
 
             return Literal;
+        })();
+
+        core.Offloaded = (function() {
+
+            /**
+             * Properties of an Offloaded.
+             * @memberof flyteidl.core
+             * @interface IOffloaded
+             * @property {string|null} [uri] Offloaded uri
+             * @property {string|null} [format] Offloaded format
+             */
+
+            /**
+             * Constructs a new Offloaded.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Offloaded.
+             * @implements IOffloaded
+             * @constructor
+             * @param {flyteidl.core.IOffloaded=} [properties] Properties to set
+             */
+            function Offloaded(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Offloaded uri.
+             * @member {string} uri
+             * @memberof flyteidl.core.Offloaded
+             * @instance
+             */
+            Offloaded.prototype.uri = "";
+
+            /**
+             * Offloaded format.
+             * @member {string} format
+             * @memberof flyteidl.core.Offloaded
+             * @instance
+             */
+            Offloaded.prototype.format = "";
+
+            /**
+             * Creates a new Offloaded instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Offloaded
+             * @static
+             * @param {flyteidl.core.IOffloaded=} [properties] Properties to set
+             * @returns {flyteidl.core.Offloaded} Offloaded instance
+             */
+            Offloaded.create = function create(properties) {
+                return new Offloaded(properties);
+            };
+
+            /**
+             * Encodes the specified Offloaded message. Does not implicitly {@link flyteidl.core.Offloaded.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Offloaded
+             * @static
+             * @param {flyteidl.core.IOffloaded} message Offloaded message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Offloaded.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                if (message.format != null && message.hasOwnProperty("format"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.format);
+                return writer;
+            };
+
+            /**
+             * Decodes an Offloaded message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Offloaded
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Offloaded} Offloaded
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Offloaded.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Offloaded();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.uri = reader.string();
+                        break;
+                    case 2:
+                        message.format = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Offloaded message.
+             * @function verify
+             * @memberof flyteidl.core.Offloaded
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Offloaded.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    if (!$util.isString(message.uri))
+                        return "uri: string expected";
+                if (message.format != null && message.hasOwnProperty("format"))
+                    if (!$util.isString(message.format))
+                        return "format: string expected";
+                return null;
+            };
+
+            return Offloaded;
+        })();
+
+        core.StringVector = (function() {
+
+            /**
+             * Properties of a StringVector.
+             * @memberof flyteidl.core
+             * @interface IStringVector
+             * @property {Array.<string>|null} [values] StringVector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] StringVector offloaded
+             */
+
+            /**
+             * Constructs a new StringVector.
+             * @memberof flyteidl.core
+             * @classdesc Represents a StringVector.
+             * @implements IStringVector
+             * @constructor
+             * @param {flyteidl.core.IStringVector=} [properties] Properties to set
+             */
+            function StringVector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * StringVector values.
+             * @member {Array.<string>} values
+             * @memberof flyteidl.core.StringVector
+             * @instance
+             */
+            StringVector.prototype.values = $util.emptyArray;
+
+            /**
+             * StringVector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.StringVector
+             * @instance
+             */
+            StringVector.prototype.offloaded = null;
+
+            /**
+             * Creates a new StringVector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.StringVector
+             * @static
+             * @param {flyteidl.core.IStringVector=} [properties] Properties to set
+             * @returns {flyteidl.core.StringVector} StringVector instance
+             */
+            StringVector.create = function create(properties) {
+                return new StringVector(properties);
+            };
+
+            /**
+             * Encodes the specified StringVector message. Does not implicitly {@link flyteidl.core.StringVector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.StringVector
+             * @static
+             * @param {flyteidl.core.IStringVector} message StringVector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StringVector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length)
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.values[i]);
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a StringVector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.StringVector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.StringVector} StringVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StringVector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.StringVector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        message.values.push(reader.string());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a StringVector message.
+             * @function verify
+             * @memberof flyteidl.core.StringVector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            StringVector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (!$util.isString(message.values[i]))
+                            return "values: string[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return StringVector;
+        })();
+
+        core.Int32Vector = (function() {
+
+            /**
+             * Properties of an Int32Vector.
+             * @memberof flyteidl.core
+             * @interface IInt32Vector
+             * @property {Array.<number>|null} [values] Int32Vector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] Int32Vector offloaded
+             */
+
+            /**
+             * Constructs a new Int32Vector.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Int32Vector.
+             * @implements IInt32Vector
+             * @constructor
+             * @param {flyteidl.core.IInt32Vector=} [properties] Properties to set
+             */
+            function Int32Vector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Int32Vector values.
+             * @member {Array.<number>} values
+             * @memberof flyteidl.core.Int32Vector
+             * @instance
+             */
+            Int32Vector.prototype.values = $util.emptyArray;
+
+            /**
+             * Int32Vector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.Int32Vector
+             * @instance
+             */
+            Int32Vector.prototype.offloaded = null;
+
+            /**
+             * Creates a new Int32Vector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Int32Vector
+             * @static
+             * @param {flyteidl.core.IInt32Vector=} [properties] Properties to set
+             * @returns {flyteidl.core.Int32Vector} Int32Vector instance
+             */
+            Int32Vector.create = function create(properties) {
+                return new Int32Vector(properties);
+            };
+
+            /**
+             * Encodes the specified Int32Vector message. Does not implicitly {@link flyteidl.core.Int32Vector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Int32Vector
+             * @static
+             * @param {flyteidl.core.IInt32Vector} message Int32Vector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Int32Vector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.int32(message.values[i]);
+                    writer.ldelim();
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an Int32Vector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Int32Vector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Int32Vector} Int32Vector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Int32Vector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Int32Vector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        if ((tag & 7) === 2) {
+                            let end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.values.push(reader.int32());
+                        } else
+                            message.values.push(reader.int32());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Int32Vector message.
+             * @function verify
+             * @memberof flyteidl.core.Int32Vector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Int32Vector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (!$util.isInteger(message.values[i]))
+                            return "values: integer[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return Int32Vector;
+        })();
+
+        core.Int64Vector = (function() {
+
+            /**
+             * Properties of an Int64Vector.
+             * @memberof flyteidl.core
+             * @interface IInt64Vector
+             * @property {Array.<Long>|null} [values] Int64Vector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] Int64Vector offloaded
+             */
+
+            /**
+             * Constructs a new Int64Vector.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Int64Vector.
+             * @implements IInt64Vector
+             * @constructor
+             * @param {flyteidl.core.IInt64Vector=} [properties] Properties to set
+             */
+            function Int64Vector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Int64Vector values.
+             * @member {Array.<Long>} values
+             * @memberof flyteidl.core.Int64Vector
+             * @instance
+             */
+            Int64Vector.prototype.values = $util.emptyArray;
+
+            /**
+             * Int64Vector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.Int64Vector
+             * @instance
+             */
+            Int64Vector.prototype.offloaded = null;
+
+            /**
+             * Creates a new Int64Vector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Int64Vector
+             * @static
+             * @param {flyteidl.core.IInt64Vector=} [properties] Properties to set
+             * @returns {flyteidl.core.Int64Vector} Int64Vector instance
+             */
+            Int64Vector.create = function create(properties) {
+                return new Int64Vector(properties);
+            };
+
+            /**
+             * Encodes the specified Int64Vector message. Does not implicitly {@link flyteidl.core.Int64Vector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Int64Vector
+             * @static
+             * @param {flyteidl.core.IInt64Vector} message Int64Vector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Int64Vector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.int64(message.values[i]);
+                    writer.ldelim();
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an Int64Vector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Int64Vector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Int64Vector} Int64Vector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Int64Vector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Int64Vector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        if ((tag & 7) === 2) {
+                            let end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.values.push(reader.int64());
+                        } else
+                            message.values.push(reader.int64());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Int64Vector message.
+             * @function verify
+             * @memberof flyteidl.core.Int64Vector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Int64Vector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (!$util.isInteger(message.values[i]) && !(message.values[i] && $util.isInteger(message.values[i].low) && $util.isInteger(message.values[i].high)))
+                            return "values: integer|Long[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return Int64Vector;
+        })();
+
+        core.FloatVector = (function() {
+
+            /**
+             * Properties of a FloatVector.
+             * @memberof flyteidl.core
+             * @interface IFloatVector
+             * @property {Array.<number>|null} [values] FloatVector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] FloatVector offloaded
+             */
+
+            /**
+             * Constructs a new FloatVector.
+             * @memberof flyteidl.core
+             * @classdesc Represents a FloatVector.
+             * @implements IFloatVector
+             * @constructor
+             * @param {flyteidl.core.IFloatVector=} [properties] Properties to set
+             */
+            function FloatVector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FloatVector values.
+             * @member {Array.<number>} values
+             * @memberof flyteidl.core.FloatVector
+             * @instance
+             */
+            FloatVector.prototype.values = $util.emptyArray;
+
+            /**
+             * FloatVector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.FloatVector
+             * @instance
+             */
+            FloatVector.prototype.offloaded = null;
+
+            /**
+             * Creates a new FloatVector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.FloatVector
+             * @static
+             * @param {flyteidl.core.IFloatVector=} [properties] Properties to set
+             * @returns {flyteidl.core.FloatVector} FloatVector instance
+             */
+            FloatVector.create = function create(properties) {
+                return new FloatVector(properties);
+            };
+
+            /**
+             * Encodes the specified FloatVector message. Does not implicitly {@link flyteidl.core.FloatVector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.FloatVector
+             * @static
+             * @param {flyteidl.core.IFloatVector} message FloatVector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FloatVector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.float(message.values[i]);
+                    writer.ldelim();
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a FloatVector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.FloatVector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.FloatVector} FloatVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FloatVector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.FloatVector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        if ((tag & 7) === 2) {
+                            let end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.values.push(reader.float());
+                        } else
+                            message.values.push(reader.float());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FloatVector message.
+             * @function verify
+             * @memberof flyteidl.core.FloatVector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FloatVector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (typeof message.values[i] !== "number")
+                            return "values: number[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return FloatVector;
+        })();
+
+        core.DoubleVector = (function() {
+
+            /**
+             * Properties of a DoubleVector.
+             * @memberof flyteidl.core
+             * @interface IDoubleVector
+             * @property {Array.<number>|null} [values] DoubleVector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] DoubleVector offloaded
+             */
+
+            /**
+             * Constructs a new DoubleVector.
+             * @memberof flyteidl.core
+             * @classdesc Represents a DoubleVector.
+             * @implements IDoubleVector
+             * @constructor
+             * @param {flyteidl.core.IDoubleVector=} [properties] Properties to set
+             */
+            function DoubleVector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DoubleVector values.
+             * @member {Array.<number>} values
+             * @memberof flyteidl.core.DoubleVector
+             * @instance
+             */
+            DoubleVector.prototype.values = $util.emptyArray;
+
+            /**
+             * DoubleVector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.DoubleVector
+             * @instance
+             */
+            DoubleVector.prototype.offloaded = null;
+
+            /**
+             * Creates a new DoubleVector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.DoubleVector
+             * @static
+             * @param {flyteidl.core.IDoubleVector=} [properties] Properties to set
+             * @returns {flyteidl.core.DoubleVector} DoubleVector instance
+             */
+            DoubleVector.create = function create(properties) {
+                return new DoubleVector(properties);
+            };
+
+            /**
+             * Encodes the specified DoubleVector message. Does not implicitly {@link flyteidl.core.DoubleVector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.DoubleVector
+             * @static
+             * @param {flyteidl.core.IDoubleVector} message DoubleVector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DoubleVector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.double(message.values[i]);
+                    writer.ldelim();
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a DoubleVector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.DoubleVector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.DoubleVector} DoubleVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DoubleVector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.DoubleVector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        if ((tag & 7) === 2) {
+                            let end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.values.push(reader.double());
+                        } else
+                            message.values.push(reader.double());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DoubleVector message.
+             * @function verify
+             * @memberof flyteidl.core.DoubleVector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DoubleVector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (typeof message.values[i] !== "number")
+                            return "values: number[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return DoubleVector;
+        })();
+
+        core.BoolVector = (function() {
+
+            /**
+             * Properties of a BoolVector.
+             * @memberof flyteidl.core
+             * @interface IBoolVector
+             * @property {Array.<boolean>|null} [values] BoolVector values
+             * @property {flyteidl.core.IOffloaded|null} [offloaded] BoolVector offloaded
+             */
+
+            /**
+             * Constructs a new BoolVector.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BoolVector.
+             * @implements IBoolVector
+             * @constructor
+             * @param {flyteidl.core.IBoolVector=} [properties] Properties to set
+             */
+            function BoolVector(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BoolVector values.
+             * @member {Array.<boolean>} values
+             * @memberof flyteidl.core.BoolVector
+             * @instance
+             */
+            BoolVector.prototype.values = $util.emptyArray;
+
+            /**
+             * BoolVector offloaded.
+             * @member {flyteidl.core.IOffloaded|null|undefined} offloaded
+             * @memberof flyteidl.core.BoolVector
+             * @instance
+             */
+            BoolVector.prototype.offloaded = null;
+
+            /**
+             * Creates a new BoolVector instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BoolVector
+             * @static
+             * @param {flyteidl.core.IBoolVector=} [properties] Properties to set
+             * @returns {flyteidl.core.BoolVector} BoolVector instance
+             */
+            BoolVector.create = function create(properties) {
+                return new BoolVector(properties);
+            };
+
+            /**
+             * Encodes the specified BoolVector message. Does not implicitly {@link flyteidl.core.BoolVector.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BoolVector
+             * @static
+             * @param {flyteidl.core.IBoolVector} message BoolVector message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BoolVector.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (let i = 0; i < message.values.length; ++i)
+                        writer.bool(message.values[i]);
+                    writer.ldelim();
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded"))
+                    $root.flyteidl.core.Offloaded.encode(message.offloaded, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a BoolVector message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BoolVector
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BoolVector} BoolVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BoolVector.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BoolVector();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        if ((tag & 7) === 2) {
+                            let end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.values.push(reader.bool());
+                        } else
+                            message.values.push(reader.bool());
+                        break;
+                    case 2:
+                        message.offloaded = $root.flyteidl.core.Offloaded.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BoolVector message.
+             * @function verify
+             * @memberof flyteidl.core.BoolVector
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BoolVector.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i)
+                        if (typeof message.values[i] !== "boolean")
+                            return "values: boolean[] expected";
+                }
+                if (message.offloaded != null && message.hasOwnProperty("offloaded")) {
+                    let error = $root.flyteidl.core.Offloaded.verify(message.offloaded);
+                    if (error)
+                        return "offloaded." + error;
+                }
+                return null;
+            };
+
+            return BoolVector;
         })();
 
         core.LiteralCollection = (function() {

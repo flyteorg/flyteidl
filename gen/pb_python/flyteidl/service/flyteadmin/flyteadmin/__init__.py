@@ -140,6 +140,7 @@ from flyteadmin.models.core_binding_data_map import CoreBindingDataMap
 from flyteadmin.models.core_blob import CoreBlob
 from flyteadmin.models.core_blob_metadata import CoreBlobMetadata
 from flyteadmin.models.core_blob_type import CoreBlobType
+from flyteadmin.models.core_bool_vector import CoreBoolVector
 from flyteadmin.models.core_boolean_expression import CoreBooleanExpression
 from flyteadmin.models.core_branch_node import CoreBranchNode
 from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag
@@ -154,13 +155,17 @@ from flyteadmin.models.core_connection_set import CoreConnectionSet
 from flyteadmin.models.core_container import CoreContainer
 from flyteadmin.models.core_container_port import CoreContainerPort
 from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
+from flyteadmin.models.core_double_vector import CoreDoubleVector
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
+from flyteadmin.models.core_float_vector import CoreFloatVector
 from flyteadmin.models.core_io_strategy import CoreIOStrategy
 from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_identity import CoreIdentity
 from flyteadmin.models.core_if_block import CoreIfBlock
 from flyteadmin.models.core_if_else_block import CoreIfElseBlock
+from flyteadmin.models.core_int32_vector import CoreInt32Vector
+from flyteadmin.models.core_int64_vector import CoreInt64Vector
 from flyteadmin.models.core_k8s_object_metadata import CoreK8sObjectMetadata
 from flyteadmin.models.core_k8s_pod import CoreK8sPod
 from flyteadmin.models.core_key_value_pair import CoreKeyValuePair
@@ -175,6 +180,7 @@ from flyteadmin.models.core_node_metadata import CoreNodeMetadata
 from flyteadmin.models.core_o_auth2_client import CoreOAuth2Client
 from flyteadmin.models.core_o_auth2_token_request import CoreOAuth2TokenRequest
 from flyteadmin.models.core_o_auth2_token_request_type import CoreOAuth2TokenRequestType
+from flyteadmin.models.core_offloaded import CoreOffloaded
 from flyteadmin.models.core_operand import CoreOperand
 from flyteadmin.models.core_output_reference import CoreOutputReference
 from flyteadmin.models.core_parameter import CoreParameter
@@ -191,6 +197,7 @@ from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
 from flyteadmin.models.core_simple_type import CoreSimpleType
+from flyteadmin.models.core_string_vector import CoreStringVector
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase
 from flyteadmin.models.core_task_log import CoreTaskLog

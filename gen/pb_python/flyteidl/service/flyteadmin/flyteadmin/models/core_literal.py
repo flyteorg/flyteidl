@@ -16,9 +16,15 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_bool_vector import CoreBoolVector  # noqa: F401,E501
+from flyteadmin.models.core_double_vector import CoreDoubleVector  # noqa: F401,E501
+from flyteadmin.models.core_float_vector import CoreFloatVector  # noqa: F401,E501
+from flyteadmin.models.core_int32_vector import CoreInt32Vector  # noqa: F401,E501
+from flyteadmin.models.core_int64_vector import CoreInt64Vector  # noqa: F401,E501
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_scalar import CoreScalar  # noqa: F401,E501
+from flyteadmin.models.core_string_vector import CoreStringVector  # noqa: F401,E501
 
 
 class CoreLiteral(object):
@@ -37,21 +43,39 @@ class CoreLiteral(object):
     swagger_types = {
         'scalar': 'CoreScalar',
         'collection': 'CoreLiteralCollection',
-        'map': 'CoreLiteralMap'
+        'map': 'CoreLiteralMap',
+        'int32_vector': 'CoreInt32Vector',
+        'int_vector': 'CoreInt64Vector',
+        'float_vector': 'CoreFloatVector',
+        'double_vector': 'CoreDoubleVector',
+        'bool_vector': 'CoreBoolVector',
+        'str_vector': 'CoreStringVector'
     }
 
     attribute_map = {
         'scalar': 'scalar',
         'collection': 'collection',
-        'map': 'map'
+        'map': 'map',
+        'int32_vector': 'int32_vector',
+        'int_vector': 'int_vector',
+        'float_vector': 'float_vector',
+        'double_vector': 'double_vector',
+        'bool_vector': 'bool_vector',
+        'str_vector': 'str_vector'
     }
 
-    def __init__(self, scalar=None, collection=None, map=None):  # noqa: E501
+    def __init__(self, scalar=None, collection=None, map=None, int32_vector=None, int_vector=None, float_vector=None, double_vector=None, bool_vector=None, str_vector=None):  # noqa: E501
         """CoreLiteral - a model defined in Swagger"""  # noqa: E501
 
         self._scalar = None
         self._collection = None
         self._map = None
+        self._int32_vector = None
+        self._int_vector = None
+        self._float_vector = None
+        self._double_vector = None
+        self._bool_vector = None
+        self._str_vector = None
         self.discriminator = None
 
         if scalar is not None:
@@ -60,6 +84,18 @@ class CoreLiteral(object):
             self.collection = collection
         if map is not None:
             self.map = map
+        if int32_vector is not None:
+            self.int32_vector = int32_vector
+        if int_vector is not None:
+            self.int_vector = int_vector
+        if float_vector is not None:
+            self.float_vector = float_vector
+        if double_vector is not None:
+            self.double_vector = double_vector
+        if bool_vector is not None:
+            self.bool_vector = bool_vector
+        if str_vector is not None:
+            self.str_vector = str_vector
 
     @property
     def scalar(self):
@@ -129,6 +165,132 @@ class CoreLiteral(object):
         """
 
         self._map = map
+
+    @property
+    def int32_vector(self):
+        """Gets the int32_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The int32_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreInt32Vector
+        """
+        return self._int32_vector
+
+    @int32_vector.setter
+    def int32_vector(self, int32_vector):
+        """Sets the int32_vector of this CoreLiteral.
+
+
+        :param int32_vector: The int32_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreInt32Vector
+        """
+
+        self._int32_vector = int32_vector
+
+    @property
+    def int_vector(self):
+        """Gets the int_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The int_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreInt64Vector
+        """
+        return self._int_vector
+
+    @int_vector.setter
+    def int_vector(self, int_vector):
+        """Sets the int_vector of this CoreLiteral.
+
+
+        :param int_vector: The int_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreInt64Vector
+        """
+
+        self._int_vector = int_vector
+
+    @property
+    def float_vector(self):
+        """Gets the float_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The float_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreFloatVector
+        """
+        return self._float_vector
+
+    @float_vector.setter
+    def float_vector(self, float_vector):
+        """Sets the float_vector of this CoreLiteral.
+
+
+        :param float_vector: The float_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreFloatVector
+        """
+
+        self._float_vector = float_vector
+
+    @property
+    def double_vector(self):
+        """Gets the double_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The double_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreDoubleVector
+        """
+        return self._double_vector
+
+    @double_vector.setter
+    def double_vector(self, double_vector):
+        """Sets the double_vector of this CoreLiteral.
+
+
+        :param double_vector: The double_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreDoubleVector
+        """
+
+        self._double_vector = double_vector
+
+    @property
+    def bool_vector(self):
+        """Gets the bool_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The bool_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreBoolVector
+        """
+        return self._bool_vector
+
+    @bool_vector.setter
+    def bool_vector(self, bool_vector):
+        """Sets the bool_vector of this CoreLiteral.
+
+
+        :param bool_vector: The bool_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreBoolVector
+        """
+
+        self._bool_vector = bool_vector
+
+    @property
+    def str_vector(self):
+        """Gets the str_vector of this CoreLiteral.  # noqa: E501
+
+
+        :return: The str_vector of this CoreLiteral.  # noqa: E501
+        :rtype: CoreStringVector
+        """
+        return self._str_vector
+
+    @str_vector.setter
+    def str_vector(self, str_vector):
+        """Sets the str_vector of this CoreLiteral.
+
+
+        :param str_vector: The str_vector of this CoreLiteral.  # noqa: E501
+        :type: CoreStringVector
+        """
+
+        self._str_vector = str_vector
 
     def to_dict(self):
         """Returns the model properties as a dict"""
