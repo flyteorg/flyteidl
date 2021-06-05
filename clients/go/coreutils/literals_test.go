@@ -600,7 +600,7 @@ func TestMakeLiteralForType(t *testing.T) {
 		v, err := MakeLiteralForType(literalType, nil)
 		assert.NoError(t, err)
 		assert.Equal(t, expected, v)
-		v, err = MakeLiteralForType(literalType, "")
+		_, err = MakeLiteralForType(literalType, "")
 		assert.Error(t, err)
 	})
 
@@ -611,7 +611,7 @@ func TestMakeLiteralForType(t *testing.T) {
 		v, err := MakeLiteralForType(literalType, "x")
 		assert.NoError(t, err)
 		assert.Equal(t, expected, v)
-		v, err = MakeLiteralForType(literalType, "")
+		_, err = MakeLiteralForType(literalType, "")
 		assert.Error(t, err)
 	})
 
