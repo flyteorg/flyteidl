@@ -48,7 +48,7 @@ struct TableStruct_flyteidl_2fcore_2fliterals_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[18]
+  static const ::google::protobuf::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -81,6 +81,21 @@ extern BlobDefaultTypeInternal _Blob_default_instance_;
 class BlobMetadata;
 class BlobMetadataDefaultTypeInternal;
 extern BlobMetadataDefaultTypeInternal _BlobMetadata_default_instance_;
+class BoolVector;
+class BoolVectorDefaultTypeInternal;
+extern BoolVectorDefaultTypeInternal _BoolVector_default_instance_;
+class DoubleVector;
+class DoubleVectorDefaultTypeInternal;
+extern DoubleVectorDefaultTypeInternal _DoubleVector_default_instance_;
+class FloatVector;
+class FloatVectorDefaultTypeInternal;
+extern FloatVectorDefaultTypeInternal _FloatVector_default_instance_;
+class Int32Vector;
+class Int32VectorDefaultTypeInternal;
+extern Int32VectorDefaultTypeInternal _Int32Vector_default_instance_;
+class Int64Vector;
+class Int64VectorDefaultTypeInternal;
+extern Int64VectorDefaultTypeInternal _Int64Vector_default_instance_;
 class KeyValuePair;
 class KeyValuePairDefaultTypeInternal;
 extern KeyValuePairDefaultTypeInternal _KeyValuePair_default_instance_;
@@ -96,6 +111,9 @@ extern LiteralMapDefaultTypeInternal _LiteralMap_default_instance_;
 class LiteralMap_LiteralsEntry_DoNotUse;
 class LiteralMap_LiteralsEntry_DoNotUseDefaultTypeInternal;
 extern LiteralMap_LiteralsEntry_DoNotUseDefaultTypeInternal _LiteralMap_LiteralsEntry_DoNotUse_default_instance_;
+class Offloaded;
+class OffloadedDefaultTypeInternal;
+extern OffloadedDefaultTypeInternal _Offloaded_default_instance_;
 class Primitive;
 class PrimitiveDefaultTypeInternal;
 extern PrimitiveDefaultTypeInternal _Primitive_default_instance_;
@@ -108,6 +126,9 @@ extern ScalarDefaultTypeInternal _Scalar_default_instance_;
 class Schema;
 class SchemaDefaultTypeInternal;
 extern SchemaDefaultTypeInternal _Schema_default_instance_;
+class StringVector;
+class StringVectorDefaultTypeInternal;
+extern StringVectorDefaultTypeInternal _StringVector_default_instance_;
 class Void;
 class VoidDefaultTypeInternal;
 extern VoidDefaultTypeInternal _Void_default_instance_;
@@ -123,15 +144,22 @@ template<> ::flyteidl::core::BindingDataMap* Arena::CreateMaybeMessage<::flyteid
 template<> ::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::Blob* Arena::CreateMaybeMessage<::flyteidl::core::Blob>(Arena*);
 template<> ::flyteidl::core::BlobMetadata* Arena::CreateMaybeMessage<::flyteidl::core::BlobMetadata>(Arena*);
+template<> ::flyteidl::core::BoolVector* Arena::CreateMaybeMessage<::flyteidl::core::BoolVector>(Arena*);
+template<> ::flyteidl::core::DoubleVector* Arena::CreateMaybeMessage<::flyteidl::core::DoubleVector>(Arena*);
+template<> ::flyteidl::core::FloatVector* Arena::CreateMaybeMessage<::flyteidl::core::FloatVector>(Arena*);
+template<> ::flyteidl::core::Int32Vector* Arena::CreateMaybeMessage<::flyteidl::core::Int32Vector>(Arena*);
+template<> ::flyteidl::core::Int64Vector* Arena::CreateMaybeMessage<::flyteidl::core::Int64Vector>(Arena*);
 template<> ::flyteidl::core::KeyValuePair* Arena::CreateMaybeMessage<::flyteidl::core::KeyValuePair>(Arena*);
 template<> ::flyteidl::core::Literal* Arena::CreateMaybeMessage<::flyteidl::core::Literal>(Arena*);
 template<> ::flyteidl::core::LiteralCollection* Arena::CreateMaybeMessage<::flyteidl::core::LiteralCollection>(Arena*);
 template<> ::flyteidl::core::LiteralMap* Arena::CreateMaybeMessage<::flyteidl::core::LiteralMap>(Arena*);
 template<> ::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse>(Arena*);
+template<> ::flyteidl::core::Offloaded* Arena::CreateMaybeMessage<::flyteidl::core::Offloaded>(Arena*);
 template<> ::flyteidl::core::Primitive* Arena::CreateMaybeMessage<::flyteidl::core::Primitive>(Arena*);
 template<> ::flyteidl::core::RetryStrategy* Arena::CreateMaybeMessage<::flyteidl::core::RetryStrategy>(Arena*);
 template<> ::flyteidl::core::Scalar* Arena::CreateMaybeMessage<::flyteidl::core::Scalar>(Arena*);
 template<> ::flyteidl::core::Schema* Arena::CreateMaybeMessage<::flyteidl::core::Schema>(Arena*);
+template<> ::flyteidl::core::StringVector* Arena::CreateMaybeMessage<::flyteidl::core::StringVector>(Arena*);
 template<> ::flyteidl::core::Void* Arena::CreateMaybeMessage<::flyteidl::core::Void>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -1193,6 +1221,12 @@ class Literal final :
     kScalar = 1,
     kCollection = 2,
     kMap = 3,
+    kInt32Vector = 4,
+    kIntVector = 5,
+    kFloatVector = 6,
+    kDoubleVector = 7,
+    kBoolVector = 8,
+    kStrVector = 9,
     VALUE_NOT_SET = 0,
   };
 
@@ -1286,6 +1320,60 @@ class Literal final :
   ::flyteidl::core::LiteralMap* mutable_map();
   void set_allocated_map(::flyteidl::core::LiteralMap* map);
 
+  // .flyteidl.core.Int32Vector int32_vector = 4;
+  bool has_int32_vector() const;
+  void clear_int32_vector();
+  static const int kInt32VectorFieldNumber = 4;
+  const ::flyteidl::core::Int32Vector& int32_vector() const;
+  ::flyteidl::core::Int32Vector* release_int32_vector();
+  ::flyteidl::core::Int32Vector* mutable_int32_vector();
+  void set_allocated_int32_vector(::flyteidl::core::Int32Vector* int32_vector);
+
+  // .flyteidl.core.Int64Vector int_vector = 5;
+  bool has_int_vector() const;
+  void clear_int_vector();
+  static const int kIntVectorFieldNumber = 5;
+  const ::flyteidl::core::Int64Vector& int_vector() const;
+  ::flyteidl::core::Int64Vector* release_int_vector();
+  ::flyteidl::core::Int64Vector* mutable_int_vector();
+  void set_allocated_int_vector(::flyteidl::core::Int64Vector* int_vector);
+
+  // .flyteidl.core.FloatVector float_vector = 6;
+  bool has_float_vector() const;
+  void clear_float_vector();
+  static const int kFloatVectorFieldNumber = 6;
+  const ::flyteidl::core::FloatVector& float_vector() const;
+  ::flyteidl::core::FloatVector* release_float_vector();
+  ::flyteidl::core::FloatVector* mutable_float_vector();
+  void set_allocated_float_vector(::flyteidl::core::FloatVector* float_vector);
+
+  // .flyteidl.core.DoubleVector double_vector = 7;
+  bool has_double_vector() const;
+  void clear_double_vector();
+  static const int kDoubleVectorFieldNumber = 7;
+  const ::flyteidl::core::DoubleVector& double_vector() const;
+  ::flyteidl::core::DoubleVector* release_double_vector();
+  ::flyteidl::core::DoubleVector* mutable_double_vector();
+  void set_allocated_double_vector(::flyteidl::core::DoubleVector* double_vector);
+
+  // .flyteidl.core.BoolVector bool_vector = 8;
+  bool has_bool_vector() const;
+  void clear_bool_vector();
+  static const int kBoolVectorFieldNumber = 8;
+  const ::flyteidl::core::BoolVector& bool_vector() const;
+  ::flyteidl::core::BoolVector* release_bool_vector();
+  ::flyteidl::core::BoolVector* mutable_bool_vector();
+  void set_allocated_bool_vector(::flyteidl::core::BoolVector* bool_vector);
+
+  // .flyteidl.core.StringVector str_vector = 9;
+  bool has_str_vector() const;
+  void clear_str_vector();
+  static const int kStrVectorFieldNumber = 9;
+  const ::flyteidl::core::StringVector& str_vector() const;
+  ::flyteidl::core::StringVector* release_str_vector();
+  ::flyteidl::core::StringVector* mutable_str_vector();
+  void set_allocated_str_vector(::flyteidl::core::StringVector* str_vector);
+
   void clear_value();
   ValueCase value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.Literal)
@@ -1294,6 +1382,12 @@ class Literal final :
   void set_has_scalar();
   void set_has_collection();
   void set_has_map();
+  void set_has_int32_vector();
+  void set_has_int_vector();
+  void set_has_float_vector();
+  void set_has_double_vector();
+  void set_has_bool_vector();
+  void set_has_str_vector();
 
   inline bool has_value() const;
   inline void clear_has_value();
@@ -1304,10 +1398,934 @@ class Literal final :
     ::flyteidl::core::Scalar* scalar_;
     ::flyteidl::core::LiteralCollection* collection_;
     ::flyteidl::core::LiteralMap* map_;
+    ::flyteidl::core::Int32Vector* int32_vector_;
+    ::flyteidl::core::Int64Vector* int_vector_;
+    ::flyteidl::core::FloatVector* float_vector_;
+    ::flyteidl::core::DoubleVector* double_vector_;
+    ::flyteidl::core::BoolVector* bool_vector_;
+    ::flyteidl::core::StringVector* str_vector_;
   } value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
 
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Offloaded final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Offloaded) */ {
+ public:
+  Offloaded();
+  virtual ~Offloaded();
+
+  Offloaded(const Offloaded& from);
+
+  inline Offloaded& operator=(const Offloaded& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Offloaded(Offloaded&& from) noexcept
+    : Offloaded() {
+    *this = ::std::move(from);
+  }
+
+  inline Offloaded& operator=(Offloaded&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Offloaded& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Offloaded* internal_default_instance() {
+    return reinterpret_cast<const Offloaded*>(
+               &_Offloaded_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(Offloaded* other);
+  friend void swap(Offloaded& a, Offloaded& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Offloaded* New() const final {
+    return CreateMaybeMessage<Offloaded>(nullptr);
+  }
+
+  Offloaded* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Offloaded>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Offloaded& from);
+  void MergeFrom(const Offloaded& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Offloaded* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string uri = 1;
+  void clear_uri();
+  static const int kUriFieldNumber = 1;
+  const ::std::string& uri() const;
+  void set_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_uri(::std::string&& value);
+  #endif
+  void set_uri(const char* value);
+  void set_uri(const char* value, size_t size);
+  ::std::string* mutable_uri();
+  ::std::string* release_uri();
+  void set_allocated_uri(::std::string* uri);
+
+  // string format = 2;
+  void clear_format();
+  static const int kFormatFieldNumber = 2;
+  const ::std::string& format() const;
+  void set_format(const ::std::string& value);
+  #if LANG_CXX11
+  void set_format(::std::string&& value);
+  #endif
+  void set_format(const char* value);
+  void set_format(const char* value, size_t size);
+  ::std::string* mutable_format();
+  ::std::string* release_format();
+  void set_allocated_format(::std::string* format);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Offloaded)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr uri_;
+  ::google::protobuf::internal::ArenaStringPtr format_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StringVector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.StringVector) */ {
+ public:
+  StringVector();
+  virtual ~StringVector();
+
+  StringVector(const StringVector& from);
+
+  inline StringVector& operator=(const StringVector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StringVector(StringVector&& from) noexcept
+    : StringVector() {
+    *this = ::std::move(from);
+  }
+
+  inline StringVector& operator=(StringVector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const StringVector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StringVector* internal_default_instance() {
+    return reinterpret_cast<const StringVector*>(
+               &_StringVector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(StringVector* other);
+  friend void swap(StringVector& a, StringVector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StringVector* New() const final {
+    return CreateMaybeMessage<StringVector>(nullptr);
+  }
+
+  StringVector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StringVector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StringVector& from);
+  void MergeFrom(const StringVector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StringVector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  const ::std::string& values(int index) const;
+  ::std::string* mutable_values(int index);
+  void set_values(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_values(int index, ::std::string&& value);
+  #endif
+  void set_values(int index, const char* value);
+  void set_values(int index, const char* value, size_t size);
+  ::std::string* add_values();
+  void add_values(const ::std::string& value);
+  #if LANG_CXX11
+  void add_values(::std::string&& value);
+  #endif
+  void add_values(const char* value);
+  void add_values(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& values() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.StringVector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> values_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Int32Vector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Int32Vector) */ {
+ public:
+  Int32Vector();
+  virtual ~Int32Vector();
+
+  Int32Vector(const Int32Vector& from);
+
+  inline Int32Vector& operator=(const Int32Vector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Int32Vector(Int32Vector&& from) noexcept
+    : Int32Vector() {
+    *this = ::std::move(from);
+  }
+
+  inline Int32Vector& operator=(Int32Vector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Int32Vector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Int32Vector* internal_default_instance() {
+    return reinterpret_cast<const Int32Vector*>(
+               &_Int32Vector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(Int32Vector* other);
+  friend void swap(Int32Vector& a, Int32Vector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Int32Vector* New() const final {
+    return CreateMaybeMessage<Int32Vector>(nullptr);
+  }
+
+  Int32Vector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Int32Vector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Int32Vector& from);
+  void MergeFrom(const Int32Vector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Int32Vector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated int32 values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  ::google::protobuf::int32 values(int index) const;
+  void set_values(int index, ::google::protobuf::int32 value);
+  void add_values(::google::protobuf::int32 value);
+  const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      values() const;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Int32Vector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > values_;
+  mutable std::atomic<int> _values_cached_byte_size_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Int64Vector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Int64Vector) */ {
+ public:
+  Int64Vector();
+  virtual ~Int64Vector();
+
+  Int64Vector(const Int64Vector& from);
+
+  inline Int64Vector& operator=(const Int64Vector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Int64Vector(Int64Vector&& from) noexcept
+    : Int64Vector() {
+    *this = ::std::move(from);
+  }
+
+  inline Int64Vector& operator=(Int64Vector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Int64Vector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Int64Vector* internal_default_instance() {
+    return reinterpret_cast<const Int64Vector*>(
+               &_Int64Vector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(Int64Vector* other);
+  friend void swap(Int64Vector& a, Int64Vector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Int64Vector* New() const final {
+    return CreateMaybeMessage<Int64Vector>(nullptr);
+  }
+
+  Int64Vector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Int64Vector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Int64Vector& from);
+  void MergeFrom(const Int64Vector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Int64Vector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated int64 values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  ::google::protobuf::int64 values(int index) const;
+  void set_values(int index, ::google::protobuf::int64 value);
+  void add_values(::google::protobuf::int64 value);
+  const ::google::protobuf::RepeatedField< ::google::protobuf::int64 >&
+      values() const;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
+      mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Int64Vector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int64 > values_;
+  mutable std::atomic<int> _values_cached_byte_size_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FloatVector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.FloatVector) */ {
+ public:
+  FloatVector();
+  virtual ~FloatVector();
+
+  FloatVector(const FloatVector& from);
+
+  inline FloatVector& operator=(const FloatVector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  FloatVector(FloatVector&& from) noexcept
+    : FloatVector() {
+    *this = ::std::move(from);
+  }
+
+  inline FloatVector& operator=(FloatVector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const FloatVector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FloatVector* internal_default_instance() {
+    return reinterpret_cast<const FloatVector*>(
+               &_FloatVector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(FloatVector* other);
+  friend void swap(FloatVector& a, FloatVector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FloatVector* New() const final {
+    return CreateMaybeMessage<FloatVector>(nullptr);
+  }
+
+  FloatVector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FloatVector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const FloatVector& from);
+  void MergeFrom(const FloatVector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FloatVector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated float values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  float values(int index) const;
+  void set_values(int index, float value);
+  void add_values(float value);
+  const ::google::protobuf::RepeatedField< float >&
+      values() const;
+  ::google::protobuf::RepeatedField< float >*
+      mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.FloatVector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< float > values_;
+  mutable std::atomic<int> _values_cached_byte_size_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DoubleVector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.DoubleVector) */ {
+ public:
+  DoubleVector();
+  virtual ~DoubleVector();
+
+  DoubleVector(const DoubleVector& from);
+
+  inline DoubleVector& operator=(const DoubleVector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DoubleVector(DoubleVector&& from) noexcept
+    : DoubleVector() {
+    *this = ::std::move(from);
+  }
+
+  inline DoubleVector& operator=(DoubleVector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DoubleVector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DoubleVector* internal_default_instance() {
+    return reinterpret_cast<const DoubleVector*>(
+               &_DoubleVector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(DoubleVector* other);
+  friend void swap(DoubleVector& a, DoubleVector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DoubleVector* New() const final {
+    return CreateMaybeMessage<DoubleVector>(nullptr);
+  }
+
+  DoubleVector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DoubleVector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DoubleVector& from);
+  void MergeFrom(const DoubleVector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DoubleVector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated double values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  double values(int index) const;
+  void set_values(int index, double value);
+  void add_values(double value);
+  const ::google::protobuf::RepeatedField< double >&
+      values() const;
+  ::google::protobuf::RepeatedField< double >*
+      mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.DoubleVector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< double > values_;
+  mutable std::atomic<int> _values_cached_byte_size_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BoolVector final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.BoolVector) */ {
+ public:
+  BoolVector();
+  virtual ~BoolVector();
+
+  BoolVector(const BoolVector& from);
+
+  inline BoolVector& operator=(const BoolVector& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  BoolVector(BoolVector&& from) noexcept
+    : BoolVector() {
+    *this = ::std::move(from);
+  }
+
+  inline BoolVector& operator=(BoolVector&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const BoolVector& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BoolVector* internal_default_instance() {
+    return reinterpret_cast<const BoolVector*>(
+               &_BoolVector_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(BoolVector* other);
+  friend void swap(BoolVector& a, BoolVector& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BoolVector* New() const final {
+    return CreateMaybeMessage<BoolVector>(nullptr);
+  }
+
+  BoolVector* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<BoolVector>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const BoolVector& from);
+  void MergeFrom(const BoolVector& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BoolVector* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated bool values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  bool values(int index) const;
+  void set_values(int index, bool value);
+  void add_values(bool value);
+  const ::google::protobuf::RepeatedField< bool >&
+      values() const;
+  ::google::protobuf::RepeatedField< bool >*
+      mutable_values();
+
+  // .flyteidl.core.Offloaded offloaded = 2;
+  bool has_offloaded() const;
+  void clear_offloaded();
+  static const int kOffloadedFieldNumber = 2;
+  const ::flyteidl::core::Offloaded& offloaded() const;
+  ::flyteidl::core::Offloaded* release_offloaded();
+  ::flyteidl::core::Offloaded* mutable_offloaded();
+  void set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.BoolVector)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< bool > values_;
+  mutable std::atomic<int> _values_cached_byte_size_;
+  ::flyteidl::core::Offloaded* offloaded_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1350,7 +2368,7 @@ class LiteralCollection final :
                &_LiteralCollection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    15;
 
   void Swap(LiteralCollection* other);
   friend void swap(LiteralCollection& a, LiteralCollection& b) {
@@ -1492,7 +2510,7 @@ class LiteralMap final :
                &_LiteralMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    17;
 
   void Swap(LiteralMap* other);
   friend void swap(LiteralMap& a, LiteralMap& b) {
@@ -1613,7 +2631,7 @@ class BindingDataCollection final :
                &_BindingDataCollection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    18;
 
   void Swap(BindingDataCollection* other);
   friend void swap(BindingDataCollection& a, BindingDataCollection& b) {
@@ -1755,7 +2773,7 @@ class BindingDataMap final :
                &_BindingDataMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    20;
 
   void Swap(BindingDataMap* other);
   friend void swap(BindingDataMap& a, BindingDataMap& b) {
@@ -1884,7 +2902,7 @@ class BindingData final :
                &_BindingData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    21;
 
   void Swap(BindingData* other);
   friend void swap(BindingData& a, BindingData& b) {
@@ -2043,7 +3061,7 @@ class Binding final :
                &_Binding_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    22;
 
   void Swap(Binding* other);
   friend void swap(Binding& a, Binding& b) {
@@ -2173,7 +3191,7 @@ class KeyValuePair final :
                &_KeyValuePair_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    23;
 
   void Swap(KeyValuePair* other);
   friend void swap(KeyValuePair& a, KeyValuePair& b) {
@@ -2308,7 +3326,7 @@ class RetryStrategy final :
                &_RetryStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    24;
 
   void Swap(RetryStrategy* other);
   friend void swap(RetryStrategy& a, RetryStrategy& b) {
@@ -3437,6 +4455,252 @@ inline ::flyteidl::core::LiteralMap* Literal::mutable_map() {
   return value_.map_;
 }
 
+// .flyteidl.core.Int32Vector int32_vector = 4;
+inline bool Literal::has_int32_vector() const {
+  return value_case() == kInt32Vector;
+}
+inline void Literal::set_has_int32_vector() {
+  _oneof_case_[0] = kInt32Vector;
+}
+inline void Literal::clear_int32_vector() {
+  if (has_int32_vector()) {
+    delete value_.int32_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::Int32Vector* Literal::release_int32_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.int32_vector)
+  if (has_int32_vector()) {
+    clear_has_value();
+      ::flyteidl::core::Int32Vector* temp = value_.int32_vector_;
+    value_.int32_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Int32Vector& Literal::int32_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.int32_vector)
+  return has_int32_vector()
+      ? *value_.int32_vector_
+      : *reinterpret_cast< ::flyteidl::core::Int32Vector*>(&::flyteidl::core::_Int32Vector_default_instance_);
+}
+inline ::flyteidl::core::Int32Vector* Literal::mutable_int32_vector() {
+  if (!has_int32_vector()) {
+    clear_value();
+    set_has_int32_vector();
+    value_.int32_vector_ = CreateMaybeMessage< ::flyteidl::core::Int32Vector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.int32_vector)
+  return value_.int32_vector_;
+}
+
+// .flyteidl.core.Int64Vector int_vector = 5;
+inline bool Literal::has_int_vector() const {
+  return value_case() == kIntVector;
+}
+inline void Literal::set_has_int_vector() {
+  _oneof_case_[0] = kIntVector;
+}
+inline void Literal::clear_int_vector() {
+  if (has_int_vector()) {
+    delete value_.int_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::Int64Vector* Literal::release_int_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.int_vector)
+  if (has_int_vector()) {
+    clear_has_value();
+      ::flyteidl::core::Int64Vector* temp = value_.int_vector_;
+    value_.int_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Int64Vector& Literal::int_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.int_vector)
+  return has_int_vector()
+      ? *value_.int_vector_
+      : *reinterpret_cast< ::flyteidl::core::Int64Vector*>(&::flyteidl::core::_Int64Vector_default_instance_);
+}
+inline ::flyteidl::core::Int64Vector* Literal::mutable_int_vector() {
+  if (!has_int_vector()) {
+    clear_value();
+    set_has_int_vector();
+    value_.int_vector_ = CreateMaybeMessage< ::flyteidl::core::Int64Vector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.int_vector)
+  return value_.int_vector_;
+}
+
+// .flyteidl.core.FloatVector float_vector = 6;
+inline bool Literal::has_float_vector() const {
+  return value_case() == kFloatVector;
+}
+inline void Literal::set_has_float_vector() {
+  _oneof_case_[0] = kFloatVector;
+}
+inline void Literal::clear_float_vector() {
+  if (has_float_vector()) {
+    delete value_.float_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::FloatVector* Literal::release_float_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.float_vector)
+  if (has_float_vector()) {
+    clear_has_value();
+      ::flyteidl::core::FloatVector* temp = value_.float_vector_;
+    value_.float_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::FloatVector& Literal::float_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.float_vector)
+  return has_float_vector()
+      ? *value_.float_vector_
+      : *reinterpret_cast< ::flyteidl::core::FloatVector*>(&::flyteidl::core::_FloatVector_default_instance_);
+}
+inline ::flyteidl::core::FloatVector* Literal::mutable_float_vector() {
+  if (!has_float_vector()) {
+    clear_value();
+    set_has_float_vector();
+    value_.float_vector_ = CreateMaybeMessage< ::flyteidl::core::FloatVector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.float_vector)
+  return value_.float_vector_;
+}
+
+// .flyteidl.core.DoubleVector double_vector = 7;
+inline bool Literal::has_double_vector() const {
+  return value_case() == kDoubleVector;
+}
+inline void Literal::set_has_double_vector() {
+  _oneof_case_[0] = kDoubleVector;
+}
+inline void Literal::clear_double_vector() {
+  if (has_double_vector()) {
+    delete value_.double_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::DoubleVector* Literal::release_double_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.double_vector)
+  if (has_double_vector()) {
+    clear_has_value();
+      ::flyteidl::core::DoubleVector* temp = value_.double_vector_;
+    value_.double_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::DoubleVector& Literal::double_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.double_vector)
+  return has_double_vector()
+      ? *value_.double_vector_
+      : *reinterpret_cast< ::flyteidl::core::DoubleVector*>(&::flyteidl::core::_DoubleVector_default_instance_);
+}
+inline ::flyteidl::core::DoubleVector* Literal::mutable_double_vector() {
+  if (!has_double_vector()) {
+    clear_value();
+    set_has_double_vector();
+    value_.double_vector_ = CreateMaybeMessage< ::flyteidl::core::DoubleVector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.double_vector)
+  return value_.double_vector_;
+}
+
+// .flyteidl.core.BoolVector bool_vector = 8;
+inline bool Literal::has_bool_vector() const {
+  return value_case() == kBoolVector;
+}
+inline void Literal::set_has_bool_vector() {
+  _oneof_case_[0] = kBoolVector;
+}
+inline void Literal::clear_bool_vector() {
+  if (has_bool_vector()) {
+    delete value_.bool_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::BoolVector* Literal::release_bool_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.bool_vector)
+  if (has_bool_vector()) {
+    clear_has_value();
+      ::flyteidl::core::BoolVector* temp = value_.bool_vector_;
+    value_.bool_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::BoolVector& Literal::bool_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.bool_vector)
+  return has_bool_vector()
+      ? *value_.bool_vector_
+      : *reinterpret_cast< ::flyteidl::core::BoolVector*>(&::flyteidl::core::_BoolVector_default_instance_);
+}
+inline ::flyteidl::core::BoolVector* Literal::mutable_bool_vector() {
+  if (!has_bool_vector()) {
+    clear_value();
+    set_has_bool_vector();
+    value_.bool_vector_ = CreateMaybeMessage< ::flyteidl::core::BoolVector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.bool_vector)
+  return value_.bool_vector_;
+}
+
+// .flyteidl.core.StringVector str_vector = 9;
+inline bool Literal::has_str_vector() const {
+  return value_case() == kStrVector;
+}
+inline void Literal::set_has_str_vector() {
+  _oneof_case_[0] = kStrVector;
+}
+inline void Literal::clear_str_vector() {
+  if (has_str_vector()) {
+    delete value_.str_vector_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::StringVector* Literal::release_str_vector() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Literal.str_vector)
+  if (has_str_vector()) {
+    clear_has_value();
+      ::flyteidl::core::StringVector* temp = value_.str_vector_;
+    value_.str_vector_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::StringVector& Literal::str_vector() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Literal.str_vector)
+  return has_str_vector()
+      ? *value_.str_vector_
+      : *reinterpret_cast< ::flyteidl::core::StringVector*>(&::flyteidl::core::_StringVector_default_instance_);
+}
+inline ::flyteidl::core::StringVector* Literal::mutable_str_vector() {
+  if (!has_str_vector()) {
+    clear_value();
+    set_has_str_vector();
+    value_.str_vector_ = CreateMaybeMessage< ::flyteidl::core::StringVector >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Literal.str_vector)
+  return value_.str_vector_;
+}
+
 inline bool Literal::has_value() const {
   return value_case() != VALUE_NOT_SET;
 }
@@ -3446,6 +4710,665 @@ inline void Literal::clear_has_value() {
 inline Literal::ValueCase Literal::value_case() const {
   return Literal::ValueCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// Offloaded
+
+// string uri = 1;
+inline void Offloaded::clear_uri() {
+  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Offloaded::uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Offloaded.uri)
+  return uri_.GetNoArena();
+}
+inline void Offloaded::set_uri(const ::std::string& value) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Offloaded.uri)
+}
+#if LANG_CXX11
+inline void Offloaded::set_uri(::std::string&& value) {
+  
+  uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Offloaded.uri)
+}
+#endif
+inline void Offloaded::set_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Offloaded.uri)
+}
+inline void Offloaded::set_uri(const char* value, size_t size) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Offloaded.uri)
+}
+inline ::std::string* Offloaded::mutable_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Offloaded.uri)
+  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Offloaded::release_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Offloaded.uri)
+  
+  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Offloaded::set_allocated_uri(::std::string* uri) {
+  if (uri != nullptr) {
+    
+  } else {
+    
+  }
+  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Offloaded.uri)
+}
+
+// string format = 2;
+inline void Offloaded::clear_format() {
+  format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Offloaded::format() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Offloaded.format)
+  return format_.GetNoArena();
+}
+inline void Offloaded::set_format(const ::std::string& value) {
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Offloaded.format)
+}
+#if LANG_CXX11
+inline void Offloaded::set_format(::std::string&& value) {
+  
+  format_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Offloaded.format)
+}
+#endif
+inline void Offloaded::set_format(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Offloaded.format)
+}
+inline void Offloaded::set_format(const char* value, size_t size) {
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Offloaded.format)
+}
+inline ::std::string* Offloaded::mutable_format() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Offloaded.format)
+  return format_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Offloaded::release_format() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Offloaded.format)
+  
+  return format_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Offloaded::set_allocated_format(::std::string* format) {
+  if (format != nullptr) {
+    
+  } else {
+    
+  }
+  format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), format);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Offloaded.format)
+}
+
+// -------------------------------------------------------------------
+
+// StringVector
+
+// repeated string values = 1;
+inline int StringVector::values_size() const {
+  return values_.size();
+}
+inline void StringVector::clear_values() {
+  values_.Clear();
+}
+inline const ::std::string& StringVector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StringVector.values)
+  return values_.Get(index);
+}
+inline ::std::string* StringVector::mutable_values(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StringVector.values)
+  return values_.Mutable(index);
+}
+inline void StringVector::set_values(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StringVector.values)
+  values_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void StringVector::set_values(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StringVector.values)
+  values_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void StringVector::set_values(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  values_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StringVector.values)
+}
+inline void StringVector::set_values(int index, const char* value, size_t size) {
+  values_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StringVector.values)
+}
+inline ::std::string* StringVector::add_values() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.core.StringVector.values)
+  return values_.Add();
+}
+inline void StringVector::add_values(const ::std::string& value) {
+  values_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.StringVector.values)
+}
+#if LANG_CXX11
+inline void StringVector::add_values(::std::string&& value) {
+  values_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.core.StringVector.values)
+}
+#endif
+inline void StringVector::add_values(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  values_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.core.StringVector.values)
+}
+inline void StringVector::add_values(const char* value, size_t size) {
+  values_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.core.StringVector.values)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+StringVector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.StringVector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+StringVector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.StringVector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool StringVector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void StringVector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& StringVector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.StringVector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* StringVector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StringVector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* StringVector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StringVector.offloaded)
+  return offloaded_;
+}
+inline void StringVector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StringVector.offloaded)
+}
+
+// -------------------------------------------------------------------
+
+// Int32Vector
+
+// repeated int32 values = 1;
+inline int Int32Vector::values_size() const {
+  return values_.size();
+}
+inline void Int32Vector::clear_values() {
+  values_.Clear();
+}
+inline ::google::protobuf::int32 Int32Vector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Int32Vector.values)
+  return values_.Get(index);
+}
+inline void Int32Vector::set_values(int index, ::google::protobuf::int32 value) {
+  values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Int32Vector.values)
+}
+inline void Int32Vector::add_values(::google::protobuf::int32 value) {
+  values_.Add(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.Int32Vector.values)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+Int32Vector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.Int32Vector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+Int32Vector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Int32Vector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool Int32Vector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void Int32Vector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& Int32Vector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Int32Vector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* Int32Vector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Int32Vector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* Int32Vector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Int32Vector.offloaded)
+  return offloaded_;
+}
+inline void Int32Vector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Int32Vector.offloaded)
+}
+
+// -------------------------------------------------------------------
+
+// Int64Vector
+
+// repeated int64 values = 1;
+inline int Int64Vector::values_size() const {
+  return values_.size();
+}
+inline void Int64Vector::clear_values() {
+  values_.Clear();
+}
+inline ::google::protobuf::int64 Int64Vector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Int64Vector.values)
+  return values_.Get(index);
+}
+inline void Int64Vector::set_values(int index, ::google::protobuf::int64 value) {
+  values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Int64Vector.values)
+}
+inline void Int64Vector::add_values(::google::protobuf::int64 value) {
+  values_.Add(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.Int64Vector.values)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int64 >&
+Int64Vector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.Int64Vector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int64 >*
+Int64Vector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.Int64Vector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool Int64Vector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void Int64Vector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& Int64Vector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Int64Vector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* Int64Vector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Int64Vector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* Int64Vector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Int64Vector.offloaded)
+  return offloaded_;
+}
+inline void Int64Vector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Int64Vector.offloaded)
+}
+
+// -------------------------------------------------------------------
+
+// FloatVector
+
+// repeated float values = 1;
+inline int FloatVector::values_size() const {
+  return values_.size();
+}
+inline void FloatVector::clear_values() {
+  values_.Clear();
+}
+inline float FloatVector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.FloatVector.values)
+  return values_.Get(index);
+}
+inline void FloatVector::set_values(int index, float value) {
+  values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.FloatVector.values)
+}
+inline void FloatVector::add_values(float value) {
+  values_.Add(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.FloatVector.values)
+}
+inline const ::google::protobuf::RepeatedField< float >&
+FloatVector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.FloatVector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedField< float >*
+FloatVector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.FloatVector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool FloatVector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void FloatVector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& FloatVector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.FloatVector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* FloatVector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.FloatVector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* FloatVector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.FloatVector.offloaded)
+  return offloaded_;
+}
+inline void FloatVector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.FloatVector.offloaded)
+}
+
+// -------------------------------------------------------------------
+
+// DoubleVector
+
+// repeated double values = 1;
+inline int DoubleVector::values_size() const {
+  return values_.size();
+}
+inline void DoubleVector::clear_values() {
+  values_.Clear();
+}
+inline double DoubleVector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DoubleVector.values)
+  return values_.Get(index);
+}
+inline void DoubleVector::set_values(int index, double value) {
+  values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.DoubleVector.values)
+}
+inline void DoubleVector::add_values(double value) {
+  values_.Add(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.DoubleVector.values)
+}
+inline const ::google::protobuf::RepeatedField< double >&
+DoubleVector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.DoubleVector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedField< double >*
+DoubleVector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.DoubleVector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool DoubleVector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void DoubleVector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& DoubleVector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.DoubleVector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* DoubleVector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.DoubleVector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* DoubleVector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.DoubleVector.offloaded)
+  return offloaded_;
+}
+inline void DoubleVector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.DoubleVector.offloaded)
+}
+
+// -------------------------------------------------------------------
+
+// BoolVector
+
+// repeated bool values = 1;
+inline int BoolVector::values_size() const {
+  return values_.size();
+}
+inline void BoolVector::clear_values() {
+  values_.Clear();
+}
+inline bool BoolVector::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.BoolVector.values)
+  return values_.Get(index);
+}
+inline void BoolVector::set_values(int index, bool value) {
+  values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.BoolVector.values)
+}
+inline void BoolVector::add_values(bool value) {
+  values_.Add(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.BoolVector.values)
+}
+inline const ::google::protobuf::RepeatedField< bool >&
+BoolVector::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.BoolVector.values)
+  return values_;
+}
+inline ::google::protobuf::RepeatedField< bool >*
+BoolVector::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.BoolVector.values)
+  return &values_;
+}
+
+// .flyteidl.core.Offloaded offloaded = 2;
+inline bool BoolVector::has_offloaded() const {
+  return this != internal_default_instance() && offloaded_ != nullptr;
+}
+inline void BoolVector::clear_offloaded() {
+  if (GetArenaNoVirtual() == nullptr && offloaded_ != nullptr) {
+    delete offloaded_;
+  }
+  offloaded_ = nullptr;
+}
+inline const ::flyteidl::core::Offloaded& BoolVector::offloaded() const {
+  const ::flyteidl::core::Offloaded* p = offloaded_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.BoolVector.offloaded)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Offloaded*>(
+      &::flyteidl::core::_Offloaded_default_instance_);
+}
+inline ::flyteidl::core::Offloaded* BoolVector::release_offloaded() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.BoolVector.offloaded)
+  
+  ::flyteidl::core::Offloaded* temp = offloaded_;
+  offloaded_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Offloaded* BoolVector::mutable_offloaded() {
+  
+  if (offloaded_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Offloaded>(GetArenaNoVirtual());
+    offloaded_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.BoolVector.offloaded)
+  return offloaded_;
+}
+inline void BoolVector::set_allocated_offloaded(::flyteidl::core::Offloaded* offloaded) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete offloaded_;
+  }
+  if (offloaded) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      offloaded = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, offloaded, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  offloaded_ = offloaded;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.BoolVector.offloaded)
+}
+
 // -------------------------------------------------------------------
 
 // LiteralCollection
@@ -3972,6 +5895,20 @@ inline void RetryStrategy::set_retries(::google::protobuf::uint32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

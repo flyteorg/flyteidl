@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// A map of literals. This is a workaround since oneofs in proto messages cannot contain a map field.
-type CoreLiteralMap struct {
-	Literals map[string]CoreLiteral `json:"literals,omitempty"`
+type CoreInt32Vector struct {
+	Values []int32 `json:"values,omitempty"`
+	Offloaded *CoreOffloaded `json:"offloaded,omitempty"`
 }

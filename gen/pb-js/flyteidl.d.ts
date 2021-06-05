@@ -2163,6 +2163,24 @@ export namespace flyteidl {
 
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
+
+            /** Literal int32Vector */
+            int32Vector?: (flyteidl.core.IInt32Vector|null);
+
+            /** Literal intVector */
+            intVector?: (flyteidl.core.IInt64Vector|null);
+
+            /** Literal floatVector */
+            floatVector?: (flyteidl.core.IFloatVector|null);
+
+            /** Literal doubleVector */
+            doubleVector?: (flyteidl.core.IDoubleVector|null);
+
+            /** Literal boolVector */
+            boolVector?: (flyteidl.core.IBoolVector|null);
+
+            /** Literal strVector */
+            strVector?: (flyteidl.core.IStringVector|null);
         }
 
         /** Represents a Literal. */
@@ -2183,8 +2201,26 @@ export namespace flyteidl {
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
 
+            /** Literal int32Vector. */
+            public int32Vector?: (flyteidl.core.IInt32Vector|null);
+
+            /** Literal intVector. */
+            public intVector?: (flyteidl.core.IInt64Vector|null);
+
+            /** Literal floatVector. */
+            public floatVector?: (flyteidl.core.IFloatVector|null);
+
+            /** Literal doubleVector. */
+            public doubleVector?: (flyteidl.core.IDoubleVector|null);
+
+            /** Literal boolVector. */
+            public boolVector?: (flyteidl.core.IBoolVector|null);
+
+            /** Literal strVector. */
+            public strVector?: (flyteidl.core.IStringVector|null);
+
             /** Literal value. */
-            public value?: ("scalar"|"collection"|"map");
+            public value?: ("scalar"|"collection"|"map"|"int32Vector"|"intVector"|"floatVector"|"doubleVector"|"boolVector"|"strVector");
 
             /**
              * Creates a new Literal instance using the specified properties.
@@ -2213,6 +2249,412 @@ export namespace flyteidl {
 
             /**
              * Verifies a Literal message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Offloaded. */
+        interface IOffloaded {
+
+            /** Offloaded uri */
+            uri?: (string|null);
+
+            /** Offloaded format */
+            format?: (string|null);
+        }
+
+        /** Represents an Offloaded. */
+        class Offloaded implements IOffloaded {
+
+            /**
+             * Constructs a new Offloaded.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IOffloaded);
+
+            /** Offloaded uri. */
+            public uri: string;
+
+            /** Offloaded format. */
+            public format: string;
+
+            /**
+             * Creates a new Offloaded instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Offloaded instance
+             */
+            public static create(properties?: flyteidl.core.IOffloaded): flyteidl.core.Offloaded;
+
+            /**
+             * Encodes the specified Offloaded message. Does not implicitly {@link flyteidl.core.Offloaded.verify|verify} messages.
+             * @param message Offloaded message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IOffloaded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Offloaded message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Offloaded
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Offloaded;
+
+            /**
+             * Verifies an Offloaded message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a StringVector. */
+        interface IStringVector {
+
+            /** StringVector values */
+            values?: (string[]|null);
+
+            /** StringVector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents a StringVector. */
+        class StringVector implements IStringVector {
+
+            /**
+             * Constructs a new StringVector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IStringVector);
+
+            /** StringVector values. */
+            public values: string[];
+
+            /** StringVector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new StringVector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StringVector instance
+             */
+            public static create(properties?: flyteidl.core.IStringVector): flyteidl.core.StringVector;
+
+            /**
+             * Encodes the specified StringVector message. Does not implicitly {@link flyteidl.core.StringVector.verify|verify} messages.
+             * @param message StringVector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IStringVector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StringVector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StringVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StringVector;
+
+            /**
+             * Verifies a StringVector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Int32Vector. */
+        interface IInt32Vector {
+
+            /** Int32Vector values */
+            values?: (number[]|null);
+
+            /** Int32Vector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents an Int32Vector. */
+        class Int32Vector implements IInt32Vector {
+
+            /**
+             * Constructs a new Int32Vector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IInt32Vector);
+
+            /** Int32Vector values. */
+            public values: number[];
+
+            /** Int32Vector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new Int32Vector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Int32Vector instance
+             */
+            public static create(properties?: flyteidl.core.IInt32Vector): flyteidl.core.Int32Vector;
+
+            /**
+             * Encodes the specified Int32Vector message. Does not implicitly {@link flyteidl.core.Int32Vector.verify|verify} messages.
+             * @param message Int32Vector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IInt32Vector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Int32Vector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Int32Vector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Int32Vector;
+
+            /**
+             * Verifies an Int32Vector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Int64Vector. */
+        interface IInt64Vector {
+
+            /** Int64Vector values */
+            values?: (Long[]|null);
+
+            /** Int64Vector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents an Int64Vector. */
+        class Int64Vector implements IInt64Vector {
+
+            /**
+             * Constructs a new Int64Vector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IInt64Vector);
+
+            /** Int64Vector values. */
+            public values: Long[];
+
+            /** Int64Vector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new Int64Vector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Int64Vector instance
+             */
+            public static create(properties?: flyteidl.core.IInt64Vector): flyteidl.core.Int64Vector;
+
+            /**
+             * Encodes the specified Int64Vector message. Does not implicitly {@link flyteidl.core.Int64Vector.verify|verify} messages.
+             * @param message Int64Vector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IInt64Vector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Int64Vector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Int64Vector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Int64Vector;
+
+            /**
+             * Verifies an Int64Vector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FloatVector. */
+        interface IFloatVector {
+
+            /** FloatVector values */
+            values?: (number[]|null);
+
+            /** FloatVector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents a FloatVector. */
+        class FloatVector implements IFloatVector {
+
+            /**
+             * Constructs a new FloatVector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IFloatVector);
+
+            /** FloatVector values. */
+            public values: number[];
+
+            /** FloatVector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new FloatVector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FloatVector instance
+             */
+            public static create(properties?: flyteidl.core.IFloatVector): flyteidl.core.FloatVector;
+
+            /**
+             * Encodes the specified FloatVector message. Does not implicitly {@link flyteidl.core.FloatVector.verify|verify} messages.
+             * @param message FloatVector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IFloatVector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FloatVector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FloatVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.FloatVector;
+
+            /**
+             * Verifies a FloatVector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DoubleVector. */
+        interface IDoubleVector {
+
+            /** DoubleVector values */
+            values?: (number[]|null);
+
+            /** DoubleVector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents a DoubleVector. */
+        class DoubleVector implements IDoubleVector {
+
+            /**
+             * Constructs a new DoubleVector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IDoubleVector);
+
+            /** DoubleVector values. */
+            public values: number[];
+
+            /** DoubleVector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new DoubleVector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DoubleVector instance
+             */
+            public static create(properties?: flyteidl.core.IDoubleVector): flyteidl.core.DoubleVector;
+
+            /**
+             * Encodes the specified DoubleVector message. Does not implicitly {@link flyteidl.core.DoubleVector.verify|verify} messages.
+             * @param message DoubleVector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IDoubleVector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DoubleVector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DoubleVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DoubleVector;
+
+            /**
+             * Verifies a DoubleVector message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a BoolVector. */
+        interface IBoolVector {
+
+            /** BoolVector values */
+            values?: (boolean[]|null);
+
+            /** BoolVector offloaded */
+            offloaded?: (flyteidl.core.IOffloaded|null);
+        }
+
+        /** Represents a BoolVector. */
+        class BoolVector implements IBoolVector {
+
+            /**
+             * Constructs a new BoolVector.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IBoolVector);
+
+            /** BoolVector values. */
+            public values: boolean[];
+
+            /** BoolVector offloaded. */
+            public offloaded?: (flyteidl.core.IOffloaded|null);
+
+            /**
+             * Creates a new BoolVector instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BoolVector instance
+             */
+            public static create(properties?: flyteidl.core.IBoolVector): flyteidl.core.BoolVector;
+
+            /**
+             * Encodes the specified BoolVector message. Does not implicitly {@link flyteidl.core.BoolVector.verify|verify} messages.
+             * @param message BoolVector message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IBoolVector, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BoolVector message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BoolVector
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.BoolVector;
+
+            /**
+             * Verifies a BoolVector message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

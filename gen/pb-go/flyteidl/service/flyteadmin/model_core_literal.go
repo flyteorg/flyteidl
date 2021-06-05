@@ -17,4 +17,10 @@ type CoreLiteral struct {
 	Collection *CoreLiteralCollection `json:"collection,omitempty"`
 	// A map of strings to literals.
 	Map_ *CoreLiteralMap `json:"map,omitempty"`
+	Int32Vector *CoreInt32Vector `json:"int32_vector,omitempty"`
+	IntVector *CoreInt64Vector `json:"int_vector,omitempty"`
+	FloatVector *CoreFloatVector `json:"float_vector,omitempty"`
+	DoubleVector *CoreDoubleVector `json:"double_vector,omitempty"`
+	BoolVector *CoreBoolVector `json:"bool_vector,omitempty"`
+	StrVector *CoreStringVector `json:"str_vector,omitempty"`
 }

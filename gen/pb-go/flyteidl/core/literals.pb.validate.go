@@ -696,6 +696,78 @@ func (m *Literal) Validate() error {
 			}
 		}
 
+	case *Literal_Int32Vector:
+
+		if v, ok := interface{}(m.GetInt32Vector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "Int32Vector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Literal_IntVector:
+
+		if v, ok := interface{}(m.GetIntVector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "IntVector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Literal_FloatVector:
+
+		if v, ok := interface{}(m.GetFloatVector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "FloatVector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Literal_DoubleVector:
+
+		if v, ok := interface{}(m.GetDoubleVector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "DoubleVector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Literal_BoolVector:
+
+		if v, ok := interface{}(m.GetBoolVector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "BoolVector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Literal_StrVector:
+
+		if v, ok := interface{}(m.GetStrVector()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiteralValidationError{
+					field:  "StrVector",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil
@@ -754,6 +826,523 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = LiteralValidationError{}
+
+// Validate checks the field values on Offloaded with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Offloaded) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Uri
+
+	// no validation rules for Format
+
+	return nil
+}
+
+// OffloadedValidationError is the validation error returned by
+// Offloaded.Validate if the designated constraints aren't met.
+type OffloadedValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e OffloadedValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e OffloadedValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e OffloadedValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e OffloadedValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e OffloadedValidationError) ErrorName() string { return "OffloadedValidationError" }
+
+// Error satisfies the builtin error interface
+func (e OffloadedValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sOffloaded.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = OffloadedValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = OffloadedValidationError{}
+
+// Validate checks the field values on StringVector with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *StringVector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StringVectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// StringVectorValidationError is the validation error returned by
+// StringVector.Validate if the designated constraints aren't met.
+type StringVectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e StringVectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e StringVectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e StringVectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e StringVectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e StringVectorValidationError) ErrorName() string { return "StringVectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e StringVectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sStringVector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = StringVectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = StringVectorValidationError{}
+
+// Validate checks the field values on Int32Vector with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Int32Vector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return Int32VectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// Int32VectorValidationError is the validation error returned by
+// Int32Vector.Validate if the designated constraints aren't met.
+type Int32VectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e Int32VectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e Int32VectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e Int32VectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e Int32VectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e Int32VectorValidationError) ErrorName() string { return "Int32VectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e Int32VectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sInt32Vector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = Int32VectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = Int32VectorValidationError{}
+
+// Validate checks the field values on Int64Vector with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Int64Vector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return Int64VectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// Int64VectorValidationError is the validation error returned by
+// Int64Vector.Validate if the designated constraints aren't met.
+type Int64VectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e Int64VectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e Int64VectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e Int64VectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e Int64VectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e Int64VectorValidationError) ErrorName() string { return "Int64VectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e Int64VectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sInt64Vector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = Int64VectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = Int64VectorValidationError{}
+
+// Validate checks the field values on FloatVector with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *FloatVector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return FloatVectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// FloatVectorValidationError is the validation error returned by
+// FloatVector.Validate if the designated constraints aren't met.
+type FloatVectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e FloatVectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e FloatVectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e FloatVectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e FloatVectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e FloatVectorValidationError) ErrorName() string { return "FloatVectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e FloatVectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sFloatVector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = FloatVectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = FloatVectorValidationError{}
+
+// Validate checks the field values on DoubleVector with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *DoubleVector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DoubleVectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// DoubleVectorValidationError is the validation error returned by
+// DoubleVector.Validate if the designated constraints aren't met.
+type DoubleVectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DoubleVectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DoubleVectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DoubleVectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DoubleVectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DoubleVectorValidationError) ErrorName() string { return "DoubleVectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e DoubleVectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDoubleVector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DoubleVectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DoubleVectorValidationError{}
+
+// Validate checks the field values on BoolVector with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *BoolVector) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetOffloaded()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return BoolVectorValidationError{
+				field:  "Offloaded",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// BoolVectorValidationError is the validation error returned by
+// BoolVector.Validate if the designated constraints aren't met.
+type BoolVectorValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e BoolVectorValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e BoolVectorValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e BoolVectorValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e BoolVectorValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e BoolVectorValidationError) ErrorName() string { return "BoolVectorValidationError" }
+
+// Error satisfies the builtin error interface
+func (e BoolVectorValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sBoolVector.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = BoolVectorValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = BoolVectorValidationError{}
 
 // Validate checks the field values on LiteralCollection with the rules defined
 // in the proto definition for this message. If any rules are violated, an

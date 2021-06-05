@@ -3853,6 +3853,13 @@ definitions:
           parameters:
             key:
               default:
+                bool_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - true
+                  - true
                 scalar:
                   schema:
                     type:
@@ -3893,12 +3900,47 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                double_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 2.3021358869347655
+                  - 2.3021358869347655
+                int_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - "values"
+                  - "values"
                 collection:
                   literals:
                   - null
                   - null
+                int32_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 5
+                  - 5
                 map:
                   literals: {}
+                float_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 5.637377
+                  - 5.637377
+                str_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - "values"
+                  - "values"
               var:
                 description: "description"
                 type:
@@ -3991,6 +4033,13 @@ definitions:
           parameters:
             key:
               default:
+                bool_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - true
+                  - true
                 scalar:
                   schema:
                     type:
@@ -4031,12 +4080,47 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                double_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 2.3021358869347655
+                  - 2.3021358869347655
+                int_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - "values"
+                  - "values"
                 collection:
                   literals:
                   - null
                   - null
+                int32_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 5
+                  - 5
                 map:
                   literals: {}
+                float_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - 5.637377
+                  - 5.637377
+                str_vector:
+                  offloaded:
+                    format: "format"
+                    uri: "uri"
+                  values:
+                  - "values"
+                  - "values"
               var:
                 description: "description"
                 type:
@@ -4169,6 +4253,13 @@ definitions:
         parameters:
           key:
             default:
+              bool_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - true
+                - true
               scalar:
                 schema:
                   type:
@@ -4209,12 +4300,47 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              double_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 2.3021358869347655
+                - 2.3021358869347655
+              int_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - "values"
+                - "values"
               collection:
                 literals:
                 - null
                 - null
+              int32_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 5
+                - 5
               map:
                 literals: {}
+              float_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 5.637377
+                - 5.637377
+              str_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - "values"
+                - "values"
             var:
               description: "description"
               type:
@@ -4312,6 +4438,13 @@ definitions:
             parameters:
               key:
                 default:
+                  bool_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - true
+                    - true
                   scalar:
                     schema:
                       type:
@@ -4352,12 +4485,47 @@ definitions:
                           string_value: "string_value"
                           null_value: {}
                           bool_value: true
+                  double_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 2.3021358869347655
+                    - 2.3021358869347655
+                  int_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                   collection:
                     literals:
                     - null
                     - null
+                  int32_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5
+                    - 5
                   map:
                     literals: {}
+                  float_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5.637377
+                    - 5.637377
+                  str_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                 var:
                   description: "description"
                   type:
@@ -4450,6 +4618,13 @@ definitions:
             parameters:
               key:
                 default:
+                  bool_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - true
+                    - true
                   scalar:
                     schema:
                       type:
@@ -4490,12 +4665,47 @@ definitions:
                           string_value: "string_value"
                           null_value: {}
                           bool_value: true
+                  double_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 2.3021358869347655
+                    - 2.3021358869347655
+                  int_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                   collection:
                     literals:
                     - null
                     - null
+                  int32_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5
+                    - 5
                   map:
                     literals: {}
+                  float_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5.637377
+                    - 5.637377
+                  str_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                 var:
                   description: "description"
                   type:
@@ -4610,6 +4820,13 @@ definitions:
             parameters:
               key:
                 default:
+                  bool_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - true
+                    - true
                   scalar:
                     schema:
                       type:
@@ -4650,12 +4867,47 @@ definitions:
                           string_value: "string_value"
                           null_value: {}
                           bool_value: true
+                  double_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 2.3021358869347655
+                    - 2.3021358869347655
+                  int_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                   collection:
                     literals:
                     - null
                     - null
+                  int32_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5
+                    - 5
                   map:
                     literals: {}
+                  float_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5.637377
+                    - 5.637377
+                  str_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                 var:
                   description: "description"
                   type:
@@ -4748,6 +5000,13 @@ definitions:
             parameters:
               key:
                 default:
+                  bool_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - true
+                    - true
                   scalar:
                     schema:
                       type:
@@ -4788,12 +5047,47 @@ definitions:
                           string_value: "string_value"
                           null_value: {}
                           bool_value: true
+                  double_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 2.3021358869347655
+                    - 2.3021358869347655
+                  int_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                   collection:
                     literals:
                     - null
                     - null
+                  int32_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5
+                    - 5
                   map:
                     literals: {}
+                  float_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - 5.637377
+                    - 5.637377
+                  str_vector:
+                    offloaded:
+                      format: "format"
+                      uri: "uri"
+                    values:
+                    - "values"
+                    - "values"
                 var:
                   description: "description"
                   type:
@@ -5030,6 +5324,13 @@ definitions:
         parameters:
           key:
             default:
+              bool_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - true
+                - true
               scalar:
                 schema:
                   type:
@@ -5070,12 +5371,47 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              double_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 2.3021358869347655
+                - 2.3021358869347655
+              int_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - "values"
+                - "values"
               collection:
                 literals:
                 - null
                 - null
+              int32_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 5
+                - 5
               map:
                 literals: {}
+              float_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - 5.637377
+                - 5.637377
+              str_vector:
+                offloaded:
+                  format: "format"
+                  uri: "uri"
+                values:
+                - "values"
+                - "values"
             var:
               description: "description"
               type:
@@ -22220,6 +22556,25 @@ definitions:
     example:
       dimensionality: {}
       format: "format"
+  coreBoolVector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "boolean"
+          format: "boolean"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "represents a list of booleans"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - true
+      - true
   coreBooleanExpression:
     type: "object"
     properties:
@@ -26546,6 +26901,25 @@ definitions:
       output_path: "output_path"
       enabled: true
       input_path: "input_path"
+  coreDoubleVector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "number"
+          format: "double"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "represents a list of double (floating point of 64 bit precision)"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - 2.3021358869347655
+      - 2.3021358869347655
   coreError:
     type: "object"
     properties:
@@ -26579,6 +26953,25 @@ definitions:
       kind: {}
       message: "message"
       error_uri: "error_uri"
+  coreFloatVector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "number"
+          format: "float"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "represents a list of floats (floating point of 32 bit precision)"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - 5.637377
+      - 5.637377
   coreIOStrategy:
     type: "object"
     properties:
@@ -26776,6 +27169,44 @@ definitions:
                 integer: "integer"
               var: "var"
             operator: {}
+  coreInt32Vector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "integer"
+          format: "int32"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "represents a list of ints of 32 bit precision"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - 5
+      - 5
+  coreInt64Vector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "string"
+          format: "int64"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "represents a list of ints of 64 bit precision"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - "values"
+      - "values"
   coreK8sObjectMetadata:
     type: "object"
     properties:
@@ -26851,9 +27282,34 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
+      int32_vector:
+        title: "DenseVector of type Int32"
+        $ref: "#/definitions/coreInt32Vector"
+      int_vector:
+        title: "DenseVector of type Int64"
+        $ref: "#/definitions/coreInt64Vector"
+      float_vector:
+        title: "DenseVector of type float (32bit precision)"
+        $ref: "#/definitions/coreFloatVector"
+      double_vector:
+        title: "DenseVector of type Double (64bit precision)"
+        $ref: "#/definitions/coreDoubleVector"
+      bool_vector:
+        title: "DenseVector of type Bool"
+        $ref: "#/definitions/coreBoolVector"
+      str_vector:
+        title: "DenseVector of type string"
+        $ref: "#/definitions/coreStringVector"
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
+      bool_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - true
+        - true
       scalar:
         schema:
           type:
@@ -26894,12 +27350,47 @@ definitions:
               string_value: "string_value"
               null_value: {}
               bool_value: true
+      double_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - 2.3021358869347655
+        - 2.3021358869347655
+      int_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - "values"
+        - "values"
       collection:
         literals:
         - null
         - null
+      int32_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - 5
+        - 5
       map:
         literals: {}
+      float_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - 5.637377
+        - 5.637377
+      str_vector:
+        offloaded:
+          format: "format"
+          uri: "uri"
+        values:
+        - "values"
+        - "values"
   coreLiteralCollection:
     type: "object"
     properties:
@@ -26921,7 +27412,7 @@ definitions:
         additionalProperties:
           $ref: "#/definitions/coreLiteral"
     description: "A map of literals. This is a workaround since oneofs in proto messages\
-      \ cannot contain a repeated field."
+      \ cannot contain a map field."
     example:
       literals: {}
   coreLiteralType:
@@ -27353,6 +27844,19 @@ definitions:
     enum:
     - "CLIENT_CREDENTIALS"
     default: "CLIENT_CREDENTIALS"
+  coreOffloaded:
+    type: "object"
+    properties:
+      uri:
+        type: "string"
+        description: "URI of the offloaded vector. Of the form s3://..."
+      format:
+        type: "string"
+        title: "Format of the offloaded vector. this is for the client libraries to\
+          \ parse. Example: parquet, arrow, hd5, proto etc"
+    example:
+      format: "format"
+      uri: "uri"
   coreOperand:
     type: "object"
     properties:
@@ -27405,6 +27909,13 @@ definitions:
       \ ability to have a default value or mark itself as required."
     example:
       default:
+        bool_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - true
+          - true
         scalar:
           schema:
             type:
@@ -27445,12 +27956,47 @@ definitions:
                 string_value: "string_value"
                 null_value: {}
                 bool_value: true
+        double_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - 2.3021358869347655
+          - 2.3021358869347655
+        int_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - "values"
+          - "values"
         collection:
           literals:
           - null
           - null
+        int32_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - 5
+          - 5
         map:
           literals: {}
+        float_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - 5.637377
+          - 5.637377
+        str_vector:
+          offloaded:
+            format: "format"
+            uri: "uri"
+          values:
+          - "values"
+          - "values"
       var:
         description: "description"
         type:
@@ -27489,6 +28035,13 @@ definitions:
       parameters:
         key:
           default:
+            bool_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - true
+              - true
             scalar:
               schema:
                 type:
@@ -27529,12 +28082,47 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            double_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - 2.3021358869347655
+              - 2.3021358869347655
+            int_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - "values"
+              - "values"
             collection:
               literals:
               - null
               - null
+            int32_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - 5
+              - 5
             map:
               literals: {}
+            float_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - 5.637377
+              - 5.637377
+            str_vector:
+              offloaded:
+                format: "format"
+                uri: "uri"
+              values:
+              - "values"
+              - "values"
           var:
             description: "description"
             type:
@@ -27882,6 +28470,24 @@ definitions:
     - "ERROR"
     - "STRUCT"
     default: "NONE"
+  coreStringVector:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        items:
+          type: "string"
+      offloaded:
+        title: "Optionally offload the vector"
+        $ref: "#/definitions/coreOffloaded"
+    title: "Represents a list of Strings"
+    example:
+      offloaded:
+        format: "format"
+        uri: "uri"
+      values:
+      - "values"
+      - "values"
   coreTaskExecutionIdentifier:
     type: "object"
     properties:

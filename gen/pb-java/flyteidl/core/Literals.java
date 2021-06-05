@@ -6569,6 +6569,156 @@ public final class Literals {
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getMapOrBuilder();
 
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    boolean hasInt32Vector();
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    flyteidl.core.Literals.Int32Vector getInt32Vector();
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    flyteidl.core.Literals.Int32VectorOrBuilder getInt32VectorOrBuilder();
+
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    boolean hasIntVector();
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    flyteidl.core.Literals.Int64Vector getIntVector();
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    flyteidl.core.Literals.Int64VectorOrBuilder getIntVectorOrBuilder();
+
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    boolean hasFloatVector();
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    flyteidl.core.Literals.FloatVector getFloatVector();
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    flyteidl.core.Literals.FloatVectorOrBuilder getFloatVectorOrBuilder();
+
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    boolean hasDoubleVector();
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    flyteidl.core.Literals.DoubleVector getDoubleVector();
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    flyteidl.core.Literals.DoubleVectorOrBuilder getDoubleVectorOrBuilder();
+
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    boolean hasBoolVector();
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    flyteidl.core.Literals.BoolVector getBoolVector();
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    flyteidl.core.Literals.BoolVectorOrBuilder getBoolVectorOrBuilder();
+
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    boolean hasStrVector();
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    flyteidl.core.Literals.StringVector getStrVector();
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    flyteidl.core.Literals.StringVectorOrBuilder getStrVectorOrBuilder();
+
     public flyteidl.core.Literals.Literal.ValueCase getValueCase();
   }
   /**
@@ -6656,6 +6806,90 @@ public final class Literals {
               valueCase_ = 3;
               break;
             }
+            case 34: {
+              flyteidl.core.Literals.Int32Vector.Builder subBuilder = null;
+              if (valueCase_ == 4) {
+                subBuilder = ((flyteidl.core.Literals.Int32Vector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.Int32Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.Int32Vector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 4;
+              break;
+            }
+            case 42: {
+              flyteidl.core.Literals.Int64Vector.Builder subBuilder = null;
+              if (valueCase_ == 5) {
+                subBuilder = ((flyteidl.core.Literals.Int64Vector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.Int64Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.Int64Vector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 5;
+              break;
+            }
+            case 50: {
+              flyteidl.core.Literals.FloatVector.Builder subBuilder = null;
+              if (valueCase_ == 6) {
+                subBuilder = ((flyteidl.core.Literals.FloatVector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.FloatVector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.FloatVector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 6;
+              break;
+            }
+            case 58: {
+              flyteidl.core.Literals.DoubleVector.Builder subBuilder = null;
+              if (valueCase_ == 7) {
+                subBuilder = ((flyteidl.core.Literals.DoubleVector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.DoubleVector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.DoubleVector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 7;
+              break;
+            }
+            case 66: {
+              flyteidl.core.Literals.BoolVector.Builder subBuilder = null;
+              if (valueCase_ == 8) {
+                subBuilder = ((flyteidl.core.Literals.BoolVector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.BoolVector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.BoolVector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 8;
+              break;
+            }
+            case 74: {
+              flyteidl.core.Literals.StringVector.Builder subBuilder = null;
+              if (valueCase_ == 9) {
+                subBuilder = ((flyteidl.core.Literals.StringVector) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.Literals.StringVector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.StringVector) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 9;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6695,6 +6929,12 @@ public final class Literals {
       SCALAR(1),
       COLLECTION(2),
       MAP(3),
+      INT32_VECTOR(4),
+      INT_VECTOR(5),
+      FLOAT_VECTOR(6),
+      DOUBLE_VECTOR(7),
+      BOOL_VECTOR(8),
+      STR_VECTOR(9),
       VALUE_NOT_SET(0);
       private final int value;
       private ValueCase(int value) {
@@ -6713,6 +6953,12 @@ public final class Literals {
           case 1: return SCALAR;
           case 2: return COLLECTION;
           case 3: return MAP;
+          case 4: return INT32_VECTOR;
+          case 5: return INT_VECTOR;
+          case 6: return FLOAT_VECTOR;
+          case 7: return DOUBLE_VECTOR;
+          case 8: return BOOL_VECTOR;
+          case 9: return STR_VECTOR;
           case 0: return VALUE_NOT_SET;
           default: return null;
         }
@@ -6842,6 +7088,234 @@ public final class Literals {
       return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
     }
 
+    public static final int INT32_VECTOR_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    public boolean hasInt32Vector() {
+      return valueCase_ == 4;
+    }
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    public flyteidl.core.Literals.Int32Vector getInt32Vector() {
+      if (valueCase_ == 4) {
+         return (flyteidl.core.Literals.Int32Vector) value_;
+      }
+      return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type Int32
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+     */
+    public flyteidl.core.Literals.Int32VectorOrBuilder getInt32VectorOrBuilder() {
+      if (valueCase_ == 4) {
+         return (flyteidl.core.Literals.Int32Vector) value_;
+      }
+      return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+    }
+
+    public static final int INT_VECTOR_FIELD_NUMBER = 5;
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    public boolean hasIntVector() {
+      return valueCase_ == 5;
+    }
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    public flyteidl.core.Literals.Int64Vector getIntVector() {
+      if (valueCase_ == 5) {
+         return (flyteidl.core.Literals.Int64Vector) value_;
+      }
+      return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type Int64
+     * </pre>
+     *
+     * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+     */
+    public flyteidl.core.Literals.Int64VectorOrBuilder getIntVectorOrBuilder() {
+      if (valueCase_ == 5) {
+         return (flyteidl.core.Literals.Int64Vector) value_;
+      }
+      return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+    }
+
+    public static final int FLOAT_VECTOR_FIELD_NUMBER = 6;
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    public boolean hasFloatVector() {
+      return valueCase_ == 6;
+    }
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    public flyteidl.core.Literals.FloatVector getFloatVector() {
+      if (valueCase_ == 6) {
+         return (flyteidl.core.Literals.FloatVector) value_;
+      }
+      return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type float (32bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+     */
+    public flyteidl.core.Literals.FloatVectorOrBuilder getFloatVectorOrBuilder() {
+      if (valueCase_ == 6) {
+         return (flyteidl.core.Literals.FloatVector) value_;
+      }
+      return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+    }
+
+    public static final int DOUBLE_VECTOR_FIELD_NUMBER = 7;
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    public boolean hasDoubleVector() {
+      return valueCase_ == 7;
+    }
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    public flyteidl.core.Literals.DoubleVector getDoubleVector() {
+      if (valueCase_ == 7) {
+         return (flyteidl.core.Literals.DoubleVector) value_;
+      }
+      return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type Double (64bit precision)
+     * </pre>
+     *
+     * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+     */
+    public flyteidl.core.Literals.DoubleVectorOrBuilder getDoubleVectorOrBuilder() {
+      if (valueCase_ == 7) {
+         return (flyteidl.core.Literals.DoubleVector) value_;
+      }
+      return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+    }
+
+    public static final int BOOL_VECTOR_FIELD_NUMBER = 8;
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    public boolean hasBoolVector() {
+      return valueCase_ == 8;
+    }
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    public flyteidl.core.Literals.BoolVector getBoolVector() {
+      if (valueCase_ == 8) {
+         return (flyteidl.core.Literals.BoolVector) value_;
+      }
+      return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type Bool
+     * </pre>
+     *
+     * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+     */
+    public flyteidl.core.Literals.BoolVectorOrBuilder getBoolVectorOrBuilder() {
+      if (valueCase_ == 8) {
+         return (flyteidl.core.Literals.BoolVector) value_;
+      }
+      return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+    }
+
+    public static final int STR_VECTOR_FIELD_NUMBER = 9;
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    public boolean hasStrVector() {
+      return valueCase_ == 9;
+    }
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    public flyteidl.core.Literals.StringVector getStrVector() {
+      if (valueCase_ == 9) {
+         return (flyteidl.core.Literals.StringVector) value_;
+      }
+      return flyteidl.core.Literals.StringVector.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * DenseVector of type string
+     * </pre>
+     *
+     * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+     */
+    public flyteidl.core.Literals.StringVectorOrBuilder getStrVectorOrBuilder() {
+      if (valueCase_ == 9) {
+         return (flyteidl.core.Literals.StringVector) value_;
+      }
+      return flyteidl.core.Literals.StringVector.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6865,6 +7339,24 @@ public final class Literals {
       if (valueCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.Literals.LiteralMap) value_);
       }
+      if (valueCase_ == 4) {
+        output.writeMessage(4, (flyteidl.core.Literals.Int32Vector) value_);
+      }
+      if (valueCase_ == 5) {
+        output.writeMessage(5, (flyteidl.core.Literals.Int64Vector) value_);
+      }
+      if (valueCase_ == 6) {
+        output.writeMessage(6, (flyteidl.core.Literals.FloatVector) value_);
+      }
+      if (valueCase_ == 7) {
+        output.writeMessage(7, (flyteidl.core.Literals.DoubleVector) value_);
+      }
+      if (valueCase_ == 8) {
+        output.writeMessage(8, (flyteidl.core.Literals.BoolVector) value_);
+      }
+      if (valueCase_ == 9) {
+        output.writeMessage(9, (flyteidl.core.Literals.StringVector) value_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6885,6 +7377,30 @@ public final class Literals {
       if (valueCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.Literals.LiteralMap) value_);
+      }
+      if (valueCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (flyteidl.core.Literals.Int32Vector) value_);
+      }
+      if (valueCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (flyteidl.core.Literals.Int64Vector) value_);
+      }
+      if (valueCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (flyteidl.core.Literals.FloatVector) value_);
+      }
+      if (valueCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (flyteidl.core.Literals.DoubleVector) value_);
+      }
+      if (valueCase_ == 8) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, (flyteidl.core.Literals.BoolVector) value_);
+      }
+      if (valueCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (flyteidl.core.Literals.StringVector) value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6915,6 +7431,30 @@ public final class Literals {
           if (!getMap()
               .equals(other.getMap())) return false;
           break;
+        case 4:
+          if (!getInt32Vector()
+              .equals(other.getInt32Vector())) return false;
+          break;
+        case 5:
+          if (!getIntVector()
+              .equals(other.getIntVector())) return false;
+          break;
+        case 6:
+          if (!getFloatVector()
+              .equals(other.getFloatVector())) return false;
+          break;
+        case 7:
+          if (!getDoubleVector()
+              .equals(other.getDoubleVector())) return false;
+          break;
+        case 8:
+          if (!getBoolVector()
+              .equals(other.getBoolVector())) return false;
+          break;
+        case 9:
+          if (!getStrVector()
+              .equals(other.getStrVector())) return false;
+          break;
         case 0:
         default:
       }
@@ -6941,6 +7481,30 @@ public final class Literals {
         case 3:
           hash = (37 * hash) + MAP_FIELD_NUMBER;
           hash = (53 * hash) + getMap().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + INT32_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getInt32Vector().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + INT_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getIntVector().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + FLOAT_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getFloatVector().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + DOUBLE_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getDoubleVector().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + BOOL_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getBoolVector().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + STR_VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getStrVector().hashCode();
           break;
         case 0:
         default:
@@ -7131,6 +7695,48 @@ public final class Literals {
             result.value_ = mapBuilder_.build();
           }
         }
+        if (valueCase_ == 4) {
+          if (int32VectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = int32VectorBuilder_.build();
+          }
+        }
+        if (valueCase_ == 5) {
+          if (intVectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = intVectorBuilder_.build();
+          }
+        }
+        if (valueCase_ == 6) {
+          if (floatVectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = floatVectorBuilder_.build();
+          }
+        }
+        if (valueCase_ == 7) {
+          if (doubleVectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = doubleVectorBuilder_.build();
+          }
+        }
+        if (valueCase_ == 8) {
+          if (boolVectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = boolVectorBuilder_.build();
+          }
+        }
+        if (valueCase_ == 9) {
+          if (strVectorBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = strVectorBuilder_.build();
+          }
+        }
         result.valueCase_ = valueCase_;
         onBuilt();
         return result;
@@ -7191,6 +7797,30 @@ public final class Literals {
           }
           case MAP: {
             mergeMap(other.getMap());
+            break;
+          }
+          case INT32_VECTOR: {
+            mergeInt32Vector(other.getInt32Vector());
+            break;
+          }
+          case INT_VECTOR: {
+            mergeIntVector(other.getIntVector());
+            break;
+          }
+          case FLOAT_VECTOR: {
+            mergeFloatVector(other.getFloatVector());
+            break;
+          }
+          case DOUBLE_VECTOR: {
+            mergeDoubleVector(other.getDoubleVector());
+            break;
+          }
+          case BOOL_VECTOR: {
+            mergeBoolVector(other.getBoolVector());
+            break;
+          }
+          case STR_VECTOR: {
+            mergeStrVector(other.getStrVector());
             break;
           }
           case VALUE_NOT_SET: {
@@ -7756,6 +8386,1038 @@ public final class Literals {
         onChanged();;
         return mapBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Int32Vector, flyteidl.core.Literals.Int32Vector.Builder, flyteidl.core.Literals.Int32VectorOrBuilder> int32VectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public boolean hasInt32Vector() {
+        return valueCase_ == 4;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public flyteidl.core.Literals.Int32Vector getInt32Vector() {
+        if (int32VectorBuilder_ == null) {
+          if (valueCase_ == 4) {
+            return (flyteidl.core.Literals.Int32Vector) value_;
+          }
+          return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 4) {
+            return int32VectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public Builder setInt32Vector(flyteidl.core.Literals.Int32Vector value) {
+        if (int32VectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          int32VectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public Builder setInt32Vector(
+          flyteidl.core.Literals.Int32Vector.Builder builderForValue) {
+        if (int32VectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          int32VectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public Builder mergeInt32Vector(flyteidl.core.Literals.Int32Vector value) {
+        if (int32VectorBuilder_ == null) {
+          if (valueCase_ == 4 &&
+              value_ != flyteidl.core.Literals.Int32Vector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.Int32Vector.newBuilder((flyteidl.core.Literals.Int32Vector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 4) {
+            int32VectorBuilder_.mergeFrom(value);
+          }
+          int32VectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public Builder clearInt32Vector() {
+        if (int32VectorBuilder_ == null) {
+          if (valueCase_ == 4) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 4) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          int32VectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public flyteidl.core.Literals.Int32Vector.Builder getInt32VectorBuilder() {
+        return getInt32VectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      public flyteidl.core.Literals.Int32VectorOrBuilder getInt32VectorOrBuilder() {
+        if ((valueCase_ == 4) && (int32VectorBuilder_ != null)) {
+          return int32VectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 4) {
+            return (flyteidl.core.Literals.Int32Vector) value_;
+          }
+          return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int32
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int32Vector int32_vector = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Int32Vector, flyteidl.core.Literals.Int32Vector.Builder, flyteidl.core.Literals.Int32VectorOrBuilder> 
+          getInt32VectorFieldBuilder() {
+        if (int32VectorBuilder_ == null) {
+          if (!(valueCase_ == 4)) {
+            value_ = flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+          }
+          int32VectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Int32Vector, flyteidl.core.Literals.Int32Vector.Builder, flyteidl.core.Literals.Int32VectorOrBuilder>(
+                  (flyteidl.core.Literals.Int32Vector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 4;
+        onChanged();;
+        return int32VectorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Int64Vector, flyteidl.core.Literals.Int64Vector.Builder, flyteidl.core.Literals.Int64VectorOrBuilder> intVectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public boolean hasIntVector() {
+        return valueCase_ == 5;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public flyteidl.core.Literals.Int64Vector getIntVector() {
+        if (intVectorBuilder_ == null) {
+          if (valueCase_ == 5) {
+            return (flyteidl.core.Literals.Int64Vector) value_;
+          }
+          return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 5) {
+            return intVectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public Builder setIntVector(flyteidl.core.Literals.Int64Vector value) {
+        if (intVectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          intVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 5;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public Builder setIntVector(
+          flyteidl.core.Literals.Int64Vector.Builder builderForValue) {
+        if (intVectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          intVectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 5;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public Builder mergeIntVector(flyteidl.core.Literals.Int64Vector value) {
+        if (intVectorBuilder_ == null) {
+          if (valueCase_ == 5 &&
+              value_ != flyteidl.core.Literals.Int64Vector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.Int64Vector.newBuilder((flyteidl.core.Literals.Int64Vector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 5) {
+            intVectorBuilder_.mergeFrom(value);
+          }
+          intVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 5;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public Builder clearIntVector() {
+        if (intVectorBuilder_ == null) {
+          if (valueCase_ == 5) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 5) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          intVectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public flyteidl.core.Literals.Int64Vector.Builder getIntVectorBuilder() {
+        return getIntVectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      public flyteidl.core.Literals.Int64VectorOrBuilder getIntVectorOrBuilder() {
+        if ((valueCase_ == 5) && (intVectorBuilder_ != null)) {
+          return intVectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 5) {
+            return (flyteidl.core.Literals.Int64Vector) value_;
+          }
+          return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Int64
+       * </pre>
+       *
+       * <code>.flyteidl.core.Int64Vector int_vector = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Int64Vector, flyteidl.core.Literals.Int64Vector.Builder, flyteidl.core.Literals.Int64VectorOrBuilder> 
+          getIntVectorFieldBuilder() {
+        if (intVectorBuilder_ == null) {
+          if (!(valueCase_ == 5)) {
+            value_ = flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+          }
+          intVectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Int64Vector, flyteidl.core.Literals.Int64Vector.Builder, flyteidl.core.Literals.Int64VectorOrBuilder>(
+                  (flyteidl.core.Literals.Int64Vector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 5;
+        onChanged();;
+        return intVectorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.FloatVector, flyteidl.core.Literals.FloatVector.Builder, flyteidl.core.Literals.FloatVectorOrBuilder> floatVectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public boolean hasFloatVector() {
+        return valueCase_ == 6;
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public flyteidl.core.Literals.FloatVector getFloatVector() {
+        if (floatVectorBuilder_ == null) {
+          if (valueCase_ == 6) {
+            return (flyteidl.core.Literals.FloatVector) value_;
+          }
+          return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 6) {
+            return floatVectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public Builder setFloatVector(flyteidl.core.Literals.FloatVector value) {
+        if (floatVectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          floatVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public Builder setFloatVector(
+          flyteidl.core.Literals.FloatVector.Builder builderForValue) {
+        if (floatVectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          floatVectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public Builder mergeFloatVector(flyteidl.core.Literals.FloatVector value) {
+        if (floatVectorBuilder_ == null) {
+          if (valueCase_ == 6 &&
+              value_ != flyteidl.core.Literals.FloatVector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.FloatVector.newBuilder((flyteidl.core.Literals.FloatVector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 6) {
+            floatVectorBuilder_.mergeFrom(value);
+          }
+          floatVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 6;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public Builder clearFloatVector() {
+        if (floatVectorBuilder_ == null) {
+          if (valueCase_ == 6) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 6) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          floatVectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public flyteidl.core.Literals.FloatVector.Builder getFloatVectorBuilder() {
+        return getFloatVectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      public flyteidl.core.Literals.FloatVectorOrBuilder getFloatVectorOrBuilder() {
+        if ((valueCase_ == 6) && (floatVectorBuilder_ != null)) {
+          return floatVectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 6) {
+            return (flyteidl.core.Literals.FloatVector) value_;
+          }
+          return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type float (32bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.FloatVector float_vector = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.FloatVector, flyteidl.core.Literals.FloatVector.Builder, flyteidl.core.Literals.FloatVectorOrBuilder> 
+          getFloatVectorFieldBuilder() {
+        if (floatVectorBuilder_ == null) {
+          if (!(valueCase_ == 6)) {
+            value_ = flyteidl.core.Literals.FloatVector.getDefaultInstance();
+          }
+          floatVectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.FloatVector, flyteidl.core.Literals.FloatVector.Builder, flyteidl.core.Literals.FloatVectorOrBuilder>(
+                  (flyteidl.core.Literals.FloatVector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 6;
+        onChanged();;
+        return floatVectorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.DoubleVector, flyteidl.core.Literals.DoubleVector.Builder, flyteidl.core.Literals.DoubleVectorOrBuilder> doubleVectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public boolean hasDoubleVector() {
+        return valueCase_ == 7;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public flyteidl.core.Literals.DoubleVector getDoubleVector() {
+        if (doubleVectorBuilder_ == null) {
+          if (valueCase_ == 7) {
+            return (flyteidl.core.Literals.DoubleVector) value_;
+          }
+          return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 7) {
+            return doubleVectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public Builder setDoubleVector(flyteidl.core.Literals.DoubleVector value) {
+        if (doubleVectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          doubleVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public Builder setDoubleVector(
+          flyteidl.core.Literals.DoubleVector.Builder builderForValue) {
+        if (doubleVectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          doubleVectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public Builder mergeDoubleVector(flyteidl.core.Literals.DoubleVector value) {
+        if (doubleVectorBuilder_ == null) {
+          if (valueCase_ == 7 &&
+              value_ != flyteidl.core.Literals.DoubleVector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.DoubleVector.newBuilder((flyteidl.core.Literals.DoubleVector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 7) {
+            doubleVectorBuilder_.mergeFrom(value);
+          }
+          doubleVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public Builder clearDoubleVector() {
+        if (doubleVectorBuilder_ == null) {
+          if (valueCase_ == 7) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 7) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          doubleVectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public flyteidl.core.Literals.DoubleVector.Builder getDoubleVectorBuilder() {
+        return getDoubleVectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      public flyteidl.core.Literals.DoubleVectorOrBuilder getDoubleVectorOrBuilder() {
+        if ((valueCase_ == 7) && (doubleVectorBuilder_ != null)) {
+          return doubleVectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 7) {
+            return (flyteidl.core.Literals.DoubleVector) value_;
+          }
+          return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Double (64bit precision)
+       * </pre>
+       *
+       * <code>.flyteidl.core.DoubleVector double_vector = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.DoubleVector, flyteidl.core.Literals.DoubleVector.Builder, flyteidl.core.Literals.DoubleVectorOrBuilder> 
+          getDoubleVectorFieldBuilder() {
+        if (doubleVectorBuilder_ == null) {
+          if (!(valueCase_ == 7)) {
+            value_ = flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+          }
+          doubleVectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.DoubleVector, flyteidl.core.Literals.DoubleVector.Builder, flyteidl.core.Literals.DoubleVectorOrBuilder>(
+                  (flyteidl.core.Literals.DoubleVector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 7;
+        onChanged();;
+        return doubleVectorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.BoolVector, flyteidl.core.Literals.BoolVector.Builder, flyteidl.core.Literals.BoolVectorOrBuilder> boolVectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public boolean hasBoolVector() {
+        return valueCase_ == 8;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public flyteidl.core.Literals.BoolVector getBoolVector() {
+        if (boolVectorBuilder_ == null) {
+          if (valueCase_ == 8) {
+            return (flyteidl.core.Literals.BoolVector) value_;
+          }
+          return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 8) {
+            return boolVectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public Builder setBoolVector(flyteidl.core.Literals.BoolVector value) {
+        if (boolVectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          boolVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public Builder setBoolVector(
+          flyteidl.core.Literals.BoolVector.Builder builderForValue) {
+        if (boolVectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          boolVectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public Builder mergeBoolVector(flyteidl.core.Literals.BoolVector value) {
+        if (boolVectorBuilder_ == null) {
+          if (valueCase_ == 8 &&
+              value_ != flyteidl.core.Literals.BoolVector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.BoolVector.newBuilder((flyteidl.core.Literals.BoolVector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 8) {
+            boolVectorBuilder_.mergeFrom(value);
+          }
+          boolVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public Builder clearBoolVector() {
+        if (boolVectorBuilder_ == null) {
+          if (valueCase_ == 8) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 8) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          boolVectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public flyteidl.core.Literals.BoolVector.Builder getBoolVectorBuilder() {
+        return getBoolVectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      public flyteidl.core.Literals.BoolVectorOrBuilder getBoolVectorOrBuilder() {
+        if ((valueCase_ == 8) && (boolVectorBuilder_ != null)) {
+          return boolVectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 8) {
+            return (flyteidl.core.Literals.BoolVector) value_;
+          }
+          return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type Bool
+       * </pre>
+       *
+       * <code>.flyteidl.core.BoolVector bool_vector = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.BoolVector, flyteidl.core.Literals.BoolVector.Builder, flyteidl.core.Literals.BoolVectorOrBuilder> 
+          getBoolVectorFieldBuilder() {
+        if (boolVectorBuilder_ == null) {
+          if (!(valueCase_ == 8)) {
+            value_ = flyteidl.core.Literals.BoolVector.getDefaultInstance();
+          }
+          boolVectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.BoolVector, flyteidl.core.Literals.BoolVector.Builder, flyteidl.core.Literals.BoolVectorOrBuilder>(
+                  (flyteidl.core.Literals.BoolVector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 8;
+        onChanged();;
+        return boolVectorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.StringVector, flyteidl.core.Literals.StringVector.Builder, flyteidl.core.Literals.StringVectorOrBuilder> strVectorBuilder_;
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public boolean hasStrVector() {
+        return valueCase_ == 9;
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public flyteidl.core.Literals.StringVector getStrVector() {
+        if (strVectorBuilder_ == null) {
+          if (valueCase_ == 9) {
+            return (flyteidl.core.Literals.StringVector) value_;
+          }
+          return flyteidl.core.Literals.StringVector.getDefaultInstance();
+        } else {
+          if (valueCase_ == 9) {
+            return strVectorBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.StringVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public Builder setStrVector(flyteidl.core.Literals.StringVector value) {
+        if (strVectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          strVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public Builder setStrVector(
+          flyteidl.core.Literals.StringVector.Builder builderForValue) {
+        if (strVectorBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          strVectorBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public Builder mergeStrVector(flyteidl.core.Literals.StringVector value) {
+        if (strVectorBuilder_ == null) {
+          if (valueCase_ == 9 &&
+              value_ != flyteidl.core.Literals.StringVector.getDefaultInstance()) {
+            value_ = flyteidl.core.Literals.StringVector.newBuilder((flyteidl.core.Literals.StringVector) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 9) {
+            strVectorBuilder_.mergeFrom(value);
+          }
+          strVectorBuilder_.setMessage(value);
+        }
+        valueCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public Builder clearStrVector() {
+        if (strVectorBuilder_ == null) {
+          if (valueCase_ == 9) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 9) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          strVectorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public flyteidl.core.Literals.StringVector.Builder getStrVectorBuilder() {
+        return getStrVectorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      public flyteidl.core.Literals.StringVectorOrBuilder getStrVectorOrBuilder() {
+        if ((valueCase_ == 9) && (strVectorBuilder_ != null)) {
+          return strVectorBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 9) {
+            return (flyteidl.core.Literals.StringVector) value_;
+          }
+          return flyteidl.core.Literals.StringVector.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * DenseVector of type string
+       * </pre>
+       *
+       * <code>.flyteidl.core.StringVector str_vector = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.StringVector, flyteidl.core.Literals.StringVector.Builder, flyteidl.core.Literals.StringVectorOrBuilder> 
+          getStrVectorFieldBuilder() {
+        if (strVectorBuilder_ == null) {
+          if (!(valueCase_ == 9)) {
+            value_ = flyteidl.core.Literals.StringVector.getDefaultInstance();
+          }
+          strVectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.StringVector, flyteidl.core.Literals.StringVector.Builder, flyteidl.core.Literals.StringVectorOrBuilder>(
+                  (flyteidl.core.Literals.StringVector) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 9;
+        onChanged();;
+        return strVectorBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7804,6 +9466,5883 @@ public final class Literals {
 
     @java.lang.Override
     public flyteidl.core.Literals.Literal getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface OffloadedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.Offloaded)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * URI of the offloaded vector. Of the form s3://...
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    java.lang.String getUri();
+    /**
+     * <pre>
+     * URI of the offloaded vector. Of the form s3://...
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+
+    /**
+     * <pre>
+     * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    java.lang.String getFormat();
+    /**
+     * <pre>
+     * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFormatBytes();
+  }
+  /**
+   * Protobuf type {@code flyteidl.core.Offloaded}
+   */
+  public  static final class Offloaded extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.Offloaded)
+      OffloadedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Offloaded.newBuilder() to construct.
+    private Offloaded(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Offloaded() {
+      uri_ = "";
+      format_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Offloaded(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              format_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Offloaded_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Offloaded_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.Offloaded.class, flyteidl.core.Literals.Offloaded.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uri_;
+    /**
+     * <pre>
+     * URI of the offloaded vector. Of the form s3://...
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URI of the offloaded vector. Of the form s3://...
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object format_;
+    /**
+     * <pre>
+     * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    public java.lang.String getFormat() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        format_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFormatBytes() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        format_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      if (!getFormatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      if (!getFormatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.Offloaded)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.Offloaded other = (flyteidl.core.Literals.Offloaded) obj;
+
+      if (!getUri()
+          .equals(other.getUri())) return false;
+      if (!getFormat()
+          .equals(other.getFormat())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + getFormat().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Offloaded parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Offloaded parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Offloaded parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.Offloaded prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.core.Offloaded}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.Offloaded)
+        flyteidl.core.Literals.OffloadedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Offloaded_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Offloaded_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.Offloaded.class, flyteidl.core.Literals.Offloaded.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.Offloaded.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uri_ = "";
+
+        format_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Offloaded_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Offloaded getDefaultInstanceForType() {
+        return flyteidl.core.Literals.Offloaded.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Offloaded build() {
+        flyteidl.core.Literals.Offloaded result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Offloaded buildPartial() {
+        flyteidl.core.Literals.Offloaded result = new flyteidl.core.Literals.Offloaded(this);
+        result.uri_ = uri_;
+        result.format_ = format_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.Offloaded) {
+          return mergeFrom((flyteidl.core.Literals.Offloaded)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.Offloaded other) {
+        if (other == flyteidl.core.Literals.Offloaded.getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          onChanged();
+        }
+        if (!other.getFormat().isEmpty()) {
+          format_ = other.format_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.Offloaded parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.Offloaded) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uri_ = "";
+      /**
+       * <pre>
+       * URI of the offloaded vector. Of the form s3://...
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI of the offloaded vector. Of the form s3://...
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI of the offloaded vector. Of the form s3://...
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI of the offloaded vector. Of the form s3://...
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI of the offloaded vector. Of the form s3://...
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object format_ = "";
+      /**
+       * <pre>
+       * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public java.lang.String getFormat() {
+        java.lang.Object ref = format_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          format_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFormatBytes() {
+        java.lang.Object ref = format_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          format_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder setFormat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        format_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder clearFormat() {
+        
+        format_ = getDefaultInstance().getFormat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Format of the offloaded vector. this is for the client libraries to parse. Example: parquet, arrow, hd5, proto etc
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder setFormatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        format_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.Offloaded)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.Offloaded)
+    private static final flyteidl.core.Literals.Offloaded DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.Offloaded();
+    }
+
+    public static flyteidl.core.Literals.Offloaded getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Offloaded>
+        PARSER = new com.google.protobuf.AbstractParser<Offloaded>() {
+      @java.lang.Override
+      public Offloaded parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Offloaded(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Offloaded> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Offloaded> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.Offloaded getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StringVectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.StringVector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getValuesList();
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    java.lang.String getValues(int index);
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getValuesBytes(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * Represents a list of Strings
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.StringVector}
+   */
+  public  static final class StringVector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.StringVector)
+      StringVectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StringVector.newBuilder() to construct.
+    private StringVector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StringVector() {
+      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StringVector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.add(s);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_ = values_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_StringVector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_StringVector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.StringVector.class, flyteidl.core.Literals.StringVector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList values_;
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    public java.lang.String getValues(int index) {
+      return values_.get(index);
+    }
+    /**
+     * <code>repeated string values = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValuesBytes(int index) {
+      return values_.getByteString(index);
+    }
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < values_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += computeStringSizeNoTag(values_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.StringVector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.StringVector other = (flyteidl.core.Literals.StringVector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.StringVector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.StringVector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.StringVector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.StringVector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a list of Strings
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.StringVector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.StringVector)
+        flyteidl.core.Literals.StringVectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_StringVector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_StringVector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.StringVector.class, flyteidl.core.Literals.StringVector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.StringVector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_StringVector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.StringVector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.StringVector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.StringVector build() {
+        flyteidl.core.Literals.StringVector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.StringVector buildPartial() {
+        flyteidl.core.Literals.StringVector result = new flyteidl.core.Literals.StringVector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_ = values_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.StringVector) {
+          return mergeFrom((flyteidl.core.Literals.StringVector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.StringVector other) {
+        if (other == flyteidl.core.Literals.StringVector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.StringVector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.StringVector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = new com.google.protobuf.LazyStringArrayList(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getValuesList() {
+        return values_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public Builder setValues(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public Builder addValues(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1;</code>
+       */
+      public Builder addValuesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.StringVector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.StringVector)
+    private static final flyteidl.core.Literals.StringVector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.StringVector();
+    }
+
+    public static flyteidl.core.Literals.StringVector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StringVector>
+        PARSER = new com.google.protobuf.AbstractParser<StringVector>() {
+      @java.lang.Override
+      public StringVector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StringVector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StringVector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StringVector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.StringVector getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface Int32VectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.Int32Vector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    java.util.List<java.lang.Integer> getValuesList();
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    int getValues(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * represents a list of ints of 32 bit precision
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.Int32Vector}
+   */
+  public  static final class Int32Vector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.Int32Vector)
+      Int32VectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Int32Vector.newBuilder() to construct.
+    private Int32Vector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Int32Vector() {
+      values_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Int32Vector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addInt(input.readInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Int32Vector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Int32Vector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.Int32Vector.class, flyteidl.core.Literals.Int32Vector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList values_;
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated int32 values = 1;</code>
+     */
+    public int getValues(int index) {
+      return values_.getInt(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeInt32NoTag(values_.getInt(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(values_.getInt(i));
+        }
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.Int32Vector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.Int32Vector other = (flyteidl.core.Literals.Int32Vector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int32Vector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.Int32Vector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * represents a list of ints of 32 bit precision
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.Int32Vector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.Int32Vector)
+        flyteidl.core.Literals.Int32VectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int32Vector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int32Vector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.Int32Vector.class, flyteidl.core.Literals.Int32Vector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.Int32Vector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int32Vector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int32Vector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.Int32Vector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int32Vector build() {
+        flyteidl.core.Literals.Int32Vector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int32Vector buildPartial() {
+        flyteidl.core.Literals.Int32Vector result = new flyteidl.core.Literals.Int32Vector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.Int32Vector) {
+          return mergeFrom((flyteidl.core.Literals.Int32Vector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.Int32Vector other) {
+        if (other == flyteidl.core.Literals.Int32Vector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.Int32Vector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.Int32Vector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.IntList values_ = emptyIntList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public int getValues(int index) {
+        return values_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public Builder setValues(
+          int index, int value) {
+        ensureValuesIsMutable();
+        values_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public Builder addValues(int value) {
+        ensureValuesIsMutable();
+        values_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.Int32Vector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.Int32Vector)
+    private static final flyteidl.core.Literals.Int32Vector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.Int32Vector();
+    }
+
+    public static flyteidl.core.Literals.Int32Vector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Int32Vector>
+        PARSER = new com.google.protobuf.AbstractParser<Int32Vector>() {
+      @java.lang.Override
+      public Int32Vector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Int32Vector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Int32Vector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Int32Vector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.Int32Vector getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface Int64VectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.Int64Vector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    java.util.List<java.lang.Long> getValuesList();
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    long getValues(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * represents a list of ints of 64 bit precision
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.Int64Vector}
+   */
+  public  static final class Int64Vector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.Int64Vector)
+      Int64VectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Int64Vector.newBuilder() to construct.
+    private Int64Vector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Int64Vector() {
+      values_ = emptyLongList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Int64Vector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addLong(input.readInt64());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newLongList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addLong(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Int64Vector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_Int64Vector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.Int64Vector.class, flyteidl.core.Literals.Int64Vector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.LongList values_;
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated int64 values = 1;</code>
+     */
+    public long getValues(int index) {
+      return values_.getLong(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeInt64NoTag(values_.getLong(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(values_.getLong(i));
+        }
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.Int64Vector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.Int64Vector other = (flyteidl.core.Literals.Int64Vector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.Int64Vector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.Int64Vector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * represents a list of ints of 64 bit precision
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.Int64Vector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.Int64Vector)
+        flyteidl.core.Literals.Int64VectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int64Vector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int64Vector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.Int64Vector.class, flyteidl.core.Literals.Int64Vector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.Int64Vector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_Int64Vector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int64Vector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.Int64Vector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int64Vector build() {
+        flyteidl.core.Literals.Int64Vector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.Int64Vector buildPartial() {
+        flyteidl.core.Literals.Int64Vector result = new flyteidl.core.Literals.Int64Vector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.Int64Vector) {
+          return mergeFrom((flyteidl.core.Literals.Int64Vector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.Int64Vector other) {
+        if (other == flyteidl.core.Literals.Int64Vector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.Int64Vector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.Int64Vector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.LongList values_ = emptyLongList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public long getValues(int index) {
+        return values_.getLong(index);
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public Builder setValues(
+          int index, long value) {
+        ensureValuesIsMutable();
+        values_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public Builder addValues(long value) {
+        ensureValuesIsMutable();
+        values_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.Int64Vector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.Int64Vector)
+    private static final flyteidl.core.Literals.Int64Vector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.Int64Vector();
+    }
+
+    public static flyteidl.core.Literals.Int64Vector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Int64Vector>
+        PARSER = new com.google.protobuf.AbstractParser<Int64Vector>() {
+      @java.lang.Override
+      public Int64Vector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Int64Vector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Int64Vector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Int64Vector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.Int64Vector getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FloatVectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.FloatVector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    java.util.List<java.lang.Float> getValuesList();
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    float getValues(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * represents a list of floats (floating point of 32 bit precision)
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.FloatVector}
+   */
+  public  static final class FloatVector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.FloatVector)
+      FloatVectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FloatVector.newBuilder() to construct.
+    private FloatVector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FloatVector() {
+      values_ = emptyFloatList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FloatVector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addFloat(input.readFloat());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newFloatList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addFloat(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_FloatVector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_FloatVector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.FloatVector.class, flyteidl.core.Literals.FloatVector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.FloatList values_;
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    public java.util.List<java.lang.Float>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated float values = 1;</code>
+     */
+    public float getValues(int index) {
+      return values_.getFloat(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeFloatNoTag(values_.getFloat(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 4 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.FloatVector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.FloatVector other = (flyteidl.core.Literals.FloatVector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.FloatVector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.FloatVector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.FloatVector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.FloatVector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * represents a list of floats (floating point of 32 bit precision)
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.FloatVector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.FloatVector)
+        flyteidl.core.Literals.FloatVectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_FloatVector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_FloatVector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.FloatVector.class, flyteidl.core.Literals.FloatVector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.FloatVector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_FloatVector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.FloatVector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.FloatVector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.FloatVector build() {
+        flyteidl.core.Literals.FloatVector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.FloatVector buildPartial() {
+        flyteidl.core.Literals.FloatVector result = new flyteidl.core.Literals.FloatVector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.FloatVector) {
+          return mergeFrom((flyteidl.core.Literals.FloatVector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.FloatVector other) {
+        if (other == flyteidl.core.Literals.FloatVector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.FloatVector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.FloatVector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public java.util.List<java.lang.Float>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public float getValues(int index) {
+        return values_.getFloat(index);
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public Builder setValues(
+          int index, float value) {
+        ensureValuesIsMutable();
+        values_.setFloat(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public Builder addValues(float value) {
+        ensureValuesIsMutable();
+        values_.addFloat(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.FloatVector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.FloatVector)
+    private static final flyteidl.core.Literals.FloatVector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.FloatVector();
+    }
+
+    public static flyteidl.core.Literals.FloatVector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FloatVector>
+        PARSER = new com.google.protobuf.AbstractParser<FloatVector>() {
+      @java.lang.Override
+      public FloatVector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FloatVector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FloatVector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FloatVector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.FloatVector getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DoubleVectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.DoubleVector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    java.util.List<java.lang.Double> getValuesList();
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    double getValues(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * represents a list of double (floating point of 64 bit precision)
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.DoubleVector}
+   */
+  public  static final class DoubleVector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.DoubleVector)
+      DoubleVectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DoubleVector.newBuilder() to construct.
+    private DoubleVector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DoubleVector() {
+      values_ = emptyDoubleList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DoubleVector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addDouble(input.readDouble());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addDouble(input.readDouble());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_DoubleVector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_DoubleVector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.DoubleVector.class, flyteidl.core.Literals.DoubleVector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.DoubleList values_;
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    public java.util.List<java.lang.Double>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated double values = 1;</code>
+     */
+    public double getValues(int index) {
+      return values_.getDouble(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeDoubleNoTag(values_.getDouble(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 8 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.DoubleVector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.DoubleVector other = (flyteidl.core.Literals.DoubleVector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.DoubleVector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.DoubleVector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * represents a list of double (floating point of 64 bit precision)
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.DoubleVector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.DoubleVector)
+        flyteidl.core.Literals.DoubleVectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_DoubleVector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_DoubleVector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.DoubleVector.class, flyteidl.core.Literals.DoubleVector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.DoubleVector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_DoubleVector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.DoubleVector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.DoubleVector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.DoubleVector build() {
+        flyteidl.core.Literals.DoubleVector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.DoubleVector buildPartial() {
+        flyteidl.core.Literals.DoubleVector result = new flyteidl.core.Literals.DoubleVector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.DoubleVector) {
+          return mergeFrom((flyteidl.core.Literals.DoubleVector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.DoubleVector other) {
+        if (other == flyteidl.core.Literals.DoubleVector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.DoubleVector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.DoubleVector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.DoubleList values_ = emptyDoubleList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public java.util.List<java.lang.Double>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public double getValues(int index) {
+        return values_.getDouble(index);
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public Builder setValues(
+          int index, double value) {
+        ensureValuesIsMutable();
+        values_.setDouble(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public Builder addValues(double value) {
+        ensureValuesIsMutable();
+        values_.addDouble(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Double> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.DoubleVector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.DoubleVector)
+    private static final flyteidl.core.Literals.DoubleVector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.DoubleVector();
+    }
+
+    public static flyteidl.core.Literals.DoubleVector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DoubleVector>
+        PARSER = new com.google.protobuf.AbstractParser<DoubleVector>() {
+      @java.lang.Override
+      public DoubleVector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DoubleVector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DoubleVector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DoubleVector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.DoubleVector getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BoolVectorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.BoolVector)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    java.util.List<java.lang.Boolean> getValuesList();
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    boolean getValues(int index);
+
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    boolean hasOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.Offloaded getOffloaded();
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder();
+  }
+  /**
+   * <pre>
+   * represents a list of booleans
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.BoolVector}
+   */
+  public  static final class BoolVector extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.BoolVector)
+      BoolVectorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BoolVector.newBuilder() to construct.
+    private BoolVector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BoolVector() {
+      values_ = emptyBooleanList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BoolVector(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                values_ = newBooleanList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              values_.addBoolean(input.readBool());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                values_ = newBooleanList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.addBoolean(input.readBool());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              flyteidl.core.Literals.Offloaded.Builder subBuilder = null;
+              if (offloaded_ != null) {
+                subBuilder = offloaded_.toBuilder();
+              }
+              offloaded_ = input.readMessage(flyteidl.core.Literals.Offloaded.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(offloaded_);
+                offloaded_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_BoolVector_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Literals.internal_static_flyteidl_core_BoolVector_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Literals.BoolVector.class, flyteidl.core.Literals.BoolVector.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.BooleanList values_;
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    public java.util.List<java.lang.Boolean>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated bool values = 1;</code>
+     */
+    public boolean getValues(int index) {
+      return values_.getBoolean(index);
+    }
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int OFFLOADED_FIELD_NUMBER = 2;
+    private flyteidl.core.Literals.Offloaded offloaded_;
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public boolean hasOffloaded() {
+      return offloaded_ != null;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.Offloaded getOffloaded() {
+      return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+    }
+    /**
+     * <pre>
+     * Optionally offload the vector
+     * </pre>
+     *
+     * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+     */
+    public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+      return getOffloaded();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeBoolNoTag(values_.getBoolean(i));
+      }
+      if (offloaded_ != null) {
+        output.writeMessage(2, getOffloaded());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 1 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      if (offloaded_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOffloaded());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Literals.BoolVector)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Literals.BoolVector other = (flyteidl.core.Literals.BoolVector) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (hasOffloaded() != other.hasOffloaded()) return false;
+      if (hasOffloaded()) {
+        if (!getOffloaded()
+            .equals(other.getOffloaded())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (hasOffloaded()) {
+        hash = (37 * hash) + OFFLOADED_FIELD_NUMBER;
+        hash = (53 * hash) + getOffloaded().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.BoolVector parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.BoolVector parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Literals.BoolVector parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Literals.BoolVector prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * represents a list of booleans
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.BoolVector}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.BoolVector)
+        flyteidl.core.Literals.BoolVectorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_BoolVector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_BoolVector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Literals.BoolVector.class, flyteidl.core.Literals.BoolVector.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Literals.BoolVector.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        values_ = emptyBooleanList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Literals.internal_static_flyteidl_core_BoolVector_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.BoolVector getDefaultInstanceForType() {
+        return flyteidl.core.Literals.BoolVector.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.BoolVector build() {
+        flyteidl.core.Literals.BoolVector result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Literals.BoolVector buildPartial() {
+        flyteidl.core.Literals.BoolVector result = new flyteidl.core.Literals.BoolVector(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.values_ = values_;
+        if (offloadedBuilder_ == null) {
+          result.offloaded_ = offloaded_;
+        } else {
+          result.offloaded_ = offloadedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Literals.BoolVector) {
+          return mergeFrom((flyteidl.core.Literals.BoolVector)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Literals.BoolVector other) {
+        if (other == flyteidl.core.Literals.BoolVector.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (other.hasOffloaded()) {
+          mergeOffloaded(other.getOffloaded());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Literals.BoolVector parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Literals.BoolVector) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.BooleanList values_ = emptyBooleanList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = mutableCopy(values_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public java.util.List<java.lang.Boolean>
+          getValuesList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(values_) : values_;
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public boolean getValues(int index) {
+        return values_.getBoolean(index);
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public Builder setValues(
+          int index, boolean value) {
+        ensureValuesIsMutable();
+        values_.setBoolean(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public Builder addValues(boolean value) {
+        ensureValuesIsMutable();
+        values_.addBoolean(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Boolean> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bool values = 1;</code>
+       */
+      public Builder clearValues() {
+        values_ = emptyBooleanList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Literals.Offloaded offloaded_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> offloadedBuilder_;
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public boolean hasOffloaded() {
+        return offloadedBuilder_ != null || offloaded_ != null;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded getOffloaded() {
+        if (offloadedBuilder_ == null) {
+          return offloaded_ == null ? flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        } else {
+          return offloadedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offloaded_ = value;
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder setOffloaded(
+          flyteidl.core.Literals.Offloaded.Builder builderForValue) {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = builderForValue.build();
+          onChanged();
+        } else {
+          offloadedBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder mergeOffloaded(flyteidl.core.Literals.Offloaded value) {
+        if (offloadedBuilder_ == null) {
+          if (offloaded_ != null) {
+            offloaded_ =
+              flyteidl.core.Literals.Offloaded.newBuilder(offloaded_).mergeFrom(value).buildPartial();
+          } else {
+            offloaded_ = value;
+          }
+          onChanged();
+        } else {
+          offloadedBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public Builder clearOffloaded() {
+        if (offloadedBuilder_ == null) {
+          offloaded_ = null;
+          onChanged();
+        } else {
+          offloaded_ = null;
+          offloadedBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.Offloaded.Builder getOffloadedBuilder() {
+        
+        onChanged();
+        return getOffloadedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      public flyteidl.core.Literals.OffloadedOrBuilder getOffloadedOrBuilder() {
+        if (offloadedBuilder_ != null) {
+          return offloadedBuilder_.getMessageOrBuilder();
+        } else {
+          return offloaded_ == null ?
+              flyteidl.core.Literals.Offloaded.getDefaultInstance() : offloaded_;
+        }
+      }
+      /**
+       * <pre>
+       * Optionally offload the vector
+       * </pre>
+       *
+       * <code>.flyteidl.core.Offloaded offloaded = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder> 
+          getOffloadedFieldBuilder() {
+        if (offloadedBuilder_ == null) {
+          offloadedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Offloaded, flyteidl.core.Literals.Offloaded.Builder, flyteidl.core.Literals.OffloadedOrBuilder>(
+                  getOffloaded(),
+                  getParentForChildren(),
+                  isClean());
+          offloaded_ = null;
+        }
+        return offloadedBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.BoolVector)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.BoolVector)
+    private static final flyteidl.core.Literals.BoolVector DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Literals.BoolVector();
+    }
+
+    public static flyteidl.core.Literals.BoolVector getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BoolVector>
+        PARSER = new com.google.protobuf.AbstractParser<BoolVector>() {
+      @java.lang.Override
+      public BoolVector parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BoolVector(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BoolVector> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BoolVector> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Literals.BoolVector getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8638,7 +16177,7 @@ public final class Literals {
   }
   /**
    * <pre>
-   * A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
+   * A map of literals. This is a workaround since oneofs in proto messages cannot contain a map field.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.LiteralMap}
@@ -8980,7 +16519,7 @@ public final class Literals {
     }
     /**
      * <pre>
-     * A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
+     * A map of literals. This is a workaround since oneofs in proto messages cannot contain a map field.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.LiteralMap}
@@ -14617,6 +22156,41 @@ public final class Literals {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Literal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Offloaded_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Offloaded_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_StringVector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_StringVector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Int32Vector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Int32Vector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Int64Vector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Int64Vector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_FloatVector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_FloatVector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_DoubleVector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_DoubleVector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_BoolVector_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_BoolVector_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_LiteralCollection_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14697,33 +22271,53 @@ public final class Literals {
       "yteidl.core.SchemaH\000\022(\n\tnone_type\030\005 \001(\0132" +
       "\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024." +
       "flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132\027" +
-      ".google.protobuf.StructH\000B\007\n\005value\"\235\001\n\007L" +
+      ".google.protobuf.StructH\000B\007\n\005value\"\322\003\n\007L" +
       "iteral\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.S" +
       "calarH\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.c" +
       "ore.LiteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMapH\000B\007\n\005value\"=\n\021Li" +
-      "teralCollection\022(\n\010literals\030\001 \003(\0132\026.flyt" +
-      "eidl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010lite" +
-      "rals\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Li" +
-      "teralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Literal" +
-      ":\0028\001\"E\n\025BindingDataCollection\022,\n\010binding" +
-      "s\030\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016" +
-      "BindingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyte" +
-      "idl.core.BindingDataMap.BindingsEntry\032K\n" +
-      "\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001" +
-      "(\0132\032.flyteidl.core.BindingData:\0028\001\"\334\001\n\013B" +
-      "indingData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.co" +
-      "re.ScalarH\000\022:\n\ncollection\030\002 \001(\0132$.flytei" +
-      "dl.core.BindingDataCollectionH\000\0221\n\007promi" +
-      "se\030\003 \001(\0132\036.flyteidl.core.OutputReference" +
-      "H\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core.BindingD" +
-      "ataMapH\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(" +
-      "\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.core.Bindi" +
-      "ngData\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005" +
-      " \001(\rB6Z4github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/coreb\006proto3"
+      "lyteidl.core.LiteralMapH\000\0222\n\014int32_vecto" +
+      "r\030\004 \001(\0132\032.flyteidl.core.Int32VectorH\000\0220\n" +
+      "\nint_vector\030\005 \001(\0132\032.flyteidl.core.Int64V" +
+      "ectorH\000\0222\n\014float_vector\030\006 \001(\0132\032.flyteidl" +
+      ".core.FloatVectorH\000\0224\n\rdouble_vector\030\007 \001" +
+      "(\0132\033.flyteidl.core.DoubleVectorH\000\0220\n\013boo" +
+      "l_vector\030\010 \001(\0132\031.flyteidl.core.BoolVecto" +
+      "rH\000\0221\n\nstr_vector\030\t \001(\0132\033.flyteidl.core." +
+      "StringVectorH\000B\007\n\005value\"(\n\tOffloaded\022\013\n\003" +
+      "uri\030\001 \001(\t\022\016\n\006format\030\002 \001(\t\"K\n\014StringVecto" +
+      "r\022\016\n\006values\030\001 \003(\t\022+\n\toffloaded\030\002 \001(\0132\030.f" +
+      "lyteidl.core.Offloaded\"J\n\013Int32Vector\022\016\n" +
+      "\006values\030\001 \003(\005\022+\n\toffloaded\030\002 \001(\0132\030.flyte" +
+      "idl.core.Offloaded\"J\n\013Int64Vector\022\016\n\006val" +
+      "ues\030\001 \003(\003\022+\n\toffloaded\030\002 \001(\0132\030.flyteidl." +
+      "core.Offloaded\"J\n\013FloatVector\022\016\n\006values\030" +
+      "\001 \003(\002\022+\n\toffloaded\030\002 \001(\0132\030.flyteidl.core" +
+      ".Offloaded\"K\n\014DoubleVector\022\016\n\006values\030\001 \003" +
+      "(\001\022+\n\toffloaded\030\002 \001(\0132\030.flyteidl.core.Of" +
+      "floaded\"I\n\nBoolVector\022\016\n\006values\030\001 \003(\010\022+\n" +
+      "\toffloaded\030\002 \001(\0132\030.flyteidl.core.Offload" +
+      "ed\"=\n\021LiteralCollection\022(\n\010literals\030\001 \003(" +
+      "\0132\026.flyteidl.core.Literal\"\220\001\n\nLiteralMap" +
+      "\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core.Liter" +
+      "alMap.LiteralsEntry\032G\n\rLiteralsEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core" +
+      ".Literal:\0028\001\"E\n\025BindingDataCollection\022,\n" +
+      "\010bindings\030\001 \003(\0132\032.flyteidl.core.BindingD" +
+      "ata\"\234\001\n\016BindingDataMap\022=\n\010bindings\030\001 \003(\013" +
+      "2+.flyteidl.core.BindingDataMap.Bindings" +
+      "Entry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005v" +
+      "alue\030\002 \001(\0132\032.flyteidl.core.BindingData:\002" +
+      "8\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001 \001(\0132\025.fly" +
+      "teidl.core.ScalarH\000\022:\n\ncollection\030\002 \001(\0132" +
+      "$.flyteidl.core.BindingDataCollectionH\000\022" +
+      "1\n\007promise\030\003 \001(\0132\036.flyteidl.core.OutputR" +
+      "eferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core." +
+      "BindingDataMapH\000B\007\n\005value\"C\n\007Binding\022\013\n\003" +
+      "var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.co" +
+      "re.BindingData\"*\n\014KeyValuePair\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007r" +
+      "etries\030\005 \001(\rB6Z4github.com/flyteorg/flyt" +
+      "eidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14788,15 +22382,57 @@ public final class Literals {
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
-        new java.lang.String[] { "Scalar", "Collection", "Map", "Value", });
-    internal_static_flyteidl_core_LiteralCollection_descriptor =
+        new java.lang.String[] { "Scalar", "Collection", "Map", "Int32Vector", "IntVector", "FloatVector", "DoubleVector", "BoolVector", "StrVector", "Value", });
+    internal_static_flyteidl_core_Offloaded_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_flyteidl_core_Offloaded_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Offloaded_descriptor,
+        new java.lang.String[] { "Uri", "Format", });
+    internal_static_flyteidl_core_StringVector_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_flyteidl_core_StringVector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_StringVector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_Int32Vector_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_flyteidl_core_Int32Vector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Int32Vector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_Int64Vector_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_flyteidl_core_Int64Vector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Int64Vector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_FloatVector_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_flyteidl_core_FloatVector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_FloatVector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_DoubleVector_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_flyteidl_core_DoubleVector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_DoubleVector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_BoolVector_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_flyteidl_core_BoolVector_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_BoolVector_descriptor,
+        new java.lang.String[] { "Values", "Offloaded", });
+    internal_static_flyteidl_core_LiteralCollection_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_core_LiteralCollection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_LiteralCollection_descriptor,
         new java.lang.String[] { "Literals", });
     internal_static_flyteidl_core_LiteralMap_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_core_LiteralMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_LiteralMap_descriptor,
@@ -14808,13 +22444,13 @@ public final class Literals {
         internal_static_flyteidl_core_LiteralMap_LiteralsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_BindingDataCollection_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_core_BindingDataCollection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingDataCollection_descriptor,
         new java.lang.String[] { "Bindings", });
     internal_static_flyteidl_core_BindingDataMap_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_core_BindingDataMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingDataMap_descriptor,
@@ -14826,25 +22462,25 @@ public final class Literals {
         internal_static_flyteidl_core_BindingDataMap_BindingsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_BindingData_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_flyteidl_core_BindingData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BindingData_descriptor,
         new java.lang.String[] { "Scalar", "Collection", "Promise", "Map", "Value", });
     internal_static_flyteidl_core_Binding_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_core_Binding_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Binding_descriptor,
         new java.lang.String[] { "Var", "Binding", });
     internal_static_flyteidl_core_KeyValuePair_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_flyteidl_core_KeyValuePair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_KeyValuePair_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_RetryStrategy_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_flyteidl_core_RetryStrategy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RetryStrategy_descriptor,
