@@ -31,31 +31,27 @@ class CoreEnumType(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'values': 'list[str]',
-        'default_value': 'str'
+        'values': 'list[str]'
     }
 
     attribute_map = {
-        'values': 'values',
-        'default_value': 'default_value'
+        'values': 'values'
     }
 
-    def __init__(self, values=None, default_value=None):  # noqa: E501
+    def __init__(self, values=None):  # noqa: E501
         """CoreEnumType - a model defined in Swagger"""  # noqa: E501
 
         self._values = None
-        self._default_value = None
         self.discriminator = None
 
         if values is not None:
             self.values = values
-        if default_value is not None:
-            self.default_value = default_value
 
     @property
     def values(self):
         """Gets the values of this CoreEnumType.  # noqa: E501
 
+        Predefined set of enum values.  # noqa: E501
 
         :return: The values of this CoreEnumType.  # noqa: E501
         :rtype: list[str]
@@ -66,33 +62,13 @@ class CoreEnumType(object):
     def values(self, values):
         """Sets the values of this CoreEnumType.
 
+        Predefined set of enum values.  # noqa: E501
 
         :param values: The values of this CoreEnumType.  # noqa: E501
         :type: list[str]
         """
 
         self._values = values
-
-    @property
-    def default_value(self):
-        """Gets the default_value of this CoreEnumType.  # noqa: E501
-
-
-        :return: The default_value of this CoreEnumType.  # noqa: E501
-        :rtype: str
-        """
-        return self._default_value
-
-    @default_value.setter
-    def default_value(self, default_value):
-        """Sets the default_value of this CoreEnumType.
-
-
-        :param default_value: The default_value of this CoreEnumType.  # noqa: E501
-        :type: str
-        """
-
-        self._default_value = default_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

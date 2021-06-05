@@ -6936,7 +6936,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IEnumType
              * @property {Array.<string>|null} [values] EnumType values
-             * @property {string|null} [defaultValue] EnumType defaultValue
              */
 
             /**
@@ -6962,14 +6961,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             EnumType.prototype.values = $util.emptyArray;
-
-            /**
-             * EnumType defaultValue.
-             * @member {string} defaultValue
-             * @memberof flyteidl.core.EnumType
-             * @instance
-             */
-            EnumType.prototype.defaultValue = "";
 
             /**
              * Creates a new EnumType instance using the specified properties.
@@ -6998,8 +6989,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.values != null && message.values.length)
                     for (let i = 0; i < message.values.length; ++i)
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.values[i]);
-                if (message.defaultValue != null && message.hasOwnProperty("defaultValue"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.defaultValue);
                 return writer;
             };
 
@@ -7025,9 +7014,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.values && message.values.length))
                             message.values = [];
                         message.values.push(reader.string());
-                        break;
-                    case 2:
-                        message.defaultValue = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7055,9 +7041,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!$util.isString(message.values[i]))
                             return "values: string[] expected";
                 }
-                if (message.defaultValue != null && message.hasOwnProperty("defaultValue"))
-                    if (!$util.isString(message.defaultValue))
-                        return "defaultValue: string expected";
                 return null;
             };
 

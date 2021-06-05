@@ -3849,7 +3849,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
@@ -3931,7 +3930,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
               required: true
       spec:
@@ -4074,7 +4072,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
               required: true
         security_context:
@@ -4180,7 +4177,6 @@ definitions:
                 values:
                 - "values"
                 - "values"
-                default_value: "default_value"
               simple: {}
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4262,7 +4258,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
             required: true
   adminLaunchPlanCreateRequest:
@@ -4333,7 +4328,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4415,7 +4409,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
                 required: true
         spec:
@@ -4558,7 +4551,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
                 required: true
           security_context:
@@ -4646,7 +4638,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4728,7 +4719,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
                 required: true
         spec:
@@ -4871,7 +4861,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
                 required: true
           security_context:
@@ -5158,7 +5147,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
             required: true
       security_context:
@@ -6535,7 +6523,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -6566,7 +6553,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -7371,7 +7357,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7402,7 +7387,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -7535,7 +7519,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7566,7 +7549,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -7732,7 +7714,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -7763,7 +7744,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -8603,7 +8583,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -8634,7 +8613,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -9354,7 +9332,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -9385,7 +9362,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -9567,7 +9543,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -9598,7 +9573,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -10078,7 +10052,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -10109,7 +10082,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -10284,7 +10256,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -10315,7 +10286,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -11253,7 +11223,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -11284,7 +11253,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -12089,7 +12057,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -12120,7 +12087,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -12253,7 +12219,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -12284,7 +12249,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -12450,7 +12414,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -12481,7 +12444,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
               config:
                 key: "config"
@@ -13321,7 +13283,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
                 inputs:
                   variables:
@@ -13352,7 +13313,6 @@ definitions:
                           values:
                           - "values"
                           - "values"
-                          default_value: "default_value"
                         simple: {}
             connections:
               upstream:
@@ -14306,7 +14266,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -14337,7 +14296,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -15142,7 +15100,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -15173,7 +15130,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -15306,7 +15262,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -15337,7 +15292,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -15503,7 +15457,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -15534,7 +15487,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -16374,7 +16326,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -16405,7 +16356,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -17303,7 +17253,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -17334,7 +17283,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -18139,7 +18087,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -18170,7 +18117,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -18303,7 +18249,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -18334,7 +18279,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -18500,7 +18444,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -18531,7 +18474,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -19371,7 +19313,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -19402,7 +19343,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -20217,7 +20157,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -20248,7 +20187,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -21053,7 +20991,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -21084,7 +21021,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -21217,7 +21153,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -21248,7 +21183,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -21414,7 +21348,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -21445,7 +21378,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                 config:
                   key: "config"
@@ -22285,7 +22217,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
                   inputs:
                     variables:
@@ -22316,7 +22247,6 @@ definitions:
                             values:
                             - "values"
                             - "values"
-                            default_value: "default_value"
                           simple: {}
               connections:
                 upstream:
@@ -22918,7 +22848,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
           inputs:
             variables:
@@ -22949,7 +22878,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
         config:
           key: "config"
@@ -23801,7 +23729,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
           inputs:
             variables:
@@ -23832,7 +23759,6 @@ definitions:
                     values:
                     - "values"
                     - "values"
-                    default_value: "default_value"
                   simple: {}
       connections:
         upstream:
@@ -24664,7 +24590,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -24695,7 +24620,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -25500,7 +25424,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25531,7 +25454,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -25664,7 +25586,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25695,7 +25616,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -25861,7 +25781,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -25892,7 +25811,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
           config:
             key: "config"
@@ -26732,7 +26650,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
             inputs:
               variables:
@@ -26763,7 +26680,6 @@ definitions:
                       values:
                       - "values"
                       - "values"
-                      default_value: "default_value"
                     simple: {}
         connections:
           upstream:
@@ -26971,18 +26887,16 @@ definitions:
     properties:
       values:
         type: "array"
-        title: "Predefined set of enum values"
+        description: "Predefined set of enum values."
         items:
           type: "string"
-      default_value:
-        type: "string"
-        title: "default value for the enum type"
-    title: "Enables declaring enum types, with predefined string values"
+    description: "Enables declaring enum types, with predefined string values\nFor\
+      \ len(values) > 0, the first value in the ordered list is regarded as the default\
+      \ value. If you wish\nTo provide no defaults, make the first value as undefined."
     example:
       values:
       - "values"
       - "values"
-      default_value: "default_value"
   coreError:
     type: "object"
     properties:
@@ -27417,7 +27331,6 @@ definitions:
         values:
         - "values"
         - "values"
-        default_value: "default_value"
       simple: {}
   coreNode:
     type: "object"
@@ -27923,7 +27836,6 @@ definitions:
             values:
             - "values"
             - "values"
-            default_value: "default_value"
           simple: {}
       required: true
   coreParameterMap:
@@ -28012,7 +27924,6 @@ definitions:
                 values:
                 - "values"
                 - "values"
-                default_value: "default_value"
               simple: {}
           required: true
   corePrimitive:
@@ -28618,7 +28529,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
         inputs:
           variables:
@@ -28649,7 +28559,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
       config:
         key: "config"
@@ -28734,7 +28643,6 @@ definitions:
                 values:
                 - "values"
                 - "values"
-                default_value: "default_value"
               simple: {}
       inputs:
         variables:
@@ -28765,7 +28673,6 @@ definitions:
                 values:
                 - "values"
                 - "values"
-                default_value: "default_value"
               simple: {}
   coreVariable:
     type: "object"
@@ -28804,7 +28711,6 @@ definitions:
           values:
           - "values"
           - "values"
-          default_value: "default_value"
         simple: {}
   coreVariableMap:
     type: "object"
@@ -28844,7 +28750,6 @@ definitions:
               values:
               - "values"
               - "values"
-              default_value: "default_value"
             simple: {}
   coreVoid:
     type: "object"
@@ -29777,7 +29682,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
         inputs:
           variables:
@@ -29808,7 +29712,6 @@ definitions:
                   values:
                   - "values"
                   - "values"
-                  default_value: "default_value"
                 simple: {}
   eventExternalResourceInfo:
     type: "object"
@@ -30836,7 +30739,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -30867,7 +30769,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -31672,7 +31573,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -31703,7 +31603,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:
@@ -31836,7 +31735,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -31867,7 +31765,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -32033,7 +31930,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -32064,7 +31960,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
             config:
               key: "config"
@@ -32904,7 +32799,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
               inputs:
                 variables:
@@ -32935,7 +32829,6 @@ definitions:
                         values:
                         - "values"
                         - "values"
-                        default_value: "default_value"
                       simple: {}
           connections:
             upstream:

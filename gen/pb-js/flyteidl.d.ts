@@ -2880,9 +2880,6 @@ export namespace flyteidl {
 
             /** EnumType values */
             values?: (string[]|null);
-
-            /** EnumType defaultValue */
-            defaultValue?: (string|null);
         }
 
         /** Represents an EnumType. */
@@ -2896,9 +2893,6 @@ export namespace flyteidl {
 
             /** EnumType values. */
             public values: string[];
-
-            /** EnumType defaultValue. */
-            public defaultValue: string;
 
             /**
              * Creates a new EnumType instance using the specified properties.

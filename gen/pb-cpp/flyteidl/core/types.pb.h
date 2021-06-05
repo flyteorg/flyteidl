@@ -717,27 +717,12 @@ class EnumType final :
   const ::google::protobuf::RepeatedPtrField<::std::string>& values() const;
   ::google::protobuf::RepeatedPtrField<::std::string>* mutable_values();
 
-  // string default_value = 2;
-  void clear_default_value();
-  static const int kDefaultValueFieldNumber = 2;
-  const ::std::string& default_value() const;
-  void set_default_value(const ::std::string& value);
-  #if LANG_CXX11
-  void set_default_value(::std::string&& value);
-  #endif
-  void set_default_value(const char* value);
-  void set_default_value(const char* value, size_t size);
-  ::std::string* mutable_default_value();
-  ::std::string* release_default_value();
-  void set_allocated_default_value(::std::string* default_value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.core.EnumType)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> values_;
-  ::google::protobuf::internal::ArenaStringPtr default_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
 };
@@ -1466,59 +1451,6 @@ inline ::google::protobuf::RepeatedPtrField<::std::string>*
 EnumType::mutable_values() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.core.EnumType.values)
   return &values_;
-}
-
-// string default_value = 2;
-inline void EnumType::clear_default_value() {
-  default_value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& EnumType::default_value() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.EnumType.default_value)
-  return default_value_.GetNoArena();
-}
-inline void EnumType::set_default_value(const ::std::string& value) {
-  
-  default_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.EnumType.default_value)
-}
-#if LANG_CXX11
-inline void EnumType::set_default_value(::std::string&& value) {
-  
-  default_value_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.EnumType.default_value)
-}
-#endif
-inline void EnumType::set_default_value(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  default_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.EnumType.default_value)
-}
-inline void EnumType::set_default_value(const char* value, size_t size) {
-  
-  default_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.EnumType.default_value)
-}
-inline ::std::string* EnumType::mutable_default_value() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.EnumType.default_value)
-  return default_value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* EnumType::release_default_value() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.EnumType.default_value)
-  
-  return default_value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void EnumType::set_allocated_default_value(::std::string* default_value) {
-  if (default_value != nullptr) {
-    
-  } else {
-    
-  }
-  default_value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), default_value);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.EnumType.default_value)
 }
 
 // -------------------------------------------------------------------

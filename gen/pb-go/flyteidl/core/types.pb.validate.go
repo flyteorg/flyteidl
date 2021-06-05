@@ -190,8 +190,6 @@ func (m *EnumType) Validate() error {
 		return nil
 	}
 
-	// no validation rules for DefaultValue
-
 	return nil
 }
 

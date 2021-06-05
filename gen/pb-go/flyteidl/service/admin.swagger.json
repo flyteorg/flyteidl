@@ -4990,14 +4990,10 @@
           "items": {
             "type": "string"
           },
-          "title": "Predefined set of enum values"
-        },
-        "default_value": {
-          "type": "string",
-          "title": "default value for the enum type"
+          "description": "Predefined set of enum values."
         }
       },
-      "title": "Enables declaring enum types, with predefined string values"
+      "description": "Enables declaring enum types, with predefined string values\nFor len(values) \u003e 0, the first value in the ordered list is regarded as the default value. If you wish\nTo provide no defaults, make the first value as undefined."
     },
     "coreError": {
       "type": "object",

@@ -251,7 +251,7 @@ func TestMakeDefaultLiteralForType(t *testing.T) {
 
 	t.Run("enum", func(t *testing.T) {
 		l, err := MakeDefaultLiteralForType(&core.LiteralType{Type: &core.LiteralType_EnumType{
-			EnumType: &core.EnumType{Values: []string{"x", "y", "z"}, DefaultValue: "x"},
+			EnumType: &core.EnumType{Values: []string{"x", "y", "z"}},
 		}})
 		assert.NoError(t, err)
 		assert.NotNil(t, l.GetScalar().GetPrimitive().GetStringValue())
@@ -595,17 +595,14 @@ func TestMakeLiteralForType(t *testing.T) {
 
 	t.Run("enumtype-nil", func(t *testing.T) {
 		var literalType = &core.LiteralType{Type: &core.LiteralType_EnumType{EnumType: &core.EnumType{}}}
-		expected := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
-			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: ""}}}}}}
-		v, err := MakeLiteralForType(literalType, nil)
-		assert.NoError(t, err)
-		assert.Equal(t, expected, v)
+		_, err := MakeLiteralForType(literalType, nil)
+		assert.Error(t, err)
 		_, err = MakeLiteralForType(literalType, "")
 		assert.Error(t, err)
 	})
 
 	t.Run("enumtype-happy", func(t *testing.T) {
-		var literalType = &core.LiteralType{Type: &core.LiteralType_EnumType{EnumType: &core.EnumType{Values: []string{"x", "y", "z"}, DefaultValue: "x"}}}
+		var literalType = &core.LiteralType{Type: &core.LiteralType_EnumType{EnumType: &core.EnumType{Values: []string{"x", "y", "z"}}}}
 		expected := &core.Literal{Value: &core.Literal_Scalar{Scalar: &core.Scalar{
 			Value: &core.Scalar_Primitive{Primitive: &core.Primitive{Value: &core.Primitive_StringValue{StringValue: "x"}}}}}}
 		v, err := MakeLiteralForType(literalType, "x")
@@ -616,7 +613,7 @@ func TestMakeLiteralForType(t *testing.T) {
 	})
 
 	t.Run("enumtype-illegal-val", func(t *testing.T) {
-		var literalType = &core.LiteralType{Type: &core.LiteralType_EnumType{EnumType: &core.EnumType{Values: []string{"x", "y", "z"}, DefaultValue: "x"}}}
+		var literalType = &core.LiteralType{Type: &core.LiteralType_EnumType{EnumType: &core.EnumType{Values: []string{"x", "y", "z"}}}}
 		_, err := MakeLiteralForType(literalType, "m")
 		assert.Error(t, err)
 	})

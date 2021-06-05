@@ -9,7 +9,8 @@
 
 package flyteadmin
 
+// Enables declaring enum types, with predefined string values For len(values) > 0, the first value in the ordered list is regarded as the default value. If you wish To provide no defaults, make the first value as undefined.
 type CoreEnumType struct {
+	// Predefined set of enum values.
 	Values []string `json:"values,omitempty"`
-	DefaultValue string `json:"default_value,omitempty"`
 }

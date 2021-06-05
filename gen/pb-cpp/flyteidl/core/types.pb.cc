@@ -204,7 +204,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftypes_2eproto::of
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::EnumType, values_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::EnumType, default_value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::LiteralType, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -238,9 +237,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 7, -1, sizeof(::flyteidl::core::SchemaType)},
   { 13, -1, sizeof(::flyteidl::core::BlobType)},
   { 20, -1, sizeof(::flyteidl::core::EnumType)},
-  { 27, -1, sizeof(::flyteidl::core::LiteralType)},
-  { 40, -1, sizeof(::flyteidl::core::OutputReference)},
-  { 47, -1, sizeof(::flyteidl::core::Error)},
+  { 26, -1, sizeof(::flyteidl::core::LiteralType)},
+  { 39, -1, sizeof(::flyteidl::core::OutputReference)},
+  { 46, -1, sizeof(::flyteidl::core::Error)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -272,29 +271,29 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto[] =
   "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f"
   "lyteidl.core.BlobType.BlobDimensionality"
   "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU"
-  "LTIPART\020\001\"1\n\010EnumType\022\016\n\006values\030\001 \003(\t\022\025\n"
-  "\rdefault_value\030\002 \001(\t\"\336\002\n\013LiteralType\022+\n\006"
-  "simple\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH"
-  "\000\022+\n\006schema\030\002 \001(\0132\031.flyteidl.core.Schema"
-  "TypeH\000\0225\n\017collection_type\030\003 \001(\0132\032.flytei"
-  "dl.core.LiteralTypeH\000\0224\n\016map_value_type\030"
-  "\004 \001(\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004b"
-  "lob\030\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\t"
-  "enum_type\030\007 \001(\0132\027.flyteidl.core.EnumType"
-  "H\000\022)\n\010metadata\030\006 \001(\0132\027.google.protobuf.S"
-  "tructB\006\n\004type\"/\n\017OutputReference\022\017\n\007node"
-  "_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016faile"
-  "d_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nSim"
-  "pleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOAT\020"
-  "\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME\020\005"
-  "\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022\n\n"
-  "\006STRUCT\020\tB6Z4github.com/flyteorg/flyteid"
-  "l/gen/pb-go/flyteidl/coreb\006proto3"
+  "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"\336\002"
+  "\n\013LiteralType\022+\n\006simple\030\001 \001(\0162\031.flyteidl"
+  ".core.SimpleTypeH\000\022+\n\006schema\030\002 \001(\0132\031.fly"
+  "teidl.core.SchemaTypeH\000\0225\n\017collection_ty"
+  "pe\030\003 \001(\0132\032.flyteidl.core.LiteralTypeH\000\0224"
+  "\n\016map_value_type\030\004 \001(\0132\032.flyteidl.core.L"
+  "iteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyteidl.co"
+  "re.BlobTypeH\000\022,\n\tenum_type\030\007 \001(\0132\027.flyte"
+  "idl.core.EnumTypeH\000\022)\n\010metadata\030\006 \001(\0132\027."
+  "google.protobuf.StructB\006\n\004type\"/\n\017Output"
+  "Reference\022\017\n\007node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\""
+  "0\n\005Error\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007mess"
+  "age\030\002 \001(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007IN"
+  "TEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEA"
+  "N\020\004\022\014\n\010DATETIME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINAR"
+  "Y\020\007\022\t\n\005ERROR\020\010\022\n\n\006STRUCT\020\tB6Z4github.com"
+  "/flyteorg/flyteidl/gen/pb-go/flyteidl/co"
+  "reb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftypes_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftypes_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto,
-  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1193,
+  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1170,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftypes_2eproto() {
@@ -1362,7 +1361,6 @@ class EnumType::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int EnumType::kValuesFieldNumber;
-const int EnumType::kDefaultValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EnumType::EnumType()
@@ -1375,17 +1373,12 @@ EnumType::EnumType(const EnumType& from)
       _internal_metadata_(nullptr),
       values_(from.values_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  default_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.default_value().size() > 0) {
-    default_value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.default_value_);
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.EnumType)
 }
 
 void EnumType::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_EnumType_flyteidl_2fcore_2ftypes_2eproto.base);
-  default_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 EnumType::~EnumType() {
@@ -1394,7 +1387,6 @@ EnumType::~EnumType() {
 }
 
 void EnumType::SharedDtor() {
-  default_value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void EnumType::SetCachedSize(int size) const {
@@ -1413,7 +1405,6 @@ void EnumType::Clear() {
   (void) cached_has_bits;
 
   values_.Clear();
-  default_value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -1447,22 +1438,6 @@ const char* EnumType::_InternalParse(const char* begin, const char* end, void* o
           ptr += size;
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
-        break;
-      }
-      // string default_value = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.EnumType.default_value");
-        object = msg->mutable_default_value();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
         break;
       }
       default: {
@@ -1515,21 +1490,6 @@ bool EnumType::MergePartialFromCodedStream(
         break;
       }
 
-      // string default_value = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_default_value()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->default_value().data(), static_cast<int>(this->default_value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.EnumType.default_value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1567,16 +1527,6 @@ void EnumType::SerializeWithCachedSizes(
       1, this->values(i), output);
   }
 
-  // string default_value = 2;
-  if (this->default_value().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->default_value().data(), static_cast<int>(this->default_value().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.EnumType.default_value");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->default_value(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1598,17 +1548,6 @@ void EnumType::SerializeWithCachedSizes(
       "flyteidl.core.EnumType.values");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->values(i), target);
-  }
-
-  // string default_value = 2;
-  if (this->default_value().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->default_value().data(), static_cast<int>(this->default_value().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.EnumType.default_value");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->default_value(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1640,13 +1579,6 @@ size_t EnumType::ByteSizeLong() const {
       this->values(i));
   }
 
-  // string default_value = 2;
-  if (this->default_value().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->default_value());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1675,10 +1607,6 @@ void EnumType::MergeFrom(const EnumType& from) {
   (void) cached_has_bits;
 
   values_.MergeFrom(from.values_);
-  if (from.default_value().size() > 0) {
-
-    default_value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.default_value_);
-  }
 }
 
 void EnumType::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1707,8 +1635,6 @@ void EnumType::InternalSwap(EnumType* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   values_.InternalSwap(CastToBase(&other->values_));
-  default_value_.Swap(&other->default_value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata EnumType::GetMetadata() const {

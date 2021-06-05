@@ -2738,7 +2738,7 @@ public final class Types {
 
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2747,7 +2747,7 @@ public final class Types {
         getValuesList();
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2755,7 +2755,7 @@ public final class Types {
     int getValuesCount();
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2763,35 +2763,19 @@ public final class Types {
     java.lang.String getValues(int index);
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
      */
     com.google.protobuf.ByteString
         getValuesBytes(int index);
-
-    /**
-     * <pre>
-     * default value for the enum type
-     * </pre>
-     *
-     * <code>string default_value = 2;</code>
-     */
-    java.lang.String getDefaultValue();
-    /**
-     * <pre>
-     * default value for the enum type
-     * </pre>
-     *
-     * <code>string default_value = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDefaultValueBytes();
   }
   /**
    * <pre>
    * Enables declaring enum types, with predefined string values
+   * For len(values) &gt; 0, the first value in the ordered list is regarded as the default value. If you wish
+   * To provide no defaults, make the first value as undefined.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.EnumType}
@@ -2807,7 +2791,6 @@ public final class Types {
     }
     private EnumType() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      defaultValue_ = "";
     }
 
     @java.lang.Override
@@ -2841,12 +2824,6 @@ public final class Types {
                 mutable_bitField0_ |= 0x00000001;
               }
               values_.add(s);
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultValue_ = s;
               break;
             }
             default: {
@@ -2884,12 +2861,11 @@ public final class Types {
               flyteidl.core.Types.EnumType.class, flyteidl.core.Types.EnumType.Builder.class);
     }
 
-    private int bitField0_;
     public static final int VALUES_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList values_;
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2900,7 +2876,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2910,7 +2886,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2920,7 +2896,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * Predefined set of enum values
+     * Predefined set of enum values.
      * </pre>
      *
      * <code>repeated string values = 1;</code>
@@ -2928,48 +2904,6 @@ public final class Types {
     public com.google.protobuf.ByteString
         getValuesBytes(int index) {
       return values_.getByteString(index);
-    }
-
-    public static final int DEFAULT_VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object defaultValue_;
-    /**
-     * <pre>
-     * default value for the enum type
-     * </pre>
-     *
-     * <code>string default_value = 2;</code>
-     */
-    public java.lang.String getDefaultValue() {
-      java.lang.Object ref = defaultValue_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultValue_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * default value for the enum type
-     * </pre>
-     *
-     * <code>string default_value = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDefaultValueBytes() {
-      java.lang.Object ref = defaultValue_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        defaultValue_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2989,9 +2923,6 @@ public final class Types {
       for (int i = 0; i < values_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
       }
-      if (!getDefaultValueBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, defaultValue_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -3008,9 +2939,6 @@ public final class Types {
         }
         size += dataSize;
         size += 1 * getValuesList().size();
-      }
-      if (!getDefaultValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, defaultValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3029,8 +2957,6 @@ public final class Types {
 
       if (!getValuesList()
           .equals(other.getValuesList())) return false;
-      if (!getDefaultValue()
-          .equals(other.getDefaultValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3046,8 +2972,6 @@ public final class Types {
         hash = (37 * hash) + VALUES_FIELD_NUMBER;
         hash = (53 * hash) + getValuesList().hashCode();
       }
-      hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3146,6 +3070,8 @@ public final class Types {
     /**
      * <pre>
      * Enables declaring enum types, with predefined string values
+     * For len(values) &gt; 0, the first value in the ordered list is regarded as the default value. If you wish
+     * To provide no defaults, make the first value as undefined.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.EnumType}
@@ -3187,8 +3113,6 @@ public final class Types {
         super.clear();
         values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        defaultValue_ = "";
-
         return this;
       }
 
@@ -3216,14 +3140,11 @@ public final class Types {
       public flyteidl.core.Types.EnumType buildPartial() {
         flyteidl.core.Types.EnumType result = new flyteidl.core.Types.EnumType(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = values_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.values_ = values_;
-        result.defaultValue_ = defaultValue_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3282,10 +3203,6 @@ public final class Types {
           }
           onChanged();
         }
-        if (!other.getDefaultValue().isEmpty()) {
-          defaultValue_ = other.defaultValue_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3325,7 +3242,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3336,7 +3253,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3346,7 +3263,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3356,7 +3273,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3367,7 +3284,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3384,7 +3301,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3401,7 +3318,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3416,7 +3333,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3429,7 +3346,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * Predefined set of enum values
+       * Predefined set of enum values.
        * </pre>
        *
        * <code>repeated string values = 1;</code>
@@ -3442,95 +3359,6 @@ public final class Types {
   checkByteStringIsUtf8(value);
         ensureValuesIsMutable();
         values_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object defaultValue_ = "";
-      /**
-       * <pre>
-       * default value for the enum type
-       * </pre>
-       *
-       * <code>string default_value = 2;</code>
-       */
-      public java.lang.String getDefaultValue() {
-        java.lang.Object ref = defaultValue_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultValue_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default value for the enum type
-       * </pre>
-       *
-       * <code>string default_value = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDefaultValueBytes() {
-        java.lang.Object ref = defaultValue_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          defaultValue_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * default value for the enum type
-       * </pre>
-       *
-       * <code>string default_value = 2;</code>
-       */
-      public Builder setDefaultValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        defaultValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default value for the enum type
-       * </pre>
-       *
-       * <code>string default_value = 2;</code>
-       */
-      public Builder clearDefaultValue() {
-        
-        defaultValue_ = getDefaultInstance().getDefaultValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * default value for the enum type
-       * </pre>
-       *
-       * <code>string default_value = 2;</code>
-       */
-      public Builder setDefaultValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        defaultValue_ = value;
         onChanged();
         return this;
       }
@@ -7471,24 +7299,24 @@ public final class Types {
       "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f" +
       "lyteidl.core.BlobType.BlobDimensionality" +
       "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU" +
-      "LTIPART\020\001\"1\n\010EnumType\022\016\n\006values\030\001 \003(\t\022\025\n" +
-      "\rdefault_value\030\002 \001(\t\"\336\002\n\013LiteralType\022+\n\006" +
-      "simple\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH" +
-      "\000\022+\n\006schema\030\002 \001(\0132\031.flyteidl.core.Schema" +
-      "TypeH\000\0225\n\017collection_type\030\003 \001(\0132\032.flytei" +
-      "dl.core.LiteralTypeH\000\0224\n\016map_value_type\030" +
-      "\004 \001(\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004b" +
-      "lob\030\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\t" +
-      "enum_type\030\007 \001(\0132\027.flyteidl.core.EnumType" +
-      "H\000\022)\n\010metadata\030\006 \001(\0132\027.google.protobuf.S" +
-      "tructB\006\n\004type\"/\n\017OutputReference\022\017\n\007node" +
-      "_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016faile" +
-      "d_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nSim" +
-      "pleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOAT\020" +
-      "\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME\020\005" +
-      "\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022\n\n" +
-      "\006STRUCT\020\tB6Z4github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/coreb\006proto3"
+      "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"\336\002" +
+      "\n\013LiteralType\022+\n\006simple\030\001 \001(\0162\031.flyteidl" +
+      ".core.SimpleTypeH\000\022+\n\006schema\030\002 \001(\0132\031.fly" +
+      "teidl.core.SchemaTypeH\000\0225\n\017collection_ty" +
+      "pe\030\003 \001(\0132\032.flyteidl.core.LiteralTypeH\000\0224" +
+      "\n\016map_value_type\030\004 \001(\0132\032.flyteidl.core.L" +
+      "iteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyteidl.co" +
+      "re.BlobTypeH\000\022,\n\tenum_type\030\007 \001(\0132\027.flyte" +
+      "idl.core.EnumTypeH\000\022)\n\010metadata\030\006 \001(\0132\027." +
+      "google.protobuf.StructB\006\n\004type\"/\n\017Output" +
+      "Reference\022\017\n\007node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"" +
+      "0\n\005Error\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007mess" +
+      "age\030\002 \001(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007IN" +
+      "TEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEA" +
+      "N\020\004\022\014\n\010DATETIME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINAR" +
+      "Y\020\007\022\t\n\005ERROR\020\010\022\n\n\006STRUCT\020\tB6Z4github.com" +
+      "/flyteorg/flyteidl/gen/pb-go/flyteidl/co" +
+      "reb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7526,7 +7354,7 @@ public final class Types {
     internal_static_flyteidl_core_EnumType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_EnumType_descriptor,
-        new java.lang.String[] { "Values", "DefaultValue", });
+        new java.lang.String[] { "Values", });
     internal_static_flyteidl_core_LiteralType_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_LiteralType_fieldAccessorTable = new
