@@ -15,8 +15,8 @@ import (
 
 // Container for node execution details and results.
 type AdminNodeExecutionClosure struct {
-	OutputUri string              `json:"output_uri,omitempty"`
-	Error_    *CoreExecutionError `json:"error,omitempty"`
+	OutputUri string `json:"output_uri,omitempty"`
+	Error_ *CoreExecutionError `json:"error,omitempty"`
 	// The last recorded phase for this node execution.
 	Phase *CoreNodeExecutionPhase `json:"phase,omitempty"`
 	// Time at which the node execution began running.
@@ -26,7 +26,7 @@ type AdminNodeExecutionClosure struct {
 	// Time at which the node execution was created.
 	CreatedAt time.Time `json:"created_at,omitempty"`
 	// Time at which the node execution was last updated.
-	UpdatedAt            time.Time                          `json:"updated_at,omitempty"`
+	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	WorkflowNodeMetadata *FlyteidladminWorkflowNodeMetadata `json:"workflow_node_metadata,omitempty"`
-	TaskNodeMetadata     *FlyteidladminTaskNodeMetadata     `json:"task_node_metadata,omitempty"`
+	TaskNodeMetadata *FlyteidladminTaskNodeMetadata `json:"task_node_metadata,omitempty"`
 }

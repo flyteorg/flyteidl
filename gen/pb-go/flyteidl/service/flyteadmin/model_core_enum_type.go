@@ -10,6 +10,6 @@
 package flyteadmin
 
 type CoreEnumType struct {
-	Values       []string `json:"values,omitempty"`
-	DefaultValue string   `json:"default_value,omitempty"`
+	Values []string `json:"values,omitempty"`
+	DefaultValue string `json:"default_value,omitempty"`
 }

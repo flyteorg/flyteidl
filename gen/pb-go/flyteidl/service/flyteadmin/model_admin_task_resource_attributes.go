@@ -11,5 +11,5 @@ package flyteadmin
 
 type AdminTaskResourceAttributes struct {
 	Defaults *AdminTaskResourceSpec `json:"defaults,omitempty"`
-	Limits   *AdminTaskResourceSpec `json:"limits,omitempty"`
+	Limits *AdminTaskResourceSpec `json:"limits,omitempty"`
 }

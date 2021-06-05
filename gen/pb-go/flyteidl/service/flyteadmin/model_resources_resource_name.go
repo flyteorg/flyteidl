@@ -8,15 +8,14 @@
  */
 
 package flyteadmin
-
 // ResourcesResourceName : Known resource names.
 type ResourcesResourceName string
 
 // List of ResourcesResourceName
 const (
 	ResourcesResourceNameUNKNOWN ResourcesResourceName = "UNKNOWN"
-	ResourcesResourceNameCPU     ResourcesResourceName = "CPU"
-	ResourcesResourceNameGPU     ResourcesResourceName = "GPU"
-	ResourcesResourceNameMEMORY  ResourcesResourceName = "MEMORY"
+	ResourcesResourceNameCPU ResourcesResourceName = "CPU"
+	ResourcesResourceNameGPU ResourcesResourceName = "GPU"
+	ResourcesResourceNameMEMORY ResourcesResourceName = "MEMORY"
 	ResourcesResourceNameSTORAGE ResourcesResourceName = "STORAGE"
 )

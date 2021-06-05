@@ -10,8 +10,8 @@
 package flyteadmin
 
 type AdminTaskResourceSpec struct {
-	Cpu     string `json:"cpu,omitempty"`
-	Gpu     string `json:"gpu,omitempty"`
-	Memory  string `json:"memory,omitempty"`
+	Cpu string `json:"cpu,omitempty"`
+	Gpu string `json:"gpu,omitempty"`
+	Memory string `json:"memory,omitempty"`
 	Storage string `json:"storage,omitempty"`
 }

@@ -15,6 +15,6 @@ type AdminWorkflowAttributesDeleteRequest struct {
 	// Unique domain id which this set of attributes references.
 	Domain string `json:"domain,omitempty"`
 	// Workflow name which this set of attributes references.
-	Workflow     string                  `json:"workflow,omitempty"`
+	Workflow string `json:"workflow,omitempty"`
 	ResourceType *AdminMatchableResource `json:"resource_type,omitempty"`
 }

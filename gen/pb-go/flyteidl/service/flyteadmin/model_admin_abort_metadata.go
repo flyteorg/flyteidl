@@ -11,6 +11,6 @@ package flyteadmin
 
 type AdminAbortMetadata struct {
 	// In the case of a user-specified abort, this will pass along the user-supplied cause.
-	Cause     string `json:"cause,omitempty"`
+	Cause string `json:"cause,omitempty"`
 	Principal string `json:"principal,omitempty"`
 }

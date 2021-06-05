@@ -12,8 +12,8 @@ package flyteadmin
 // Represents a structure for notifications based on execution status. The Notification content is configured within Admin. Future iterations could expose configuring notifications with custom content.
 type AdminNotification struct {
 	// A list of phases to which users can associate the notifications to.
-	Phases    []CoreWorkflowExecutionPhase `json:"phases,omitempty"`
-	Email     *AdminEmailNotification      `json:"email,omitempty"`
-	PagerDuty *AdminPagerDutyNotification  `json:"pager_duty,omitempty"`
-	Slack     *AdminSlackNotification      `json:"slack,omitempty"`
+	Phases []CoreWorkflowExecutionPhase `json:"phases,omitempty"`
+	Email *AdminEmailNotification `json:"email,omitempty"`
+	PagerDuty *AdminPagerDutyNotification `json:"pager_duty,omitempty"`
+	Slack *AdminSlackNotification `json:"slack,omitempty"`
 }
