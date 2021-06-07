@@ -112,9 +112,9 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("Override", func(t *testing.T) {
 			testValue := defaultConfig.ClientBaseConfig.Endpoint.String()
 
-			cmdFlags.Set("endpoint", testValue)
-			if vString, err := cmdFlags.GetString("endpoint"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.Endpoint)
+			cmdFlags.Set("ClientBaseConfig.endpoint", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.endpoint"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.Endpoint)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -134,9 +134,9 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("insecure", testValue)
-			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.UseInsecureConnection)
+			cmdFlags.Set("ClientBaseConfig.insecure", testValue)
+			if vBool, err := cmdFlags.GetBool("ClientBaseConfig.insecure"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.ClientBaseConfig.UseInsecureConnection)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -154,11 +154,11 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.MaxBackoffDelay.String()
+			testValue := defaultConfig.ClientBaseConfig.MaxBackoffDelay.String()
 
-			cmdFlags.Set("maxBackoffDelay", testValue)
-			if vString, err := cmdFlags.GetString("maxBackoffDelay"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.MaxBackoffDelay)
+			cmdFlags.Set("ClientBaseConfig.maxBackoffDelay", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.maxBackoffDelay"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.MaxBackoffDelay)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -176,11 +176,11 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.PerRetryTimeout.String()
+			testValue := defaultConfig.ClientBaseConfig.PerRetryTimeout.String()
 
-			cmdFlags.Set("perRetryTimeout", testValue)
-			if vString, err := cmdFlags.GetString("perRetryTimeout"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.PerRetryTimeout)
+			cmdFlags.Set("ClientBaseConfig.perRetryTimeout", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.perRetryTimeout"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.PerRetryTimeout)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -200,9 +200,9 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("maxRetries", testValue)
-			if vInt, err := cmdFlags.GetInt("maxRetries"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.MaxRetries)
+			cmdFlags.Set("ClientBaseConfig.maxRetries", testValue)
+			if vInt, err := cmdFlags.GetInt("ClientBaseConfig.maxRetries"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.ClientBaseConfig.MaxRetries)
 
 			} else {
 				assert.FailNow(t, err.Error())
