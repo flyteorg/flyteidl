@@ -28,4 +28,6 @@ type AdminExecutionSpec struct {
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
 	// Indicates the runtime priority of the execution.
 	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
+	// Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+	MaxParallelism int32 `json:"max_parallelism,omitempty"`
 }

@@ -103,6 +103,9 @@ message LaunchPlanSpec {
     core.QualityOfService quality_of_service = 16;
 
     RawOutputDataConfig raw_output_data_config = 17;
+
+    // Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+    int32 max_parallelism = 18;
 }
 
 // Values computed by the flyte platform after launch plan registration.
