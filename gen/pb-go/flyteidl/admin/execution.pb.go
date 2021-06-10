@@ -916,7 +916,9 @@ type ExecutionSpec struct {
 	AuthRole *AuthRole `protobuf:"bytes,16,opt,name=auth_role,json=authRole,proto3" json:"auth_role,omitempty"` // Deprecated: Do not use.
 	// Indicates the runtime priority of the execution.
 	QualityOfService *core.QualityOfService `protobuf:"bytes,17,opt,name=quality_of_service,json=qualityOfService,proto3" json:"quality_of_service,omitempty"`
-	// Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+	// Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+	// This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+	// and parallelism/concurrency of MapTasks is independent from this.
 	MaxParallelism       int32    `protobuf:"varint,18,opt,name=max_parallelism,json=maxParallelism,proto3" json:"max_parallelism,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

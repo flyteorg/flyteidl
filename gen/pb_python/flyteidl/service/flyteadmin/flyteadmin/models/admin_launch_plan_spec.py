@@ -383,7 +383,7 @@ class AdminLaunchPlanSpec(object):
     def max_parallelism(self):
         """Gets the max_parallelism of this AdminLaunchPlanSpec.  # noqa: E501
 
-        Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.  # noqa: E501
+        Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this.  # noqa: E501
 
         :return: The max_parallelism of this AdminLaunchPlanSpec.  # noqa: E501
         :rtype: int
@@ -394,7 +394,7 @@ class AdminLaunchPlanSpec(object):
     def max_parallelism(self, max_parallelism):
         """Sets the max_parallelism of this AdminLaunchPlanSpec.
 
-        Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.  # noqa: E501
+        Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this.  # noqa: E501
 
         :param max_parallelism: The max_parallelism of this AdminLaunchPlanSpec.  # noqa: E501
         :type: int

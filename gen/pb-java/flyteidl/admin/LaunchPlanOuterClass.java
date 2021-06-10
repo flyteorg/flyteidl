@@ -4498,7 +4498,9 @@ public final class LaunchPlanOuterClass {
 
     /**
      * <pre>
-     * Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+     * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+     * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+     * and parallelism/concurrency of MapTasks is independent from this.
      * </pre>
      *
      * <code>int32 max_parallelism = 18;</code>
@@ -5120,7 +5122,9 @@ public final class LaunchPlanOuterClass {
     private int maxParallelism_;
     /**
      * <pre>
-     * Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+     * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+     * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+     * and parallelism/concurrency of MapTasks is independent from this.
      * </pre>
      *
      * <code>int32 max_parallelism = 18;</code>
@@ -7485,7 +7489,9 @@ public final class LaunchPlanOuterClass {
       private int maxParallelism_ ;
       /**
        * <pre>
-       * Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+       * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
        *
        * <code>int32 max_parallelism = 18;</code>
@@ -7495,7 +7501,9 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+       * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
        *
        * <code>int32 max_parallelism = 18;</code>
@@ -7508,7 +7516,9 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
+       * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
        *
        * <code>int32 max_parallelism = 18;</code>
