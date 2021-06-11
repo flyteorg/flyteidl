@@ -17,46 +17,51 @@ import "flyteidl/admin/task_execution.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
 
+// Contains the information about the workflow execution such as inputs,
+// annotations, labels. It also includes the workflow graph.
 message ExecutionEventClosure {
     flyteidl.core.ConnectionSet connections = 1;
 
     flyteidl.core.LiteralMap computed_input = 2;
 
-    core.Identifier launch_plan        = 3;
+    core.Identifier launch_plan = 3;
+
     flyteidl.admin.Annotations annotations = 4;
-    // parent_node_execution
-    flyteidl.admin.ExecutionMetadata metadata = 5;
-    flyteidl.admin.Labels label = 6;
+
+    flyteidl.admin.Labels labels = 5;
+
+    flyteidl.admin.ExecutionMetadata metadata = 6;
 }
 
+// An event for workflow execution
 message WorkflowEvent {
-   // Workflow execution id
    flyteidl.admin.Execution execution = 1;
 
    ExecutionEventClosure workflow_event_closure = 2;
 }
 
+// Contains the node spec and workflow event closure. If the node is a task node,
+// it will also include the task execution.
 message NodeEventClosure {
-    string spec_node_id = 1;
+    flyteidl.core.Node node = 1;
     // Only available when the node is a task node and node is finished
-    oneof taskExecution {
-        flyteidl.admin.TaskExecution finalTaskExecution = 2;
+    oneof target {
+        flyteidl.admin.TaskExecution task_execution = 2;
     }
-    flyteidl.core.Node spec_node = 3;
-    ExecutionEventClosure workflow_event_closure = 4;
+
+    ExecutionEventClosure workflow_event_closure = 3;
 }
 
-
+// Event for Node Execution
 message NodeEvent {
-    // Unique identifier for this node execution
     flyteidl.admin.NodeExecution node_execution = 1;
 
     NodeEventClosure node_event_closure = 2;
 }
 
+// Event for Task Execution
 message TaskEvent {
-    flyteidl.admin.TaskExecution taskExecution = 1;
-
+    flyteidl.admin.TaskExecution task_execution = 1;
 }
 
 
@@ -66,9 +71,9 @@ message Event {
     string producer_id = 2;
     google.protobuf.Timestamp occurred_at = 3;
     oneof event {
-        WorkflowEvent workflowEvent = 4;
-        NodeEvent nodeEvent = 5;
-        TaskEvent taskEvent = 6;
+        WorkflowEvent workflow_event = 4;
+        NodeEvent node_event = 5;
+        TaskEvent task_event = 6;
     }
 }
 
