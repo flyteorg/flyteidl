@@ -64,7 +64,6 @@ message TaskEvent {
     flyteidl.admin.TaskExecution task_execution = 1;
 }
 
-
 // Instead of creating a new envelope, we can also use the cloudEvent as the envelope
 message Event {
     string id = 1;
