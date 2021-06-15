@@ -244,42 +244,43 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fcore_2fexecution_2eproto[] =
   "\n\035flyteidl/core/execution.proto\022\rflyteid"
-  "l.core\032\036google/protobuf/duration.proto\"\231"
-  "\001\n\021WorkflowExecution\"\203\001\n\005Phase\022\r\n\tUNDEFI"
+  "l.core\032\036google/protobuf/duration.proto\"\247"
+  "\001\n\021WorkflowExecution\"\221\001\n\005Phase\022\r\n\tUNDEFI"
   "NED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\016\n\nSUCCEE"
   "DING\020\003\022\r\n\tSUCCEEDED\020\004\022\013\n\007FAILING\020\005\022\n\n\006FA"
-  "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\"\247\001\n\rN"
-  "odeExecution\"\225\001\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n"
-  "\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n"
-  "\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABORTED\020\006\022\013\n\007S"
-  "KIPPED\020\007\022\r\n\tTIMED_OUT\020\010\022\023\n\017DYNAMIC_RUNNI"
-  "NG\020\t\"\226\001\n\rTaskExecution\"\204\001\n\005Phase\022\r\n\tUNDE"
-  "FINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCC"
-  "EEDED\020\003\022\013\n\007ABORTED\020\004\022\n\n\006FAILED\020\005\022\020\n\014INIT"
-  "IALIZING\020\006\022\031\n\025WAITING_FOR_RESOURCES\020\007\"\251\001"
-  "\n\016ExecutionError\022\014\n\004code\030\001 \001(\t\022\017\n\007messag"
-  "e\030\002 \001(\t\022\021\n\terror_uri\030\003 \001(\t\0225\n\004kind\030\004 \001(\016"
-  "2\'.flyteidl.core.ExecutionError.ErrorKin"
-  "d\".\n\tErrorKind\022\013\n\007UNKNOWN\020\000\022\010\n\004USER\020\001\022\n\n"
-  "\006SYSTEM\020\002\"\273\001\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004na"
-  "me\030\002 \001(\t\022<\n\016message_format\030\003 \001(\0162$.flyte"
-  "idl.core.TaskLog.MessageFormat\022&\n\003ttl\030\004 "
-  "\001(\0132\031.google.protobuf.Duration\"/\n\rMessag"
-  "eFormat\022\013\n\007UNKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020\002\""
-  "J\n\024QualityOfServiceSpec\0222\n\017queueing_budg"
-  "et\030\001 \001(\0132\031.google.protobuf.Duration\"\302\001\n\020"
-  "QualityOfService\0224\n\004tier\030\001 \001(\0162$.flyteid"
-  "l.core.QualityOfService.TierH\000\0223\n\004spec\030\002"
-  " \001(\0132#.flyteidl.core.QualityOfServiceSpe"
-  "cH\000\"4\n\004Tier\022\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006"
-  "MEDIUM\020\002\022\007\n\003LOW\020\003B\r\n\013designationB6Z4gith"
-  "ub.com/flyteorg/flyteidl/gen/pb-go/flyte"
-  "idl/coreb\006proto3"
+  "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\022\014\n\010RE"
+  "OVERED\020\t\"\265\001\n\rNodeExecution\"\243\001\n\005Phase\022\r\n\t"
+  "UNDEFINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\t"
+  "SUCCEEDED\020\003\022\013\n\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n\007"
+  "ABORTED\020\006\022\013\n\007SKIPPED\020\007\022\r\n\tTIMED_OUT\020\010\022\023\n"
+  "\017DYNAMIC_RUNNING\020\t\022\014\n\010REOVERED\020\n\"\226\001\n\rTas"
+  "kExecution\"\204\001\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n\006Q"
+  "UEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n\007A"
+  "BORTED\020\004\022\n\n\006FAILED\020\005\022\020\n\014INITIALIZING\020\006\022\031"
+  "\n\025WAITING_FOR_RESOURCES\020\007\"\251\001\n\016ExecutionE"
+  "rror\022\014\n\004code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\021\n\te"
+  "rror_uri\030\003 \001(\t\0225\n\004kind\030\004 \001(\0162\'.flyteidl."
+  "core.ExecutionError.ErrorKind\".\n\tErrorKi"
+  "nd\022\013\n\007UNKNOWN\020\000\022\010\n\004USER\020\001\022\n\n\006SYSTEM\020\002\"\273\001"
+  "\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022<\n\016"
+  "message_format\030\003 \001(\0162$.flyteidl.core.Tas"
+  "kLog.MessageFormat\022&\n\003ttl\030\004 \001(\0132\031.google"
+  ".protobuf.Duration\"/\n\rMessageFormat\022\013\n\007U"
+  "NKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"J\n\024QualityOf"
+  "ServiceSpec\0222\n\017queueing_budget\030\001 \001(\0132\031.g"
+  "oogle.protobuf.Duration\"\302\001\n\020QualityOfSer"
+  "vice\0224\n\004tier\030\001 \001(\0162$.flyteidl.core.Quali"
+  "tyOfService.TierH\000\0223\n\004spec\030\002 \001(\0132#.flyte"
+  "idl.core.QualityOfServiceSpecH\000\"4\n\004Tier\022"
+  "\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007\n\003"
+  "LOW\020\003B\r\n\013designationB6Z4github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fexecution_2eproto,
-  "flyteidl/core/execution.proto", &assign_descriptors_table_flyteidl_2fcore_2fexecution_2eproto, 1256,
+  "flyteidl/core/execution.proto", &assign_descriptors_table_flyteidl_2fcore_2fexecution_2eproto, 1284,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fexecution_2eproto() {
@@ -309,6 +310,7 @@ bool WorkflowExecution_Phase_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
       return true;
     default:
       return false;
@@ -325,6 +327,7 @@ const WorkflowExecution_Phase WorkflowExecution::FAILING;
 const WorkflowExecution_Phase WorkflowExecution::FAILED;
 const WorkflowExecution_Phase WorkflowExecution::ABORTED;
 const WorkflowExecution_Phase WorkflowExecution::TIMED_OUT;
+const WorkflowExecution_Phase WorkflowExecution::REOVERED;
 const WorkflowExecution_Phase WorkflowExecution::Phase_MIN;
 const WorkflowExecution_Phase WorkflowExecution::Phase_MAX;
 const int WorkflowExecution::Phase_ARRAYSIZE;
@@ -345,6 +348,7 @@ bool NodeExecution_Phase_IsValid(int value) {
     case 7:
     case 8:
     case 9:
+    case 10:
       return true;
     default:
       return false;
@@ -362,6 +366,7 @@ const NodeExecution_Phase NodeExecution::ABORTED;
 const NodeExecution_Phase NodeExecution::SKIPPED;
 const NodeExecution_Phase NodeExecution::TIMED_OUT;
 const NodeExecution_Phase NodeExecution::DYNAMIC_RUNNING;
+const NodeExecution_Phase NodeExecution::REOVERED;
 const NodeExecution_Phase NodeExecution::Phase_MIN;
 const NodeExecution_Phase NodeExecution::Phase_MAX;
 const int NodeExecution::Phase_ARRAYSIZE;

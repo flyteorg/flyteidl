@@ -185,3 +185,16 @@ message NodeExecutionGetDataResponse {
     // Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
     DynamicWorkflowNodeMetadata dynamic_workflow = 16;
 }
+
+message NodeExecutionRecoverRequest {
+    //  The original node execution from which to recover execution state.
+    core.NodeExecutionIdentifier id   = 1;
+}
+
+message NodeExecutionRecoverResponse {
+    // Computed results associated with the recovered node execution.
+    NodeExecutionClosure closure           = 1;
+
+    // Any data produced by the original node execution.
+    NodeExecutionGetDataResponse data      = 2;
+}

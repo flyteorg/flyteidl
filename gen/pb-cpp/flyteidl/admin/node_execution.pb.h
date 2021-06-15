@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[12]
+  static const ::google::protobuf::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -88,6 +88,12 @@ extern NodeExecutionListRequestDefaultTypeInternal _NodeExecutionListRequest_def
 class NodeExecutionMetaData;
 class NodeExecutionMetaDataDefaultTypeInternal;
 extern NodeExecutionMetaDataDefaultTypeInternal _NodeExecutionMetaData_default_instance_;
+class NodeExecutionRecoverRequest;
+class NodeExecutionRecoverRequestDefaultTypeInternal;
+extern NodeExecutionRecoverRequestDefaultTypeInternal _NodeExecutionRecoverRequest_default_instance_;
+class NodeExecutionRecoverResponse;
+class NodeExecutionRecoverResponseDefaultTypeInternal;
+extern NodeExecutionRecoverResponseDefaultTypeInternal _NodeExecutionRecoverResponse_default_instance_;
 class TaskNodeMetadata;
 class TaskNodeMetadataDefaultTypeInternal;
 extern TaskNodeMetadataDefaultTypeInternal _TaskNodeMetadata_default_instance_;
@@ -108,6 +114,8 @@ template<> ::flyteidl::admin::NodeExecutionGetRequest* Arena::CreateMaybeMessage
 template<> ::flyteidl::admin::NodeExecutionList* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionList>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionListRequest>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionMetaData* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionMetaData>(Arena*);
+template<> ::flyteidl::admin::NodeExecutionRecoverRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionRecoverRequest>(Arena*);
+template<> ::flyteidl::admin::NodeExecutionRecoverResponse* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionRecoverResponse>(Arena*);
 template<> ::flyteidl::admin::TaskNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::TaskNodeMetadata>(Arena*);
 template<> ::flyteidl::admin::WorkflowNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::WorkflowNodeMetadata>(Arena*);
 }  // namespace protobuf
@@ -1857,6 +1865,246 @@ class NodeExecutionGetDataResponse final :
   ::flyteidl::core::LiteralMap* full_inputs_;
   ::flyteidl::core::LiteralMap* full_outputs_;
   ::flyteidl::admin::DynamicWorkflowNodeMetadata* dynamic_workflow_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NodeExecutionRecoverRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.NodeExecutionRecoverRequest) */ {
+ public:
+  NodeExecutionRecoverRequest();
+  virtual ~NodeExecutionRecoverRequest();
+
+  NodeExecutionRecoverRequest(const NodeExecutionRecoverRequest& from);
+
+  inline NodeExecutionRecoverRequest& operator=(const NodeExecutionRecoverRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NodeExecutionRecoverRequest(NodeExecutionRecoverRequest&& from) noexcept
+    : NodeExecutionRecoverRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline NodeExecutionRecoverRequest& operator=(NodeExecutionRecoverRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NodeExecutionRecoverRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodeExecutionRecoverRequest* internal_default_instance() {
+    return reinterpret_cast<const NodeExecutionRecoverRequest*>(
+               &_NodeExecutionRecoverRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(NodeExecutionRecoverRequest* other);
+  friend void swap(NodeExecutionRecoverRequest& a, NodeExecutionRecoverRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodeExecutionRecoverRequest* New() const final {
+    return CreateMaybeMessage<NodeExecutionRecoverRequest>(nullptr);
+  }
+
+  NodeExecutionRecoverRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NodeExecutionRecoverRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NodeExecutionRecoverRequest& from);
+  void MergeFrom(const NodeExecutionRecoverRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodeExecutionRecoverRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.NodeExecutionIdentifier id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::flyteidl::core::NodeExecutionIdentifier& id() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_id();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionRecoverRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::NodeExecutionIdentifier* id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NodeExecutionRecoverResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.NodeExecutionRecoverResponse) */ {
+ public:
+  NodeExecutionRecoverResponse();
+  virtual ~NodeExecutionRecoverResponse();
+
+  NodeExecutionRecoverResponse(const NodeExecutionRecoverResponse& from);
+
+  inline NodeExecutionRecoverResponse& operator=(const NodeExecutionRecoverResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NodeExecutionRecoverResponse(NodeExecutionRecoverResponse&& from) noexcept
+    : NodeExecutionRecoverResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline NodeExecutionRecoverResponse& operator=(NodeExecutionRecoverResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NodeExecutionRecoverResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodeExecutionRecoverResponse* internal_default_instance() {
+    return reinterpret_cast<const NodeExecutionRecoverResponse*>(
+               &_NodeExecutionRecoverResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(NodeExecutionRecoverResponse* other);
+  friend void swap(NodeExecutionRecoverResponse& a, NodeExecutionRecoverResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodeExecutionRecoverResponse* New() const final {
+    return CreateMaybeMessage<NodeExecutionRecoverResponse>(nullptr);
+  }
+
+  NodeExecutionRecoverResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NodeExecutionRecoverResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NodeExecutionRecoverResponse& from);
+  void MergeFrom(const NodeExecutionRecoverResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodeExecutionRecoverResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.admin.NodeExecutionClosure closure = 1;
+  bool has_closure() const;
+  void clear_closure();
+  static const int kClosureFieldNumber = 1;
+  const ::flyteidl::admin::NodeExecutionClosure& closure() const;
+  ::flyteidl::admin::NodeExecutionClosure* release_closure();
+  ::flyteidl::admin::NodeExecutionClosure* mutable_closure();
+  void set_allocated_closure(::flyteidl::admin::NodeExecutionClosure* closure);
+
+  // .flyteidl.admin.NodeExecutionGetDataResponse data = 2;
+  bool has_data() const;
+  void clear_data();
+  static const int kDataFieldNumber = 2;
+  const ::flyteidl::admin::NodeExecutionGetDataResponse& data() const;
+  ::flyteidl::admin::NodeExecutionGetDataResponse* release_data();
+  ::flyteidl::admin::NodeExecutionGetDataResponse* mutable_data();
+  void set_allocated_data(::flyteidl::admin::NodeExecutionGetDataResponse* data);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionRecoverResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::admin::NodeExecutionClosure* closure_;
+  ::flyteidl::admin::NodeExecutionGetDataResponse* data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
@@ -3731,9 +3979,168 @@ inline void NodeExecutionGetDataResponse::set_allocated_dynamic_workflow(::flyte
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetDataResponse.dynamic_workflow)
 }
 
+// -------------------------------------------------------------------
+
+// NodeExecutionRecoverRequest
+
+// .flyteidl.core.NodeExecutionIdentifier id = 1;
+inline bool NodeExecutionRecoverRequest::has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& NodeExecutionRecoverRequest::id() const {
+  const ::flyteidl::core::NodeExecutionIdentifier* p = id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionRecoverRequest.id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
+      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* NodeExecutionRecoverRequest::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionRecoverRequest.id)
+  
+  ::flyteidl::core::NodeExecutionIdentifier* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* NodeExecutionRecoverRequest::mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionRecoverRequest.id)
+  return id_;
+}
+inline void NodeExecutionRecoverRequest::set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionRecoverRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// NodeExecutionRecoverResponse
+
+// .flyteidl.admin.NodeExecutionClosure closure = 1;
+inline bool NodeExecutionRecoverResponse::has_closure() const {
+  return this != internal_default_instance() && closure_ != nullptr;
+}
+inline void NodeExecutionRecoverResponse::clear_closure() {
+  if (GetArenaNoVirtual() == nullptr && closure_ != nullptr) {
+    delete closure_;
+  }
+  closure_ = nullptr;
+}
+inline const ::flyteidl::admin::NodeExecutionClosure& NodeExecutionRecoverResponse::closure() const {
+  const ::flyteidl::admin::NodeExecutionClosure* p = closure_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionRecoverResponse.closure)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::NodeExecutionClosure*>(
+      &::flyteidl::admin::_NodeExecutionClosure_default_instance_);
+}
+inline ::flyteidl::admin::NodeExecutionClosure* NodeExecutionRecoverResponse::release_closure() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionRecoverResponse.closure)
+  
+  ::flyteidl::admin::NodeExecutionClosure* temp = closure_;
+  closure_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::NodeExecutionClosure* NodeExecutionRecoverResponse::mutable_closure() {
+  
+  if (closure_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::NodeExecutionClosure>(GetArenaNoVirtual());
+    closure_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionRecoverResponse.closure)
+  return closure_;
+}
+inline void NodeExecutionRecoverResponse::set_allocated_closure(::flyteidl::admin::NodeExecutionClosure* closure) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete closure_;
+  }
+  if (closure) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      closure = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, closure, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  closure_ = closure;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionRecoverResponse.closure)
+}
+
+// .flyteidl.admin.NodeExecutionGetDataResponse data = 2;
+inline bool NodeExecutionRecoverResponse::has_data() const {
+  return this != internal_default_instance() && data_ != nullptr;
+}
+inline void NodeExecutionRecoverResponse::clear_data() {
+  if (GetArenaNoVirtual() == nullptr && data_ != nullptr) {
+    delete data_;
+  }
+  data_ = nullptr;
+}
+inline const ::flyteidl::admin::NodeExecutionGetDataResponse& NodeExecutionRecoverResponse::data() const {
+  const ::flyteidl::admin::NodeExecutionGetDataResponse* p = data_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionRecoverResponse.data)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::NodeExecutionGetDataResponse*>(
+      &::flyteidl::admin::_NodeExecutionGetDataResponse_default_instance_);
+}
+inline ::flyteidl::admin::NodeExecutionGetDataResponse* NodeExecutionRecoverResponse::release_data() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionRecoverResponse.data)
+  
+  ::flyteidl::admin::NodeExecutionGetDataResponse* temp = data_;
+  data_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::NodeExecutionGetDataResponse* NodeExecutionRecoverResponse::mutable_data() {
+  
+  if (data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetDataResponse>(GetArenaNoVirtual());
+    data_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionRecoverResponse.data)
+  return data_;
+}
+inline void NodeExecutionRecoverResponse::set_allocated_data(::flyteidl::admin::NodeExecutionGetDataResponse* data) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete data_;
+  }
+  if (data) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      data = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  data_ = data;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionRecoverResponse.data)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

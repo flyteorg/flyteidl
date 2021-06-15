@@ -463,6 +463,25 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminExecutionCreateResponse"
+  /api/v1/executions/recover:
+    post:
+      tags:
+      - "AdminService"
+      description: "Recovers a previously-run workflow execution that failed due to\
+        \ system failure."
+      operationId: "RecoverExecution"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/adminExecutionRecoverRequest"
+        x-exportParamName: "Body"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminExecutionCreateResponse"
   /api/v1/executions/relaunch:
     post:
       tags:
@@ -1190,6 +1209,43 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminNamedEntityList"
+  /api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
+    get:
+      tags:
+      - "AdminService"
+      description: "Recovers already produced data from an existing node execution\
+        \ (if any)."
+      operationId: "RecoverNodeExecution"
+      parameters:
+      - name: "id.execution_id.project"
+        in: "path"
+        description: "Name of the project the resource belongs to."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdProject"
+      - name: "id.execution_id.domain"
+        in: "path"
+        description: "Name of the domain the resource belongs to.\nA domain can be\
+          \ considered as a subset within a specific project."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdDomain"
+      - name: "id.execution_id.name"
+        in: "path"
+        description: "User or system provided value for the resource."
+        required: true
+        type: "string"
+        x-exportParamName: "IdExecutionIdName"
+      - name: "id.node_id"
+        in: "path"
+        required: true
+        type: "string"
+        x-exportParamName: "IdNodeId"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminNodeExecutionRecoverResponse"
   /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
     get:
       tags:
@@ -2506,13 +2562,15 @@ definitions:
       \ SYSTEM: A system process was responsible for launching this execution rather\
       \ an individual.\n - RELAUNCH: This execution was launched with identical inputs\
       \ as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered\
-      \ by another execution."
+      \ by another execution.\n - RECOVERED: This execution was recovered from another\
+      \ execution."
     enum:
     - "MANUAL"
     - "SCHEDULED"
     - "SYSTEM"
     - "RELAUNCH"
     - "CHILD_WORKFLOW"
+    - "RECOVERED"
     default: "MANUAL"
   IOStrategyDownloadMode:
     type: "string"
@@ -3570,6 +3628,17 @@ definitions:
       tags:
       - "tags"
       - "tags"
+  adminExecutionRecoverRequest:
+    type: "object"
+    properties:
+      id:
+        description: "Identifier of the workflow execution to recover."
+        $ref: "#/definitions/coreWorkflowExecutionIdentifier"
+      name:
+        type: "string"
+        title: "User provided value for the recovered execution.\nIf none is provided\
+          \ the system will generate a unique string.\n+optional"
+    description: "Request to recover the referenced execution."
   adminExecutionRelaunchRequest:
     type: "object"
     properties:
@@ -8802,6 +8871,2973 @@ definitions:
       retry_group: "retry_group"
       is_parent_node: true
       spec_node_id: "spec_node_id"
+  adminNodeExecutionRecoverResponse:
+    type: "object"
+    properties:
+      closure:
+        description: "Computed results associated with the recovered node execution."
+        $ref: "#/definitions/adminNodeExecutionClosure"
+      data:
+        description: "Any data produced by the original node execution."
+        $ref: "#/definitions/adminNodeExecutionGetDataResponse"
+    example:
+      data:
+        outputs:
+          bytes: "bytes"
+          url: "url"
+        full_inputs:
+          literals: {}
+        dynamic_workflow:
+          compiled_workflow:
+            sub_workflows:
+            - template:
+                outputs:
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                metadata:
+                  on_failure: {}
+                  quality_of_service:
+                    tier: {}
+                    spec:
+                      queueing_budget: "queueing_budget"
+                failure_node:
+                  branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                nodes:
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                metadata_defaults:
+                  interruptible: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                interface:
+                  outputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                  inputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+              connections:
+                upstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+                downstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+            - template:
+                outputs:
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                metadata:
+                  on_failure: {}
+                  quality_of_service:
+                    tier: {}
+                    spec:
+                      queueing_budget: "queueing_budget"
+                failure_node:
+                  branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                nodes:
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                metadata_defaults:
+                  interruptible: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                interface:
+                  outputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                  inputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+              connections:
+                upstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+                downstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+            tasks:
+            - template:
+                container:
+                  args:
+                  - "args"
+                  - "args"
+                  image: "image"
+                  resources:
+                    requests:
+                    - name: {}
+                      value: "value"
+                    - name: {}
+                      value: "value"
+                    limits:
+                    - name: {}
+                      value: "value"
+                    - name: {}
+                      value: "value"
+                  data_config:
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
+                    format: {}
+                    output_path: "output_path"
+                    enabled: true
+                    input_path: "input_path"
+                  env:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
+                  ports:
+                  - container_port: 6
+                  - container_port: 6
+                  config:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
+                  command:
+                  - "command"
+                  - "command"
+                metadata:
+                  retries:
+                    retries: 0
+                  discoverable: true
+                  runtime:
+                    flavor: "flavor"
+                    type: {}
+                    version: "version"
+                  discovery_version: "discovery_version"
+                  deprecated_error_message: "deprecated_error_message"
+                  interruptible: true
+                  timeout: "timeout"
+                task_type_version: 1
+                custom:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                k8s_pod:
+                  metadata:
+                    annotations:
+                      key: "annotations"
+                    labels:
+                      key: "labels"
+                  pod_spec:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                type: "type"
+                interface:
+                  outputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                  inputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                config:
+                  key: "config"
+                security_context:
+                  run_as:
+                    iam_role: "iam_role"
+                    oauth2_client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    k8s_service_account: "k8s_service_account"
+                  tokens:
+                  - idp_discovery_endpoint: "idp_discovery_endpoint"
+                    name: "name"
+                    client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    type: {}
+                    token_endpoint: "token_endpoint"
+                  - idp_discovery_endpoint: "idp_discovery_endpoint"
+                    name: "name"
+                    client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    type: {}
+                    token_endpoint: "token_endpoint"
+                  secrets:
+                  - mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  - mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+            - template:
+                container:
+                  args:
+                  - "args"
+                  - "args"
+                  image: "image"
+                  resources:
+                    requests:
+                    - name: {}
+                      value: "value"
+                    - name: {}
+                      value: "value"
+                    limits:
+                    - name: {}
+                      value: "value"
+                    - name: {}
+                      value: "value"
+                  data_config:
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
+                    format: {}
+                    output_path: "output_path"
+                    enabled: true
+                    input_path: "input_path"
+                  env:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
+                  ports:
+                  - container_port: 6
+                  - container_port: 6
+                  config:
+                  - value: "value"
+                    key: "key"
+                  - value: "value"
+                    key: "key"
+                  command:
+                  - "command"
+                  - "command"
+                metadata:
+                  retries:
+                    retries: 0
+                  discoverable: true
+                  runtime:
+                    flavor: "flavor"
+                    type: {}
+                    version: "version"
+                  discovery_version: "discovery_version"
+                  deprecated_error_message: "deprecated_error_message"
+                  interruptible: true
+                  timeout: "timeout"
+                task_type_version: 1
+                custom:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                k8s_pod:
+                  metadata:
+                    annotations:
+                      key: "annotations"
+                    labels:
+                      key: "labels"
+                  pod_spec:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                type: "type"
+                interface:
+                  outputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                  inputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                config:
+                  key: "config"
+                security_context:
+                  run_as:
+                    iam_role: "iam_role"
+                    oauth2_client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    k8s_service_account: "k8s_service_account"
+                  tokens:
+                  - idp_discovery_endpoint: "idp_discovery_endpoint"
+                    name: "name"
+                    client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    type: {}
+                    token_endpoint: "token_endpoint"
+                  - idp_discovery_endpoint: "idp_discovery_endpoint"
+                    name: "name"
+                    client:
+                      client_secret:
+                        mount_requirement: {}
+                        group_version: "group_version"
+                        key: "key"
+                        group: "group"
+                      client_id: "client_id"
+                    type: {}
+                    token_endpoint: "token_endpoint"
+                  secrets:
+                  - mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  - mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+            primary:
+              template:
+                outputs:
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                - var: "var"
+                  binding:
+                    scalar:
+                      schema:
+                        type:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        uri: "uri"
+                      blob:
+                        metadata:
+                          type:
+                            dimensionality: {}
+                            format: "format"
+                        uri: "uri"
+                      none_type: {}
+                      primitive:
+                        duration: "duration"
+                        datetime: "2000-01-23T04:56:07.000+00:00"
+                        string_value: "string_value"
+                        boolean: true
+                        float_value: 1.4658129805029452
+                        integer: "integer"
+                      binary:
+                        tag: "tag"
+                        value: "value"
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      generic:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    promise:
+                      var: "var"
+                      node_id: "node_id"
+                    collection:
+                      bindings:
+                      - null
+                      - null
+                    map:
+                      bindings: {}
+                metadata:
+                  on_failure: {}
+                  quality_of_service:
+                    tier: {}
+                    spec:
+                      queueing_budget: "queueing_budget"
+                failure_node:
+                  branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                nodes:
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                - branch_node:
+                    if_else:
+                      other:
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      - condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                      error:
+                        message: "message"
+                        failed_node_id: "failed_node_id"
+                      case:
+                        condition:
+                          conjunction:
+                            operator: {}
+                          comparison:
+                            left_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            right_value:
+                              primitive:
+                                duration: "duration"
+                                datetime: "2000-01-23T04:56:07.000+00:00"
+                                string_value: "string_value"
+                                boolean: true
+                                float_value: 1.4658129805029452
+                                integer: "integer"
+                              var: "var"
+                            operator: {}
+                  metadata:
+                    retries:
+                      retries: 0
+                    name: "name"
+                    interruptible: true
+                    timeout: "timeout"
+                  upstream_node_ids:
+                  - "upstream_node_ids"
+                  - "upstream_node_ids"
+                  inputs:
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  - var: "var"
+                    binding:
+                      scalar:
+                        schema:
+                          type:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          uri: "uri"
+                        blob:
+                          metadata:
+                            type:
+                              dimensionality: {}
+                              format: "format"
+                          uri: "uri"
+                        none_type: {}
+                        primitive:
+                          duration: "duration"
+                          datetime: "2000-01-23T04:56:07.000+00:00"
+                          string_value: "string_value"
+                          boolean: true
+                          float_value: 1.4658129805029452
+                          integer: "integer"
+                        binary:
+                          tag: "tag"
+                          value: "value"
+                        error:
+                          message: "message"
+                          failed_node_id: "failed_node_id"
+                        generic:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      promise:
+                        var: "var"
+                        node_id: "node_id"
+                      collection:
+                        bindings:
+                        - null
+                        - null
+                      map:
+                        bindings: {}
+                  output_aliases:
+                  - var: "var"
+                    alias: "alias"
+                  - var: "var"
+                    alias: "alias"
+                  task_node:
+                    reference_id:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                  id: "id"
+                  workflow_node:
+                    launchplan_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                    sub_workflow_ref:
+                      domain: "domain"
+                      resource_type: {}
+                      name: "name"
+                      project: "project"
+                      version: "version"
+                metadata_defaults:
+                  interruptible: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
+                interface:
+                  outputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                  inputs:
+                    variables:
+                      key:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+              connections:
+                upstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+                downstream:
+                  key:
+                    ids:
+                    - "ids"
+                    - "ids"
+          id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
+        inputs:
+          bytes: "bytes"
+          url: "url"
+        full_outputs:
+          literals: {}
+      closure:
+        phase: {}
+        duration: "duration"
+        workflow_node_metadata:
+          executionId:
+            domain: "domain"
+            name: "name"
+            project: "project"
+        updated_at: "2000-01-23T04:56:07.000+00:00"
+        task_node_metadata:
+          catalog_key:
+            source_task_execution:
+              task_id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
+              node_execution_id:
+                execution_id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
+                node_id: "node_id"
+              retry_attempt: 0
+            dataset_id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
+            artifact_tag:
+              name: "name"
+              artifact_id: "artifact_id"
+          cache_status: {}
+        output_uri: "output_uri"
+        started_at: "2000-01-23T04:56:07.000+00:00"
+        created_at: "2000-01-23T04:56:07.000+00:00"
+        error:
+          code: "code"
+          kind: {}
+          message: "message"
+          error_uri: "error_uri"
   adminNotification:
     type: "object"
     properties:
@@ -27640,6 +30676,7 @@ definitions:
     - "SKIPPED"
     - "TIMED_OUT"
     - "DYNAMIC_RUNNING"
+    - "REOVERED"
     default: "UNDEFINED"
   coreNodeMetadata:
     type: "object"
@@ -28808,6 +31845,7 @@ definitions:
     - "FAILED"
     - "ABORTED"
     - "TIMED_OUT"
+    - "REOVERED"
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"

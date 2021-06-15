@@ -109,6 +109,8 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**list_workflow_ids**](docs/AdminServiceApi.md#list_workflow_ids) | **GET** /api/v1/workflow_ids/{project}/{domain} | 
 *AdminServiceApi* | [**list_workflows**](docs/AdminServiceApi.md#list_workflows) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**list_workflows2**](docs/AdminServiceApi.md#list_workflows2) | **GET** /api/v1/workflows/{id.project}/{id.domain} | 
+*AdminServiceApi* | [**recover_execution**](docs/AdminServiceApi.md#recover_execution) | **POST** /api/v1/executions/recover | 
+*AdminServiceApi* | [**recover_node_execution**](docs/AdminServiceApi.md#recover_node_execution) | **GET** /api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | 
 *AdminServiceApi* | [**register_project**](docs/AdminServiceApi.md#register_project) | **POST** /api/v1/projects | 
 *AdminServiceApi* | [**relaunch_execution**](docs/AdminServiceApi.md#relaunch_execution) | **POST** /api/v1/executions/relaunch | 
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
@@ -137,6 +139,7 @@ Class | Method | HTTP request | Description
  - [AdminExecutionList](docs/AdminExecutionList.md)
  - [AdminExecutionMetadata](docs/AdminExecutionMetadata.md)
  - [AdminExecutionQueueAttributes](docs/AdminExecutionQueueAttributes.md)
+ - [AdminExecutionRecoverRequest](docs/AdminExecutionRecoverRequest.md)
  - [AdminExecutionRelaunchRequest](docs/AdminExecutionRelaunchRequest.md)
  - [AdminExecutionSpec](docs/AdminExecutionSpec.md)
  - [AdminExecutionTerminateRequest](docs/AdminExecutionTerminateRequest.md)
@@ -174,6 +177,7 @@ Class | Method | HTTP request | Description
  - [AdminNodeExecutionGetDataResponse](docs/AdminNodeExecutionGetDataResponse.md)
  - [AdminNodeExecutionList](docs/AdminNodeExecutionList.md)
  - [AdminNodeExecutionMetaData](docs/AdminNodeExecutionMetaData.md)
+ - [AdminNodeExecutionRecoverResponse](docs/AdminNodeExecutionRecoverResponse.md)
  - [AdminNotification](docs/AdminNotification.md)
  - [AdminNotificationList](docs/AdminNotificationList.md)
  - [AdminPagerDutyNotification](docs/AdminPagerDutyNotification.md)

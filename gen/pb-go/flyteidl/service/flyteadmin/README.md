@@ -61,6 +61,8 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**ListWorkflowIds**](docs/AdminServiceApi.md#listworkflowids) | **Get** /api/v1/workflow_ids/{project}/{domain} | 
 *AdminServiceApi* | [**ListWorkflows**](docs/AdminServiceApi.md#listworkflows) | **Get** /api/v1/workflows/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**ListWorkflows2**](docs/AdminServiceApi.md#listworkflows2) | **Get** /api/v1/workflows/{id.project}/{id.domain} | 
+*AdminServiceApi* | [**RecoverExecution**](docs/AdminServiceApi.md#recoverexecution) | **Post** /api/v1/executions/recover | 
+*AdminServiceApi* | [**RecoverNodeExecution**](docs/AdminServiceApi.md#recovernodeexecution) | **Get** /api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | 
 *AdminServiceApi* | [**RegisterProject**](docs/AdminServiceApi.md#registerproject) | **Post** /api/v1/projects | 
 *AdminServiceApi* | [**RelaunchExecution**](docs/AdminServiceApi.md#relaunchexecution) | **Post** /api/v1/executions/relaunch | 
 *AdminServiceApi* | [**TerminateExecution**](docs/AdminServiceApi.md#terminateexecution) | **Delete** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
@@ -89,6 +91,7 @@ Class | Method | HTTP request | Description
  - [AdminExecutionList](docs/AdminExecutionList.md)
  - [AdminExecutionMetadata](docs/AdminExecutionMetadata.md)
  - [AdminExecutionQueueAttributes](docs/AdminExecutionQueueAttributes.md)
+ - [AdminExecutionRecoverRequest](docs/AdminExecutionRecoverRequest.md)
  - [AdminExecutionRelaunchRequest](docs/AdminExecutionRelaunchRequest.md)
  - [AdminExecutionSpec](docs/AdminExecutionSpec.md)
  - [AdminExecutionTerminateRequest](docs/AdminExecutionTerminateRequest.md)
@@ -126,6 +129,7 @@ Class | Method | HTTP request | Description
  - [AdminNodeExecutionGetDataResponse](docs/AdminNodeExecutionGetDataResponse.md)
  - [AdminNodeExecutionList](docs/AdminNodeExecutionList.md)
  - [AdminNodeExecutionMetaData](docs/AdminNodeExecutionMetaData.md)
+ - [AdminNodeExecutionRecoverResponse](docs/AdminNodeExecutionRecoverResponse.md)
  - [AdminNotification](docs/AdminNotification.md)
  - [AdminNotificationList](docs/AdminNotificationList.md)
  - [AdminPagerDutyNotification](docs/AdminPagerDutyNotification.md)

@@ -549,6 +549,33 @@
         ]
       }
     },
+    "/api/v1/executions/recover": {
+      "post": {
+        "description": "Recovers a previously-run workflow execution that failed due to system failure.",
+        "operationId": "RecoverExecution",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminExecutionRecoverRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/executions/relaunch": {
       "post": {
         "description": "Relaunch a workflow execution.",
@@ -1357,6 +1384,52 @@
             "description": "Indicates a list of filters passed as string.\n+optional.",
             "in": "query",
             "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
+      "get": {
+        "description": "Recovers already produced data from an existing node execution (if any).",
+        "operationId": "RecoverNodeExecution",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionRecoverResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "path",
+            "required": true,
             "type": "string"
           }
         ],
@@ -2838,10 +2911,11 @@
         "SCHEDULED",
         "SYSTEM",
         "RELAUNCH",
-        "CHILD_WORKFLOW"
+        "CHILD_WORKFLOW",
+        "RECOVERED"
       ],
       "default": "MANUAL",
-      "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution."
+      "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution.\n - RECOVERED: This execution was recovered from another execution."
     },
     "IOStrategyDownloadMode": {
       "type": "string",
@@ -3288,6 +3362,20 @@
           "description": "Tags used for assigning execution queues for tasks defined within this project."
         }
       }
+    },
+    "adminExecutionRecoverRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Identifier of the workflow execution to recover."
+        },
+        "name": {
+          "type": "string",
+          "title": "User provided value for the recovered execution.\nIf none is provided the system will generate a unique string.\n+optional"
+        }
+      },
+      "description": "Request to recover the referenced execution."
     },
     "adminExecutionRelaunchRequest": {
       "type": "object",
@@ -3914,6 +4002,19 @@
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
+    },
+    "adminNodeExecutionRecoverResponse": {
+      "type": "object",
+      "properties": {
+        "closure": {
+          "$ref": "#/definitions/adminNodeExecutionClosure",
+          "description": "Computed results associated with the recovered node execution."
+        },
+        "data": {
+          "$ref": "#/definitions/adminNodeExecutionGetDataResponse",
+          "description": "Any data produced by the original node execution."
+        }
+      }
     },
     "adminNotification": {
       "type": "object",
@@ -5330,7 +5431,8 @@
         "ABORTED",
         "SKIPPED",
         "TIMED_OUT",
-        "DYNAMIC_RUNNING"
+        "DYNAMIC_RUNNING",
+        "REOVERED"
       ],
       "default": "UNDEFINED"
     },
@@ -5891,7 +5993,8 @@
         "FAILING",
         "FAILED",
         "ABORTED",
-        "TIMED_OUT"
+        "TIMED_OUT",
+        "REOVERED"
       ],
       "default": "UNDEFINED"
     },

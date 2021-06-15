@@ -1155,3 +1155,169 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = NodeExecutionGetDataResponseValidationError{}
+
+// Validate checks the field values on NodeExecutionRecoverRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NodeExecutionRecoverRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionRecoverRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// NodeExecutionRecoverRequestValidationError is the validation error returned
+// by NodeExecutionRecoverRequest.Validate if the designated constraints
+// aren't met.
+type NodeExecutionRecoverRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e NodeExecutionRecoverRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e NodeExecutionRecoverRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e NodeExecutionRecoverRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e NodeExecutionRecoverRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e NodeExecutionRecoverRequestValidationError) ErrorName() string {
+	return "NodeExecutionRecoverRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e NodeExecutionRecoverRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sNodeExecutionRecoverRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = NodeExecutionRecoverRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = NodeExecutionRecoverRequestValidationError{}
+
+// Validate checks the field values on NodeExecutionRecoverResponse with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NodeExecutionRecoverResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetClosure()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionRecoverResponseValidationError{
+				field:  "Closure",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetData()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionRecoverResponseValidationError{
+				field:  "Data",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// NodeExecutionRecoverResponseValidationError is the validation error returned
+// by NodeExecutionRecoverResponse.Validate if the designated constraints
+// aren't met.
+type NodeExecutionRecoverResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e NodeExecutionRecoverResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e NodeExecutionRecoverResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e NodeExecutionRecoverResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e NodeExecutionRecoverResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e NodeExecutionRecoverResponseValidationError) ErrorName() string {
+	return "NodeExecutionRecoverResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e NodeExecutionRecoverResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sNodeExecutionRecoverResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = NodeExecutionRecoverResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = NodeExecutionRecoverResponseValidationError{}

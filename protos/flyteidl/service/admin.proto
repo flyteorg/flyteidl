@@ -231,6 +231,16 @@ service AdminService {
     };
   }
 
+  rpc RecoverExecution (flyteidl.admin.ExecutionRecoverRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/executions/recover"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Recovers a previously-run workflow execution that failed due to system failure."
+    };
+  }
+
   rpc GetExecution (flyteidl.admin.WorkflowExecutionGetRequest) returns (flyteidl.admin.Execution) {
     option (google.api.http) = {
       get: "/api/v1/executions/{id.project}/{id.domain}/{id.name}"
@@ -274,6 +284,15 @@ service AdminService {
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve an existing node execution."
+    };
+  }
+
+  rpc RecoverNodeExecution (flyteidl.admin.NodeExecutionRecoverRequest) returns (flyteidl.admin.NodeExecutionRecoverResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Recovers already produced data from an existing node execution (if any)."
     };
   }
 

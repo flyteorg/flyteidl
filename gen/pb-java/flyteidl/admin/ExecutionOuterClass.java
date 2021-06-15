@@ -2368,6 +2368,871 @@ public final class ExecutionOuterClass {
 
   }
 
+  public interface ExecutionRecoverRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionRecoverRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId();
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <pre>
+     * User provided value for the recovered execution.
+     * If none is provided the system will generate a unique string.
+     * +optional
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * User provided value for the recovered execution.
+     * If none is provided the system will generate a unique string.
+     * +optional
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * <pre>
+   * Request to recover the referenced execution.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.ExecutionRecoverRequest}
+   */
+  public  static final class ExecutionRecoverRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionRecoverRequest)
+      ExecutionRecoverRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExecutionRecoverRequest.newBuilder() to construct.
+    private ExecutionRecoverRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExecutionRecoverRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExecutionRecoverRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.class, flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <pre>
+     * Identifier of the workflow execution to recover.
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * User provided value for the recovered execution.
+     * If none is provided the system will generate a unique string.
+     * +optional
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User provided value for the recovered execution.
+     * If none is provided the system will generate a unique string.
+     * +optional
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest other = (flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Request to recover the referenced execution.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.ExecutionRecoverRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionRecoverRequest)
+        flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.class, flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest build() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest result = new flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> idBuilder_;
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the workflow execution to recover.
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * User provided value for the recovered execution.
+       * If none is provided the system will generate a unique string.
+       * +optional
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User provided value for the recovered execution.
+       * If none is provided the system will generate a unique string.
+       * +optional
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User provided value for the recovered execution.
+       * If none is provided the system will generate a unique string.
+       * +optional
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User provided value for the recovered execution.
+       * If none is provided the system will generate a unique string.
+       * +optional
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User provided value for the recovered execution.
+       * If none is provided the system will generate a unique string.
+       * +optional
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionRecoverRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionRecoverRequest)
+    private static final flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExecutionRecoverRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ExecutionRecoverRequest>() {
+      @java.lang.Override
+      public ExecutionRecoverRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExecutionRecoverRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExecutionRecoverRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExecutionRecoverRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.ExecutionRecoverRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ExecutionCreateResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionCreateResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -12212,6 +13077,14 @@ public final class ExecutionOuterClass {
        * <code>CHILD_WORKFLOW = 4;</code>
        */
       CHILD_WORKFLOW(4),
+      /**
+       * <pre>
+       * This execution was recovered from another execution.
+       * </pre>
+       *
+       * <code>RECOVERED = 5;</code>
+       */
+      RECOVERED(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -12255,6 +13128,14 @@ public final class ExecutionOuterClass {
        * <code>CHILD_WORKFLOW = 4;</code>
        */
       public static final int CHILD_WORKFLOW_VALUE = 4;
+      /**
+       * <pre>
+       * This execution was recovered from another execution.
+       * </pre>
+       *
+       * <code>RECOVERED = 5;</code>
+       */
+      public static final int RECOVERED_VALUE = 5;
 
 
       public final int getNumber() {
@@ -12280,6 +13161,7 @@ public final class ExecutionOuterClass {
           case 2: return SYSTEM;
           case 3: return RELAUNCH;
           case 4: return CHILD_WORKFLOW;
+          case 5: return RECOVERED;
           default: return null;
         }
       }
@@ -21081,6 +21963,11 @@ public final class ExecutionOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_ExecutionRelaunchRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionCreateResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21177,77 +22064,80 @@ public final class ExecutionOuterClass {
       "2\031.flyteidl.core.LiteralMap\"`\n\030Execution" +
       "RelaunchRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.c" +
       "ore.WorkflowExecutionIdentifier\022\014\n\004name\030" +
-      "\003 \001(\t\"Q\n\027ExecutionCreateResponse\0226\n\002id\030\001" +
+      "\003 \001(\t\"_\n\027ExecutionRecoverRequest\0226\n\002id\030\001" +
       " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
-      "entifier\"U\n\033WorkflowExecutionGetRequest\022" +
+      "entifier\022\014\n\004name\030\003 \001(\t\"Q\n\027ExecutionCreat" +
+      "eResponse\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
+      "rkflowExecutionIdentifier\"U\n\033WorkflowExe" +
+      "cutionGetRequest\0226\n\002id\030\001 \001(\0132*.flyteidl." +
+      "core.WorkflowExecutionIdentifier\"\243\001\n\tExe" +
+      "cution\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
+      "lowExecutionIdentifier\022+\n\004spec\030\002 \001(\0132\035.f" +
+      "lyteidl.admin.ExecutionSpec\0221\n\007closure\030\003" +
+      " \001(\0132 .flyteidl.admin.ExecutionClosure\"M" +
+      "\n\rExecutionList\022-\n\nexecutions\030\001 \003(\0132\031.fl" +
+      "yteidl.admin.Execution\022\r\n\005token\030\002 \001(\t\"T\n" +
+      "\016LiteralMapBlob\022+\n\006values\030\001 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004d" +
+      "ata\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tp" +
+      "rincipal\030\002 \001(\t\"\353\004\n\020ExecutionClosure\0221\n\007o" +
+      "utputs\030\001 \001(\0132\036.flyteidl.admin.LiteralMap" +
+      "BlobH\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Ex" +
+      "ecutionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H" +
+      "\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flyteidl.adm" +
+      "in.AbortMetadataH\000\0226\n\017computed_inputs\030\003 " +
+      "\001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225\n\005ph" +
+      "ase\030\004 \001(\0162&.flyteidl.core.WorkflowExecut" +
+      "ion.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022+\n\010duration\030\006 \001(\0132\031.go" +
+      "ogle.protobuf.Duration\022.\n\ncreated_at\030\007 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022.\n\nupdate" +
+      "d_at\030\010 \001(\0132\032.google.protobuf.Timestamp\0223" +
+      "\n\rnotifications\030\t \003(\0132\034.flyteidl.admin.N" +
+      "otification\022.\n\013workflow_id\030\013 \001(\0132\031.flyte" +
+      "idl.core.IdentifierB\017\n\routput_result\"+\n\016" +
+      "SystemMetadata\022\031\n\021execution_cluster\030\001 \001(" +
+      "\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/." +
+      "flyteidl.admin.ExecutionMetadata.Executi" +
+      "onMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001" +
+      "(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.protob" +
+      "uf.Timestamp\022E\n\025parent_node_execution\030\005 " +
+      "\001(\0132&.flyteidl.core.NodeExecutionIdentif" +
+      "ier\022G\n\023reference_execution\030\020 \001(\0132*.flyte" +
+      "idl.core.WorkflowExecutionIdentifier\0227\n\017" +
+      "system_metadata\030\021 \001(\0132\036.flyteidl.admin.S" +
+      "ystemMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL" +
+      "\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNC" +
+      "H\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G" +
+      "\n\020NotificationList\0223\n\rnotifications\030\001 \003(" +
+      "\0132\034.flyteidl.admin.Notification\"\260\004\n\rExec" +
+      "utionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteid" +
+      "l.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyt" +
+      "eidl.core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001" +
+      "(\0132!.flyteidl.admin.ExecutionMetadata\0229\n" +
+      "\rnotifications\030\005 \001(\0132 .flyteidl.admin.No" +
+      "tificationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022" +
+      "&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Labels\022" +
+      "0\n\013annotations\030\010 \001(\0132\033.flyteidl.admin.An" +
+      "notations\0228\n\020security_context\030\n \001(\0132\036.fl" +
+      "yteidl.core.SecurityContext\022/\n\tauth_role" +
+      "\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022" +
+      "quality_of_service\030\021 \001(\0132\037.flyteidl.core" +
+      ".QualityOfService\022\027\n\017max_parallelism\030\022 \001" +
+      "(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Ex" +
+      "ecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*.fl" +
+      "yteidl.core.WorkflowExecutionIdentifier\022" +
+      "\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateResp" +
+      "onse\"Y\n\037WorkflowExecutionGetDataRequest\022" +
       "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
-      "utionIdentifier\"\243\001\n\tExecution\0226\n\002id\030\001 \001(" +
-      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
-      "ifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin.Exe" +
-      "cutionSpec\0221\n\007closure\030\003 \001(\0132 .flyteidl.a" +
-      "dmin.ExecutionClosure\"M\n\rExecutionList\022-" +
-      "\n\nexecutions\030\001 \003(\0132\031.flyteidl.admin.Exec" +
-      "ution\022\r\n\005token\030\002 \001(\t\"T\n\016LiteralMapBlob\022+" +
-      "\n\006values\030\001 \001(\0132\031.flyteidl.core.LiteralMa" +
-      "pH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetad" +
-      "ata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\353\004" +
-      "\n\020ExecutionClosure\0221\n\007outputs\030\001 \001(\0132\036.fl" +
-      "yteidl.admin.LiteralMapBlobH\000\022.\n\005error\030\002" +
-      " \001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n" +
-      "\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_metada" +
-      "ta\030\014 \001(\0132\035.flyteidl.admin.AbortMetadataH" +
-      "\000\0226\n\017computed_inputs\030\003 \001(\0132\031.flyteidl.co" +
-      "re.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyte" +
-      "idl.core.WorkflowExecution.Phase\022.\n\nstar" +
-      "ted_at\030\005 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022+\n\010duration\030\006 \001(\0132\031.google.protobuf.Dur" +
-      "ation\022.\n\ncreated_at\030\007 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\0223\n\rnotifications\030\t" +
-      " \003(\0132\034.flyteidl.admin.Notification\022.\n\013wo" +
-      "rkflow_id\030\013 \001(\0132\031.flyteidl.core.Identifi" +
-      "erB\017\n\routput_result\"+\n\016SystemMetadata\022\031\n" +
-      "\021execution_cluster\030\001 \001(\t\"\313\003\n\021ExecutionMe" +
-      "tadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.Ex" +
-      "ecutionMetadata.ExecutionMode\022\021\n\tprincip" +
-      "al\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_a" +
-      "t\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n\025p" +
-      "arent_node_execution\030\005 \001(\0132&.flyteidl.co" +
-      "re.NodeExecutionIdentifier\022G\n\023reference_" +
-      "execution\030\020 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\0227\n\017system_metadata\030\021" +
-      " \001(\0132\036.flyteidl.admin.SystemMetadata\"X\n\r" +
-      "ExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001" +
-      "\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORK" +
-      "FLOW\020\004\"G\n\020NotificationList\0223\n\rnotificati" +
-      "ons\030\001 \003(\0132\034.flyteidl.admin.Notification\"" +
-      "\260\004\n\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031" +
-      ".flyteidl.core.Identifier\022-\n\006inputs\030\002 \001(" +
-      "\0132\031.flyteidl.core.LiteralMapB\002\030\001\0223\n\010meta" +
-      "data\030\003 \001(\0132!.flyteidl.admin.ExecutionMet" +
-      "adata\0229\n\rnotifications\030\005 \001(\0132 .flyteidl." +
-      "admin.NotificationListH\000\022\025\n\013disable_all\030" +
-      "\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin" +
-      ".Labels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl." +
-      "admin.Annotations\0228\n\020security_context\030\n " +
-      "\001(\0132\036.flyteidl.core.SecurityContext\022/\n\ta" +
-      "uth_role\030\020 \001(\0132\030.flyteidl.admin.AuthRole" +
-      "B\002\030\001\022;\n\022quality_of_service\030\021 \001(\0132\037.flyte" +
-      "idl.core.QualityOfService\022\027\n\017max_paralle" +
-      "lism\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004" +
-      "\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 " +
-      "\001(\0132*.flyteidl.core.WorkflowExecutionIde" +
-      "ntifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTermi" +
-      "nateResponse\"Y\n\037WorkflowExecutionGetData" +
-      "Request\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\"\326\001\n WorkflowExec" +
-      "utionGetDataResponse\022(\n\007outputs\030\001 \001(\0132\027." +
-      "flyteidl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027" +
-      ".flyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003" +
-      " \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_" +
-      "outputs\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "utionIdentifier\"\326\001\n WorkflowExecutionGet" +
+      "DataResponse\022(\n\007outputs\030\001 \001(\0132\027.flyteidl" +
+      ".admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyteid" +
+      "l.admin.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031.f" +
+      "lyteidl.core.LiteralMap\022/\n\014full_outputs\030" +
+      "\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5gith" +
+      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
+      "idl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21280,92 +22170,98 @@ public final class ExecutionOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionRelaunchRequest_descriptor,
         new java.lang.String[] { "Id", "Name", });
-    internal_static_flyteidl_admin_ExecutionCreateResponse_descriptor =
+    internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor,
+        new java.lang.String[] { "Id", "Name", });
+    internal_static_flyteidl_admin_ExecutionCreateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_ExecutionCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionCreateResponse_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_WorkflowExecutionGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_WorkflowExecutionGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_Execution_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_Execution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Execution_descriptor,
         new java.lang.String[] { "Id", "Spec", "Closure", });
     internal_static_flyteidl_admin_ExecutionList_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_ExecutionList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionList_descriptor,
         new java.lang.String[] { "Executions", "Token", });
     internal_static_flyteidl_admin_LiteralMapBlob_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_LiteralMapBlob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LiteralMapBlob_descriptor,
         new java.lang.String[] { "Values", "Uri", "Data", });
     internal_static_flyteidl_admin_AbortMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_AbortMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AbortMetadata_descriptor,
         new java.lang.String[] { "Cause", "Principal", });
     internal_static_flyteidl_admin_ExecutionClosure_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_ExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionClosure_descriptor,
         new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "OutputResult", });
     internal_static_flyteidl_admin_SystemMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_SystemMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SystemMetadata_descriptor,
         new java.lang.String[] { "ExecutionCluster", });
     internal_static_flyteidl_admin_ExecutionMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_admin_ExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionMetadata_descriptor,
         new java.lang.String[] { "Mode", "Principal", "Nesting", "ScheduledAt", "ParentNodeExecution", "ReferenceExecution", "SystemMetadata", });
     internal_static_flyteidl_admin_NotificationList_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_admin_NotificationList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NotificationList_descriptor,
         new java.lang.String[] { "Notifications", });
     internal_static_flyteidl_admin_ExecutionSpec_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
         new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor,
         new java.lang.String[] { "Id", "Cause", });
     internal_static_flyteidl_admin_ExecutionTerminateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_admin_ExecutionTerminateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionTerminateResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor,
