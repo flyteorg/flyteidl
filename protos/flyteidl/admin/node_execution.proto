@@ -191,10 +191,3 @@ message NodeExecutionRecoverRequest {
     core.NodeExecutionIdentifier id   = 1;
 }
 
-message NodeExecutionRecoverResponse {
-    // Computed results associated with the recovered node execution.
-    NodeExecutionClosure closure           = 1;
-
-    // Any data produced by the original node execution.
-    NodeExecutionGetDataResponse data      = 2;
-}

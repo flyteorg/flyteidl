@@ -769,32 +769,32 @@ void AdminService::Stub::experimental_async::GetNodeExecution(::grpc::ClientCont
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecution>::Create(channel_.get(), cq, rpcmethod_GetNodeExecution_, context, request, false);
 }
 
-::grpc::Status AdminService::Stub::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) {
+::grpc::Status AdminService::Stub::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecution* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RecoverNodeExecution_, context, request, response);
 }
 
-void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)> f) {
+void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RecoverNodeExecution_, context, request, response, std::move(f));
 }
 
-void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)> f) {
+void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RecoverNodeExecution_, context, request, response, std::move(f));
 }
 
-void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RecoverNodeExecution_, context, request, response, reactor);
 }
 
-void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AdminService::Stub::experimental_async::RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RecoverNodeExecution_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>* AdminService::Stub::AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecutionRecoverResponse>::Create(channel_.get(), cq, rpcmethod_RecoverNodeExecution_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* AdminService::Stub::AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecution>::Create(channel_.get(), cq, rpcmethod_RecoverNodeExecution_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>* AdminService::Stub::PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecutionRecoverResponse>::Create(channel_.get(), cq, rpcmethod_RecoverNodeExecution_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* AdminService::Stub::PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecution>::Create(channel_.get(), cq, rpcmethod_RecoverNodeExecution_, context, request, false);
 }
 
 ::grpc::Status AdminService::Stub::ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::flyteidl::admin::NodeExecutionList* response) {
@@ -1560,7 +1560,7 @@ AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecutionRecoverResponse>(
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecution>(
           std::mem_fn(&AdminService::Service::RecoverNodeExecution), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[24],
@@ -1843,7 +1843,7 @@ AdminService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AdminService::Service::RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) {
+::grpc::Status AdminService::Service::RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) {
   (void) context;
   (void) request;
   (void) response;

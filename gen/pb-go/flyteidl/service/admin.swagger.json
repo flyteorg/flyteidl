@@ -1400,7 +1400,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminNodeExecutionRecoverResponse"
+              "$ref": "#/definitions/flyteidladminNodeExecution"
             }
           }
         },
@@ -4002,19 +4002,6 @@
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
-    },
-    "adminNodeExecutionRecoverResponse": {
-      "type": "object",
-      "properties": {
-        "closure": {
-          "$ref": "#/definitions/adminNodeExecutionClosure",
-          "description": "Computed results associated with the recovered node execution."
-        },
-        "data": {
-          "$ref": "#/definitions/adminNodeExecutionGetDataResponse",
-          "description": "Any data produced by the original node execution."
-        }
-      }
     },
     "adminNotification": {
       "type": "object",

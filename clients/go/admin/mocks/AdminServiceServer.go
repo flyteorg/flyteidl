@@ -1577,7 +1577,7 @@ type AdminServiceServer_RecoverNodeExecution struct {
 	*mock.Call
 }
 
-func (_m AdminServiceServer_RecoverNodeExecution) Return(_a0 *admin.NodeExecutionRecoverResponse, _a1 error) *AdminServiceServer_RecoverNodeExecution {
+func (_m AdminServiceServer_RecoverNodeExecution) Return(_a0 *admin.NodeExecution, _a1 error) *AdminServiceServer_RecoverNodeExecution {
 	return &AdminServiceServer_RecoverNodeExecution{Call: _m.Call.Return(_a0, _a1)}
 }
 
@@ -1592,15 +1592,15 @@ func (_m *AdminServiceServer) OnRecoverNodeExecutionMatch(matchers ...interface{
 }
 
 // RecoverNodeExecution provides a mock function with given fields: _a0, _a1
-func (_m *AdminServiceServer) RecoverNodeExecution(_a0 context.Context, _a1 *admin.NodeExecutionRecoverRequest) (*admin.NodeExecutionRecoverResponse, error) {
+func (_m *AdminServiceServer) RecoverNodeExecution(_a0 context.Context, _a1 *admin.NodeExecutionRecoverRequest) (*admin.NodeExecution, error) {
 	ret := _m.Called(_a0, _a1)
 
-	var r0 *admin.NodeExecutionRecoverResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest) *admin.NodeExecutionRecoverResponse); ok {
+	var r0 *admin.NodeExecution
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest) *admin.NodeExecution); ok {
 		r0 = rf(_a0, _a1)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.NodeExecutionRecoverResponse)
+			r0 = ret.Get(0).(*admin.NodeExecution)
 		}
 	}
 

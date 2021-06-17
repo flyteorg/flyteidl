@@ -287,7 +287,7 @@ service AdminService {
     };
   }
 
-  rpc RecoverNodeExecution (flyteidl.admin.NodeExecutionRecoverRequest) returns (flyteidl.admin.NodeExecutionRecoverResponse) {
+  rpc RecoverNodeExecution (flyteidl.admin.NodeExecutionRecoverRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
       get: "/api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
     };

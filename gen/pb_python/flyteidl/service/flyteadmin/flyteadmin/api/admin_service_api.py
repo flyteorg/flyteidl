@@ -5070,7 +5070,7 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
-        :return: AdminNodeExecutionRecoverResponse
+        :return: FlyteidladminNodeExecution
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5095,7 +5095,7 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
-        :return: AdminNodeExecutionRecoverResponse
+        :return: FlyteidladminNodeExecution
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5171,7 +5171,7 @@ class AdminServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AdminNodeExecutionRecoverResponse',  # noqa: E501
+            response_type='FlyteidladminNodeExecution',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

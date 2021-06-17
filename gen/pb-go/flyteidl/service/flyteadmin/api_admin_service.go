@@ -4493,15 +4493,15 @@ Recovers already produced data from an existing node execution (if any).
  * @param idExecutionIdName User or system provided value for the resource.
  * @param idNodeId
 
-@return AdminNodeExecutionRecoverResponse
+@return FlyteidladminNodeExecution
 */
-func (a *AdminServiceApiService) RecoverNodeExecution(ctx context.Context, idExecutionIdProject string, idExecutionIdDomain string, idExecutionIdName string, idNodeId string) (AdminNodeExecutionRecoverResponse, *http.Response, error) {
+func (a *AdminServiceApiService) RecoverNodeExecution(ctx context.Context, idExecutionIdProject string, idExecutionIdDomain string, idExecutionIdName string, idNodeId string) (FlyteidladminNodeExecution, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AdminNodeExecutionRecoverResponse
+		localVarReturnValue FlyteidladminNodeExecution
 	)
 
 	// create path and map variables
@@ -4563,7 +4563,7 @@ func (a *AdminServiceApiService) RecoverNodeExecution(ctx context.Context, idExe
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AdminNodeExecutionRecoverResponse
+			var v FlyteidladminNodeExecution
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

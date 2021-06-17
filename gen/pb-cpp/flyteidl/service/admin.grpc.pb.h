@@ -211,12 +211,12 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>> PrepareAsyncGetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>>(PrepareAsyncGetNodeExecutionRaw(context, request, cq));
     }
-    virtual ::grpc::Status RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>> AsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>>(AsyncRecoverNodeExecutionRaw(context, request, cq));
+    virtual ::grpc::Status RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecution* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>> AsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>>(AsyncRecoverNodeExecutionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>> PrepareAsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>>(PrepareAsyncRecoverNodeExecutionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>> PrepareAsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>>(PrepareAsyncRecoverNodeExecutionRaw(context, request, cq));
     }
     virtual ::grpc::Status ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::flyteidl::admin::NodeExecutionList* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionList>> AsyncListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -476,10 +476,10 @@ class AdminService final {
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNodeExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -623,8 +623,8 @@ class AdminService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionTerminateResponse>* PrepareAsyncTerminateExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>* AsyncGetNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>* PrepareAsyncGetNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>* AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionRecoverResponse>* PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>* AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>* PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionList>* AsyncListNodeExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionList>* PrepareAsyncListNodeExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionList>* AsyncListNodeExecutionsForTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -836,12 +836,12 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>> PrepareAsyncGetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>>(PrepareAsyncGetNodeExecutionRaw(context, request, cq));
     }
-    ::grpc::Status RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>> AsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>>(AsyncRecoverNodeExecutionRaw(context, request, cq));
+    ::grpc::Status RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::flyteidl::admin::NodeExecution* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>> AsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>>(AsyncRecoverNodeExecutionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>> PrepareAsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>>(PrepareAsyncRecoverNodeExecutionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>> PrepareAsyncRecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>>(PrepareAsyncRecoverNodeExecutionRaw(context, request, cq));
     }
     ::grpc::Status ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::flyteidl::admin::NodeExecutionList* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>> AsyncListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -1099,10 +1099,10 @@ class AdminService final {
       void GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) override;
       void GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)>) override;
-      void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, std::function<void(::grpc::Status)>) override;
-      void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) override;
+      void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) override;
+      void RecoverNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RecoverNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)>) override;
       void ListNodeExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)>) override;
       void ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
@@ -1252,8 +1252,8 @@ class AdminService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ExecutionTerminateResponse>* PrepareAsyncTerminateExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* AsyncGetNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* PrepareAsyncGetNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>* AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionRecoverResponse>* PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* AsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* PrepareAsyncRecoverNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>* AsyncListNodeExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>* PrepareAsyncListNodeExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>* AsyncListNodeExecutionsForTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1377,7 +1377,7 @@ class AdminService final {
     virtual ::grpc::Status ListExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::ExecutionList* response);
     virtual ::grpc::Status TerminateExecution(::grpc::ServerContext* context, const ::flyteidl::admin::ExecutionTerminateRequest* request, ::flyteidl::admin::ExecutionTerminateResponse* response);
     virtual ::grpc::Status GetNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response);
-    virtual ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response);
+    virtual ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response);
     virtual ::grpc::Status ListNodeExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status ListNodeExecutionsForTask(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status GetNodeExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response);
@@ -1876,11 +1876,11 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRecoverNodeExecution(::grpc::ServerContext* context, ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::NodeExecutionRecoverResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRecoverNodeExecution(::grpc::ServerContext* context, ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::NodeExecution>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -3065,17 +3065,17 @@ class AdminService final {
    public:
     ExperimentalWithCallbackMethod_RecoverNodeExecution() {
       ::grpc::Service::experimental().MarkMethodCallback(23,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecutionRecoverResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecution>(
           [this](::grpc::ServerContext* context,
                  const ::flyteidl::admin::NodeExecutionRecoverRequest* request,
-                 ::flyteidl::admin::NodeExecutionRecoverResponse* response,
+                 ::flyteidl::admin::NodeExecution* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->RecoverNodeExecution(context, request, response, controller);
                  }));
     }
     void SetMessageAllocatorFor_RecoverNodeExecution(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecutionRecoverResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecutionRecoverResponse>*>(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecution>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecution>*>(
           ::grpc::Service::experimental().GetHandler(23))
               ->SetMessageAllocator(allocator);
     }
@@ -3083,11 +3083,11 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListNodeExecutions : public BaseClass {
@@ -4206,7 +4206,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5074,7 +5074,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -6136,7 +6136,7 @@ class AdminService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -7184,18 +7184,18 @@ class AdminService final {
    public:
     WithStreamedUnaryMethod_RecoverNodeExecution() {
       ::grpc::Service::MarkMethodStreamed(23,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecutionRecoverResponse>(std::bind(&WithStreamedUnaryMethod_RecoverNodeExecution<BaseClass>::StreamedRecoverNodeExecution, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::NodeExecutionRecoverRequest, ::flyteidl::admin::NodeExecution>(std::bind(&WithStreamedUnaryMethod_RecoverNodeExecution<BaseClass>::StreamedRecoverNodeExecution, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_RecoverNodeExecution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecutionRecoverResponse* response) override {
+    ::grpc::Status RecoverNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionRecoverRequest* request, ::flyteidl::admin::NodeExecution* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRecoverNodeExecution(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::NodeExecutionRecoverRequest,::flyteidl::admin::NodeExecutionRecoverResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRecoverNodeExecution(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::NodeExecutionRecoverRequest,::flyteidl::admin::NodeExecution>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_ListNodeExecutions : public BaseClass {

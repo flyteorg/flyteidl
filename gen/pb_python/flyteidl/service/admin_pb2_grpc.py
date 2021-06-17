@@ -145,7 +145,7 @@ class AdminServiceStub(object):
     self.RecoverNodeExecution = channel.unary_unary(
         '/flyteidl.service.AdminService/RecoverNodeExecution',
         request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionRecoverRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionRecoverResponse.FromString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.FromString,
         )
     self.ListNodeExecutions = channel.unary_unary(
         '/flyteidl.service.AdminService/ListNodeExecutions',
@@ -720,7 +720,7 @@ def add_AdminServiceServicer_to_server(servicer, server):
       'RecoverNodeExecution': grpc.unary_unary_rpc_method_handler(
           servicer.RecoverNodeExecution,
           request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionRecoverRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionRecoverResponse.SerializeToString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.SerializeToString,
       ),
       'ListNodeExecutions': grpc.unary_unary_rpc_method_handler(
           servicer.ListNodeExecutions,

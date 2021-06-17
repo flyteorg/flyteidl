@@ -1845,7 +1845,7 @@ type AdminServiceClient_RecoverNodeExecution struct {
 	*mock.Call
 }
 
-func (_m AdminServiceClient_RecoverNodeExecution) Return(_a0 *admin.NodeExecutionRecoverResponse, _a1 error) *AdminServiceClient_RecoverNodeExecution {
+func (_m AdminServiceClient_RecoverNodeExecution) Return(_a0 *admin.NodeExecution, _a1 error) *AdminServiceClient_RecoverNodeExecution {
 	return &AdminServiceClient_RecoverNodeExecution{Call: _m.Call.Return(_a0, _a1)}
 }
 
@@ -1860,7 +1860,7 @@ func (_m *AdminServiceClient) OnRecoverNodeExecutionMatch(matchers ...interface{
 }
 
 // RecoverNodeExecution provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) RecoverNodeExecution(ctx context.Context, in *admin.NodeExecutionRecoverRequest, opts ...grpc.CallOption) (*admin.NodeExecutionRecoverResponse, error) {
+func (_m *AdminServiceClient) RecoverNodeExecution(ctx context.Context, in *admin.NodeExecutionRecoverRequest, opts ...grpc.CallOption) (*admin.NodeExecution, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -1870,12 +1870,12 @@ func (_m *AdminServiceClient) RecoverNodeExecution(ctx context.Context, in *admi
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *admin.NodeExecutionRecoverResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest, ...grpc.CallOption) *admin.NodeExecutionRecoverResponse); ok {
+	var r0 *admin.NodeExecution
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest, ...grpc.CallOption) *admin.NodeExecution); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.NodeExecutionRecoverResponse)
+			r0 = ret.Get(0).(*admin.NodeExecution)
 		}
 	}
 
