@@ -1196,12 +1196,14 @@ func (m *WorkflowExecutionGetDataRequest) GetId() *core.WorkflowExecutionIdentif
 // Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
 type WorkflowExecutionGetDataResponse struct {
 	// Signed url to fetch a core.LiteralMap of execution outputs.
+	// Deprecated: Please use full_outputs instead.
 	Outputs *UrlBlob `protobuf:"bytes,1,opt,name=outputs,proto3" json:"outputs,omitempty"` // Deprecated: Do not use.
 	// Signed url to fetch a core.LiteralMap of execution inputs.
+	// Deprecated: Please use full_inputs instead.
 	Inputs *UrlBlob `protobuf:"bytes,2,opt,name=inputs,proto3" json:"inputs,omitempty"` // Deprecated: Do not use.
-	// Optional, full_inputs will only be populated if they are under a configured size threshold.
+	// Full_inputs will only be populated if they are under a configured size threshold.
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
-	// Optional, full_outputs will only be populated if they are under a configured size threshold.
+	// Full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs          *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`

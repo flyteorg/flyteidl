@@ -9,6 +9,7 @@
 
 package flyteadmin
 
+// Request to delete a set matchable project domain attribute override.
 type AdminProjectDomainAttributesDeleteRequest struct {
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`

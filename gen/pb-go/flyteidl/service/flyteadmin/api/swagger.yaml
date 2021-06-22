@@ -5406,7 +5406,9 @@ definitions:
       launch_plan:
         type: "string"
     description: "Represents a custom set of attributes applied for either a domain;\
-      \ a domain and project; or\ndomain, project and workflow name."
+      \ a domain and project; or\ndomain, project and workflow name.\nThese are used\
+      \ to override system level defaults for kubernetes cluster resource management,\n\
+      default execution values, and more all across different levels of specificity."
     example:
       launch_plan: "launch_plan"
       workflow: "workflow"
@@ -5768,18 +5770,20 @@ definitions:
     type: "object"
     properties:
       inputs:
-        description: "Signed url to fetch a core.LiteralMap of node execution inputs."
+        description: "Signed url to fetch a core.LiteralMap of node execution inputs.\n\
+          Deprecated: Please use full_inputs instead."
         $ref: "#/definitions/adminUrlBlob"
       outputs:
-        description: "Signed url to fetch a core.LiteralMap of node execution outputs."
+        description: "Signed url to fetch a core.LiteralMap of node execution outputs.\n\
+          Deprecated: Please use full_outputs instead."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        description: "Optional, full_inputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_inputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        description: "Optional, full_outputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_outputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
       dynamic_workflow:
         description: "Optional Workflow closure for a dynamically generated workflow,\
@@ -9029,7 +9033,8 @@ definitions:
       matching_attributes:
         $ref: "#/definitions/adminMatchingAttributes"
     description: "Defines a set of custom matching attributes which defines resource\
-      \ defaults for a project and domain."
+      \ defaults for a project and domain.\nFor more info on matchable attributes,\
+      \ see - :ref:`ref_flyteidl/admin/matchable_resource.proto`."
     example:
       domain: "domain"
       project: "project"
@@ -9084,6 +9089,7 @@ definitions:
       resource_type:
         title: "Which type of matchable attributes to delete.\n+required"
         $ref: "#/definitions/adminMatchableResource"
+    description: "Request to delete a set matchable project domain attribute override."
   adminProjectDomainAttributesDeleteResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
@@ -9092,6 +9098,7 @@ definitions:
     properties:
       attributes:
         $ref: "#/definitions/adminProjectDomainAttributes"
+    description: "Response to get an individual project domain attribute override."
     example:
       attributes:
         domain: "domain"
@@ -9818,18 +9825,20 @@ definitions:
     type: "object"
     properties:
       inputs:
-        description: "Signed url to fetch a core.LiteralMap of task execution inputs."
+        description: "Signed url to fetch a core.LiteralMap of task execution inputs.\n\
+          Deprecated: Please use full_inputs instead."
         $ref: "#/definitions/adminUrlBlob"
       outputs:
-        description: "Signed url to fetch a core.LiteralMap of task execution outputs."
+        description: "Signed url to fetch a core.LiteralMap of task execution outputs.\n\
+          Deprecated: Please use full_outputs instead."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        description: "Optional, full_inputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_inputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        description: "Optional, full_outputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_outputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
@@ -13421,7 +13430,8 @@ definitions:
       matching_attributes:
         $ref: "#/definitions/adminMatchingAttributes"
     description: "Defines a set of custom matching attributes which defines resource\
-      \ defaults for a project, domain and workflow."
+      \ defaults for a project, domain and workflow.\nFor more info on matchable attributes,\
+      \ see - :ref:`ref_flyteidl/admin/matchable_resource.proto`."
     example:
       workflow: "workflow"
       domain: "domain"
@@ -13480,6 +13490,7 @@ definitions:
       resource_type:
         title: "Which type of matchable attributes to delete.\n+required"
         $ref: "#/definitions/adminMatchableResource"
+    description: "Request to delete a set matchable workflow attribute override."
   adminWorkflowAttributesDeleteResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
@@ -13488,6 +13499,7 @@ definitions:
     properties:
       attributes:
         $ref: "#/definitions/adminWorkflowAttributes"
+    description: "Response to get an individual workflow attribute override."
     example:
       attributes:
         workflow: "workflow"
@@ -16493,18 +16505,20 @@ definitions:
     type: "object"
     properties:
       outputs:
-        description: "Signed url to fetch a core.LiteralMap of execution outputs."
+        description: "Signed url to fetch a core.LiteralMap of execution outputs.\n\
+          Deprecated: Please use full_outputs instead."
         $ref: "#/definitions/adminUrlBlob"
       inputs:
-        description: "Signed url to fetch a core.LiteralMap of execution inputs."
+        description: "Signed url to fetch a core.LiteralMap of execution inputs.\n\
+          Deprecated: Please use full_inputs instead."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        description: "Optional, full_inputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_inputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        description: "Optional, full_outputs will only be populated if they are under\
-          \ a configured size threshold."
+        description: "Full_outputs will only be populated if they are under a configured\
+          \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for WorkflowExecutionGetDataRequest which contains\
       \ inputs and outputs for an execution."

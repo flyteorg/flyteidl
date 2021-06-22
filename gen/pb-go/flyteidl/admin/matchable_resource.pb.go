@@ -630,6 +630,8 @@ func (*MatchingAttributes) XXX_OneofWrappers() []interface{} {
 
 // Represents a custom set of attributes applied for either a domain; a domain and project; or
 // domain, project and workflow name.
+// These are used to override system level defaults for kubernetes cluster resource management,
+// default execution values, and more all across different levels of specificity.
 type MatchableAttributesConfiguration struct {
 	Attributes           *MatchingAttributes `protobuf:"bytes,1,opt,name=attributes,proto3" json:"attributes,omitempty"`
 	Domain               string              `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`

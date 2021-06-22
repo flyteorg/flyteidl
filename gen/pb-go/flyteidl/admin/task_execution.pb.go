@@ -487,12 +487,14 @@ func (m *TaskExecutionGetDataRequest) GetId() *core.TaskExecutionIdentifier {
 // Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution.
 type TaskExecutionGetDataResponse struct {
 	// Signed url to fetch a core.LiteralMap of task execution inputs.
+	// Deprecated: Please use full_inputs instead.
 	Inputs *UrlBlob `protobuf:"bytes,1,opt,name=inputs,proto3" json:"inputs,omitempty"` // Deprecated: Do not use.
 	// Signed url to fetch a core.LiteralMap of task execution outputs.
+	// Deprecated: Please use full_outputs instead.
 	Outputs *UrlBlob `protobuf:"bytes,2,opt,name=outputs,proto3" json:"outputs,omitempty"` // Deprecated: Do not use.
-	// Optional, full_inputs will only be populated if they are under a configured size threshold.
+	// Full_inputs will only be populated if they are under a configured size threshold.
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
-	// Optional, full_outputs will only be populated if they are under a configured size threshold.
+	// Full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs          *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`

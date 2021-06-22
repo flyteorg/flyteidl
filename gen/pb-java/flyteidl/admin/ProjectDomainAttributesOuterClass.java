@@ -70,6 +70,7 @@ public final class ProjectDomainAttributesOuterClass {
   /**
    * <pre>
    * Defines a set of custom matching attributes which defines resource defaults for a project and domain.
+   * For more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributes}
@@ -457,6 +458,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Defines a set of custom matching attributes which defines resource defaults for a project and domain.
+     * For more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ProjectDomainAttributes}
@@ -2131,6 +2133,10 @@ public final class ProjectDomainAttributesOuterClass {
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
+   * <pre>
+   * Request to get an individual project domain attribute override.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesGetRequest}
    */
   public  static final class ProjectDomainAttributesGetRequest extends
@@ -2512,6 +2518,10 @@ public final class ProjectDomainAttributesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Request to get an individual project domain attribute override.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesGetRequest}
      */
     public static final class Builder extends
@@ -3000,6 +3010,10 @@ public final class ProjectDomainAttributesOuterClass {
     flyteidl.admin.ProjectDomainAttributesOuterClass.ProjectDomainAttributesOrBuilder getAttributesOrBuilder();
   }
   /**
+   * <pre>
+   * Response to get an individual project domain attribute override.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesGetResponse}
    */
   public  static final class ProjectDomainAttributesGetResponse extends
@@ -3265,6 +3279,10 @@ public final class ProjectDomainAttributesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Response to get an individual project domain attribute override.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesGetResponse}
      */
     public static final class Builder extends
@@ -3652,6 +3670,10 @@ public final class ProjectDomainAttributesOuterClass {
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
+   * <pre>
+   * Request to delete a set matchable project domain attribute override.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesDeleteRequest}
    */
   public  static final class ProjectDomainAttributesDeleteRequest extends
@@ -4033,6 +4055,10 @@ public final class ProjectDomainAttributesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Request to delete a set matchable project domain attribute override.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesDeleteRequest}
      */
     public static final class Builder extends

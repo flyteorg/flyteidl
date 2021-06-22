@@ -1149,10 +1149,10 @@ Response structure for WorkflowExecutionGetDataRequest which contains inputs and
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of execution outputs."
-   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of execution inputs."
-   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_inputs will only be populated if they are under a configured size threshold."
-   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_outputs will only be populated if they are under a configured size threshold."
+   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of execution outputs. Deprecated: Please use full_outputs instead."
+   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of execution inputs. Deprecated: Please use full_inputs instead."
+   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_inputs will only be populated if they are under a configured size threshold."
+   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_outputs will only be populated if they are under a configured size threshold."
 
 
 
@@ -1665,6 +1665,8 @@ MatchableAttributesConfiguration
 
 Represents a custom set of attributes applied for either a domain; a domain and project; or
 domain, project and workflow name.
+These are used to override system level defaults for kubernetes cluster resource management,
+default execution values, and more all across different levels of specificity.
 
 
 
@@ -2018,10 +2020,10 @@ Response structure for NodeExecutionGetDataRequest which contains inputs and out
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of node execution inputs."
-   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of node execution outputs."
-   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_inputs will only be populated if they are under a configured size threshold."
-   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_outputs will only be populated if they are under a configured size threshold."
+   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of node execution inputs. Deprecated: Please use full_inputs instead."
+   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of node execution outputs. Deprecated: Please use full_outputs instead."
+   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_inputs will only be populated if they are under a configured size threshold."
+   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_outputs will only be populated if they are under a configured size threshold."
    "dynamic_workflow", ":ref:`ref_flyteidl.admin.DynamicWorkflowNodeMetadata`", "", "Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here."
 
 
@@ -2412,6 +2414,7 @@ ProjectDomainAttributes
 ------------------------------------------------------------------
 
 Defines a set of custom matching attributes which defines resource defaults for a project and domain.
+For more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`.
 
 
 
@@ -2434,7 +2437,7 @@ Defines a set of custom matching attributes which defines resource defaults for 
 ProjectDomainAttributesDeleteRequest
 ------------------------------------------------------------------
 
-
+Request to delete a set matchable project domain attribute override.
 
 
 
@@ -2471,7 +2474,7 @@ Purposefully empty, may be populated in the future.
 ProjectDomainAttributesGetRequest
 ------------------------------------------------------------------
 
-
+Request to get an individual project domain attribute override.
 
 
 
@@ -2494,7 +2497,7 @@ ProjectDomainAttributesGetRequest
 ProjectDomainAttributesGetResponse
 ------------------------------------------------------------------
 
-
+Response to get an individual project domain attribute override.
 
 
 
@@ -2904,10 +2907,10 @@ Response structure for TaskExecutionGetDataRequest which contains inputs and out
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of task execution inputs."
-   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of task execution outputs."
-   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_inputs will only be populated if they are under a configured size threshold."
-   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Optional, full_outputs will only be populated if they are under a configured size threshold."
+   "inputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of task execution inputs. Deprecated: Please use full_inputs instead."
+   "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of task execution outputs. Deprecated: Please use full_outputs instead."
+   "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_inputs will only be populated if they are under a configured size threshold."
+   "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_outputs will only be populated if they are under a configured size threshold."
 
 
 
@@ -3227,6 +3230,7 @@ WorkflowAttributes
 ------------------------------------------------------------------
 
 Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
+For more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`.
 
 
 
@@ -3250,7 +3254,7 @@ Defines a set of custom matching attributes which defines resource defaults for 
 WorkflowAttributesDeleteRequest
 ------------------------------------------------------------------
 
-
+Request to delete a set matchable workflow attribute override.
 
 
 
@@ -3288,7 +3292,7 @@ Purposefully empty, may be populated in the future.
 WorkflowAttributesGetRequest
 ------------------------------------------------------------------
 
-
+Request to get an individual workflow attribute override.
 
 
 
@@ -3312,7 +3316,7 @@ WorkflowAttributesGetRequest
 WorkflowAttributesGetResponse
 ------------------------------------------------------------------
 
-
+Response to get an individual workflow attribute override.
 
 
 

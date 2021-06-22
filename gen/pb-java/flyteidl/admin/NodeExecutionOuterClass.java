@@ -12599,6 +12599,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12607,6 +12608,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12615,6 +12617,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12624,6 +12627,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12632,6 +12636,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12640,6 +12645,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12648,7 +12654,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12656,7 +12662,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12664,7 +12670,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12673,7 +12679,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12681,7 +12687,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12689,7 +12695,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12866,6 +12872,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12876,6 +12883,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12886,6 +12894,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -12899,6 +12908,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12909,6 +12919,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12919,6 +12930,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
      * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -12931,7 +12943,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullInputs_;
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12941,7 +12953,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12951,7 +12963,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12964,7 +12976,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullOutputs_;
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12974,7 +12986,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12984,7 +12996,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13471,6 +13483,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13481,6 +13494,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13495,6 +13509,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13515,6 +13530,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13533,6 +13549,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13555,6 +13572,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13573,6 +13591,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13585,6 +13604,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13600,6 +13620,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
@@ -13624,6 +13645,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13634,6 +13656,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13648,6 +13671,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13668,6 +13692,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13686,6 +13711,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13708,6 +13734,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13726,6 +13753,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13738,6 +13766,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13753,6 +13782,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
        * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
@@ -13776,7 +13806,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullInputsBuilder_;
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13786,7 +13816,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13800,7 +13830,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13820,7 +13850,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13838,7 +13868,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13860,7 +13890,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13878,7 +13908,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13890,7 +13920,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13905,7 +13935,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13929,7 +13959,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullOutputsBuilder_;
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13939,7 +13969,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13953,7 +13983,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13973,7 +14003,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13991,7 +14021,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14013,7 +14043,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14031,7 +14061,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14043,7 +14073,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14058,7 +14088,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>

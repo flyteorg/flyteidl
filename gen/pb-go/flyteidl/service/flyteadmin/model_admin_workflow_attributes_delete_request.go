@@ -9,6 +9,7 @@
 
 package flyteadmin
 
+// Request to delete a set matchable workflow attribute override.
 type AdminWorkflowAttributesDeleteRequest struct {
 	Project string `json:"project,omitempty"`
 	Domain string `json:"domain,omitempty"`

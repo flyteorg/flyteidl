@@ -8521,6 +8521,8 @@ public final class MatchableResourceOuterClass {
    * <pre>
    * Represents a custom set of attributes applied for either a domain; a domain and project; or
    * domain, project and workflow name.
+   * These are used to override system level defaults for kubernetes cluster resource management,
+   * default execution values, and more all across different levels of specificity.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.MatchableAttributesConfiguration}
@@ -8995,6 +8997,8 @@ public final class MatchableResourceOuterClass {
      * <pre>
      * Represents a custom set of attributes applied for either a domain; a domain and project; or
      * domain, project and workflow name.
+     * These are used to override system level defaults for kubernetes cluster resource management,
+     * default execution values, and more all across different levels of specificity.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.MatchableAttributesConfiguration}
