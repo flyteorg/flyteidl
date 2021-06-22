@@ -21,6 +21,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -29,6 +30,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -37,6 +39,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -136,6 +139,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -146,6 +150,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -156,6 +161,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Unique identifier for the task execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -489,6 +495,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -499,6 +506,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -513,6 +521,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -533,6 +542,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -551,6 +561,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -573,6 +584,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -591,6 +603,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -603,6 +616,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -618,6 +632,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Unique identifier for the task execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -695,6 +710,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -703,6 +719,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -711,6 +728,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -720,6 +738,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -800,7 +819,7 @@ public final class TaskExecutionOuterClass {
   }
   /**
    * <pre>
-   * Represents a request structure to retrieve a list of task execution entities.
+   * Represents a request structure to retrieve a list of task execution entities yielded by a specific node execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.TaskExecutionListRequest}
@@ -923,6 +942,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -933,6 +953,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -943,6 +964,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -956,6 +978,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -1301,7 +1324,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * Represents a request structure to retrieve a list of task execution entities.
+     * Represents a request structure to retrieve a list of task execution entities yielded by a specific node execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.TaskExecutionListRequest}
@@ -1498,6 +1521,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1508,6 +1532,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1522,6 +1547,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1542,6 +1568,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1560,6 +1587,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1582,6 +1610,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1600,6 +1629,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1612,6 +1642,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1627,6 +1658,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_execution_id = 1;</code>
@@ -1649,6 +1681,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -1659,6 +1692,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -1672,6 +1706,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -7713,6 +7748,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -7721,6 +7757,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -7729,6 +7766,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -7737,7 +7775,7 @@ public final class TaskExecutionOuterClass {
   }
   /**
    * <pre>
-   * Request structure to fetch inputs and output urls for a task execution.
+   * Request structure to fetch inputs and output for a task execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.TaskExecutionGetDataRequest}
@@ -7828,6 +7866,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -7838,6 +7877,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -7848,6 +7888,7 @@ public final class TaskExecutionOuterClass {
     /**
      * <pre>
      * The identifier of the task execution for which to fetch inputs and outputs.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8018,7 +8059,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * Request structure to fetch inputs and output urls for a task execution.
+     * Request structure to fetch inputs and output for a task execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.TaskExecutionGetDataRequest}
@@ -8181,6 +8222,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8191,6 +8233,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8205,6 +8248,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8225,6 +8269,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8243,6 +8288,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8265,6 +8311,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8283,6 +8330,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8295,6 +8343,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8310,6 +8359,7 @@ public final class TaskExecutionOuterClass {
       /**
        * <pre>
        * The identifier of the task execution for which to fetch inputs and outputs.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier id = 1;</code>
@@ -8389,50 +8439,50 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    boolean hasInputs();
+    @java.lang.Deprecated boolean hasInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getInputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
 
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    boolean hasOutputs();
+    @java.lang.Deprecated boolean hasOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getOutputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
 
     /**
      * <pre>
@@ -8618,9 +8668,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public boolean hasInputs() {
+    @java.lang.Deprecated public boolean hasInputs() {
       return inputs_ != null;
     }
     /**
@@ -8628,9 +8678,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getInputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
       return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
     }
     /**
@@ -8638,9 +8688,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution inputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
       return getInputs();
     }
 
@@ -8651,9 +8701,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public boolean hasOutputs() {
+    @java.lang.Deprecated public boolean hasOutputs() {
       return outputs_ != null;
     }
     /**
@@ -8661,9 +8711,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getOutputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
       return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
     }
     /**
@@ -8671,9 +8721,9 @@ public final class TaskExecutionOuterClass {
      * Signed url to fetch a core.LiteralMap of task execution outputs.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
       return getOutputs();
     }
 
@@ -9160,9 +9210,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public boolean hasInputs() {
+      @java.lang.Deprecated public boolean hasInputs() {
         return inputsBuilder_ != null || inputs_ != null;
       }
       /**
@@ -9170,9 +9220,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getInputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
         if (inputsBuilder_ == null) {
           return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
         } else {
@@ -9184,9 +9234,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9204,9 +9254,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder setInputs(
+      @java.lang.Deprecated public Builder setInputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (inputsBuilder_ == null) {
           inputs_ = builderForValue.build();
@@ -9222,9 +9272,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (inputs_ != null) {
             inputs_ =
@@ -9244,9 +9294,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder clearInputs() {
+      @java.lang.Deprecated public Builder clearInputs() {
         if (inputsBuilder_ == null) {
           inputs_ = null;
           onChanged();
@@ -9262,9 +9312,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
         
         onChanged();
         return getInputsFieldBuilder().getBuilder();
@@ -9274,9 +9324,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
         if (inputsBuilder_ != null) {
           return inputsBuilder_.getMessageOrBuilder();
         } else {
@@ -9289,7 +9339,7 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution inputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -9313,9 +9363,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public boolean hasOutputs() {
+      @java.lang.Deprecated public boolean hasOutputs() {
         return outputsBuilder_ != null || outputs_ != null;
       }
       /**
@@ -9323,9 +9373,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getOutputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
         if (outputsBuilder_ == null) {
           return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
         } else {
@@ -9337,9 +9387,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9357,9 +9407,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder setOutputs(
+      @java.lang.Deprecated public Builder setOutputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (outputsBuilder_ == null) {
           outputs_ = builderForValue.build();
@@ -9375,9 +9425,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (outputs_ != null) {
             outputs_ =
@@ -9397,9 +9447,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder clearOutputs() {
+      @java.lang.Deprecated public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
           outputs_ = null;
           onChanged();
@@ -9415,9 +9465,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
         
         onChanged();
         return getOutputsFieldBuilder().getBuilder();
@@ -9427,9 +9477,9 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
         if (outputsBuilder_ != null) {
           return outputsBuilder_.getMessageOrBuilder();
         } else {
@@ -9442,7 +9492,7 @@ public final class TaskExecutionOuterClass {
        * Signed url to fetch a core.LiteralMap of task execution outputs.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -9895,14 +9945,14 @@ public final class TaskExecutionOuterClass {
       "\030\020 \001(\0132%.flyteidl.event.TaskExecutionMet" +
       "adataB\017\n\routput_result\"Q\n\033TaskExecutionG" +
       "etDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.cor" +
-      "e.TaskExecutionIdentifier\"\322\001\n\034TaskExecut" +
-      "ionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.fly" +
-      "teidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.f" +
-      "lyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003 \001" +
-      "(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_ou" +
-      "tputs\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7" +
-      "Z5github.com/flyteorg/flyteidl/gen/pb-go" +
-      "/flyteidl/adminb\006proto3"
+      "e.TaskExecutionIdentifier\"\332\001\n\034TaskExecut" +
+      "ionGetDataResponse\022+\n\006inputs\030\001 \001(\0132\027.fly" +
+      "teidl.admin.UrlBlobB\002\030\001\022,\n\007outputs\030\002 \001(\013" +
+      "2\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_in" +
+      "puts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n" +
+      "\014full_outputs\030\004 \001(\0132\031.flyteidl.core.Lite" +
+      "ralMapB7Z5github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

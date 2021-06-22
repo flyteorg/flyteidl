@@ -86,6 +86,10 @@ public final class WorkflowAttributesOuterClass {
     flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getMatchingAttributesOrBuilder();
   }
   /**
+   * <pre>
+   * Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.WorkflowAttributes}
    */
   public  static final class WorkflowAttributes extends
@@ -528,6 +532,10 @@ public final class WorkflowAttributesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.WorkflowAttributes}
      */
     public static final class Builder extends
@@ -2179,6 +2187,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -2187,6 +2196,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -2197,6 +2207,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -2205,6 +2216,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -2215,6 +2227,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -2223,6 +2236,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -2231,10 +2245,20 @@ public final class WorkflowAttributesOuterClass {
         getWorkflowBytes();
 
     /**
+     * <pre>
+     * Which type of matchable attributes to return.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     int getResourceTypeValue();
     /**
+     * <pre>
+     * Which type of matchable attributes to return.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
@@ -2343,6 +2367,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -2362,6 +2387,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -2385,6 +2411,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -2404,6 +2431,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -2427,6 +2455,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -2446,6 +2475,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -2467,12 +2497,22 @@ public final class WorkflowAttributesOuterClass {
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
     private int resourceType_;
     /**
+     * <pre>
+     * Which type of matchable attributes to return.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     public int getResourceTypeValue() {
       return resourceType_;
     }
     /**
+     * <pre>
+     * Which type of matchable attributes to return.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -2837,6 +2877,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -2856,6 +2897,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -2876,6 +2918,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -2893,6 +2936,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -2906,6 +2950,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -2926,6 +2971,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -2945,6 +2991,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -2965,6 +3012,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -2982,6 +3030,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -2995,6 +3044,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -3015,6 +3065,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -3034,6 +3085,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -3054,6 +3106,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -3071,6 +3124,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -3084,6 +3138,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -3102,12 +3157,22 @@ public final class WorkflowAttributesOuterClass {
 
       private int resourceType_ = 0;
       /**
+       * <pre>
+       * Which type of matchable attributes to return.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public int getResourceTypeValue() {
         return resourceType_;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to return.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder setResourceTypeValue(int value) {
@@ -3116,6 +3181,11 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to return.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -3124,6 +3194,11 @@ public final class WorkflowAttributesOuterClass {
         return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to return.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
@@ -3136,6 +3211,11 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to return.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder clearResourceType() {
@@ -3810,6 +3890,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -3818,6 +3899,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -3828,6 +3910,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -3836,6 +3919,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -3846,6 +3930,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -3854,6 +3939,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -3862,10 +3948,20 @@ public final class WorkflowAttributesOuterClass {
         getWorkflowBytes();
 
     /**
+     * <pre>
+     * Which type of matchable attributes to delete.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     int getResourceTypeValue();
     /**
+     * <pre>
+     * Which type of matchable attributes to delete.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
@@ -3974,6 +4070,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -3993,6 +4090,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique project id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -4016,6 +4114,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -4035,6 +4134,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Unique domain id which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -4058,6 +4158,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -4077,6 +4178,7 @@ public final class WorkflowAttributesOuterClass {
     /**
      * <pre>
      * Workflow name which this set of attributes references.
+     * +required
      * </pre>
      *
      * <code>string workflow = 3;</code>
@@ -4098,12 +4200,22 @@ public final class WorkflowAttributesOuterClass {
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
     private int resourceType_;
     /**
+     * <pre>
+     * Which type of matchable attributes to delete.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     public int getResourceTypeValue() {
       return resourceType_;
     }
     /**
+     * <pre>
+     * Which type of matchable attributes to delete.
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
      */
     public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -4468,6 +4580,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -4487,6 +4600,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -4507,6 +4621,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -4524,6 +4639,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -4537,6 +4653,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique project id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -4557,6 +4674,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -4576,6 +4694,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -4596,6 +4715,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -4613,6 +4733,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -4626,6 +4747,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Unique domain id which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -4646,6 +4768,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -4665,6 +4788,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -4685,6 +4809,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -4702,6 +4827,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -4715,6 +4841,7 @@ public final class WorkflowAttributesOuterClass {
       /**
        * <pre>
        * Workflow name which this set of attributes references.
+       * +required
        * </pre>
        *
        * <code>string workflow = 3;</code>
@@ -4733,12 +4860,22 @@ public final class WorkflowAttributesOuterClass {
 
       private int resourceType_ = 0;
       /**
+       * <pre>
+       * Which type of matchable attributes to delete.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public int getResourceTypeValue() {
         return resourceType_;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to delete.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder setResourceTypeValue(int value) {
@@ -4747,6 +4884,11 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to delete.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -4755,6 +4897,11 @@ public final class WorkflowAttributesOuterClass {
         return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to delete.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
@@ -4767,6 +4914,11 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Which type of matchable attributes to delete.
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
        */
       public Builder clearResourceType() {

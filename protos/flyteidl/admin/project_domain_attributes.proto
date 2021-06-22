@@ -5,6 +5,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/admin/matchable_resource.proto";
 
+// Defines a set of custom matching attributes which defines resource defaults for a project and domain.
 message ProjectDomainAttributes {
     // Unique project id for which this set of attributes will be applied.
     string project                 = 1;
@@ -17,6 +18,7 @@ message ProjectDomainAttributes {
 
 // Sets custom attributes for a project-domain combination.
 message ProjectDomainAttributesUpdateRequest {
+    // +required
     ProjectDomainAttributes attributes = 1;
 }
 
@@ -26,11 +28,15 @@ message ProjectDomainAttributesUpdateResponse {
 
 message ProjectDomainAttributesGetRequest {
     // Unique project id which this set of attributes references.
+    // +required
     string project                 = 1;
 
     // Unique domain id which this set of attributes references.
+    // +required
     string domain                  = 2;
 
+    // Which type of matchable attributes to return.
+    // +required
     MatchableResource resource_type = 3;
 }
 
@@ -41,11 +47,15 @@ message ProjectDomainAttributesGetResponse {
 
 message ProjectDomainAttributesDeleteRequest {
     // Unique project id which this set of attributes references.
+    // +required
     string project                 = 1;
 
     // Unique domain id which this set of attributes references.
+    // +required
     string domain                  = 2;
 
+    // Which type of matchable attributes to delete.
+    // +required
     MatchableResource resource_type = 3;
 }
 

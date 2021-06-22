@@ -20,6 +20,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
 type WorkflowAttributes struct {
 	// Unique project id for which this set of attributes will be applied.
 	Project string `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
@@ -160,11 +161,16 @@ var xxx_messageInfo_WorkflowAttributesUpdateResponse proto.InternalMessageInfo
 
 type WorkflowAttributesGetRequest struct {
 	// Unique project id which this set of attributes references.
+	// +required
 	Project string `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
 	// Unique domain id which this set of attributes references.
+	// +required
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	// Workflow name which this set of attributes references.
-	Workflow             string            `protobuf:"bytes,3,opt,name=workflow,proto3" json:"workflow,omitempty"`
+	// +required
+	Workflow string `protobuf:"bytes,3,opt,name=workflow,proto3" json:"workflow,omitempty"`
+	// Which type of matchable attributes to return.
+	// +required
 	ResourceType         MatchableResource `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3,enum=flyteidl.admin.MatchableResource" json:"resource_type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
@@ -265,11 +271,16 @@ func (m *WorkflowAttributesGetResponse) GetAttributes() *WorkflowAttributes {
 
 type WorkflowAttributesDeleteRequest struct {
 	// Unique project id which this set of attributes references.
+	// +required
 	Project string `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
 	// Unique domain id which this set of attributes references.
+	// +required
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	// Workflow name which this set of attributes references.
-	Workflow             string            `protobuf:"bytes,3,opt,name=workflow,proto3" json:"workflow,omitempty"`
+	// +required
+	Workflow string `protobuf:"bytes,3,opt,name=workflow,proto3" json:"workflow,omitempty"`
+	// Which type of matchable attributes to delete.
+	// +required
 	ResourceType         MatchableResource `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3,enum=flyteidl.admin.MatchableResource" json:"resource_type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`

@@ -263,6 +263,10 @@ public final class MatchableResourceOuterClass {
         getStorageBytes();
   }
   /**
+   * <pre>
+   * Defines a set of overridable task resource attributes set during task registration.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.TaskResourceSpec}
    */
   public  static final class TaskResourceSpec extends
@@ -682,6 +686,10 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Defines a set of overridable task resource attributes set during task registration.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.TaskResourceSpec}
      */
     public static final class Builder extends
@@ -1209,6 +1217,10 @@ public final class MatchableResourceOuterClass {
     flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getLimitsOrBuilder();
   }
   /**
+   * <pre>
+   * Defines task resource defaults and limits that will be applied at task registration.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
    */
   public  static final class TaskResourceAttributes extends
@@ -1524,6 +1536,10 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Defines task resource defaults and limits that will be applied at task registration.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
      */
     public static final class Builder extends
@@ -4235,6 +4251,10 @@ public final class MatchableResourceOuterClass {
     public enum MissingPluginBehavior
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       * By default, if this plugin is not enabled for a Flyte deployment then execution will fail.
+       * </pre>
+       *
        * <code>FAIL = 0;</code>
        */
       FAIL(0),
@@ -4250,6 +4270,10 @@ public final class MatchableResourceOuterClass {
       ;
 
       /**
+       * <pre>
+       * By default, if this plugin is not enabled for a Flyte deployment then execution will fail.
+       * </pre>
+       *
        * <code>FAIL = 0;</code>
        */
       public static final int FAIL_VALUE = 0;
@@ -9605,17 +9629,25 @@ public final class MatchableResourceOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     int getResourceTypeValue();
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * <pre>
-   * Request all matching resource attributes.
+   * Request all matching resource attributes for a resource type.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ListMatchableAttributesRequest}
@@ -9698,12 +9730,20 @@ public final class MatchableResourceOuterClass {
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
     private int resourceType_;
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     public int getResourceTypeValue() {
       return resourceType_;
     }
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -9868,7 +9908,7 @@ public final class MatchableResourceOuterClass {
     }
     /**
      * <pre>
-     * Request all matching resource attributes.
+     * Request all matching resource attributes for a resource type.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ListMatchableAttributesRequest}
@@ -10019,12 +10059,20 @@ public final class MatchableResourceOuterClass {
 
       private int resourceType_ = 0;
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public int getResourceTypeValue() {
         return resourceType_;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder setResourceTypeValue(int value) {
@@ -10033,6 +10081,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
@@ -10041,6 +10093,10 @@ public final class MatchableResourceOuterClass {
         return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
@@ -10053,6 +10109,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder clearResourceType() {
@@ -10144,7 +10204,7 @@ public final class MatchableResourceOuterClass {
   }
   /**
    * <pre>
-   * Response for a request for all matching resource attributes.
+   * Response for a request for all matching resource attributes for a resource type.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ListMatchableAttributesResponse}
@@ -10424,7 +10484,7 @@ public final class MatchableResourceOuterClass {
     }
     /**
      * <pre>
-     * Response for a request for all matching resource attributes.
+     * Response for a request for all matching resource attributes for a resource type.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ListMatchableAttributesResponse}

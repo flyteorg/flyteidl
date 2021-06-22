@@ -5,6 +5,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/admin/matchable_resource.proto";
 
+// Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
 message WorkflowAttributes {
     // Unique project id for which this set of attributes will be applied.
     string project                 = 1;
@@ -29,14 +30,19 @@ message WorkflowAttributesUpdateResponse {
 
 message WorkflowAttributesGetRequest {
     // Unique project id which this set of attributes references.
+    // +required
     string project                 = 1;
 
     // Unique domain id which this set of attributes references.
+    // +required
     string domain                  = 2;
 
     // Workflow name which this set of attributes references.
+    // +required
     string workflow                = 3;
 
+    // Which type of matchable attributes to return.
+    // +required
     MatchableResource resource_type = 4;
 }
 
@@ -46,14 +52,19 @@ message WorkflowAttributesGetResponse {
 
 message WorkflowAttributesDeleteRequest {
     // Unique project id which this set of attributes references.
+    // +required
     string project                 = 1;
 
     // Unique domain id which this set of attributes references.
+    // +required
     string domain                  = 2;
 
     // Workflow name which this set of attributes references.
+    // +required
     string workflow                = 3;
 
+    // Which type of matchable attributes to delete.
+    // +required
     MatchableResource resource_type = 4;
 }
 

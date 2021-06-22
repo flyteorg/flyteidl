@@ -10,11 +10,8 @@
 package flyteadmin
 
 type AdminWorkflowAttributesDeleteRequest struct {
-	// Unique project id which this set of attributes references.
 	Project string `json:"project,omitempty"`
-	// Unique domain id which this set of attributes references.
 	Domain string `json:"domain,omitempty"`
-	// Workflow name which this set of attributes references.
 	Workflow string `json:"workflow,omitempty"`
 	ResourceType *AdminMatchableResource `json:"resource_type,omitempty"`
 }
