@@ -1137,6 +1137,8 @@ func (m *TaskNodeOverrides) Validate() error {
 		}
 	}
 
+	// no validation rules for Config
+
 	return nil
 }
 

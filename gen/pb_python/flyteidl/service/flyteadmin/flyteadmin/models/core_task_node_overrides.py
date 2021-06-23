@@ -37,21 +37,24 @@ class CoreTaskNodeOverrides(object):
     swagger_types = {
         'resources': 'CoreResources',
         'env': 'list[CoreKeyValuePair]',
-        'security_context': 'CoreSecurityContext'
+        'security_context': 'CoreSecurityContext',
+        'config': 'dict(str, str)'
     }
 
     attribute_map = {
         'resources': 'resources',
         'env': 'env',
-        'security_context': 'security_context'
+        'security_context': 'security_context',
+        'config': 'config'
     }
 
-    def __init__(self, resources=None, env=None, security_context=None):  # noqa: E501
+    def __init__(self, resources=None, env=None, security_context=None, config=None):  # noqa: E501
         """CoreTaskNodeOverrides - a model defined in Swagger"""  # noqa: E501
 
         self._resources = None
         self._env = None
         self._security_context = None
+        self._config = None
         self.discriminator = None
 
         if resources is not None:
@@ -60,6 +63,8 @@ class CoreTaskNodeOverrides(object):
             self.env = env
         if security_context is not None:
             self.security_context = security_context
+        if config is not None:
+            self.config = config
 
     @property
     def resources(self):
@@ -129,6 +134,29 @@ class CoreTaskNodeOverrides(object):
         """
 
         self._security_context = security_context
+
+    @property
+    def config(self):
+        """Gets the config of this CoreTaskNodeOverrides.  # noqa: E501
+
+        Metadata about the task custom. This is extensible to allow various plugins in the system to use as required.  # noqa: E501
+
+        :return: The config of this CoreTaskNodeOverrides.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._config
+
+    @config.setter
+    def config(self, config):
+        """Sets the config of this CoreTaskNodeOverrides.
+
+        Metadata about the task custom. This is extensible to allow various plugins in the system to use as required.  # noqa: E501
+
+        :param config: The config of this CoreTaskNodeOverrides.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._config = config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

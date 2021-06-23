@@ -1449,6 +1449,9 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides securityContext */
             securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** TaskNodeOverrides config */
+            config?: ({ [k: string]: string }|null);
         }
 
         /** Represents a TaskNodeOverrides. */
@@ -1468,6 +1471,9 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides securityContext. */
             public securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** TaskNodeOverrides config. */
+            public config: { [k: string]: string };
 
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.

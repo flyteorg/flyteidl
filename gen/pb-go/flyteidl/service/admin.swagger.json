@@ -5792,6 +5792,13 @@
         "security_context": {
           "$ref": "#/definitions/coreSecurityContext",
           "description": "Security attributes that apply to tasks."
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Metadata about the task custom. This is extensible to allow various plugins in the system\nto use as required."
         }
       },
       "description": "Optional task node overrides that will be applied at task execution time."

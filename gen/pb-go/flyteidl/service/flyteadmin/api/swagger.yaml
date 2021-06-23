@@ -6081,6 +6081,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -6356,6 +6358,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -6630,6 +6634,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -7095,6 +7101,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -7370,6 +7378,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -7644,6 +7654,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -8501,6 +8513,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -8776,6 +8790,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -9050,6 +9066,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -11321,6 +11339,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -11596,6 +11616,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -11870,6 +11892,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -12335,6 +12359,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -12610,6 +12636,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -12884,6 +12912,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -13741,6 +13771,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -14016,6 +14048,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -14290,6 +14324,8 @@ definitions:
                       key: "key"
                     - value: "value"
                       key: "key"
+                    config:
+                      key: "config"
                     security_context:
                       run_as:
                         iam_role: "iam_role"
@@ -14904,6 +14940,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -15179,6 +15217,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -15453,6 +15493,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -15918,6 +15960,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -16193,6 +16237,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -16467,6 +16513,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -17324,6 +17372,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -17599,6 +17649,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -17873,6 +17925,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -18431,6 +18485,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -18706,6 +18762,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -18980,6 +19038,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -19445,6 +19505,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -19720,6 +19782,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -19994,6 +20058,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -20851,6 +20917,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -21126,6 +21194,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -21400,6 +21470,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -21875,6 +21947,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -22150,6 +22224,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -22424,6 +22500,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -22889,6 +22967,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -23164,6 +23244,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -23438,6 +23520,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -24295,6 +24379,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -24570,6 +24656,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -24844,6 +24932,8 @@ definitions:
                         key: "key"
                       - value: "value"
                         key: "key"
+                      config:
+                        key: "config"
                       security_context:
                         run_as:
                           iam_role: "iam_role"
@@ -25987,6 +26077,8 @@ definitions:
                 key: "key"
               - value: "value"
                 key: "key"
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -26262,6 +26354,8 @@ definitions:
                 key: "key"
               - value: "value"
                 key: "key"
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -26536,6 +26630,8 @@ definitions:
                 key: "key"
               - value: "value"
                 key: "key"
+              config:
+                key: "config"
               security_context:
                 run_as:
                   iam_role: "iam_role"
@@ -27028,6 +27124,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -27303,6 +27401,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -27577,6 +27677,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -28042,6 +28144,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -28317,6 +28421,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -28591,6 +28697,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -29448,6 +29556,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -29723,6 +29833,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -29997,6 +30109,8 @@ definitions:
                   key: "key"
                 - value: "value"
                   key: "key"
+                config:
+                  key: "config"
                 security_context:
                   run_as:
                     iam_role: "iam_role"
@@ -31036,6 +31150,8 @@ definitions:
             key: "key"
           - value: "value"
             key: "key"
+          config:
+            key: "config"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -31885,6 +32001,8 @@ definitions:
           key: "key"
         - value: "value"
           key: "key"
+        config:
+          key: "config"
         security_context:
           run_as:
             iam_role: "iam_role"
@@ -31944,6 +32062,12 @@ definitions:
       security_context:
         description: "Security attributes that apply to tasks."
         $ref: "#/definitions/coreSecurityContext"
+      config:
+        type: "object"
+        description: "Metadata about the task custom. This is extensible to allow\
+          \ various plugins in the system\nto use as required."
+        additionalProperties:
+          type: "string"
     description: "Optional task node overrides that will be applied at task execution\
       \ time."
     example:
@@ -31963,6 +32087,8 @@ definitions:
         key: "key"
       - value: "value"
         key: "key"
+      config:
+        key: "config"
       security_context:
         run_as:
           iam_role: "iam_role"
@@ -32861,6 +32987,8 @@ definitions:
               key: "key"
             - value: "value"
               key: "key"
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -33136,6 +33264,8 @@ definitions:
               key: "key"
             - value: "value"
               key: "key"
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -33410,6 +33540,8 @@ definitions:
               key: "key"
             - value: "value"
               key: "key"
+            config:
+              key: "config"
             security_context:
               run_as:
                 iam_role: "iam_role"
@@ -34098,6 +34230,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -34373,6 +34507,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -34647,6 +34783,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -35112,6 +35250,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -35387,6 +35527,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -35661,6 +35803,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -36518,6 +36662,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -36793,6 +36939,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"
@@ -37067,6 +37215,8 @@ definitions:
                     key: "key"
                   - value: "value"
                     key: "key"
+                  config:
+                    key: "config"
                   security_context:
                     run_as:
                       iam_role: "iam_role"

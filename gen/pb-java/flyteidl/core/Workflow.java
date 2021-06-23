@@ -14846,6 +14846,65 @@ public final class Workflow {
      * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
      */
     flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
+
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+    int getConfigCount();
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+    boolean containsConfig(
+        java.lang.String key);
+    /**
+     * Use {@link #getConfigMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getConfig();
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getConfigMap();
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    java.lang.String getConfigOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    java.lang.String getConfigOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -14926,6 +14985,19 @@ public final class Workflow {
 
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                config_ = com.google.protobuf.MapField.newMapField(
+                    ConfigDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              config__ = input.readMessage(
+                  ConfigDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              config_.getMutableMap().put(
+                  config__.getKey(), config__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -14953,6 +15025,18 @@ public final class Workflow {
       return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetConfig();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -15083,6 +15167,102 @@ public final class Workflow {
       return getSecurityContext();
     }
 
+    public static final int CONFIG_FIELD_NUMBER = 4;
+    private static final class ConfigDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> config_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetConfig() {
+      if (config_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConfigDefaultEntryHolder.defaultEntry);
+      }
+      return config_;
+    }
+
+    public int getConfigCount() {
+      return internalGetConfig().getMap().size();
+    }
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    public boolean containsConfig(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetConfig().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getConfigMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getConfig() {
+      return getConfigMap();
+    }
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
+      return internalGetConfig().getMap();
+    }
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    public java.lang.String getConfigOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConfig().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Metadata about the task custom. This is extensible to allow various plugins in the system
+     * to use as required.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; config = 4;</code>
+     */
+
+    public java.lang.String getConfigOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConfig().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15106,6 +15286,12 @@ public final class Workflow {
       if (securityContext_ != null) {
         output.writeMessage(3, getSecurityContext());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetConfig(),
+          ConfigDefaultEntryHolder.defaultEntry,
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -15126,6 +15312,16 @@ public final class Workflow {
       if (securityContext_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSecurityContext());
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetConfig().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        config__ = ConfigDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, config__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15154,6 +15350,8 @@ public final class Workflow {
         if (!getSecurityContext()
             .equals(other.getSecurityContext())) return false;
       }
+      if (!internalGetConfig().equals(
+          other.internalGetConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15176,6 +15374,10 @@ public final class Workflow {
       if (hasSecurityContext()) {
         hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityContext().hashCode();
+      }
+      if (!internalGetConfig().getMap().isEmpty()) {
+        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15288,6 +15490,28 @@ public final class Workflow {
         return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetConfig();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableConfig();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -15333,6 +15557,7 @@ public final class Workflow {
           securityContext_ = null;
           securityContextBuilder_ = null;
         }
+        internalGetMutableConfig().clear();
         return this;
       }
 
@@ -15380,6 +15605,8 @@ public final class Workflow {
         } else {
           result.securityContext_ = securityContextBuilder_.build();
         }
+        result.config_ = internalGetConfig();
+        result.config_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -15461,6 +15688,8 @@ public final class Workflow {
         if (other.hasSecurityContext()) {
           mergeSecurityContext(other.getSecurityContext());
         }
+        internalGetMutableConfig().mergeFrom(
+            other.internalGetConfig());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -16108,6 +16337,164 @@ public final class Workflow {
         }
         return securityContextBuilder_;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> config_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetConfig() {
+        if (config_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ConfigDefaultEntryHolder.defaultEntry);
+        }
+        return config_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableConfig() {
+        onChanged();;
+        if (config_ == null) {
+          config_ = com.google.protobuf.MapField.newMapField(
+              ConfigDefaultEntryHolder.defaultEntry);
+        }
+        if (!config_.isMutable()) {
+          config_ = config_.copy();
+        }
+        return config_;
+      }
+
+      public int getConfigCount() {
+        return internalGetConfig().getMap().size();
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public boolean containsConfig(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetConfig().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getConfigMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getConfig() {
+        return getConfigMap();
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
+        return internalGetConfig().getMap();
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public java.lang.String getConfigOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetConfig().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public java.lang.String getConfigOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetConfig().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearConfig() {
+        internalGetMutableConfig().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public Builder removeConfig(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableConfig().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableConfig() {
+        return internalGetMutableConfig().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+      public Builder putConfig(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableConfig().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata about the task custom. This is extensible to allow various plugins in the system
+       * to use as required.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; config = 4;</code>
+       */
+
+      public Builder putAllConfig(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableConfig().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16221,6 +16608,11 @@ public final class Workflow {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -16282,13 +16674,16 @@ public final class Workflow {
       "e\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bindi" +
       "ng\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core" +
       ".Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyte" +
-      "idl.core.WorkflowMetadataDefaults\"\244\001\n\021Ta" +
+      "idl.core.WorkflowMetadataDefaults\"\221\002\n\021Ta" +
       "skNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.fly" +
       "teidl.core.Resources\022(\n\003env\030\002 \003(\0132\033.flyt" +
       "eidl.core.KeyValuePair\0228\n\020security_conte" +
       "xt\030\003 \001(\0132\036.flyteidl.core.SecurityContext" +
-      "B6Z4github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/coreb\006proto3"
+      "\022<\n\006config\030\004 \003(\0132,.flyteidl.core.TaskNod" +
+      "eOverrides.ConfigEntry\032-\n\013ConfigEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16382,7 +16777,13 @@ public final class Workflow {
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,
-        new java.lang.String[] { "Resources", "Env", "SecurityContext", });
+        new java.lang.String[] { "Resources", "Env", "SecurityContext", "Config", });
+    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor =
+      internal_static_flyteidl_core_TaskNodeOverrides_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     flyteidl.core.Condition.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();

@@ -210,4 +210,8 @@ message TaskNodeOverrides {
 
     // Security attributes that apply to tasks.
     SecurityContext security_context = 3;
+
+    // Metadata about the task custom. This is extensible to allow various plugins in the system
+    // to use as required.
+    map<string, string> config = 4;
 }
