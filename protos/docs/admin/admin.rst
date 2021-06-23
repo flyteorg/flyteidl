@@ -997,6 +997,7 @@ of an execution as it progresses across phase changes..
    "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "Optional: security context override to apply this execution."
    "auth_role", ":ref:`ref_flyteidl.admin.AuthRole`", "", "**Deprecated.** Optional: auth override to apply this execution."
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
+   "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
 
 
 
@@ -1442,6 +1443,7 @@ User-provided launch plan definition and configuration values.
    "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "Indicates security context for permissions triggered with this launch plan"
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", ""
+   "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
 
 
 
