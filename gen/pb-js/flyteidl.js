@@ -3510,9 +3510,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface ITaskNodeOverrides
              * @property {flyteidl.core.IResources|null} [resources] TaskNodeOverrides resources
-             * @property {Array.<flyteidl.core.IKeyValuePair>|null} [env] TaskNodeOverrides env
-             * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskNodeOverrides securityContext
-             * @property {Object.<string,string>|null} [config] TaskNodeOverrides config
              */
 
             /**
@@ -3524,8 +3521,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.ITaskNodeOverrides=} [properties] Properties to set
              */
             function TaskNodeOverrides(properties) {
-                this.env = [];
-                this.config = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3539,30 +3534,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskNodeOverrides.prototype.resources = null;
-
-            /**
-             * TaskNodeOverrides env.
-             * @member {Array.<flyteidl.core.IKeyValuePair>} env
-             * @memberof flyteidl.core.TaskNodeOverrides
-             * @instance
-             */
-            TaskNodeOverrides.prototype.env = $util.emptyArray;
-
-            /**
-             * TaskNodeOverrides securityContext.
-             * @member {flyteidl.core.ISecurityContext|null|undefined} securityContext
-             * @memberof flyteidl.core.TaskNodeOverrides
-             * @instance
-             */
-            TaskNodeOverrides.prototype.securityContext = null;
-
-            /**
-             * TaskNodeOverrides config.
-             * @member {Object.<string,string>} config
-             * @memberof flyteidl.core.TaskNodeOverrides
-             * @instance
-             */
-            TaskNodeOverrides.prototype.config = $util.emptyObject;
 
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.
@@ -3590,14 +3561,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.resources != null && message.hasOwnProperty("resources"))
                     $root.flyteidl.core.Resources.encode(message.resources, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.env != null && message.env.length)
-                    for (let i = 0; i < message.env.length; ++i)
-                        $root.flyteidl.core.KeyValuePair.encode(message.env[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.securityContext != null && message.hasOwnProperty("securityContext"))
-                    $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.config != null && message.hasOwnProperty("config"))
-                    for (let keys = Object.keys(message.config), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.config[keys[i]]).ldelim();
                 return writer;
             };
 
@@ -3615,28 +3578,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskNodeOverrides.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNodeOverrides(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNodeOverrides();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.resources = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        if (!(message.env && message.env.length))
-                            message.env = [];
-                        message.env.push($root.flyteidl.core.KeyValuePair.decode(reader, reader.uint32()));
-                        break;
-                    case 3:
-                        message.securityContext = $root.flyteidl.core.SecurityContext.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        reader.skip().pos++;
-                        if (message.config === $util.emptyObject)
-                            message.config = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.config[key] = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3661,28 +3608,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.Resources.verify(message.resources);
                     if (error)
                         return "resources." + error;
-                }
-                if (message.env != null && message.hasOwnProperty("env")) {
-                    if (!Array.isArray(message.env))
-                        return "env: array expected";
-                    for (let i = 0; i < message.env.length; ++i) {
-                        let error = $root.flyteidl.core.KeyValuePair.verify(message.env[i]);
-                        if (error)
-                            return "env." + error;
-                    }
-                }
-                if (message.securityContext != null && message.hasOwnProperty("securityContext")) {
-                    let error = $root.flyteidl.core.SecurityContext.verify(message.securityContext);
-                    if (error)
-                        return "securityContext." + error;
-                }
-                if (message.config != null && message.hasOwnProperty("config")) {
-                    if (!$util.isObject(message.config))
-                        return "config: object expected";
-                    let key = Object.keys(message.config);
-                    for (let i = 0; i < key.length; ++i)
-                        if (!$util.isString(message.config[key[i]]))
-                            return "config: string{k:string} expected";
                 }
                 return null;
             };

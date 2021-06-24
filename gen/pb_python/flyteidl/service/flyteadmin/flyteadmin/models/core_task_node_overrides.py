@@ -16,9 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_key_value_pair import CoreKeyValuePair  # noqa: F401,E501
 from flyteadmin.models.core_resources import CoreResources  # noqa: F401,E501
-from flyteadmin.models.core_security_context import CoreSecurityContext  # noqa: F401,E501
 
 
 class CoreTaskNodeOverrides(object):
@@ -35,36 +33,21 @@ class CoreTaskNodeOverrides(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resources': 'CoreResources',
-        'env': 'list[CoreKeyValuePair]',
-        'security_context': 'CoreSecurityContext',
-        'config': 'dict(str, str)'
+        'resources': 'CoreResources'
     }
 
     attribute_map = {
-        'resources': 'resources',
-        'env': 'env',
-        'security_context': 'security_context',
-        'config': 'config'
+        'resources': 'resources'
     }
 
-    def __init__(self, resources=None, env=None, security_context=None, config=None):  # noqa: E501
+    def __init__(self, resources=None):  # noqa: E501
         """CoreTaskNodeOverrides - a model defined in Swagger"""  # noqa: E501
 
         self._resources = None
-        self._env = None
-        self._security_context = None
-        self._config = None
         self.discriminator = None
 
         if resources is not None:
             self.resources = resources
-        if env is not None:
-            self.env = env
-        if security_context is not None:
-            self.security_context = security_context
-        if config is not None:
-            self.config = config
 
     @property
     def resources(self):
@@ -88,75 +71,6 @@ class CoreTaskNodeOverrides(object):
         """
 
         self._resources = resources
-
-    @property
-    def env(self):
-        """Gets the env of this CoreTaskNodeOverrides.  # noqa: E501
-
-        Environment variables will be set as the task container is starting up.  # noqa: E501
-
-        :return: The env of this CoreTaskNodeOverrides.  # noqa: E501
-        :rtype: list[CoreKeyValuePair]
-        """
-        return self._env
-
-    @env.setter
-    def env(self, env):
-        """Sets the env of this CoreTaskNodeOverrides.
-
-        Environment variables will be set as the task container is starting up.  # noqa: E501
-
-        :param env: The env of this CoreTaskNodeOverrides.  # noqa: E501
-        :type: list[CoreKeyValuePair]
-        """
-
-        self._env = env
-
-    @property
-    def security_context(self):
-        """Gets the security_context of this CoreTaskNodeOverrides.  # noqa: E501
-
-        Security attributes that apply to tasks.  # noqa: E501
-
-        :return: The security_context of this CoreTaskNodeOverrides.  # noqa: E501
-        :rtype: CoreSecurityContext
-        """
-        return self._security_context
-
-    @security_context.setter
-    def security_context(self, security_context):
-        """Sets the security_context of this CoreTaskNodeOverrides.
-
-        Security attributes that apply to tasks.  # noqa: E501
-
-        :param security_context: The security_context of this CoreTaskNodeOverrides.  # noqa: E501
-        :type: CoreSecurityContext
-        """
-
-        self._security_context = security_context
-
-    @property
-    def config(self):
-        """Gets the config of this CoreTaskNodeOverrides.  # noqa: E501
-
-        Metadata about the task custom. This is extensible to allow various plugins in the system to use as required.  # noqa: E501
-
-        :return: The config of this CoreTaskNodeOverrides.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._config
-
-    @config.setter
-    def config(self, config):
-        """Sets the config of this CoreTaskNodeOverrides.
-
-        Metadata about the task custom. This is extensible to allow various plugins in the system to use as required.  # noqa: E501
-
-        :param config: The config of this CoreTaskNodeOverrides.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._config = config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

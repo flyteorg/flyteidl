@@ -1112,33 +1112,6 @@ func (m *TaskNodeOverrides) Validate() error {
 		}
 	}
 
-	for idx, item := range m.GetEnv() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return TaskNodeOverridesValidationError{
-					field:  fmt.Sprintf("Env[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	if v, ok := interface{}(m.GetSecurityContext()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TaskNodeOverridesValidationError{
-				field:  "SecurityContext",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	// no validation rules for Config
-
 	return nil
 }
 

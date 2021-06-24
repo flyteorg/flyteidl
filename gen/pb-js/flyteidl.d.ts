@@ -1443,15 +1443,6 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources */
             resources?: (flyteidl.core.IResources|null);
-
-            /** TaskNodeOverrides env */
-            env?: (flyteidl.core.IKeyValuePair[]|null);
-
-            /** TaskNodeOverrides securityContext */
-            securityContext?: (flyteidl.core.ISecurityContext|null);
-
-            /** TaskNodeOverrides config */
-            config?: ({ [k: string]: string }|null);
         }
 
         /** Represents a TaskNodeOverrides. */
@@ -1465,15 +1456,6 @@ export namespace flyteidl {
 
             /** TaskNodeOverrides resources. */
             public resources?: (flyteidl.core.IResources|null);
-
-            /** TaskNodeOverrides env. */
-            public env: flyteidl.core.IKeyValuePair[];
-
-            /** TaskNodeOverrides securityContext. */
-            public securityContext?: (flyteidl.core.ISecurityContext|null);
-
-            /** TaskNodeOverrides config. */
-            public config: { [k: string]: string };
 
             /**
              * Creates a new TaskNodeOverrides instance using the specified properties.

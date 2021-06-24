@@ -2569,31 +2569,6 @@ Optional task node overrides that will be applied at task execution time.
    :widths: auto
 
    "resources", ":ref:`ref_flyteidl.core.Resources`", "", "A customizable interface to convey resources requested for a task container."
-   "env", ":ref:`ref_flyteidl.core.KeyValuePair`", "repeated", "Environment variables will be set as the task container is starting up."
-   "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "Security attributes that apply to tasks."
-   "config", ":ref:`ref_flyteidl.core.TaskNodeOverrides.ConfigEntry`", "repeated", "Metadata about the task custom. This is extensible to allow various plugins in the system to use as required."
-
-
-
-
-
-
-
-.. _ref_flyteidl.core.TaskNodeOverrides.ConfigEntry:
-
-TaskNodeOverrides.ConfigEntry
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: TaskNodeOverrides.ConfigEntry type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_string`", "", ""
 
 
 

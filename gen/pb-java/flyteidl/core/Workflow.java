@@ -14777,134 +14777,6 @@ public final class Workflow {
      * <code>.flyteidl.core.Resources resources = 1;</code>
      */
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
-
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    java.util.List<flyteidl.core.Literals.KeyValuePair> 
-        getEnvList();
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    flyteidl.core.Literals.KeyValuePair getEnv(int index);
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    int getEnvCount();
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
-        getEnvOrBuilderList();
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    flyteidl.core.Literals.KeyValuePairOrBuilder getEnvOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    boolean hasSecurityContext();
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    flyteidl.core.Security.SecurityContext getSecurityContext();
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder();
-
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-    int getConfigCount();
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-    boolean containsConfig(
-        java.lang.String key);
-    /**
-     * Use {@link #getConfigMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getConfig();
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getConfigMap();
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    java.lang.String getConfigOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    java.lang.String getConfigOrThrow(
-        java.lang.String key);
   }
   /**
    * <pre>
@@ -14923,7 +14795,6 @@ public final class Workflow {
       super(builder);
     }
     private TaskNodeOverrides() {
-      env_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -14963,41 +14834,6 @@ public final class Workflow {
 
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                env_ = new java.util.ArrayList<flyteidl.core.Literals.KeyValuePair>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              env_.add(
-                  input.readMessage(flyteidl.core.Literals.KeyValuePair.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              flyteidl.core.Security.SecurityContext.Builder subBuilder = null;
-              if (securityContext_ != null) {
-                subBuilder = securityContext_.toBuilder();
-              }
-              securityContext_ = input.readMessage(flyteidl.core.Security.SecurityContext.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(securityContext_);
-                securityContext_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                config_ = com.google.protobuf.MapField.newMapField(
-                    ConfigDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              config__ = input.readMessage(
-                  ConfigDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              config_.getMutableMap().put(
-                  config__.getKey(), config__.getValue());
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -15013,9 +14849,6 @@ public final class Workflow {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          env_ = java.util.Collections.unmodifiableList(env_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -15025,18 +14858,6 @@ public final class Workflow {
       return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 4:
-          return internalGetConfig();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -15045,7 +14866,6 @@ public final class Workflow {
               flyteidl.core.Workflow.TaskNodeOverrides.class, flyteidl.core.Workflow.TaskNodeOverrides.Builder.class);
     }
 
-    private int bitField0_;
     public static final int RESOURCES_FIELD_NUMBER = 1;
     private flyteidl.core.Tasks.Resources resources_;
     /**
@@ -15079,190 +14899,6 @@ public final class Workflow {
       return getResources();
     }
 
-    public static final int ENV_FIELD_NUMBER = 2;
-    private java.util.List<flyteidl.core.Literals.KeyValuePair> env_;
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    public java.util.List<flyteidl.core.Literals.KeyValuePair> getEnvList() {
-      return env_;
-    }
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
-        getEnvOrBuilderList() {
-      return env_;
-    }
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    public int getEnvCount() {
-      return env_.size();
-    }
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    public flyteidl.core.Literals.KeyValuePair getEnv(int index) {
-      return env_.get(index);
-    }
-    /**
-     * <pre>
-     * Environment variables will be set as the task container is starting up.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-     */
-    public flyteidl.core.Literals.KeyValuePairOrBuilder getEnvOrBuilder(
-        int index) {
-      return env_.get(index);
-    }
-
-    public static final int SECURITY_CONTEXT_FIELD_NUMBER = 3;
-    private flyteidl.core.Security.SecurityContext securityContext_;
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    public boolean hasSecurityContext() {
-      return securityContext_ != null;
-    }
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    public flyteidl.core.Security.SecurityContext getSecurityContext() {
-      return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
-    }
-    /**
-     * <pre>
-     * Security attributes that apply to tasks.
-     * </pre>
-     *
-     * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-     */
-    public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
-      return getSecurityContext();
-    }
-
-    public static final int CONFIG_FIELD_NUMBER = 4;
-    private static final class ConfigDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> config_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetConfig() {
-      if (config_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ConfigDefaultEntryHolder.defaultEntry);
-      }
-      return config_;
-    }
-
-    public int getConfigCount() {
-      return internalGetConfig().getMap().size();
-    }
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    public boolean containsConfig(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetConfig().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getConfigMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getConfig() {
-      return getConfigMap();
-    }
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
-      return internalGetConfig().getMap();
-    }
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    public java.lang.String getConfigOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetConfig().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Metadata about the task custom. This is extensible to allow various plugins in the system
-     * to use as required.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 4;</code>
-     */
-
-    public java.lang.String getConfigOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetConfig().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15280,18 +14916,6 @@ public final class Workflow {
       if (resources_ != null) {
         output.writeMessage(1, getResources());
       }
-      for (int i = 0; i < env_.size(); i++) {
-        output.writeMessage(2, env_.get(i));
-      }
-      if (securityContext_ != null) {
-        output.writeMessage(3, getSecurityContext());
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetConfig(),
-          ConfigDefaultEntryHolder.defaultEntry,
-          4);
       unknownFields.writeTo(output);
     }
 
@@ -15304,24 +14928,6 @@ public final class Workflow {
       if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResources());
-      }
-      for (int i = 0; i < env_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, env_.get(i));
-      }
-      if (securityContext_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getSecurityContext());
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetConfig().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        config__ = ConfigDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, config__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15343,15 +14949,6 @@ public final class Workflow {
         if (!getResources()
             .equals(other.getResources())) return false;
       }
-      if (!getEnvList()
-          .equals(other.getEnvList())) return false;
-      if (hasSecurityContext() != other.hasSecurityContext()) return false;
-      if (hasSecurityContext()) {
-        if (!getSecurityContext()
-            .equals(other.getSecurityContext())) return false;
-      }
-      if (!internalGetConfig().equals(
-          other.internalGetConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15366,18 +14963,6 @@ public final class Workflow {
       if (hasResources()) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResources().hashCode();
-      }
-      if (getEnvCount() > 0) {
-        hash = (37 * hash) + ENV_FIELD_NUMBER;
-        hash = (53 * hash) + getEnvList().hashCode();
-      }
-      if (hasSecurityContext()) {
-        hash = (37 * hash) + SECURITY_CONTEXT_FIELD_NUMBER;
-        hash = (53 * hash) + getSecurityContext().hashCode();
-      }
-      if (!internalGetConfig().getMap().isEmpty()) {
-        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15490,28 +15075,6 @@ public final class Workflow {
         return flyteidl.core.Workflow.internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetConfig();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetMutableConfig();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -15533,7 +15096,6 @@ public final class Workflow {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getEnvFieldBuilder();
         }
       }
       @java.lang.Override
@@ -15545,19 +15107,6 @@ public final class Workflow {
           resources_ = null;
           resourcesBuilder_ = null;
         }
-        if (envBuilder_ == null) {
-          env_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          envBuilder_.clear();
-        }
-        if (securityContextBuilder_ == null) {
-          securityContext_ = null;
-        } else {
-          securityContext_ = null;
-          securityContextBuilder_ = null;
-        }
-        internalGetMutableConfig().clear();
         return this;
       }
 
@@ -15584,30 +15133,11 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.TaskNodeOverrides buildPartial() {
         flyteidl.core.Workflow.TaskNodeOverrides result = new flyteidl.core.Workflow.TaskNodeOverrides(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (resourcesBuilder_ == null) {
           result.resources_ = resources_;
         } else {
           result.resources_ = resourcesBuilder_.build();
         }
-        if (envBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            env_ = java.util.Collections.unmodifiableList(env_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.env_ = env_;
-        } else {
-          result.env_ = envBuilder_.build();
-        }
-        if (securityContextBuilder_ == null) {
-          result.securityContext_ = securityContext_;
-        } else {
-          result.securityContext_ = securityContextBuilder_.build();
-        }
-        result.config_ = internalGetConfig();
-        result.config_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -15659,37 +15189,6 @@ public final class Workflow {
         if (other.hasResources()) {
           mergeResources(other.getResources());
         }
-        if (envBuilder_ == null) {
-          if (!other.env_.isEmpty()) {
-            if (env_.isEmpty()) {
-              env_ = other.env_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureEnvIsMutable();
-              env_.addAll(other.env_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.env_.isEmpty()) {
-            if (envBuilder_.isEmpty()) {
-              envBuilder_.dispose();
-              envBuilder_ = null;
-              env_ = other.env_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              envBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getEnvFieldBuilder() : null;
-            } else {
-              envBuilder_.addAllMessages(other.env_);
-            }
-          }
-        }
-        if (other.hasSecurityContext()) {
-          mergeSecurityContext(other.getSecurityContext());
-        }
-        internalGetMutableConfig().mergeFrom(
-            other.internalGetConfig());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -15718,7 +15217,6 @@ public final class Workflow {
         }
         return this;
       }
-      private int bitField0_;
 
       private flyteidl.core.Tasks.Resources resources_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -15872,629 +15370,6 @@ public final class Workflow {
         }
         return resourcesBuilder_;
       }
-
-      private java.util.List<flyteidl.core.Literals.KeyValuePair> env_ =
-        java.util.Collections.emptyList();
-      private void ensureEnvIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          env_ = new java.util.ArrayList<flyteidl.core.Literals.KeyValuePair>(env_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder> envBuilder_;
-
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public java.util.List<flyteidl.core.Literals.KeyValuePair> getEnvList() {
-        if (envBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(env_);
-        } else {
-          return envBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public int getEnvCount() {
-        if (envBuilder_ == null) {
-          return env_.size();
-        } else {
-          return envBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public flyteidl.core.Literals.KeyValuePair getEnv(int index) {
-        if (envBuilder_ == null) {
-          return env_.get(index);
-        } else {
-          return envBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder setEnv(
-          int index, flyteidl.core.Literals.KeyValuePair value) {
-        if (envBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEnvIsMutable();
-          env_.set(index, value);
-          onChanged();
-        } else {
-          envBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder setEnv(
-          int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
-        if (envBuilder_ == null) {
-          ensureEnvIsMutable();
-          env_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          envBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder addEnv(flyteidl.core.Literals.KeyValuePair value) {
-        if (envBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEnvIsMutable();
-          env_.add(value);
-          onChanged();
-        } else {
-          envBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder addEnv(
-          int index, flyteidl.core.Literals.KeyValuePair value) {
-        if (envBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureEnvIsMutable();
-          env_.add(index, value);
-          onChanged();
-        } else {
-          envBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder addEnv(
-          flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
-        if (envBuilder_ == null) {
-          ensureEnvIsMutable();
-          env_.add(builderForValue.build());
-          onChanged();
-        } else {
-          envBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder addEnv(
-          int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
-        if (envBuilder_ == null) {
-          ensureEnvIsMutable();
-          env_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          envBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder addAllEnv(
-          java.lang.Iterable<? extends flyteidl.core.Literals.KeyValuePair> values) {
-        if (envBuilder_ == null) {
-          ensureEnvIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, env_);
-          onChanged();
-        } else {
-          envBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder clearEnv() {
-        if (envBuilder_ == null) {
-          env_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          envBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public Builder removeEnv(int index) {
-        if (envBuilder_ == null) {
-          ensureEnvIsMutable();
-          env_.remove(index);
-          onChanged();
-        } else {
-          envBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public flyteidl.core.Literals.KeyValuePair.Builder getEnvBuilder(
-          int index) {
-        return getEnvFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public flyteidl.core.Literals.KeyValuePairOrBuilder getEnvOrBuilder(
-          int index) {
-        if (envBuilder_ == null) {
-          return env_.get(index);  } else {
-          return envBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
-           getEnvOrBuilderList() {
-        if (envBuilder_ != null) {
-          return envBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(env_);
-        }
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public flyteidl.core.Literals.KeyValuePair.Builder addEnvBuilder() {
-        return getEnvFieldBuilder().addBuilder(
-            flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public flyteidl.core.Literals.KeyValuePair.Builder addEnvBuilder(
-          int index) {
-        return getEnvFieldBuilder().addBuilder(
-            index, flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Environment variables will be set as the task container is starting up.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.KeyValuePair env = 2;</code>
-       */
-      public java.util.List<flyteidl.core.Literals.KeyValuePair.Builder> 
-           getEnvBuilderList() {
-        return getEnvFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder> 
-          getEnvFieldBuilder() {
-        if (envBuilder_ == null) {
-          envBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder>(
-                  env_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          env_ = null;
-        }
-        return envBuilder_;
-      }
-
-      private flyteidl.core.Security.SecurityContext securityContext_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> securityContextBuilder_;
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public boolean hasSecurityContext() {
-        return securityContextBuilder_ != null || securityContext_ != null;
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public flyteidl.core.Security.SecurityContext getSecurityContext() {
-        if (securityContextBuilder_ == null) {
-          return securityContext_ == null ? flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
-        } else {
-          return securityContextBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public Builder setSecurityContext(flyteidl.core.Security.SecurityContext value) {
-        if (securityContextBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          securityContext_ = value;
-          onChanged();
-        } else {
-          securityContextBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public Builder setSecurityContext(
-          flyteidl.core.Security.SecurityContext.Builder builderForValue) {
-        if (securityContextBuilder_ == null) {
-          securityContext_ = builderForValue.build();
-          onChanged();
-        } else {
-          securityContextBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public Builder mergeSecurityContext(flyteidl.core.Security.SecurityContext value) {
-        if (securityContextBuilder_ == null) {
-          if (securityContext_ != null) {
-            securityContext_ =
-              flyteidl.core.Security.SecurityContext.newBuilder(securityContext_).mergeFrom(value).buildPartial();
-          } else {
-            securityContext_ = value;
-          }
-          onChanged();
-        } else {
-          securityContextBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public Builder clearSecurityContext() {
-        if (securityContextBuilder_ == null) {
-          securityContext_ = null;
-          onChanged();
-        } else {
-          securityContext_ = null;
-          securityContextBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public flyteidl.core.Security.SecurityContext.Builder getSecurityContextBuilder() {
-        
-        onChanged();
-        return getSecurityContextFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      public flyteidl.core.Security.SecurityContextOrBuilder getSecurityContextOrBuilder() {
-        if (securityContextBuilder_ != null) {
-          return securityContextBuilder_.getMessageOrBuilder();
-        } else {
-          return securityContext_ == null ?
-              flyteidl.core.Security.SecurityContext.getDefaultInstance() : securityContext_;
-        }
-      }
-      /**
-       * <pre>
-       * Security attributes that apply to tasks.
-       * </pre>
-       *
-       * <code>.flyteidl.core.SecurityContext security_context = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder> 
-          getSecurityContextFieldBuilder() {
-        if (securityContextBuilder_ == null) {
-          securityContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Security.SecurityContext, flyteidl.core.Security.SecurityContext.Builder, flyteidl.core.Security.SecurityContextOrBuilder>(
-                  getSecurityContext(),
-                  getParentForChildren(),
-                  isClean());
-          securityContext_ = null;
-        }
-        return securityContextBuilder_;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> config_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetConfig() {
-        if (config_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ConfigDefaultEntryHolder.defaultEntry);
-        }
-        return config_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableConfig() {
-        onChanged();;
-        if (config_ == null) {
-          config_ = com.google.protobuf.MapField.newMapField(
-              ConfigDefaultEntryHolder.defaultEntry);
-        }
-        if (!config_.isMutable()) {
-          config_ = config_.copy();
-        }
-        return config_;
-      }
-
-      public int getConfigCount() {
-        return internalGetConfig().getMap().size();
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public boolean containsConfig(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetConfig().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getConfigMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getConfig() {
-        return getConfigMap();
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
-        return internalGetConfig().getMap();
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public java.lang.String getConfigOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetConfig().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public java.lang.String getConfigOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetConfig().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearConfig() {
-        internalGetMutableConfig().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public Builder removeConfig(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableConfig().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableConfig() {
-        return internalGetMutableConfig().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-      public Builder putConfig(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableConfig().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <pre>
-       * Metadata about the task custom. This is extensible to allow various plugins in the system
-       * to use as required.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 4;</code>
-       */
-
-      public Builder putAllConfig(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableConfig().getMutableMap()
-            .putAll(values);
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16608,11 +15483,6 @@ public final class Workflow {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -16674,16 +15544,11 @@ public final class Workflow {
       "e\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bindi" +
       "ng\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core" +
       ".Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyte" +
-      "idl.core.WorkflowMetadataDefaults\"\221\002\n\021Ta" +
-      "skNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.fly" +
-      "teidl.core.Resources\022(\n\003env\030\002 \003(\0132\033.flyt" +
-      "eidl.core.KeyValuePair\0228\n\020security_conte" +
-      "xt\030\003 \001(\0132\036.flyteidl.core.SecurityContext" +
-      "\022<\n\006config\030\004 \003(\0132,.flyteidl.core.TaskNod" +
-      "eOverrides.ConfigEntry\032-\n\013ConfigEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/coreb\006proto3"
+      "idl.core.WorkflowMetadataDefaults\"@\n\021Tas" +
+      "kNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyt" +
+      "eidl.core.ResourcesB6Z4github.com/flyteo" +
+      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16777,13 +15642,7 @@ public final class Workflow {
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,
-        new java.lang.String[] { "Resources", "Env", "SecurityContext", "Config", });
-    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor =
-      internal_static_flyteidl_core_TaskNodeOverrides_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_TaskNodeOverrides_ConfigEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "Resources", });
     flyteidl.core.Condition.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();

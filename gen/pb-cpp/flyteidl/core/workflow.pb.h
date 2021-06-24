@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/condition.pb.h"
@@ -54,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2fworkflow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[13]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -87,9 +84,6 @@ extern TaskNodeDefaultTypeInternal _TaskNode_default_instance_;
 class TaskNodeOverrides;
 class TaskNodeOverridesDefaultTypeInternal;
 extern TaskNodeOverridesDefaultTypeInternal _TaskNodeOverrides_default_instance_;
-class TaskNodeOverrides_ConfigEntry_DoNotUse;
-class TaskNodeOverrides_ConfigEntry_DoNotUseDefaultTypeInternal;
-extern TaskNodeOverrides_ConfigEntry_DoNotUseDefaultTypeInternal _TaskNodeOverrides_ConfigEntry_DoNotUse_default_instance_;
 class WorkflowMetadata;
 class WorkflowMetadataDefaultTypeInternal;
 extern WorkflowMetadataDefaultTypeInternal _WorkflowMetadata_default_instance_;
@@ -114,7 +108,6 @@ template<> ::flyteidl::core::Node* Arena::CreateMaybeMessage<::flyteidl::core::N
 template<> ::flyteidl::core::NodeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::NodeMetadata>(Arena*);
 template<> ::flyteidl::core::TaskNode* Arena::CreateMaybeMessage<::flyteidl::core::TaskNode>(Arena*);
 template<> ::flyteidl::core::TaskNodeOverrides* Arena::CreateMaybeMessage<::flyteidl::core::TaskNodeOverrides>(Arena*);
-template<> ::flyteidl::core::TaskNodeOverrides_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskNodeOverrides_ConfigEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::WorkflowMetadata* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadata>(Arena*);
 template<> ::flyteidl::core::WorkflowMetadataDefaults* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadataDefaults>(Arena*);
 template<> ::flyteidl::core::WorkflowNode* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowNode>(Arena*);
@@ -1808,30 +1801,6 @@ class WorkflowTemplate final :
 };
 // -------------------------------------------------------------------
 
-class TaskNodeOverrides_ConfigEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TaskNodeOverrides_ConfigEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<TaskNodeOverrides_ConfigEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  TaskNodeOverrides_ConfigEntry_DoNotUse();
-  TaskNodeOverrides_ConfigEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const TaskNodeOverrides_ConfigEntry_DoNotUse& other);
-  static const TaskNodeOverrides_ConfigEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TaskNodeOverrides_ConfigEntry_DoNotUse*>(&_TaskNodeOverrides_ConfigEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
 class TaskNodeOverrides final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TaskNodeOverrides) */ {
  public:
@@ -1870,7 +1839,7 @@ class TaskNodeOverrides final :
                &_TaskNodeOverrides_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(TaskNodeOverrides* other);
   friend void swap(TaskNodeOverrides& a, TaskNodeOverrides& b) {
@@ -1925,29 +1894,7 @@ class TaskNodeOverrides final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
-
-  // repeated .flyteidl.core.KeyValuePair env = 2;
-  int env_size() const;
-  void clear_env();
-  static const int kEnvFieldNumber = 2;
-  ::flyteidl::core::KeyValuePair* mutable_env(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
-      mutable_env();
-  const ::flyteidl::core::KeyValuePair& env(int index) const;
-  ::flyteidl::core::KeyValuePair* add_env();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
-      env() const;
-
-  // map<string, string> config = 4;
-  int config_size() const;
-  void clear_config();
-  static const int kConfigFieldNumber = 4;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      config() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_config();
 
   // .flyteidl.core.Resources resources = 1;
   bool has_resources() const;
@@ -1958,29 +1905,12 @@ class TaskNodeOverrides final :
   ::flyteidl::core::Resources* mutable_resources();
   void set_allocated_resources(::flyteidl::core::Resources* resources);
 
-  // .flyteidl.core.SecurityContext security_context = 3;
-  bool has_security_context() const;
-  void clear_security_context();
-  static const int kSecurityContextFieldNumber = 3;
-  const ::flyteidl::core::SecurityContext& security_context() const;
-  ::flyteidl::core::SecurityContext* release_security_context();
-  ::flyteidl::core::SecurityContext* mutable_security_context();
-  void set_allocated_security_context(::flyteidl::core::SecurityContext* security_context);
-
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskNodeOverrides)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > env_;
-  ::google::protobuf::internal::MapField<
-      TaskNodeOverrides_ConfigEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > config_;
   ::flyteidl::core::Resources* resources_;
-  ::flyteidl::core::SecurityContext* security_context_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -3547,8 +3477,6 @@ inline void WorkflowTemplate::set_allocated_metadata_defaults(::flyteidl::core::
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // TaskNodeOverrides
 
 // .flyteidl.core.Resources resources = 1;
@@ -3596,101 +3524,9 @@ inline void TaskNodeOverrides::set_allocated_resources(::flyteidl::core::Resourc
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.resources)
 }
 
-// repeated .flyteidl.core.KeyValuePair env = 2;
-inline int TaskNodeOverrides::env_size() const {
-  return env_.size();
-}
-inline ::flyteidl::core::KeyValuePair* TaskNodeOverrides::mutable_env(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNodeOverrides.env)
-  return env_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
-TaskNodeOverrides::mutable_env() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.TaskNodeOverrides.env)
-  return &env_;
-}
-inline const ::flyteidl::core::KeyValuePair& TaskNodeOverrides::env(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.env)
-  return env_.Get(index);
-}
-inline ::flyteidl::core::KeyValuePair* TaskNodeOverrides::add_env() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.TaskNodeOverrides.env)
-  return env_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
-TaskNodeOverrides::env() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.TaskNodeOverrides.env)
-  return env_;
-}
-
-// .flyteidl.core.SecurityContext security_context = 3;
-inline bool TaskNodeOverrides::has_security_context() const {
-  return this != internal_default_instance() && security_context_ != nullptr;
-}
-inline const ::flyteidl::core::SecurityContext& TaskNodeOverrides::security_context() const {
-  const ::flyteidl::core::SecurityContext* p = security_context_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskNodeOverrides.security_context)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::SecurityContext*>(
-      &::flyteidl::core::_SecurityContext_default_instance_);
-}
-inline ::flyteidl::core::SecurityContext* TaskNodeOverrides::release_security_context() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.TaskNodeOverrides.security_context)
-  
-  ::flyteidl::core::SecurityContext* temp = security_context_;
-  security_context_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::SecurityContext* TaskNodeOverrides::mutable_security_context() {
-  
-  if (security_context_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::SecurityContext>(GetArenaNoVirtual());
-    security_context_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskNodeOverrides.security_context)
-  return security_context_;
-}
-inline void TaskNodeOverrides::set_allocated_security_context(::flyteidl::core::SecurityContext* security_context) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(security_context_);
-  }
-  if (security_context) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      security_context = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, security_context, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  security_context_ = security_context;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskNodeOverrides.security_context)
-}
-
-// map<string, string> config = 4;
-inline int TaskNodeOverrides::config_size() const {
-  return config_.size();
-}
-inline void TaskNodeOverrides::clear_config() {
-  config_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-TaskNodeOverrides::config() const {
-  // @@protoc_insertion_point(field_map:flyteidl.core.TaskNodeOverrides.config)
-  return config_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-TaskNodeOverrides::mutable_config() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskNodeOverrides.config)
-  return config_.MutableMap();
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

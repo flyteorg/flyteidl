@@ -204,14 +204,4 @@ message WorkflowTemplate {
 message TaskNodeOverrides {
     // A customizable interface to convey resources requested for a task container. 
     Resources resources = 1;
-
-    // Environment variables will be set as the task container is starting up.
-    repeated KeyValuePair env = 2;
-
-    // Security attributes that apply to tasks.
-    SecurityContext security_context = 3;
-
-    // Metadata about the task custom. This is extensible to allow various plugins in the system
-    // to use as required.
-    map<string, string> config = 4;
 }

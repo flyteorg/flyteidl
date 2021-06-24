@@ -13,10 +13,4 @@ package flyteadmin
 type CoreTaskNodeOverrides struct {
 	// A customizable interface to convey resources requested for a task container.
 	Resources *CoreResources `json:"resources,omitempty"`
-	// Environment variables will be set as the task container is starting up.
-	Env []CoreKeyValuePair `json:"env,omitempty"`
-	// Security attributes that apply to tasks.
-	SecurityContext *CoreSecurityContext `json:"security_context,omitempty"`
-	// Metadata about the task custom. This is extensible to allow various plugins in the system to use as required.
-	Config map[string]string `json:"config,omitempty"`
 }
