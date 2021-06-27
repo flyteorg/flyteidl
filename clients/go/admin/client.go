@@ -200,7 +200,8 @@ func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption)
 		var creds credentials.TransportCredentials
 		if cfg.InsecureSkipVerify {
 			tlsConfig := &tls.Config{
-				InsecureSkipVerify: true,
+				InsecureSkipVerify: true, //nolint
+
 			}
 			creds = credentials.NewTLS(tlsConfig)
 		} else {
