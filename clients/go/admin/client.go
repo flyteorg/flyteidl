@@ -2,6 +2,7 @@ package admin
 
 import (
 	"context"
+	"crypto/tls"
 	"fmt"
 	"io/ioutil"
 	"strings"
@@ -196,7 +197,15 @@ func NewAdminConnection(_ context.Context, cfg *Config, opts ...grpc.DialOption)
 		opts = append(opts, grpc.WithInsecure())
 	} else {
 		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
-		creds := credentials.NewClientTLSFromCert(nil, "")
+		var creds credentials.TransportCredentials
+		if cfg.InsecureSkipVerify {
+			tlsConfig := &tls.Config{
+				InsecureSkipVerify: true,
+			}
+			creds = credentials.NewTLS(tlsConfig)
+		} else {
+			creds = credentials.NewClientTLSFromCert(nil, "")
+		}
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 	}
 
