@@ -23,7 +23,7 @@ This is one of the core repositories of Flyte and contains the Specification of 
     make generate
 ```
 
-4. To add new dependencies for documentation generation, modify ``doc_requirements.in`` and then
+4. To add new dependencies for documentation generation, modify ``doc-requirements.in`` and then
 
 ```bash
    make doc-requirements.txt
