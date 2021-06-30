@@ -199,7 +199,7 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
 		var creds credentials.TransportCredentials
 		if cfg.InsecureSkipVerify {
-			logger.Warnf(ctx, "using insecureSkipVerify. Caution : shouldn't be used for production usecases")
+			logger.Warnf(ctx, "using insecureSkipVerify. Server's certificate chain and host name wont be verified. Caution : shouldn't be used for production usecases")
 			tlsConfig := &tls.Config{
 				InsecureSkipVerify: true, //nolint
 
