@@ -84,7 +84,7 @@ func testDecodeJson_Config(t *testing.T, val, result interface{}) {
 	assert.NoError(t, decode_Config(val, result))
 }
 
-func testDecodeRaw_Config(t *testing.T, vStringSlice, result interface{}) {
+func testDecodeSlice_Config(t *testing.T, vStringSlice, result interface{}) {
 	assert.NoError(t, decode_Config(vStringSlice, result))
 }
 
@@ -99,70 +99,110 @@ func TestConfig_SetFlags(t *testing.T) {
 	cmdFlags := actual.GetPFlagSet("")
 	assert.True(t, cmdFlags.HasFlags())
 
-	t.Run("Test_endpoint", func(t *testing.T) {
+	t.Run("Test_ClientBaseConfig.endpoint", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.endpoint"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientBaseConfig.Endpoint.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.Endpoint.String()
+			testValue := defaultConfig.ClientBaseConfig.Endpoint.String()
 
-			cmdFlags.Set("endpoint", testValue)
-			if vString, err := cmdFlags.GetString("endpoint"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.Endpoint)
+			cmdFlags.Set("ClientBaseConfig.endpoint", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.endpoint"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.Endpoint)
 
 			} else {
 				assert.FailNow(t, err.Error())
 			}
 		})
 	})
-	t.Run("Test_insecure", func(t *testing.T) {
+	t.Run("Test_ClientBaseConfig.insecure", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vBool, err := cmdFlags.GetBool("ClientBaseConfig.insecure"); err == nil {
+				assert.Equal(t, bool(defaultConfig.ClientBaseConfig.UseInsecureConnection), vBool)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("insecure", testValue)
-			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.UseInsecureConnection)
+			cmdFlags.Set("ClientBaseConfig.insecure", testValue)
+			if vBool, err := cmdFlags.GetBool("ClientBaseConfig.insecure"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.ClientBaseConfig.UseInsecureConnection)
 
 			} else {
 				assert.FailNow(t, err.Error())
 			}
 		})
 	})
-	t.Run("Test_maxBackoffDelay", func(t *testing.T) {
+	t.Run("Test_ClientBaseConfig.maxBackoffDelay", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.maxBackoffDelay"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientBaseConfig.MaxBackoffDelay.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.MaxBackoffDelay.String()
+			testValue := defaultConfig.ClientBaseConfig.MaxBackoffDelay.String()
 
-			cmdFlags.Set("maxBackoffDelay", testValue)
-			if vString, err := cmdFlags.GetString("maxBackoffDelay"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.MaxBackoffDelay)
+			cmdFlags.Set("ClientBaseConfig.maxBackoffDelay", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.maxBackoffDelay"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.MaxBackoffDelay)
 
 			} else {
 				assert.FailNow(t, err.Error())
 			}
 		})
 	})
-	t.Run("Test_perRetryTimeout", func(t *testing.T) {
+	t.Run("Test_ClientBaseConfig.perRetryTimeout", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.perRetryTimeout"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientBaseConfig.PerRetryTimeout.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.PerRetryTimeout.String()
+			testValue := defaultConfig.ClientBaseConfig.PerRetryTimeout.String()
 
-			cmdFlags.Set("perRetryTimeout", testValue)
-			if vString, err := cmdFlags.GetString("perRetryTimeout"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.PerRetryTimeout)
+			cmdFlags.Set("ClientBaseConfig.perRetryTimeout", testValue)
+			if vString, err := cmdFlags.GetString("ClientBaseConfig.perRetryTimeout"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientBaseConfig.PerRetryTimeout)
 
 			} else {
 				assert.FailNow(t, err.Error())
 			}
 		})
 	})
-	t.Run("Test_maxRetries", func(t *testing.T) {
+	t.Run("Test_ClientBaseConfig.maxRetries", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vInt, err := cmdFlags.GetInt("ClientBaseConfig.maxRetries"); err == nil {
+				assert.Equal(t, int(defaultConfig.ClientBaseConfig.MaxRetries), vInt)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("maxRetries", testValue)
-			if vInt, err := cmdFlags.GetInt("maxRetries"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.MaxRetries)
+			cmdFlags.Set("ClientBaseConfig.maxRetries", testValue)
+			if vInt, err := cmdFlags.GetInt("ClientBaseConfig.maxRetries"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.ClientBaseConfig.MaxRetries)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -170,6 +210,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_useAuth", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vBool, err := cmdFlags.GetBool("useAuth"); err == nil {
+				assert.Equal(t, bool(defaultConfig.DeprecatedUseAuth), vBool)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -184,6 +232,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_clientId", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("clientId"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientID), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -198,6 +254,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_clientSecretLocation", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("clientSecretLocation"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientSecretLocation), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -212,13 +276,21 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_scopes", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vStringSlice, err := cmdFlags.GetStringSlice("scopes"); err == nil {
+				assert.Equal(t, []string([]string{}), vStringSlice)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := join_Config("1,1", ",")
 
 			cmdFlags.Set("scopes", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("scopes"); err == nil {
-				testDecodeRaw_Config(t, join_Config(vStringSlice, ","), &actual.Scopes)
+				testDecodeSlice_Config(t, join_Config(vStringSlice, ","), &actual.Scopes)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -226,6 +298,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_authorizationServerUrl", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("authorizationServerUrl"); err == nil {
+				assert.Equal(t, string(defaultConfig.DeprecatedAuthorizationServerURL), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -240,6 +320,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_tokenUrl", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("tokenUrl"); err == nil {
+				assert.Equal(t, string(defaultConfig.TokenURL), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -254,6 +342,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_authorizationHeader", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("authorizationHeader"); err == nil {
+				assert.Equal(t, string(defaultConfig.DeprecatedAuthorizationHeader), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
@@ -268,6 +364,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_pkceConfig.timeout", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("pkceConfig.timeout"); err == nil {
+				assert.Equal(t, string(defaultConfig.PkceConfig.BrowserSessionTimeout.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := defaultConfig.PkceConfig.BrowserSessionTimeout.String()
@@ -282,6 +386,14 @@ func TestConfig_SetFlags(t *testing.T) {
 		})
 	})
 	t.Run("Test_pkceConfig.refreshTime", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vString, err := cmdFlags.GetString("pkceConfig.refreshTime"); err == nil {
+				assert.Equal(t, string(defaultConfig.PkceConfig.TokenRefreshGracePeriod.String()), vString)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := defaultConfig.PkceConfig.TokenRefreshGracePeriod.String()
