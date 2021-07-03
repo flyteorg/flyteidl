@@ -6,15 +6,16 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/compiler.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/workflow.proto";
-import "flyteidl/admin/common.proto";
 import "google/protobuf/timestamp.proto";
 
 // Represents a request structure to create a revision of a workflow.
 message WorkflowCreateRequest {
     // id represents the unique identifier of the workflow.
+    // +required
     core.Identifier id     = 1;
     
     // Represents the specification for workflow.
+    // +required
     WorkflowSpec spec      = 2;
 }
 

@@ -1060,14 +1060,14 @@ class LiteralMapBlob final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.LiteralMap values = 1;
-  bool has_values() const;
-  void clear_values();
-  static const int kValuesFieldNumber = 1;
-  const ::flyteidl::core::LiteralMap& values() const;
-  ::flyteidl::core::LiteralMap* release_values();
-  ::flyteidl::core::LiteralMap* mutable_values();
-  void set_allocated_values(::flyteidl::core::LiteralMap* values);
+  // .flyteidl.core.LiteralMap values = 1 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_values() const;
+  PROTOBUF_DEPRECATED void clear_values();
+  PROTOBUF_DEPRECATED static const int kValuesFieldNumber = 1;
+  PROTOBUF_DEPRECATED const ::flyteidl::core::LiteralMap& values() const;
+  PROTOBUF_DEPRECATED ::flyteidl::core::LiteralMap* release_values();
+  PROTOBUF_DEPRECATED ::flyteidl::core::LiteralMap* mutable_values();
+  PROTOBUF_DEPRECATED void set_allocated_values(::flyteidl::core::LiteralMap* values);
 
   // string uri = 2;
   private:
@@ -2117,6 +2117,12 @@ class ExecutionSpec final :
   ::flyteidl::core::QualityOfService* mutable_quality_of_service();
   void set_allocated_quality_of_service(::flyteidl::core::QualityOfService* quality_of_service);
 
+  // int32 max_parallelism = 18;
+  void clear_max_parallelism();
+  static const int kMaxParallelismFieldNumber = 18;
+  ::google::protobuf::int32 max_parallelism() const;
+  void set_max_parallelism(::google::protobuf::int32 value);
+
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -2155,6 +2161,7 @@ class ExecutionSpec final :
   ::flyteidl::core::SecurityContext* security_context_;
   ::flyteidl::admin::AuthRole* auth_role_;
   ::flyteidl::core::QualityOfService* quality_of_service_;
+  ::google::protobuf::int32 max_parallelism_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -2612,23 +2619,23 @@ class WorkflowExecutionGetDataResponse final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.UrlBlob outputs = 1;
-  bool has_outputs() const;
-  void clear_outputs();
-  static const int kOutputsFieldNumber = 1;
-  const ::flyteidl::admin::UrlBlob& outputs() const;
-  ::flyteidl::admin::UrlBlob* release_outputs();
-  ::flyteidl::admin::UrlBlob* mutable_outputs();
-  void set_allocated_outputs(::flyteidl::admin::UrlBlob* outputs);
+  // .flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_outputs() const;
+  PROTOBUF_DEPRECATED void clear_outputs();
+  PROTOBUF_DEPRECATED static const int kOutputsFieldNumber = 1;
+  PROTOBUF_DEPRECATED const ::flyteidl::admin::UrlBlob& outputs() const;
+  PROTOBUF_DEPRECATED ::flyteidl::admin::UrlBlob* release_outputs();
+  PROTOBUF_DEPRECATED ::flyteidl::admin::UrlBlob* mutable_outputs();
+  PROTOBUF_DEPRECATED void set_allocated_outputs(::flyteidl::admin::UrlBlob* outputs);
 
-  // .flyteidl.admin.UrlBlob inputs = 2;
-  bool has_inputs() const;
-  void clear_inputs();
-  static const int kInputsFieldNumber = 2;
-  const ::flyteidl::admin::UrlBlob& inputs() const;
-  ::flyteidl::admin::UrlBlob* release_inputs();
-  ::flyteidl::admin::UrlBlob* mutable_inputs();
-  void set_allocated_inputs(::flyteidl::admin::UrlBlob* inputs);
+  // .flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_inputs() const;
+  PROTOBUF_DEPRECATED void clear_inputs();
+  PROTOBUF_DEPRECATED static const int kInputsFieldNumber = 2;
+  PROTOBUF_DEPRECATED const ::flyteidl::admin::UrlBlob& inputs() const;
+  PROTOBUF_DEPRECATED ::flyteidl::admin::UrlBlob* release_inputs();
+  PROTOBUF_DEPRECATED ::flyteidl::admin::UrlBlob* mutable_inputs();
+  PROTOBUF_DEPRECATED void set_allocated_inputs(::flyteidl::admin::UrlBlob* inputs);
 
   // .flyteidl.core.LiteralMap full_inputs = 3;
   bool has_full_inputs() const;
@@ -3368,7 +3375,7 @@ inline void ExecutionList::set_allocated_token(::std::string* token) {
 
 // LiteralMapBlob
 
-// .flyteidl.core.LiteralMap values = 1;
+// .flyteidl.core.LiteralMap values = 1 [deprecated = true];
 inline bool LiteralMapBlob::has_values() const {
   return data_case() == kValues;
 }
@@ -4951,6 +4958,20 @@ inline void ExecutionSpec::set_allocated_quality_of_service(::flyteidl::core::Qu
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.quality_of_service)
 }
 
+// int32 max_parallelism = 18;
+inline void ExecutionSpec::clear_max_parallelism() {
+  max_parallelism_ = 0;
+}
+inline ::google::protobuf::int32 ExecutionSpec::max_parallelism() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.max_parallelism)
+  return max_parallelism_;
+}
+inline void ExecutionSpec::set_max_parallelism(::google::protobuf::int32 value) {
+  
+  max_parallelism_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.max_parallelism)
+}
+
 inline bool ExecutionSpec::has_notification_overrides() const {
   return notification_overrides_case() != NOTIFICATION_OVERRIDES_NOT_SET;
 }
@@ -5119,7 +5140,7 @@ inline void WorkflowExecutionGetDataRequest::set_allocated_id(::flyteidl::core::
 
 // WorkflowExecutionGetDataResponse
 
-// .flyteidl.admin.UrlBlob outputs = 1;
+// .flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];
 inline bool WorkflowExecutionGetDataResponse::has_outputs() const {
   return this != internal_default_instance() && outputs_ != nullptr;
 }
@@ -5164,7 +5185,7 @@ inline void WorkflowExecutionGetDataResponse::set_allocated_outputs(::flyteidl::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionGetDataResponse.outputs)
 }
 
-// .flyteidl.admin.UrlBlob inputs = 2;
+// .flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];
 inline bool WorkflowExecutionGetDataResponse::has_inputs() const {
   return this != internal_default_instance() && inputs_ != nullptr;
 }

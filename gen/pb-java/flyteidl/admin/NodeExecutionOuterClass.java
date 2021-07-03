@@ -21,6 +21,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -29,6 +30,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -37,6 +39,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -136,6 +139,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -146,6 +150,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -156,6 +161,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Uniquely identifies an individual node execution.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -489,6 +495,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -499,6 +506,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -513,6 +521,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -533,6 +542,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -551,6 +561,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -573,6 +584,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -591,6 +603,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -603,6 +616,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -618,6 +632,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Uniquely identifies an individual node execution.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
@@ -695,6 +710,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -703,6 +719,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -711,6 +728,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -720,6 +738,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -727,22 +746,10 @@ public final class NodeExecutionOuterClass {
     int getLimit();
 
     /**
-     * <pre>
-     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-     * in a query.
-     * +optional
-     * </pre>
-     *
      * <code>string token = 3;</code>
      */
     java.lang.String getToken();
     /**
-     * <pre>
-     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-     * in a query.
-     * +optional
-     * </pre>
-     *
      * <code>string token = 3;</code>
      */
     com.google.protobuf.ByteString
@@ -950,6 +957,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -960,6 +968,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -970,6 +979,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -983,6 +993,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -994,12 +1005,6 @@ public final class NodeExecutionOuterClass {
     public static final int TOKEN_FIELD_NUMBER = 3;
     private volatile java.lang.Object token_;
     /**
-     * <pre>
-     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-     * in a query.
-     * +optional
-     * </pre>
-     *
      * <code>string token = 3;</code>
      */
     public java.lang.String getToken() {
@@ -1015,12 +1020,6 @@ public final class NodeExecutionOuterClass {
       }
     }
     /**
-     * <pre>
-     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-     * in a query.
-     * +optional
-     * </pre>
-     *
      * <code>string token = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -1586,6 +1585,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1596,6 +1596,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1610,6 +1611,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1630,6 +1632,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1648,6 +1651,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1670,6 +1674,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1688,6 +1693,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1700,6 +1706,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1715,6 +1722,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
@@ -1737,6 +1745,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -1747,6 +1756,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -1760,6 +1770,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -1773,12 +1784,6 @@ public final class NodeExecutionOuterClass {
 
       private java.lang.Object token_ = "";
       /**
-       * <pre>
-       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-       * in a query.
-       * +optional
-       * </pre>
-       *
        * <code>string token = 3;</code>
        */
       public java.lang.String getToken() {
@@ -1794,12 +1799,6 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
-       * <pre>
-       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-       * in a query.
-       * +optional
-       * </pre>
-       *
        * <code>string token = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -1816,12 +1815,6 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
-       * <pre>
-       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-       * in a query.
-       * +optional
-       * </pre>
-       *
        * <code>string token = 3;</code>
        */
       public Builder setToken(
@@ -1835,12 +1828,6 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-       * in a query.
-       * +optional
-       * </pre>
-       *
        * <code>string token = 3;</code>
        */
       public Builder clearToken() {
@@ -1850,12 +1837,6 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
-       * in a query.
-       * +optional
-       * </pre>
-       *
        * <code>string token = 3;</code>
        */
       public Builder setTokenBytes(
@@ -2284,6 +2265,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2292,6 +2274,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2300,6 +2283,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2309,6 +2293,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -2390,6 +2375,7 @@ public final class NodeExecutionOuterClass {
   /**
    * <pre>
    * Represents a request structure to retrieve a list of node execution entities launched by a specific task.
+   * This can arise when a task yields a subworkflow.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.NodeExecutionForTaskListRequest}
@@ -2512,6 +2498,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2522,6 +2509,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2532,6 +2520,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the node execution to filter by.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -2545,6 +2534,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Indicates the number of resources to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 2;</code>
@@ -2891,6 +2881,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Represents a request structure to retrieve a list of node execution entities launched by a specific task.
+     * This can arise when a task yields a subworkflow.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.NodeExecutionForTaskListRequest}
@@ -3087,6 +3078,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3097,6 +3089,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3111,6 +3104,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3131,6 +3125,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3149,6 +3144,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3171,6 +3167,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3189,6 +3186,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3201,6 +3199,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3216,6 +3215,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the node execution to filter by.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_execution_id = 1;</code>
@@ -3238,6 +3238,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -3248,6 +3249,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -3261,6 +3263,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Indicates the number of resources to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 2;</code>
@@ -5072,6 +5075,8 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Boolean flag indicating if the node has child nodes under it
+     * This can be true when a node contains a dynamic workflow which then produces
+     * child nodes.
      * </pre>
      *
      * <code>bool is_parent_node = 2;</code>
@@ -5241,6 +5246,8 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Boolean flag indicating if the node has child nodes under it
+     * This can be true when a node contains a dynamic workflow which then produces
+     * child nodes.
      * </pre>
      *
      * <code>bool is_parent_node = 2;</code>
@@ -5732,6 +5739,8 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Boolean flag indicating if the node has child nodes under it
+       * This can be true when a node contains a dynamic workflow which then produces
+       * child nodes.
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -5742,6 +5751,8 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Boolean flag indicating if the node has child nodes under it
+       * This can be true when a node contains a dynamic workflow which then produces
+       * child nodes.
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -5755,6 +5766,8 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Boolean flag indicating if the node has child nodes under it
+       * This can be true when a node contains a dynamic workflow which then produces
+       * child nodes.
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -6891,10 +6904,18 @@ public final class NodeExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+     * </pre>
+     *
      * <code>string output_uri = 1;</code>
      */
     java.lang.String getOutputUri();
     /**
+     * <pre>
+     * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+     * </pre>
+     *
      * <code>string output_uri = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -7332,6 +7353,10 @@ public final class NodeExecutionOuterClass {
 
     public static final int OUTPUT_URI_FIELD_NUMBER = 1;
     /**
+     * <pre>
+     * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+     * </pre>
+     *
      * <code>string output_uri = 1;</code>
      */
     public java.lang.String getOutputUri() {
@@ -7352,6 +7377,10 @@ public final class NodeExecutionOuterClass {
       }
     }
     /**
+     * <pre>
+     * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+     * </pre>
+     *
      * <code>string output_uri = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -8211,6 +8240,10 @@ public final class NodeExecutionOuterClass {
 
 
       /**
+       * <pre>
+       * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+       * </pre>
+       *
        * <code>string output_uri = 1;</code>
        */
       public java.lang.String getOutputUri() {
@@ -8231,6 +8264,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+       * </pre>
+       *
        * <code>string output_uri = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -8252,6 +8289,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+       * </pre>
+       *
        * <code>string output_uri = 1;</code>
        */
       public Builder setOutputUri(
@@ -8265,6 +8306,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+       * </pre>
+       *
        * <code>string output_uri = 1;</code>
        */
       public Builder clearOutputUri() {
@@ -8276,6 +8321,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Links to a remotely stored, serialized core.LiteralMap of node execution outputs.
+       * </pre>
+       *
        * <code>string output_uri = 1;</code>
        */
       public Builder setOutputUriBytes(
@@ -9468,14 +9517,26 @@ public final class NodeExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     boolean hasExecutionId();
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId();
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder();
@@ -9571,18 +9632,30 @@ public final class NodeExecutionOuterClass {
     public static final int EXECUTIONID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier executionId_;
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     public boolean hasExecutionId() {
       return executionId_ != null;
     }
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId() {
       return executionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : executionId_;
     }
     /**
+     * <pre>
+     * The identifier for a workflow execution launched by a node.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder() {
@@ -9912,12 +9985,20 @@ public final class NodeExecutionOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> executionIdBuilder_;
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public boolean hasExecutionId() {
         return executionIdBuilder_ != null || executionId_ != null;
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId() {
@@ -9928,6 +10009,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public Builder setExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -9944,6 +10029,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public Builder setExecutionId(
@@ -9958,6 +10047,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public Builder mergeExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -9976,6 +10069,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public Builder clearExecutionId() {
@@ -9990,6 +10087,10 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getExecutionIdBuilder() {
@@ -9998,6 +10099,10 @@ public final class NodeExecutionOuterClass {
         return getExecutionIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder() {
@@ -10009,6 +10114,10 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * The identifier for a workflow execution launched by a node.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier executionId = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -10122,31 +10231,6 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.core.CatalogMetadata catalog_key = 2;</code>
      */
     flyteidl.core.Catalog.CatalogMetadataOrBuilder getCatalogKeyOrBuilder();
-
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    boolean hasDynamicWorkflow();
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow();
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder();
   }
   /**
    * <pre>
@@ -10207,19 +10291,6 @@ public final class NodeExecutionOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(catalogKey_);
                 catalogKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 130: {
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder subBuilder = null;
-              if (dynamicWorkflow_ != null) {
-                subBuilder = dynamicWorkflow_.toBuilder();
-              }
-              dynamicWorkflow_ = input.readMessage(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dynamicWorkflow_);
-                dynamicWorkflow_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10314,39 +10385,6 @@ public final class NodeExecutionOuterClass {
       return getCatalogKey();
     }
 
-    public static final int DYNAMIC_WORKFLOW_FIELD_NUMBER = 16;
-    private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    public boolean hasDynamicWorkflow() {
-      return dynamicWorkflow_ != null;
-    }
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow() {
-      return dynamicWorkflow_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
-    }
-    /**
-     * <pre>
-     * In the case this task launched a dynamic workflow we capture its structure here.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-     */
-    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder() {
-      return getDynamicWorkflow();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10367,9 +10405,6 @@ public final class NodeExecutionOuterClass {
       if (catalogKey_ != null) {
         output.writeMessage(2, getCatalogKey());
       }
-      if (dynamicWorkflow_ != null) {
-        output.writeMessage(16, getDynamicWorkflow());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10386,10 +10421,6 @@ public final class NodeExecutionOuterClass {
       if (catalogKey_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCatalogKey());
-      }
-      if (dynamicWorkflow_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, getDynamicWorkflow());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10412,11 +10443,6 @@ public final class NodeExecutionOuterClass {
         if (!getCatalogKey()
             .equals(other.getCatalogKey())) return false;
       }
-      if (hasDynamicWorkflow() != other.hasDynamicWorkflow()) return false;
-      if (hasDynamicWorkflow()) {
-        if (!getDynamicWorkflow()
-            .equals(other.getDynamicWorkflow())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10433,10 +10459,6 @@ public final class NodeExecutionOuterClass {
       if (hasCatalogKey()) {
         hash = (37 * hash) + CATALOG_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getCatalogKey().hashCode();
-      }
-      if (hasDynamicWorkflow()) {
-        hash = (37 * hash) + DYNAMIC_WORKFLOW_FIELD_NUMBER;
-        hash = (53 * hash) + getDynamicWorkflow().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10583,12 +10605,6 @@ public final class NodeExecutionOuterClass {
           catalogKey_ = null;
           catalogKeyBuilder_ = null;
         }
-        if (dynamicWorkflowBuilder_ == null) {
-          dynamicWorkflow_ = null;
-        } else {
-          dynamicWorkflow_ = null;
-          dynamicWorkflowBuilder_ = null;
-        }
         return this;
       }
 
@@ -10620,11 +10636,6 @@ public final class NodeExecutionOuterClass {
           result.catalogKey_ = catalogKey_;
         } else {
           result.catalogKey_ = catalogKeyBuilder_.build();
-        }
-        if (dynamicWorkflowBuilder_ == null) {
-          result.dynamicWorkflow_ = dynamicWorkflow_;
-        } else {
-          result.dynamicWorkflow_ = dynamicWorkflowBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10679,9 +10690,6 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasCatalogKey()) {
           mergeCatalogKey(other.getCatalogKey());
-        }
-        if (other.hasDynamicWorkflow()) {
-          mergeDynamicWorkflow(other.getDynamicWorkflow());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10929,159 +10937,6 @@ public final class NodeExecutionOuterClass {
         }
         return catalogKeyBuilder_;
       }
-
-      private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowBuilder_;
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public boolean hasDynamicWorkflow() {
-        return dynamicWorkflowBuilder_ != null || dynamicWorkflow_ != null;
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow() {
-        if (dynamicWorkflowBuilder_ == null) {
-          return dynamicWorkflow_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
-        } else {
-          return dynamicWorkflowBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public Builder setDynamicWorkflow(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
-        if (dynamicWorkflowBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dynamicWorkflow_ = value;
-          onChanged();
-        } else {
-          dynamicWorkflowBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public Builder setDynamicWorkflow(
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder builderForValue) {
-        if (dynamicWorkflowBuilder_ == null) {
-          dynamicWorkflow_ = builderForValue.build();
-          onChanged();
-        } else {
-          dynamicWorkflowBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public Builder mergeDynamicWorkflow(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
-        if (dynamicWorkflowBuilder_ == null) {
-          if (dynamicWorkflow_ != null) {
-            dynamicWorkflow_ =
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.newBuilder(dynamicWorkflow_).mergeFrom(value).buildPartial();
-          } else {
-            dynamicWorkflow_ = value;
-          }
-          onChanged();
-        } else {
-          dynamicWorkflowBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public Builder clearDynamicWorkflow() {
-        if (dynamicWorkflowBuilder_ == null) {
-          dynamicWorkflow_ = null;
-          onChanged();
-        } else {
-          dynamicWorkflow_ = null;
-          dynamicWorkflowBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder getDynamicWorkflowBuilder() {
-        
-        onChanged();
-        return getDynamicWorkflowFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder() {
-        if (dynamicWorkflowBuilder_ != null) {
-          return dynamicWorkflowBuilder_.getMessageOrBuilder();
-        } else {
-          return dynamicWorkflow_ == null ?
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
-        }
-      }
-      /**
-       * <pre>
-       * In the case this task launched a dynamic workflow we capture its structure here.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> 
-          getDynamicWorkflowFieldBuilder() {
-        if (dynamicWorkflowBuilder_ == null) {
-          dynamicWorkflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder>(
-                  getDynamicWorkflow(),
-                  getParentForChildren(),
-                  isClean());
-          dynamicWorkflow_ = null;
-        }
-        return dynamicWorkflowBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11191,7 +11046,7 @@ public final class NodeExecutionOuterClass {
   }
   /**
    * <pre>
-   * For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+   * For dynamic workflow nodes we capture information about the dynamic workflow definition that gets generated.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.DynamicWorkflowNodeMetadata}
@@ -11534,7 +11389,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * For dynamic workflow nodes we send information about the dynamic workflow definition that gets generated.
+     * For dynamic workflow nodes we capture information about the dynamic workflow definition that gets generated.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.DynamicWorkflowNodeMetadata}
@@ -12094,7 +11949,7 @@ public final class NodeExecutionOuterClass {
   }
   /**
    * <pre>
-   * Request structure to fetch inputs and output urls for a node execution.
+   * Request structure to fetch inputs and output for a node execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.NodeExecutionGetDataRequest}
@@ -12375,7 +12230,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Request structure to fetch inputs and output urls for a node execution.
+     * Request structure to fetch inputs and output for a node execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.NodeExecutionGetDataRequest}
@@ -12744,56 +12599,62 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    boolean hasInputs();
+    @java.lang.Deprecated boolean hasInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getInputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
 
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    boolean hasOutputs();
+    @java.lang.Deprecated boolean hasOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getOutputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
 
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12801,7 +12662,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12809,7 +12670,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -12818,7 +12679,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12826,7 +12687,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12834,12 +12695,37 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder();
+
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    boolean hasDynamicWorkflow();
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow();
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder();
   }
   /**
    * <pre>
@@ -12936,6 +12822,19 @@ public final class NodeExecutionOuterClass {
 
               break;
             }
+            case 130: {
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder subBuilder = null;
+              if (dynamicWorkflow_ != null) {
+                subBuilder = dynamicWorkflow_.toBuilder();
+              }
+              dynamicWorkflow_ = input.readMessage(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dynamicWorkflow_);
+                dynamicWorkflow_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12973,31 +12872,34 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public boolean hasInputs() {
+    @java.lang.Deprecated public boolean hasInputs() {
       return inputs_ != null;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getInputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
       return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
       return getInputs();
     }
 
@@ -13006,31 +12908,34 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public boolean hasOutputs() {
+    @java.lang.Deprecated public boolean hasOutputs() {
       return outputs_ != null;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getOutputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
       return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of node execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
       return getOutputs();
     }
 
@@ -13038,7 +12943,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullInputs_;
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13048,7 +12953,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13058,7 +12963,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13071,7 +12976,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullOutputs_;
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13081,7 +12986,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13091,13 +12996,46 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+     * Full_outputs will only be populated if they are under a configured size threshold. 
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
      */
     public flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder() {
       return getFullOutputs();
+    }
+
+    public static final int DYNAMIC_WORKFLOW_FIELD_NUMBER = 16;
+    private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    public boolean hasDynamicWorkflow() {
+      return dynamicWorkflow_ != null;
+    }
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow() {
+      return dynamicWorkflow_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
+    }
+    /**
+     * <pre>
+     * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+     */
+    public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder() {
+      return getDynamicWorkflow();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -13126,6 +13064,9 @@ public final class NodeExecutionOuterClass {
       if (fullOutputs_ != null) {
         output.writeMessage(4, getFullOutputs());
       }
+      if (dynamicWorkflow_ != null) {
+        output.writeMessage(16, getDynamicWorkflow());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -13150,6 +13091,10 @@ public final class NodeExecutionOuterClass {
       if (fullOutputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFullOutputs());
+      }
+      if (dynamicWorkflow_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getDynamicWorkflow());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13186,6 +13131,11 @@ public final class NodeExecutionOuterClass {
         if (!getFullOutputs()
             .equals(other.getFullOutputs())) return false;
       }
+      if (hasDynamicWorkflow() != other.hasDynamicWorkflow()) return false;
+      if (hasDynamicWorkflow()) {
+        if (!getDynamicWorkflow()
+            .equals(other.getDynamicWorkflow())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13212,6 +13162,10 @@ public final class NodeExecutionOuterClass {
       if (hasFullOutputs()) {
         hash = (37 * hash) + FULL_OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getFullOutputs().hashCode();
+      }
+      if (hasDynamicWorkflow()) {
+        hash = (37 * hash) + DYNAMIC_WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getDynamicWorkflow().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -13374,6 +13328,12 @@ public final class NodeExecutionOuterClass {
           fullOutputs_ = null;
           fullOutputsBuilder_ = null;
         }
+        if (dynamicWorkflowBuilder_ == null) {
+          dynamicWorkflow_ = null;
+        } else {
+          dynamicWorkflow_ = null;
+          dynamicWorkflowBuilder_ = null;
+        }
         return this;
       }
 
@@ -13419,6 +13379,11 @@ public final class NodeExecutionOuterClass {
           result.fullOutputs_ = fullOutputs_;
         } else {
           result.fullOutputs_ = fullOutputsBuilder_.build();
+        }
+        if (dynamicWorkflowBuilder_ == null) {
+          result.dynamicWorkflow_ = dynamicWorkflow_;
+        } else {
+          result.dynamicWorkflow_ = dynamicWorkflowBuilder_.build();
         }
         onBuilt();
         return result;
@@ -13480,6 +13445,9 @@ public final class NodeExecutionOuterClass {
         if (other.hasFullOutputs()) {
           mergeFullOutputs(other.getFullOutputs());
         }
+        if (other.hasDynamicWorkflow()) {
+          mergeDynamicWorkflow(other.getDynamicWorkflow());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -13515,21 +13483,23 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public boolean hasInputs() {
+      @java.lang.Deprecated public boolean hasInputs() {
         return inputsBuilder_ != null || inputs_ != null;
       }
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getInputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
         if (inputsBuilder_ == null) {
           return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
         } else {
@@ -13539,11 +13509,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13559,11 +13530,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder setInputs(
+      @java.lang.Deprecated public Builder setInputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (inputsBuilder_ == null) {
           inputs_ = builderForValue.build();
@@ -13577,11 +13549,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (inputs_ != null) {
             inputs_ =
@@ -13599,11 +13572,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public Builder clearInputs() {
+      @java.lang.Deprecated public Builder clearInputs() {
         if (inputsBuilder_ == null) {
           inputs_ = null;
           onChanged();
@@ -13617,11 +13591,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
         
         onChanged();
         return getInputsFieldBuilder().getBuilder();
@@ -13629,11 +13604,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
         if (inputsBuilder_ != null) {
           return inputsBuilder_.getMessageOrBuilder();
         } else {
@@ -13644,9 +13620,10 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -13668,21 +13645,23 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public boolean hasOutputs() {
+      @java.lang.Deprecated public boolean hasOutputs() {
         return outputsBuilder_ != null || outputs_ != null;
       }
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getOutputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
         if (outputsBuilder_ == null) {
           return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
         } else {
@@ -13692,11 +13671,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13712,11 +13692,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder setOutputs(
+      @java.lang.Deprecated public Builder setOutputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (outputsBuilder_ == null) {
           outputs_ = builderForValue.build();
@@ -13730,11 +13711,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (outputs_ != null) {
             outputs_ =
@@ -13752,11 +13734,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public Builder clearOutputs() {
+      @java.lang.Deprecated public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
           outputs_ = null;
           onChanged();
@@ -13770,11 +13753,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
         
         onChanged();
         return getOutputsFieldBuilder().getBuilder();
@@ -13782,11 +13766,12 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
         if (outputsBuilder_ != null) {
           return outputsBuilder_.getMessageOrBuilder();
         } else {
@@ -13797,9 +13782,10 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of node execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -13820,7 +13806,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullInputsBuilder_;
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13830,7 +13816,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13844,7 +13830,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13864,7 +13850,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13882,7 +13868,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13904,7 +13890,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13922,7 +13908,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13934,7 +13920,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13949,7 +13935,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -13973,7 +13959,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullOutputsBuilder_;
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13983,7 +13969,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -13997,7 +13983,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14017,7 +14003,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14035,7 +14021,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14057,7 +14043,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14075,7 +14061,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14087,7 +14073,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14102,7 +14088,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold. 
+       * Full_outputs will only be populated if they are under a configured size threshold. 
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -14119,6 +14105,159 @@ public final class NodeExecutionOuterClass {
           fullOutputs_ = null;
         }
         return fullOutputsBuilder_;
+      }
+
+      private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowBuilder_;
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public boolean hasDynamicWorkflow() {
+        return dynamicWorkflowBuilder_ != null || dynamicWorkflow_ != null;
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata getDynamicWorkflow() {
+        if (dynamicWorkflowBuilder_ == null) {
+          return dynamicWorkflow_ == null ? flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
+        } else {
+          return dynamicWorkflowBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public Builder setDynamicWorkflow(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dynamicWorkflow_ = value;
+          onChanged();
+        } else {
+          dynamicWorkflowBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public Builder setDynamicWorkflow(
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder builderForValue) {
+        if (dynamicWorkflowBuilder_ == null) {
+          dynamicWorkflow_ = builderForValue.build();
+          onChanged();
+        } else {
+          dynamicWorkflowBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public Builder mergeDynamicWorkflow(flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata value) {
+        if (dynamicWorkflowBuilder_ == null) {
+          if (dynamicWorkflow_ != null) {
+            dynamicWorkflow_ =
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.newBuilder(dynamicWorkflow_).mergeFrom(value).buildPartial();
+          } else {
+            dynamicWorkflow_ = value;
+          }
+          onChanged();
+        } else {
+          dynamicWorkflowBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public Builder clearDynamicWorkflow() {
+        if (dynamicWorkflowBuilder_ == null) {
+          dynamicWorkflow_ = null;
+          onChanged();
+        } else {
+          dynamicWorkflow_ = null;
+          dynamicWorkflowBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder getDynamicWorkflowBuilder() {
+        
+        onChanged();
+        return getDynamicWorkflowFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      public flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder getDynamicWorkflowOrBuilder() {
+        if (dynamicWorkflowBuilder_ != null) {
+          return dynamicWorkflowBuilder_.getMessageOrBuilder();
+        } else {
+          return dynamicWorkflow_ == null ?
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.getDefaultInstance() : dynamicWorkflow_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> 
+          getDynamicWorkflowFieldBuilder() {
+        if (dynamicWorkflowBuilder_ == null) {
+          dynamicWorkflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder>(
+                  getDynamicWorkflow(),
+                  getParentForChildren(),
+                  isClean());
+          dynamicWorkflow_ = null;
+        }
+        return dynamicWorkflowBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14286,24 +14425,24 @@ public final class NodeExecutionOuterClass {
       "\017\n\routput_resultB\021\n\017target_metadata\"W\n\024W" +
       "orkflowNodeMetadata\022?\n\013executionId\030\001 \001(\013" +
       "2*.flyteidl.core.WorkflowExecutionIdenti" +
-      "fier\"\307\001\n\020TaskNodeMetadata\0227\n\014cache_statu" +
+      "fier\"\200\001\n\020TaskNodeMetadata\0227\n\014cache_statu" +
       "s\030\001 \001(\0162!.flyteidl.core.CatalogCacheStat" +
       "us\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl.core." +
-      "CatalogMetadata\022E\n\020dynamic_workflow\030\020 \001(" +
-      "\0132+.flyteidl.admin.DynamicWorkflowNodeMe" +
-      "tadata\"\207\001\n\033DynamicWorkflowNodeMetadata\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022A\n" +
-      "\021compiled_workflow\030\002 \001(\0132&.flyteidl.core" +
-      ".CompiledWorkflowClosure\"Q\n\033NodeExecutio" +
-      "nGetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.c" +
-      "ore.NodeExecutionIdentifier\"\322\001\n\034NodeExec" +
-      "utionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.f" +
-      "lyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027" +
-      ".flyteidl.admin.UrlBlob\022.\n\013full_inputs\030\003" +
-      " \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014full_" +
-      "outputs\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "CatalogMetadata\"\207\001\n\033DynamicWorkflowNodeM" +
+      "etadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
+      "tifier\022A\n\021compiled_workflow\030\002 \001(\0132&.flyt" +
+      "eidl.core.CompiledWorkflowClosure\"Q\n\033Nod" +
+      "eExecutionGetDataRequest\0222\n\002id\030\001 \001(\0132&.f" +
+      "lyteidl.core.NodeExecutionIdentifier\"\241\002\n" +
+      "\034NodeExecutionGetDataResponse\022+\n\006inputs\030" +
+      "\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022,\n\007ou" +
+      "tputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001" +
+      "\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Li" +
+      "teralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteid" +
+      "l.core.LiteralMap\022E\n\020dynamic_workflow\030\020 " +
+      "\001(\0132+.flyteidl.admin.DynamicWorkflowNode" +
+      "MetadataB7Z5github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14378,7 +14517,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_TaskNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskNodeMetadata_descriptor,
-        new java.lang.String[] { "CacheStatus", "CatalogKey", "DynamicWorkflow", });
+        new java.lang.String[] { "CacheStatus", "CatalogKey", });
     internal_static_flyteidl_admin_DynamicWorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_DynamicWorkflowNodeMetadata_fieldAccessorTable = new
@@ -14396,7 +14535,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionGetDataResponse_descriptor,
-        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", });
+        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", "DynamicWorkflow", });
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

@@ -17,11 +17,15 @@ certifi==2021.5.30
     # via requests
 chardet==4.0.0
     # via requests
+commonmark==0.9.1
+    # via recommonmark
 css-html-js-minify==2.5.5
     # via sphinx-material
-docutils==0.17.1
-    # via sphinx
-furo==2021.6.24b37
+docutils==0.16
+    # via
+    #   recommonmark
+    #   sphinx
+git+git://github.com/flyteorg/furo@main
     # via -r doc-requirements.in
 idna==2.10
     # via requests
@@ -31,6 +35,8 @@ jinja2==3.0.1
     # via sphinx
 lxml==4.6.3
     # via sphinx-material
+markdown==3.3.4
+    # via sphinx-markdown-tables
 markupsafe==2.0.1
     # via jinja2
 packaging==20.9
@@ -45,6 +51,8 @@ python-slugify[unidecode]==5.0.2
     # via sphinx-material
 pytz==2021.1
     # via babel
+recommonmark==0.7.1
+    # via -r doc-requirements.in
 requests==2.25.1
     # via sphinx
 six==1.16.0
@@ -53,17 +61,23 @@ snowballstemmer==2.1.0
     # via sphinx
 soupsieve==2.2.1
     # via beautifulsoup4
-sphinx==4.0.2
+sphinx==3.5.4
     # via
     #   -r doc-requirements.in
     #   furo
+    #   recommonmark
     #   sphinx-code-include
     #   sphinx-copybutton
+    #   sphinx-fontawesome
     #   sphinx-material
     #   sphinx-prompt
 sphinx-code-include==1.1.1
     # via -r doc-requirements.in
 sphinx-copybutton==0.3.3
+    # via -r doc-requirements.in
+sphinx-fontawesome==0.0.6
+    # via -r doc-requirements.in
+sphinx-markdown-tables==0.0.15
     # via -r doc-requirements.in
 sphinx-material==0.0.32
     # via -r doc-requirements.in

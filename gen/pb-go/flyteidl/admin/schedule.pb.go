@@ -49,7 +49,7 @@ func (FixedRateUnit) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_a71cf75647fcd25a, []int{0}
 }
 
-// Option for schedules run at a certain frequency, e.g. every 2 minutes.
+// Option for schedules run at a certain frequency e.g. every 2 minutes.
 type FixedRate struct {
 	Value                uint32        `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
 	Unit                 FixedRateUnit `protobuf:"varint,2,opt,name=unit,proto3,enum=flyteidl.admin.FixedRateUnit" json:"unit,omitempty"`
@@ -97,6 +97,7 @@ func (m *FixedRate) GetUnit() FixedRateUnit {
 	return FixedRateUnit_MINUTE
 }
 
+// Options for schedules to run according to a cron expression.
 type CronSchedule struct {
 	// Standard/default cron implementation as described by https://en.wikipedia.org/wiki/Cron#CRON_expression;
 	// Also supports nonstandard predefined scheduling definitions

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export REPOSITORY=flyteidl
-include boilerplate/lyft/golang_test_targets/Makefile
+include boilerplate/flyte/golang_test_targets/Makefile
 
 define PIP_COMPILE
 pip-compile $(1) --upgrade --verbose
@@ -9,10 +9,11 @@ endef
 
 .PHONY: update_boilerplate
 update_boilerplate:
+	@curl https://raw.githubusercontent.com/flyteorg/boilerplate/master/boilerplate/update.sh -o boilerplate/update.sh
 	@boilerplate/update.sh
 
 .PHONY: generate
-generate: install # install tools, generate protos, mocks and pflags
+generate: update_boilerplate install doc_gen_deps # get latest boiler plate, install tools, generate protos, mock, pflags and  get doc dependencies
 	./generate_protos.sh
 	./generate_mocks.sh
 	go generate ./...
@@ -37,6 +38,11 @@ build_python:
 .PHONY: install-piptools
 install-piptools:
 	pip install -U pip-tools
+
+.PHONY: doc_gen_deps # these dependencies are required by protoc gen doc for the protos which have external library dependencies. 
+# which includes grpc-gateway, googleapis, k8.io/api and apimachinery, protocolbuffers 
+doc_gen_deps:
+	./scripts/doc_gen_deps.sh
 
 .PHONY: doc-requirements.txt
 doc-requirements.txt: doc-requirements.in install-piptools

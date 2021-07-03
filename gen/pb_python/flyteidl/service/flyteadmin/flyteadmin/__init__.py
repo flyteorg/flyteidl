@@ -121,6 +121,7 @@ from flyteadmin.models.admin_workflow_attributes_update_response import AdminWor
 from flyteadmin.models.admin_workflow_closure import AdminWorkflowClosure
 from flyteadmin.models.admin_workflow_create_request import AdminWorkflowCreateRequest
 from flyteadmin.models.admin_workflow_create_response import AdminWorkflowCreateResponse
+from flyteadmin.models.admin_workflow_execution_config import AdminWorkflowExecutionConfig
 from flyteadmin.models.admin_workflow_execution_event_request import AdminWorkflowExecutionEventRequest
 from flyteadmin.models.admin_workflow_execution_event_response import AdminWorkflowExecutionEventResponse
 from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWorkflowExecutionGetDataResponse
@@ -153,6 +154,7 @@ from flyteadmin.models.core_connection_set import CoreConnectionSet
 from flyteadmin.models.core_container import CoreContainer
 from flyteadmin.models.core_container_port import CoreContainerPort
 from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
+from flyteadmin.models.core_enum_type import CoreEnumType
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
 from flyteadmin.models.core_io_strategy import CoreIOStrategy
@@ -160,6 +162,8 @@ from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_identity import CoreIdentity
 from flyteadmin.models.core_if_block import CoreIfBlock
 from flyteadmin.models.core_if_else_block import CoreIfElseBlock
+from flyteadmin.models.core_k8s_object_metadata import CoreK8sObjectMetadata
+from flyteadmin.models.core_k8s_pod import CoreK8sPod
 from flyteadmin.models.core_key_value_pair import CoreKeyValuePair
 from flyteadmin.models.core_literal import CoreLiteral
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection
@@ -193,6 +197,7 @@ from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase
 from flyteadmin.models.core_task_log import CoreTaskLog
 from flyteadmin.models.core_task_metadata import CoreTaskMetadata
 from flyteadmin.models.core_task_node import CoreTaskNode
+from flyteadmin.models.core_task_node_overrides import CoreTaskNodeOverrides
 from flyteadmin.models.core_task_template import CoreTaskTemplate
 from flyteadmin.models.core_typed_interface import CoreTypedInterface
 from flyteadmin.models.core_variable import CoreVariable

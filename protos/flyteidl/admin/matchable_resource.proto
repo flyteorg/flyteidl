@@ -3,7 +3,6 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
-import "flyteidl/admin/common.proto";
 import "flyteidl/core/execution.proto";
 
 // Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes
@@ -26,8 +25,12 @@ enum MatchableResource {
 
   // Selects configurable plugin implementation behavior for a given task type.
   PLUGIN_OVERRIDE = 5;
+
+  // Adds defaults for customizable workflow-execution specifications and overrides.
+  WORKFLOW_EXECUTION_CONFIG = 6;
 }
 
+// Defines a set of overridable task resource attributes set during task registration.
 message TaskResourceSpec {
   string cpu = 1;
 
@@ -38,6 +41,7 @@ message TaskResourceSpec {
   string storage = 4;  
 }
 
+// Defines task resource defaults and limits that will be applied at task registration.
 message TaskResourceAttributes {
   TaskResourceSpec defaults = 1;
 
@@ -72,6 +76,7 @@ message PluginOverride {
   repeated string plugin_id = 2;
 
   enum MissingPluginBehavior {
+    // By default, if this plugin is not enabled for a Flyte deployment then execution will fail.
     FAIL = 0;
 
     // Uses the system-configured default implementation.
@@ -85,6 +90,12 @@ message PluginOverride {
 
 message PluginOverrides {
   repeated PluginOverride overrides = 1;
+}
+
+// Adds defaults for customizable workflow-execution specifications and overrides.
+message WorkflowExecutionConfig {
+  // Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
+  int32 max_parallelism = 1;
 }
 
 // Generic container for encapsulating all types of the above attributes messages.
@@ -101,11 +112,15 @@ message MatchingAttributes {
     core.QualityOfService quality_of_service = 5;
 
     PluginOverrides plugin_overrides = 6;
+
+    WorkflowExecutionConfig workflow_execution_config = 7;
   }
 }
 
 // Represents a custom set of attributes applied for either a domain; a domain and project; or
 // domain, project and workflow name.
+// These are used to override system level defaults for kubernetes cluster resource management,
+// default execution values, and more all across different levels of specificity.
 message MatchableAttributesConfiguration {
     MatchingAttributes attributes = 1;
 
@@ -118,12 +133,13 @@ message MatchableAttributesConfiguration {
     string launch_plan = 5;
 }
 
-// Request all matching resource attributes.
+// Request all matching resource attributes for a resource type.
 message ListMatchableAttributesRequest {
+    // +required
     MatchableResource resource_type = 1;
 }
 
-// Response for a request for all matching resource attributes.
+// Response for a request for all matching resource attributes for a resource type.
 message ListMatchableAttributesResponse {
     repeated MatchableAttributesConfiguration configurations = 1;
 }

@@ -373,15 +373,9 @@ func (m *Auth) Validate() error {
 		return nil
 	}
 
-	switch m.Method.(type) {
+	// no validation rules for AssumableIamRole
 
-	case *Auth_AssumableIamRole:
-		// no validation rules for AssumableIamRole
-
-	case *Auth_KubernetesServiceAccount:
-		// no validation rules for KubernetesServiceAccount
-
-	}
+	// no validation rules for KubernetesServiceAccount
 
 	return nil
 }
@@ -559,6 +553,8 @@ func (m *LaunchPlanSpec) Validate() error {
 			}
 		}
 	}
+
+	// no validation rules for MaxParallelism
 
 	return nil
 }

@@ -21,6 +21,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -29,6 +30,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -37,6 +39,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -46,6 +49,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -54,6 +58,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -62,6 +67,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -174,6 +180,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -184,6 +191,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -194,6 +202,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -207,6 +216,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -217,6 +227,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -227,6 +238,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -590,6 +602,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -600,6 +613,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -614,6 +628,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -634,6 +649,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -652,6 +668,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -674,6 +691,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -692,6 +710,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -704,6 +723,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -719,6 +739,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -743,6 +764,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -753,6 +775,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -767,6 +790,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -787,6 +811,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -805,6 +830,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -827,6 +853,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -845,6 +872,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -857,6 +885,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -872,6 +901,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -5563,24 +5593,24 @@ public final class WorkflowOuterClass {
       "\n\035flyteidl/admin/workflow.proto\022\016flyteid" +
       "l.admin\032\034flyteidl/core/compiler.proto\032\036f" +
       "lyteidl/core/identifier.proto\032\034flyteidl/" +
-      "core/workflow.proto\032\033flyteidl/admin/comm" +
-      "on.proto\032\037google/protobuf/timestamp.prot" +
-      "o\"j\n\025WorkflowCreateRequest\022%\n\002id\030\001 \001(\0132\031" +
-      ".flyteidl.core.Identifier\022*\n\004spec\030\002 \001(\0132" +
-      "\034.flyteidl.admin.WorkflowSpec\"\030\n\026Workflo" +
-      "wCreateResponse\"c\n\010Workflow\022%\n\002id\030\001 \001(\0132" +
-      "\031.flyteidl.core.Identifier\0220\n\007closure\030\002 " +
-      "\001(\0132\037.flyteidl.admin.WorkflowClosure\"J\n\014" +
-      "WorkflowList\022+\n\tworkflows\030\001 \003(\0132\030.flytei" +
-      "dl.admin.Workflow\022\r\n\005token\030\002 \001(\t\"y\n\014Work" +
-      "flowSpec\0221\n\010template\030\001 \001(\0132\037.flyteidl.co" +
-      "re.WorkflowTemplate\0226\n\rsub_workflows\030\002 \003" +
-      "(\0132\037.flyteidl.core.WorkflowTemplate\"\204\001\n\017" +
-      "WorkflowClosure\022A\n\021compiled_workflow\030\001 \001" +
-      "(\0132&.flyteidl.core.CompiledWorkflowClosu" +
-      "re\022.\n\ncreated_at\030\002 \001(\0132\032.google.protobuf" +
-      ".TimestampB7Z5github.com/flyteorg/flytei" +
-      "dl/gen/pb-go/flyteidl/adminb\006proto3"
+      "core/workflow.proto\032\037google/protobuf/tim" +
+      "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n" +
+      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004" +
+      "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec" +
+      "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%" +
+      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n" +
+      "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow" +
+      "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003" +
+      "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 " +
+      "\001(\t\"y\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037." +
+      "flyteidl.core.WorkflowTemplate\0226\n\rsub_wo" +
+      "rkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowTe" +
+      "mplate\"\204\001\n\017WorkflowClosure\022A\n\021compiled_w" +
+      "orkflow\030\001 \001(\0132&.flyteidl.core.CompiledWo" +
+      "rkflowClosure\022.\n\ncreated_at\030\002 \001(\0132\032.goog" +
+      "le.protobuf.TimestampB7Z5github.com/flyt" +
+      "eorg/flyteidl/gen/pb-go/flyteidl/adminb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5596,7 +5626,6 @@ public final class WorkflowOuterClass {
           flyteidl.core.Compiler.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Workflow.getDescriptor(),
-          flyteidl.admin.Common.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowCreateRequest_descriptor =
@@ -5638,7 +5667,6 @@ public final class WorkflowOuterClass {
     flyteidl.core.Compiler.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Workflow.getDescriptor();
-    flyteidl.admin.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

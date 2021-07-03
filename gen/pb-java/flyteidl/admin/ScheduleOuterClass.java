@@ -145,7 +145,7 @@ public final class ScheduleOuterClass {
   }
   /**
    * <pre>
-   * Option for schedules run at a certain frequency, e.g. every 2 minutes.
+   * Option for schedules run at a certain frequency e.g. every 2 minutes.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.FixedRate}
@@ -423,7 +423,7 @@ public final class ScheduleOuterClass {
     }
     /**
      * <pre>
-     * Option for schedules run at a certain frequency, e.g. every 2 minutes.
+     * Option for schedules run at a certain frequency e.g. every 2 minutes.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.FixedRate}
@@ -748,6 +748,10 @@ public final class ScheduleOuterClass {
         getOffsetBytes();
   }
   /**
+   * <pre>
+   * Options for schedules to run according to a cron expression.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.CronSchedule}
    */
   public  static final class CronSchedule extends
@@ -1087,6 +1091,10 @@ public final class ScheduleOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Options for schedules to run according to a cron expression.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.CronSchedule}
      */
     public static final class Builder extends
@@ -1492,8 +1500,8 @@ public final class ScheduleOuterClass {
 
     /**
      * <pre>
-     * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-     * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+     * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+     * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
      * </pre>
      *
      * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -1501,8 +1509,8 @@ public final class ScheduleOuterClass {
     @java.lang.Deprecated java.lang.String getCronExpression();
     /**
      * <pre>
-     * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-     * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+     * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+     * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
      * </pre>
      *
      * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -1715,8 +1723,8 @@ public final class ScheduleOuterClass {
     public static final int CRON_EXPRESSION_FIELD_NUMBER = 1;
     /**
      * <pre>
-     * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-     * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+     * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+     * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
      * </pre>
      *
      * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -1740,8 +1748,8 @@ public final class ScheduleOuterClass {
     }
     /**
      * <pre>
-     * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-     * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+     * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+     * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
      * </pre>
      *
      * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -2274,8 +2282,8 @@ public final class ScheduleOuterClass {
 
       /**
        * <pre>
-       * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-       * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+       * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+       * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
        * </pre>
        *
        * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -2299,8 +2307,8 @@ public final class ScheduleOuterClass {
       }
       /**
        * <pre>
-       * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-       * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+       * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+       * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
        * </pre>
        *
        * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -2325,8 +2333,8 @@ public final class ScheduleOuterClass {
       }
       /**
        * <pre>
-       * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-       * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+       * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+       * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
        * </pre>
        *
        * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -2343,8 +2351,8 @@ public final class ScheduleOuterClass {
       }
       /**
        * <pre>
-       * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-       * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+       * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+       * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
        * </pre>
        *
        * <code>string cron_expression = 1 [deprecated = true];</code>
@@ -2359,8 +2367,8 @@ public final class ScheduleOuterClass {
       }
       /**
        * <pre>
-       * Uses AWS syntax: "Minutes Hours Day-of-month Month Day-of-week Year"
-       * e.g. for a schedule that runs every 15 minutes: "0/15 * * * ? *"
+       * Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year
+       * e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *
        * </pre>
        *
        * <code>string cron_expression = 1 [deprecated = true];</code>

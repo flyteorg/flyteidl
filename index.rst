@@ -16,16 +16,18 @@ This specification is used to generate client stubs for `FlyteKit <https://flyte
    :maxdepth: 1
    :hidden:
 
-   Getting Started <https://docs.flyte.org/en/latest/getting_started.html>
-   Tutorials <https://flytecookbook.readthedocs.io>
-   reference/index
-   Community <https://docs.flyte.org/en/latest/community/index.html>
+   |plane| Getting Started <https://docs.flyte.org/en/latest/getting_started.html>
+   |book-reader| User Guide <https://docs.flyte.org/projects/cookbook/en/latest/user_guide.html>
+   |chalkboard| Tutorials <https://docs.flyte.org/projects/cookbook/en/latest/tutorials.html>
+   |project-diagram| Concepts <https://docs.flyte.org/en/latest/concepts/basics.html>
+   |rocket| Deployment <https://docs.flyte.org/en/latest/deployment/index.html>
+   |book| API Reference <https://docs.flyte.org/en/latest/reference/index.html>
+   |hands-helping| Community <https://docs.flyte.org/en/latest/community/index.html>
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: -1
    :caption: FlyteIDL
    :hidden:
 
-   Overview <self>
-   gen/pb-protodoc/flyteidl/index
-   developing
+   README
+   protos/index

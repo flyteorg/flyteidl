@@ -2,6 +2,7 @@
 package coreutils
 
 import (
+	"encoding/json"
 	"fmt"
 	"reflect"
 	"strconv"
@@ -293,6 +294,8 @@ func MakeDefaultLiteralForType(typ *core.LiteralType) (*core.Literal, error) {
 				},
 			},
 		}, nil
+	case *core.LiteralType_EnumType:
+		return MakeLiteralForType(typ, nil)
 		//case *core.LiteralType_Schema:
 	}
 
@@ -461,6 +464,7 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 				Literals: literals,
 			},
 		}
+
 	case *core.LiteralType_CollectionType:
 		newT := t.Type.(*core.LiteralType_CollectionType)
 		newV, ok := v.([]interface{})
@@ -481,18 +485,61 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 				Literals: literals,
 			},
 		}
+
 	case *core.LiteralType_Simple:
 		newT := t.Type.(*core.LiteralType_Simple)
-		lv, err := MakeLiteralForSimpleType(newT.Simple, fmt.Sprintf("%v", v))
+		strValue := fmt.Sprintf("%v", v)
+		if v == nil {
+			strValue = ""
+		}
+
+		if newT.Simple == core.SimpleType_STRUCT {
+			if _, isValueStringType := v.(string); !isValueStringType {
+				byteValue, err := json.Marshal(v)
+				if err != nil {
+					return nil, fmt.Errorf("unable to marshal to json string for struct value %v", v)
+				}
+				strValue = string(byteValue)
+			}
+		}
+		lv, err := MakeLiteralForSimpleType(newT.Simple, strValue)
 		if err != nil {
 			return nil, err
 		}
 		return lv, nil
+
 	case *core.LiteralType_Blob:
 		newT := t.Type.(*core.LiteralType_Blob)
 		isDir := newT.Blob.Dimensionality == core.BlobType_MULTIPART
 		lv := MakeLiteralForBlob(storage.DataReference(fmt.Sprintf("%v", v)), isDir, newT.Blob.Format)
 		return lv, nil
+
+	case *core.LiteralType_EnumType:
+		var newV string
+		if v == nil {
+			if len(t.GetEnumType().Values) == 0 {
+				return nil, fmt.Errorf("enum types need atleast one value")
+			}
+			newV = t.GetEnumType().Values[0]
+		} else {
+			var ok bool
+			newV, ok = v.(string)
+			if !ok {
+				return nil, fmt.Errorf("cannot convert [%v] to enum representations, only string values are supported in enum literals", reflect.TypeOf(v))
+			}
+			found := false
+			for _, val := range t.GetEnumType().GetValues() {
+				if val == newV {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return nil, fmt.Errorf("incorrect enum value [%s], supported values %+v", newV, t.GetEnumType().GetValues())
+			}
+		}
+		return MakePrimitiveLiteral(newV)
+
 	default:
 		return nil, fmt.Errorf("unsupported type %s", t.String())
 	}
