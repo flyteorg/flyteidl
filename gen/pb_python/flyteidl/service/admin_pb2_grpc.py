@@ -407,8 +407,8 @@ class AdminServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetNodeExecution(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

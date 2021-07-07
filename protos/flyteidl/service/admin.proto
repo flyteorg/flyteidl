@@ -268,12 +268,13 @@ service AdminService {
     };
   }
 
+  // Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details
   rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
       get: "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Retrieve an existing node execution."
+      description: "Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details"
     };
   }
 

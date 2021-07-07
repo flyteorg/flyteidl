@@ -1369,7 +1369,8 @@
     },
     "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
-        "description": "Retrieve an existing node execution.",
+        "summary": "Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details",
+        "description": "Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details",
         "operationId": "GetNodeExecution",
         "responses": {
           "200": {
@@ -3247,7 +3248,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Used as a response for request to list executions."
+      "title": "Used as a response for request to list executions.\nSee :ref:`ref_flyteidl.admin.Execution` for more details"
     },
     "adminExecutionMetadata": {
       "type": "object",
@@ -3502,7 +3503,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Response object for list launch plan requests."
+      "title": "Response object for list launch plan requests.\nSee :ref:`ref_flyteidl.admin.LaunchPlan` for more details"
     },
     "adminLaunchPlanMetadata": {
       "type": "object",
@@ -3600,7 +3601,7 @@
           "description": "Desired state to apply to the launch plan.\n+required."
         }
       },
-      "description": "Request to set the referenced launch plan state to the configured value."
+      "title": "Request to set the referenced launch plan state to the configured value.\nSee :ref:`ref_flyteidl.admin.LaunchPlan` for more details"
     },
     "adminLaunchPlanUpdateResponse": {
       "type": "object",
@@ -3616,7 +3617,7 @@
           }
         }
       },
-      "description": "Response for a request for all matching resource attributes for a resource type."
+      "title": "Response for a request for all matching resource attributes for a resource type.\nSee :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details"
     },
     "adminLiteralMapBlob": {
       "type": "object",
@@ -3909,7 +3910,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Request structure to retrieve a list of node execution entities."
+      "title": "Request structure to retrieve a list of node execution entities.\nSee :ref:`ref_flyteidl.admin.NodeExecution` for more details"
     },
     "adminNodeExecutionMetaData": {
       "type": "object",
@@ -4053,7 +4054,7 @@
           "$ref": "#/definitions/adminMatchingAttributes"
         }
       },
-      "description": "Defines a set of custom matching attributes which defines resource defaults for a project and domain.\nFor more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`."
+      "title": "Defines a set of custom matching attributes which defines resource defaults for a project and domain.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesDeleteRequest": {
       "type": "object",
@@ -4071,7 +4072,7 @@
           "title": "Which type of matchable attributes to delete.\n+required"
         }
       },
-      "description": "Request to delete a set matchable project domain attribute override."
+      "title": "Request to delete a set matchable project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesDeleteResponse": {
       "type": "object",
@@ -4084,7 +4085,7 @@
           "$ref": "#/definitions/adminProjectDomainAttributes"
         }
       },
-      "description": "Response to get an individual project domain attribute override."
+      "title": "Response to get an individual project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesUpdateRequest": {
       "type": "object",
@@ -4094,7 +4095,7 @@
           "title": "+required"
         }
       },
-      "description": "Sets custom attributes for a project-domain combination."
+      "title": "Sets custom attributes for a project-domain combination.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesUpdateResponse": {
       "type": "object",
@@ -4107,13 +4108,16 @@
           "$ref": "#/definitions/adminProject",
           "title": "+required"
         }
-      }
+      },
+      "title": "Adds a new user-project within the Flyte deployment.\nSee :ref:`ref_flyteidl.admin.Project` for more details"
     },
     "adminProjectRegisterResponse": {
-      "type": "object"
+      "type": "object",
+      "description": "Purposefully empty, may be updated in the future."
     },
     "adminProjectUpdateResponse": {
-      "type": "object"
+      "type": "object",
+      "description": "Purposefully empty, may be updated in the future."
     },
     "adminProjects": {
       "type": "object",
@@ -4128,7 +4132,8 @@
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
-      }
+      },
+      "title": "Represents a list of projects.\nSee :ref:`ref_flyteidl.admin.Project` for more details"
     },
     "adminRawOutputDataConfig": {
       "type": "object",
@@ -4238,7 +4243,7 @@
           "title": "Represents the specification for task.\n+required"
         }
       },
-      "description": "Represents a request structure to create a revision of a task."
+      "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
     },
     "adminTaskCreateResponse": {
       "type": "object",
@@ -4357,7 +4362,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Response structure for a query to list of task execution entities."
+      "title": "Response structure for a query to list of task execution entities.\nSee :ref:`ref_flyteidl.admin.TaskExecution` for more details"
     },
     "adminTaskList": {
       "type": "object",
@@ -4374,7 +4379,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Represents a list of tasks returned from the admin."
+      "title": "Represents a list of tasks returned from the admin.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
     },
     "adminTaskResourceAttributes": {
       "type": "object",
@@ -4482,7 +4487,7 @@
           "$ref": "#/definitions/adminMatchingAttributes"
         }
       },
-      "description": "Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.\nFor more info on matchable attributes, see - :ref:`ref_flyteidl/admin/matchable_resource.proto`."
+      "title": "Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesDeleteRequest": {
       "type": "object",
@@ -4504,7 +4509,7 @@
           "title": "Which type of matchable attributes to delete.\n+required"
         }
       },
-      "description": "Request to delete a set matchable workflow attribute override."
+      "title": "Request to delete a set matchable workflow attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesDeleteResponse": {
       "type": "object",
@@ -4526,7 +4531,7 @@
           "$ref": "#/definitions/adminWorkflowAttributes"
         }
       },
-      "description": "Sets custom attributes for a project, domain and workflow combination."
+      "title": "Sets custom attributes for a project, domain and workflow combination.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesUpdateResponse": {
       "type": "object",
@@ -4559,7 +4564,7 @@
           "title": "Represents the specification for workflow.\n+required"
         }
       },
-      "description": "Represents a request structure to create a revision of a workflow."
+      "title": "Represents a request structure to create a revision of a workflow.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
     },
     "adminWorkflowCreateResponse": {
       "type": "object"
@@ -4629,7 +4634,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Represents a list of workflows returned from the admin."
+      "title": "Represents a list of workflows returned from the admin.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
     },
     "adminWorkflowSpec": {
       "type": "object",

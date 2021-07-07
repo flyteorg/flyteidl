@@ -1392,8 +1392,8 @@ func (a *AdminServiceApiService) GetNamedEntity(ctx context.Context, resourceTyp
 }
 
 /* 
-AdminServiceApiService
-Retrieve an existing node execution.
+AdminServiceApiService Retrieve an existing node execution. See :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60; for more details
+Retrieve an existing node execution. See :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60; for more details
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idExecutionIdProject Name of the project the resource belongs to.
  * @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.

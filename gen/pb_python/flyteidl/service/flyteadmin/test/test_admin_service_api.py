@@ -116,6 +116,7 @@ class TestAdminServiceApi(unittest.TestCase):
     def test_get_node_execution(self):
         """Test case for get_node_execution
 
+        Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details  # noqa: E501
         """
         pass
 

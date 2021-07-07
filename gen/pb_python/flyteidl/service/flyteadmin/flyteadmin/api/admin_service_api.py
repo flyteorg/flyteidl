@@ -1560,9 +1560,9 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_node_execution(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution  # noqa: E501
+        """Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details  # noqa: E501
 
-        Retrieve an existing node execution.  # noqa: E501
+        Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)
@@ -1585,9 +1585,9 @@ class AdminServiceApi(object):
             return data
 
     def get_node_execution_with_http_info(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution  # noqa: E501
+        """Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details  # noqa: E501
 
-        Retrieve an existing node execution.  # noqa: E501
+        Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution_with_http_info(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)

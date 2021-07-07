@@ -35,7 +35,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**GetExecutionData**](docs/AdminServiceApi.md#getexecutiondata) | **Get** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**GetLaunchPlan**](docs/AdminServiceApi.md#getlaunchplan) | **Get** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | 
 *AdminServiceApi* | [**GetNamedEntity**](docs/AdminServiceApi.md#getnamedentity) | **Get** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | 
-*AdminServiceApi* | [**GetNodeExecution**](docs/AdminServiceApi.md#getnodeexecution) | **Get** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | 
+*AdminServiceApi* | [**GetNodeExecution**](docs/AdminServiceApi.md#getnodeexecution) | **Get** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Retrieve an existing node execution. See :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60; for more details
 *AdminServiceApi* | [**GetNodeExecutionData**](docs/AdminServiceApi.md#getnodeexecutiondata) | **Get** /api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | 
 *AdminServiceApi* | [**GetProjectDomainAttributes**](docs/AdminServiceApi.md#getprojectdomainattributes) | **Get** /api/v1/project_domain_attributes/{project}/{domain} | 
 *AdminServiceApi* | [**GetTask**](docs/AdminServiceApi.md#gettask) | **Get** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | 

@@ -197,6 +197,7 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionTerminateResponse>> PrepareAsyncTerminateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionTerminateResponse>>(PrepareAsyncTerminateExecutionRaw(context, request, cq));
     }
+    // Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details
     virtual ::grpc::Status GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::flyteidl::admin::NodeExecution* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>> AsyncGetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecution>>(AsyncGetNodeExecutionRaw(context, request, cq));
@@ -454,6 +455,7 @@ class AdminService final {
       virtual void TerminateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionTerminateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void TerminateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest* request, ::flyteidl::admin::ExecutionTerminateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void TerminateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionTerminateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -1321,6 +1323,7 @@ class AdminService final {
     virtual ::grpc::Status GetExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetDataRequest* request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response);
     virtual ::grpc::Status ListExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::ExecutionList* response);
     virtual ::grpc::Status TerminateExecution(::grpc::ServerContext* context, const ::flyteidl::admin::ExecutionTerminateRequest* request, ::flyteidl::admin::ExecutionTerminateResponse* response);
+    // Retrieve an existing node execution. See :ref:`ref_flyteidl.admin.NodeExecution` for more details
     virtual ::grpc::Status GetNodeExecution(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response);
     virtual ::grpc::Status ListNodeExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
     virtual ::grpc::Status ListNodeExecutionsForTask(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response);
