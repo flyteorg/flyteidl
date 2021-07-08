@@ -9,11 +9,14 @@ import "flyteidl/core/workflow.proto";
 import "google/protobuf/timestamp.proto";
 
 // Represents a request structure to create a revision of a workflow.
+// See :ref:`ref_flyteidl.admin.Workflow` for more details
 message WorkflowCreateRequest {
     // id represents the unique identifier of the workflow.
+    // +required
     core.Identifier id     = 1;
     
     // Represents the specification for workflow.
+    // +required
     WorkflowSpec spec      = 2;
 }
 
@@ -33,6 +36,7 @@ message Workflow {
 }
 
 // Represents a list of workflows returned from the admin.
+// See :ref:`ref_flyteidl.admin.Workflow` for more details
 message WorkflowList {
     // A list of workflows returned based on the request.
     repeated Workflow workflows = 1;

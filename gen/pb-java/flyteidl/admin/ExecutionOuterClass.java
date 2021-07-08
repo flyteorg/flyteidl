@@ -21,6 +21,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Name of the project the execution belongs to.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -29,6 +30,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Name of the project the execution belongs to.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -40,6 +42,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * Name of the domain the execution belongs to.
      * A domain can be considered as a subset within a specific project.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -49,6 +52,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * Name of the domain the execution belongs to.
      * A domain can be considered as a subset within a specific project.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -81,6 +85,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -89,6 +94,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -97,6 +103,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -107,6 +114,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -116,6 +124,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -125,6 +134,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -133,7 +143,7 @@ public final class ExecutionOuterClass {
   }
   /**
    * <pre>
-   * Request to launch an execution with the given project, domain and optionally name.
+   * Request to launch an execution with the given project, domain and optionally-assigned name.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ExecutionCreateRequest}
@@ -258,6 +268,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Name of the project the execution belongs to.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -277,6 +288,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Name of the project the execution belongs to.
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -301,6 +313,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * Name of the domain the execution belongs to.
      * A domain can be considered as a subset within a specific project.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -321,6 +334,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * Name of the domain the execution belongs to.
      * A domain can be considered as a subset within a specific project.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -390,6 +404,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -400,6 +415,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -410,6 +426,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Additional fields necessary to launch the execution.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -424,6 +441,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -435,6 +453,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -446,6 +465,7 @@ public final class ExecutionOuterClass {
      * <pre>
      * The inputs required to start the execution. All required inputs must be
      * included in this map. If not required and not provided, defaults apply.
+     * +optional
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -662,7 +682,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Request to launch an execution with the given project, domain and optionally name.
+     * Request to launch an execution with the given project, domain and optionally-assigned name.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ExecutionCreateRequest}
@@ -858,6 +878,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Name of the project the execution belongs to.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -877,6 +898,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Name of the project the execution belongs to.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -897,6 +919,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Name of the project the execution belongs to.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -914,6 +937,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Name of the project the execution belongs to.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -927,6 +951,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Name of the project the execution belongs to.
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -948,6 +973,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * Name of the domain the execution belongs to.
        * A domain can be considered as a subset within a specific project.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -968,6 +994,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * Name of the domain the execution belongs to.
        * A domain can be considered as a subset within a specific project.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -989,6 +1016,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * Name of the domain the execution belongs to.
        * A domain can be considered as a subset within a specific project.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1007,6 +1035,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * Name of the domain the execution belongs to.
        * A domain can be considered as a subset within a specific project.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1021,6 +1050,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * Name of the domain the execution belongs to.
        * A domain can be considered as a subset within a specific project.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1142,6 +1172,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1152,6 +1183,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1166,6 +1198,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1186,6 +1219,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1204,6 +1238,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1226,6 +1261,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1244,6 +1280,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1256,6 +1293,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1271,6 +1309,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Additional fields necessary to launch the execution.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.admin.ExecutionSpec spec = 4;</code>
@@ -1296,6 +1335,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1307,6 +1347,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1322,6 +1363,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1343,6 +1385,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1362,6 +1405,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1385,6 +1429,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1404,6 +1449,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1417,6 +1463,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1433,6 +1480,7 @@ public final class ExecutionOuterClass {
        * <pre>
        * The inputs required to start the execution. All required inputs must be
        * included in this map. If not required and not provided, defaults apply.
+       * +optional
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap inputs = 5;</code>
@@ -1510,6 +1558,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -1518,6 +1567,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -1526,6 +1576,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -1654,6 +1705,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -1664,6 +1716,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -1674,6 +1727,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Identifier of the workflow execution to relaunch.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2070,6 +2124,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2080,6 +2135,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2094,6 +2150,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2114,6 +2171,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2132,6 +2190,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2154,6 +2213,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2172,6 +2232,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2184,6 +2245,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -2199,6 +2261,7 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Identifier of the workflow execution to relaunch.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
@@ -3881,6 +3944,7 @@ public final class ExecutionOuterClass {
   /**
    * <pre>
    * A message used to fetch a single workflow execution entity.
+   * See :ref:`ref_flyteidl.admin.Execution` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetRequest}
@@ -4162,6 +4226,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * A message used to fetch a single workflow execution entity.
+     * See :ref:`ref_flyteidl.admin.Execution` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetRequest}
@@ -5760,6 +5825,7 @@ public final class ExecutionOuterClass {
   /**
    * <pre>
    * Used as a response for request to list executions.
+   * See :ref:`ref_flyteidl.admin.Execution` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ExecutionList}
@@ -6102,6 +6168,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Used as a response for request to list executions.
+     * See :ref:`ref_flyteidl.admin.Execution` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ExecutionList}
@@ -6692,25 +6759,25 @@ public final class ExecutionOuterClass {
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    boolean hasValues();
+    @java.lang.Deprecated boolean hasValues();
     /**
      * <pre>
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    flyteidl.core.Literals.LiteralMap getValues();
+    @java.lang.Deprecated flyteidl.core.Literals.LiteralMap getValues();
     /**
      * <pre>
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder();
+    @java.lang.Deprecated flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder();
 
     /**
      * <pre>
@@ -6831,7 +6898,7 @@ public final class ExecutionOuterClass {
     private java.lang.Object data_;
     public enum DataCase
         implements com.google.protobuf.Internal.EnumLite {
-      VALUES(1),
+      @java.lang.Deprecated VALUES(1),
       URI(2),
       DATA_NOT_SET(0);
       private final int value;
@@ -6871,9 +6938,9 @@ public final class ExecutionOuterClass {
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    public boolean hasValues() {
+    @java.lang.Deprecated public boolean hasValues() {
       return dataCase_ == 1;
     }
     /**
@@ -6881,9 +6948,9 @@ public final class ExecutionOuterClass {
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    public flyteidl.core.Literals.LiteralMap getValues() {
+    @java.lang.Deprecated public flyteidl.core.Literals.LiteralMap getValues() {
       if (dataCase_ == 1) {
          return (flyteidl.core.Literals.LiteralMap) data_;
       }
@@ -6894,9 +6961,9 @@ public final class ExecutionOuterClass {
      * Data in LiteralMap format
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap values = 1;</code>
+     * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
      */
-    public flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder() {
+    @java.lang.Deprecated public flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder() {
       if (dataCase_ == 1) {
          return (flyteidl.core.Literals.LiteralMap) data_;
       }
@@ -7331,9 +7398,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public boolean hasValues() {
+      @java.lang.Deprecated public boolean hasValues() {
         return dataCase_ == 1;
       }
       /**
@@ -7341,9 +7408,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.LiteralMap getValues() {
+      @java.lang.Deprecated public flyteidl.core.Literals.LiteralMap getValues() {
         if (valuesBuilder_ == null) {
           if (dataCase_ == 1) {
             return (flyteidl.core.Literals.LiteralMap) data_;
@@ -7361,9 +7428,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public Builder setValues(flyteidl.core.Literals.LiteralMap value) {
+      @java.lang.Deprecated public Builder setValues(flyteidl.core.Literals.LiteralMap value) {
         if (valuesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7381,9 +7448,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public Builder setValues(
+      @java.lang.Deprecated public Builder setValues(
           flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
         if (valuesBuilder_ == null) {
           data_ = builderForValue.build();
@@ -7399,9 +7466,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public Builder mergeValues(flyteidl.core.Literals.LiteralMap value) {
+      @java.lang.Deprecated public Builder mergeValues(flyteidl.core.Literals.LiteralMap value) {
         if (valuesBuilder_ == null) {
           if (dataCase_ == 1 &&
               data_ != flyteidl.core.Literals.LiteralMap.getDefaultInstance()) {
@@ -7425,9 +7492,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public Builder clearValues() {
+      @java.lang.Deprecated public Builder clearValues() {
         if (valuesBuilder_ == null) {
           if (dataCase_ == 1) {
             dataCase_ = 0;
@@ -7448,9 +7515,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.LiteralMap.Builder getValuesBuilder() {
+      @java.lang.Deprecated public flyteidl.core.Literals.LiteralMap.Builder getValuesBuilder() {
         return getValuesFieldBuilder().getBuilder();
       }
       /**
@@ -7458,9 +7525,9 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
-      public flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder() {
+      @java.lang.Deprecated public flyteidl.core.Literals.LiteralMapOrBuilder getValuesOrBuilder() {
         if ((dataCase_ == 1) && (valuesBuilder_ != null)) {
           return valuesBuilder_.getMessageOrBuilder();
         } else {
@@ -7475,7 +7542,7 @@ public final class ExecutionOuterClass {
        * Data in LiteralMap format
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap values = 1;</code>
+       * <code>.flyteidl.core.LiteralMap values = 1 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
@@ -7689,6 +7756,10 @@ public final class ExecutionOuterClass {
         getPrincipalBytes();
   }
   /**
+   * <pre>
+   * Specifies metadata around an aborted workflow execution.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.AbortMetadata}
    */
   public  static final class AbortMetadata extends
@@ -8022,6 +8093,10 @@ public final class ExecutionOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Specifies metadata around an aborted workflow execution.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.AbortMetadata}
      */
     public static final class Builder extends
@@ -8412,7 +8487,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -8420,7 +8495,7 @@ public final class ExecutionOuterClass {
     boolean hasOutputs();
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -8428,7 +8503,7 @@ public final class ExecutionOuterClass {
     flyteidl.admin.ExecutionOuterClass.LiteralMapBlob getOutputs();
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -8550,7 +8625,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -8558,7 +8633,7 @@ public final class ExecutionOuterClass {
     boolean hasStartedAt();
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -8566,7 +8641,7 @@ public final class ExecutionOuterClass {
     com.google.protobuf.Timestamp getStartedAt();
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -8996,7 +9071,7 @@ public final class ExecutionOuterClass {
     public static final int OUTPUTS_FIELD_NUMBER = 1;
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -9006,7 +9081,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -9019,7 +9094,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * A map of outputs in the case of a successful execution.
+     * Output URI in the case of a successful execution.
      * </pre>
      *
      * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -9223,7 +9298,7 @@ public final class ExecutionOuterClass {
     private com.google.protobuf.Timestamp startedAt_;
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -9233,7 +9308,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -9243,7 +9318,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Reported ime at which the execution began running.
+     * Reported time at which the execution began running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -10130,7 +10205,7 @@ public final class ExecutionOuterClass {
           flyteidl.admin.ExecutionOuterClass.LiteralMapBlob, flyteidl.admin.ExecutionOuterClass.LiteralMapBlob.Builder, flyteidl.admin.ExecutionOuterClass.LiteralMapBlobOrBuilder> outputsBuilder_;
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10140,7 +10215,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10160,7 +10235,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10180,7 +10255,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10198,7 +10273,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10224,7 +10299,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10247,7 +10322,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10257,7 +10332,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10274,7 +10349,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * A map of outputs in the case of a successful execution.
+       * Output URI in the case of a successful execution.
        * </pre>
        *
        * <code>.flyteidl.admin.LiteralMapBlob outputs = 1;</code>
@@ -10974,7 +11049,7 @@ public final class ExecutionOuterClass {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedAtBuilder_;
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -10984,7 +11059,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -10998,7 +11073,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11018,7 +11093,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11036,7 +11111,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11058,7 +11133,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11076,7 +11151,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11088,7 +11163,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -11103,7 +11178,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Reported ime at which the execution began running.
+       * Reported time at which the execution began running.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp started_at = 5;</code>
@@ -12158,7 +12233,7 @@ public final class ExecutionOuterClass {
   }
   /**
    * <pre>
-   * Represents system rather than user-facing metadata about an execution.
+   * Represents system, rather than user-facing, metadata about an execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.SystemMetadata}
@@ -12436,7 +12511,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Represents system rather than user-facing metadata about an execution.
+     * Represents system, rather than user-facing, metadata about an execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.SystemMetadata}
@@ -12802,7 +12877,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -12810,7 +12885,7 @@ public final class ExecutionOuterClass {
     boolean hasParentNodeExecution();
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -12818,7 +12893,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecution();
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -13331,7 +13406,7 @@ public final class ExecutionOuterClass {
     private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecution_;
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -13341,7 +13416,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -13351,7 +13426,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Which subworkflow node launched this execution
+     * Which subworkflow node (if any) launched this execution
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14244,7 +14319,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> parentNodeExecutionBuilder_;
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14254,7 +14329,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14268,7 +14343,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14288,7 +14363,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14306,7 +14381,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14328,7 +14403,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14346,7 +14421,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14358,7 +14433,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -14373,7 +14448,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node launched this execution
+       * Which subworkflow node (if any) launched this execution
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 5;</code>
@@ -15795,7 +15870,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+     * Controls the maximum number of task nodes that can be run in parallel for the entire workflow.
      * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
      * and parallelism/concurrency of MapTasks is independent from this.
      * </pre>
@@ -15809,7 +15884,7 @@ public final class ExecutionOuterClass {
   /**
    * <pre>
    * An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
-   * of an execution as it progresses across phase changes..
+   * of an execution as it progresses across phase changes.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ExecutionSpec}
@@ -16375,7 +16450,7 @@ public final class ExecutionOuterClass {
     private int maxParallelism_;
     /**
      * <pre>
-     * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+     * Controls the maximum number of task nodes that can be run in parallel for the entire workflow.
      * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
      * and parallelism/concurrency of MapTasks is independent from this.
      * </pre>
@@ -16714,7 +16789,7 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
-     * of an execution as it progresses across phase changes..
+     * of an execution as it progresses across phase changes.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ExecutionSpec}
@@ -18475,7 +18550,7 @@ public final class ExecutionOuterClass {
       private int maxParallelism_ ;
       /**
        * <pre>
-       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * Controls the maximum number of task nodes that can be run in parallel for the entire workflow.
        * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
        * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
@@ -18487,7 +18562,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * Controls the maximum number of task nodes that can be run in parallel for the entire workflow.
        * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
        * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
@@ -18502,7 +18577,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.
+       * Controls the maximum number of task nodes that can be run in parallel for the entire workflow.
        * This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
        * and parallelism/concurrency of MapTasks is independent from this.
        * </pre>
@@ -19873,7 +19948,8 @@ public final class ExecutionOuterClass {
   }
   /**
    * <pre>
-   * Request structure to fetch inputs and output urls for an execution.
+   * Request structure to fetch inputs, output and other data produced by an execution.
+   * By default this data is not returned inline in :ref:`ref_flyteidl.admin.WorkflowExecutionGetRequest`
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetDataRequest}
@@ -20154,7 +20230,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Request structure to fetch inputs and output urls for an execution.
+     * Request structure to fetch inputs, output and other data produced by an execution.
+     * By default this data is not returned inline in :ref:`ref_flyteidl.admin.WorkflowExecutionGetRequest`
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetDataRequest}
@@ -20523,56 +20600,62 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    boolean hasOutputs();
+    @java.lang.Deprecated boolean hasOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getOutputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getOutputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
 
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    boolean hasInputs();
+    @java.lang.Deprecated boolean hasInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlob getInputs();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlob getInputs();
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder();
 
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20580,7 +20663,7 @@ public final class ExecutionOuterClass {
     boolean hasFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20588,7 +20671,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20597,7 +20680,7 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -20605,7 +20688,7 @@ public final class ExecutionOuterClass {
     boolean hasFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -20613,7 +20696,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -20752,31 +20835,34 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    public boolean hasOutputs() {
+    @java.lang.Deprecated public boolean hasOutputs() {
       return outputs_ != null;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getOutputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
       return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution outputs.
+     * Deprecated: Please use full_outputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+     * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
       return getOutputs();
     }
 
@@ -20785,31 +20871,34 @@ public final class ExecutionOuterClass {
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    public boolean hasInputs() {
+    @java.lang.Deprecated public boolean hasInputs() {
       return inputs_ != null;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlob getInputs() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
       return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
     }
     /**
      * <pre>
      * Signed url to fetch a core.LiteralMap of execution inputs.
+     * Deprecated: Please use full_inputs instead.
      * </pre>
      *
-     * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+     * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
       return getInputs();
     }
 
@@ -20817,7 +20906,7 @@ public final class ExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullInputs_;
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20827,7 +20916,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20837,7 +20926,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if they are under a configured size threshold.
+     * Full_inputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -20850,7 +20939,7 @@ public final class ExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullOutputs_;
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -20860,7 +20949,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -20870,7 +20959,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if they are under a configured size threshold.
+     * Full_outputs will only be populated if they are under a configured size threshold.
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21294,21 +21383,23 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public boolean hasOutputs() {
+      @java.lang.Deprecated public boolean hasOutputs() {
         return outputsBuilder_ != null || outputs_ != null;
       }
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getOutputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getOutputs() {
         if (outputsBuilder_ == null) {
           return outputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : outputs_;
         } else {
@@ -21318,11 +21409,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21338,11 +21430,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public Builder setOutputs(
+      @java.lang.Deprecated public Builder setOutputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (outputsBuilder_ == null) {
           outputs_ = builderForValue.build();
@@ -21356,11 +21449,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeOutputs(flyteidl.admin.Common.UrlBlob value) {
         if (outputsBuilder_ == null) {
           if (outputs_ != null) {
             outputs_ =
@@ -21378,11 +21472,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public Builder clearOutputs() {
+      @java.lang.Deprecated public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
           outputs_ = null;
           onChanged();
@@ -21396,11 +21491,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getOutputsBuilder() {
         
         onChanged();
         return getOutputsFieldBuilder().getBuilder();
@@ -21408,11 +21504,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder() {
         if (outputsBuilder_ != null) {
           return outputsBuilder_.getMessageOrBuilder();
         } else {
@@ -21423,9 +21520,10 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution outputs.
+       * Deprecated: Please use full_outputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob outputs = 1;</code>
+       * <code>.flyteidl.admin.UrlBlob outputs = 1 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -21447,21 +21545,23 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public boolean hasInputs() {
+      @java.lang.Deprecated public boolean hasInputs() {
         return inputsBuilder_ != null || inputs_ != null;
       }
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob getInputs() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob getInputs() {
         if (inputsBuilder_ == null) {
           return inputs_ == null ? flyteidl.admin.Common.UrlBlob.getDefaultInstance() : inputs_;
         } else {
@@ -21471,11 +21571,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder setInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21491,11 +21592,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public Builder setInputs(
+      @java.lang.Deprecated public Builder setInputs(
           flyteidl.admin.Common.UrlBlob.Builder builderForValue) {
         if (inputsBuilder_ == null) {
           inputs_ = builderForValue.build();
@@ -21509,11 +21611,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
+      @java.lang.Deprecated public Builder mergeInputs(flyteidl.admin.Common.UrlBlob value) {
         if (inputsBuilder_ == null) {
           if (inputs_ != null) {
             inputs_ =
@@ -21531,11 +21634,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public Builder clearInputs() {
+      @java.lang.Deprecated public Builder clearInputs() {
         if (inputsBuilder_ == null) {
           inputs_ = null;
           onChanged();
@@ -21549,11 +21653,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlob.Builder getInputsBuilder() {
         
         onChanged();
         return getInputsFieldBuilder().getBuilder();
@@ -21561,11 +21666,12 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.Common.UrlBlobOrBuilder getInputsOrBuilder() {
         if (inputsBuilder_ != null) {
           return inputsBuilder_.getMessageOrBuilder();
         } else {
@@ -21576,9 +21682,10 @@ public final class ExecutionOuterClass {
       /**
        * <pre>
        * Signed url to fetch a core.LiteralMap of execution inputs.
+       * Deprecated: Please use full_inputs instead.
        * </pre>
        *
-       * <code>.flyteidl.admin.UrlBlob inputs = 2;</code>
+       * <code>.flyteidl.admin.UrlBlob inputs = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.UrlBlob, flyteidl.admin.Common.UrlBlob.Builder, flyteidl.admin.Common.UrlBlobOrBuilder> 
@@ -21599,7 +21706,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullInputsBuilder_;
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21609,7 +21716,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21623,7 +21730,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21643,7 +21750,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21661,7 +21768,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21683,7 +21790,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21701,7 +21808,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21713,7 +21820,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21728,7 +21835,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if they are under a configured size threshold.
+       * Full_inputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -21752,7 +21859,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullOutputsBuilder_;
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21762,7 +21869,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21776,7 +21883,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21796,7 +21903,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21814,7 +21921,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21836,7 +21943,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21854,7 +21961,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21866,7 +21973,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -21881,7 +21988,7 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if they are under a configured size threshold.
+       * Full_outputs will only be populated if they are under a configured size threshold.
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -22076,68 +22183,68 @@ public final class ExecutionOuterClass {
       "lyteidl.admin.ExecutionSpec\0221\n\007closure\030\003" +
       " \001(\0132 .flyteidl.admin.ExecutionClosure\"M" +
       "\n\rExecutionList\022-\n\nexecutions\030\001 \003(\0132\031.fl" +
-      "yteidl.admin.Execution\022\r\n\005token\030\002 \001(\t\"T\n" +
-      "\016LiteralMapBlob\022+\n\006values\030\001 \001(\0132\031.flytei" +
-      "dl.core.LiteralMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004d" +
-      "ata\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tp" +
-      "rincipal\030\002 \001(\t\"\353\004\n\020ExecutionClosure\0221\n\007o" +
-      "utputs\030\001 \001(\0132\036.flyteidl.admin.LiteralMap" +
-      "BlobH\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Ex" +
-      "ecutionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H" +
-      "\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flyteidl.adm" +
-      "in.AbortMetadataH\000\0226\n\017computed_inputs\030\003 " +
-      "\001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225\n\005ph" +
-      "ase\030\004 \001(\0162&.flyteidl.core.WorkflowExecut" +
-      "ion.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022+\n\010duration\030\006 \001(\0132\031.go" +
-      "ogle.protobuf.Duration\022.\n\ncreated_at\030\007 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022.\n\nupdate" +
-      "d_at\030\010 \001(\0132\032.google.protobuf.Timestamp\0223" +
-      "\n\rnotifications\030\t \003(\0132\034.flyteidl.admin.N" +
-      "otification\022.\n\013workflow_id\030\013 \001(\0132\031.flyte" +
-      "idl.core.IdentifierB\017\n\routput_result\"+\n\016" +
-      "SystemMetadata\022\031\n\021execution_cluster\030\001 \001(" +
-      "\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/." +
-      "flyteidl.admin.ExecutionMetadata.Executi" +
-      "onMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001" +
-      "(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.protob" +
-      "uf.Timestamp\022E\n\025parent_node_execution\030\005 " +
-      "\001(\0132&.flyteidl.core.NodeExecutionIdentif" +
-      "ier\022G\n\023reference_execution\030\020 \001(\0132*.flyte" +
-      "idl.core.WorkflowExecutionIdentifier\0227\n\017" +
-      "system_metadata\030\021 \001(\0132\036.flyteidl.admin.S" +
-      "ystemMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL" +
-      "\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNC" +
-      "H\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G" +
-      "\n\020NotificationList\0223\n\rnotifications\030\001 \003(" +
-      "\0132\034.flyteidl.admin.Notification\"\260\004\n\rExec" +
-      "utionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteid" +
-      "l.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyt" +
-      "eidl.core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001" +
-      "(\0132!.flyteidl.admin.ExecutionMetadata\0229\n" +
-      "\rnotifications\030\005 \001(\0132 .flyteidl.admin.No" +
-      "tificationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022" +
-      "&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Labels\022" +
-      "0\n\013annotations\030\010 \001(\0132\033.flyteidl.admin.An" +
-      "notations\0228\n\020security_context\030\n \001(\0132\036.fl" +
-      "yteidl.core.SecurityContext\022/\n\tauth_role" +
-      "\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022" +
-      "quality_of_service\030\021 \001(\0132\037.flyteidl.core" +
-      ".QualityOfService\022\027\n\017max_parallelism\030\022 \001" +
-      "(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Ex" +
-      "ecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*.fl" +
-      "yteidl.core.WorkflowExecutionIdentifier\022" +
-      "\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateResp" +
-      "onse\"Y\n\037WorkflowExecutionGetDataRequest\022" +
-      "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
-      "utionIdentifier\"\326\001\n WorkflowExecutionGet" +
-      "DataResponse\022(\n\007outputs\030\001 \001(\0132\027.flyteidl" +
-      ".admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyteid" +
-      "l.admin.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMap\022/\n\014full_outputs\030" +
-      "\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5gith" +
-      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
-      "idl/adminb\006proto3"
+      "yteidl.admin.Execution\022\r\n\005token\030\002 \001(\t\"X\n" +
+      "\016LiteralMapBlob\022/\n\006values\030\001 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B" +
+      "\006\n\004data\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022" +
+      "\021\n\tprincipal\030\002 \001(\t\"\353\004\n\020ExecutionClosure\022" +
+      "1\n\007outputs\030\001 \001(\0132\036.flyteidl.admin.Litera" +
+      "lMapBlobH\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.cor" +
+      "e.ExecutionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB" +
+      "\002\030\001H\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flyteidl" +
+      ".admin.AbortMetadataH\000\0226\n\017computed_input" +
+      "s\030\003 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225" +
+      "\n\005phase\030\004 \001(\0162&.flyteidl.core.WorkflowEx" +
+      "ecution.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022+\n\010duration\030\006 \001(\0132" +
+      "\031.google.protobuf.Duration\022.\n\ncreated_at" +
+      "\030\007 \001(\0132\032.google.protobuf.Timestamp\022.\n\nup" +
+      "dated_at\030\010 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\0223\n\rnotifications\030\t \003(\0132\034.flyteidl.adm" +
+      "in.Notification\022.\n\013workflow_id\030\013 \001(\0132\031.f" +
+      "lyteidl.core.IdentifierB\017\n\routput_result" +
+      "\"+\n\016SystemMetadata\022\031\n\021execution_cluster\030" +
+      "\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(" +
+      "\0162/.flyteidl.admin.ExecutionMetadata.Exe" +
+      "cutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting" +
+      "\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022E\n\025parent_node_executio" +
+      "n\030\005 \001(\0132&.flyteidl.core.NodeExecutionIde" +
+      "ntifier\022G\n\023reference_execution\030\020 \001(\0132*.f" +
+      "lyteidl.core.WorkflowExecutionIdentifier" +
+      "\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.adm" +
+      "in.SystemMetadata\"g\n\rExecutionMode\022\n\n\006MA" +
+      "NUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010REL" +
+      "AUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED" +
+      "\020\005\"G\n\020NotificationList\0223\n\rnotifications\030" +
+      "\001 \003(\0132\034.flyteidl.admin.Notification\"\260\004\n\r" +
+      "ExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fly" +
+      "teidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031." +
+      "flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadata" +
+      "\030\003 \001(\0132!.flyteidl.admin.ExecutionMetadat" +
+      "a\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.admi" +
+      "n.NotificationListH\000\022\025\n\013disable_all\030\006 \001(" +
+      "\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Lab" +
+      "els\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.admi" +
+      "n.Annotations\0228\n\020security_context\030\n \001(\0132" +
+      "\036.flyteidl.core.SecurityContext\022/\n\tauth_" +
+      "role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001" +
+      "\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl." +
+      "core.QualityOfService\022\027\n\017max_parallelism" +
+      "\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"b" +
+      "\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminate" +
+      "Response\"Y\n\037WorkflowExecutionGetDataRequ" +
+      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\"\336\001\n WorkflowExecutio" +
+      "nGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.flyt" +
+      "eidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027" +
+      ".flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inpu" +
+      "ts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014f" +
+      "ull_outputs\030\004 \001(\0132\031.flyteidl.core.Litera" +
+      "lMapB7Z5github.com/flyteorg/flyteidl/gen" +
+      "/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

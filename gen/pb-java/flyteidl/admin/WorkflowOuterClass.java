@@ -21,6 +21,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -29,6 +30,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -37,6 +39,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -46,6 +49,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -54,6 +58,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -62,6 +67,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -71,6 +77,7 @@ public final class WorkflowOuterClass {
   /**
    * <pre>
    * Represents a request structure to create a revision of a workflow.
+   * See :ref:`ref_flyteidl.admin.Workflow` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowCreateRequest}
@@ -174,6 +181,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -184,6 +192,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -194,6 +203,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * id represents the unique identifier of the workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -207,6 +217,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -217,6 +228,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -227,6 +239,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents the specification for workflow.
+     * +required
      * </pre>
      *
      * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -414,6 +427,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents a request structure to create a revision of a workflow.
+     * See :ref:`ref_flyteidl.admin.Workflow` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowCreateRequest}
@@ -590,6 +604,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -600,6 +615,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -614,6 +630,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -634,6 +651,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -652,6 +670,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -674,6 +693,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -692,6 +712,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -704,6 +725,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -719,6 +741,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * id represents the unique identifier of the workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.core.Identifier id = 1;</code>
@@ -743,6 +766,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -753,6 +777,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -767,6 +792,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -787,6 +813,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -805,6 +832,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -827,6 +855,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -845,6 +874,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -857,6 +887,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -872,6 +903,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * Represents the specification for workflow.
+       * +required
        * </pre>
        *
        * <code>.flyteidl.admin.WorkflowSpec spec = 2;</code>
@@ -2364,6 +2396,7 @@ public final class WorkflowOuterClass {
   /**
    * <pre>
    * Represents a list of workflows returned from the admin.
+   * See :ref:`ref_flyteidl.admin.Workflow` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowList}
@@ -2726,6 +2759,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * Represents a list of workflows returned from the admin.
+     * See :ref:`ref_flyteidl.admin.Workflow` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowList}

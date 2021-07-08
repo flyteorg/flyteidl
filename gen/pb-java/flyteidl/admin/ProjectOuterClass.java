@@ -19,10 +19,18 @@ public final class ProjectOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Globally unique domain name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Globally unique domain name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -139,6 +147,10 @@ public final class ProjectOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Globally unique domain name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
@@ -154,6 +166,10 @@ public final class ProjectOuterClass {
       }
     }
     /**
+     * <pre>
+     * Globally unique domain name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -538,6 +554,10 @@ public final class ProjectOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Globally unique domain name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
@@ -553,6 +573,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * Globally unique domain name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -569,6 +593,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * Globally unique domain name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder setId(
@@ -582,6 +610,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Globally unique domain name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
@@ -591,6 +623,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Globally unique domain name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
@@ -751,10 +787,18 @@ public final class ProjectOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Globally unique project name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * Globally unique project name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -1117,6 +1161,10 @@ public final class ProjectOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * Globally unique project name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
@@ -1132,6 +1180,10 @@ public final class ProjectOuterClass {
       }
     }
     /**
+     * <pre>
+     * Globally unique project name.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1759,6 +1811,10 @@ public final class ProjectOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * Globally unique project name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
@@ -1774,6 +1830,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * Globally unique project name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1790,6 +1850,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * Globally unique project name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder setId(
@@ -1803,6 +1867,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Globally unique project name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
@@ -1812,6 +1880,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Globally unique project name.
+       * </pre>
+       *
        * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
@@ -2532,6 +2604,11 @@ public final class ProjectOuterClass {
         getTokenBytes();
   }
   /**
+   * <pre>
+   * Represents a list of projects.
+   * See :ref:`ref_flyteidl.admin.Project` for more details
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.Projects}
    */
   public  static final class Projects extends
@@ -2870,6 +2947,11 @@ public final class ProjectOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Represents a list of projects.
+     * See :ref:`ref_flyteidl.admin.Project` for more details
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.Projects}
      */
     public static final class Builder extends
@@ -3456,6 +3538,7 @@ public final class ProjectOuterClass {
     /**
      * <pre>
      * Indicates the number of projects to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 1;</code>
@@ -3535,6 +3618,11 @@ public final class ProjectOuterClass {
     flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
   }
   /**
+   * <pre>
+   * Request to retrieve a list of projects matching specified filters. 
+   * See :ref:`ref_flyteidl.admin.Project` for more details
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectListRequest}
    */
   public  static final class ProjectListRequest extends
@@ -3642,6 +3730,7 @@ public final class ProjectOuterClass {
     /**
      * <pre>
      * Indicates the number of projects to be returned.
+     * +required
      * </pre>
      *
      * <code>uint32 limit = 1;</code>
@@ -3970,6 +4059,11 @@ public final class ProjectOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Request to retrieve a list of projects matching specified filters. 
+     * See :ref:`ref_flyteidl.admin.Project` for more details
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectListRequest}
      */
     public static final class Builder extends
@@ -4148,6 +4242,7 @@ public final class ProjectOuterClass {
       /**
        * <pre>
        * Indicates the number of projects to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 1;</code>
@@ -4158,6 +4253,7 @@ public final class ProjectOuterClass {
       /**
        * <pre>
        * Indicates the number of projects to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 1;</code>
@@ -4171,6 +4267,7 @@ public final class ProjectOuterClass {
       /**
        * <pre>
        * Indicates the number of projects to be returned.
+       * +required
        * </pre>
        *
        * <code>uint32 limit = 1;</code>
@@ -4599,19 +4696,36 @@ public final class ProjectOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     boolean hasProject();
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     flyteidl.admin.ProjectOuterClass.Project getProject();
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     flyteidl.admin.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder();
   }
   /**
+   * <pre>
+   * Adds a new user-project within the Flyte deployment.
+   * See :ref:`ref_flyteidl.admin.Project` for more details
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectRegisterRequest}
    */
   public  static final class ProjectRegisterRequest extends
@@ -4698,18 +4812,30 @@ public final class ProjectOuterClass {
     public static final int PROJECT_FIELD_NUMBER = 1;
     private flyteidl.admin.ProjectOuterClass.Project project_;
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     public boolean hasProject() {
       return project_ != null;
     }
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     public flyteidl.admin.ProjectOuterClass.Project getProject() {
       return project_ == null ? flyteidl.admin.ProjectOuterClass.Project.getDefaultInstance() : project_;
     }
     /**
+     * <pre>
+     * +required
+     * </pre>
+     *
      * <code>.flyteidl.admin.Project project = 1;</code>
      */
     public flyteidl.admin.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder() {
@@ -4877,6 +5003,11 @@ public final class ProjectOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Adds a new user-project within the Flyte deployment.
+     * See :ref:`ref_flyteidl.admin.Project` for more details
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectRegisterRequest}
      */
     public static final class Builder extends
@@ -5035,12 +5166,20 @@ public final class ProjectOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.ProjectOuterClass.Project, flyteidl.admin.ProjectOuterClass.Project.Builder, flyteidl.admin.ProjectOuterClass.ProjectOrBuilder> projectBuilder_;
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public boolean hasProject() {
         return projectBuilder_ != null || project_ != null;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public flyteidl.admin.ProjectOuterClass.Project getProject() {
@@ -5051,6 +5190,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public Builder setProject(flyteidl.admin.ProjectOuterClass.Project value) {
@@ -5067,6 +5210,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public Builder setProject(
@@ -5081,6 +5228,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public Builder mergeProject(flyteidl.admin.ProjectOuterClass.Project value) {
@@ -5099,6 +5250,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public Builder clearProject() {
@@ -5113,6 +5268,10 @@ public final class ProjectOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public flyteidl.admin.ProjectOuterClass.Project.Builder getProjectBuilder() {
@@ -5121,6 +5280,10 @@ public final class ProjectOuterClass {
         return getProjectFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       public flyteidl.admin.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder() {
@@ -5132,6 +5295,10 @@ public final class ProjectOuterClass {
         }
       }
       /**
+       * <pre>
+       * +required
+       * </pre>
+       *
        * <code>.flyteidl.admin.Project project = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5205,6 +5372,10 @@ public final class ProjectOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Purposefully empty, may be updated in the future.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectRegisterResponse}
    */
   public  static final class ProjectRegisterResponse extends
@@ -5419,6 +5590,10 @@ public final class ProjectOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Purposefully empty, may be updated in the future.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectRegisterResponse}
      */
     public static final class Builder extends
@@ -5616,6 +5791,10 @@ public final class ProjectOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Purposefully empty, may be updated in the future.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ProjectUpdateResponse}
    */
   public  static final class ProjectUpdateResponse extends
@@ -5830,6 +6009,10 @@ public final class ProjectOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Purposefully empty, may be updated in the future.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ProjectUpdateResponse}
      */
     public static final class Builder extends

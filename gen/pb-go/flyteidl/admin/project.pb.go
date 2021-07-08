@@ -55,6 +55,7 @@ func (Project_ProjectState) EnumDescriptor() ([]byte, []int) {
 // Namespace within a project commonly used to differentiate between different service instances.
 // e.g. "production", "development", etc.
 type Domain struct {
+	// Globally unique domain name.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Display name.
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -104,6 +105,7 @@ func (m *Domain) GetName() string {
 
 // Top-level namespace used to classify different entities like workflows and executions.
 type Project struct {
+	// Globally unique project name.
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Display name.
 	Name        string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -185,6 +187,8 @@ func (m *Project) GetState() Project_ProjectState {
 	return Project_ACTIVE
 }
 
+// Represents a list of projects.
+// See :ref:`ref_flyteidl.admin.Project` for more details
 type Projects struct {
 	Projects []*Project `protobuf:"bytes,1,rep,name=projects,proto3" json:"projects,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
@@ -234,8 +238,11 @@ func (m *Projects) GetToken() string {
 	return ""
 }
 
+// Request to retrieve a list of projects matching specified filters.
+// See :ref:`ref_flyteidl.admin.Project` for more details
 type ProjectListRequest struct {
 	// Indicates the number of projects to be returned.
+	// +required
 	Limit uint32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, this server-provided token can be used to fetch the next page
 	// in a query.
@@ -306,7 +313,10 @@ func (m *ProjectListRequest) GetSortBy() *Sort {
 	return nil
 }
 
+// Adds a new user-project within the Flyte deployment.
+// See :ref:`ref_flyteidl.admin.Project` for more details
 type ProjectRegisterRequest struct {
+	// +required
 	Project              *Project `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -345,6 +355,7 @@ func (m *ProjectRegisterRequest) GetProject() *Project {
 	return nil
 }
 
+// Purposefully empty, may be updated in the future.
 type ProjectRegisterResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -376,6 +387,7 @@ func (m *ProjectRegisterResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ProjectRegisterResponse proto.InternalMessageInfo
 
+// Purposefully empty, may be updated in the future.
 type ProjectUpdateResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

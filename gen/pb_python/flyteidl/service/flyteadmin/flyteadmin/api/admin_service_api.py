@@ -34,7 +34,7 @@ class AdminServiceApi(object):
         self.api_client = api_client
 
     def create_execution(self, body, **kwargs):  # noqa: E501
-        """create_execution  # noqa: E501
+        """Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
         Create a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -56,7 +56,7 @@ class AdminServiceApi(object):
             return data
 
     def create_execution_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_execution  # noqa: E501
+        """Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
         Create a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -133,7 +133,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_launch_plan(self, body, **kwargs):  # noqa: E501
-        """create_launch_plan  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition  # noqa: E501
 
         Create and register a launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class AdminServiceApi(object):
             return data
 
     def create_launch_plan_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_launch_plan  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition  # noqa: E501
 
         Create and register a launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -232,7 +232,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_node_event(self, body, **kwargs):  # noqa: E501
-        """create_node_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.  # noqa: E501
 
         Create a node execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -254,7 +254,7 @@ class AdminServiceApi(object):
             return data
 
     def create_node_event_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_node_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.  # noqa: E501
 
         Create a node execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -331,7 +331,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_task(self, body, **kwargs):  # noqa: E501
-        """create_task  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.Task` definition  # noqa: E501
 
         Create and register a task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -353,7 +353,7 @@ class AdminServiceApi(object):
             return data
 
     def create_task_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_task  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.Task` definition  # noqa: E501
 
         Create and register a task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -430,7 +430,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_task_event(self, body, **kwargs):  # noqa: E501
-        """create_task_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.  # noqa: E501
 
         Create a task execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -452,7 +452,7 @@ class AdminServiceApi(object):
             return data
 
     def create_task_event_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_task_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.  # noqa: E501
 
         Create a task execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -529,7 +529,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_workflow(self, body, **kwargs):  # noqa: E501
-        """create_workflow  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition  # noqa: E501
 
         Create and register a workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -551,7 +551,7 @@ class AdminServiceApi(object):
             return data
 
     def create_workflow_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_workflow  # noqa: E501
+        """Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition  # noqa: E501
 
         Create and register a workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -628,7 +628,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def create_workflow_event(self, body, **kwargs):  # noqa: E501
-        """create_workflow_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.  # noqa: E501
 
         Create a workflow execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -650,7 +650,7 @@ class AdminServiceApi(object):
             return data
 
     def create_workflow_event_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create_workflow_event  # noqa: E501
+        """Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.  # noqa: E501
 
         Create a workflow execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -727,7 +727,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def delete_project_domain_attributes(self, project, domain, body, **kwargs):  # noqa: E501
-        """delete_project_domain_attributes  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Delete the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -736,8 +736,8 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
         :param AdminProjectDomainAttributesDeleteRequest body: (required)
         :return: AdminProjectDomainAttributesDeleteResponse
                  If the method is called asynchronously,
@@ -751,7 +751,7 @@ class AdminServiceApi(object):
             return data
 
     def delete_project_domain_attributes_with_http_info(self, project, domain, body, **kwargs):  # noqa: E501
-        """delete_project_domain_attributes  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Delete the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -760,8 +760,8 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
         :param AdminProjectDomainAttributesDeleteRequest body: (required)
         :return: AdminProjectDomainAttributesDeleteResponse
                  If the method is called asynchronously,
@@ -842,7 +842,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def delete_workflow_attributes(self, project, domain, workflow, body, **kwargs):  # noqa: E501
-        """delete_workflow_attributes  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Delete the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -851,9 +851,9 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str workflow: Workflow name which this set of attributes references. (required)
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
         :param AdminWorkflowAttributesDeleteRequest body: (required)
         :return: AdminWorkflowAttributesDeleteResponse
                  If the method is called asynchronously,
@@ -867,7 +867,7 @@ class AdminServiceApi(object):
             return data
 
     def delete_workflow_attributes_with_http_info(self, project, domain, workflow, body, **kwargs):  # noqa: E501
-        """delete_workflow_attributes  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Delete the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -876,9 +876,9 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str workflow: Workflow name which this set of attributes references. (required)
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
         :param AdminWorkflowAttributesDeleteRequest body: (required)
         :return: AdminWorkflowAttributesDeleteResponse
                  If the method is called asynchronously,
@@ -965,7 +965,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_active_launch_plan(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_active_launch_plan  # noqa: E501
+        """Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Retrieve the active launch plan version specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -989,7 +989,7 @@ class AdminServiceApi(object):
             return data
 
     def get_active_launch_plan_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_active_launch_plan  # noqa: E501
+        """Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Retrieve the active launch plan version specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1080,7 +1080,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_execution(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Retrieve an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1104,7 +1104,7 @@ class AdminServiceApi(object):
             return data
 
     def get_execution_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Retrieve an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1195,7 +1195,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_execution_data(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Retrieve input and output data from an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1219,7 +1219,7 @@ class AdminServiceApi(object):
             return data
 
     def get_execution_data_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Retrieve input and output data from an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1310,7 +1310,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_launch_plan(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_launch_plan  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.  # noqa: E501
 
         Retrieve an existing launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1336,7 +1336,7 @@ class AdminServiceApi(object):
             return data
 
     def get_launch_plan_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_launch_plan  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.  # noqa: E501
 
         Retrieve an existing launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1437,7 +1437,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_named_entity(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_named_entity  # noqa: E501
+        """Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
         Retrieve a NamedEntity object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1446,7 +1446,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: (required)
+        :param str resource_type: Resource type of the metadata to get. One of Task, Workflow or LaunchPlan. +required (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
@@ -1462,7 +1462,7 @@ class AdminServiceApi(object):
             return data
 
     def get_named_entity_with_http_info(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """get_named_entity  # noqa: E501
+        """Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
         Retrieve a NamedEntity object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1471,7 +1471,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: (required)
+        :param str resource_type: Resource type of the metadata to get. One of Task, Workflow or LaunchPlan. +required (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
@@ -1560,7 +1560,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_node_execution(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Retrieve an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1585,7 +1585,7 @@ class AdminServiceApi(object):
             return data
 
     def get_node_execution_with_http_info(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Retrieve an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1683,7 +1683,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_node_execution_data(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Retrieve input and output data from an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1708,7 +1708,7 @@ class AdminServiceApi(object):
             return data
 
     def get_node_execution_data_with_http_info(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
-        """get_node_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Retrieve input and output data from an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1806,7 +1806,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_project_domain_attributes(self, project, domain, **kwargs):  # noqa: E501
-        """get_project_domain_attributes  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Retrieve the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1815,9 +1815,9 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminProjectDomainAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1830,7 +1830,7 @@ class AdminServiceApi(object):
             return data
 
     def get_project_domain_attributes_with_http_info(self, project, domain, **kwargs):  # noqa: E501
-        """get_project_domain_attributes  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Retrieve the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1839,9 +1839,9 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminProjectDomainAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1917,7 +1917,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_task(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_task  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.Task` definition.  # noqa: E501
 
         Retrieve an existing task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1943,7 +1943,7 @@ class AdminServiceApi(object):
             return data
 
     def get_task_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_task  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.Task` definition.  # noqa: E501
 
         Retrieve an existing task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2044,7 +2044,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_task_execution(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """get_task_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Retrieve an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2075,7 +2075,7 @@ class AdminServiceApi(object):
             return data
 
     def get_task_execution_with_http_info(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """get_task_execution  # noqa: E501
+        """Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Retrieve an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2211,7 +2211,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_task_execution_data(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """get_task_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Retrieve input and output data from an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2242,7 +2242,7 @@ class AdminServiceApi(object):
             return data
 
     def get_task_execution_data_with_http_info(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """get_task_execution_data  # noqa: E501
+        """Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Retrieve input and output data from an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2469,7 +2469,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_workflow(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_workflow  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.  # noqa: E501
 
         Retrieve an existing workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2495,7 +2495,7 @@ class AdminServiceApi(object):
             return data
 
     def get_workflow_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """get_workflow  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.  # noqa: E501
 
         Retrieve an existing workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2596,7 +2596,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def get_workflow_attributes(self, project, domain, workflow, **kwargs):  # noqa: E501
-        """get_workflow_attributes  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Retrieve the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2605,10 +2605,10 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str workflow: Workflow name which this set of attributes references. (required)
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminWorkflowAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2621,7 +2621,7 @@ class AdminServiceApi(object):
             return data
 
     def get_workflow_attributes_with_http_info(self, project, domain, workflow, **kwargs):  # noqa: E501
-        """get_workflow_attributes  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Retrieve the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2630,10 +2630,10 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Unique project id which this set of attributes references. (required)
-        :param str domain: Unique domain id which this set of attributes references. (required)
-        :param str workflow: Workflow name which this set of attributes references. (required)
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminWorkflowAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2715,7 +2715,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_active_launch_plans(self, project, domain, **kwargs):  # noqa: E501
-        """list_active_launch_plans  # noqa: E501
+        """List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Fetch the active launch plan versions specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2724,12 +2724,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required. (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required. (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2742,7 +2742,7 @@ class AdminServiceApi(object):
             return data
 
     def list_active_launch_plans_with_http_info(self, project, domain, **kwargs):  # noqa: E501
-        """list_active_launch_plans  # noqa: E501
+        """List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Fetch the active launch plan versions specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2751,12 +2751,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required. (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required. (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2838,7 +2838,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_executions(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_executions  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Fetch existing workflow executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2850,11 +2850,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2867,7 +2867,7 @@ class AdminServiceApi(object):
             return data
 
     def list_executions_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_executions  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Fetch existing workflow executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2879,11 +2879,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2969,7 +2969,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_launch_plan_ids(self, project, domain, **kwargs):  # noqa: E501
-        """list_launch_plan_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.  # noqa: E501
 
         Fetch existing launch plan definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2978,12 +2978,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -2997,7 +2997,7 @@ class AdminServiceApi(object):
             return data
 
     def list_launch_plan_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
-        """list_launch_plan_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.  # noqa: E501
 
         Fetch existing launch plan definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3006,12 +3006,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -3096,7 +3096,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_launch_plans(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_launch_plans  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
         Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3108,11 +3108,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3125,7 +3125,7 @@ class AdminServiceApi(object):
             return data
 
     def list_launch_plans_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_launch_plans  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
         Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3137,11 +3137,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3231,7 +3231,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_launch_plans2(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_launch_plans2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
         Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3243,11 +3243,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3260,7 +3260,7 @@ class AdminServiceApi(object):
             return data
 
     def list_launch_plans2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_launch_plans2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
         Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3272,11 +3272,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3362,7 +3362,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_matchable_attributes(self, **kwargs):  # noqa: E501
-        """list_matchable_attributes  # noqa: E501
+        """Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.  # noqa: E501
 
         Retrieve a list of MatchableAttributesConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3371,7 +3371,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str resource_type: +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminListMatchableAttributesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3384,7 +3384,7 @@ class AdminServiceApi(object):
             return data
 
     def list_matchable_attributes_with_http_info(self, **kwargs):  # noqa: E501
-        """list_matchable_attributes  # noqa: E501
+        """Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.  # noqa: E501
 
         Retrieve a list of MatchableAttributesConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3393,7 +3393,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
+        :param str resource_type: +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.
         :return: AdminListMatchableAttributesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3457,7 +3457,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_named_entities(self, resource_type, project, domain, **kwargs):  # noqa: E501
-        """list_named_entities  # noqa: E501
+        """Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.  # noqa: E501
 
         Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3466,13 +3466,13 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: (required)
-        :param str project: Name of the project that contains the identifiers. (required)
+        :param str resource_type: Resource type of the metadata to query. One of Task, Workflow or LaunchPlan. +required (required)
+        :param str project: Name of the project that contains the identifiers. +required (required)
         :param str domain: Name of the domain the identifiers belongs to within the project. (required)
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityList
                  If the method is called asynchronously,
@@ -3486,7 +3486,7 @@ class AdminServiceApi(object):
             return data
 
     def list_named_entities_with_http_info(self, resource_type, project, domain, **kwargs):  # noqa: E501
-        """list_named_entities  # noqa: E501
+        """Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.  # noqa: E501
 
         Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3495,13 +3495,13 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: (required)
-        :param str project: Name of the project that contains the identifiers. (required)
+        :param str resource_type: Resource type of the metadata to query. One of Task, Workflow or LaunchPlan. +required (required)
+        :param str project: Name of the project that contains the identifiers. +required (required)
         :param str domain: Name of the domain the identifiers belongs to within the project. (required)
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityList
                  If the method is called asynchronously,
@@ -3592,7 +3592,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_node_executions(self, workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, **kwargs):  # noqa: E501
-        """list_node_executions  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Fetch existing node executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3604,11 +3604,11 @@ class AdminServiceApi(object):
         :param str workflow_execution_id_project: Name of the project the resource belongs to. (required)
         :param str workflow_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str workflow_execution_id_name: User or system provided value for the resource. (required)
-        :param int limit: Indicates the number of resources to be returned.
-        :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token:
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str unique_parent_id: Unique identifier of the parent node in the execution +optional.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
@@ -3622,7 +3622,7 @@ class AdminServiceApi(object):
             return data
 
     def list_node_executions_with_http_info(self, workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, **kwargs):  # noqa: E501
-        """list_node_executions  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
         Fetch existing node executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3634,11 +3634,11 @@ class AdminServiceApi(object):
         :param str workflow_execution_id_project: Name of the project the resource belongs to. (required)
         :param str workflow_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str workflow_execution_id_name: User or system provided value for the resource. (required)
-        :param int limit: Indicates the number of resources to be returned.
-        :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token:
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str unique_parent_id: Unique identifier of the parent node in the execution +optional.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
@@ -3731,7 +3731,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_node_executions_for_task(self, task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, **kwargs):  # noqa: E501
-        """list_node_executions_for_task  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Fetch child node executions launched by the specified task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3750,11 +3750,11 @@ class AdminServiceApi(object):
         :param str task_execution_id_task_id_version: Specific version of the resource. (required)
         :param int task_execution_id_retry_attempt: (required)
         :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3767,7 +3767,7 @@ class AdminServiceApi(object):
             return data
 
     def list_node_executions_for_task_with_http_info(self, task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, **kwargs):  # noqa: E501
-        """list_node_executions_for_task  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Fetch child node executions launched by the specified task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3786,11 +3786,11 @@ class AdminServiceApi(object):
         :param str task_execution_id_task_id_version: Specific version of the resource. (required)
         :param int task_execution_id_retry_attempt: (required)
         :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3918,7 +3918,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_projects(self, **kwargs):  # noqa: E501
-        """list_projects  # noqa: E501
+        """Fetches a list of :ref:`ref_flyteidl.admin.Project`  # noqa: E501
 
         Fetch registered projects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3927,11 +3927,11 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: Indicates the number of projects to be returned.
+        :param int limit: Indicates the number of projects to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminProjects
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3944,7 +3944,7 @@ class AdminServiceApi(object):
             return data
 
     def list_projects_with_http_info(self, **kwargs):  # noqa: E501
-        """list_projects  # noqa: E501
+        """Fetches a list of :ref:`ref_flyteidl.admin.Project`  # noqa: E501
 
         Fetch registered projects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3953,11 +3953,11 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: Indicates the number of projects to be returned.
+        :param int limit: Indicates the number of projects to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminProjects
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4029,7 +4029,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_task_executions(self, node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, **kwargs):  # noqa: E501
-        """list_task_executions  # noqa: E501
+        """Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Fetch existing task executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4042,11 +4042,11 @@ class AdminServiceApi(object):
         :param str node_execution_id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str node_execution_id_execution_id_name: User or system provided value for the resource. (required)
         :param str node_execution_id_node_id: (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4059,7 +4059,7 @@ class AdminServiceApi(object):
             return data
 
     def list_task_executions_with_http_info(self, node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, **kwargs):  # noqa: E501
-        """list_task_executions  # noqa: E501
+        """Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
         Fetch existing task executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4072,11 +4072,11 @@ class AdminServiceApi(object):
         :param str node_execution_id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str node_execution_id_execution_id_name: User or system provided value for the resource. (required)
         :param str node_execution_id_node_id: (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4172,7 +4172,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_task_ids(self, project, domain, **kwargs):  # noqa: E501
-        """list_task_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.  # noqa: E501
 
         Fetch existing task definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4181,12 +4181,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -4200,7 +4200,7 @@ class AdminServiceApi(object):
             return data
 
     def list_task_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
-        """list_task_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.  # noqa: E501
 
         Fetch existing task definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4209,12 +4209,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -4299,7 +4299,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_tasks(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_tasks  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
         Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4311,11 +4311,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4328,7 +4328,7 @@ class AdminServiceApi(object):
             return data
 
     def list_tasks_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_tasks  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
         Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4340,11 +4340,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4434,7 +4434,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_tasks2(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_tasks2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
         Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4446,11 +4446,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4463,7 +4463,7 @@ class AdminServiceApi(object):
             return data
 
     def list_tasks2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_tasks2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
         Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4475,11 +4475,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4565,7 +4565,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_workflow_ids(self, project, domain, **kwargs):  # noqa: E501
-        """list_workflow_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.  # noqa: E501
 
         Fetch an existing workflow definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4574,12 +4574,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -4593,7 +4593,7 @@ class AdminServiceApi(object):
             return data
 
     def list_workflow_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
-        """list_workflow_ids  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.  # noqa: E501
 
         Fetch an existing workflow definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4602,12 +4602,12 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str project: Name of the project that contains the identifiers. (required)
-        :param str domain: Name of the domain the identifiers belongs to within the project. (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param str project: Name of the project that contains the identifiers. +required (required)
+        :param str domain: Name of the domain the identifiers belongs to within the project. +required (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :param str filters: Indicates a list of filters passed as string. +optional.
         :return: AdminNamedEntityIdentifierList
                  If the method is called asynchronously,
@@ -4692,7 +4692,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_workflows(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_workflows  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
         Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4704,11 +4704,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4721,7 +4721,7 @@ class AdminServiceApi(object):
             return data
 
     def list_workflows_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
-        """list_workflows  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
         Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4733,11 +4733,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4827,7 +4827,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def list_workflows2(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_workflows2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
         Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4839,11 +4839,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4856,7 +4856,7 @@ class AdminServiceApi(object):
             return data
 
     def list_workflows2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
-        """list_workflows2  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
         Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4868,11 +4868,11 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
-        :param int limit: Indicates the number of resources to be returned.
+        :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, this server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
-        :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
-        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5180,7 +5180,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def register_project(self, body, **kwargs):  # noqa: E501
-        """register_project  # noqa: E501
+        """Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5202,7 +5202,7 @@ class AdminServiceApi(object):
             return data
 
     def register_project_with_http_info(self, body, **kwargs):  # noqa: E501
-        """register_project  # noqa: E501
+        """Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.  # noqa: E501
 
         Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5279,7 +5279,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def relaunch_execution(self, body, **kwargs):  # noqa: E501
-        """relaunch_execution  # noqa: E501
+        """Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
         Relaunch a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5301,7 +5301,7 @@ class AdminServiceApi(object):
             return data
 
     def relaunch_execution_with_http_info(self, body, **kwargs):  # noqa: E501
-        """relaunch_execution  # noqa: E501
+        """Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
         Relaunch a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5378,7 +5378,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def terminate_execution(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
-        """terminate_execution  # noqa: E501
+        """Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Terminate the active workflow execution specified in the request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5403,7 +5403,7 @@ class AdminServiceApi(object):
             return data
 
     def terminate_execution_with_http_info(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
-        """terminate_execution  # noqa: E501
+        """Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
         Terminate the active workflow execution specified in the request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5501,7 +5501,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_launch_plan(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
-        """update_launch_plan  # noqa: E501
+        """Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5527,7 +5527,7 @@ class AdminServiceApi(object):
             return data
 
     def update_launch_plan_with_http_info(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
-        """update_launch_plan  # noqa: E501
+        """Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
         Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5632,7 +5632,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_named_entity(self, resource_type, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
-        """update_named_entity  # noqa: E501
+        """Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
         Update the fields associated with a NamedEntity  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5641,7 +5641,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: Resource type of the metadata to update (required)
+        :param str resource_type: Resource type of the metadata to update +required (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
@@ -5658,7 +5658,7 @@ class AdminServiceApi(object):
             return data
 
     def update_named_entity_with_http_info(self, resource_type, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
-        """update_named_entity  # noqa: E501
+        """Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
         Update the fields associated with a NamedEntity  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5667,7 +5667,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_type: Resource type of the metadata to update (required)
+        :param str resource_type: Resource type of the metadata to update +required (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
@@ -5763,7 +5763,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_project(self, id, body, **kwargs):  # noqa: E501
-        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
+        """Updates an existing :ref:`ref_flyteidl.admin.Project`  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
         Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5772,7 +5772,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: Globally unique project name. (required)
         :param AdminProject body: (required)
         :return: AdminProjectUpdateResponse
                  If the method is called asynchronously,
@@ -5786,7 +5786,7 @@ class AdminServiceApi(object):
             return data
 
     def update_project_with_http_info(self, id, body, **kwargs):  # noqa: E501
-        """flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
+        """Updates an existing :ref:`ref_flyteidl.admin.Project`  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
         Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5795,7 +5795,7 @@ class AdminServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str id: Globally unique project name. (required)
         :param AdminProject body: (required)
         :return: AdminProjectUpdateResponse
                  If the method is called asynchronously,
@@ -5870,7 +5870,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_project_domain_attributes(self, attributes_project, attributes_domain, body, **kwargs):  # noqa: E501
-        """update_project_domain_attributes  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Update the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5894,7 +5894,7 @@ class AdminServiceApi(object):
             return data
 
     def update_project_domain_attributes_with_http_info(self, attributes_project, attributes_domain, body, **kwargs):  # noqa: E501
-        """update_project_domain_attributes  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
         Update the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5985,7 +5985,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def update_workflow_attributes(self, attributes_project, attributes_domain, attributes_workflow, body, **kwargs):  # noqa: E501
-        """update_workflow_attributes  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Update the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6010,7 +6010,7 @@ class AdminServiceApi(object):
             return data
 
     def update_workflow_attributes_with_http_info(self, attributes_project, attributes_domain, attributes_workflow, body, **kwargs):  # noqa: E501
-        """update_workflow_attributes  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
         Update the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

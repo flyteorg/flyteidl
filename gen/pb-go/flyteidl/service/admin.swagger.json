@@ -17,6 +17,7 @@
   "paths": {
     "/api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.",
         "description": "Retrieve the active launch plan version specified by input request filters.",
         "operationId": "GetActiveLaunchPlan",
         "responses": {
@@ -57,6 +58,7 @@
     },
     "/api/v1/active_launch_plans/{project}/{domain}": {
       "get": {
+        "summary": "List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.",
         "description": "Fetch the active launch plan versions specified by input request filters.",
         "operationId": "ListActiveLaunchPlans",
         "responses": {
@@ -70,21 +72,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Name of the project that contains the identifiers.",
+            "description": "Name of the project that contains the identifiers.\n+required.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+required.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -99,14 +101,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -124,6 +126,7 @@
     },
     "/api/v1/children/task_executions/{task_execution_id.node_execution_id.execution_id.project}/{task_execution_id.node_execution_id.execution_id.domain}/{task_execution_id.node_execution_id.execution_id.name}/{task_execution_id.node_execution_id.node_id}/{task_execution_id.task_id.project}/{task_execution_id.task_id.domain}/{task_execution_id.task_id.name}/{task_execution_id.task_id.version}/{task_execution_id.retry_attempt}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.",
         "description": "Fetch child node executions launched by the specified task execution.",
         "operationId": "ListNodeExecutionsForTask",
         "responses": {
@@ -214,7 +217,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -236,14 +239,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -261,6 +264,7 @@
     },
     "/api/v1/data/executions/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.",
         "description": "Retrieve input and output data from an existing workflow execution.",
         "operationId": "GetExecutionData",
         "responses": {
@@ -301,6 +305,7 @@
     },
     "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
+        "summary": "Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.",
         "description": "Retrieve input and output data from an existing node execution.",
         "operationId": "GetNodeExecutionData",
         "responses": {
@@ -347,6 +352,7 @@
     },
     "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
       "get": {
+        "summary": "Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.",
         "description": "Retrieve input and output data from an existing task execution.",
         "operationId": "GetTaskExecutionData",
         "responses": {
@@ -443,6 +449,7 @@
     },
     "/api/v1/events/nodes": {
       "post": {
+        "summary": "Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.",
         "description": "Create a node execution event recording a phase transition.",
         "operationId": "CreateNodeEvent",
         "responses": {
@@ -470,6 +477,7 @@
     },
     "/api/v1/events/tasks": {
       "post": {
+        "summary": "Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.",
         "description": "Create a task execution event recording a phase transition.",
         "operationId": "CreateTaskEvent",
         "responses": {
@@ -497,6 +505,7 @@
     },
     "/api/v1/events/workflows": {
       "post": {
+        "summary": "Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.",
         "description": "Create a workflow execution event recording a phase transition.",
         "operationId": "CreateWorkflowEvent",
         "responses": {
@@ -524,6 +533,7 @@
     },
     "/api/v1/executions": {
       "post": {
+        "summary": "Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`",
         "description": "Create a workflow execution.",
         "operationId": "CreateExecution",
         "responses": {
@@ -578,6 +588,7 @@
     },
     "/api/v1/executions/relaunch": {
       "post": {
+        "summary": "Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`",
         "description": "Relaunch a workflow execution.",
         "operationId": "RelaunchExecution",
         "responses": {
@@ -605,6 +616,7 @@
     },
     "/api/v1/executions/{id.project}/{id.domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Execution`.",
         "description": "Fetch existing workflow executions matching input filters.",
         "operationId": "ListExecutions",
         "responses": {
@@ -639,7 +651,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -661,14 +673,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -686,6 +698,7 @@
     },
     "/api/v1/executions/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetches a :ref:`ref_flyteidl.admin.Execution`.",
         "description": "Retrieve an existing workflow execution.",
         "operationId": "GetExecution",
         "responses": {
@@ -724,6 +737,7 @@
         ]
       },
       "delete": {
+        "summary": "Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.",
         "description": "Terminate the active workflow execution specified in the request.",
         "operationId": "TerminateExecution",
         "responses": {
@@ -772,6 +786,7 @@
     },
     "/api/v1/launch_plan_ids/{project}/{domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.",
         "description": "Fetch existing launch plan definition identifiers matching input filters.",
         "operationId": "ListLaunchPlanIds",
         "responses": {
@@ -785,21 +800,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Name of the project that contains the identifiers.",
+            "description": "Name of the project that contains the identifiers.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -814,14 +829,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -846,6 +861,7 @@
     },
     "/api/v1/launch_plans": {
       "post": {
+        "summary": "Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition",
         "description": "Create and register a launch plan definition.",
         "operationId": "CreateLaunchPlan",
         "responses": {
@@ -881,6 +897,7 @@
     },
     "/api/v1/launch_plans/{id.project}/{id.domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.",
         "description": "Fetch existing launch plan definitions matching input filters.",
         "operationId": "ListLaunchPlans2",
         "responses": {
@@ -915,7 +932,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -937,14 +954,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -962,6 +979,7 @@
     },
     "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.",
         "description": "Fetch existing launch plan definitions matching input filters.",
         "operationId": "ListLaunchPlans",
         "responses": {
@@ -996,7 +1014,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1018,14 +1036,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1043,6 +1061,7 @@
     },
     "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
+        "summary": "Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.",
         "description": "Retrieve an existing launch plan definition.",
         "operationId": "GetLaunchPlan",
         "responses": {
@@ -1103,6 +1122,7 @@
         ]
       },
       "put": {
+        "summary": "Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.",
         "description": "Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.",
         "operationId": "UpdateLaunchPlan",
         "responses": {
@@ -1158,6 +1178,7 @@
     },
     "/api/v1/matchable_attributes": {
       "get": {
+        "summary": "Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.",
         "description": "Retrieve a list of MatchableAttributesConfiguration objects.",
         "operationId": "ListMatchableAttributes",
         "responses": {
@@ -1171,7 +1192,7 @@
         "parameters": [
           {
             "name": "resource_type",
-            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
+            "description": "+required.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1194,6 +1215,7 @@
     },
     "/api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.",
         "description": "Retrieve a NamedEntity object.",
         "operationId": "GetNamedEntity",
         "responses": {
@@ -1207,6 +1229,7 @@
         "parameters": [
           {
             "name": "resource_type",
+            "description": "Resource type of the metadata to get. One of Task, Workflow or LaunchPlan.\n+required",
             "in": "path",
             "required": true,
             "type": "string",
@@ -1245,6 +1268,7 @@
         ]
       },
       "put": {
+        "summary": "Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.",
         "description": "Update the fields associated with a NamedEntity",
         "operationId": "UpdateNamedEntity",
         "responses": {
@@ -1258,7 +1282,7 @@
         "parameters": [
           {
             "name": "resource_type",
-            "description": "Resource type of the metadata to update",
+            "description": "Resource type of the metadata to update\n+required",
             "in": "path",
             "required": true,
             "type": "string",
@@ -1307,6 +1331,7 @@
     },
     "/api/v1/named_entities/{resource_type}/{project}/{domain}": {
       "get": {
+        "summary": "Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.",
         "description": "Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.",
         "operationId": "ListNamedEntities",
         "responses": {
@@ -1320,6 +1345,7 @@
         "parameters": [
           {
             "name": "resource_type",
+            "description": "Resource type of the metadata to query. One of Task, Workflow or LaunchPlan.\n+required",
             "in": "path",
             "required": true,
             "type": "string",
@@ -1333,7 +1359,7 @@
           },
           {
             "name": "project",
-            "description": "Name of the project that contains the identifiers.",
+            "description": "Name of the project that contains the identifiers.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1362,14 +1388,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1440,6 +1466,7 @@
     },
     "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
+        "summary": "Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.",
         "description": "Retrieve an existing node execution.",
         "operationId": "GetNodeExecution",
         "responses": {
@@ -1486,6 +1513,7 @@
     },
     "/api/v1/node_executions/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.",
         "description": "Fetch existing node executions matching input filters.",
         "operationId": "ListNodeExecutions",
         "responses": {
@@ -1520,7 +1548,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1528,7 +1556,6 @@
           },
           {
             "name": "token",
-            "description": "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page\nin a query.\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -1542,14 +1569,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1574,6 +1601,7 @@
     },
     "/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}": {
       "put": {
+        "summary": "Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.",
         "description": "Update the customized resource attributes associated with a project-domain combination",
         "operationId": "UpdateProjectDomainAttributes",
         "responses": {
@@ -1615,6 +1643,7 @@
     },
     "/api/v1/project_domain_attributes/{project}/{domain}": {
       "get": {
+        "summary": "Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.",
         "description": "Retrieve the customized resource attributes associated with a project-domain combination",
         "operationId": "GetProjectDomainAttributes",
         "responses": {
@@ -1628,21 +1657,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Unique project id which this set of attributes references.",
+            "description": "Unique project id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Unique domain id which this set of attributes references.",
+            "description": "Unique domain id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "resource_type",
-            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
+            "description": "Which type of matchable attributes to return.\n+required.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1663,6 +1692,7 @@
         ]
       },
       "delete": {
+        "summary": "Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.",
         "description": "Delete the customized resource attributes associated with a project-domain combination",
         "operationId": "DeleteProjectDomainAttributes",
         "responses": {
@@ -1676,14 +1706,14 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Unique project id which this set of attributes references.",
+            "description": "Unique project id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Unique domain id which this set of attributes references.",
+            "description": "Unique domain id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1704,6 +1734,7 @@
     },
     "/api/v1/projects": {
       "get": {
+        "summary": "Fetches a list of :ref:`ref_flyteidl.admin.Project`",
         "description": "Fetch registered projects.",
         "operationId": "ListProjects",
         "responses": {
@@ -1717,7 +1748,7 @@
         "parameters": [
           {
             "name": "limit",
-            "description": "Indicates the number of projects to be returned.",
+            "description": "Indicates the number of projects to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1739,14 +1770,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1762,6 +1793,7 @@
         ]
       },
       "post": {
+        "summary": "Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.",
         "description": "Register a project.",
         "operationId": "RegisterProject",
         "responses": {
@@ -1789,7 +1821,7 @@
     },
     "/api/v1/projects/{id}": {
       "put": {
-        "summary": "flyteidl.admin.Project should be passed but the domains property should be empty;\nit will be ignored in the handler as domains cannot be updated via this API.",
+        "summary": "Updates an existing :ref:`ref_flyteidl.admin.Project` \nflyteidl.admin.Project should be passed but the domains property should be empty;\nit will be ignored in the handler as domains cannot be updated via this API.",
         "description": "Update a project.",
         "operationId": "UpdateProject",
         "responses": {
@@ -1803,6 +1835,7 @@
         "parameters": [
           {
             "name": "id",
+            "description": "Globally unique project name.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1823,6 +1856,7 @@
     },
     "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
       "get": {
+        "summary": "Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.",
         "description": "Retrieve an existing task execution.",
         "operationId": "GetTaskExecution",
         "responses": {
@@ -1919,6 +1953,7 @@
     },
     "/api/v1/task_executions/{node_execution_id.execution_id.project}/{node_execution_id.execution_id.domain}/{node_execution_id.execution_id.name}/{node_execution_id.node_id}": {
       "get": {
+        "summary": "Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.",
         "description": "Fetch existing task executions matching input filters.",
         "operationId": "ListTaskExecutions",
         "responses": {
@@ -1959,7 +1994,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1981,14 +2016,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2006,6 +2041,7 @@
     },
     "/api/v1/task_ids/{project}/{domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.",
         "description": "Fetch existing task definition identifiers matching input filters.",
         "operationId": "ListTaskIds",
         "responses": {
@@ -2019,21 +2055,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Name of the project that contains the identifiers.",
+            "description": "Name of the project that contains the identifiers.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2048,14 +2084,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2080,6 +2116,7 @@
     },
     "/api/v1/tasks": {
       "post": {
+        "summary": "Create and upload a :ref:`ref_flyteidl.admin.Task` definition",
         "description": "Create and register a task definition.",
         "operationId": "CreateTask",
         "responses": {
@@ -2115,6 +2152,7 @@
     },
     "/api/v1/tasks/{id.project}/{id.domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.",
         "description": "Fetch existing task definitions matching input filters.",
         "operationId": "ListTasks2",
         "responses": {
@@ -2149,7 +2187,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2171,14 +2209,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2196,6 +2234,7 @@
     },
     "/api/v1/tasks/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.",
         "description": "Fetch existing task definitions matching input filters.",
         "operationId": "ListTasks",
         "responses": {
@@ -2230,7 +2269,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2252,14 +2291,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2277,6 +2316,7 @@
     },
     "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
+        "summary": "Fetch a :ref:`ref_flyteidl.admin.Task` definition.",
         "description": "Retrieve an existing task definition.",
         "operationId": "GetTask",
         "responses": {
@@ -2356,6 +2396,7 @@
     },
     "/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}": {
       "put": {
+        "summary": "Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
         "description": "Update the customized resource attributes associated with a project, domain and workflow combination",
         "operationId": "UpdateWorkflowAttributes",
         "responses": {
@@ -2404,6 +2445,7 @@
     },
     "/api/v1/workflow_attributes/{project}/{domain}/{workflow}": {
       "get": {
+        "summary": "Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
         "description": "Retrieve the customized resource attributes associated with a project, domain and workflow combination",
         "operationId": "GetWorkflowAttributes",
         "responses": {
@@ -2417,28 +2459,28 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Unique project id which this set of attributes references.",
+            "description": "Unique project id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Unique domain id which this set of attributes references.",
+            "description": "Unique domain id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "workflow",
-            "description": "Workflow name which this set of attributes references.",
+            "description": "Workflow name which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "resource_type",
-            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
+            "description": "Which type of matchable attributes to return.\n+required.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2459,6 +2501,7 @@
         ]
       },
       "delete": {
+        "summary": "Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
         "description": "Delete the customized resource attributes associated with a project, domain and workflow combination",
         "operationId": "DeleteWorkflowAttributes",
         "responses": {
@@ -2472,21 +2515,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Unique project id which this set of attributes references.",
+            "description": "Unique project id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Unique domain id which this set of attributes references.",
+            "description": "Unique domain id which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "workflow",
-            "description": "Workflow name which this set of attributes references.",
+            "description": "Workflow name which this set of attributes references.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
@@ -2507,6 +2550,7 @@
     },
     "/api/v1/workflow_ids/{project}/{domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.",
         "description": "Fetch an existing workflow definition identifiers matching input filters.",
         "operationId": "ListWorkflowIds",
         "responses": {
@@ -2520,21 +2564,21 @@
         "parameters": [
           {
             "name": "project",
-            "description": "Name of the project that contains the identifiers.",
+            "description": "Name of the project that contains the identifiers.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+required",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2549,14 +2593,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2581,6 +2625,7 @@
     },
     "/api/v1/workflows": {
       "post": {
+        "summary": "Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition",
         "description": "Create and register a workflow definition.",
         "operationId": "CreateWorkflow",
         "responses": {
@@ -2616,6 +2661,7 @@
     },
     "/api/v1/workflows/{id.project}/{id.domain}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.",
         "description": "Fetch existing workflow definitions matching input filters.",
         "operationId": "ListWorkflows2",
         "responses": {
@@ -2650,7 +2696,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2672,14 +2718,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2697,6 +2743,7 @@
     },
     "/api/v1/workflows/{id.project}/{id.domain}/{id.name}": {
       "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.",
         "description": "Fetch existing workflow definitions matching input filters.",
         "operationId": "ListWorkflows",
         "responses": {
@@ -2731,7 +2778,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
+            "description": "Indicates the number of resources to be returned.\n+required.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2753,14 +2800,14 @@
           },
           {
             "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "description": "Indicates an attribute to sort the response values.\n+required.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.\n\n - DESCENDING: By default, fields are sorted in descending order.",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2778,6 +2825,7 @@
     },
     "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
+        "summary": "Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.",
         "description": "Retrieve an existing workflow definition.",
         "operationId": "GetWorkflow",
         "responses": {
@@ -2946,7 +2994,7 @@
         "USE_DEFAULT"
       ],
       "default": "FAIL",
-      "description": " - USE_DEFAULT: Uses the system-configured default implementation."
+      "description": " - FAIL: By default, if this plugin is not enabled for a Flyte deployment then execution will fail.\n - USE_DEFAULT: Uses the system-configured default implementation."
     },
     "ProjectProjectState": {
       "type": "string",
@@ -3044,7 +3092,8 @@
         "DESCENDING",
         "ASCENDING"
       ],
-      "default": "DESCENDING"
+      "default": "DESCENDING",
+      "description": " - DESCENDING: By default, fields are sorted in descending order."
     },
     "TaskExecutionMetadataInstanceClass": {
       "type": "string",
@@ -3085,7 +3134,8 @@
           "type": "string",
           "title": "Identifies the entity (if any) responsible for terminating the execution"
         }
-      }
+      },
+      "description": "Specifies metadata around an aborted workflow execution."
     },
     "adminAnnotations": {
       "type": "object",
@@ -3151,13 +3201,15 @@
           "type": "string",
           "title": "ISO 8601 duration as described by https://en.wikipedia.org/wiki/ISO_8601#Durations"
         }
-      }
+      },
+      "description": "Options for schedules to run according to a cron expression."
     },
     "adminDomain": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "description": "Globally unique domain name."
         },
         "name": {
           "type": "string",
@@ -3174,9 +3226,10 @@
           "items": {
             "type": "string"
           },
-          "description": "The list of email addresses recipients for this notification."
+          "title": "The list of email addresses recipients for this notification.\n+required"
         }
-      }
+      },
+      "description": "Defines an email notification specification."
     },
     "adminExecution": {
       "type": "object",
@@ -3201,7 +3254,7 @@
       "properties": {
         "outputs": {
           "$ref": "#/definitions/adminLiteralMapBlob",
-          "description": "A map of outputs in the case of a successful execution."
+          "description": "Output URI in the case of a successful execution."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
@@ -3226,7 +3279,7 @@
         "started_at": {
           "type": "string",
           "format": "date-time",
-          "description": "Reported ime at which the execution began running."
+          "description": "Reported time at which the execution began running."
         },
         "duration": {
           "type": "string",
@@ -3270,11 +3323,11 @@
       "properties": {
         "project": {
           "type": "string",
-          "description": "Name of the project the execution belongs to."
+          "title": "Name of the project the execution belongs to.\n+required"
         },
         "domain": {
           "type": "string",
-          "description": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project."
+          "title": "Name of the domain the execution belongs to.\nA domain can be considered as a subset within a specific project.\n+required"
         },
         "name": {
           "type": "string",
@@ -3282,14 +3335,14 @@
         },
         "spec": {
           "$ref": "#/definitions/adminExecutionSpec",
-          "description": "Additional fields necessary to launch the execution."
+          "title": "Additional fields necessary to launch the execution.\n+optional"
         },
         "inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "The inputs required to start the execution. All required inputs must be\nincluded in this map. If not required and not provided, defaults apply."
+          "title": "The inputs required to start the execution. All required inputs must be\nincluded in this map. If not required and not provided, defaults apply.\n+optional"
         }
       },
-      "description": "Request to launch an execution with the given project, domain and optionally name."
+      "description": "Request to launch an execution with the given project, domain and optionally-assigned name."
     },
     "adminExecutionCreateResponse": {
       "type": "object",
@@ -3314,7 +3367,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Used as a response for request to list executions."
+      "title": "Used as a response for request to list executions.\nSee :ref:`ref_flyteidl.admin.Execution` for more details"
     },
     "adminExecutionMetadata": {
       "type": "object",
@@ -3338,7 +3391,7 @@
         },
         "parent_node_execution": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "title": "Which subworkflow node launched this execution"
+          "title": "Which subworkflow node (if any) launched this execution"
         },
         "reference_execution": {
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
@@ -3382,7 +3435,7 @@
       "properties": {
         "id": {
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
-          "description": "Identifier of the workflow execution to relaunch."
+          "title": "Identifier of the workflow execution to relaunch.\n+required"
         },
         "name": {
           "type": "string",
@@ -3438,10 +3491,10 @@
         "max_parallelism": {
           "type": "integer",
           "format": "int32",
-          "description": "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow.\nThis is useful to achieve fairness. Note: MapTasks are regarded as one unit,\nand parallelism/concurrency of MapTasks is independent from this."
+          "description": "Controls the maximum number of task nodes that can be run in parallel for the entire workflow.\nThis is useful to achieve fairness. Note: MapTasks are regarded as one unit,\nand parallelism/concurrency of MapTasks is independent from this."
         }
       },
-      "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
+      "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
     },
     "adminExecutionTerminateRequest": {
       "type": "object",
@@ -3510,13 +3563,16 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreIdentifier"
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Uniquely identifies a launch plan entity."
         },
         "spec": {
-          "$ref": "#/definitions/adminLaunchPlanSpec"
+          "$ref": "#/definitions/adminLaunchPlanSpec",
+          "description": "User-provided launch plan details, including reference workflow, inputs and other metadata."
         },
         "closure": {
-          "$ref": "#/definitions/adminLaunchPlanClosure"
+          "$ref": "#/definitions/adminLaunchPlanClosure",
+          "description": "Values computed by the flyte platform after launch plan registration."
         }
       },
       "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
@@ -3526,15 +3582,15 @@
       "properties": {
         "state": {
           "$ref": "#/definitions/adminLaunchPlanState",
-          "title": "Indicate the Launch plan phase"
+          "description": "Indicate the Launch plan state."
         },
         "expected_inputs": {
           "$ref": "#/definitions/coreParameterMap",
-          "title": "Indicates the set of inputs to execute the Launch plan"
+          "title": "Indicates the set of inputs expected when creating an execution with the Launch plan"
         },
         "expected_outputs": {
           "$ref": "#/definitions/coreVariableMap",
-          "title": "Indicates the set of outputs from the Launch plan"
+          "title": "Indicates the set of outputs expected to be produced by creating an execution with the Launch plan"
         },
         "created_at": {
           "type": "string",
@@ -3561,7 +3617,7 @@
           "description": "User-provided launch plan details, including reference workflow, inputs and other metadata."
         }
       },
-      "description": "Request to register a launch plan. A LaunchPlanSpec may include a complete or incomplete set of inputs required\nto launch a workflow execution. By default all launch plans are registered in state INACTIVE. If you wish to\nset the state to ACTIVE, you must submit a LaunchPlanUpdateRequest, after you have created a launch plan."
+      "description": "Request to register a launch plan. The included LaunchPlanSpec may have a complete or incomplete set of inputs required\nto launch a workflow execution. By default all launch plans are registered in state INACTIVE. If you wish to\nset the state to ACTIVE, you must submit a LaunchPlanUpdateRequest, after you have successfully created a launch plan."
     },
     "adminLaunchPlanCreateResponse": {
       "type": "object"
@@ -3580,7 +3636,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Response object for list launch plan requests."
+      "title": "Response object for list launch plan requests.\nSee :ref:`ref_flyteidl.admin.LaunchPlan` for more details"
     },
     "adminLaunchPlanMetadata": {
       "type": "object",
@@ -3612,11 +3668,11 @@
         },
         "default_inputs": {
           "$ref": "#/definitions/coreParameterMap",
-          "title": "Input values to be passed for the execution"
+          "description": "Input values to be passed for the execution.\nThese can be overriden when an execution is created with this launch plan."
         },
         "fixed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Fixed, non-overridable inputs for the Launch Plan"
+          "description": "Fixed, non-overridable inputs for the Launch Plan.\nThese can not be overriden when an execution is created with this launch plan."
         },
         "role": {
           "type": "string",
@@ -3646,7 +3702,8 @@
           "description": "Indicates the runtime priority of the execution."
         },
         "raw_output_data_config": {
-          "$ref": "#/definitions/adminRawOutputDataConfig"
+          "$ref": "#/definitions/adminRawOutputDataConfig",
+          "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
         },
         "max_parallelism": {
           "type": "integer",
@@ -3670,14 +3727,14 @@
       "properties": {
         "id": {
           "$ref": "#/definitions/coreIdentifier",
-          "description": "Identifier of launch plan for which to change state."
+          "description": "Identifier of launch plan for which to change state.\n+required."
         },
         "state": {
           "$ref": "#/definitions/adminLaunchPlanState",
-          "description": "Desired state to apply to the launch plan."
+          "description": "Desired state to apply to the launch plan.\n+required."
         }
       },
-      "description": "Request to set the referenced launch plan state to the configured value."
+      "title": "Request to set the referenced launch plan state to the configured value.\nSee :ref:`ref_flyteidl.admin.LaunchPlan` for more details"
     },
     "adminLaunchPlanUpdateResponse": {
       "type": "object",
@@ -3693,7 +3750,7 @@
           }
         }
       },
-      "description": "Response for a request for all matching resource attributes."
+      "title": "Response for a request for all matching resource attributes for a resource type.\nSee :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details"
     },
     "adminLiteralMapBlob": {
       "type": "object",
@@ -3728,7 +3785,7 @@
           "type": "string"
         }
       },
-      "description": "Represents a custom set of attributes applied for either a domain; a domain and project; or\ndomain, project and workflow name."
+      "description": "Represents a custom set of attributes applied for either a domain; a domain and project; or\ndomain, project and workflow name.\nThese are used to override system level defaults for kubernetes cluster resource management,\ndefault execution values, and more all across different levels of specificity."
     },
     "adminMatchableResource": {
       "type": "string",
@@ -3775,16 +3832,18 @@
       "type": "object",
       "properties": {
         "resource_type": {
-          "$ref": "#/definitions/coreResourceType"
+          "$ref": "#/definitions/coreResourceType",
+          "description": "Resource type of the named entity. One of Task, Workflow or LaunchPlan."
         },
         "id": {
           "$ref": "#/definitions/adminNamedEntityIdentifier"
         },
         "metadata": {
-          "$ref": "#/definitions/adminNamedEntityMetadata"
+          "$ref": "#/definitions/adminNamedEntityMetadata",
+          "description": "Additional metadata around a named entity."
         }
       },
-      "title": "Describes information common to a NamedEntity, identified by a project /\ndomain / name / resource type combination"
+      "description": "Encapsulates information common to a NamedEntity, a Flyte resource such as a task,\nworkflow or launch plan. A NamedEntity is exclusively identified by its resource type\nand identifier."
     },
     "adminNamedEntityIdentifier": {
       "type": "object",
@@ -3802,7 +3861,7 @@
           "title": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'"
         }
       },
-      "description": "Encapsulation of fields that identifies a Flyte resource.\nA resource can internally have multiple versions."
+      "description": "Encapsulation of fields that identifies a Flyte resource.\nA Flyte resource can be a task, workflow or launch plan.\nA resource can internally have multiple versions and is uniquely identified\nby project, domain, and name."
     },
     "adminNamedEntityIdentifierList": {
       "type": "object",
@@ -3849,7 +3908,8 @@
           "$ref": "#/definitions/adminNamedEntityState",
           "description": "Shared state across all version of the entity\nAt this point in time, only workflow entities can have their state archived."
         }
-      }
+      },
+      "description": "Additional metadata around a named entity."
     },
     "adminNamedEntityState": {
       "type": "string",
@@ -3866,18 +3926,18 @@
       "properties": {
         "resource_type": {
           "$ref": "#/definitions/coreResourceType",
-          "title": "Resource type of the metadata to update"
+          "title": "Resource type of the metadata to update\n+required"
         },
         "id": {
           "$ref": "#/definitions/adminNamedEntityIdentifier",
-          "title": "Identifier of the metadata to update"
+          "title": "Identifier of the metadata to update\n+required"
         },
         "metadata": {
           "$ref": "#/definitions/adminNamedEntityMetadata",
-          "title": "Metadata object to set as the new value"
+          "title": "Metadata object to set as the new value\n+required"
         }
       },
-      "description": "Request to set the referenced launch plan state to the configured value."
+      "description": "Request to set the referenced named entity state to the configured value."
     },
     "adminNamedEntityUpdateResponse": {
       "type": "object",
@@ -3887,7 +3947,8 @@
       "type": "object",
       "properties": {
         "output_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "Links to a remotely stored, serialized core.LiteralMap of node execution outputs."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
@@ -3947,19 +4008,19 @@
       "properties": {
         "inputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of node execution inputs."
+          "description": "Signed url to fetch a core.LiteralMap of node execution inputs.\nDeprecated: Please use full_inputs instead."
         },
         "outputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of node execution outputs."
+          "description": "Signed url to fetch a core.LiteralMap of node execution outputs.\nDeprecated: Please use full_outputs instead."
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_inputs will only be populated if they are under a configured size threshold."
+          "description": "Full_inputs will only be populated if they are under a configured size threshold."
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_outputs will only be populated if they are under a configured size threshold."
+          "description": "Full_outputs will only be populated if they are under a configured size threshold."
         },
         "dynamic_workflow": {
           "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
@@ -3982,7 +4043,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Request structure to retrieve a list of node execution entities."
+      "title": "Request structure to retrieve a list of node execution entities.\nSee :ref:`ref_flyteidl.admin.NodeExecution` for more details"
     },
     "adminNodeExecutionMetaData": {
       "type": "object",
@@ -3994,7 +4055,7 @@
         "is_parent_node": {
           "type": "boolean",
           "format": "boolean",
-          "title": "Boolean flag indicating if the node has child nodes under it"
+          "description": "Boolean flag indicating if the node has child nodes under it\nThis can be true when a node contains a dynamic workflow which then produces\nchild nodes."
         },
         "spec_node_id": {
           "type": "string",
@@ -4011,7 +4072,7 @@
           "items": {
             "$ref": "#/definitions/coreWorkflowExecutionPhase"
           },
-          "description": "A list of phases to which users can associate the notifications to."
+          "title": "A list of phases to which users can associate the notifications to.\n+required"
         },
         "email": {
           "$ref": "#/definitions/adminEmailNotification"
@@ -4023,7 +4084,7 @@
           "$ref": "#/definitions/adminSlackNotification"
         }
       },
-      "description": "Represents a structure for notifications based on execution status.\nThe Notification content is configured within Admin. Future iterations could\nexpose configuring notifications with custom content."
+      "description": "Represents a structure for notifications based on execution status.\nThe notification content is configured within flyte admin but can be templatized.\nFuture iterations could expose configuring notifications with custom content."
     },
     "adminNotificationList": {
       "type": "object",
@@ -4044,9 +4105,10 @@
           "items": {
             "type": "string"
           },
-          "description": "Currently, PagerDuty notifications leverage email to trigger a notification."
+          "title": "Currently, PagerDuty notifications leverage email to trigger a notification.\n+required"
         }
-      }
+      },
+      "description": "Defines a pager duty notification specification."
     },
     "adminPluginOverride": {
       "type": "object",
@@ -4084,7 +4146,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "description": "Globally unique project name."
         },
         "name": {
           "type": "string",
@@ -4123,23 +4186,26 @@
         "matching_attributes": {
           "$ref": "#/definitions/adminMatchingAttributes"
         }
-      }
+      },
+      "title": "Defines a set of custom matching attributes which defines resource defaults for a project and domain.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesDeleteRequest": {
       "type": "object",
       "properties": {
         "project": {
           "type": "string",
-          "description": "Unique project id which this set of attributes references."
+          "title": "Unique project id which this set of attributes references.\n+required"
         },
         "domain": {
           "type": "string",
-          "description": "Unique domain id which this set of attributes references."
+          "title": "Unique domain id which this set of attributes references.\n+required"
         },
         "resource_type": {
-          "$ref": "#/definitions/adminMatchableResource"
+          "$ref": "#/definitions/adminMatchableResource",
+          "title": "Which type of matchable attributes to delete.\n+required"
         }
-      }
+      },
+      "title": "Request to delete a set matchable project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesDeleteResponse": {
       "type": "object",
@@ -4151,16 +4217,18 @@
         "attributes": {
           "$ref": "#/definitions/adminProjectDomainAttributes"
         }
-      }
+      },
+      "title": "Response to get an individual project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesUpdateRequest": {
       "type": "object",
       "properties": {
         "attributes": {
-          "$ref": "#/definitions/adminProjectDomainAttributes"
+          "$ref": "#/definitions/adminProjectDomainAttributes",
+          "title": "+required"
         }
       },
-      "description": "Sets custom attributes for a project-domain combination."
+      "title": "Sets custom attributes for a project-domain combination.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectDomainAttributesUpdateResponse": {
       "type": "object",
@@ -4170,15 +4238,19 @@
       "type": "object",
       "properties": {
         "project": {
-          "$ref": "#/definitions/adminProject"
+          "$ref": "#/definitions/adminProject",
+          "title": "+required"
         }
-      }
+      },
+      "title": "Adds a new user-project within the Flyte deployment.\nSee :ref:`ref_flyteidl.admin.Project` for more details"
     },
     "adminProjectRegisterResponse": {
-      "type": "object"
+      "type": "object",
+      "description": "Purposefully empty, may be updated in the future."
     },
     "adminProjectUpdateResponse": {
-      "type": "object"
+      "type": "object",
+      "description": "Purposefully empty, may be updated in the future."
     },
     "adminProjects": {
       "type": "object",
@@ -4193,7 +4265,8 @@
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
-      }
+      },
+      "title": "Represents a list of projects.\nSee :ref:`ref_flyteidl.admin.Project` for more details"
     },
     "adminRawOutputDataConfig": {
       "type": "object",
@@ -4233,23 +4306,24 @@
           "items": {
             "type": "string"
           },
-          "description": "Currently, Slack notifications leverage email to trigger a notification."
+          "title": "Currently, Slack notifications leverage email to trigger a notification.\n+required"
         }
-      }
+      },
+      "description": "Defines a slack notification specification."
     },
     "adminSort": {
       "type": "object",
       "properties": {
         "key": {
           "type": "string",
-          "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty."
+          "title": "Indicates an attribute to sort the response values.\n+required"
         },
         "direction": {
           "$ref": "#/definitions/SortDirection",
           "title": "Indicates the direction to apply sort key for response values.\n+optional"
         }
       },
-      "description": "Species sort ordering in a list request."
+      "description": "Specifies sort ordering in a list request."
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -4259,7 +4333,7 @@
           "description": "Which execution cluster this execution ran on."
         }
       },
-      "description": "Represents system rather than user-facing metadata about an execution."
+      "description": "Represents system, rather than user-facing, metadata about an execution."
     },
     "adminTask": {
       "type": "object",
@@ -4295,14 +4369,14 @@
       "properties": {
         "id": {
           "$ref": "#/definitions/coreIdentifier",
-          "description": "id represents the unique identifier of the task."
+          "title": "id represents the unique identifier of the task.\n+required"
         },
         "spec": {
           "$ref": "#/definitions/adminTaskSpec",
-          "description": "Represents the specification for task."
+          "title": "Represents the specification for task.\n+required"
         }
       },
-      "description": "Represents a request structure to create a revision of a task."
+      "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
     },
     "adminTaskCreateResponse": {
       "type": "object",
@@ -4390,19 +4464,19 @@
       "properties": {
         "inputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of task execution inputs."
+          "description": "Signed url to fetch a core.LiteralMap of task execution inputs.\nDeprecated: Please use full_inputs instead."
         },
         "outputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of task execution outputs."
+          "description": "Signed url to fetch a core.LiteralMap of task execution outputs.\nDeprecated: Please use full_outputs instead."
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_inputs will only be populated if they are under a configured size threshold."
+          "description": "Full_inputs will only be populated if they are under a configured size threshold."
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_outputs will only be populated if they are under a configured size threshold."
+          "description": "Full_outputs will only be populated if they are under a configured size threshold."
         }
       },
       "description": "Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution."
@@ -4421,7 +4495,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Response structure for a query to list of task execution entities."
+      "title": "Response structure for a query to list of task execution entities.\nSee :ref:`ref_flyteidl.admin.TaskExecution` for more details"
     },
     "adminTaskList": {
       "type": "object",
@@ -4438,7 +4512,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Represents a list of tasks returned from the admin."
+      "title": "Represents a list of tasks returned from the admin.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
     },
     "adminTaskResourceAttributes": {
       "type": "object",
@@ -4449,7 +4523,8 @@
         "limits": {
           "$ref": "#/definitions/adminTaskResourceSpec"
         }
-      }
+      },
+      "description": "Defines task resource defaults and limits that will be applied at task registration."
     },
     "adminTaskResourceSpec": {
       "type": "object",
@@ -4466,7 +4541,8 @@
         "storage": {
           "type": "string"
         }
-      }
+      },
+      "description": "Defines a set of overridable task resource attributes set during task registration."
     },
     "adminTaskSpec": {
       "type": "object",
@@ -4543,27 +4619,30 @@
         "matching_attributes": {
           "$ref": "#/definitions/adminMatchingAttributes"
         }
-      }
+      },
+      "title": "Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesDeleteRequest": {
       "type": "object",
       "properties": {
         "project": {
           "type": "string",
-          "description": "Unique project id which this set of attributes references."
+          "title": "Unique project id which this set of attributes references.\n+required"
         },
         "domain": {
           "type": "string",
-          "description": "Unique domain id which this set of attributes references."
+          "title": "Unique domain id which this set of attributes references.\n+required"
         },
         "workflow": {
           "type": "string",
-          "description": "Workflow name which this set of attributes references."
+          "title": "Workflow name which this set of attributes references.\n+required"
         },
         "resource_type": {
-          "$ref": "#/definitions/adminMatchableResource"
+          "$ref": "#/definitions/adminMatchableResource",
+          "title": "Which type of matchable attributes to delete.\n+required"
         }
-      }
+      },
+      "title": "Request to delete a set matchable workflow attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesDeleteResponse": {
       "type": "object",
@@ -4575,7 +4654,8 @@
         "attributes": {
           "$ref": "#/definitions/adminWorkflowAttributes"
         }
-      }
+      },
+      "description": "Response to get an individual workflow attribute override."
     },
     "adminWorkflowAttributesUpdateRequest": {
       "type": "object",
@@ -4584,7 +4664,7 @@
           "$ref": "#/definitions/adminWorkflowAttributes"
         }
       },
-      "description": "Sets custom attributes for a project, domain and workflow combination."
+      "title": "Sets custom attributes for a project, domain and workflow combination.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminWorkflowAttributesUpdateResponse": {
       "type": "object",
@@ -4610,14 +4690,14 @@
       "properties": {
         "id": {
           "$ref": "#/definitions/coreIdentifier",
-          "description": "id represents the unique identifier of the workflow."
+          "title": "id represents the unique identifier of the workflow.\n+required"
         },
         "spec": {
           "$ref": "#/definitions/adminWorkflowSpec",
-          "description": "Represents the specification for workflow."
+          "title": "Represents the specification for workflow.\n+required"
         }
       },
-      "description": "Represents a request structure to create a revision of a workflow."
+      "title": "Represents a request structure to create a revision of a workflow.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
     },
     "adminWorkflowCreateResponse": {
       "type": "object"
@@ -4655,19 +4735,19 @@
       "properties": {
         "outputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of execution outputs."
+          "description": "Signed url to fetch a core.LiteralMap of execution outputs.\nDeprecated: Please use full_outputs instead."
         },
         "inputs": {
           "$ref": "#/definitions/adminUrlBlob",
-          "description": "Signed url to fetch a core.LiteralMap of execution inputs."
+          "description": "Signed url to fetch a core.LiteralMap of execution inputs.\nDeprecated: Please use full_inputs instead."
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_inputs will only be populated if they are under a configured size threshold."
+          "description": "Full_inputs will only be populated if they are under a configured size threshold."
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Optional, full_outputs will only be populated if they are under a configured size threshold."
+          "description": "Full_outputs will only be populated if they are under a configured size threshold."
         }
       },
       "description": "Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution."
@@ -4687,7 +4767,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Represents a list of workflows returned from the admin."
+      "title": "Represents a list of workflows returned from the admin.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
     },
     "adminWorkflowSpec": {
       "type": "object",
@@ -5856,9 +5936,23 @@
         "reference_id": {
           "$ref": "#/definitions/coreIdentifier",
           "description": "A globally unique identifier for the task."
+        },
+        "overrides": {
+          "$ref": "#/definitions/coreTaskNodeOverrides",
+          "description": "Optional overrides applied at task execution time."
         }
       },
       "description": "Refers to the task that the Node is to execute."
+    },
+    "coreTaskNodeOverrides": {
+      "type": "object",
+      "properties": {
+        "resources": {
+          "$ref": "#/definitions/coreResources",
+          "description": "A customizable interface to convey resources requested for a task container."
+        }
+      },
+      "description": "Optional task node overrides that will be applied at task execution time."
     },
     "coreTaskTemplate": {
       "type": "object",
@@ -6372,7 +6466,8 @@
       "type": "object",
       "properties": {
         "executionId": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "The identifier for a workflow execution launched by a node."
         }
       },
       "title": "Metadata for a WorkflowNode"
