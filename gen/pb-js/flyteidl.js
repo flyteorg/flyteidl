@@ -19465,6 +19465,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExecutionRecoverRequest
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionRecoverRequest id
              * @property {string|null} [name] ExecutionRecoverRequest name
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionRecoverRequest parentNodeExecution
              */
 
             /**
@@ -19499,6 +19500,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionRecoverRequest.prototype.name = "";
 
             /**
+             * ExecutionRecoverRequest parentNodeExecution.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecution
+             * @memberof flyteidl.admin.ExecutionRecoverRequest
+             * @instance
+             */
+            ExecutionRecoverRequest.prototype.parentNodeExecution = null;
+
+            /**
              * Creates a new ExecutionRecoverRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionRecoverRequest
@@ -19525,7 +19534,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -19550,8 +19561,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
                         break;
-                    case 3:
+                    case 2:
                         message.name = reader.string();
+                        break;
+                    case 3:
+                        message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19580,6 +19594,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
+                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution")) {
+                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
+                    if (error)
+                        return "parentNodeExecution." + error;
+                }
                 return null;
             };
 

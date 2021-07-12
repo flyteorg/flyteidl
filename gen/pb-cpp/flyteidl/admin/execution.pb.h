@@ -561,9 +561,9 @@ class ExecutionRecoverRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string name = 3;
+  // string name = 2;
   void clear_name();
-  static const int kNameFieldNumber = 3;
+  static const int kNameFieldNumber = 2;
   const ::std::string& name() const;
   void set_name(const ::std::string& value);
   #if LANG_CXX11
@@ -584,6 +584,15 @@ class ExecutionRecoverRequest final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::WorkflowExecutionIdentifier* id);
 
+  // .flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;
+  bool has_parent_node_execution() const;
+  void clear_parent_node_execution();
+  static const int kParentNodeExecutionFieldNumber = 3;
+  const ::flyteidl::core::NodeExecutionIdentifier& parent_node_execution() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_parent_node_execution();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_parent_node_execution();
+  void set_allocated_parent_node_execution(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionRecoverRequest)
  private:
   class HasBitSetters;
@@ -591,6 +600,7 @@ class ExecutionRecoverRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
+  ::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -3221,7 +3231,7 @@ inline void ExecutionRecoverRequest::set_allocated_id(::flyteidl::core::Workflow
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.id)
 }
 
-// string name = 3;
+// string name = 2;
 inline void ExecutionRecoverRequest::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3272,6 +3282,51 @@ inline void ExecutionRecoverRequest::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.name)
+}
+
+// .flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;
+inline bool ExecutionRecoverRequest::has_parent_node_execution() const {
+  return this != internal_default_instance() && parent_node_execution_ != nullptr;
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& ExecutionRecoverRequest::parent_node_execution() const {
+  const ::flyteidl::core::NodeExecutionIdentifier* p = parent_node_execution_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
+      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* ExecutionRecoverRequest::release_parent_node_execution() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
+  
+  ::flyteidl::core::NodeExecutionIdentifier* temp = parent_node_execution_;
+  parent_node_execution_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* ExecutionRecoverRequest::mutable_parent_node_execution() {
+  
+  if (parent_node_execution_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
+    parent_node_execution_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
+  return parent_node_execution_;
+}
+inline void ExecutionRecoverRequest::set_allocated_parent_node_execution(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(parent_node_execution_);
+  }
+  if (parent_node_execution) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      parent_node_execution = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, parent_node_execution, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  parent_node_execution_ = parent_node_execution;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
 }
 
 // -------------------------------------------------------------------

@@ -14,4 +14,5 @@ type AdminExecutionRecoverRequest struct {
 	// Identifier of the workflow execution to recover.
 	Id *CoreWorkflowExecutionIdentifier `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
+	ParentNodeExecution *CoreNodeExecutionIdentifier `json:"parent_node_execution,omitempty"`
 }

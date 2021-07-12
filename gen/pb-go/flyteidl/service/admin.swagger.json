@@ -3426,6 +3426,10 @@
         "name": {
           "type": "string",
           "title": "User provided value for the recovered execution.\nIf none is provided the system will generate a unique string.\n+optional"
+        },
+        "parent_node_execution": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "title": "Which subworkflow node (if any) launched this execution"
         }
       },
       "description": "Request to recover the referenced execution."

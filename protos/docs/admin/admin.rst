@@ -973,6 +973,7 @@ Request to recover the referenced execution.
 
    "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the workflow execution to recover."
    "name", ":ref:`ref_string`", "", "User provided value for the recovered execution. If none is provided the system will generate a unique string. +optional"
+   "parent_node_execution", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Which subworkflow node (if any) launched this execution"
 
 
 

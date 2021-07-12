@@ -57,7 +57,11 @@ message ExecutionRecoverRequest {
     // User provided value for the recovered execution.
     // If none is provided the system will generate a unique string.
     // +optional
-    string name = 3;
+    string name = 2;
+
+    // Which subworkflow node (if any) launched this execution
+    core.NodeExecutionIdentifier parent_node_execution = 3;
+
 }
 
 // The unique identifier for a successfully created execution.

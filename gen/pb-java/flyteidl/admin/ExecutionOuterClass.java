@@ -2467,7 +2467,7 @@ public final class ExecutionOuterClass {
      * +optional
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      */
     java.lang.String getName();
     /**
@@ -2477,10 +2477,35 @@ public final class ExecutionOuterClass {
      * +optional
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    boolean hasParentNodeExecution();
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecution();
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionOrBuilder();
   }
   /**
    * <pre>
@@ -2539,10 +2564,23 @@ public final class ExecutionOuterClass {
 
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 26: {
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder subBuilder = null;
+              if (parentNodeExecution_ != null) {
+                subBuilder = parentNodeExecution_.toBuilder();
+              }
+              parentNodeExecution_ = input.readMessage(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(parentNodeExecution_);
+                parentNodeExecution_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -2610,7 +2648,7 @@ public final class ExecutionOuterClass {
       return getId();
     }
 
-    public static final int NAME_FIELD_NUMBER = 3;
+    public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
      * <pre>
@@ -2619,7 +2657,7 @@ public final class ExecutionOuterClass {
      * +optional
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2640,7 +2678,7 @@ public final class ExecutionOuterClass {
      * +optional
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2654,6 +2692,39 @@ public final class ExecutionOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int PARENT_NODE_EXECUTION_FIELD_NUMBER = 3;
+    private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecution_;
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    public boolean hasParentNodeExecution() {
+      return parentNodeExecution_ != null;
+    }
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecution() {
+      return parentNodeExecution_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecution_;
+    }
+    /**
+     * <pre>
+     * Which subworkflow node (if any) launched this execution
+     * </pre>
+     *
+     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionOrBuilder() {
+      return getParentNodeExecution();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2674,7 +2745,10 @@ public final class ExecutionOuterClass {
         output.writeMessage(1, getId());
       }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (parentNodeExecution_ != null) {
+        output.writeMessage(3, getParentNodeExecution());
       }
       unknownFields.writeTo(output);
     }
@@ -2690,7 +2764,11 @@ public final class ExecutionOuterClass {
           .computeMessageSize(1, getId());
       }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (parentNodeExecution_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getParentNodeExecution());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2714,6 +2792,11 @@ public final class ExecutionOuterClass {
       }
       if (!getName()
           .equals(other.getName())) return false;
+      if (hasParentNodeExecution() != other.hasParentNodeExecution()) return false;
+      if (hasParentNodeExecution()) {
+        if (!getParentNodeExecution()
+            .equals(other.getParentNodeExecution())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2731,6 +2814,10 @@ public final class ExecutionOuterClass {
       }
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      if (hasParentNodeExecution()) {
+        hash = (37 * hash) + PARENT_NODE_EXECUTION_FIELD_NUMBER;
+        hash = (53 * hash) + getParentNodeExecution().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2876,6 +2963,12 @@ public final class ExecutionOuterClass {
         }
         name_ = "";
 
+        if (parentNodeExecutionBuilder_ == null) {
+          parentNodeExecution_ = null;
+        } else {
+          parentNodeExecution_ = null;
+          parentNodeExecutionBuilder_ = null;
+        }
         return this;
       }
 
@@ -2908,6 +3001,11 @@ public final class ExecutionOuterClass {
           result.id_ = idBuilder_.build();
         }
         result.name_ = name_;
+        if (parentNodeExecutionBuilder_ == null) {
+          result.parentNodeExecution_ = parentNodeExecution_;
+        } else {
+          result.parentNodeExecution_ = parentNodeExecutionBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2962,6 +3060,9 @@ public final class ExecutionOuterClass {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
+        }
+        if (other.hasParentNodeExecution()) {
+          mergeParentNodeExecution(other.getParentNodeExecution());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3153,7 +3254,7 @@ public final class ExecutionOuterClass {
        * +optional
        * </pre>
        *
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3174,7 +3275,7 @@ public final class ExecutionOuterClass {
        * +optional
        * </pre>
        *
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3196,7 +3297,7 @@ public final class ExecutionOuterClass {
        * +optional
        * </pre>
        *
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -3215,7 +3316,7 @@ public final class ExecutionOuterClass {
        * +optional
        * </pre>
        *
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        */
       public Builder clearName() {
         
@@ -3230,7 +3331,7 @@ public final class ExecutionOuterClass {
        * +optional
        * </pre>
        *
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3242,6 +3343,159 @@ public final class ExecutionOuterClass {
         name_ = value;
         onChanged();
         return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecution_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> parentNodeExecutionBuilder_;
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public boolean hasParentNodeExecution() {
+        return parentNodeExecutionBuilder_ != null || parentNodeExecution_ != null;
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecution() {
+        if (parentNodeExecutionBuilder_ == null) {
+          return parentNodeExecution_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecution_;
+        } else {
+          return parentNodeExecutionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public Builder setParentNodeExecution(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
+        if (parentNodeExecutionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          parentNodeExecution_ = value;
+          onChanged();
+        } else {
+          parentNodeExecutionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public Builder setParentNodeExecution(
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder builderForValue) {
+        if (parentNodeExecutionBuilder_ == null) {
+          parentNodeExecution_ = builderForValue.build();
+          onChanged();
+        } else {
+          parentNodeExecutionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public Builder mergeParentNodeExecution(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
+        if (parentNodeExecutionBuilder_ == null) {
+          if (parentNodeExecution_ != null) {
+            parentNodeExecution_ =
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.newBuilder(parentNodeExecution_).mergeFrom(value).buildPartial();
+          } else {
+            parentNodeExecution_ = value;
+          }
+          onChanged();
+        } else {
+          parentNodeExecutionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public Builder clearParentNodeExecution() {
+        if (parentNodeExecutionBuilder_ == null) {
+          parentNodeExecution_ = null;
+          onChanged();
+        } else {
+          parentNodeExecution_ = null;
+          parentNodeExecutionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder getParentNodeExecutionBuilder() {
+        
+        onChanged();
+        return getParentNodeExecutionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionOrBuilder() {
+        if (parentNodeExecutionBuilder_ != null) {
+          return parentNodeExecutionBuilder_.getMessageOrBuilder();
+        } else {
+          return parentNodeExecution_ == null ?
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecution_;
+        }
+      }
+      /**
+       * <pre>
+       * Which subworkflow node (if any) launched this execution
+       * </pre>
+       *
+       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> 
+          getParentNodeExecutionFieldBuilder() {
+        if (parentNodeExecutionBuilder_ == null) {
+          parentNodeExecutionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder>(
+                  getParentNodeExecution(),
+                  getParentForChildren(),
+                  isClean());
+          parentNodeExecution_ = null;
+        }
+        return parentNodeExecutionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22171,80 +22425,82 @@ public final class ExecutionOuterClass {
       "2\031.flyteidl.core.LiteralMap\"`\n\030Execution" +
       "RelaunchRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.c" +
       "ore.WorkflowExecutionIdentifier\022\014\n\004name\030" +
-      "\003 \001(\t\"_\n\027ExecutionRecoverRequest\0226\n\002id\030\001" +
-      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
-      "entifier\022\014\n\004name\030\003 \001(\t\"Q\n\027ExecutionCreat" +
-      "eResponse\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifier\"U\n\033WorkflowExe" +
-      "cutionGetRequest\0226\n\002id\030\001 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\"\243\001\n\tExe" +
-      "cution\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
-      "lowExecutionIdentifier\022+\n\004spec\030\002 \001(\0132\035.f" +
-      "lyteidl.admin.ExecutionSpec\0221\n\007closure\030\003" +
-      " \001(\0132 .flyteidl.admin.ExecutionClosure\"M" +
-      "\n\rExecutionList\022-\n\nexecutions\030\001 \003(\0132\031.fl" +
-      "yteidl.admin.Execution\022\r\n\005token\030\002 \001(\t\"X\n" +
-      "\016LiteralMapBlob\022/\n\006values\030\001 \001(\0132\031.flytei" +
-      "dl.core.LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B" +
-      "\006\n\004data\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022" +
-      "\021\n\tprincipal\030\002 \001(\t\"\353\004\n\020ExecutionClosure\022" +
-      "1\n\007outputs\030\001 \001(\0132\036.flyteidl.admin.Litera" +
-      "lMapBlobH\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.cor" +
-      "e.ExecutionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB" +
-      "\002\030\001H\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flyteidl" +
-      ".admin.AbortMetadataH\000\0226\n\017computed_input" +
-      "s\030\003 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225" +
-      "\n\005phase\030\004 \001(\0162&.flyteidl.core.WorkflowEx" +
-      "ecution.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022+\n\010duration\030\006 \001(\0132" +
-      "\031.google.protobuf.Duration\022.\n\ncreated_at" +
-      "\030\007 \001(\0132\032.google.protobuf.Timestamp\022.\n\nup" +
-      "dated_at\030\010 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\0223\n\rnotifications\030\t \003(\0132\034.flyteidl.adm" +
-      "in.Notification\022.\n\013workflow_id\030\013 \001(\0132\031.f" +
-      "lyteidl.core.IdentifierB\017\n\routput_result" +
-      "\"+\n\016SystemMetadata\022\031\n\021execution_cluster\030" +
-      "\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(" +
-      "\0162/.flyteidl.admin.ExecutionMetadata.Exe" +
-      "cutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting" +
-      "\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022E\n\025parent_node_executio" +
-      "n\030\005 \001(\0132&.flyteidl.core.NodeExecutionIde" +
-      "ntifier\022G\n\023reference_execution\030\020 \001(\0132*.f" +
-      "lyteidl.core.WorkflowExecutionIdentifier" +
-      "\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.adm" +
-      "in.SystemMetadata\"g\n\rExecutionMode\022\n\n\006MA" +
-      "NUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010REL" +
-      "AUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED" +
-      "\020\005\"G\n\020NotificationList\0223\n\rnotifications\030" +
-      "\001 \003(\0132\034.flyteidl.admin.Notification\"\260\004\n\r" +
-      "ExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fly" +
-      "teidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031." +
-      "flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadata" +
-      "\030\003 \001(\0132!.flyteidl.admin.ExecutionMetadat" +
-      "a\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.admi" +
-      "n.NotificationListH\000\022\025\n\013disable_all\030\006 \001(" +
-      "\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Lab" +
-      "els\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.admi" +
-      "n.Annotations\0228\n\020security_context\030\n \001(\0132" +
-      "\036.flyteidl.core.SecurityContext\022/\n\tauth_" +
-      "role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001" +
-      "\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl." +
-      "core.QualityOfService\022\027\n\017max_parallelism" +
-      "\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"b" +
-      "\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132" +
-      "*.flyteidl.core.WorkflowExecutionIdentif" +
-      "ier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminate" +
-      "Response\"Y\n\037WorkflowExecutionGetDataRequ" +
-      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
-      "ExecutionIdentifier\"\336\001\n WorkflowExecutio" +
-      "nGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.flyt" +
-      "eidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027" +
-      ".flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inpu" +
-      "ts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014f" +
-      "ull_outputs\030\004 \001(\0132\031.flyteidl.core.Litera" +
-      "lMapB7Z5github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/adminb\006proto3"
+      "\003 \001(\t\"\246\001\n\027ExecutionRecoverRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022\014\n\004name\030\002 \001(\t\022E\n\025parent_node_e" +
+      "xecution\030\003 \001(\0132&.flyteidl.core.NodeExecu" +
+      "tionIdentifier\"Q\n\027ExecutionCreateRespons" +
+      "e\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowEx" +
+      "ecutionIdentifier\"U\n\033WorkflowExecutionGe" +
+      "tRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor" +
+      "kflowExecutionIdentifier\"\243\001\n\tExecution\0226" +
+      "\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecu" +
+      "tionIdentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl." +
+      "admin.ExecutionSpec\0221\n\007closure\030\003 \001(\0132 .f" +
+      "lyteidl.admin.ExecutionClosure\"M\n\rExecut" +
+      "ionList\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl.a" +
+      "dmin.Execution\022\r\n\005token\030\002 \001(\t\"X\n\016Literal" +
+      "MapBlob\022/\n\006values\030\001 \001(\0132\031.flyteidl.core." +
+      "LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"" +
+      "1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprinc" +
+      "ipal\030\002 \001(\t\"\353\004\n\020ExecutionClosure\0221\n\007outpu" +
+      "ts\030\001 \001(\0132\036.flyteidl.admin.LiteralMapBlob" +
+      "H\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Execut" +
+      "ionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n" +
+      "\016abort_metadata\030\014 \001(\0132\035.flyteidl.admin.A" +
+      "bortMetadataH\000\0226\n\017computed_inputs\030\003 \001(\0132" +
+      "\031.flyteidl.core.LiteralMapB\002\030\001\0225\n\005phase\030" +
+      "\004 \001(\0162&.flyteidl.core.WorkflowExecution." +
+      "Phase\022.\n\nstarted_at\030\005 \001(\0132\032.google.proto" +
+      "buf.Timestamp\022+\n\010duration\030\006 \001(\0132\031.google" +
+      ".protobuf.Duration\022.\n\ncreated_at\030\007 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022.\n\nupdated_at" +
+      "\030\010 \001(\0132\032.google.protobuf.Timestamp\0223\n\rno" +
+      "tifications\030\t \003(\0132\034.flyteidl.admin.Notif" +
+      "ication\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl." +
+      "core.IdentifierB\017\n\routput_result\"+\n\016Syst" +
+      "emMetadata\022\031\n\021execution_cluster\030\001 \001(\t\"\332\003" +
+      "\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyt" +
+      "eidl.admin.ExecutionMetadata.ExecutionMo" +
+      "de\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220" +
+      "\n\014scheduled_at\030\004 \001(\0132\032.google.protobuf.T" +
+      "imestamp\022E\n\025parent_node_execution\030\005 \001(\0132" +
+      "&.flyteidl.core.NodeExecutionIdentifier\022" +
+      "G\n\023reference_execution\030\020 \001(\0132*.flyteidl." +
+      "core.WorkflowExecutionIdentifier\0227\n\017syst" +
+      "em_metadata\030\021 \001(\0132\036.flyteidl.admin.Syste" +
+      "mMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r" +
+      "\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022" +
+      "\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020No" +
+      "tificationList\0223\n\rnotifications\030\001 \003(\0132\034." +
+      "flyteidl.admin.Notification\"\260\004\n\rExecutio" +
+      "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co" +
+      "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl" +
+      ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!" +
+      ".flyteidl.admin.ExecutionMetadata\0229\n\rnot" +
+      "ifications\030\005 \001(\0132 .flyteidl.admin.Notifi" +
+      "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
+      "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
+      "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
+      "tions\0228\n\020security_context\030\n \001(\0132\036.flytei" +
+      "dl.core.SecurityContext\022/\n\tauth_role\030\020 \001" +
+      "(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022qual" +
+      "ity_of_service\030\021 \001(\0132\037.flyteidl.core.Qua" +
+      "lityOfService\022\027\n\017max_parallelism\030\022 \001(\005B\030" +
+      "\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Execut" +
+      "ionTerminateRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
+      "dl.core.WorkflowExecutionIdentifier\022\r\n\005c" +
+      "ause\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse" +
+      "\"Y\n\037WorkflowExecutionGetDataRequest\0226\n\002i" +
+      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
+      "nIdentifier\"\336\001\n WorkflowExecutionGetData" +
+      "Response\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.adm" +
+      "in.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteid" +
+      "l.admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\013" +
+      "2\031.flyteidl.core.LiteralMap\022/\n\014full_outp" +
+      "uts\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22282,7 +22538,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "Id", "Name", "ParentNodeExecution", });
     internal_static_flyteidl_admin_ExecutionCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_ExecutionCreateResponse_fieldAccessorTable = new

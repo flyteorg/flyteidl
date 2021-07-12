@@ -8135,6 +8135,9 @@ export namespace flyteidl {
 
             /** ExecutionRecoverRequest name */
             name?: (string|null);
+
+            /** ExecutionRecoverRequest parentNodeExecution */
+            parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
         }
 
         /** Represents an ExecutionRecoverRequest. */
@@ -8151,6 +8154,9 @@ export namespace flyteidl {
 
             /** ExecutionRecoverRequest name. */
             public name: string;
+
+            /** ExecutionRecoverRequest parentNodeExecution. */
+            public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
 
             /**
              * Creates a new ExecutionRecoverRequest instance using the specified properties.

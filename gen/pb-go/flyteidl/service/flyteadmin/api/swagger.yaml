@@ -3720,6 +3720,9 @@ definitions:
         type: "string"
         title: "User provided value for the recovered execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
+      parent_node_execution:
+        title: "Which subworkflow node (if any) launched this execution"
+        $ref: "#/definitions/coreNodeExecutionIdentifier"
     description: "Request to recover the referenced execution."
   adminExecutionRelaunchRequest:
     type: "object"

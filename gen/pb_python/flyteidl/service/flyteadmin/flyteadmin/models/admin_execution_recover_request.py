@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 
 
@@ -34,25 +35,30 @@ class AdminExecutionRecoverRequest(object):
     """
     swagger_types = {
         'id': 'CoreWorkflowExecutionIdentifier',
-        'name': 'str'
+        'name': 'str',
+        'parent_node_execution': 'CoreNodeExecutionIdentifier'
     }
 
     attribute_map = {
         'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'parent_node_execution': 'parent_node_execution'
     }
 
-    def __init__(self, id=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, parent_node_execution=None):  # noqa: E501
         """AdminExecutionRecoverRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
+        self._parent_node_execution = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if parent_node_execution is not None:
+            self.parent_node_execution = parent_node_execution
 
     @property
     def id(self):
@@ -97,6 +103,27 @@ class AdminExecutionRecoverRequest(object):
         """
 
         self._name = name
+
+    @property
+    def parent_node_execution(self):
+        """Gets the parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
+
+
+        :return: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
+        :rtype: CoreNodeExecutionIdentifier
+        """
+        return self._parent_node_execution
+
+    @parent_node_execution.setter
+    def parent_node_execution(self, parent_node_execution):
+        """Sets the parent_node_execution of this AdminExecutionRecoverRequest.
+
+
+        :param parent_node_execution: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
+        :type: CoreNodeExecutionIdentifier
+        """
+
+        self._parent_node_execution = parent_node_execution
 
     def to_dict(self):
         """Returns the model properties as a dict"""
