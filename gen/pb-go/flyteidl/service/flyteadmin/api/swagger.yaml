@@ -1242,43 +1242,6 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminNamedEntityList"
-  /api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
-    get:
-      tags:
-      - "AdminService"
-      description: "Recovers already produced data from an existing node execution\
-        \ (if any)."
-      operationId: "RecoverNodeExecution"
-      parameters:
-      - name: "id.execution_id.project"
-        in: "path"
-        description: "Name of the project the resource belongs to."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdProject"
-      - name: "id.execution_id.domain"
-        in: "path"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdDomain"
-      - name: "id.execution_id.name"
-        in: "path"
-        description: "User or system provided value for the resource."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdName"
-      - name: "id.node_id"
-        in: "path"
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeId"
-      responses:
-        200:
-          description: "A successful response."
-          schema:
-            $ref: "#/definitions/flyteidladminNodeExecution"
   /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
     get:
       tags:

@@ -55,7 +55,6 @@ Standard response codes for both are defined here: https://github.com/grpc-ecosy
    "ListExecutions", ":ref:`ref_flyteidl.admin.ResourceListRequest`", ":ref:`ref_flyteidl.admin.ExecutionList`", "Fetch a list of :ref:`ref_flyteidl.admin.Execution`."
    "TerminateExecution", ":ref:`ref_flyteidl.admin.ExecutionTerminateRequest`", ":ref:`ref_flyteidl.admin.ExecutionTerminateResponse`", "Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`."
    "GetNodeExecution", ":ref:`ref_flyteidl.admin.NodeExecutionGetRequest`", ":ref:`ref_flyteidl.admin.NodeExecution`", "Fetches a :ref:`ref_flyteidl.admin.NodeExecution`."
-   "RecoverNodeExecution", ":ref:`ref_flyteidl.admin.NodeExecutionRecoverRequest`", ":ref:`ref_flyteidl.admin.NodeExecution`", ""
    "ListNodeExecutions", ":ref:`ref_flyteidl.admin.NodeExecutionListRequest`", ":ref:`ref_flyteidl.admin.NodeExecutionList`", "Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`."
    "ListNodeExecutionsForTask", ":ref:`ref_flyteidl.admin.NodeExecutionForTaskListRequest`", ":ref:`ref_flyteidl.admin.NodeExecutionList`", "Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`."
    "GetNodeExecutionData", ":ref:`ref_flyteidl.admin.NodeExecutionGetDataRequest`", ":ref:`ref_flyteidl.admin.NodeExecutionGetDataResponse`", "Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`."

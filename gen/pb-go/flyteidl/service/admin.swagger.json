@@ -1418,52 +1418,6 @@
         ]
       }
     },
-    "/api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
-      "get": {
-        "description": "Recovers already produced data from an existing node execution (if any).",
-        "operationId": "RecoverNodeExecution",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/flyteidladminNodeExecution"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.node_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "summary": "Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.",

@@ -309,15 +309,6 @@ service AdminService {
     };
   }
 
-  rpc RecoverNodeExecution (flyteidl.admin.NodeExecutionRecoverRequest) returns (flyteidl.admin.NodeExecution) {
-    option (google.api.http) = {
-      get: "/api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
-    };
-    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Recovers already produced data from an existing node execution (if any)."
-    };
-  }
-
   // Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.
   rpc ListNodeExecutions (flyteidl.admin.NodeExecutionListRequest) returns (flyteidl.admin.NodeExecutionList) {
     option (google.api.http) = {

@@ -2161,27 +2161,6 @@ Represents additional attributes related to a Node Execution
 
 
 
-.. _ref_flyteidl.admin.NodeExecutionRecoverRequest:
-
-NodeExecutionRecoverRequest
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: NodeExecutionRecoverRequest type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "The original node execution from which to recover execution state."
-
-
-
-
-
-
-
 .. _ref_flyteidl.admin.TaskNodeMetadata:
 
 TaskNodeMetadata

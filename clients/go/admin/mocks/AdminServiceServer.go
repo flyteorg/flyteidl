@@ -1573,47 +1573,6 @@ func (_m *AdminServiceServer) RecoverExecution(_a0 context.Context, _a1 *admin.E
 	return r0, r1
 }
 
-type AdminServiceServer_RecoverNodeExecution struct {
-	*mock.Call
-}
-
-func (_m AdminServiceServer_RecoverNodeExecution) Return(_a0 *admin.NodeExecution, _a1 error) *AdminServiceServer_RecoverNodeExecution {
-	return &AdminServiceServer_RecoverNodeExecution{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AdminServiceServer) OnRecoverNodeExecution(_a0 context.Context, _a1 *admin.NodeExecutionRecoverRequest) *AdminServiceServer_RecoverNodeExecution {
-	c := _m.On("RecoverNodeExecution", _a0, _a1)
-	return &AdminServiceServer_RecoverNodeExecution{Call: c}
-}
-
-func (_m *AdminServiceServer) OnRecoverNodeExecutionMatch(matchers ...interface{}) *AdminServiceServer_RecoverNodeExecution {
-	c := _m.On("RecoverNodeExecution", matchers...)
-	return &AdminServiceServer_RecoverNodeExecution{Call: c}
-}
-
-// RecoverNodeExecution provides a mock function with given fields: _a0, _a1
-func (_m *AdminServiceServer) RecoverNodeExecution(_a0 context.Context, _a1 *admin.NodeExecutionRecoverRequest) (*admin.NodeExecution, error) {
-	ret := _m.Called(_a0, _a1)
-
-	var r0 *admin.NodeExecution
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest) *admin.NodeExecution); ok {
-		r0 = rf(_a0, _a1)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.NodeExecution)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionRecoverRequest) error); ok {
-		r1 = rf(_a0, _a1)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 type AdminServiceServer_RegisterProject struct {
 	*mock.Call
 }

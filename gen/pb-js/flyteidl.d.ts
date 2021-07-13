@@ -11726,58 +11726,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a NodeExecutionRecoverRequest. */
-        interface INodeExecutionRecoverRequest {
-
-            /** NodeExecutionRecoverRequest id */
-            id?: (flyteidl.core.INodeExecutionIdentifier|null);
-        }
-
-        /** Represents a NodeExecutionRecoverRequest. */
-        class NodeExecutionRecoverRequest implements INodeExecutionRecoverRequest {
-
-            /**
-             * Constructs a new NodeExecutionRecoverRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionRecoverRequest);
-
-            /** NodeExecutionRecoverRequest id. */
-            public id?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /**
-             * Creates a new NodeExecutionRecoverRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionRecoverRequest instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionRecoverRequest): flyteidl.admin.NodeExecutionRecoverRequest;
-
-            /**
-             * Encodes the specified NodeExecutionRecoverRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionRecoverRequest.verify|verify} messages.
-             * @param message NodeExecutionRecoverRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionRecoverRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionRecoverRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionRecoverRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionRecoverRequest;
-
-            /**
-             * Verifies a NodeExecutionRecoverRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of an EmailMessage. */
         interface IEmailMessage {
 
@@ -14738,20 +14686,6 @@ export namespace flyteidl {
             public getNodeExecution(request: flyteidl.admin.INodeExecutionGetRequest): Promise<flyteidl.admin.NodeExecution>;
 
             /**
-             * Calls RecoverNodeExecution.
-             * @param request NodeExecutionRecoverRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and NodeExecution
-             */
-            public recoverNodeExecution(request: flyteidl.admin.INodeExecutionRecoverRequest, callback: flyteidl.service.AdminService.RecoverNodeExecutionCallback): void;
-
-            /**
-             * Calls RecoverNodeExecution.
-             * @param request NodeExecutionRecoverRequest message or plain object
-             * @returns Promise
-             */
-            public recoverNodeExecution(request: flyteidl.admin.INodeExecutionRecoverRequest): Promise<flyteidl.admin.NodeExecution>;
-
-            /**
              * Calls ListNodeExecutions.
              * @param request NodeExecutionListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and NodeExecutionList
@@ -15236,13 +15170,6 @@ export namespace flyteidl {
              * @param [response] NodeExecution
              */
             type GetNodeExecutionCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecution) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#recoverNodeExecution}.
-             * @param error Error, if any
-             * @param [response] NodeExecution
-             */
-            type RecoverNodeExecutionCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecution) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listNodeExecutions}.

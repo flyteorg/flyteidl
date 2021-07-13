@@ -62,7 +62,6 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**ListWorkflows**](docs/AdminServiceApi.md#listworkflows) | **Get** /api/v1/workflows/{id.project}/{id.domain}/{id.name} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definitions.
 *AdminServiceApi* | [**ListWorkflows2**](docs/AdminServiceApi.md#listworkflows2) | **Get** /api/v1/workflows/{id.project}/{id.domain} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definitions.
 *AdminServiceApi* | [**RecoverExecution**](docs/AdminServiceApi.md#recoverexecution) | **Post** /api/v1/executions/recover | 
-*AdminServiceApi* | [**RecoverNodeExecution**](docs/AdminServiceApi.md#recovernodeexecution) | **Get** /api/v1/node_executions/recover/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | 
 *AdminServiceApi* | [**RegisterProject**](docs/AdminServiceApi.md#registerproject) | **Post** /api/v1/projects | Registers a :ref:&#x60;ref_flyteidl.admin.Project&#x60; with the Flyte deployment.
 *AdminServiceApi* | [**RelaunchExecution**](docs/AdminServiceApi.md#relaunchexecution) | **Post** /api/v1/executions/relaunch | Triggers the creation of an identical :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 *AdminServiceApi* | [**TerminateExecution**](docs/AdminServiceApi.md#terminateexecution) | **Delete** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Terminates an in-progress :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.

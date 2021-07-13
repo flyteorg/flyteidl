@@ -1841,54 +1841,6 @@ func (_m *AdminServiceClient) RecoverExecution(ctx context.Context, in *admin.Ex
 	return r0, r1
 }
 
-type AdminServiceClient_RecoverNodeExecution struct {
-	*mock.Call
-}
-
-func (_m AdminServiceClient_RecoverNodeExecution) Return(_a0 *admin.NodeExecution, _a1 error) *AdminServiceClient_RecoverNodeExecution {
-	return &AdminServiceClient_RecoverNodeExecution{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AdminServiceClient) OnRecoverNodeExecution(ctx context.Context, in *admin.NodeExecutionRecoverRequest, opts ...grpc.CallOption) *AdminServiceClient_RecoverNodeExecution {
-	c := _m.On("RecoverNodeExecution", ctx, in, opts)
-	return &AdminServiceClient_RecoverNodeExecution{Call: c}
-}
-
-func (_m *AdminServiceClient) OnRecoverNodeExecutionMatch(matchers ...interface{}) *AdminServiceClient_RecoverNodeExecution {
-	c := _m.On("RecoverNodeExecution", matchers...)
-	return &AdminServiceClient_RecoverNodeExecution{Call: c}
-}
-
-// RecoverNodeExecution provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) RecoverNodeExecution(ctx context.Context, in *admin.NodeExecutionRecoverRequest, opts ...grpc.CallOption) (*admin.NodeExecution, error) {
-	_va := make([]interface{}, len(opts))
-	for _i := range opts {
-		_va[_i] = opts[_i]
-	}
-	var _ca []interface{}
-	_ca = append(_ca, ctx, in)
-	_ca = append(_ca, _va...)
-	ret := _m.Called(_ca...)
-
-	var r0 *admin.NodeExecution
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionRecoverRequest, ...grpc.CallOption) *admin.NodeExecution); ok {
-		r0 = rf(ctx, in, opts...)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.NodeExecution)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionRecoverRequest, ...grpc.CallOption) error); ok {
-		r1 = rf(ctx, in, opts...)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 type AdminServiceClient_RegisterProject struct {
 	*mock.Call
 }

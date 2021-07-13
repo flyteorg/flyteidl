@@ -314,12 +314,6 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_recover_node_execution(self):
-        """Test case for recover_node_execution
-
-        """
-        pass
-
     def test_register_project(self):
         """Test case for register_project
 
