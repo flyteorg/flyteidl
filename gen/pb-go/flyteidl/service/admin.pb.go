@@ -267,6 +267,11 @@ type AdminServiceClient interface {
 	CreateExecution(ctx context.Context, in *admin.ExecutionCreateRequest, opts ...grpc.CallOption) (*admin.ExecutionCreateResponse, error)
 	// Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`
 	RelaunchExecution(ctx context.Context, in *admin.ExecutionRelaunchRequest, opts ...grpc.CallOption) (*admin.ExecutionCreateResponse, error)
+	// Recreates a previously-run workflow execution that will only start executing from the last known failure point.
+	// In Recover mode, users cannot change any input parameters or update the version of the execution.
+	// This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,
+	// downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
+	// See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
 	RecoverExecution(ctx context.Context, in *admin.ExecutionRecoverRequest, opts ...grpc.CallOption) (*admin.ExecutionCreateResponse, error)
 	// Fetches a :ref:`ref_flyteidl.admin.Execution`.
 	GetExecution(ctx context.Context, in *admin.WorkflowExecutionGetRequest, opts ...grpc.CallOption) (*admin.Execution, error)
@@ -785,6 +790,11 @@ type AdminServiceServer interface {
 	CreateExecution(context.Context, *admin.ExecutionCreateRequest) (*admin.ExecutionCreateResponse, error)
 	// Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`
 	RelaunchExecution(context.Context, *admin.ExecutionRelaunchRequest) (*admin.ExecutionCreateResponse, error)
+	// Recreates a previously-run workflow execution that will only start executing from the last known failure point.
+	// In Recover mode, users cannot change any input parameters or update the version of the execution.
+	// This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,
+	// downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
+	// See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
 	RecoverExecution(context.Context, *admin.ExecutionRecoverRequest) (*admin.ExecutionCreateResponse, error)
 	// Fetches a :ref:`ref_flyteidl.admin.Execution`.
 	GetExecution(context.Context, *admin.WorkflowExecutionGetRequest) (*admin.Execution, error)

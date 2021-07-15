@@ -7814,7 +7814,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} FAILED=6 FAILED value
              * @property {number} ABORTED=7 ABORTED value
              * @property {number} TIMED_OUT=8 TIMED_OUT value
-             * @property {number} RECOVERED=9 RECOVERED value
              */
             WorkflowExecution.Phase = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -7827,7 +7826,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[6] = "FAILED"] = 6;
                 values[valuesById[7] = "ABORTED"] = 7;
                 values[valuesById[8] = "TIMED_OUT"] = 8;
-                values[valuesById[9] = "RECOVERED"] = 9;
                 return values;
             })();
 
@@ -13166,7 +13164,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 6:
                     case 7:
                     case 8:
-                    case 9:
                         break;
                     }
                 if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
@@ -17594,7 +17591,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         case 6:
                         case 7:
                         case 8:
-                        case 9:
                             break;
                         }
                 }
@@ -20721,7 +20717,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 6:
                     case 7:
                     case 8:
-                    case 9:
                         break;
                     }
                 if (message.startedAt != null && message.hasOwnProperty("startedAt")) {

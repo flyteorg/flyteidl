@@ -561,6 +561,7 @@
     },
     "/api/v1/executions/recover": {
       "post": {
+        "summary": "Recreates a previously-run workflow execution that will only start executing from the last known failure point.\nIn Recover mode, users cannot change any input parameters or update the version of the execution.\nThis is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,\ndownstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.\nSee :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.",
         "description": "Recovers a previously-run workflow execution that failed due to system failure.",
         "operationId": "RecoverExecution",
         "responses": {
@@ -3383,7 +3384,7 @@
         },
         "parent_node_execution": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "description": "Which node (if any) launched this execution. This situation arises for recovered nodes\nwhich execute a launch plan and launch a child workflow."
+          "description": "Which node (if any) launched the execution created in this request.\nThis situation arises for recovered nodes which execute a launch plan and launch a child workflow."
         }
       },
       "description": "Request to recover the referenced execution."
@@ -6032,8 +6033,7 @@
         "FAILING",
         "FAILED",
         "ABORTED",
-        "TIMED_OUT",
-        "RECOVERED"
+        "TIMED_OUT"
       ],
       "default": "UNDEFINED"
     },

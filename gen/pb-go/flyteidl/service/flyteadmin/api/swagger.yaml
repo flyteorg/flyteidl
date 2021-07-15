@@ -479,6 +479,14 @@ paths:
     post:
       tags:
       - "AdminService"
+      summary: "Recreates a previously-run workflow execution that will only start\
+        \ executing from the last known failure point.\nIn Recover mode, users cannot\
+        \ change any input parameters or update the version of the execution.\nThis\
+        \ is extremely useful to recover from system errors and byzantine faults like\
+        \ - Loss of K8s cluster, bugs in platform or instability, machine failures,\n\
+        downstream system failures (downstream services), or simply to recover executions\
+        \ that failed because of retry exhaustion and should complete if tried again.\n\
+        See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details."
       description: "Recovers a previously-run workflow execution that failed due to\
         \ system failure."
       operationId: "RecoverExecution"
@@ -3684,9 +3692,9 @@ definitions:
         title: "User provided value for the recovered execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
       parent_node_execution:
-        description: "Which node (if any) launched this execution. This situation\
-          \ arises for recovered nodes\nwhich execute a launch plan and launch a child\
-          \ workflow."
+        description: "Which node (if any) launched the execution created in this request.\n\
+          This situation arises for recovered nodes which execute a launch plan and\
+          \ launch a child workflow."
         $ref: "#/definitions/coreNodeExecutionIdentifier"
     description: "Request to recover the referenced execution."
   adminExecutionRelaunchRequest:
@@ -29729,7 +29737,6 @@ definitions:
     - "FAILED"
     - "ABORTED"
     - "TIMED_OUT"
-    - "RECOVERED"
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"

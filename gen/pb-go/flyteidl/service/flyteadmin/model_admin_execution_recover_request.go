@@ -14,6 +14,6 @@ type AdminExecutionRecoverRequest struct {
 	// Identifier of the workflow execution to recover.
 	Id *CoreWorkflowExecutionIdentifier `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
-	// Which node (if any) launched this execution. This situation arises for recovered nodes which execute a launch plan and launch a child workflow.
+	// Which node (if any) launched the execution created in this request. This situation arises for recovered nodes which execute a launch plan and launch a child workflow.
 	ParentNodeExecution *CoreNodeExecutionIdentifier `json:"parent_node_execution,omitempty"`
 }

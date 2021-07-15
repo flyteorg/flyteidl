@@ -22,5 +22,4 @@ const (
 	CoreWorkflowExecutionPhaseFAILED CoreWorkflowExecutionPhase = "FAILED"
 	CoreWorkflowExecutionPhaseABORTED CoreWorkflowExecutionPhase = "ABORTED"
 	CoreWorkflowExecutionPhaseTIMED_OUT CoreWorkflowExecutionPhase = "TIMED_OUT"
-	CoreWorkflowExecutionPhaseRECOVERED CoreWorkflowExecutionPhase = "RECOVERED"
 )

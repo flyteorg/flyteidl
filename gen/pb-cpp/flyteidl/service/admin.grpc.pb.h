@@ -186,6 +186,11 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionCreateResponse>> PrepareAsyncRelaunchExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionCreateResponse>>(PrepareAsyncRelaunchExecutionRaw(context, request, cq));
     }
+    // Recreates a previously-run workflow execution that will only start executing from the last known failure point.
+    // In Recover mode, users cannot change any input parameters or update the version of the execution.
+    // This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,
+    // downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
+    // See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
     virtual ::grpc::Status RecoverExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRecoverRequest& request, ::flyteidl::admin::ExecutionCreateResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionCreateResponse>> AsyncRecoverExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRecoverRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ExecutionCreateResponse>>(AsyncRecoverExecutionRaw(context, request, cq));
@@ -506,6 +511,11 @@ class AdminService final {
       virtual void RelaunchExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RelaunchExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void RelaunchExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Recreates a previously-run workflow execution that will only start executing from the last known failure point.
+      // In Recover mode, users cannot change any input parameters or update the version of the execution.
+      // This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,
+      // downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
+      // See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
       virtual void RecoverExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRecoverRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RecoverExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RecoverExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRecoverRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -1449,6 +1459,11 @@ class AdminService final {
     virtual ::grpc::Status CreateExecution(::grpc::ServerContext* context, const ::flyteidl::admin::ExecutionCreateRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response);
     // Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`
     virtual ::grpc::Status RelaunchExecution(::grpc::ServerContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response);
+    // Recreates a previously-run workflow execution that will only start executing from the last known failure point.
+    // In Recover mode, users cannot change any input parameters or update the version of the execution.
+    // This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures,
+    // downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
+    // See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
     virtual ::grpc::Status RecoverExecution(::grpc::ServerContext* context, const ::flyteidl::admin::ExecutionRecoverRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response);
     // Fetches a :ref:`ref_flyteidl.admin.Execution`.
     virtual ::grpc::Status GetExecution(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetRequest* request, ::flyteidl::admin::Execution* response);

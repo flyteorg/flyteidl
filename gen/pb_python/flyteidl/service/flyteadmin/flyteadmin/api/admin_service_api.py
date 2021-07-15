@@ -4958,7 +4958,7 @@ class AdminServiceApi(object):
             collection_formats=collection_formats)
 
     def recover_execution(self, body, **kwargs):  # noqa: E501
-        """recover_execution  # noqa: E501
+        """Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.  # noqa: E501
 
         Recovers a previously-run workflow execution that failed due to system failure.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4980,7 +4980,7 @@ class AdminServiceApi(object):
             return data
 
     def recover_execution_with_http_info(self, body, **kwargs):  # noqa: E501
-        """recover_execution  # noqa: E501
+        """Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.  # noqa: E501
 
         Recovers a previously-run workflow execution that failed due to system failure.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

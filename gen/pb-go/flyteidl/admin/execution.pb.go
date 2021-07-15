@@ -213,8 +213,8 @@ type ExecutionRecoverRequest struct {
 	// If none is provided the system will generate a unique string.
 	// +optional
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	// Which node (if any) launched this execution. This situation arises for recovered nodes
-	// which execute a launch plan and launch a child workflow.
+	// Which node (if any) launched the execution created in this request.
+	// This situation arises for recovered nodes which execute a launch plan and launch a child workflow.
 	ParentNodeExecution  *core.NodeExecutionIdentifier `protobuf:"bytes,3,opt,name=parent_node_execution,json=parentNodeExecution,proto3" json:"parent_node_execution,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
 	XXX_unrecognized     []byte                        `json:"-"`
