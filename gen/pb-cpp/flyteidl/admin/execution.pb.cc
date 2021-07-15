@@ -688,7 +688,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "tifications\030\t \003(\0132\034.flyteidl.admin.Notif"
   "ication\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl."
   "core.IdentifierB\017\n\routput_result\"+\n\016Syst"
-  "emMetadata\022\031\n\021execution_cluster\030\001 \001(\t\"\332\003"
+  "emMetadata\022\031\n\021execution_cluster\030\001 \001(\t\"\371\003"
   "\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyt"
   "eidl.admin.ExecutionMetadata.ExecutionMo"
   "de\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220"
@@ -698,43 +698,44 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "G\n\023reference_execution\030\020 \001(\0132*.flyteidl."
   "core.WorkflowExecutionIdentifier\0227\n\017syst"
   "em_metadata\030\021 \001(\0132\036.flyteidl.admin.Syste"
-  "mMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r"
-  "\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022"
-  "\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020No"
-  "tificationList\0223\n\rnotifications\030\001 \003(\0132\034."
-  "flyteidl.admin.Notification\"\260\004\n\rExecutio"
-  "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co"
-  "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl"
-  ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!"
-  ".flyteidl.admin.ExecutionMetadata\0229\n\rnot"
-  "ifications\030\005 \001(\0132 .flyteidl.admin.Notifi"
-  "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l"
-  "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a"
-  "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota"
-  "tions\0228\n\020security_context\030\n \001(\0132\036.flytei"
-  "dl.core.SecurityContext\022/\n\tauth_role\030\020 \001"
-  "(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022qual"
-  "ity_of_service\030\021 \001(\0132\037.flyteidl.core.Qua"
-  "lityOfService\022\027\n\017max_parallelism\030\022 \001(\005B\030"
-  "\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Execut"
-  "ionTerminateRequest\0226\n\002id\030\001 \001(\0132*.flytei"
-  "dl.core.WorkflowExecutionIdentifier\022\r\n\005c"
-  "ause\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse"
-  "\"Y\n\037WorkflowExecutionGetDataRequest\0226\n\002i"
-  "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio"
-  "nIdentifier\"\336\001\n WorkflowExecutionGetData"
-  "Response\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.adm"
-  "in.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteid"
-  "l.admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\013"
-  "2\031.flyteidl.core.LiteralMap\022/\n\014full_outp"
-  "uts\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/adminb\006proto3"
+  "mMetadata\"\205\001\n\rExecutionMode\022\n\n\006MANUAL\020\000\022"
+  "\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003"
+  "\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\022\034\n\030R"
+  "ECOVERED_CHILD_WORKFLOW\020\006\"G\n\020Notificatio"
+  "nList\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl."
+  "admin.Notification\"\260\004\n\rExecutionSpec\022.\n\013"
+  "launch_plan\030\001 \001(\0132\031.flyteidl.core.Identi"
+  "fier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Lit"
+  "eralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl"
+  ".admin.ExecutionMetadata\0229\n\rnotification"
+  "s\030\005 \001(\0132 .flyteidl.admin.NotificationLis"
+  "tH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001"
+  "(\0132\026.flyteidl.admin.Labels\0220\n\013annotation"
+  "s\030\010 \001(\0132\033.flyteidl.admin.Annotations\0228\n\020"
+  "security_context\030\n \001(\0132\036.flyteidl.core.S"
+  "ecurityContext\022/\n\tauth_role\030\020 \001(\0132\030.flyt"
+  "eidl.admin.AuthRoleB\002\030\001\022;\n\022quality_of_se"
+  "rvice\030\021 \001(\0132\037.flyteidl.core.QualityOfSer"
+  "vice\022\027\n\017max_parallelism\030\022 \001(\005B\030\n\026notific"
+  "ation_overridesJ\004\010\004\020\005\"b\n\031ExecutionTermin"
+  "ateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.W"
+  "orkflowExecutionIdentifier\022\r\n\005cause\030\002 \001("
+  "\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Workf"
+  "lowExecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*"
+  ".flyteidl.core.WorkflowExecutionIdentifi"
+  "er\"\336\001\n WorkflowExecutionGetDataResponse\022"
+  ",\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlo"
+  "bB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.U"
+  "rlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flytei"
+  "dl.core.LiteralMap\022/\n\014full_outputs\030\004 \001(\013"
+  "2\031.flyteidl.core.LiteralMapB7Z5github.co"
+  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/a"
+  "dminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3541,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3572,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -767,6 +768,7 @@ bool ExecutionMetadata_ExecutionMode_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -780,6 +782,7 @@ const ExecutionMetadata_ExecutionMode ExecutionMetadata::SYSTEM;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::RELAUNCH;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::CHILD_WORKFLOW;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::RECOVERED;
+const ExecutionMetadata_ExecutionMode ExecutionMetadata::RECOVERED_CHILD_WORKFLOW;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::ExecutionMode_MIN;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::ExecutionMode_MAX;
 const int ExecutionMetadata::ExecutionMode_ARRAYSIZE;

@@ -2608,7 +2608,8 @@ definitions:
       \ an individual.\n - RELAUNCH: This execution was launched with identical inputs\
       \ as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered\
       \ by another execution.\n - RECOVERED: This execution was recovered from another\
-      \ execution."
+      \ execution.\n - RECOVERED_CHILD_WORKFLOW: This execution was a child workflow\
+      \ recovered from another execution."
     enum:
     - "MANUAL"
     - "SCHEDULED"
@@ -2616,6 +2617,7 @@ definitions:
     - "RELAUNCH"
     - "CHILD_WORKFLOW"
     - "RECOVERED"
+    - "RECOVERED_CHILD_WORKFLOW"
     default: "MANUAL"
   IOStrategyDownloadMode:
     type: "string"

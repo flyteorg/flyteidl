@@ -21064,6 +21064,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                     case 4:
                     case 5:
+                    case 6:
                         break;
                     }
                 if (message.principal != null && message.hasOwnProperty("principal"))
@@ -21105,6 +21106,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} RELAUNCH=3 RELAUNCH value
              * @property {number} CHILD_WORKFLOW=4 CHILD_WORKFLOW value
              * @property {number} RECOVERED=5 RECOVERED value
+             * @property {number} RECOVERED_CHILD_WORKFLOW=6 RECOVERED_CHILD_WORKFLOW value
              */
             ExecutionMetadata.ExecutionMode = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -21114,6 +21116,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[3] = "RELAUNCH"] = 3;
                 values[valuesById[4] = "CHILD_WORKFLOW"] = 4;
                 values[valuesById[5] = "RECOVERED"] = 5;
+                values[valuesById[6] = "RECOVERED_CHILD_WORKFLOW"] = 6;
                 return values;
             })();
 

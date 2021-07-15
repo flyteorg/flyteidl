@@ -146,12 +146,13 @@ enum ExecutionMetadata_ExecutionMode {
   ExecutionMetadata_ExecutionMode_RELAUNCH = 3,
   ExecutionMetadata_ExecutionMode_CHILD_WORKFLOW = 4,
   ExecutionMetadata_ExecutionMode_RECOVERED = 5,
+  ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW = 6,
   ExecutionMetadata_ExecutionMode_ExecutionMetadata_ExecutionMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ExecutionMetadata_ExecutionMode_ExecutionMetadata_ExecutionMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ExecutionMetadata_ExecutionMode_IsValid(int value);
 const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MIN = ExecutionMetadata_ExecutionMode_MANUAL;
-const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MAX = ExecutionMetadata_ExecutionMode_RECOVERED;
+const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MAX = ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW;
 const int ExecutionMetadata_ExecutionMode_ExecutionMode_ARRAYSIZE = ExecutionMetadata_ExecutionMode_ExecutionMode_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ExecutionMetadata_ExecutionMode_descriptor();
@@ -1871,6 +1872,8 @@ class ExecutionMetadata final :
     ExecutionMetadata_ExecutionMode_CHILD_WORKFLOW;
   static const ExecutionMode RECOVERED =
     ExecutionMetadata_ExecutionMode_RECOVERED;
+  static const ExecutionMode RECOVERED_CHILD_WORKFLOW =
+    ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW;
   static inline bool ExecutionMode_IsValid(int value) {
     return ExecutionMetadata_ExecutionMode_IsValid(value);
   }

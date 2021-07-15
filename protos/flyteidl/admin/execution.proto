@@ -197,6 +197,9 @@ message ExecutionMetadata {
 
         // This execution was recovered from another execution.
         RECOVERED = 5;
+
+        // This execution was a child workflow recovered from another execution.
+        RECOVERED_CHILD_WORKFLOW = 6;
     }
     ExecutionMode mode = 1;
 
