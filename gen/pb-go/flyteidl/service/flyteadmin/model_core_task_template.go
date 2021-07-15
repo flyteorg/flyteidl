@@ -17,7 +17,7 @@ type CoreTaskTemplate struct {
 	Type_ string `json:"type,omitempty"`
 	// Extra metadata about the task.
 	Metadata *CoreTaskMetadata `json:"metadata,omitempty"`
-	// A strongly typed interface for the task. This enables others to use this task within a workflow and gauarantees compile-time validation of the workflow to avoid costly runtime failures.
+	// A strongly typed interface for the task. This enables others to use this task within a workflow and guarantees compile-time validation of the workflow to avoid costly runtime failures.
 	Interface_ *CoreTypedInterface `json:"interface,omitempty"`
 	// Custom data about the task. This is extensible to allow various plugins in the system.
 	Custom *ProtobufStruct `json:"custom,omitempty"`
