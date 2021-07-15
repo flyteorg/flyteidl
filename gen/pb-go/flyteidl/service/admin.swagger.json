@@ -3383,7 +3383,7 @@
         },
         "parent_node_execution": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "title": "Which subworkflow node (if any) launched this execution"
+          "description": "Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes\nwhich execute a launch plan and launches a child workflow."
         }
       },
       "description": "Request to recover the referenced execution."
@@ -5457,7 +5457,7 @@
         "SKIPPED",
         "TIMED_OUT",
         "DYNAMIC_RUNNING",
-        "REOVERED"
+        "RECOVERED"
       ],
       "default": "UNDEFINED"
     },
@@ -6033,7 +6033,7 @@
         "FAILED",
         "ABORTED",
         "TIMED_OUT",
-        "REOVERED"
+        "RECOVERED"
       ],
       "default": "UNDEFINED"
     },

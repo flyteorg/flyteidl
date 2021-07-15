@@ -134,9 +134,9 @@ public final class Execution {
        */
       TIMED_OUT(8),
       /**
-       * <code>REOVERED = 9;</code>
+       * <code>RECOVERED = 9;</code>
        */
-      REOVERED(9),
+      RECOVERED(9),
       UNRECOGNIZED(-1),
       ;
 
@@ -177,9 +177,9 @@ public final class Execution {
        */
       public static final int TIMED_OUT_VALUE = 8;
       /**
-       * <code>REOVERED = 9;</code>
+       * <code>RECOVERED = 9;</code>
        */
-      public static final int REOVERED_VALUE = 9;
+      public static final int RECOVERED_VALUE = 9;
 
 
       public final int getNumber() {
@@ -209,7 +209,7 @@ public final class Execution {
           case 6: return FAILED;
           case 7: return ABORTED;
           case 8: return TIMED_OUT;
-          case 9: return REOVERED;
+          case 9: return RECOVERED;
           default: return null;
         }
       }
@@ -727,9 +727,9 @@ public final class Execution {
        */
       DYNAMIC_RUNNING(9),
       /**
-       * <code>REOVERED = 10;</code>
+       * <code>RECOVERED = 10;</code>
        */
-      REOVERED(10),
+      RECOVERED(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -774,9 +774,9 @@ public final class Execution {
        */
       public static final int DYNAMIC_RUNNING_VALUE = 9;
       /**
-       * <code>REOVERED = 10;</code>
+       * <code>RECOVERED = 10;</code>
        */
-      public static final int REOVERED_VALUE = 10;
+      public static final int RECOVERED_VALUE = 10;
 
 
       public final int getNumber() {
@@ -807,7 +807,7 @@ public final class Execution {
           case 7: return SKIPPED;
           case 8: return TIMED_OUT;
           case 9: return DYNAMIC_RUNNING;
-          case 10: return REOVERED;
+          case 10: return RECOVERED;
           default: return null;
         }
       }
@@ -5698,38 +5698,38 @@ public final class Execution {
   static {
     java.lang.String[] descriptorData = {
       "\n\035flyteidl/core/execution.proto\022\rflyteid" +
-      "l.core\032\036google/protobuf/duration.proto\"\247" +
-      "\001\n\021WorkflowExecution\"\221\001\n\005Phase\022\r\n\tUNDEFI" +
+      "l.core\032\036google/protobuf/duration.proto\"\250" +
+      "\001\n\021WorkflowExecution\"\222\001\n\005Phase\022\r\n\tUNDEFI" +
       "NED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\016\n\nSUCCEE" +
       "DING\020\003\022\r\n\tSUCCEEDED\020\004\022\013\n\007FAILING\020\005\022\n\n\006FA" +
-      "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\022\014\n\010RE" +
-      "OVERED\020\t\"\265\001\n\rNodeExecution\"\243\001\n\005Phase\022\r\n\t" +
-      "UNDEFINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\t" +
-      "SUCCEEDED\020\003\022\013\n\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n\007" +
-      "ABORTED\020\006\022\013\n\007SKIPPED\020\007\022\r\n\tTIMED_OUT\020\010\022\023\n" +
-      "\017DYNAMIC_RUNNING\020\t\022\014\n\010REOVERED\020\n\"\226\001\n\rTas" +
-      "kExecution\"\204\001\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n\006Q" +
-      "UEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n\007A" +
-      "BORTED\020\004\022\n\n\006FAILED\020\005\022\020\n\014INITIALIZING\020\006\022\031" +
-      "\n\025WAITING_FOR_RESOURCES\020\007\"\251\001\n\016ExecutionE" +
-      "rror\022\014\n\004code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\021\n\te" +
-      "rror_uri\030\003 \001(\t\0225\n\004kind\030\004 \001(\0162\'.flyteidl." +
-      "core.ExecutionError.ErrorKind\".\n\tErrorKi" +
-      "nd\022\013\n\007UNKNOWN\020\000\022\010\n\004USER\020\001\022\n\n\006SYSTEM\020\002\"\273\001" +
-      "\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022<\n\016" +
-      "message_format\030\003 \001(\0162$.flyteidl.core.Tas" +
-      "kLog.MessageFormat\022&\n\003ttl\030\004 \001(\0132\031.google" +
-      ".protobuf.Duration\"/\n\rMessageFormat\022\013\n\007U" +
-      "NKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"J\n\024QualityOf" +
-      "ServiceSpec\0222\n\017queueing_budget\030\001 \001(\0132\031.g" +
-      "oogle.protobuf.Duration\"\302\001\n\020QualityOfSer" +
-      "vice\0224\n\004tier\030\001 \001(\0162$.flyteidl.core.Quali" +
-      "tyOfService.TierH\000\0223\n\004spec\030\002 \001(\0132#.flyte" +
-      "idl.core.QualityOfServiceSpecH\000\"4\n\004Tier\022" +
-      "\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007\n\003" +
-      "LOW\020\003B\r\n\013designationB6Z4github.com/flyte" +
-      "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr" +
-      "oto3"
+      "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\022\r\n\tRE" +
+      "COVERED\020\t\"\266\001\n\rNodeExecution\"\244\001\n\005Phase\022\r\n" +
+      "\tUNDEFINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n" +
+      "\tSUCCEEDED\020\003\022\013\n\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n" +
+      "\007ABORTED\020\006\022\013\n\007SKIPPED\020\007\022\r\n\tTIMED_OUT\020\010\022\023" +
+      "\n\017DYNAMIC_RUNNING\020\t\022\r\n\tRECOVERED\020\n\"\226\001\n\rT" +
+      "askExecution\"\204\001\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n" +
+      "\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n" +
+      "\007ABORTED\020\004\022\n\n\006FAILED\020\005\022\020\n\014INITIALIZING\020\006" +
+      "\022\031\n\025WAITING_FOR_RESOURCES\020\007\"\251\001\n\016Executio" +
+      "nError\022\014\n\004code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\021\n" +
+      "\terror_uri\030\003 \001(\t\0225\n\004kind\030\004 \001(\0162\'.flyteid" +
+      "l.core.ExecutionError.ErrorKind\".\n\tError" +
+      "Kind\022\013\n\007UNKNOWN\020\000\022\010\n\004USER\020\001\022\n\n\006SYSTEM\020\002\"" +
+      "\273\001\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022<" +
+      "\n\016message_format\030\003 \001(\0162$.flyteidl.core.T" +
+      "askLog.MessageFormat\022&\n\003ttl\030\004 \001(\0132\031.goog" +
+      "le.protobuf.Duration\"/\n\rMessageFormat\022\013\n" +
+      "\007UNKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"J\n\024Quality" +
+      "OfServiceSpec\0222\n\017queueing_budget\030\001 \001(\0132\031" +
+      ".google.protobuf.Duration\"\302\001\n\020QualityOfS" +
+      "ervice\0224\n\004tier\030\001 \001(\0162$.flyteidl.core.Qua" +
+      "lityOfService.TierH\000\0223\n\004spec\030\002 \001(\0132#.fly" +
+      "teidl.core.QualityOfServiceSpecH\000\"4\n\004Tie" +
+      "r\022\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007" +
+      "\n\003LOW\020\003B\r\n\013designationB6Z4github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

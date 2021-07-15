@@ -7814,7 +7814,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} FAILED=6 FAILED value
              * @property {number} ABORTED=7 ABORTED value
              * @property {number} TIMED_OUT=8 TIMED_OUT value
-             * @property {number} REOVERED=9 REOVERED value
+             * @property {number} RECOVERED=9 RECOVERED value
              */
             WorkflowExecution.Phase = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -7827,7 +7827,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[6] = "FAILED"] = 6;
                 values[valuesById[7] = "ABORTED"] = 7;
                 values[valuesById[8] = "TIMED_OUT"] = 8;
-                values[valuesById[9] = "REOVERED"] = 9;
+                values[valuesById[9] = "RECOVERED"] = 9;
                 return values;
             })();
 
@@ -7938,7 +7938,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} SKIPPED=7 SKIPPED value
              * @property {number} TIMED_OUT=8 TIMED_OUT value
              * @property {number} DYNAMIC_RUNNING=9 DYNAMIC_RUNNING value
-             * @property {number} REOVERED=10 REOVERED value
+             * @property {number} RECOVERED=10 RECOVERED value
              */
             NodeExecution.Phase = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -7952,7 +7952,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[7] = "SKIPPED"] = 7;
                 values[valuesById[8] = "TIMED_OUT"] = 8;
                 values[valuesById[9] = "DYNAMIC_RUNNING"] = 9;
-                values[valuesById[10] = "REOVERED"] = 10;
+                values[valuesById[10] = "RECOVERED"] = 10;
                 return values;
             })();
 

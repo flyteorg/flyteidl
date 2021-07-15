@@ -3684,7 +3684,9 @@ definitions:
         title: "User provided value for the recovered execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
       parent_node_execution:
-        title: "Which subworkflow node (if any) launched this execution"
+        description: "Which subworkflow node (if any) launched this execution. This\
+          \ situation arises for recovered nodes\nwhich execute a launch plan and\
+          \ launches a child workflow."
         $ref: "#/definitions/coreNodeExecutionIdentifier"
     description: "Request to recover the referenced execution."
   adminExecutionRelaunchRequest:
@@ -28522,7 +28524,7 @@ definitions:
     - "SKIPPED"
     - "TIMED_OUT"
     - "DYNAMIC_RUNNING"
-    - "REOVERED"
+    - "RECOVERED"
     default: "UNDEFINED"
   coreNodeMetadata:
     type: "object"
@@ -29727,7 +29729,7 @@ definitions:
     - "FAILED"
     - "ABORTED"
     - "TIMED_OUT"
-    - "REOVERED"
+    - "RECOVERED"
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"

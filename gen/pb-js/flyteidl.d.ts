@@ -3251,7 +3251,7 @@ export namespace flyteidl {
                 FAILED = 6,
                 ABORTED = 7,
                 TIMED_OUT = 8,
-                REOVERED = 9
+                RECOVERED = 9
             }
         }
 
@@ -3315,7 +3315,7 @@ export namespace flyteidl {
                 SKIPPED = 7,
                 TIMED_OUT = 8,
                 DYNAMIC_RUNNING = 9,
-                REOVERED = 10
+                RECOVERED = 10
             }
         }
 

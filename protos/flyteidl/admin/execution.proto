@@ -59,7 +59,8 @@ message ExecutionRecoverRequest {
     // +optional
     string name = 2;
 
-    // Which subworkflow node (if any) launched this execution
+    // Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
+    // which execute a launch plan and launches a child workflow.
     core.NodeExecutionIdentifier parent_node_execution = 3;
 
 }

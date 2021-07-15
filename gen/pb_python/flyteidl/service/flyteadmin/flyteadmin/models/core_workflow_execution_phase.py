@@ -35,7 +35,7 @@ class CoreWorkflowExecutionPhase(object):
     FAILED = "FAILED"
     ABORTED = "ABORTED"
     TIMED_OUT = "TIMED_OUT"
-    REOVERED = "REOVERED"
+    RECOVERED = "RECOVERED"
 
     """
     Attributes:

@@ -108,6 +108,7 @@ class AdminExecutionRecoverRequest(object):
     def parent_node_execution(self):
         """Gets the parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
 
+        Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes which execute a launch plan and launches a child workflow.  # noqa: E501
 
         :return: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
         :rtype: CoreNodeExecutionIdentifier
@@ -118,6 +119,7 @@ class AdminExecutionRecoverRequest(object):
     def parent_node_execution(self, parent_node_execution):
         """Sets the parent_node_execution of this AdminExecutionRecoverRequest.
 
+        Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes which execute a launch plan and launches a child workflow.  # noqa: E501
 
         :param parent_node_execution: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
         :type: CoreNodeExecutionIdentifier

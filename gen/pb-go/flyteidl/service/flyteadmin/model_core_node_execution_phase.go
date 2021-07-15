@@ -23,5 +23,5 @@ const (
 	CoreNodeExecutionPhaseSKIPPED CoreNodeExecutionPhase = "SKIPPED"
 	CoreNodeExecutionPhaseTIMED_OUT CoreNodeExecutionPhase = "TIMED_OUT"
 	CoreNodeExecutionPhaseDYNAMIC_RUNNING CoreNodeExecutionPhase = "DYNAMIC_RUNNING"
-	CoreNodeExecutionPhaseREOVERED CoreNodeExecutionPhase = "REOVERED"
+	CoreNodeExecutionPhaseRECOVERED CoreNodeExecutionPhase = "RECOVERED"
 )

@@ -718,7 +718,7 @@ NodeExecution.Phase
    "SKIPPED", "7", ""
    "TIMED_OUT", "8", ""
    "DYNAMIC_RUNNING", "9", ""
-   "REOVERED", "10", ""
+   "RECOVERED", "10", ""
 
 
 
@@ -799,7 +799,7 @@ WorkflowExecution.Phase
    "FAILED", "6", ""
    "ABORTED", "7", ""
    "TIMED_OUT", "8", ""
-   "REOVERED", "9", ""
+   "RECOVERED", "9", ""
 
  
 
