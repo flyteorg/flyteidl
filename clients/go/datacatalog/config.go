@@ -2,8 +2,8 @@ package datacatalog
 
 import (
 	"context"
+	"github.com/flyteorg/flytestdlib/config"
 
-	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flytestdlib/logger"
 )
 
@@ -18,7 +18,13 @@ var (
 	//configSection = config.MustRegisterSection(ConfigSectionKey, defaultConfig)
 )
 
-type Config clientutils.ClientBaseConfig
+type Config struct {
+	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
+	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection."`
+	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
+	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
+	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
+}
 
 func GetConfig(ctx context.Context) *Config {
 	/* TODO: Add this section when everybody has migrated

@@ -3,15 +3,14 @@ package admin
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
-	"strings"
-	"sync"
-
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
+	"io/ioutil"
+	"strings"
+	"sync"
 
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
@@ -149,7 +148,7 @@ func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client service.AuthMetadataServiceClient, err error) {
 	onceAuthMetadata.Do(func() {
 		authMetadataConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.ClientBaseConfig{
+			&clientutils.Config{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,
@@ -198,7 +197,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		}
 
 		adminConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.ClientBaseConfig{
+			&clientutils.Config{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,

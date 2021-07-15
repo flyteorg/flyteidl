@@ -27,11 +27,10 @@ package datacatalog
 import (
 	"context"
 	"fmt"
-	"sync"
-
 	"github.com/flyteorg/flyteidl/clients/go/clientutils"
 	"github.com/flyteorg/flyteidl/clients/go/datacatalog/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/datacatalog"
+	"sync"
 
 	"github.com/flyteorg/flytestdlib/logger"
 	"google.golang.org/grpc"
@@ -56,7 +55,7 @@ func InitializeDataCatalogClient(ctx context.Context, cfg Config) (datacatalog.D
 	once.Do(func() {
 		var err error
 		dataCatalogConnection, err = clientutils.NewConnection(ctx,
-			&clientutils.ClientBaseConfig{
+			&clientutils.Config{
 				Endpoint:              cfg.Endpoint,
 				UseInsecureConnection: cfg.UseInsecureConnection,
 				MaxBackoffDelay:       cfg.MaxBackoffDelay,
