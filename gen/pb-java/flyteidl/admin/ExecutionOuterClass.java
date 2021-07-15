@@ -2484,8 +2484,8 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -2493,8 +2493,8 @@ public final class ExecutionOuterClass {
     boolean hasParentNodeExecution();
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -2502,8 +2502,8 @@ public final class ExecutionOuterClass {
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecution();
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -2701,8 +2701,8 @@ public final class ExecutionOuterClass {
     private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecution_;
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -2712,8 +2712,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -2723,8 +2723,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-     * which execute a launch plan and launches a child workflow.
+     * Which node (if any) launched this execution. This situation arises for recovered nodes
+     * which execute a launch plan and launch a child workflow.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3356,8 +3356,8 @@ public final class ExecutionOuterClass {
           flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> parentNodeExecutionBuilder_;
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3367,8 +3367,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3382,8 +3382,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3403,8 +3403,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3422,8 +3422,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3445,8 +3445,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3464,8 +3464,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3477,8 +3477,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>
@@ -3493,8 +3493,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes
-       * which execute a launch plan and launches a child workflow.
+       * Which node (if any) launched this execution. This situation arises for recovered nodes
+       * which execute a launch plan and launch a child workflow.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;</code>

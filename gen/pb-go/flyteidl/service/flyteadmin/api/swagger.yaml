@@ -3684,9 +3684,9 @@ definitions:
         title: "User provided value for the recovered execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
       parent_node_execution:
-        description: "Which subworkflow node (if any) launched this execution. This\
-          \ situation arises for recovered nodes\nwhich execute a launch plan and\
-          \ launches a child workflow."
+        description: "Which node (if any) launched this execution. This situation\
+          \ arises for recovered nodes\nwhich execute a launch plan and launch a child\
+          \ workflow."
         $ref: "#/definitions/coreNodeExecutionIdentifier"
     description: "Request to recover the referenced execution."
   adminExecutionRelaunchRequest:

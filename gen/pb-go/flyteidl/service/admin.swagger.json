@@ -3383,7 +3383,7 @@
         },
         "parent_node_execution": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "description": "Which subworkflow node (if any) launched this execution. This situation arises for recovered nodes\nwhich execute a launch plan and launches a child workflow."
+          "description": "Which node (if any) launched this execution. This situation arises for recovered nodes\nwhich execute a launch plan and launch a child workflow."
         }
       },
       "description": "Request to recover the referenced execution."
