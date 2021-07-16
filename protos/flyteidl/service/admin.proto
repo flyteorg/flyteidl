@@ -259,7 +259,11 @@ service AdminService {
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Recovers a previously-run workflow execution that failed due to system failure."
+      description: "Recreates a previously-run workflow execution that will only start executing from the last known failure point. "
+      "In Recover mode, users cannot change any input parameters or update the version of the execution. "
+      "This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, "
+      "downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again."
+
     };
   }
 

@@ -973,7 +973,7 @@ Request to recover the referenced execution.
 
    "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the workflow execution to recover."
    "name", ":ref:`ref_string`", "", "User provided value for the recovered execution. If none is provided the system will generate a unique string. +optional"
-   "parent_node_execution", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Which node (if any) launched the execution created in this request. This situation arises for recovered nodes which execute a launch plan and launch a child workflow."
+   "metadata", ":ref:`ref_flyteidl.admin.ExecutionMetadata`", "", "Additional metadata which will be used to overwrite any metadata in the reference execution when triggering a recovery execution."
 
 
 
@@ -1226,7 +1226,6 @@ The method by which this execution was launched.
    "RELAUNCH", "3", "This execution was launched with identical inputs as a previous execution."
    "CHILD_WORKFLOW", "4", "This execution was triggered by another execution."
    "RECOVERED", "5", "This execution was recovered from another execution."
-   "RECOVERED_CHILD_WORKFLOW", "6", "This execution was a child workflow recovered from another execution."
 
  <!-- end enums -->
 

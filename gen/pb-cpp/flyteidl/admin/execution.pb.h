@@ -146,13 +146,12 @@ enum ExecutionMetadata_ExecutionMode {
   ExecutionMetadata_ExecutionMode_RELAUNCH = 3,
   ExecutionMetadata_ExecutionMode_CHILD_WORKFLOW = 4,
   ExecutionMetadata_ExecutionMode_RECOVERED = 5,
-  ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW = 6,
   ExecutionMetadata_ExecutionMode_ExecutionMetadata_ExecutionMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ExecutionMetadata_ExecutionMode_ExecutionMetadata_ExecutionMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ExecutionMetadata_ExecutionMode_IsValid(int value);
 const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MIN = ExecutionMetadata_ExecutionMode_MANUAL;
-const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MAX = ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW;
+const ExecutionMetadata_ExecutionMode ExecutionMetadata_ExecutionMode_ExecutionMode_MAX = ExecutionMetadata_ExecutionMode_RECOVERED;
 const int ExecutionMetadata_ExecutionMode_ExecutionMode_ARRAYSIZE = ExecutionMetadata_ExecutionMode_ExecutionMode_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ExecutionMetadata_ExecutionMode_descriptor();
@@ -585,14 +584,14 @@ class ExecutionRecoverRequest final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::WorkflowExecutionIdentifier* id);
 
-  // .flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;
-  bool has_parent_node_execution() const;
-  void clear_parent_node_execution();
-  static const int kParentNodeExecutionFieldNumber = 3;
-  const ::flyteidl::core::NodeExecutionIdentifier& parent_node_execution() const;
-  ::flyteidl::core::NodeExecutionIdentifier* release_parent_node_execution();
-  ::flyteidl::core::NodeExecutionIdentifier* mutable_parent_node_execution();
-  void set_allocated_parent_node_execution(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution);
+  // .flyteidl.admin.ExecutionMetadata metadata = 3;
+  bool has_metadata() const;
+  void clear_metadata();
+  static const int kMetadataFieldNumber = 3;
+  const ::flyteidl::admin::ExecutionMetadata& metadata() const;
+  ::flyteidl::admin::ExecutionMetadata* release_metadata();
+  ::flyteidl::admin::ExecutionMetadata* mutable_metadata();
+  void set_allocated_metadata(::flyteidl::admin::ExecutionMetadata* metadata);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionRecoverRequest)
  private:
@@ -601,7 +600,7 @@ class ExecutionRecoverRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
-  ::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_;
+  ::flyteidl::admin::ExecutionMetadata* metadata_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -1872,8 +1871,6 @@ class ExecutionMetadata final :
     ExecutionMetadata_ExecutionMode_CHILD_WORKFLOW;
   static const ExecutionMode RECOVERED =
     ExecutionMetadata_ExecutionMode_RECOVERED;
-  static const ExecutionMode RECOVERED_CHILD_WORKFLOW =
-    ExecutionMetadata_ExecutionMode_RECOVERED_CHILD_WORKFLOW;
   static inline bool ExecutionMode_IsValid(int value) {
     return ExecutionMetadata_ExecutionMode_IsValid(value);
   }
@@ -3287,49 +3284,55 @@ inline void ExecutionRecoverRequest::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.name)
 }
 
-// .flyteidl.core.NodeExecutionIdentifier parent_node_execution = 3;
-inline bool ExecutionRecoverRequest::has_parent_node_execution() const {
-  return this != internal_default_instance() && parent_node_execution_ != nullptr;
+// .flyteidl.admin.ExecutionMetadata metadata = 3;
+inline bool ExecutionRecoverRequest::has_metadata() const {
+  return this != internal_default_instance() && metadata_ != nullptr;
 }
-inline const ::flyteidl::core::NodeExecutionIdentifier& ExecutionRecoverRequest::parent_node_execution() const {
-  const ::flyteidl::core::NodeExecutionIdentifier* p = parent_node_execution_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
-      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+inline void ExecutionRecoverRequest::clear_metadata() {
+  if (GetArenaNoVirtual() == nullptr && metadata_ != nullptr) {
+    delete metadata_;
+  }
+  metadata_ = nullptr;
 }
-inline ::flyteidl::core::NodeExecutionIdentifier* ExecutionRecoverRequest::release_parent_node_execution() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
+inline const ::flyteidl::admin::ExecutionMetadata& ExecutionRecoverRequest::metadata() const {
+  const ::flyteidl::admin::ExecutionMetadata* p = metadata_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRecoverRequest.metadata)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionMetadata*>(
+      &::flyteidl::admin::_ExecutionMetadata_default_instance_);
+}
+inline ::flyteidl::admin::ExecutionMetadata* ExecutionRecoverRequest::release_metadata() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionRecoverRequest.metadata)
   
-  ::flyteidl::core::NodeExecutionIdentifier* temp = parent_node_execution_;
-  parent_node_execution_ = nullptr;
+  ::flyteidl::admin::ExecutionMetadata* temp = metadata_;
+  metadata_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::NodeExecutionIdentifier* ExecutionRecoverRequest::mutable_parent_node_execution() {
+inline ::flyteidl::admin::ExecutionMetadata* ExecutionRecoverRequest::mutable_metadata() {
   
-  if (parent_node_execution_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
-    parent_node_execution_ = p;
+  if (metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionMetadata>(GetArenaNoVirtual());
+    metadata_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
-  return parent_node_execution_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionRecoverRequest.metadata)
+  return metadata_;
 }
-inline void ExecutionRecoverRequest::set_allocated_parent_node_execution(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution) {
+inline void ExecutionRecoverRequest::set_allocated_metadata(::flyteidl::admin::ExecutionMetadata* metadata) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(parent_node_execution_);
+    delete metadata_;
   }
-  if (parent_node_execution) {
+  if (metadata) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      parent_node_execution = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, parent_node_execution, submessage_arena);
+      metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, metadata, submessage_arena);
     }
     
   } else {
     
   }
-  parent_node_execution_ = parent_node_execution;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.parent_node_execution)
+  metadata_ = metadata;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRecoverRequest.metadata)
 }
 
 // -------------------------------------------------------------------

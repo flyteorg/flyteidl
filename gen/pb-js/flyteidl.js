@@ -19461,7 +19461,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExecutionRecoverRequest
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionRecoverRequest id
              * @property {string|null} [name] ExecutionRecoverRequest name
-             * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionRecoverRequest parentNodeExecution
+             * @property {flyteidl.admin.IExecutionMetadata|null} [metadata] ExecutionRecoverRequest metadata
              */
 
             /**
@@ -19496,12 +19496,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionRecoverRequest.prototype.name = "";
 
             /**
-             * ExecutionRecoverRequest parentNodeExecution.
-             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecution
+             * ExecutionRecoverRequest metadata.
+             * @member {flyteidl.admin.IExecutionMetadata|null|undefined} metadata
              * @memberof flyteidl.admin.ExecutionRecoverRequest
              * @instance
              */
-            ExecutionRecoverRequest.prototype.parentNodeExecution = null;
+            ExecutionRecoverRequest.prototype.metadata = null;
 
             /**
              * Creates a new ExecutionRecoverRequest instance using the specified properties.
@@ -19531,8 +19531,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
-                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.admin.ExecutionMetadata.encode(message.metadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -19561,7 +19561,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.name = reader.string();
                         break;
                     case 3:
-                        message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        message.metadata = $root.flyteidl.admin.ExecutionMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19590,10 +19590,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution")) {
-                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.admin.ExecutionMetadata.verify(message.metadata);
                     if (error)
-                        return "parentNodeExecution." + error;
+                        return "metadata." + error;
                 }
                 return null;
             };
@@ -21064,7 +21064,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                     case 4:
                     case 5:
-                    case 6:
                         break;
                     }
                 if (message.principal != null && message.hasOwnProperty("principal"))
@@ -21106,7 +21105,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} RELAUNCH=3 RELAUNCH value
              * @property {number} CHILD_WORKFLOW=4 CHILD_WORKFLOW value
              * @property {number} RECOVERED=5 RECOVERED value
-             * @property {number} RECOVERED_CHILD_WORKFLOW=6 RECOVERED_CHILD_WORKFLOW value
              */
             ExecutionMetadata.ExecutionMode = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -21116,7 +21114,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[3] = "RELAUNCH"] = 3;
                 values[valuesById[4] = "CHILD_WORKFLOW"] = 4;
                 values[valuesById[5] = "RECOVERED"] = 5;
-                values[valuesById[6] = "RECOVERED_CHILD_WORKFLOW"] = 6;
                 return values;
             })();
 

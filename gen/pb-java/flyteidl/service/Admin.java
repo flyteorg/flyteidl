@@ -37,7 +37,7 @@ public final class Admin {
       "dmin/task_execution.proto\032\034flyteidl/admi" +
       "n/version.proto\032\033flyteidl/admin/common.p" +
       "roto\032,protoc-gen-swagger/options/annotat" +
-      "ions.proto2\207c\n\014AdminService\022\305\002\n\nCreateTa" +
+      "ions.proto2\305f\n\014AdminService\022\305\002\n\nCreateTa" +
       "sk\022!.flyteidl.admin.TaskCreateRequest\032\"." +
       "flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344\223" +
       "\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and reg" +
@@ -156,206 +156,218 @@ public final class Admin {
       "idl.admin.ExecutionRelaunchRequest\032\'.fly" +
       "teidl.admin.ExecutionCreateResponse\"I\202\323\344" +
       "\223\002 \"\033/api/v1/executions/relaunch:\001*\222A \032\036" +
-      "Relaunch a workflow execution.\022\337\001\n\020Recov" +
+      "Relaunch a workflow execution.\022\235\005\n\020Recov" +
       "erExecution\022\'.flyteidl.admin.ExecutionRe" +
       "coverRequest\032\'.flyteidl.admin.ExecutionC" +
-      "reateResponse\"y\202\323\344\223\002\037\"\032/api/v1/execution" +
-      "s/recover:\001*\222AQ\032ORecovers a previously-r" +
-      "un workflow execution that failed due to" +
-      " system failure.\022\302\001\n\014GetExecution\022+.flyt" +
-      "eidl.admin.WorkflowExecutionGetRequest\032\031" +
-      ".flyteidl.admin.Execution\"j\202\323\344\223\0027\0225/api/" +
-      "v1/executions/{id.project}/{id.domain}/{" +
-      "id.name}\222A*\032(Retrieve an existing workfl" +
-      "ow execution.\022\202\002\n\020GetExecutionData\022/.fly" +
-      "teidl.admin.WorkflowExecutionGetDataRequ" +
-      "est\0320.flyteidl.admin.WorkflowExecutionGe" +
-      "tDataResponse\"\212\001\202\323\344\223\002<\022:/api/v1/data/exe" +
-      "cutions/{id.project}/{id.domain}/{id.nam" +
-      "e}\222AE\032CRetrieve input and output data fr" +
-      "om an existing workflow execution.\022\310\001\n\016L" +
-      "istExecutions\022#.flyteidl.admin.ResourceL" +
-      "istRequest\032\035.flyteidl.admin.ExecutionLis" +
-      "t\"r\202\323\344\223\002-\022+/api/v1/executions/{id.projec" +
-      "t}/{id.domain}\222A<\032:Fetch existing workfl" +
-      "ow executions matching input filters.\022\364\001" +
-      "\n\022TerminateExecution\022).flyteidl.admin.Ex" +
-      "ecutionTerminateRequest\032*.flyteidl.admin" +
-      ".ExecutionTerminateResponse\"\206\001\202\323\344\223\002:*5/a" +
-      "pi/v1/executions/{id.project}/{id.domain" +
-      "}/{id.name}:\001*\222AC\032ATerminate the active " +
-      "workflow execution specified in the requ" +
-      "est.\022\374\001\n\020GetNodeExecution\022\'.flyteidl.adm" +
-      "in.NodeExecutionGetRequest\032\035.flyteidl.ad" +
-      "min.NodeExecution\"\237\001\202\323\344\223\002p\022n/api/v1/node" +
+      "reateResponse\"\266\004\202\323\344\223\002\037\"\032/api/v1/executio" +
+      "ns/recover:\001*\222A\215\004\032\212\004Recreates a previous" +
+      "ly-run workflow execution that will only" +
+      " start executing from the last known fai" +
+      "lure point. In Recover mode, users canno" +
+      "t change any input parameters or update " +
+      "the version of the execution. This is ex" +
+      "tremely useful to recover from system er" +
+      "rors and byzantine faults like - Loss of" +
+      " K8s cluster, bugs in platform or instab" +
+      "ility, machine failures, downstream syst" +
+      "em failures (downstream services), or si" +
+      "mply to recover executions that failed b" +
+      "ecause of retry exhaustion and should co" +
+      "mplete if tried again.\022\302\001\n\014GetExecution\022" +
+      "+.flyteidl.admin.WorkflowExecutionGetReq" +
+      "uest\032\031.flyteidl.admin.Execution\"j\202\323\344\223\0027\022" +
+      "5/api/v1/executions/{id.project}/{id.dom" +
+      "ain}/{id.name}\222A*\032(Retrieve an existing " +
+      "workflow execution.\022\202\002\n\020GetExecutionData" +
+      "\022/.flyteidl.admin.WorkflowExecutionGetDa" +
+      "taRequest\0320.flyteidl.admin.WorkflowExecu" +
+      "tionGetDataResponse\"\212\001\202\323\344\223\002<\022:/api/v1/da" +
+      "ta/executions/{id.project}/{id.domain}/{" +
+      "id.name}\222AE\032CRetrieve input and output d" +
+      "ata from an existing workflow execution." +
+      "\022\310\001\n\016ListExecutions\022#.flyteidl.admin.Res" +
+      "ourceListRequest\032\035.flyteidl.admin.Execut" +
+      "ionList\"r\202\323\344\223\002-\022+/api/v1/executions/{id." +
+      "project}/{id.domain}\222A<\032:Fetch existing " +
+      "workflow executions matching input filte" +
+      "rs.\022\364\001\n\022TerminateExecution\022).flyteidl.ad" +
+      "min.ExecutionTerminateRequest\032*.flyteidl" +
+      ".admin.ExecutionTerminateResponse\"\206\001\202\323\344\223" +
+      "\002:*5/api/v1/executions/{id.project}/{id." +
+      "domain}/{id.name}:\001*\222AC\032ATerminate the a" +
+      "ctive workflow execution specified in th" +
+      "e request.\022\374\001\n\020GetNodeExecution\022\'.flytei" +
+      "dl.admin.NodeExecutionGetRequest\032\035.flyte" +
+      "idl.admin.NodeExecution\"\237\001\202\323\344\223\002p\022n/api/v" +
+      "1/node_executions/{id.execution_id.proje" +
+      "ct}/{id.execution_id.domain}/{id.executi" +
+      "on_id.name}/{id.node_id}\222A&\032$Retrieve an" +
+      " existing node execution.\022\232\002\n\022ListNodeEx" +
+      "ecutions\022(.flyteidl.admin.NodeExecutionL" +
+      "istRequest\032!.flyteidl.admin.NodeExecutio" +
+      "nList\"\266\001\202\323\344\223\002u\022s/api/v1/node_executions/" +
+      "{workflow_execution_id.project}/{workflo" +
+      "w_execution_id.domain}/{workflow_executi" +
+      "on_id.name}\222A8\0326Fetch existing node exec" +
+      "utions matching input filters.\022\357\004\n\031ListN" +
+      "odeExecutionsForTask\022/.flyteidl.admin.No" +
+      "deExecutionForTaskListRequest\032!.flyteidl" +
+      ".admin.NodeExecutionList\"\375\003\202\323\344\223\002\254\003\022\251\003/ap" +
+      "i/v1/children/task_executions/{task_exec" +
+      "ution_id.node_execution_id.execution_id." +
+      "project}/{task_execution_id.node_executi" +
+      "on_id.execution_id.domain}/{task_executi" +
+      "on_id.node_execution_id.execution_id.nam" +
+      "e}/{task_execution_id.node_execution_id." +
+      "node_id}/{task_execution_id.task_id.proj" +
+      "ect}/{task_execution_id.task_id.domain}/" +
+      "{task_execution_id.task_id.name}/{task_e" +
+      "xecution_id.task_id.version}/{task_execu" +
+      "tion_id.retry_attempt}\222AG\032EFetch child n" +
+      "ode executions launched by the specified" +
+      " task execution.\022\263\002\n\024GetNodeExecutionDat" +
+      "a\022+.flyteidl.admin.NodeExecutionGetDataR" +
+      "equest\032,.flyteidl.admin.NodeExecutionGet" +
+      "DataResponse\"\277\001\202\323\344\223\002u\022s/api/v1/data/node" +
       "_executions/{id.execution_id.project}/{i" +
       "d.execution_id.domain}/{id.execution_id." +
-      "name}/{id.node_id}\222A&\032$Retrieve an exist" +
-      "ing node execution.\022\232\002\n\022ListNodeExecutio" +
-      "ns\022(.flyteidl.admin.NodeExecutionListReq" +
-      "uest\032!.flyteidl.admin.NodeExecutionList\"" +
-      "\266\001\202\323\344\223\002u\022s/api/v1/node_executions/{workf" +
-      "low_execution_id.project}/{workflow_exec" +
-      "ution_id.domain}/{workflow_execution_id." +
-      "name}\222A8\0326Fetch existing node executions" +
-      " matching input filters.\022\357\004\n\031ListNodeExe" +
-      "cutionsForTask\022/.flyteidl.admin.NodeExec" +
-      "utionForTaskListRequest\032!.flyteidl.admin" +
-      ".NodeExecutionList\"\375\003\202\323\344\223\002\254\003\022\251\003/api/v1/c" +
-      "hildren/task_executions/{task_execution_" +
-      "id.node_execution_id.execution_id.projec" +
-      "t}/{task_execution_id.node_execution_id." +
-      "execution_id.domain}/{task_execution_id." +
-      "node_execution_id.execution_id.name}/{ta" +
-      "sk_execution_id.node_execution_id.node_i" +
-      "d}/{task_execution_id.task_id.project}/{" +
-      "task_execution_id.task_id.domain}/{task_" +
-      "execution_id.task_id.name}/{task_executi" +
-      "on_id.task_id.version}/{task_execution_i" +
-      "d.retry_attempt}\222AG\032EFetch child node ex" +
-      "ecutions launched by the specified task " +
-      "execution.\022\263\002\n\024GetNodeExecutionData\022+.fl" +
-      "yteidl.admin.NodeExecutionGetDataRequest" +
-      "\032,.flyteidl.admin.NodeExecutionGetDataRe" +
-      "sponse\"\277\001\202\323\344\223\002u\022s/api/v1/data/node_execu" +
-      "tions/{id.execution_id.project}/{id.exec" +
-      "ution_id.domain}/{id.execution_id.name}/" +
-      "{id.node_id}\222AA\032?Retrieve input and outp" +
-      "ut data from an existing node execution." +
-      "\022\227\001\n\017RegisterProject\022&.flyteidl.admin.Pr" +
-      "ojectRegisterRequest\032\'.flyteidl.admin.Pr" +
-      "ojectRegisterResponse\"3\202\323\344\223\002\025\"\020/api/v1/p" +
-      "rojects:\001*\222A\025\032\023Register a project.\022\207\001\n\rU" +
-      "pdateProject\022\027.flyteidl.admin.Project\032%." +
-      "flyteidl.admin.ProjectUpdateResponse\"6\202\323" +
-      "\344\223\002\032\032\025/api/v1/projects/{id}:\001*\222A\023\032\021Updat" +
-      "e a project.\022\205\001\n\014ListProjects\022\".flyteidl" +
-      ".admin.ProjectListRequest\032\030.flyteidl.adm" +
-      "in.Projects\"7\202\323\344\223\002\022\022\020/api/v1/projects\222A\034" +
-      "\032\032Fetch registered projects.\022\335\001\n\023CreateW" +
-      "orkflowEvent\022-.flyteidl.admin.WorkflowEx" +
-      "ecutionEventRequest\032..flyteidl.admin.Wor" +
-      "kflowExecutionEventResponse\"g\202\323\344\223\002\035\"\030/ap" +
-      "i/v1/events/workflows:\001*\222AA\032?Create a wo" +
-      "rkflow execution event recording a phase" +
-      " transition.\022\311\001\n\017CreateNodeEvent\022).flyte" +
-      "idl.admin.NodeExecutionEventRequest\032*.fl" +
-      "yteidl.admin.NodeExecutionEventResponse\"" +
-      "_\202\323\344\223\002\031\"\024/api/v1/events/nodes:\001*\222A=\032;Cre" +
-      "ate a node execution event recording a p" +
-      "hase transition.\022\311\001\n\017CreateTaskEvent\022).f" +
-      "lyteidl.admin.TaskExecutionEventRequest\032" +
-      "*.flyteidl.admin.TaskExecutionEventRespo" +
-      "nse\"_\202\323\344\223\002\031\"\024/api/v1/events/tasks:\001*\222A=\032" +
-      ";Create a task execution event recording" +
-      " a phase transition.\022\251\003\n\020GetTaskExecutio" +
-      "n\022\'.flyteidl.admin.TaskExecutionGetReque" +
-      "st\032\035.flyteidl.admin.TaskExecution\"\314\002\202\323\344\223" +
-      "\002\234\002\022\231\002/api/v1/task_executions/{id.node_e" +
-      "xecution_id.execution_id.project}/{id.no" +
-      "de_execution_id.execution_id.domain}/{id" +
-      ".node_execution_id.execution_id.name}/{i" +
-      "d.node_execution_id.node_id}/{id.task_id" +
-      ".project}/{id.task_id.domain}/{id.task_i" +
-      "d.name}/{id.task_id.version}/{id.retry_a" +
-      "ttempt}\222A&\032$Retrieve an existing task ex" +
-      "ecution.\022\323\002\n\022ListTaskExecutions\022(.flytei" +
-      "dl.admin.TaskExecutionListRequest\032!.flyt" +
-      "eidl.admin.TaskExecutionList\"\357\001\202\323\344\223\002\255\001\022\252" +
-      "\001/api/v1/task_executions/{node_execution" +
-      "_id.execution_id.project}/{node_executio" +
-      "n_id.execution_id.domain}/{node_executio" +
-      "n_id.execution_id.name}/{node_execution_" +
-      "id.node_id}\222A8\0326Fetch existing task exec" +
-      "utions matching input filters.\022\340\003\n\024GetTa" +
-      "skExecutionData\022+.flyteidl.admin.TaskExe" +
-      "cutionGetDataRequest\032,.flyteidl.admin.Ta" +
-      "skExecutionGetDataResponse\"\354\002\202\323\344\223\002\241\002\022\236\002/" +
-      "api/v1/data/task_executions/{id.node_exe" +
-      "cution_id.execution_id.project}/{id.node" +
-      "_execution_id.execution_id.domain}/{id.n" +
-      "ode_execution_id.execution_id.name}/{id." +
-      "node_execution_id.node_id}/{id.task_id.p" +
-      "roject}/{id.task_id.domain}/{id.task_id." +
-      "name}/{id.task_id.version}/{id.retry_att" +
-      "empt}\222AA\032?Retrieve input and output data" +
-      " from an existing task execution.\022\277\002\n\035Up" +
-      "dateProjectDomainAttributes\0224.flyteidl.a" +
-      "dmin.ProjectDomainAttributesUpdateReques" +
-      "t\0325.flyteidl.admin.ProjectDomainAttribut" +
-      "esUpdateResponse\"\260\001\202\323\344\223\002O\032J/api/v1/proje" +
-      "ct_domain_attributes/{attributes.project" +
-      "}/{attributes.domain}:\001*\222AX\032VUpdate the " +
-      "customized resource attributes associate" +
-      "d with a project-domain combination\022\237\002\n\032" +
-      "GetProjectDomainAttributes\0221.flyteidl.ad" +
-      "min.ProjectDomainAttributesGetRequest\0322." +
-      "flyteidl.admin.ProjectDomainAttributesGe" +
-      "tResponse\"\231\001\202\323\344\223\0026\0224/api/v1/project_doma" +
-      "in_attributes/{project}/{domain}\222AZ\032XRet" +
-      "rieve the customized resource attributes" +
-      " associated with a project-domain combin" +
-      "ation\022\251\002\n\035DeleteProjectDomainAttributes\022" +
-      "4.flyteidl.admin.ProjectDomainAttributes" +
-      "DeleteRequest\0325.flyteidl.admin.ProjectDo" +
-      "mainAttributesDeleteResponse\"\232\001\202\323\344\223\0029*4/" +
-      "api/v1/project_domain_attributes/{projec" +
-      "t}/{domain}:\001*\222AX\032VDelete the customized" +
-      " resource attributes associated with a p" +
-      "roject-domain combination\022\316\002\n\030UpdateWork" +
-      "flowAttributes\022/.flyteidl.admin.Workflow" +
-      "AttributesUpdateRequest\0320.flyteidl.admin" +
-      ".WorkflowAttributesUpdateResponse\"\316\001\202\323\344\223" +
-      "\002_\032Z/api/v1/workflow_attributes/{attribu" +
-      "tes.project}/{attributes.domain}/{attrib" +
-      "utes.workflow}:\001*\222Af\032dUpdate the customi" +
-      "zed resource attributes associated with " +
-      "a project, domain and workflow combinati" +
-      "on\022\243\002\n\025GetWorkflowAttributes\022,.flyteidl." +
-      "admin.WorkflowAttributesGetRequest\032-.fly" +
-      "teidl.admin.WorkflowAttributesGetRespons" +
-      "e\"\254\001\202\323\344\223\002;\0229/api/v1/workflow_attributes/" +
-      "{project}/{domain}/{workflow}\222Ah\032fRetrie" +
-      "ve the customized resource attributes as" +
-      "sociated with a project, domain and work" +
-      "flow combination\022\255\002\n\030DeleteWorkflowAttri" +
-      "butes\022/.flyteidl.admin.WorkflowAttribute" +
-      "sDeleteRequest\0320.flyteidl.admin.Workflow" +
-      "AttributesDeleteResponse\"\255\001\202\323\344\223\002>*9/api/" +
-      "v1/workflow_attributes/{project}/{domain" +
-      "}/{workflow}:\001*\222Af\032dDelete the customize" +
-      "d resource attributes associated with a " +
-      "project, domain and workflow combination" +
-      "\022\341\001\n\027ListMatchableAttributes\022..flyteidl." +
-      "admin.ListMatchableAttributesRequest\032/.f" +
-      "lyteidl.admin.ListMatchableAttributesRes" +
-      "ponse\"e\202\323\344\223\002\036\022\034/api/v1/matchable_attribu" +
-      "tes\222A>\032<Retrieve a list of MatchableAttr" +
-      "ibutesConfiguration objects.\022\200\002\n\021ListNam" +
-      "edEntities\022&.flyteidl.admin.NamedEntityL" +
-      "istRequest\032\037.flyteidl.admin.NamedEntityL" +
-      "ist\"\241\001\202\323\344\223\002;\0229/api/v1/named_entities/{re" +
-      "source_type}/{project}/{domain}\222A]\032[Retr" +
-      "ieve a list of NamedEntity objects shari" +
-      "ng a common resource type, project, and " +
-      "domain.\022\312\001\n\016GetNamedEntity\022%.flyteidl.ad" +
-      "min.NamedEntityGetRequest\032\033.flyteidl.adm" +
-      "in.NamedEntity\"t\202\323\344\223\002K\022I/api/v1/named_en" +
-      "tities/{resource_type}/{id.project}/{id." +
-      "domain}/{id.name}\222A \032\036Retrieve a NamedEn" +
-      "tity object.\022\363\001\n\021UpdateNamedEntity\022(.fly" +
-      "teidl.admin.NamedEntityUpdateRequest\032).f" +
-      "lyteidl.admin.NamedEntityUpdateResponse\"" +
-      "\210\001\202\323\344\223\002N\032I/api/v1/named_entities/{resour" +
-      "ce_type}/{id.project}/{id.domain}/{id.na" +
-      "me}:\001*\222A1\032/Update the fields associated " +
-      "with a NamedEntity\022\277\001\n\nGetVersion\022!.flyt" +
-      "eidl.admin.GetVersionRequest\032\".flyteidl." +
-      "admin.GetVersionResponse\"j\202\323\344\223\002\021\022\017/api/v" +
-      "1/version\222AP\032NRetrieve the Version (incl" +
-      "uding the Build  information) for FlyteA" +
-      "dmin serviceB9Z7github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/serviceb\006proto3"
+      "name}/{id.node_id}\222AA\032?Retrieve input an" +
+      "d output data from an existing node exec" +
+      "ution.\022\227\001\n\017RegisterProject\022&.flyteidl.ad" +
+      "min.ProjectRegisterRequest\032\'.flyteidl.ad" +
+      "min.ProjectRegisterResponse\"3\202\323\344\223\002\025\"\020/ap" +
+      "i/v1/projects:\001*\222A\025\032\023Register a project." +
+      "\022\207\001\n\rUpdateProject\022\027.flyteidl.admin.Proj" +
+      "ect\032%.flyteidl.admin.ProjectUpdateRespon" +
+      "se\"6\202\323\344\223\002\032\032\025/api/v1/projects/{id}:\001*\222A\023\032" +
+      "\021Update a project.\022\205\001\n\014ListProjects\022\".fl" +
+      "yteidl.admin.ProjectListRequest\032\030.flytei" +
+      "dl.admin.Projects\"7\202\323\344\223\002\022\022\020/api/v1/proje" +
+      "cts\222A\034\032\032Fetch registered projects.\022\335\001\n\023C" +
+      "reateWorkflowEvent\022-.flyteidl.admin.Work" +
+      "flowExecutionEventRequest\032..flyteidl.adm" +
+      "in.WorkflowExecutionEventResponse\"g\202\323\344\223\002" +
+      "\035\"\030/api/v1/events/workflows:\001*\222AA\032?Creat" +
+      "e a workflow execution event recording a" +
+      " phase transition.\022\311\001\n\017CreateNodeEvent\022)" +
+      ".flyteidl.admin.NodeExecutionEventReques" +
+      "t\032*.flyteidl.admin.NodeExecutionEventRes" +
+      "ponse\"_\202\323\344\223\002\031\"\024/api/v1/events/nodes:\001*\222A" +
+      "=\032;Create a node execution event recordi" +
+      "ng a phase transition.\022\311\001\n\017CreateTaskEve" +
+      "nt\022).flyteidl.admin.TaskExecutionEventRe" +
+      "quest\032*.flyteidl.admin.TaskExecutionEven" +
+      "tResponse\"_\202\323\344\223\002\031\"\024/api/v1/events/tasks:" +
+      "\001*\222A=\032;Create a task execution event rec" +
+      "ording a phase transition.\022\251\003\n\020GetTaskEx" +
+      "ecution\022\'.flyteidl.admin.TaskExecutionGe" +
+      "tRequest\032\035.flyteidl.admin.TaskExecution\"" +
+      "\314\002\202\323\344\223\002\234\002\022\231\002/api/v1/task_executions/{id." +
+      "node_execution_id.execution_id.project}/" +
+      "{id.node_execution_id.execution_id.domai" +
+      "n}/{id.node_execution_id.execution_id.na" +
+      "me}/{id.node_execution_id.node_id}/{id.t" +
+      "ask_id.project}/{id.task_id.domain}/{id." +
+      "task_id.name}/{id.task_id.version}/{id.r" +
+      "etry_attempt}\222A&\032$Retrieve an existing t" +
+      "ask execution.\022\323\002\n\022ListTaskExecutions\022(." +
+      "flyteidl.admin.TaskExecutionListRequest\032" +
+      "!.flyteidl.admin.TaskExecutionList\"\357\001\202\323\344" +
+      "\223\002\255\001\022\252\001/api/v1/task_executions/{node_exe" +
+      "cution_id.execution_id.project}/{node_ex" +
+      "ecution_id.execution_id.domain}/{node_ex" +
+      "ecution_id.execution_id.name}/{node_exec" +
+      "ution_id.node_id}\222A8\0326Fetch existing tas" +
+      "k executions matching input filters.\022\340\003\n" +
+      "\024GetTaskExecutionData\022+.flyteidl.admin.T" +
+      "askExecutionGetDataRequest\032,.flyteidl.ad" +
+      "min.TaskExecutionGetDataResponse\"\354\002\202\323\344\223\002" +
+      "\241\002\022\236\002/api/v1/data/task_executions/{id.no" +
+      "de_execution_id.execution_id.project}/{i" +
+      "d.node_execution_id.execution_id.domain}" +
+      "/{id.node_execution_id.execution_id.name" +
+      "}/{id.node_execution_id.node_id}/{id.tas" +
+      "k_id.project}/{id.task_id.domain}/{id.ta" +
+      "sk_id.name}/{id.task_id.version}/{id.ret" +
+      "ry_attempt}\222AA\032?Retrieve input and outpu" +
+      "t data from an existing task execution.\022" +
+      "\277\002\n\035UpdateProjectDomainAttributes\0224.flyt" +
+      "eidl.admin.ProjectDomainAttributesUpdate" +
+      "Request\0325.flyteidl.admin.ProjectDomainAt" +
+      "tributesUpdateResponse\"\260\001\202\323\344\223\002O\032J/api/v1" +
+      "/project_domain_attributes/{attributes.p" +
+      "roject}/{attributes.domain}:\001*\222AX\032VUpdat" +
+      "e the customized resource attributes ass" +
+      "ociated with a project-domain combinatio" +
+      "n\022\237\002\n\032GetProjectDomainAttributes\0221.flyte" +
+      "idl.admin.ProjectDomainAttributesGetRequ" +
+      "est\0322.flyteidl.admin.ProjectDomainAttrib" +
+      "utesGetResponse\"\231\001\202\323\344\223\0026\0224/api/v1/projec" +
+      "t_domain_attributes/{project}/{domain}\222A" +
+      "Z\032XRetrieve the customized resource attr" +
+      "ibutes associated with a project-domain " +
+      "combination\022\251\002\n\035DeleteProjectDomainAttri" +
+      "butes\0224.flyteidl.admin.ProjectDomainAttr" +
+      "ibutesDeleteRequest\0325.flyteidl.admin.Pro" +
+      "jectDomainAttributesDeleteResponse\"\232\001\202\323\344" +
+      "\223\0029*4/api/v1/project_domain_attributes/{" +
+      "project}/{domain}:\001*\222AX\032VDelete the cust" +
+      "omized resource attributes associated wi" +
+      "th a project-domain combination\022\316\002\n\030Upda" +
+      "teWorkflowAttributes\022/.flyteidl.admin.Wo" +
+      "rkflowAttributesUpdateRequest\0320.flyteidl" +
+      ".admin.WorkflowAttributesUpdateResponse\"" +
+      "\316\001\202\323\344\223\002_\032Z/api/v1/workflow_attributes/{a" +
+      "ttributes.project}/{attributes.domain}/{" +
+      "attributes.workflow}:\001*\222Af\032dUpdate the c" +
+      "ustomized resource attributes associated" +
+      " with a project, domain and workflow com" +
+      "bination\022\243\002\n\025GetWorkflowAttributes\022,.fly" +
+      "teidl.admin.WorkflowAttributesGetRequest" +
+      "\032-.flyteidl.admin.WorkflowAttributesGetR" +
+      "esponse\"\254\001\202\323\344\223\002;\0229/api/v1/workflow_attri" +
+      "butes/{project}/{domain}/{workflow}\222Ah\032f" +
+      "Retrieve the customized resource attribu" +
+      "tes associated with a project, domain an" +
+      "d workflow combination\022\255\002\n\030DeleteWorkflo" +
+      "wAttributes\022/.flyteidl.admin.WorkflowAtt" +
+      "ributesDeleteRequest\0320.flyteidl.admin.Wo" +
+      "rkflowAttributesDeleteResponse\"\255\001\202\323\344\223\002>*" +
+      "9/api/v1/workflow_attributes/{project}/{" +
+      "domain}/{workflow}:\001*\222Af\032dDelete the cus" +
+      "tomized resource attributes associated w" +
+      "ith a project, domain and workflow combi" +
+      "nation\022\341\001\n\027ListMatchableAttributes\022..fly" +
+      "teidl.admin.ListMatchableAttributesReque" +
+      "st\032/.flyteidl.admin.ListMatchableAttribu" +
+      "tesResponse\"e\202\323\344\223\002\036\022\034/api/v1/matchable_a" +
+      "ttributes\222A>\032<Retrieve a list of Matchab" +
+      "leAttributesConfiguration objects.\022\200\002\n\021L" +
+      "istNamedEntities\022&.flyteidl.admin.NamedE" +
+      "ntityListRequest\032\037.flyteidl.admin.NamedE" +
+      "ntityList\"\241\001\202\323\344\223\002;\0229/api/v1/named_entiti" +
+      "es/{resource_type}/{project}/{domain}\222A]" +
+      "\032[Retrieve a list of NamedEntity objects" +
+      " sharing a common resource type, project" +
+      ", and domain.\022\312\001\n\016GetNamedEntity\022%.flyte" +
+      "idl.admin.NamedEntityGetRequest\032\033.flytei" +
+      "dl.admin.NamedEntity\"t\202\323\344\223\002K\022I/api/v1/na" +
+      "med_entities/{resource_type}/{id.project" +
+      "}/{id.domain}/{id.name}\222A \032\036Retrieve a N" +
+      "amedEntity object.\022\363\001\n\021UpdateNamedEntity" +
+      "\022(.flyteidl.admin.NamedEntityUpdateReque" +
+      "st\032).flyteidl.admin.NamedEntityUpdateRes" +
+      "ponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_entities/{" +
+      "resource_type}/{id.project}/{id.domain}/" +
+      "{id.name}:\001*\222A1\032/Update the fields assoc" +
+      "iated with a NamedEntity\022\277\001\n\nGetVersion\022" +
+      "!.flyteidl.admin.GetVersionRequest\032\".fly" +
+      "teidl.admin.GetVersionResponse\"j\202\323\344\223\002\021\022\017" +
+      "/api/v1/version\222AP\032NRetrieve the Version" +
+      " (including the Build  information) for " +
+      "FlyteAdmin serviceB9Z7github.com/flyteor" +
+      "g/flyteidl/gen/pb-go/flyteidl/serviceb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

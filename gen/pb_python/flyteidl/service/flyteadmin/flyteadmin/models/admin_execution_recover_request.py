@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
+from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 
 
@@ -36,29 +36,29 @@ class AdminExecutionRecoverRequest(object):
     swagger_types = {
         'id': 'CoreWorkflowExecutionIdentifier',
         'name': 'str',
-        'parent_node_execution': 'CoreNodeExecutionIdentifier'
+        'metadata': 'AdminExecutionMetadata'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'parent_node_execution': 'parent_node_execution'
+        'metadata': 'metadata'
     }
 
-    def __init__(self, id=None, name=None, parent_node_execution=None):  # noqa: E501
+    def __init__(self, id=None, name=None, metadata=None):  # noqa: E501
         """AdminExecutionRecoverRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
-        self._parent_node_execution = None
+        self._metadata = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if parent_node_execution is not None:
-            self.parent_node_execution = parent_node_execution
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def id(self):
@@ -105,27 +105,27 @@ class AdminExecutionRecoverRequest(object):
         self._name = name
 
     @property
-    def parent_node_execution(self):
-        """Gets the parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
+    def metadata(self):
+        """Gets the metadata of this AdminExecutionRecoverRequest.  # noqa: E501
 
-        Which node (if any) launched the execution created in this request. This situation arises for recovered nodes which execute a launch plan and launch a child workflow.  # noqa: E501
+        Additional metadata which will be used to overwrite any metadata in the reference execution when triggering a recovery execution.  # noqa: E501
 
-        :return: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
-        :rtype: CoreNodeExecutionIdentifier
+        :return: The metadata of this AdminExecutionRecoverRequest.  # noqa: E501
+        :rtype: AdminExecutionMetadata
         """
-        return self._parent_node_execution
+        return self._metadata
 
-    @parent_node_execution.setter
-    def parent_node_execution(self, parent_node_execution):
-        """Sets the parent_node_execution of this AdminExecutionRecoverRequest.
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this AdminExecutionRecoverRequest.
 
-        Which node (if any) launched the execution created in this request. This situation arises for recovered nodes which execute a launch plan and launch a child workflow.  # noqa: E501
+        Additional metadata which will be used to overwrite any metadata in the reference execution when triggering a recovery execution.  # noqa: E501
 
-        :param parent_node_execution: The parent_node_execution of this AdminExecutionRecoverRequest.  # noqa: E501
-        :type: CoreNodeExecutionIdentifier
+        :param metadata: The metadata of this AdminExecutionRecoverRequest.  # noqa: E501
+        :type: AdminExecutionMetadata
         """
 
-        self._parent_node_execution = parent_node_execution
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

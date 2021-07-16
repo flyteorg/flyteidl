@@ -8135,8 +8135,8 @@ export namespace flyteidl {
             /** ExecutionRecoverRequest name */
             name?: (string|null);
 
-            /** ExecutionRecoverRequest parentNodeExecution */
-            parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+            /** ExecutionRecoverRequest metadata */
+            metadata?: (flyteidl.admin.IExecutionMetadata|null);
         }
 
         /** Represents an ExecutionRecoverRequest. */
@@ -8154,8 +8154,8 @@ export namespace flyteidl {
             /** ExecutionRecoverRequest name. */
             public name: string;
 
-            /** ExecutionRecoverRequest parentNodeExecution. */
-            public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+            /** ExecutionRecoverRequest metadata. */
+            public metadata?: (flyteidl.admin.IExecutionMetadata|null);
 
             /**
              * Creates a new ExecutionRecoverRequest instance using the specified properties.
@@ -8805,8 +8805,7 @@ export namespace flyteidl {
                 SYSTEM = 2,
                 RELAUNCH = 3,
                 CHILD_WORKFLOW = 4,
-                RECOVERED = 5,
-                RECOVERED_CHILD_WORKFLOW = 6
+                RECOVERED = 5
             }
         }
 

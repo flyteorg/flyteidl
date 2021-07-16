@@ -232,10 +232,10 @@ func (m *ExecutionRecoverRequest) Validate() error {
 
 	// no validation rules for Name
 
-	if v, ok := interface{}(m.GetParentNodeExecution()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ExecutionRecoverRequestValidationError{
-				field:  "ParentNodeExecution",
+				field:  "Metadata",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

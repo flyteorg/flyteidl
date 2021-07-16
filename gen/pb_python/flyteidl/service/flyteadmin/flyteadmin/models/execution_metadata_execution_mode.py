@@ -32,7 +32,6 @@ class ExecutionMetadataExecutionMode(object):
     RELAUNCH = "RELAUNCH"
     CHILD_WORKFLOW = "CHILD_WORKFLOW"
     RECOVERED = "RECOVERED"
-    RECOVERED_CHILD_WORKFLOW = "RECOVERED_CHILD_WORKFLOW"
 
     """
     Attributes:
