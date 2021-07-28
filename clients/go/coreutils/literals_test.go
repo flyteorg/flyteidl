@@ -397,8 +397,7 @@ func TestMakeLiteralForType(t *testing.T) {
 		var literalType = &core.LiteralType{Type: &core.LiteralType_Simple{Simple: core.SimpleType_INTEGER}}
 		_, err := MakeLiteralForType(literalType, 8.888888e+19)
 		assert.NotNil(t, err)
-		var numError error
-		numError = &strconv.NumError{
+		numError := &strconv.NumError{
 			Func: "ParseInt",
 			Num:  "88888880000000000000",
 			Err:  fmt.Errorf("value out of range"),
