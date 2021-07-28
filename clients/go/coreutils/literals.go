@@ -4,6 +4,7 @@ package coreutils
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"reflect"
 	"strconv"
 	"strings"
@@ -492,7 +493,9 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		if v == nil {
 			strValue = ""
 		}
-
+		if f, ok := v.(float64); ok && math.Trunc(f) == f {
+			strValue = fmt.Sprintf("%.0f", math.Trunc(f))
+		}
 		if newT.Simple == core.SimpleType_STRUCT {
 			if _, isValueStringType := v.(string); !isValueStringType {
 				byteValue, err := json.Marshal(v)
