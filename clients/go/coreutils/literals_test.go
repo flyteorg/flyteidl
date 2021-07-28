@@ -396,7 +396,7 @@ func TestMakeLiteralForType(t *testing.T) {
 	t.Run("IntegerComingInAsFloatOverFlow", func(t *testing.T) {
 		var literalType = &core.LiteralType{Type: &core.LiteralType_Simple{Simple: core.SimpleType_INTEGER}}
 		_, err := MakeLiteralForType(literalType, 8.888888e+19)
-		//assert.Nil(t, err)
+		assert.NotNil(t, err)
 		var numError error
 		numError = &strconv.NumError{
 			Func: "ParseInt",
