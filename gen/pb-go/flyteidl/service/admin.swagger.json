@@ -5587,14 +5587,26 @@
       "type": "object",
       "properties": {
         "parameters": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/coreParameter"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreParameterMapFieldEntry"
           },
           "description": "Defines a map of parameter names to parameters."
         }
       },
-      "description": "A map of Parameters."
+      "description": "A map of Parameters in the form of repeated map entries."
+    },
+    "coreParameterMapFieldEntry": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/coreParameter"
+        }
+      },
+      "title": "Map entry of ParameterMap"
     },
     "corePrimitive": {
       "type": "object",
@@ -5995,14 +6007,26 @@
       "type": "object",
       "properties": {
         "variables": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/coreVariable"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreVariableMapFieldEntry"
           },
           "description": "Defines a map of variable names to variables."
         }
       },
-      "title": "A map of Variables"
+      "title": "A map of Variables in the form of repeated map entries"
+    },
+    "coreVariableMapFieldEntry": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/coreVariable"
+        }
+      },
+      "title": "Map entry of VariableMap"
     },
     "coreVoid": {
       "type": "object",

@@ -870,7 +870,24 @@ public final class Interface {
      * Defines a map of variable names to variables.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+     */
+    java.util.List<flyteidl.core.Interface.VariableMapFieldEntry> 
+        getVariablesList();
+    /**
+     * <pre>
+     * Defines a map of variable names to variables.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+     */
+    flyteidl.core.Interface.VariableMapFieldEntry getVariables(int index);
+    /**
+     * <pre>
+     * Defines a map of variable names to variables.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
      */
     int getVariablesCount();
     /**
@@ -878,50 +895,23 @@ public final class Interface {
      * Defines a map of variable names to variables.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
      */
-    boolean containsVariables(
-        java.lang.String key);
-    /**
-     * Use {@link #getVariablesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, flyteidl.core.Interface.Variable>
-    getVariables();
+    java.util.List<? extends flyteidl.core.Interface.VariableMapFieldEntryOrBuilder> 
+        getVariablesOrBuilderList();
     /**
      * <pre>
      * Defines a map of variable names to variables.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
      */
-    java.util.Map<java.lang.String, flyteidl.core.Interface.Variable>
-    getVariablesMap();
-    /**
-     * <pre>
-     * Defines a map of variable names to variables.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-     */
-
-    flyteidl.core.Interface.Variable getVariablesOrDefault(
-        java.lang.String key,
-        flyteidl.core.Interface.Variable defaultValue);
-    /**
-     * <pre>
-     * Defines a map of variable names to variables.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-     */
-
-    flyteidl.core.Interface.Variable getVariablesOrThrow(
-        java.lang.String key);
+    flyteidl.core.Interface.VariableMapFieldEntryOrBuilder getVariablesOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * A map of Variables
+   * A map of Variables in the form of repeated map entries
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.VariableMap}
@@ -936,6 +926,7 @@ public final class Interface {
       super(builder);
     }
     private VariableMap() {
+      variables_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -964,15 +955,11 @@ public final class Interface {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                variables_ = com.google.protobuf.MapField.newMapField(
-                    VariablesDefaultEntryHolder.defaultEntry);
+                variables_ = new java.util.ArrayList<flyteidl.core.Interface.VariableMapFieldEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Interface.Variable>
-              variables__ = input.readMessage(
-                  VariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              variables_.getMutableMap().put(
-                  variables__.getKey(), variables__.getValue());
+              variables_.add(
+                  input.readMessage(flyteidl.core.Interface.VariableMapFieldEntry.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -990,6 +977,9 @@ public final class Interface {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          variables_ = java.util.Collections.unmodifiableList(variables_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -999,18 +989,6 @@ public final class Interface {
       return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMap_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetVariables();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1020,95 +998,58 @@ public final class Interface {
     }
 
     public static final int VARIABLES_FIELD_NUMBER = 1;
-    private static final class VariablesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, flyteidl.core.Interface.Variable> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, flyteidl.core.Interface.Variable>newDefaultInstance(
-                  flyteidl.core.Interface.internal_static_flyteidl_core_VariableMap_VariablesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  flyteidl.core.Interface.Variable.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, flyteidl.core.Interface.Variable> variables_;
-    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Variable>
-    internalGetVariables() {
-      if (variables_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            VariablesDefaultEntryHolder.defaultEntry);
-      }
+    private java.util.List<flyteidl.core.Interface.VariableMapFieldEntry> variables_;
+    /**
+     * <pre>
+     * Defines a map of variable names to variables.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+     */
+    public java.util.List<flyteidl.core.Interface.VariableMapFieldEntry> getVariablesList() {
       return variables_;
     }
-
+    /**
+     * <pre>
+     * Defines a map of variable names to variables.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Interface.VariableMapFieldEntryOrBuilder> 
+        getVariablesOrBuilderList() {
+      return variables_;
+    }
+    /**
+     * <pre>
+     * Defines a map of variable names to variables.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+     */
     public int getVariablesCount() {
-      return internalGetVariables().getMap().size();
+      return variables_.size();
     }
     /**
      * <pre>
      * Defines a map of variable names to variables.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
      */
-
-    public boolean containsVariables(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetVariables().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getVariablesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> getVariables() {
-      return getVariablesMap();
+    public flyteidl.core.Interface.VariableMapFieldEntry getVariables(int index) {
+      return variables_.get(index);
     }
     /**
      * <pre>
      * Defines a map of variable names to variables.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+     * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
      */
-
-    public java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> getVariablesMap() {
-      return internalGetVariables().getMap();
-    }
-    /**
-     * <pre>
-     * Defines a map of variable names to variables.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-     */
-
-    public flyteidl.core.Interface.Variable getVariablesOrDefault(
-        java.lang.String key,
-        flyteidl.core.Interface.Variable defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> map =
-          internalGetVariables().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Defines a map of variable names to variables.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-     */
-
-    public flyteidl.core.Interface.Variable getVariablesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> map =
-          internalGetVariables().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public flyteidl.core.Interface.VariableMapFieldEntryOrBuilder getVariablesOrBuilder(
+        int index) {
+      return variables_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1125,12 +1066,9 @@ public final class Interface {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetVariables(),
-          VariablesDefaultEntryHolder.defaultEntry,
-          1);
+      for (int i = 0; i < variables_.size(); i++) {
+        output.writeMessage(1, variables_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1140,15 +1078,9 @@ public final class Interface {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, flyteidl.core.Interface.Variable> entry
-           : internalGetVariables().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Interface.Variable>
-        variables__ = VariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < variables_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, variables__);
+          .computeMessageSize(1, variables_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1165,8 +1097,8 @@ public final class Interface {
       }
       flyteidl.core.Interface.VariableMap other = (flyteidl.core.Interface.VariableMap) obj;
 
-      if (!internalGetVariables().equals(
-          other.internalGetVariables())) return false;
+      if (!getVariablesList()
+          .equals(other.getVariablesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1178,9 +1110,9 @@ public final class Interface {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetVariables().getMap().isEmpty()) {
+      if (getVariablesCount() > 0) {
         hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetVariables().hashCode();
+        hash = (53 * hash) + getVariablesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1279,7 +1211,7 @@ public final class Interface {
     }
     /**
      * <pre>
-     * A map of Variables
+     * A map of Variables in the form of repeated map entries
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.VariableMap}
@@ -1293,28 +1225,6 @@ public final class Interface {
         return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMap_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetVariables();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableVariables();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1336,12 +1246,18 @@ public final class Interface {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getVariablesFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableVariables().clear();
+        if (variablesBuilder_ == null) {
+          variables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          variablesBuilder_.clear();
+        }
         return this;
       }
 
@@ -1369,8 +1285,15 @@ public final class Interface {
       public flyteidl.core.Interface.VariableMap buildPartial() {
         flyteidl.core.Interface.VariableMap result = new flyteidl.core.Interface.VariableMap(this);
         int from_bitField0_ = bitField0_;
-        result.variables_ = internalGetVariables();
-        result.variables_.makeImmutable();
+        if (variablesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            variables_ = java.util.Collections.unmodifiableList(variables_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.variables_ = variables_;
+        } else {
+          result.variables_ = variablesBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1419,8 +1342,32 @@ public final class Interface {
 
       public Builder mergeFrom(flyteidl.core.Interface.VariableMap other) {
         if (other == flyteidl.core.Interface.VariableMap.getDefaultInstance()) return this;
-        internalGetMutableVariables().mergeFrom(
-            other.internalGetVariables());
+        if (variablesBuilder_ == null) {
+          if (!other.variables_.isEmpty()) {
+            if (variables_.isEmpty()) {
+              variables_ = other.variables_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureVariablesIsMutable();
+              variables_.addAll(other.variables_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.variables_.isEmpty()) {
+            if (variablesBuilder_.isEmpty()) {
+              variablesBuilder_.dispose();
+              variablesBuilder_ = null;
+              variables_ = other.variables_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              variablesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getVariablesFieldBuilder() : null;
+            } else {
+              variablesBuilder_.addAllMessages(other.variables_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1451,101 +1398,210 @@ public final class Interface {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, flyteidl.core.Interface.Variable> variables_;
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Variable>
-      internalGetVariables() {
-        if (variables_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              VariablesDefaultEntryHolder.defaultEntry);
-        }
-        return variables_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Variable>
-      internalGetMutableVariables() {
-        onChanged();;
-        if (variables_ == null) {
-          variables_ = com.google.protobuf.MapField.newMapField(
-              VariablesDefaultEntryHolder.defaultEntry);
-        }
-        if (!variables_.isMutable()) {
-          variables_ = variables_.copy();
-        }
-        return variables_;
+      private java.util.List<flyteidl.core.Interface.VariableMapFieldEntry> variables_ =
+        java.util.Collections.emptyList();
+      private void ensureVariablesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          variables_ = new java.util.ArrayList<flyteidl.core.Interface.VariableMapFieldEntry>(variables_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Interface.VariableMapFieldEntry, flyteidl.core.Interface.VariableMapFieldEntry.Builder, flyteidl.core.Interface.VariableMapFieldEntryOrBuilder> variablesBuilder_;
+
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Interface.VariableMapFieldEntry> getVariablesList() {
+        if (variablesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(variables_);
+        } else {
+          return variablesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
       public int getVariablesCount() {
-        return internalGetVariables().getMap().size();
-      }
-      /**
-       * <pre>
-       * Defines a map of variable names to variables.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-       */
-
-      public boolean containsVariables(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetVariables().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getVariablesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> getVariables() {
-        return getVariablesMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of variable names to variables.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> getVariablesMap() {
-        return internalGetVariables().getMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of variable names to variables.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-       */
-
-      public flyteidl.core.Interface.Variable getVariablesOrDefault(
-          java.lang.String key,
-          flyteidl.core.Interface.Variable defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> map =
-            internalGetVariables().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Defines a map of variable names to variables.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-       */
-
-      public flyteidl.core.Interface.Variable getVariablesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> map =
-            internalGetVariables().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        if (variablesBuilder_ == null) {
+          return variables_.size();
+        } else {
+          return variablesBuilder_.getCount();
         }
-        return map.get(key);
       }
-
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public flyteidl.core.Interface.VariableMapFieldEntry getVariables(int index) {
+        if (variablesBuilder_ == null) {
+          return variables_.get(index);
+        } else {
+          return variablesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder setVariables(
+          int index, flyteidl.core.Interface.VariableMapFieldEntry value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.set(index, value);
+          onChanged();
+        } else {
+          variablesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder setVariables(
+          int index, flyteidl.core.Interface.VariableMapFieldEntry.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder addVariables(flyteidl.core.Interface.VariableMapFieldEntry value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.add(value);
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder addVariables(
+          int index, flyteidl.core.Interface.VariableMapFieldEntry value) {
+        if (variablesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVariablesIsMutable();
+          variables_.add(index, value);
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder addVariables(
+          flyteidl.core.Interface.VariableMapFieldEntry.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.add(builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder addVariables(
+          int index, flyteidl.core.Interface.VariableMapFieldEntry.Builder builderForValue) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          variablesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public Builder addAllVariables(
+          java.lang.Iterable<? extends flyteidl.core.Interface.VariableMapFieldEntry> values) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, variables_);
+          onChanged();
+        } else {
+          variablesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
       public Builder clearVariables() {
-        internalGetMutableVariables().getMutableMap()
-            .clear();
+        if (variablesBuilder_ == null) {
+          variables_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          variablesBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -1553,38 +1609,16 @@ public final class Interface {
        * Defines a map of variable names to variables.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
        */
-
-      public Builder removeVariables(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableVariables().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Variable>
-      getMutableVariables() {
-        return internalGetMutableVariables().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of variable names to variables.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
-       */
-      public Builder putVariables(
-          java.lang.String key,
-          flyteidl.core.Interface.Variable value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableVariables().getMutableMap()
-            .put(key, value);
+      public Builder removeVariables(int index) {
+        if (variablesBuilder_ == null) {
+          ensureVariablesIsMutable();
+          variables_.remove(index);
+          onChanged();
+        } else {
+          variablesBuilder_.remove(index);
+        }
         return this;
       }
       /**
@@ -1592,14 +1626,88 @@ public final class Interface {
        * Defines a map of variable names to variables.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Variable&gt; variables = 1;</code>
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
        */
-
-      public Builder putAllVariables(
-          java.util.Map<java.lang.String, flyteidl.core.Interface.Variable> values) {
-        internalGetMutableVariables().getMutableMap()
-            .putAll(values);
-        return this;
+      public flyteidl.core.Interface.VariableMapFieldEntry.Builder getVariablesBuilder(
+          int index) {
+        return getVariablesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public flyteidl.core.Interface.VariableMapFieldEntryOrBuilder getVariablesOrBuilder(
+          int index) {
+        if (variablesBuilder_ == null) {
+          return variables_.get(index);  } else {
+          return variablesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Interface.VariableMapFieldEntryOrBuilder> 
+           getVariablesOrBuilderList() {
+        if (variablesBuilder_ != null) {
+          return variablesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(variables_);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public flyteidl.core.Interface.VariableMapFieldEntry.Builder addVariablesBuilder() {
+        return getVariablesFieldBuilder().addBuilder(
+            flyteidl.core.Interface.VariableMapFieldEntry.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public flyteidl.core.Interface.VariableMapFieldEntry.Builder addVariablesBuilder(
+          int index) {
+        return getVariablesFieldBuilder().addBuilder(
+            index, flyteidl.core.Interface.VariableMapFieldEntry.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Defines a map of variable names to variables.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.VariableMapFieldEntry variables = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Interface.VariableMapFieldEntry.Builder> 
+           getVariablesBuilderList() {
+        return getVariablesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Interface.VariableMapFieldEntry, flyteidl.core.Interface.VariableMapFieldEntry.Builder, flyteidl.core.Interface.VariableMapFieldEntryOrBuilder> 
+          getVariablesFieldBuilder() {
+        if (variablesBuilder_ == null) {
+          variablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Interface.VariableMapFieldEntry, flyteidl.core.Interface.VariableMapFieldEntry.Builder, flyteidl.core.Interface.VariableMapFieldEntryOrBuilder>(
+                  variables_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          variables_ = null;
+        }
+        return variablesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1649,6 +1757,757 @@ public final class Interface {
 
     @java.lang.Override
     public flyteidl.core.Interface.VariableMap getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface VariableMapFieldEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.VariableMapFieldEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    flyteidl.core.Interface.Variable getValue();
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    flyteidl.core.Interface.VariableOrBuilder getValueOrBuilder();
+  }
+  /**
+   * <pre>
+   * Map entry of VariableMap
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.VariableMapFieldEntry}
+   */
+  public  static final class VariableMapFieldEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.VariableMapFieldEntry)
+      VariableMapFieldEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use VariableMapFieldEntry.newBuilder() to construct.
+    private VariableMapFieldEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VariableMapFieldEntry() {
+      key_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private VariableMapFieldEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              flyteidl.core.Interface.Variable.Builder subBuilder = null;
+              if (value_ != null) {
+                subBuilder = value_.toBuilder();
+              }
+              value_ = input.readMessage(flyteidl.core.Interface.Variable.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(value_);
+                value_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMapFieldEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMapFieldEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Interface.VariableMapFieldEntry.class, flyteidl.core.Interface.VariableMapFieldEntry.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private flyteidl.core.Interface.Variable value_;
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    public boolean hasValue() {
+      return value_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    public flyteidl.core.Interface.Variable getValue() {
+      return value_ == null ? flyteidl.core.Interface.Variable.getDefaultInstance() : value_;
+    }
+    /**
+     * <code>.flyteidl.core.Variable value = 2;</code>
+     */
+    public flyteidl.core.Interface.VariableOrBuilder getValueOrBuilder() {
+      return getValue();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (value_ != null) {
+        output.writeMessage(2, getValue());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (value_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getValue());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Interface.VariableMapFieldEntry)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Interface.VariableMapFieldEntry other = (flyteidl.core.Interface.VariableMapFieldEntry) obj;
+
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (!getValue()
+            .equals(other.getValue())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.VariableMapFieldEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Interface.VariableMapFieldEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Map entry of VariableMap
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.VariableMapFieldEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.VariableMapFieldEntry)
+        flyteidl.core.Interface.VariableMapFieldEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMapFieldEntry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMapFieldEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Interface.VariableMapFieldEntry.class, flyteidl.core.Interface.VariableMapFieldEntry.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Interface.VariableMapFieldEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+
+        if (valueBuilder_ == null) {
+          value_ = null;
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_VariableMapFieldEntry_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.VariableMapFieldEntry getDefaultInstanceForType() {
+        return flyteidl.core.Interface.VariableMapFieldEntry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.VariableMapFieldEntry build() {
+        flyteidl.core.Interface.VariableMapFieldEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.VariableMapFieldEntry buildPartial() {
+        flyteidl.core.Interface.VariableMapFieldEntry result = new flyteidl.core.Interface.VariableMapFieldEntry(this);
+        result.key_ = key_;
+        if (valueBuilder_ == null) {
+          result.value_ = value_;
+        } else {
+          result.value_ = valueBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Interface.VariableMapFieldEntry) {
+          return mergeFrom((flyteidl.core.Interface.VariableMapFieldEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Interface.VariableMapFieldEntry other) {
+        if (other == flyteidl.core.Interface.VariableMapFieldEntry.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (other.hasValue()) {
+          mergeValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Interface.VariableMapFieldEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Interface.VariableMapFieldEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Interface.Variable value_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.Variable, flyteidl.core.Interface.Variable.Builder, flyteidl.core.Interface.VariableOrBuilder> valueBuilder_;
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public boolean hasValue() {
+        return valueBuilder_ != null || value_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public flyteidl.core.Interface.Variable getValue() {
+        if (valueBuilder_ == null) {
+          return value_ == null ? flyteidl.core.Interface.Variable.getDefaultInstance() : value_;
+        } else {
+          return valueBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public Builder setValue(flyteidl.core.Interface.Variable value) {
+        if (valueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public Builder setValue(
+          flyteidl.core.Interface.Variable.Builder builderForValue) {
+        if (valueBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public Builder mergeValue(flyteidl.core.Interface.Variable value) {
+        if (valueBuilder_ == null) {
+          if (value_ != null) {
+            value_ =
+              flyteidl.core.Interface.Variable.newBuilder(value_).mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          valueBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public Builder clearValue() {
+        if (valueBuilder_ == null) {
+          value_ = null;
+          onChanged();
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public flyteidl.core.Interface.Variable.Builder getValueBuilder() {
+        
+        onChanged();
+        return getValueFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      public flyteidl.core.Interface.VariableOrBuilder getValueOrBuilder() {
+        if (valueBuilder_ != null) {
+          return valueBuilder_.getMessageOrBuilder();
+        } else {
+          return value_ == null ?
+              flyteidl.core.Interface.Variable.getDefaultInstance() : value_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Variable value = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.Variable, flyteidl.core.Interface.Variable.Builder, flyteidl.core.Interface.VariableOrBuilder> 
+          getValueFieldBuilder() {
+        if (valueBuilder_ == null) {
+          valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Interface.Variable, flyteidl.core.Interface.Variable.Builder, flyteidl.core.Interface.VariableOrBuilder>(
+                  getValue(),
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        return valueBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.VariableMapFieldEntry)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.VariableMapFieldEntry)
+    private static final flyteidl.core.Interface.VariableMapFieldEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Interface.VariableMapFieldEntry();
+    }
+
+    public static flyteidl.core.Interface.VariableMapFieldEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VariableMapFieldEntry>
+        PARSER = new com.google.protobuf.AbstractParser<VariableMapFieldEntry>() {
+      @java.lang.Override
+      public VariableMapFieldEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new VariableMapFieldEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<VariableMapFieldEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VariableMapFieldEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Interface.VariableMapFieldEntry getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3590,7 +4449,24 @@ public final class Interface {
      * Defines a map of parameter names to parameters.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+     */
+    java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry> 
+        getParametersList();
+    /**
+     * <pre>
+     * Defines a map of parameter names to parameters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+     */
+    flyteidl.core.Interface.ParameterMapFieldEntry getParameters(int index);
+    /**
+     * <pre>
+     * Defines a map of parameter names to parameters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
      */
     int getParametersCount();
     /**
@@ -3598,50 +4474,23 @@ public final class Interface {
      * Defines a map of parameter names to parameters.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
      */
-    boolean containsParameters(
-        java.lang.String key);
-    /**
-     * Use {@link #getParametersMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter>
-    getParameters();
+    java.util.List<? extends flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder> 
+        getParametersOrBuilderList();
     /**
      * <pre>
      * Defines a map of parameter names to parameters.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
      */
-    java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter>
-    getParametersMap();
-    /**
-     * <pre>
-     * Defines a map of parameter names to parameters.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-     */
-
-    flyteidl.core.Interface.Parameter getParametersOrDefault(
-        java.lang.String key,
-        flyteidl.core.Interface.Parameter defaultValue);
-    /**
-     * <pre>
-     * Defines a map of parameter names to parameters.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-     */
-
-    flyteidl.core.Interface.Parameter getParametersOrThrow(
-        java.lang.String key);
+    flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder getParametersOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * A map of Parameters.
+   * A map of Parameters in the form of repeated map entries.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.ParameterMap}
@@ -3656,6 +4505,7 @@ public final class Interface {
       super(builder);
     }
     private ParameterMap() {
+      parameters_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3684,15 +4534,11 @@ public final class Interface {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                parameters_ = com.google.protobuf.MapField.newMapField(
-                    ParametersDefaultEntryHolder.defaultEntry);
+                parameters_ = new java.util.ArrayList<flyteidl.core.Interface.ParameterMapFieldEntry>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Interface.Parameter>
-              parameters__ = input.readMessage(
-                  ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              parameters_.getMutableMap().put(
-                  parameters__.getKey(), parameters__.getValue());
+              parameters_.add(
+                  input.readMessage(flyteidl.core.Interface.ParameterMapFieldEntry.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3710,6 +4556,9 @@ public final class Interface {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3719,18 +4568,6 @@ public final class Interface {
       return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMap_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetParameters();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3740,95 +4577,58 @@ public final class Interface {
     }
 
     public static final int PARAMETERS_FIELD_NUMBER = 1;
-    private static final class ParametersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, flyteidl.core.Interface.Parameter> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, flyteidl.core.Interface.Parameter>newDefaultInstance(
-                  flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMap_ParametersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  flyteidl.core.Interface.Parameter.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, flyteidl.core.Interface.Parameter> parameters_;
-    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Parameter>
-    internalGetParameters() {
-      if (parameters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
-      }
+    private java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry> parameters_;
+    /**
+     * <pre>
+     * Defines a map of parameter names to parameters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+     */
+    public java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry> getParametersList() {
       return parameters_;
     }
-
+    /**
+     * <pre>
+     * Defines a map of parameter names to parameters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    /**
+     * <pre>
+     * Defines a map of parameter names to parameters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+     */
     public int getParametersCount() {
-      return internalGetParameters().getMap().size();
+      return parameters_.size();
     }
     /**
      * <pre>
      * Defines a map of parameter names to parameters.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
      */
-
-    public boolean containsParameters(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetParameters().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getParametersMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> getParameters() {
-      return getParametersMap();
+    public flyteidl.core.Interface.ParameterMapFieldEntry getParameters(int index) {
+      return parameters_.get(index);
     }
     /**
      * <pre>
      * Defines a map of parameter names to parameters.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+     * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
      */
-
-    public java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> getParametersMap() {
-      return internalGetParameters().getMap();
-    }
-    /**
-     * <pre>
-     * Defines a map of parameter names to parameters.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-     */
-
-    public flyteidl.core.Interface.Parameter getParametersOrDefault(
-        java.lang.String key,
-        flyteidl.core.Interface.Parameter defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> map =
-          internalGetParameters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Defines a map of parameter names to parameters.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-     */
-
-    public flyteidl.core.Interface.Parameter getParametersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> map =
-          internalGetParameters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3845,12 +4645,9 @@ public final class Interface {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetParameters(),
-          ParametersDefaultEntryHolder.defaultEntry,
-          1);
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(1, parameters_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3860,15 +4657,9 @@ public final class Interface {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, flyteidl.core.Interface.Parameter> entry
-           : internalGetParameters().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.Interface.Parameter>
-        parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, parameters__);
+          .computeMessageSize(1, parameters_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3885,8 +4676,8 @@ public final class Interface {
       }
       flyteidl.core.Interface.ParameterMap other = (flyteidl.core.Interface.ParameterMap) obj;
 
-      if (!internalGetParameters().equals(
-          other.internalGetParameters())) return false;
+      if (!getParametersList()
+          .equals(other.getParametersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3898,9 +4689,9 @@ public final class Interface {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetParameters().getMap().isEmpty()) {
+      if (getParametersCount() > 0) {
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetParameters().hashCode();
+        hash = (53 * hash) + getParametersList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3999,7 +4790,7 @@ public final class Interface {
     }
     /**
      * <pre>
-     * A map of Parameters.
+     * A map of Parameters in the form of repeated map entries.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.ParameterMap}
@@ -4013,28 +4804,6 @@ public final class Interface {
         return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMap_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetParameters();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableParameters();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -4056,12 +4825,18 @@ public final class Interface {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getParametersFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableParameters().clear();
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          parametersBuilder_.clear();
+        }
         return this;
       }
 
@@ -4089,8 +4864,15 @@ public final class Interface {
       public flyteidl.core.Interface.ParameterMap buildPartial() {
         flyteidl.core.Interface.ParameterMap result = new flyteidl.core.Interface.ParameterMap(this);
         int from_bitField0_ = bitField0_;
-        result.parameters_ = internalGetParameters();
-        result.parameters_.makeImmutable();
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4139,8 +4921,32 @@ public final class Interface {
 
       public Builder mergeFrom(flyteidl.core.Interface.ParameterMap other) {
         if (other == flyteidl.core.Interface.ParameterMap.getDefaultInstance()) return this;
-        internalGetMutableParameters().mergeFrom(
-            other.internalGetParameters());
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4171,101 +4977,210 @@ public final class Interface {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, flyteidl.core.Interface.Parameter> parameters_;
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Parameter>
-      internalGetParameters() {
-        if (parameters_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ParametersDefaultEntryHolder.defaultEntry);
-        }
-        return parameters_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.Interface.Parameter>
-      internalGetMutableParameters() {
-        onChanged();;
-        if (parameters_ == null) {
-          parameters_ = com.google.protobuf.MapField.newMapField(
-              ParametersDefaultEntryHolder.defaultEntry);
-        }
-        if (!parameters_.isMutable()) {
-          parameters_ = parameters_.copy();
-        }
-        return parameters_;
+      private java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          parameters_ = new java.util.ArrayList<flyteidl.core.Interface.ParameterMapFieldEntry>(parameters_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Interface.ParameterMapFieldEntry, flyteidl.core.Interface.ParameterMapFieldEntry.Builder, flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder> parametersBuilder_;
+
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
       public int getParametersCount() {
-        return internalGetParameters().getMap().size();
-      }
-      /**
-       * <pre>
-       * Defines a map of parameter names to parameters.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-       */
-
-      public boolean containsParameters(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetParameters().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getParametersMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> getParameters() {
-        return getParametersMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of parameter names to parameters.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> getParametersMap() {
-        return internalGetParameters().getMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of parameter names to parameters.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-       */
-
-      public flyteidl.core.Interface.Parameter getParametersOrDefault(
-          java.lang.String key,
-          flyteidl.core.Interface.Parameter defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> map =
-            internalGetParameters().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Defines a map of parameter names to parameters.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-       */
-
-      public flyteidl.core.Interface.Parameter getParametersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> map =
-            internalGetParameters().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
         }
-        return map.get(key);
       }
-
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public flyteidl.core.Interface.ParameterMapFieldEntry getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder setParameters(
+          int index, flyteidl.core.Interface.ParameterMapFieldEntry value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder setParameters(
+          int index, flyteidl.core.Interface.ParameterMapFieldEntry.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder addParameters(flyteidl.core.Interface.ParameterMapFieldEntry value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder addParameters(
+          int index, flyteidl.core.Interface.ParameterMapFieldEntry value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder addParameters(
+          flyteidl.core.Interface.ParameterMapFieldEntry.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder addParameters(
+          int index, flyteidl.core.Interface.ParameterMapFieldEntry.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends flyteidl.core.Interface.ParameterMapFieldEntry> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
       public Builder clearParameters() {
-        internalGetMutableParameters().getMutableMap()
-            .clear();
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -4273,38 +5188,16 @@ public final class Interface {
        * Defines a map of parameter names to parameters.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
        */
-
-      public Builder removeParameters(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableParameters().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter>
-      getMutableParameters() {
-        return internalGetMutableParameters().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Defines a map of parameter names to parameters.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
-       */
-      public Builder putParameters(
-          java.lang.String key,
-          flyteidl.core.Interface.Parameter value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableParameters().getMutableMap()
-            .put(key, value);
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
         return this;
       }
       /**
@@ -4312,14 +5205,88 @@ public final class Interface {
        * Defines a map of parameter names to parameters.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Parameter&gt; parameters = 1;</code>
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
        */
-
-      public Builder putAllParameters(
-          java.util.Map<java.lang.String, flyteidl.core.Interface.Parameter> values) {
-        internalGetMutableParameters().getMutableMap()
-            .putAll(values);
-        return this;
+      public flyteidl.core.Interface.ParameterMapFieldEntry.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public flyteidl.core.Interface.ParameterMapFieldEntry.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            flyteidl.core.Interface.ParameterMapFieldEntry.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public flyteidl.core.Interface.ParameterMapFieldEntry.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, flyteidl.core.Interface.ParameterMapFieldEntry.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Defines a map of parameter names to parameters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.ParameterMapFieldEntry parameters = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Interface.ParameterMapFieldEntry.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Interface.ParameterMapFieldEntry, flyteidl.core.Interface.ParameterMapFieldEntry.Builder, flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Interface.ParameterMapFieldEntry, flyteidl.core.Interface.ParameterMapFieldEntry.Builder, flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4374,6 +5341,757 @@ public final class Interface {
 
   }
 
+  public interface ParameterMapFieldEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.ParameterMapFieldEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    flyteidl.core.Interface.Parameter getValue();
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    flyteidl.core.Interface.ParameterOrBuilder getValueOrBuilder();
+  }
+  /**
+   * <pre>
+   * Map entry of ParameterMap
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.ParameterMapFieldEntry}
+   */
+  public  static final class ParameterMapFieldEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.ParameterMapFieldEntry)
+      ParameterMapFieldEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ParameterMapFieldEntry.newBuilder() to construct.
+    private ParameterMapFieldEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ParameterMapFieldEntry() {
+      key_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ParameterMapFieldEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              flyteidl.core.Interface.Parameter.Builder subBuilder = null;
+              if (value_ != null) {
+                subBuilder = value_.toBuilder();
+              }
+              value_ = input.readMessage(flyteidl.core.Interface.Parameter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(value_);
+                value_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMapFieldEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Interface.ParameterMapFieldEntry.class, flyteidl.core.Interface.ParameterMapFieldEntry.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private flyteidl.core.Interface.Parameter value_;
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    public boolean hasValue() {
+      return value_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    public flyteidl.core.Interface.Parameter getValue() {
+      return value_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : value_;
+    }
+    /**
+     * <code>.flyteidl.core.Parameter value = 2;</code>
+     */
+    public flyteidl.core.Interface.ParameterOrBuilder getValueOrBuilder() {
+      return getValue();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (value_ != null) {
+        output.writeMessage(2, getValue());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (value_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getValue());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Interface.ParameterMapFieldEntry)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Interface.ParameterMapFieldEntry other = (flyteidl.core.Interface.ParameterMapFieldEntry) obj;
+
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (!getValue()
+            .equals(other.getValue())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Interface.ParameterMapFieldEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Interface.ParameterMapFieldEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Map entry of ParameterMap
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.ParameterMapFieldEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.ParameterMapFieldEntry)
+        flyteidl.core.Interface.ParameterMapFieldEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMapFieldEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Interface.ParameterMapFieldEntry.class, flyteidl.core.Interface.ParameterMapFieldEntry.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Interface.ParameterMapFieldEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+
+        if (valueBuilder_ == null) {
+          value_ = null;
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Interface.internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.ParameterMapFieldEntry getDefaultInstanceForType() {
+        return flyteidl.core.Interface.ParameterMapFieldEntry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.ParameterMapFieldEntry build() {
+        flyteidl.core.Interface.ParameterMapFieldEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Interface.ParameterMapFieldEntry buildPartial() {
+        flyteidl.core.Interface.ParameterMapFieldEntry result = new flyteidl.core.Interface.ParameterMapFieldEntry(this);
+        result.key_ = key_;
+        if (valueBuilder_ == null) {
+          result.value_ = value_;
+        } else {
+          result.value_ = valueBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Interface.ParameterMapFieldEntry) {
+          return mergeFrom((flyteidl.core.Interface.ParameterMapFieldEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Interface.ParameterMapFieldEntry other) {
+        if (other == flyteidl.core.Interface.ParameterMapFieldEntry.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (other.hasValue()) {
+          mergeValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Interface.ParameterMapFieldEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Interface.ParameterMapFieldEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Interface.Parameter value_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder> valueBuilder_;
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public boolean hasValue() {
+        return valueBuilder_ != null || value_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public flyteidl.core.Interface.Parameter getValue() {
+        if (valueBuilder_ == null) {
+          return value_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : value_;
+        } else {
+          return valueBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public Builder setValue(flyteidl.core.Interface.Parameter value) {
+        if (valueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public Builder setValue(
+          flyteidl.core.Interface.Parameter.Builder builderForValue) {
+        if (valueBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          valueBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public Builder mergeValue(flyteidl.core.Interface.Parameter value) {
+        if (valueBuilder_ == null) {
+          if (value_ != null) {
+            value_ =
+              flyteidl.core.Interface.Parameter.newBuilder(value_).mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          valueBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public Builder clearValue() {
+        if (valueBuilder_ == null) {
+          value_ = null;
+          onChanged();
+        } else {
+          value_ = null;
+          valueBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public flyteidl.core.Interface.Parameter.Builder getValueBuilder() {
+        
+        onChanged();
+        return getValueFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      public flyteidl.core.Interface.ParameterOrBuilder getValueOrBuilder() {
+        if (valueBuilder_ != null) {
+          return valueBuilder_.getMessageOrBuilder();
+        } else {
+          return value_ == null ?
+              flyteidl.core.Interface.Parameter.getDefaultInstance() : value_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Parameter value = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder> 
+          getValueFieldBuilder() {
+        if (valueBuilder_ == null) {
+          valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder>(
+                  getValue(),
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        return valueBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.ParameterMapFieldEntry)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.ParameterMapFieldEntry)
+    private static final flyteidl.core.Interface.ParameterMapFieldEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Interface.ParameterMapFieldEntry();
+    }
+
+    public static flyteidl.core.Interface.ParameterMapFieldEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParameterMapFieldEntry>
+        PARSER = new com.google.protobuf.AbstractParser<ParameterMapFieldEntry>() {
+      @java.lang.Override
+      public ParameterMapFieldEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ParameterMapFieldEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ParameterMapFieldEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParameterMapFieldEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Interface.ParameterMapFieldEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_Variable_descriptor;
   private static final 
@@ -4385,10 +6103,10 @@ public final class Interface {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_VariableMap_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_VariableMap_VariablesEntry_descriptor;
+    internal_static_flyteidl_core_VariableMapFieldEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_VariableMap_VariablesEntry_fieldAccessorTable;
+      internal_static_flyteidl_core_VariableMapFieldEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_TypedInterface_descriptor;
   private static final 
@@ -4405,10 +6123,10 @@ public final class Interface {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_ParameterMap_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_ParameterMap_ParametersEntry_descriptor;
+    internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_ParameterMap_ParametersEntry_fieldAccessorTable;
+      internal_static_flyteidl_core_ParameterMapFieldEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4422,22 +6140,22 @@ public final class Interface {
       "l.core\032\031flyteidl/core/types.proto\032\034flyte" +
       "idl/core/literals.proto\"I\n\010Variable\022(\n\004t" +
       "ype\030\001 \001(\0132\032.flyteidl.core.LiteralType\022\023\n" +
-      "\013description\030\002 \001(\t\"\226\001\n\013VariableMap\022<\n\tva" +
-      "riables\030\001 \003(\0132).flyteidl.core.VariableMa" +
-      "p.VariablesEntry\032I\n\016VariablesEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.V" +
-      "ariable:\0028\001\"i\n\016TypedInterface\022*\n\006inputs\030" +
-      "\001 \001(\0132\032.flyteidl.core.VariableMap\022+\n\007out" +
-      "puts\030\002 \001(\0132\032.flyteidl.core.VariableMap\"|" +
-      "\n\tParameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core" +
-      ".Variable\022)\n\007default\030\002 \001(\0132\026.flyteidl.co" +
-      "re.LiteralH\000\022\022\n\010required\030\003 \001(\010H\000B\n\n\010beha" +
-      "vior\"\234\001\n\014ParameterMap\022?\n\nparameters\030\001 \003(" +
-      "\0132+.flyteidl.core.ParameterMap.Parameter" +
-      "sEntry\032K\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\'" +
-      "\n\005value\030\002 \001(\0132\030.flyteidl.core.Parameter:" +
-      "\0028\001B6Z4github.com/flyteorg/flyteidl/gen/" +
-      "pb-go/flyteidl/coreb\006proto3"
+      "\013description\030\002 \001(\t\"F\n\013VariableMap\0227\n\tvar" +
+      "iables\030\001 \003(\0132$.flyteidl.core.VariableMap" +
+      "FieldEntry\"L\n\025VariableMapFieldEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core." +
+      "Variable\"i\n\016TypedInterface\022*\n\006inputs\030\001 \001" +
+      "(\0132\032.flyteidl.core.VariableMap\022+\n\007output" +
+      "s\030\002 \001(\0132\032.flyteidl.core.VariableMap\"|\n\tP" +
+      "arameter\022$\n\003var\030\001 \001(\0132\027.flyteidl.core.Va" +
+      "riable\022)\n\007default\030\002 \001(\0132\026.flyteidl.core." +
+      "LiteralH\000\022\022\n\010required\030\003 \001(\010H\000B\n\n\010behavio" +
+      "r\"I\n\014ParameterMap\0229\n\nparameters\030\001 \003(\0132%." +
+      "flyteidl.core.ParameterMapFieldEntry\"N\n\026" +
+      "ParameterMapFieldEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005v" +
+      "alue\030\002 \001(\0132\030.flyteidl.core.ParameterB6Z4" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4465,35 +6183,35 @@ public final class Interface {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_VariableMap_descriptor,
         new java.lang.String[] { "Variables", });
-    internal_static_flyteidl_core_VariableMap_VariablesEntry_descriptor =
-      internal_static_flyteidl_core_VariableMap_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_core_VariableMap_VariablesEntry_fieldAccessorTable = new
+    internal_static_flyteidl_core_VariableMapFieldEntry_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_core_VariableMapFieldEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_VariableMap_VariablesEntry_descriptor,
+        internal_static_flyteidl_core_VariableMapFieldEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_TypedInterface_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_TypedInterface_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TypedInterface_descriptor,
         new java.lang.String[] { "Inputs", "Outputs", });
     internal_static_flyteidl_core_Parameter_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_Parameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Parameter_descriptor,
         new java.lang.String[] { "Var", "Default", "Required", "Behavior", });
     internal_static_flyteidl_core_ParameterMap_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_ParameterMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ParameterMap_descriptor,
         new java.lang.String[] { "Parameters", });
-    internal_static_flyteidl_core_ParameterMap_ParametersEntry_descriptor =
-      internal_static_flyteidl_core_ParameterMap_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_core_ParameterMap_ParametersEntry_fieldAccessorTable = new
+    internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_core_ParameterMapFieldEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_ParameterMap_ParametersEntry_descriptor,
+        internal_static_flyteidl_core_ParameterMapFieldEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     flyteidl.core.Types.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

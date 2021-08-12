@@ -8867,7 +8867,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a VariableMap.
              * @memberof flyteidl.core
              * @interface IVariableMap
-             * @property {Object.<string,flyteidl.core.IVariable>|null} [variables] VariableMap variables
+             * @property {Array.<flyteidl.core.IVariableMapFieldEntry>|null} [variables] VariableMap variables
              */
 
             /**
@@ -8879,7 +8879,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.IVariableMap=} [properties] Properties to set
              */
             function VariableMap(properties) {
-                this.variables = {};
+                this.variables = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -8888,11 +8888,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * VariableMap variables.
-             * @member {Object.<string,flyteidl.core.IVariable>} variables
+             * @member {Array.<flyteidl.core.IVariableMapFieldEntry>} variables
              * @memberof flyteidl.core.VariableMap
              * @instance
              */
-            VariableMap.prototype.variables = $util.emptyObject;
+            VariableMap.prototype.variables = $util.emptyArray;
 
             /**
              * Creates a new VariableMap instance using the specified properties.
@@ -8918,11 +8918,9 @@ export const flyteidl = $root.flyteidl = (() => {
             VariableMap.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.variables != null && message.hasOwnProperty("variables"))
-                    for (let keys = Object.keys(message.variables), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.Variable.encode(message.variables[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
+                if (message.variables != null && message.variables.length)
+                    for (let i = 0; i < message.variables.length; ++i)
+                        $root.flyteidl.core.VariableMapFieldEntry.encode(message.variables[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -8940,17 +8938,14 @@ export const flyteidl = $root.flyteidl = (() => {
             VariableMap.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.VariableMap(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.VariableMap();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        reader.skip().pos++;
-                        if (message.variables === $util.emptyObject)
-                            message.variables = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.variables[key] = $root.flyteidl.core.Variable.decode(reader, reader.uint32());
+                        if (!(message.variables && message.variables.length))
+                            message.variables = [];
+                        message.variables.push($root.flyteidl.core.VariableMapFieldEntry.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8972,11 +8967,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.variables != null && message.hasOwnProperty("variables")) {
-                    if (!$util.isObject(message.variables))
-                        return "variables: object expected";
-                    let key = Object.keys(message.variables);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.Variable.verify(message.variables[key[i]]);
+                    if (!Array.isArray(message.variables))
+                        return "variables: array expected";
+                    for (let i = 0; i < message.variables.length; ++i) {
+                        let error = $root.flyteidl.core.VariableMapFieldEntry.verify(message.variables[i]);
                         if (error)
                             return "variables." + error;
                     }
@@ -8985,6 +8979,135 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return VariableMap;
+        })();
+
+        core.VariableMapFieldEntry = (function() {
+
+            /**
+             * Properties of a VariableMapFieldEntry.
+             * @memberof flyteidl.core
+             * @interface IVariableMapFieldEntry
+             * @property {string|null} [key] VariableMapFieldEntry key
+             * @property {flyteidl.core.IVariable|null} [value] VariableMapFieldEntry value
+             */
+
+            /**
+             * Constructs a new VariableMapFieldEntry.
+             * @memberof flyteidl.core
+             * @classdesc Represents a VariableMapFieldEntry.
+             * @implements IVariableMapFieldEntry
+             * @constructor
+             * @param {flyteidl.core.IVariableMapFieldEntry=} [properties] Properties to set
+             */
+            function VariableMapFieldEntry(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * VariableMapFieldEntry key.
+             * @member {string} key
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @instance
+             */
+            VariableMapFieldEntry.prototype.key = "";
+
+            /**
+             * VariableMapFieldEntry value.
+             * @member {flyteidl.core.IVariable|null|undefined} value
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @instance
+             */
+            VariableMapFieldEntry.prototype.value = null;
+
+            /**
+             * Creates a new VariableMapFieldEntry instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @static
+             * @param {flyteidl.core.IVariableMapFieldEntry=} [properties] Properties to set
+             * @returns {flyteidl.core.VariableMapFieldEntry} VariableMapFieldEntry instance
+             */
+            VariableMapFieldEntry.create = function create(properties) {
+                return new VariableMapFieldEntry(properties);
+            };
+
+            /**
+             * Encodes the specified VariableMapFieldEntry message. Does not implicitly {@link flyteidl.core.VariableMapFieldEntry.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @static
+             * @param {flyteidl.core.IVariableMapFieldEntry} message VariableMapFieldEntry message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            VariableMapFieldEntry.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    $root.flyteidl.core.Variable.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a VariableMapFieldEntry message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.VariableMapFieldEntry} VariableMapFieldEntry
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            VariableMapFieldEntry.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.VariableMapFieldEntry();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.value = $root.flyteidl.core.Variable.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a VariableMapFieldEntry message.
+             * @function verify
+             * @memberof flyteidl.core.VariableMapFieldEntry
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            VariableMapFieldEntry.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.value != null && message.hasOwnProperty("value")) {
+                    let error = $root.flyteidl.core.Variable.verify(message.value);
+                    if (error)
+                        return "value." + error;
+                }
+                return null;
+            };
+
+            return VariableMapFieldEntry;
         })();
 
         core.TypedInterface = (function() {
@@ -9294,7 +9417,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ParameterMap.
              * @memberof flyteidl.core
              * @interface IParameterMap
-             * @property {Object.<string,flyteidl.core.IParameter>|null} [parameters] ParameterMap parameters
+             * @property {Array.<flyteidl.core.IParameterMapFieldEntry>|null} [parameters] ParameterMap parameters
              */
 
             /**
@@ -9306,7 +9429,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.IParameterMap=} [properties] Properties to set
              */
             function ParameterMap(properties) {
-                this.parameters = {};
+                this.parameters = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -9315,11 +9438,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ParameterMap parameters.
-             * @member {Object.<string,flyteidl.core.IParameter>} parameters
+             * @member {Array.<flyteidl.core.IParameterMapFieldEntry>} parameters
              * @memberof flyteidl.core.ParameterMap
              * @instance
              */
-            ParameterMap.prototype.parameters = $util.emptyObject;
+            ParameterMap.prototype.parameters = $util.emptyArray;
 
             /**
              * Creates a new ParameterMap instance using the specified properties.
@@ -9345,11 +9468,9 @@ export const flyteidl = $root.flyteidl = (() => {
             ParameterMap.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.parameters != null && message.hasOwnProperty("parameters"))
-                    for (let keys = Object.keys(message.parameters), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.Parameter.encode(message.parameters[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
+                if (message.parameters != null && message.parameters.length)
+                    for (let i = 0; i < message.parameters.length; ++i)
+                        $root.flyteidl.core.ParameterMapFieldEntry.encode(message.parameters[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -9367,17 +9488,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ParameterMap.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ParameterMap(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ParameterMap();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        reader.skip().pos++;
-                        if (message.parameters === $util.emptyObject)
-                            message.parameters = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.parameters[key] = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
+                        if (!(message.parameters && message.parameters.length))
+                            message.parameters = [];
+                        message.parameters.push($root.flyteidl.core.ParameterMapFieldEntry.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9399,11 +9517,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.parameters != null && message.hasOwnProperty("parameters")) {
-                    if (!$util.isObject(message.parameters))
-                        return "parameters: object expected";
-                    let key = Object.keys(message.parameters);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.Parameter.verify(message.parameters[key[i]]);
+                    if (!Array.isArray(message.parameters))
+                        return "parameters: array expected";
+                    for (let i = 0; i < message.parameters.length; ++i) {
+                        let error = $root.flyteidl.core.ParameterMapFieldEntry.verify(message.parameters[i]);
                         if (error)
                             return "parameters." + error;
                     }
@@ -9412,6 +9529,135 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ParameterMap;
+        })();
+
+        core.ParameterMapFieldEntry = (function() {
+
+            /**
+             * Properties of a ParameterMapFieldEntry.
+             * @memberof flyteidl.core
+             * @interface IParameterMapFieldEntry
+             * @property {string|null} [key] ParameterMapFieldEntry key
+             * @property {flyteidl.core.IParameter|null} [value] ParameterMapFieldEntry value
+             */
+
+            /**
+             * Constructs a new ParameterMapFieldEntry.
+             * @memberof flyteidl.core
+             * @classdesc Represents a ParameterMapFieldEntry.
+             * @implements IParameterMapFieldEntry
+             * @constructor
+             * @param {flyteidl.core.IParameterMapFieldEntry=} [properties] Properties to set
+             */
+            function ParameterMapFieldEntry(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ParameterMapFieldEntry key.
+             * @member {string} key
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @instance
+             */
+            ParameterMapFieldEntry.prototype.key = "";
+
+            /**
+             * ParameterMapFieldEntry value.
+             * @member {flyteidl.core.IParameter|null|undefined} value
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @instance
+             */
+            ParameterMapFieldEntry.prototype.value = null;
+
+            /**
+             * Creates a new ParameterMapFieldEntry instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @static
+             * @param {flyteidl.core.IParameterMapFieldEntry=} [properties] Properties to set
+             * @returns {flyteidl.core.ParameterMapFieldEntry} ParameterMapFieldEntry instance
+             */
+            ParameterMapFieldEntry.create = function create(properties) {
+                return new ParameterMapFieldEntry(properties);
+            };
+
+            /**
+             * Encodes the specified ParameterMapFieldEntry message. Does not implicitly {@link flyteidl.core.ParameterMapFieldEntry.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @static
+             * @param {flyteidl.core.IParameterMapFieldEntry} message ParameterMapFieldEntry message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ParameterMapFieldEntry.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    $root.flyteidl.core.Parameter.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ParameterMapFieldEntry message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ParameterMapFieldEntry} ParameterMapFieldEntry
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ParameterMapFieldEntry.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ParameterMapFieldEntry();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.value = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ParameterMapFieldEntry message.
+             * @function verify
+             * @memberof flyteidl.core.ParameterMapFieldEntry
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ParameterMapFieldEntry.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.value != null && message.hasOwnProperty("value")) {
+                    let error = $root.flyteidl.core.Parameter.verify(message.value);
+                    if (error)
+                        return "value." + error;
+                }
+                return null;
+            };
+
+            return ParameterMapFieldEntry;
         })();
 
         core.Resources = (function() {

@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_variable import CoreVariable  # noqa: F401,E501
+from flyteadmin.models.core_variable_map_field_entry import CoreVariableMapFieldEntry  # noqa: F401,E501
 
 
 class CoreVariableMap(object):
@@ -33,7 +33,7 @@ class CoreVariableMap(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'variables': 'dict(str, CoreVariable)'
+        'variables': 'list[CoreVariableMapFieldEntry]'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class CoreVariableMap(object):
         Defines a map of variable names to variables.  # noqa: E501
 
         :return: The variables of this CoreVariableMap.  # noqa: E501
-        :rtype: dict(str, CoreVariable)
+        :rtype: list[CoreVariableMapFieldEntry]
         """
         return self._variables
 
@@ -67,7 +67,7 @@ class CoreVariableMap(object):
         Defines a map of variable names to variables.  # noqa: E501
 
         :param variables: The variables of this CoreVariableMap.  # noqa: E501
-        :type: dict(str, CoreVariable)
+        :type: list[CoreVariableMapFieldEntry]
         """
 
         self._variables = variables

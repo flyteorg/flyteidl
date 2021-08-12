@@ -120,15 +120,13 @@ func (m *VariableMap) Validate() error {
 		return nil
 	}
 
-	for key, val := range m.GetVariables() {
-		_ = val
+	for idx, item := range m.GetVariables() {
+		_, _ = idx, item
 
-		// no validation rules for Variables[key]
-
-		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return VariableMapValidationError{
-					field:  fmt.Sprintf("Variables[%v]", key),
+					field:  fmt.Sprintf("Variables[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -193,6 +191,85 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = VariableMapValidationError{}
+
+// Validate checks the field values on VariableMapFieldEntry with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *VariableMapFieldEntry) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Key
+
+	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return VariableMapFieldEntryValidationError{
+				field:  "Value",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// VariableMapFieldEntryValidationError is the validation error returned by
+// VariableMapFieldEntry.Validate if the designated constraints aren't met.
+type VariableMapFieldEntryValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e VariableMapFieldEntryValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e VariableMapFieldEntryValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e VariableMapFieldEntryValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e VariableMapFieldEntryValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e VariableMapFieldEntryValidationError) ErrorName() string {
+	return "VariableMapFieldEntryValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e VariableMapFieldEntryValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sVariableMapFieldEntry.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = VariableMapFieldEntryValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = VariableMapFieldEntryValidationError{}
 
 // Validate checks the field values on TypedInterface with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -380,15 +457,13 @@ func (m *ParameterMap) Validate() error {
 		return nil
 	}
 
-	for key, val := range m.GetParameters() {
-		_ = val
+	for idx, item := range m.GetParameters() {
+		_, _ = idx, item
 
-		// no validation rules for Parameters[key]
-
-		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return ParameterMapValidationError{
-					field:  fmt.Sprintf("Parameters[%v]", key),
+					field:  fmt.Sprintf("Parameters[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -453,3 +528,82 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ParameterMapValidationError{}
+
+// Validate checks the field values on ParameterMapFieldEntry with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ParameterMapFieldEntry) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Key
+
+	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ParameterMapFieldEntryValidationError{
+				field:  "Value",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ParameterMapFieldEntryValidationError is the validation error returned by
+// ParameterMapFieldEntry.Validate if the designated constraints aren't met.
+type ParameterMapFieldEntryValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ParameterMapFieldEntryValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ParameterMapFieldEntryValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ParameterMapFieldEntryValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ParameterMapFieldEntryValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ParameterMapFieldEntryValidationError) ErrorName() string {
+	return "ParameterMapFieldEntryValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ParameterMapFieldEntryValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sParameterMapFieldEntry.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ParameterMapFieldEntryValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ParameterMapFieldEntryValidationError{}

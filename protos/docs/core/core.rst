@@ -977,7 +977,7 @@ the special ability to have a default value or mark itself as required.
 ParameterMap
 ------------------------------------------------------------------
 
-A map of Parameters.
+A map of Parameters in the form of repeated map entries.
 
 
 
@@ -985,7 +985,7 @@ A map of Parameters.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "parameters", ":ref:`ref_flyteidl.core.ParameterMap.ParametersEntry`", "repeated", "Defines a map of parameter names to parameters."
+   "parameters", ":ref:`ref_flyteidl.core.ParameterMapFieldEntry`", "repeated", "Defines a map of parameter names to parameters."
 
 
 
@@ -993,16 +993,16 @@ A map of Parameters.
 
 
 
-.. _ref_flyteidl.core.ParameterMap.ParametersEntry:
+.. _ref_flyteidl.core.ParameterMapFieldEntry:
 
-ParameterMap.ParametersEntry
+ParameterMapFieldEntry
 ------------------------------------------------------------------
 
+Map entry of ParameterMap
 
 
 
-
-.. csv-table:: ParameterMap.ParametersEntry type fields
+.. csv-table:: ParameterMapFieldEntry type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
@@ -1064,7 +1064,7 @@ Defines a strongly typed variable.
 VariableMap
 ------------------------------------------------------------------
 
-A map of Variables
+A map of Variables in the form of repeated map entries
 
 
 
@@ -1072,7 +1072,7 @@ A map of Variables
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "variables", ":ref:`ref_flyteidl.core.VariableMap.VariablesEntry`", "repeated", "Defines a map of variable names to variables."
+   "variables", ":ref:`ref_flyteidl.core.VariableMapFieldEntry`", "repeated", "Defines a map of variable names to variables."
 
 
 
@@ -1080,16 +1080,16 @@ A map of Variables
 
 
 
-.. _ref_flyteidl.core.VariableMap.VariablesEntry:
+.. _ref_flyteidl.core.VariableMapFieldEntry:
 
-VariableMap.VariablesEntry
+VariableMapFieldEntry
 ------------------------------------------------------------------
 
+Map entry of VariableMap
 
 
 
-
-.. csv-table:: VariableMap.VariablesEntry type fields
+.. csv-table:: VariableMapFieldEntry type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 

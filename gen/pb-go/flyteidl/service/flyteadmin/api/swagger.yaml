@@ -3971,7 +3971,7 @@ definitions:
       closure:
         expected_outputs:
           variables:
-            key:
+          - value:
               description: "description"
               type:
                 schema:
@@ -3999,12 +3999,42 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
+            key: "key"
+          - value:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            key: "key"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
         state: {}
         expected_inputs:
           parameters:
-            key:
+          - value:
               default:
                 scalar:
                   schema:
@@ -4081,6 +4111,85 @@ definitions:
                     - "values"
                   simple: {}
               required: true
+            key: "key"
+          - value:
+              default:
+                scalar:
+                  schema:
+                    type:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    uri: "uri"
+                  blob:
+                    metadata:
+                      type:
+                        dimensionality: {}
+                        format: "format"
+                    uri: "uri"
+                  none_type: {}
+                  primitive:
+                    duration: "duration"
+                    datetime: "2000-01-23T04:56:07.000+00:00"
+                    string_value: "string_value"
+                    boolean: true
+                    float_value: 1.4658129805029452
+                    integer: "integer"
+                  binary:
+                    tag: "tag"
+                    value: "value"
+                  error:
+                    message: "message"
+                    failed_node_id: "failed_node_id"
+                  generic:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                collection:
+                  literals:
+                  - null
+                  - null
+                map:
+                  literals: {}
+              var:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              required: true
+            key: "key"
       spec:
         workflow_id:
           domain: "domain"
@@ -4150,7 +4259,7 @@ definitions:
           output_location_prefix: "output_location_prefix"
         default_inputs:
           parameters:
-            key:
+          - value:
               default:
                 scalar:
                   schema:
@@ -4227,6 +4336,85 @@ definitions:
                     - "values"
                   simple: {}
               required: true
+            key: "key"
+          - value:
+              default:
+                scalar:
+                  schema:
+                    type:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    uri: "uri"
+                  blob:
+                    metadata:
+                      type:
+                        dimensionality: {}
+                        format: "format"
+                    uri: "uri"
+                  none_type: {}
+                  primitive:
+                    duration: "duration"
+                    datetime: "2000-01-23T04:56:07.000+00:00"
+                    string_value: "string_value"
+                    boolean: true
+                    float_value: 1.4658129805029452
+                    integer: "integer"
+                  binary:
+                    tag: "tag"
+                    value: "value"
+                  error:
+                    message: "message"
+                    failed_node_id: "failed_node_id"
+                  generic:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                collection:
+                  literals:
+                  - null
+                  - null
+                map:
+                  literals: {}
+              var:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              required: true
+            key: "key"
         security_context:
           run_as:
             iam_role: "iam_role"
@@ -4302,7 +4490,7 @@ definitions:
     example:
       expected_outputs:
         variables:
-          key:
+        - value:
             description: "description"
             type:
               schema:
@@ -4330,12 +4518,42 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
+          key: "key"
+        - value:
+            description: "description"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              simple: {}
+          key: "key"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
       state: {}
       expected_inputs:
         parameters:
-          key:
+        - value:
             default:
               scalar:
                 schema:
@@ -4412,6 +4630,85 @@ definitions:
                   - "values"
                 simple: {}
             required: true
+          key: "key"
+        - value:
+            default:
+              scalar:
+                schema:
+                  type:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  uri: "uri"
+                blob:
+                  metadata:
+                    type:
+                      dimensionality: {}
+                      format: "format"
+                  uri: "uri"
+                none_type: {}
+                primitive:
+                  duration: "duration"
+                  datetime: "2000-01-23T04:56:07.000+00:00"
+                  string_value: "string_value"
+                  boolean: true
+                  float_value: 1.4658129805029452
+                  integer: "integer"
+                binary:
+                  tag: "tag"
+                  value: "value"
+                error:
+                  message: "message"
+                  failed_node_id: "failed_node_id"
+                generic:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              collection:
+                literals:
+                - null
+                - null
+              map:
+                literals: {}
+            var:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            required: true
+          key: "key"
   adminLaunchPlanCreateRequest:
     type: "object"
     properties:
@@ -4454,7 +4751,7 @@ definitions:
         closure:
           expected_outputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -4482,12 +4779,42 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
           expected_inputs:
             parameters:
-              key:
+            - value:
                 default:
                   scalar:
                     schema:
@@ -4564,6 +4891,85 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
+              key: "key"
+            - value:
+                default:
+                  scalar:
+                    schema:
+                      type:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      uri: "uri"
+                    blob:
+                      metadata:
+                        type:
+                          dimensionality: {}
+                          format: "format"
+                      uri: "uri"
+                    none_type: {}
+                    primitive:
+                      duration: "duration"
+                      datetime: "2000-01-23T04:56:07.000+00:00"
+                      string_value: "string_value"
+                      boolean: true
+                      float_value: 1.4658129805029452
+                      integer: "integer"
+                    binary:
+                      tag: "tag"
+                      value: "value"
+                    error:
+                      message: "message"
+                      failed_node_id: "failed_node_id"
+                    generic:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  collection:
+                    literals:
+                    - null
+                    - null
+                  map:
+                    literals: {}
+                var:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                required: true
+              key: "key"
         spec:
           workflow_id:
             domain: "domain"
@@ -4633,7 +5039,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-              key:
+            - value:
                 default:
                   scalar:
                     schema:
@@ -4710,6 +5116,85 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
+              key: "key"
+            - value:
+                default:
+                  scalar:
+                    schema:
+                      type:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      uri: "uri"
+                    blob:
+                      metadata:
+                        type:
+                          dimensionality: {}
+                          format: "format"
+                      uri: "uri"
+                    none_type: {}
+                    primitive:
+                      duration: "duration"
+                      datetime: "2000-01-23T04:56:07.000+00:00"
+                      string_value: "string_value"
+                      boolean: true
+                      float_value: 1.4658129805029452
+                      integer: "integer"
+                    binary:
+                      tag: "tag"
+                      value: "value"
+                    error:
+                      message: "message"
+                      failed_node_id: "failed_node_id"
+                    generic:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  collection:
+                    literals:
+                    - null
+                    - null
+                  map:
+                    literals: {}
+                var:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                required: true
+              key: "key"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -4765,7 +5250,7 @@ definitions:
         closure:
           expected_outputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -4793,12 +5278,42 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
           expected_inputs:
             parameters:
-              key:
+            - value:
                 default:
                   scalar:
                     schema:
@@ -4875,6 +5390,85 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
+              key: "key"
+            - value:
+                default:
+                  scalar:
+                    schema:
+                      type:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      uri: "uri"
+                    blob:
+                      metadata:
+                        type:
+                          dimensionality: {}
+                          format: "format"
+                      uri: "uri"
+                    none_type: {}
+                    primitive:
+                      duration: "duration"
+                      datetime: "2000-01-23T04:56:07.000+00:00"
+                      string_value: "string_value"
+                      boolean: true
+                      float_value: 1.4658129805029452
+                      integer: "integer"
+                    binary:
+                      tag: "tag"
+                      value: "value"
+                    error:
+                      message: "message"
+                      failed_node_id: "failed_node_id"
+                    generic:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  collection:
+                    literals:
+                    - null
+                    - null
+                  map:
+                    literals: {}
+                var:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                required: true
+              key: "key"
         spec:
           workflow_id:
             domain: "domain"
@@ -4944,7 +5538,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-              key:
+            - value:
                 default:
                   scalar:
                     schema:
@@ -5021,6 +5615,85 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
+              key: "key"
+            - value:
+                default:
+                  scalar:
+                    schema:
+                      type:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      uri: "uri"
+                    blob:
+                      metadata:
+                        type:
+                          dimensionality: {}
+                          format: "format"
+                      uri: "uri"
+                    none_type: {}
+                    primitive:
+                      duration: "duration"
+                      datetime: "2000-01-23T04:56:07.000+00:00"
+                      string_value: "string_value"
+                      boolean: true
+                      float_value: 1.4658129805029452
+                      integer: "integer"
+                    binary:
+                      tag: "tag"
+                      value: "value"
+                    error:
+                      message: "message"
+                      failed_node_id: "failed_node_id"
+                    generic:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  collection:
+                    literals:
+                    - null
+                    - null
+                  map:
+                    literals: {}
+                var:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                required: true
+              key: "key"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -5242,7 +5915,7 @@ definitions:
         output_location_prefix: "output_location_prefix"
       default_inputs:
         parameters:
-          key:
+        - value:
             default:
               scalar:
                 schema:
@@ -5319,6 +5992,85 @@ definitions:
                   - "values"
                 simple: {}
             required: true
+          key: "key"
+        - value:
+            default:
+              scalar:
+                schema:
+                  type:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  uri: "uri"
+                blob:
+                  metadata:
+                    type:
+                      dimensionality: {}
+                      format: "format"
+                  uri: "uri"
+                none_type: {}
+                primitive:
+                  duration: "duration"
+                  datetime: "2000-01-23T04:56:07.000+00:00"
+                  string_value: "string_value"
+                  boolean: true
+                  float_value: 1.4658129805029452
+                  integer: "integer"
+                binary:
+                  tag: "tag"
+                  value: "value"
+                error:
+                  message: "message"
+                  failed_node_id: "failed_node_id"
+                generic:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              collection:
+                literals:
+                - null
+                - null
+              map:
+                literals: {}
+            var:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            required: true
+          key: "key"
       security_context:
         run_as:
           iam_role: "iam_role"
@@ -6722,7 +7474,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -6750,9 +7502,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -6780,6 +7562,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -7592,7 +8404,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -7620,9 +8432,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -7650,6 +8492,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -7754,7 +8626,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -7782,9 +8654,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -7812,6 +8714,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -7949,7 +8881,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -7977,9 +8909,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -8007,6 +8969,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -8854,7 +9846,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -8882,9 +9874,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -8912,6 +9934,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -9629,7 +10681,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -9657,9 +10709,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -9687,6 +10769,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
             config:
               key: "config"
             security_context:
@@ -9840,7 +10952,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -9868,9 +10980,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -9898,6 +11040,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
           config:
             key: "config"
           security_context:
@@ -10354,7 +11526,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -10382,9 +11554,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -10412,6 +11614,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -10558,7 +11790,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -10586,9 +11818,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -10616,6 +11878,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -11570,7 +12862,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -11598,9 +12890,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -11628,6 +12950,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -12440,7 +13792,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12468,9 +13820,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12498,6 +13880,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -12602,7 +14014,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12630,9 +14042,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12660,6 +14102,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -12797,7 +14269,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12825,9 +14297,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -12855,6 +14357,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
               config:
                 key: "config"
               security_context:
@@ -13702,7 +15234,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -13730,9 +15262,39 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
                 inputs:
                   variables:
-                    key:
+                  - value:
                       description: "description"
                       type:
                         schema:
@@ -13760,6 +15322,36 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
+                    key: "key"
+                  - value:
+                      description: "description"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        simple: {}
+                    key: "key"
             connections:
               upstream:
                 key:
@@ -14733,7 +16325,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -14761,9 +16353,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -14791,6 +16413,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
@@ -15603,7 +17255,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -15631,9 +17283,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -15661,6 +17343,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
@@ -15765,7 +17477,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -15793,9 +17505,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -15823,6 +17565,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
             config:
               key: "config"
             security_context:
@@ -15960,7 +17732,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -15988,9 +17760,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -16018,6 +17820,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
             config:
               key: "config"
             security_context:
@@ -16865,7 +18697,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -16893,9 +18725,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -16923,6 +18785,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
@@ -17832,7 +19724,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -17860,9 +19752,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -17890,6 +19812,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -18702,7 +20654,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -18730,9 +20682,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -18760,6 +20742,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -18864,7 +20876,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -18892,9 +20904,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -18922,6 +20964,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                 config:
                   key: "config"
                 security_context:
@@ -19059,7 +21131,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -19087,9 +21159,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -19117,6 +21219,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                 config:
                   key: "config"
                 security_context:
@@ -19964,7 +22096,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -19992,9 +22124,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -20022,6 +22184,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -20844,7 +23036,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -20872,9 +23064,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -20902,6 +23124,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -21714,7 +23966,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -21742,9 +23994,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -21772,6 +24054,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -21876,7 +24188,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -21904,9 +24216,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -21934,6 +24276,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                 config:
                   key: "config"
                 security_context:
@@ -22071,7 +24443,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -22099,9 +24471,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -22129,6 +24531,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                 config:
                   key: "config"
                 security_context:
@@ -22976,7 +25408,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -23004,9 +25436,39 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
                   inputs:
                     variables:
-                      key:
+                    - value:
                         description: "description"
                         type:
                           schema:
@@ -23034,6 +25496,36 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
+                      key: "key"
+                    - value:
+                        description: "description"
+                        type:
+                          schema:
+                            columns:
+                            - name: "name"
+                              type: {}
+                            - name: "name"
+                              type: {}
+                          metadata:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                          blob:
+                            dimensionality: {}
+                            format: "format"
+                          enum_type:
+                            values:
+                            - "values"
+                            - "values"
+                          simple: {}
+                      key: "key"
               connections:
                 upstream:
                   key:
@@ -23607,7 +26099,7 @@ definitions:
         interface:
           outputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -23635,9 +26127,39 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
           inputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -23665,6 +26187,36 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
         config:
           key: "config"
         security_context:
@@ -24524,7 +27076,7 @@ definitions:
         interface:
           outputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -24552,9 +27104,39 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
           inputs:
             variables:
-              key:
+            - value:
                 description: "description"
                 type:
                   schema:
@@ -24582,6 +27164,36 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
+              key: "key"
+            - value:
+                description: "description"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  simple: {}
+              key: "key"
       connections:
         upstream:
           key:
@@ -25421,7 +28033,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -25449,9 +28061,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -25479,6 +28121,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
         connections:
           upstream:
             key:
@@ -26291,7 +28963,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26319,9 +28991,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26349,6 +29051,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
         connections:
           upstream:
             key:
@@ -26453,7 +29185,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26481,9 +29213,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26511,6 +29273,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
           config:
             key: "config"
           security_context:
@@ -26648,7 +29440,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26676,9 +29468,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -26706,6 +29528,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
           config:
             key: "config"
           security_context:
@@ -27553,7 +30405,7 @@ definitions:
           interface:
             outputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -27581,9 +30433,39 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
             inputs:
               variables:
-                key:
+              - value:
                   description: "description"
                   type:
                     schema:
@@ -27611,6 +30493,36 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
+                key: "key"
+              - value:
+                  description: "description"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    simple: {}
+                key: "key"
         connections:
           upstream:
             key:
@@ -28785,14 +31697,14 @@ definitions:
     type: "object"
     properties:
       parameters:
-        type: "object"
+        type: "array"
         description: "Defines a map of parameter names to parameters."
-        additionalProperties:
-          $ref: "#/definitions/coreParameter"
-    description: "A map of Parameters."
+        items:
+          $ref: "#/definitions/coreParameterMapFieldEntry"
+    description: "A map of Parameters in the form of repeated map entries."
     example:
       parameters:
-        key:
+      - value:
           default:
             scalar:
               schema:
@@ -28869,6 +31781,172 @@ definitions:
                 - "values"
               simple: {}
           required: true
+        key: "key"
+      - value:
+          default:
+            scalar:
+              schema:
+                type:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                uri: "uri"
+              blob:
+                metadata:
+                  type:
+                    dimensionality: {}
+                    format: "format"
+                uri: "uri"
+              none_type: {}
+              primitive:
+                duration: "duration"
+                datetime: "2000-01-23T04:56:07.000+00:00"
+                string_value: "string_value"
+                boolean: true
+                float_value: 1.4658129805029452
+                integer: "integer"
+              binary:
+                tag: "tag"
+                value: "value"
+              error:
+                message: "message"
+                failed_node_id: "failed_node_id"
+              generic:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+            collection:
+              literals:
+              - null
+              - null
+            map:
+              literals: {}
+          var:
+            description: "description"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              simple: {}
+          required: true
+        key: "key"
+  coreParameterMapFieldEntry:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+      value:
+        $ref: "#/definitions/coreParameter"
+    title: "Map entry of ParameterMap"
+    example:
+      value:
+        default:
+          scalar:
+            schema:
+              type:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              uri: "uri"
+            blob:
+              metadata:
+                type:
+                  dimensionality: {}
+                  format: "format"
+              uri: "uri"
+            none_type: {}
+            primitive:
+              duration: "duration"
+              datetime: "2000-01-23T04:56:07.000+00:00"
+              string_value: "string_value"
+              boolean: true
+              float_value: 1.4658129805029452
+              integer: "integer"
+            binary:
+              tag: "tag"
+              value: "value"
+            error:
+              message: "message"
+              failed_node_id: "failed_node_id"
+            generic:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+          collection:
+            literals:
+            - null
+            - null
+          map:
+            literals: {}
+        var:
+          description: "description"
+          type:
+            schema:
+              columns:
+              - name: "name"
+                type: {}
+              - name: "name"
+                type: {}
+            metadata:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            blob:
+              dimensionality: {}
+              format: "format"
+            enum_type:
+              values:
+              - "values"
+              - "values"
+            simple: {}
+        required: true
+      key: "key"
   corePrimitive:
     type: "object"
     properties:
@@ -29481,7 +32559,7 @@ definitions:
       interface:
         outputs:
           variables:
-            key:
+          - value:
               description: "description"
               type:
                 schema:
@@ -29509,9 +32587,39 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
+            key: "key"
+          - value:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            key: "key"
         inputs:
           variables:
-            key:
+          - value:
               description: "description"
               type:
                 schema:
@@ -29539,6 +32647,36 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
+            key: "key"
+          - value:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            key: "key"
       config:
         key: "config"
       security_context:
@@ -29595,7 +32733,7 @@ definitions:
     example:
       outputs:
         variables:
-          key:
+        - value:
             description: "description"
             type:
               schema:
@@ -29623,9 +32761,39 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
+          key: "key"
+        - value:
+            description: "description"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              simple: {}
+          key: "key"
       inputs:
         variables:
-          key:
+        - value:
             description: "description"
             type:
               schema:
@@ -29653,6 +32821,36 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
+          key: "key"
+        - value:
+            description: "description"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              simple: {}
+          key: "key"
   coreVariable:
     type: "object"
     properties:
@@ -29695,14 +32893,14 @@ definitions:
     type: "object"
     properties:
       variables:
-        type: "object"
+        type: "array"
         description: "Defines a map of variable names to variables."
-        additionalProperties:
-          $ref: "#/definitions/coreVariable"
-    title: "A map of Variables"
+        items:
+          $ref: "#/definitions/coreVariableMapFieldEntry"
+    title: "A map of Variables in the form of repeated map entries"
     example:
       variables:
-        key:
+      - value:
           description: "description"
           type:
             schema:
@@ -29730,6 +32928,74 @@ definitions:
               - "values"
               - "values"
             simple: {}
+        key: "key"
+      - value:
+          description: "description"
+          type:
+            schema:
+              columns:
+              - name: "name"
+                type: {}
+              - name: "name"
+                type: {}
+            metadata:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            blob:
+              dimensionality: {}
+              format: "format"
+            enum_type:
+              values:
+              - "values"
+              - "values"
+            simple: {}
+        key: "key"
+  coreVariableMapFieldEntry:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+      value:
+        $ref: "#/definitions/coreVariable"
+    title: "Map entry of VariableMap"
+    example:
+      value:
+        description: "description"
+        type:
+          schema:
+            columns:
+            - name: "name"
+              type: {}
+            - name: "name"
+              type: {}
+          metadata:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          blob:
+            dimensionality: {}
+            format: "format"
+          enum_type:
+            values:
+            - "values"
+            - "values"
+          simple: {}
+      key: "key"
   coreVoid:
     type: "object"
     description: "Used to denote a nil/null/None assignment to a scalar value. The\
@@ -30670,7 +33936,7 @@ definitions:
       interface:
         outputs:
           variables:
-            key:
+          - value:
               description: "description"
               type:
                 schema:
@@ -30698,9 +33964,39 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
+            key: "key"
+          - value:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            key: "key"
         inputs:
           variables:
-            key:
+          - value:
               description: "description"
               type:
                 schema:
@@ -30728,6 +34024,36 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
+            key: "key"
+          - value:
+              description: "description"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                simple: {}
+            key: "key"
   eventExternalResourceInfo:
     type: "object"
     properties:
@@ -31763,7 +35089,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -31791,9 +35117,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -31821,6 +35177,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
@@ -32633,7 +36019,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -32661,9 +36047,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -32691,6 +36107,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
@@ -32795,7 +36241,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -32823,9 +36269,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -32853,6 +36329,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
             config:
               key: "config"
             security_context:
@@ -32990,7 +36496,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -33018,9 +36524,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -33048,6 +36584,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
             config:
               key: "config"
             security_context:
@@ -33895,7 +37461,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -33923,9 +37489,39 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
               inputs:
                 variables:
-                  key:
+                - value:
                     description: "description"
                     type:
                       schema:
@@ -33953,6 +37549,36 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
+                  key: "key"
+                - value:
+                    description: "description"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      simple: {}
+                  key: "key"
           connections:
             upstream:
               key:
