@@ -5589,20 +5589,20 @@
         "parameters": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/coreParameterMapFieldEntry"
+            "$ref": "#/definitions/coreParameterMapEntry"
           },
           "description": "Defines a map of parameter names to parameters."
         }
       },
       "description": "A map of Parameters in the form of repeated map entries."
     },
-    "coreParameterMapFieldEntry": {
+    "coreParameterMapEntry": {
       "type": "object",
       "properties": {
-        "key": {
+        "name": {
           "type": "string"
         },
-        "value": {
+        "var": {
           "$ref": "#/definitions/coreParameter"
         }
       },
@@ -6009,20 +6009,20 @@
         "variables": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/coreVariableMapFieldEntry"
+            "$ref": "#/definitions/coreVariableMapEntry"
           },
           "description": "Defines a map of variable names to variables."
         }
       },
       "title": "A map of Variables in the form of repeated map entries"
     },
-    "coreVariableMapFieldEntry": {
+    "coreVariableMapEntry": {
       "type": "object",
       "properties": {
-        "key": {
+        "name": {
           "type": "string"
         },
-        "value": {
+        "var": {
           "$ref": "#/definitions/coreVariable"
         }
       },

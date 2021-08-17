@@ -985,7 +985,7 @@ A map of Parameters in the form of repeated map entries.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "parameters", ":ref:`ref_flyteidl.core.ParameterMapFieldEntry`", "repeated", "Defines a map of parameter names to parameters."
+   "parameters", ":ref:`ref_flyteidl.core.ParameterMapEntry`", "repeated", "Defines a map of parameter names to parameters."
 
 
 
@@ -993,21 +993,21 @@ A map of Parameters in the form of repeated map entries.
 
 
 
-.. _ref_flyteidl.core.ParameterMapFieldEntry:
+.. _ref_flyteidl.core.ParameterMapEntry:
 
-ParameterMapFieldEntry
+ParameterMapEntry
 ------------------------------------------------------------------
 
 Map entry of ParameterMap
 
 
 
-.. csv-table:: ParameterMapFieldEntry type fields
+.. csv-table:: ParameterMapEntry type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Parameter`", "", ""
+   "name", ":ref:`ref_string`", "", ""
+   "var", ":ref:`ref_flyteidl.core.Parameter`", "", ""
 
 
 
@@ -1072,7 +1072,7 @@ A map of Variables in the form of repeated map entries
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "variables", ":ref:`ref_flyteidl.core.VariableMapFieldEntry`", "repeated", "Defines a map of variable names to variables."
+   "variables", ":ref:`ref_flyteidl.core.VariableMapEntry`", "repeated", "Defines a map of variable names to variables."
 
 
 
@@ -1080,21 +1080,21 @@ A map of Variables in the form of repeated map entries
 
 
 
-.. _ref_flyteidl.core.VariableMapFieldEntry:
+.. _ref_flyteidl.core.VariableMapEntry:
 
-VariableMapFieldEntry
+VariableMapEntry
 ------------------------------------------------------------------
 
 Map entry of VariableMap
 
 
 
-.. csv-table:: VariableMapFieldEntry type fields
+.. csv-table:: VariableMapEntry type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Variable`", "", ""
+   "name", ":ref:`ref_string`", "", ""
+   "var", ":ref:`ref_flyteidl.core.Variable`", "", ""
 
 
 

@@ -3971,7 +3971,7 @@ definitions:
       closure:
         expected_outputs:
           variables:
-          - value:
+          - var:
               description: "description"
               type:
                 schema:
@@ -3999,8 +3999,8 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               description: "description"
               type:
                 schema:
@@ -4028,13 +4028,13 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
+            name: "name"
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
         state: {}
         expected_inputs:
           parameters:
-          - value:
+          - var:
               default:
                 scalar:
                   schema:
@@ -4111,8 +4111,8 @@ definitions:
                     - "values"
                   simple: {}
               required: true
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               default:
                 scalar:
                   schema:
@@ -4189,7 +4189,7 @@ definitions:
                     - "values"
                   simple: {}
               required: true
-            key: "key"
+            name: "name"
       spec:
         workflow_id:
           domain: "domain"
@@ -4259,7 +4259,7 @@ definitions:
           output_location_prefix: "output_location_prefix"
         default_inputs:
           parameters:
-          - value:
+          - var:
               default:
                 scalar:
                   schema:
@@ -4336,8 +4336,8 @@ definitions:
                     - "values"
                   simple: {}
               required: true
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               default:
                 scalar:
                   schema:
@@ -4414,7 +4414,7 @@ definitions:
                     - "values"
                   simple: {}
               required: true
-            key: "key"
+            name: "name"
         security_context:
           run_as:
             iam_role: "iam_role"
@@ -4490,7 +4490,7 @@ definitions:
     example:
       expected_outputs:
         variables:
-        - value:
+        - var:
             description: "description"
             type:
               schema:
@@ -4518,8 +4518,8 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
-        - value:
+          name: "name"
+        - var:
             description: "description"
             type:
               schema:
@@ -4547,13 +4547,13 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
+          name: "name"
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
       state: {}
       expected_inputs:
         parameters:
-        - value:
+        - var:
             default:
               scalar:
                 schema:
@@ -4630,8 +4630,8 @@ definitions:
                   - "values"
                 simple: {}
             required: true
-          key: "key"
-        - value:
+          name: "name"
+        - var:
             default:
               scalar:
                 schema:
@@ -4708,7 +4708,7 @@ definitions:
                   - "values"
                 simple: {}
             required: true
-          key: "key"
+          name: "name"
   adminLaunchPlanCreateRequest:
     type: "object"
     properties:
@@ -4751,7 +4751,7 @@ definitions:
         closure:
           expected_outputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -4779,8 +4779,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -4808,13 +4808,13 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
           expected_inputs:
             parameters:
-            - value:
+            - var:
                 default:
                   scalar:
                     schema:
@@ -4891,8 +4891,8 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 default:
                   scalar:
                     schema:
@@ -4969,7 +4969,7 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
+              name: "name"
         spec:
           workflow_id:
             domain: "domain"
@@ -5039,7 +5039,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-            - value:
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5116,8 +5116,8 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5194,7 +5194,7 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
+              name: "name"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -5250,7 +5250,7 @@ definitions:
         closure:
           expected_outputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -5278,8 +5278,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -5307,13 +5307,13 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
           expected_inputs:
             parameters:
-            - value:
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5390,8 +5390,8 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5468,7 +5468,7 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
+              name: "name"
         spec:
           workflow_id:
             domain: "domain"
@@ -5538,7 +5538,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-            - value:
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5615,8 +5615,8 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 default:
                   scalar:
                     schema:
@@ -5693,7 +5693,7 @@ definitions:
                       - "values"
                     simple: {}
                 required: true
-              key: "key"
+              name: "name"
           security_context:
             run_as:
               iam_role: "iam_role"
@@ -5915,7 +5915,7 @@ definitions:
         output_location_prefix: "output_location_prefix"
       default_inputs:
         parameters:
-        - value:
+        - var:
             default:
               scalar:
                 schema:
@@ -5992,8 +5992,8 @@ definitions:
                   - "values"
                 simple: {}
             required: true
-          key: "key"
-        - value:
+          name: "name"
+        - var:
             default:
               scalar:
                 schema:
@@ -6070,7 +6070,7 @@ definitions:
                   - "values"
                 simple: {}
             required: true
-          key: "key"
+          name: "name"
       security_context:
         run_as:
           iam_role: "iam_role"
@@ -7474,7 +7474,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -7502,8 +7502,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -7531,10 +7531,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -7562,8 +7562,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -7591,7 +7591,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -8404,7 +8404,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8432,8 +8432,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8461,10 +8461,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8492,8 +8492,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8521,7 +8521,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -8626,7 +8626,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8654,8 +8654,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8683,10 +8683,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8714,8 +8714,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8743,7 +8743,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -8881,7 +8881,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8909,8 +8909,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8938,10 +8938,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8969,8 +8969,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -8998,7 +8998,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -9846,7 +9846,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -9874,8 +9874,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -9903,10 +9903,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -9934,8 +9934,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -9963,7 +9963,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -10681,7 +10681,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -10709,8 +10709,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -10738,10 +10738,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -10769,8 +10769,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -10798,7 +10798,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
             config:
               key: "config"
             security_context:
@@ -10952,7 +10952,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -10980,8 +10980,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -11009,10 +11009,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -11040,8 +11040,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -11069,7 +11069,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
           config:
             key: "config"
           security_context:
@@ -11526,7 +11526,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11554,8 +11554,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11583,10 +11583,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11614,8 +11614,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11643,7 +11643,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -11790,7 +11790,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11818,8 +11818,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11847,10 +11847,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11878,8 +11878,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -11907,7 +11907,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -12862,7 +12862,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -12890,8 +12890,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -12919,10 +12919,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -12950,8 +12950,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -12979,7 +12979,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -13792,7 +13792,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -13820,8 +13820,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -13849,10 +13849,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -13880,8 +13880,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -13909,7 +13909,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -14014,7 +14014,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14042,8 +14042,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14071,10 +14071,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14102,8 +14102,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14131,7 +14131,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -14269,7 +14269,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14297,8 +14297,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14326,10 +14326,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14357,8 +14357,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -14386,7 +14386,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
               config:
                 key: "config"
               security_context:
@@ -15234,7 +15234,7 @@ definitions:
               interface:
                 outputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -15262,8 +15262,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -15291,10 +15291,10 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
                 inputs:
                   variables:
-                  - value:
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -15322,8 +15322,8 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
-                  - value:
+                    name: "name"
+                  - var:
                       description: "description"
                       type:
                         schema:
@@ -15351,7 +15351,7 @@ definitions:
                           - "values"
                           - "values"
                         simple: {}
-                    key: "key"
+                    name: "name"
             connections:
               upstream:
                 key:
@@ -16325,7 +16325,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -16353,8 +16353,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -16382,10 +16382,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -16413,8 +16413,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -16442,7 +16442,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:
@@ -17255,7 +17255,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17283,8 +17283,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17312,10 +17312,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17343,8 +17343,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17372,7 +17372,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:
@@ -17477,7 +17477,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17505,8 +17505,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17534,10 +17534,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17565,8 +17565,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17594,7 +17594,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
             config:
               key: "config"
             security_context:
@@ -17732,7 +17732,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17760,8 +17760,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17789,10 +17789,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17820,8 +17820,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -17849,7 +17849,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
             config:
               key: "config"
             security_context:
@@ -18697,7 +18697,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -18725,8 +18725,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -18754,10 +18754,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -18785,8 +18785,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -18814,7 +18814,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:
@@ -19724,7 +19724,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -19752,8 +19752,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -19781,10 +19781,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -19812,8 +19812,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -19841,7 +19841,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -20654,7 +20654,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20682,8 +20682,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20711,10 +20711,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20742,8 +20742,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20771,7 +20771,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -20876,7 +20876,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20904,8 +20904,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20933,10 +20933,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20964,8 +20964,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -20993,7 +20993,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                 config:
                   key: "config"
                 security_context:
@@ -21131,7 +21131,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -21159,8 +21159,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -21188,10 +21188,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -21219,8 +21219,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -21248,7 +21248,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                 config:
                   key: "config"
                 security_context:
@@ -22096,7 +22096,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -22124,8 +22124,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -22153,10 +22153,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -22184,8 +22184,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -22213,7 +22213,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -23036,7 +23036,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -23064,8 +23064,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -23093,10 +23093,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -23124,8 +23124,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -23153,7 +23153,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -23966,7 +23966,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -23994,8 +23994,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24023,10 +24023,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24054,8 +24054,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24083,7 +24083,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -24188,7 +24188,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24216,8 +24216,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24245,10 +24245,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24276,8 +24276,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24305,7 +24305,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                 config:
                   key: "config"
                 security_context:
@@ -24443,7 +24443,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24471,8 +24471,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24500,10 +24500,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24531,8 +24531,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -24560,7 +24560,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                 config:
                   key: "config"
                 security_context:
@@ -25408,7 +25408,7 @@ definitions:
                 interface:
                   outputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -25436,8 +25436,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -25465,10 +25465,10 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
                   inputs:
                     variables:
-                    - value:
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -25496,8 +25496,8 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
-                    - value:
+                      name: "name"
+                    - var:
                         description: "description"
                         type:
                           schema:
@@ -25525,7 +25525,7 @@ definitions:
                             - "values"
                             - "values"
                           simple: {}
-                      key: "key"
+                      name: "name"
               connections:
                 upstream:
                   key:
@@ -26099,7 +26099,7 @@ definitions:
         interface:
           outputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -26127,8 +26127,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -26156,10 +26156,10 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
           inputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -26187,8 +26187,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -26216,7 +26216,7 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
         config:
           key: "config"
         security_context:
@@ -27076,7 +27076,7 @@ definitions:
         interface:
           outputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -27104,8 +27104,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -27133,10 +27133,10 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
           inputs:
             variables:
-            - value:
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -27164,8 +27164,8 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
-            - value:
+              name: "name"
+            - var:
                 description: "description"
                 type:
                   schema:
@@ -27193,7 +27193,7 @@ definitions:
                     - "values"
                     - "values"
                   simple: {}
-              key: "key"
+              name: "name"
       connections:
         upstream:
           key:
@@ -28033,7 +28033,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -28061,8 +28061,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -28090,10 +28090,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -28121,8 +28121,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -28150,7 +28150,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
         connections:
           upstream:
             key:
@@ -28963,7 +28963,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -28991,8 +28991,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29020,10 +29020,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29051,8 +29051,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29080,7 +29080,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
         connections:
           upstream:
             key:
@@ -29185,7 +29185,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29213,8 +29213,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29242,10 +29242,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29273,8 +29273,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29302,7 +29302,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
           config:
             key: "config"
           security_context:
@@ -29440,7 +29440,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29468,8 +29468,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29497,10 +29497,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29528,8 +29528,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -29557,7 +29557,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
           config:
             key: "config"
           security_context:
@@ -30405,7 +30405,7 @@ definitions:
           interface:
             outputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -30433,8 +30433,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -30462,10 +30462,10 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
             inputs:
               variables:
-              - value:
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -30493,8 +30493,8 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
-              - value:
+                name: "name"
+              - var:
                   description: "description"
                   type:
                     schema:
@@ -30522,7 +30522,7 @@ definitions:
                       - "values"
                       - "values"
                     simple: {}
-                key: "key"
+                name: "name"
         connections:
           upstream:
             key:
@@ -31700,11 +31700,11 @@ definitions:
         type: "array"
         description: "Defines a map of parameter names to parameters."
         items:
-          $ref: "#/definitions/coreParameterMapFieldEntry"
+          $ref: "#/definitions/coreParameterMapEntry"
     description: "A map of Parameters in the form of repeated map entries."
     example:
       parameters:
-      - value:
+      - var:
           default:
             scalar:
               schema:
@@ -31781,8 +31781,8 @@ definitions:
                 - "values"
               simple: {}
           required: true
-        key: "key"
-      - value:
+        name: "name"
+      - var:
           default:
             scalar:
               schema:
@@ -31859,17 +31859,17 @@ definitions:
                 - "values"
               simple: {}
           required: true
-        key: "key"
-  coreParameterMapFieldEntry:
+        name: "name"
+  coreParameterMapEntry:
     type: "object"
     properties:
-      key:
+      name:
         type: "string"
-      value:
+      var:
         $ref: "#/definitions/coreParameter"
     title: "Map entry of ParameterMap"
     example:
-      value:
+      var:
         default:
           scalar:
             schema:
@@ -31946,7 +31946,7 @@ definitions:
               - "values"
             simple: {}
         required: true
-      key: "key"
+      name: "name"
   corePrimitive:
     type: "object"
     properties:
@@ -32559,7 +32559,7 @@ definitions:
       interface:
         outputs:
           variables:
-          - value:
+          - var:
               description: "description"
               type:
                 schema:
@@ -32587,8 +32587,8 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               description: "description"
               type:
                 schema:
@@ -32616,10 +32616,10 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
+            name: "name"
         inputs:
           variables:
-          - value:
+          - var:
               description: "description"
               type:
                 schema:
@@ -32647,8 +32647,8 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               description: "description"
               type:
                 schema:
@@ -32676,7 +32676,7 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
+            name: "name"
       config:
         key: "config"
       security_context:
@@ -32733,7 +32733,7 @@ definitions:
     example:
       outputs:
         variables:
-        - value:
+        - var:
             description: "description"
             type:
               schema:
@@ -32761,8 +32761,8 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
-        - value:
+          name: "name"
+        - var:
             description: "description"
             type:
               schema:
@@ -32790,10 +32790,10 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
+          name: "name"
       inputs:
         variables:
-        - value:
+        - var:
             description: "description"
             type:
               schema:
@@ -32821,8 +32821,8 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
-        - value:
+          name: "name"
+        - var:
             description: "description"
             type:
               schema:
@@ -32850,7 +32850,7 @@ definitions:
                 - "values"
                 - "values"
               simple: {}
-          key: "key"
+          name: "name"
   coreVariable:
     type: "object"
     properties:
@@ -32896,11 +32896,11 @@ definitions:
         type: "array"
         description: "Defines a map of variable names to variables."
         items:
-          $ref: "#/definitions/coreVariableMapFieldEntry"
+          $ref: "#/definitions/coreVariableMapEntry"
     title: "A map of Variables in the form of repeated map entries"
     example:
       variables:
-      - value:
+      - var:
           description: "description"
           type:
             schema:
@@ -32928,8 +32928,8 @@ definitions:
               - "values"
               - "values"
             simple: {}
-        key: "key"
-      - value:
+        name: "name"
+      - var:
           description: "description"
           type:
             schema:
@@ -32957,17 +32957,17 @@ definitions:
               - "values"
               - "values"
             simple: {}
-        key: "key"
-  coreVariableMapFieldEntry:
+        name: "name"
+  coreVariableMapEntry:
     type: "object"
     properties:
-      key:
+      name:
         type: "string"
-      value:
+      var:
         $ref: "#/definitions/coreVariable"
     title: "Map entry of VariableMap"
     example:
-      value:
+      var:
         description: "description"
         type:
           schema:
@@ -32995,7 +32995,7 @@ definitions:
             - "values"
             - "values"
           simple: {}
-      key: "key"
+      name: "name"
   coreVoid:
     type: "object"
     description: "Used to denote a nil/null/None assignment to a scalar value. The\
@@ -33936,7 +33936,7 @@ definitions:
       interface:
         outputs:
           variables:
-          - value:
+          - var:
               description: "description"
               type:
                 schema:
@@ -33964,8 +33964,8 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               description: "description"
               type:
                 schema:
@@ -33993,10 +33993,10 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
+            name: "name"
         inputs:
           variables:
-          - value:
+          - var:
               description: "description"
               type:
                 schema:
@@ -34024,8 +34024,8 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
-          - value:
+            name: "name"
+          - var:
               description: "description"
               type:
                 schema:
@@ -34053,7 +34053,7 @@ definitions:
                   - "values"
                   - "values"
                 simple: {}
-            key: "key"
+            name: "name"
   eventExternalResourceInfo:
     type: "object"
     properties:
@@ -35089,7 +35089,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -35117,8 +35117,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -35146,10 +35146,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -35177,8 +35177,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -35206,7 +35206,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:
@@ -36019,7 +36019,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36047,8 +36047,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36076,10 +36076,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36107,8 +36107,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36136,7 +36136,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:
@@ -36241,7 +36241,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36269,8 +36269,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36298,10 +36298,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36329,8 +36329,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36358,7 +36358,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
             config:
               key: "config"
             security_context:
@@ -36496,7 +36496,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36524,8 +36524,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36553,10 +36553,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36584,8 +36584,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -36613,7 +36613,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
             config:
               key: "config"
             security_context:
@@ -37461,7 +37461,7 @@ definitions:
             interface:
               outputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -37489,8 +37489,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -37518,10 +37518,10 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
               inputs:
                 variables:
-                - value:
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -37549,8 +37549,8 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
-                - value:
+                  name: "name"
+                - var:
                     description: "description"
                     type:
                       schema:
@@ -37578,7 +37578,7 @@ definitions:
                         - "values"
                         - "values"
                       simple: {}
-                  key: "key"
+                  name: "name"
           connections:
             upstream:
               key:

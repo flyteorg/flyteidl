@@ -192,20 +192,20 @@ var _ interface {
 	ErrorName() string
 } = VariableMapValidationError{}
 
-// Validate checks the field values on VariableMapFieldEntry with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *VariableMapFieldEntry) Validate() error {
+// Validate checks the field values on VariableMapEntry with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *VariableMapEntry) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for Key
+	// no validation rules for Name
 
-	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetVar()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return VariableMapFieldEntryValidationError{
-				field:  "Value",
+			return VariableMapEntryValidationError{
+				field:  "Var",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -215,9 +215,9 @@ func (m *VariableMapFieldEntry) Validate() error {
 	return nil
 }
 
-// VariableMapFieldEntryValidationError is the validation error returned by
-// VariableMapFieldEntry.Validate if the designated constraints aren't met.
-type VariableMapFieldEntryValidationError struct {
+// VariableMapEntryValidationError is the validation error returned by
+// VariableMapEntry.Validate if the designated constraints aren't met.
+type VariableMapEntryValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -225,24 +225,22 @@ type VariableMapFieldEntryValidationError struct {
 }
 
 // Field function returns field value.
-func (e VariableMapFieldEntryValidationError) Field() string { return e.field }
+func (e VariableMapEntryValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e VariableMapFieldEntryValidationError) Reason() string { return e.reason }
+func (e VariableMapEntryValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e VariableMapFieldEntryValidationError) Cause() error { return e.cause }
+func (e VariableMapEntryValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e VariableMapFieldEntryValidationError) Key() bool { return e.key }
+func (e VariableMapEntryValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e VariableMapFieldEntryValidationError) ErrorName() string {
-	return "VariableMapFieldEntryValidationError"
-}
+func (e VariableMapEntryValidationError) ErrorName() string { return "VariableMapEntryValidationError" }
 
 // Error satisfies the builtin error interface
-func (e VariableMapFieldEntryValidationError) Error() string {
+func (e VariableMapEntryValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -254,14 +252,14 @@ func (e VariableMapFieldEntryValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sVariableMapFieldEntry.%s: %s%s",
+		"invalid %sVariableMapEntry.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = VariableMapFieldEntryValidationError{}
+var _ error = VariableMapEntryValidationError{}
 
 var _ interface {
 	Field() string
@@ -269,7 +267,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = VariableMapFieldEntryValidationError{}
+} = VariableMapEntryValidationError{}
 
 // Validate checks the field values on TypedInterface with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -529,20 +527,20 @@ var _ interface {
 	ErrorName() string
 } = ParameterMapValidationError{}
 
-// Validate checks the field values on ParameterMapFieldEntry with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *ParameterMapFieldEntry) Validate() error {
+// Validate checks the field values on ParameterMapEntry with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ParameterMapEntry) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for Key
+	// no validation rules for Name
 
-	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetVar()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ParameterMapFieldEntryValidationError{
-				field:  "Value",
+			return ParameterMapEntryValidationError{
+				field:  "Var",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -552,9 +550,9 @@ func (m *ParameterMapFieldEntry) Validate() error {
 	return nil
 }
 
-// ParameterMapFieldEntryValidationError is the validation error returned by
-// ParameterMapFieldEntry.Validate if the designated constraints aren't met.
-type ParameterMapFieldEntryValidationError struct {
+// ParameterMapEntryValidationError is the validation error returned by
+// ParameterMapEntry.Validate if the designated constraints aren't met.
+type ParameterMapEntryValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -562,24 +560,24 @@ type ParameterMapFieldEntryValidationError struct {
 }
 
 // Field function returns field value.
-func (e ParameterMapFieldEntryValidationError) Field() string { return e.field }
+func (e ParameterMapEntryValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ParameterMapFieldEntryValidationError) Reason() string { return e.reason }
+func (e ParameterMapEntryValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ParameterMapFieldEntryValidationError) Cause() error { return e.cause }
+func (e ParameterMapEntryValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ParameterMapFieldEntryValidationError) Key() bool { return e.key }
+func (e ParameterMapEntryValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ParameterMapFieldEntryValidationError) ErrorName() string {
-	return "ParameterMapFieldEntryValidationError"
+func (e ParameterMapEntryValidationError) ErrorName() string {
+	return "ParameterMapEntryValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ParameterMapFieldEntryValidationError) Error() string {
+func (e ParameterMapEntryValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -591,14 +589,14 @@ func (e ParameterMapFieldEntryValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sParameterMapFieldEntry.%s: %s%s",
+		"invalid %sParameterMapEntry.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ParameterMapFieldEntryValidationError{}
+var _ error = ParameterMapEntryValidationError{}
 
 var _ interface {
 	Field() string
@@ -606,4 +604,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ParameterMapFieldEntryValidationError{}
+} = ParameterMapEntryValidationError{}

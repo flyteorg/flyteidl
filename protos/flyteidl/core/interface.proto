@@ -19,13 +19,13 @@ message Variable {
 // A map of Variables in the form of repeated map entries
 message VariableMap {
     // Defines a map of variable names to variables.
-    repeated VariableMapFieldEntry variables = 1;
+    repeated VariableMapEntry variables = 1;
 }
 
 // Map entry of VariableMap
-message VariableMapFieldEntry {
-    string key = 1;
-    Variable value = 2;
+message VariableMapEntry {
+    string name = 1;
+    Variable var = 2;
 }
 
 // Defines strongly typed inputs and outputs.
@@ -53,11 +53,11 @@ message Parameter {
 // A map of Parameters in the form of repeated map entries.
 message ParameterMap {
     // Defines a map of parameter names to parameters.
-    repeated ParameterMapFieldEntry parameters = 1;
+    repeated ParameterMapEntry parameters = 1;
 }
 
 // Map entry of ParameterMap
-message ParameterMapFieldEntry {
-    string key = 1;
-    Parameter value = 2;
+message ParameterMapEntry {
+    string name = 1;
+    Parameter var = 2;
 }
