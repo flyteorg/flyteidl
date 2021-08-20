@@ -20,7 +20,7 @@ public final class Mpi {
 
     /**
      * <pre>
-     * number of worker,launcher replicas spawned in the cluster for this job
+     * number of worker spawned in the cluster for this job
      * </pre>
      *
      * <code>int32 workers = 1;</code>
@@ -28,11 +28,19 @@ public final class Mpi {
     int getWorkers();
 
     /**
+     * <pre>
+     * number of launcher replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 launcher_replicas = 2;</code>
      */
     int getLauncherReplicas();
 
     /**
+     * <pre>
+     * number of slots per worker used in hostfile.
+     * </pre>
+     *
      * <code>int32 slots = 3;</code>
      */
     int getSlots();
@@ -131,7 +139,7 @@ public final class Mpi {
     private int workers_;
     /**
      * <pre>
-     * number of worker,launcher replicas spawned in the cluster for this job
+     * number of worker spawned in the cluster for this job
      * </pre>
      *
      * <code>int32 workers = 1;</code>
@@ -143,6 +151,10 @@ public final class Mpi {
     public static final int LAUNCHER_REPLICAS_FIELD_NUMBER = 2;
     private int launcherReplicas_;
     /**
+     * <pre>
+     * number of launcher replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 launcher_replicas = 2;</code>
      */
     public int getLauncherReplicas() {
@@ -152,6 +164,10 @@ public final class Mpi {
     public static final int SLOTS_FIELD_NUMBER = 3;
     private int slots_;
     /**
+     * <pre>
+     * number of slots per worker used in hostfile.
+     * </pre>
+     *
      * <code>int32 slots = 3;</code>
      */
     public int getSlots() {
@@ -501,7 +517,7 @@ public final class Mpi {
       private int workers_ ;
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker spawned in the cluster for this job
        * </pre>
        *
        * <code>int32 workers = 1;</code>
@@ -511,7 +527,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker spawned in the cluster for this job
        * </pre>
        *
        * <code>int32 workers = 1;</code>
@@ -524,7 +540,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker spawned in the cluster for this job
        * </pre>
        *
        * <code>int32 workers = 1;</code>
@@ -538,12 +554,20 @@ public final class Mpi {
 
       private int launcherReplicas_ ;
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public int getLauncherReplicas() {
         return launcherReplicas_;
       }
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public Builder setLauncherReplicas(int value) {
@@ -553,6 +577,10 @@ public final class Mpi {
         return this;
       }
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public Builder clearLauncherReplicas() {
@@ -564,12 +592,20 @@ public final class Mpi {
 
       private int slots_ ;
       /**
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
        * <code>int32 slots = 3;</code>
        */
       public int getSlots() {
         return slots_;
       }
       /**
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
        * <code>int32 slots = 3;</code>
        */
       public Builder setSlots(int value) {
@@ -579,6 +615,10 @@ public final class Mpi {
         return this;
       }
       /**
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
        * <code>int32 slots = 3;</code>
        */
       public Builder clearSlots() {

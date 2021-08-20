@@ -22,9 +22,11 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 // Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
 type DistributedMPITrainingTask struct {
-	// number of worker,launcher replicas spawned in the cluster for this job
-	Workers              int32    `protobuf:"varint,1,opt,name=workers,proto3" json:"workers,omitempty"`
-	LauncherReplicas     int32    `protobuf:"varint,2,opt,name=launcher_replicas,json=launcherReplicas,proto3" json:"launcher_replicas,omitempty"`
+	// number of worker spawned in the cluster for this job
+	Workers int32 `protobuf:"varint,1,opt,name=workers,proto3" json:"workers,omitempty"`
+	// number of launcher replicas spawned in the cluster for this job
+	LauncherReplicas int32 `protobuf:"varint,2,opt,name=launcher_replicas,json=launcherReplicas,proto3" json:"launcher_replicas,omitempty"`
+	// number of slots per worker used in hostfile.
 	Slots                int32    `protobuf:"varint,3,opt,name=slots,proto3" json:"slots,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
