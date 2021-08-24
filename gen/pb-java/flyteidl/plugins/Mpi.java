@@ -20,22 +20,30 @@ public final class Mpi {
 
     /**
      * <pre>
-     * number of worker,launcher replicas spawned in the cluster for this job
+     * number of worker replicas spawned in the cluster for this job
      * </pre>
      *
-     * <code>int32 workers = 1;</code>
+     * <code>int32 worker_replicas = 1;</code>
      */
-    int getWorkers();
+    int getWorkerReplicas();
 
     /**
+     * <pre>
+     * number of launcher replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 launcher_replicas = 2;</code>
      */
     int getLauncherReplicas();
 
     /**
-     * <code>int32 slots = 3;</code>
+     * <pre>
+     * number of slots per worker used in hostfile.
+     * </pre>
+     *
+     * <code>int32 slots_per_workers = 3;</code>
      */
-    int getSlots();
+    int getSlotsPerWorkers();
   }
   /**
    * <pre>
@@ -82,7 +90,7 @@ public final class Mpi {
               break;
             case 8: {
 
-              workers_ = input.readInt32();
+              workerReplicas_ = input.readInt32();
               break;
             }
             case 16: {
@@ -92,7 +100,7 @@ public final class Mpi {
             }
             case 24: {
 
-              slots_ = input.readInt32();
+              slotsPerWorkers_ = input.readInt32();
               break;
             }
             default: {
@@ -127,35 +135,43 @@ public final class Mpi {
               flyteidl.plugins.Mpi.DistributedMPITrainingTask.class, flyteidl.plugins.Mpi.DistributedMPITrainingTask.Builder.class);
     }
 
-    public static final int WORKERS_FIELD_NUMBER = 1;
-    private int workers_;
+    public static final int WORKER_REPLICAS_FIELD_NUMBER = 1;
+    private int workerReplicas_;
     /**
      * <pre>
-     * number of worker,launcher replicas spawned in the cluster for this job
+     * number of worker replicas spawned in the cluster for this job
      * </pre>
      *
-     * <code>int32 workers = 1;</code>
+     * <code>int32 worker_replicas = 1;</code>
      */
-    public int getWorkers() {
-      return workers_;
+    public int getWorkerReplicas() {
+      return workerReplicas_;
     }
 
     public static final int LAUNCHER_REPLICAS_FIELD_NUMBER = 2;
     private int launcherReplicas_;
     /**
+     * <pre>
+     * number of launcher replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 launcher_replicas = 2;</code>
      */
     public int getLauncherReplicas() {
       return launcherReplicas_;
     }
 
-    public static final int SLOTS_FIELD_NUMBER = 3;
-    private int slots_;
+    public static final int SLOTS_PER_WORKERS_FIELD_NUMBER = 3;
+    private int slotsPerWorkers_;
     /**
-     * <code>int32 slots = 3;</code>
+     * <pre>
+     * number of slots per worker used in hostfile.
+     * </pre>
+     *
+     * <code>int32 slots_per_workers = 3;</code>
      */
-    public int getSlots() {
-      return slots_;
+    public int getSlotsPerWorkers() {
+      return slotsPerWorkers_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -172,14 +188,14 @@ public final class Mpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (workers_ != 0) {
-        output.writeInt32(1, workers_);
+      if (workerReplicas_ != 0) {
+        output.writeInt32(1, workerReplicas_);
       }
       if (launcherReplicas_ != 0) {
         output.writeInt32(2, launcherReplicas_);
       }
-      if (slots_ != 0) {
-        output.writeInt32(3, slots_);
+      if (slotsPerWorkers_ != 0) {
+        output.writeInt32(3, slotsPerWorkers_);
       }
       unknownFields.writeTo(output);
     }
@@ -190,17 +206,17 @@ public final class Mpi {
       if (size != -1) return size;
 
       size = 0;
-      if (workers_ != 0) {
+      if (workerReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, workers_);
+          .computeInt32Size(1, workerReplicas_);
       }
       if (launcherReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, launcherReplicas_);
       }
-      if (slots_ != 0) {
+      if (slotsPerWorkers_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, slots_);
+          .computeInt32Size(3, slotsPerWorkers_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,12 +233,12 @@ public final class Mpi {
       }
       flyteidl.plugins.Mpi.DistributedMPITrainingTask other = (flyteidl.plugins.Mpi.DistributedMPITrainingTask) obj;
 
-      if (getWorkers()
-          != other.getWorkers()) return false;
+      if (getWorkerReplicas()
+          != other.getWorkerReplicas()) return false;
       if (getLauncherReplicas()
           != other.getLauncherReplicas()) return false;
-      if (getSlots()
-          != other.getSlots()) return false;
+      if (getSlotsPerWorkers()
+          != other.getSlotsPerWorkers()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -234,12 +250,12 @@ public final class Mpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WORKERS_FIELD_NUMBER;
-      hash = (53 * hash) + getWorkers();
+      hash = (37 * hash) + WORKER_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerReplicas();
       hash = (37 * hash) + LAUNCHER_REPLICAS_FIELD_NUMBER;
       hash = (53 * hash) + getLauncherReplicas();
-      hash = (37 * hash) + SLOTS_FIELD_NUMBER;
-      hash = (53 * hash) + getSlots();
+      hash = (37 * hash) + SLOTS_PER_WORKERS_FIELD_NUMBER;
+      hash = (53 * hash) + getSlotsPerWorkers();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,11 +393,11 @@ public final class Mpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        workers_ = 0;
+        workerReplicas_ = 0;
 
         launcherReplicas_ = 0;
 
-        slots_ = 0;
+        slotsPerWorkers_ = 0;
 
         return this;
       }
@@ -409,9 +425,9 @@ public final class Mpi {
       @java.lang.Override
       public flyteidl.plugins.Mpi.DistributedMPITrainingTask buildPartial() {
         flyteidl.plugins.Mpi.DistributedMPITrainingTask result = new flyteidl.plugins.Mpi.DistributedMPITrainingTask(this);
-        result.workers_ = workers_;
+        result.workerReplicas_ = workerReplicas_;
         result.launcherReplicas_ = launcherReplicas_;
-        result.slots_ = slots_;
+        result.slotsPerWorkers_ = slotsPerWorkers_;
         onBuilt();
         return result;
       }
@@ -460,14 +476,14 @@ public final class Mpi {
 
       public Builder mergeFrom(flyteidl.plugins.Mpi.DistributedMPITrainingTask other) {
         if (other == flyteidl.plugins.Mpi.DistributedMPITrainingTask.getDefaultInstance()) return this;
-        if (other.getWorkers() != 0) {
-          setWorkers(other.getWorkers());
+        if (other.getWorkerReplicas() != 0) {
+          setWorkerReplicas(other.getWorkerReplicas());
         }
         if (other.getLauncherReplicas() != 0) {
           setLauncherReplicas(other.getLauncherReplicas());
         }
-        if (other.getSlots() != 0) {
-          setSlots(other.getSlots());
+        if (other.getSlotsPerWorkers() != 0) {
+          setSlotsPerWorkers(other.getSlotsPerWorkers());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -498,52 +514,60 @@ public final class Mpi {
         return this;
       }
 
-      private int workers_ ;
+      private int workerReplicas_ ;
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker replicas spawned in the cluster for this job
        * </pre>
        *
-       * <code>int32 workers = 1;</code>
+       * <code>int32 worker_replicas = 1;</code>
        */
-      public int getWorkers() {
-        return workers_;
+      public int getWorkerReplicas() {
+        return workerReplicas_;
       }
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker replicas spawned in the cluster for this job
        * </pre>
        *
-       * <code>int32 workers = 1;</code>
+       * <code>int32 worker_replicas = 1;</code>
        */
-      public Builder setWorkers(int value) {
+      public Builder setWorkerReplicas(int value) {
         
-        workers_ = value;
+        workerReplicas_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * number of worker,launcher replicas spawned in the cluster for this job
+       * number of worker replicas spawned in the cluster for this job
        * </pre>
        *
-       * <code>int32 workers = 1;</code>
+       * <code>int32 worker_replicas = 1;</code>
        */
-      public Builder clearWorkers() {
+      public Builder clearWorkerReplicas() {
         
-        workers_ = 0;
+        workerReplicas_ = 0;
         onChanged();
         return this;
       }
 
       private int launcherReplicas_ ;
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public int getLauncherReplicas() {
         return launcherReplicas_;
       }
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public Builder setLauncherReplicas(int value) {
@@ -553,6 +577,10 @@ public final class Mpi {
         return this;
       }
       /**
+       * <pre>
+       * number of launcher replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 launcher_replicas = 2;</code>
        */
       public Builder clearLauncherReplicas() {
@@ -562,28 +590,40 @@ public final class Mpi {
         return this;
       }
 
-      private int slots_ ;
+      private int slotsPerWorkers_ ;
       /**
-       * <code>int32 slots = 3;</code>
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
+       * <code>int32 slots_per_workers = 3;</code>
        */
-      public int getSlots() {
-        return slots_;
+      public int getSlotsPerWorkers() {
+        return slotsPerWorkers_;
       }
       /**
-       * <code>int32 slots = 3;</code>
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
+       * <code>int32 slots_per_workers = 3;</code>
        */
-      public Builder setSlots(int value) {
+      public Builder setSlotsPerWorkers(int value) {
         
-        slots_ = value;
+        slotsPerWorkers_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 slots = 3;</code>
+       * <pre>
+       * number of slots per worker used in hostfile.
+       * </pre>
+       *
+       * <code>int32 slots_per_workers = 3;</code>
        */
-      public Builder clearSlots() {
+      public Builder clearSlotsPerWorkers() {
         
-        slots_ = 0;
+        slotsPerWorkers_ = 0;
         onChanged();
         return this;
       }
@@ -655,11 +695,11 @@ public final class Mpi {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/plugins/mpi.proto\022\020flyteidl.p" +
-      "lugins\"W\n\032DistributedMPITrainingTask\022\017\n\007" +
-      "workers\030\001 \001(\005\022\031\n\021launcher_replicas\030\002 \001(\005" +
-      "\022\r\n\005slots\030\003 \001(\005B9Z7github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/pluginsb\006prot" +
-      "o3"
+      "lugins\"k\n\032DistributedMPITrainingTask\022\027\n\017" +
+      "worker_replicas\030\001 \001(\005\022\031\n\021launcher_replic" +
+      "as\030\002 \001(\005\022\031\n\021slots_per_workers\030\003 \001(\005B9Z7g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -678,7 +718,7 @@ public final class Mpi {
     internal_static_flyteidl_plugins_DistributedMPITrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DistributedMPITrainingTask_descriptor,
-        new java.lang.String[] { "Workers", "LauncherReplicas", "Slots", });
+        new java.lang.String[] { "WorkerReplicas", "LauncherReplicas", "SlotsPerWorkers", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
