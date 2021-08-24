@@ -3,6 +3,7 @@ syntax = "proto3";
 package datacatalog;
 
 import "flyteidl/core/literals.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
 /*
@@ -36,9 +37,8 @@ service DataCatalog {
 
     // Get an artifact and the corresponding data. If the artifact does not exist,
     // try to reserve a spot for populating the artifact.
-    // Once you preserve a spot, you should call ExtendReservation API periodically
-    // to extend the reservation. Otherwise, the reservation can expire and other
-    // tasks may take the spot.
+    // Once you preserve a spot, you should peridically extend the reservation before expiration
+    // with an identical call. Otherwise, the reservation may be acquired by another task.
     // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
     // Note: We may have multiple concurrent tasks with the same signature
     // and the same input that try to populate the same artifact at the same time.
@@ -49,10 +49,6 @@ service DataCatalog {
     // A and B running in parallel. So a third task C may get the Artifact from A or B,
     // whichever writes last.
     rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
-
-    // Extend the reservation to keep it from expiring. If the reservation expires,
-    // other tasks can take over the reservation by calling GetOrReserveArtifact.
-    rpc ExtendReservation (ExtendReservationRequest) returns (ExtendReservationResponse);
 
     // Release the reservation when the task holding the spot fails so that the other tasks
     // can grab the spot.
@@ -192,8 +188,10 @@ message ReservationStatus {
     };
 
     State state = 1;
-    Metadata metadata = 2;
-    string owner_id = 3;
+    google.protobuf.Timestamp expires_at = 2; // Expiration timestamp of this reservation
+    google.protobuf.Duration heartbeat_interval = 3; // Recommended heartbeat interval to extend reservation
+    Metadata metadata = 4;
+    string owner_id = 5;
 }
 
 // Response to get artifact or reserve spot.
@@ -202,18 +200,6 @@ message GetOrReserveArtifactResponse {
         Artifact artifact = 1;
         ReservationStatus reservation_status = 2;
     }
-}
-
-// Request to extend reservation
-message ExtendReservationRequest {
-    DatasetID dataset_id = 1;
-    string tag_name = 2;
-    string owner_id = 3;
-}
-
-// Response to extend reservation
-message ExtendReservationResponse {
-
 }
 
 // Request to release reservation
