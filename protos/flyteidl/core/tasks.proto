@@ -121,6 +121,7 @@ message TaskTemplate {
     oneof target {
         Container container = 6;
         K8sPod k8s_pod = 17;
+        Sql sql = 18;
     }
 
     // This can be used to customize task handling at execution time for the same task type.
@@ -262,4 +263,10 @@ message K8sObjectMetadata {
 
   // Optional annotations to add to the pod definition.
   map<string, string> annotations = 2;
+}
+
+// Sql represents a generic sql workload with a statement and engine.
+message Sql {
+    string statement = 1;
+    string engine = 2;
 }
