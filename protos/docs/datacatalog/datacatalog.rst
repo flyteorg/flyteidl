@@ -261,43 +261,6 @@ Dataset properties we can filter by
 
 
 
-.. _ref_datacatalog.ExtendReservationRequest:
-
-ExtendReservationRequest
-------------------------------------------------------------------
-
-Request to extend reservation
-
-
-
-.. csv-table:: ExtendReservationRequest type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "dataset_id", ":ref:`ref_datacatalog.DatasetID`", "", ""
-   "tag_name", ":ref:`ref_string`", "", ""
-   "owner_id", ":ref:`ref_string`", "", ""
-
-
-
-
-
-
-
-.. _ref_datacatalog.ExtendReservationResponse:
-
-ExtendReservationResponse
-------------------------------------------------------------------
-
-Response to extend reservation
-
-
-
-
-
-
-
-
 .. _ref_datacatalog.FilterExpression:
 
 FilterExpression
@@ -727,6 +690,8 @@ Whether we successfully reserve a spot.
    :widths: auto
 
    "state", ":ref:`ref_datacatalog.ReservationStatus.State`", "", ""
+   "expires_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Expiration timestamp of this reservation"
+   "heartbeat_interval", ":ref:`ref_google.protobuf.Duration`", "", "Recommended heartbeat interval to extend reservation"
    "metadata", ":ref:`ref_datacatalog.Metadata`", "", ""
    "owner_id", ":ref:`ref_string`", "", ""
 
@@ -894,8 +859,7 @@ Artifacts are associated with a Dataset, and can be tagged for retrieval.
    "AddTag", ":ref:`ref_datacatalog.AddTagRequest`", ":ref:`ref_datacatalog.AddTagResponse`", "Associate a tag with an artifact. Tags are unique within a Dataset."
    "ListArtifacts", ":ref:`ref_datacatalog.ListArtifactsRequest`", ":ref:`ref_datacatalog.ListArtifactsResponse`", "Return a paginated list of artifacts"
    "ListDatasets", ":ref:`ref_datacatalog.ListDatasetsRequest`", ":ref:`ref_datacatalog.ListDatasetsResponse`", "Return a paginated list of datasets"
-   "GetOrReserveArtifact", ":ref:`ref_datacatalog.GetOrReserveArtifactRequest`", ":ref:`ref_datacatalog.GetOrReserveArtifactResponse`", "Get an artifact and the corresponding data. If the artifact does not exist, try to reserve a spot for populating the artifact. Once you preserve a spot, you should call ExtendReservation API periodically to extend the reservation. Otherwise, the reservation can expire and other tasks may take the spot. If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency). Note: We may have multiple concurrent tasks with the same signature and the same input that try to populate the same artifact at the same time. Thus with reservation, only one task can run at a time, until the reservation expires. Note: If task A does not extend the reservation in time and the reservation expires, another task B may take over the reservation, resulting in two tasks A and B running in parallel. So a third task C may get the Artifact from A or B, whichever writes last."
-   "ExtendReservation", ":ref:`ref_datacatalog.ExtendReservationRequest`", ":ref:`ref_datacatalog.ExtendReservationResponse`", "Extend the reservation to keep it from expiring. If the reservation expires, other tasks can take over the reservation by calling GetOrReserveArtifact."
+   "GetOrReserveArtifact", ":ref:`ref_datacatalog.GetOrReserveArtifactRequest`", ":ref:`ref_datacatalog.GetOrReserveArtifactResponse`", "Get an artifact and the corresponding data. If the artifact does not exist, try to reserve a spot for populating the artifact. Once you preserve a spot, you should peridically extend the reservation before expiration with an identical call. Otherwise, the reservation may be acquired by another task. If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency). Note: We may have multiple concurrent tasks with the same signature and the same input that try to populate the same artifact at the same time. Thus with reservation, only one task can run at a time, until the reservation expires. Note: If task A does not extend the reservation in time and the reservation expires, another task B may take over the reservation, resulting in two tasks A and B running in parallel. So a third task C may get the Artifact from A or B, whichever writes last."
    "ReleaseReservation", ":ref:`ref_datacatalog.ReleaseReservationRequest`", ":ref:`ref_datacatalog.ReleaseReservationResponse`", "Release the reservation when the task holding the spot fails so that the other tasks can grab the spot."
  <!-- end services -->
 
