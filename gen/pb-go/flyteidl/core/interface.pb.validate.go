@@ -537,10 +537,10 @@ func (m *ParameterMapEntry) Validate() error {
 
 	// no validation rules for Name
 
-	if v, ok := interface{}(m.GetVar()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetParameter()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ParameterMapEntryValidationError{
-				field:  "Var",
+				field:  "Parameter",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

@@ -9538,7 +9538,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IParameterMapEntry
              * @property {string|null} [name] ParameterMapEntry name
-             * @property {flyteidl.core.IParameter|null} ["var"] ParameterMapEntry var
+             * @property {flyteidl.core.IParameter|null} [parameter] ParameterMapEntry parameter
              */
 
             /**
@@ -9565,12 +9565,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ParameterMapEntry.prototype.name = "";
 
             /**
-             * ParameterMapEntry var.
-             * @member {flyteidl.core.IParameter|null|undefined} var
+             * ParameterMapEntry parameter.
+             * @member {flyteidl.core.IParameter|null|undefined} parameter
              * @memberof flyteidl.core.ParameterMapEntry
              * @instance
              */
-            ParameterMapEntry.prototype["var"] = null;
+            ParameterMapEntry.prototype.parameter = null;
 
             /**
              * Creates a new ParameterMapEntry instance using the specified properties.
@@ -9598,8 +9598,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message["var"] != null && message.hasOwnProperty("var"))
-                    $root.flyteidl.core.Parameter.encode(message["var"], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.parameter != null && message.hasOwnProperty("parameter"))
+                    $root.flyteidl.core.Parameter.encode(message.parameter, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -9625,7 +9625,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.name = reader.string();
                         break;
                     case 2:
-                        message["var"] = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
+                        message.parameter = $root.flyteidl.core.Parameter.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9649,10 +9649,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message["var"] != null && message.hasOwnProperty("var")) {
-                    let error = $root.flyteidl.core.Parameter.verify(message["var"]);
+                if (message.parameter != null && message.hasOwnProperty("parameter")) {
+                    let error = $root.flyteidl.core.Parameter.verify(message.parameter);
                     if (error)
-                        return "var." + error;
+                        return "parameter." + error;
                 }
                 return null;
             };

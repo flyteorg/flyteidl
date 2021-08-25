@@ -1007,7 +1007,7 @@ Map entry of ParameterMap
    :widths: auto
 
    "name", ":ref:`ref_string`", "", ""
-   "var", ":ref:`ref_flyteidl.core.Parameter`", "", ""
+   "parameter", ":ref:`ref_flyteidl.core.Parameter`", "", ""
 
 
 

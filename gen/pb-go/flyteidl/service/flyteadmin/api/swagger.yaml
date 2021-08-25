@@ -4045,7 +4045,7 @@ definitions:
         state: {}
         expected_inputs:
           parameters:
-          - var:
+          - parameter:
               default:
                 scalar:
                   schema:
@@ -4123,7 +4123,7 @@ definitions:
                   simple: {}
               required: true
             name: "name"
-          - var:
+          - parameter:
               default:
                 scalar:
                   schema:
@@ -4270,7 +4270,7 @@ definitions:
           output_location_prefix: "output_location_prefix"
         default_inputs:
           parameters:
-          - var:
+          - parameter:
               default:
                 scalar:
                   schema:
@@ -4348,7 +4348,7 @@ definitions:
                   simple: {}
               required: true
             name: "name"
-          - var:
+          - parameter:
               default:
                 scalar:
                   schema:
@@ -4564,7 +4564,7 @@ definitions:
       state: {}
       expected_inputs:
         parameters:
-        - var:
+        - parameter:
             default:
               scalar:
                 schema:
@@ -4642,7 +4642,7 @@ definitions:
                 simple: {}
             required: true
           name: "name"
-        - var:
+        - parameter:
             default:
               scalar:
                 schema:
@@ -4825,7 +4825,7 @@ definitions:
           state: {}
           expected_inputs:
             parameters:
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -4903,7 +4903,7 @@ definitions:
                     simple: {}
                 required: true
               name: "name"
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5050,7 +5050,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5128,7 +5128,7 @@ definitions:
                     simple: {}
                 required: true
               name: "name"
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5324,7 +5324,7 @@ definitions:
           state: {}
           expected_inputs:
             parameters:
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5402,7 +5402,7 @@ definitions:
                     simple: {}
                 required: true
               name: "name"
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5549,7 +5549,7 @@ definitions:
             output_location_prefix: "output_location_prefix"
           default_inputs:
             parameters:
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5627,7 +5627,7 @@ definitions:
                     simple: {}
                 required: true
               name: "name"
-            - var:
+            - parameter:
                 default:
                   scalar:
                     schema:
@@ -5926,7 +5926,7 @@ definitions:
         output_location_prefix: "output_location_prefix"
       default_inputs:
         parameters:
-        - var:
+        - parameter:
             default:
               scalar:
                 schema:
@@ -6004,7 +6004,7 @@ definitions:
                 simple: {}
             required: true
           name: "name"
-        - var:
+        - parameter:
             default:
               scalar:
                 schema:
@@ -31733,7 +31733,7 @@ definitions:
     description: "A map of Parameters in the form of repeated map entries."
     example:
       parameters:
-      - var:
+      - parameter:
           default:
             scalar:
               schema:
@@ -31811,7 +31811,7 @@ definitions:
               simple: {}
           required: true
         name: "name"
-      - var:
+      - parameter:
           default:
             scalar:
               schema:
@@ -31894,11 +31894,11 @@ definitions:
     properties:
       name:
         type: "string"
-      var:
+      parameter:
         $ref: "#/definitions/coreParameter"
     title: "Map entry of ParameterMap"
     example:
-      var:
+      parameter:
         default:
           scalar:
             schema:

@@ -5356,17 +5356,17 @@ public final class Interface {
         getNameBytes();
 
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    boolean hasVar();
+    boolean hasParameter();
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    flyteidl.core.Interface.Parameter getVar();
+    flyteidl.core.Interface.Parameter getParameter();
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    flyteidl.core.Interface.ParameterOrBuilder getVarOrBuilder();
+    flyteidl.core.Interface.ParameterOrBuilder getParameterOrBuilder();
   }
   /**
    * <pre>
@@ -5420,13 +5420,13 @@ public final class Interface {
             }
             case 18: {
               flyteidl.core.Interface.Parameter.Builder subBuilder = null;
-              if (var_ != null) {
-                subBuilder = var_.toBuilder();
+              if (parameter_ != null) {
+                subBuilder = parameter_.toBuilder();
               }
-              var_ = input.readMessage(flyteidl.core.Interface.Parameter.parser(), extensionRegistry);
+              parameter_ = input.readMessage(flyteidl.core.Interface.Parameter.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(var_);
-                var_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(parameter_);
+                parameter_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5497,25 +5497,25 @@ public final class Interface {
       }
     }
 
-    public static final int VAR_FIELD_NUMBER = 2;
-    private flyteidl.core.Interface.Parameter var_;
+    public static final int PARAMETER_FIELD_NUMBER = 2;
+    private flyteidl.core.Interface.Parameter parameter_;
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    public boolean hasVar() {
-      return var_ != null;
+    public boolean hasParameter() {
+      return parameter_ != null;
     }
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    public flyteidl.core.Interface.Parameter getVar() {
-      return var_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : var_;
+    public flyteidl.core.Interface.Parameter getParameter() {
+      return parameter_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : parameter_;
     }
     /**
-     * <code>.flyteidl.core.Parameter var = 2;</code>
+     * <code>.flyteidl.core.Parameter parameter = 2;</code>
      */
-    public flyteidl.core.Interface.ParameterOrBuilder getVarOrBuilder() {
-      return getVar();
+    public flyteidl.core.Interface.ParameterOrBuilder getParameterOrBuilder() {
+      return getParameter();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5535,8 +5535,8 @@ public final class Interface {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (var_ != null) {
-        output.writeMessage(2, getVar());
+      if (parameter_ != null) {
+        output.writeMessage(2, getParameter());
       }
       unknownFields.writeTo(output);
     }
@@ -5550,9 +5550,9 @@ public final class Interface {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (var_ != null) {
+      if (parameter_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getVar());
+          .computeMessageSize(2, getParameter());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5571,10 +5571,10 @@ public final class Interface {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (hasVar() != other.hasVar()) return false;
-      if (hasVar()) {
-        if (!getVar()
-            .equals(other.getVar())) return false;
+      if (hasParameter() != other.hasParameter()) return false;
+      if (hasParameter()) {
+        if (!getParameter()
+            .equals(other.getParameter())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -5589,9 +5589,9 @@ public final class Interface {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      if (hasVar()) {
-        hash = (37 * hash) + VAR_FIELD_NUMBER;
-        hash = (53 * hash) + getVar().hashCode();
+      if (hasParameter()) {
+        hash = (37 * hash) + PARAMETER_FIELD_NUMBER;
+        hash = (53 * hash) + getParameter().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5732,11 +5732,11 @@ public final class Interface {
         super.clear();
         name_ = "";
 
-        if (varBuilder_ == null) {
-          var_ = null;
+        if (parameterBuilder_ == null) {
+          parameter_ = null;
         } else {
-          var_ = null;
-          varBuilder_ = null;
+          parameter_ = null;
+          parameterBuilder_ = null;
         }
         return this;
       }
@@ -5765,10 +5765,10 @@ public final class Interface {
       public flyteidl.core.Interface.ParameterMapEntry buildPartial() {
         flyteidl.core.Interface.ParameterMapEntry result = new flyteidl.core.Interface.ParameterMapEntry(this);
         result.name_ = name_;
-        if (varBuilder_ == null) {
-          result.var_ = var_;
+        if (parameterBuilder_ == null) {
+          result.parameter_ = parameter_;
         } else {
-          result.var_ = varBuilder_.build();
+          result.parameter_ = parameterBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5822,8 +5822,8 @@ public final class Interface {
           name_ = other.name_;
           onChanged();
         }
-        if (other.hasVar()) {
-          mergeVar(other.getVar());
+        if (other.hasParameter()) {
+          mergeParameter(other.getParameter());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5923,121 +5923,121 @@ public final class Interface {
         return this;
       }
 
-      private flyteidl.core.Interface.Parameter var_;
+      private flyteidl.core.Interface.Parameter parameter_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder> varBuilder_;
+          flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder> parameterBuilder_;
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public boolean hasVar() {
-        return varBuilder_ != null || var_ != null;
+      public boolean hasParameter() {
+        return parameterBuilder_ != null || parameter_ != null;
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public flyteidl.core.Interface.Parameter getVar() {
-        if (varBuilder_ == null) {
-          return var_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : var_;
+      public flyteidl.core.Interface.Parameter getParameter() {
+        if (parameterBuilder_ == null) {
+          return parameter_ == null ? flyteidl.core.Interface.Parameter.getDefaultInstance() : parameter_;
         } else {
-          return varBuilder_.getMessage();
+          return parameterBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public Builder setVar(flyteidl.core.Interface.Parameter value) {
-        if (varBuilder_ == null) {
+      public Builder setParameter(flyteidl.core.Interface.Parameter value) {
+        if (parameterBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          var_ = value;
+          parameter_ = value;
           onChanged();
         } else {
-          varBuilder_.setMessage(value);
+          parameterBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public Builder setVar(
+      public Builder setParameter(
           flyteidl.core.Interface.Parameter.Builder builderForValue) {
-        if (varBuilder_ == null) {
-          var_ = builderForValue.build();
+        if (parameterBuilder_ == null) {
+          parameter_ = builderForValue.build();
           onChanged();
         } else {
-          varBuilder_.setMessage(builderForValue.build());
+          parameterBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public Builder mergeVar(flyteidl.core.Interface.Parameter value) {
-        if (varBuilder_ == null) {
-          if (var_ != null) {
-            var_ =
-              flyteidl.core.Interface.Parameter.newBuilder(var_).mergeFrom(value).buildPartial();
+      public Builder mergeParameter(flyteidl.core.Interface.Parameter value) {
+        if (parameterBuilder_ == null) {
+          if (parameter_ != null) {
+            parameter_ =
+              flyteidl.core.Interface.Parameter.newBuilder(parameter_).mergeFrom(value).buildPartial();
           } else {
-            var_ = value;
+            parameter_ = value;
           }
           onChanged();
         } else {
-          varBuilder_.mergeFrom(value);
+          parameterBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public Builder clearVar() {
-        if (varBuilder_ == null) {
-          var_ = null;
+      public Builder clearParameter() {
+        if (parameterBuilder_ == null) {
+          parameter_ = null;
           onChanged();
         } else {
-          var_ = null;
-          varBuilder_ = null;
+          parameter_ = null;
+          parameterBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public flyteidl.core.Interface.Parameter.Builder getVarBuilder() {
+      public flyteidl.core.Interface.Parameter.Builder getParameterBuilder() {
         
         onChanged();
-        return getVarFieldBuilder().getBuilder();
+        return getParameterFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
-      public flyteidl.core.Interface.ParameterOrBuilder getVarOrBuilder() {
-        if (varBuilder_ != null) {
-          return varBuilder_.getMessageOrBuilder();
+      public flyteidl.core.Interface.ParameterOrBuilder getParameterOrBuilder() {
+        if (parameterBuilder_ != null) {
+          return parameterBuilder_.getMessageOrBuilder();
         } else {
-          return var_ == null ?
-              flyteidl.core.Interface.Parameter.getDefaultInstance() : var_;
+          return parameter_ == null ?
+              flyteidl.core.Interface.Parameter.getDefaultInstance() : parameter_;
         }
       }
       /**
-       * <code>.flyteidl.core.Parameter var = 2;</code>
+       * <code>.flyteidl.core.Parameter parameter = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder> 
-          getVarFieldBuilder() {
-        if (varBuilder_ == null) {
-          varBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getParameterFieldBuilder() {
+        if (parameterBuilder_ == null) {
+          parameterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.core.Interface.Parameter, flyteidl.core.Interface.Parameter.Builder, flyteidl.core.Interface.ParameterOrBuilder>(
-                  getVar(),
+                  getParameter(),
                   getParentForChildren(),
                   isClean());
-          var_ = null;
+          parameter_ = null;
         }
-        return varBuilder_;
+        return parameterBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6151,10 +6151,11 @@ public final class Interface {
       "efault\030\002 \001(\0132\026.flyteidl.core.LiteralH\000\022\022" +
       "\n\010required\030\003 \001(\010H\000B\n\n\010behavior\"D\n\014Parame" +
       "terMap\0224\n\nparameters\030\001 \003(\0132 .flyteidl.co" +
-      "re.ParameterMapEntry\"H\n\021ParameterMapEntr" +
-      "y\022\014\n\004name\030\001 \001(\t\022%\n\003var\030\002 \001(\0132\030.flyteidl." +
-      "core.ParameterB6Z4github.com/flyteorg/fl" +
-      "yteidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "re.ParameterMapEntry\"N\n\021ParameterMapEntr" +
+      "y\022\014\n\004name\030\001 \001(\t\022+\n\tparameter\030\002 \001(\0132\030.fly" +
+      "teidl.core.ParameterB6Z4github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6211,7 +6212,7 @@ public final class Interface {
     internal_static_flyteidl_core_ParameterMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ParameterMapEntry_descriptor,
-        new java.lang.String[] { "Name", "Var", });
+        new java.lang.String[] { "Name", "Parameter", });
     flyteidl.core.Types.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
   }

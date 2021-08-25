@@ -226,7 +226,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2finterface_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMapEntry, name_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMapEntry, var_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ParameterMapEntry, parameter_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::core::Variable)},
@@ -270,15 +270,16 @@ const char descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto[] =
   "efault\030\002 \001(\0132\026.flyteidl.core.LiteralH\000\022\022"
   "\n\010required\030\003 \001(\010H\000B\n\n\010behavior\"D\n\014Parame"
   "terMap\0224\n\nparameters\030\001 \003(\0132 .flyteidl.co"
-  "re.ParameterMapEntry\"H\n\021ParameterMapEntr"
-  "y\022\014\n\004name\030\001 \001(\t\022%\n\003var\030\002 \001(\0132\030.flyteidl."
-  "core.ParameterB6Z4github.com/flyteorg/fl"
-  "yteidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "re.ParameterMapEntry\"N\n\021ParameterMapEntr"
+  "y\022\014\n\004name\030\001 \001(\t\022+\n\tparameter\030\002 \001(\0132\030.fly"
+  "teidl.core.ParameterB6Z4github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2finterface_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2finterface_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2finterface_2eproto,
-  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 758,
+  "flyteidl/core/interface.proto", &assign_descriptors_table_flyteidl_2fcore_2finterface_2eproto, 764,
 };
 
 void AddDescriptors_flyteidl_2fcore_2finterface_2eproto() {
@@ -2402,21 +2403,21 @@ void ParameterMap::InternalSwap(ParameterMap* other) {
 // ===================================================================
 
 void ParameterMapEntry::InitAsDefaultInstance() {
-  ::flyteidl::core::_ParameterMapEntry_default_instance_._instance.get_mutable()->var_ = const_cast< ::flyteidl::core::Parameter*>(
+  ::flyteidl::core::_ParameterMapEntry_default_instance_._instance.get_mutable()->parameter_ = const_cast< ::flyteidl::core::Parameter*>(
       ::flyteidl::core::Parameter::internal_default_instance());
 }
 class ParameterMapEntry::HasBitSetters {
  public:
-  static const ::flyteidl::core::Parameter& var(const ParameterMapEntry* msg);
+  static const ::flyteidl::core::Parameter& parameter(const ParameterMapEntry* msg);
 };
 
 const ::flyteidl::core::Parameter&
-ParameterMapEntry::HasBitSetters::var(const ParameterMapEntry* msg) {
-  return *msg->var_;
+ParameterMapEntry::HasBitSetters::parameter(const ParameterMapEntry* msg) {
+  return *msg->parameter_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ParameterMapEntry::kNameFieldNumber;
-const int ParameterMapEntry::kVarFieldNumber;
+const int ParameterMapEntry::kParameterFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ParameterMapEntry::ParameterMapEntry()
@@ -2432,10 +2433,10 @@ ParameterMapEntry::ParameterMapEntry(const ParameterMapEntry& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.has_var()) {
-    var_ = new ::flyteidl::core::Parameter(*from.var_);
+  if (from.has_parameter()) {
+    parameter_ = new ::flyteidl::core::Parameter(*from.parameter_);
   } else {
-    var_ = nullptr;
+    parameter_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.ParameterMapEntry)
 }
@@ -2444,7 +2445,7 @@ void ParameterMapEntry::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ParameterMapEntry_flyteidl_2fcore_2finterface_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  var_ = nullptr;
+  parameter_ = nullptr;
 }
 
 ParameterMapEntry::~ParameterMapEntry() {
@@ -2454,7 +2455,7 @@ ParameterMapEntry::~ParameterMapEntry() {
 
 void ParameterMapEntry::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete var_;
+  if (this != internal_default_instance()) delete parameter_;
 }
 
 void ParameterMapEntry::SetCachedSize(int size) const {
@@ -2473,10 +2474,10 @@ void ParameterMapEntry::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && var_ != nullptr) {
-    delete var_;
+  if (GetArenaNoVirtual() == nullptr && parameter_ != nullptr) {
+    delete parameter_;
   }
-  var_ = nullptr;
+  parameter_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -2509,13 +2510,13 @@ const char* ParameterMapEntry::_InternalParse(const char* begin, const char* end
         ptr += size;
         break;
       }
-      // .flyteidl.core.Parameter var = 2;
+      // .flyteidl.core.Parameter parameter = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Parameter::_InternalParse;
-        object = msg->mutable_var();
+        object = msg->mutable_parameter();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2571,11 +2572,11 @@ bool ParameterMapEntry::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.Parameter var = 2;
+      // .flyteidl.core.Parameter parameter = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_var()));
+               input, mutable_parameter()));
         } else {
           goto handle_unusual;
         }
@@ -2619,10 +2620,10 @@ void ParameterMapEntry::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // .flyteidl.core.Parameter var = 2;
-  if (this->has_var()) {
+  // .flyteidl.core.Parameter parameter = 2;
+  if (this->has_parameter()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::var(this), output);
+      2, HasBitSetters::parameter(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2649,11 +2650,11 @@ void ParameterMapEntry::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // .flyteidl.core.Parameter var = 2;
-  if (this->has_var()) {
+  // .flyteidl.core.Parameter parameter = 2;
+  if (this->has_parameter()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::var(this), target);
+        2, HasBitSetters::parameter(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2684,11 +2685,11 @@ size_t ParameterMapEntry::ByteSizeLong() const {
         this->name());
   }
 
-  // .flyteidl.core.Parameter var = 2;
-  if (this->has_var()) {
+  // .flyteidl.core.Parameter parameter = 2;
+  if (this->has_parameter()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *var_);
+        *parameter_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2722,8 +2723,8 @@ void ParameterMapEntry::MergeFrom(const ParameterMapEntry& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.has_var()) {
-    mutable_var()->::flyteidl::core::Parameter::MergeFrom(from.var());
+  if (from.has_parameter()) {
+    mutable_parameter()->::flyteidl::core::Parameter::MergeFrom(from.parameter());
   }
 }
 
@@ -2754,7 +2755,7 @@ void ParameterMapEntry::InternalSwap(ParameterMapEntry* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(var_, other->var_);
+  swap(parameter_, other->parameter_);
 }
 
 ::google::protobuf::Metadata ParameterMapEntry::GetMetadata() const {

@@ -974,14 +974,14 @@ class ParameterMapEntry final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // .flyteidl.core.Parameter var = 2;
-  bool has_var() const;
-  void clear_var();
-  static const int kVarFieldNumber = 2;
-  const ::flyteidl::core::Parameter& var() const;
-  ::flyteidl::core::Parameter* release_var();
-  ::flyteidl::core::Parameter* mutable_var();
-  void set_allocated_var(::flyteidl::core::Parameter* var);
+  // .flyteidl.core.Parameter parameter = 2;
+  bool has_parameter() const;
+  void clear_parameter();
+  static const int kParameterFieldNumber = 2;
+  const ::flyteidl::core::Parameter& parameter() const;
+  ::flyteidl::core::Parameter* release_parameter();
+  ::flyteidl::core::Parameter* mutable_parameter();
+  void set_allocated_parameter(::flyteidl::core::Parameter* parameter);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.ParameterMapEntry)
  private:
@@ -989,7 +989,7 @@ class ParameterMapEntry final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  ::flyteidl::core::Parameter* var_;
+  ::flyteidl::core::Parameter* parameter_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2finterface_2eproto;
 };
@@ -1569,55 +1569,55 @@ inline void ParameterMapEntry::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ParameterMapEntry.name)
 }
 
-// .flyteidl.core.Parameter var = 2;
-inline bool ParameterMapEntry::has_var() const {
-  return this != internal_default_instance() && var_ != nullptr;
+// .flyteidl.core.Parameter parameter = 2;
+inline bool ParameterMapEntry::has_parameter() const {
+  return this != internal_default_instance() && parameter_ != nullptr;
 }
-inline void ParameterMapEntry::clear_var() {
-  if (GetArenaNoVirtual() == nullptr && var_ != nullptr) {
-    delete var_;
+inline void ParameterMapEntry::clear_parameter() {
+  if (GetArenaNoVirtual() == nullptr && parameter_ != nullptr) {
+    delete parameter_;
   }
-  var_ = nullptr;
+  parameter_ = nullptr;
 }
-inline const ::flyteidl::core::Parameter& ParameterMapEntry::var() const {
-  const ::flyteidl::core::Parameter* p = var_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.ParameterMapEntry.var)
+inline const ::flyteidl::core::Parameter& ParameterMapEntry::parameter() const {
+  const ::flyteidl::core::Parameter* p = parameter_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.ParameterMapEntry.parameter)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Parameter*>(
       &::flyteidl::core::_Parameter_default_instance_);
 }
-inline ::flyteidl::core::Parameter* ParameterMapEntry::release_var() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.ParameterMapEntry.var)
+inline ::flyteidl::core::Parameter* ParameterMapEntry::release_parameter() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ParameterMapEntry.parameter)
   
-  ::flyteidl::core::Parameter* temp = var_;
-  var_ = nullptr;
+  ::flyteidl::core::Parameter* temp = parameter_;
+  parameter_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Parameter* ParameterMapEntry::mutable_var() {
+inline ::flyteidl::core::Parameter* ParameterMapEntry::mutable_parameter() {
   
-  if (var_ == nullptr) {
+  if (parameter_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::Parameter>(GetArenaNoVirtual());
-    var_ = p;
+    parameter_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ParameterMapEntry.var)
-  return var_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ParameterMapEntry.parameter)
+  return parameter_;
 }
-inline void ParameterMapEntry::set_allocated_var(::flyteidl::core::Parameter* var) {
+inline void ParameterMapEntry::set_allocated_parameter(::flyteidl::core::Parameter* parameter) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete var_;
+    delete parameter_;
   }
-  if (var) {
+  if (parameter) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      var = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, var, submessage_arena);
+      parameter = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, parameter, submessage_arena);
     }
     
   } else {
     
   }
-  var_ = var;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ParameterMapEntry.var)
+  parameter_ = parameter;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ParameterMapEntry.parameter)
 }
 
 #ifdef __GNUC__

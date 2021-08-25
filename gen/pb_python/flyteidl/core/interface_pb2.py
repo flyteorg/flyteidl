@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"I\n\x08Variable\x12(\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"A\n\x0bVariableMap\x12\x32\n\tvariables\x18\x01 \x03(\x0b\x32\x1f.flyteidl.core.VariableMapEntry\"F\n\x10VariableMapEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x03var\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\"|\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12)\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\n\n\x08\x62\x65havior\"D\n\x0cParameterMap\x12\x34\n\nparameters\x18\x01 \x03(\x0b\x32 .flyteidl.core.ParameterMapEntry\"H\n\x11ParameterMapEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x03var\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ParameterB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"I\n\x08Variable\x12(\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"A\n\x0bVariableMap\x12\x32\n\tvariables\x18\x01 \x03(\x0b\x32\x1f.flyteidl.core.VariableMapEntry\"F\n\x10VariableMapEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x03var\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\"|\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12)\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\n\n\x08\x62\x65havior\"D\n\x0cParameterMap\x12\x34\n\nparameters\x18\x01 \x03(\x0b\x32 .flyteidl.core.ParameterMapEntry\"N\n\x11ParameterMapEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12+\n\tparameter\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ParameterB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -268,7 +268,7 @@ _PARAMETERMAPENTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='var', full_name='flyteidl.core.ParameterMapEntry.var', index=1,
+      name='parameter', full_name='flyteidl.core.ParameterMapEntry.parameter', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -287,7 +287,7 @@ _PARAMETERMAPENTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=622,
-  serialized_end=694,
+  serialized_end=700,
 )
 
 _VARIABLE.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
@@ -304,7 +304,7 @@ _PARAMETER.oneofs_by_name['behavior'].fields.append(
   _PARAMETER.fields_by_name['required'])
 _PARAMETER.fields_by_name['required'].containing_oneof = _PARAMETER.oneofs_by_name['behavior']
 _PARAMETERMAP.fields_by_name['parameters'].message_type = _PARAMETERMAPENTRY
-_PARAMETERMAPENTRY.fields_by_name['var'].message_type = _PARAMETER
+_PARAMETERMAPENTRY.fields_by_name['parameter'].message_type = _PARAMETER
 DESCRIPTOR.message_types_by_name['Variable'] = _VARIABLE
 DESCRIPTOR.message_types_by_name['VariableMap'] = _VARIABLEMAP
 DESCRIPTOR.message_types_by_name['VariableMapEntry'] = _VARIABLEMAPENTRY

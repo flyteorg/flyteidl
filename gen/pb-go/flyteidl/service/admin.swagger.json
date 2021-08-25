@@ -5614,7 +5614,7 @@
         "name": {
           "type": "string"
         },
-        "var": {
+        "parameter": {
           "$ref": "#/definitions/coreParameter"
         }
       },

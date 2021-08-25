@@ -4014,8 +4014,8 @@ export namespace flyteidl {
             /** ParameterMapEntry name */
             name?: (string|null);
 
-            /** ParameterMapEntry var */
-            "var"?: (flyteidl.core.IParameter|null);
+            /** ParameterMapEntry parameter */
+            parameter?: (flyteidl.core.IParameter|null);
         }
 
         /** Represents a ParameterMapEntry. */
@@ -4030,8 +4030,8 @@ export namespace flyteidl {
             /** ParameterMapEntry name. */
             public name: string;
 
-            /** ParameterMapEntry var. */
-            public var?: (flyteidl.core.IParameter|null);
+            /** ParameterMapEntry parameter. */
+            public parameter?: (flyteidl.core.IParameter|null);
 
             /**
              * Creates a new ParameterMapEntry instance using the specified properties.
