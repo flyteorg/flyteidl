@@ -1134,17 +1134,17 @@ var _ interface {
 	ErrorName() string
 } = ListDatasetsResponseValidationError{}
 
-// Validate checks the field values on GetOrReserveArtifactRequest with the
-// rules defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *GetOrReserveArtifactRequest) Validate() error {
+// Validate checks the field values on ReservationID with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *ReservationID) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetDatasetId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return GetOrReserveArtifactRequestValidationError{
+			return ReservationIDValidationError{
 				field:  "DatasetId",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -1153,6 +1153,81 @@ func (m *GetOrReserveArtifactRequest) Validate() error {
 	}
 
 	// no validation rules for TagName
+
+	return nil
+}
+
+// ReservationIDValidationError is the validation error returned by
+// ReservationID.Validate if the designated constraints aren't met.
+type ReservationIDValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ReservationIDValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ReservationIDValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ReservationIDValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ReservationIDValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ReservationIDValidationError) ErrorName() string { return "ReservationIDValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ReservationIDValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sReservationID.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ReservationIDValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ReservationIDValidationError{}
+
+// Validate checks the field values on GetOrReserveArtifactRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *GetOrReserveArtifactRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetReservationId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrReserveArtifactRequestValidationError{
+				field:  "ReservationId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for OwnerId
 
@@ -1224,6 +1299,18 @@ func (m *ReservationStatus) Validate() error {
 		return nil
 	}
 
+	if v, ok := interface{}(m.GetReservationId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ReservationStatusValidationError{
+				field:  "ReservationId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for OwnerId
+
 	// no validation rules for State
 
 	if v, ok := interface{}(m.GetExpiresAt()).(interface{ Validate() error }); ok {
@@ -1255,8 +1342,6 @@ func (m *ReservationStatus) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for OwnerId
 
 	return nil
 }
@@ -1421,17 +1506,15 @@ func (m *ReleaseReservationRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetDatasetId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetReservationId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ReleaseReservationRequestValidationError{
-				field:  "DatasetId",
+				field:  "ReservationId",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
-
-	// no validation rules for TagName
 
 	// no validation rules for OwnerId
 
