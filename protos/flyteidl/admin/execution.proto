@@ -276,6 +276,10 @@ message ExecutionSpec {
     // This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
     // and parallelism/concurrency of MapTasks is independent from this.
     int32 max_parallelism = 18;
+
+    string description = 19;
+
+    repeated string tags = 20;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

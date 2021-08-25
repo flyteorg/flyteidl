@@ -51,6 +51,7 @@ message TaskList {
 message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
+    EntityDescription description = 16;
 }
 
 // Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data
@@ -61,4 +62,44 @@ message TaskClosure {
         
     // Time at which the task was created.
     google.protobuf.Timestamp created_at = 2;
+}
+
+message EntityDescription {
+    // One-liner overview of the entity.
+    string short_description = 1;
+
+    // Full user description with formatting preserved. This can be rendered
+    // by clients, such as the console or command line tools with in-tact
+    // formatting.
+    string long_description = 2;
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering entities.
+    repeated string tags = 3;
+    // User-defined free-form key-value pair attributes. These are arbitrary
+    // and can be used for searching, filtering and discovering entities.
+    map<string, string> labels = 4;
+
+    // Optional link to source code used to define this entity.
+    CodeSource source = 5;
+}
+
+message CodeSource {
+    // This is the link to the project root in the user's flytekit config
+    string root = 1;  // maybe scrap?
+
+    // Fully resolved URL path based on entity module, code source root and
+    // version control type. This may be filled in by the back-end
+    string path = 2;
+
+    enum VersionControl {
+        GITHUB = 0;
+        GITLAB = 1;
+    }
+    VersionControl version_control = 3;  // maybe scrap ?
+
+    string version = 4;
+}
+
+message DescriptionGetRequest {
+    core.Identifier id = 1;  // includes resource type
 }

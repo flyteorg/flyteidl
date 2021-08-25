@@ -45,6 +45,10 @@ message Project {
         SYSTEM_GENERATED = 2;
     }
     ProjectState state = 6;
+
+    repeated string tags = 7;
+
+    Labels labels = 8;
 }
 
 // Represents a list of projects.
