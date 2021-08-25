@@ -267,6 +267,8 @@ message K8sObjectMetadata {
 
 // Sql represents a generic sql workload with a statement and engine.
 message Sql {
+    // Define a query to execute.
     string statement = 1;
+    // Define the engine to execute SQL statement. For example hive or bigquery.
     string engine = 2;
 }
