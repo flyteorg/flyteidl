@@ -10,6 +10,6 @@
 package flyteadmin
 
 type CoreParameterMapEntry struct {
-	Name      string         `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 	Parameter *CoreParameter `json:"parameter,omitempty"`
 }

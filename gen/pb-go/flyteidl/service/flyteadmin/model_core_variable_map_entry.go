@@ -10,6 +10,6 @@
 package flyteadmin
 
 type CoreVariableMapEntry struct {
-	Name string        `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 	Var_ *CoreVariable `json:"var,omitempty"`
 }
