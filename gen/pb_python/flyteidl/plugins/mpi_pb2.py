@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1a\x66lyteidl/plugins/mpi.proto\x12\x10\x66lyteidl.plugins\"W\n\x1a\x44istributedMPITrainingTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x12\x19\n\x11launcher_replicas\x18\x02 \x01(\x05\x12\r\n\x05slots\x18\x03 \x01(\x05\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/plugins/mpi.proto\x12\x10\x66lyteidl.plugins\"_\n\x1a\x44istributedMPITrainingTask\x12\x13\n\x0bnum_workers\x18\x01 \x01(\x05\x12\x1d\n\x15num_launcher_replicas\x18\x02 \x01(\x05\x12\r\n\x05slots\x18\x03 \x01(\x05\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 
@@ -34,14 +34,14 @@ _DISTRIBUTEDMPITRAININGTASK = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workers', full_name='flyteidl.plugins.DistributedMPITrainingTask.workers', index=0,
+      name='num_workers', full_name='flyteidl.plugins.DistributedMPITrainingTask.num_workers', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='launcher_replicas', full_name='flyteidl.plugins.DistributedMPITrainingTask.launcher_replicas', index=1,
+      name='num_launcher_replicas', full_name='flyteidl.plugins.DistributedMPITrainingTask.num_launcher_replicas', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -67,7 +67,7 @@ _DISTRIBUTEDMPITRAININGTASK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=135,
+  serialized_end=143,
 )
 
 DESCRIPTOR.message_types_by_name['DistributedMPITrainingTask'] = _DISTRIBUTEDMPITRAININGTASK

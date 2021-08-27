@@ -70,8 +70,8 @@ Custom proto for plugin that enables distributed training using https://github.c
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "workers", ":ref:`ref_int32`", "", "number of worker spawned in the cluster for this job"
-   "launcher_replicas", ":ref:`ref_int32`", "", "number of launcher replicas spawned in the cluster for this job"
+   "num_workers", ":ref:`ref_int32`", "", "number of worker spawned in the cluster for this job"
+   "num_launcher_replicas", ":ref:`ref_int32`", "", "number of launcher replicas spawned in the cluster for this job"
    "slots", ":ref:`ref_int32`", "", "number of slots per worker used in hostfile."
 
 

@@ -44,9 +44,9 @@ func (m *DistributedMPITrainingTask) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Workers
+	// no validation rules for NumWorkers
 
-	// no validation rules for LauncherReplicas
+	// no validation rules for NumLauncherReplicas
 
 	// no validation rules for Slots
 

@@ -160,17 +160,17 @@ class DistributedMPITrainingTask final :
 
   // accessors -------------------------------------------------------
 
-  // int32 workers = 1;
-  void clear_workers();
-  static const int kWorkersFieldNumber = 1;
-  ::google::protobuf::int32 workers() const;
-  void set_workers(::google::protobuf::int32 value);
+  // int32 num_workers = 1;
+  void clear_num_workers();
+  static const int kNumWorkersFieldNumber = 1;
+  ::google::protobuf::int32 num_workers() const;
+  void set_num_workers(::google::protobuf::int32 value);
 
-  // int32 launcher_replicas = 2;
-  void clear_launcher_replicas();
-  static const int kLauncherReplicasFieldNumber = 2;
-  ::google::protobuf::int32 launcher_replicas() const;
-  void set_launcher_replicas(::google::protobuf::int32 value);
+  // int32 num_launcher_replicas = 2;
+  void clear_num_launcher_replicas();
+  static const int kNumLauncherReplicasFieldNumber = 2;
+  ::google::protobuf::int32 num_launcher_replicas() const;
+  void set_num_launcher_replicas(::google::protobuf::int32 value);
 
   // int32 slots = 3;
   void clear_slots();
@@ -183,8 +183,8 @@ class DistributedMPITrainingTask final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int32 workers_;
-  ::google::protobuf::int32 launcher_replicas_;
+  ::google::protobuf::int32 num_workers_;
+  ::google::protobuf::int32 num_launcher_replicas_;
   ::google::protobuf::int32 slots_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fmpi_2eproto;
@@ -200,32 +200,32 @@ class DistributedMPITrainingTask final :
 #endif  // __GNUC__
 // DistributedMPITrainingTask
 
-// int32 workers = 1;
-inline void DistributedMPITrainingTask::clear_workers() {
-  workers_ = 0;
+// int32 num_workers = 1;
+inline void DistributedMPITrainingTask::clear_num_workers() {
+  num_workers_ = 0;
 }
-inline ::google::protobuf::int32 DistributedMPITrainingTask::workers() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedMPITrainingTask.workers)
-  return workers_;
+inline ::google::protobuf::int32 DistributedMPITrainingTask::num_workers() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedMPITrainingTask.num_workers)
+  return num_workers_;
 }
-inline void DistributedMPITrainingTask::set_workers(::google::protobuf::int32 value) {
+inline void DistributedMPITrainingTask::set_num_workers(::google::protobuf::int32 value) {
   
-  workers_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedMPITrainingTask.workers)
+  num_workers_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedMPITrainingTask.num_workers)
 }
 
-// int32 launcher_replicas = 2;
-inline void DistributedMPITrainingTask::clear_launcher_replicas() {
-  launcher_replicas_ = 0;
+// int32 num_launcher_replicas = 2;
+inline void DistributedMPITrainingTask::clear_num_launcher_replicas() {
+  num_launcher_replicas_ = 0;
 }
-inline ::google::protobuf::int32 DistributedMPITrainingTask::launcher_replicas() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedMPITrainingTask.launcher_replicas)
-  return launcher_replicas_;
+inline ::google::protobuf::int32 DistributedMPITrainingTask::num_launcher_replicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedMPITrainingTask.num_launcher_replicas)
+  return num_launcher_replicas_;
 }
-inline void DistributedMPITrainingTask::set_launcher_replicas(::google::protobuf::int32 value) {
+inline void DistributedMPITrainingTask::set_num_launcher_replicas(::google::protobuf::int32 value) {
   
-  launcher_replicas_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedMPITrainingTask.launcher_replicas)
+  num_launcher_replicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedMPITrainingTask.num_launcher_replicas)
 }
 
 // int32 slots = 3;
