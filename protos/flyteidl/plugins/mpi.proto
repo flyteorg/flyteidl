@@ -6,12 +6,21 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
 // Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
 message DistributedMPITrainingTask {
+<<<<<<< HEAD
   // number of worker replicas spawned in the cluster for this job
   int32 worker_replicas = 1;
+=======
+  // number of worker spawned in the cluster for this job
+  int32 workers = 1;
+>>>>>>> 2cd6288a159da1d90d37d136b74dfb622c13445c
 
   // number of launcher replicas spawned in the cluster for this job
   int32 launcher_replicas = 2;
 
   // number of slots per worker used in hostfile.
+<<<<<<< HEAD
   int32 slots_per_workers = 3;
+=======
+  int32 slots = 3;
+>>>>>>> 2cd6288a159da1d90d37d136b74dfb622c13445c
 } 
