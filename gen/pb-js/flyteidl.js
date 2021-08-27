@@ -12972,6 +12972,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [occurredAt] WorkflowExecutionEvent occurredAt
              * @property {string|null} [outputUri] WorkflowExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] WorkflowExecutionEvent error
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] WorkflowExecutionEvent outputData
              */
 
             /**
@@ -13037,17 +13038,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             WorkflowExecutionEvent.prototype.error = null;
 
+            /**
+             * WorkflowExecutionEvent outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.event.WorkflowExecutionEvent
+             * @instance
+             */
+            WorkflowExecutionEvent.prototype.outputData = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * WorkflowExecutionEvent outputResult.
-             * @member {"outputUri"|"error"|undefined} outputResult
+             * @member {"outputUri"|"error"|"outputData"|undefined} outputResult
              * @memberof flyteidl.event.WorkflowExecutionEvent
              * @instance
              */
             Object.defineProperty(WorkflowExecutionEvent.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -13087,6 +13096,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.outputUri);
                 if (message.error != null && message.hasOwnProperty("error"))
                     $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -13125,6 +13136,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13189,6 +13203,16 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "error." + error;
                     }
                 }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
+                    }
+                }
                 return null;
             };
 
@@ -13208,6 +13232,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [inputUri] NodeExecutionEvent inputUri
              * @property {string|null} [outputUri] NodeExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionEvent error
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] NodeExecutionEvent outputData
              * @property {flyteidl.event.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionEvent workflowNodeMetadata
              * @property {flyteidl.event.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionEvent taskNodeMetadata
              * @property {flyteidl.event.IParentTaskExecutionMetadata|null} [parentTaskMetadata] NodeExecutionEvent parentTaskMetadata
@@ -13289,6 +13314,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionEvent.prototype.error = null;
 
             /**
+             * NodeExecutionEvent outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.outputData = null;
+
+            /**
              * NodeExecutionEvent workflowNodeMetadata.
              * @member {flyteidl.event.IWorkflowNodeMetadata|null|undefined} workflowNodeMetadata
              * @memberof flyteidl.event.NodeExecutionEvent
@@ -13349,12 +13382,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * NodeExecutionEvent outputResult.
-             * @member {"outputUri"|"error"|undefined} outputResult
+             * @member {"outputUri"|"error"|"outputData"|undefined} outputResult
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
             Object.defineProperty(NodeExecutionEvent.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -13421,6 +13454,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.nodeName);
                 if (message.taskNodeMetadata != null && message.hasOwnProperty("taskNodeMetadata"))
                     $root.flyteidl.event.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
 
@@ -13462,6 +13497,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 15:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 8:
                         message.workflowNodeMetadata = $root.flyteidl.event.WorkflowNodeMetadata.decode(reader, reader.uint32());
@@ -13550,6 +13588,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.ExecutionError.verify(message.error);
                         if (error)
                             return "error." + error;
+                    }
+                }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
                     }
                 }
                 if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata")) {
@@ -14233,6 +14281,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [inputUri] TaskExecutionEvent inputUri
              * @property {string|null} [outputUri] TaskExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] TaskExecutionEvent error
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] TaskExecutionEvent outputData
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
              * @property {number|null} [phaseVersion] TaskExecutionEvent phaseVersion
              * @property {string|null} [reason] TaskExecutionEvent reason
@@ -14337,6 +14386,14 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionEvent.prototype.error = null;
 
             /**
+             * TaskExecutionEvent outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.outputData = null;
+
+            /**
              * TaskExecutionEvent customInfo.
              * @member {google.protobuf.IStruct|null|undefined} customInfo
              * @memberof flyteidl.event.TaskExecutionEvent
@@ -14381,12 +14438,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskExecutionEvent outputResult.
-             * @member {"outputUri"|"error"|undefined} outputResult
+             * @member {"outputUri"|"error"|"outputData"|undefined} outputResult
              * @memberof flyteidl.event.TaskExecutionEvent
              * @instance
              */
             Object.defineProperty(TaskExecutionEvent.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -14445,6 +14502,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 14, wireType 2 =*/114).string(message.taskType);
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -14497,6 +14556,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 10:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 11:
                         message.customInfo = $root.google.protobuf.Struct.decode(reader, reader.uint32());
@@ -14593,6 +14655,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.ExecutionError.verify(message.error);
                         if (error)
                             return "error." + error;
+                    }
+                }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
                     }
                 }
                 if (message.customInfo != null && message.hasOwnProperty("customInfo")) {
@@ -20403,6 +20475,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IExecutionError|null} [error] ExecutionClosure error
              * @property {string|null} [abortCause] ExecutionClosure abortCause
              * @property {flyteidl.admin.IAbortMetadata|null} [abortMetadata] ExecutionClosure abortMetadata
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] ExecutionClosure outputData
              * @property {flyteidl.core.ILiteralMap|null} [computedInputs] ExecutionClosure computedInputs
              * @property {flyteidl.core.WorkflowExecution.Phase|null} [phase] ExecutionClosure phase
              * @property {google.protobuf.ITimestamp|null} [startedAt] ExecutionClosure startedAt
@@ -20460,6 +20533,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExecutionClosure.prototype.abortMetadata = null;
+
+            /**
+             * ExecutionClosure outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.outputData = null;
 
             /**
              * ExecutionClosure computedInputs.
@@ -20530,12 +20611,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ExecutionClosure outputResult.
-             * @member {"outputs"|"error"|"abortCause"|"abortMetadata"|undefined} outputResult
+             * @member {"outputs"|"error"|"abortCause"|"abortMetadata"|"outputData"|undefined} outputResult
              * @memberof flyteidl.admin.ExecutionClosure
              * @instance
              */
             Object.defineProperty(ExecutionClosure.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputs", "error", "abortCause", "abortMetadata"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputs", "error", "abortCause", "abortMetadata", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -20588,6 +20669,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Identifier.encode(message.workflowId, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.abortMetadata != null && message.hasOwnProperty("abortMetadata"))
                     $root.flyteidl.admin.AbortMetadata.encode(message.abortMetadata, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                 return writer;
             };
 
@@ -20620,6 +20703,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 12:
                         message.abortMetadata = $root.flyteidl.admin.AbortMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 13:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.computedInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
@@ -20700,6 +20786,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.admin.AbortMetadata.verify(message.abortMetadata);
                         if (error)
                             return "abortMetadata." + error;
+                    }
+                }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
                     }
                 }
                 if (message.computedInputs != null && message.hasOwnProperty("computedInputs")) {
@@ -27098,6 +27194,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface INodeExecutionClosure
              * @property {string|null} [outputUri] NodeExecutionClosure outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionClosure error
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] NodeExecutionClosure outputData
              * @property {flyteidl.core.NodeExecution.Phase|null} [phase] NodeExecutionClosure phase
              * @property {google.protobuf.ITimestamp|null} [startedAt] NodeExecutionClosure startedAt
              * @property {google.protobuf.IDuration|null} [duration] NodeExecutionClosure duration
@@ -27137,6 +27234,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NodeExecutionClosure.prototype.error = null;
+
+            /**
+             * NodeExecutionClosure outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.outputData = null;
 
             /**
              * NodeExecutionClosure phase.
@@ -27199,12 +27304,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * NodeExecutionClosure outputResult.
-             * @member {"outputUri"|"error"|undefined} outputResult
+             * @member {"outputUri"|"error"|"outputData"|undefined} outputResult
              * @memberof flyteidl.admin.NodeExecutionClosure
              * @instance
              */
             Object.defineProperty(NodeExecutionClosure.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -27261,6 +27366,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.WorkflowNodeMetadata.encode(message.workflowNodeMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.taskNodeMetadata != null && message.hasOwnProperty("taskNodeMetadata"))
                     $root.flyteidl.admin.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 return writer;
             };
 
@@ -27287,6 +27394,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.phase = reader.int32();
@@ -27342,6 +27452,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.ExecutionError.verify(message.error);
                         if (error)
                             return "error." + error;
+                    }
+                }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
                     }
                 }
                 if (message.phase != null && message.hasOwnProperty("phase"))
@@ -31412,6 +31532,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskExecutionClosure
              * @property {string|null} [outputUri] TaskExecutionClosure outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] TaskExecutionClosure error
+             * @property {flyteidl.core.ILiteralMap|null} [outputData] TaskExecutionClosure outputData
              * @property {flyteidl.core.TaskExecution.Phase|null} [phase] TaskExecutionClosure phase
              * @property {Array.<flyteidl.core.ITaskLog>|null} [logs] TaskExecutionClosure logs
              * @property {google.protobuf.ITimestamp|null} [startedAt] TaskExecutionClosure startedAt
@@ -31455,6 +31576,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskExecutionClosure.prototype.error = null;
+
+            /**
+             * TaskExecutionClosure outputData.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} outputData
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.outputData = null;
 
             /**
              * TaskExecutionClosure phase.
@@ -31541,12 +31670,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskExecutionClosure outputResult.
-             * @member {"outputUri"|"error"|undefined} outputResult
+             * @member {"outputUri"|"error"|"outputData"|undefined} outputResult
              * @memberof flyteidl.admin.TaskExecutionClosure
              * @instance
              */
             Object.defineProperty(TaskExecutionClosure.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error", "outputData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -31597,6 +31726,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.reason);
                 if (message.taskType != null && message.hasOwnProperty("taskType"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskType);
+                if (message.outputData != null && message.hasOwnProperty("outputData"))
+                    $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
@@ -31625,6 +31756,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.outputData = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.phase = reader.int32();
@@ -31691,6 +31825,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.ExecutionError.verify(message.error);
                         if (error)
                             return "error." + error;
+                    }
+                }
+                if (message.outputData != null && message.hasOwnProperty("outputData")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.outputData);
+                        if (error)
+                            return "outputData." + error;
                     }
                 }
                 if (message.phase != null && message.hasOwnProperty("phase"))
