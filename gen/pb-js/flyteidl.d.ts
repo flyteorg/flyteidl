@@ -4903,8 +4903,8 @@ export namespace flyteidl {
             /** Sql statement */
             statement?: (string|null);
 
-            /** Sql engine */
-            engine?: (string|null);
+            /** Sql dialect */
+            dialect?: (flyteidl.core.Sql.Dialect|null);
         }
 
         /** Represents a Sql. */
@@ -4919,8 +4919,8 @@ export namespace flyteidl {
             /** Sql statement. */
             public statement: string;
 
-            /** Sql engine. */
-            public engine: string;
+            /** Sql dialect. */
+            public dialect: flyteidl.core.Sql.Dialect;
 
             /**
              * Creates a new Sql instance using the specified properties.
@@ -4953,6 +4953,15 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace Sql {
+
+            /** Dialect enum. */
+            enum Dialect {
+                ANSI = 0,
+                HIVE = 1
+            }
         }
 
         /** Properties of a Secret. */

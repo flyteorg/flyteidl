@@ -16405,7 +16405,15 @@ public final class Tasks {
 
     /**
      * <pre>
-     * Define a query to execute.
+     * The actual query to run, the query can have templated parameters.
+     * We use Flyte's Golang templating format for Query templating.
+     * Refer to the templating documentation.
+     * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+     * For example,
+     * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+     * select *
+     * from my_table
+     * where ds = '{{ .Inputs.ds }}'
      * </pre>
      *
      * <code>string statement = 1;</code>
@@ -16413,7 +16421,15 @@ public final class Tasks {
     java.lang.String getStatement();
     /**
      * <pre>
-     * Define a query to execute.
+     * The actual query to run, the query can have templated parameters.
+     * We use Flyte's Golang templating format for Query templating.
+     * Refer to the templating documentation.
+     * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+     * For example,
+     * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+     * select *
+     * from my_table
+     * where ds = '{{ .Inputs.ds }}'
      * </pre>
      *
      * <code>string statement = 1;</code>
@@ -16422,22 +16438,13 @@ public final class Tasks {
         getStatementBytes();
 
     /**
-     * <pre>
-     * Define the engine to execute SQL statement. For example hive or bigquery.
-     * </pre>
-     *
-     * <code>string engine = 2;</code>
+     * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
      */
-    java.lang.String getEngine();
+    int getDialectValue();
     /**
-     * <pre>
-     * Define the engine to execute SQL statement. For example hive or bigquery.
-     * </pre>
-     *
-     * <code>string engine = 2;</code>
+     * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getEngineBytes();
+    flyteidl.core.Tasks.Sql.Dialect getDialect();
   }
   /**
    * <pre>
@@ -16457,7 +16464,7 @@ public final class Tasks {
     }
     private Sql() {
       statement_ = "";
-      engine_ = "";
+      dialect_ = 0;
     }
 
     @java.lang.Override
@@ -16490,10 +16497,10 @@ public final class Tasks {
               statement_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
+              int rawValue = input.readEnum();
 
-              engine_ = s;
+              dialect_ = rawValue;
               break;
             }
             default: {
@@ -16528,11 +16535,123 @@ public final class Tasks {
               flyteidl.core.Tasks.Sql.class, flyteidl.core.Tasks.Sql.Builder.class);
     }
 
+    /**
+     * <pre>
+     * The dialect of the SQL statement. This is used to validate and parse SQL statements at compilation time to avoid
+     * expensive runtime operations. If set to an unsupported dialect, no validation will be done on the statement.
+     * We support the following dialect: ansi, hive.
+     * </pre>
+     *
+     * Protobuf enum {@code flyteidl.core.Sql.Dialect}
+     */
+    public enum Dialect
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ANSI = 0;</code>
+       */
+      ANSI(0),
+      /**
+       * <code>HIVE = 1;</code>
+       */
+      HIVE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ANSI = 0;</code>
+       */
+      public static final int ANSI_VALUE = 0;
+      /**
+       * <code>HIVE = 1;</code>
+       */
+      public static final int HIVE_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Dialect valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Dialect forNumber(int value) {
+        switch (value) {
+          case 0: return ANSI;
+          case 1: return HIVE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Dialect>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Dialect> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Dialect>() {
+              public Dialect findValueByNumber(int number) {
+                return Dialect.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.Sql.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Dialect[] VALUES = values();
+
+      public static Dialect valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Dialect(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.Sql.Dialect)
+    }
+
     public static final int STATEMENT_FIELD_NUMBER = 1;
     private volatile java.lang.Object statement_;
     /**
      * <pre>
-     * Define a query to execute.
+     * The actual query to run, the query can have templated parameters.
+     * We use Flyte's Golang templating format for Query templating.
+     * Refer to the templating documentation.
+     * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+     * For example,
+     * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+     * select *
+     * from my_table
+     * where ds = '{{ .Inputs.ds }}'
      * </pre>
      *
      * <code>string statement = 1;</code>
@@ -16551,7 +16670,15 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * Define a query to execute.
+     * The actual query to run, the query can have templated parameters.
+     * We use Flyte's Golang templating format for Query templating.
+     * Refer to the templating documentation.
+     * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+     * For example,
+     * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+     * select *
+     * from my_table
+     * where ds = '{{ .Inputs.ds }}'
      * </pre>
      *
      * <code>string statement = 1;</code>
@@ -16570,46 +16697,21 @@ public final class Tasks {
       }
     }
 
-    public static final int ENGINE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object engine_;
+    public static final int DIALECT_FIELD_NUMBER = 2;
+    private int dialect_;
     /**
-     * <pre>
-     * Define the engine to execute SQL statement. For example hive or bigquery.
-     * </pre>
-     *
-     * <code>string engine = 2;</code>
+     * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
      */
-    public java.lang.String getEngine() {
-      java.lang.Object ref = engine_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        engine_ = s;
-        return s;
-      }
+    public int getDialectValue() {
+      return dialect_;
     }
     /**
-     * <pre>
-     * Define the engine to execute SQL statement. For example hive or bigquery.
-     * </pre>
-     *
-     * <code>string engine = 2;</code>
+     * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getEngineBytes() {
-      java.lang.Object ref = engine_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        engine_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.core.Tasks.Sql.Dialect getDialect() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Tasks.Sql.Dialect result = flyteidl.core.Tasks.Sql.Dialect.valueOf(dialect_);
+      return result == null ? flyteidl.core.Tasks.Sql.Dialect.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16629,8 +16731,8 @@ public final class Tasks {
       if (!getStatementBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, statement_);
       }
-      if (!getEngineBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, engine_);
+      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.ANSI.getNumber()) {
+        output.writeEnum(2, dialect_);
       }
       unknownFields.writeTo(output);
     }
@@ -16644,8 +16746,9 @@ public final class Tasks {
       if (!getStatementBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, statement_);
       }
-      if (!getEngineBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, engine_);
+      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.ANSI.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, dialect_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16664,8 +16767,7 @@ public final class Tasks {
 
       if (!getStatement()
           .equals(other.getStatement())) return false;
-      if (!getEngine()
-          .equals(other.getEngine())) return false;
+      if (dialect_ != other.dialect_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16679,8 +16781,8 @@ public final class Tasks {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getStatement().hashCode();
-      hash = (37 * hash) + ENGINE_FIELD_NUMBER;
-      hash = (53 * hash) + getEngine().hashCode();
+      hash = (37 * hash) + DIALECT_FIELD_NUMBER;
+      hash = (53 * hash) + dialect_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16820,7 +16922,7 @@ public final class Tasks {
         super.clear();
         statement_ = "";
 
-        engine_ = "";
+        dialect_ = 0;
 
         return this;
       }
@@ -16849,7 +16951,7 @@ public final class Tasks {
       public flyteidl.core.Tasks.Sql buildPartial() {
         flyteidl.core.Tasks.Sql result = new flyteidl.core.Tasks.Sql(this);
         result.statement_ = statement_;
-        result.engine_ = engine_;
+        result.dialect_ = dialect_;
         onBuilt();
         return result;
       }
@@ -16902,9 +17004,8 @@ public final class Tasks {
           statement_ = other.statement_;
           onChanged();
         }
-        if (!other.getEngine().isEmpty()) {
-          engine_ = other.engine_;
-          onChanged();
+        if (other.dialect_ != 0) {
+          setDialectValue(other.getDialectValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16938,7 +17039,15 @@ public final class Tasks {
       private java.lang.Object statement_ = "";
       /**
        * <pre>
-       * Define a query to execute.
+       * The actual query to run, the query can have templated parameters.
+       * We use Flyte's Golang templating format for Query templating.
+       * Refer to the templating documentation.
+       * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+       * For example,
+       * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+       * select *
+       * from my_table
+       * where ds = '{{ .Inputs.ds }}'
        * </pre>
        *
        * <code>string statement = 1;</code>
@@ -16957,7 +17066,15 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Define a query to execute.
+       * The actual query to run, the query can have templated parameters.
+       * We use Flyte's Golang templating format for Query templating.
+       * Refer to the templating documentation.
+       * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+       * For example,
+       * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+       * select *
+       * from my_table
+       * where ds = '{{ .Inputs.ds }}'
        * </pre>
        *
        * <code>string statement = 1;</code>
@@ -16977,7 +17094,15 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Define a query to execute.
+       * The actual query to run, the query can have templated parameters.
+       * We use Flyte's Golang templating format for Query templating.
+       * Refer to the templating documentation.
+       * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+       * For example,
+       * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+       * select *
+       * from my_table
+       * where ds = '{{ .Inputs.ds }}'
        * </pre>
        *
        * <code>string statement = 1;</code>
@@ -16994,7 +17119,15 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Define a query to execute.
+       * The actual query to run, the query can have templated parameters.
+       * We use Flyte's Golang templating format for Query templating.
+       * Refer to the templating documentation.
+       * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+       * For example,
+       * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+       * select *
+       * from my_table
+       * where ds = '{{ .Inputs.ds }}'
        * </pre>
        *
        * <code>string statement = 1;</code>
@@ -17007,7 +17140,15 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Define a query to execute.
+       * The actual query to run, the query can have templated parameters.
+       * We use Flyte's Golang templating format for Query templating.
+       * Refer to the templating documentation.
+       * https://docs.flyte.org/projects/cookbook/en/latest/auto/integrations/external_services/hive/hive.html#sphx-glr-auto-integrations-external-services-hive-hive-py
+       * For example,
+       * insert overwrite directory '{{ .rawOutputDataPrefix }}' stored as parquet
+       * select *
+       * from my_table
+       * where ds = '{{ .Inputs.ds }}'
        * </pre>
        *
        * <code>string statement = 1;</code>
@@ -17024,91 +17165,47 @@ public final class Tasks {
         return this;
       }
 
-      private java.lang.Object engine_ = "";
+      private int dialect_ = 0;
       /**
-       * <pre>
-       * Define the engine to execute SQL statement. For example hive or bigquery.
-       * </pre>
-       *
-       * <code>string engine = 2;</code>
+       * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
        */
-      public java.lang.String getEngine() {
-        java.lang.Object ref = engine_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          engine_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getDialectValue() {
+        return dialect_;
       }
       /**
-       * <pre>
-       * Define the engine to execute SQL statement. For example hive or bigquery.
-       * </pre>
-       *
-       * <code>string engine = 2;</code>
+       * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getEngineBytes() {
-        java.lang.Object ref = engine_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          engine_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Define the engine to execute SQL statement. For example hive or bigquery.
-       * </pre>
-       *
-       * <code>string engine = 2;</code>
-       */
-      public Builder setEngine(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        engine_ = value;
+      public Builder setDialectValue(int value) {
+        dialect_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Define the engine to execute SQL statement. For example hive or bigquery.
-       * </pre>
-       *
-       * <code>string engine = 2;</code>
+       * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
        */
-      public Builder clearEngine() {
+      public flyteidl.core.Tasks.Sql.Dialect getDialect() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Tasks.Sql.Dialect result = flyteidl.core.Tasks.Sql.Dialect.valueOf(dialect_);
+        return result == null ? flyteidl.core.Tasks.Sql.Dialect.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
+       */
+      public Builder setDialect(flyteidl.core.Tasks.Sql.Dialect value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        engine_ = getDefaultInstance().getEngine();
+        dialect_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Define the engine to execute SQL statement. For example hive or bigquery.
-       * </pre>
-       *
-       * <code>string engine = 2;</code>
+       * <code>.flyteidl.core.Sql.Dialect dialect = 2;</code>
        */
-      public Builder setEngineBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearDialect() {
         
-        engine_ = value;
+        dialect_ = 0;
         onChanged();
         return this;
       }
@@ -17317,10 +17414,11 @@ public final class Tasks {
       "e.K8sObjectMetadata.AnnotationsEntry\032-\n\013" +
       "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
       "\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"(\n\003Sql\022\021\n\tstatement\030\001 \001(" +
-      "\t\022\016\n\006engine\030\002 \001(\tB6Z4github.com/flyteorg" +
-      "/flyteidl/gen/pb-go/flyteidl/coreb\006proto" +
-      "3"
+      "value\030\002 \001(\t:\0028\001\"d\n\003Sql\022\021\n\tstatement\030\001 \001(" +
+      "\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.D" +
+      "ialect\"\035\n\007Dialect\022\010\n\004ANSI\020\000\022\010\n\004HIVE\020\001B6Z" +
+      "4github.com/flyteorg/flyteidl/gen/pb-go/" +
+      "flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17429,7 +17527,7 @@ public final class Tasks {
     internal_static_flyteidl_core_Sql_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Sql_descriptor,
-        new java.lang.String[] { "Statement", "Engine", });
+        new java.lang.String[] { "Statement", "Dialect", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

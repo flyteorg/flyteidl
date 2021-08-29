@@ -350,6 +350,7 @@ Class | Method | HTTP request | Description
  - [SchemaTypeSchemaColumn](docs/SchemaTypeSchemaColumn.md)
  - [SecretMountType](docs/SecretMountType.md)
  - [SortDirection](docs/SortDirection.md)
+ - [SqlDialect](docs/SqlDialect.md)
  - [TaskExecutionMetadataInstanceClass](docs/TaskExecutionMetadataInstanceClass.md)
  - [TaskLogMessageFormat](docs/TaskLogMessageFormat.md)
  - [WorkflowMetadataOnFailurePolicy](docs/WorkflowMetadataOnFailurePolicy.md)

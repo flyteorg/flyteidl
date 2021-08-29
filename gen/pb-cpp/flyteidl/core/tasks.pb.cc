@@ -353,7 +353,7 @@ void InitDefaults_flyteidl_2fcore_2ftasks_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2ftasks_2eproto[15];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[5];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[6];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2ftasks_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -492,7 +492,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Sql, statement_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Sql, engine_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Sql, dialect_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::core::Resources_ResourceEntry)},
@@ -605,15 +605,16 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "e.K8sObjectMetadata.AnnotationsEntry\032-\n\013"
   "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
   "\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-  "value\030\002 \001(\t:\0028\001\"(\n\003Sql\022\021\n\tstatement\030\001 \001("
-  "\t\022\016\n\006engine\030\002 \001(\tB6Z4github.com/flyteorg"
-  "/flyteidl/gen/pb-go/flyteidl/coreb\006proto"
-  "3"
+  "value\030\002 \001(\t:\0028\001\"d\n\003Sql\022\021\n\tstatement\030\001 \001("
+  "\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.D"
+  "ialect\"\035\n\007Dialect\022\010\n\004ANSI\020\000\022\010\n\004HIVE\020\001B6Z"
+  "4github.com/flyteorg/flyteidl/gen/pb-go/"
+  "flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2841,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2901,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -751,6 +752,27 @@ const DataLoadingConfig_LiteralMapFormat DataLoadingConfig::PROTO;
 const DataLoadingConfig_LiteralMapFormat DataLoadingConfig::LiteralMapFormat_MIN;
 const DataLoadingConfig_LiteralMapFormat DataLoadingConfig::LiteralMapFormat_MAX;
 const int DataLoadingConfig::LiteralMapFormat_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* Sql_Dialect_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[5];
+}
+bool Sql_Dialect_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Sql_Dialect Sql::ANSI;
+const Sql_Dialect Sql::HIVE;
+const Sql_Dialect Sql::Dialect_MIN;
+const Sql_Dialect Sql::Dialect_MAX;
+const int Sql::Dialect_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -6589,7 +6611,7 @@ class Sql::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Sql::kStatementFieldNumber;
-const int Sql::kEngineFieldNumber;
+const int Sql::kDialectFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Sql::Sql()
@@ -6605,10 +6627,7 @@ Sql::Sql(const Sql& from)
   if (from.statement().size() > 0) {
     statement_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.statement_);
   }
-  engine_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.engine().size() > 0) {
-    engine_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.engine_);
-  }
+  dialect_ = from.dialect_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.Sql)
 }
 
@@ -6616,7 +6635,7 @@ void Sql::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Sql_flyteidl_2fcore_2ftasks_2eproto.base);
   statement_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  engine_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dialect_ = 0;
 }
 
 Sql::~Sql() {
@@ -6626,7 +6645,6 @@ Sql::~Sql() {
 
 void Sql::SharedDtor() {
   statement_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  engine_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Sql::SetCachedSize(int size) const {
@@ -6645,7 +6663,7 @@ void Sql::Clear() {
   (void) cached_has_bits;
 
   statement_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  engine_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dialect_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -6678,20 +6696,12 @@ const char* Sql::_InternalParse(const char* begin, const char* end, void* object
         ptr += size;
         break;
       }
-      // string engine = 2;
+      // .flyteidl.core.Sql.Dialect dialect = 2;
       case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_dialect(static_cast<::flyteidl::core::Sql_Dialect>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Sql.engine");
-        object = msg->mutable_engine();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
         break;
       }
       default: {
@@ -6743,15 +6753,14 @@ bool Sql::MergePartialFromCodedStream(
         break;
       }
 
-      // string engine = 2;
+      // .flyteidl.core.Sql.Dialect dialect = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_engine()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->engine().data(), static_cast<int>(this->engine().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Sql.engine"));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_dialect(static_cast< ::flyteidl::core::Sql_Dialect >(value));
         } else {
           goto handle_unusual;
         }
@@ -6795,14 +6804,10 @@ void Sql::SerializeWithCachedSizes(
       1, this->statement(), output);
   }
 
-  // string engine = 2;
-  if (this->engine().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->engine().data(), static_cast<int>(this->engine().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Sql.engine");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->engine(), output);
+  // .flyteidl.core.Sql.Dialect dialect = 2;
+  if (this->dialect() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->dialect(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6829,15 +6834,10 @@ void Sql::SerializeWithCachedSizes(
         1, this->statement(), target);
   }
 
-  // string engine = 2;
-  if (this->engine().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->engine().data(), static_cast<int>(this->engine().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Sql.engine");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->engine(), target);
+  // .flyteidl.core.Sql.Dialect dialect = 2;
+  if (this->dialect() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->dialect(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6868,11 +6868,10 @@ size_t Sql::ByteSizeLong() const {
         this->statement());
   }
 
-  // string engine = 2;
-  if (this->engine().size() > 0) {
+  // .flyteidl.core.Sql.Dialect dialect = 2;
+  if (this->dialect() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->engine());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->dialect());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -6906,9 +6905,8 @@ void Sql::MergeFrom(const Sql& from) {
 
     statement_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.statement_);
   }
-  if (from.engine().size() > 0) {
-
-    engine_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.engine_);
+  if (from.dialect() != 0) {
+    set_dialect(from.dialect());
   }
 }
 
@@ -6939,8 +6937,7 @@ void Sql::InternalSwap(Sql* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   statement_.Swap(&other->statement_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  engine_.Swap(&other->engine_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  swap(dialect_, other->dialect_);
 }
 
 ::google::protobuf::Metadata Sql::GetMetadata() const {

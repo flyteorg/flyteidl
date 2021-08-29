@@ -241,6 +241,27 @@ inline bool DataLoadingConfig_LiteralMapFormat_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<DataLoadingConfig_LiteralMapFormat>(
     DataLoadingConfig_LiteralMapFormat_descriptor(), name, value);
 }
+enum Sql_Dialect {
+  Sql_Dialect_ANSI = 0,
+  Sql_Dialect_HIVE = 1,
+  Sql_Dialect_Sql_Dialect_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  Sql_Dialect_Sql_Dialect_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool Sql_Dialect_IsValid(int value);
+const Sql_Dialect Sql_Dialect_Dialect_MIN = Sql_Dialect_ANSI;
+const Sql_Dialect Sql_Dialect_Dialect_MAX = Sql_Dialect_HIVE;
+const int Sql_Dialect_Dialect_ARRAYSIZE = Sql_Dialect_Dialect_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Sql_Dialect_descriptor();
+inline const ::std::string& Sql_Dialect_Name(Sql_Dialect value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Sql_Dialect_descriptor(), value);
+}
+inline bool Sql_Dialect_Parse(
+    const ::std::string& name, Sql_Dialect* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Sql_Dialect>(
+    Sql_Dialect_descriptor(), name, value);
+}
 // ===================================================================
 
 class Resources_ResourceEntry final :
@@ -2271,6 +2292,32 @@ class Sql final :
 
   // nested types ----------------------------------------------------
 
+  typedef Sql_Dialect Dialect;
+  static const Dialect ANSI =
+    Sql_Dialect_ANSI;
+  static const Dialect HIVE =
+    Sql_Dialect_HIVE;
+  static inline bool Dialect_IsValid(int value) {
+    return Sql_Dialect_IsValid(value);
+  }
+  static const Dialect Dialect_MIN =
+    Sql_Dialect_Dialect_MIN;
+  static const Dialect Dialect_MAX =
+    Sql_Dialect_Dialect_MAX;
+  static const int Dialect_ARRAYSIZE =
+    Sql_Dialect_Dialect_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Dialect_descriptor() {
+    return Sql_Dialect_descriptor();
+  }
+  static inline const ::std::string& Dialect_Name(Dialect value) {
+    return Sql_Dialect_Name(value);
+  }
+  static inline bool Dialect_Parse(const ::std::string& name,
+      Dialect* value) {
+    return Sql_Dialect_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // string statement = 1;
@@ -2287,19 +2334,11 @@ class Sql final :
   ::std::string* release_statement();
   void set_allocated_statement(::std::string* statement);
 
-  // string engine = 2;
-  void clear_engine();
-  static const int kEngineFieldNumber = 2;
-  const ::std::string& engine() const;
-  void set_engine(const ::std::string& value);
-  #if LANG_CXX11
-  void set_engine(::std::string&& value);
-  #endif
-  void set_engine(const char* value);
-  void set_engine(const char* value, size_t size);
-  ::std::string* mutable_engine();
-  ::std::string* release_engine();
-  void set_allocated_engine(::std::string* engine);
+  // .flyteidl.core.Sql.Dialect dialect = 2;
+  void clear_dialect();
+  static const int kDialectFieldNumber = 2;
+  ::flyteidl::core::Sql_Dialect dialect() const;
+  void set_dialect(::flyteidl::core::Sql_Dialect value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.Sql)
  private:
@@ -2307,7 +2346,7 @@ class Sql final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr statement_;
-  ::google::protobuf::internal::ArenaStringPtr engine_;
+  int dialect_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -4158,57 +4197,18 @@ inline void Sql::set_allocated_statement(::std::string* statement) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Sql.statement)
 }
 
-// string engine = 2;
-inline void Sql::clear_engine() {
-  engine_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.core.Sql.Dialect dialect = 2;
+inline void Sql::clear_dialect() {
+  dialect_ = 0;
 }
-inline const ::std::string& Sql::engine() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Sql.engine)
-  return engine_.GetNoArena();
+inline ::flyteidl::core::Sql_Dialect Sql::dialect() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Sql.dialect)
+  return static_cast< ::flyteidl::core::Sql_Dialect >(dialect_);
 }
-inline void Sql::set_engine(const ::std::string& value) {
+inline void Sql::set_dialect(::flyteidl::core::Sql_Dialect value) {
   
-  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.Sql.engine)
-}
-#if LANG_CXX11
-inline void Sql::set_engine(::std::string&& value) {
-  
-  engine_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Sql.engine)
-}
-#endif
-inline void Sql::set_engine(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.Sql.engine)
-}
-inline void Sql::set_engine(const char* value, size_t size) {
-  
-  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Sql.engine)
-}
-inline ::std::string* Sql::mutable_engine() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.Sql.engine)
-  return engine_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Sql::release_engine() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.Sql.engine)
-  
-  return engine_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Sql::set_allocated_engine(::std::string* engine) {
-  if (engine != nullptr) {
-    
-  } else {
-    
-  }
-  engine_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), engine);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Sql.engine)
+  dialect_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.Sql.dialect)
 }
 
 #ifdef __GNUC__
@@ -4275,6 +4275,11 @@ template <> struct is_proto_enum< ::flyteidl::core::DataLoadingConfig_LiteralMap
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::DataLoadingConfig_LiteralMapFormat>() {
   return ::flyteidl::core::DataLoadingConfig_LiteralMapFormat_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::Sql_Dialect> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::Sql_Dialect>() {
+  return ::flyteidl::core::Sql_Dialect_descriptor();
 }
 
 }  // namespace protobuf

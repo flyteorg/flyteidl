@@ -11750,7 +11750,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface ISql
              * @property {string|null} [statement] Sql statement
-             * @property {string|null} [engine] Sql engine
+             * @property {flyteidl.core.Sql.Dialect|null} [dialect] Sql dialect
              */
 
             /**
@@ -11777,12 +11777,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Sql.prototype.statement = "";
 
             /**
-             * Sql engine.
-             * @member {string} engine
+             * Sql dialect.
+             * @member {flyteidl.core.Sql.Dialect} dialect
              * @memberof flyteidl.core.Sql
              * @instance
              */
-            Sql.prototype.engine = "";
+            Sql.prototype.dialect = 0;
 
             /**
              * Creates a new Sql instance using the specified properties.
@@ -11810,8 +11810,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.statement != null && message.hasOwnProperty("statement"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.statement);
-                if (message.engine != null && message.hasOwnProperty("engine"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.engine);
+                if (message.dialect != null && message.hasOwnProperty("dialect"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.dialect);
                 return writer;
             };
 
@@ -11837,7 +11837,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.statement = reader.string();
                         break;
                     case 2:
-                        message.engine = reader.string();
+                        message.dialect = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11861,11 +11861,30 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.statement != null && message.hasOwnProperty("statement"))
                     if (!$util.isString(message.statement))
                         return "statement: string expected";
-                if (message.engine != null && message.hasOwnProperty("engine"))
-                    if (!$util.isString(message.engine))
-                        return "engine: string expected";
+                if (message.dialect != null && message.hasOwnProperty("dialect"))
+                    switch (message.dialect) {
+                    default:
+                        return "dialect: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
+
+            /**
+             * Dialect enum.
+             * @name flyteidl.core.Sql.Dialect
+             * @enum {string}
+             * @property {number} ANSI=0 ANSI value
+             * @property {number} HIVE=1 HIVE value
+             */
+            Sql.Dialect = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "ANSI"] = 0;
+                values[valuesById[1] = "HIVE"] = 1;
+                return values;
+            })();
 
             return Sql;
         })();

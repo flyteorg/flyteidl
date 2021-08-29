@@ -11,8 +11,6 @@ package flyteadmin
 
 // Sql represents a generic sql workload with a statement and engine.
 type CoreSql struct {
-	// Define a query to execute.
 	Statement string `json:"statement,omitempty"`
-	// Define the engine to execute SQL statement. For example hive or bigquery.
-	Engine string `json:"engine,omitempty"`
+	Dialect *SqlDialect `json:"dialect,omitempty"`
 }

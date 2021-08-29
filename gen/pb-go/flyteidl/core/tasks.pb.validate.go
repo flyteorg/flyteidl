@@ -985,7 +985,7 @@ func (m *Sql) Validate() error {
 
 	// no validation rules for Statement
 
-	// no validation rules for Engine
+	// no validation rules for Dialect
 
 	return nil
 }

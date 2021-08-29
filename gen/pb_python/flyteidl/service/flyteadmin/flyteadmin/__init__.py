@@ -249,6 +249,7 @@ from flyteadmin.models.schema_column_schema_column_type import SchemaColumnSchem
 from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
 from flyteadmin.models.secret_mount_type import SecretMountType
 from flyteadmin.models.sort_direction import SortDirection
+from flyteadmin.models.sql_dialect import SqlDialect
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass
 from flyteadmin.models.task_log_message_format import TaskLogMessageFormat
 from flyteadmin.models.workflow_metadata_on_failure_policy import WorkflowMetadataOnFailurePolicy
