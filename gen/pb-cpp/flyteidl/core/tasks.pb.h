@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[14]
+  static const ::google::protobuf::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -93,6 +93,9 @@ extern Resources_ResourceEntryDefaultTypeInternal _Resources_ResourceEntry_defau
 class RuntimeMetadata;
 class RuntimeMetadataDefaultTypeInternal;
 extern RuntimeMetadataDefaultTypeInternal _RuntimeMetadata_default_instance_;
+class Sql;
+class SqlDefaultTypeInternal;
+extern SqlDefaultTypeInternal _Sql_default_instance_;
 class TaskMetadata;
 class TaskMetadataDefaultTypeInternal;
 extern TaskMetadataDefaultTypeInternal _TaskMetadata_default_instance_;
@@ -117,6 +120,7 @@ template<> ::flyteidl::core::K8sPod* Arena::CreateMaybeMessage<::flyteidl::core:
 template<> ::flyteidl::core::Resources* Arena::CreateMaybeMessage<::flyteidl::core::Resources>(Arena*);
 template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<::flyteidl::core::Resources_ResourceEntry>(Arena*);
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
+template<> ::flyteidl::core::Sql* Arena::CreateMaybeMessage<::flyteidl::core::Sql>(Arena*);
 template<> ::flyteidl::core::TaskMetadata* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata>(Arena*);
 template<> ::flyteidl::core::TaskTemplate* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate>(Arena*);
 template<> ::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse>(Arena*);
@@ -958,6 +962,7 @@ class TaskTemplate final :
   enum TargetCase {
     kContainer = 6,
     kK8SPod = 17,
+    kSql = 18,
     TARGET_NOT_SET = 0,
   };
 
@@ -1117,6 +1122,15 @@ class TaskTemplate final :
   ::flyteidl::core::K8sPod* mutable_k8s_pod();
   void set_allocated_k8s_pod(::flyteidl::core::K8sPod* k8s_pod);
 
+  // .flyteidl.core.Sql sql = 18;
+  bool has_sql() const;
+  void clear_sql();
+  static const int kSqlFieldNumber = 18;
+  const ::flyteidl::core::Sql& sql() const;
+  ::flyteidl::core::Sql* release_sql();
+  ::flyteidl::core::Sql* mutable_sql();
+  void set_allocated_sql(::flyteidl::core::Sql* sql);
+
   void clear_target();
   TargetCase target_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskTemplate)
@@ -1124,6 +1138,7 @@ class TaskTemplate final :
   class HasBitSetters;
   void set_has_container();
   void set_has_k8s_pod();
+  void set_has_sql();
 
   inline bool has_target() const;
   inline void clear_has_target();
@@ -1146,6 +1161,7 @@ class TaskTemplate final :
     TargetUnion() {}
     ::flyteidl::core::Container* container_;
     ::flyteidl::core::K8sPod* k8s_pod_;
+    ::flyteidl::core::Sql* sql_;
   } target_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2160,6 +2176,141 @@ class K8sObjectMetadata final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Sql final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Sql) */ {
+ public:
+  Sql();
+  virtual ~Sql();
+
+  Sql(const Sql& from);
+
+  inline Sql& operator=(const Sql& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Sql(Sql&& from) noexcept
+    : Sql() {
+    *this = ::std::move(from);
+  }
+
+  inline Sql& operator=(Sql&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Sql& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Sql* internal_default_instance() {
+    return reinterpret_cast<const Sql*>(
+               &_Sql_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(Sql* other);
+  friend void swap(Sql& a, Sql& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Sql* New() const final {
+    return CreateMaybeMessage<Sql>(nullptr);
+  }
+
+  Sql* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Sql>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Sql& from);
+  void MergeFrom(const Sql& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Sql* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string statement = 1;
+  void clear_statement();
+  static const int kStatementFieldNumber = 1;
+  const ::std::string& statement() const;
+  void set_statement(const ::std::string& value);
+  #if LANG_CXX11
+  void set_statement(::std::string&& value);
+  #endif
+  void set_statement(const char* value);
+  void set_statement(const char* value, size_t size);
+  ::std::string* mutable_statement();
+  ::std::string* release_statement();
+  void set_allocated_statement(::std::string* statement);
+
+  // string engine = 2;
+  void clear_engine();
+  static const int kEngineFieldNumber = 2;
+  const ::std::string& engine() const;
+  void set_engine(const ::std::string& value);
+  #if LANG_CXX11
+  void set_engine(::std::string&& value);
+  #endif
+  void set_engine(const char* value);
+  void set_engine(const char* value, size_t size);
+  ::std::string* mutable_engine();
+  ::std::string* release_engine();
+  void set_allocated_engine(::std::string* engine);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Sql)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr statement_;
+  ::google::protobuf::internal::ArenaStringPtr engine_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
 // ===================================================================
 
 
@@ -3058,6 +3209,47 @@ inline ::flyteidl::core::K8sPod* TaskTemplate::mutable_k8s_pod() {
   return target_.k8s_pod_;
 }
 
+// .flyteidl.core.Sql sql = 18;
+inline bool TaskTemplate::has_sql() const {
+  return target_case() == kSql;
+}
+inline void TaskTemplate::set_has_sql() {
+  _oneof_case_[0] = kSql;
+}
+inline void TaskTemplate::clear_sql() {
+  if (has_sql()) {
+    delete target_.sql_;
+    clear_has_target();
+  }
+}
+inline ::flyteidl::core::Sql* TaskTemplate::release_sql() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.sql)
+  if (has_sql()) {
+    clear_has_target();
+      ::flyteidl::core::Sql* temp = target_.sql_;
+    target_.sql_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Sql& TaskTemplate::sql() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.sql)
+  return has_sql()
+      ? *target_.sql_
+      : *reinterpret_cast< ::flyteidl::core::Sql*>(&::flyteidl::core::_Sql_default_instance_);
+}
+inline ::flyteidl::core::Sql* TaskTemplate::mutable_sql() {
+  if (!has_sql()) {
+    clear_target();
+    set_has_sql();
+    target_.sql_ = CreateMaybeMessage< ::flyteidl::core::Sql >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.sql)
+  return target_.sql_;
+}
+
 // int32 task_type_version = 7;
 inline void TaskTemplate::clear_task_type_version() {
   task_type_version_ = 0;
@@ -3909,9 +4101,121 @@ K8sObjectMetadata::mutable_annotations() {
   return annotations_.MutableMap();
 }
 
+// -------------------------------------------------------------------
+
+// Sql
+
+// string statement = 1;
+inline void Sql::clear_statement() {
+  statement_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Sql::statement() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Sql.statement)
+  return statement_.GetNoArena();
+}
+inline void Sql::set_statement(const ::std::string& value) {
+  
+  statement_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Sql.statement)
+}
+#if LANG_CXX11
+inline void Sql::set_statement(::std::string&& value) {
+  
+  statement_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Sql.statement)
+}
+#endif
+inline void Sql::set_statement(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  statement_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Sql.statement)
+}
+inline void Sql::set_statement(const char* value, size_t size) {
+  
+  statement_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Sql.statement)
+}
+inline ::std::string* Sql::mutable_statement() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Sql.statement)
+  return statement_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Sql::release_statement() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Sql.statement)
+  
+  return statement_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Sql::set_allocated_statement(::std::string* statement) {
+  if (statement != nullptr) {
+    
+  } else {
+    
+  }
+  statement_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), statement);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Sql.statement)
+}
+
+// string engine = 2;
+inline void Sql::clear_engine() {
+  engine_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Sql::engine() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Sql.engine)
+  return engine_.GetNoArena();
+}
+inline void Sql::set_engine(const ::std::string& value) {
+  
+  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Sql.engine)
+}
+#if LANG_CXX11
+inline void Sql::set_engine(::std::string&& value) {
+  
+  engine_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Sql.engine)
+}
+#endif
+inline void Sql::set_engine(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Sql.engine)
+}
+inline void Sql::set_engine(const char* value, size_t size) {
+  
+  engine_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Sql.engine)
+}
+inline ::std::string* Sql::mutable_engine() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Sql.engine)
+  return engine_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Sql::release_engine() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Sql.engine)
+  
+  return engine_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Sql::set_allocated_engine(::std::string* engine) {
+  if (engine != nullptr) {
+    
+  } else {
+    
+  }
+  engine_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), engine);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Sql.engine)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

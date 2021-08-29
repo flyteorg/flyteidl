@@ -246,6 +246,7 @@ Class | Method | HTTP request | Description
  - [CoreSecret](docs/CoreSecret.md)
  - [CoreSecurityContext](docs/CoreSecurityContext.md)
  - [CoreSimpleType](docs/CoreSimpleType.md)
+ - [CoreSql](docs/CoreSql.md)
  - [CoreTaskExecutionIdentifier](docs/CoreTaskExecutionIdentifier.md)
  - [CoreTaskExecutionPhase](docs/CoreTaskExecutionPhase.md)
  - [CoreTaskLog](docs/CoreTaskLog.md)

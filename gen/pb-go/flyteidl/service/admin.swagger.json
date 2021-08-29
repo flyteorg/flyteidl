@@ -5833,6 +5833,20 @@
       "default": "NONE",
       "description": "Define a set of simple types."
     },
+    "coreSql": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string",
+          "description": "Define a query to execute."
+        },
+        "engine": {
+          "type": "string",
+          "description": "Define the engine to execute SQL statement. For example hive or bigquery."
+        }
+      },
+      "description": "Sql represents a generic sql workload with a statement and engine."
+    },
     "coreTaskExecutionIdentifier": {
       "type": "object",
       "properties": {
@@ -5969,6 +5983,9 @@
         },
         "k8s_pod": {
           "$ref": "#/definitions/coreK8sPod"
+        },
+        "sql": {
+          "$ref": "#/definitions/coreSql"
         },
         "task_type_version": {
           "type": "integer",

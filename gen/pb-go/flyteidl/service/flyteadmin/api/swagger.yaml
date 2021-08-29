@@ -8805,6 +8805,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
           - template:
               container:
                 args:
@@ -9060,6 +9063,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
           primary:
             template:
               outputs:
@@ -10864,6 +10870,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              engine: "engine"
+              statement: "statement"
   adminTaskClosure:
     type: "object"
     properties:
@@ -11135,6 +11144,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            engine: "engine"
+            statement: "statement"
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -11718,6 +11730,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
       - id:
           domain: "domain"
           resource_type: {}
@@ -11982,6 +11997,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -14206,6 +14224,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
           - template:
               container:
                 args:
@@ -14461,6 +14482,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                engine: "engine"
+                statement: "statement"
           primary:
             template:
               outputs:
@@ -17669,6 +17693,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              engine: "engine"
+              statement: "statement"
         - template:
             container:
               args:
@@ -17924,6 +17951,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              engine: "engine"
+              statement: "statement"
         primary:
           template:
             outputs:
@@ -21068,6 +21098,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  engine: "engine"
+                  statement: "statement"
             - template:
                 container:
                   args:
@@ -21323,6 +21356,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  engine: "engine"
+                  statement: "statement"
             primary:
               template:
                 outputs:
@@ -24380,6 +24416,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  engine: "engine"
+                  statement: "statement"
             - template:
                 container:
                   args:
@@ -24635,6 +24674,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  engine: "engine"
+                  statement: "statement"
             primary:
               template:
                 outputs:
@@ -26291,6 +26333,9 @@ definitions:
             group_version: "group_version"
             key: "key"
             group: "group"
+        sql:
+          engine: "engine"
+          statement: "statement"
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -29377,6 +29422,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            engine: "engine"
+            statement: "statement"
       - template:
           container:
             args:
@@ -29632,6 +29680,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            engine: "engine"
+            statement: "statement"
       primary:
         template:
           outputs:
@@ -32298,6 +32349,20 @@ definitions:
     - "ERROR"
     - "STRUCT"
     default: "NONE"
+  coreSql:
+    type: "object"
+    properties:
+      statement:
+        type: "string"
+        description: "Define a query to execute."
+      engine:
+        type: "string"
+        description: "Define the engine to execute SQL statement. For example hive\
+          \ or bigquery."
+    description: "Sql represents a generic sql workload with a statement and engine."
+    example:
+      engine: "engine"
+      statement: "statement"
   coreTaskExecutionIdentifier:
     type: "object"
     properties:
@@ -32478,6 +32543,8 @@ definitions:
         $ref: "#/definitions/coreContainer"
       k8s_pod:
         $ref: "#/definitions/coreK8sPod"
+      sql:
+        $ref: "#/definitions/coreSql"
       task_type_version:
         type: "integer"
         format: "int32"
@@ -32751,6 +32818,9 @@ definitions:
           group_version: "group_version"
           key: "key"
           group: "group"
+      sql:
+        engine: "engine"
+        statement: "statement"
   coreTypedInterface:
     type: "object"
     properties:
@@ -36442,6 +36512,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              engine: "engine"
+              statement: "statement"
         - template:
             container:
               args:
@@ -36697,6 +36770,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              engine: "engine"
+              statement: "statement"
         primary:
           template:
             outputs:
