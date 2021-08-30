@@ -265,7 +265,7 @@ message K8sObjectMetadata {
   map<string, string> annotations = 2;
 }
 
-// Sql represents a generic sql workload with a statement and engine.
+// Sql represents a generic sql workload with a statement and dialect.
 message Sql {
     // The actual query to run, the query can have templated parameters.
     // We use Flyte's Golang templating format for Query templating.
