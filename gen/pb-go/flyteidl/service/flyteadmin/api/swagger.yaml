@@ -2756,9 +2756,11 @@ definitions:
       \ If set to an unsupported dialect, no validation will be done on the statement.\n\
       We support the following dialect: ansi, hive."
     enum:
+    - "UNDEFINED"
     - "ANSI"
     - "HIVE"
-    default: "ANSI"
+    - "OTHER"
+    default: "UNDEFINED"
   TaskExecutionMetadataInstanceClass:
     type: "string"
     description: "Includes the broad category of machine used for this specific task\
@@ -32371,7 +32373,7 @@ definitions:
           \ as parquet\nselect *\nfrom my_table\nwhere ds = '{{ .Inputs.ds }}'"
       dialect:
         $ref: "#/definitions/SqlDialect"
-    description: "Sql represents a generic sql workload with a statement and engine."
+    description: "Sql represents a generic sql workload with a statement and dialect."
     example:
       dialect: {}
       statement: "statement"

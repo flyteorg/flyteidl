@@ -605,16 +605,17 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "e.K8sObjectMetadata.AnnotationsEntry\032-\n\013"
   "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
   "\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-  "value\030\002 \001(\t:\0028\001\"d\n\003Sql\022\021\n\tstatement\030\001 \001("
+  "value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001("
   "\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.D"
-  "ialect\"\035\n\007Dialect\022\010\n\004ANSI\020\000\022\010\n\004HIVE\020\001B6Z"
-  "4github.com/flyteorg/flyteidl/gen/pb-go/"
-  "flyteidl/coreb\006proto3"
+  "ialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI"
+  "\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/fl"
+  "yteorg/flyteidl/gen/pb-go/flyteidl/coreb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2901,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2927,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -761,6 +762,8 @@ bool Sql_Dialect_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
+    case 3:
       return true;
     default:
       return false;
@@ -768,8 +771,10 @@ bool Sql_Dialect_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Sql_Dialect Sql::UNDEFINED;
 const Sql_Dialect Sql::ANSI;
 const Sql_Dialect Sql::HIVE;
+const Sql_Dialect Sql::OTHER;
 const Sql_Dialect Sql::Dialect_MIN;
 const Sql_Dialect Sql::Dialect_MAX;
 const int Sql::Dialect_ARRAYSIZE;

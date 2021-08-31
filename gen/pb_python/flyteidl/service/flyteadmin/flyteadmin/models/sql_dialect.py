@@ -26,8 +26,10 @@ class SqlDialect(object):
     """
     allowed enum values
     """
+    UNDEFINED = "UNDEFINED"
     ANSI = "ANSI"
     HIVE = "HIVE"
+    OTHER = "OTHER"
 
     """
     Attributes:

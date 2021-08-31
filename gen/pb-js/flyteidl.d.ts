@@ -4959,8 +4959,10 @@ export namespace flyteidl {
 
             /** Dialect enum. */
             enum Dialect {
-                ANSI = 0,
-                HIVE = 1
+                UNDEFINED = 0,
+                ANSI = 1,
+                HIVE = 2,
+                OTHER = 3
             }
         }
 

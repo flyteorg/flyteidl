@@ -242,14 +242,16 @@ inline bool DataLoadingConfig_LiteralMapFormat_Parse(
     DataLoadingConfig_LiteralMapFormat_descriptor(), name, value);
 }
 enum Sql_Dialect {
-  Sql_Dialect_ANSI = 0,
-  Sql_Dialect_HIVE = 1,
+  Sql_Dialect_UNDEFINED = 0,
+  Sql_Dialect_ANSI = 1,
+  Sql_Dialect_HIVE = 2,
+  Sql_Dialect_OTHER = 3,
   Sql_Dialect_Sql_Dialect_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Sql_Dialect_Sql_Dialect_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Sql_Dialect_IsValid(int value);
-const Sql_Dialect Sql_Dialect_Dialect_MIN = Sql_Dialect_ANSI;
-const Sql_Dialect Sql_Dialect_Dialect_MAX = Sql_Dialect_HIVE;
+const Sql_Dialect Sql_Dialect_Dialect_MIN = Sql_Dialect_UNDEFINED;
+const Sql_Dialect Sql_Dialect_Dialect_MAX = Sql_Dialect_OTHER;
 const int Sql_Dialect_Dialect_ARRAYSIZE = Sql_Dialect_Dialect_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Sql_Dialect_descriptor();
@@ -2293,10 +2295,14 @@ class Sql final :
   // nested types ----------------------------------------------------
 
   typedef Sql_Dialect Dialect;
+  static const Dialect UNDEFINED =
+    Sql_Dialect_UNDEFINED;
   static const Dialect ANSI =
     Sql_Dialect_ANSI;
   static const Dialect HIVE =
     Sql_Dialect_HIVE;
+  static const Dialect OTHER =
+    Sql_Dialect_OTHER;
   static inline bool Dialect_IsValid(int value) {
     return Sql_Dialect_IsValid(value);
   }

@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Sql represents a generic sql workload with a statement and engine.
+// Sql represents a generic sql workload with a statement and dialect.
 type CoreSql struct {
 	Statement string `json:"statement,omitempty"`
 	Dialect *SqlDialect `json:"dialect,omitempty"`

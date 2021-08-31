@@ -11867,6 +11867,8 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "dialect: enum value expected";
                     case 0:
                     case 1:
+                    case 2:
+                    case 3:
                         break;
                     }
                 return null;
@@ -11876,13 +11878,17 @@ export const flyteidl = $root.flyteidl = (() => {
              * Dialect enum.
              * @name flyteidl.core.Sql.Dialect
              * @enum {string}
-             * @property {number} ANSI=0 ANSI value
-             * @property {number} HIVE=1 HIVE value
+             * @property {number} UNDEFINED=0 UNDEFINED value
+             * @property {number} ANSI=1 ANSI value
+             * @property {number} HIVE=2 HIVE value
+             * @property {number} OTHER=3 OTHER value
              */
             Sql.Dialect = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "ANSI"] = 0;
-                values[valuesById[1] = "HIVE"] = 1;
+                values[valuesById[0] = "UNDEFINED"] = 0;
+                values[valuesById[1] = "ANSI"] = 1;
+                values[valuesById[2] = "HIVE"] = 2;
+                values[valuesById[3] = "OTHER"] = 3;
                 return values;
             })();
 

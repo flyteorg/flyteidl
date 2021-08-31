@@ -3054,10 +3054,12 @@
     "SqlDialect": {
       "type": "string",
       "enum": [
+        "UNDEFINED",
         "ANSI",
-        "HIVE"
+        "HIVE",
+        "OTHER"
       ],
-      "default": "ANSI",
+      "default": "UNDEFINED",
       "description": "The dialect of the SQL statement. This is used to validate and parse SQL statements at compilation time to avoid\nexpensive runtime operations. If set to an unsupported dialect, no validation will be done on the statement.\nWe support the following dialect: ansi, hive."
     },
     "TaskExecutionMetadataInstanceClass": {
@@ -5853,7 +5855,7 @@
           "$ref": "#/definitions/SqlDialect"
         }
       },
-      "description": "Sql represents a generic sql workload with a statement and engine."
+      "description": "Sql represents a generic sql workload with a statement and dialect."
     },
     "coreTaskExecutionIdentifier": {
       "type": "object",

@@ -281,8 +281,10 @@ message Sql {
     // expensive runtime operations. If set to an unsupported dialect, no validation will be done on the statement.
     // We support the following dialect: ansi, hive.
     enum Dialect {
-        ANSI = 0;
-        HIVE = 1;
+        UNDEFINED = 0;
+        ANSI = 1;
+        HIVE = 2;
+        OTHER = 3;
     }
     Dialect dialect = 2;
 }

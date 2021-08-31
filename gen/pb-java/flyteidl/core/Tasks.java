@@ -16448,7 +16448,7 @@ public final class Tasks {
   }
   /**
    * <pre>
-   * Sql represents a generic sql workload with a statement and engine.
+   * Sql represents a generic sql workload with a statement and dialect.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.Sql}
@@ -16547,24 +16547,40 @@ public final class Tasks {
     public enum Dialect
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>ANSI = 0;</code>
+       * <code>UNDEFINED = 0;</code>
        */
-      ANSI(0),
+      UNDEFINED(0),
       /**
-       * <code>HIVE = 1;</code>
+       * <code>ANSI = 1;</code>
        */
-      HIVE(1),
+      ANSI(1),
+      /**
+       * <code>HIVE = 2;</code>
+       */
+      HIVE(2),
+      /**
+       * <code>OTHER = 3;</code>
+       */
+      OTHER(3),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>ANSI = 0;</code>
+       * <code>UNDEFINED = 0;</code>
        */
-      public static final int ANSI_VALUE = 0;
+      public static final int UNDEFINED_VALUE = 0;
       /**
-       * <code>HIVE = 1;</code>
+       * <code>ANSI = 1;</code>
        */
-      public static final int HIVE_VALUE = 1;
+      public static final int ANSI_VALUE = 1;
+      /**
+       * <code>HIVE = 2;</code>
+       */
+      public static final int HIVE_VALUE = 2;
+      /**
+       * <code>OTHER = 3;</code>
+       */
+      public static final int OTHER_VALUE = 3;
 
 
       public final int getNumber() {
@@ -16585,8 +16601,10 @@ public final class Tasks {
 
       public static Dialect forNumber(int value) {
         switch (value) {
-          case 0: return ANSI;
-          case 1: return HIVE;
+          case 0: return UNDEFINED;
+          case 1: return ANSI;
+          case 2: return HIVE;
+          case 3: return OTHER;
           default: return null;
         }
       }
@@ -16731,7 +16749,7 @@ public final class Tasks {
       if (!getStatementBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, statement_);
       }
-      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.ANSI.getNumber()) {
+      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.UNDEFINED.getNumber()) {
         output.writeEnum(2, dialect_);
       }
       unknownFields.writeTo(output);
@@ -16746,7 +16764,7 @@ public final class Tasks {
       if (!getStatementBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, statement_);
       }
-      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.ANSI.getNumber()) {
+      if (dialect_ != flyteidl.core.Tasks.Sql.Dialect.UNDEFINED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, dialect_);
       }
@@ -16880,7 +16898,7 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * Sql represents a generic sql workload with a statement and engine.
+     * Sql represents a generic sql workload with a statement and dialect.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.Sql}
@@ -17414,11 +17432,12 @@ public final class Tasks {
       "e.K8sObjectMetadata.AnnotationsEntry\032-\n\013" +
       "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
       "\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"d\n\003Sql\022\021\n\tstatement\030\001 \001(" +
+      "value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(" +
       "\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.D" +
-      "ialect\"\035\n\007Dialect\022\010\n\004ANSI\020\000\022\010\n\004HIVE\020\001B6Z" +
-      "4github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/coreb\006proto3"
+      "ialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI" +
+      "\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/coreb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
