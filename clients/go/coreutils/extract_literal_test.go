@@ -4,8 +4,8 @@
 package coreutils
 
 import (
-	"time"
 	"testing"
+	"time"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 
