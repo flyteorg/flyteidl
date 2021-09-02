@@ -62,6 +62,7 @@ flyteidl/plugins/mpi.proto
 DistributedMPITrainingTask
 ------------------------------------------------------------------
 
+MPI operator proposal https://github.com/kubeflow/community/blob/master/proposals/mpi-operator-proposal.md
 Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
 
 
@@ -71,8 +72,8 @@ Custom proto for plugin that enables distributed training using https://github.c
    :widths: auto
 
    "num_workers", ":ref:`ref_int32`", "", "number of worker spawned in the cluster for this job"
-   "num_launcher_replicas", ":ref:`ref_int32`", "", "number of launcher replicas spawned in the cluster for this job"
-   "slots", ":ref:`ref_int32`", "", "number of slots per worker used in hostfile."
+   "num_launcher_replicas", ":ref:`ref_int32`", "", "number of launcher replicas spawned in the cluster for this job The launcher pod invokes mpirun and communicates with worker pods through MPI."
+   "slots", ":ref:`ref_int32`", "", "number of slots per worker used in hostfile. The available slots (GPUs) in each pod."
 
 
 

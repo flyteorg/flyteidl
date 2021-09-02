@@ -30,6 +30,7 @@ public final class Mpi {
     /**
      * <pre>
      * number of launcher replicas spawned in the cluster for this job
+     * The launcher pod invokes mpirun and communicates with worker pods through MPI.
      * </pre>
      *
      * <code>int32 num_launcher_replicas = 2;</code>
@@ -39,6 +40,7 @@ public final class Mpi {
     /**
      * <pre>
      * number of slots per worker used in hostfile.
+     * The available slots (GPUs) in each pod.
      * </pre>
      *
      * <code>int32 slots = 3;</code>
@@ -47,6 +49,7 @@ public final class Mpi {
   }
   /**
    * <pre>
+   * MPI operator proposal https://github.com/kubeflow/community/blob/master/proposals/mpi-operator-proposal.md
    * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
    * </pre>
    *
@@ -153,6 +156,7 @@ public final class Mpi {
     /**
      * <pre>
      * number of launcher replicas spawned in the cluster for this job
+     * The launcher pod invokes mpirun and communicates with worker pods through MPI.
      * </pre>
      *
      * <code>int32 num_launcher_replicas = 2;</code>
@@ -166,6 +170,7 @@ public final class Mpi {
     /**
      * <pre>
      * number of slots per worker used in hostfile.
+     * The available slots (GPUs) in each pod.
      * </pre>
      *
      * <code>int32 slots = 3;</code>
@@ -353,6 +358,7 @@ public final class Mpi {
     }
     /**
      * <pre>
+     * MPI operator proposal https://github.com/kubeflow/community/blob/master/proposals/mpi-operator-proposal.md
      * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
      * </pre>
      *
@@ -556,6 +562,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of launcher replicas spawned in the cluster for this job
+       * The launcher pod invokes mpirun and communicates with worker pods through MPI.
        * </pre>
        *
        * <code>int32 num_launcher_replicas = 2;</code>
@@ -566,6 +573,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of launcher replicas spawned in the cluster for this job
+       * The launcher pod invokes mpirun and communicates with worker pods through MPI.
        * </pre>
        *
        * <code>int32 num_launcher_replicas = 2;</code>
@@ -579,6 +587,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of launcher replicas spawned in the cluster for this job
+       * The launcher pod invokes mpirun and communicates with worker pods through MPI.
        * </pre>
        *
        * <code>int32 num_launcher_replicas = 2;</code>
@@ -594,6 +603,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of slots per worker used in hostfile.
+       * The available slots (GPUs) in each pod.
        * </pre>
        *
        * <code>int32 slots = 3;</code>
@@ -604,6 +614,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of slots per worker used in hostfile.
+       * The available slots (GPUs) in each pod.
        * </pre>
        *
        * <code>int32 slots = 3;</code>
@@ -617,6 +628,7 @@ public final class Mpi {
       /**
        * <pre>
        * number of slots per worker used in hostfile.
+       * The available slots (GPUs) in each pod.
        * </pre>
        *
        * <code>int32 slots = 3;</code>

@@ -20,13 +20,16 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// MPI operator proposal https://github.com/kubeflow/community/blob/master/proposals/mpi-operator-proposal.md
 // Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
 type DistributedMPITrainingTask struct {
 	// number of worker spawned in the cluster for this job
 	NumWorkers int32 `protobuf:"varint,1,opt,name=num_workers,json=numWorkers,proto3" json:"num_workers,omitempty"`
 	// number of launcher replicas spawned in the cluster for this job
+	// The launcher pod invokes mpirun and communicates with worker pods through MPI.
 	NumLauncherReplicas int32 `protobuf:"varint,2,opt,name=num_launcher_replicas,json=numLauncherReplicas,proto3" json:"num_launcher_replicas,omitempty"`
 	// number of slots per worker used in hostfile.
+	// The available slots (GPUs) in each pod.
 	Slots                int32    `protobuf:"varint,3,opt,name=slots,proto3" json:"slots,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
