@@ -297,7 +297,8 @@ func MakeDefaultLiteralForType(typ *core.LiteralType) (*core.Literal, error) {
 		}, nil
 	case *core.LiteralType_EnumType:
 		return MakeLiteralForType(typ, nil)
-		//case *core.LiteralType_Schema:
+	case *core.LiteralType_Schema:
+		return MakeLiteralForType(typ, nil)
 	}
 
 	return nil, fmt.Errorf("failed to convert to a known Literal. Input Type [%v] not supported", typ.String())
@@ -418,6 +419,23 @@ func MakeLiteralMap(v map[string]interface{}) (*core.LiteralMap, error) {
 	}, nil
 }
 
+func MakeLiteralForSchema(path storage.DataReference, columns []*core.SchemaType_SchemaColumn) *core.Literal {
+	return &core.Literal{
+		Value: &core.Literal_Scalar{
+			Scalar: &core.Scalar{
+				Value: &core.Scalar_Schema{
+					Schema: &core.Schema{
+						Uri: path.String(),
+						Type: &core.SchemaType{
+							Columns: columns,
+						},
+					},
+				},
+			},
+		},
+	}
+}
+
 func MakeLiteralForBlob(path storage.DataReference, isDir bool, format string) *core.Literal {
 	dim := core.BlobType_SINGLE
 	if isDir {
@@ -519,6 +537,11 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		newT := t.Type.(*core.LiteralType_Blob)
 		isDir := newT.Blob.Dimensionality == core.BlobType_MULTIPART
 		lv := MakeLiteralForBlob(storage.DataReference(fmt.Sprintf("%v", v)), isDir, newT.Blob.Format)
+		return lv, nil
+
+	case *core.LiteralType_Schema:
+		newT := t.Type.(*core.LiteralType_Schema)
+		lv := MakeLiteralForSchema(storage.DataReference(fmt.Sprintf("%v", v)), newT.Schema.Columns)
 		return lv, nil
 
 	case *core.LiteralType_EnumType:
