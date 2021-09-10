@@ -37,6 +37,12 @@ func (r *EventError) Is(target error) bool {
 	if !ok {
 		return false
 	}
+	if r == nil && t == nil {
+		return true
+	}
+	if r == nil || t == nil {
+		return false
+	}
 	return r.Code == t.Code && (r.Cause == t.Cause || t.Cause == nil) && (r.Message == t.Message || t.Message == "")
 }
 
