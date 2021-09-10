@@ -31,6 +31,18 @@ func (r EventError) Error() string {
 	return fmt.Sprintf("%s: %s, caused by [%s]", r.Code, r.Message, r.Cause.Error())
 }
 
+func (r *EventError) Is(target error) bool {
+	t, ok := target.(*EventError)
+	if !ok {
+		return false
+	}
+	return r.Code == t.Code && (r.Cause == t.Cause || t.Cause == nil) && (r.Message == t.Message || t.Message == "")
+}
+
+func (r *EventError) Unwrap() error {
+	return r.Cause
+}
+
 func WrapError(err error) error {
 	// check if error is gRPC, and convert into our own custom error
 	statusErr, ok := status.FromError(err)
