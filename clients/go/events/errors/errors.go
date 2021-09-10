@@ -2,6 +2,7 @@ package errors
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin"
@@ -90,46 +91,25 @@ func wrapf(code ErrorCode, cause error, msg string) error {
 
 // Checks if the error is of type EventError and the ErrorCode is of type AlreadyExists
 func IsAlreadyExists(err error) bool {
-	e, ok := err.(*EventError)
-	if ok {
-		return e.Code == AlreadyExists
-	}
-	return false
+	return errors.Is(err, &EventError{Code: AlreadyExists})
 }
 
 // Checks if the error is of type EventError and the ErrorCode is of type InvalidArgument
 func IsInvalidArguments(err error) bool {
-	e, ok := err.(*EventError)
-	if ok {
-		return e.Code == InvalidArgument
-	}
-	return false
+	return errors.Is(err, &EventError{Code: InvalidArgument})
 }
 
 // Checks if the error is of type EventError and the ErrorCode is of type ExecutionNotFound
 func IsNotFound(err error) bool {
-	e, ok := err.(*EventError)
-	if ok {
-		return e.Code == ExecutionNotFound
-	}
-	return false
+	return errors.Is(err, &EventError{Code: ExecutionNotFound})
 }
 
 // Checks if the error is of type EventError and the ErrorCode is of type ResourceExhausted
 func IsResourceExhausted(err error) bool {
-	e, ok := err.(*EventError)
-	if ok {
-		return e.Code == ResourceExhausted
-	}
-	return false
+	return errors.Is(err, &EventError{Code: ResourceExhausted})
 }
 
 // Checks if the error is of type EventError and the ErrorCode is of type EventAlreadyInTerminalStateError
 func IsEventAlreadyInTerminalStateError(err error) bool {
-	// TODO: don't rely on the specific type here as it could be wrapped in another object.
-	e, ok := err.(*EventError)
-	if ok {
-		return e.Code == EventAlreadyInTerminalStateError
-	}
-	return false
+	return errors.Is(err, &EventError{Code: EventAlreadyInTerminalStateError})
 }
