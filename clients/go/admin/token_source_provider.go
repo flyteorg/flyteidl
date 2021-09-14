@@ -3,7 +3,6 @@ package admin
 import (
 	"context"
 	"fmt"
-	"github.com/flyteorg/flyteidl/clients/go/admin/clientcredentials"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"golang.org/x/oauth2"
@@ -34,12 +33,12 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 	//var tSource oauth2.TokenSource
 	var tokenProvider TokenSourceProvider
 	if cfg.AuthType == AuthTypeClientSecret {
-		tokenProvider, err = clientcredentials.NewClientCredentialsTokenSourceProvider(ctx, cfg, clientMetadata, tokenURL)
+		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, clientMetadata, tokenURL)
 		if err != nil {
 			return nil, err
 		}
 	} else if cfg.AuthType == AuthTypePkce {
-		tokenProvider, err = pkce.NewPkceTokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
+		tokenProvider, err = pkce.NewPKCETokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
 		if err != nil {
 			return nil, err
 		}

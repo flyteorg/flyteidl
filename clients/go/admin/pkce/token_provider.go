@@ -8,26 +8,26 @@ import (
 	"golang.org/x/oauth2"
 )
 
-type PkceTokenSourceProvider struct {
+type PKCETokenSourceProvider struct {
 	tokenOrchestrator TokenOrchestrator
 }
 
-func NewPkceTokenSourceProvider(ctx context.Context, pkceCfg Config, tokenCache TokenCache, authClient service.AuthMetadataServiceClient) (admin.TokenSourceProvider, error) {
+func NewPKCETokenSourceProvider(ctx context.Context, pkceCfg Config, tokenCache TokenCache, authClient service.AuthMetadataServiceClient) (admin.TokenSourceProvider, error) {
 
 	tokenOrchestrator, err := NewTokenOrchestrator(ctx, pkceCfg, tokenCache, authClient)
 	if err != nil {
 		return nil, err
 	}
 
-	return PkceTokenSourceProvider{tokenOrchestrator: tokenOrchestrator}, nil
+	return PKCETokenSourceProvider{tokenOrchestrator: tokenOrchestrator}, nil
 }
 
-func (p PkceTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
-	return  getPkceAuthTokenSource(ctx, p.tokenOrchestrator)
+func (p PKCETokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	return getPKCEAuthTokenSource(ctx, p.tokenOrchestrator)
 }
 
 // Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
-func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator TokenOrchestrator) (oauth2.TokenSource, error) {
+func getPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator TokenOrchestrator) (oauth2.TokenSource, error) {
 	// explicitly ignore error while fetching token from cache.
 	authToken, err := tokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
 	if err != nil {
