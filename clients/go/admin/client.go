@@ -5,11 +5,12 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/clientcredentials"
 	"io/ioutil"
 	"strings"
 	"sync"
+
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/clientcredentials"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
@@ -126,16 +127,15 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
-			ClientID: cfg.ClientID,
+			ClientID:     cfg.ClientID,
 			ClientSecret: secret,
-			TokenURL: tokenURL,
-			Scopes: scopes}}, nil
+			TokenURL:     tokenURL,
+			Scopes:       scopes}}, nil
 }
 
 func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
 	return p.ccConfig.TokenSource(ctx), nil
 }
-
 
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
 func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client service.AuthMetadataServiceClient, err error) {
@@ -203,7 +203,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 
 		tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, authMetadataClient)
 		if err != nil {
-			fmt.Errorf("failed to initialize token source provider. Err: %s", err.Error())
+			logger.Errorf(ctx, "failed to initialize token source provider. Err: %s", err.Error())
 		}
 
 		opt, err := getAuthenticationDialOption(ctx, cfg, tokenSourceProvider, authMetadataClient)
