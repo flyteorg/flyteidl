@@ -8,6 +8,8 @@ import (
 	"golang.org/x/oauth2"
 )
 
+// TokenSourceProvider defines the interface needed to provide a TokenSource that is used to
+// create a client with authentication enabled.
 type TokenSourceProvider interface {
 	GetTokenSource(ctx context.Context) (oauth2.TokenSource, error)
 }
