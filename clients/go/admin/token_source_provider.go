@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/logger"
 	"golang.org/x/oauth2"
 )
 
@@ -32,7 +33,6 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
 
-	//var tSource oauth2.TokenSource
 	var tokenProvider TokenSourceProvider
 	if cfg.AuthType == AuthTypeClientSecret {
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, clientMetadata, tokenURL)
@@ -40,7 +40,7 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 			return nil, err
 		}
 	} else if cfg.AuthType == AuthTypePkce {
-		tokenProvider, err = pkce.NewPKCETokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
+		tokenProvider, err = NewPKCETokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
 		if err != nil {
 			return nil, err
 		}
@@ -49,4 +49,43 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 	}
 
 	return tokenProvider, nil
+}
+
+type PKCETokenSourceProvider struct {
+	tokenOrchestrator pkce.TokenOrchestrator
+}
+
+func NewPKCETokenSourceProvider(ctx context.Context, pkceCfg pkce.Config, tokenCache pkce.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
+
+	tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, pkceCfg, tokenCache, authClient)
+	if err != nil {
+		return nil, err
+	}
+
+	return PKCETokenSourceProvider{tokenOrchestrator: tokenOrchestrator}, nil
+}
+
+func (p PKCETokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	return GetPKCEAuthTokenSource(ctx, p.tokenOrchestrator)
+}
+
+// Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
+func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrchestrator) (oauth2.TokenSource, error) {
+	// explicitly ignore error while fetching token from cache.
+	authToken, err := tokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	if err != nil {
+		logger.Warnf(ctx, "Failed fetching from cache. Will restart the flow. Error: %v", err)
+	}
+
+	if authToken == nil {
+		// Fetch using auth flow
+		if authToken, err = tokenOrchestrator.FetchTokenFromAuthFlow(ctx); err != nil {
+			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
+			return nil, err
+		}
+	}
+
+	return &pkce.SimpleTokenSource{
+		CachedToken: authToken,
+	}, nil
 }
