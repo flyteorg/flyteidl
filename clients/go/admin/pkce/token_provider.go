@@ -26,12 +26,6 @@ func (p PkceTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.Tok
 	return  getPkceAuthTokenSource(ctx, p.tokenOrchestrator)
 }
 
-func (p PkceTokenSourceProvider) GetAuthType() admin.AuthType{
-	return admin.AuthTypePkce
-}
-
-
-
 // Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
 func getPkceAuthTokenSource(ctx context.Context, tokenOrchestrator TokenOrchestrator) (oauth2.TokenSource, error) {
 	// explicitly ignore error while fetching token from cache.

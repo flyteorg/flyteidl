@@ -11,7 +11,6 @@ import (
 
 type TokenSourceProvider interface {
 	GetTokenSource(ctx context.Context) (oauth2.TokenSource, error)
-	GetAuthType() AuthType
 }
 
 func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache,

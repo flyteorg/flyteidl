@@ -41,8 +41,3 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *admin.Con
 func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
 	return p.ccConfig.TokenSource(ctx), nil
 }
-
-func (p ClientCredentialsTokenSourceProvider) GetAuthType() admin.AuthType {
-	return admin.AuthTypeClientSecret
-}
-
