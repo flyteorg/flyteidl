@@ -3,6 +3,7 @@ package admin
 import (
 	"context"
 	"crypto/tls"
+	"errors"
 	"fmt"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
@@ -86,15 +87,8 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 // the token endpoint is set in the config, that will be used, otherwise it'll attempt to make a metadata call.
 func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourceProvider TokenSourceProvider,
 	authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
-
-	tokenURL := cfg.TokenURL
-	if len(tokenURL) == 0 {
-		metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
-		if err != nil {
-			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
-		}
-
-		tokenURL = metadata.TokenEndpoint
+	if tokenSourceProvider == nil {
+		return nil, errors.New("can't create authenticated channel without a TokenSourceProvider")
 	}
 
 	clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
@@ -209,10 +203,9 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 
 		tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, authMetadataClient)
 		if err != nil {
-			logger.Panicf(ctx,"failed to initialize token source provider. Err: %s", err.Error())
+			fmt.Errorf("failed to initialize token source provider. Err: %s", err.Error())
 		}
-		// If auth is enabled, this call will return the required information to use to authenticate, otherwise,
-		// start the client without authentication.
+
 		opt, err := getAuthenticationDialOption(ctx, cfg, tokenSourceProvider, authMetadataClient)
 		if err != nil {
 			logger.Warnf(ctx, "Starting an unauthenticated client because: %v", err)
