@@ -462,9 +462,8 @@ func MakeLiteralForBlob(path storage.DataReference, isDir bool, format string) *
 
 func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, error) {
 	l := &core.Literal{}
-	switch t.Type.(type) {
+	switch newT := t.Type.(type) {
 	case *core.LiteralType_MapValueType:
-		newT := t.Type.(*core.LiteralType_MapValueType)
 		newV, ok := v.(map[string]interface{})
 		if !ok {
 			return nil, fmt.Errorf("map value types can only be of type map[string]interface{}, but found %v", reflect.TypeOf(v))
@@ -485,7 +484,6 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		}
 
 	case *core.LiteralType_CollectionType:
-		newT := t.Type.(*core.LiteralType_CollectionType)
 		newV, ok := v.([]interface{})
 		if !ok {
 			return nil, fmt.Errorf("collection type expected but found %v", reflect.TypeOf(v))
@@ -506,7 +504,6 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		}
 
 	case *core.LiteralType_Simple:
-		newT := t.Type.(*core.LiteralType_Simple)
 		strValue := fmt.Sprintf("%v", v)
 		if v == nil {
 			strValue = ""
@@ -534,13 +531,11 @@ func MakeLiteralForType(t *core.LiteralType, v interface{}) (*core.Literal, erro
 		return lv, nil
 
 	case *core.LiteralType_Blob:
-		newT := t.Type.(*core.LiteralType_Blob)
 		isDir := newT.Blob.Dimensionality == core.BlobType_MULTIPART
 		lv := MakeLiteralForBlob(storage.DataReference(fmt.Sprintf("%v", v)), isDir, newT.Blob.Format)
 		return lv, nil
 
 	case *core.LiteralType_Schema:
-		newT := t.Type.(*core.LiteralType_Schema)
 		lv := MakeLiteralForSchema(storage.DataReference(fmt.Sprintf("%v", v)), newT.Schema.Columns)
 		return lv, nil
 
