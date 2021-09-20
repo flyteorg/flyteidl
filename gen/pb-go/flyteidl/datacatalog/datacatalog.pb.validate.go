@@ -1211,17 +1211,17 @@ var _ interface {
 	ErrorName() string
 } = ReservationIDValidationError{}
 
-// Validate checks the field values on GetOrReserveArtifactRequest with the
+// Validate checks the field values on GetOrExtendReservationRequest with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *GetOrReserveArtifactRequest) Validate() error {
+func (m *GetOrExtendReservationRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetReservationId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return GetOrReserveArtifactRequestValidationError{
+			return GetOrExtendReservationRequestValidationError{
 				field:  "ReservationId",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -1231,13 +1231,23 @@ func (m *GetOrReserveArtifactRequest) Validate() error {
 
 	// no validation rules for OwnerId
 
+	if v, ok := interface{}(m.GetHeartbeatInterval()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrExtendReservationRequestValidationError{
+				field:  "HeartbeatInterval",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 
-// GetOrReserveArtifactRequestValidationError is the validation error returned
-// by GetOrReserveArtifactRequest.Validate if the designated constraints
-// aren't met.
-type GetOrReserveArtifactRequestValidationError struct {
+// GetOrExtendReservationRequestValidationError is the validation error
+// returned by GetOrExtendReservationRequest.Validate if the designated
+// constraints aren't met.
+type GetOrExtendReservationRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1245,24 +1255,24 @@ type GetOrReserveArtifactRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e GetOrReserveArtifactRequestValidationError) Field() string { return e.field }
+func (e GetOrExtendReservationRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e GetOrReserveArtifactRequestValidationError) Reason() string { return e.reason }
+func (e GetOrExtendReservationRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e GetOrReserveArtifactRequestValidationError) Cause() error { return e.cause }
+func (e GetOrExtendReservationRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e GetOrReserveArtifactRequestValidationError) Key() bool { return e.key }
+func (e GetOrExtendReservationRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e GetOrReserveArtifactRequestValidationError) ErrorName() string {
-	return "GetOrReserveArtifactRequestValidationError"
+func (e GetOrExtendReservationRequestValidationError) ErrorName() string {
+	return "GetOrExtendReservationRequestValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e GetOrReserveArtifactRequestValidationError) Error() string {
+func (e GetOrExtendReservationRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1274,14 +1284,14 @@ func (e GetOrReserveArtifactRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sGetOrReserveArtifactRequest.%s: %s%s",
+		"invalid %sGetOrExtendReservationRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = GetOrReserveArtifactRequestValidationError{}
+var _ error = GetOrExtendReservationRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -1289,19 +1299,19 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = GetOrReserveArtifactRequestValidationError{}
+} = GetOrExtendReservationRequestValidationError{}
 
-// Validate checks the field values on ReservationStatus with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *ReservationStatus) Validate() error {
+// Validate checks the field values on Reservation with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Reservation) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetReservationId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ReservationStatusValidationError{
+			return ReservationValidationError{
 				field:  "ReservationId",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -1311,22 +1321,20 @@ func (m *ReservationStatus) Validate() error {
 
 	// no validation rules for OwnerId
 
-	// no validation rules for State
-
-	if v, ok := interface{}(m.GetExpiresAt()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetHeartbeatInterval()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ReservationStatusValidationError{
-				field:  "ExpiresAt",
+			return ReservationValidationError{
+				field:  "HeartbeatInterval",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetHeartbeatInterval()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetExpiresAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ReservationStatusValidationError{
-				field:  "HeartbeatInterval",
+			return ReservationValidationError{
+				field:  "ExpiresAt",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1335,7 +1343,7 @@ func (m *ReservationStatus) Validate() error {
 
 	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ReservationStatusValidationError{
+			return ReservationValidationError{
 				field:  "Metadata",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -1346,9 +1354,9 @@ func (m *ReservationStatus) Validate() error {
 	return nil
 }
 
-// ReservationStatusValidationError is the validation error returned by
-// ReservationStatus.Validate if the designated constraints aren't met.
-type ReservationStatusValidationError struct {
+// ReservationValidationError is the validation error returned by
+// Reservation.Validate if the designated constraints aren't met.
+type ReservationValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1356,24 +1364,22 @@ type ReservationStatusValidationError struct {
 }
 
 // Field function returns field value.
-func (e ReservationStatusValidationError) Field() string { return e.field }
+func (e ReservationValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ReservationStatusValidationError) Reason() string { return e.reason }
+func (e ReservationValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ReservationStatusValidationError) Cause() error { return e.cause }
+func (e ReservationValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ReservationStatusValidationError) Key() bool { return e.key }
+func (e ReservationValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ReservationStatusValidationError) ErrorName() string {
-	return "ReservationStatusValidationError"
-}
+func (e ReservationValidationError) ErrorName() string { return "ReservationValidationError" }
 
 // Error satisfies the builtin error interface
-func (e ReservationStatusValidationError) Error() string {
+func (e ReservationValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1385,14 +1391,14 @@ func (e ReservationStatusValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sReservationStatus.%s: %s%s",
+		"invalid %sReservation.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ReservationStatusValidationError{}
+var _ error = ReservationValidationError{}
 
 var _ interface {
 	Field() string
@@ -1400,51 +1406,33 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ReservationStatusValidationError{}
+} = ReservationValidationError{}
 
-// Validate checks the field values on GetOrReserveArtifactResponse with the
+// Validate checks the field values on GetOrExtendReservationResponse with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *GetOrReserveArtifactResponse) Validate() error {
+func (m *GetOrExtendReservationResponse) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	switch m.Value.(type) {
-
-	case *GetOrReserveArtifactResponse_Artifact:
-
-		if v, ok := interface{}(m.GetArtifact()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return GetOrReserveArtifactResponseValidationError{
-					field:  "Artifact",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetReservation()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetOrExtendReservationResponseValidationError{
+				field:  "Reservation",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
-
-	case *GetOrReserveArtifactResponse_ReservationStatus:
-
-		if v, ok := interface{}(m.GetReservationStatus()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return GetOrReserveArtifactResponseValidationError{
-					field:  "ReservationStatus",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	return nil
 }
 
-// GetOrReserveArtifactResponseValidationError is the validation error returned
-// by GetOrReserveArtifactResponse.Validate if the designated constraints
-// aren't met.
-type GetOrReserveArtifactResponseValidationError struct {
+// GetOrExtendReservationResponseValidationError is the validation error
+// returned by GetOrExtendReservationResponse.Validate if the designated
+// constraints aren't met.
+type GetOrExtendReservationResponseValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1452,24 +1440,24 @@ type GetOrReserveArtifactResponseValidationError struct {
 }
 
 // Field function returns field value.
-func (e GetOrReserveArtifactResponseValidationError) Field() string { return e.field }
+func (e GetOrExtendReservationResponseValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e GetOrReserveArtifactResponseValidationError) Reason() string { return e.reason }
+func (e GetOrExtendReservationResponseValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e GetOrReserveArtifactResponseValidationError) Cause() error { return e.cause }
+func (e GetOrExtendReservationResponseValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e GetOrReserveArtifactResponseValidationError) Key() bool { return e.key }
+func (e GetOrExtendReservationResponseValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e GetOrReserveArtifactResponseValidationError) ErrorName() string {
-	return "GetOrReserveArtifactResponseValidationError"
+func (e GetOrExtendReservationResponseValidationError) ErrorName() string {
+	return "GetOrExtendReservationResponseValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e GetOrReserveArtifactResponseValidationError) Error() string {
+func (e GetOrExtendReservationResponseValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1481,14 +1469,14 @@ func (e GetOrReserveArtifactResponseValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sGetOrReserveArtifactResponse.%s: %s%s",
+		"invalid %sGetOrExtendReservationResponse.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = GetOrReserveArtifactResponseValidationError{}
+var _ error = GetOrExtendReservationResponseValidationError{}
 
 var _ interface {
 	Field() string
@@ -1496,7 +1484,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = GetOrReserveArtifactResponseValidationError{}
+} = GetOrExtendReservationResponseValidationError{}
 
 // Validate checks the field values on ReleaseReservationRequest with the rules
 // defined in the proto definition for this message. If any rules are

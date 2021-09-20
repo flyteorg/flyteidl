@@ -52,10 +52,10 @@ class DataCatalogStub(object):
         request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsRequest.SerializeToString,
         response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsResponse.FromString,
         )
-    self.GetOrReserveArtifact = channel.unary_unary(
-        '/datacatalog.DataCatalog/GetOrReserveArtifact',
-        request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.FromString,
+    self.GetOrExtendReservation = channel.unary_unary(
+        '/datacatalog.DataCatalog/GetOrExtendReservation',
+        request_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrExtendReservationRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrExtendReservationResponse.FromString,
         )
     self.ReleaseReservation = channel.unary_unary(
         '/datacatalog.DataCatalog/ReleaseReservation',
@@ -122,7 +122,7 @@ class DataCatalogServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetOrReserveArtifact(self, request, context):
+  def GetOrExtendReservation(self, request, context):
     """Get an artifact and the corresponding data. If the artifact does not exist,
     try to reserve a spot for populating the artifact.
     Once you preserve a spot, you should peridically extend the reservation before expiration
@@ -136,6 +136,7 @@ class DataCatalogServicer(object):
     expires, another task B may take over the reservation, resulting in two tasks
     A and B running in parallel. So a third task C may get the Artifact from A or B,
     whichever writes last.
+    TODO - update comment
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -187,10 +188,10 @@ def add_DataCatalogServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsRequest.FromString,
           response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.ListDatasetsResponse.SerializeToString,
       ),
-      'GetOrReserveArtifact': grpc.unary_unary_rpc_method_handler(
-          servicer.GetOrReserveArtifact,
-          request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactRequest.FromString,
-          response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrReserveArtifactResponse.SerializeToString,
+      'GetOrExtendReservation': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrExtendReservation,
+          request_deserializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrExtendReservationRequest.FromString,
+          response_serializer=flyteidl_dot_datacatalog_dot_datacatalog__pb2.GetOrExtendReservationResponse.SerializeToString,
       ),
       'ReleaseReservation': grpc.unary_unary_rpc_method_handler(
           servicer.ReleaseReservation,

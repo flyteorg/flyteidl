@@ -256,26 +256,26 @@ func (_m *DataCatalogClient) GetDataset(ctx context.Context, in *datacatalog.Get
 	return r0, r1
 }
 
-type DataCatalogClient_GetOrReserveArtifact struct {
+type DataCatalogClient_GetOrExtendReservation struct {
 	*mock.Call
 }
 
-func (_m DataCatalogClient_GetOrReserveArtifact) Return(_a0 *datacatalog.GetOrReserveArtifactResponse, _a1 error) *DataCatalogClient_GetOrReserveArtifact {
-	return &DataCatalogClient_GetOrReserveArtifact{Call: _m.Call.Return(_a0, _a1)}
+func (_m DataCatalogClient_GetOrExtendReservation) Return(_a0 *datacatalog.GetOrExtendReservationResponse, _a1 error) *DataCatalogClient_GetOrExtendReservation {
+	return &DataCatalogClient_GetOrExtendReservation{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *DataCatalogClient) OnGetOrReserveArtifact(ctx context.Context, in *datacatalog.GetOrReserveArtifactRequest, opts ...grpc.CallOption) *DataCatalogClient_GetOrReserveArtifact {
-	c := _m.On("GetOrReserveArtifact", ctx, in, opts)
-	return &DataCatalogClient_GetOrReserveArtifact{Call: c}
+func (_m *DataCatalogClient) OnGetOrExtendReservation(ctx context.Context, in *datacatalog.GetOrExtendReservationRequest, opts ...grpc.CallOption) *DataCatalogClient_GetOrExtendReservation {
+	c := _m.On("GetOrExtendReservation", ctx, in, opts)
+	return &DataCatalogClient_GetOrExtendReservation{Call: c}
 }
 
-func (_m *DataCatalogClient) OnGetOrReserveArtifactMatch(matchers ...interface{}) *DataCatalogClient_GetOrReserveArtifact {
-	c := _m.On("GetOrReserveArtifact", matchers...)
-	return &DataCatalogClient_GetOrReserveArtifact{Call: c}
+func (_m *DataCatalogClient) OnGetOrExtendReservationMatch(matchers ...interface{}) *DataCatalogClient_GetOrExtendReservation {
+	c := _m.On("GetOrExtendReservation", matchers...)
+	return &DataCatalogClient_GetOrExtendReservation{Call: c}
 }
 
-// GetOrReserveArtifact provides a mock function with given fields: ctx, in, opts
-func (_m *DataCatalogClient) GetOrReserveArtifact(ctx context.Context, in *datacatalog.GetOrReserveArtifactRequest, opts ...grpc.CallOption) (*datacatalog.GetOrReserveArtifactResponse, error) {
+// GetOrExtendReservation provides a mock function with given fields: ctx, in, opts
+func (_m *DataCatalogClient) GetOrExtendReservation(ctx context.Context, in *datacatalog.GetOrExtendReservationRequest, opts ...grpc.CallOption) (*datacatalog.GetOrExtendReservationResponse, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -285,17 +285,17 @@ func (_m *DataCatalogClient) GetOrReserveArtifact(ctx context.Context, in *datac
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *datacatalog.GetOrReserveArtifactResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *datacatalog.GetOrReserveArtifactRequest, ...grpc.CallOption) *datacatalog.GetOrReserveArtifactResponse); ok {
+	var r0 *datacatalog.GetOrExtendReservationResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *datacatalog.GetOrExtendReservationRequest, ...grpc.CallOption) *datacatalog.GetOrExtendReservationResponse); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*datacatalog.GetOrReserveArtifactResponse)
+			r0 = ret.Get(0).(*datacatalog.GetOrExtendReservationResponse)
 		}
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *datacatalog.GetOrReserveArtifactRequest, ...grpc.CallOption) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *datacatalog.GetOrExtendReservationRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

@@ -32,7 +32,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::g
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Tag_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Dataset_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_SinglePropertyFilter_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fdatacatalog_2fdatacatalog_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_Artifact_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
@@ -100,20 +100,18 @@ class ReservationIDDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ReservationID> _instance;
 } _ReservationID_default_instance_;
-class GetOrReserveArtifactRequestDefaultTypeInternal {
+class GetOrExtendReservationRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GetOrReserveArtifactRequest> _instance;
-} _GetOrReserveArtifactRequest_default_instance_;
-class ReservationStatusDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<GetOrExtendReservationRequest> _instance;
+} _GetOrExtendReservationRequest_default_instance_;
+class ReservationDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ReservationStatus> _instance;
-} _ReservationStatus_default_instance_;
-class GetOrReserveArtifactResponseDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<Reservation> _instance;
+} _Reservation_default_instance_;
+class GetOrExtendReservationResponseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<GetOrReserveArtifactResponse> _instance;
-  const ::datacatalog::Artifact* artifact_;
-  const ::datacatalog::ReservationStatus* reservation_status_;
-} _GetOrReserveArtifactResponse_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<GetOrExtendReservationResponse> _instance;
+} _GetOrExtendReservationResponse_default_instance_;
 class ReleaseReservationRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ReleaseReservationRequest> _instance;
@@ -423,54 +421,54 @@ static void InitDefaultsReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2epro
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
       &scc_info_DatasetID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
 
-static void InitDefaultsGetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
+static void InitDefaultsGetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::datacatalog::_GetOrReserveArtifactRequest_default_instance_;
-    new (ptr) ::datacatalog::GetOrReserveArtifactRequest();
+    void* ptr = &::datacatalog::_GetOrExtendReservationRequest_default_instance_;
+    new (ptr) ::datacatalog::GetOrExtendReservationRequest();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::datacatalog::GetOrReserveArtifactRequest::InitAsDefaultInstance();
+  ::datacatalog::GetOrExtendReservationRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
-      &scc_info_ReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
-
-static void InitDefaultsReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::datacatalog::_ReservationStatus_default_instance_;
-    new (ptr) ::datacatalog::ReservationStatus();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::datacatalog::ReservationStatus::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<4> scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
+::google::protobuf::internal::SCCInfo<2> scc_info_GetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsGetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
       &scc_info_ReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
+      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
+
+static void InitDefaultsReservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::datacatalog::_Reservation_default_instance_;
+    new (ptr) ::datacatalog::Reservation();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::datacatalog::Reservation::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<4> scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsReservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
+      &scc_info_ReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,
       &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_Metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
 
-static void InitDefaultsGetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
+static void InitDefaultsGetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::datacatalog::_GetOrReserveArtifactResponse_default_instance_;
-    new (ptr) ::datacatalog::GetOrReserveArtifactResponse();
+    void* ptr = &::datacatalog::_GetOrExtendReservationResponse_default_instance_;
+    new (ptr) ::datacatalog::GetOrExtendReservationResponse();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::datacatalog::GetOrReserveArtifactResponse::InitAsDefaultInstance();
+  ::datacatalog::GetOrExtendReservationResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsGetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
-      &scc_info_Artifact_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,
-      &scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_GetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto}, {
+      &scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base,}};
 
 static void InitDefaultsReleaseReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -757,9 +755,9 @@ void InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ListDatasetsRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ListDatasetsResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReservationID_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReleaseReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReleaseReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Dataset_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
@@ -781,7 +779,7 @@ void InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[36];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[4];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fdatacatalog_2fdatacatalog_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -882,31 +880,29 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fdatacatalog_2fdatacatalo
   PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationID, dataset_id_),
   PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationID, tag_name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, reservation_id_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactRequest, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationRequest, reservation_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationRequest, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationRequest, heartbeat_interval_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, reservation_id_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, owner_id_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, state_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, expires_at_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, heartbeat_interval_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::ReservationStatus, metadata_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, reservation_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, heartbeat_interval_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, expires_at_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::Reservation, metadata_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, _oneof_case_[0]),
+  ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  offsetof(::datacatalog::GetOrReserveArtifactResponseDefaultTypeInternal, artifact_),
-  offsetof(::datacatalog::GetOrReserveArtifactResponseDefaultTypeInternal, reservation_status_),
-  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrReserveArtifactResponse, value_),
+  PROTOBUF_FIELD_OFFSET(::datacatalog::GetOrExtendReservationResponse, reservation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::datacatalog::ReleaseReservationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1067,27 +1063,27 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 75, -1, sizeof(::datacatalog::ListDatasetsRequest)},
   { 82, -1, sizeof(::datacatalog::ListDatasetsResponse)},
   { 89, -1, sizeof(::datacatalog::ReservationID)},
-  { 96, -1, sizeof(::datacatalog::GetOrReserveArtifactRequest)},
-  { 103, -1, sizeof(::datacatalog::ReservationStatus)},
-  { 114, -1, sizeof(::datacatalog::GetOrReserveArtifactResponse)},
-  { 122, -1, sizeof(::datacatalog::ReleaseReservationRequest)},
-  { 129, -1, sizeof(::datacatalog::ReleaseReservationResponse)},
-  { 134, -1, sizeof(::datacatalog::Dataset)},
-  { 142, -1, sizeof(::datacatalog::Partition)},
-  { 149, -1, sizeof(::datacatalog::DatasetID)},
-  { 159, -1, sizeof(::datacatalog::Artifact)},
-  { 171, -1, sizeof(::datacatalog::ArtifactData)},
-  { 178, -1, sizeof(::datacatalog::Tag)},
-  { 186, 193, sizeof(::datacatalog::Metadata_KeyMapEntry_DoNotUse)},
-  { 195, -1, sizeof(::datacatalog::Metadata)},
-  { 201, -1, sizeof(::datacatalog::FilterExpression)},
-  { 207, -1, sizeof(::datacatalog::SinglePropertyFilter)},
-  { 218, -1, sizeof(::datacatalog::ArtifactPropertyFilter)},
-  { 225, -1, sizeof(::datacatalog::TagPropertyFilter)},
-  { 232, -1, sizeof(::datacatalog::PartitionPropertyFilter)},
-  { 239, -1, sizeof(::datacatalog::KeyValuePair)},
-  { 246, -1, sizeof(::datacatalog::DatasetPropertyFilter)},
-  { 256, -1, sizeof(::datacatalog::PaginationOptions)},
+  { 96, -1, sizeof(::datacatalog::GetOrExtendReservationRequest)},
+  { 104, -1, sizeof(::datacatalog::Reservation)},
+  { 114, -1, sizeof(::datacatalog::GetOrExtendReservationResponse)},
+  { 120, -1, sizeof(::datacatalog::ReleaseReservationRequest)},
+  { 127, -1, sizeof(::datacatalog::ReleaseReservationResponse)},
+  { 132, -1, sizeof(::datacatalog::Dataset)},
+  { 140, -1, sizeof(::datacatalog::Partition)},
+  { 147, -1, sizeof(::datacatalog::DatasetID)},
+  { 157, -1, sizeof(::datacatalog::Artifact)},
+  { 169, -1, sizeof(::datacatalog::ArtifactData)},
+  { 176, -1, sizeof(::datacatalog::Tag)},
+  { 184, 191, sizeof(::datacatalog::Metadata_KeyMapEntry_DoNotUse)},
+  { 193, -1, sizeof(::datacatalog::Metadata)},
+  { 199, -1, sizeof(::datacatalog::FilterExpression)},
+  { 205, -1, sizeof(::datacatalog::SinglePropertyFilter)},
+  { 216, -1, sizeof(::datacatalog::ArtifactPropertyFilter)},
+  { 223, -1, sizeof(::datacatalog::TagPropertyFilter)},
+  { 230, -1, sizeof(::datacatalog::PartitionPropertyFilter)},
+  { 237, -1, sizeof(::datacatalog::KeyValuePair)},
+  { 244, -1, sizeof(::datacatalog::DatasetPropertyFilter)},
+  { 254, -1, sizeof(::datacatalog::PaginationOptions)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1106,9 +1102,9 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ListDatasetsRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ListDatasetsResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ReservationID_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrReserveArtifactRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ReservationStatus_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrReserveArtifactResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrExtendReservationRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_Reservation_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_GetOrExtendReservationResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ReleaseReservationRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_ReleaseReservationResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::datacatalog::_Dataset_default_instance_),
@@ -1167,96 +1163,93 @@ const char descriptor_table_protodef_flyteidl_2fdatacatalog_2fdatacatalog_2eprot
   "\024.datacatalog.Dataset\022\022\n\nnext_token\030\002 \001("
   "\t\"M\n\rReservationID\022*\n\ndataset_id\030\001 \001(\0132\026"
   ".datacatalog.DatasetID\022\020\n\010tag_name\030\002 \001(\t"
-  "\"c\n\033GetOrReserveArtifactRequest\0222\n\016reser"
-  "vation_id\030\001 \001(\0132\032.datacatalog.Reservatio"
-  "nID\022\020\n\010owner_id\030\002 \001(\t\"\316\002\n\021ReservationSta"
-  "tus\0222\n\016reservation_id\030\001 \001(\0132\032.datacatalo"
-  "g.ReservationID\022\020\n\010owner_id\030\002 \001(\t\0223\n\005sta"
-  "te\030\003 \001(\0162$.datacatalog.ReservationStatus"
-  ".State\022.\n\nexpires_at\030\004 \001(\0132\032.google.prot"
-  "obuf.Timestamp\0225\n\022heartbeat_interval\030\005 \001"
-  "(\0132\031.google.protobuf.Duration\022\'\n\010metadat"
-  "a\030\006 \001(\0132\025.datacatalog.Metadata\".\n\005State\022"
-  "\014\n\010ACQUIRED\020\000\022\027\n\023ALREADY_IN_PROGRESS\020\001\"\220"
-  "\001\n\034GetOrReserveArtifactResponse\022)\n\010artif"
-  "act\030\001 \001(\0132\025.datacatalog.ArtifactH\000\022<\n\022re"
-  "servation_status\030\002 \001(\0132\036.datacatalog.Res"
-  "ervationStatusH\000B\007\n\005value\"a\n\031ReleaseRese"
-  "rvationRequest\0222\n\016reservation_id\030\001 \001(\0132\032"
-  ".datacatalog.ReservationID\022\020\n\010owner_id\030\002"
-  " \001(\t\"\034\n\032ReleaseReservationResponse\"m\n\007Da"
-  "taset\022\"\n\002id\030\001 \001(\0132\026.datacatalog.DatasetI"
-  "D\022\'\n\010metadata\030\002 \001(\0132\025.datacatalog.Metada"
-  "ta\022\025\n\rpartitionKeys\030\003 \003(\t\"\'\n\tPartition\022\013"
-  "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"Y\n\tDatasetID\022"
-  "\017\n\007project\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006domain"
-  "\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004UUID\030\005 \001(\t\"\215\002"
-  "\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'\n\007dataset\030\002 \001(\0132"
-  "\026.datacatalog.DatasetID\022\'\n\004data\030\003 \003(\0132\031."
-  "datacatalog.ArtifactData\022\'\n\010metadata\030\004 \001"
-  "(\0132\025.datacatalog.Metadata\022*\n\npartitions\030"
-  "\005 \003(\0132\026.datacatalog.Partition\022\036\n\004tags\030\006 "
-  "\003(\0132\020.datacatalog.Tag\022.\n\ncreated_at\030\007 \001("
-  "\0132\032.google.protobuf.Timestamp\"C\n\014Artifac"
-  "tData\022\014\n\004name\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.fly"
-  "teidl.core.Literal\"Q\n\003Tag\022\014\n\004name\030\001 \001(\t\022"
-  "\023\n\013artifact_id\030\002 \001(\t\022\'\n\007dataset\030\003 \001(\0132\026."
-  "datacatalog.DatasetID\"m\n\010Metadata\0222\n\007key"
-  "_map\030\001 \003(\0132!.datacatalog.Metadata.KeyMap"
-  "Entry\032-\n\013KeyMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-  "ue\030\002 \001(\t:\0028\001\"F\n\020FilterExpression\0222\n\007filt"
-  "ers\030\001 \003(\0132!.datacatalog.SinglePropertyFi"
-  "lter\"\211\003\n\024SinglePropertyFilter\0224\n\ntag_fil"
-  "ter\030\001 \001(\0132\036.datacatalog.TagPropertyFilte"
-  "rH\000\022@\n\020partition_filter\030\002 \001(\0132$.datacata"
-  "log.PartitionPropertyFilterH\000\022>\n\017artifac"
-  "t_filter\030\003 \001(\0132#.datacatalog.ArtifactPro"
-  "pertyFilterH\000\022<\n\016dataset_filter\030\004 \001(\0132\"."
-  "datacatalog.DatasetPropertyFilterH\000\022F\n\010o"
-  "perator\030\n \001(\01624.datacatalog.SingleProper"
-  "tyFilter.ComparisonOperator\" \n\022Compariso"
-  "nOperator\022\n\n\006EQUALS\020\000B\021\n\017property_filter"
-  "\";\n\026ArtifactPropertyFilter\022\025\n\013artifact_i"
-  "d\030\001 \001(\tH\000B\n\n\010property\"3\n\021TagPropertyFilt"
-  "er\022\022\n\010tag_name\030\001 \001(\tH\000B\n\n\010property\"S\n\027Pa"
-  "rtitionPropertyFilter\022,\n\007key_val\030\001 \001(\0132\031"
-  ".datacatalog.KeyValuePairH\000B\n\n\010property\""
-  "*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-  "\001(\t\"k\n\025DatasetPropertyFilter\022\021\n\007project\030"
-  "\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022\020\n\006domain\030\003 \001(\tH"
-  "\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010property\"\361\001\n\021Pag"
-  "inationOptions\022\r\n\005limit\030\001 \001(\r\022\r\n\005token\030\002"
-  " \001(\t\0227\n\007sortKey\030\003 \001(\0162&.datacatalog.Pagi"
-  "nationOptions.SortKey\022;\n\tsortOrder\030\004 \001(\016"
-  "2(.datacatalog.PaginationOptions.SortOrd"
-  "er\"*\n\tSortOrder\022\016\n\nDESCENDING\020\000\022\r\n\tASCEN"
-  "DING\020\001\"\034\n\007SortKey\022\021\n\rCREATION_TIME\020\0002\245\006\n"
-  "\013DataCatalog\022V\n\rCreateDataset\022!.datacata"
-  "log.CreateDatasetRequest\032\".datacatalog.C"
-  "reateDatasetResponse\022M\n\nGetDataset\022\036.dat"
-  "acatalog.GetDatasetRequest\032\037.datacatalog"
-  ".GetDatasetResponse\022Y\n\016CreateArtifact\022\"."
-  "datacatalog.CreateArtifactRequest\032#.data"
-  "catalog.CreateArtifactResponse\022P\n\013GetArt"
-  "ifact\022\037.datacatalog.GetArtifactRequest\032 "
-  ".datacatalog.GetArtifactResponse\022A\n\006AddT"
-  "ag\022\032.datacatalog.AddTagRequest\032\033.datacat"
-  "alog.AddTagResponse\022V\n\rListArtifacts\022!.d"
-  "atacatalog.ListArtifactsRequest\032\".dataca"
-  "talog.ListArtifactsResponse\022S\n\014ListDatas"
-  "ets\022 .datacatalog.ListDatasetsRequest\032!."
-  "datacatalog.ListDatasetsResponse\022k\n\024GetO"
-  "rReserveArtifact\022(.datacatalog.GetOrRese"
-  "rveArtifactRequest\032).datacatalog.GetOrRe"
-  "serveArtifactResponse\022e\n\022ReleaseReservat"
-  "ion\022&.datacatalog.ReleaseReservationRequ"
-  "est\032\'.datacatalog.ReleaseReservationResp"
-  "onseb\006proto3"
+  "\"\234\001\n\035GetOrExtendReservationRequest\0222\n\016re"
+  "servation_id\030\001 \001(\0132\032.datacatalog.Reserva"
+  "tionID\022\020\n\010owner_id\030\002 \001(\t\0225\n\022heartbeat_in"
+  "terval\030\003 \001(\0132\031.google.protobuf.Duration\""
+  "\343\001\n\013Reservation\0222\n\016reservation_id\030\001 \001(\0132"
+  "\032.datacatalog.ReservationID\022\020\n\010owner_id\030"
+  "\002 \001(\t\0225\n\022heartbeat_interval\030\003 \001(\0132\031.goog"
+  "le.protobuf.Duration\022.\n\nexpires_at\030\004 \001(\013"
+  "2\032.google.protobuf.Timestamp\022\'\n\010metadata"
+  "\030\006 \001(\0132\025.datacatalog.Metadata\"O\n\036GetOrEx"
+  "tendReservationResponse\022-\n\013reservation\030\001"
+  " \001(\0132\030.datacatalog.Reservation\"a\n\031Releas"
+  "eReservationRequest\0222\n\016reservation_id\030\001 "
+  "\001(\0132\032.datacatalog.ReservationID\022\020\n\010owner"
+  "_id\030\002 \001(\t\"\034\n\032ReleaseReservationResponse\""
+  "m\n\007Dataset\022\"\n\002id\030\001 \001(\0132\026.datacatalog.Dat"
+  "asetID\022\'\n\010metadata\030\002 \001(\0132\025.datacatalog.M"
+  "etadata\022\025\n\rpartitionKeys\030\003 \003(\t\"\'\n\tPartit"
+  "ion\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"Y\n\tDatas"
+  "etID\022\017\n\007project\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006d"
+  "omain\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004UUID\030\005 \001"
+  "(\t\"\215\002\n\010Artifact\022\n\n\002id\030\001 \001(\t\022\'\n\007dataset\030\002"
+  " \001(\0132\026.datacatalog.DatasetID\022\'\n\004data\030\003 \003"
+  "(\0132\031.datacatalog.ArtifactData\022\'\n\010metadat"
+  "a\030\004 \001(\0132\025.datacatalog.Metadata\022*\n\npartit"
+  "ions\030\005 \003(\0132\026.datacatalog.Partition\022\036\n\004ta"
+  "gs\030\006 \003(\0132\020.datacatalog.Tag\022.\n\ncreated_at"
+  "\030\007 \001(\0132\032.google.protobuf.Timestamp\"C\n\014Ar"
+  "tifactData\022\014\n\004name\030\001 \001(\t\022%\n\005value\030\002 \001(\0132"
+  "\026.flyteidl.core.Literal\"Q\n\003Tag\022\014\n\004name\030\001"
+  " \001(\t\022\023\n\013artifact_id\030\002 \001(\t\022\'\n\007dataset\030\003 \001"
+  "(\0132\026.datacatalog.DatasetID\"m\n\010Metadata\0222"
+  "\n\007key_map\030\001 \003(\0132!.datacatalog.Metadata.K"
+  "eyMapEntry\032-\n\013KeyMapEntry\022\013\n\003key\030\001 \001(\t\022\r"
+  "\n\005value\030\002 \001(\t:\0028\001\"F\n\020FilterExpression\0222\n"
+  "\007filters\030\001 \003(\0132!.datacatalog.SinglePrope"
+  "rtyFilter\"\211\003\n\024SinglePropertyFilter\0224\n\nta"
+  "g_filter\030\001 \001(\0132\036.datacatalog.TagProperty"
+  "FilterH\000\022@\n\020partition_filter\030\002 \001(\0132$.dat"
+  "acatalog.PartitionPropertyFilterH\000\022>\n\017ar"
+  "tifact_filter\030\003 \001(\0132#.datacatalog.Artifa"
+  "ctPropertyFilterH\000\022<\n\016dataset_filter\030\004 \001"
+  "(\0132\".datacatalog.DatasetPropertyFilterH\000"
+  "\022F\n\010operator\030\n \001(\01624.datacatalog.SingleP"
+  "ropertyFilter.ComparisonOperator\" \n\022Comp"
+  "arisonOperator\022\n\n\006EQUALS\020\000B\021\n\017property_f"
+  "ilter\";\n\026ArtifactPropertyFilter\022\025\n\013artif"
+  "act_id\030\001 \001(\tH\000B\n\n\010property\"3\n\021TagPropert"
+  "yFilter\022\022\n\010tag_name\030\001 \001(\tH\000B\n\n\010property\""
+  "S\n\027PartitionPropertyFilter\022,\n\007key_val\030\001 "
+  "\001(\0132\031.datacatalog.KeyValuePairH\000B\n\n\010prop"
+  "erty\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+  "ue\030\002 \001(\t\"k\n\025DatasetPropertyFilter\022\021\n\007pro"
+  "ject\030\001 \001(\tH\000\022\016\n\004name\030\002 \001(\tH\000\022\020\n\006domain\030\003"
+  " \001(\tH\000\022\021\n\007version\030\004 \001(\tH\000B\n\n\010property\"\361\001"
+  "\n\021PaginationOptions\022\r\n\005limit\030\001 \001(\r\022\r\n\005to"
+  "ken\030\002 \001(\t\0227\n\007sortKey\030\003 \001(\0162&.datacatalog"
+  ".PaginationOptions.SortKey\022;\n\tsortOrder\030"
+  "\004 \001(\0162(.datacatalog.PaginationOptions.So"
+  "rtOrder\"*\n\tSortOrder\022\016\n\nDESCENDING\020\000\022\r\n\t"
+  "ASCENDING\020\001\"\034\n\007SortKey\022\021\n\rCREATION_TIME\020"
+  "\0002\253\006\n\013DataCatalog\022V\n\rCreateDataset\022!.dat"
+  "acatalog.CreateDatasetRequest\032\".datacata"
+  "log.CreateDatasetResponse\022M\n\nGetDataset\022"
+  "\036.datacatalog.GetDatasetRequest\032\037.dataca"
+  "talog.GetDatasetResponse\022Y\n\016CreateArtifa"
+  "ct\022\".datacatalog.CreateArtifactRequest\032#"
+  ".datacatalog.CreateArtifactResponse\022P\n\013G"
+  "etArtifact\022\037.datacatalog.GetArtifactRequ"
+  "est\032 .datacatalog.GetArtifactResponse\022A\n"
+  "\006AddTag\022\032.datacatalog.AddTagRequest\032\033.da"
+  "tacatalog.AddTagResponse\022V\n\rListArtifact"
+  "s\022!.datacatalog.ListArtifactsRequest\032\".d"
+  "atacatalog.ListArtifactsResponse\022S\n\014List"
+  "Datasets\022 .datacatalog.ListDatasetsReque"
+  "st\032!.datacatalog.ListDatasetsResponse\022q\n"
+  "\026GetOrExtendReservation\022*.datacatalog.Ge"
+  "tOrExtendReservationRequest\032+.datacatalo"
+  "g.GetOrExtendReservationResponse\022e\n\022Rele"
+  "aseReservation\022&.datacatalog.ReleaseRese"
+  "rvationRequest\032\'.datacatalog.ReleaseRese"
+  "rvationResponseb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = {
   false, InitDefaults_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 
   descriptor_table_protodef_flyteidl_2fdatacatalog_2fdatacatalog_2eproto,
-  "flyteidl/datacatalog/datacatalog.proto", &assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 4612,
+  "flyteidl/datacatalog/datacatalog.proto", &assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto, 4503,
 };
 
 void AddDescriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
@@ -1272,30 +1265,9 @@ void AddDescriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto() {
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_flyteidl_2fdatacatalog_2fdatacatalog_2eproto = []() { AddDescriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto(); return true; }();
 namespace datacatalog {
-const ::google::protobuf::EnumDescriptor* ReservationStatus_State_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[0];
-}
-bool ReservationStatus_State_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ReservationStatus_State ReservationStatus::ACQUIRED;
-const ReservationStatus_State ReservationStatus::ALREADY_IN_PROGRESS;
-const ReservationStatus_State ReservationStatus::State_MIN;
-const ReservationStatus_State ReservationStatus::State_MAX;
-const int ReservationStatus::State_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* SinglePropertyFilter_ComparisonOperator_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[1];
+  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[0];
 }
 bool SinglePropertyFilter_ComparisonOperator_IsValid(int value) {
   switch (value) {
@@ -1314,7 +1286,7 @@ const int SinglePropertyFilter::ComparisonOperator_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* PaginationOptions_SortOrder_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[2];
+  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[1];
 }
 bool PaginationOptions_SortOrder_IsValid(int value) {
   switch (value) {
@@ -1335,7 +1307,7 @@ const int PaginationOptions::SortOrder_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* PaginationOptions_SortKey_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[3];
+  return file_level_enum_descriptors_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[2];
 }
 bool PaginationOptions_SortKey_IsValid(int value) {
   switch (value) {
@@ -6031,30 +6003,44 @@ void ReservationID::InternalSwap(ReservationID* other) {
 
 // ===================================================================
 
-void GetOrReserveArtifactRequest::InitAsDefaultInstance() {
-  ::datacatalog::_GetOrReserveArtifactRequest_default_instance_._instance.get_mutable()->reservation_id_ = const_cast< ::datacatalog::ReservationID*>(
+void GetOrExtendReservationRequest::InitAsDefaultInstance() {
+  ::datacatalog::_GetOrExtendReservationRequest_default_instance_._instance.get_mutable()->reservation_id_ = const_cast< ::datacatalog::ReservationID*>(
       ::datacatalog::ReservationID::internal_default_instance());
+  ::datacatalog::_GetOrExtendReservationRequest_default_instance_._instance.get_mutable()->heartbeat_interval_ = const_cast< ::google::protobuf::Duration*>(
+      ::google::protobuf::Duration::internal_default_instance());
 }
-class GetOrReserveArtifactRequest::HasBitSetters {
+class GetOrExtendReservationRequest::HasBitSetters {
  public:
-  static const ::datacatalog::ReservationID& reservation_id(const GetOrReserveArtifactRequest* msg);
+  static const ::datacatalog::ReservationID& reservation_id(const GetOrExtendReservationRequest* msg);
+  static const ::google::protobuf::Duration& heartbeat_interval(const GetOrExtendReservationRequest* msg);
 };
 
 const ::datacatalog::ReservationID&
-GetOrReserveArtifactRequest::HasBitSetters::reservation_id(const GetOrReserveArtifactRequest* msg) {
+GetOrExtendReservationRequest::HasBitSetters::reservation_id(const GetOrExtendReservationRequest* msg) {
   return *msg->reservation_id_;
 }
+const ::google::protobuf::Duration&
+GetOrExtendReservationRequest::HasBitSetters::heartbeat_interval(const GetOrExtendReservationRequest* msg) {
+  return *msg->heartbeat_interval_;
+}
+void GetOrExtendReservationRequest::clear_heartbeat_interval() {
+  if (GetArenaNoVirtual() == nullptr && heartbeat_interval_ != nullptr) {
+    delete heartbeat_interval_;
+  }
+  heartbeat_interval_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GetOrReserveArtifactRequest::kReservationIdFieldNumber;
-const int GetOrReserveArtifactRequest::kOwnerIdFieldNumber;
+const int GetOrExtendReservationRequest::kReservationIdFieldNumber;
+const int GetOrExtendReservationRequest::kOwnerIdFieldNumber;
+const int GetOrExtendReservationRequest::kHeartbeatIntervalFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-GetOrReserveArtifactRequest::GetOrReserveArtifactRequest()
+GetOrExtendReservationRequest::GetOrExtendReservationRequest()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(constructor:datacatalog.GetOrExtendReservationRequest)
 }
-GetOrReserveArtifactRequest::GetOrReserveArtifactRequest(const GetOrReserveArtifactRequest& from)
+GetOrExtendReservationRequest::GetOrExtendReservationRequest(const GetOrExtendReservationRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -6067,37 +6053,45 @@ GetOrReserveArtifactRequest::GetOrReserveArtifactRequest(const GetOrReserveArtif
   } else {
     reservation_id_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrReserveArtifactRequest)
+  if (from.has_heartbeat_interval()) {
+    heartbeat_interval_ = new ::google::protobuf::Duration(*from.heartbeat_interval_);
+  } else {
+    heartbeat_interval_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrExtendReservationRequest)
 }
 
-void GetOrReserveArtifactRequest::SharedCtor() {
+void GetOrExtendReservationRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+      &scc_info_GetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   owner_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  reservation_id_ = nullptr;
+  ::memset(&reservation_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&heartbeat_interval_) -
+      reinterpret_cast<char*>(&reservation_id_)) + sizeof(heartbeat_interval_));
 }
 
-GetOrReserveArtifactRequest::~GetOrReserveArtifactRequest() {
-  // @@protoc_insertion_point(destructor:datacatalog.GetOrReserveArtifactRequest)
+GetOrExtendReservationRequest::~GetOrExtendReservationRequest() {
+  // @@protoc_insertion_point(destructor:datacatalog.GetOrExtendReservationRequest)
   SharedDtor();
 }
 
-void GetOrReserveArtifactRequest::SharedDtor() {
+void GetOrExtendReservationRequest::SharedDtor() {
   owner_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete reservation_id_;
+  if (this != internal_default_instance()) delete heartbeat_interval_;
 }
 
-void GetOrReserveArtifactRequest::SetCachedSize(int size) const {
+void GetOrExtendReservationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetOrReserveArtifactRequest& GetOrReserveArtifactRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrReserveArtifactRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+const GetOrExtendReservationRequest& GetOrExtendReservationRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrExtendReservationRequest_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GetOrReserveArtifactRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrReserveArtifactRequest)
+void GetOrExtendReservationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrExtendReservationRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6107,13 +6101,17 @@ void GetOrReserveArtifactRequest::Clear() {
     delete reservation_id_;
   }
   reservation_id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && heartbeat_interval_ != nullptr) {
+    delete heartbeat_interval_;
+  }
+  heartbeat_interval_ = nullptr;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* GetOrReserveArtifactRequest::_InternalParse(const char* begin, const char* end, void* object,
+const char* GetOrExtendReservationRequest::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<GetOrReserveArtifactRequest*>(object);
+  auto msg = static_cast<GetOrExtendReservationRequest*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -6141,7 +6139,7 @@ const char* GetOrReserveArtifactRequest::_InternalParse(const char* begin, const
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("datacatalog.GetOrReserveArtifactRequest.owner_id");
+        ctx->extra_parse_data().SetFieldName("datacatalog.GetOrExtendReservationRequest.owner_id");
         object = msg->mutable_owner_id();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -6150,6 +6148,19 @@ const char* GetOrReserveArtifactRequest::_InternalParse(const char* begin, const
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .google.protobuf.Duration heartbeat_interval = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Duration::_InternalParse;
+        object = msg->mutable_heartbeat_interval();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -6176,11 +6187,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool GetOrReserveArtifactRequest::MergePartialFromCodedStream(
+bool GetOrExtendReservationRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(parse_start:datacatalog.GetOrExtendReservationRequest)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -6205,7 +6216,18 @@ bool GetOrReserveArtifactRequest::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->owner_id().data(), static_cast<int>(this->owner_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "datacatalog.GetOrReserveArtifactRequest.owner_id"));
+            "datacatalog.GetOrExtendReservationRequest.owner_id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Duration heartbeat_interval = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_heartbeat_interval()));
         } else {
           goto handle_unusual;
         }
@@ -6224,18 +6246,18 @@ bool GetOrReserveArtifactRequest::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(parse_success:datacatalog.GetOrExtendReservationRequest)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrExtendReservationRequest)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void GetOrReserveArtifactRequest::SerializeWithCachedSizes(
+void GetOrExtendReservationRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrExtendReservationRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6250,21 +6272,27 @@ void GetOrReserveArtifactRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->owner_id().data(), static_cast<int>(this->owner_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "datacatalog.GetOrReserveArtifactRequest.owner_id");
+      "datacatalog.GetOrExtendReservationRequest.owner_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->owner_id(), output);
+  }
+
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::heartbeat_interval(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrExtendReservationRequest)
 }
 
-::google::protobuf::uint8* GetOrReserveArtifactRequest::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* GetOrExtendReservationRequest::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrExtendReservationRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6280,22 +6308,29 @@ void GetOrReserveArtifactRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->owner_id().data(), static_cast<int>(this->owner_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "datacatalog.GetOrReserveArtifactRequest.owner_id");
+      "datacatalog.GetOrExtendReservationRequest.owner_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->owner_id(), target);
+  }
+
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::heartbeat_interval(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrExtendReservationRequest)
   return target;
 }
 
-size_t GetOrReserveArtifactRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrReserveArtifactRequest)
+size_t GetOrExtendReservationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrExtendReservationRequest)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6321,28 +6356,35 @@ size_t GetOrReserveArtifactRequest::ByteSizeLong() const {
         *reservation_id_);
   }
 
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *heartbeat_interval_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GetOrReserveArtifactRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrReserveArtifactRequest)
+void GetOrExtendReservationRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrExtendReservationRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const GetOrReserveArtifactRequest* source =
-      ::google::protobuf::DynamicCastToGenerated<GetOrReserveArtifactRequest>(
+  const GetOrExtendReservationRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<GetOrExtendReservationRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrExtendReservationRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrReserveArtifactRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrExtendReservationRequest)
     MergeFrom(*source);
   }
 }
 
-void GetOrReserveArtifactRequest::MergeFrom(const GetOrReserveArtifactRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrReserveArtifactRequest)
+void GetOrExtendReservationRequest::MergeFrom(const GetOrExtendReservationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrExtendReservationRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -6355,39 +6397,43 @@ void GetOrReserveArtifactRequest::MergeFrom(const GetOrReserveArtifactRequest& f
   if (from.has_reservation_id()) {
     mutable_reservation_id()->::datacatalog::ReservationID::MergeFrom(from.reservation_id());
   }
+  if (from.has_heartbeat_interval()) {
+    mutable_heartbeat_interval()->::google::protobuf::Duration::MergeFrom(from.heartbeat_interval());
+  }
 }
 
-void GetOrReserveArtifactRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrReserveArtifactRequest)
+void GetOrExtendReservationRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrExtendReservationRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GetOrReserveArtifactRequest::CopyFrom(const GetOrReserveArtifactRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrReserveArtifactRequest)
+void GetOrExtendReservationRequest::CopyFrom(const GetOrExtendReservationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrExtendReservationRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetOrReserveArtifactRequest::IsInitialized() const {
+bool GetOrExtendReservationRequest::IsInitialized() const {
   return true;
 }
 
-void GetOrReserveArtifactRequest::Swap(GetOrReserveArtifactRequest* other) {
+void GetOrExtendReservationRequest::Swap(GetOrExtendReservationRequest* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void GetOrReserveArtifactRequest::InternalSwap(GetOrReserveArtifactRequest* other) {
+void GetOrExtendReservationRequest::InternalSwap(GetOrExtendReservationRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   owner_id_.Swap(&other->owner_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(reservation_id_, other->reservation_id_);
+  swap(heartbeat_interval_, other->heartbeat_interval_);
 }
 
-::google::protobuf::Metadata GetOrReserveArtifactRequest::GetMetadata() const {
+::google::protobuf::Metadata GetOrExtendReservationRequest::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
   return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[kIndexInFileMessages];
 }
@@ -6395,67 +6441,66 @@ void GetOrReserveArtifactRequest::InternalSwap(GetOrReserveArtifactRequest* othe
 
 // ===================================================================
 
-void ReservationStatus::InitAsDefaultInstance() {
-  ::datacatalog::_ReservationStatus_default_instance_._instance.get_mutable()->reservation_id_ = const_cast< ::datacatalog::ReservationID*>(
+void Reservation::InitAsDefaultInstance() {
+  ::datacatalog::_Reservation_default_instance_._instance.get_mutable()->reservation_id_ = const_cast< ::datacatalog::ReservationID*>(
       ::datacatalog::ReservationID::internal_default_instance());
-  ::datacatalog::_ReservationStatus_default_instance_._instance.get_mutable()->expires_at_ = const_cast< ::google::protobuf::Timestamp*>(
-      ::google::protobuf::Timestamp::internal_default_instance());
-  ::datacatalog::_ReservationStatus_default_instance_._instance.get_mutable()->heartbeat_interval_ = const_cast< ::google::protobuf::Duration*>(
+  ::datacatalog::_Reservation_default_instance_._instance.get_mutable()->heartbeat_interval_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
-  ::datacatalog::_ReservationStatus_default_instance_._instance.get_mutable()->metadata_ = const_cast< ::datacatalog::Metadata*>(
+  ::datacatalog::_Reservation_default_instance_._instance.get_mutable()->expires_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
+  ::datacatalog::_Reservation_default_instance_._instance.get_mutable()->metadata_ = const_cast< ::datacatalog::Metadata*>(
       ::datacatalog::Metadata::internal_default_instance());
 }
-class ReservationStatus::HasBitSetters {
+class Reservation::HasBitSetters {
  public:
-  static const ::datacatalog::ReservationID& reservation_id(const ReservationStatus* msg);
-  static const ::google::protobuf::Timestamp& expires_at(const ReservationStatus* msg);
-  static const ::google::protobuf::Duration& heartbeat_interval(const ReservationStatus* msg);
-  static const ::datacatalog::Metadata& metadata(const ReservationStatus* msg);
+  static const ::datacatalog::ReservationID& reservation_id(const Reservation* msg);
+  static const ::google::protobuf::Duration& heartbeat_interval(const Reservation* msg);
+  static const ::google::protobuf::Timestamp& expires_at(const Reservation* msg);
+  static const ::datacatalog::Metadata& metadata(const Reservation* msg);
 };
 
 const ::datacatalog::ReservationID&
-ReservationStatus::HasBitSetters::reservation_id(const ReservationStatus* msg) {
+Reservation::HasBitSetters::reservation_id(const Reservation* msg) {
   return *msg->reservation_id_;
 }
-const ::google::protobuf::Timestamp&
-ReservationStatus::HasBitSetters::expires_at(const ReservationStatus* msg) {
-  return *msg->expires_at_;
-}
 const ::google::protobuf::Duration&
-ReservationStatus::HasBitSetters::heartbeat_interval(const ReservationStatus* msg) {
+Reservation::HasBitSetters::heartbeat_interval(const Reservation* msg) {
   return *msg->heartbeat_interval_;
 }
+const ::google::protobuf::Timestamp&
+Reservation::HasBitSetters::expires_at(const Reservation* msg) {
+  return *msg->expires_at_;
+}
 const ::datacatalog::Metadata&
-ReservationStatus::HasBitSetters::metadata(const ReservationStatus* msg) {
+Reservation::HasBitSetters::metadata(const Reservation* msg) {
   return *msg->metadata_;
 }
-void ReservationStatus::clear_expires_at() {
-  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
-    delete expires_at_;
-  }
-  expires_at_ = nullptr;
-}
-void ReservationStatus::clear_heartbeat_interval() {
+void Reservation::clear_heartbeat_interval() {
   if (GetArenaNoVirtual() == nullptr && heartbeat_interval_ != nullptr) {
     delete heartbeat_interval_;
   }
   heartbeat_interval_ = nullptr;
 }
+void Reservation::clear_expires_at() {
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ReservationStatus::kReservationIdFieldNumber;
-const int ReservationStatus::kOwnerIdFieldNumber;
-const int ReservationStatus::kStateFieldNumber;
-const int ReservationStatus::kExpiresAtFieldNumber;
-const int ReservationStatus::kHeartbeatIntervalFieldNumber;
-const int ReservationStatus::kMetadataFieldNumber;
+const int Reservation::kReservationIdFieldNumber;
+const int Reservation::kOwnerIdFieldNumber;
+const int Reservation::kHeartbeatIntervalFieldNumber;
+const int Reservation::kExpiresAtFieldNumber;
+const int Reservation::kMetadataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ReservationStatus::ReservationStatus()
+Reservation::Reservation()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(constructor:datacatalog.Reservation)
 }
-ReservationStatus::ReservationStatus(const ReservationStatus& from)
+Reservation::Reservation(const Reservation& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -6468,58 +6513,57 @@ ReservationStatus::ReservationStatus(const ReservationStatus& from)
   } else {
     reservation_id_ = nullptr;
   }
-  if (from.has_expires_at()) {
-    expires_at_ = new ::google::protobuf::Timestamp(*from.expires_at_);
-  } else {
-    expires_at_ = nullptr;
-  }
   if (from.has_heartbeat_interval()) {
     heartbeat_interval_ = new ::google::protobuf::Duration(*from.heartbeat_interval_);
   } else {
     heartbeat_interval_ = nullptr;
+  }
+  if (from.has_expires_at()) {
+    expires_at_ = new ::google::protobuf::Timestamp(*from.expires_at_);
+  } else {
+    expires_at_ = nullptr;
   }
   if (from.has_metadata()) {
     metadata_ = new ::datacatalog::Metadata(*from.metadata_);
   } else {
     metadata_ = nullptr;
   }
-  state_ = from.state_;
-  // @@protoc_insertion_point(copy_constructor:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(copy_constructor:datacatalog.Reservation)
 }
 
-void ReservationStatus::SharedCtor() {
+void Reservation::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+      &scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   owner_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&reservation_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&reservation_id_)) + sizeof(state_));
+      reinterpret_cast<char*>(&metadata_) -
+      reinterpret_cast<char*>(&reservation_id_)) + sizeof(metadata_));
 }
 
-ReservationStatus::~ReservationStatus() {
-  // @@protoc_insertion_point(destructor:datacatalog.ReservationStatus)
+Reservation::~Reservation() {
+  // @@protoc_insertion_point(destructor:datacatalog.Reservation)
   SharedDtor();
 }
 
-void ReservationStatus::SharedDtor() {
+void Reservation::SharedDtor() {
   owner_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete reservation_id_;
-  if (this != internal_default_instance()) delete expires_at_;
   if (this != internal_default_instance()) delete heartbeat_interval_;
+  if (this != internal_default_instance()) delete expires_at_;
   if (this != internal_default_instance()) delete metadata_;
 }
 
-void ReservationStatus::SetCachedSize(int size) const {
+void Reservation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ReservationStatus& ReservationStatus::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ReservationStatus_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+const Reservation& Reservation::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Reservation_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void ReservationStatus::Clear() {
-// @@protoc_insertion_point(message_clear_start:datacatalog.ReservationStatus)
+void Reservation::Clear() {
+// @@protoc_insertion_point(message_clear_start:datacatalog.Reservation)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6529,26 +6573,25 @@ void ReservationStatus::Clear() {
     delete reservation_id_;
   }
   reservation_id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
-    delete expires_at_;
-  }
-  expires_at_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && heartbeat_interval_ != nullptr) {
     delete heartbeat_interval_;
   }
   heartbeat_interval_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && metadata_ != nullptr) {
     delete metadata_;
   }
   metadata_ = nullptr;
-  state_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ReservationStatus::_InternalParse(const char* begin, const char* end, void* object,
+const char* Reservation::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ReservationStatus*>(object);
+  auto msg = static_cast<Reservation*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -6576,7 +6619,7 @@ const char* ReservationStatus::_InternalParse(const char* begin, const char* end
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("datacatalog.ReservationStatus.owner_id");
+        ctx->extra_parse_data().SetFieldName("datacatalog.Reservation.owner_id");
         object = msg->mutable_owner_id();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -6587,12 +6630,17 @@ const char* ReservationStatus::_InternalParse(const char* begin, const char* end
         ptr += size;
         break;
       }
-      // .datacatalog.ReservationStatus.State state = 3;
+      // .google.protobuf.Duration heartbeat_interval = 3;
       case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_state(static_cast<::datacatalog::ReservationStatus_State>(val));
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Duration::_InternalParse;
+        object = msg->mutable_heartbeat_interval();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       // .google.protobuf.Timestamp expires_at = 4;
@@ -6602,19 +6650,6 @@ const char* ReservationStatus::_InternalParse(const char* begin, const char* end
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
         object = msg->mutable_expires_at();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .google.protobuf.Duration heartbeat_interval = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_heartbeat_interval();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -6658,11 +6693,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ReservationStatus::MergePartialFromCodedStream(
+bool Reservation::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(parse_start:datacatalog.Reservation)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -6687,21 +6722,18 @@ bool ReservationStatus::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->owner_id().data(), static_cast<int>(this->owner_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "datacatalog.ReservationStatus.owner_id"));
+            "datacatalog.Reservation.owner_id"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .datacatalog.ReservationStatus.State state = 3;
+      // .google.protobuf.Duration heartbeat_interval = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_state(static_cast< ::datacatalog::ReservationStatus_State >(value));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_heartbeat_interval()));
         } else {
           goto handle_unusual;
         }
@@ -6713,17 +6745,6 @@ bool ReservationStatus::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_expires_at()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Duration heartbeat_interval = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_heartbeat_interval()));
         } else {
           goto handle_unusual;
         }
@@ -6753,18 +6774,18 @@ bool ReservationStatus::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(parse_success:datacatalog.Reservation)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(parse_failure:datacatalog.Reservation)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void ReservationStatus::SerializeWithCachedSizes(
+void Reservation::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(serialize_start:datacatalog.Reservation)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6779,27 +6800,21 @@ void ReservationStatus::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->owner_id().data(), static_cast<int>(this->owner_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "datacatalog.ReservationStatus.owner_id");
+      "datacatalog.Reservation.owner_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->owner_id(), output);
   }
 
-  // .datacatalog.ReservationStatus.State state = 3;
-  if (this->state() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      3, this->state(), output);
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::heartbeat_interval(this), output);
   }
 
   // .google.protobuf.Timestamp expires_at = 4;
   if (this->has_expires_at()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, HasBitSetters::expires_at(this), output);
-  }
-
-  // .google.protobuf.Duration heartbeat_interval = 5;
-  if (this->has_heartbeat_interval()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::heartbeat_interval(this), output);
   }
 
   // .datacatalog.Metadata metadata = 6;
@@ -6812,12 +6827,12 @@ void ReservationStatus::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(serialize_end:datacatalog.Reservation)
 }
 
-::google::protobuf::uint8* ReservationStatus::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Reservation::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.Reservation)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6833,16 +6848,17 @@ void ReservationStatus::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->owner_id().data(), static_cast<int>(this->owner_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "datacatalog.ReservationStatus.owner_id");
+      "datacatalog.Reservation.owner_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->owner_id(), target);
   }
 
-  // .datacatalog.ReservationStatus.State state = 3;
-  if (this->state() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      3, this->state(), target);
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::heartbeat_interval(this), target);
   }
 
   // .google.protobuf.Timestamp expires_at = 4;
@@ -6850,13 +6866,6 @@ void ReservationStatus::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, HasBitSetters::expires_at(this), target);
-  }
-
-  // .google.protobuf.Duration heartbeat_interval = 5;
-  if (this->has_heartbeat_interval()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, HasBitSetters::heartbeat_interval(this), target);
   }
 
   // .datacatalog.Metadata metadata = 6;
@@ -6870,12 +6879,12 @@ void ReservationStatus::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.Reservation)
   return target;
 }
 
-size_t ReservationStatus::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:datacatalog.ReservationStatus)
+size_t Reservation::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datacatalog.Reservation)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6901,18 +6910,18 @@ size_t ReservationStatus::ByteSizeLong() const {
         *reservation_id_);
   }
 
+  // .google.protobuf.Duration heartbeat_interval = 3;
+  if (this->has_heartbeat_interval()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *heartbeat_interval_);
+  }
+
   // .google.protobuf.Timestamp expires_at = 4;
   if (this->has_expires_at()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *expires_at_);
-  }
-
-  // .google.protobuf.Duration heartbeat_interval = 5;
-  if (this->has_heartbeat_interval()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *heartbeat_interval_);
   }
 
   // .datacatalog.Metadata metadata = 6;
@@ -6922,34 +6931,28 @@ size_t ReservationStatus::ByteSizeLong() const {
         *metadata_);
   }
 
-  // .datacatalog.ReservationStatus.State state = 3;
-  if (this->state() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void ReservationStatus::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.ReservationStatus)
+void Reservation::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.Reservation)
   GOOGLE_DCHECK_NE(&from, this);
-  const ReservationStatus* source =
-      ::google::protobuf::DynamicCastToGenerated<ReservationStatus>(
+  const Reservation* source =
+      ::google::protobuf::DynamicCastToGenerated<Reservation>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.Reservation)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.ReservationStatus)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.Reservation)
     MergeFrom(*source);
   }
 }
 
-void ReservationStatus::MergeFrom(const ReservationStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.ReservationStatus)
+void Reservation::MergeFrom(const Reservation& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.Reservation)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -6962,55 +6965,51 @@ void ReservationStatus::MergeFrom(const ReservationStatus& from) {
   if (from.has_reservation_id()) {
     mutable_reservation_id()->::datacatalog::ReservationID::MergeFrom(from.reservation_id());
   }
-  if (from.has_expires_at()) {
-    mutable_expires_at()->::google::protobuf::Timestamp::MergeFrom(from.expires_at());
-  }
   if (from.has_heartbeat_interval()) {
     mutable_heartbeat_interval()->::google::protobuf::Duration::MergeFrom(from.heartbeat_interval());
+  }
+  if (from.has_expires_at()) {
+    mutable_expires_at()->::google::protobuf::Timestamp::MergeFrom(from.expires_at());
   }
   if (from.has_metadata()) {
     mutable_metadata()->::datacatalog::Metadata::MergeFrom(from.metadata());
   }
-  if (from.state() != 0) {
-    set_state(from.state());
-  }
 }
 
-void ReservationStatus::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.ReservationStatus)
+void Reservation::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.Reservation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ReservationStatus::CopyFrom(const ReservationStatus& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.ReservationStatus)
+void Reservation::CopyFrom(const Reservation& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.Reservation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ReservationStatus::IsInitialized() const {
+bool Reservation::IsInitialized() const {
   return true;
 }
 
-void ReservationStatus::Swap(ReservationStatus* other) {
+void Reservation::Swap(Reservation* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ReservationStatus::InternalSwap(ReservationStatus* other) {
+void Reservation::InternalSwap(Reservation* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   owner_id_.Swap(&other->owner_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(reservation_id_, other->reservation_id_);
-  swap(expires_at_, other->expires_at_);
   swap(heartbeat_interval_, other->heartbeat_interval_);
+  swap(expires_at_, other->expires_at_);
   swap(metadata_, other->metadata_);
-  swap(state_, other->state_);
 }
 
-::google::protobuf::Metadata ReservationStatus::GetMetadata() const {
+::google::protobuf::Metadata Reservation::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
   return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[kIndexInFileMessages];
 }
@@ -7018,144 +7017,81 @@ void ReservationStatus::InternalSwap(ReservationStatus* other) {
 
 // ===================================================================
 
-void GetOrReserveArtifactResponse::InitAsDefaultInstance() {
-  ::datacatalog::_GetOrReserveArtifactResponse_default_instance_.artifact_ = const_cast< ::datacatalog::Artifact*>(
-      ::datacatalog::Artifact::internal_default_instance());
-  ::datacatalog::_GetOrReserveArtifactResponse_default_instance_.reservation_status_ = const_cast< ::datacatalog::ReservationStatus*>(
-      ::datacatalog::ReservationStatus::internal_default_instance());
+void GetOrExtendReservationResponse::InitAsDefaultInstance() {
+  ::datacatalog::_GetOrExtendReservationResponse_default_instance_._instance.get_mutable()->reservation_ = const_cast< ::datacatalog::Reservation*>(
+      ::datacatalog::Reservation::internal_default_instance());
 }
-class GetOrReserveArtifactResponse::HasBitSetters {
+class GetOrExtendReservationResponse::HasBitSetters {
  public:
-  static const ::datacatalog::Artifact& artifact(const GetOrReserveArtifactResponse* msg);
-  static const ::datacatalog::ReservationStatus& reservation_status(const GetOrReserveArtifactResponse* msg);
+  static const ::datacatalog::Reservation& reservation(const GetOrExtendReservationResponse* msg);
 };
 
-const ::datacatalog::Artifact&
-GetOrReserveArtifactResponse::HasBitSetters::artifact(const GetOrReserveArtifactResponse* msg) {
-  return *msg->value_.artifact_;
-}
-const ::datacatalog::ReservationStatus&
-GetOrReserveArtifactResponse::HasBitSetters::reservation_status(const GetOrReserveArtifactResponse* msg) {
-  return *msg->value_.reservation_status_;
-}
-void GetOrReserveArtifactResponse::set_allocated_artifact(::datacatalog::Artifact* artifact) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_value();
-  if (artifact) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      artifact = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact, submessage_arena);
-    }
-    set_has_artifact();
-    value_.artifact_ = artifact;
-  }
-  // @@protoc_insertion_point(field_set_allocated:datacatalog.GetOrReserveArtifactResponse.artifact)
-}
-void GetOrReserveArtifactResponse::set_allocated_reservation_status(::datacatalog::ReservationStatus* reservation_status) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_value();
-  if (reservation_status) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      reservation_status = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, reservation_status, submessage_arena);
-    }
-    set_has_reservation_status();
-    value_.reservation_status_ = reservation_status;
-  }
-  // @@protoc_insertion_point(field_set_allocated:datacatalog.GetOrReserveArtifactResponse.reservation_status)
+const ::datacatalog::Reservation&
+GetOrExtendReservationResponse::HasBitSetters::reservation(const GetOrExtendReservationResponse* msg) {
+  return *msg->reservation_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GetOrReserveArtifactResponse::kArtifactFieldNumber;
-const int GetOrReserveArtifactResponse::kReservationStatusFieldNumber;
+const int GetOrExtendReservationResponse::kReservationFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-GetOrReserveArtifactResponse::GetOrReserveArtifactResponse()
+GetOrExtendReservationResponse::GetOrExtendReservationResponse()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(constructor:datacatalog.GetOrExtendReservationResponse)
 }
-GetOrReserveArtifactResponse::GetOrReserveArtifactResponse(const GetOrReserveArtifactResponse& from)
+GetOrExtendReservationResponse::GetOrExtendReservationResponse(const GetOrExtendReservationResponse& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  clear_has_value();
-  switch (from.value_case()) {
-    case kArtifact: {
-      mutable_artifact()->::datacatalog::Artifact::MergeFrom(from.artifact());
-      break;
-    }
-    case kReservationStatus: {
-      mutable_reservation_status()->::datacatalog::ReservationStatus::MergeFrom(from.reservation_status());
-      break;
-    }
-    case VALUE_NOT_SET: {
-      break;
-    }
+  if (from.has_reservation()) {
+    reservation_ = new ::datacatalog::Reservation(*from.reservation_);
+  } else {
+    reservation_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(copy_constructor:datacatalog.GetOrExtendReservationResponse)
 }
 
-void GetOrReserveArtifactResponse::SharedCtor() {
+void GetOrExtendReservationResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
-  clear_has_value();
+      &scc_info_GetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+  reservation_ = nullptr;
 }
 
-GetOrReserveArtifactResponse::~GetOrReserveArtifactResponse() {
-  // @@protoc_insertion_point(destructor:datacatalog.GetOrReserveArtifactResponse)
+GetOrExtendReservationResponse::~GetOrExtendReservationResponse() {
+  // @@protoc_insertion_point(destructor:datacatalog.GetOrExtendReservationResponse)
   SharedDtor();
 }
 
-void GetOrReserveArtifactResponse::SharedDtor() {
-  if (has_value()) {
-    clear_value();
-  }
+void GetOrExtendReservationResponse::SharedDtor() {
+  if (this != internal_default_instance()) delete reservation_;
 }
 
-void GetOrReserveArtifactResponse::SetCachedSize(int size) const {
+void GetOrExtendReservationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetOrReserveArtifactResponse& GetOrReserveArtifactResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrReserveArtifactResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
+const GetOrExtendReservationResponse& GetOrExtendReservationResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetOrExtendReservationResponse_flyteidl_2fdatacatalog_2fdatacatalog_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GetOrReserveArtifactResponse::clear_value() {
-// @@protoc_insertion_point(one_of_clear_start:datacatalog.GetOrReserveArtifactResponse)
-  switch (value_case()) {
-    case kArtifact: {
-      delete value_.artifact_;
-      break;
-    }
-    case kReservationStatus: {
-      delete value_.reservation_status_;
-      break;
-    }
-    case VALUE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = VALUE_NOT_SET;
-}
-
-
-void GetOrReserveArtifactResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrReserveArtifactResponse)
+void GetOrExtendReservationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:datacatalog.GetOrExtendReservationResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_value();
+  if (GetArenaNoVirtual() == nullptr && reservation_ != nullptr) {
+    delete reservation_;
+  }
+  reservation_ = nullptr;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* GetOrReserveArtifactResponse::_InternalParse(const char* begin, const char* end, void* object,
+const char* GetOrExtendReservationResponse::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<GetOrReserveArtifactResponse*>(object);
+  auto msg = static_cast<GetOrExtendReservationResponse*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -7165,26 +7101,13 @@ const char* GetOrReserveArtifactResponse::_InternalParse(const char* begin, cons
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .datacatalog.Artifact artifact = 1;
+      // .datacatalog.Reservation reservation = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::datacatalog::Artifact::_InternalParse;
-        object = msg->mutable_artifact();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .datacatalog.ReservationStatus reservation_status = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::datacatalog::ReservationStatus::_InternalParse;
-        object = msg->mutable_reservation_status();
+        parser_till_end = ::datacatalog::Reservation::_InternalParse;
+        object = msg->mutable_reservation();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -7211,32 +7134,21 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool GetOrReserveArtifactResponse::MergePartialFromCodedStream(
+bool GetOrExtendReservationResponse::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(parse_start:datacatalog.GetOrExtendReservationResponse)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .datacatalog.Artifact artifact = 1;
+      // .datacatalog.Reservation reservation = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_artifact()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .datacatalog.ReservationStatus reservation_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_reservation_status()));
+               input, mutable_reservation()));
         } else {
           goto handle_unusual;
         }
@@ -7255,70 +7167,57 @@ bool GetOrReserveArtifactResponse::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(parse_success:datacatalog.GetOrExtendReservationResponse)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(parse_failure:datacatalog.GetOrExtendReservationResponse)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void GetOrReserveArtifactResponse::SerializeWithCachedSizes(
+void GetOrExtendReservationResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(serialize_start:datacatalog.GetOrExtendReservationResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .datacatalog.Artifact artifact = 1;
-  if (has_artifact()) {
+  // .datacatalog.Reservation reservation = 1;
+  if (this->has_reservation()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::artifact(this), output);
-  }
-
-  // .datacatalog.ReservationStatus reservation_status = 2;
-  if (has_reservation_status()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::reservation_status(this), output);
+      1, HasBitSetters::reservation(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(serialize_end:datacatalog.GetOrExtendReservationResponse)
 }
 
-::google::protobuf::uint8* GetOrReserveArtifactResponse::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* GetOrExtendReservationResponse::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:datacatalog.GetOrExtendReservationResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .datacatalog.Artifact artifact = 1;
-  if (has_artifact()) {
+  // .datacatalog.Reservation reservation = 1;
+  if (this->has_reservation()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::artifact(this), target);
-  }
-
-  // .datacatalog.ReservationStatus reservation_status = 2;
-  if (has_reservation_status()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::reservation_status(this), target);
+        1, HasBitSetters::reservation(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:datacatalog.GetOrExtendReservationResponse)
   return target;
 }
 
-size_t GetOrReserveArtifactResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrReserveArtifactResponse)
+size_t GetOrExtendReservationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:datacatalog.GetOrExtendReservationResponse)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7330,97 +7229,74 @@ size_t GetOrReserveArtifactResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (value_case()) {
-    // .datacatalog.Artifact artifact = 1;
-    case kArtifact: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *value_.artifact_);
-      break;
-    }
-    // .datacatalog.ReservationStatus reservation_status = 2;
-    case kReservationStatus: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *value_.reservation_status_);
-      break;
-    }
-    case VALUE_NOT_SET: {
-      break;
-    }
+  // .datacatalog.Reservation reservation = 1;
+  if (this->has_reservation()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *reservation_);
   }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GetOrReserveArtifactResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrReserveArtifactResponse)
+void GetOrExtendReservationResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:datacatalog.GetOrExtendReservationResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const GetOrReserveArtifactResponse* source =
-      ::google::protobuf::DynamicCastToGenerated<GetOrReserveArtifactResponse>(
+  const GetOrExtendReservationResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<GetOrExtendReservationResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:datacatalog.GetOrExtendReservationResponse)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrReserveArtifactResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:datacatalog.GetOrExtendReservationResponse)
     MergeFrom(*source);
   }
 }
 
-void GetOrReserveArtifactResponse::MergeFrom(const GetOrReserveArtifactResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrReserveArtifactResponse)
+void GetOrExtendReservationResponse::MergeFrom(const GetOrExtendReservationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:datacatalog.GetOrExtendReservationResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.value_case()) {
-    case kArtifact: {
-      mutable_artifact()->::datacatalog::Artifact::MergeFrom(from.artifact());
-      break;
-    }
-    case kReservationStatus: {
-      mutable_reservation_status()->::datacatalog::ReservationStatus::MergeFrom(from.reservation_status());
-      break;
-    }
-    case VALUE_NOT_SET: {
-      break;
-    }
+  if (from.has_reservation()) {
+    mutable_reservation()->::datacatalog::Reservation::MergeFrom(from.reservation());
   }
 }
 
-void GetOrReserveArtifactResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrReserveArtifactResponse)
+void GetOrExtendReservationResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:datacatalog.GetOrExtendReservationResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GetOrReserveArtifactResponse::CopyFrom(const GetOrReserveArtifactResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrReserveArtifactResponse)
+void GetOrExtendReservationResponse::CopyFrom(const GetOrExtendReservationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:datacatalog.GetOrExtendReservationResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetOrReserveArtifactResponse::IsInitialized() const {
+bool GetOrExtendReservationResponse::IsInitialized() const {
   return true;
 }
 
-void GetOrReserveArtifactResponse::Swap(GetOrReserveArtifactResponse* other) {
+void GetOrExtendReservationResponse::Swap(GetOrExtendReservationResponse* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void GetOrReserveArtifactResponse::InternalSwap(GetOrReserveArtifactResponse* other) {
+void GetOrExtendReservationResponse::InternalSwap(GetOrExtendReservationResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(value_, other->value_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(reservation_, other->reservation_);
 }
 
-::google::protobuf::Metadata GetOrReserveArtifactResponse::GetMetadata() const {
+::google::protobuf::Metadata GetOrExtendReservationResponse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fdatacatalog_2fdatacatalog_2eproto);
   return ::file_level_metadata_flyteidl_2fdatacatalog_2fdatacatalog_2eproto[kIndexInFileMessages];
 }
@@ -14600,14 +14476,14 @@ template<> PROTOBUF_NOINLINE ::datacatalog::ListDatasetsResponse* Arena::CreateM
 template<> PROTOBUF_NOINLINE ::datacatalog::ReservationID* Arena::CreateMaybeMessage< ::datacatalog::ReservationID >(Arena* arena) {
   return Arena::CreateInternal< ::datacatalog::ReservationID >(arena);
 }
-template<> PROTOBUF_NOINLINE ::datacatalog::GetOrReserveArtifactRequest* Arena::CreateMaybeMessage< ::datacatalog::GetOrReserveArtifactRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::datacatalog::GetOrReserveArtifactRequest >(arena);
+template<> PROTOBUF_NOINLINE ::datacatalog::GetOrExtendReservationRequest* Arena::CreateMaybeMessage< ::datacatalog::GetOrExtendReservationRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::datacatalog::GetOrExtendReservationRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::datacatalog::ReservationStatus* Arena::CreateMaybeMessage< ::datacatalog::ReservationStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::datacatalog::ReservationStatus >(arena);
+template<> PROTOBUF_NOINLINE ::datacatalog::Reservation* Arena::CreateMaybeMessage< ::datacatalog::Reservation >(Arena* arena) {
+  return Arena::CreateInternal< ::datacatalog::Reservation >(arena);
 }
-template<> PROTOBUF_NOINLINE ::datacatalog::GetOrReserveArtifactResponse* Arena::CreateMaybeMessage< ::datacatalog::GetOrReserveArtifactResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::datacatalog::GetOrReserveArtifactResponse >(arena);
+template<> PROTOBUF_NOINLINE ::datacatalog::GetOrExtendReservationResponse* Arena::CreateMaybeMessage< ::datacatalog::GetOrExtendReservationResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::datacatalog::GetOrExtendReservationResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::datacatalog::ReleaseReservationRequest* Arena::CreateMaybeMessage< ::datacatalog::ReleaseReservationRequest >(Arena* arena) {
   return Arena::CreateInternal< ::datacatalog::ReleaseReservationRequest >(arena);

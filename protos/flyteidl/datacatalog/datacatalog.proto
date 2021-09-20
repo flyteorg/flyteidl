@@ -48,7 +48,8 @@ service DataCatalog {
     // expires, another task B may take over the reservation, resulting in two tasks
     // A and B running in parallel. So a third task C may get the Artifact from A or B,
     // whichever writes last.
-    rpc GetOrReserveArtifact (GetOrReserveArtifactRequest) returns (GetOrReserveArtifactResponse);
+	// TODO - update comment
+    rpc GetOrExtendReservation (GetOrExtendReservationRequest) returns (GetOrExtendReservationResponse);
 
     // Release the reservation when the task holding the spot fails so that the other tasks
     // can grab the spot.
@@ -179,35 +180,25 @@ message ReservationID {
 }
 
 // Get the Artifact or try to reserve a spot if the Artifact does not exist.
-message GetOrReserveArtifactRequest {
+message GetOrExtendReservationRequest {
 	ReservationID reservation_id = 1;
     string owner_id = 2;
+	google.protobuf.Duration heartbeat_interval = 3; // Requested reservation extension heartbeat interval
 }
 
-// The status of a reservation including owner, state, expiration timestamp, and various metadata.
-message ReservationStatus {
+// A reservation including owner, heartbeat interval, expiration timestamp, and various metadata.
+message Reservation {
 	ReservationID reservation_id = 1;
     string owner_id = 2;
-    State state = 3;
+    google.protobuf.Duration heartbeat_interval = 3; // Recommended heartbeat interval to extend reservation
     google.protobuf.Timestamp expires_at = 4; // Expiration timestamp of this reservation
-    google.protobuf.Duration heartbeat_interval = 5; // Recommended heartbeat interval to extend reservation
     Metadata metadata = 6;
-
-    enum State {
-        // Acquired the reservation successfully.
-        ACQUIRED = 0;
-
-        // Indicates an existing active reservation exist for a different owner_id.
-        ALREADY_IN_PROGRESS = 1;
-    };
 }
 
 // Response to get artifact or reserve spot.
-message GetOrReserveArtifactResponse {
-    oneof value {
-        Artifact artifact = 1;
-        ReservationStatus reservation_status = 2;
-    }
+// TODO - update comment
+message GetOrExtendReservationResponse {
+    Reservation reservation = 1;
 }
 
 // Request to release reservation
