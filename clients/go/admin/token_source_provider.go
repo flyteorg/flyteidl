@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
+
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
@@ -45,11 +47,35 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 		if err != nil {
 			return nil, err
 		}
+	} else if cfg.AuthType == AuthTypeExternalProcess {
+		tokenProvider, err = NewExternalTokenSourceProvider(cfg.ExternalCommand)
+		if err != nil {
+			return nil, err
+		}
 	} else {
 		return nil, fmt.Errorf("unsupported type %v", cfg.AuthType)
 	}
 
 	return tokenProvider, nil
+}
+
+type ExternalTokenSourceProvider struct {
+	command []string
+}
+
+func NewExternalTokenSourceProvider(command []string) (TokenSourceProvider, error) {
+	return &ExternalTokenSourceProvider{command: command}, nil
+}
+
+func (e ExternalTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	output, err := externalprocess.Execute(e.command)
+	if err != nil {
+		return nil, err
+	}
+
+	return oauth2.StaticTokenSource(&oauth2.Token{
+		AccessToken: string(output),
+	}), nil
 }
 
 type PKCETokenSourceProvider struct {
