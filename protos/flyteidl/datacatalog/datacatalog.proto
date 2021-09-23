@@ -35,17 +35,17 @@ service DataCatalog {
     // Return a paginated list of datasets
     rpc ListDatasets (ListDatasetsRequest) returns (ListDatasetsResponse);
 
-	// Attempts to get or extend a reservation for the corresponding artifact. If one already exists
-	// (ie. another entity owns the reservation) then that reservation is retrieved.
+    // Attempts to get or extend a reservation for the corresponding artifact. If one already exists
+    // (ie. another entity owns the reservation) then that reservation is retrieved.
     // Once you acquire a reservation, you need to  periodically extend the reservation with an 
-	// identical call. If the reservation is not extended before the defined expiration, it may be
-	// acquired by another task.
+    // identical call. If the reservation is not extended before the defined expiration, it may be
+    // acquired by another task.
     // Note: We may have multiple concurrent tasks with the same signature and the same input that
-	// try to populate the same artifact at the same time. Thus with reservation, only one task can
-	// run at a time, until the reservation expires.
+    // try to populate the same artifact at the same time. Thus with reservation, only one task can
+    // run at a time, until the reservation expires.
     // Note: If task A does not extend the reservation in time and the reservation expires, another
-	// task B may take over the reservation, resulting in two tasks A and B running in parallel. So
-	// a third task C may get the Artifact from A or B, whichever writes last.
+    // task B may take over the reservation, resulting in two tasks A and B running in parallel. So
+    // a third task C may get the Artifact from A or B, whichever writes last.
     rpc GetOrExtendReservation (GetOrExtendReservationRequest) returns (GetOrExtendReservationResponse);
 
     // Release the reservation when the task holding the spot fails so that the other tasks
@@ -172,20 +172,20 @@ message ListDatasetsResponse {
  * ReservationID message that is composed of several string fields.
  */
 message ReservationID {
-	DatasetID dataset_id = 1;
-	string tag_name = 2;
+    DatasetID dataset_id = 1;
+    string tag_name = 2;
 }
 
 // Try to acquire or extend an artifact reservation. If an active reservation exists, retreive that instance.
 message GetOrExtendReservationRequest {
-	ReservationID reservation_id = 1;
+    ReservationID reservation_id = 1;
     string owner_id = 2;
-	google.protobuf.Duration heartbeat_interval = 3; // Requested reservation extension heartbeat interval
+    google.protobuf.Duration heartbeat_interval = 3; // Requested reservation extension heartbeat interval
 }
 
 // A reservation including owner, heartbeat interval, expiration timestamp, and various metadata.
 message Reservation {
-	ReservationID reservation_id = 1;
+    ReservationID reservation_id = 1;
     string owner_id = 2;
     google.protobuf.Duration heartbeat_interval = 3; // Recommended heartbeat interval to extend reservation
     google.protobuf.Timestamp expires_at = 4; // Expiration timestamp of this reservation
@@ -199,7 +199,7 @@ message GetOrExtendReservationResponse {
 
 // Request to release reservation
 message ReleaseReservationRequest {
-	ReservationID reservation_id = 1;
+    ReservationID reservation_id = 1;
     string owner_id = 2;
 }
 
