@@ -147,6 +147,7 @@ from flyteadmin.models.core_branch_node import CoreBranchNode
 from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag
 from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus
 from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata
+from flyteadmin.models.core_catalog_reservation_status import CoreCatalogReservationStatus
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
 from flyteadmin.models.core_compiled_workflow import CoreCompiledWorkflow

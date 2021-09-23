@@ -35,20 +35,17 @@ service DataCatalog {
     // Return a paginated list of datasets
     rpc ListDatasets (ListDatasetsRequest) returns (ListDatasetsResponse);
 
-    // Get an artifact and the corresponding data. If the artifact does not exist,
-    // try to reserve a spot for populating the artifact.
-    // Once you preserve a spot, you should peridically extend the reservation before expiration
-    // with an identical call. Otherwise, the reservation may be acquired by another task.
-    // If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
-    // Note: We may have multiple concurrent tasks with the same signature
-    // and the same input that try to populate the same artifact at the same time.
-    // Thus with reservation, only one task can run at a time, until the reservation
-    // expires.
-    // Note: If task A does not extend the reservation in time and the reservation
-    // expires, another task B may take over the reservation, resulting in two tasks
-    // A and B running in parallel. So a third task C may get the Artifact from A or B,
-    // whichever writes last.
-	// TODO - update comment
+	// Attempts to get or extend a reservation for the corresponding artifact. If one already exists
+	// (ie. another entity owns the reservation) then that reservation is retrieved.
+    // Once you acquire a reservation, you need to  periodically extend the reservation with an 
+	// identical call. If the reservation is not extended before the defined expiration, it may be
+	// acquired by another task.
+    // Note: We may have multiple concurrent tasks with the same signature and the same input that
+	// try to populate the same artifact at the same time. Thus with reservation, only one task can
+	// run at a time, until the reservation expires.
+    // Note: If task A does not extend the reservation in time and the reservation expires, another
+	// task B may take over the reservation, resulting in two tasks A and B running in parallel. So
+	// a third task C may get the Artifact from A or B, whichever writes last.
     rpc GetOrExtendReservation (GetOrExtendReservationRequest) returns (GetOrExtendReservationResponse);
 
     // Release the reservation when the task holding the spot fails so that the other tasks
@@ -179,7 +176,7 @@ message ReservationID {
 	string tag_name = 2;
 }
 
-// Get the Artifact or try to reserve a spot if the Artifact does not exist.
+// Try to acquire or extend an artifact reservation. If an active reservation exists, retreive that instance.
 message GetOrExtendReservationRequest {
 	ReservationID reservation_id = 1;
     string owner_id = 2;
@@ -195,8 +192,7 @@ message Reservation {
     Metadata metadata = 6;
 }
 
-// Response to get artifact or reserve spot.
-// TODO - update comment
+// Response including either a newly minted reservation or the existing reservation
 message GetOrExtendReservationResponse {
     Reservation reservation = 1;
 }

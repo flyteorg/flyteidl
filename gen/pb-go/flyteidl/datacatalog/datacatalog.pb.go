@@ -795,7 +795,7 @@ func (m *ReservationID) GetTagName() string {
 	return ""
 }
 
-// Get the Artifact or try to reserve a spot if the Artifact does not exist.
+// Try to acquire or extend an artifact reservation. If an active reservation exists, retreive that instance.
 type GetOrExtendReservationRequest struct {
 	ReservationId        *ReservationID     `protobuf:"bytes,1,opt,name=reservation_id,json=reservationId,proto3" json:"reservation_id,omitempty"`
 	OwnerId              string             `protobuf:"bytes,2,opt,name=owner_id,json=ownerId,proto3" json:"owner_id,omitempty"`
@@ -923,8 +923,7 @@ func (m *Reservation) GetMetadata() *Metadata {
 	return nil
 }
 
-// Response to get artifact or reserve spot.
-// TODO - update comment
+// Response including either a newly minted reservation or the existing reservation
 type GetOrExtendReservationResponse struct {
 	Reservation          *Reservation `protobuf:"bytes,1,opt,name=reservation,proto3" json:"reservation,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
@@ -2222,20 +2221,17 @@ type DataCatalogClient interface {
 	ListArtifacts(ctx context.Context, in *ListArtifactsRequest, opts ...grpc.CallOption) (*ListArtifactsResponse, error)
 	// Return a paginated list of datasets
 	ListDatasets(ctx context.Context, in *ListDatasetsRequest, opts ...grpc.CallOption) (*ListDatasetsResponse, error)
-	// Get an artifact and the corresponding data. If the artifact does not exist,
-	// try to reserve a spot for populating the artifact.
-	// Once you preserve a spot, you should peridically extend the reservation before expiration
-	// with an identical call. Otherwise, the reservation may be acquired by another task.
-	// If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
-	// Note: We may have multiple concurrent tasks with the same signature
-	// and the same input that try to populate the same artifact at the same time.
-	// Thus with reservation, only one task can run at a time, until the reservation
-	// expires.
-	// Note: If task A does not extend the reservation in time and the reservation
-	// expires, another task B may take over the reservation, resulting in two tasks
-	// A and B running in parallel. So a third task C may get the Artifact from A or B,
-	// whichever writes last.
-	// TODO - update comment
+	// Attempts to get or extend a reservation for the corresponding artifact. If one already exists
+	// (ie. another entity owns the reservation) then that reservation is retrieved.
+	// Once you acquire a reservation, you need to  periodically extend the reservation with an
+	// identical call. If the reservation is not extended before the defined expiration, it may be
+	// acquired by another task.
+	// Note: We may have multiple concurrent tasks with the same signature and the same input that
+	// try to populate the same artifact at the same time. Thus with reservation, only one task can
+	// run at a time, until the reservation expires.
+	// Note: If task A does not extend the reservation in time and the reservation expires, another
+	// task B may take over the reservation, resulting in two tasks A and B running in parallel. So
+	// a third task C may get the Artifact from A or B, whichever writes last.
 	GetOrExtendReservation(ctx context.Context, in *GetOrExtendReservationRequest, opts ...grpc.CallOption) (*GetOrExtendReservationResponse, error)
 	// Release the reservation when the task holding the spot fails so that the other tasks
 	// can grab the spot.
@@ -2349,20 +2345,17 @@ type DataCatalogServer interface {
 	ListArtifacts(context.Context, *ListArtifactsRequest) (*ListArtifactsResponse, error)
 	// Return a paginated list of datasets
 	ListDatasets(context.Context, *ListDatasetsRequest) (*ListDatasetsResponse, error)
-	// Get an artifact and the corresponding data. If the artifact does not exist,
-	// try to reserve a spot for populating the artifact.
-	// Once you preserve a spot, you should peridically extend the reservation before expiration
-	// with an identical call. Otherwise, the reservation may be acquired by another task.
-	// If the same owner_id calls this API for the same dataset and it has an active reservation and the artifacts have not been written yet by a different owner, the API will respond with an Acquired Reservation Status (providing idempotency).
-	// Note: We may have multiple concurrent tasks with the same signature
-	// and the same input that try to populate the same artifact at the same time.
-	// Thus with reservation, only one task can run at a time, until the reservation
-	// expires.
-	// Note: If task A does not extend the reservation in time and the reservation
-	// expires, another task B may take over the reservation, resulting in two tasks
-	// A and B running in parallel. So a third task C may get the Artifact from A or B,
-	// whichever writes last.
-	// TODO - update comment
+	// Attempts to get or extend a reservation for the corresponding artifact. If one already exists
+	// (ie. another entity owns the reservation) then that reservation is retrieved.
+	// Once you acquire a reservation, you need to  periodically extend the reservation with an
+	// identical call. If the reservation is not extended before the defined expiration, it may be
+	// acquired by another task.
+	// Note: We may have multiple concurrent tasks with the same signature and the same input that
+	// try to populate the same artifact at the same time. Thus with reservation, only one task can
+	// run at a time, until the reservation expires.
+	// Note: If task A does not extend the reservation in time and the reservation expires, another
+	// task B may take over the reservation, resulting in two tasks A and B running in parallel. So
+	// a third task C may get the Artifact from A or B, whichever writes last.
 	GetOrExtendReservation(context.Context, *GetOrExtendReservationRequest) (*GetOrExtendReservationResponse, error)
 	// Release the reservation when the task holding the spot fails so that the other tasks
 	// can grab the spot.

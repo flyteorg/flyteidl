@@ -200,6 +200,175 @@ public final class Catalog {
     // @@protoc_insertion_point(enum_scope:flyteidl.core.CatalogCacheStatus)
   }
 
+  /**
+   * <pre>
+   * Indicates the status of a catalog reservation operation.
+   * </pre>
+   *
+   * Protobuf enum {@code flyteidl.core.CatalogReservationStatus}
+   */
+  public enum CatalogReservationStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Used to indicate that reservations are disabled
+     * </pre>
+     *
+     * <code>RESERVATION_DISABLED = 0;</code>
+     */
+    RESERVATION_DISABLED(0),
+    /**
+     * <pre>
+     * Used to indicate that a reservation was successfully acquired or extended
+     * </pre>
+     *
+     * <code>RESERVATION_ACQUIRED = 1;</code>
+     */
+    RESERVATION_ACQUIRED(1),
+    /**
+     * <pre>
+     * Used to indicate that an active reservation currently exists
+     * </pre>
+     *
+     * <code>RESERVATION_EXISTS = 2;</code>
+     */
+    RESERVATION_EXISTS(2),
+    /**
+     * <pre>
+     * Used to indicate that the reservation has been successfully released
+     * </pre>
+     *
+     * <code>RESERVATION_RELEASED = 3;</code>
+     */
+    RESERVATION_RELEASED(3),
+    /**
+     * <pre>
+     * Used to indicate that a reservation operation resulted in failure
+     * </pre>
+     *
+     * <code>RESERVATION_FAILURE = 4;</code>
+     */
+    RESERVATION_FAILURE(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Used to indicate that reservations are disabled
+     * </pre>
+     *
+     * <code>RESERVATION_DISABLED = 0;</code>
+     */
+    public static final int RESERVATION_DISABLED_VALUE = 0;
+    /**
+     * <pre>
+     * Used to indicate that a reservation was successfully acquired or extended
+     * </pre>
+     *
+     * <code>RESERVATION_ACQUIRED = 1;</code>
+     */
+    public static final int RESERVATION_ACQUIRED_VALUE = 1;
+    /**
+     * <pre>
+     * Used to indicate that an active reservation currently exists
+     * </pre>
+     *
+     * <code>RESERVATION_EXISTS = 2;</code>
+     */
+    public static final int RESERVATION_EXISTS_VALUE = 2;
+    /**
+     * <pre>
+     * Used to indicate that the reservation has been successfully released
+     * </pre>
+     *
+     * <code>RESERVATION_RELEASED = 3;</code>
+     */
+    public static final int RESERVATION_RELEASED_VALUE = 3;
+    /**
+     * <pre>
+     * Used to indicate that a reservation operation resulted in failure
+     * </pre>
+     *
+     * <code>RESERVATION_FAILURE = 4;</code>
+     */
+    public static final int RESERVATION_FAILURE_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CatalogReservationStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CatalogReservationStatus forNumber(int value) {
+      switch (value) {
+        case 0: return RESERVATION_DISABLED;
+        case 1: return RESERVATION_ACQUIRED;
+        case 2: return RESERVATION_EXISTS;
+        case 3: return RESERVATION_RELEASED;
+        case 4: return RESERVATION_FAILURE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CatalogReservationStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CatalogReservationStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CatalogReservationStatus>() {
+            public CatalogReservationStatus findValueByNumber(int number) {
+              return CatalogReservationStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.core.Catalog.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final CatalogReservationStatus[] VALUES = values();
+
+    public static CatalogReservationStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CatalogReservationStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.core.CatalogReservationStatus)
+  }
+
   public interface CatalogArtifactTagOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.CatalogArtifactTag)
       com.google.protobuf.MessageOrBuilder {
@@ -2262,8 +2431,12 @@ public final class Catalog {
       "ogCacheStatus\022\022\n\016CACHE_DISABLED\020\000\022\016\n\nCAC" +
       "HE_MISS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULA" +
       "TED\020\003\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE" +
-      "_PUT_FAILURE\020\005B6Z4github.com/flyteorg/fl" +
-      "yteidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "_PUT_FAILURE\020\005*\231\001\n\030CatalogReservationSta" +
+      "tus\022\030\n\024RESERVATION_DISABLED\020\000\022\030\n\024RESERVA" +
+      "TION_ACQUIRED\020\001\022\026\n\022RESERVATION_EXISTS\020\002\022" +
+      "\030\n\024RESERVATION_RELEASED\020\003\022\027\n\023RESERVATION" +
+      "_FAILURE\020\004B6Z4github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

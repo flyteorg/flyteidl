@@ -94,6 +94,30 @@ inline bool CatalogCacheStatus_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<CatalogCacheStatus>(
     CatalogCacheStatus_descriptor(), name, value);
 }
+enum CatalogReservationStatus {
+  RESERVATION_DISABLED = 0,
+  RESERVATION_ACQUIRED = 1,
+  RESERVATION_EXISTS = 2,
+  RESERVATION_RELEASED = 3,
+  RESERVATION_FAILURE = 4,
+  CatalogReservationStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  CatalogReservationStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool CatalogReservationStatus_IsValid(int value);
+const CatalogReservationStatus CatalogReservationStatus_MIN = RESERVATION_DISABLED;
+const CatalogReservationStatus CatalogReservationStatus_MAX = RESERVATION_FAILURE;
+const int CatalogReservationStatus_ARRAYSIZE = CatalogReservationStatus_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CatalogReservationStatus_descriptor();
+inline const ::std::string& CatalogReservationStatus_Name(CatalogReservationStatus value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CatalogReservationStatus_descriptor(), value);
+}
+inline bool CatalogReservationStatus_Parse(
+    const ::std::string& name, CatalogReservationStatus* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CatalogReservationStatus>(
+    CatalogReservationStatus_descriptor(), name, value);
+}
 // ===================================================================
 
 class CatalogArtifactTag final :
@@ -659,6 +683,11 @@ template <> struct is_proto_enum< ::flyteidl::core::CatalogCacheStatus> : ::std:
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::CatalogCacheStatus>() {
   return ::flyteidl::core::CatalogCacheStatus_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::CatalogReservationStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::CatalogReservationStatus>() {
+  return ::flyteidl::core::CatalogReservationStatus_descriptor();
 }
 
 }  // namespace protobuf

@@ -79,6 +79,25 @@ Indicates the status of CatalogCaching. The reason why this is not embedded in T
    "CACHE_LOOKUP_FAILURE", "4", "Used to indicate that cache lookup failed because of an error"
    "CACHE_PUT_FAILURE", "5", "Used to indicate that cache lookup failed because of an error"
 
+
+
+.. _ref_flyteidl.core.CatalogReservationStatus:
+
+CatalogReservationStatus
+------------------------------------------------------------------
+
+Indicates the status of a catalog reservation operation.
+
+.. csv-table:: Enum CatalogReservationStatus values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "RESERVATION_DISABLED", "0", "Used to indicate that reservations are disabled"
+   "RESERVATION_ACQUIRED", "1", "Used to indicate that a reservation was successfully acquired or extended"
+   "RESERVATION_EXISTS", "2", "Used to indicate that an active reservation currently exists"
+   "RESERVATION_RELEASED", "3", "Used to indicate that the reservation has been successfully released"
+   "RESERVATION_FAILURE", "4", "Used to indicate that a reservation operation resulted in failure"
+
  
 
  
@@ -1732,6 +1751,7 @@ Container
    "config", ":ref:`ref_flyteidl.core.KeyValuePair`", "repeated", "**Deprecated.** Allows extra configs to be available for the container. TODO: elaborate on how configs will become available. Deprecated, please use TaskTemplate.config instead."
    "ports", ":ref:`ref_flyteidl.core.ContainerPort`", "repeated", "Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but not supported on AWS Batch) Only K8s"
    "data_config", ":ref:`ref_flyteidl.core.DataLoadingConfig`", "", "BETA: Optional configuration for DataLoading. If not specified, then default values are used. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths. Only K8s"
+   "architecture", ":ref:`ref_flyteidl.core.Container.Architecture`", "", ""
 
 
 
@@ -2007,6 +2027,7 @@ Task Metadata
    "discovery_version", ":ref:`ref_string`", "", "Indicates a logical version to apply to this task for the purpose of discovery."
    "deprecated_error_message", ":ref:`ref_string`", "", "If set, this indicates that this task is deprecated. This will enable owners of tasks to notify consumers of the ending of support for a given task."
    "interruptible", ":ref:`ref_bool`", "", ""
+   "discovery_reservable", ":ref:`ref_bool`", "", "Indicates whether the system should attempt to reserve the task&#39;s output to avoid duplicate executions"
 
 
 
@@ -2067,6 +2088,25 @@ TaskTemplate.ConfigEntry
 
 
  
+
+
+
+.. _ref_flyteidl.core.Container.Architecture:
+
+Container.Architecture
+------------------------------------------------------------------
+
+Architecture-type the container image supports.
+
+.. csv-table:: Enum Container.Architecture values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "UNKNOWN", "0", ""
+   "AMD64", "1", ""
+   "ARM64", "2", ""
+   "ARM_V6", "3", ""
+   "ARM_V7", "4", ""
 
 
 
@@ -3101,8 +3141,8 @@ Value
 
 `Value` represents a dynamically typed value which can be either
 null, a number, a string, a boolean, a recursive struct value, or a
-list of values. A producer of value is expected to set one of that
-variants, absence of any variant indicates an error.
+list of values. A producer of value is expected to set one of these
+variants. Absence of any variant indicates an error.
 
 The JSON representation for `Value` is JSON value.
 

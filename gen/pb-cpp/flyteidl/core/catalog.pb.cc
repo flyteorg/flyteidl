@@ -69,7 +69,7 @@ void InitDefaults_flyteidl_2fcore_2fcatalog_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2fcatalog_2eproto[2];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2fcatalog_2eproto[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2fcatalog_2eproto[2];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2fcatalog_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fcatalog_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -119,13 +119,17 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fcatalog_2eproto[] =
   "ogCacheStatus\022\022\n\016CACHE_DISABLED\020\000\022\016\n\nCAC"
   "HE_MISS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULA"
   "TED\020\003\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE"
-  "_PUT_FAILURE\020\005B6Z4github.com/flyteorg/fl"
-  "yteidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "_PUT_FAILURE\020\005*\231\001\n\030CatalogReservationSta"
+  "tus\022\030\n\024RESERVATION_DISABLED\020\000\022\030\n\024RESERVA"
+  "TION_ACQUIRED\020\001\022\026\n\022RESERVATION_EXISTS\020\002\022"
+  "\030\n\024RESERVATION_RELEASED\020\003\022\027\n\023RESERVATION"
+  "_FAILURE\020\004B6Z4github.com/flyteorg/flytei"
+  "dl/gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fcatalog_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fcatalog_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fcatalog_2eproto,
-  "flyteidl/core/catalog.proto", &assign_descriptors_table_flyteidl_2fcore_2fcatalog_2eproto, 558,
+  "flyteidl/core/catalog.proto", &assign_descriptors_table_flyteidl_2fcore_2fcatalog_2eproto, 714,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fcatalog_2eproto() {
@@ -152,6 +156,23 @@ bool CatalogCacheStatus_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* CatalogReservationStatus_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fcatalog_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fcore_2fcatalog_2eproto[1];
+}
+bool CatalogReservationStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;

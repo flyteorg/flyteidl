@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
  - [CoreCatalogArtifactTag](docs/CoreCatalogArtifactTag.md)
  - [CoreCatalogCacheStatus](docs/CoreCatalogCacheStatus.md)
  - [CoreCatalogMetadata](docs/CoreCatalogMetadata.md)
+ - [CoreCatalogReservationStatus](docs/CoreCatalogReservationStatus.md)
  - [CoreComparisonExpression](docs/CoreComparisonExpression.md)
  - [CoreCompiledTask](docs/CoreCompiledTask.md)
  - [CoreCompiledWorkflow](docs/CoreCompiledWorkflow.md)

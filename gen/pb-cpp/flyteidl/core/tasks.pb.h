@@ -913,6 +913,12 @@ class TaskMetadata final :
   bool discoverable() const;
   void set_discoverable(bool value);
 
+  // bool discovery_reservable = 9;
+  void clear_discovery_reservable();
+  static const int kDiscoveryReservableFieldNumber = 9;
+  bool discovery_reservable() const;
+  void set_discovery_reservable(bool value);
+
   // bool interruptible = 8;
   private:
   bool has_interruptible() const;
@@ -939,6 +945,7 @@ class TaskMetadata final :
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
   bool discoverable_;
+  bool discovery_reservable_;
   union InterruptibleValueUnion {
     InterruptibleValueUnion() {}
     bool interruptible_;
@@ -2978,6 +2985,20 @@ inline void TaskMetadata::set_interruptible(bool value) {
   }
   interruptible_value_.interruptible_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.interruptible)
+}
+
+// bool discovery_reservable = 9;
+inline void TaskMetadata::clear_discovery_reservable() {
+  discovery_reservable_ = false;
+}
+inline bool TaskMetadata::discovery_reservable() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.discovery_reservable)
+  return discovery_reservable_;
+}
+inline void TaskMetadata::set_discovery_reservable(bool value) {
+  
+  discovery_reservable_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.discovery_reservable)
 }
 
 inline bool TaskMetadata::has_interruptible_value() const {

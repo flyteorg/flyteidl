@@ -140,6 +140,15 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** CatalogReservationStatus enum. */
+        enum CatalogReservationStatus {
+            RESERVATION_DISABLED = 0,
+            RESERVATION_ACQUIRED = 1,
+            RESERVATION_EXISTS = 2,
+            RESERVATION_RELEASED = 3,
+            RESERVATION_FAILURE = 4
+        }
+
         /** ResourceType enum. */
         enum ResourceType {
             UNSPECIFIED = 0,
@@ -4175,6 +4184,9 @@ export namespace flyteidl {
 
             /** TaskMetadata interruptible */
             interruptible?: (boolean|null);
+
+            /** TaskMetadata discoveryReservable */
+            discoveryReservable?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -4206,6 +4218,9 @@ export namespace flyteidl {
 
             /** TaskMetadata interruptible. */
             public interruptible: boolean;
+
+            /** TaskMetadata discoveryReservable. */
+            public discoveryReservable: boolean;
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -5781,6 +5796,9 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
+            /** TaskNodeMetadata reservationStatus */
+            reservationStatus?: (flyteidl.core.CatalogReservationStatus|null);
+
             /** TaskNodeMetadata dynamicWorkflow */
             dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
         }
@@ -5799,6 +5817,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata reservationStatus. */
+            public reservationStatus: flyteidl.core.CatalogReservationStatus;
 
             /** TaskNodeMetadata dynamicWorkflow. */
             public dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);

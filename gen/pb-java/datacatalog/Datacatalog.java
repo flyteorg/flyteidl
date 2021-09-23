@@ -11044,7 +11044,7 @@ public final class Datacatalog {
   }
   /**
    * <pre>
-   * Get the Artifact or try to reserve a spot if the Artifact does not exist.
+   * Try to acquire or extend an artifact reservation. If an active reservation exists, retreive that instance.
    * </pre>
    *
    * Protobuf type {@code datacatalog.GetOrExtendReservationRequest}
@@ -11426,7 +11426,7 @@ public final class Datacatalog {
     }
     /**
      * <pre>
-     * Get the Artifact or try to reserve a spot if the Artifact does not exist.
+     * Try to acquire or extend an artifact reservation. If an active reservation exists, retreive that instance.
      * </pre>
      *
      * Protobuf type {@code datacatalog.GetOrExtendReservationRequest}
@@ -13467,8 +13467,7 @@ public final class Datacatalog {
   }
   /**
    * <pre>
-   * Response to get artifact or reserve spot.
-   * TODO - update comment
+   * Response including either a newly minted reservation or the existing reservation
    * </pre>
    *
    * Protobuf type {@code datacatalog.GetOrExtendReservationResponse}
@@ -13737,8 +13736,7 @@ public final class Datacatalog {
     }
     /**
      * <pre>
-     * Response to get artifact or reserve spot.
-     * TODO - update comment
+     * Response including either a newly minted reservation or the existing reservation
      * </pre>
      *
      * Protobuf type {@code datacatalog.GetOrExtendReservationResponse}

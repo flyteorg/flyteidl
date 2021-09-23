@@ -40,7 +40,8 @@ class CoreTaskMetadata(object):
         'retries': 'CoreRetryStrategy',
         'discovery_version': 'str',
         'deprecated_error_message': 'str',
-        'interruptible': 'bool'
+        'interruptible': 'bool',
+        'discovery_reservable': 'bool'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class CoreTaskMetadata(object):
         'retries': 'retries',
         'discovery_version': 'discovery_version',
         'deprecated_error_message': 'deprecated_error_message',
-        'interruptible': 'interruptible'
+        'interruptible': 'interruptible',
+        'discovery_reservable': 'discovery_reservable'
     }
 
-    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None):  # noqa: E501
+    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None, discovery_reservable=None):  # noqa: E501
         """CoreTaskMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._discoverable = None
@@ -63,6 +65,7 @@ class CoreTaskMetadata(object):
         self._discovery_version = None
         self._deprecated_error_message = None
         self._interruptible = None
+        self._discovery_reservable = None
         self.discriminator = None
 
         if discoverable is not None:
@@ -79,6 +82,8 @@ class CoreTaskMetadata(object):
             self.deprecated_error_message = deprecated_error_message
         if interruptible is not None:
             self.interruptible = interruptible
+        if discovery_reservable is not None:
+            self.discovery_reservable = discovery_reservable
 
     @property
     def discoverable(self):
@@ -238,6 +243,27 @@ class CoreTaskMetadata(object):
         """
 
         self._interruptible = interruptible
+
+    @property
+    def discovery_reservable(self):
+        """Gets the discovery_reservable of this CoreTaskMetadata.  # noqa: E501
+
+
+        :return: The discovery_reservable of this CoreTaskMetadata.  # noqa: E501
+        :rtype: bool
+        """
+        return self._discovery_reservable
+
+    @discovery_reservable.setter
+    def discovery_reservable(self, discovery_reservable):
+        """Sets the discovery_reservable of this CoreTaskMetadata.
+
+
+        :param discovery_reservable: The discovery_reservable of this CoreTaskMetadata.  # noqa: E501
+        :type: bool
+        """
+
+        self._discovery_reservable = discovery_reservable
 
     def to_dict(self):
         """Returns the model properties as a dict"""
