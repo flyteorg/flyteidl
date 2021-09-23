@@ -3,6 +3,7 @@ package admin
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 
@@ -74,7 +75,8 @@ func (e ExternalTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2
 	}
 
 	return oauth2.StaticTokenSource(&oauth2.Token{
-		AccessToken: string(output),
+		AccessToken: strings.Trim(string(output), "\t \n"),
+		TokenType:   "bearer",
 	}), nil
 }
 
