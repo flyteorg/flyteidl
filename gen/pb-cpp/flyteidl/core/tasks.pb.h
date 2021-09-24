@@ -913,11 +913,11 @@ class TaskMetadata final :
   bool discoverable() const;
   void set_discoverable(bool value);
 
-  // bool discovery_reservable = 9;
-  void clear_discovery_reservable();
-  static const int kDiscoveryReservableFieldNumber = 9;
-  bool discovery_reservable() const;
-  void set_discovery_reservable(bool value);
+  // bool discovery_serializable = 9;
+  void clear_discovery_serializable();
+  static const int kDiscoverySerializableFieldNumber = 9;
+  bool discovery_serializable() const;
+  void set_discovery_serializable(bool value);
 
   // bool interruptible = 8;
   private:
@@ -945,7 +945,7 @@ class TaskMetadata final :
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
   bool discoverable_;
-  bool discovery_reservable_;
+  bool discovery_serializable_;
   union InterruptibleValueUnion {
     InterruptibleValueUnion() {}
     bool interruptible_;
@@ -2987,18 +2987,18 @@ inline void TaskMetadata::set_interruptible(bool value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.interruptible)
 }
 
-// bool discovery_reservable = 9;
-inline void TaskMetadata::clear_discovery_reservable() {
-  discovery_reservable_ = false;
+// bool discovery_serializable = 9;
+inline void TaskMetadata::clear_discovery_serializable() {
+  discovery_serializable_ = false;
 }
-inline bool TaskMetadata::discovery_reservable() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.discovery_reservable)
-  return discovery_reservable_;
+inline bool TaskMetadata::discovery_serializable() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.discovery_serializable)
+  return discovery_serializable_;
 }
-inline void TaskMetadata::set_discovery_reservable(bool value) {
+inline void TaskMetadata::set_discovery_serializable(bool value) {
   
-  discovery_reservable_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.discovery_reservable)
+  discovery_serializable_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.discovery_serializable)
 }
 
 inline bool TaskMetadata::has_interruptible_value() const {

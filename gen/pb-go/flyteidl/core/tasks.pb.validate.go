@@ -245,7 +245,7 @@ func (m *TaskMetadata) Validate() error {
 
 	// no validation rules for DeprecatedErrorMessage
 
-	// no validation rules for DiscoveryReservable
+	// no validation rules for DiscoverySerializable
 
 	switch m.InterruptibleValue.(type) {
 

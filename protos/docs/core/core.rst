@@ -2027,7 +2027,7 @@ Task Metadata
    "discovery_version", ":ref:`ref_string`", "", "Indicates a logical version to apply to this task for the purpose of discovery."
    "deprecated_error_message", ":ref:`ref_string`", "", "If set, this indicates that this task is deprecated. This will enable owners of tasks to notify consumers of the ending of support for a given task."
    "interruptible", ":ref:`ref_bool`", "", ""
-   "discovery_reservable", ":ref:`ref_bool`", "", "Indicates whether the system should attempt to reserve the task&#39;s output to avoid duplicate executions"
+   "discovery_serializable", ":ref:`ref_bool`", "", "Indicates whether the system should attempt to execute discoverable instances in serial to avoid duplicate work"
 
 
 

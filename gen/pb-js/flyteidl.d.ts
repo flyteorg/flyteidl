@@ -4185,8 +4185,8 @@ export namespace flyteidl {
             /** TaskMetadata interruptible */
             interruptible?: (boolean|null);
 
-            /** TaskMetadata discoveryReservable */
-            discoveryReservable?: (boolean|null);
+            /** TaskMetadata discoverySerializable */
+            discoverySerializable?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -4219,8 +4219,8 @@ export namespace flyteidl {
             /** TaskMetadata interruptible. */
             public interruptible: boolean;
 
-            /** TaskMetadata discoveryReservable. */
-            public discoveryReservable: boolean;
+            /** TaskMetadata discoverySerializable. */
+            public discoverySerializable: boolean;
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";

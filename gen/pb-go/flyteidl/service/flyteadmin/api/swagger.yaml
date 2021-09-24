@@ -7751,7 +7751,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -7951,7 +7951,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -9640,7 +9640,7 @@ definitions:
                 type: {}
                 version: "version"
               discovery_version: "discovery_version"
-              discovery_reservable: true
+              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -9856,7 +9856,7 @@ definitions:
               type: {}
               version: "version"
             discovery_version: "discovery_version"
-            discovery_reservable: true
+            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -10384,7 +10384,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -10593,7 +10593,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -12642,7 +12642,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -12842,7 +12842,7 @@ definitions:
                   type: {}
                   version: "version"
                 discovery_version: "discovery_version"
-                discovery_reservable: true
+                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -15815,7 +15815,7 @@ definitions:
                 type: {}
                 version: "version"
               discovery_version: "discovery_version"
-              discovery_reservable: true
+              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -16015,7 +16015,7 @@ definitions:
                 type: {}
                 version: "version"
               discovery_version: "discovery_version"
-              discovery_reservable: true
+              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -18924,7 +18924,7 @@ definitions:
                     type: {}
                     version: "version"
                   discovery_version: "discovery_version"
-                  discovery_reservable: true
+                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -19124,7 +19124,7 @@ definitions:
                     type: {}
                     version: "version"
                   discovery_version: "discovery_version"
-                  discovery_reservable: true
+                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -21946,7 +21946,7 @@ definitions:
                     type: {}
                     version: "version"
                   discovery_version: "discovery_version"
-                  discovery_reservable: true
+                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -22146,7 +22146,7 @@ definitions:
                     type: {}
                     version: "version"
                   discovery_version: "discovery_version"
-                  discovery_reservable: true
+                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -23703,7 +23703,7 @@ definitions:
             type: {}
             version: "version"
           discovery_version: "discovery_version"
-          discovery_reservable: true
+          discovery_serializable: true
           deprecated_error_message: "deprecated_error_message"
           interruptible: true
           timeout: "timeout"
@@ -26554,7 +26554,7 @@ definitions:
               type: {}
               version: "version"
             discovery_version: "discovery_version"
-            discovery_reservable: true
+            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -26754,7 +26754,7 @@ definitions:
               type: {}
               version: "version"
             discovery_version: "discovery_version"
-            discovery_reservable: true
+            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -29450,11 +29450,11 @@ definitions:
       interruptible:
         type: "boolean"
         format: "boolean"
-      discovery_reservable:
+      discovery_serializable:
         type: "boolean"
         format: "boolean"
-        title: "Indicates whether the system should attempt to reserve the task's\
-          \ output to avoid duplicate executions"
+        title: "Indicates whether the system should attempt to execute discoverable\
+          \ instances in serial to avoid duplicate work"
     title: "Task Metadata"
     example:
       retries:
@@ -29465,7 +29465,7 @@ definitions:
         type: {}
         version: "version"
       discovery_version: "discovery_version"
-      discovery_reservable: true
+      discovery_serializable: true
       deprecated_error_message: "deprecated_error_message"
       interruptible: true
       timeout: "timeout"
@@ -29619,7 +29619,7 @@ definitions:
           type: {}
           version: "version"
         discovery_version: "discovery_version"
-        discovery_reservable: true
+        discovery_serializable: true
         deprecated_error_message: "deprecated_error_message"
         interruptible: true
         timeout: "timeout"
@@ -32947,7 +32947,7 @@ definitions:
                 type: {}
                 version: "version"
               discovery_version: "discovery_version"
-              discovery_reservable: true
+              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -33147,7 +33147,7 @@ definitions:
                 type: {}
                 version: "version"
               discovery_version: "discovery_version"
-              discovery_reservable: true
+              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
