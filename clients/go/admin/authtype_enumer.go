@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-const _AuthTypeName = "ClientSecretPkceExternalProcess"
+const _AuthTypeName = "ClientSecretPkceExternalCommand"
 
 var _AuthTypeIndex = [...]uint8{0, 12, 16, 31}
 

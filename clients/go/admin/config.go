@@ -33,7 +33,7 @@ const (
 	// Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
 	AuthTypePkce
 	// Chooses an external authentication process
-	AuthTypeExternalProcess
+	AuthTypeExternalCommand
 )
 
 type Config struct {
@@ -65,7 +65,7 @@ type Config struct {
 
 	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
 
-	ExternalCommand []string `json:"command" pflag:",Command for external authentication token generation"`
+	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 }
 
 var (

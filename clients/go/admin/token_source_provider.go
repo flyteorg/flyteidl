@@ -50,8 +50,8 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.To
 		if err != nil {
 			return nil, err
 		}
-	case AuthTypeExternalProcess:
-		tokenProvider, err = NewExternalTokenSourceProvider(cfg.ExternalCommand)
+	case AuthTypeExternalCommand:
+		tokenProvider, err = NewExternalTokenSourceProvider(cfg.Command)
 		if err != nil {
 			return nil, err
 		}
