@@ -22,38 +22,40 @@ type TokenSourceProvider interface {
 func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache,
 	authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
 
-	tokenURL := cfg.TokenURL
-	if len(tokenURL) == 0 {
-		metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
-		if err != nil {
-			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
+	var tokenProvider TokenSourceProvider
+	var err error
+	switch cfg.AuthType {
+	case AuthTypeClientSecret:
+		tokenURL := cfg.TokenURL
+		if len(tokenURL) == 0 {
+			metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
+			if err != nil {
+				return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
+			}
+
+			tokenURL = metadata.TokenEndpoint
 		}
 
-		tokenURL = metadata.TokenEndpoint
-	}
+		clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
+		if err != nil {
+			return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
+		}
 
-	clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-	if err != nil {
-		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-	}
-
-	var tokenProvider TokenSourceProvider
-	if cfg.AuthType == AuthTypeClientSecret {
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, clientMetadata, tokenURL)
 		if err != nil {
 			return nil, err
 		}
-	} else if cfg.AuthType == AuthTypePkce {
+	case AuthTypePkce:
 		tokenProvider, err = NewPKCETokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
 		if err != nil {
 			return nil, err
 		}
-	} else if cfg.AuthType == AuthTypeExternalProcess {
+	case AuthTypeExternalProcess:
 		tokenProvider, err = NewExternalTokenSourceProvider(cfg.ExternalCommand)
 		if err != nil {
 			return nil, err
 		}
-	} else {
+	default:
 		return nil, fmt.Errorf("unsupported type %v", cfg.AuthType)
 	}
 
