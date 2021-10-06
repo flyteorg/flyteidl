@@ -3,6 +3,7 @@ package admin
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
 	"strings"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
@@ -11,6 +12,7 @@ import (
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/clientcredentials"
 )
 
 // TokenSourceProvider defines the interface needed to provide a TokenSource that is used to
@@ -119,4 +121,35 @@ func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 	return &pkce.SimpleTokenSource{
 		CachedToken: authToken,
 	}, nil
+}
+
+type ClientCredentialsTokenSourceProvider struct {
+	ccConfig clientcredentials.Config
+}
+
+func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
+	clientMetadata *service.PublicClientAuthConfigResponse, tokenURL string) (TokenSourceProvider, error) {
+
+	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+	if err != nil {
+		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
+		return nil, err
+	}
+
+	secret := strings.TrimSpace(string(secretBytes))
+	scopes := cfg.Scopes
+	if len(scopes) == 0 {
+		scopes = clientMetadata.Scopes
+	}
+
+	return ClientCredentialsTokenSourceProvider{
+		ccConfig: clientcredentials.Config{
+			ClientID:     cfg.ClientID,
+			ClientSecret: secret,
+			TokenURL:     tokenURL,
+			Scopes:       scopes}}, nil
+}
+
+func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	return p.ccConfig.TokenSource(ctx), nil
 }
