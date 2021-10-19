@@ -13,6 +13,8 @@ type ContainerArchitecture string
 
 // List of ContainerArchitecture
 const (
-	ContainerArchitectureX86_64 ContainerArchitecture = "X86_64"
-	ContainerArchitectureARM_64 ContainerArchitecture = "ARM_64"
+	ContainerArchitectureAMD64 ContainerArchitecture = "AMD64"
+	ContainerArchitectureARM64 ContainerArchitecture = "ARM64"
+	ContainerArchitectureARM_V6 ContainerArchitecture = "ARM_V6"
+	ContainerArchitectureARM_V7 ContainerArchitecture = "ARM_V7"
 )

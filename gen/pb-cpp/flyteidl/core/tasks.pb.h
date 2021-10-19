@@ -176,14 +176,16 @@ inline bool RuntimeMetadata_RuntimeType_Parse(
     RuntimeMetadata_RuntimeType_descriptor(), name, value);
 }
 enum Container_Architecture {
-  Container_Architecture_X86_64 = 0,
-  Container_Architecture_ARM_64 = 1,
+  Container_Architecture_AMD64 = 0,
+  Container_Architecture_ARM64 = 1,
+  Container_Architecture_ARM_V6 = 2,
+  Container_Architecture_ARM_V7 = 3,
   Container_Architecture_Container_Architecture_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Container_Architecture_Container_Architecture_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Container_Architecture_IsValid(int value);
-const Container_Architecture Container_Architecture_Architecture_MIN = Container_Architecture_X86_64;
-const Container_Architecture Container_Architecture_Architecture_MAX = Container_Architecture_ARM_64;
+const Container_Architecture Container_Architecture_Architecture_MIN = Container_Architecture_AMD64;
+const Container_Architecture Container_Architecture_Architecture_MAX = Container_Architecture_ARM_V7;
 const int Container_Architecture_Architecture_ARRAYSIZE = Container_Architecture_Architecture_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Container_Architecture_descriptor();
@@ -1420,10 +1422,14 @@ class Container final :
   // nested types ----------------------------------------------------
 
   typedef Container_Architecture Architecture;
-  static const Architecture X86_64 =
-    Container_Architecture_X86_64;
-  static const Architecture ARM_64 =
-    Container_Architecture_ARM_64;
+  static const Architecture AMD64 =
+    Container_Architecture_AMD64;
+  static const Architecture ARM64 =
+    Container_Architecture_ARM64;
+  static const Architecture ARM_V6 =
+    Container_Architecture_ARM_V6;
+  static const Architecture ARM_V7 =
+    Container_Architecture_ARM_V7;
   static inline bool Architecture_IsValid(int value) {
     return Container_Architecture_IsValid(value);
   }

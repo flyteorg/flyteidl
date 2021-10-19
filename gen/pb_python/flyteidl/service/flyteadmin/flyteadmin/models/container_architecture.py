@@ -26,8 +26,10 @@ class ContainerArchitecture(object):
     """
     allowed enum values
     """
-    X86_64 = "X86_64"
-    ARM_64 = "ARM_64"
+    AMD64 = "AMD64"
+    ARM64 = "ARM64"
+    ARM_V6 = "ARM_V6"
+    ARM_V7 = "ARM_V7"
 
     """
     Attributes:

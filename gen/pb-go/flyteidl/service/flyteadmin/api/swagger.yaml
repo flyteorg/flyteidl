@@ -2583,9 +2583,11 @@ definitions:
     type: "string"
     description: "Architecture-type the container image supports."
     enum:
-    - "X86_64"
-    - "ARM_64"
-    default: "X86_64"
+    - "AMD64"
+    - "ARM64"
+    - "ARM_V6"
+    - "ARM_V7"
+    default: "AMD64"
   DataLoadingConfigLiteralMapFormat:
     type: "string"
     title: "LiteralMapFormat decides the encoding format in which the input metadata\
