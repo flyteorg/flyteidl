@@ -353,7 +353,7 @@ void InitDefaults_flyteidl_2fcore_2ftasks_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2ftasks_2eproto[15];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[6];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[7];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2ftasks_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -437,6 +437,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Container, config_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Container, ports_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Container, data_config_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::Container, architecture_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::IOStrategy, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -503,13 +504,13 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 44, -1, sizeof(::flyteidl::core::TaskTemplate)},
   { 61, -1, sizeof(::flyteidl::core::ContainerPort)},
   { 67, -1, sizeof(::flyteidl::core::Container)},
-  { 80, -1, sizeof(::flyteidl::core::IOStrategy)},
-  { 87, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
-  { 97, -1, sizeof(::flyteidl::core::K8sPod)},
-  { 104, 111, sizeof(::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse)},
-  { 113, 120, sizeof(::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse)},
-  { 122, -1, sizeof(::flyteidl::core::K8sObjectMetadata)},
-  { 129, -1, sizeof(::flyteidl::core::Sql)},
+  { 81, -1, sizeof(::flyteidl::core::IOStrategy)},
+  { 88, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
+  { 98, -1, sizeof(::flyteidl::core::K8sPod)},
+  { 105, 112, sizeof(::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse)},
+  { 114, 121, sizeof(::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse)},
+  { 123, -1, sizeof(::flyteidl::core::K8sObjectMetadata)},
+  { 130, -1, sizeof(::flyteidl::core::Sql)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -575,7 +576,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "ig\030\020 \003(\0132\'.flyteidl.core.TaskTemplate.Co"
   "nfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
   "\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContainerP"
-  "ort\022\026\n\016container_port\030\001 \001(\r\"\245\002\n\tContaine"
+  "ort\022\026\n\016container_port\030\001 \001(\r\"\212\003\n\tContaine"
   "r\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004arg"
   "s\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.co"
   "re.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.cor"
@@ -583,39 +584,41 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "l.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034"
   ".flyteidl.core.ContainerPort\0225\n\013data_con"
   "fig\030\t \001(\0132 .flyteidl.core.DataLoadingCon"
-  "fig\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001("
-  "\0162&.flyteidl.core.IOStrategy.DownloadMod"
-  "e\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.I"
-  "OStrategy.UploadMode\"L\n\014DownloadMode\022\022\n\016"
-  "DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n"
-  "\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLO"
-  "AD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT"
-  "_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabl"
-  "ed\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_p"
-  "ath\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.cor"
-  "e.DataLoadingConfig.LiteralMapFormat\022.\n\013"
-  "io_strategy\030\005 \001(\0132\031.flyteidl.core.IOStra"
-  "tegy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YA"
-  "ML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 "
-  "\001(\0132 .flyteidl.core.K8sObjectMetadata\022)\n"
-  "\010pod_spec\030\002 \001(\0132\027.google.protobuf.Struct"
-  "\"\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,"
-  ".flyteidl.core.K8sObjectMetadata.LabelsE"
-  "ntry\022F\n\013annotations\030\002 \003(\01321.flyteidl.cor"
-  "e.K8sObjectMetadata.AnnotationsEntry\032-\n\013"
-  "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-  "\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-  "value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001("
-  "\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.D"
-  "ialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI"
-  "\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/fl"
-  "yteorg/flyteidl/gen/pb-go/flyteidl/coreb"
-  "\006proto3"
+  "fig\022;\n\014architecture\030\n \001(\0162%.flyteidl.cor"
+  "e.Container.Architecture\"&\n\014Architecture"
+  "\022\n\n\006X86_64\020\000\022\n\n\006ARM_64\020\001\"\233\002\n\nIOStrategy\022"
+  "=\n\rdownload_mode\030\001 \001(\0162&.flyteidl.core.I"
+  "OStrategy.DownloadMode\0229\n\013upload_mode\030\002 "
+  "\001(\0162$.flyteidl.core.IOStrategy.UploadMod"
+  "e\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n"
+  "\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\""
+  "E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPL"
+  "OAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataL"
+  "oadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_p"
+  "ath\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format"
+  "\030\004 \001(\01621.flyteidl.core.DataLoadingConfig"
+  ".LiteralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031"
+  ".flyteidl.core.IOStrategy\"1\n\020LiteralMapF"
+  "ormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006"
+  "K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteidl.core"
+  ".K8sObjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.g"
+  "oogle.protobuf.Struct\"\374\001\n\021K8sObjectMetad"
+  "ata\022<\n\006labels\030\001 \003(\0132,.flyteidl.core.K8sO"
+  "bjectMetadata.LabelsEntry\022F\n\013annotations"
+  "\030\002 \003(\01321.flyteidl.core.K8sObjectMetadata"
+  ".AnnotationsEntry\032-\n\013LabelsEntry\022\013\n\003key\030"
+  "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsE"
+  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003"
+  "Sql\022\021\n\tstatement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162"
+  "\032.flyteidl.core.Sql.Dialect\"7\n\007Dialect\022\r"
+  "\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTH"
+  "ER\020\003B6Z4github.com/flyteorg/flyteidl/gen"
+  "/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 2927,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3028,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -685,9 +688,30 @@ const RuntimeMetadata_RuntimeType RuntimeMetadata::RuntimeType_MIN;
 const RuntimeMetadata_RuntimeType RuntimeMetadata::RuntimeType_MAX;
 const int RuntimeMetadata::RuntimeType_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* IOStrategy_DownloadMode_descriptor() {
+const ::google::protobuf::EnumDescriptor* Container_Architecture_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
   return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[2];
+}
+bool Container_Architecture_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Container_Architecture Container::X86_64;
+const Container_Architecture Container::ARM_64;
+const Container_Architecture Container::Architecture_MIN;
+const Container_Architecture Container::Architecture_MAX;
+const int Container::Architecture_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* IOStrategy_DownloadMode_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[3];
 }
 bool IOStrategy_DownloadMode_IsValid(int value) {
   switch (value) {
@@ -710,7 +734,7 @@ const int IOStrategy::DownloadMode_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* IOStrategy_UploadMode_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[3];
+  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[4];
 }
 bool IOStrategy_UploadMode_IsValid(int value) {
   switch (value) {
@@ -733,7 +757,7 @@ const int IOStrategy::UploadMode_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* DataLoadingConfig_LiteralMapFormat_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[4];
+  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[5];
 }
 bool DataLoadingConfig_LiteralMapFormat_IsValid(int value) {
   switch (value) {
@@ -756,7 +780,7 @@ const int DataLoadingConfig::LiteralMapFormat_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* Sql_Dialect_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[5];
+  return file_level_enum_descriptors_flyteidl_2fcore_2ftasks_2eproto[6];
 }
 bool Sql_Dialect_IsValid(int value) {
   switch (value) {
@@ -4058,6 +4082,7 @@ const int Container::kEnvFieldNumber;
 const int Container::kConfigFieldNumber;
 const int Container::kPortsFieldNumber;
 const int Container::kDataConfigFieldNumber;
+const int Container::kArchitectureFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Container::Container()
@@ -4088,6 +4113,7 @@ Container::Container(const Container& from)
   } else {
     data_config_ = nullptr;
   }
+  architecture_ = from.architecture_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.Container)
 }
 
@@ -4096,8 +4122,8 @@ void Container::SharedCtor() {
       &scc_info_Container_flyteidl_2fcore_2ftasks_2eproto.base);
   image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&resources_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&data_config_) -
-      reinterpret_cast<char*>(&resources_)) + sizeof(data_config_));
+      reinterpret_cast<char*>(&architecture_) -
+      reinterpret_cast<char*>(&resources_)) + sizeof(architecture_));
 }
 
 Container::~Container() {
@@ -4140,6 +4166,7 @@ void Container::Clear() {
     delete data_config_;
   }
   data_config_ = nullptr;
+  architecture_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -4284,6 +4311,14 @@ const char* Container::_InternalParse(const char* begin, const char* end, void* 
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // .flyteidl.core.Container.Architecture architecture = 10;
+      case 10: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 80) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_architecture(static_cast<::flyteidl::core::Container_Architecture>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -4420,6 +4455,20 @@ bool Container::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.core.Container.Architecture architecture = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (80 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_architecture(static_cast< ::flyteidl::core::Container_Architecture >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -4516,6 +4565,12 @@ void Container::SerializeWithCachedSizes(
       9, HasBitSetters::data_config(this), output);
   }
 
+  // .flyteidl.core.Container.Architecture architecture = 10;
+  if (this->architecture() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      10, this->architecture(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -4596,6 +4651,12 @@ void Container::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         9, HasBitSetters::data_config(this), target);
+  }
+
+  // .flyteidl.core.Container.Architecture architecture = 10;
+  if (this->architecture() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      10, this->architecture(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4689,6 +4750,12 @@ size_t Container::ByteSizeLong() const {
         *data_config_);
   }
 
+  // .flyteidl.core.Container.Architecture architecture = 10;
+  if (this->architecture() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->architecture());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -4731,6 +4798,9 @@ void Container::MergeFrom(const Container& from) {
   if (from.has_data_config()) {
     mutable_data_config()->::flyteidl::core::DataLoadingConfig::MergeFrom(from.data_config());
   }
+  if (from.architecture() != 0) {
+    set_architecture(from.architecture());
+  }
 }
 
 void Container::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4767,6 +4837,7 @@ void Container::InternalSwap(Container* other) {
     GetArenaNoVirtual());
   swap(resources_, other->resources_);
   swap(data_config_, other->data_config_);
+  swap(architecture_, other->architecture_);
 }
 
 ::google::protobuf::Metadata Container::GetMetadata() const {
