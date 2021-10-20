@@ -4514,10 +4514,11 @@ export namespace flyteidl {
 
             /** Architecture enum. */
             enum Architecture {
-                AMD64 = 0,
-                ARM64 = 1,
-                ARM_V6 = 2,
-                ARM_V7 = 3
+                UNKNOWN = 0,
+                AMD64 = 1,
+                ARM64 = 2,
+                ARM_V6 = 3,
+                ARM_V7 = 4
             }
         }
 

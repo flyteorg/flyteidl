@@ -576,7 +576,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "ig\030\020 \003(\0132\'.flyteidl.core.TaskTemplate.Co"
   "nfigEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
   "\005value\030\002 \001(\t:\0028\001B\010\n\006target\"\'\n\rContainerP"
-  "ort\022\026\n\016container_port\030\001 \001(\r\"\240\003\n\tContaine"
+  "ort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContaine"
   "r\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004arg"
   "s\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.co"
   "re.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.cor"
@@ -585,41 +585,41 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   ".flyteidl.core.ContainerPort\0225\n\013data_con"
   "fig\030\t \001(\0132 .flyteidl.core.DataLoadingCon"
   "fig\022;\n\014architecture\030\n \001(\0162%.flyteidl.cor"
-  "e.Container.Architecture\"<\n\014Architecture"
-  "\022\t\n\005AMD64\020\000\022\t\n\005ARM64\020\001\022\n\n\006ARM_V6\020\002\022\n\n\006AR"
-  "M_V7\020\003\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001"
-  " \001(\0162&.flyteidl.core.IOStrategy.Download"
-  "Mode\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.cor"
-  "e.IOStrategy.UploadMode\"L\n\014DownloadMode\022"
-  "\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001"
-  "\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016U"
-  "PLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_"
-  "NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007en"
-  "abled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013outpu"
-  "t_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl."
-  "core.DataLoadingConfig.LiteralMapFormat\022"
-  ".\n\013io_strategy\030\005 \001(\0132\031.flyteidl.core.IOS"
-  "trategy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n"
-  "\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadata"
-  "\030\001 \001(\0132 .flyteidl.core.K8sObjectMetadata"
-  "\022)\n\010pod_spec\030\002 \001(\0132\027.google.protobuf.Str"
-  "uct\"\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003("
-  "\0132,.flyteidl.core.K8sObjectMetadata.Labe"
-  "lsEntry\022F\n\013annotations\030\002 \003(\01321.flyteidl."
-  "core.K8sObjectMetadata.AnnotationsEntry\032"
-  "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-  "(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022"
-  "\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001"
-  " \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sq"
-  "l.Dialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004A"
-  "NSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com"
-  "/flyteorg/flyteidl/gen/pb-go/flyteidl/co"
-  "reb\006proto3"
+  "e.Container.Architecture\"I\n\014Architecture"
+  "\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006A"
+  "RM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\rdo"
+  "wnload_mode\030\001 \001(\0162&.flyteidl.core.IOStra"
+  "tegy.DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$"
+  ".flyteidl.core.IOStrategy.UploadMode\"L\n\014"
+  "DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWN"
+  "LOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUp"
+  "loadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_E"
+  "AGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadin"
+  "gConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002"
+  " \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001("
+  "\01621.flyteidl.core.DataLoadingConfig.Lite"
+  "ralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyt"
+  "eidl.core.IOStrategy\"1\n\020LiteralMapFormat"
+  "\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPo"
+  "d\0222\n\010metadata\030\001 \001(\0132 .flyteidl.core.K8sO"
+  "bjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.google"
+  ".protobuf.Struct\"\374\001\n\021K8sObjectMetadata\022<"
+  "\n\006labels\030\001 \003(\0132,.flyteidl.core.K8sObject"
+  "Metadata.LabelsEntry\022F\n\013annotations\030\002 \003("
+  "\01321.flyteidl.core.K8sObjectMetadata.Anno"
+  "tationsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
+  "\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022"
+  "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021"
+  "\n\tstatement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.fly"
+  "teidl.core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUND"
+  "EFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B"
+  "6Z4github.com/flyteorg/flyteidl/gen/pb-g"
+  "o/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3050,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3063,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
@@ -699,6 +699,7 @@ bool Container_Architecture_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -706,6 +707,7 @@ bool Container_Architecture_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Container_Architecture Container::UNKNOWN;
 const Container_Architecture Container::AMD64;
 const Container_Architecture Container::ARM64;
 const Container_Architecture Container::ARM_V6;

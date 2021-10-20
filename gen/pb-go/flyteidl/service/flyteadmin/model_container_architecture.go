@@ -13,6 +13,7 @@ type ContainerArchitecture string
 
 // List of ContainerArchitecture
 const (
+	ContainerArchitectureUNKNOWN ContainerArchitecture = "UNKNOWN"
 	ContainerArchitectureAMD64 ContainerArchitecture = "AMD64"
 	ContainerArchitectureARM64 ContainerArchitecture = "ARM64"
 	ContainerArchitectureARM_V6 ContainerArchitecture = "ARM_V6"

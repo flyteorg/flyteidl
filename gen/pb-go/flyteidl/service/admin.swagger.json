@@ -2889,12 +2889,13 @@
     "ContainerArchitecture": {
       "type": "string",
       "enum": [
+        "UNKNOWN",
         "AMD64",
         "ARM64",
         "ARM_V6",
         "ARM_V7"
       ],
-      "default": "AMD64",
+      "default": "UNKNOWN",
       "description": "Architecture-type the container image supports."
     },
     "DataLoadingConfigLiteralMapFormat": {

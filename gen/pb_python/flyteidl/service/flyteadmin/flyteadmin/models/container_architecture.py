@@ -26,6 +26,7 @@ class ContainerArchitecture(object):
     """
     allowed enum values
     """
+    UNKNOWN = "UNKNOWN"
     AMD64 = "AMD64"
     ARM64 = "ARM64"
     ARM_V6 = "ARM_V6"

@@ -10858,6 +10858,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;
@@ -10867,17 +10868,19 @@ export const flyteidl = $root.flyteidl = (() => {
              * Architecture enum.
              * @name flyteidl.core.Container.Architecture
              * @enum {string}
-             * @property {number} AMD64=0 AMD64 value
-             * @property {number} ARM64=1 ARM64 value
-             * @property {number} ARM_V6=2 ARM_V6 value
-             * @property {number} ARM_V7=3 ARM_V7 value
+             * @property {number} UNKNOWN=0 UNKNOWN value
+             * @property {number} AMD64=1 AMD64 value
+             * @property {number} ARM64=2 ARM64 value
+             * @property {number} ARM_V6=3 ARM_V6 value
+             * @property {number} ARM_V7=4 ARM_V7 value
              */
             Container.Architecture = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "AMD64"] = 0;
-                values[valuesById[1] = "ARM64"] = 1;
-                values[valuesById[2] = "ARM_V6"] = 2;
-                values[valuesById[3] = "ARM_V7"] = 3;
+                values[valuesById[0] = "UNKNOWN"] = 0;
+                values[valuesById[1] = "AMD64"] = 1;
+                values[valuesById[2] = "ARM64"] = 2;
+                values[valuesById[3] = "ARM_V6"] = 3;
+                values[valuesById[4] = "ARM_V7"] = 4;
                 return values;
             })();
 
