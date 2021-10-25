@@ -52,6 +52,28 @@ message Schema {
     SchemaType type = 3;
 }
 
+message SchemaMetadata {
+    // This is the storage format, the format of the bits at rest
+    // Parquet, Feather, CSV, etc.
+    // Should this be an enum?
+    string format = 1;
+
+    // Where is this stored? GCS, S3, BigQuery
+    string storage = 2;
+
+    // arrow mostly
+    string external_schema_type = 3;
+
+    // The serialized bytes of a third-party schema library like Arrow
+    bytes external_schema_bytes = 4;
+}
+
+message ExpandedSchema {
+    ExpandedSchemaType type = 1;
+    string uri = 2;
+    SchemaMetadata metadata = 3;
+}
+
 message Scalar {
     oneof value {
         Primitive primitive = 1;
@@ -61,6 +83,7 @@ message Scalar {
         Void none_type = 5;
         Error error = 6;
         google.protobuf.Struct generic = 7;
+        ExpandedSchema = 8;
     }
 }
 
