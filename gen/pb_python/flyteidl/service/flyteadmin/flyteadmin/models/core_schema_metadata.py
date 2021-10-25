@@ -32,35 +32,25 @@ class CoreSchemaMetadata(object):
     """
     swagger_types = {
         'format': 'str',
-        'storage': 'str',
-        'external_schema_type': 'str',
-        'external_schema_bytes': 'str'
+        'storage': 'str'
     }
 
     attribute_map = {
         'format': 'format',
-        'storage': 'storage',
-        'external_schema_type': 'external_schema_type',
-        'external_schema_bytes': 'external_schema_bytes'
+        'storage': 'storage'
     }
 
-    def __init__(self, format=None, storage=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
+    def __init__(self, format=None, storage=None):  # noqa: E501
         """CoreSchemaMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._format = None
         self._storage = None
-        self._external_schema_type = None
-        self._external_schema_bytes = None
         self.discriminator = None
 
         if format is not None:
             self.format = format
         if storage is not None:
             self.storage = storage
-        if external_schema_type is not None:
-            self.external_schema_type = external_schema_type
-        if external_schema_bytes is not None:
-            self.external_schema_bytes = external_schema_bytes
 
     @property
     def format(self):
@@ -103,50 +93,6 @@ class CoreSchemaMetadata(object):
         """
 
         self._storage = storage
-
-    @property
-    def external_schema_type(self):
-        """Gets the external_schema_type of this CoreSchemaMetadata.  # noqa: E501
-
-
-        :return: The external_schema_type of this CoreSchemaMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_schema_type
-
-    @external_schema_type.setter
-    def external_schema_type(self, external_schema_type):
-        """Sets the external_schema_type of this CoreSchemaMetadata.
-
-
-        :param external_schema_type: The external_schema_type of this CoreSchemaMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._external_schema_type = external_schema_type
-
-    @property
-    def external_schema_bytes(self):
-        """Gets the external_schema_bytes of this CoreSchemaMetadata.  # noqa: E501
-
-
-        :return: The external_schema_bytes of this CoreSchemaMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_schema_bytes
-
-    @external_schema_bytes.setter
-    def external_schema_bytes(self, external_schema_bytes):
-        """Sets the external_schema_bytes of this CoreSchemaMetadata.
-
-
-        :param external_schema_bytes: The external_schema_bytes of this CoreSchemaMetadata.  # noqa: E501
-        :type: str
-        """
-        if external_schema_bytes is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', external_schema_bytes):  # noqa: E501
-            raise ValueError(r"Invalid value for `external_schema_bytes`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
-
-        self._external_schema_bytes = external_schema_bytes
 
     def to_dict(self):
         """Returns the model properties as a dict"""

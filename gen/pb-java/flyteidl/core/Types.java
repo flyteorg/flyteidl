@@ -1987,23 +1987,66 @@ public final class Types {
         int index);
 
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     java.util.List<java.lang.String>
         getNamesList();
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     int getNamesCount();
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     java.lang.String getNames(int index);
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     com.google.protobuf.ByteString
         getNamesBytes(int index);
+
+    /**
+     * <pre>
+     * arrow mostly
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    java.lang.String getExternalSchemaType();
+    /**
+     * <pre>
+     * arrow mostly
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getExternalSchemaTypeBytes();
+
+    /**
+     * <pre>
+     * The serialized bytes of a third-party schema library like Arrow
+     * </pre>
+     *
+     * <code>bytes external_schema_bytes = 4;</code>
+     */
+    com.google.protobuf.ByteString getExternalSchemaBytes();
   }
   /**
    * Protobuf type {@code flyteidl.core.ExpandedSchemaType}
@@ -2020,6 +2063,8 @@ public final class Types {
     private ExpandedSchemaType() {
       columns_ = java.util.Collections.emptyList();
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      externalSchemaType_ = "";
+      externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -2064,6 +2109,17 @@ public final class Types {
               names_.add(s);
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              externalSchemaType_ = s;
+              break;
+            }
+            case 34: {
+
+              externalSchemaBytes_ = input.readBytes();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2102,6 +2158,7 @@ public final class Types {
               flyteidl.core.Types.ExpandedSchemaType.class, flyteidl.core.Types.ExpandedSchemaType.Builder.class);
     }
 
+    private int bitField0_;
     public static final int COLUMNS_FIELD_NUMBER = 1;
     private java.util.List<flyteidl.core.Types.LiteralType> columns_;
     /**
@@ -2160,6 +2217,10 @@ public final class Types {
     public static final int NAMES_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList names_;
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -2167,23 +2228,90 @@ public final class Types {
       return names_;
     }
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     public int getNamesCount() {
       return names_.size();
     }
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
     /**
+     * <pre>
+     * Column names
+     * </pre>
+     *
      * <code>repeated string names = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNamesBytes(int index) {
       return names_.getByteString(index);
+    }
+
+    public static final int EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object externalSchemaType_;
+    /**
+     * <pre>
+     * arrow mostly
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    public java.lang.String getExternalSchemaType() {
+      java.lang.Object ref = externalSchemaType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalSchemaType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * arrow mostly
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExternalSchemaTypeBytes() {
+      java.lang.Object ref = externalSchemaType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        externalSchemaType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString externalSchemaBytes_;
+    /**
+     * <pre>
+     * The serialized bytes of a third-party schema library like Arrow
+     * </pre>
+     *
+     * <code>bytes external_schema_bytes = 4;</code>
+     */
+    public com.google.protobuf.ByteString getExternalSchemaBytes() {
+      return externalSchemaBytes_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2206,6 +2334,12 @@ public final class Types {
       for (int i = 0; i < names_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, names_.getRaw(i));
       }
+      if (!getExternalSchemaTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalSchemaType_);
+      }
+      if (!externalSchemaBytes_.isEmpty()) {
+        output.writeBytes(4, externalSchemaBytes_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2227,6 +2361,13 @@ public final class Types {
         size += dataSize;
         size += 1 * getNamesList().size();
       }
+      if (!getExternalSchemaTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, externalSchemaType_);
+      }
+      if (!externalSchemaBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, externalSchemaBytes_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2246,6 +2387,10 @@ public final class Types {
           .equals(other.getColumnsList())) return false;
       if (!getNamesList()
           .equals(other.getNamesList())) return false;
+      if (!getExternalSchemaType()
+          .equals(other.getExternalSchemaType())) return false;
+      if (!getExternalSchemaBytes()
+          .equals(other.getExternalSchemaBytes())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2265,6 +2410,10 @@ public final class Types {
         hash = (37 * hash) + NAMES_FIELD_NUMBER;
         hash = (53 * hash) + getNamesList().hashCode();
       }
+      hash = (37 * hash) + EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalSchemaType().hashCode();
+      hash = (37 * hash) + EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalSchemaBytes().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2407,6 +2556,10 @@ public final class Types {
         }
         names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        externalSchemaType_ = "";
+
+        externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -2434,6 +2587,7 @@ public final class Types {
       public flyteidl.core.Types.ExpandedSchemaType buildPartial() {
         flyteidl.core.Types.ExpandedSchemaType result = new flyteidl.core.Types.ExpandedSchemaType(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (columnsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             columns_ = java.util.Collections.unmodifiableList(columns_);
@@ -2448,6 +2602,9 @@ public final class Types {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.names_ = names_;
+        result.externalSchemaType_ = externalSchemaType_;
+        result.externalSchemaBytes_ = externalSchemaBytes_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2531,6 +2688,13 @@ public final class Types {
             names_.addAll(other.names_);
           }
           onChanged();
+        }
+        if (!other.getExternalSchemaType().isEmpty()) {
+          externalSchemaType_ = other.externalSchemaType_;
+          onChanged();
+        }
+        if (other.getExternalSchemaBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setExternalSchemaBytes(other.getExternalSchemaBytes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2882,6 +3046,10 @@ public final class Types {
          }
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -2889,18 +3057,30 @@ public final class Types {
         return names_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public int getNamesCount() {
         return names_.size();
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public java.lang.String getNames(int index) {
         return names_.get(index);
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -2908,6 +3088,10 @@ public final class Types {
         return names_.getByteString(index);
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public Builder setNames(
@@ -2921,6 +3105,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public Builder addNames(
@@ -2934,6 +3122,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public Builder addAllNames(
@@ -2945,6 +3137,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public Builder clearNames() {
@@ -2954,6 +3150,10 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * Column names
+       * </pre>
+       *
        * <code>repeated string names = 2;</code>
        */
       public Builder addNamesBytes(
@@ -2964,6 +3164,136 @@ public final class Types {
   checkByteStringIsUtf8(value);
         ensureNamesIsMutable();
         names_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object externalSchemaType_ = "";
+      /**
+       * <pre>
+       * arrow mostly
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public java.lang.String getExternalSchemaType() {
+        java.lang.Object ref = externalSchemaType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          externalSchemaType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * arrow mostly
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExternalSchemaTypeBytes() {
+        java.lang.Object ref = externalSchemaType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          externalSchemaType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * arrow mostly
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder setExternalSchemaType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        externalSchemaType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * arrow mostly
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder clearExternalSchemaType() {
+        
+        externalSchemaType_ = getDefaultInstance().getExternalSchemaType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * arrow mostly
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder setExternalSchemaTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        externalSchemaType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public com.google.protobuf.ByteString getExternalSchemaBytes() {
+        return externalSchemaBytes_;
+      }
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public Builder setExternalSchemaBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        externalSchemaBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public Builder clearExternalSchemaBytes() {
+        
+        externalSchemaBytes_ = getDefaultInstance().getExternalSchemaBytes();
         onChanged();
         return this;
       }
@@ -8382,30 +8712,31 @@ public final class Types {
       ".core.SchemaType.SchemaColumn.SchemaColu" +
       "mnType\"_\n\020SchemaColumnType\022\013\n\007INTEGER\020\000\022" +
       "\t\n\005FLOAT\020\001\022\n\n\006STRING\020\002\022\013\n\007BOOLEAN\020\003\022\014\n\010D" +
-      "ATETIME\020\004\022\014\n\010DURATION\020\005\"P\n\022ExpandedSchem" +
-      "aType\022+\n\007columns\030\001 \003(\0132\032.flyteidl.core.L" +
-      "iteralType\022\r\n\005names\030\002 \003(\t\"\217\001\n\010BlobType\022\016" +
-      "\n\006format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*" +
-      ".flyteidl.core.BlobType.BlobDimensionali" +
-      "ty\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\t" +
-      "MULTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"" +
-      "\336\002\n\013LiteralType\022+\n\006simple\030\001 \001(\0162\031.flytei" +
-      "dl.core.SimpleTypeH\000\022+\n\006schema\030\002 \001(\0132\031.f" +
-      "lyteidl.core.SchemaTypeH\000\0225\n\017collection_" +
-      "type\030\003 \001(\0132\032.flyteidl.core.LiteralTypeH\000" +
-      "\0224\n\016map_value_type\030\004 \001(\0132\032.flyteidl.core" +
-      ".LiteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyteidl." +
-      "core.BlobTypeH\000\022,\n\tenum_type\030\007 \001(\0132\027.fly" +
-      "teidl.core.EnumTypeH\000\022)\n\010metadata\030\006 \001(\0132" +
-      "\027.google.protobuf.StructB\006\n\004type\"/\n\017Outp" +
-      "utReference\022\017\n\007node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(" +
-      "\t\"0\n\005Error\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007me" +
-      "ssage\030\002 \001(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007" +
-      "INTEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOL" +
-      "EAN\020\004\022\014\n\010DATETIME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BIN" +
-      "ARY\020\007\022\t\n\005ERROR\020\010\022\n\n\006STRUCT\020\tB6Z4github.c" +
-      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
-      "coreb\006proto3"
+      "ATETIME\020\004\022\014\n\010DURATION\020\005\"\215\001\n\022ExpandedSche" +
+      "maType\022+\n\007columns\030\001 \003(\0132\032.flyteidl.core." +
+      "LiteralType\022\r\n\005names\030\002 \003(\t\022\034\n\024external_s" +
+      "chema_type\030\003 \001(\t\022\035\n\025external_schema_byte" +
+      "s\030\004 \001(\014\"\217\001\n\010BlobType\022\016\n\006format\030\001 \001(\t\022B\n\016" +
+      "dimensionality\030\002 \001(\0162*.flyteidl.core.Blo" +
+      "bType.BlobDimensionality\"/\n\022BlobDimensio" +
+      "nality\022\n\n\006SINGLE\020\000\022\r\n\tMULTIPART\020\001\"\032\n\010Enu" +
+      "mType\022\016\n\006values\030\001 \003(\t\"\336\002\n\013LiteralType\022+\n" +
+      "\006simple\030\001 \001(\0162\031.flyteidl.core.SimpleType" +
+      "H\000\022+\n\006schema\030\002 \001(\0132\031.flyteidl.core.Schem" +
+      "aTypeH\000\0225\n\017collection_type\030\003 \001(\0132\032.flyte" +
+      "idl.core.LiteralTypeH\000\0224\n\016map_value_type" +
+      "\030\004 \001(\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004" +
+      "blob\030\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n" +
+      "\tenum_type\030\007 \001(\0132\027.flyteidl.core.EnumTyp" +
+      "eH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protobuf." +
+      "StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007nod" +
+      "e_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016fail" +
+      "ed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nSi" +
+      "mpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOAT" +
+      "\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME\020" +
+      "\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022\n" +
+      "\n\006STRUCT\020\tB6Z4github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8437,7 +8768,7 @@ public final class Types {
     internal_static_flyteidl_core_ExpandedSchemaType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ExpandedSchemaType_descriptor,
-        new java.lang.String[] { "Columns", "Names", });
+        new java.lang.String[] { "Columns", "Names", "ExternalSchemaType", "ExternalSchemaBytes", });
     internal_static_flyteidl_core_BlobType_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_BlobType_fieldAccessorTable = new

@@ -5237,7 +5237,17 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Column names"
+        },
+        "external_schema_type": {
+          "type": "string",
+          "title": "arrow mostly"
+        },
+        "external_schema_bytes": {
+          "type": "string",
+          "format": "byte",
+          "title": "The serialized bytes of a third-party schema library like Arrow"
         }
       }
     },
@@ -5816,15 +5826,6 @@
         "storage": {
           "type": "string",
           "title": "Where is this stored? GCS, S3, BigQuery"
-        },
-        "external_schema_type": {
-          "type": "string",
-          "title": "arrow mostly"
-        },
-        "external_schema_bytes": {
-          "type": "string",
-          "format": "byte",
-          "title": "The serialized bytes of a third-party schema library like Arrow"
         }
       }
     },

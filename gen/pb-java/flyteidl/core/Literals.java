@@ -4534,33 +4534,6 @@ public final class Literals {
      */
     com.google.protobuf.ByteString
         getStorageBytes();
-
-    /**
-     * <pre>
-     * arrow mostly
-     * </pre>
-     *
-     * <code>string external_schema_type = 3;</code>
-     */
-    java.lang.String getExternalSchemaType();
-    /**
-     * <pre>
-     * arrow mostly
-     * </pre>
-     *
-     * <code>string external_schema_type = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getExternalSchemaTypeBytes();
-
-    /**
-     * <pre>
-     * The serialized bytes of a third-party schema library like Arrow
-     * </pre>
-     *
-     * <code>bytes external_schema_bytes = 4;</code>
-     */
-    com.google.protobuf.ByteString getExternalSchemaBytes();
   }
   /**
    * Protobuf type {@code flyteidl.core.SchemaMetadata}
@@ -4577,8 +4550,6 @@ public final class Literals {
     private SchemaMetadata() {
       format_ = "";
       storage_ = "";
-      externalSchemaType_ = "";
-      externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -4615,17 +4586,6 @@ public final class Literals {
               java.lang.String s = input.readStringRequireUtf8();
 
               storage_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalSchemaType_ = s;
-              break;
-            }
-            case 34: {
-
-              externalSchemaBytes_ = input.readBytes();
               break;
             }
             default: {
@@ -4748,61 +4708,6 @@ public final class Literals {
       }
     }
 
-    public static final int EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object externalSchemaType_;
-    /**
-     * <pre>
-     * arrow mostly
-     * </pre>
-     *
-     * <code>string external_schema_type = 3;</code>
-     */
-    public java.lang.String getExternalSchemaType() {
-      java.lang.Object ref = externalSchemaType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        externalSchemaType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * arrow mostly
-     * </pre>
-     *
-     * <code>string external_schema_type = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getExternalSchemaTypeBytes() {
-      java.lang.Object ref = externalSchemaType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        externalSchemaType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString externalSchemaBytes_;
-    /**
-     * <pre>
-     * The serialized bytes of a third-party schema library like Arrow
-     * </pre>
-     *
-     * <code>bytes external_schema_bytes = 4;</code>
-     */
-    public com.google.protobuf.ByteString getExternalSchemaBytes() {
-      return externalSchemaBytes_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4823,12 +4728,6 @@ public final class Literals {
       if (!getStorageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, storage_);
       }
-      if (!getExternalSchemaTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalSchemaType_);
-      }
-      if (!externalSchemaBytes_.isEmpty()) {
-        output.writeBytes(4, externalSchemaBytes_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -4843,13 +4742,6 @@ public final class Literals {
       }
       if (!getStorageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, storage_);
-      }
-      if (!getExternalSchemaTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, externalSchemaType_);
-      }
-      if (!externalSchemaBytes_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, externalSchemaBytes_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4870,10 +4762,6 @@ public final class Literals {
           .equals(other.getFormat())) return false;
       if (!getStorage()
           .equals(other.getStorage())) return false;
-      if (!getExternalSchemaType()
-          .equals(other.getExternalSchemaType())) return false;
-      if (!getExternalSchemaBytes()
-          .equals(other.getExternalSchemaBytes())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4889,10 +4777,6 @@ public final class Literals {
       hash = (53 * hash) + getFormat().hashCode();
       hash = (37 * hash) + STORAGE_FIELD_NUMBER;
       hash = (53 * hash) + getStorage().hashCode();
-      hash = (37 * hash) + EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getExternalSchemaType().hashCode();
-      hash = (37 * hash) + EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getExternalSchemaBytes().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5030,10 +4914,6 @@ public final class Literals {
 
         storage_ = "";
 
-        externalSchemaType_ = "";
-
-        externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -5062,8 +4942,6 @@ public final class Literals {
         flyteidl.core.Literals.SchemaMetadata result = new flyteidl.core.Literals.SchemaMetadata(this);
         result.format_ = format_;
         result.storage_ = storage_;
-        result.externalSchemaType_ = externalSchemaType_;
-        result.externalSchemaBytes_ = externalSchemaBytes_;
         onBuilt();
         return result;
       }
@@ -5119,13 +4997,6 @@ public final class Literals {
         if (!other.getStorage().isEmpty()) {
           storage_ = other.storage_;
           onChanged();
-        }
-        if (!other.getExternalSchemaType().isEmpty()) {
-          externalSchemaType_ = other.externalSchemaType_;
-          onChanged();
-        }
-        if (other.getExternalSchemaBytes() != com.google.protobuf.ByteString.EMPTY) {
-          setExternalSchemaBytes(other.getExternalSchemaBytes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5340,136 +5211,6 @@ public final class Literals {
   checkByteStringIsUtf8(value);
         
         storage_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object externalSchemaType_ = "";
-      /**
-       * <pre>
-       * arrow mostly
-       * </pre>
-       *
-       * <code>string external_schema_type = 3;</code>
-       */
-      public java.lang.String getExternalSchemaType() {
-        java.lang.Object ref = externalSchemaType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          externalSchemaType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * arrow mostly
-       * </pre>
-       *
-       * <code>string external_schema_type = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExternalSchemaTypeBytes() {
-        java.lang.Object ref = externalSchemaType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          externalSchemaType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * arrow mostly
-       * </pre>
-       *
-       * <code>string external_schema_type = 3;</code>
-       */
-      public Builder setExternalSchemaType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        externalSchemaType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * arrow mostly
-       * </pre>
-       *
-       * <code>string external_schema_type = 3;</code>
-       */
-      public Builder clearExternalSchemaType() {
-        
-        externalSchemaType_ = getDefaultInstance().getExternalSchemaType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * arrow mostly
-       * </pre>
-       *
-       * <code>string external_schema_type = 3;</code>
-       */
-      public Builder setExternalSchemaTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        externalSchemaType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
-       * </pre>
-       *
-       * <code>bytes external_schema_bytes = 4;</code>
-       */
-      public com.google.protobuf.ByteString getExternalSchemaBytes() {
-        return externalSchemaBytes_;
-      }
-      /**
-       * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
-       * </pre>
-       *
-       * <code>bytes external_schema_bytes = 4;</code>
-       */
-      public Builder setExternalSchemaBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        externalSchemaBytes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
-       * </pre>
-       *
-       * <code>bytes external_schema_bytes = 4;</code>
-       */
-      public Builder clearExternalSchemaBytes() {
-        
-        externalSchemaBytes_ = getDefaultInstance().getExternalSchemaBytes();
         onChanged();
         return this;
       }
@@ -16889,48 +16630,46 @@ public final class Literals {
       "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value" +
       "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001" +
       "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT" +
-      "ype\"n\n\016SchemaMetadata\022\016\n\006format\030\001 \001(\t\022\017\n" +
-      "\007storage\030\002 \001(\t\022\034\n\024external_schema_type\030\003" +
-      " \001(\t\022\035\n\025external_schema_bytes\030\004 \001(\014\"\177\n\016E" +
-      "xpandedSchema\022/\n\004type\030\001 \001(\0132!.flyteidl.c" +
-      "ore.ExpandedSchemaType\022\013\n\003uri\030\002 \001(\t\022/\n\010m" +
-      "etadata\030\003 \001(\0132\035.flyteidl.core.SchemaMeta" +
-      "data\"\353\002\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030.fly" +
-      "teidl.core.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132\023.f" +
-      "lyteidl.core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025.fl" +
-      "yteidl.core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132\025.f" +
-      "lyteidl.core.SchemaH\000\022(\n\tnone_type\030\005 \001(\013" +
-      "2\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024" +
-      ".flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132" +
-      "\027.google.protobuf.StructH\000\0225\n\014flyte_sche" +
-      "ma\030\010 \001(\0132\035.flyteidl.core.ExpandedSchemaH" +
-      "\000B\007\n\005value\"\235\001\n\007Literal\022\'\n\006scalar\030\001 \001(\0132\025" +
-      ".flyteidl.core.ScalarH\000\0226\n\ncollection\030\002 " +
-      "\001(\0132 .flyteidl.core.LiteralCollectionH\000\022" +
-      "(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralMapH" +
-      "\000B\007\n\005value\"=\n\021LiteralCollection\022(\n\010liter" +
-      "als\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\nLi" +
-      "teralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl.co" +
-      "re.LiteralMap.LiteralsEntry\032G\n\rLiteralsE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyte" +
-      "idl.core.Literal:\0028\001\"E\n\025BindingDataColle" +
-      "ction\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.core." +
-      "BindingData\"\234\001\n\016BindingDataMap\022=\n\010bindin" +
-      "gs\030\001 \003(\0132+.flyteidl.core.BindingDataMap." +
-      "BindingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Bindi" +
-      "ngData:\0028\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001 \001" +
-      "(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollectio" +
-      "n\030\002 \001(\0132$.flyteidl.core.BindingDataColle" +
-      "ctionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.core" +
-      ".OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flytei" +
-      "dl.core.BindingDataMapH\000B\007\n\005value\"C\n\007Bin" +
-      "ding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.fly" +
-      "teidl.core.BindingData\"*\n\014KeyValuePair\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrat" +
-      "egy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/flyte" +
-      "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr" +
-      "oto3"
+      "ype\"1\n\016SchemaMetadata\022\016\n\006format\030\001 \001(\t\022\017\n" +
+      "\007storage\030\002 \001(\t\"\177\n\016ExpandedSchema\022/\n\004type" +
+      "\030\001 \001(\0132!.flyteidl.core.ExpandedSchemaTyp" +
+      "e\022\013\n\003uri\030\002 \001(\t\022/\n\010metadata\030\003 \001(\0132\035.flyte" +
+      "idl.core.SchemaMetadata\"\353\002\n\006Scalar\022-\n\tpr" +
+      "imitive\030\001 \001(\0132\030.flyteidl.core.PrimitiveH" +
+      "\000\022#\n\004blob\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'" +
+      "\n\006binary\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022" +
+      "\'\n\006schema\030\004 \001(\0132\025.flyteidl.core.SchemaH\000" +
+      "\022(\n\tnone_type\030\005 \001(\0132\023.flyteidl.core.Void" +
+      "H\000\022%\n\005error\030\006 \001(\0132\024.flyteidl.core.ErrorH" +
+      "\000\022*\n\007generic\030\007 \001(\0132\027.google.protobuf.Str" +
+      "uctH\000\0225\n\014flyte_schema\030\010 \001(\0132\035.flyteidl.c" +
+      "ore.ExpandedSchemaH\000B\007\n\005value\"\235\001\n\007Litera" +
+      "l\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Scalar" +
+      "H\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.L" +
+      "iteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapH\000B\007\n\005value\"=\n\021Literal" +
+      "Collection\022(\n\010literals\030\001 \003(\0132\026.flyteidl." +
+      "core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030" +
+      "\001 \003(\0132\'.flyteidl.core.LiteralMap.Literal" +
+      "sEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005" +
+      "value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\"" +
+      "E\n\025BindingDataCollection\022,\n\010bindings\030\001 \003" +
+      "(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindi" +
+      "ngDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.c" +
+      "ore.BindingDataMap.BindingsEntry\032K\n\rBind" +
+      "ingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032." +
+      "flyteidl.core.BindingData:\0028\001\"\334\001\n\013Bindin" +
+      "gData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sc" +
+      "alarH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.co" +
+      "re.BindingDataCollectionH\000\0221\n\007promise\030\003 " +
+      "\001(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n" +
+      "\003map\030\004 \001(\0132\035.flyteidl.core.BindingDataMa" +
+      "pH\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007" +
+      "binding\030\002 \001(\0132\032.flyteidl.core.BindingDat" +
+      "a\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB" +
+      "6Z4github.com/flyteorg/flyteidl/gen/pb-g" +
+      "o/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16989,7 +16728,7 @@ public final class Literals {
     internal_static_flyteidl_core_SchemaMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SchemaMetadata_descriptor,
-        new java.lang.String[] { "Format", "Storage", "ExternalSchemaType", "ExternalSchemaBytes", });
+        new java.lang.String[] { "Format", "Storage", });
     internal_static_flyteidl_core_ExpandedSchema_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_ExpandedSchema_fieldAccessorTable = new

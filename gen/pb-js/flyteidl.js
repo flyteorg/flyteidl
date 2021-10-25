@@ -5102,8 +5102,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ISchemaMetadata
              * @property {string|null} [format] SchemaMetadata format
              * @property {string|null} [storage] SchemaMetadata storage
-             * @property {string|null} [externalSchemaType] SchemaMetadata externalSchemaType
-             * @property {Uint8Array|null} [externalSchemaBytes] SchemaMetadata externalSchemaBytes
              */
 
             /**
@@ -5138,22 +5136,6 @@ export const flyteidl = $root.flyteidl = (() => {
             SchemaMetadata.prototype.storage = "";
 
             /**
-             * SchemaMetadata externalSchemaType.
-             * @member {string} externalSchemaType
-             * @memberof flyteidl.core.SchemaMetadata
-             * @instance
-             */
-            SchemaMetadata.prototype.externalSchemaType = "";
-
-            /**
-             * SchemaMetadata externalSchemaBytes.
-             * @member {Uint8Array} externalSchemaBytes
-             * @memberof flyteidl.core.SchemaMetadata
-             * @instance
-             */
-            SchemaMetadata.prototype.externalSchemaBytes = $util.newBuffer([]);
-
-            /**
              * Creates a new SchemaMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.SchemaMetadata
@@ -5181,10 +5163,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.format);
                 if (message.storage != null && message.hasOwnProperty("storage"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.storage);
-                if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.externalSchemaType);
-                if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.externalSchemaBytes);
                 return writer;
             };
 
@@ -5212,12 +5190,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.storage = reader.string();
                         break;
-                    case 3:
-                        message.externalSchemaType = reader.string();
-                        break;
-                    case 4:
-                        message.externalSchemaBytes = reader.bytes();
-                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5243,12 +5215,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.storage != null && message.hasOwnProperty("storage"))
                     if (!$util.isString(message.storage))
                         return "storage: string expected";
-                if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
-                    if (!$util.isString(message.externalSchemaType))
-                        return "externalSchemaType: string expected";
-                if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
-                    if (!(message.externalSchemaBytes && typeof message.externalSchemaBytes.length === "number" || $util.isString(message.externalSchemaBytes)))
-                        return "externalSchemaBytes: buffer expected";
                 return null;
             };
 
@@ -7255,6 +7221,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExpandedSchemaType
              * @property {Array.<flyteidl.core.ILiteralType>|null} [columns] ExpandedSchemaType columns
              * @property {Array.<string>|null} [names] ExpandedSchemaType names
+             * @property {string|null} [externalSchemaType] ExpandedSchemaType externalSchemaType
+             * @property {Uint8Array|null} [externalSchemaBytes] ExpandedSchemaType externalSchemaBytes
              */
 
             /**
@@ -7291,6 +7259,22 @@ export const flyteidl = $root.flyteidl = (() => {
             ExpandedSchemaType.prototype.names = $util.emptyArray;
 
             /**
+             * ExpandedSchemaType externalSchemaType.
+             * @member {string} externalSchemaType
+             * @memberof flyteidl.core.ExpandedSchemaType
+             * @instance
+             */
+            ExpandedSchemaType.prototype.externalSchemaType = "";
+
+            /**
+             * ExpandedSchemaType externalSchemaBytes.
+             * @member {Uint8Array} externalSchemaBytes
+             * @memberof flyteidl.core.ExpandedSchemaType
+             * @instance
+             */
+            ExpandedSchemaType.prototype.externalSchemaBytes = $util.newBuffer([]);
+
+            /**
              * Creates a new ExpandedSchemaType instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.ExpandedSchemaType
@@ -7320,6 +7304,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.names != null && message.names.length)
                     for (let i = 0; i < message.names.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.names[i]);
+                if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.externalSchemaType);
+                if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.externalSchemaBytes);
                 return writer;
             };
 
@@ -7350,6 +7338,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.names && message.names.length))
                             message.names = [];
                         message.names.push(reader.string());
+                        break;
+                    case 3:
+                        message.externalSchemaType = reader.string();
+                        break;
+                    case 4:
+                        message.externalSchemaBytes = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7386,6 +7380,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!$util.isString(message.names[i]))
                             return "names: string[] expected";
                 }
+                if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
+                    if (!$util.isString(message.externalSchemaType))
+                        return "externalSchemaType: string expected";
+                if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
+                    if (!(message.externalSchemaBytes && typeof message.externalSchemaBytes.length === "number" || $util.isString(message.externalSchemaBytes)))
+                        return "externalSchemaBytes: buffer expected";
                 return null;
             };
 

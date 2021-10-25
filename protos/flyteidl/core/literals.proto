@@ -60,12 +60,6 @@ message SchemaMetadata {
 
     // Where is this stored? GCS, S3, BigQuery
     string storage = 2;
-
-    // arrow mostly
-    string external_schema_type = 3;
-
-    // The serialized bytes of a third-party schema library like Arrow
-    bytes external_schema_bytes = 4;
 }
 
 message ExpandedSchema {

@@ -580,6 +580,34 @@ class ExpandedSchemaType final :
   const ::google::protobuf::RepeatedPtrField<::std::string>& names() const;
   ::google::protobuf::RepeatedPtrField<::std::string>* mutable_names();
 
+  // string external_schema_type = 3;
+  void clear_external_schema_type();
+  static const int kExternalSchemaTypeFieldNumber = 3;
+  const ::std::string& external_schema_type() const;
+  void set_external_schema_type(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_schema_type(::std::string&& value);
+  #endif
+  void set_external_schema_type(const char* value);
+  void set_external_schema_type(const char* value, size_t size);
+  ::std::string* mutable_external_schema_type();
+  ::std::string* release_external_schema_type();
+  void set_allocated_external_schema_type(::std::string* external_schema_type);
+
+  // bytes external_schema_bytes = 4;
+  void clear_external_schema_bytes();
+  static const int kExternalSchemaBytesFieldNumber = 4;
+  const ::std::string& external_schema_bytes() const;
+  void set_external_schema_bytes(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_schema_bytes(::std::string&& value);
+  #endif
+  void set_external_schema_bytes(const char* value);
+  void set_external_schema_bytes(const void* value, size_t size);
+  ::std::string* mutable_external_schema_bytes();
+  ::std::string* release_external_schema_bytes();
+  void set_allocated_external_schema_bytes(::std::string* external_schema_bytes);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.ExpandedSchemaType)
  private:
   class HasBitSetters;
@@ -587,6 +615,8 @@ class ExpandedSchemaType final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > columns_;
   ::google::protobuf::RepeatedPtrField<::std::string> names_;
+  ::google::protobuf::internal::ArenaStringPtr external_schema_type_;
+  ::google::protobuf::internal::ArenaStringPtr external_schema_bytes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
 };
@@ -1555,6 +1585,112 @@ inline ::google::protobuf::RepeatedPtrField<::std::string>*
 ExpandedSchemaType::mutable_names() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.core.ExpandedSchemaType.names)
   return &names_;
+}
+
+// string external_schema_type = 3;
+inline void ExpandedSchemaType::clear_external_schema_type() {
+  external_schema_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ExpandedSchemaType::external_schema_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  return external_schema_type_.GetNoArena();
+}
+inline void ExpandedSchemaType::set_external_schema_type(const ::std::string& value) {
+  
+  external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.external_schema_type)
+}
+#if LANG_CXX11
+inline void ExpandedSchemaType::set_external_schema_type(::std::string&& value) {
+  
+  external_schema_type_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ExpandedSchemaType.external_schema_type)
+}
+#endif
+inline void ExpandedSchemaType::set_external_schema_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.ExpandedSchemaType.external_schema_type)
+}
+inline void ExpandedSchemaType::set_external_schema_type(const char* value, size_t size) {
+  
+  external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ExpandedSchemaType.external_schema_type)
+}
+inline ::std::string* ExpandedSchemaType::mutable_external_schema_type() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  return external_schema_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ExpandedSchemaType::release_external_schema_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  
+  return external_schema_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ExpandedSchemaType::set_allocated_external_schema_type(::std::string* external_schema_type) {
+  if (external_schema_type != nullptr) {
+    
+  } else {
+    
+  }
+  external_schema_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_schema_type);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ExpandedSchemaType.external_schema_type)
+}
+
+// bytes external_schema_bytes = 4;
+inline void ExpandedSchemaType::clear_external_schema_bytes() {
+  external_schema_bytes_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ExpandedSchemaType::external_schema_bytes() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  return external_schema_bytes_.GetNoArena();
+}
+inline void ExpandedSchemaType::set_external_schema_bytes(const ::std::string& value) {
+  
+  external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+}
+#if LANG_CXX11
+inline void ExpandedSchemaType::set_external_schema_bytes(::std::string&& value) {
+  
+  external_schema_bytes_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+}
+#endif
+inline void ExpandedSchemaType::set_external_schema_bytes(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+}
+inline void ExpandedSchemaType::set_external_schema_bytes(const void* value, size_t size) {
+  
+  external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+}
+inline ::std::string* ExpandedSchemaType::mutable_external_schema_bytes() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  return external_schema_bytes_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ExpandedSchemaType::release_external_schema_bytes() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  
+  return external_schema_bytes_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ExpandedSchemaType::set_allocated_external_schema_bytes(::std::string* external_schema_bytes) {
+  if (external_schema_bytes != nullptr) {
+    
+  } else {
+    
+  }
+  external_schema_bytes_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_schema_bytes);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
 }
 
 // -------------------------------------------------------------------

@@ -462,8 +462,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fliterals_2eproto:
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SchemaMetadata, format_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SchemaMetadata, storage_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SchemaMetadata, external_schema_type_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SchemaMetadata, external_schema_bytes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ExpandedSchema, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -576,19 +574,19 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 30, -1, sizeof(::flyteidl::core::Binary)},
   { 37, -1, sizeof(::flyteidl::core::Schema)},
   { 44, -1, sizeof(::flyteidl::core::SchemaMetadata)},
-  { 53, -1, sizeof(::flyteidl::core::ExpandedSchema)},
-  { 61, -1, sizeof(::flyteidl::core::Scalar)},
-  { 75, -1, sizeof(::flyteidl::core::Literal)},
-  { 84, -1, sizeof(::flyteidl::core::LiteralCollection)},
-  { 90, 97, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
-  { 99, -1, sizeof(::flyteidl::core::LiteralMap)},
-  { 105, -1, sizeof(::flyteidl::core::BindingDataCollection)},
-  { 111, 118, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
-  { 120, -1, sizeof(::flyteidl::core::BindingDataMap)},
-  { 126, -1, sizeof(::flyteidl::core::BindingData)},
-  { 136, -1, sizeof(::flyteidl::core::Binding)},
-  { 143, -1, sizeof(::flyteidl::core::KeyValuePair)},
-  { 150, -1, sizeof(::flyteidl::core::RetryStrategy)},
+  { 51, -1, sizeof(::flyteidl::core::ExpandedSchema)},
+  { 59, -1, sizeof(::flyteidl::core::Scalar)},
+  { 73, -1, sizeof(::flyteidl::core::Literal)},
+  { 82, -1, sizeof(::flyteidl::core::LiteralCollection)},
+  { 88, 95, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
+  { 97, -1, sizeof(::flyteidl::core::LiteralMap)},
+  { 103, -1, sizeof(::flyteidl::core::BindingDataCollection)},
+  { 109, 116, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
+  { 118, -1, sizeof(::flyteidl::core::BindingDataMap)},
+  { 124, -1, sizeof(::flyteidl::core::BindingData)},
+  { 134, -1, sizeof(::flyteidl::core::Binding)},
+  { 141, -1, sizeof(::flyteidl::core::KeyValuePair)},
+  { 148, -1, sizeof(::flyteidl::core::RetryStrategy)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -636,53 +634,51 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto[] =
   "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value"
   "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001"
   "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT"
-  "ype\"n\n\016SchemaMetadata\022\016\n\006format\030\001 \001(\t\022\017\n"
-  "\007storage\030\002 \001(\t\022\034\n\024external_schema_type\030\003"
-  " \001(\t\022\035\n\025external_schema_bytes\030\004 \001(\014\"\177\n\016E"
-  "xpandedSchema\022/\n\004type\030\001 \001(\0132!.flyteidl.c"
-  "ore.ExpandedSchemaType\022\013\n\003uri\030\002 \001(\t\022/\n\010m"
-  "etadata\030\003 \001(\0132\035.flyteidl.core.SchemaMeta"
-  "data\"\353\002\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030.fly"
-  "teidl.core.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132\023.f"
-  "lyteidl.core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025.fl"
-  "yteidl.core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132\025.f"
-  "lyteidl.core.SchemaH\000\022(\n\tnone_type\030\005 \001(\013"
-  "2\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024"
-  ".flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132"
-  "\027.google.protobuf.StructH\000\0225\n\014flyte_sche"
-  "ma\030\010 \001(\0132\035.flyteidl.core.ExpandedSchemaH"
-  "\000B\007\n\005value\"\235\001\n\007Literal\022\'\n\006scalar\030\001 \001(\0132\025"
-  ".flyteidl.core.ScalarH\000\0226\n\ncollection\030\002 "
-  "\001(\0132 .flyteidl.core.LiteralCollectionH\000\022"
-  "(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralMapH"
-  "\000B\007\n\005value\"=\n\021LiteralCollection\022(\n\010liter"
-  "als\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\nLi"
-  "teralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl.co"
-  "re.LiteralMap.LiteralsEntry\032G\n\rLiteralsE"
-  "ntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyte"
-  "idl.core.Literal:\0028\001\"E\n\025BindingDataColle"
-  "ction\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.core."
-  "BindingData\"\234\001\n\016BindingDataMap\022=\n\010bindin"
-  "gs\030\001 \003(\0132+.flyteidl.core.BindingDataMap."
-  "BindingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 "
-  "\001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Bindi"
-  "ngData:\0028\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001 \001"
-  "(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollectio"
-  "n\030\002 \001(\0132$.flyteidl.core.BindingDataColle"
-  "ctionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.core"
-  ".OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flytei"
-  "dl.core.BindingDataMapH\000B\007\n\005value\"C\n\007Bin"
-  "ding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.fly"
-  "teidl.core.BindingData\"*\n\014KeyValuePair\022\013"
-  "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrat"
-  "egy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/flyte"
-  "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr"
-  "oto3"
+  "ype\"1\n\016SchemaMetadata\022\016\n\006format\030\001 \001(\t\022\017\n"
+  "\007storage\030\002 \001(\t\"\177\n\016ExpandedSchema\022/\n\004type"
+  "\030\001 \001(\0132!.flyteidl.core.ExpandedSchemaTyp"
+  "e\022\013\n\003uri\030\002 \001(\t\022/\n\010metadata\030\003 \001(\0132\035.flyte"
+  "idl.core.SchemaMetadata\"\353\002\n\006Scalar\022-\n\tpr"
+  "imitive\030\001 \001(\0132\030.flyteidl.core.PrimitiveH"
+  "\000\022#\n\004blob\030\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'"
+  "\n\006binary\030\003 \001(\0132\025.flyteidl.core.BinaryH\000\022"
+  "\'\n\006schema\030\004 \001(\0132\025.flyteidl.core.SchemaH\000"
+  "\022(\n\tnone_type\030\005 \001(\0132\023.flyteidl.core.Void"
+  "H\000\022%\n\005error\030\006 \001(\0132\024.flyteidl.core.ErrorH"
+  "\000\022*\n\007generic\030\007 \001(\0132\027.google.protobuf.Str"
+  "uctH\000\0225\n\014flyte_schema\030\010 \001(\0132\035.flyteidl.c"
+  "ore.ExpandedSchemaH\000B\007\n\005value\"\235\001\n\007Litera"
+  "l\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Scalar"
+  "H\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.L"
+  "iteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flytei"
+  "dl.core.LiteralMapH\000B\007\n\005value\"=\n\021Literal"
+  "Collection\022(\n\010literals\030\001 \003(\0132\026.flyteidl."
+  "core.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030"
+  "\001 \003(\0132\'.flyteidl.core.LiteralMap.Literal"
+  "sEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005"
+  "value\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\""
+  "E\n\025BindingDataCollection\022,\n\010bindings\030\001 \003"
+  "(\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindi"
+  "ngDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.c"
+  "ore.BindingDataMap.BindingsEntry\032K\n\rBind"
+  "ingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032."
+  "flyteidl.core.BindingData:\0028\001\"\334\001\n\013Bindin"
+  "gData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sc"
+  "alarH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.co"
+  "re.BindingDataCollectionH\000\0221\n\007promise\030\003 "
+  "\001(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n"
+  "\003map\030\004 \001(\0132\035.flyteidl.core.BindingDataMa"
+  "pH\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007"
+  "binding\030\002 \001(\0132\032.flyteidl.core.BindingDat"
+  "a\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+  "\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB"
+  "6Z4github.com/flyteorg/flyteidl/gen/pb-g"
+  "o/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fliterals_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fliterals_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto,
-  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2244,
+  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2183,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fliterals_2eproto() {
@@ -2959,8 +2955,6 @@ class SchemaMetadata::HasBitSetters {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SchemaMetadata::kFormatFieldNumber;
 const int SchemaMetadata::kStorageFieldNumber;
-const int SchemaMetadata::kExternalSchemaTypeFieldNumber;
-const int SchemaMetadata::kExternalSchemaBytesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SchemaMetadata::SchemaMetadata()
@@ -2980,14 +2974,6 @@ SchemaMetadata::SchemaMetadata(const SchemaMetadata& from)
   if (from.storage().size() > 0) {
     storage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.storage_);
   }
-  external_schema_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.external_schema_type().size() > 0) {
-    external_schema_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_schema_type_);
-  }
-  external_schema_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.external_schema_bytes().size() > 0) {
-    external_schema_bytes_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_schema_bytes_);
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.SchemaMetadata)
 }
 
@@ -2996,8 +2982,6 @@ void SchemaMetadata::SharedCtor() {
       &scc_info_SchemaMetadata_flyteidl_2fcore_2fliterals_2eproto.base);
   format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   storage_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 SchemaMetadata::~SchemaMetadata() {
@@ -3008,8 +2992,6 @@ SchemaMetadata::~SchemaMetadata() {
 void SchemaMetadata::SharedDtor() {
   format_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   storage_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_bytes_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void SchemaMetadata::SetCachedSize(int size) const {
@@ -3029,8 +3011,6 @@ void SchemaMetadata::Clear() {
 
   format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   storage_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  external_schema_bytes_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -3075,37 +3055,6 @@ const char* SchemaMetadata::_InternalParse(const char* begin, const char* end, v
           goto string_till_end;
         }
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string external_schema_type = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.SchemaMetadata.external_schema_type");
-        object = msg->mutable_external_schema_type();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // bytes external_schema_bytes = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        object = msg->mutable_external_schema_bytes();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParser;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
         break;
@@ -3174,32 +3123,6 @@ bool SchemaMetadata::MergePartialFromCodedStream(
         break;
       }
 
-      // string external_schema_type = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_external_schema_type()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->external_schema_type().data(), static_cast<int>(this->external_schema_type().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.SchemaMetadata.external_schema_type"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // bytes external_schema_bytes = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_external_schema_bytes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3247,22 +3170,6 @@ void SchemaMetadata::SerializeWithCachedSizes(
       2, this->storage(), output);
   }
 
-  // string external_schema_type = 3;
-  if (this->external_schema_type().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->external_schema_type().data(), static_cast<int>(this->external_schema_type().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.SchemaMetadata.external_schema_type");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->external_schema_type(), output);
-  }
-
-  // bytes external_schema_bytes = 4;
-  if (this->external_schema_bytes().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      4, this->external_schema_bytes(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3296,24 +3203,6 @@ void SchemaMetadata::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->storage(), target);
-  }
-
-  // string external_schema_type = 3;
-  if (this->external_schema_type().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->external_schema_type().data(), static_cast<int>(this->external_schema_type().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.SchemaMetadata.external_schema_type");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->external_schema_type(), target);
-  }
-
-  // bytes external_schema_bytes = 4;
-  if (this->external_schema_bytes().size() > 0) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        4, this->external_schema_bytes(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3351,20 +3240,6 @@ size_t SchemaMetadata::ByteSizeLong() const {
         this->storage());
   }
 
-  // string external_schema_type = 3;
-  if (this->external_schema_type().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->external_schema_type());
-  }
-
-  // bytes external_schema_bytes = 4;
-  if (this->external_schema_bytes().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->external_schema_bytes());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -3400,14 +3275,6 @@ void SchemaMetadata::MergeFrom(const SchemaMetadata& from) {
 
     storage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.storage_);
   }
-  if (from.external_schema_type().size() > 0) {
-
-    external_schema_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_schema_type_);
-  }
-  if (from.external_schema_bytes().size() > 0) {
-
-    external_schema_bytes_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_schema_bytes_);
-  }
 }
 
 void SchemaMetadata::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3438,10 +3305,6 @@ void SchemaMetadata::InternalSwap(SchemaMetadata* other) {
   format_.Swap(&other->format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   storage_.Swap(&other->storage_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  external_schema_type_.Swap(&other->external_schema_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  external_schema_bytes_.Swap(&other->external_schema_bytes_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

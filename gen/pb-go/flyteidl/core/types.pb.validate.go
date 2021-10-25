@@ -138,6 +138,10 @@ func (m *ExpandedSchemaType) Validate() error {
 
 	}
 
+	// no validation rules for ExternalSchemaType
+
+	// no validation rules for ExternalSchemaBytes
+
 	return nil
 }
 

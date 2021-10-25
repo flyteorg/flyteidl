@@ -2127,12 +2127,6 @@ export namespace flyteidl {
 
             /** SchemaMetadata storage */
             storage?: (string|null);
-
-            /** SchemaMetadata externalSchemaType */
-            externalSchemaType?: (string|null);
-
-            /** SchemaMetadata externalSchemaBytes */
-            externalSchemaBytes?: (Uint8Array|null);
         }
 
         /** Represents a SchemaMetadata. */
@@ -2149,12 +2143,6 @@ export namespace flyteidl {
 
             /** SchemaMetadata storage. */
             public storage: string;
-
-            /** SchemaMetadata externalSchemaType. */
-            public externalSchemaType: string;
-
-            /** SchemaMetadata externalSchemaBytes. */
-            public externalSchemaBytes: Uint8Array;
 
             /**
              * Creates a new SchemaMetadata instance using the specified properties.
@@ -3014,6 +3002,12 @@ export namespace flyteidl {
 
             /** ExpandedSchemaType names */
             names?: (string[]|null);
+
+            /** ExpandedSchemaType externalSchemaType */
+            externalSchemaType?: (string|null);
+
+            /** ExpandedSchemaType externalSchemaBytes */
+            externalSchemaBytes?: (Uint8Array|null);
         }
 
         /** Represents an ExpandedSchemaType. */
@@ -3030,6 +3024,12 @@ export namespace flyteidl {
 
             /** ExpandedSchemaType names. */
             public names: string[];
+
+            /** ExpandedSchemaType externalSchemaType. */
+            public externalSchemaType: string;
+
+            /** ExpandedSchemaType externalSchemaBytes. */
+            public externalSchemaBytes: Uint8Array;
 
             /**
              * Creates a new ExpandedSchemaType instance using the specified properties.

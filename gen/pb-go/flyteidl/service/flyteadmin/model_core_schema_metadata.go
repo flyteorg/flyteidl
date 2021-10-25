@@ -12,6 +12,4 @@ package flyteadmin
 type CoreSchemaMetadata struct {
 	Format string `json:"format,omitempty"`
 	Storage string `json:"storage,omitempty"`
-	ExternalSchemaType string `json:"external_schema_type,omitempty"`
-	ExternalSchemaBytes string `json:"external_schema_bytes,omitempty"`
 }

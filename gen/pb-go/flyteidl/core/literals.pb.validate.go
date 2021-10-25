@@ -511,10 +511,6 @@ func (m *SchemaMetadata) Validate() error {
 
 	// no validation rules for Storage
 
-	// no validation rules for ExternalSchemaType
-
-	// no validation rules for ExternalSchemaBytes
-
 	return nil
 }
 

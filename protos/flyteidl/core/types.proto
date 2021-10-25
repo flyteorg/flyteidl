@@ -47,7 +47,14 @@ message ExpandedSchemaType {
     // A list of ordered columns this schema comprises of.
     repeated LiteralType columns = 1;
 
+    // Column names
     repeated string names = 2;
+
+    // arrow mostly
+    string external_schema_type = 3;
+
+    // The serialized bytes of a third-party schema library like Arrow
+    bytes external_schema_bytes = 4;
 }
 
 // Defines type behavior for blob objects
