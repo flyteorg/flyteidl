@@ -19,8 +19,8 @@ import six
 from flyteadmin.models.core_binary import CoreBinary  # noqa: F401,E501
 from flyteadmin.models.core_blob import CoreBlob  # noqa: F401,E501
 from flyteadmin.models.core_error import CoreError  # noqa: F401,E501
-from flyteadmin.models.core_expanded_schema import CoreExpandedSchema  # noqa: F401,E501
 from flyteadmin.models.core_primitive import CorePrimitive  # noqa: F401,E501
+from flyteadmin.models.core_structured_dataset import CoreStructuredDataset  # noqa: F401,E501
 from flyteadmin.models.core_void import CoreVoid  # noqa: F401,E501
 from flyteadmin.models.flyteidlcore_schema import FlyteidlcoreSchema  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
@@ -47,7 +47,7 @@ class CoreScalar(object):
         'none_type': 'CoreVoid',
         'error': 'CoreError',
         'generic': 'ProtobufStruct',
-        'flyte_schema': 'CoreExpandedSchema'
+        'structured_dataset': 'CoreStructuredDataset'
     }
 
     attribute_map = {
@@ -58,10 +58,10 @@ class CoreScalar(object):
         'none_type': 'none_type',
         'error': 'error',
         'generic': 'generic',
-        'flyte_schema': 'flyte_schema'
+        'structured_dataset': 'structured_dataset'
     }
 
-    def __init__(self, primitive=None, blob=None, binary=None, schema=None, none_type=None, error=None, generic=None, flyte_schema=None):  # noqa: E501
+    def __init__(self, primitive=None, blob=None, binary=None, schema=None, none_type=None, error=None, generic=None, structured_dataset=None):  # noqa: E501
         """CoreScalar - a model defined in Swagger"""  # noqa: E501
 
         self._primitive = None
@@ -71,7 +71,7 @@ class CoreScalar(object):
         self._none_type = None
         self._error = None
         self._generic = None
-        self._flyte_schema = None
+        self._structured_dataset = None
         self.discriminator = None
 
         if primitive is not None:
@@ -88,8 +88,8 @@ class CoreScalar(object):
             self.error = error
         if generic is not None:
             self.generic = generic
-        if flyte_schema is not None:
-            self.flyte_schema = flyte_schema
+        if structured_dataset is not None:
+            self.structured_dataset = structured_dataset
 
     @property
     def primitive(self):
@@ -239,25 +239,25 @@ class CoreScalar(object):
         self._generic = generic
 
     @property
-    def flyte_schema(self):
-        """Gets the flyte_schema of this CoreScalar.  # noqa: E501
+    def structured_dataset(self):
+        """Gets the structured_dataset of this CoreScalar.  # noqa: E501
 
 
-        :return: The flyte_schema of this CoreScalar.  # noqa: E501
-        :rtype: CoreExpandedSchema
+        :return: The structured_dataset of this CoreScalar.  # noqa: E501
+        :rtype: CoreStructuredDataset
         """
-        return self._flyte_schema
+        return self._structured_dataset
 
-    @flyte_schema.setter
-    def flyte_schema(self, flyte_schema):
-        """Sets the flyte_schema of this CoreScalar.
+    @structured_dataset.setter
+    def structured_dataset(self, structured_dataset):
+        """Sets the structured_dataset of this CoreScalar.
 
 
-        :param flyte_schema: The flyte_schema of this CoreScalar.  # noqa: E501
-        :type: CoreExpandedSchema
+        :param structured_dataset: The structured_dataset of this CoreScalar.  # noqa: E501
+        :type: CoreStructuredDataset
         """
 
-        self._flyte_schema = flyte_schema
+        self._structured_dataset = structured_dataset
 
     def to_dict(self):
         """Returns the model properties as a dict"""

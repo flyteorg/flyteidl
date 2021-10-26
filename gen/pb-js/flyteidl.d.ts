@@ -2119,122 +2119,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a SchemaMetadata. */
-        interface ISchemaMetadata {
+        /** Properties of a StructuredDatasetMetadata. */
+        interface IStructuredDatasetMetadata {
 
-            /** SchemaMetadata format */
+            /** StructuredDatasetMetadata format */
             format?: (string|null);
 
-            /** SchemaMetadata storage */
-            storage?: (string|null);
+            /** StructuredDatasetMetadata type */
+            type?: (flyteidl.core.IStructuredDatasetType|null);
         }
 
-        /** Represents a SchemaMetadata. */
-        class SchemaMetadata implements ISchemaMetadata {
+        /** Represents a StructuredDatasetMetadata. */
+        class StructuredDatasetMetadata implements IStructuredDatasetMetadata {
 
             /**
-             * Constructs a new SchemaMetadata.
+             * Constructs a new StructuredDatasetMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.ISchemaMetadata);
+            constructor(properties?: flyteidl.core.IStructuredDatasetMetadata);
 
-            /** SchemaMetadata format. */
+            /** StructuredDatasetMetadata format. */
             public format: string;
 
-            /** SchemaMetadata storage. */
-            public storage: string;
+            /** StructuredDatasetMetadata type. */
+            public type?: (flyteidl.core.IStructuredDatasetType|null);
 
             /**
-             * Creates a new SchemaMetadata instance using the specified properties.
+             * Creates a new StructuredDatasetMetadata instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns SchemaMetadata instance
+             * @returns StructuredDatasetMetadata instance
              */
-            public static create(properties?: flyteidl.core.ISchemaMetadata): flyteidl.core.SchemaMetadata;
+            public static create(properties?: flyteidl.core.IStructuredDatasetMetadata): flyteidl.core.StructuredDatasetMetadata;
 
             /**
-             * Encodes the specified SchemaMetadata message. Does not implicitly {@link flyteidl.core.SchemaMetadata.verify|verify} messages.
-             * @param message SchemaMetadata message or plain object to encode
+             * Encodes the specified StructuredDatasetMetadata message. Does not implicitly {@link flyteidl.core.StructuredDatasetMetadata.verify|verify} messages.
+             * @param message StructuredDatasetMetadata message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.ISchemaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IStructuredDatasetMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a SchemaMetadata message from the specified reader or buffer.
+             * Decodes a StructuredDatasetMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns SchemaMetadata
+             * @returns StructuredDatasetMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.SchemaMetadata;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetMetadata;
 
             /**
-             * Verifies a SchemaMetadata message.
+             * Verifies a StructuredDatasetMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExpandedSchema. */
-        interface IExpandedSchema {
+        /** Properties of a StructuredDataset. */
+        interface IStructuredDataset {
 
-            /** ExpandedSchema type */
-            type?: (flyteidl.core.IExpandedSchemaType|null);
-
-            /** ExpandedSchema uri */
+            /** StructuredDataset uri */
             uri?: (string|null);
 
-            /** ExpandedSchema metadata */
-            metadata?: (flyteidl.core.ISchemaMetadata|null);
+            /** StructuredDataset metadata */
+            metadata?: (flyteidl.core.IStructuredDatasetMetadata|null);
         }
 
-        /** Represents an ExpandedSchema. */
-        class ExpandedSchema implements IExpandedSchema {
+        /** Represents a StructuredDataset. */
+        class StructuredDataset implements IStructuredDataset {
 
             /**
-             * Constructs a new ExpandedSchema.
+             * Constructs a new StructuredDataset.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IExpandedSchema);
+            constructor(properties?: flyteidl.core.IStructuredDataset);
 
-            /** ExpandedSchema type. */
-            public type?: (flyteidl.core.IExpandedSchemaType|null);
-
-            /** ExpandedSchema uri. */
+            /** StructuredDataset uri. */
             public uri: string;
 
-            /** ExpandedSchema metadata. */
-            public metadata?: (flyteidl.core.ISchemaMetadata|null);
+            /** StructuredDataset metadata. */
+            public metadata?: (flyteidl.core.IStructuredDatasetMetadata|null);
 
             /**
-             * Creates a new ExpandedSchema instance using the specified properties.
+             * Creates a new StructuredDataset instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ExpandedSchema instance
+             * @returns StructuredDataset instance
              */
-            public static create(properties?: flyteidl.core.IExpandedSchema): flyteidl.core.ExpandedSchema;
+            public static create(properties?: flyteidl.core.IStructuredDataset): flyteidl.core.StructuredDataset;
 
             /**
-             * Encodes the specified ExpandedSchema message. Does not implicitly {@link flyteidl.core.ExpandedSchema.verify|verify} messages.
-             * @param message ExpandedSchema message or plain object to encode
+             * Encodes the specified StructuredDataset message. Does not implicitly {@link flyteidl.core.StructuredDataset.verify|verify} messages.
+             * @param message StructuredDataset message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IExpandedSchema, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IStructuredDataset, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExpandedSchema message from the specified reader or buffer.
+             * Decodes a StructuredDataset message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExpandedSchema
+             * @returns StructuredDataset
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ExpandedSchema;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDataset;
 
             /**
-             * Verifies an ExpandedSchema message.
+             * Verifies a StructuredDataset message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -2265,8 +2259,8 @@ export namespace flyteidl {
             /** Scalar generic */
             generic?: (google.protobuf.IStruct|null);
 
-            /** Scalar flyteSchema */
-            flyteSchema?: (flyteidl.core.IExpandedSchema|null);
+            /** Scalar structuredDataset */
+            structuredDataset?: (flyteidl.core.IStructuredDataset|null);
         }
 
         /** Represents a Scalar. */
@@ -2299,11 +2293,11 @@ export namespace flyteidl {
             /** Scalar generic. */
             public generic?: (google.protobuf.IStruct|null);
 
-            /** Scalar flyteSchema. */
-            public flyteSchema?: (flyteidl.core.IExpandedSchema|null);
+            /** Scalar structuredDataset. */
+            public structuredDataset?: (flyteidl.core.IStructuredDataset|null);
 
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"flyteSchema");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"structuredDataset");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -2994,74 +2988,135 @@ export namespace flyteidl {
             }
         }
 
-        /** Properties of an ExpandedSchemaType. */
-        interface IExpandedSchemaType {
+        /** Properties of a StructuredDatasetType. */
+        interface IStructuredDatasetType {
 
-            /** ExpandedSchemaType columns */
-            columns?: (flyteidl.core.ILiteralType[]|null);
+            /** StructuredDatasetType columns */
+            columns?: (flyteidl.core.StructuredDatasetType.IDatasetColumn[]|null);
 
-            /** ExpandedSchemaType names */
+            /** StructuredDatasetType names */
             names?: (string[]|null);
 
-            /** ExpandedSchemaType externalSchemaType */
+            /** StructuredDatasetType externalSchemaType */
             externalSchemaType?: (string|null);
 
-            /** ExpandedSchemaType externalSchemaBytes */
+            /** StructuredDatasetType externalSchemaBytes */
             externalSchemaBytes?: (Uint8Array|null);
         }
 
-        /** Represents an ExpandedSchemaType. */
-        class ExpandedSchemaType implements IExpandedSchemaType {
+        /** Represents a StructuredDatasetType. */
+        class StructuredDatasetType implements IStructuredDatasetType {
 
             /**
-             * Constructs a new ExpandedSchemaType.
+             * Constructs a new StructuredDatasetType.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IExpandedSchemaType);
+            constructor(properties?: flyteidl.core.IStructuredDatasetType);
 
-            /** ExpandedSchemaType columns. */
-            public columns: flyteidl.core.ILiteralType[];
+            /** StructuredDatasetType columns. */
+            public columns: flyteidl.core.StructuredDatasetType.IDatasetColumn[];
 
-            /** ExpandedSchemaType names. */
+            /** StructuredDatasetType names. */
             public names: string[];
 
-            /** ExpandedSchemaType externalSchemaType. */
+            /** StructuredDatasetType externalSchemaType. */
             public externalSchemaType: string;
 
-            /** ExpandedSchemaType externalSchemaBytes. */
+            /** StructuredDatasetType externalSchemaBytes. */
             public externalSchemaBytes: Uint8Array;
 
             /**
-             * Creates a new ExpandedSchemaType instance using the specified properties.
+             * Creates a new StructuredDatasetType instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ExpandedSchemaType instance
+             * @returns StructuredDatasetType instance
              */
-            public static create(properties?: flyteidl.core.IExpandedSchemaType): flyteidl.core.ExpandedSchemaType;
+            public static create(properties?: flyteidl.core.IStructuredDatasetType): flyteidl.core.StructuredDatasetType;
 
             /**
-             * Encodes the specified ExpandedSchemaType message. Does not implicitly {@link flyteidl.core.ExpandedSchemaType.verify|verify} messages.
-             * @param message ExpandedSchemaType message or plain object to encode
+             * Encodes the specified StructuredDatasetType message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.verify|verify} messages.
+             * @param message StructuredDatasetType message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IExpandedSchemaType, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IStructuredDatasetType, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExpandedSchemaType message from the specified reader or buffer.
+             * Decodes a StructuredDatasetType message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExpandedSchemaType
+             * @returns StructuredDatasetType
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ExpandedSchemaType;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetType;
 
             /**
-             * Verifies an ExpandedSchemaType message.
+             * Verifies a StructuredDatasetType message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace StructuredDatasetType {
+
+            /** Properties of a DatasetColumn. */
+            interface IDatasetColumn {
+
+                /** DatasetColumn name */
+                name?: (string|null);
+
+                /** DatasetColumn literalType */
+                literalType?: (flyteidl.core.ILiteralType|null);
+            }
+
+            /** Represents a DatasetColumn. */
+            class DatasetColumn implements IDatasetColumn {
+
+                /**
+                 * Constructs a new DatasetColumn.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: flyteidl.core.StructuredDatasetType.IDatasetColumn);
+
+                /** DatasetColumn name. */
+                public name: string;
+
+                /** DatasetColumn literalType. */
+                public literalType?: (flyteidl.core.ILiteralType|null);
+
+                /**
+                 * Creates a new DatasetColumn instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns DatasetColumn instance
+                 */
+                public static create(properties?: flyteidl.core.StructuredDatasetType.IDatasetColumn): flyteidl.core.StructuredDatasetType.DatasetColumn;
+
+                /**
+                 * Encodes the specified DatasetColumn message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.DatasetColumn.verify|verify} messages.
+                 * @param message DatasetColumn message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: flyteidl.core.StructuredDatasetType.IDatasetColumn, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a DatasetColumn message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns DatasetColumn
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetType.DatasetColumn;
+
+                /**
+                 * Verifies a DatasetColumn message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+            }
         }
 
         /** Properties of a BlobType. */
@@ -3204,6 +3259,9 @@ export namespace flyteidl {
             /** LiteralType enumType */
             enumType?: (flyteidl.core.IEnumType|null);
 
+            /** LiteralType structuredDatasetType */
+            structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
+
             /** LiteralType metadata */
             metadata?: (google.protobuf.IStruct|null);
         }
@@ -3235,11 +3293,14 @@ export namespace flyteidl {
             /** LiteralType enumType. */
             public enumType?: (flyteidl.core.IEnumType|null);
 
+            /** LiteralType structuredDatasetType. */
+            public structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
+
             /** LiteralType metadata. */
             public metadata?: (google.protobuf.IStruct|null);
 
             /** LiteralType type. */
-            public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType");
+            public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|"structuredDatasetType");
 
             /**
              * Creates a new LiteralType instance using the specified properties.

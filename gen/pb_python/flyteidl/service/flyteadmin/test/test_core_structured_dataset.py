@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_schema_metadata import CoreSchemaMetadata  # noqa: E501
+from flyteadmin.models.core_structured_dataset import CoreStructuredDataset  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreSchemaMetadata(unittest.TestCase):
-    """CoreSchemaMetadata unit test stubs"""
+class TestCoreStructuredDataset(unittest.TestCase):
+    """CoreStructuredDataset unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreSchemaMetadata(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreSchemaMetadata(self):
-        """Test CoreSchemaMetadata"""
+    def testCoreStructuredDataset(self):
+        """Test CoreStructuredDataset"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_schema_metadata.CoreSchemaMetadata()  # noqa: E501
+        # model = flyteadmin.models.core_structured_dataset.CoreStructuredDataset()  # noqa: E501
         pass
 
 

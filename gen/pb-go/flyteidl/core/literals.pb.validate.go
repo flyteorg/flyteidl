@@ -499,24 +499,32 @@ var _ interface {
 	ErrorName() string
 } = SchemaValidationError{}
 
-// Validate checks the field values on SchemaMetadata with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *SchemaMetadata) Validate() error {
+// Validate checks the field values on StructuredDatasetMetadata with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *StructuredDatasetMetadata) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	// no validation rules for Format
 
-	// no validation rules for Storage
+	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StructuredDatasetMetadataValidationError{
+				field:  "Type",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
 
-// SchemaMetadataValidationError is the validation error returned by
-// SchemaMetadata.Validate if the designated constraints aren't met.
-type SchemaMetadataValidationError struct {
+// StructuredDatasetMetadataValidationError is the validation error returned by
+// StructuredDatasetMetadata.Validate if the designated constraints aren't met.
+type StructuredDatasetMetadataValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -524,22 +532,24 @@ type SchemaMetadataValidationError struct {
 }
 
 // Field function returns field value.
-func (e SchemaMetadataValidationError) Field() string { return e.field }
+func (e StructuredDatasetMetadataValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SchemaMetadataValidationError) Reason() string { return e.reason }
+func (e StructuredDatasetMetadataValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SchemaMetadataValidationError) Cause() error { return e.cause }
+func (e StructuredDatasetMetadataValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SchemaMetadataValidationError) Key() bool { return e.key }
+func (e StructuredDatasetMetadataValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SchemaMetadataValidationError) ErrorName() string { return "SchemaMetadataValidationError" }
+func (e StructuredDatasetMetadataValidationError) ErrorName() string {
+	return "StructuredDatasetMetadataValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e SchemaMetadataValidationError) Error() string {
+func (e StructuredDatasetMetadataValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -551,14 +561,14 @@ func (e SchemaMetadataValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSchemaMetadata.%s: %s%s",
+		"invalid %sStructuredDatasetMetadata.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SchemaMetadataValidationError{}
+var _ error = StructuredDatasetMetadataValidationError{}
 
 var _ interface {
 	Field() string
@@ -566,31 +576,21 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SchemaMetadataValidationError{}
+} = StructuredDatasetMetadataValidationError{}
 
-// Validate checks the field values on ExpandedSchema with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *ExpandedSchema) Validate() error {
+// Validate checks the field values on StructuredDataset with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *StructuredDataset) Validate() error {
 	if m == nil {
 		return nil
-	}
-
-	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ExpandedSchemaValidationError{
-				field:  "Type",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
 	}
 
 	// no validation rules for Uri
 
 	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ExpandedSchemaValidationError{
+			return StructuredDatasetValidationError{
 				field:  "Metadata",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -601,9 +601,9 @@ func (m *ExpandedSchema) Validate() error {
 	return nil
 }
 
-// ExpandedSchemaValidationError is the validation error returned by
-// ExpandedSchema.Validate if the designated constraints aren't met.
-type ExpandedSchemaValidationError struct {
+// StructuredDatasetValidationError is the validation error returned by
+// StructuredDataset.Validate if the designated constraints aren't met.
+type StructuredDatasetValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -611,22 +611,24 @@ type ExpandedSchemaValidationError struct {
 }
 
 // Field function returns field value.
-func (e ExpandedSchemaValidationError) Field() string { return e.field }
+func (e StructuredDatasetValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ExpandedSchemaValidationError) Reason() string { return e.reason }
+func (e StructuredDatasetValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ExpandedSchemaValidationError) Cause() error { return e.cause }
+func (e StructuredDatasetValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ExpandedSchemaValidationError) Key() bool { return e.key }
+func (e StructuredDatasetValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ExpandedSchemaValidationError) ErrorName() string { return "ExpandedSchemaValidationError" }
+func (e StructuredDatasetValidationError) ErrorName() string {
+	return "StructuredDatasetValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e ExpandedSchemaValidationError) Error() string {
+func (e StructuredDatasetValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -638,14 +640,14 @@ func (e ExpandedSchemaValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sExpandedSchema.%s: %s%s",
+		"invalid %sStructuredDataset.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ExpandedSchemaValidationError{}
+var _ error = StructuredDatasetValidationError{}
 
 var _ interface {
 	Field() string
@@ -653,7 +655,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ExpandedSchemaValidationError{}
+} = StructuredDatasetValidationError{}
 
 // Validate checks the field values on Scalar with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -748,12 +750,12 @@ func (m *Scalar) Validate() error {
 			}
 		}
 
-	case *Scalar_FlyteSchema:
+	case *Scalar_StructuredDataset:
 
-		if v, ok := interface{}(m.GetFlyteSchema()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetStructuredDataset()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return ScalarValidationError{
-					field:  "FlyteSchema",
+					field:  "StructuredDataset",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

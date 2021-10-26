@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fcore_2ftypes_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -61,9 +61,6 @@ extern EnumTypeDefaultTypeInternal _EnumType_default_instance_;
 class Error;
 class ErrorDefaultTypeInternal;
 extern ErrorDefaultTypeInternal _Error_default_instance_;
-class ExpandedSchemaType;
-class ExpandedSchemaTypeDefaultTypeInternal;
-extern ExpandedSchemaTypeDefaultTypeInternal _ExpandedSchemaType_default_instance_;
 class LiteralType;
 class LiteralTypeDefaultTypeInternal;
 extern LiteralTypeDefaultTypeInternal _LiteralType_default_instance_;
@@ -76,6 +73,12 @@ extern SchemaTypeDefaultTypeInternal _SchemaType_default_instance_;
 class SchemaType_SchemaColumn;
 class SchemaType_SchemaColumnDefaultTypeInternal;
 extern SchemaType_SchemaColumnDefaultTypeInternal _SchemaType_SchemaColumn_default_instance_;
+class StructuredDatasetType;
+class StructuredDatasetTypeDefaultTypeInternal;
+extern StructuredDatasetTypeDefaultTypeInternal _StructuredDatasetType_default_instance_;
+class StructuredDatasetType_DatasetColumn;
+class StructuredDatasetType_DatasetColumnDefaultTypeInternal;
+extern StructuredDatasetType_DatasetColumnDefaultTypeInternal _StructuredDatasetType_DatasetColumn_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -83,11 +86,12 @@ namespace protobuf {
 template<> ::flyteidl::core::BlobType* Arena::CreateMaybeMessage<::flyteidl::core::BlobType>(Arena*);
 template<> ::flyteidl::core::EnumType* Arena::CreateMaybeMessage<::flyteidl::core::EnumType>(Arena*);
 template<> ::flyteidl::core::Error* Arena::CreateMaybeMessage<::flyteidl::core::Error>(Arena*);
-template<> ::flyteidl::core::ExpandedSchemaType* Arena::CreateMaybeMessage<::flyteidl::core::ExpandedSchemaType>(Arena*);
 template<> ::flyteidl::core::LiteralType* Arena::CreateMaybeMessage<::flyteidl::core::LiteralType>(Arena*);
 template<> ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage<::flyteidl::core::OutputReference>(Arena*);
 template<> ::flyteidl::core::SchemaType* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType>(Arena*);
 template<> ::flyteidl::core::SchemaType_SchemaColumn* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType_SchemaColumn>(Arena*);
+template<> ::flyteidl::core::StructuredDatasetType* Arena::CreateMaybeMessage<::flyteidl::core::StructuredDatasetType>(Arena*);
+template<> ::flyteidl::core::StructuredDatasetType_DatasetColumn* Arena::CreateMaybeMessage<::flyteidl::core::StructuredDatasetType_DatasetColumn>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -451,25 +455,25 @@ class SchemaType final :
 };
 // -------------------------------------------------------------------
 
-class ExpandedSchemaType final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.ExpandedSchemaType) */ {
+class StructuredDatasetType_DatasetColumn final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.StructuredDatasetType.DatasetColumn) */ {
  public:
-  ExpandedSchemaType();
-  virtual ~ExpandedSchemaType();
+  StructuredDatasetType_DatasetColumn();
+  virtual ~StructuredDatasetType_DatasetColumn();
 
-  ExpandedSchemaType(const ExpandedSchemaType& from);
+  StructuredDatasetType_DatasetColumn(const StructuredDatasetType_DatasetColumn& from);
 
-  inline ExpandedSchemaType& operator=(const ExpandedSchemaType& from) {
+  inline StructuredDatasetType_DatasetColumn& operator=(const StructuredDatasetType_DatasetColumn& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  ExpandedSchemaType(ExpandedSchemaType&& from) noexcept
-    : ExpandedSchemaType() {
+  StructuredDatasetType_DatasetColumn(StructuredDatasetType_DatasetColumn&& from) noexcept
+    : StructuredDatasetType_DatasetColumn() {
     *this = ::std::move(from);
   }
 
-  inline ExpandedSchemaType& operator=(ExpandedSchemaType&& from) noexcept {
+  inline StructuredDatasetType_DatasetColumn& operator=(StructuredDatasetType_DatasetColumn&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -481,34 +485,34 @@ class ExpandedSchemaType final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const ExpandedSchemaType& default_instance();
+  static const StructuredDatasetType_DatasetColumn& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ExpandedSchemaType* internal_default_instance() {
-    return reinterpret_cast<const ExpandedSchemaType*>(
-               &_ExpandedSchemaType_default_instance_);
+  static inline const StructuredDatasetType_DatasetColumn* internal_default_instance() {
+    return reinterpret_cast<const StructuredDatasetType_DatasetColumn*>(
+               &_StructuredDatasetType_DatasetColumn_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(ExpandedSchemaType* other);
-  friend void swap(ExpandedSchemaType& a, ExpandedSchemaType& b) {
+  void Swap(StructuredDatasetType_DatasetColumn* other);
+  friend void swap(StructuredDatasetType_DatasetColumn& a, StructuredDatasetType_DatasetColumn& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline ExpandedSchemaType* New() const final {
-    return CreateMaybeMessage<ExpandedSchemaType>(nullptr);
+  inline StructuredDatasetType_DatasetColumn* New() const final {
+    return CreateMaybeMessage<StructuredDatasetType_DatasetColumn>(nullptr);
   }
 
-  ExpandedSchemaType* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ExpandedSchemaType>(arena);
+  StructuredDatasetType_DatasetColumn* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StructuredDatasetType_DatasetColumn>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ExpandedSchemaType& from);
-  void MergeFrom(const ExpandedSchemaType& from);
+  void CopyFrom(const StructuredDatasetType_DatasetColumn& from);
+  void MergeFrom(const StructuredDatasetType_DatasetColumn& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -530,7 +534,7 @@ class ExpandedSchemaType final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ExpandedSchemaType* other);
+  void InternalSwap(StructuredDatasetType_DatasetColumn* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -546,16 +550,148 @@ class ExpandedSchemaType final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.LiteralType columns = 1;
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // .flyteidl.core.LiteralType literal_type = 2;
+  bool has_literal_type() const;
+  void clear_literal_type();
+  static const int kLiteralTypeFieldNumber = 2;
+  const ::flyteidl::core::LiteralType& literal_type() const;
+  ::flyteidl::core::LiteralType* release_literal_type();
+  ::flyteidl::core::LiteralType* mutable_literal_type();
+  void set_allocated_literal_type(::flyteidl::core::LiteralType* literal_type);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.StructuredDatasetType.DatasetColumn)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::flyteidl::core::LiteralType* literal_type_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StructuredDatasetType final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.StructuredDatasetType) */ {
+ public:
+  StructuredDatasetType();
+  virtual ~StructuredDatasetType();
+
+  StructuredDatasetType(const StructuredDatasetType& from);
+
+  inline StructuredDatasetType& operator=(const StructuredDatasetType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StructuredDatasetType(StructuredDatasetType&& from) noexcept
+    : StructuredDatasetType() {
+    *this = ::std::move(from);
+  }
+
+  inline StructuredDatasetType& operator=(StructuredDatasetType&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const StructuredDatasetType& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StructuredDatasetType* internal_default_instance() {
+    return reinterpret_cast<const StructuredDatasetType*>(
+               &_StructuredDatasetType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(StructuredDatasetType* other);
+  friend void swap(StructuredDatasetType& a, StructuredDatasetType& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StructuredDatasetType* New() const final {
+    return CreateMaybeMessage<StructuredDatasetType>(nullptr);
+  }
+
+  StructuredDatasetType* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StructuredDatasetType>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StructuredDatasetType& from);
+  void MergeFrom(const StructuredDatasetType& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StructuredDatasetType* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef StructuredDatasetType_DatasetColumn DatasetColumn;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;
   int columns_size() const;
   void clear_columns();
   static const int kColumnsFieldNumber = 1;
-  ::flyteidl::core::LiteralType* mutable_columns(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
+  ::flyteidl::core::StructuredDatasetType_DatasetColumn* mutable_columns(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >*
       mutable_columns();
-  const ::flyteidl::core::LiteralType& columns(int index) const;
-  ::flyteidl::core::LiteralType* add_columns();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
+  const ::flyteidl::core::StructuredDatasetType_DatasetColumn& columns(int index) const;
+  ::flyteidl::core::StructuredDatasetType_DatasetColumn* add_columns();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >&
       columns() const;
 
   // repeated string names = 2;
@@ -608,12 +744,12 @@ class ExpandedSchemaType final :
   ::std::string* release_external_schema_bytes();
   void set_allocated_external_schema_bytes(::std::string* external_schema_bytes);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.core.ExpandedSchemaType)
+  // @@protoc_insertion_point(class_scope:flyteidl.core.StructuredDatasetType)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > columns_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn > columns_;
   ::google::protobuf::RepeatedPtrField<::std::string> names_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_type_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_bytes_;
@@ -660,7 +796,7 @@ class BlobType final :
                &_BlobType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(BlobType* other);
   friend void swap(BlobType& a, BlobType& b) {
@@ -813,7 +949,7 @@ class EnumType final :
                &_EnumType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(EnumType* other);
   friend void swap(EnumType& a, EnumType& b) {
@@ -942,6 +1078,7 @@ class LiteralType final :
     kMapValueType = 4,
     kBlob = 5,
     kEnumType = 7,
+    kStructuredDatasetType = 8,
     TYPE_NOT_SET = 0,
   };
 
@@ -951,7 +1088,7 @@ class LiteralType final :
                &_LiteralType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(LiteralType* other);
   friend void swap(LiteralType& a, LiteralType& b) {
@@ -1071,6 +1208,15 @@ class LiteralType final :
   ::flyteidl::core::EnumType* mutable_enum_type();
   void set_allocated_enum_type(::flyteidl::core::EnumType* enum_type);
 
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 8;
+  bool has_structured_dataset_type() const;
+  void clear_structured_dataset_type();
+  static const int kStructuredDatasetTypeFieldNumber = 8;
+  const ::flyteidl::core::StructuredDatasetType& structured_dataset_type() const;
+  ::flyteidl::core::StructuredDatasetType* release_structured_dataset_type();
+  ::flyteidl::core::StructuredDatasetType* mutable_structured_dataset_type();
+  void set_allocated_structured_dataset_type(::flyteidl::core::StructuredDatasetType* structured_dataset_type);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.LiteralType)
@@ -1082,6 +1228,7 @@ class LiteralType final :
   void set_has_map_value_type();
   void set_has_blob();
   void set_has_enum_type();
+  void set_has_structured_dataset_type();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -1096,6 +1243,7 @@ class LiteralType final :
     ::flyteidl::core::LiteralType* map_value_type_;
     ::flyteidl::core::BlobType* blob_;
     ::flyteidl::core::EnumType* enum_type_;
+    ::flyteidl::core::StructuredDatasetType* structured_dataset_type_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1142,7 +1290,7 @@ class OutputReference final :
                &_OutputReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(OutputReference* other);
   friend void swap(OutputReference& a, OutputReference& b) {
@@ -1277,7 +1425,7 @@ class Error final :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -1486,211 +1634,319 @@ SchemaType::columns() const {
 
 // -------------------------------------------------------------------
 
-// ExpandedSchemaType
+// StructuredDatasetType_DatasetColumn
 
-// repeated .flyteidl.core.LiteralType columns = 1;
-inline int ExpandedSchemaType::columns_size() const {
+// string name = 1;
+inline void StructuredDatasetType_DatasetColumn::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& StructuredDatasetType_DatasetColumn::name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+  return name_.GetNoArena();
+}
+inline void StructuredDatasetType_DatasetColumn::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+}
+#if LANG_CXX11
+inline void StructuredDatasetType_DatasetColumn::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+}
+#endif
+inline void StructuredDatasetType_DatasetColumn::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+}
+inline void StructuredDatasetType_DatasetColumn::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+}
+inline ::std::string* StructuredDatasetType_DatasetColumn::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* StructuredDatasetType_DatasetColumn::release_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void StructuredDatasetType_DatasetColumn::set_allocated_name(::std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.DatasetColumn.name)
+}
+
+// .flyteidl.core.LiteralType literal_type = 2;
+inline bool StructuredDatasetType_DatasetColumn::has_literal_type() const {
+  return this != internal_default_instance() && literal_type_ != nullptr;
+}
+inline void StructuredDatasetType_DatasetColumn::clear_literal_type() {
+  if (GetArenaNoVirtual() == nullptr && literal_type_ != nullptr) {
+    delete literal_type_;
+  }
+  literal_type_ = nullptr;
+}
+inline const ::flyteidl::core::LiteralType& StructuredDatasetType_DatasetColumn::literal_type() const {
+  const ::flyteidl::core::LiteralType* p = literal_type_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.DatasetColumn.literal_type)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralType*>(
+      &::flyteidl::core::_LiteralType_default_instance_);
+}
+inline ::flyteidl::core::LiteralType* StructuredDatasetType_DatasetColumn::release_literal_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetType.DatasetColumn.literal_type)
+  
+  ::flyteidl::core::LiteralType* temp = literal_type_;
+  literal_type_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::LiteralType* StructuredDatasetType_DatasetColumn::mutable_literal_type() {
+  
+  if (literal_type_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralType>(GetArenaNoVirtual());
+    literal_type_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.DatasetColumn.literal_type)
+  return literal_type_;
+}
+inline void StructuredDatasetType_DatasetColumn::set_allocated_literal_type(::flyteidl::core::LiteralType* literal_type) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete literal_type_;
+  }
+  if (literal_type) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      literal_type = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, literal_type, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  literal_type_ = literal_type;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.DatasetColumn.literal_type)
+}
+
+// -------------------------------------------------------------------
+
+// StructuredDatasetType
+
+// repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;
+inline int StructuredDatasetType::columns_size() const {
   return columns_.size();
 }
-inline void ExpandedSchemaType::clear_columns() {
+inline void StructuredDatasetType::clear_columns() {
   columns_.Clear();
 }
-inline ::flyteidl::core::LiteralType* ExpandedSchemaType::mutable_columns(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.columns)
+inline ::flyteidl::core::StructuredDatasetType_DatasetColumn* StructuredDatasetType::mutable_columns(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.columns)
   return columns_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
-ExpandedSchemaType::mutable_columns() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.ExpandedSchemaType.columns)
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >*
+StructuredDatasetType::mutable_columns() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.StructuredDatasetType.columns)
   return &columns_;
 }
-inline const ::flyteidl::core::LiteralType& ExpandedSchemaType::columns(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.columns)
+inline const ::flyteidl::core::StructuredDatasetType_DatasetColumn& StructuredDatasetType::columns(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.columns)
   return columns_.Get(index);
 }
-inline ::flyteidl::core::LiteralType* ExpandedSchemaType::add_columns() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.ExpandedSchemaType.columns)
+inline ::flyteidl::core::StructuredDatasetType_DatasetColumn* StructuredDatasetType::add_columns() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.columns)
   return columns_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
-ExpandedSchemaType::columns() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.ExpandedSchemaType.columns)
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >&
+StructuredDatasetType::columns() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.StructuredDatasetType.columns)
   return columns_;
 }
 
 // repeated string names = 2;
-inline int ExpandedSchemaType::names_size() const {
+inline int StructuredDatasetType::names_size() const {
   return names_.size();
 }
-inline void ExpandedSchemaType::clear_names() {
+inline void StructuredDatasetType::clear_names() {
   names_.Clear();
 }
-inline const ::std::string& ExpandedSchemaType::names(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.names)
+inline const ::std::string& StructuredDatasetType::names(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.names)
   return names_.Get(index);
 }
-inline ::std::string* ExpandedSchemaType::mutable_names(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.names)
+inline ::std::string* StructuredDatasetType::mutable_names(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.names)
   return names_.Mutable(index);
 }
-inline void ExpandedSchemaType::set_names(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.names)
+inline void StructuredDatasetType::set_names(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.names)
   names_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void ExpandedSchemaType::set_names(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.names)
+inline void StructuredDatasetType::set_names(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.names)
   names_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void ExpandedSchemaType::set_names(int index, const char* value) {
+inline void StructuredDatasetType::set_names(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   names_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.names)
 }
-inline void ExpandedSchemaType::set_names(int index, const char* value, size_t size) {
+inline void StructuredDatasetType::set_names(int index, const char* value, size_t size) {
   names_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.names)
 }
-inline ::std::string* ExpandedSchemaType::add_names() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.core.ExpandedSchemaType.names)
+inline ::std::string* StructuredDatasetType::add_names() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.core.StructuredDatasetType.names)
   return names_.Add();
 }
-inline void ExpandedSchemaType::add_names(const ::std::string& value) {
+inline void StructuredDatasetType::add_names(const ::std::string& value) {
   names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.names)
 }
 #if LANG_CXX11
-inline void ExpandedSchemaType::add_names(::std::string&& value) {
+inline void StructuredDatasetType::add_names(::std::string&& value) {
   names_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.names)
 }
 #endif
-inline void ExpandedSchemaType::add_names(const char* value) {
+inline void StructuredDatasetType::add_names(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_add_char:flyteidl.core.StructuredDatasetType.names)
 }
-inline void ExpandedSchemaType::add_names(const char* value, size_t size) {
+inline void StructuredDatasetType::add_names(const char* value, size_t size) {
   names_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.core.ExpandedSchemaType.names)
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.core.StructuredDatasetType.names)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-ExpandedSchemaType::names() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.ExpandedSchemaType.names)
+StructuredDatasetType::names() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.StructuredDatasetType.names)
   return names_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
-ExpandedSchemaType::mutable_names() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.ExpandedSchemaType.names)
+StructuredDatasetType::mutable_names() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.StructuredDatasetType.names)
   return &names_;
 }
 
 // string external_schema_type = 3;
-inline void ExpandedSchemaType::clear_external_schema_type() {
+inline void StructuredDatasetType::clear_external_schema_type() {
   external_schema_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ExpandedSchemaType::external_schema_type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.external_schema_type)
+inline const ::std::string& StructuredDatasetType::external_schema_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.external_schema_type)
   return external_schema_type_.GetNoArena();
 }
-inline void ExpandedSchemaType::set_external_schema_type(const ::std::string& value) {
+inline void StructuredDatasetType::set_external_schema_type(const ::std::string& value) {
   
   external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
 #if LANG_CXX11
-inline void ExpandedSchemaType::set_external_schema_type(::std::string&& value) {
+inline void StructuredDatasetType::set_external_schema_type(::std::string&& value) {
   
   external_schema_type_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
 #endif
-inline void ExpandedSchemaType::set_external_schema_type(const char* value) {
+inline void StructuredDatasetType::set_external_schema_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
-inline void ExpandedSchemaType::set_external_schema_type(const char* value, size_t size) {
+inline void StructuredDatasetType::set_external_schema_type(const char* value, size_t size) {
   
   external_schema_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
-inline ::std::string* ExpandedSchemaType::mutable_external_schema_type() {
+inline ::std::string* StructuredDatasetType::mutable_external_schema_type() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.external_schema_type)
   return external_schema_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ExpandedSchemaType::release_external_schema_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.ExpandedSchemaType.external_schema_type)
+inline ::std::string* StructuredDatasetType::release_external_schema_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetType.external_schema_type)
   
   return external_schema_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ExpandedSchemaType::set_allocated_external_schema_type(::std::string* external_schema_type) {
+inline void StructuredDatasetType::set_allocated_external_schema_type(::std::string* external_schema_type) {
   if (external_schema_type != nullptr) {
     
   } else {
     
   }
   external_schema_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_schema_type);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ExpandedSchemaType.external_schema_type)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
 
 // bytes external_schema_bytes = 4;
-inline void ExpandedSchemaType::clear_external_schema_bytes() {
+inline void StructuredDatasetType::clear_external_schema_bytes() {
   external_schema_bytes_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ExpandedSchemaType::external_schema_bytes() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+inline const ::std::string& StructuredDatasetType::external_schema_bytes() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.external_schema_bytes)
   return external_schema_bytes_.GetNoArena();
 }
-inline void ExpandedSchemaType::set_external_schema_bytes(const ::std::string& value) {
+inline void StructuredDatasetType::set_external_schema_bytes(const ::std::string& value) {
   
   external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.external_schema_bytes)
 }
 #if LANG_CXX11
-inline void ExpandedSchemaType::set_external_schema_bytes(::std::string&& value) {
+inline void StructuredDatasetType::set_external_schema_bytes(::std::string&& value) {
   
   external_schema_bytes_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.StructuredDatasetType.external_schema_bytes)
 }
 #endif
-inline void ExpandedSchemaType::set_external_schema_bytes(const char* value) {
+inline void StructuredDatasetType::set_external_schema_bytes(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.external_schema_bytes)
 }
-inline void ExpandedSchemaType::set_external_schema_bytes(const void* value, size_t size) {
+inline void StructuredDatasetType::set_external_schema_bytes(const void* value, size_t size) {
   
   external_schema_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.external_schema_bytes)
 }
-inline ::std::string* ExpandedSchemaType::mutable_external_schema_bytes() {
+inline ::std::string* StructuredDatasetType::mutable_external_schema_bytes() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.external_schema_bytes)
   return external_schema_bytes_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ExpandedSchemaType::release_external_schema_bytes() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+inline ::std::string* StructuredDatasetType::release_external_schema_bytes() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetType.external_schema_bytes)
   
   return external_schema_bytes_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ExpandedSchemaType::set_allocated_external_schema_bytes(::std::string* external_schema_bytes) {
+inline void StructuredDatasetType::set_allocated_external_schema_bytes(::std::string* external_schema_bytes) {
   if (external_schema_bytes != nullptr) {
     
   } else {
     
   }
   external_schema_bytes_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_schema_bytes);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ExpandedSchemaType.external_schema_bytes)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.external_schema_bytes)
 }
 
 // -------------------------------------------------------------------
@@ -2075,6 +2331,47 @@ inline ::flyteidl::core::EnumType* LiteralType::mutable_enum_type() {
   return type_.enum_type_;
 }
 
+// .flyteidl.core.StructuredDatasetType structured_dataset_type = 8;
+inline bool LiteralType::has_structured_dataset_type() const {
+  return type_case() == kStructuredDatasetType;
+}
+inline void LiteralType::set_has_structured_dataset_type() {
+  _oneof_case_[0] = kStructuredDatasetType;
+}
+inline void LiteralType::clear_structured_dataset_type() {
+  if (has_structured_dataset_type()) {
+    delete type_.structured_dataset_type_;
+    clear_has_type();
+  }
+}
+inline ::flyteidl::core::StructuredDatasetType* LiteralType::release_structured_dataset_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.LiteralType.structured_dataset_type)
+  if (has_structured_dataset_type()) {
+    clear_has_type();
+      ::flyteidl::core::StructuredDatasetType* temp = type_.structured_dataset_type_;
+    type_.structured_dataset_type_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::StructuredDatasetType& LiteralType::structured_dataset_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.LiteralType.structured_dataset_type)
+  return has_structured_dataset_type()
+      ? *type_.structured_dataset_type_
+      : *reinterpret_cast< ::flyteidl::core::StructuredDatasetType*>(&::flyteidl::core::_StructuredDatasetType_default_instance_);
+}
+inline ::flyteidl::core::StructuredDatasetType* LiteralType::mutable_structured_dataset_type() {
+  if (!has_structured_dataset_type()) {
+    clear_type();
+    set_has_structured_dataset_type();
+    type_.structured_dataset_type_ = CreateMaybeMessage< ::flyteidl::core::StructuredDatasetType >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.LiteralType.structured_dataset_type)
+  return type_.structured_dataset_type_;
+}
+
 // .google.protobuf.Struct metadata = 6;
 inline bool LiteralType::has_metadata() const {
   return this != internal_default_instance() && metadata_ != nullptr;
@@ -2353,6 +2650,8 @@ inline void Error::set_allocated_message(::std::string* message) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

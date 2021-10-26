@@ -9,9 +9,9 @@
 
 package flyteadmin
 
-type CoreExpandedSchemaType struct {
+type CoreStructuredDatasetType struct {
 	// A list of ordered columns this schema comprises of.
-	Columns []CoreLiteralType `json:"columns,omitempty"`
+	Columns []StructuredDatasetTypeDatasetColumn `json:"columns,omitempty"`
 	Names []string `json:"names,omitempty"`
 	ExternalSchemaType string `json:"external_schema_type,omitempty"`
 	ExternalSchemaBytes string `json:"external_schema_bytes,omitempty"`

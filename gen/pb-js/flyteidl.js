@@ -5094,25 +5094,25 @@ export const flyteidl = $root.flyteidl = (() => {
             return Schema;
         })();
 
-        core.SchemaMetadata = (function() {
+        core.StructuredDatasetMetadata = (function() {
 
             /**
-             * Properties of a SchemaMetadata.
+             * Properties of a StructuredDatasetMetadata.
              * @memberof flyteidl.core
-             * @interface ISchemaMetadata
-             * @property {string|null} [format] SchemaMetadata format
-             * @property {string|null} [storage] SchemaMetadata storage
+             * @interface IStructuredDatasetMetadata
+             * @property {string|null} [format] StructuredDatasetMetadata format
+             * @property {flyteidl.core.IStructuredDatasetType|null} [type] StructuredDatasetMetadata type
              */
 
             /**
-             * Constructs a new SchemaMetadata.
+             * Constructs a new StructuredDatasetMetadata.
              * @memberof flyteidl.core
-             * @classdesc Represents a SchemaMetadata.
-             * @implements ISchemaMetadata
+             * @classdesc Represents a StructuredDatasetMetadata.
+             * @implements IStructuredDatasetMetadata
              * @constructor
-             * @param {flyteidl.core.ISchemaMetadata=} [properties] Properties to set
+             * @param {flyteidl.core.IStructuredDatasetMetadata=} [properties] Properties to set
              */
-            function SchemaMetadata(properties) {
+            function StructuredDatasetMetadata(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -5120,67 +5120,67 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * SchemaMetadata format.
+             * StructuredDatasetMetadata format.
              * @member {string} format
-             * @memberof flyteidl.core.SchemaMetadata
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @instance
              */
-            SchemaMetadata.prototype.format = "";
+            StructuredDatasetMetadata.prototype.format = "";
 
             /**
-             * SchemaMetadata storage.
-             * @member {string} storage
-             * @memberof flyteidl.core.SchemaMetadata
+             * StructuredDatasetMetadata type.
+             * @member {flyteidl.core.IStructuredDatasetType|null|undefined} type
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @instance
              */
-            SchemaMetadata.prototype.storage = "";
+            StructuredDatasetMetadata.prototype.type = null;
 
             /**
-             * Creates a new SchemaMetadata instance using the specified properties.
+             * Creates a new StructuredDatasetMetadata instance using the specified properties.
              * @function create
-             * @memberof flyteidl.core.SchemaMetadata
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @static
-             * @param {flyteidl.core.ISchemaMetadata=} [properties] Properties to set
-             * @returns {flyteidl.core.SchemaMetadata} SchemaMetadata instance
+             * @param {flyteidl.core.IStructuredDatasetMetadata=} [properties] Properties to set
+             * @returns {flyteidl.core.StructuredDatasetMetadata} StructuredDatasetMetadata instance
              */
-            SchemaMetadata.create = function create(properties) {
-                return new SchemaMetadata(properties);
+            StructuredDatasetMetadata.create = function create(properties) {
+                return new StructuredDatasetMetadata(properties);
             };
 
             /**
-             * Encodes the specified SchemaMetadata message. Does not implicitly {@link flyteidl.core.SchemaMetadata.verify|verify} messages.
+             * Encodes the specified StructuredDatasetMetadata message. Does not implicitly {@link flyteidl.core.StructuredDatasetMetadata.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.core.SchemaMetadata
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @static
-             * @param {flyteidl.core.ISchemaMetadata} message SchemaMetadata message or plain object to encode
+             * @param {flyteidl.core.IStructuredDatasetMetadata} message StructuredDatasetMetadata message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            SchemaMetadata.encode = function encode(message, writer) {
+            StructuredDatasetMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.format != null && message.hasOwnProperty("format"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.format);
-                if (message.storage != null && message.hasOwnProperty("storage"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.storage);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    $root.flyteidl.core.StructuredDatasetType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Decodes a SchemaMetadata message from the specified reader or buffer.
+             * Decodes a StructuredDatasetMetadata message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.core.SchemaMetadata
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.SchemaMetadata} SchemaMetadata
+             * @returns {flyteidl.core.StructuredDatasetMetadata} StructuredDatasetMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SchemaMetadata.decode = function decode(reader, length) {
+            StructuredDatasetMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.SchemaMetadata();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.StructuredDatasetMetadata();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -5188,7 +5188,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.format = reader.string();
                         break;
                     case 2:
-                        message.storage = reader.string();
+                        message.type = $root.flyteidl.core.StructuredDatasetType.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5199,48 +5199,49 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a SchemaMetadata message.
+             * Verifies a StructuredDatasetMetadata message.
              * @function verify
-             * @memberof flyteidl.core.SchemaMetadata
+             * @memberof flyteidl.core.StructuredDatasetMetadata
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            SchemaMetadata.verify = function verify(message) {
+            StructuredDatasetMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.format != null && message.hasOwnProperty("format"))
                     if (!$util.isString(message.format))
                         return "format: string expected";
-                if (message.storage != null && message.hasOwnProperty("storage"))
-                    if (!$util.isString(message.storage))
-                        return "storage: string expected";
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.StructuredDatasetType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
                 return null;
             };
 
-            return SchemaMetadata;
+            return StructuredDatasetMetadata;
         })();
 
-        core.ExpandedSchema = (function() {
+        core.StructuredDataset = (function() {
 
             /**
-             * Properties of an ExpandedSchema.
+             * Properties of a StructuredDataset.
              * @memberof flyteidl.core
-             * @interface IExpandedSchema
-             * @property {flyteidl.core.IExpandedSchemaType|null} [type] ExpandedSchema type
-             * @property {string|null} [uri] ExpandedSchema uri
-             * @property {flyteidl.core.ISchemaMetadata|null} [metadata] ExpandedSchema metadata
+             * @interface IStructuredDataset
+             * @property {string|null} [uri] StructuredDataset uri
+             * @property {flyteidl.core.IStructuredDatasetMetadata|null} [metadata] StructuredDataset metadata
              */
 
             /**
-             * Constructs a new ExpandedSchema.
+             * Constructs a new StructuredDataset.
              * @memberof flyteidl.core
-             * @classdesc Represents an ExpandedSchema.
-             * @implements IExpandedSchema
+             * @classdesc Represents a StructuredDataset.
+             * @implements IStructuredDataset
              * @constructor
-             * @param {flyteidl.core.IExpandedSchema=} [properties] Properties to set
+             * @param {flyteidl.core.IStructuredDataset=} [properties] Properties to set
              */
-            function ExpandedSchema(properties) {
+            function StructuredDataset(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -5248,88 +5249,75 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ExpandedSchema type.
-             * @member {flyteidl.core.IExpandedSchemaType|null|undefined} type
-             * @memberof flyteidl.core.ExpandedSchema
-             * @instance
-             */
-            ExpandedSchema.prototype.type = null;
-
-            /**
-             * ExpandedSchema uri.
+             * StructuredDataset uri.
              * @member {string} uri
-             * @memberof flyteidl.core.ExpandedSchema
+             * @memberof flyteidl.core.StructuredDataset
              * @instance
              */
-            ExpandedSchema.prototype.uri = "";
+            StructuredDataset.prototype.uri = "";
 
             /**
-             * ExpandedSchema metadata.
-             * @member {flyteidl.core.ISchemaMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.ExpandedSchema
+             * StructuredDataset metadata.
+             * @member {flyteidl.core.IStructuredDatasetMetadata|null|undefined} metadata
+             * @memberof flyteidl.core.StructuredDataset
              * @instance
              */
-            ExpandedSchema.prototype.metadata = null;
+            StructuredDataset.prototype.metadata = null;
 
             /**
-             * Creates a new ExpandedSchema instance using the specified properties.
+             * Creates a new StructuredDataset instance using the specified properties.
              * @function create
-             * @memberof flyteidl.core.ExpandedSchema
+             * @memberof flyteidl.core.StructuredDataset
              * @static
-             * @param {flyteidl.core.IExpandedSchema=} [properties] Properties to set
-             * @returns {flyteidl.core.ExpandedSchema} ExpandedSchema instance
+             * @param {flyteidl.core.IStructuredDataset=} [properties] Properties to set
+             * @returns {flyteidl.core.StructuredDataset} StructuredDataset instance
              */
-            ExpandedSchema.create = function create(properties) {
-                return new ExpandedSchema(properties);
+            StructuredDataset.create = function create(properties) {
+                return new StructuredDataset(properties);
             };
 
             /**
-             * Encodes the specified ExpandedSchema message. Does not implicitly {@link flyteidl.core.ExpandedSchema.verify|verify} messages.
+             * Encodes the specified StructuredDataset message. Does not implicitly {@link flyteidl.core.StructuredDataset.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.core.ExpandedSchema
+             * @memberof flyteidl.core.StructuredDataset
              * @static
-             * @param {flyteidl.core.IExpandedSchema} message ExpandedSchema message or plain object to encode
+             * @param {flyteidl.core.IStructuredDataset} message StructuredDataset message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ExpandedSchema.encode = function encode(message, writer) {
+            StructuredDataset.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
-                    $root.flyteidl.core.ExpandedSchemaType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.uri != null && message.hasOwnProperty("uri"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.uri);
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.SchemaMetadata.encode(message.metadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.core.StructuredDatasetMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Decodes an ExpandedSchema message from the specified reader or buffer.
+             * Decodes a StructuredDataset message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.core.ExpandedSchema
+             * @memberof flyteidl.core.StructuredDataset
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.ExpandedSchema} ExpandedSchema
+             * @returns {flyteidl.core.StructuredDataset} StructuredDataset
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExpandedSchema.decode = function decode(reader, length) {
+            StructuredDataset.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ExpandedSchema();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.StructuredDataset();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.type = $root.flyteidl.core.ExpandedSchemaType.decode(reader, reader.uint32());
-                        break;
-                    case 2:
                         message.uri = reader.string();
                         break;
-                    case 3:
-                        message.metadata = $root.flyteidl.core.SchemaMetadata.decode(reader, reader.uint32());
+                    case 2:
+                        message.metadata = $root.flyteidl.core.StructuredDatasetMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5340,33 +5328,28 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an ExpandedSchema message.
+             * Verifies a StructuredDataset message.
              * @function verify
-             * @memberof flyteidl.core.ExpandedSchema
+             * @memberof flyteidl.core.StructuredDataset
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ExpandedSchema.verify = function verify(message) {
+            StructuredDataset.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    let error = $root.flyteidl.core.ExpandedSchemaType.verify(message.type);
-                    if (error)
-                        return "type." + error;
-                }
                 if (message.uri != null && message.hasOwnProperty("uri"))
                     if (!$util.isString(message.uri))
                         return "uri: string expected";
                 if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.SchemaMetadata.verify(message.metadata);
+                    let error = $root.flyteidl.core.StructuredDatasetMetadata.verify(message.metadata);
                     if (error)
                         return "metadata." + error;
                 }
                 return null;
             };
 
-            return ExpandedSchema;
+            return StructuredDataset;
         })();
 
         core.Scalar = (function() {
@@ -5382,7 +5365,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
              * @property {flyteidl.core.IError|null} [error] Scalar error
              * @property {google.protobuf.IStruct|null} [generic] Scalar generic
-             * @property {flyteidl.core.IExpandedSchema|null} [flyteSchema] Scalar flyteSchema
+             * @property {flyteidl.core.IStructuredDataset|null} [structuredDataset] Scalar structuredDataset
              */
 
             /**
@@ -5457,24 +5440,24 @@ export const flyteidl = $root.flyteidl = (() => {
             Scalar.prototype.generic = null;
 
             /**
-             * Scalar flyteSchema.
-             * @member {flyteidl.core.IExpandedSchema|null|undefined} flyteSchema
+             * Scalar structuredDataset.
+             * @member {flyteidl.core.IStructuredDataset|null|undefined} structuredDataset
              * @memberof flyteidl.core.Scalar
              * @instance
              */
-            Scalar.prototype.flyteSchema = null;
+            Scalar.prototype.structuredDataset = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Scalar value.
-             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"flyteSchema"|undefined} value
+             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"structuredDataset"|undefined} value
              * @memberof flyteidl.core.Scalar
              * @instance
              */
             Object.defineProperty(Scalar.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic", "flyteSchema"]),
+                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic", "structuredDataset"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5516,8 +5499,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.generic != null && message.hasOwnProperty("generic"))
                     $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.flyteSchema != null && message.hasOwnProperty("flyteSchema"))
-                    $root.flyteidl.core.ExpandedSchema.encode(message.flyteSchema, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.structuredDataset != null && message.hasOwnProperty("structuredDataset"))
+                    $root.flyteidl.core.StructuredDataset.encode(message.structuredDataset, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -5561,7 +5544,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     case 8:
-                        message.flyteSchema = $root.flyteidl.core.ExpandedSchema.decode(reader, reader.uint32());
+                        message.structuredDataset = $root.flyteidl.core.StructuredDataset.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5651,14 +5634,14 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "generic." + error;
                     }
                 }
-                if (message.flyteSchema != null && message.hasOwnProperty("flyteSchema")) {
+                if (message.structuredDataset != null && message.hasOwnProperty("structuredDataset")) {
                     if (properties.value === 1)
                         return "value: multiple values";
                     properties.value = 1;
                     {
-                        let error = $root.flyteidl.core.ExpandedSchema.verify(message.flyteSchema);
+                        let error = $root.flyteidl.core.StructuredDataset.verify(message.structuredDataset);
                         if (error)
-                            return "flyteSchema." + error;
+                            return "structuredDataset." + error;
                     }
                 }
                 return null;
@@ -7213,27 +7196,27 @@ export const flyteidl = $root.flyteidl = (() => {
             return SchemaType;
         })();
 
-        core.ExpandedSchemaType = (function() {
+        core.StructuredDatasetType = (function() {
 
             /**
-             * Properties of an ExpandedSchemaType.
+             * Properties of a StructuredDatasetType.
              * @memberof flyteidl.core
-             * @interface IExpandedSchemaType
-             * @property {Array.<flyteidl.core.ILiteralType>|null} [columns] ExpandedSchemaType columns
-             * @property {Array.<string>|null} [names] ExpandedSchemaType names
-             * @property {string|null} [externalSchemaType] ExpandedSchemaType externalSchemaType
-             * @property {Uint8Array|null} [externalSchemaBytes] ExpandedSchemaType externalSchemaBytes
+             * @interface IStructuredDatasetType
+             * @property {Array.<flyteidl.core.StructuredDatasetType.IDatasetColumn>|null} [columns] StructuredDatasetType columns
+             * @property {Array.<string>|null} [names] StructuredDatasetType names
+             * @property {string|null} [externalSchemaType] StructuredDatasetType externalSchemaType
+             * @property {Uint8Array|null} [externalSchemaBytes] StructuredDatasetType externalSchemaBytes
              */
 
             /**
-             * Constructs a new ExpandedSchemaType.
+             * Constructs a new StructuredDatasetType.
              * @memberof flyteidl.core
-             * @classdesc Represents an ExpandedSchemaType.
-             * @implements IExpandedSchemaType
+             * @classdesc Represents a StructuredDatasetType.
+             * @implements IStructuredDatasetType
              * @constructor
-             * @param {flyteidl.core.IExpandedSchemaType=} [properties] Properties to set
+             * @param {flyteidl.core.IStructuredDatasetType=} [properties] Properties to set
              */
-            function ExpandedSchemaType(properties) {
+            function StructuredDatasetType(properties) {
                 this.columns = [];
                 this.names = [];
                 if (properties)
@@ -7243,64 +7226,64 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ExpandedSchemaType columns.
-             * @member {Array.<flyteidl.core.ILiteralType>} columns
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * StructuredDatasetType columns.
+             * @member {Array.<flyteidl.core.StructuredDatasetType.IDatasetColumn>} columns
+             * @memberof flyteidl.core.StructuredDatasetType
              * @instance
              */
-            ExpandedSchemaType.prototype.columns = $util.emptyArray;
+            StructuredDatasetType.prototype.columns = $util.emptyArray;
 
             /**
-             * ExpandedSchemaType names.
+             * StructuredDatasetType names.
              * @member {Array.<string>} names
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @instance
              */
-            ExpandedSchemaType.prototype.names = $util.emptyArray;
+            StructuredDatasetType.prototype.names = $util.emptyArray;
 
             /**
-             * ExpandedSchemaType externalSchemaType.
+             * StructuredDatasetType externalSchemaType.
              * @member {string} externalSchemaType
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @instance
              */
-            ExpandedSchemaType.prototype.externalSchemaType = "";
+            StructuredDatasetType.prototype.externalSchemaType = "";
 
             /**
-             * ExpandedSchemaType externalSchemaBytes.
+             * StructuredDatasetType externalSchemaBytes.
              * @member {Uint8Array} externalSchemaBytes
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @instance
              */
-            ExpandedSchemaType.prototype.externalSchemaBytes = $util.newBuffer([]);
+            StructuredDatasetType.prototype.externalSchemaBytes = $util.newBuffer([]);
 
             /**
-             * Creates a new ExpandedSchemaType instance using the specified properties.
+             * Creates a new StructuredDatasetType instance using the specified properties.
              * @function create
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @static
-             * @param {flyteidl.core.IExpandedSchemaType=} [properties] Properties to set
-             * @returns {flyteidl.core.ExpandedSchemaType} ExpandedSchemaType instance
+             * @param {flyteidl.core.IStructuredDatasetType=} [properties] Properties to set
+             * @returns {flyteidl.core.StructuredDatasetType} StructuredDatasetType instance
              */
-            ExpandedSchemaType.create = function create(properties) {
-                return new ExpandedSchemaType(properties);
+            StructuredDatasetType.create = function create(properties) {
+                return new StructuredDatasetType(properties);
             };
 
             /**
-             * Encodes the specified ExpandedSchemaType message. Does not implicitly {@link flyteidl.core.ExpandedSchemaType.verify|verify} messages.
+             * Encodes the specified StructuredDatasetType message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @static
-             * @param {flyteidl.core.IExpandedSchemaType} message ExpandedSchemaType message or plain object to encode
+             * @param {flyteidl.core.IStructuredDatasetType} message StructuredDatasetType message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ExpandedSchemaType.encode = function encode(message, writer) {
+            StructuredDatasetType.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.columns != null && message.columns.length)
                     for (let i = 0; i < message.columns.length; ++i)
-                        $root.flyteidl.core.LiteralType.encode(message.columns[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.core.StructuredDatasetType.DatasetColumn.encode(message.columns[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.names != null && message.names.length)
                     for (let i = 0; i < message.names.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.names[i]);
@@ -7312,27 +7295,27 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes an ExpandedSchemaType message from the specified reader or buffer.
+             * Decodes a StructuredDatasetType message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.ExpandedSchemaType} ExpandedSchemaType
+             * @returns {flyteidl.core.StructuredDatasetType} StructuredDatasetType
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExpandedSchemaType.decode = function decode(reader, length) {
+            StructuredDatasetType.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ExpandedSchemaType();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.StructuredDatasetType();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.columns && message.columns.length))
                             message.columns = [];
-                        message.columns.push($root.flyteidl.core.LiteralType.decode(reader, reader.uint32()));
+                        message.columns.push($root.flyteidl.core.StructuredDatasetType.DatasetColumn.decode(reader, reader.uint32()));
                         break;
                     case 2:
                         if (!(message.names && message.names.length))
@@ -7354,21 +7337,21 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an ExpandedSchemaType message.
+             * Verifies a StructuredDatasetType message.
              * @function verify
-             * @memberof flyteidl.core.ExpandedSchemaType
+             * @memberof flyteidl.core.StructuredDatasetType
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ExpandedSchemaType.verify = function verify(message) {
+            StructuredDatasetType.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.columns != null && message.hasOwnProperty("columns")) {
                     if (!Array.isArray(message.columns))
                         return "columns: array expected";
                     for (let i = 0; i < message.columns.length; ++i) {
-                        let error = $root.flyteidl.core.LiteralType.verify(message.columns[i]);
+                        let error = $root.flyteidl.core.StructuredDatasetType.DatasetColumn.verify(message.columns[i]);
                         if (error)
                             return "columns." + error;
                     }
@@ -7389,7 +7372,136 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return ExpandedSchemaType;
+            StructuredDatasetType.DatasetColumn = (function() {
+
+                /**
+                 * Properties of a DatasetColumn.
+                 * @memberof flyteidl.core.StructuredDatasetType
+                 * @interface IDatasetColumn
+                 * @property {string|null} [name] DatasetColumn name
+                 * @property {flyteidl.core.ILiteralType|null} [literalType] DatasetColumn literalType
+                 */
+
+                /**
+                 * Constructs a new DatasetColumn.
+                 * @memberof flyteidl.core.StructuredDatasetType
+                 * @classdesc Represents a DatasetColumn.
+                 * @implements IDatasetColumn
+                 * @constructor
+                 * @param {flyteidl.core.StructuredDatasetType.IDatasetColumn=} [properties] Properties to set
+                 */
+                function DatasetColumn(properties) {
+                    if (properties)
+                        for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * DatasetColumn name.
+                 * @member {string} name
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @instance
+                 */
+                DatasetColumn.prototype.name = "";
+
+                /**
+                 * DatasetColumn literalType.
+                 * @member {flyteidl.core.ILiteralType|null|undefined} literalType
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @instance
+                 */
+                DatasetColumn.prototype.literalType = null;
+
+                /**
+                 * Creates a new DatasetColumn instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @static
+                 * @param {flyteidl.core.StructuredDatasetType.IDatasetColumn=} [properties] Properties to set
+                 * @returns {flyteidl.core.StructuredDatasetType.DatasetColumn} DatasetColumn instance
+                 */
+                DatasetColumn.create = function create(properties) {
+                    return new DatasetColumn(properties);
+                };
+
+                /**
+                 * Encodes the specified DatasetColumn message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.DatasetColumn.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @static
+                 * @param {flyteidl.core.StructuredDatasetType.IDatasetColumn} message DatasetColumn message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                DatasetColumn.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                    if (message.literalType != null && message.hasOwnProperty("literalType"))
+                        $root.flyteidl.core.LiteralType.encode(message.literalType, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+
+                /**
+                 * Decodes a DatasetColumn message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.StructuredDatasetType.DatasetColumn} DatasetColumn
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                DatasetColumn.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.StructuredDatasetType.DatasetColumn();
+                    while (reader.pos < end) {
+                        let tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.name = reader.string();
+                            break;
+                        case 2:
+                            message.literalType = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Verifies a DatasetColumn message.
+                 * @function verify
+                 * @memberof flyteidl.core.StructuredDatasetType.DatasetColumn
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                DatasetColumn.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
+                    if (message.literalType != null && message.hasOwnProperty("literalType")) {
+                        let error = $root.flyteidl.core.LiteralType.verify(message.literalType);
+                        if (error)
+                            return "literalType." + error;
+                    }
+                    return null;
+                };
+
+                return DatasetColumn;
+            })();
+
+            return StructuredDatasetType;
         })();
 
         core.BlobType = (function() {
@@ -7668,6 +7780,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ILiteralType|null} [mapValueType] LiteralType mapValueType
              * @property {flyteidl.core.IBlobType|null} [blob] LiteralType blob
              * @property {flyteidl.core.IEnumType|null} [enumType] LiteralType enumType
+             * @property {flyteidl.core.IStructuredDatasetType|null} [structuredDatasetType] LiteralType structuredDatasetType
              * @property {google.protobuf.IStruct|null} [metadata] LiteralType metadata
              */
 
@@ -7735,6 +7848,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LiteralType.prototype.enumType = null;
 
             /**
+             * LiteralType structuredDatasetType.
+             * @member {flyteidl.core.IStructuredDatasetType|null|undefined} structuredDatasetType
+             * @memberof flyteidl.core.LiteralType
+             * @instance
+             */
+            LiteralType.prototype.structuredDatasetType = null;
+
+            /**
              * LiteralType metadata.
              * @member {google.protobuf.IStruct|null|undefined} metadata
              * @memberof flyteidl.core.LiteralType
@@ -7747,12 +7868,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * LiteralType type.
-             * @member {"simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|undefined} type
+             * @member {"simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|"structuredDatasetType"|undefined} type
              * @memberof flyteidl.core.LiteralType
              * @instance
              */
             Object.defineProperty(LiteralType.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["simple", "schema", "collectionType", "mapValueType", "blob", "enumType"]),
+                get: $util.oneOfGetter($oneOfFields = ["simple", "schema", "collectionType", "mapValueType", "blob", "enumType", "structuredDatasetType"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -7794,6 +7915,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Struct.encode(message.metadata, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.enumType != null && message.hasOwnProperty("enumType"))
                     $root.flyteidl.core.EnumType.encode(message.enumType, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.structuredDatasetType != null && message.hasOwnProperty("structuredDatasetType"))
+                    $root.flyteidl.core.StructuredDatasetType.encode(message.structuredDatasetType, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -7832,6 +7955,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.enumType = $root.flyteidl.core.EnumType.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.structuredDatasetType = $root.flyteidl.core.StructuredDatasetType.decode(reader, reader.uint32());
                         break;
                     case 6:
                         message.metadata = $root.google.protobuf.Struct.decode(reader, reader.uint32());
@@ -7922,6 +8048,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.EnumType.verify(message.enumType);
                         if (error)
                             return "enumType." + error;
+                    }
+                }
+                if (message.structuredDatasetType != null && message.hasOwnProperty("structuredDatasetType")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        let error = $root.flyteidl.core.StructuredDatasetType.verify(message.structuredDatasetType);
+                        if (error)
+                            return "structuredDatasetType." + error;
                     }
                 }
                 if (message.metadata != null && message.hasOwnProperty("metadata")) {

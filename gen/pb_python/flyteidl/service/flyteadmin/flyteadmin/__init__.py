@@ -159,8 +159,6 @@ from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
 from flyteadmin.models.core_enum_type import CoreEnumType
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
-from flyteadmin.models.core_expanded_schema import CoreExpandedSchema
-from flyteadmin.models.core_expanded_schema_type import CoreExpandedSchemaType
 from flyteadmin.models.core_io_strategy import CoreIOStrategy
 from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_identity import CoreIdentity
@@ -192,12 +190,14 @@ from flyteadmin.models.core_resources import CoreResources
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy
 from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata
 from flyteadmin.models.core_scalar import CoreScalar
-from flyteadmin.models.core_schema_metadata import CoreSchemaMetadata
 from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_sql import CoreSql
+from flyteadmin.models.core_structured_dataset import CoreStructuredDataset
+from flyteadmin.models.core_structured_dataset_metadata import CoreStructuredDatasetMetadata
+from flyteadmin.models.core_structured_dataset_type import CoreStructuredDatasetType
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase
 from flyteadmin.models.core_task_log import CoreTaskLog
@@ -252,6 +252,7 @@ from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
 from flyteadmin.models.secret_mount_type import SecretMountType
 from flyteadmin.models.sort_direction import SortDirection
 from flyteadmin.models.sql_dialect import SqlDialect
+from flyteadmin.models.structured_dataset_type_dataset_column import StructuredDatasetTypeDatasetColumn
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass
 from flyteadmin.models.task_log_message_format import TaskLogMessageFormat
 from flyteadmin.models.workflow_metadata_on_failure_policy import WorkflowMetadataOnFailurePolicy

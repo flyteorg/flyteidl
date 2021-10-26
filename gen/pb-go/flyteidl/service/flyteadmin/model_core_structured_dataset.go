@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-type CoreExpandedSchema struct {
-	Type_ *CoreExpandedSchemaType `json:"type,omitempty"`
+type CoreStructuredDataset struct {
 	Uri string `json:"uri,omitempty"`
-	Metadata *CoreSchemaMetadata `json:"metadata,omitempty"`
+	Metadata *CoreStructuredDatasetMetadata `json:"metadata,omitempty"`
 }

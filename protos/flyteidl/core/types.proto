@@ -43,9 +43,17 @@ message SchemaType {
     repeated SchemaColumn columns = 3;
 }
 
-message ExpandedSchemaType {
+message StructuredDatasetType {
+    message DatasetColumn {
+        // A unique name within the schema type for the column.
+        string name = 1;
+
+        // The column type.
+        LiteralType literal_type = 2;
+    }
+
     // A list of ordered columns this schema comprises of.
-    repeated LiteralType columns = 1;
+    repeated DatasetColumn columns = 1;
 
     // Column names
     repeated string names = 2;
@@ -98,6 +106,9 @@ message LiteralType {
 
         // Defines an enum with pre-defined string values.
         EnumType enum_type = 7;
+
+        // Generalized schema support
+        StructuredDatasetType structured_dataset_type = 8;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by

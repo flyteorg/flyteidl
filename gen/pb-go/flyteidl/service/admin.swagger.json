@@ -3074,6 +3074,19 @@
       "default": "UNDEFINED",
       "description": "The dialect of the SQL statement. This is used to validate and parse SQL statements at compilation time to avoid\nexpensive runtime operations. If set to an unsupported dialect, no validation will be done on the statement.\nWe support the following dialect: ansi, hive."
     },
+    "StructuredDatasetTypeDatasetColumn": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A unique name within the schema type for the column."
+        },
+        "literal_type": {
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "The column type."
+        }
+      }
+    },
     "TaskExecutionMetadataInstanceClass": {
       "type": "string",
       "enum": [
@@ -5209,48 +5222,6 @@
       },
       "description": "Represents the error message from the execution."
     },
-    "coreExpandedSchema": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/coreExpandedSchemaType"
-        },
-        "uri": {
-          "type": "string"
-        },
-        "metadata": {
-          "$ref": "#/definitions/coreSchemaMetadata"
-        }
-      }
-    },
-    "coreExpandedSchemaType": {
-      "type": "object",
-      "properties": {
-        "columns": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreLiteralType"
-          },
-          "description": "A list of ordered columns this schema comprises of."
-        },
-        "names": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Column names"
-        },
-        "external_schema_type": {
-          "type": "string",
-          "title": "arrow mostly"
-        },
-        "external_schema_bytes": {
-          "type": "string",
-          "format": "byte",
-          "title": "The serialized bytes of a third-party schema library like Arrow"
-        }
-      }
-    },
     "coreIOStrategy": {
       "type": "object",
       "properties": {
@@ -5462,6 +5433,10 @@
         "enum_type": {
           "$ref": "#/definitions/coreEnumType",
           "description": "Defines an enum with pre-defined string values."
+        },
+        "structured_dataset_type": {
+          "$ref": "#/definitions/coreStructuredDatasetType",
+          "title": "Generalized schema support"
         },
         "metadata": {
           "$ref": "#/definitions/protobufStruct",
@@ -5811,21 +5786,8 @@
         "generic": {
           "$ref": "#/definitions/protobufStruct"
         },
-        "flyte_schema": {
-          "$ref": "#/definitions/coreExpandedSchema"
-        }
-      }
-    },
-    "coreSchemaMetadata": {
-      "type": "object",
-      "properties": {
-        "format": {
-          "type": "string",
-          "title": "This is the storage format, the format of the bits at rest\nParquet, Feather, CSV, etc.\nShould this be an enum?"
-        },
-        "storage": {
-          "type": "string",
-          "title": "Where is this stored? GCS, S3, BigQuery"
+        "structured_dataset": {
+          "$ref": "#/definitions/coreStructuredDataset"
         }
       }
     },
@@ -5917,6 +5879,59 @@
         }
       },
       "description": "Sql represents a generic sql workload with a statement and dialect."
+    },
+    "coreStructuredDataset": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "title": "String location uniquely identifying where the data is.\nShould start with the storage location (e.g. s3://, gs://, bq://, etc.)"
+        },
+        "metadata": {
+          "$ref": "#/definitions/coreStructuredDatasetMetadata"
+        }
+      }
+    },
+    "coreStructuredDatasetMetadata": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "title": "This is the storage format, the format of the bits at rest\nParquet, Feather, CSV, etc.\nShould this be an enum?"
+        },
+        "type": {
+          "$ref": "#/definitions/coreStructuredDatasetType",
+          "description": "Bundle the type information along with the literal."
+        }
+      }
+    },
+    "coreStructuredDatasetType": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StructuredDatasetTypeDatasetColumn"
+          },
+          "description": "A list of ordered columns this schema comprises of."
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Column names"
+        },
+        "external_schema_type": {
+          "type": "string",
+          "title": "arrow mostly"
+        },
+        "external_schema_bytes": {
+          "type": "string",
+          "format": "byte",
+          "title": "The serialized bytes of a third-party schema library like Arrow"
+        }
+      }
     },
     "coreTaskExecutionIdentifier": {
       "type": "object",

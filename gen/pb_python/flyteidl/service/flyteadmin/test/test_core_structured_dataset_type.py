@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_expanded_schema_type import CoreExpandedSchemaType  # noqa: E501
+from flyteadmin.models.core_structured_dataset_type import CoreStructuredDatasetType  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreExpandedSchemaType(unittest.TestCase):
-    """CoreExpandedSchemaType unit test stubs"""
+class TestCoreStructuredDatasetType(unittest.TestCase):
+    """CoreStructuredDatasetType unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreExpandedSchemaType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreExpandedSchemaType(self):
-        """Test CoreExpandedSchemaType"""
+    def testCoreStructuredDatasetType(self):
+        """Test CoreStructuredDatasetType"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_expanded_schema_type.CoreExpandedSchemaType()  # noqa: E501
+        # model = flyteadmin.models.core_structured_dataset_type.CoreStructuredDatasetType()  # noqa: E501
         pass
 
 
