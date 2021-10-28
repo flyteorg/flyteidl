@@ -38,7 +38,7 @@ var (
 type Clientset struct {
 	adminServiceClient        service.AdminServiceClient
 	authMetadataServiceClient service.AuthMetadataServiceClient
-	healthServiceClient 	  grpc_health_v1.HealthClient
+	healthServiceClient       grpc_health_v1.HealthClient
 	identityServiceClient     service.IdentityServiceClient
 }
 
