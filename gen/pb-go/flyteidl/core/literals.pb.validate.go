@@ -509,10 +509,10 @@ func (m *StructuredDatasetMetadata) Validate() error {
 
 	// no validation rules for Format
 
-	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetStructuredDatasetType()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return StructuredDatasetMetadataValidationError{
-				field:  "Type",
+				field:  "StructuredDatasetType",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

@@ -1071,14 +1071,14 @@ class StructuredDatasetMetadata final :
   ::std::string* release_format();
   void set_allocated_format(::std::string* format);
 
-  // .flyteidl.core.StructuredDatasetType type = 2;
-  bool has_type() const;
-  void clear_type();
-  static const int kTypeFieldNumber = 2;
-  const ::flyteidl::core::StructuredDatasetType& type() const;
-  ::flyteidl::core::StructuredDatasetType* release_type();
-  ::flyteidl::core::StructuredDatasetType* mutable_type();
-  void set_allocated_type(::flyteidl::core::StructuredDatasetType* type);
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+  bool has_structured_dataset_type() const;
+  void clear_structured_dataset_type();
+  static const int kStructuredDatasetTypeFieldNumber = 2;
+  const ::flyteidl::core::StructuredDatasetType& structured_dataset_type() const;
+  ::flyteidl::core::StructuredDatasetType* release_structured_dataset_type();
+  ::flyteidl::core::StructuredDatasetType* mutable_structured_dataset_type();
+  void set_allocated_structured_dataset_type(::flyteidl::core::StructuredDatasetType* structured_dataset_type);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.StructuredDatasetMetadata)
  private:
@@ -1086,7 +1086,7 @@ class StructuredDatasetMetadata final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr format_;
-  ::flyteidl::core::StructuredDatasetType* type_;
+  ::flyteidl::core::StructuredDatasetType* structured_dataset_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
 };
@@ -3359,49 +3359,49 @@ inline void StructuredDatasetMetadata::set_allocated_format(::std::string* forma
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetMetadata.format)
 }
 
-// .flyteidl.core.StructuredDatasetType type = 2;
-inline bool StructuredDatasetMetadata::has_type() const {
-  return this != internal_default_instance() && type_ != nullptr;
+// .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+inline bool StructuredDatasetMetadata::has_structured_dataset_type() const {
+  return this != internal_default_instance() && structured_dataset_type_ != nullptr;
 }
-inline const ::flyteidl::core::StructuredDatasetType& StructuredDatasetMetadata::type() const {
-  const ::flyteidl::core::StructuredDatasetType* p = type_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetMetadata.type)
+inline const ::flyteidl::core::StructuredDatasetType& StructuredDatasetMetadata::structured_dataset_type() const {
+  const ::flyteidl::core::StructuredDatasetType* p = structured_dataset_type_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetMetadata.structured_dataset_type)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::StructuredDatasetType*>(
       &::flyteidl::core::_StructuredDatasetType_default_instance_);
 }
-inline ::flyteidl::core::StructuredDatasetType* StructuredDatasetMetadata::release_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetMetadata.type)
+inline ::flyteidl::core::StructuredDatasetType* StructuredDatasetMetadata::release_structured_dataset_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetMetadata.structured_dataset_type)
   
-  ::flyteidl::core::StructuredDatasetType* temp = type_;
-  type_ = nullptr;
+  ::flyteidl::core::StructuredDatasetType* temp = structured_dataset_type_;
+  structured_dataset_type_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::StructuredDatasetType* StructuredDatasetMetadata::mutable_type() {
+inline ::flyteidl::core::StructuredDatasetType* StructuredDatasetMetadata::mutable_structured_dataset_type() {
   
-  if (type_ == nullptr) {
+  if (structured_dataset_type_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::StructuredDatasetType>(GetArenaNoVirtual());
-    type_ = p;
+    structured_dataset_type_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetMetadata.type)
-  return type_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetMetadata.structured_dataset_type)
+  return structured_dataset_type_;
 }
-inline void StructuredDatasetMetadata::set_allocated_type(::flyteidl::core::StructuredDatasetType* type) {
+inline void StructuredDatasetMetadata::set_allocated_structured_dataset_type(::flyteidl::core::StructuredDatasetType* structured_dataset_type) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(type_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(structured_dataset_type_);
   }
-  if (type) {
+  if (structured_dataset_type) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, type, submessage_arena);
+      structured_dataset_type = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, structured_dataset_type, submessage_arena);
     }
     
   } else {
     
   }
-  type_ = type;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetMetadata.type)
+  structured_dataset_type_ = structured_dataset_type;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetMetadata.structured_dataset_type)
 }
 
 // -------------------------------------------------------------------

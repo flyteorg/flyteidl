@@ -2125,8 +2125,8 @@ export namespace flyteidl {
             /** StructuredDatasetMetadata format */
             format?: (string|null);
 
-            /** StructuredDatasetMetadata type */
-            type?: (flyteidl.core.IStructuredDatasetType|null);
+            /** StructuredDatasetMetadata structuredDatasetType */
+            structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
         }
 
         /** Represents a StructuredDatasetMetadata. */
@@ -2141,8 +2141,8 @@ export namespace flyteidl {
             /** StructuredDatasetMetadata format. */
             public format: string;
 
-            /** StructuredDatasetMetadata type. */
-            public type?: (flyteidl.core.IStructuredDatasetType|null);
+            /** StructuredDatasetMetadata structuredDatasetType. */
+            public structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
 
             /**
              * Creates a new StructuredDatasetMetadata instance using the specified properties.

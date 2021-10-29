@@ -12,5 +12,5 @@ package flyteadmin
 type CoreStructuredDatasetMetadata struct {
 	Format string `json:"format,omitempty"`
 	// Bundle the type information along with the literal.
-	Type_ *CoreStructuredDatasetType `json:"type,omitempty"`
+	StructuredDatasetType *CoreStructuredDatasetType `json:"structured_dataset_type,omitempty"`
 }

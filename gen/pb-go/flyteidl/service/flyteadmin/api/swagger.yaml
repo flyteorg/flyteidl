@@ -4084,13 +4084,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -4246,13 +4246,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -4453,13 +4453,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -4627,13 +4627,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -4789,13 +4789,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -4976,13 +4976,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -5138,13 +5138,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -5452,13 +5452,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -6154,13 +6154,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -6215,13 +6215,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -6369,13 +6369,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6430,13 +6430,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6616,13 +6616,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6677,13 +6677,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6862,13 +6862,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6923,13 +6923,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7116,13 +7116,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -7177,13 +7177,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -7331,13 +7331,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7392,13 +7392,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7578,13 +7578,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7639,13 +7639,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7824,13 +7824,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7885,13 +7885,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -8502,13 +8502,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -8563,13 +8563,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -8717,13 +8717,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -8778,13 +8778,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -8964,13 +8964,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9025,13 +9025,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9210,13 +9210,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9271,13 +9271,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11387,13 +11387,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -11448,13 +11448,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -11602,13 +11602,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11663,13 +11663,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11849,13 +11849,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11910,13 +11910,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12095,13 +12095,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12156,13 +12156,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12349,13 +12349,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -12410,13 +12410,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -12564,13 +12564,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12625,13 +12625,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12811,13 +12811,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12872,13 +12872,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13057,13 +13057,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13118,13 +13118,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13735,13 +13735,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -13796,13 +13796,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -13950,13 +13950,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14011,13 +14011,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14197,13 +14197,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14258,13 +14258,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14443,13 +14443,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14504,13 +14504,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14858,13 +14858,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -14919,13 +14919,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -15073,13 +15073,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15134,13 +15134,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15320,13 +15320,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15381,13 +15381,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15566,13 +15566,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15627,13 +15627,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15820,13 +15820,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -15881,13 +15881,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -16035,13 +16035,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16096,13 +16096,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16282,13 +16282,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16343,13 +16343,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16528,13 +16528,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16589,13 +16589,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17206,13 +17206,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -17267,13 +17267,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -17421,13 +17421,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17482,13 +17482,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17668,13 +17668,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17729,13 +17729,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17914,13 +17914,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17975,13 +17975,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -18265,13 +18265,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -18326,13 +18326,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -18480,13 +18480,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18541,13 +18541,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18727,13 +18727,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18788,13 +18788,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18973,13 +18973,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19034,13 +19034,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19227,13 +19227,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -19288,13 +19288,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -19442,13 +19442,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19503,13 +19503,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19689,13 +19689,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19750,13 +19750,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19935,13 +19935,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19996,13 +19996,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -20613,13 +20613,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -20674,13 +20674,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -20828,13 +20828,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -20889,13 +20889,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21075,13 +21075,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21136,13 +21136,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21321,13 +21321,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21382,13 +21382,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21585,13 +21585,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -21646,13 +21646,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -21800,13 +21800,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21861,13 +21861,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22047,13 +22047,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22108,13 +22108,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22293,13 +22293,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22354,13 +22354,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22547,13 +22547,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -22608,13 +22608,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -22762,13 +22762,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22823,13 +22823,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23009,13 +23009,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23070,13 +23070,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23255,13 +23255,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23316,13 +23316,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23933,13 +23933,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -23994,13 +23994,13 @@ definitions:
                         value: "value"
                       structured_dataset:
                         metadata:
-                          format: "format"
-                          type:
+                          structured_dataset_type:
                             external_schema_type: "external_schema_type"
                             columns:
                             - name: "name"
                             - name: "name"
                             external_schema_bytes: "external_schema_bytes"
+                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -24148,13 +24148,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24209,13 +24209,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24395,13 +24395,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24456,13 +24456,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24641,13 +24641,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24702,13 +24702,13 @@ definitions:
                           value: "value"
                         structured_dataset:
                           metadata:
-                            format: "format"
-                            type:
+                            structured_dataset_type:
                               external_schema_type: "external_schema_type"
                               columns:
                               - name: "name"
                               - name: "name"
                               external_schema_bytes: "external_schema_bytes"
+                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24955,13 +24955,13 @@ definitions:
             value: "value"
           structured_dataset:
             metadata:
-              format: "format"
-              type:
+              structured_dataset_type:
                 external_schema_type: "external_schema_type"
                 columns:
                 - name: "name"
                 - name: "name"
                 external_schema_bytes: "external_schema_bytes"
+              format: "format"
             uri: "uri"
           error:
             message: "message"
@@ -25032,13 +25032,13 @@ definitions:
           value: "value"
         structured_dataset:
           metadata:
-            format: "format"
-            type:
+            structured_dataset_type:
               external_schema_type: "external_schema_type"
               columns:
               - name: "name"
               - name: "name"
               external_schema_bytes: "external_schema_bytes"
+            format: "format"
           uri: "uri"
         error:
           message: "message"
@@ -25609,13 +25609,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -25670,13 +25670,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -25824,13 +25824,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -25885,13 +25885,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26071,13 +26071,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26132,13 +26132,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26317,13 +26317,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26378,13 +26378,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26598,13 +26598,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26659,13 +26659,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26813,13 +26813,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -26874,13 +26874,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27060,13 +27060,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27121,13 +27121,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27306,13 +27306,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27367,13 +27367,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27560,13 +27560,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -27621,13 +27621,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -27775,13 +27775,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27836,13 +27836,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28022,13 +28022,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28083,13 +28083,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28268,13 +28268,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28329,13 +28329,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28946,13 +28946,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -29007,13 +29007,13 @@ definitions:
                   value: "value"
                 structured_dataset:
                   metadata:
-                    format: "format"
-                    type:
+                    structured_dataset_type:
                       external_schema_type: "external_schema_type"
                       columns:
                       - name: "name"
                       - name: "name"
                       external_schema_bytes: "external_schema_bytes"
+                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -29161,13 +29161,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29222,13 +29222,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29408,13 +29408,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29469,13 +29469,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29654,13 +29654,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29715,13 +29715,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -30420,13 +30420,13 @@ definitions:
           value: "value"
         structured_dataset:
           metadata:
-            format: "format"
-            type:
+            structured_dataset_type:
               external_schema_type: "external_schema_type"
               columns:
               - name: "name"
               - name: "name"
               external_schema_bytes: "external_schema_bytes"
+            format: "format"
           uri: "uri"
         error:
           message: "message"
@@ -30699,13 +30699,13 @@ definitions:
               value: "value"
             structured_dataset:
               metadata:
-                format: "format"
-                type:
+                structured_dataset_type:
                   external_schema_type: "external_schema_type"
                   columns:
                   - name: "name"
                   - name: "name"
                   external_schema_bytes: "external_schema_bytes"
+                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -30760,13 +30760,13 @@ definitions:
               value: "value"
             structured_dataset:
               metadata:
-                format: "format"
-                type:
+                structured_dataset_type:
                   external_schema_type: "external_schema_type"
                   columns:
                   - name: "name"
                   - name: "name"
                   external_schema_bytes: "external_schema_bytes"
+                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -31030,13 +31030,13 @@ definitions:
             value: "value"
           structured_dataset:
             metadata:
-              format: "format"
-              type:
+              structured_dataset_type:
                 external_schema_type: "external_schema_type"
                 columns:
                 - name: "name"
                 - name: "name"
                 external_schema_bytes: "external_schema_bytes"
+              format: "format"
             uri: "uri"
           error:
             message: "message"
@@ -31134,13 +31134,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -31367,13 +31367,13 @@ definitions:
         value: "value"
       structured_dataset:
         metadata:
-          format: "format"
-          type:
+          structured_dataset_type:
             external_schema_type: "external_schema_type"
             columns:
             - name: "name"
             - name: "name"
             external_schema_bytes: "external_schema_bytes"
+          format: "format"
         uri: "uri"
       error:
         message: "message"
@@ -31558,13 +31558,13 @@ definitions:
         $ref: "#/definitions/coreStructuredDatasetMetadata"
     example:
       metadata:
-        format: "format"
-        type:
+        structured_dataset_type:
           external_schema_type: "external_schema_type"
           columns:
           - name: "name"
           - name: "name"
           external_schema_bytes: "external_schema_bytes"
+        format: "format"
       uri: "uri"
   coreStructuredDatasetMetadata:
     type: "object"
@@ -31573,17 +31573,17 @@ definitions:
         type: "string"
         title: "This is the storage format, the format of the bits at rest\nParquet,\
           \ Feather, CSV, etc.\nShould this be an enum?"
-      type:
+      structured_dataset_type:
         description: "Bundle the type information along with the literal."
         $ref: "#/definitions/coreStructuredDatasetType"
     example:
-      format: "format"
-      type:
+      structured_dataset_type:
         external_schema_type: "external_schema_type"
         columns:
         - name: "name"
         - name: "name"
         external_schema_bytes: "external_schema_bytes"
+      format: "format"
   coreStructuredDatasetType:
     type: "object"
     properties:
@@ -32358,13 +32358,13 @@ definitions:
               value: "value"
             structured_dataset:
               metadata:
-                format: "format"
-                type:
+                structured_dataset_type:
                   external_schema_type: "external_schema_type"
                   columns:
                   - name: "name"
                   - name: "name"
                   external_schema_bytes: "external_schema_bytes"
+                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -32419,13 +32419,13 @@ definitions:
               value: "value"
             structured_dataset:
               metadata:
-                format: "format"
-                type:
+                structured_dataset_type:
                   external_schema_type: "external_schema_type"
                   columns:
                   - name: "name"
                   - name: "name"
                   external_schema_bytes: "external_schema_bytes"
+                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -32573,13 +32573,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -32634,13 +32634,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -32820,13 +32820,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -32881,13 +32881,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33066,13 +33066,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33127,13 +33127,13 @@ definitions:
                 value: "value"
               structured_dataset:
                 metadata:
-                  format: "format"
-                  type:
+                  structured_dataset_type:
                     external_schema_type: "external_schema_type"
                     columns:
                     - name: "name"
                     - name: "name"
                     external_schema_bytes: "external_schema_bytes"
+                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33552,13 +33552,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -33613,13 +33613,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -33767,13 +33767,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -33828,13 +33828,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34014,13 +34014,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34075,13 +34075,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34260,13 +34260,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34321,13 +34321,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34514,13 +34514,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -34575,13 +34575,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -34729,13 +34729,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34790,13 +34790,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34976,13 +34976,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35037,13 +35037,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35222,13 +35222,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35283,13 +35283,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35900,13 +35900,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -35961,13 +35961,13 @@ definitions:
                     value: "value"
                   structured_dataset:
                     metadata:
-                      format: "format"
-                      type:
+                      structured_dataset_type:
                         external_schema_type: "external_schema_type"
                         columns:
                         - name: "name"
                         - name: "name"
                         external_schema_bytes: "external_schema_bytes"
+                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -36115,13 +36115,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36176,13 +36176,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36362,13 +36362,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36423,13 +36423,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36608,13 +36608,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36669,13 +36669,13 @@ definitions:
                       value: "value"
                     structured_dataset:
                       metadata:
-                        format: "format"
-                        type:
+                        structured_dataset_type:
                           external_schema_type: "external_schema_type"
                           columns:
                           - name: "name"
                           - name: "name"
                           external_schema_bytes: "external_schema_bytes"
+                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"

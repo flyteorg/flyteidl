@@ -5899,7 +5899,7 @@
           "type": "string",
           "title": "This is the storage format, the format of the bits at rest\nParquet, Feather, CSV, etc.\nShould this be an enum?"
         },
-        "type": {
+        "structured_dataset_type": {
           "$ref": "#/definitions/coreStructuredDatasetType",
           "description": "Bundle the type information along with the literal."
         }

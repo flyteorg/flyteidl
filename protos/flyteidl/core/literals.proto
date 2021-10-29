@@ -59,7 +59,7 @@ message StructuredDatasetMetadata {
     string format = 1;
 
     // Bundle the type information along with the literal.
-    StructuredDatasetType type = 2;
+    StructuredDatasetType structured_dataset_type = 2;
 }
 
 message StructuredDataset {

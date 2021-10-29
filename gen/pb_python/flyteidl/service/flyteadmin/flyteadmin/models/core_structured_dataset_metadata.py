@@ -34,25 +34,25 @@ class CoreStructuredDatasetMetadata(object):
     """
     swagger_types = {
         'format': 'str',
-        'type': 'CoreStructuredDatasetType'
+        'structured_dataset_type': 'CoreStructuredDatasetType'
     }
 
     attribute_map = {
         'format': 'format',
-        'type': 'type'
+        'structured_dataset_type': 'structured_dataset_type'
     }
 
-    def __init__(self, format=None, type=None):  # noqa: E501
+    def __init__(self, format=None, structured_dataset_type=None):  # noqa: E501
         """CoreStructuredDatasetMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._format = None
-        self._type = None
+        self._structured_dataset_type = None
         self.discriminator = None
 
         if format is not None:
             self.format = format
-        if type is not None:
-            self.type = type
+        if structured_dataset_type is not None:
+            self.structured_dataset_type = structured_dataset_type
 
     @property
     def format(self):
@@ -76,27 +76,27 @@ class CoreStructuredDatasetMetadata(object):
         self._format = format
 
     @property
-    def type(self):
-        """Gets the type of this CoreStructuredDatasetMetadata.  # noqa: E501
+    def structured_dataset_type(self):
+        """Gets the structured_dataset_type of this CoreStructuredDatasetMetadata.  # noqa: E501
 
         Bundle the type information along with the literal.  # noqa: E501
 
-        :return: The type of this CoreStructuredDatasetMetadata.  # noqa: E501
+        :return: The structured_dataset_type of this CoreStructuredDatasetMetadata.  # noqa: E501
         :rtype: CoreStructuredDatasetType
         """
-        return self._type
+        return self._structured_dataset_type
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this CoreStructuredDatasetMetadata.
+    @structured_dataset_type.setter
+    def structured_dataset_type(self, structured_dataset_type):
+        """Sets the structured_dataset_type of this CoreStructuredDatasetMetadata.
 
         Bundle the type information along with the literal.  # noqa: E501
 
-        :param type: The type of this CoreStructuredDatasetMetadata.  # noqa: E501
+        :param structured_dataset_type: The structured_dataset_type of this CoreStructuredDatasetMetadata.  # noqa: E501
         :type: CoreStructuredDatasetType
         """
 
-        self._type = type
+        self._structured_dataset_type = structured_dataset_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
