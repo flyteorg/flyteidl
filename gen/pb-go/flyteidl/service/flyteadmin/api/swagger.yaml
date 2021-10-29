@@ -4026,9 +4026,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -4090,9 +4087,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -4129,9 +4123,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -4258,9 +4249,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -4297,9 +4285,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -4410,9 +4395,6 @@ definitions:
                   type: {}
               structured_dataset_type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -4474,9 +4456,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -4513,9 +4492,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -4593,9 +4569,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -4657,9 +4630,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -4696,9 +4666,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -4825,9 +4792,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -4864,9 +4828,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -4957,9 +4918,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -5021,9 +4979,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -5060,9 +5015,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -5189,9 +5141,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -5228,9 +5177,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -5509,9 +5455,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -5548,9 +5491,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -6217,9 +6157,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -6281,9 +6218,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -6438,9 +6372,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -6502,9 +6433,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -6691,9 +6619,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -6755,9 +6680,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -6943,9 +6865,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7007,9 +6926,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7098,9 +7014,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -7137,9 +7050,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -7209,9 +7119,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -7273,9 +7180,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -7430,9 +7334,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7494,9 +7395,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7683,9 +7581,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7747,9 +7642,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7935,9 +7827,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -7999,9 +7888,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -8090,9 +7976,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8129,9 +8012,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8271,9 +8151,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8310,9 +8187,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8488,9 +8362,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8527,9 +8398,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8637,9 +8505,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8701,9 +8566,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -8858,9 +8720,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -8922,9 +8781,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -9111,9 +8967,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -9175,9 +9028,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -9363,9 +9213,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -9427,9 +9274,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -9518,9 +9362,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -9557,9 +9398,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -10316,9 +10154,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -10355,9 +10190,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -10549,9 +10381,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -10588,9 +10417,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -11094,9 +10920,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11133,9 +10956,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11320,9 +11140,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11359,9 +11176,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11576,9 +11390,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11640,9 +11451,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -11797,9 +11605,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -11861,9 +11666,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12050,9 +11852,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12114,9 +11913,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12302,9 +12098,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12366,9 +12159,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12457,9 +12247,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -12496,9 +12283,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -12568,9 +12352,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -12632,9 +12413,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -12789,9 +12567,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -12853,9 +12628,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -13042,9 +12814,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -13106,9 +12875,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -13294,9 +13060,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -13358,9 +13121,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -13449,9 +13209,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13488,9 +13245,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13630,9 +13384,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13669,9 +13420,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13847,9 +13595,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13886,9 +13631,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -13996,9 +13738,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -14060,9 +13799,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -14217,9 +13953,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14281,9 +14014,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14470,9 +14200,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14534,9 +14261,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14722,9 +14446,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14786,9 +14507,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -14877,9 +14595,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -14916,9 +14631,6 @@ definitions:
                             type: {}
                         structured_dataset_type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15149,9 +14861,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -15213,9 +14922,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -15370,9 +15076,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15434,9 +15137,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15623,9 +15323,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15687,9 +15384,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15875,9 +15569,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -15939,9 +15630,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16030,9 +15718,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -16069,9 +15754,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -16141,9 +15823,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -16205,9 +15884,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -16362,9 +16038,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16426,9 +16099,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16615,9 +16285,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16679,9 +16346,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16867,9 +16531,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -16931,9 +16592,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -17022,9 +16680,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17061,9 +16716,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17203,9 +16855,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17242,9 +16891,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17420,9 +17066,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17459,9 +17102,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17569,9 +17209,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17633,9 +17270,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -17790,9 +17424,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -17854,9 +17485,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -18043,9 +17671,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -18107,9 +17732,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -18295,9 +17917,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -18359,9 +17978,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -18450,9 +18066,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -18489,9 +18102,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -18658,9 +18268,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -18722,9 +18329,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -18879,9 +18483,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -18943,9 +18544,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19132,9 +18730,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19196,9 +18791,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19384,9 +18976,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19448,9 +19037,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19539,9 +19125,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -19578,9 +19161,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -19650,9 +19230,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -19714,9 +19291,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -19871,9 +19445,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -19935,9 +19506,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -20124,9 +19692,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -20188,9 +19753,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -20376,9 +19938,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -20440,9 +19999,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -20531,9 +20087,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -20570,9 +20123,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -20712,9 +20262,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -20751,9 +20298,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -20929,9 +20473,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -20968,9 +20509,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -21078,9 +20616,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -21142,9 +20677,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -21299,9 +20831,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21363,9 +20892,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21552,9 +21078,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21616,9 +21139,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21804,9 +21324,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21868,9 +21385,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -21959,9 +21473,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -21998,9 +21509,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -22080,9 +21588,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -22144,9 +21649,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -22301,9 +21803,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22365,9 +21864,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22554,9 +22050,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22618,9 +22111,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22806,9 +22296,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22870,9 +22357,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -22961,9 +22445,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -23000,9 +22481,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -23072,9 +22550,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -23136,9 +22611,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -23293,9 +22765,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23357,9 +22826,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23546,9 +23012,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23610,9 +23073,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23798,9 +23258,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23862,9 +23319,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -23953,9 +23407,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -23992,9 +23443,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24134,9 +23582,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24173,9 +23618,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24351,9 +23793,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24390,9 +23829,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24500,9 +23936,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24564,9 +23997,6 @@ definitions:
                           format: "format"
                           type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -24721,9 +24151,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -24785,9 +24212,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -24974,9 +24398,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -25038,9 +24459,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -25226,9 +24644,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -25290,9 +24705,6 @@ definitions:
                             format: "format"
                             type:
                               external_schema_type: "external_schema_type"
-                              names:
-                              - "names"
-                              - "names"
                               columns:
                               - name: "name"
                               - name: "name"
@@ -25381,9 +24793,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -25420,9 +24829,6 @@ definitions:
                               type: {}
                           structured_dataset_type:
                             external_schema_type: "external_schema_type"
-                            names:
-                            - "names"
-                            - "names"
                             columns:
                             - name: "name"
                             - name: "name"
@@ -25552,9 +24958,6 @@ definitions:
               format: "format"
               type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -25632,9 +25035,6 @@ definitions:
             format: "format"
             type:
               external_schema_type: "external_schema_type"
-              names:
-              - "names"
-              - "names"
               columns:
               - name: "name"
               - name: "name"
@@ -26057,9 +25457,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -26096,9 +25493,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -26218,9 +25612,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -26282,9 +25673,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -26439,9 +25827,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -26503,9 +25888,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -26692,9 +26074,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -26756,9 +26135,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -26944,9 +26320,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -27008,9 +26381,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -27099,9 +26469,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -27138,9 +26505,6 @@ definitions:
                       type: {}
                   structured_dataset_type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -27237,9 +26601,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -27301,9 +26662,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -27458,9 +26816,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -27522,9 +26877,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -27711,9 +27063,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -27775,9 +27124,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -27963,9 +27309,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28027,9 +27370,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28118,9 +27458,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -28157,9 +27494,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -28229,9 +27563,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -28293,9 +27624,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -28450,9 +27778,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28514,9 +27839,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28703,9 +28025,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28767,9 +28086,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -28955,9 +28271,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -29019,9 +28332,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -29110,9 +28420,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29149,9 +28456,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29291,9 +28595,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29330,9 +28631,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29508,9 +28806,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29547,9 +28842,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29657,9 +28949,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29721,9 +29010,6 @@ definitions:
                     format: "format"
                     type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -29878,9 +29164,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -29942,9 +29225,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -30131,9 +29411,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -30195,9 +29472,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -30383,9 +29657,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -30447,9 +29718,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -30538,9 +29806,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -30577,9 +29842,6 @@ definitions:
                         type: {}
                     structured_dataset_type:
                       external_schema_type: "external_schema_type"
-                      names:
-                      - "names"
-                      - "names"
                       columns:
                       - name: "name"
                       - name: "name"
@@ -31161,9 +30423,6 @@ definitions:
             format: "format"
             type:
               external_schema_type: "external_schema_type"
-              names:
-              - "names"
-              - "names"
               columns:
               - name: "name"
               - name: "name"
@@ -31256,9 +30515,6 @@ definitions:
           type: {}
       structured_dataset_type:
         external_schema_type: "external_schema_type"
-        names:
-        - "names"
-        - "names"
         columns:
         - name: "name"
         - name: "name"
@@ -31446,9 +30702,6 @@ definitions:
                 format: "format"
                 type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -31510,9 +30763,6 @@ definitions:
                 format: "format"
                 type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -31783,9 +31033,6 @@ definitions:
               format: "format"
               type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -31822,9 +31069,6 @@ definitions:
               type: {}
           structured_dataset_type:
             external_schema_type: "external_schema_type"
-            names:
-            - "names"
-            - "names"
             columns:
             - name: "name"
             - name: "name"
@@ -31893,9 +31137,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -31932,9 +31173,6 @@ definitions:
                   type: {}
               structured_dataset_type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -32132,9 +31370,6 @@ definitions:
           format: "format"
           type:
             external_schema_type: "external_schema_type"
-            names:
-            - "names"
-            - "names"
             columns:
             - name: "name"
             - name: "name"
@@ -32326,9 +31561,6 @@ definitions:
         format: "format"
         type:
           external_schema_type: "external_schema_type"
-          names:
-          - "names"
-          - "names"
           columns:
           - name: "name"
           - name: "name"
@@ -32348,9 +31580,6 @@ definitions:
       format: "format"
       type:
         external_schema_type: "external_schema_type"
-        names:
-        - "names"
-        - "names"
         columns:
         - name: "name"
         - name: "name"
@@ -32363,11 +31592,6 @@ definitions:
         description: "A list of ordered columns this schema comprises of."
         items:
           $ref: "#/definitions/StructuredDatasetTypeDatasetColumn"
-      names:
-        type: "array"
-        title: "Column names"
-        items:
-          type: "string"
       external_schema_type:
         type: "string"
         title: "arrow mostly"
@@ -32378,9 +31602,6 @@ definitions:
         pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
     example:
       external_schema_type: "external_schema_type"
-      names:
-      - "names"
-      - "names"
       columns:
       - name: "name"
       - name: "name"
@@ -32689,9 +31910,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -32728,9 +31946,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -32824,9 +32039,6 @@ definitions:
                   type: {}
               structured_dataset_type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -32863,9 +32075,6 @@ definitions:
                   type: {}
               structured_dataset_type:
                 external_schema_type: "external_schema_type"
-                names:
-                - "names"
-                - "names"
                 columns:
                 - name: "name"
                 - name: "name"
@@ -32910,9 +32119,6 @@ definitions:
             type: {}
         structured_dataset_type:
           external_schema_type: "external_schema_type"
-          names:
-          - "names"
-          - "names"
           columns:
           - name: "name"
           - name: "name"
@@ -32958,9 +32164,6 @@ definitions:
                 type: {}
             structured_dataset_type:
               external_schema_type: "external_schema_type"
-              names:
-              - "names"
-              - "names"
               columns:
               - name: "name"
               - name: "name"
@@ -33158,9 +32361,6 @@ definitions:
                 format: "format"
                 type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -33222,9 +32422,6 @@ definitions:
                 format: "format"
                 type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -33379,9 +32576,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -33443,9 +32637,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -33632,9 +32823,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -33696,9 +32884,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -33884,9 +33069,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -33948,9 +33130,6 @@ definitions:
                   format: "format"
                   type:
                     external_schema_type: "external_schema_type"
-                    names:
-                    - "names"
-                    - "names"
                     columns:
                     - name: "name"
                     - name: "name"
@@ -34039,9 +33218,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -34078,9 +33254,6 @@ definitions:
                     type: {}
                 structured_dataset_type:
                   external_schema_type: "external_schema_type"
-                  names:
-                  - "names"
-                  - "names"
                   columns:
                   - name: "name"
                   - name: "name"
@@ -34382,9 +33555,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -34446,9 +33616,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -34603,9 +33770,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -34667,9 +33831,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -34856,9 +34017,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -34920,9 +34078,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35108,9 +34263,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35172,9 +34324,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35263,9 +34412,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -35302,9 +34448,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -35374,9 +34517,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -35438,9 +34578,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -35595,9 +34732,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35659,9 +34793,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35848,9 +34979,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -35912,9 +35040,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -36100,9 +35225,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -36164,9 +35286,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -36255,9 +35374,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36294,9 +35410,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36436,9 +35549,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36475,9 +35585,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36653,9 +35760,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36692,9 +35796,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36802,9 +35903,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -36866,9 +35964,6 @@ definitions:
                       format: "format"
                       type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -37023,9 +36118,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37087,9 +36179,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37276,9 +36365,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37340,9 +36426,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37528,9 +36611,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37592,9 +36672,6 @@ definitions:
                         format: "format"
                         type:
                           external_schema_type: "external_schema_type"
-                          names:
-                          - "names"
-                          - "names"
                           columns:
                           - name: "name"
                           - name: "name"
@@ -37683,9 +36760,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"
@@ -37722,9 +36796,6 @@ definitions:
                           type: {}
                       structured_dataset_type:
                         external_schema_type: "external_schema_type"
-                        names:
-                        - "names"
-                        - "names"
                         columns:
                         - name: "name"
                         - name: "name"

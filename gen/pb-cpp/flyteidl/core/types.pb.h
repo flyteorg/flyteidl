@@ -694,31 +694,9 @@ class StructuredDatasetType final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >&
       columns() const;
 
-  // repeated string names = 2;
-  int names_size() const;
-  void clear_names();
-  static const int kNamesFieldNumber = 2;
-  const ::std::string& names(int index) const;
-  ::std::string* mutable_names(int index);
-  void set_names(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_names(int index, ::std::string&& value);
-  #endif
-  void set_names(int index, const char* value);
-  void set_names(int index, const char* value, size_t size);
-  ::std::string* add_names();
-  void add_names(const ::std::string& value);
-  #if LANG_CXX11
-  void add_names(::std::string&& value);
-  #endif
-  void add_names(const char* value);
-  void add_names(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& names() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_names();
-
-  // string external_schema_type = 3;
+  // string external_schema_type = 2;
   void clear_external_schema_type();
-  static const int kExternalSchemaTypeFieldNumber = 3;
+  static const int kExternalSchemaTypeFieldNumber = 2;
   const ::std::string& external_schema_type() const;
   void set_external_schema_type(const ::std::string& value);
   #if LANG_CXX11
@@ -730,9 +708,9 @@ class StructuredDatasetType final :
   ::std::string* release_external_schema_type();
   void set_allocated_external_schema_type(::std::string* external_schema_type);
 
-  // bytes external_schema_bytes = 4;
+  // bytes external_schema_bytes = 3;
   void clear_external_schema_bytes();
-  static const int kExternalSchemaBytesFieldNumber = 4;
+  static const int kExternalSchemaBytesFieldNumber = 3;
   const ::std::string& external_schema_bytes() const;
   void set_external_schema_bytes(const ::std::string& value);
   #if LANG_CXX11
@@ -750,7 +728,6 @@ class StructuredDatasetType final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn > columns_;
-  ::google::protobuf::RepeatedPtrField<::std::string> names_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_type_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_bytes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1774,76 +1751,7 @@ StructuredDatasetType::columns() const {
   return columns_;
 }
 
-// repeated string names = 2;
-inline int StructuredDatasetType::names_size() const {
-  return names_.size();
-}
-inline void StructuredDatasetType::clear_names() {
-  names_.Clear();
-}
-inline const ::std::string& StructuredDatasetType::names(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.names)
-  return names_.Get(index);
-}
-inline ::std::string* StructuredDatasetType::mutable_names(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.names)
-  return names_.Mutable(index);
-}
-inline void StructuredDatasetType::set_names(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.names)
-  names_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void StructuredDatasetType::set_names(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.names)
-  names_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void StructuredDatasetType::set_names(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  names_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.names)
-}
-inline void StructuredDatasetType::set_names(int index, const char* value, size_t size) {
-  names_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.names)
-}
-inline ::std::string* StructuredDatasetType::add_names() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.core.StructuredDatasetType.names)
-  return names_.Add();
-}
-inline void StructuredDatasetType::add_names(const ::std::string& value) {
-  names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.names)
-}
-#if LANG_CXX11
-inline void StructuredDatasetType::add_names(::std::string&& value) {
-  names_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.names)
-}
-#endif
-inline void StructuredDatasetType::add_names(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.core.StructuredDatasetType.names)
-}
-inline void StructuredDatasetType::add_names(const char* value, size_t size) {
-  names_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.core.StructuredDatasetType.names)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-StructuredDatasetType::names() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.StructuredDatasetType.names)
-  return names_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-StructuredDatasetType::mutable_names() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.StructuredDatasetType.names)
-  return &names_;
-}
-
-// string external_schema_type = 3;
+// string external_schema_type = 2;
 inline void StructuredDatasetType::clear_external_schema_type() {
   external_schema_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1896,7 +1804,7 @@ inline void StructuredDatasetType::set_allocated_external_schema_type(::std::str
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
 
-// bytes external_schema_bytes = 4;
+// bytes external_schema_bytes = 3;
 inline void StructuredDatasetType::clear_external_schema_bytes() {
   external_schema_bytes_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

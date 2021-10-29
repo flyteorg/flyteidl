@@ -5915,13 +5915,6 @@
           },
           "description": "A list of ordered columns this schema comprises of."
         },
-        "names": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Column names"
-        },
         "external_schema_type": {
           "type": "string",
           "title": "arrow mostly"

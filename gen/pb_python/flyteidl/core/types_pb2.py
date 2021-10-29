@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\xf9\x01\n\x15StructuredDatasetType\x12\x43\n\x07\x63olumns\x18\x01 \x03(\x0b\x32\x32.flyteidl.core.StructuredDatasetType.DatasetColumn\x12\r\n\x05names\x18\x02 \x03(\t\x12\x1c\n\x14\x65xternal_schema_type\x18\x03 \x01(\t\x12\x1d\n\x15\x65xternal_schema_bytes\x18\x04 \x01(\x0c\x1aO\n\rDatasetColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0cliteral_type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\x1a\n\x08\x45numType\x12\x0e\n\x06values\x18\x01 \x03(\t\"\xa7\x03\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12,\n\tenum_type\x18\x07 \x01(\x0b\x32\x17.flyteidl.core.EnumTypeH\x00\x12G\n\x17structured_dataset_type\x18\x08 \x01(\x0b\x32$.flyteidl.core.StructuredDatasetTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\xea\x01\n\x15StructuredDatasetType\x12\x43\n\x07\x63olumns\x18\x01 \x03(\x0b\x32\x32.flyteidl.core.StructuredDatasetType.DatasetColumn\x12\x1c\n\x14\x65xternal_schema_type\x18\x02 \x01(\t\x12\x1d\n\x15\x65xternal_schema_bytes\x18\x03 \x01(\x0c\x1aO\n\rDatasetColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0cliteral_type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\x1a\n\x08\x45numType\x12\x0e\n\x06values\x18\x01 \x03(\t\"\xa7\x03\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12,\n\tenum_type\x18\x07 \x01(\x0b\x32\x17.flyteidl.core.EnumTypeH\x00\x12G\n\x17structured_dataset_type\x18\x08 \x01(\x0b\x32$.flyteidl.core.StructuredDatasetTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -75,8 +75,8 @@ _SIMPLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1297,
-  serialized_end=1431,
+  serialized_start=1282,
+  serialized_end=1416,
 )
 _sym_db.RegisterEnumDescriptor(_SIMPLETYPE)
 
@@ -148,8 +148,8 @@ _BLOBTYPE_BLOBDIMENSIONALITY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=694,
-  serialized_end=741,
+  serialized_start=679,
+  serialized_end=726,
 )
 _sym_db.RegisterEnumDescriptor(_BLOBTYPE_BLOBDIMENSIONALITY)
 
@@ -256,8 +256,8 @@ _STRUCTUREDDATASETTYPE_DATASETCOLUMN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=516,
-  serialized_end=595,
+  serialized_start=501,
+  serialized_end=580,
 )
 
 _STRUCTUREDDATASETTYPE = _descriptor.Descriptor(
@@ -275,22 +275,15 @@ _STRUCTUREDDATASETTYPE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='names', full_name='flyteidl.core.StructuredDatasetType.names', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='external_schema_type', full_name='flyteidl.core.StructuredDatasetType.external_schema_type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='external_schema_type', full_name='flyteidl.core.StructuredDatasetType.external_schema_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='external_schema_bytes', full_name='flyteidl.core.StructuredDatasetType.external_schema_bytes', index=3,
-      number=4, type=12, cpp_type=9, label=1,
+      name='external_schema_bytes', full_name='flyteidl.core.StructuredDatasetType.external_schema_bytes', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -308,7 +301,7 @@ _STRUCTUREDDATASETTYPE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=346,
-  serialized_end=595,
+  serialized_end=580,
 )
 
 
@@ -346,8 +339,8 @@ _BLOBTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=598,
-  serialized_end=741,
+  serialized_start=583,
+  serialized_end=726,
 )
 
 
@@ -377,8 +370,8 @@ _ENUMTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=743,
-  serialized_end=769,
+  serialized_start=728,
+  serialized_end=754,
 )
 
 
@@ -460,8 +453,8 @@ _LITERALTYPE = _descriptor.Descriptor(
       name='type', full_name='flyteidl.core.LiteralType.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=772,
-  serialized_end=1195,
+  serialized_start=757,
+  serialized_end=1180,
 )
 
 
@@ -498,8 +491,8 @@ _OUTPUTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1197,
-  serialized_end=1244,
+  serialized_start=1182,
+  serialized_end=1229,
 )
 
 
@@ -536,8 +529,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1246,
-  serialized_end=1294,
+  serialized_start=1231,
+  serialized_end=1279,
 )
 
 _SCHEMATYPE_SCHEMACOLUMN.fields_by_name['type'].enum_type = _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE

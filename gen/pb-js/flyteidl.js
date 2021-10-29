@@ -7203,7 +7203,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IStructuredDatasetType
              * @property {Array.<flyteidl.core.StructuredDatasetType.IDatasetColumn>|null} [columns] StructuredDatasetType columns
-             * @property {Array.<string>|null} [names] StructuredDatasetType names
              * @property {string|null} [externalSchemaType] StructuredDatasetType externalSchemaType
              * @property {Uint8Array|null} [externalSchemaBytes] StructuredDatasetType externalSchemaBytes
              */
@@ -7218,7 +7217,6 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             function StructuredDatasetType(properties) {
                 this.columns = [];
-                this.names = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -7232,14 +7230,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             StructuredDatasetType.prototype.columns = $util.emptyArray;
-
-            /**
-             * StructuredDatasetType names.
-             * @member {Array.<string>} names
-             * @memberof flyteidl.core.StructuredDatasetType
-             * @instance
-             */
-            StructuredDatasetType.prototype.names = $util.emptyArray;
 
             /**
              * StructuredDatasetType externalSchemaType.
@@ -7284,13 +7274,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.columns != null && message.columns.length)
                     for (let i = 0; i < message.columns.length; ++i)
                         $root.flyteidl.core.StructuredDatasetType.DatasetColumn.encode(message.columns[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.names != null && message.names.length)
-                    for (let i = 0; i < message.names.length; ++i)
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.names[i]);
                 if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.externalSchemaType);
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.externalSchemaType);
                 if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.externalSchemaBytes);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.externalSchemaBytes);
                 return writer;
             };
 
@@ -7318,14 +7305,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.columns.push($root.flyteidl.core.StructuredDatasetType.DatasetColumn.decode(reader, reader.uint32()));
                         break;
                     case 2:
-                        if (!(message.names && message.names.length))
-                            message.names = [];
-                        message.names.push(reader.string());
-                        break;
-                    case 3:
                         message.externalSchemaType = reader.string();
                         break;
-                    case 4:
+                    case 3:
                         message.externalSchemaBytes = reader.bytes();
                         break;
                     default:
@@ -7355,13 +7337,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "columns." + error;
                     }
-                }
-                if (message.names != null && message.hasOwnProperty("names")) {
-                    if (!Array.isArray(message.names))
-                        return "names: array expected";
-                    for (let i = 0; i < message.names.length; ++i)
-                        if (!$util.isString(message.names[i]))
-                            return "names: string[] expected";
                 }
                 if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
                     if (!$util.isString(message.externalSchemaType))

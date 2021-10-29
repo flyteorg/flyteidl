@@ -34,31 +34,26 @@ class CoreStructuredDatasetType(object):
     """
     swagger_types = {
         'columns': 'list[StructuredDatasetTypeDatasetColumn]',
-        'names': 'list[str]',
         'external_schema_type': 'str',
         'external_schema_bytes': 'str'
     }
 
     attribute_map = {
         'columns': 'columns',
-        'names': 'names',
         'external_schema_type': 'external_schema_type',
         'external_schema_bytes': 'external_schema_bytes'
     }
 
-    def __init__(self, columns=None, names=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
+    def __init__(self, columns=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
         """CoreStructuredDatasetType - a model defined in Swagger"""  # noqa: E501
 
         self._columns = None
-        self._names = None
         self._external_schema_type = None
         self._external_schema_bytes = None
         self.discriminator = None
 
         if columns is not None:
             self.columns = columns
-        if names is not None:
-            self.names = names
         if external_schema_type is not None:
             self.external_schema_type = external_schema_type
         if external_schema_bytes is not None:
@@ -86,27 +81,6 @@ class CoreStructuredDatasetType(object):
         """
 
         self._columns = columns
-
-    @property
-    def names(self):
-        """Gets the names of this CoreStructuredDatasetType.  # noqa: E501
-
-
-        :return: The names of this CoreStructuredDatasetType.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._names
-
-    @names.setter
-    def names(self, names):
-        """Sets the names of this CoreStructuredDatasetType.
-
-
-        :param names: The names of this CoreStructuredDatasetType.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._names = names
 
     @property
     def external_schema_type(self):

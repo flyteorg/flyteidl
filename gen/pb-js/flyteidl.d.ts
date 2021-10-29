@@ -2994,9 +2994,6 @@ export namespace flyteidl {
             /** StructuredDatasetType columns */
             columns?: (flyteidl.core.StructuredDatasetType.IDatasetColumn[]|null);
 
-            /** StructuredDatasetType names */
-            names?: (string[]|null);
-
             /** StructuredDatasetType externalSchemaType */
             externalSchemaType?: (string|null);
 
@@ -3015,9 +3012,6 @@ export namespace flyteidl {
 
             /** StructuredDatasetType columns. */
             public columns: flyteidl.core.StructuredDatasetType.IDatasetColumn[];
-
-            /** StructuredDatasetType names. */
-            public names: string[];
 
             /** StructuredDatasetType externalSchemaType. */
             public externalSchemaType: string;

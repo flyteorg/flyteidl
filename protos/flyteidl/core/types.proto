@@ -55,14 +55,11 @@ message StructuredDatasetType {
     // A list of ordered columns this schema comprises of.
     repeated DatasetColumn columns = 1;
 
-    // Column names
-    repeated string names = 2;
-
     // arrow mostly
-    string external_schema_type = 3;
+    string external_schema_type = 2;
 
     // The serialized bytes of a third-party schema library like Arrow
-    bytes external_schema_bytes = 4;
+    bytes external_schema_bytes = 3;
 }
 
 // Defines type behavior for blob objects
