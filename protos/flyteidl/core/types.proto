@@ -64,6 +64,13 @@ message EnumType {
     repeated string values = 1;
 }
 
+// Enables declaring typing.union types in python.
+// typing.union[T1, T2] will be serialized to a set of LiteralTypes
+message UnionType {
+    // Predefined set of LiteralTypes in union.
+    repeated LiteralType values = 1;
+}
+
 // Defines a strong type to allow type checking between interfaces.
 message LiteralType {
     oneof type {
@@ -84,6 +91,9 @@ message LiteralType {
 
         // Defines an enum with pre-defined string values.
         EnumType enum_type = 7;
+
+        // Defines an union type with pre-defined LiteralTypes.
+        UnionType union_type = 8;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by

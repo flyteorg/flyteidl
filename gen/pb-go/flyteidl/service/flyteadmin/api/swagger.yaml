@@ -4031,6 +4031,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
         updated_at: "2000-01-23T04:56:07.000+00:00"
         created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4112,6 +4116,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
               required: true
       spec:
@@ -4258,6 +4266,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
               required: true
         security_context:
@@ -4362,6 +4374,10 @@ definitions:
                 values:
                 - "values"
                 - "values"
+              union_type:
+                values:
+                - null
+                - null
               simple: {}
       updated_at: "2000-01-23T04:56:07.000+00:00"
       created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4443,6 +4459,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
             required: true
   adminLaunchPlanCreateRequest:
@@ -4514,6 +4534,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4595,6 +4619,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
                 required: true
         spec:
@@ -4741,6 +4769,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
                 required: true
           security_context:
@@ -4825,6 +4857,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
           updated_at: "2000-01-23T04:56:07.000+00:00"
           created_at: "2000-01-23T04:56:07.000+00:00"
@@ -4906,6 +4942,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
                 required: true
         spec:
@@ -5052,6 +5092,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
                 required: true
           security_context:
@@ -5350,6 +5394,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
             required: true
       security_context:
@@ -6787,6 +6835,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -6817,6 +6869,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -7657,6 +7713,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -7687,6 +7747,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -7820,6 +7884,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -7850,6 +7918,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -8019,6 +8091,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -8049,6 +8125,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -8927,6 +9007,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -8957,6 +9041,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -9707,6 +9795,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -9737,6 +9829,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
             config:
               key: "config"
@@ -9922,6 +10018,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -9952,6 +10052,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
           config:
             key: "config"
@@ -10449,6 +10553,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -10479,6 +10587,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -10657,6 +10769,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -10687,6 +10803,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -11672,6 +11792,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -11702,6 +11826,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -12542,6 +12670,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -12572,6 +12704,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -12705,6 +12841,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -12735,6 +12875,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -12904,6 +13048,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -12934,6 +13082,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
               config:
                 key: "config"
@@ -13812,6 +13964,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
                 inputs:
                   variables:
@@ -13842,6 +13998,10 @@ definitions:
                           values:
                           - "values"
                           - "values"
+                        union_type:
+                          values:
+                          - null
+                          - null
                         simple: {}
             connections:
               upstream:
@@ -14843,6 +15003,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -14873,6 +15037,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:
@@ -15713,6 +15881,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -15743,6 +15915,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:
@@ -15876,6 +16052,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -15906,6 +16086,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
             config:
               key: "config"
@@ -16075,6 +16259,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -16105,6 +16293,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
             config:
               key: "config"
@@ -16983,6 +17175,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -17013,6 +17209,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:
@@ -17950,6 +18150,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -17980,6 +18184,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -18820,6 +19028,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -18850,6 +19062,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -18983,6 +19199,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -19013,6 +19233,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                 config:
                   key: "config"
@@ -19182,6 +19406,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -19212,6 +19440,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                 config:
                   key: "config"
@@ -20090,6 +20322,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -20120,6 +20356,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -20970,6 +21210,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -21000,6 +21244,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -21840,6 +22088,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -21870,6 +22122,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -22003,6 +22259,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -22033,6 +22293,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                 config:
                   key: "config"
@@ -22202,6 +22466,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -22232,6 +22500,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                 config:
                   key: "config"
@@ -23110,6 +23382,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
                   inputs:
                     variables:
@@ -23140,6 +23416,10 @@ definitions:
                             values:
                             - "values"
                             - "values"
+                          union_type:
+                            values:
+                            - null
+                            - null
                           simple: {}
               connections:
                 upstream:
@@ -23742,6 +24022,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
           inputs:
             variables:
@@ -23772,6 +24056,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
         config:
           key: "config"
@@ -24662,6 +24950,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
           inputs:
             variables:
@@ -24692,6 +24984,10 @@ definitions:
                     values:
                     - "values"
                     - "values"
+                  union_type:
+                    values:
+                    - null
+                    - null
                   simple: {}
       connections:
         upstream:
@@ -25559,6 +25855,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -25589,6 +25889,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
         connections:
           upstream:
@@ -26429,6 +26733,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -26459,6 +26767,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
         connections:
           upstream:
@@ -26592,6 +26904,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -26622,6 +26938,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
           config:
             key: "config"
@@ -26791,6 +27111,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -26821,6 +27145,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
           config:
             key: "config"
@@ -27699,6 +28027,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
             inputs:
               variables:
@@ -27729,6 +28061,10 @@ definitions:
                       values:
                       - "values"
                       - "values"
+                    union_type:
+                      values:
+                      - null
+                      - null
                     simple: {}
         connections:
           upstream:
@@ -28351,6 +28687,9 @@ definitions:
       enum_type:
         description: "Defines an enum with pre-defined string values."
         $ref: "#/definitions/coreEnumType"
+      union_type:
+        description: "Defines an union type with pre-defined LiteralTypes."
+        $ref: "#/definitions/coreUnionType"
       metadata:
         description: "This field contains type metadata that is descriptive of the\
           \ type, but is NOT considered in type-checking.  This might be used by\n\
@@ -28383,6 +28722,10 @@ definitions:
         values:
         - "values"
         - "values"
+      union_type:
+        values:
+        - null
+        - null
       simple: {}
   coreNode:
     type: "object"
@@ -28901,6 +29244,10 @@ definitions:
             values:
             - "values"
             - "values"
+          union_type:
+            values:
+            - null
+            - null
           simple: {}
       required: true
   coreParameterMap:
@@ -28989,6 +29336,10 @@ definitions:
                 values:
                 - "values"
                 - "values"
+              union_type:
+                values:
+                - null
+                - null
               simple: {}
           required: true
   corePrimitive:
@@ -29649,6 +30000,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
         inputs:
           variables:
@@ -29679,6 +30034,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
       config:
         key: "config"
@@ -29766,6 +30125,10 @@ definitions:
                 values:
                 - "values"
                 - "values"
+              union_type:
+                values:
+                - null
+                - null
               simple: {}
       inputs:
         variables:
@@ -29796,7 +30159,25 @@ definitions:
                 values:
                 - "values"
                 - "values"
+              union_type:
+                values:
+                - null
+                - null
               simple: {}
+  coreUnionType:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        description: "Predefined set of LiteralTypes in union."
+        items:
+          $ref: "#/definitions/coreLiteralType"
+    title: "Enables declaring typing.union types in python.\ntyping.union[T1, T2]\
+      \ will be serialized to a set of LiteralTypes"
+    example:
+      values:
+      - null
+      - null
   coreVariable:
     type: "object"
     properties:
@@ -29834,6 +30215,10 @@ definitions:
           values:
           - "values"
           - "values"
+        union_type:
+          values:
+          - null
+          - null
         simple: {}
   coreVariableMap:
     type: "object"
@@ -29873,6 +30258,10 @@ definitions:
               values:
               - "values"
               - "values"
+            union_type:
+              values:
+              - null
+              - null
             simple: {}
   coreVoid:
     type: "object"
@@ -30841,6 +31230,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
         inputs:
           variables:
@@ -30871,6 +31264,10 @@ definitions:
                   values:
                   - "values"
                   - "values"
+                union_type:
+                  values:
+                  - null
+                  - null
                 simple: {}
   eventExternalResourceInfo:
     type: "object"
@@ -31943,6 +32340,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -31973,6 +32374,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:
@@ -32813,6 +33218,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -32843,6 +33252,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:
@@ -32976,6 +33389,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -33006,6 +33423,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
             config:
               key: "config"
@@ -33175,6 +33596,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -33205,6 +33630,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
             config:
               key: "config"
@@ -34083,6 +34512,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
               inputs:
                 variables:
@@ -34113,6 +34546,10 @@ definitions:
                         values:
                         - "values"
                         - "values"
+                      union_type:
+                        values:
+                        - null
+                        - null
                       simple: {}
           connections:
             upstream:

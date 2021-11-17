@@ -5421,6 +5421,10 @@
           "$ref": "#/definitions/coreEnumType",
           "description": "Defines an enum with pre-defined string values."
         },
+        "union_type": {
+          "$ref": "#/definitions/coreUnionType",
+          "description": "Defines an union type with pre-defined LiteralTypes."
+        },
         "metadata": {
           "$ref": "#/definitions/protobufStruct",
           "description": "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by\nconsumers to identify special behavior or display extended information for the type."
@@ -6030,6 +6034,19 @@
         }
       },
       "description": "Defines strongly typed inputs and outputs."
+    },
+    "coreUnionType": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreLiteralType"
+          },
+          "description": "Predefined set of LiteralTypes in union."
+        }
+      },
+      "title": "Enables declaring typing.union types in python.\ntyping.union[T1, T2] will be serialized to a set of LiteralTypes"
     },
     "coreVariable": {
       "type": "object",

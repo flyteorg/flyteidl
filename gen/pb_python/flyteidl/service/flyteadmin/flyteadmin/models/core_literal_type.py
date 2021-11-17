@@ -21,6 +21,7 @@ from flyteadmin.models.core_enum_type import CoreEnumType  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 from flyteadmin.models.core_schema_type import CoreSchemaType  # noqa: F401,E501
 from flyteadmin.models.core_simple_type import CoreSimpleType  # noqa: F401,E501
+from flyteadmin.models.core_union_type import CoreUnionType  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
 
@@ -44,6 +45,7 @@ class CoreLiteralType(object):
         'map_value_type': 'CoreLiteralType',
         'blob': 'CoreBlobType',
         'enum_type': 'CoreEnumType',
+        'union_type': 'CoreUnionType',
         'metadata': 'ProtobufStruct'
     }
 
@@ -54,10 +56,11 @@ class CoreLiteralType(object):
         'map_value_type': 'map_value_type',
         'blob': 'blob',
         'enum_type': 'enum_type',
+        'union_type': 'union_type',
         'metadata': 'metadata'
     }
 
-    def __init__(self, simple=None, schema=None, collection_type=None, map_value_type=None, blob=None, enum_type=None, metadata=None):  # noqa: E501
+    def __init__(self, simple=None, schema=None, collection_type=None, map_value_type=None, blob=None, enum_type=None, union_type=None, metadata=None):  # noqa: E501
         """CoreLiteralType - a model defined in Swagger"""  # noqa: E501
 
         self._simple = None
@@ -66,6 +69,7 @@ class CoreLiteralType(object):
         self._map_value_type = None
         self._blob = None
         self._enum_type = None
+        self._union_type = None
         self._metadata = None
         self.discriminator = None
 
@@ -81,6 +85,8 @@ class CoreLiteralType(object):
             self.blob = blob
         if enum_type is not None:
             self.enum_type = enum_type
+        if union_type is not None:
+            self.union_type = union_type
         if metadata is not None:
             self.metadata = metadata
 
@@ -221,6 +227,29 @@ class CoreLiteralType(object):
         """
 
         self._enum_type = enum_type
+
+    @property
+    def union_type(self):
+        """Gets the union_type of this CoreLiteralType.  # noqa: E501
+
+        Defines an union type with pre-defined LiteralTypes.  # noqa: E501
+
+        :return: The union_type of this CoreLiteralType.  # noqa: E501
+        :rtype: CoreUnionType
+        """
+        return self._union_type
+
+    @union_type.setter
+    def union_type(self, union_type):
+        """Sets the union_type of this CoreLiteralType.
+
+        Defines an union type with pre-defined LiteralTypes.  # noqa: E501
+
+        :param union_type: The union_type of this CoreLiteralType.  # noqa: E501
+        :type: CoreUnionType
+        """
+
+        self._union_type = union_type
 
     @property
     def metadata(self):
