@@ -122,6 +122,7 @@ from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWo
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
 from flyteadmin.models.blob_type_blob_dimensionality import BlobTypeBlobDimensionality
+from flyteadmin.models.catalog_reservation_status import CatalogReservationStatus
 from flyteadmin.models.comparison_expression_operator import ComparisonExpressionOperator
 from flyteadmin.models.conjunction_expression_logical_operator import ConjunctionExpressionLogicalOperator
 from flyteadmin.models.connection_set_id_list import ConnectionSetIdList
@@ -140,7 +141,6 @@ from flyteadmin.models.core_branch_node import CoreBranchNode
 from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag
 from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus
 from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata
-from flyteadmin.models.core_catalog_reservation_status import CoreCatalogReservationStatus
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
 from flyteadmin.models.core_compiled_workflow import CoreCompiledWorkflow

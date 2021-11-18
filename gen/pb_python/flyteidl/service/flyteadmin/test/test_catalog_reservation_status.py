@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_catalog_reservation_status import CoreCatalogReservationStatus  # noqa: E501
+from flyteadmin.models.catalog_reservation_status import CatalogReservationStatus  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreCatalogReservationStatus(unittest.TestCase):
-    """CoreCatalogReservationStatus unit test stubs"""
+class TestCatalogReservationStatus(unittest.TestCase):
+    """CatalogReservationStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreCatalogReservationStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreCatalogReservationStatus(self):
-        """Test CoreCatalogReservationStatus"""
+    def testCatalogReservationStatus(self):
+        """Test CatalogReservationStatus"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_catalog_reservation_status.CoreCatalogReservationStatus()  # noqa: E501
+        # model = flyteadmin.models.catalog_reservation_status.CatalogReservationStatus()  # noqa: E501
         pass
 
 

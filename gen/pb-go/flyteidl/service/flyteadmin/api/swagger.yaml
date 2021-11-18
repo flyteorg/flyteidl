@@ -2547,6 +2547,22 @@ definitions:
     - "SINGLE"
     - "MULTIPART"
     default: "SINGLE"
+  CatalogReservationStatus:
+    type: "string"
+    description: "Indicates the status of a catalog reservation operation.\n\n - RESERVATION_DISABLED:\
+      \ Used to indicate that reservations are disabled\n - RESERVATION_ACQUIRED:\
+      \ Used to indicate that a reservation was successfully acquired or extended\n\
+      \ - RESERVATION_EXISTS: Used to indicate that an active reservation currently\
+      \ exists\n - RESERVATION_RELEASED: Used to indicate that the reservation has\
+      \ been successfully released\n - RESERVATION_FAILURE: Used to indicate that\
+      \ a reservation operation resulted in failure"
+    enum:
+    - "RESERVATION_DISABLED"
+    - "RESERVATION_ACQUIRED"
+    - "RESERVATION_EXISTS"
+    - "RESERVATION_RELEASED"
+    - "RESERVATION_FAILURE"
+    default: "RESERVATION_DISABLED"
   ComparisonExpressionOperator:
     type: "string"
     title: "Binary Operator for each expression"
@@ -23595,22 +23611,6 @@ definitions:
       artifact_tag:
         name: "name"
         artifact_id: "artifact_id"
-  coreCatalogReservationStatus:
-    type: "string"
-    description: "Indicates the status of a catalog reservation operation.\n\n - RESERVATION_DISABLED:\
-      \ Used to indicate that reservations are disabled\n - RESERVATION_ACQUIRED:\
-      \ Used to indicate that a reservation was successfully acquired or extended\n\
-      \ - RESERVATION_EXISTS: Used to indicate that an active reservation currently\
-      \ exists\n - RESERVATION_RELEASED: Used to indicate that the reservation has\
-      \ been successfully released\n - RESERVATION_FAILURE: Used to indicate that\
-      \ a reservation operation resulted in failure"
-    enum:
-    - "RESERVATION_DISABLED"
-    - "RESERVATION_ACQUIRED"
-    - "RESERVATION_EXISTS"
-    - "RESERVATION_RELEASED"
-    - "RESERVATION_FAILURE"
-    default: "RESERVATION_DISABLED"
   coreComparisonExpression:
     type: "object"
     properties:
@@ -34423,7 +34423,7 @@ definitions:
         $ref: "#/definitions/coreCatalogMetadata"
       reservation_status:
         description: "Captures the status of cache reservations for this execution."
-        $ref: "#/definitions/coreCatalogReservationStatus"
+        $ref: "#/definitions/CatalogReservationStatus"
       dynamic_workflow:
         description: "In the case this task launched a dynamic workflow we capture\
           \ its structure here."

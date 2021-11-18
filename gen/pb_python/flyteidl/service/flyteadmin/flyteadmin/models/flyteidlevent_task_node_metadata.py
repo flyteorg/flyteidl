@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.catalog_reservation_status import CatalogReservationStatus  # noqa: F401,E501
 from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus  # noqa: F401,E501
 from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata  # noqa: F401,E501
-from flyteadmin.models.core_catalog_reservation_status import CoreCatalogReservationStatus  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_dynamic_workflow_node_metadata import FlyteidleventDynamicWorkflowNodeMetadata  # noqa: F401,E501
 
 
@@ -38,7 +38,7 @@ class FlyteidleventTaskNodeMetadata(object):
     swagger_types = {
         'cache_status': 'CoreCatalogCacheStatus',
         'catalog_key': 'CoreCatalogMetadata',
-        'reservation_status': 'CoreCatalogReservationStatus',
+        'reservation_status': 'CatalogReservationStatus',
         'dynamic_workflow': 'FlyteidleventDynamicWorkflowNodeMetadata'
     }
 
@@ -118,7 +118,7 @@ class FlyteidleventTaskNodeMetadata(object):
         Captures the status of cache reservations for this execution.  # noqa: E501
 
         :return: The reservation_status of this FlyteidleventTaskNodeMetadata.  # noqa: E501
-        :rtype: CoreCatalogReservationStatus
+        :rtype: CatalogReservationStatus
         """
         return self._reservation_status
 
@@ -129,7 +129,7 @@ class FlyteidleventTaskNodeMetadata(object):
         Captures the status of cache reservations for this execution.  # noqa: E501
 
         :param reservation_status: The reservation_status of this FlyteidleventTaskNodeMetadata.  # noqa: E501
-        :type: CoreCatalogReservationStatus
+        :type: CatalogReservationStatus
         """
 
         self._reservation_status = reservation_status

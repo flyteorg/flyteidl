@@ -894,11 +894,11 @@ class TaskNodeMetadata final :
   ::flyteidl::core::CatalogCacheStatus cache_status() const;
   void set_cache_status(::flyteidl::core::CatalogCacheStatus value);
 
-  // .flyteidl.core.CatalogReservationStatus reservation_status = 3;
+  // .flyteidl.core.CatalogReservation.Status reservation_status = 3;
   void clear_reservation_status();
   static const int kReservationStatusFieldNumber = 3;
-  ::flyteidl::core::CatalogReservationStatus reservation_status() const;
-  void set_reservation_status(::flyteidl::core::CatalogReservationStatus value);
+  ::flyteidl::core::CatalogReservation_Status reservation_status() const;
+  void set_reservation_status(::flyteidl::core::CatalogReservation_Status value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.event.TaskNodeMetadata)
  private:
@@ -3218,15 +3218,15 @@ inline void TaskNodeMetadata::set_allocated_catalog_key(::flyteidl::core::Catalo
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskNodeMetadata.catalog_key)
 }
 
-// .flyteidl.core.CatalogReservationStatus reservation_status = 3;
+// .flyteidl.core.CatalogReservation.Status reservation_status = 3;
 inline void TaskNodeMetadata::clear_reservation_status() {
   reservation_status_ = 0;
 }
-inline ::flyteidl::core::CatalogReservationStatus TaskNodeMetadata::reservation_status() const {
+inline ::flyteidl::core::CatalogReservation_Status TaskNodeMetadata::reservation_status() const {
   // @@protoc_insertion_point(field_get:flyteidl.event.TaskNodeMetadata.reservation_status)
-  return static_cast< ::flyteidl::core::CatalogReservationStatus >(reservation_status_);
+  return static_cast< ::flyteidl::core::CatalogReservation_Status >(reservation_status_);
 }
-inline void TaskNodeMetadata::set_reservation_status(::flyteidl::core::CatalogReservationStatus value) {
+inline void TaskNodeMetadata::set_reservation_status(::flyteidl::core::CatalogReservation_Status value) {
   
   reservation_status_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.event.TaskNodeMetadata.reservation_status)

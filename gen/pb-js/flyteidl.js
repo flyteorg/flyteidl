@@ -342,24 +342,117 @@ export const flyteidl = $root.flyteidl = (() => {
             return CatalogMetadata;
         })();
 
-        /**
-         * CatalogReservationStatus enum.
-         * @name flyteidl.core.CatalogReservationStatus
-         * @enum {string}
-         * @property {number} RESERVATION_DISABLED=0 RESERVATION_DISABLED value
-         * @property {number} RESERVATION_ACQUIRED=1 RESERVATION_ACQUIRED value
-         * @property {number} RESERVATION_EXISTS=2 RESERVATION_EXISTS value
-         * @property {number} RESERVATION_RELEASED=3 RESERVATION_RELEASED value
-         * @property {number} RESERVATION_FAILURE=4 RESERVATION_FAILURE value
-         */
-        core.CatalogReservationStatus = (function() {
-            const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "RESERVATION_DISABLED"] = 0;
-            values[valuesById[1] = "RESERVATION_ACQUIRED"] = 1;
-            values[valuesById[2] = "RESERVATION_EXISTS"] = 2;
-            values[valuesById[3] = "RESERVATION_RELEASED"] = 3;
-            values[valuesById[4] = "RESERVATION_FAILURE"] = 4;
-            return values;
+        core.CatalogReservation = (function() {
+
+            /**
+             * Properties of a CatalogReservation.
+             * @memberof flyteidl.core
+             * @interface ICatalogReservation
+             */
+
+            /**
+             * Constructs a new CatalogReservation.
+             * @memberof flyteidl.core
+             * @classdesc Represents a CatalogReservation.
+             * @implements ICatalogReservation
+             * @constructor
+             * @param {flyteidl.core.ICatalogReservation=} [properties] Properties to set
+             */
+            function CatalogReservation(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new CatalogReservation instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.CatalogReservation
+             * @static
+             * @param {flyteidl.core.ICatalogReservation=} [properties] Properties to set
+             * @returns {flyteidl.core.CatalogReservation} CatalogReservation instance
+             */
+            CatalogReservation.create = function create(properties) {
+                return new CatalogReservation(properties);
+            };
+
+            /**
+             * Encodes the specified CatalogReservation message. Does not implicitly {@link flyteidl.core.CatalogReservation.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.CatalogReservation
+             * @static
+             * @param {flyteidl.core.ICatalogReservation} message CatalogReservation message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CatalogReservation.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a CatalogReservation message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.CatalogReservation
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.CatalogReservation} CatalogReservation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CatalogReservation.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.CatalogReservation();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CatalogReservation message.
+             * @function verify
+             * @memberof flyteidl.core.CatalogReservation
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CatalogReservation.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            /**
+             * Status enum.
+             * @name flyteidl.core.CatalogReservation.Status
+             * @enum {string}
+             * @property {number} RESERVATION_DISABLED=0 RESERVATION_DISABLED value
+             * @property {number} RESERVATION_ACQUIRED=1 RESERVATION_ACQUIRED value
+             * @property {number} RESERVATION_EXISTS=2 RESERVATION_EXISTS value
+             * @property {number} RESERVATION_RELEASED=3 RESERVATION_RELEASED value
+             * @property {number} RESERVATION_FAILURE=4 RESERVATION_FAILURE value
+             */
+            CatalogReservation.Status = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "RESERVATION_DISABLED"] = 0;
+                values[valuesById[1] = "RESERVATION_ACQUIRED"] = 1;
+                values[valuesById[2] = "RESERVATION_EXISTS"] = 2;
+                values[valuesById[3] = "RESERVATION_RELEASED"] = 3;
+                values[valuesById[4] = "RESERVATION_FAILURE"] = 4;
+                return values;
+            })();
+
+            return CatalogReservation;
         })();
 
         /**
@@ -14021,7 +14114,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskNodeMetadata
              * @property {flyteidl.core.CatalogCacheStatus|null} [cacheStatus] TaskNodeMetadata cacheStatus
              * @property {flyteidl.core.ICatalogMetadata|null} [catalogKey] TaskNodeMetadata catalogKey
-             * @property {flyteidl.core.CatalogReservationStatus|null} [reservationStatus] TaskNodeMetadata reservationStatus
+             * @property {flyteidl.core.CatalogReservation.Status|null} [reservationStatus] TaskNodeMetadata reservationStatus
              * @property {flyteidl.event.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] TaskNodeMetadata dynamicWorkflow
              */
 
@@ -14058,7 +14151,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskNodeMetadata reservationStatus.
-             * @member {flyteidl.core.CatalogReservationStatus} reservationStatus
+             * @member {flyteidl.core.CatalogReservation.Status} reservationStatus
              * @memberof flyteidl.event.TaskNodeMetadata
              * @instance
              */

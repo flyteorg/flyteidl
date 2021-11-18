@@ -40,7 +40,7 @@ var (
 
 	_ = core.CatalogCacheStatus(0)
 
-	_ = core.CatalogReservationStatus(0)
+	_ = core.CatalogReservation_Status(0)
 
 	_ = core.TaskExecution_Phase(0)
 )

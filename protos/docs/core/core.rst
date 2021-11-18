@@ -57,6 +57,20 @@ Catalog artifact information with specific metadata
 
 
 
+
+
+.. _ref_flyteidl.core.CatalogReservation:
+
+CatalogReservation
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
  
 
 
@@ -81,14 +95,14 @@ Indicates the status of CatalogCaching. The reason why this is not embedded in T
 
 
 
-.. _ref_flyteidl.core.CatalogReservationStatus:
+.. _ref_flyteidl.core.CatalogReservation.Status:
 
-CatalogReservationStatus
+CatalogReservation.Status
 ------------------------------------------------------------------
 
 Indicates the status of a catalog reservation operation.
 
-.. csv-table:: Enum CatalogReservationStatus values
+.. csv-table:: Enum CatalogReservation.Status values
    :header: "Name", "Number", "Description"
    :widths: auto
 
