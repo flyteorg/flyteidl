@@ -3,7 +3,7 @@ module github.com/flyteorg/boilerplate
 go 1.16
 
 require (
-	github.com/dmarkham/enumer v1.5.3
+	github.com/alvaroloes/enumer v1.1.2
 	github.com/flyteorg/flytestdlib v0.3.22
 	github.com/golangci/golangci-lint v1.38.0
 	github.com/pseudomuto/protoc-gen-doc v1.4.1
