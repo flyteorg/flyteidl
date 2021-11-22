@@ -1,4 +1,4 @@
-// Initializes an Admin Client that exposes all implemented services by FlyteAdmin server. The library supports different
+// Package admin initializes an Admin Client that exposes all implemented services by FlyteAdmin server. The library supports different
 // authentication flows (see AuthType). It initializes the grpc connection once and reuses it. The gRPC connection is
 // sticky (it hogs one server and keeps the connection alive). For better load balancing against the server, place a
 // proxy service in between instead.
@@ -25,16 +25,35 @@ const (
 var DefaultClientSecretLocation = filepath.Join(string(filepath.Separator), "etc", "secrets", "client_secret")
 
 //go:generate enumer --type=AuthType -json -yaml -trimprefix=AuthType
-type AuthType uint8
+type AuthType int
 
 const (
-	// Chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
+	// AuthTypeClientSecret chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
 	AuthTypeClientSecret AuthType = iota
-	// Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
+	// AuthTypePkce chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
 	AuthTypePkce
-	// Chooses an external authentication process
+	// AuthTypeExternalCommand chooses an external authentication process
 	AuthTypeExternalCommand
 )
+
+// Implementation of pflag.Value interface:
+
+// Set attempts to set the value of AuthType to the passed string representation. Returns error if the passed value doesn't
+// match one of the specified enum strings.
+func (i *AuthType) Set(val string) error {
+	res, err := AuthTypeString(val)
+	if err != nil {
+		return err
+	}
+
+	*i = res
+	return nil
+}
+
+// Type returns a string representation of the type.
+func (i *AuthType) Type() string {
+	return "AuthType"
+}
 
 type Config struct {
 	Endpoint              config.URL      `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
@@ -43,7 +62,7 @@ type Config struct {
 	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
-	AuthType              AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
+	AuthType              AuthType        `json:"authType" pflag:",Type of OAuth2 flow used for communicating with admin."`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
