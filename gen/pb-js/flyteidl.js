@@ -10008,7 +10008,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [discoveryVersion] TaskMetadata discoveryVersion
              * @property {string|null} [deprecatedErrorMessage] TaskMetadata deprecatedErrorMessage
              * @property {boolean|null} [interruptible] TaskMetadata interruptible
-             * @property {boolean|null} [discoverySerializable] TaskMetadata discoverySerializable
+             * @property {boolean|null} [cacheSerializable] TaskMetadata cacheSerializable
              */
 
             /**
@@ -10083,12 +10083,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskMetadata.prototype.interruptible = false;
 
             /**
-             * TaskMetadata discoverySerializable.
-             * @member {boolean} discoverySerializable
+             * TaskMetadata cacheSerializable.
+             * @member {boolean} cacheSerializable
              * @memberof flyteidl.core.TaskMetadata
              * @instance
              */
-            TaskMetadata.prototype.discoverySerializable = false;
+            TaskMetadata.prototype.cacheSerializable = false;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -10142,8 +10142,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.deprecatedErrorMessage);
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                     writer.uint32(/* id 8, wireType 0 =*/64).bool(message.interruptible);
-                if (message.discoverySerializable != null && message.hasOwnProperty("discoverySerializable"))
-                    writer.uint32(/* id 9, wireType 0 =*/72).bool(message.discoverySerializable);
+                if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
+                    writer.uint32(/* id 9, wireType 0 =*/72).bool(message.cacheSerializable);
                 return writer;
             };
 
@@ -10187,7 +10187,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.interruptible = reader.bool();
                         break;
                     case 9:
-                        message.discoverySerializable = reader.bool();
+                        message.cacheSerializable = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10238,9 +10238,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (typeof message.interruptible !== "boolean")
                         return "interruptible: boolean expected";
                 }
-                if (message.discoverySerializable != null && message.hasOwnProperty("discoverySerializable"))
-                    if (typeof message.discoverySerializable !== "boolean")
-                        return "discoverySerializable: boolean expected";
+                if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
+                    if (typeof message.cacheSerializable !== "boolean")
+                        return "cacheSerializable: boolean expected";
                 return null;
             };
 

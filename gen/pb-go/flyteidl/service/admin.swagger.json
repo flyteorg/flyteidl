@@ -5953,7 +5953,7 @@
           "type": "boolean",
           "format": "boolean"
         },
-        "discovery_serializable": {
+        "cache_serializable": {
           "type": "boolean",
           "format": "boolean",
           "title": "Indicates whether the system should attempt to execute discoverable instances in serial to avoid duplicate work"

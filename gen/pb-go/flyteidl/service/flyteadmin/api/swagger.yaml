@@ -7766,8 +7766,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -7966,8 +7966,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -9655,8 +9655,8 @@ definitions:
                 flavor: "flavor"
                 type: {}
                 version: "version"
+              cache_serializable: true
               discovery_version: "discovery_version"
-              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -9871,8 +9871,8 @@ definitions:
               flavor: "flavor"
               type: {}
               version: "version"
+            cache_serializable: true
             discovery_version: "discovery_version"
-            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -10399,8 +10399,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -10608,8 +10608,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -12657,8 +12657,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -12857,8 +12857,8 @@ definitions:
                   flavor: "flavor"
                   type: {}
                   version: "version"
+                cache_serializable: true
                 discovery_version: "discovery_version"
-                discovery_serializable: true
                 deprecated_error_message: "deprecated_error_message"
                 interruptible: true
                 timeout: "timeout"
@@ -15830,8 +15830,8 @@ definitions:
                 flavor: "flavor"
                 type: {}
                 version: "version"
+              cache_serializable: true
               discovery_version: "discovery_version"
-              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -16030,8 +16030,8 @@ definitions:
                 flavor: "flavor"
                 type: {}
                 version: "version"
+              cache_serializable: true
               discovery_version: "discovery_version"
-              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -18939,8 +18939,8 @@ definitions:
                     flavor: "flavor"
                     type: {}
                     version: "version"
+                  cache_serializable: true
                   discovery_version: "discovery_version"
-                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -19139,8 +19139,8 @@ definitions:
                     flavor: "flavor"
                     type: {}
                     version: "version"
+                  cache_serializable: true
                   discovery_version: "discovery_version"
-                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -21961,8 +21961,8 @@ definitions:
                     flavor: "flavor"
                     type: {}
                     version: "version"
+                  cache_serializable: true
                   discovery_version: "discovery_version"
-                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -22161,8 +22161,8 @@ definitions:
                     flavor: "flavor"
                     type: {}
                     version: "version"
+                  cache_serializable: true
                   discovery_version: "discovery_version"
-                  discovery_serializable: true
                   deprecated_error_message: "deprecated_error_message"
                   interruptible: true
                   timeout: "timeout"
@@ -23702,8 +23702,8 @@ definitions:
             flavor: "flavor"
             type: {}
             version: "version"
+          cache_serializable: true
           discovery_version: "discovery_version"
-          discovery_serializable: true
           deprecated_error_message: "deprecated_error_message"
           interruptible: true
           timeout: "timeout"
@@ -26553,8 +26553,8 @@ definitions:
               flavor: "flavor"
               type: {}
               version: "version"
+            cache_serializable: true
             discovery_version: "discovery_version"
-            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -26753,8 +26753,8 @@ definitions:
               flavor: "flavor"
               type: {}
               version: "version"
+            cache_serializable: true
             discovery_version: "discovery_version"
-            discovery_serializable: true
             deprecated_error_message: "deprecated_error_message"
             interruptible: true
             timeout: "timeout"
@@ -29450,7 +29450,7 @@ definitions:
       interruptible:
         type: "boolean"
         format: "boolean"
-      discovery_serializable:
+      cache_serializable:
         type: "boolean"
         format: "boolean"
         title: "Indicates whether the system should attempt to execute discoverable\
@@ -29464,8 +29464,8 @@ definitions:
         flavor: "flavor"
         type: {}
         version: "version"
+      cache_serializable: true
       discovery_version: "discovery_version"
-      discovery_serializable: true
       deprecated_error_message: "deprecated_error_message"
       interruptible: true
       timeout: "timeout"
@@ -29618,8 +29618,8 @@ definitions:
           flavor: "flavor"
           type: {}
           version: "version"
+        cache_serializable: true
         discovery_version: "discovery_version"
-        discovery_serializable: true
         deprecated_error_message: "deprecated_error_message"
         interruptible: true
         timeout: "timeout"
@@ -32946,8 +32946,8 @@ definitions:
                 flavor: "flavor"
                 type: {}
                 version: "version"
+              cache_serializable: true
               discovery_version: "discovery_version"
-              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
@@ -33146,8 +33146,8 @@ definitions:
                 flavor: "flavor"
                 type: {}
                 version: "version"
+              cache_serializable: true
               discovery_version: "discovery_version"
-              discovery_serializable: true
               deprecated_error_message: "deprecated_error_message"
               interruptible: true
               timeout: "timeout"
