@@ -125,7 +125,7 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		}
 	}()
 
-	logger.Infof(ctx, "Opening the browser at "+urlToOpen)
+	logger.Infof(ctx, "Opening the browser at [%v]", urlToOpen)
 	if err = browser.OpenURL(urlToOpen); err != nil {
 		return nil, err
 	}

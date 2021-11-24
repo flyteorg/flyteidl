@@ -13,7 +13,7 @@ const _AuthTypeName = "ClientSecretPkceExternalCommand"
 var _AuthTypeIndex = [...]uint8{0, 12, 16, 31}
 
 func (i AuthType) String() string {
-	if i >= AuthType(len(_AuthTypeIndex)-1) {
+	if i < 0 || i >= AuthType(len(_AuthTypeIndex)-1) {
 		return fmt.Sprintf("AuthType(%d)", i)
 	}
 	return _AuthTypeName[_AuthTypeIndex[i]:_AuthTypeIndex[i+1]]

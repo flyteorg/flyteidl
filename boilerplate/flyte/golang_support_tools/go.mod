@@ -6,7 +6,7 @@ require (
 	github.com/alvaroloes/enumer v1.1.2
 	github.com/flyteorg/flytestdlib v0.3.22
 	github.com/golangci/golangci-lint v1.38.0
-	github.com/pseudomuto/protoc-gen-doc v1.4.1 // indirect
+	github.com/pseudomuto/protoc-gen-doc v1.4.1
 	github.com/vektra/mockery v0.0.0-20181123154057-e78b021dcbb5
 )
 
