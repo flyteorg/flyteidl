@@ -7291,6 +7291,118 @@ export const flyteidl = $root.flyteidl = (() => {
             return EnumType;
         })();
 
+        core.TypeAnnotation = (function() {
+
+            /**
+             * Properties of a TypeAnnotation.
+             * @memberof flyteidl.core
+             * @interface ITypeAnnotation
+             * @property {google.protobuf.IStruct|null} [annotations] TypeAnnotation annotations
+             */
+
+            /**
+             * Constructs a new TypeAnnotation.
+             * @memberof flyteidl.core
+             * @classdesc Represents a TypeAnnotation.
+             * @implements ITypeAnnotation
+             * @constructor
+             * @param {flyteidl.core.ITypeAnnotation=} [properties] Properties to set
+             */
+            function TypeAnnotation(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TypeAnnotation annotations.
+             * @member {google.protobuf.IStruct|null|undefined} annotations
+             * @memberof flyteidl.core.TypeAnnotation
+             * @instance
+             */
+            TypeAnnotation.prototype.annotations = null;
+
+            /**
+             * Creates a new TypeAnnotation instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.TypeAnnotation
+             * @static
+             * @param {flyteidl.core.ITypeAnnotation=} [properties] Properties to set
+             * @returns {flyteidl.core.TypeAnnotation} TypeAnnotation instance
+             */
+            TypeAnnotation.create = function create(properties) {
+                return new TypeAnnotation(properties);
+            };
+
+            /**
+             * Encodes the specified TypeAnnotation message. Does not implicitly {@link flyteidl.core.TypeAnnotation.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.TypeAnnotation
+             * @static
+             * @param {flyteidl.core.ITypeAnnotation} message TypeAnnotation message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TypeAnnotation.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.annotations != null && message.hasOwnProperty("annotations"))
+                    $root.google.protobuf.Struct.encode(message.annotations, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a TypeAnnotation message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.TypeAnnotation
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.TypeAnnotation} TypeAnnotation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TypeAnnotation.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TypeAnnotation();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.annotations = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TypeAnnotation message.
+             * @function verify
+             * @memberof flyteidl.core.TypeAnnotation
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TypeAnnotation.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                    let error = $root.google.protobuf.Struct.verify(message.annotations);
+                    if (error)
+                        return "annotations." + error;
+                }
+                return null;
+            };
+
+            return TypeAnnotation;
+        })();
+
         core.LiteralType = (function() {
 
             /**
@@ -7304,6 +7416,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IBlobType|null} [blob] LiteralType blob
              * @property {flyteidl.core.IEnumType|null} [enumType] LiteralType enumType
              * @property {google.protobuf.IStruct|null} [metadata] LiteralType metadata
+             * @property {flyteidl.core.ITypeAnnotation|null} [annotation] LiteralType annotation
              */
 
             /**
@@ -7377,6 +7490,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             LiteralType.prototype.metadata = null;
 
+            /**
+             * LiteralType annotation.
+             * @member {flyteidl.core.ITypeAnnotation|null|undefined} annotation
+             * @memberof flyteidl.core.LiteralType
+             * @instance
+             */
+            LiteralType.prototype.annotation = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -7429,6 +7550,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Struct.encode(message.metadata, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.enumType != null && message.hasOwnProperty("enumType"))
                     $root.flyteidl.core.EnumType.encode(message.enumType, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.annotation != null && message.hasOwnProperty("annotation"))
+                    $root.flyteidl.core.TypeAnnotation.encode(message.annotation, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -7470,6 +7593,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.metadata = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.annotation = $root.flyteidl.core.TypeAnnotation.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7563,6 +7689,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.Struct.verify(message.metadata);
                     if (error)
                         return "metadata." + error;
+                }
+                if (message.annotation != null && message.hasOwnProperty("annotation")) {
+                    let error = $root.flyteidl.core.TypeAnnotation.verify(message.annotation);
+                    if (error)
+                        return "annotation." + error;
                 }
                 return null;
             };

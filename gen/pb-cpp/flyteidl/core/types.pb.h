@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fcore_2ftypes_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -73,6 +73,9 @@ extern SchemaTypeDefaultTypeInternal _SchemaType_default_instance_;
 class SchemaType_SchemaColumn;
 class SchemaType_SchemaColumnDefaultTypeInternal;
 extern SchemaType_SchemaColumnDefaultTypeInternal _SchemaType_SchemaColumn_default_instance_;
+class TypeAnnotation;
+class TypeAnnotationDefaultTypeInternal;
+extern TypeAnnotationDefaultTypeInternal _TypeAnnotation_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -84,6 +87,7 @@ template<> ::flyteidl::core::LiteralType* Arena::CreateMaybeMessage<::flyteidl::
 template<> ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage<::flyteidl::core::OutputReference>(Arena*);
 template<> ::flyteidl::core::SchemaType* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType>(Arena*);
 template<> ::flyteidl::core::SchemaType_SchemaColumn* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType_SchemaColumn>(Arena*);
+template<> ::flyteidl::core::TypeAnnotation* Arena::CreateMaybeMessage<::flyteidl::core::TypeAnnotation>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -728,6 +732,121 @@ class EnumType final :
 };
 // -------------------------------------------------------------------
 
+class TypeAnnotation final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TypeAnnotation) */ {
+ public:
+  TypeAnnotation();
+  virtual ~TypeAnnotation();
+
+  TypeAnnotation(const TypeAnnotation& from);
+
+  inline TypeAnnotation& operator=(const TypeAnnotation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TypeAnnotation(TypeAnnotation&& from) noexcept
+    : TypeAnnotation() {
+    *this = ::std::move(from);
+  }
+
+  inline TypeAnnotation& operator=(TypeAnnotation&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TypeAnnotation& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TypeAnnotation* internal_default_instance() {
+    return reinterpret_cast<const TypeAnnotation*>(
+               &_TypeAnnotation_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(TypeAnnotation* other);
+  friend void swap(TypeAnnotation& a, TypeAnnotation& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TypeAnnotation* New() const final {
+    return CreateMaybeMessage<TypeAnnotation>(nullptr);
+  }
+
+  TypeAnnotation* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TypeAnnotation>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TypeAnnotation& from);
+  void MergeFrom(const TypeAnnotation& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TypeAnnotation* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .google.protobuf.Struct annotations = 1;
+  bool has_annotations() const;
+  void clear_annotations();
+  static const int kAnnotationsFieldNumber = 1;
+  const ::google::protobuf::Struct& annotations() const;
+  ::google::protobuf::Struct* release_annotations();
+  ::google::protobuf::Struct* mutable_annotations();
+  void set_allocated_annotations(::google::protobuf::Struct* annotations);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.TypeAnnotation)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::Struct* annotations_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
+};
+// -------------------------------------------------------------------
+
 class LiteralType final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.LiteralType) */ {
  public:
@@ -776,7 +895,7 @@ class LiteralType final :
                &_LiteralType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(LiteralType* other);
   friend void swap(LiteralType& a, LiteralType& b) {
@@ -841,6 +960,15 @@ class LiteralType final :
   ::google::protobuf::Struct* release_metadata();
   ::google::protobuf::Struct* mutable_metadata();
   void set_allocated_metadata(::google::protobuf::Struct* metadata);
+
+  // .flyteidl.core.TypeAnnotation annotation = 8;
+  bool has_annotation() const;
+  void clear_annotation();
+  static const int kAnnotationFieldNumber = 8;
+  const ::flyteidl::core::TypeAnnotation& annotation() const;
+  ::flyteidl::core::TypeAnnotation* release_annotation();
+  ::flyteidl::core::TypeAnnotation* mutable_annotation();
+  void set_allocated_annotation(::flyteidl::core::TypeAnnotation* annotation);
 
   // .flyteidl.core.SimpleType simple = 1;
   private:
@@ -913,6 +1041,7 @@ class LiteralType final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::Struct* metadata_;
+  ::flyteidl::core::TypeAnnotation* annotation_;
   union TypeUnion {
     TypeUnion() {}
     int simple_;
@@ -967,7 +1096,7 @@ class OutputReference final :
                &_OutputReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(OutputReference* other);
   friend void swap(OutputReference& a, OutputReference& b) {
@@ -1102,7 +1231,7 @@ class Error final :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -1455,6 +1584,56 @@ EnumType::mutable_values() {
 
 // -------------------------------------------------------------------
 
+// TypeAnnotation
+
+// .google.protobuf.Struct annotations = 1;
+inline bool TypeAnnotation::has_annotations() const {
+  return this != internal_default_instance() && annotations_ != nullptr;
+}
+inline const ::google::protobuf::Struct& TypeAnnotation::annotations() const {
+  const ::google::protobuf::Struct* p = annotations_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.TypeAnnotation.annotations)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Struct*>(
+      &::google::protobuf::_Struct_default_instance_);
+}
+inline ::google::protobuf::Struct* TypeAnnotation::release_annotations() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TypeAnnotation.annotations)
+  
+  ::google::protobuf::Struct* temp = annotations_;
+  annotations_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Struct* TypeAnnotation::mutable_annotations() {
+  
+  if (annotations_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Struct>(GetArenaNoVirtual());
+    annotations_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TypeAnnotation.annotations)
+  return annotations_;
+}
+inline void TypeAnnotation::set_allocated_annotations(::google::protobuf::Struct* annotations) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(annotations_);
+  }
+  if (annotations) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(annotations)->GetArena();
+    if (message_arena != submessage_arena) {
+      annotations = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, annotations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  annotations_ = annotations;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TypeAnnotation.annotations)
+}
+
+// -------------------------------------------------------------------
+
 // LiteralType
 
 // .flyteidl.core.SimpleType simple = 1;
@@ -1737,6 +1916,57 @@ inline void LiteralType::set_allocated_metadata(::google::protobuf::Struct* meta
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.LiteralType.metadata)
 }
 
+// .flyteidl.core.TypeAnnotation annotation = 8;
+inline bool LiteralType::has_annotation() const {
+  return this != internal_default_instance() && annotation_ != nullptr;
+}
+inline void LiteralType::clear_annotation() {
+  if (GetArenaNoVirtual() == nullptr && annotation_ != nullptr) {
+    delete annotation_;
+  }
+  annotation_ = nullptr;
+}
+inline const ::flyteidl::core::TypeAnnotation& LiteralType::annotation() const {
+  const ::flyteidl::core::TypeAnnotation* p = annotation_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.LiteralType.annotation)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::TypeAnnotation*>(
+      &::flyteidl::core::_TypeAnnotation_default_instance_);
+}
+inline ::flyteidl::core::TypeAnnotation* LiteralType::release_annotation() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.LiteralType.annotation)
+  
+  ::flyteidl::core::TypeAnnotation* temp = annotation_;
+  annotation_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::TypeAnnotation* LiteralType::mutable_annotation() {
+  
+  if (annotation_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::TypeAnnotation>(GetArenaNoVirtual());
+    annotation_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.LiteralType.annotation)
+  return annotation_;
+}
+inline void LiteralType::set_allocated_annotation(::flyteidl::core::TypeAnnotation* annotation) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete annotation_;
+  }
+  if (annotation) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      annotation = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, annotation, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  annotation_ = annotation;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.LiteralType.annotation)
+}
+
 inline bool LiteralType::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -1969,6 +2199,8 @@ inline void Error::set_allocated_message(::std::string* message) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
