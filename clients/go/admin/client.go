@@ -27,6 +27,7 @@ import (
 var (
 	once            = sync.Once{}
 	adminConnection *grpc.ClientConn
+	rootCerts       []tls.Certificate
 
 	// A new connection just for auth metadata service since it will be used to retrieve auth
 	// related information that's needed to initialize the Clientset.
@@ -141,7 +142,7 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 			logger.Warnf(ctx, "using insecureSkipVerify. Server's certificate chain and host name wont be verified. Caution : shouldn't be used for production usecases")
 			tlsConfig := &tls.Config{
 				InsecureSkipVerify: true, //nolint
-
+				Certificates:       rootCerts,
 			}
 			creds = credentials.NewTLS(tlsConfig)
 		} else {
@@ -155,7 +156,7 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
-// Create an AdminClient with a shared Admin connection for the process
+// InitializeAdminClient creates an AdminClient with a shared Admin connection for the process
 // Deprecated: Please use initializeClients instead.
 func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOption) service.AdminServiceClient {
 	set, err := initializeClients(ctx, cfg, nil, opts...)
