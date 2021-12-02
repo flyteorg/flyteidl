@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\x1a\n\x08\x45numType\x12\x0e\n\x06values\x18\x01 \x03(\t\"7\n\tUnionType\x12*\n\x06values\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.LiteralType\"\x8e\x03\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12,\n\tenum_type\x18\x07 \x01(\x0b\x32\x17.flyteidl.core.EnumTypeH\x00\x12.\n\nunion_type\x18\x08 \x01(\x0b\x32\x18.flyteidl.core.UnionTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\x1a\x1cgoogle/protobuf/struct.proto\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0b\n\x07\x42OOLEAN\x10\x03\x12\x0c\n\x08\x44\x41TETIME\x10\x04\x12\x0c\n\x08\x44URATION\x10\x05\"\x8f\x01\n\x08\x42lobType\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x42\n\x0e\x64imensionality\x18\x02 \x01(\x0e\x32*.flyteidl.core.BlobType.BlobDimensionality\"/\n\x12\x42lobDimensionality\x12\n\n\x06SINGLE\x10\x00\x12\r\n\tMULTIPART\x10\x01\"\x1a\n\x08\x45numType\x12\x0e\n\x06values\x18\x01 \x03(\t\"9\n\tUnionType\x12,\n\x08variants\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.LiteralType\"\x8e\x03\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\'\n\x04\x62lob\x18\x05 \x01(\x0b\x32\x17.flyteidl.core.BlobTypeH\x00\x12,\n\tenum_type\x18\x07 \x01(\x0b\x32\x17.flyteidl.core.EnumTypeH\x00\x12.\n\nunion_type\x18\x08 \x01(\x0b\x32\x18.flyteidl.core.UnionTypeH\x00\x12)\n\x08metadata\x18\x06 \x01(\x0b\x32\x17.google.protobuf.StructB\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x86\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\x0c\n\x08\x44\x41TETIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\n\n\x06\x42INARY\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\n\n\x06STRUCT\x10\tB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -75,8 +75,8 @@ _SIMPLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1077,
-  serialized_end=1211,
+  serialized_start=1079,
+  serialized_end=1213,
 )
 _sym_db.RegisterEnumDescriptor(_SIMPLETYPE)
 
@@ -301,7 +301,7 @@ _UNIONTYPE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='values', full_name='flyteidl.core.UnionType.values', index=0,
+      name='variants', full_name='flyteidl.core.UnionType.variants', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -320,7 +320,7 @@ _UNIONTYPE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=519,
-  serialized_end=574,
+  serialized_end=576,
 )
 
 
@@ -402,8 +402,8 @@ _LITERALTYPE = _descriptor.Descriptor(
       name='type', full_name='flyteidl.core.LiteralType.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=577,
-  serialized_end=975,
+  serialized_start=579,
+  serialized_end=977,
 )
 
 
@@ -440,8 +440,8 @@ _OUTPUTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=977,
-  serialized_end=1024,
+  serialized_start=979,
+  serialized_end=1026,
 )
 
 
@@ -478,8 +478,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1026,
-  serialized_end=1074,
+  serialized_start=1028,
+  serialized_end=1076,
 )
 
 _SCHEMATYPE_SCHEMACOLUMN.fields_by_name['type'].enum_type = _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE
@@ -488,7 +488,7 @@ _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE.containing_type = _SCHEMATYPE_SCHEMACO
 _SCHEMATYPE.fields_by_name['columns'].message_type = _SCHEMATYPE_SCHEMACOLUMN
 _BLOBTYPE.fields_by_name['dimensionality'].enum_type = _BLOBTYPE_BLOBDIMENSIONALITY
 _BLOBTYPE_BLOBDIMENSIONALITY.containing_type = _BLOBTYPE
-_UNIONTYPE.fields_by_name['values'].message_type = _LITERALTYPE
+_UNIONTYPE.fields_by_name['variants'].message_type = _LITERALTYPE
 _LITERALTYPE.fields_by_name['simple'].enum_type = _SIMPLETYPE
 _LITERALTYPE.fields_by_name['schema'].message_type = _SCHEMATYPE
 _LITERALTYPE.fields_by_name['collection_type'].message_type = _LITERALTYPE

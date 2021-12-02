@@ -3424,49 +3424,75 @@ public final class Types {
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
     java.util.List<flyteidl.core.Types.LiteralType> 
-        getValuesList();
+        getVariantsList();
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    flyteidl.core.Types.LiteralType getValues(int index);
+    flyteidl.core.Types.LiteralType getVariants(int index);
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    int getValuesCount();
+    int getVariantsCount();
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
     java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-        getValuesOrBuilderList();
+        getVariantsOrBuilderList();
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    flyteidl.core.Types.LiteralTypeOrBuilder getValuesOrBuilder(
+    flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Enables declaring typing.union types in python.
-   * typing.union[T1, T2] will be serialized to a set of LiteralTypes
+   * Defines a tagged union type, also known as a variant (and formally as the sum type).
+   * A sum type S is defined by a sequence of types (A, B, C, ...) (each tagged by its numerical position in the sequence)
+   * A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
+   * storing the varaint's tag (position in the sequence) with the literal value and can be examined in runtime.
+   * Type S is typically written as
+   * S := A | B | C | ...
+   * or as
+   * S := Apple A | Banana B | Cantaloupe C | ...
+   * if the tags are assigned some name (here arbitrarily chosen to be fruit).
+   * If the tags are ommitted, this implementation resolves ambiguities by choosing the earliest compatible variant type
+   * For example, a value of type `List (A | B) | List (B | C)` is constructed from a value of type `List B` by using
+   * the tag for the `List (A | B)` variant since it occurs before `List (B | C)` even though they are both compatible
+   * When converting from IDL back to the native implementation, the tag should not be relied upon to retrieve the correct output type
+   * because a value of type `A | B` with tag 0 must be compatible with type `B | A` despite the tag pointing to the wrong variant.
+   * Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
+   * Optional X := X | Null
+   * Python's `typing.Union` is an example of a union type with no runtime representation.
+   * It allows ambiguous sum types such as `typing.Union[int, int]` and `Union[list[Union[a, b]], list[Union[b, c]]]`
+   * since the ambiguity does not influence whether the types are compatible in any way.
+   * When converting to IDL, runtime values of type-erased unions use the first-compatible rule.
+   * C++'s `std::variant` is an example of a tagged union where the tag is implicit in the order of the types.
+   * When converting to IDL, runtime values of implicitly-tagged unions should use the index of the variant as the tag.
+   * Haskell's sum types, as well as Rust's and Swift's "enum" types are examples of tagged union types where the tag is explicitly named.
+   * When converting to IDL, runtime values of explicitly-tagged unions should use the index of the variant as the tag.
+   * This means that IDL values do not follow language semantics in case the variants are rearranged as IDL values will no longer have the correct tag.
+   * ^ Haskell example: `Nothing` will have tag `1` for `Maybe a = Just a | Nothing` and tag `0` for `Maybe a = Nothing | Just a`
+   *                    the tags are incompatible despite the values being compatible by Haskell rules.
+   * See also: https://en.wikipedia.org/wiki/Tagged_union
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.UnionType}
@@ -3481,7 +3507,7 @@ public final class Types {
       super(builder);
     }
     private UnionType() {
-      values_ = java.util.Collections.emptyList();
+      variants_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3510,10 +3536,10 @@ public final class Types {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>();
+                variants_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              values_.add(
+              variants_.add(
                   input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry));
               break;
             }
@@ -3533,7 +3559,7 @@ public final class Types {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
+          variants_ = java.util.Collections.unmodifiableList(variants_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3552,59 +3578,59 @@ public final class Types {
               flyteidl.core.Types.UnionType.class, flyteidl.core.Types.UnionType.Builder.class);
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.core.Types.LiteralType> values_;
+    public static final int VARIANTS_FIELD_NUMBER = 1;
+    private java.util.List<flyteidl.core.Types.LiteralType> variants_;
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    public java.util.List<flyteidl.core.Types.LiteralType> getValuesList() {
-      return values_;
+    public java.util.List<flyteidl.core.Types.LiteralType> getVariantsList() {
+      return variants_;
     }
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
     public java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-        getValuesOrBuilderList() {
-      return values_;
+        getVariantsOrBuilderList() {
+      return variants_;
     }
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    public int getValuesCount() {
-      return values_.size();
+    public int getVariantsCount() {
+      return variants_.size();
     }
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    public flyteidl.core.Types.LiteralType getValues(int index) {
-      return values_.get(index);
+    public flyteidl.core.Types.LiteralType getVariants(int index) {
+      return variants_.get(index);
     }
     /**
      * <pre>
      * Predefined set of LiteralTypes in union.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
      */
-    public flyteidl.core.Types.LiteralTypeOrBuilder getValuesOrBuilder(
+    public flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
         int index) {
-      return values_.get(index);
+      return variants_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3621,8 +3647,8 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < values_.size(); i++) {
-        output.writeMessage(1, values_.get(i));
+      for (int i = 0; i < variants_.size(); i++) {
+        output.writeMessage(1, variants_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3633,9 +3659,9 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < values_.size(); i++) {
+      for (int i = 0; i < variants_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, values_.get(i));
+          .computeMessageSize(1, variants_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3652,8 +3678,8 @@ public final class Types {
       }
       flyteidl.core.Types.UnionType other = (flyteidl.core.Types.UnionType) obj;
 
-      if (!getValuesList()
-          .equals(other.getValuesList())) return false;
+      if (!getVariantsList()
+          .equals(other.getVariantsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3665,9 +3691,9 @@ public final class Types {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValuesCount() > 0) {
-        hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + getValuesList().hashCode();
+      if (getVariantsCount() > 0) {
+        hash = (37 * hash) + VARIANTS_FIELD_NUMBER;
+        hash = (53 * hash) + getVariantsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3766,8 +3792,34 @@ public final class Types {
     }
     /**
      * <pre>
-     * Enables declaring typing.union types in python.
-     * typing.union[T1, T2] will be serialized to a set of LiteralTypes
+     * Defines a tagged union type, also known as a variant (and formally as the sum type).
+     * A sum type S is defined by a sequence of types (A, B, C, ...) (each tagged by its numerical position in the sequence)
+     * A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
+     * storing the varaint's tag (position in the sequence) with the literal value and can be examined in runtime.
+     * Type S is typically written as
+     * S := A | B | C | ...
+     * or as
+     * S := Apple A | Banana B | Cantaloupe C | ...
+     * if the tags are assigned some name (here arbitrarily chosen to be fruit).
+     * If the tags are ommitted, this implementation resolves ambiguities by choosing the earliest compatible variant type
+     * For example, a value of type `List (A | B) | List (B | C)` is constructed from a value of type `List B` by using
+     * the tag for the `List (A | B)` variant since it occurs before `List (B | C)` even though they are both compatible
+     * When converting from IDL back to the native implementation, the tag should not be relied upon to retrieve the correct output type
+     * because a value of type `A | B` with tag 0 must be compatible with type `B | A` despite the tag pointing to the wrong variant.
+     * Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
+     * Optional X := X | Null
+     * Python's `typing.Union` is an example of a union type with no runtime representation.
+     * It allows ambiguous sum types such as `typing.Union[int, int]` and `Union[list[Union[a, b]], list[Union[b, c]]]`
+     * since the ambiguity does not influence whether the types are compatible in any way.
+     * When converting to IDL, runtime values of type-erased unions use the first-compatible rule.
+     * C++'s `std::variant` is an example of a tagged union where the tag is implicit in the order of the types.
+     * When converting to IDL, runtime values of implicitly-tagged unions should use the index of the variant as the tag.
+     * Haskell's sum types, as well as Rust's and Swift's "enum" types are examples of tagged union types where the tag is explicitly named.
+     * When converting to IDL, runtime values of explicitly-tagged unions should use the index of the variant as the tag.
+     * This means that IDL values do not follow language semantics in case the variants are rearranged as IDL values will no longer have the correct tag.
+     * ^ Haskell example: `Nothing` will have tag `1` for `Maybe a = Just a | Nothing` and tag `0` for `Maybe a = Nothing | Just a`
+     *                    the tags are incompatible despite the values being compatible by Haskell rules.
+     * See also: https://en.wikipedia.org/wiki/Tagged_union
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.UnionType}
@@ -3802,17 +3854,17 @@ public final class Types {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValuesFieldBuilder();
+          getVariantsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+        if (variantsBuilder_ == null) {
+          variants_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          valuesBuilder_.clear();
+          variantsBuilder_.clear();
         }
         return this;
       }
@@ -3841,14 +3893,14 @@ public final class Types {
       public flyteidl.core.Types.UnionType buildPartial() {
         flyteidl.core.Types.UnionType result = new flyteidl.core.Types.UnionType(this);
         int from_bitField0_ = bitField0_;
-        if (valuesBuilder_ == null) {
+        if (variantsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = java.util.Collections.unmodifiableList(values_);
+            variants_ = java.util.Collections.unmodifiableList(variants_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.values_ = values_;
+          result.variants_ = variants_;
         } else {
-          result.values_ = valuesBuilder_.build();
+          result.variants_ = variantsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3898,29 +3950,29 @@ public final class Types {
 
       public Builder mergeFrom(flyteidl.core.Types.UnionType other) {
         if (other == flyteidl.core.Types.UnionType.getDefaultInstance()) return this;
-        if (valuesBuilder_ == null) {
-          if (!other.values_.isEmpty()) {
-            if (values_.isEmpty()) {
-              values_ = other.values_;
+        if (variantsBuilder_ == null) {
+          if (!other.variants_.isEmpty()) {
+            if (variants_.isEmpty()) {
+              variants_ = other.variants_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureValuesIsMutable();
-              values_.addAll(other.values_);
+              ensureVariantsIsMutable();
+              variants_.addAll(other.variants_);
             }
             onChanged();
           }
         } else {
-          if (!other.values_.isEmpty()) {
-            if (valuesBuilder_.isEmpty()) {
-              valuesBuilder_.dispose();
-              valuesBuilder_ = null;
-              values_ = other.values_;
+          if (!other.variants_.isEmpty()) {
+            if (variantsBuilder_.isEmpty()) {
+              variantsBuilder_.dispose();
+              variantsBuilder_ = null;
+              variants_ = other.variants_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              valuesBuilder_ = 
+              variantsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValuesFieldBuilder() : null;
+                   getVariantsFieldBuilder() : null;
             } else {
-              valuesBuilder_.addAllMessages(other.values_);
+              variantsBuilder_.addAllMessages(other.variants_);
             }
           }
         }
@@ -3954,30 +4006,30 @@ public final class Types {
       }
       private int bitField0_;
 
-      private java.util.List<flyteidl.core.Types.LiteralType> values_ =
+      private java.util.List<flyteidl.core.Types.LiteralType> variants_ =
         java.util.Collections.emptyList();
-      private void ensureValuesIsMutable() {
+      private void ensureVariantsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          values_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>(values_);
+          variants_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>(variants_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> valuesBuilder_;
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> variantsBuilder_;
 
       /**
        * <pre>
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public java.util.List<flyteidl.core.Types.LiteralType> getValuesList() {
-        if (valuesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(values_);
+      public java.util.List<flyteidl.core.Types.LiteralType> getVariantsList() {
+        if (variantsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(variants_);
         } else {
-          return valuesBuilder_.getMessageList();
+          return variantsBuilder_.getMessageList();
         }
       }
       /**
@@ -3985,13 +4037,13 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public int getValuesCount() {
-        if (valuesBuilder_ == null) {
-          return values_.size();
+      public int getVariantsCount() {
+        if (variantsBuilder_ == null) {
+          return variants_.size();
         } else {
-          return valuesBuilder_.getCount();
+          return variantsBuilder_.getCount();
         }
       }
       /**
@@ -3999,13 +4051,13 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public flyteidl.core.Types.LiteralType getValues(int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);
+      public flyteidl.core.Types.LiteralType getVariants(int index) {
+        if (variantsBuilder_ == null) {
+          return variants_.get(index);
         } else {
-          return valuesBuilder_.getMessage(index);
+          return variantsBuilder_.getMessage(index);
         }
       }
       /**
@@ -4013,19 +4065,19 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVariants(
           int index, flyteidl.core.Types.LiteralType value) {
-        if (valuesBuilder_ == null) {
+        if (variantsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.set(index, value);
+          ensureVariantsIsMutable();
+          variants_.set(index, value);
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, value);
+          variantsBuilder_.setMessage(index, value);
         }
         return this;
       }
@@ -4034,16 +4086,16 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder setValues(
+      public Builder setVariants(
           int index, flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.set(index, builderForValue.build());
+        if (variantsBuilder_ == null) {
+          ensureVariantsIsMutable();
+          variants_.set(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.setMessage(index, builderForValue.build());
+          variantsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -4052,18 +4104,18 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder addValues(flyteidl.core.Types.LiteralType value) {
-        if (valuesBuilder_ == null) {
+      public Builder addVariants(flyteidl.core.Types.LiteralType value) {
+        if (variantsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(value);
+          ensureVariantsIsMutable();
+          variants_.add(value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(value);
+          variantsBuilder_.addMessage(value);
         }
         return this;
       }
@@ -4072,19 +4124,19 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVariants(
           int index, flyteidl.core.Types.LiteralType value) {
-        if (valuesBuilder_ == null) {
+        if (variantsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureValuesIsMutable();
-          values_.add(index, value);
+          ensureVariantsIsMutable();
+          variants_.add(index, value);
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, value);
+          variantsBuilder_.addMessage(index, value);
         }
         return this;
       }
@@ -4093,16 +4145,16 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVariants(
           flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(builderForValue.build());
+        if (variantsBuilder_ == null) {
+          ensureVariantsIsMutable();
+          variants_.add(builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(builderForValue.build());
+          variantsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -4111,16 +4163,16 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder addValues(
+      public Builder addVariants(
           int index, flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.add(index, builderForValue.build());
+        if (variantsBuilder_ == null) {
+          ensureVariantsIsMutable();
+          variants_.add(index, builderForValue.build());
           onChanged();
         } else {
-          valuesBuilder_.addMessage(index, builderForValue.build());
+          variantsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -4129,17 +4181,17 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder addAllValues(
+      public Builder addAllVariants(
           java.lang.Iterable<? extends flyteidl.core.Types.LiteralType> values) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
+        if (variantsBuilder_ == null) {
+          ensureVariantsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, values_);
+              values, variants_);
           onChanged();
         } else {
-          valuesBuilder_.addAllMessages(values);
+          variantsBuilder_.addAllMessages(values);
         }
         return this;
       }
@@ -4148,15 +4200,15 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder clearValues() {
-        if (valuesBuilder_ == null) {
-          values_ = java.util.Collections.emptyList();
+      public Builder clearVariants() {
+        if (variantsBuilder_ == null) {
+          variants_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          valuesBuilder_.clear();
+          variantsBuilder_.clear();
         }
         return this;
       }
@@ -4165,15 +4217,15 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public Builder removeValues(int index) {
-        if (valuesBuilder_ == null) {
-          ensureValuesIsMutable();
-          values_.remove(index);
+      public Builder removeVariants(int index) {
+        if (variantsBuilder_ == null) {
+          ensureVariantsIsMutable();
+          variants_.remove(index);
           onChanged();
         } else {
-          valuesBuilder_.remove(index);
+          variantsBuilder_.remove(index);
         }
         return this;
       }
@@ -4182,24 +4234,24 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public flyteidl.core.Types.LiteralType.Builder getValuesBuilder(
+      public flyteidl.core.Types.LiteralType.Builder getVariantsBuilder(
           int index) {
-        return getValuesFieldBuilder().getBuilder(index);
+        return getVariantsFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public flyteidl.core.Types.LiteralTypeOrBuilder getValuesOrBuilder(
+      public flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
           int index) {
-        if (valuesBuilder_ == null) {
-          return values_.get(index);  } else {
-          return valuesBuilder_.getMessageOrBuilder(index);
+        if (variantsBuilder_ == null) {
+          return variants_.get(index);  } else {
+          return variantsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -4207,14 +4259,14 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
       public java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-           getValuesOrBuilderList() {
-        if (valuesBuilder_ != null) {
-          return valuesBuilder_.getMessageOrBuilderList();
+           getVariantsOrBuilderList() {
+        if (variantsBuilder_ != null) {
+          return variantsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(values_);
+          return java.util.Collections.unmodifiableList(variants_);
         }
       }
       /**
@@ -4222,10 +4274,10 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public flyteidl.core.Types.LiteralType.Builder addValuesBuilder() {
-        return getValuesFieldBuilder().addBuilder(
+      public flyteidl.core.Types.LiteralType.Builder addVariantsBuilder() {
+        return getVariantsFieldBuilder().addBuilder(
             flyteidl.core.Types.LiteralType.getDefaultInstance());
       }
       /**
@@ -4233,11 +4285,11 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
-      public flyteidl.core.Types.LiteralType.Builder addValuesBuilder(
+      public flyteidl.core.Types.LiteralType.Builder addVariantsBuilder(
           int index) {
-        return getValuesFieldBuilder().addBuilder(
+        return getVariantsFieldBuilder().addBuilder(
             index, flyteidl.core.Types.LiteralType.getDefaultInstance());
       }
       /**
@@ -4245,25 +4297,25 @@ public final class Types {
        * Predefined set of LiteralTypes in union.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType values = 1;</code>
+       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
        */
       public java.util.List<flyteidl.core.Types.LiteralType.Builder> 
-           getValuesBuilderList() {
-        return getValuesFieldBuilder().getBuilderList();
+           getVariantsBuilderList() {
+        return getVariantsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
-          getValuesFieldBuilder() {
-        if (valuesBuilder_ == null) {
-          valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getVariantsFieldBuilder() {
+        if (variantsBuilder_ == null) {
+          variantsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
-                  values_,
+                  variants_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          values_ = null;
+          variants_ = null;
         }
-        return valuesBuilder_;
+        return variantsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8484,26 +8536,26 @@ public final class Types {
       "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f" +
       "lyteidl.core.BlobType.BlobDimensionality" +
       "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU" +
-      "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"7\n" +
-      "\tUnionType\022*\n\006values\030\001 \003(\0132\032.flyteidl.co" +
-      "re.LiteralType\"\216\003\n\013LiteralType\022+\n\006simple" +
-      "\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH\000\022+\n\006s" +
-      "chema\030\002 \001(\0132\031.flyteidl.core.SchemaTypeH\000" +
-      "\0225\n\017collection_type\030\003 \001(\0132\032.flyteidl.cor" +
-      "e.LiteralTypeH\000\0224\n\016map_value_type\030\004 \001(\0132" +
-      "\032.flyteidl.core.LiteralTypeH\000\022\'\n\004blob\030\005 " +
-      "\001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\tenum_t" +
-      "ype\030\007 \001(\0132\027.flyteidl.core.EnumTypeH\000\022.\n\n" +
-      "union_type\030\010 \001(\0132\030.flyteidl.core.UnionTy" +
-      "peH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protobuf" +
-      ".StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007no" +
-      "de_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016fai" +
-      "led_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nS" +
-      "impleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOA" +
-      "T\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME" +
-      "\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022" +
-      "\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/coreb\006proto3"
+      "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"9\n" +
+      "\tUnionType\022,\n\010variants\030\001 \003(\0132\032.flyteidl." +
+      "core.LiteralType\"\216\003\n\013LiteralType\022+\n\006simp" +
+      "le\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH\000\022+\n" +
+      "\006schema\030\002 \001(\0132\031.flyteidl.core.SchemaType" +
+      "H\000\0225\n\017collection_type\030\003 \001(\0132\032.flyteidl.c" +
+      "ore.LiteralTypeH\000\0224\n\016map_value_type\030\004 \001(" +
+      "\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004blob\030" +
+      "\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\tenum" +
+      "_type\030\007 \001(\0132\027.flyteidl.core.EnumTypeH\000\022." +
+      "\n\nunion_type\030\010 \001(\0132\030.flyteidl.core.Union" +
+      "TypeH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protob" +
+      "uf.StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007" +
+      "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016f" +
+      "ailed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n" +
+      "\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FL" +
+      "OAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETI" +
+      "ME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020" +
+      "\010\022\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/fly" +
+      "teidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8547,7 +8599,7 @@ public final class Types {
     internal_static_flyteidl_core_UnionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_UnionType_descriptor,
-        new java.lang.String[] { "Values", });
+        new java.lang.String[] { "Variants", });
     internal_static_flyteidl_core_LiteralType_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_LiteralType_fieldAccessorTable = new

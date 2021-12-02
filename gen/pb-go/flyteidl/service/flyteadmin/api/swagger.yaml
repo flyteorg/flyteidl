@@ -4032,7 +4032,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -4069,6 +4069,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -4117,7 +4123,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -4219,6 +4225,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -4267,7 +4279,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -4375,7 +4387,7 @@ definitions:
                 - "values"
                 - "values"
               union_type:
-                values:
+                variants:
                 - null
                 - null
               simple: {}
@@ -4412,6 +4424,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -4460,7 +4478,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -4535,7 +4553,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -4572,6 +4590,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -4620,7 +4644,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -4722,6 +4746,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -4770,7 +4800,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -4858,7 +4888,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -4895,6 +4925,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -4943,7 +4979,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -5045,6 +5081,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -5093,7 +5135,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -5347,6 +5389,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -5395,7 +5443,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -6037,6 +6085,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -6088,6 +6142,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -6232,6 +6292,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6283,6 +6349,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6459,6 +6531,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6510,6 +6588,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6685,6 +6769,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6736,6 +6826,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -6836,7 +6932,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -6870,7 +6966,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -6915,6 +7011,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -6966,6 +7068,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -7110,6 +7218,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7161,6 +7275,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7337,6 +7457,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7388,6 +7514,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7563,6 +7695,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7614,6 +7752,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -7714,7 +7858,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -7748,7 +7892,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -7885,7 +8029,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -7919,7 +8063,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -8092,7 +8236,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -8126,7 +8270,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -8209,6 +8353,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -8260,6 +8410,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -8404,6 +8560,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -8455,6 +8617,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -8631,6 +8799,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -8682,6 +8856,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -8857,6 +9037,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -8908,6 +9094,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -9008,7 +9200,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -9042,7 +9234,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -9796,7 +9988,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -9830,7 +10022,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -10019,7 +10211,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -10053,7 +10245,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -10554,7 +10746,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -10588,7 +10780,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -10770,7 +10962,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -10804,7 +10996,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -10994,6 +11186,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -11045,6 +11243,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -11189,6 +11393,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11240,6 +11450,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11416,6 +11632,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11467,6 +11689,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11642,6 +11870,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11693,6 +11927,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -11793,7 +12033,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -11827,7 +12067,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -11872,6 +12112,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -11923,6 +12169,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -12067,6 +12319,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12118,6 +12376,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12294,6 +12558,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12345,6 +12615,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12520,6 +12796,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12571,6 +12853,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -12671,7 +12959,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -12705,7 +12993,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -12842,7 +13130,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -12876,7 +13164,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -13049,7 +13337,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -13083,7 +13371,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -13166,6 +13454,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -13217,6 +13511,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -13361,6 +13661,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13412,6 +13718,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13588,6 +13900,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13639,6 +13957,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13814,6 +14138,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13865,6 +14195,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -13965,7 +14301,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -13999,7 +14335,7 @@ definitions:
                           - "values"
                           - "values"
                         union_type:
-                          values:
+                          variants:
                           - null
                           - null
                         simple: {}
@@ -14205,6 +14541,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -14256,6 +14598,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -14400,6 +14748,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -14451,6 +14805,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -14627,6 +14987,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -14678,6 +15044,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -14853,6 +15225,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -14904,6 +15282,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15004,7 +15388,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -15038,7 +15422,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -15083,6 +15467,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -15134,6 +15524,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -15278,6 +15674,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15329,6 +15731,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15505,6 +15913,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15556,6 +15970,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15731,6 +16151,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15782,6 +16208,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -15882,7 +16314,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -15916,7 +16348,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -16053,7 +16485,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -16087,7 +16519,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -16260,7 +16692,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -16294,7 +16726,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -16377,6 +16809,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -16428,6 +16866,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -16572,6 +17016,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -16623,6 +17073,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -16799,6 +17255,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -16850,6 +17312,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -17025,6 +17493,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -17076,6 +17550,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -17176,7 +17656,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -17210,7 +17690,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -17352,6 +17832,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -17403,6 +17889,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -17547,6 +18039,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -17598,6 +18096,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -17774,6 +18278,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -17825,6 +18335,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18000,6 +18516,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18051,6 +18573,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18151,7 +18679,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -18185,7 +18713,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -18230,6 +18758,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -18281,6 +18815,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -18425,6 +18965,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18476,6 +19022,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18652,6 +19204,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18703,6 +19261,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18878,6 +19442,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -18929,6 +19499,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -19029,7 +19605,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19063,7 +19639,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19200,7 +19776,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19234,7 +19810,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19407,7 +19983,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19441,7 +20017,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -19524,6 +20100,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -19575,6 +20157,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -19719,6 +20307,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -19770,6 +20364,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -19946,6 +20546,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -19997,6 +20603,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20172,6 +20784,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20223,6 +20841,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20323,7 +20947,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -20357,7 +20981,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -20412,6 +21036,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -20463,6 +21093,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -20607,6 +21243,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20658,6 +21300,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20834,6 +21482,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -20885,6 +21539,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21060,6 +21720,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21111,6 +21777,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21211,7 +21883,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -21245,7 +21917,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -21290,6 +21962,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -21341,6 +22019,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -21485,6 +22169,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21536,6 +22226,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21712,6 +22408,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21763,6 +22465,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21938,6 +22646,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -21989,6 +22703,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -22089,7 +22809,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22123,7 +22843,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22260,7 +22980,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22294,7 +23014,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22467,7 +23187,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22501,7 +23221,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -22584,6 +23304,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -22635,6 +23361,12 @@ definitions:
                       binary:
                         tag: "tag"
                         value: "value"
+                      union:
+                        tag: "tag"
+                        type:
+                          variants:
+                          - null
+                          - null
                       error:
                         message: "message"
                         failed_node_id: "failed_node_id"
@@ -22779,6 +23511,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -22830,6 +23568,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -23006,6 +23750,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -23057,6 +23807,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -23232,6 +23988,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -23283,6 +24045,12 @@ definitions:
                         binary:
                           tag: "tag"
                           value: "value"
+                        union:
+                          tag: "tag"
+                          type:
+                            variants:
+                            - null
+                            - null
                         error:
                           message: "message"
                           failed_node_id: "failed_node_id"
@@ -23383,7 +24151,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -23417,7 +24185,7 @@ definitions:
                             - "values"
                             - "values"
                           union_type:
-                            values:
+                            variants:
                             - null
                             - null
                           simple: {}
@@ -23522,6 +24290,12 @@ definitions:
           binary:
             tag: "tag"
             value: "value"
+          union:
+            tag: "tag"
+            type:
+              variants:
+              - null
+              - null
           error:
             message: "message"
             failed_node_id: "failed_node_id"
@@ -23589,6 +24363,12 @@ definitions:
         binary:
           tag: "tag"
           value: "value"
+        union:
+          tag: "tag"
+          type:
+            variants:
+            - null
+            - null
         error:
           message: "message"
           failed_node_id: "failed_node_id"
@@ -24023,7 +24803,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -24057,7 +24837,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -24152,6 +24932,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -24203,6 +24989,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -24347,6 +25139,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24398,6 +25196,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24574,6 +25378,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24625,6 +25435,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24800,6 +25616,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24851,6 +25673,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -24951,7 +25779,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -24985,7 +25813,7 @@ definitions:
                     - "values"
                     - "values"
                   union_type:
-                    values:
+                    variants:
                     - null
                     - null
                   simple: {}
@@ -25057,6 +25885,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -25108,6 +25942,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -25252,6 +26092,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25303,6 +26149,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25479,6 +26331,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25530,6 +26388,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25705,6 +26569,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25756,6 +26626,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -25856,7 +26732,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -25890,7 +26766,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -25935,6 +26811,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -25986,6 +26868,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -26130,6 +27018,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26181,6 +27075,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26357,6 +27257,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26408,6 +27314,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26583,6 +27495,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26634,6 +27552,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -26734,7 +27658,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -26768,7 +27692,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -26905,7 +27829,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -26939,7 +27863,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -27112,7 +28036,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -27146,7 +28070,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -27229,6 +28153,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -27280,6 +28210,12 @@ definitions:
                 binary:
                   tag: "tag"
                   value: "value"
+                union:
+                  tag: "tag"
+                  type:
+                    variants:
+                    - null
+                    - null
                 error:
                   message: "message"
                   failed_node_id: "failed_node_id"
@@ -27424,6 +28360,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -27475,6 +28417,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -27651,6 +28599,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -27702,6 +28656,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -27877,6 +28837,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -27928,6 +28894,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -28028,7 +29000,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -28062,7 +29034,7 @@ definitions:
                       - "values"
                       - "values"
                     union_type:
-                      values:
+                      variants:
                       - null
                       - null
                     simple: {}
@@ -28619,6 +29591,12 @@ definitions:
         binary:
           tag: "tag"
           value: "value"
+        union:
+          tag: "tag"
+          type:
+            variants:
+            - null
+            - null
         error:
           message: "message"
           failed_node_id: "failed_node_id"
@@ -28723,7 +29701,7 @@ definitions:
         - "values"
         - "values"
       union_type:
-        values:
+        variants:
         - null
         - null
       simple: {}
@@ -28886,6 +29864,12 @@ definitions:
             binary:
               tag: "tag"
               value: "value"
+            union:
+              tag: "tag"
+              type:
+                variants:
+                - null
+                - null
             error:
               message: "message"
               failed_node_id: "failed_node_id"
@@ -28937,6 +29921,12 @@ definitions:
             binary:
               tag: "tag"
               value: "value"
+            union:
+              tag: "tag"
+              type:
+                variants:
+                - null
+                - null
             error:
               message: "message"
               failed_node_id: "failed_node_id"
@@ -29197,6 +30187,12 @@ definitions:
           binary:
             tag: "tag"
             value: "value"
+          union:
+            tag: "tag"
+            type:
+              variants:
+              - null
+              - null
           error:
             message: "message"
             failed_node_id: "failed_node_id"
@@ -29245,7 +30241,7 @@ definitions:
             - "values"
             - "values"
           union_type:
-            values:
+            variants:
             - null
             - null
           simple: {}
@@ -29289,6 +30285,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -29337,7 +30339,7 @@ definitions:
                 - "values"
                 - "values"
               union_type:
-                values:
+                variants:
                 - null
                 - null
               simple: {}
@@ -29482,6 +30484,8 @@ definitions:
         $ref: "#/definitions/coreError"
       generic:
         $ref: "#/definitions/protobufStruct"
+      union:
+        $ref: "#/definitions/coreUnion"
     example:
       schema:
         type:
@@ -29508,6 +30512,12 @@ definitions:
       binary:
         tag: "tag"
         value: "value"
+      union:
+        tag: "tag"
+        type:
+          variants:
+          - null
+          - null
       error:
         message: "message"
         failed_node_id: "failed_node_id"
@@ -30001,7 +31011,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -30035,7 +31045,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -30126,7 +31136,7 @@ definitions:
                 - "values"
                 - "values"
               union_type:
-                values:
+                variants:
                 - null
                 - null
               simple: {}
@@ -30160,22 +31170,73 @@ definitions:
                 - "values"
                 - "values"
               union_type:
-                values:
+                variants:
                 - null
                 - null
               simple: {}
+  coreUnion:
+    type: "object"
+    properties:
+      value:
+        $ref: "#/definitions/coreLiteral"
+      type:
+        $ref: "#/definitions/coreUnionType"
+      tag:
+        type: "string"
+        format: "uint64"
+    description: "The runtime representation of a tagged union value. See `UnionType`\
+      \ for more details."
+    example:
+      tag: "tag"
+      type:
+        variants:
+        - null
+        - null
   coreUnionType:
     type: "object"
     properties:
-      values:
+      variants:
         type: "array"
         description: "Predefined set of LiteralTypes in union."
         items:
           $ref: "#/definitions/coreLiteralType"
-    title: "Enables declaring typing.union types in python.\ntyping.union[T1, T2]\
-      \ will be serialized to a set of LiteralTypes"
+    description: "Defines a tagged union type, also known as a variant (and formally\
+      \ as the sum type).\n\nA sum type S is defined by a sequence of types (A, B,\
+      \ C, ...) (each tagged by its numerical position in the sequence)\nA value of\
+      \ type S is constructed from a value of any of the variant types. The specific\
+      \ choice of type is recorded by\nstoring the varaint's tag (position in the\
+      \ sequence) with the literal value and can be examined in runtime.\n\nType S\
+      \ is typically written as\nS := A | B | C | ...\nor as\nS := Apple A | Banana\
+      \ B | Cantaloupe C | ...\nif the tags are assigned some name (here arbitrarily\
+      \ chosen to be fruit).\n\nIf the tags are ommitted, this implementation resolves\
+      \ ambiguities by choosing the earliest compatible variant type\nFor example,\
+      \ a value of type `List (A | B) | List (B | C)` is constructed from a value\
+      \ of type `List B` by using\nthe tag for the `List (A | B)` variant since it\
+      \ occurs before `List (B | C)` even though they are both compatible\nWhen converting\
+      \ from IDL back to the native implementation, the tag should not be relied upon\
+      \ to retrieve the correct output type\nbecause a value of type `A | B` with\
+      \ tag 0 must be compatible with type `B | A` despite the tag pointing to the\
+      \ wrong variant.\n\nNotably, a nullable (optional) type is a sum type between\
+      \ some type X and the singleton type representing a null-value:\nOptional X\
+      \ := X | Null\n\nPython's `typing.Union` is an example of a union type with\
+      \ no runtime representation.\nIt allows ambiguous sum types such as `typing.Union[int,\
+      \ int]` and `Union[list[Union[a, b]], list[Union[b, c]]]`\nsince the ambiguity\
+      \ does not influence whether the types are compatible in any way.\nWhen converting\
+      \ to IDL, runtime values of type-erased unions use the first-compatible rule.\n\
+      \nC++'s `std::variant` is an example of a tagged union where the tag is implicit\
+      \ in the order of the types.\nWhen converting to IDL, runtime values of implicitly-tagged\
+      \ unions should use the index of the variant as the tag.\n\nHaskell's sum types,\
+      \ as well as Rust's and Swift's \"enum\" types are examples of tagged union\
+      \ types where the tag is explicitly named.\nWhen converting to IDL, runtime\
+      \ values of explicitly-tagged unions should use the index of the variant as\
+      \ the tag.\nThis means that IDL values do not follow language semantics in case\
+      \ the variants are rearranged as IDL values will no longer have the correct\
+      \ tag.\n^ Haskell example: `Nothing` will have tag `1` for `Maybe a = Just a\
+      \ | Nothing` and tag `0` for `Maybe a = Nothing | Just a`\n                \
+      \   the tags are incompatible despite the values being compatible by Haskell\
+      \ rules.\n\nSee also: https://en.wikipedia.org/wiki/Tagged_union"
     example:
-      values:
+      variants:
       - null
       - null
   coreVariable:
@@ -30216,7 +31277,7 @@ definitions:
           - "values"
           - "values"
         union_type:
-          values:
+          variants:
           - null
           - null
         simple: {}
@@ -30259,7 +31320,7 @@ definitions:
               - "values"
               - "values"
             union_type:
-              values:
+              variants:
               - null
               - null
             simple: {}
@@ -30432,6 +31493,12 @@ definitions:
             binary:
               tag: "tag"
               value: "value"
+            union:
+              tag: "tag"
+              type:
+                variants:
+                - null
+                - null
             error:
               message: "message"
               failed_node_id: "failed_node_id"
@@ -30483,6 +31550,12 @@ definitions:
             binary:
               tag: "tag"
               value: "value"
+            union:
+              tag: "tag"
+              type:
+                variants:
+                - null
+                - null
             error:
               message: "message"
               failed_node_id: "failed_node_id"
@@ -30627,6 +31700,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -30678,6 +31757,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -30854,6 +31939,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -30905,6 +31996,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -31080,6 +32177,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -31131,6 +32234,12 @@ definitions:
               binary:
                 tag: "tag"
                 value: "value"
+              union:
+                tag: "tag"
+                type:
+                  variants:
+                  - null
+                  - null
               error:
                 message: "message"
                 failed_node_id: "failed_node_id"
@@ -31231,7 +32340,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -31265,7 +32374,7 @@ definitions:
                   - "values"
                   - "values"
                 union_type:
-                  values:
+                  variants:
                   - null
                   - null
                 simple: {}
@@ -31542,6 +32651,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -31593,6 +32708,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -31737,6 +32858,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -31788,6 +32915,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -31964,6 +33097,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32015,6 +33154,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32190,6 +33335,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32241,6 +33392,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32341,7 +33498,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -32375,7 +33532,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -32420,6 +33577,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -32471,6 +33634,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -32615,6 +33784,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32666,6 +33841,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32842,6 +34023,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -32893,6 +34080,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -33068,6 +34261,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -33119,6 +34318,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -33219,7 +34424,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33253,7 +34458,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33390,7 +34595,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33424,7 +34629,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33597,7 +34802,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33631,7 +34836,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -33714,6 +34919,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -33765,6 +34976,12 @@ definitions:
                   binary:
                     tag: "tag"
                     value: "value"
+                  union:
+                    tag: "tag"
+                    type:
+                      variants:
+                      - null
+                      - null
                   error:
                     message: "message"
                     failed_node_id: "failed_node_id"
@@ -33909,6 +35126,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -33960,6 +35183,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -34136,6 +35365,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -34187,6 +35422,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -34362,6 +35603,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -34413,6 +35660,12 @@ definitions:
                     binary:
                       tag: "tag"
                       value: "value"
+                    union:
+                      tag: "tag"
+                      type:
+                        variants:
+                        - null
+                        - null
                     error:
                       message: "message"
                       failed_node_id: "failed_node_id"
@@ -34513,7 +35766,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}
@@ -34547,7 +35800,7 @@ definitions:
                         - "values"
                         - "values"
                       union_type:
-                        values:
+                        variants:
                         - null
                         - null
                       simple: {}

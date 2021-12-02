@@ -52,6 +52,13 @@ message Schema {
     SchemaType type = 3;
 }
 
+// The runtime representation of a tagged union value. See `UnionType` for more details.
+message Union {
+    Literal value = 1;
+    UnionType type = 2;
+    uint64 tag = 3;
+}
+
 message Scalar {
     oneof value {
         Primitive primitive = 1;
@@ -61,6 +68,7 @@ message Scalar {
         Void none_type = 5;
         Error error = 6;
         google.protobuf.Struct generic = 7;
+        Union union = 8;
     }
 }
 

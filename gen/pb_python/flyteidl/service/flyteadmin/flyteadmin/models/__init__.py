@@ -196,6 +196,7 @@ from flyteadmin.models.core_task_node import CoreTaskNode
 from flyteadmin.models.core_task_node_overrides import CoreTaskNodeOverrides
 from flyteadmin.models.core_task_template import CoreTaskTemplate
 from flyteadmin.models.core_typed_interface import CoreTypedInterface
+from flyteadmin.models.core_union import CoreUnion
 from flyteadmin.models.core_union_type import CoreUnionType
 from flyteadmin.models.core_variable import CoreVariable
 from flyteadmin.models.core_variable_map import CoreVariableMap

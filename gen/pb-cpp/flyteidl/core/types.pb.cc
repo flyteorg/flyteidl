@@ -220,7 +220,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftypes_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionType, values_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionType, variants_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::LiteralType, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -291,31 +291,31 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto[] =
   "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f"
   "lyteidl.core.BlobType.BlobDimensionality"
   "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU"
-  "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"7\n"
-  "\tUnionType\022*\n\006values\030\001 \003(\0132\032.flyteidl.co"
-  "re.LiteralType\"\216\003\n\013LiteralType\022+\n\006simple"
-  "\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH\000\022+\n\006s"
-  "chema\030\002 \001(\0132\031.flyteidl.core.SchemaTypeH\000"
-  "\0225\n\017collection_type\030\003 \001(\0132\032.flyteidl.cor"
-  "e.LiteralTypeH\000\0224\n\016map_value_type\030\004 \001(\0132"
-  "\032.flyteidl.core.LiteralTypeH\000\022\'\n\004blob\030\005 "
-  "\001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\tenum_t"
-  "ype\030\007 \001(\0132\027.flyteidl.core.EnumTypeH\000\022.\n\n"
-  "union_type\030\010 \001(\0132\030.flyteidl.core.UnionTy"
-  "peH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protobuf"
-  ".StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007no"
-  "de_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016fai"
-  "led_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nS"
-  "impleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOA"
-  "T\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME"
-  "\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022"
-  "\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/flyte"
-  "idl/gen/pb-go/flyteidl/coreb\006proto3"
+  "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"9\n"
+  "\tUnionType\022,\n\010variants\030\001 \003(\0132\032.flyteidl."
+  "core.LiteralType\"\216\003\n\013LiteralType\022+\n\006simp"
+  "le\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH\000\022+\n"
+  "\006schema\030\002 \001(\0132\031.flyteidl.core.SchemaType"
+  "H\000\0225\n\017collection_type\030\003 \001(\0132\032.flyteidl.c"
+  "ore.LiteralTypeH\000\0224\n\016map_value_type\030\004 \001("
+  "\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004blob\030"
+  "\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\tenum"
+  "_type\030\007 \001(\0132\027.flyteidl.core.EnumTypeH\000\022."
+  "\n\nunion_type\030\010 \001(\0132\030.flyteidl.core.Union"
+  "TypeH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protob"
+  "uf.StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007"
+  "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016f"
+  "ailed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n"
+  "\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FL"
+  "OAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETI"
+  "ME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020"
+  "\010\022\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/fly"
+  "teidl/gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftypes_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftypes_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto,
-  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1275,
+  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1277,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftypes_2eproto() {
@@ -1674,7 +1674,7 @@ class UnionType::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int UnionType::kValuesFieldNumber;
+const int UnionType::kVariantsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UnionType::UnionType()
@@ -1685,7 +1685,7 @@ UnionType::UnionType()
 UnionType::UnionType(const UnionType& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
-      values_(from.values_) {
+      variants_(from.variants_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.UnionType)
 }
@@ -1718,7 +1718,7 @@ void UnionType::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  values_.Clear();
+  variants_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -1735,14 +1735,14 @@ const char* UnionType::_InternalParse(const char* begin, const char* end, void* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .flyteidl.core.LiteralType values = 1;
+      // repeated .flyteidl.core.LiteralType variants = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
           parser_till_end = ::flyteidl::core::LiteralType::_InternalParse;
-          object = msg->add_values();
+          object = msg->add_variants();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1781,11 +1781,11 @@ bool UnionType::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .flyteidl.core.LiteralType values = 1;
+      // repeated .flyteidl.core.LiteralType variants = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_values()));
+                input, add_variants()));
         } else {
           goto handle_unusual;
         }
@@ -1819,12 +1819,12 @@ void UnionType::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType values = 1;
+  // repeated .flyteidl.core.LiteralType variants = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->values_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->variants_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->values(static_cast<int>(i)),
+      this->variants(static_cast<int>(i)),
       output);
   }
 
@@ -1841,12 +1841,12 @@ void UnionType::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType values = 1;
+  // repeated .flyteidl.core.LiteralType variants = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->values_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->variants_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->values(static_cast<int>(i)), target);
+        1, this->variants(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1870,14 +1870,14 @@ size_t UnionType::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType values = 1;
+  // repeated .flyteidl.core.LiteralType variants = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->values_size());
+    unsigned int count = static_cast<unsigned int>(this->variants_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->values(static_cast<int>(i)));
+          this->variants(static_cast<int>(i)));
     }
   }
 
@@ -1908,7 +1908,7 @@ void UnionType::MergeFrom(const UnionType& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  values_.MergeFrom(from.values_);
+  variants_.MergeFrom(from.variants_);
 }
 
 void UnionType::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1936,7 +1936,7 @@ void UnionType::Swap(UnionType* other) {
 void UnionType::InternalSwap(UnionType* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&values_)->InternalSwap(CastToBase(&other->values_));
+  CastToBase(&variants_)->InternalSwap(CastToBase(&other->variants_));
 }
 
 ::google::protobuf::Metadata UnionType::GetMetadata() const {

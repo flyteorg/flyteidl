@@ -254,13 +254,13 @@ func (m *UnionType) Validate() error {
 		return nil
 	}
 
-	for idx, item := range m.GetValues() {
+	for idx, item := range m.GetVariants() {
 		_, _ = idx, item
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return UnionTypeValidationError{
-					field:  fmt.Sprintf("Values[%v]", idx),
+					field:  fmt.Sprintf("Variants[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

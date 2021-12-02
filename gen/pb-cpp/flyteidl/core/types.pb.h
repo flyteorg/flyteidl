@@ -827,24 +827,24 @@ class UnionType final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.LiteralType values = 1;
-  int values_size() const;
-  void clear_values();
-  static const int kValuesFieldNumber = 1;
-  ::flyteidl::core::LiteralType* mutable_values(int index);
+  // repeated .flyteidl.core.LiteralType variants = 1;
+  int variants_size() const;
+  void clear_variants();
+  static const int kVariantsFieldNumber = 1;
+  ::flyteidl::core::LiteralType* mutable_variants(int index);
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
-      mutable_values();
-  const ::flyteidl::core::LiteralType& values(int index) const;
-  ::flyteidl::core::LiteralType* add_values();
+      mutable_variants();
+  const ::flyteidl::core::LiteralType& variants(int index) const;
+  ::flyteidl::core::LiteralType* add_variants();
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
-      values() const;
+      variants() const;
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.UnionType)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > values_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > variants_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
 };
@@ -1591,34 +1591,34 @@ EnumType::mutable_values() {
 
 // UnionType
 
-// repeated .flyteidl.core.LiteralType values = 1;
-inline int UnionType::values_size() const {
-  return values_.size();
+// repeated .flyteidl.core.LiteralType variants = 1;
+inline int UnionType::variants_size() const {
+  return variants_.size();
 }
-inline void UnionType::clear_values() {
-  values_.Clear();
+inline void UnionType::clear_variants() {
+  variants_.Clear();
 }
-inline ::flyteidl::core::LiteralType* UnionType::mutable_values(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionType.values)
-  return values_.Mutable(index);
+inline ::flyteidl::core::LiteralType* UnionType::mutable_variants(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionType.variants)
+  return variants_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
-UnionType::mutable_values() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.UnionType.values)
-  return &values_;
+UnionType::mutable_variants() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.UnionType.variants)
+  return &variants_;
 }
-inline const ::flyteidl::core::LiteralType& UnionType::values(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.UnionType.values)
-  return values_.Get(index);
+inline const ::flyteidl::core::LiteralType& UnionType::variants(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.UnionType.variants)
+  return variants_.Get(index);
 }
-inline ::flyteidl::core::LiteralType* UnionType::add_values() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.UnionType.values)
-  return values_.Add();
+inline ::flyteidl::core::LiteralType* UnionType::add_variants() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.UnionType.variants)
+  return variants_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
-UnionType::values() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.UnionType.values)
-  return values_;
+UnionType::variants() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.UnionType.variants)
+  return variants_;
 }
 
 // -------------------------------------------------------------------

@@ -255,6 +255,7 @@ Class | Method | HTTP request | Description
  - [CoreTaskNodeOverrides](docs/CoreTaskNodeOverrides.md)
  - [CoreTaskTemplate](docs/CoreTaskTemplate.md)
  - [CoreTypedInterface](docs/CoreTypedInterface.md)
+ - [CoreUnion](docs/CoreUnion.md)
  - [CoreUnionType](docs/CoreUnionType.md)
  - [CoreVariable](docs/CoreVariable.md)
  - [CoreVariableMap](docs/CoreVariableMap.md)

@@ -5094,6 +5094,154 @@ export const flyteidl = $root.flyteidl = (() => {
             return Schema;
         })();
 
+        core.Union = (function() {
+
+            /**
+             * Properties of an Union.
+             * @memberof flyteidl.core
+             * @interface IUnion
+             * @property {flyteidl.core.ILiteral|null} [value] Union value
+             * @property {flyteidl.core.IUnionType|null} [type] Union type
+             * @property {Long|null} [tag] Union tag
+             */
+
+            /**
+             * Constructs a new Union.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Union.
+             * @implements IUnion
+             * @constructor
+             * @param {flyteidl.core.IUnion=} [properties] Properties to set
+             */
+            function Union(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Union value.
+             * @member {flyteidl.core.ILiteral|null|undefined} value
+             * @memberof flyteidl.core.Union
+             * @instance
+             */
+            Union.prototype.value = null;
+
+            /**
+             * Union type.
+             * @member {flyteidl.core.IUnionType|null|undefined} type
+             * @memberof flyteidl.core.Union
+             * @instance
+             */
+            Union.prototype.type = null;
+
+            /**
+             * Union tag.
+             * @member {Long} tag
+             * @memberof flyteidl.core.Union
+             * @instance
+             */
+            Union.prototype.tag = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+            /**
+             * Creates a new Union instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Union
+             * @static
+             * @param {flyteidl.core.IUnion=} [properties] Properties to set
+             * @returns {flyteidl.core.Union} Union instance
+             */
+            Union.create = function create(properties) {
+                return new Union(properties);
+            };
+
+            /**
+             * Encodes the specified Union message. Does not implicitly {@link flyteidl.core.Union.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Union
+             * @static
+             * @param {flyteidl.core.IUnion} message Union message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Union.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.value != null && message.hasOwnProperty("value"))
+                    $root.flyteidl.core.Literal.encode(message.value, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    $root.flyteidl.core.UnionType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.tag);
+                return writer;
+            };
+
+            /**
+             * Decodes an Union message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Union
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Union} Union
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Union.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Union();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.value = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.type = $root.flyteidl.core.UnionType.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.tag = reader.uint64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Union message.
+             * @function verify
+             * @memberof flyteidl.core.Union
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Union.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.value != null && message.hasOwnProperty("value")) {
+                    let error = $root.flyteidl.core.Literal.verify(message.value);
+                    if (error)
+                        return "value." + error;
+                }
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.UnionType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    if (!$util.isInteger(message.tag) && !(message.tag && $util.isInteger(message.tag.low) && $util.isInteger(message.tag.high)))
+                        return "tag: integer|Long expected";
+                return null;
+            };
+
+            return Union;
+        })();
+
         core.Scalar = (function() {
 
             /**
@@ -5107,6 +5255,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
              * @property {flyteidl.core.IError|null} [error] Scalar error
              * @property {google.protobuf.IStruct|null} [generic] Scalar generic
+             * @property {flyteidl.core.IUnion|null} [union] Scalar union
              */
 
             /**
@@ -5180,17 +5329,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Scalar.prototype.generic = null;
 
+            /**
+             * Scalar union.
+             * @member {flyteidl.core.IUnion|null|undefined} union
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.union = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Scalar value.
-             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|undefined} value
+             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"union"|undefined} value
              * @memberof flyteidl.core.Scalar
              * @instance
              */
             Object.defineProperty(Scalar.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic"]),
+                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic", "union"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5232,6 +5389,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.generic != null && message.hasOwnProperty("generic"))
                     $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.union != null && message.hasOwnProperty("union"))
+                    $root.flyteidl.core.Union.encode(message.union, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -5273,6 +5432,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.union = $root.flyteidl.core.Union.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5360,6 +5522,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.google.protobuf.Struct.verify(message.generic);
                         if (error)
                             return "generic." + error;
+                    }
+                }
+                if (message.union != null && message.hasOwnProperty("union")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Union.verify(message.union);
+                        if (error)
+                            return "union." + error;
                     }
                 }
                 return null;
@@ -7184,7 +7356,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an UnionType.
              * @memberof flyteidl.core
              * @interface IUnionType
-             * @property {Array.<flyteidl.core.ILiteralType>|null} [values] UnionType values
+             * @property {Array.<flyteidl.core.ILiteralType>|null} [variants] UnionType variants
              */
 
             /**
@@ -7196,7 +7368,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.IUnionType=} [properties] Properties to set
              */
             function UnionType(properties) {
-                this.values = [];
+                this.variants = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -7204,12 +7376,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * UnionType values.
-             * @member {Array.<flyteidl.core.ILiteralType>} values
+             * UnionType variants.
+             * @member {Array.<flyteidl.core.ILiteralType>} variants
              * @memberof flyteidl.core.UnionType
              * @instance
              */
-            UnionType.prototype.values = $util.emptyArray;
+            UnionType.prototype.variants = $util.emptyArray;
 
             /**
              * Creates a new UnionType instance using the specified properties.
@@ -7235,9 +7407,9 @@ export const flyteidl = $root.flyteidl = (() => {
             UnionType.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.values != null && message.values.length)
-                    for (let i = 0; i < message.values.length; ++i)
-                        $root.flyteidl.core.LiteralType.encode(message.values[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.variants != null && message.variants.length)
+                    for (let i = 0; i < message.variants.length; ++i)
+                        $root.flyteidl.core.LiteralType.encode(message.variants[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -7260,9 +7432,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.values && message.values.length))
-                            message.values = [];
-                        message.values.push($root.flyteidl.core.LiteralType.decode(reader, reader.uint32()));
+                        if (!(message.variants && message.variants.length))
+                            message.variants = [];
+                        message.variants.push($root.flyteidl.core.LiteralType.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7283,13 +7455,13 @@ export const flyteidl = $root.flyteidl = (() => {
             UnionType.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.values != null && message.hasOwnProperty("values")) {
-                    if (!Array.isArray(message.values))
-                        return "values: array expected";
-                    for (let i = 0; i < message.values.length; ++i) {
-                        let error = $root.flyteidl.core.LiteralType.verify(message.values[i]);
+                if (message.variants != null && message.hasOwnProperty("variants")) {
+                    if (!Array.isArray(message.variants))
+                        return "variants: array expected";
+                    for (let i = 0; i < message.variants.length; ++i) {
+                        let error = $root.flyteidl.core.LiteralType.verify(message.variants[i]);
                         if (error)
-                            return "values." + error;
+                            return "variants." + error;
                     }
                 }
                 return null;

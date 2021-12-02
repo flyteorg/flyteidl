@@ -2119,6 +2119,70 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an Union. */
+        interface IUnion {
+
+            /** Union value */
+            value?: (flyteidl.core.ILiteral|null);
+
+            /** Union type */
+            type?: (flyteidl.core.IUnionType|null);
+
+            /** Union tag */
+            tag?: (Long|null);
+        }
+
+        /** Represents an Union. */
+        class Union implements IUnion {
+
+            /**
+             * Constructs a new Union.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IUnion);
+
+            /** Union value. */
+            public value?: (flyteidl.core.ILiteral|null);
+
+            /** Union type. */
+            public type?: (flyteidl.core.IUnionType|null);
+
+            /** Union tag. */
+            public tag: Long;
+
+            /**
+             * Creates a new Union instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Union instance
+             */
+            public static create(properties?: flyteidl.core.IUnion): flyteidl.core.Union;
+
+            /**
+             * Encodes the specified Union message. Does not implicitly {@link flyteidl.core.Union.verify|verify} messages.
+             * @param message Union message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IUnion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Union message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Union
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Union;
+
+            /**
+             * Verifies an Union message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Scalar. */
         interface IScalar {
 
@@ -2142,6 +2206,9 @@ export namespace flyteidl {
 
             /** Scalar generic */
             generic?: (google.protobuf.IStruct|null);
+
+            /** Scalar union */
+            union?: (flyteidl.core.IUnion|null);
         }
 
         /** Represents a Scalar. */
@@ -2174,8 +2241,11 @@ export namespace flyteidl {
             /** Scalar generic. */
             public generic?: (google.protobuf.IStruct|null);
 
+            /** Scalar union. */
+            public union?: (flyteidl.core.IUnion|null);
+
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"union");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -2988,8 +3058,8 @@ export namespace flyteidl {
         /** Properties of an UnionType. */
         interface IUnionType {
 
-            /** UnionType values */
-            values?: (flyteidl.core.ILiteralType[]|null);
+            /** UnionType variants */
+            variants?: (flyteidl.core.ILiteralType[]|null);
         }
 
         /** Represents an UnionType. */
@@ -3001,8 +3071,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IUnionType);
 
-            /** UnionType values. */
-            public values: flyteidl.core.ILiteralType[];
+            /** UnionType variants. */
+            public variants: flyteidl.core.ILiteralType[];
 
             /**
              * Creates a new UnionType instance using the specified properties.
