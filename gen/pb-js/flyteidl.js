@@ -5490,6 +5490,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
              * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
              * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
+             * @property {string|null} [hash] Literal hash
              */
 
             /**
@@ -5530,6 +5531,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Literal.prototype.map = null;
+
+            /**
+             * Literal hash.
+             * @member {string} hash
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.hash = "";
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -5575,6 +5584,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.map != null && message.hasOwnProperty("map"))
                     $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.hash);
                 return writer;
             };
 
@@ -5604,6 +5615,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.hash = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5653,6 +5667,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "map." + error;
                     }
                 }
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    if (!$util.isString(message.hash))
+                        return "hash: string expected";
                 return null;
             };
 

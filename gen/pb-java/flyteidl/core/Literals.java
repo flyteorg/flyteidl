@@ -6569,6 +6569,24 @@ public final class Literals {
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getMapOrBuilder();
 
+    /**
+     * <pre>
+     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    java.lang.String getHash();
+    /**
+     * <pre>
+     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashBytes();
+
     public flyteidl.core.Literals.Literal.ValueCase getValueCase();
   }
   /**
@@ -6588,6 +6606,7 @@ public final class Literals {
       super(builder);
     }
     private Literal() {
+      hash_ = "";
     }
 
     @java.lang.Override
@@ -6654,6 +6673,12 @@ public final class Literals {
                 value_ = subBuilder.buildPartial();
               }
               valueCase_ = 3;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hash_ = s;
               break;
             }
             default: {
@@ -6842,6 +6867,48 @@ public final class Literals {
       return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
     }
 
+    public static final int HASH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object hash_;
+    /**
+     * <pre>
+     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    public java.lang.String getHash() {
+      java.lang.Object ref = hash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hash_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashBytes() {
+      java.lang.Object ref = hash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6865,6 +6932,9 @@ public final class Literals {
       if (valueCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.Literals.LiteralMap) value_);
       }
+      if (!getHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, hash_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6886,6 +6956,9 @@ public final class Literals {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.Literals.LiteralMap) value_);
       }
+      if (!getHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, hash_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6901,6 +6974,8 @@ public final class Literals {
       }
       flyteidl.core.Literals.Literal other = (flyteidl.core.Literals.Literal) obj;
 
+      if (!getHash()
+          .equals(other.getHash())) return false;
       if (!getValueCase().equals(other.getValueCase())) return false;
       switch (valueCase_) {
         case 1:
@@ -6929,6 +7004,8 @@ public final class Literals {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getHash().hashCode();
       switch (valueCase_) {
         case 1:
           hash = (37 * hash) + SCALAR_FIELD_NUMBER;
@@ -7082,6 +7159,8 @@ public final class Literals {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        hash_ = "";
+
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -7131,6 +7210,7 @@ public final class Literals {
             result.value_ = mapBuilder_.build();
           }
         }
+        result.hash_ = hash_;
         result.valueCase_ = valueCase_;
         onBuilt();
         return result;
@@ -7180,6 +7260,10 @@ public final class Literals {
 
       public Builder mergeFrom(flyteidl.core.Literals.Literal other) {
         if (other == flyteidl.core.Literals.Literal.getDefaultInstance()) return this;
+        if (!other.getHash().isEmpty()) {
+          hash_ = other.hash_;
+          onChanged();
+        }
         switch (other.getValueCase()) {
           case SCALAR: {
             mergeScalar(other.getScalar());
@@ -7755,6 +7839,95 @@ public final class Literals {
         valueCase_ = 3;
         onChanged();;
         return mapBuilder_;
+      }
+
+      private java.lang.Object hash_ = "";
+      /**
+       * <pre>
+       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public java.lang.String getHash() {
+        java.lang.Object ref = hash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashBytes() {
+        java.lang.Object ref = hash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder setHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder clearHash() {
+        
+        hash_ = getDefaultInstance().getHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder setHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hash_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14697,33 +14870,34 @@ public final class Literals {
       "yteidl.core.SchemaH\000\022(\n\tnone_type\030\005 \001(\0132" +
       "\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024." +
       "flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132\027" +
-      ".google.protobuf.StructH\000B\007\n\005value\"\235\001\n\007L" +
+      ".google.protobuf.StructH\000B\007\n\005value\"\253\001\n\007L" +
       "iteral\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.S" +
       "calarH\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.c" +
       "ore.LiteralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMapH\000B\007\n\005value\"=\n\021Li" +
-      "teralCollection\022(\n\010literals\030\001 \003(\0132\026.flyt" +
-      "eidl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010lite" +
-      "rals\030\001 \003(\0132\'.flyteidl.core.LiteralMap.Li" +
-      "teralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Literal" +
-      ":\0028\001\"E\n\025BindingDataCollection\022,\n\010binding" +
-      "s\030\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n\016" +
-      "BindingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyte" +
-      "idl.core.BindingDataMap.BindingsEntry\032K\n" +
-      "\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001" +
-      "(\0132\032.flyteidl.core.BindingData:\0028\001\"\334\001\n\013B" +
-      "indingData\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.co" +
-      "re.ScalarH\000\022:\n\ncollection\030\002 \001(\0132$.flytei" +
-      "dl.core.BindingDataCollectionH\000\0221\n\007promi" +
-      "se\030\003 \001(\0132\036.flyteidl.core.OutputReference" +
-      "H\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core.BindingD" +
-      "ataMapH\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(" +
-      "\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.core.Bindi" +
-      "ngData\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005" +
-      " \001(\rB6Z4github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/coreb\006proto3"
+      "lyteidl.core.LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB" +
+      "\007\n\005value\"=\n\021LiteralCollection\022(\n\010literal" +
+      "s\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\nLite" +
+      "ralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl.core" +
+      ".LiteralMap.LiteralsEntry\032G\n\rLiteralsEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.flyteid" +
+      "l.core.Literal:\0028\001\"E\n\025BindingDataCollect" +
+      "ion\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.core.Bi" +
+      "ndingData\"\234\001\n\016BindingDataMap\022=\n\010bindings" +
+      "\030\001 \003(\0132+.flyteidl.core.BindingDataMap.Bi" +
+      "ndingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Binding" +
+      "Data:\0028\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001 \001(\013" +
+      "2\025.flyteidl.core.ScalarH\000\022:\n\ncollection\030" +
+      "\002 \001(\0132$.flyteidl.core.BindingDataCollect" +
+      "ionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.core.O" +
+      "utputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl" +
+      ".core.BindingDataMapH\000B\007\n\005value\"C\n\007Bindi" +
+      "ng\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyte" +
+      "idl.core.BindingData\"*\n\014KeyValuePair\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrateg" +
+      "y\022\017\n\007retries\030\005 \001(\rB6Z4github.com/flyteor" +
+      "g/flyteidl/gen/pb-go/flyteidl/coreb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14788,7 +14962,7 @@ public final class Literals {
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
-        new java.lang.String[] { "Scalar", "Collection", "Map", "Value", });
+        new java.lang.String[] { "Scalar", "Collection", "Map", "Hash", "Value", });
     internal_static_flyteidl_core_LiteralCollection_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_LiteralCollection_fieldAccessorTable = new

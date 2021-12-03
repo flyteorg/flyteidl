@@ -5378,6 +5378,10 @@
         "map": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
+        },
+        "hash": {
+          "type": "string",
+          "description": "TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog."
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."

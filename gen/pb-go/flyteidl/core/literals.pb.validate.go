@@ -658,6 +658,8 @@ func (m *Literal) Validate() error {
 		return nil
 	}
 
+	// no validation rules for Hash
+
 	switch m.Value.(type) {
 
 	case *Literal_Scalar:

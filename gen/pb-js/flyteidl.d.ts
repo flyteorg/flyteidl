@@ -2279,6 +2279,9 @@ export namespace flyteidl {
 
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
+
+            /** Literal hash */
+            hash?: (string|null);
         }
 
         /** Represents a Literal. */
@@ -2298,6 +2301,9 @@ export namespace flyteidl {
 
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
+
+            /** Literal hash. */
+            public hash: string;
 
             /** Literal value. */
             public value?: ("scalar"|"collection"|"map");
