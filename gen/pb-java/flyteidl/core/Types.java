@@ -3445,6 +3445,10 @@ public final class Types {
     com.google.protobuf.StructOrBuilder getAnnotationsOrBuilder();
   }
   /**
+   * <pre>
+   * TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.core.TypeAnnotation}
    */
   public  static final class TypeAnnotation extends
@@ -3722,6 +3726,10 @@ public final class Types {
       return builder;
     }
     /**
+     * <pre>
+     * TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.core.TypeAnnotation}
      */
     public static final class Builder extends

@@ -316,6 +316,7 @@ func (m *EnumType) GetValues() []string {
 	return nil
 }
 
+// TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
 type TypeAnnotation struct {
 	// A arbitrary JSON payload to describe a type.
 	Annotations          *_struct.Struct `protobuf:"bytes,1,opt,name=annotations,proto3" json:"annotations,omitempty"`
