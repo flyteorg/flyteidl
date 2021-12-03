@@ -76,6 +76,9 @@ message Literal {
         // A map of strings to literals.
         LiteralMap map = 3;
     }
+
+    // TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+    string hash = 4;
 }
 
 // A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
