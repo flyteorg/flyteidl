@@ -841,11 +841,11 @@ Encapsulates the results of the Execution
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "outputs", ":ref:`ref_flyteidl.admin.LiteralMapBlob`", "", "Output URI in the case of a successful execution."
+   "outputs", ":ref:`ref_flyteidl.admin.LiteralMapBlob`", "", "**Deprecated.** Output URI in the case of a successful execution. DEPRECATED. Use GetExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information in the case of a failed execution."
    "abort_cause", ":ref:`ref_string`", "", "**Deprecated.** In the case of a user-specified abort, this will pass along the user-supplied cause."
    "abort_metadata", ":ref:`ref_flyteidl.admin.AbortMetadata`", "", "In the case of a user-specified abort, this will pass along the user and their supplied cause."
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this execution. DEPRECATED. Use GetExecutionData to fetch output data instead."
    "computed_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Inputs computed and passed for execution. computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan"
    "phase", ":ref:`ref_flyteidl.core.WorkflowExecution.Phase`", "", "Most recent recorded phase for the execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Reported time at which the execution began running."
@@ -1979,9 +1979,9 @@ Container for node execution details and results.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "output_uri", ":ref:`ref_string`", "", "Links to a remotely stored, serialized core.LiteralMap of node execution outputs."
+   "output_uri", ":ref:`ref_string`", "", "**Deprecated.** Links to a remotely stored, serialized core.LiteralMap of node execution outputs. DEPRECATED. Use GetNodeExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information for the Node"
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this node execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this node execution. DEPRECATED. Use GetNodeExecutionData to fetch output data instead."
    "phase", ":ref:`ref_flyteidl.core.NodeExecution.Phase`", "", "The last recorded phase for this node execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Time at which the node execution began running."
    "duration", ":ref:`ref_google.protobuf.Duration`", "", "The amount of time the node execution spent running."
@@ -2511,8 +2511,6 @@ Purposefully empty, may be populated in the future.
 
 
 
-
-
 .. _ref_flyteidl.admin.ProjectDomainAttributesGetRequest:
 
 ProjectDomainAttributesGetRequest
@@ -2587,7 +2585,6 @@ ProjectDomainAttributesUpdateResponse
 ------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
-
 
 
 
@@ -2903,9 +2900,9 @@ Container for task execution details and results.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "output_uri", ":ref:`ref_string`", "", "Path to remote data store where output blob is stored if the execution succeeded (and produced outputs)."
+   "output_uri", ":ref:`ref_string`", "", "**Deprecated.** Path to remote data store where output blob is stored if the execution succeeded (and produced outputs). DEPRECATED. Use GetTaskExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information for the task execution. Populated if the execution failed."
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this task execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this task execution. DEPRECATED. Use GetTaskExecutionData to fetch output data instead."
    "phase", ":ref:`ref_flyteidl.core.TaskExecution.Phase`", "", "The last recorded phase for this task execution."
    "logs", ":ref:`ref_flyteidl.core.TaskLog`", "repeated", "Detailed log information output by the task execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Time at which the task execution began running."
