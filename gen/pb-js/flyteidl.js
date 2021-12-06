@@ -7203,6 +7203,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IStructuredDatasetType
              * @property {Array.<flyteidl.core.StructuredDatasetType.IDatasetColumn>|null} [columns] StructuredDatasetType columns
+             * @property {string|null} [format] StructuredDatasetType format
              * @property {string|null} [externalSchemaType] StructuredDatasetType externalSchemaType
              * @property {Uint8Array|null} [externalSchemaBytes] StructuredDatasetType externalSchemaBytes
              */
@@ -7230,6 +7231,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             StructuredDatasetType.prototype.columns = $util.emptyArray;
+
+            /**
+             * StructuredDatasetType format.
+             * @member {string} format
+             * @memberof flyteidl.core.StructuredDatasetType
+             * @instance
+             */
+            StructuredDatasetType.prototype.format = "";
 
             /**
              * StructuredDatasetType externalSchemaType.
@@ -7274,10 +7283,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.columns != null && message.columns.length)
                     for (let i = 0; i < message.columns.length; ++i)
                         $root.flyteidl.core.StructuredDatasetType.DatasetColumn.encode(message.columns[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.format != null && message.hasOwnProperty("format"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.format);
                 if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.externalSchemaType);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.externalSchemaType);
                 if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.externalSchemaBytes);
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.externalSchemaBytes);
                 return writer;
             };
 
@@ -7305,9 +7316,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.columns.push($root.flyteidl.core.StructuredDatasetType.DatasetColumn.decode(reader, reader.uint32()));
                         break;
                     case 2:
-                        message.externalSchemaType = reader.string();
+                        message.format = reader.string();
                         break;
                     case 3:
+                        message.externalSchemaType = reader.string();
+                        break;
+                    case 4:
                         message.externalSchemaBytes = reader.bytes();
                         break;
                     default:
@@ -7338,6 +7352,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "columns." + error;
                     }
                 }
+                if (message.format != null && message.hasOwnProperty("format"))
+                    if (!$util.isString(message.format))
+                        return "format: string expected";
                 if (message.externalSchemaType != null && message.hasOwnProperty("externalSchemaType"))
                     if (!$util.isString(message.externalSchemaType))
                         return "externalSchemaType: string expected";
