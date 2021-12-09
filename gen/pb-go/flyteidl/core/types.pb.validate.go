@@ -138,6 +138,8 @@ func (m *StructuredDatasetType) Validate() error {
 
 	}
 
+	// no validation rules for Format
+
 	// no validation rules for ExternalSchemaType
 
 	// no validation rules for ExternalSchemaBytes

@@ -694,9 +694,23 @@ class StructuredDatasetType final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >&
       columns() const;
 
-  // string external_schema_type = 2;
+  // string format = 2;
+  void clear_format();
+  static const int kFormatFieldNumber = 2;
+  const ::std::string& format() const;
+  void set_format(const ::std::string& value);
+  #if LANG_CXX11
+  void set_format(::std::string&& value);
+  #endif
+  void set_format(const char* value);
+  void set_format(const char* value, size_t size);
+  ::std::string* mutable_format();
+  ::std::string* release_format();
+  void set_allocated_format(::std::string* format);
+
+  // string external_schema_type = 3;
   void clear_external_schema_type();
-  static const int kExternalSchemaTypeFieldNumber = 2;
+  static const int kExternalSchemaTypeFieldNumber = 3;
   const ::std::string& external_schema_type() const;
   void set_external_schema_type(const ::std::string& value);
   #if LANG_CXX11
@@ -708,9 +722,9 @@ class StructuredDatasetType final :
   ::std::string* release_external_schema_type();
   void set_allocated_external_schema_type(::std::string* external_schema_type);
 
-  // bytes external_schema_bytes = 3;
+  // bytes external_schema_bytes = 4;
   void clear_external_schema_bytes();
-  static const int kExternalSchemaBytesFieldNumber = 3;
+  static const int kExternalSchemaBytesFieldNumber = 4;
   const ::std::string& external_schema_bytes() const;
   void set_external_schema_bytes(const ::std::string& value);
   #if LANG_CXX11
@@ -728,6 +742,7 @@ class StructuredDatasetType final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn > columns_;
+  ::google::protobuf::internal::ArenaStringPtr format_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_type_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_bytes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1751,7 +1766,60 @@ StructuredDatasetType::columns() const {
   return columns_;
 }
 
-// string external_schema_type = 2;
+// string format = 2;
+inline void StructuredDatasetType::clear_format() {
+  format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& StructuredDatasetType::format() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.format)
+  return format_.GetNoArena();
+}
+inline void StructuredDatasetType::set_format(const ::std::string& value) {
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.format)
+}
+#if LANG_CXX11
+inline void StructuredDatasetType::set_format(::std::string&& value) {
+  
+  format_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.StructuredDatasetType.format)
+}
+#endif
+inline void StructuredDatasetType::set_format(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.format)
+}
+inline void StructuredDatasetType::set_format(const char* value, size_t size) {
+  
+  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.format)
+}
+inline ::std::string* StructuredDatasetType::mutable_format() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.format)
+  return format_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* StructuredDatasetType::release_format() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetType.format)
+  
+  return format_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void StructuredDatasetType::set_allocated_format(::std::string* format) {
+  if (format != nullptr) {
+    
+  } else {
+    
+  }
+  format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), format);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.format)
+}
+
+// string external_schema_type = 3;
 inline void StructuredDatasetType::clear_external_schema_type() {
   external_schema_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1804,7 +1872,7 @@ inline void StructuredDatasetType::set_allocated_external_schema_type(::std::str
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.external_schema_type)
 }
 
-// bytes external_schema_bytes = 3;
+// bytes external_schema_bytes = 4;
 inline void StructuredDatasetType::clear_external_schema_bytes() {
   external_schema_bytes_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

@@ -34,26 +34,31 @@ class CoreStructuredDatasetType(object):
     """
     swagger_types = {
         'columns': 'list[StructuredDatasetTypeDatasetColumn]',
+        'format': 'str',
         'external_schema_type': 'str',
         'external_schema_bytes': 'str'
     }
 
     attribute_map = {
         'columns': 'columns',
+        'format': 'format',
         'external_schema_type': 'external_schema_type',
         'external_schema_bytes': 'external_schema_bytes'
     }
 
-    def __init__(self, columns=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
+    def __init__(self, columns=None, format=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
         """CoreStructuredDatasetType - a model defined in Swagger"""  # noqa: E501
 
         self._columns = None
+        self._format = None
         self._external_schema_type = None
         self._external_schema_bytes = None
         self.discriminator = None
 
         if columns is not None:
             self.columns = columns
+        if format is not None:
+            self.format = format
         if external_schema_type is not None:
             self.external_schema_type = external_schema_type
         if external_schema_bytes is not None:
@@ -81,6 +86,27 @@ class CoreStructuredDatasetType(object):
         """
 
         self._columns = columns
+
+    @property
+    def format(self):
+        """Gets the format of this CoreStructuredDatasetType.  # noqa: E501
+
+
+        :return: The format of this CoreStructuredDatasetType.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this CoreStructuredDatasetType.
+
+
+        :param format: The format of this CoreStructuredDatasetType.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
 
     @property
     def external_schema_type(self):
