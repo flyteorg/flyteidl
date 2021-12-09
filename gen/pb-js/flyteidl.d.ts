@@ -2125,11 +2125,8 @@ export namespace flyteidl {
             /** Union value */
             value?: (flyteidl.core.ILiteral|null);
 
-            /** Union type */
-            type?: (flyteidl.core.IUnionType|null);
-
             /** Union tag */
-            tag?: (Long|null);
+            tag?: (string|null);
         }
 
         /** Represents an Union. */
@@ -2144,11 +2141,8 @@ export namespace flyteidl {
             /** Union value. */
             public value?: (flyteidl.core.ILiteral|null);
 
-            /** Union type. */
-            public type?: (flyteidl.core.IUnionType|null);
-
             /** Union tag. */
-            public tag: Long;
+            public tag: string;
 
             /**
              * Creates a new Union instance using the specified properties.
@@ -3055,11 +3049,69 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an UnionVariant. */
+        interface IUnionVariant {
+
+            /** UnionVariant type */
+            type?: (flyteidl.core.ILiteralType|null);
+
+            /** UnionVariant tag */
+            tag?: (string|null);
+        }
+
+        /** Represents an UnionVariant. */
+        class UnionVariant implements IUnionVariant {
+
+            /**
+             * Constructs a new UnionVariant.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IUnionVariant);
+
+            /** UnionVariant type. */
+            public type?: (flyteidl.core.ILiteralType|null);
+
+            /** UnionVariant tag. */
+            public tag: string;
+
+            /**
+             * Creates a new UnionVariant instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UnionVariant instance
+             */
+            public static create(properties?: flyteidl.core.IUnionVariant): flyteidl.core.UnionVariant;
+
+            /**
+             * Encodes the specified UnionVariant message. Does not implicitly {@link flyteidl.core.UnionVariant.verify|verify} messages.
+             * @param message UnionVariant message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IUnionVariant, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an UnionVariant message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UnionVariant
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.UnionVariant;
+
+            /**
+             * Verifies an UnionVariant message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an UnionType. */
         interface IUnionType {
 
             /** UnionType variants */
-            variants?: (flyteidl.core.ILiteralType[]|null);
+            variants?: (flyteidl.core.IUnionVariant[]|null);
         }
 
         /** Represents an UnionType. */
@@ -3072,7 +3124,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.core.IUnionType);
 
             /** UnionType variants. */
-            public variants: flyteidl.core.ILiteralType[];
+            public variants: flyteidl.core.IUnionVariant[];
 
             /**
              * Creates a new UnionType instance using the specified properties.

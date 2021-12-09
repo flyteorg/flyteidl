@@ -516,16 +516,6 @@ func (m *Union) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return UnionValidationError{
-				field:  "Type",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	// no validation rules for Tag
 
 	return nil

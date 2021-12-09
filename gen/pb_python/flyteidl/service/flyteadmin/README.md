@@ -306,6 +306,7 @@ Class | Method | HTTP request | Description
  - [CoreTypedInterface](docs/CoreTypedInterface.md)
  - [CoreUnion](docs/CoreUnion.md)
  - [CoreUnionType](docs/CoreUnionType.md)
+ - [CoreUnionVariant](docs/CoreUnionVariant.md)
  - [CoreVariable](docs/CoreVariable.md)
  - [CoreVariableMap](docs/CoreVariableMap.md)
  - [CoreVoid](docs/CoreVoid.md)

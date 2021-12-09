@@ -1517,8 +1517,7 @@ The runtime representation of a tagged union value. See `UnionType` for more det
    :widths: auto
 
    "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
-   "type", ":ref:`ref_flyteidl.core.UnionType`", "", ""
-   "tag", ":ref:`ref_uint64`", "", ""
+   "tag", ":ref:`ref_string`", "", ""
 
 
 
@@ -2406,42 +2405,7 @@ SchemaType.SchemaColumn
 UnionType
 ------------------------------------------------------------------
 
-Defines a tagged union type, also known as a variant (and formally as the sum type).
 
-A sum type S is defined by a sequence of types (A, B, C, ...) (each tagged by its numerical position in the sequence)
-A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
-storing the varaint&#39;s tag (position in the sequence) with the literal value and can be examined in runtime.
-
-Type S is typically written as
-S := A | B | C | ...
-or as
-S := Apple A | Banana B | Cantaloupe C | ...
-if the tags are assigned some name (here arbitrarily chosen to be fruit).
-
-If the tags are ommitted, this implementation resolves ambiguities by choosing the earliest compatible variant type
-For example, a value of type `List (A | B) | List (B | C)` is constructed from a value of type `List B` by using
-the tag for the `List (A | B)` variant since it occurs before `List (B | C)` even though they are both compatible
-When converting from IDL back to the native implementation, the tag should not be relied upon to retrieve the correct output type
-because a value of type `A | B` with tag 0 must be compatible with type `B | A` despite the tag pointing to the wrong variant.
-
-Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
-Optional X := X | Null
-
-Python&#39;s `typing.Union` is an example of a union type with no runtime representation.
-It allows ambiguous sum types such as `typing.Union[int, int]` and `Union[list[Union[a, b]], list[Union[b, c]]]`
-since the ambiguity does not influence whether the types are compatible in any way.
-When converting to IDL, runtime values of type-erased unions use the first-compatible rule.
-
-C&#43;&#43;&#39;s `std::variant` is an example of a tagged union where the tag is implicit in the order of the types.
-When converting to IDL, runtime values of implicitly-tagged unions should use the index of the variant as the tag.
-
-Haskell&#39;s sum types, as well as Rust&#39;s and Swift&#39;s &#34;enum&#34; types are examples of tagged union types where the tag is explicitly named.
-When converting to IDL, runtime values of explicitly-tagged unions should use the index of the variant as the tag.
-This means that IDL values do not follow language semantics in case the variants are rearranged as IDL values will no longer have the correct tag.
-^ Haskell example: `Nothing` will have tag `1` for `Maybe a = Just a | Nothing` and tag `0` for `Maybe a = Nothing | Just a`
-                   the tags are incompatible despite the values being compatible by Haskell rules.
-
-See also: https://en.wikipedia.org/wiki/Tagged_union
 
 
 
@@ -2449,7 +2413,41 @@ See also: https://en.wikipedia.org/wiki/Tagged_union
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "variants", ":ref:`ref_flyteidl.core.LiteralType`", "repeated", "Predefined set of LiteralTypes in union."
+   "variants", ":ref:`ref_flyteidl.core.UnionVariant`", "repeated", "Predefined set of variants in union."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.UnionVariant:
+
+UnionVariant
+------------------------------------------------------------------
+
+Defines a tagged union type, also known as a variant (and formally as the sum type).
+
+A sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag
+A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
+storing the varaint&#39;s tag with the literal value and can be examined in runtime.
+
+Type S is typically written as
+S := Apple A | Banana B | Cantaloupe C | ...
+
+Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
+Optional X := X | Null
+
+See also: https://en.wikipedia.org/wiki/Tagged_union
+
+
+
+.. csv-table:: UnionVariant type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+   "tag", ":ref:`ref_string`", "", ""
 
 
 

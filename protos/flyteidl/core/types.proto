@@ -77,13 +77,13 @@ message EnumType {
 // Optional X := X | Null
 //
 // See also: https://en.wikipedia.org/wiki/Tagged_union
-message UnionVaraint {
+message UnionVariant {
     LiteralType type = 1;
     string tag = 2;
 }
 message UnionType {
     // Predefined set of variants in union.
-    repeated UnionVaraint variants = 1;
+    repeated UnionVariant variants = 1;
 }
 
 // Defines a strong type to allow type checking between interfaces.

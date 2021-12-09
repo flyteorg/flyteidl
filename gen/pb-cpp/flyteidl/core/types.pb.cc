@@ -40,6 +40,10 @@ class EnumTypeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<EnumType> _instance;
 } _EnumType_default_instance_;
+class UnionVariantDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<UnionVariant> _instance;
+} _UnionVariant_default_instance_;
 class UnionTypeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<UnionType> _instance;
@@ -126,6 +130,11 @@ static void InitDefaultsLiteralType_flyteidl_2fcore_2ftypes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
+    void* ptr = &::flyteidl::core::_UnionVariant_default_instance_;
+    new (ptr) ::flyteidl::core::UnionVariant();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  {
     void* ptr = &::flyteidl::core::_UnionType_default_instance_;
     new (ptr) ::flyteidl::core::UnionType();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
@@ -135,6 +144,7 @@ static void InitDefaultsLiteralType_flyteidl_2fcore_2ftypes_2eproto() {
     new (ptr) ::flyteidl::core::LiteralType();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::flyteidl::core::UnionVariant::InitAsDefaultInstance();
   ::flyteidl::core::UnionType::InitAsDefaultInstance();
   ::flyteidl::core::LiteralType::InitAsDefaultInstance();
 }
@@ -184,7 +194,7 @@ void InitDefaults_flyteidl_2fcore_2ftypes_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Error_flyteidl_2fcore_2ftypes_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2ftypes_2eproto[8];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2ftypes_2eproto[9];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2ftypes_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2ftypes_2eproto = nullptr;
 
@@ -215,6 +225,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftypes_2eproto::of
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::EnumType, values_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionVariant, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionVariant, type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionVariant, tag_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::UnionType, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -255,10 +272,11 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 7, -1, sizeof(::flyteidl::core::SchemaType)},
   { 13, -1, sizeof(::flyteidl::core::BlobType)},
   { 20, -1, sizeof(::flyteidl::core::EnumType)},
-  { 26, -1, sizeof(::flyteidl::core::UnionType)},
-  { 32, -1, sizeof(::flyteidl::core::LiteralType)},
-  { 46, -1, sizeof(::flyteidl::core::OutputReference)},
-  { 53, -1, sizeof(::flyteidl::core::Error)},
+  { 26, -1, sizeof(::flyteidl::core::UnionVariant)},
+  { 33, -1, sizeof(::flyteidl::core::UnionType)},
+  { 39, -1, sizeof(::flyteidl::core::LiteralType)},
+  { 53, -1, sizeof(::flyteidl::core::OutputReference)},
+  { 60, -1, sizeof(::flyteidl::core::Error)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -266,6 +284,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SchemaType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_BlobType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_EnumType_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_UnionVariant_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_UnionType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_LiteralType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_OutputReference_default_instance_),
@@ -275,7 +294,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto = {
   {}, AddDescriptors_flyteidl_2fcore_2ftypes_2eproto, "flyteidl/core/types.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fcore_2ftypes_2eproto::offsets,
-  file_level_metadata_flyteidl_2fcore_2ftypes_2eproto, 8, file_level_enum_descriptors_flyteidl_2fcore_2ftypes_2eproto, file_level_service_descriptors_flyteidl_2fcore_2ftypes_2eproto,
+  file_level_metadata_flyteidl_2fcore_2ftypes_2eproto, 9, file_level_enum_descriptors_flyteidl_2fcore_2ftypes_2eproto, file_level_service_descriptors_flyteidl_2fcore_2ftypes_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto[] =
@@ -291,31 +310,33 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto[] =
   "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f"
   "lyteidl.core.BlobType.BlobDimensionality"
   "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU"
-  "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"9\n"
-  "\tUnionType\022,\n\010variants\030\001 \003(\0132\032.flyteidl."
-  "core.LiteralType\"\216\003\n\013LiteralType\022+\n\006simp"
-  "le\030\001 \001(\0162\031.flyteidl.core.SimpleTypeH\000\022+\n"
-  "\006schema\030\002 \001(\0132\031.flyteidl.core.SchemaType"
-  "H\000\0225\n\017collection_type\030\003 \001(\0132\032.flyteidl.c"
-  "ore.LiteralTypeH\000\0224\n\016map_value_type\030\004 \001("
-  "\0132\032.flyteidl.core.LiteralTypeH\000\022\'\n\004blob\030"
-  "\005 \001(\0132\027.flyteidl.core.BlobTypeH\000\022,\n\tenum"
-  "_type\030\007 \001(\0132\027.flyteidl.core.EnumTypeH\000\022."
-  "\n\nunion_type\030\010 \001(\0132\030.flyteidl.core.Union"
-  "TypeH\000\022)\n\010metadata\030\006 \001(\0132\027.google.protob"
-  "uf.StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007"
-  "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016f"
-  "ailed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n"
-  "\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FL"
-  "OAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETI"
-  "ME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020"
-  "\010\022\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"E\n"
+  "\014UnionVariant\022(\n\004type\030\001 \001(\0132\032.flyteidl.c"
+  "ore.LiteralType\022\013\n\003tag\030\002 \001(\t\":\n\tUnionTyp"
+  "e\022-\n\010variants\030\001 \003(\0132\033.flyteidl.core.Unio"
+  "nVariant\"\216\003\n\013LiteralType\022+\n\006simple\030\001 \001(\016"
+  "2\031.flyteidl.core.SimpleTypeH\000\022+\n\006schema\030"
+  "\002 \001(\0132\031.flyteidl.core.SchemaTypeH\000\0225\n\017co"
+  "llection_type\030\003 \001(\0132\032.flyteidl.core.Lite"
+  "ralTypeH\000\0224\n\016map_value_type\030\004 \001(\0132\032.flyt"
+  "eidl.core.LiteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027."
+  "flyteidl.core.BlobTypeH\000\022,\n\tenum_type\030\007 "
+  "\001(\0132\027.flyteidl.core.EnumTypeH\000\022.\n\nunion_"
+  "type\030\010 \001(\0132\030.flyteidl.core.UnionTypeH\000\022)"
+  "\n\010metadata\030\006 \001(\0132\027.google.protobuf.Struc"
+  "tB\006\n\004type\"/\n\017OutputReference\022\017\n\007node_id\030"
+  "\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016failed_no"
+  "de_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nSimpleT"
+  "ype\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n"
+  "\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME\020\005\022\014\n\010"
+  "DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022\n\n\006STR"
+  "UCT\020\tB6Z4github.com/flyteorg/flyteidl/ge"
+  "n/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftypes_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftypes_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftypes_2eproto,
-  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1277,
+  "flyteidl/core/types.proto", &assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto, 1349,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftypes_2eproto() {
@@ -1667,6 +1688,370 @@ void EnumType::InternalSwap(EnumType* other) {
 
 // ===================================================================
 
+void UnionVariant::InitAsDefaultInstance() {
+  ::flyteidl::core::_UnionVariant_default_instance_._instance.get_mutable()->type_ = const_cast< ::flyteidl::core::LiteralType*>(
+      ::flyteidl::core::LiteralType::internal_default_instance());
+}
+class UnionVariant::HasBitSetters {
+ public:
+  static const ::flyteidl::core::LiteralType& type(const UnionVariant* msg);
+};
+
+const ::flyteidl::core::LiteralType&
+UnionVariant::HasBitSetters::type(const UnionVariant* msg) {
+  return *msg->type_;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int UnionVariant::kTypeFieldNumber;
+const int UnionVariant::kTagFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+UnionVariant::UnionVariant()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.core.UnionVariant)
+}
+UnionVariant::UnionVariant(const UnionVariant& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  tag_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.tag().size() > 0) {
+    tag_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tag_);
+  }
+  if (from.has_type()) {
+    type_ = new ::flyteidl::core::LiteralType(*from.type_);
+  } else {
+    type_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.UnionVariant)
+}
+
+void UnionVariant::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base);
+  tag_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_ = nullptr;
+}
+
+UnionVariant::~UnionVariant() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.UnionVariant)
+  SharedDtor();
+}
+
+void UnionVariant::SharedDtor() {
+  tag_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete type_;
+}
+
+void UnionVariant::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UnionVariant& UnionVariant::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UnionVariant::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.UnionVariant)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && type_ != nullptr) {
+    delete type_;
+  }
+  type_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* UnionVariant::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<UnionVariant*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.core.LiteralType type = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::LiteralType::_InternalParse;
+        object = msg->mutable_type();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string tag = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.UnionVariant.tag");
+        object = msg->mutable_tag();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool UnionVariant::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.core.UnionVariant)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .flyteidl.core.LiteralType type = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_type()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string tag = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_tag()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tag().data(), static_cast<int>(this->tag().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.UnionVariant.tag"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.core.UnionVariant)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.UnionVariant)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void UnionVariant::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.UnionVariant)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.LiteralType type = 1;
+  if (this->has_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::type(this), output);
+  }
+
+  // string tag = 2;
+  if (this->tag().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tag().data(), static_cast<int>(this->tag().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.UnionVariant.tag");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->tag(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.UnionVariant)
+}
+
+::google::protobuf::uint8* UnionVariant::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.UnionVariant)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.LiteralType type = 1;
+  if (this->has_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::type(this), target);
+  }
+
+  // string tag = 2;
+  if (this->tag().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tag().data(), static_cast<int>(this->tag().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.UnionVariant.tag");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->tag(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.UnionVariant)
+  return target;
+}
+
+size_t UnionVariant::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.UnionVariant)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string tag = 2;
+  if (this->tag().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->tag());
+  }
+
+  // .flyteidl.core.LiteralType type = 1;
+  if (this->has_type()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *type_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void UnionVariant::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.UnionVariant)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UnionVariant* source =
+      ::google::protobuf::DynamicCastToGenerated<UnionVariant>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.UnionVariant)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.UnionVariant)
+    MergeFrom(*source);
+  }
+}
+
+void UnionVariant::MergeFrom(const UnionVariant& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.UnionVariant)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.tag().size() > 0) {
+
+    tag_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tag_);
+  }
+  if (from.has_type()) {
+    mutable_type()->::flyteidl::core::LiteralType::MergeFrom(from.type());
+  }
+}
+
+void UnionVariant::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.UnionVariant)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UnionVariant::CopyFrom(const UnionVariant& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.UnionVariant)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UnionVariant::IsInitialized() const {
+  return true;
+}
+
+void UnionVariant::Swap(UnionVariant* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void UnionVariant::InternalSwap(UnionVariant* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  tag_.Swap(&other->tag_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(type_, other->type_);
+}
+
+::google::protobuf::Metadata UnionVariant::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2ftypes_2eproto);
+  return ::file_level_metadata_flyteidl_2fcore_2ftypes_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void UnionType::InitAsDefaultInstance() {
 }
 class UnionType::HasBitSetters {
@@ -1735,13 +2120,13 @@ const char* UnionType::_InternalParse(const char* begin, const char* end, void* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .flyteidl.core.LiteralType variants = 1;
+      // repeated .flyteidl.core.UnionVariant variants = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::core::LiteralType::_InternalParse;
+          parser_till_end = ::flyteidl::core::UnionVariant::_InternalParse;
           object = msg->add_variants();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1781,7 +2166,7 @@ bool UnionType::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .flyteidl.core.LiteralType variants = 1;
+      // repeated .flyteidl.core.UnionVariant variants = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1819,7 +2204,7 @@ void UnionType::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType variants = 1;
+  // repeated .flyteidl.core.UnionVariant variants = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->variants_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1841,7 +2226,7 @@ void UnionType::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType variants = 1;
+  // repeated .flyteidl.core.UnionVariant variants = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->variants_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1870,7 +2255,7 @@ size_t UnionType::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.LiteralType variants = 1;
+  // repeated .flyteidl.core.UnionVariant variants = 1;
   {
     unsigned int count = static_cast<unsigned int>(this->variants_size());
     total_size += 1UL * count;
@@ -3550,6 +3935,9 @@ template<> PROTOBUF_NOINLINE ::flyteidl::core::BlobType* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::EnumType* Arena::CreateMaybeMessage< ::flyteidl::core::EnumType >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::EnumType >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::core::UnionVariant* Arena::CreateMaybeMessage< ::flyteidl::core::UnionVariant >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::UnionVariant >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::UnionType* Arena::CreateMaybeMessage< ::flyteidl::core::UnionType >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::UnionType >(arena);

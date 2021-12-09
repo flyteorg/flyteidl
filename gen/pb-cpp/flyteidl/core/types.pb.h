@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fcore_2ftypes_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -76,6 +76,9 @@ extern SchemaType_SchemaColumnDefaultTypeInternal _SchemaType_SchemaColumn_defau
 class UnionType;
 class UnionTypeDefaultTypeInternal;
 extern UnionTypeDefaultTypeInternal _UnionType_default_instance_;
+class UnionVariant;
+class UnionVariantDefaultTypeInternal;
+extern UnionVariantDefaultTypeInternal _UnionVariant_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -88,6 +91,7 @@ template<> ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage<::flytei
 template<> ::flyteidl::core::SchemaType* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType>(Arena*);
 template<> ::flyteidl::core::SchemaType_SchemaColumn* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType_SchemaColumn>(Arena*);
 template<> ::flyteidl::core::UnionType* Arena::CreateMaybeMessage<::flyteidl::core::UnionType>(Arena*);
+template<> ::flyteidl::core::UnionVariant* Arena::CreateMaybeMessage<::flyteidl::core::UnionVariant>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -732,6 +736,136 @@ class EnumType final :
 };
 // -------------------------------------------------------------------
 
+class UnionVariant final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.UnionVariant) */ {
+ public:
+  UnionVariant();
+  virtual ~UnionVariant();
+
+  UnionVariant(const UnionVariant& from);
+
+  inline UnionVariant& operator=(const UnionVariant& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UnionVariant(UnionVariant&& from) noexcept
+    : UnionVariant() {
+    *this = ::std::move(from);
+  }
+
+  inline UnionVariant& operator=(UnionVariant&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const UnionVariant& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UnionVariant* internal_default_instance() {
+    return reinterpret_cast<const UnionVariant*>(
+               &_UnionVariant_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(UnionVariant* other);
+  friend void swap(UnionVariant& a, UnionVariant& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UnionVariant* New() const final {
+    return CreateMaybeMessage<UnionVariant>(nullptr);
+  }
+
+  UnionVariant* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UnionVariant>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UnionVariant& from);
+  void MergeFrom(const UnionVariant& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnionVariant* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string tag = 2;
+  void clear_tag();
+  static const int kTagFieldNumber = 2;
+  const ::std::string& tag() const;
+  void set_tag(const ::std::string& value);
+  #if LANG_CXX11
+  void set_tag(::std::string&& value);
+  #endif
+  void set_tag(const char* value);
+  void set_tag(const char* value, size_t size);
+  ::std::string* mutable_tag();
+  ::std::string* release_tag();
+  void set_allocated_tag(::std::string* tag);
+
+  // .flyteidl.core.LiteralType type = 1;
+  bool has_type() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  const ::flyteidl::core::LiteralType& type() const;
+  ::flyteidl::core::LiteralType* release_type();
+  ::flyteidl::core::LiteralType* mutable_type();
+  void set_allocated_type(::flyteidl::core::LiteralType* type);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.UnionVariant)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr tag_;
+  ::flyteidl::core::LiteralType* type_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
+};
+// -------------------------------------------------------------------
+
 class UnionType final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.UnionType) */ {
  public:
@@ -770,7 +904,7 @@ class UnionType final :
                &_UnionType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(UnionType* other);
   friend void swap(UnionType& a, UnionType& b) {
@@ -827,16 +961,16 @@ class UnionType final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.LiteralType variants = 1;
+  // repeated .flyteidl.core.UnionVariant variants = 1;
   int variants_size() const;
   void clear_variants();
   static const int kVariantsFieldNumber = 1;
-  ::flyteidl::core::LiteralType* mutable_variants(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
+  ::flyteidl::core::UnionVariant* mutable_variants(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >*
       mutable_variants();
-  const ::flyteidl::core::LiteralType& variants(int index) const;
-  ::flyteidl::core::LiteralType* add_variants();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
+  const ::flyteidl::core::UnionVariant& variants(int index) const;
+  ::flyteidl::core::UnionVariant* add_variants();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >&
       variants() const;
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.UnionType)
@@ -844,7 +978,7 @@ class UnionType final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > variants_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant > variants_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
 };
@@ -899,7 +1033,7 @@ class LiteralType final :
                &_LiteralType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(LiteralType* other);
   friend void swap(LiteralType& a, LiteralType& b) {
@@ -1101,7 +1235,7 @@ class OutputReference final :
                &_OutputReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(OutputReference* other);
   friend void swap(OutputReference& a, OutputReference& b) {
@@ -1236,7 +1370,7 @@ class Error final :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -1589,33 +1723,141 @@ EnumType::mutable_values() {
 
 // -------------------------------------------------------------------
 
+// UnionVariant
+
+// .flyteidl.core.LiteralType type = 1;
+inline bool UnionVariant::has_type() const {
+  return this != internal_default_instance() && type_ != nullptr;
+}
+inline void UnionVariant::clear_type() {
+  if (GetArenaNoVirtual() == nullptr && type_ != nullptr) {
+    delete type_;
+  }
+  type_ = nullptr;
+}
+inline const ::flyteidl::core::LiteralType& UnionVariant::type() const {
+  const ::flyteidl::core::LiteralType* p = type_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.UnionVariant.type)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralType*>(
+      &::flyteidl::core::_LiteralType_default_instance_);
+}
+inline ::flyteidl::core::LiteralType* UnionVariant::release_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.UnionVariant.type)
+  
+  ::flyteidl::core::LiteralType* temp = type_;
+  type_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::LiteralType* UnionVariant::mutable_type() {
+  
+  if (type_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralType>(GetArenaNoVirtual());
+    type_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionVariant.type)
+  return type_;
+}
+inline void UnionVariant::set_allocated_type(::flyteidl::core::LiteralType* type) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete type_;
+  }
+  if (type) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      type = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, type, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  type_ = type;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.UnionVariant.type)
+}
+
+// string tag = 2;
+inline void UnionVariant::clear_tag() {
+  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UnionVariant::tag() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.UnionVariant.tag)
+  return tag_.GetNoArena();
+}
+inline void UnionVariant::set_tag(const ::std::string& value) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.UnionVariant.tag)
+}
+#if LANG_CXX11
+inline void UnionVariant::set_tag(::std::string&& value) {
+  
+  tag_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.UnionVariant.tag)
+}
+#endif
+inline void UnionVariant::set_tag(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.UnionVariant.tag)
+}
+inline void UnionVariant::set_tag(const char* value, size_t size) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.UnionVariant.tag)
+}
+inline ::std::string* UnionVariant::mutable_tag() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionVariant.tag)
+  return tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UnionVariant::release_tag() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.UnionVariant.tag)
+  
+  return tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UnionVariant::set_allocated_tag(::std::string* tag) {
+  if (tag != nullptr) {
+    
+  } else {
+    
+  }
+  tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tag);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.UnionVariant.tag)
+}
+
+// -------------------------------------------------------------------
+
 // UnionType
 
-// repeated .flyteidl.core.LiteralType variants = 1;
+// repeated .flyteidl.core.UnionVariant variants = 1;
 inline int UnionType::variants_size() const {
   return variants_.size();
 }
 inline void UnionType::clear_variants() {
   variants_.Clear();
 }
-inline ::flyteidl::core::LiteralType* UnionType::mutable_variants(int index) {
+inline ::flyteidl::core::UnionVariant* UnionType::mutable_variants(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionType.variants)
   return variants_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >*
 UnionType::mutable_variants() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.core.UnionType.variants)
   return &variants_;
 }
-inline const ::flyteidl::core::LiteralType& UnionType::variants(int index) const {
+inline const ::flyteidl::core::UnionVariant& UnionType::variants(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.core.UnionType.variants)
   return variants_.Get(index);
 }
-inline ::flyteidl::core::LiteralType* UnionType::add_variants() {
+inline ::flyteidl::core::UnionVariant* UnionType::add_variants() {
   // @@protoc_insertion_point(field_add:flyteidl.core.UnionType.variants)
   return variants_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >&
 UnionType::variants() const {
   // @@protoc_insertion_point(field_list:flyteidl.core.UnionType.variants)
   return variants_;
@@ -2178,6 +2420,8 @@ inline void Error::set_allocated_message(::std::string* message) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

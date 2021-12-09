@@ -5101,8 +5101,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IUnion
              * @property {flyteidl.core.ILiteral|null} [value] Union value
-             * @property {flyteidl.core.IUnionType|null} [type] Union type
-             * @property {Long|null} [tag] Union tag
+             * @property {string|null} [tag] Union tag
              */
 
             /**
@@ -5129,20 +5128,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Union.prototype.value = null;
 
             /**
-             * Union type.
-             * @member {flyteidl.core.IUnionType|null|undefined} type
-             * @memberof flyteidl.core.Union
-             * @instance
-             */
-            Union.prototype.type = null;
-
-            /**
              * Union tag.
-             * @member {Long} tag
+             * @member {string} tag
              * @memberof flyteidl.core.Union
              * @instance
              */
-            Union.prototype.tag = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+            Union.prototype.tag = "";
 
             /**
              * Creates a new Union instance using the specified properties.
@@ -5170,10 +5161,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.value != null && message.hasOwnProperty("value"))
                     $root.flyteidl.core.Literal.encode(message.value, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.type != null && message.hasOwnProperty("type"))
-                    $root.flyteidl.core.UnionType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.tag != null && message.hasOwnProperty("tag"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.tag);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.tag);
                 return writer;
             };
 
@@ -5198,11 +5187,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.value = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
                         break;
-                    case 2:
-                        message.type = $root.flyteidl.core.UnionType.decode(reader, reader.uint32());
-                        break;
                     case 3:
-                        message.tag = reader.uint64();
+                        message.tag = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5228,14 +5214,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "value." + error;
                 }
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    let error = $root.flyteidl.core.UnionType.verify(message.type);
-                    if (error)
-                        return "type." + error;
-                }
                 if (message.tag != null && message.hasOwnProperty("tag"))
-                    if (!$util.isInteger(message.tag) && !(message.tag && $util.isInteger(message.tag.low) && $util.isInteger(message.tag.high)))
-                        return "tag: integer|Long expected";
+                    if (!$util.isString(message.tag))
+                        return "tag: string expected";
                 return null;
             };
 
@@ -7350,13 +7331,142 @@ export const flyteidl = $root.flyteidl = (() => {
             return EnumType;
         })();
 
+        core.UnionVariant = (function() {
+
+            /**
+             * Properties of an UnionVariant.
+             * @memberof flyteidl.core
+             * @interface IUnionVariant
+             * @property {flyteidl.core.ILiteralType|null} [type] UnionVariant type
+             * @property {string|null} [tag] UnionVariant tag
+             */
+
+            /**
+             * Constructs a new UnionVariant.
+             * @memberof flyteidl.core
+             * @classdesc Represents an UnionVariant.
+             * @implements IUnionVariant
+             * @constructor
+             * @param {flyteidl.core.IUnionVariant=} [properties] Properties to set
+             */
+            function UnionVariant(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * UnionVariant type.
+             * @member {flyteidl.core.ILiteralType|null|undefined} type
+             * @memberof flyteidl.core.UnionVariant
+             * @instance
+             */
+            UnionVariant.prototype.type = null;
+
+            /**
+             * UnionVariant tag.
+             * @member {string} tag
+             * @memberof flyteidl.core.UnionVariant
+             * @instance
+             */
+            UnionVariant.prototype.tag = "";
+
+            /**
+             * Creates a new UnionVariant instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.UnionVariant
+             * @static
+             * @param {flyteidl.core.IUnionVariant=} [properties] Properties to set
+             * @returns {flyteidl.core.UnionVariant} UnionVariant instance
+             */
+            UnionVariant.create = function create(properties) {
+                return new UnionVariant(properties);
+            };
+
+            /**
+             * Encodes the specified UnionVariant message. Does not implicitly {@link flyteidl.core.UnionVariant.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.UnionVariant
+             * @static
+             * @param {flyteidl.core.IUnionVariant} message UnionVariant message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            UnionVariant.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.tag);
+                return writer;
+            };
+
+            /**
+             * Decodes an UnionVariant message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.UnionVariant
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.UnionVariant} UnionVariant
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            UnionVariant.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.UnionVariant();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.tag = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an UnionVariant message.
+             * @function verify
+             * @memberof flyteidl.core.UnionVariant
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            UnionVariant.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.LiteralType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    if (!$util.isString(message.tag))
+                        return "tag: string expected";
+                return null;
+            };
+
+            return UnionVariant;
+        })();
+
         core.UnionType = (function() {
 
             /**
              * Properties of an UnionType.
              * @memberof flyteidl.core
              * @interface IUnionType
-             * @property {Array.<flyteidl.core.ILiteralType>|null} [variants] UnionType variants
+             * @property {Array.<flyteidl.core.IUnionVariant>|null} [variants] UnionType variants
              */
 
             /**
@@ -7377,7 +7487,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * UnionType variants.
-             * @member {Array.<flyteidl.core.ILiteralType>} variants
+             * @member {Array.<flyteidl.core.IUnionVariant>} variants
              * @memberof flyteidl.core.UnionType
              * @instance
              */
@@ -7409,7 +7519,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.variants != null && message.variants.length)
                     for (let i = 0; i < message.variants.length; ++i)
-                        $root.flyteidl.core.LiteralType.encode(message.variants[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.core.UnionVariant.encode(message.variants[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -7434,7 +7544,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         if (!(message.variants && message.variants.length))
                             message.variants = [];
-                        message.variants.push($root.flyteidl.core.LiteralType.decode(reader, reader.uint32()));
+                        message.variants.push($root.flyteidl.core.UnionVariant.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7459,7 +7569,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (!Array.isArray(message.variants))
                         return "variants: array expected";
                     for (let i = 0; i < message.variants.length; ++i) {
-                        let error = $root.flyteidl.core.LiteralType.verify(message.variants[i]);
+                        let error = $root.flyteidl.core.UnionVariant.verify(message.variants[i]);
                         if (error)
                             return "variants." + error;
                     }
