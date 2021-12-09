@@ -55,8 +55,7 @@ message Schema {
 // The runtime representation of a tagged union value. See `UnionType` for more details.
 message Union {
     Literal value = 1;
-    UnionType type = 2;
-    uint64 tag = 3;
+    string tag = 3;
 }
 
 message Scalar {
