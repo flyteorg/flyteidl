@@ -42,6 +42,7 @@ type Config struct {
 	InsecureSkipVerify    bool            `json:"insecureSkipVerify" pflag:",InsecureSkipVerify controls whether a client verifies the server's certificate chain and host name. Caution : shouldn't be use for production usecases'"`
 	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
+	MaxMsgSizeBs          int             `json:"maxMsgSizeBs" pflag:",Max gRPC send and receive message size (in bytes)"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 	AuthType              AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
 	// Deprecated: settings will be discovered dynamically
@@ -72,6 +73,7 @@ var (
 	defaultConfig = Config{
 		MaxBackoffDelay:      config.Duration{Duration: 8 * time.Second},
 		PerRetryTimeout:      config.Duration{Duration: 15 * time.Second},
+		MaxMsgSizeBs:         4194304,
 		MaxRetries:           4,
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,

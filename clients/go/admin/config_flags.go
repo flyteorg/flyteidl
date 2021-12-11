@@ -55,6 +55,7 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "insecureSkipVerify"), defaultConfig.InsecureSkipVerify, "InsecureSkipVerify controls whether a client verifies the server's certificate chain and host name. Caution : shouldn't be use for production usecases'")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "maxBackoffDelay"), defaultConfig.MaxBackoffDelay.String(), "Max delay for grpc backoff")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "perRetryTimeout"), defaultConfig.PerRetryTimeout.String(), "gRPC per retry timeout")
+	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "maxMsgSizeBs"), defaultConfig.MaxMsgSizeBs, "Max gRPC send and receive message size (in bytes)")
 	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "maxRetries"), defaultConfig.MaxRetries, "Max number of gRPC retries")
 	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "useAuth"), defaultConfig.DeprecatedUseAuth, "Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information.")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "clientId"), defaultConfig.ClientID, "Client ID")

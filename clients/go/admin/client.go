@@ -5,6 +5,7 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
+	"time"
 
 	"sync"
 
@@ -86,6 +87,8 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
 	// ever has those endpoints
 	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
+
+	opts = append(opts, grpc.WithDefaultCallOptions(grpc.MaxCallRecvMsgSize(cfg.MaxMsgSizeBs), grpc.MaxCallSendMsgSize(cfg.MaxMsgSizeBs)))
 
 	return opts
 }
