@@ -110,6 +110,9 @@ message NodeExecutionMetaData {
     // Node id of the node in the original workflow
     // This maps to value of WorkflowTemplate.nodes[X].id
     string spec_node_id = 3;
+    
+    // List of spec node ids from root to current node's parent
+    repeated string node_id_path = 5;
 }
 
 // Request structure to retrieve a list of node execution entities.
