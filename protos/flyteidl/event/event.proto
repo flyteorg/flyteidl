@@ -87,9 +87,6 @@ message NodeExecutionEvent {
 
     // Friendly readable name for the node
     string node_name = 13;
-
-    // List of spec node ids from root to current node's parent
-    repeated string node_id_path = 16;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched
