@@ -9022,6 +9022,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          parent_node_id: "parent_node_id"
         input_uri: "input_uri"
         id:
           execution_id:
@@ -9078,6 +9079,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          parent_node_id: "parent_node_id"
         input_uri: "input_uri"
         id:
           execution_id:
@@ -9148,11 +9150,15 @@ definitions:
         type: "string"
         title: "Node id of the node in the original workflow\nThis maps to value of\
           \ WorkflowTemplate.nodes[X].id"
+      parent_node_id:
+        type: "string"
+        title: "Parent node id, in case of root node it is an empty string"
     title: "Represents additional attributes related to a Node Execution"
     example:
       retry_group: "retry_group"
       is_parent_node: true
       spec_node_id: "spec_node_id"
+      parent_node_id: "parent_node_id"
   adminNotification:
     type: "object"
     properties:
@@ -34204,6 +34210,7 @@ definitions:
         retry_group: "retry_group"
         is_parent_node: true
         spec_node_id: "spec_node_id"
+        parent_node_id: "parent_node_id"
       input_uri: "input_uri"
       id:
         execution_id:

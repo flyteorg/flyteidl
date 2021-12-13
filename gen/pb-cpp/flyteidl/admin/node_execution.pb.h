@@ -844,6 +844,20 @@ class NodeExecutionMetaData final :
   ::std::string* release_spec_node_id();
   void set_allocated_spec_node_id(::std::string* spec_node_id);
 
+  // string parent_node_id = 5;
+  void clear_parent_node_id();
+  static const int kParentNodeIdFieldNumber = 5;
+  const ::std::string& parent_node_id() const;
+  void set_parent_node_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_parent_node_id(::std::string&& value);
+  #endif
+  void set_parent_node_id(const char* value);
+  void set_parent_node_id(const char* value, size_t size);
+  ::std::string* mutable_parent_node_id();
+  ::std::string* release_parent_node_id();
+  void set_allocated_parent_node_id(::std::string* parent_node_id);
+
   // bool is_parent_node = 2;
   void clear_is_parent_node();
   static const int kIsParentNodeFieldNumber = 2;
@@ -857,6 +871,7 @@ class NodeExecutionMetaData final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr retry_group_;
   ::google::protobuf::internal::ArenaStringPtr spec_node_id_;
+  ::google::protobuf::internal::ArenaStringPtr parent_node_id_;
   bool is_parent_node_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
@@ -2735,6 +2750,59 @@ inline void NodeExecutionMetaData::set_allocated_spec_node_id(::std::string* spe
   }
   spec_node_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), spec_node_id);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionMetaData.spec_node_id)
+}
+
+// string parent_node_id = 5;
+inline void NodeExecutionMetaData::clear_parent_node_id() {
+  parent_node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeExecutionMetaData::parent_node_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+  return parent_node_id_.GetNoArena();
+}
+inline void NodeExecutionMetaData::set_parent_node_id(const ::std::string& value) {
+  
+  parent_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+}
+#if LANG_CXX11
+inline void NodeExecutionMetaData::set_parent_node_id(::std::string&& value) {
+  
+  parent_node_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+}
+#endif
+inline void NodeExecutionMetaData::set_parent_node_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  parent_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+}
+inline void NodeExecutionMetaData::set_parent_node_id(const char* value, size_t size) {
+  
+  parent_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+}
+inline ::std::string* NodeExecutionMetaData::mutable_parent_node_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+  return parent_node_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeExecutionMetaData::release_parent_node_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
+  
+  return parent_node_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeExecutionMetaData::set_allocated_parent_node_id(::std::string* parent_node_id) {
+  if (parent_node_id != nullptr) {
+    
+  } else {
+    
+  }
+  parent_node_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), parent_node_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionMetaData.parent_node_id)
 }
 
 // -------------------------------------------------------------------
