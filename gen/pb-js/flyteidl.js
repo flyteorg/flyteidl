@@ -18797,6 +18797,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return EventErrorAlreadyInTerminalState;
         })();
 
+        admin.EventIncompatibleCluster = (function() {
+
+            /**
+             * Properties of an EventIncompatibleCluster.
+             * @memberof flyteidl.admin
+             * @interface IEventIncompatibleCluster
+             * @property {string|null} [cluster] EventIncompatibleCluster cluster
+             */
+
+            /**
+             * Constructs a new EventIncompatibleCluster.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an EventIncompatibleCluster.
+             * @implements IEventIncompatibleCluster
+             * @constructor
+             * @param {flyteidl.admin.IEventIncompatibleCluster=} [properties] Properties to set
+             */
+            function EventIncompatibleCluster(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * EventIncompatibleCluster cluster.
+             * @member {string} cluster
+             * @memberof flyteidl.admin.EventIncompatibleCluster
+             * @instance
+             */
+            EventIncompatibleCluster.prototype.cluster = "";
+
+            /**
+             * Creates a new EventIncompatibleCluster instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.EventIncompatibleCluster
+             * @static
+             * @param {flyteidl.admin.IEventIncompatibleCluster=} [properties] Properties to set
+             * @returns {flyteidl.admin.EventIncompatibleCluster} EventIncompatibleCluster instance
+             */
+            EventIncompatibleCluster.create = function create(properties) {
+                return new EventIncompatibleCluster(properties);
+            };
+
+            /**
+             * Encodes the specified EventIncompatibleCluster message. Does not implicitly {@link flyteidl.admin.EventIncompatibleCluster.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.EventIncompatibleCluster
+             * @static
+             * @param {flyteidl.admin.IEventIncompatibleCluster} message EventIncompatibleCluster message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EventIncompatibleCluster.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.cluster != null && message.hasOwnProperty("cluster"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.cluster);
+                return writer;
+            };
+
+            /**
+             * Decodes an EventIncompatibleCluster message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.EventIncompatibleCluster
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.EventIncompatibleCluster} EventIncompatibleCluster
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EventIncompatibleCluster.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.EventIncompatibleCluster();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.cluster = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an EventIncompatibleCluster message.
+             * @function verify
+             * @memberof flyteidl.admin.EventIncompatibleCluster
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            EventIncompatibleCluster.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.cluster != null && message.hasOwnProperty("cluster"))
+                    if (!$util.isString(message.cluster))
+                        return "cluster: string expected";
+                return null;
+            };
+
+            return EventIncompatibleCluster;
+        })();
+
         admin.EventFailureReason = (function() {
 
             /**
@@ -18804,6 +18914,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IEventFailureReason
              * @property {flyteidl.admin.IEventErrorAlreadyInTerminalState|null} [alreadyInTerminalState] EventFailureReason alreadyInTerminalState
+             * @property {flyteidl.admin.IEventIncompatibleCluster|null} [incompatibleCluster] EventFailureReason incompatibleCluster
              */
 
             /**
@@ -18829,17 +18940,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             EventFailureReason.prototype.alreadyInTerminalState = null;
 
+            /**
+             * EventFailureReason incompatibleCluster.
+             * @member {flyteidl.admin.IEventIncompatibleCluster|null|undefined} incompatibleCluster
+             * @memberof flyteidl.admin.EventFailureReason
+             * @instance
+             */
+            EventFailureReason.prototype.incompatibleCluster = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * EventFailureReason reason.
-             * @member {"alreadyInTerminalState"|undefined} reason
+             * @member {"alreadyInTerminalState"|"incompatibleCluster"|undefined} reason
              * @memberof flyteidl.admin.EventFailureReason
              * @instance
              */
             Object.defineProperty(EventFailureReason.prototype, "reason", {
-                get: $util.oneOfGetter($oneOfFields = ["alreadyInTerminalState"]),
+                get: $util.oneOfGetter($oneOfFields = ["alreadyInTerminalState", "incompatibleCluster"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -18869,6 +18988,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.alreadyInTerminalState != null && message.hasOwnProperty("alreadyInTerminalState"))
                     $root.flyteidl.admin.EventErrorAlreadyInTerminalState.encode(message.alreadyInTerminalState, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.incompatibleCluster != null && message.hasOwnProperty("incompatibleCluster"))
+                    $root.flyteidl.admin.EventIncompatibleCluster.encode(message.incompatibleCluster, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -18892,6 +19013,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     switch (tag >>> 3) {
                     case 1:
                         message.alreadyInTerminalState = $root.flyteidl.admin.EventErrorAlreadyInTerminalState.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.incompatibleCluster = $root.flyteidl.admin.EventIncompatibleCluster.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18919,6 +19043,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.admin.EventErrorAlreadyInTerminalState.verify(message.alreadyInTerminalState);
                         if (error)
                             return "alreadyInTerminalState." + error;
+                    }
+                }
+                if (message.incompatibleCluster != null && message.hasOwnProperty("incompatibleCluster")) {
+                    if (properties.reason === 1)
+                        return "reason: multiple values";
+                    properties.reason = 1;
+                    {
+                        let error = $root.flyteidl.admin.EventIncompatibleCluster.verify(message.incompatibleCluster);
+                        if (error)
+                            return "incompatibleCluster." + error;
                     }
                 }
                 return null;
