@@ -13,7 +13,7 @@ message EventErrorAlreadyInTerminalState {
     string current_phase = 1;
 }
 
-// Indicates an event was rejected because it came froma different cluster than 
+// Indicates an event was rejected because it came from a different cluster than 
 // is on record as running the execution.
 message EventErrorIncompatibleCluster {
     // The cluster which has been recorded as processing the execution.

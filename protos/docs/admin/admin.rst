@@ -639,7 +639,7 @@ for further state transitions).
 EventErrorIncompatibleCluster
 ------------------------------------------------------------------
 
-Indicates an event was rejected because it came froma different cluster than 
+Indicates an event was rejected because it came from a different cluster than 
 is on record as running the execution.
 
 
