@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1a\x66lyteidl/admin/event.proto\x12\x0e\x66lyteidl.admin\x1a\x1a\x66lyteidl/event/event.proto\"9\n EventErrorAlreadyInTerminalState\x12\x15\n\rcurrent_phase\x18\x01 \x01(\t\"+\n\x18\x45ventIncompatibleCluster\x12\x0f\n\x07\x63luster\x18\x01 \x01(\t\"\xbf\x01\n\x12\x45ventFailureReason\x12U\n\x19\x61lready_in_terminal_state\x18\x01 \x01(\x0b\x32\x30.flyteidl.admin.EventErrorAlreadyInTerminalStateH\x00\x12H\n\x14incompatible_cluster\x18\x02 \x01(\x0b\x32(.flyteidl.admin.EventIncompatibleClusterH\x00\x42\x08\n\x06reason\"j\n\x1dWorkflowExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x35\n\x05\x65vent\x18\x02 \x01(\x0b\x32&.flyteidl.event.WorkflowExecutionEvent\" \n\x1eWorkflowExecutionEventResponse\"b\n\x19NodeExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65vent\x18\x02 \x01(\x0b\x32\".flyteidl.event.NodeExecutionEvent\"\x1c\n\x1aNodeExecutionEventResponse\"b\n\x19TaskExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65vent\x18\x02 \x01(\x0b\x32\".flyteidl.event.TaskExecutionEvent\"\x1c\n\x1aTaskExecutionEventResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/admin/event.proto\x12\x0e\x66lyteidl.admin\x1a\x1a\x66lyteidl/event/event.proto\"9\n EventErrorAlreadyInTerminalState\x12\x15\n\rcurrent_phase\x18\x01 \x01(\t\"0\n\x1d\x45ventErrorIncompatibleCluster\x12\x0f\n\x07\x63luster\x18\x01 \x01(\t\"\xc4\x01\n\x12\x45ventFailureReason\x12U\n\x19\x61lready_in_terminal_state\x18\x01 \x01(\x0b\x32\x30.flyteidl.admin.EventErrorAlreadyInTerminalStateH\x00\x12M\n\x14incompatible_cluster\x18\x02 \x01(\x0b\x32-.flyteidl.admin.EventErrorIncompatibleClusterH\x00\x42\x08\n\x06reason\"j\n\x1dWorkflowExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x35\n\x05\x65vent\x18\x02 \x01(\x0b\x32&.flyteidl.event.WorkflowExecutionEvent\" \n\x1eWorkflowExecutionEventResponse\"b\n\x19NodeExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65vent\x18\x02 \x01(\x0b\x32\".flyteidl.event.NodeExecutionEvent\"\x1c\n\x1aNodeExecutionEventResponse\"b\n\x19TaskExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x31\n\x05\x65vent\x18\x02 \x01(\x0b\x32\".flyteidl.event.TaskExecutionEvent\"\x1c\n\x1aTaskExecutionEventResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_event_dot_event__pb2.DESCRIPTOR,])
 
@@ -59,15 +59,15 @@ _EVENTERRORALREADYINTERMINALSTATE = _descriptor.Descriptor(
 )
 
 
-_EVENTINCOMPATIBLECLUSTER = _descriptor.Descriptor(
-  name='EventIncompatibleCluster',
-  full_name='flyteidl.admin.EventIncompatibleCluster',
+_EVENTERRORINCOMPATIBLECLUSTER = _descriptor.Descriptor(
+  name='EventErrorIncompatibleCluster',
+  full_name='flyteidl.admin.EventErrorIncompatibleCluster',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster', full_name='flyteidl.admin.EventIncompatibleCluster.cluster', index=0,
+      name='cluster', full_name='flyteidl.admin.EventErrorIncompatibleCluster.cluster', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -86,7 +86,7 @@ _EVENTINCOMPATIBLECLUSTER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=133,
-  serialized_end=176,
+  serialized_end=181,
 )
 
 
@@ -126,8 +126,8 @@ _EVENTFAILUREREASON = _descriptor.Descriptor(
       name='reason', full_name='flyteidl.admin.EventFailureReason.reason',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=179,
-  serialized_end=370,
+  serialized_start=184,
+  serialized_end=380,
 )
 
 
@@ -164,8 +164,8 @@ _WORKFLOWEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=478,
+  serialized_start=382,
+  serialized_end=488,
 )
 
 
@@ -188,8 +188,8 @@ _WORKFLOWEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=480,
-  serialized_end=512,
+  serialized_start=490,
+  serialized_end=522,
 )
 
 
@@ -226,8 +226,8 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=612,
+  serialized_start=524,
+  serialized_end=622,
 )
 
 
@@ -250,8 +250,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=642,
+  serialized_start=624,
+  serialized_end=652,
 )
 
 
@@ -288,8 +288,8 @@ _TASKEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=644,
-  serialized_end=742,
+  serialized_start=654,
+  serialized_end=752,
 )
 
 
@@ -312,12 +312,12 @@ _TASKEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=744,
-  serialized_end=772,
+  serialized_start=754,
+  serialized_end=782,
 )
 
 _EVENTFAILUREREASON.fields_by_name['already_in_terminal_state'].message_type = _EVENTERRORALREADYINTERMINALSTATE
-_EVENTFAILUREREASON.fields_by_name['incompatible_cluster'].message_type = _EVENTINCOMPATIBLECLUSTER
+_EVENTFAILUREREASON.fields_by_name['incompatible_cluster'].message_type = _EVENTERRORINCOMPATIBLECLUSTER
 _EVENTFAILUREREASON.oneofs_by_name['reason'].fields.append(
   _EVENTFAILUREREASON.fields_by_name['already_in_terminal_state'])
 _EVENTFAILUREREASON.fields_by_name['already_in_terminal_state'].containing_oneof = _EVENTFAILUREREASON.oneofs_by_name['reason']
@@ -328,7 +328,7 @@ _WORKFLOWEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_d
 _NODEEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_event_dot_event__pb2._NODEEXECUTIONEVENT
 _TASKEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_event_dot_event__pb2._TASKEXECUTIONEVENT
 DESCRIPTOR.message_types_by_name['EventErrorAlreadyInTerminalState'] = _EVENTERRORALREADYINTERMINALSTATE
-DESCRIPTOR.message_types_by_name['EventIncompatibleCluster'] = _EVENTINCOMPATIBLECLUSTER
+DESCRIPTOR.message_types_by_name['EventErrorIncompatibleCluster'] = _EVENTERRORINCOMPATIBLECLUSTER
 DESCRIPTOR.message_types_by_name['EventFailureReason'] = _EVENTFAILUREREASON
 DESCRIPTOR.message_types_by_name['WorkflowExecutionEventRequest'] = _WORKFLOWEXECUTIONEVENTREQUEST
 DESCRIPTOR.message_types_by_name['WorkflowExecutionEventResponse'] = _WORKFLOWEXECUTIONEVENTRESPONSE
@@ -345,12 +345,12 @@ EventErrorAlreadyInTerminalState = _reflection.GeneratedProtocolMessageType('Eve
   ))
 _sym_db.RegisterMessage(EventErrorAlreadyInTerminalState)
 
-EventIncompatibleCluster = _reflection.GeneratedProtocolMessageType('EventIncompatibleCluster', (_message.Message,), dict(
-  DESCRIPTOR = _EVENTINCOMPATIBLECLUSTER,
+EventErrorIncompatibleCluster = _reflection.GeneratedProtocolMessageType('EventErrorIncompatibleCluster', (_message.Message,), dict(
+  DESCRIPTOR = _EVENTERRORINCOMPATIBLECLUSTER,
   __module__ = 'flyteidl.admin.event_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.EventIncompatibleCluster)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.EventErrorIncompatibleCluster)
   ))
-_sym_db.RegisterMessage(EventIncompatibleCluster)
+_sym_db.RegisterMessage(EventErrorIncompatibleCluster)
 
 EventFailureReason = _reflection.GeneratedProtocolMessageType('EventFailureReason', (_message.Message,), dict(
   DESCRIPTOR = _EVENTFAILUREREASON,

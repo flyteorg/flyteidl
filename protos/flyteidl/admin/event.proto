@@ -13,9 +13,9 @@ message EventErrorAlreadyInTerminalState {
     string current_phase = 1;
 }
 
-// Indicates an event was rejected because it referenced a cluster different than the one
-// the recorded execution ran on.
-message EventIncompatibleCluster {
+// Indicates an event was rejected because it came froma different cluster than 
+// is on record as running the execution.
+message EventErrorIncompatibleCluster {
     // The cluster which has been recorded as processing the execution.
     // +required
     string cluster = 1;
@@ -26,7 +26,7 @@ message EventFailureReason {
     // +required
     oneof reason {
         EventErrorAlreadyInTerminalState already_in_terminal_state = 1;
-        EventIncompatibleCluster incompatible_cluster = 2;
+        EventErrorIncompatibleCluster incompatible_cluster = 2;
     }
 }
 

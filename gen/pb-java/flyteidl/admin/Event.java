@@ -611,8 +611,8 @@ public final class Event {
 
   }
 
-  public interface EventIncompatibleClusterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.EventIncompatibleCluster)
+  public interface EventErrorIncompatibleClusterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.EventErrorIncompatibleCluster)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -637,22 +637,22 @@ public final class Event {
   }
   /**
    * <pre>
-   * Indicates an event was rejected because it referenced a cluster different than the one
-   * the recorded execution ran on.
+   * Indicates an event was rejected because it came froma different cluster than 
+   * is on record as running the execution.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.EventIncompatibleCluster}
+   * Protobuf type {@code flyteidl.admin.EventErrorIncompatibleCluster}
    */
-  public  static final class EventIncompatibleCluster extends
+  public  static final class EventErrorIncompatibleCluster extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.EventIncompatibleCluster)
-      EventIncompatibleClusterOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.EventErrorIncompatibleCluster)
+      EventErrorIncompatibleClusterOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use EventIncompatibleCluster.newBuilder() to construct.
-    private EventIncompatibleCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use EventErrorIncompatibleCluster.newBuilder() to construct.
+    private EventErrorIncompatibleCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private EventIncompatibleCluster() {
+    private EventErrorIncompatibleCluster() {
       cluster_ = "";
     }
 
@@ -661,7 +661,7 @@ public final class Event {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EventIncompatibleCluster(
+    private EventErrorIncompatibleCluster(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -707,15 +707,15 @@ public final class Event {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.Event.internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor;
+      return flyteidl.admin.Event.internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.Event.internal_static_flyteidl_admin_EventIncompatibleCluster_fieldAccessorTable
+      return flyteidl.admin.Event.internal_static_flyteidl_admin_EventErrorIncompatibleCluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Event.EventIncompatibleCluster.class, flyteidl.admin.Event.EventIncompatibleCluster.Builder.class);
+              flyteidl.admin.Event.EventErrorIncompatibleCluster.class, flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder.class);
     }
 
     public static final int CLUSTER_FIELD_NUMBER = 1;
@@ -801,10 +801,10 @@ public final class Event {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.Event.EventIncompatibleCluster)) {
+      if (!(obj instanceof flyteidl.admin.Event.EventErrorIncompatibleCluster)) {
         return super.equals(obj);
       }
-      flyteidl.admin.Event.EventIncompatibleCluster other = (flyteidl.admin.Event.EventIncompatibleCluster) obj;
+      flyteidl.admin.Event.EventErrorIncompatibleCluster other = (flyteidl.admin.Event.EventErrorIncompatibleCluster) obj;
 
       if (!getCluster()
           .equals(other.getCluster())) return false;
@@ -826,69 +826,69 @@ public final class Event {
       return hash;
     }
 
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(byte[] data)
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseDelimitedFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Event.EventIncompatibleCluster parseFrom(
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -901,7 +901,7 @@ public final class Event {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.Event.EventIncompatibleCluster prototype) {
+    public static Builder newBuilder(flyteidl.admin.Event.EventErrorIncompatibleCluster prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -918,30 +918,30 @@ public final class Event {
     }
     /**
      * <pre>
-     * Indicates an event was rejected because it referenced a cluster different than the one
-     * the recorded execution ran on.
+     * Indicates an event was rejected because it came froma different cluster than 
+     * is on record as running the execution.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.EventIncompatibleCluster}
+     * Protobuf type {@code flyteidl.admin.EventErrorIncompatibleCluster}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.EventIncompatibleCluster)
-        flyteidl.admin.Event.EventIncompatibleClusterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.EventErrorIncompatibleCluster)
+        flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor;
+        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventIncompatibleCluster_fieldAccessorTable
+        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventErrorIncompatibleCluster_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Event.EventIncompatibleCluster.class, flyteidl.admin.Event.EventIncompatibleCluster.Builder.class);
+                flyteidl.admin.Event.EventErrorIncompatibleCluster.class, flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder.class);
       }
 
-      // Construct using flyteidl.admin.Event.EventIncompatibleCluster.newBuilder()
+      // Construct using flyteidl.admin.Event.EventErrorIncompatibleCluster.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -967,17 +967,17 @@ public final class Event {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor;
+        return flyteidl.admin.Event.internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.Event.EventIncompatibleCluster getDefaultInstanceForType() {
-        return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+      public flyteidl.admin.Event.EventErrorIncompatibleCluster getDefaultInstanceForType() {
+        return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.Event.EventIncompatibleCluster build() {
-        flyteidl.admin.Event.EventIncompatibleCluster result = buildPartial();
+      public flyteidl.admin.Event.EventErrorIncompatibleCluster build() {
+        flyteidl.admin.Event.EventErrorIncompatibleCluster result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -985,8 +985,8 @@ public final class Event {
       }
 
       @java.lang.Override
-      public flyteidl.admin.Event.EventIncompatibleCluster buildPartial() {
-        flyteidl.admin.Event.EventIncompatibleCluster result = new flyteidl.admin.Event.EventIncompatibleCluster(this);
+      public flyteidl.admin.Event.EventErrorIncompatibleCluster buildPartial() {
+        flyteidl.admin.Event.EventErrorIncompatibleCluster result = new flyteidl.admin.Event.EventErrorIncompatibleCluster(this);
         result.cluster_ = cluster_;
         onBuilt();
         return result;
@@ -1026,16 +1026,16 @@ public final class Event {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Event.EventIncompatibleCluster) {
-          return mergeFrom((flyteidl.admin.Event.EventIncompatibleCluster)other);
+        if (other instanceof flyteidl.admin.Event.EventErrorIncompatibleCluster) {
+          return mergeFrom((flyteidl.admin.Event.EventErrorIncompatibleCluster)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.Event.EventIncompatibleCluster other) {
-        if (other == flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.Event.EventErrorIncompatibleCluster other) {
+        if (other == flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance()) return this;
         if (!other.getCluster().isEmpty()) {
           cluster_ = other.cluster_;
           onChanged();
@@ -1055,11 +1055,11 @@ public final class Event {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.Event.EventIncompatibleCluster parsedMessage = null;
+        flyteidl.admin.Event.EventErrorIncompatibleCluster parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Event.EventIncompatibleCluster) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.Event.EventErrorIncompatibleCluster) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1175,41 +1175,41 @@ public final class Event {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.EventIncompatibleCluster)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.EventErrorIncompatibleCluster)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.EventIncompatibleCluster)
-    private static final flyteidl.admin.Event.EventIncompatibleCluster DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.EventErrorIncompatibleCluster)
+    private static final flyteidl.admin.Event.EventErrorIncompatibleCluster DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Event.EventIncompatibleCluster();
+      DEFAULT_INSTANCE = new flyteidl.admin.Event.EventErrorIncompatibleCluster();
     }
 
-    public static flyteidl.admin.Event.EventIncompatibleCluster getDefaultInstance() {
+    public static flyteidl.admin.Event.EventErrorIncompatibleCluster getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<EventIncompatibleCluster>
-        PARSER = new com.google.protobuf.AbstractParser<EventIncompatibleCluster>() {
+    private static final com.google.protobuf.Parser<EventErrorIncompatibleCluster>
+        PARSER = new com.google.protobuf.AbstractParser<EventErrorIncompatibleCluster>() {
       @java.lang.Override
-      public EventIncompatibleCluster parsePartialFrom(
+      public EventErrorIncompatibleCluster parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EventIncompatibleCluster(input, extensionRegistry);
+        return new EventErrorIncompatibleCluster(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<EventIncompatibleCluster> parser() {
+    public static com.google.protobuf.Parser<EventErrorIncompatibleCluster> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<EventIncompatibleCluster> getParserForType() {
+    public com.google.protobuf.Parser<EventErrorIncompatibleCluster> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.Event.EventIncompatibleCluster getDefaultInstanceForType() {
+    public flyteidl.admin.Event.EventErrorIncompatibleCluster getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1233,17 +1233,17 @@ public final class Event {
     flyteidl.admin.Event.EventErrorAlreadyInTerminalStateOrBuilder getAlreadyInTerminalStateOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
     boolean hasIncompatibleCluster();
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
-    flyteidl.admin.Event.EventIncompatibleCluster getIncompatibleCluster();
+    flyteidl.admin.Event.EventErrorIncompatibleCluster getIncompatibleCluster();
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
-    flyteidl.admin.Event.EventIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder();
+    flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder();
 
     public flyteidl.admin.Event.EventFailureReason.ReasonCase getReasonCase();
   }
@@ -1305,14 +1305,14 @@ public final class Event {
               break;
             }
             case 18: {
-              flyteidl.admin.Event.EventIncompatibleCluster.Builder subBuilder = null;
+              flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder subBuilder = null;
               if (reasonCase_ == 2) {
-                subBuilder = ((flyteidl.admin.Event.EventIncompatibleCluster) reason_).toBuilder();
+                subBuilder = ((flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_).toBuilder();
               }
               reason_ =
-                  input.readMessage(flyteidl.admin.Event.EventIncompatibleCluster.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.admin.Event.EventErrorIncompatibleCluster.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.admin.Event.EventIncompatibleCluster) reason_);
+                subBuilder.mergeFrom((flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_);
                 reason_ = subBuilder.buildPartial();
               }
               reasonCase_ = 2;
@@ -1416,28 +1416,28 @@ public final class Event {
 
     public static final int INCOMPATIBLE_CLUSTER_FIELD_NUMBER = 2;
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
     public boolean hasIncompatibleCluster() {
       return reasonCase_ == 2;
     }
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
-    public flyteidl.admin.Event.EventIncompatibleCluster getIncompatibleCluster() {
+    public flyteidl.admin.Event.EventErrorIncompatibleCluster getIncompatibleCluster() {
       if (reasonCase_ == 2) {
-         return (flyteidl.admin.Event.EventIncompatibleCluster) reason_;
+         return (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_;
       }
-      return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+      return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
     }
     /**
-     * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+     * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
      */
-    public flyteidl.admin.Event.EventIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder() {
+    public flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder() {
       if (reasonCase_ == 2) {
-         return (flyteidl.admin.Event.EventIncompatibleCluster) reason_;
+         return (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_;
       }
-      return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+      return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1458,7 +1458,7 @@ public final class Event {
         output.writeMessage(1, (flyteidl.admin.Event.EventErrorAlreadyInTerminalState) reason_);
       }
       if (reasonCase_ == 2) {
-        output.writeMessage(2, (flyteidl.admin.Event.EventIncompatibleCluster) reason_);
+        output.writeMessage(2, (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -1475,7 +1475,7 @@ public final class Event {
       }
       if (reasonCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (flyteidl.admin.Event.EventIncompatibleCluster) reason_);
+          .computeMessageSize(2, (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1950,33 +1950,33 @@ public final class Event {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Event.EventIncompatibleCluster, flyteidl.admin.Event.EventIncompatibleCluster.Builder, flyteidl.admin.Event.EventIncompatibleClusterOrBuilder> incompatibleClusterBuilder_;
+          flyteidl.admin.Event.EventErrorIncompatibleCluster, flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder, flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder> incompatibleClusterBuilder_;
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
       public boolean hasIncompatibleCluster() {
         return reasonCase_ == 2;
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
-      public flyteidl.admin.Event.EventIncompatibleCluster getIncompatibleCluster() {
+      public flyteidl.admin.Event.EventErrorIncompatibleCluster getIncompatibleCluster() {
         if (incompatibleClusterBuilder_ == null) {
           if (reasonCase_ == 2) {
-            return (flyteidl.admin.Event.EventIncompatibleCluster) reason_;
+            return (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_;
           }
-          return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+          return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
         } else {
           if (reasonCase_ == 2) {
             return incompatibleClusterBuilder_.getMessage();
           }
-          return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+          return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
-      public Builder setIncompatibleCluster(flyteidl.admin.Event.EventIncompatibleCluster value) {
+      public Builder setIncompatibleCluster(flyteidl.admin.Event.EventErrorIncompatibleCluster value) {
         if (incompatibleClusterBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1990,10 +1990,10 @@ public final class Event {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
       public Builder setIncompatibleCluster(
-          flyteidl.admin.Event.EventIncompatibleCluster.Builder builderForValue) {
+          flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder builderForValue) {
         if (incompatibleClusterBuilder_ == null) {
           reason_ = builderForValue.build();
           onChanged();
@@ -2004,13 +2004,13 @@ public final class Event {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
-      public Builder mergeIncompatibleCluster(flyteidl.admin.Event.EventIncompatibleCluster value) {
+      public Builder mergeIncompatibleCluster(flyteidl.admin.Event.EventErrorIncompatibleCluster value) {
         if (incompatibleClusterBuilder_ == null) {
           if (reasonCase_ == 2 &&
-              reason_ != flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance()) {
-            reason_ = flyteidl.admin.Event.EventIncompatibleCluster.newBuilder((flyteidl.admin.Event.EventIncompatibleCluster) reason_)
+              reason_ != flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance()) {
+            reason_ = flyteidl.admin.Event.EventErrorIncompatibleCluster.newBuilder((flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_)
                 .mergeFrom(value).buildPartial();
           } else {
             reason_ = value;
@@ -2026,7 +2026,7 @@ public final class Event {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
       public Builder clearIncompatibleCluster() {
         if (incompatibleClusterBuilder_ == null) {
@@ -2045,37 +2045,37 @@ public final class Event {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
-      public flyteidl.admin.Event.EventIncompatibleCluster.Builder getIncompatibleClusterBuilder() {
+      public flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder getIncompatibleClusterBuilder() {
         return getIncompatibleClusterFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
-      public flyteidl.admin.Event.EventIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder() {
+      public flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder getIncompatibleClusterOrBuilder() {
         if ((reasonCase_ == 2) && (incompatibleClusterBuilder_ != null)) {
           return incompatibleClusterBuilder_.getMessageOrBuilder();
         } else {
           if (reasonCase_ == 2) {
-            return (flyteidl.admin.Event.EventIncompatibleCluster) reason_;
+            return (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_;
           }
-          return flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+          return flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.admin.EventIncompatibleCluster incompatible_cluster = 2;</code>
+       * <code>.flyteidl.admin.EventErrorIncompatibleCluster incompatible_cluster = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Event.EventIncompatibleCluster, flyteidl.admin.Event.EventIncompatibleCluster.Builder, flyteidl.admin.Event.EventIncompatibleClusterOrBuilder> 
+          flyteidl.admin.Event.EventErrorIncompatibleCluster, flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder, flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder> 
           getIncompatibleClusterFieldBuilder() {
         if (incompatibleClusterBuilder_ == null) {
           if (!(reasonCase_ == 2)) {
-            reason_ = flyteidl.admin.Event.EventIncompatibleCluster.getDefaultInstance();
+            reason_ = flyteidl.admin.Event.EventErrorIncompatibleCluster.getDefaultInstance();
           }
           incompatibleClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Event.EventIncompatibleCluster, flyteidl.admin.Event.EventIncompatibleCluster.Builder, flyteidl.admin.Event.EventIncompatibleClusterOrBuilder>(
-                  (flyteidl.admin.Event.EventIncompatibleCluster) reason_,
+              flyteidl.admin.Event.EventErrorIncompatibleCluster, flyteidl.admin.Event.EventErrorIncompatibleCluster.Builder, flyteidl.admin.Event.EventErrorIncompatibleClusterOrBuilder>(
+                  (flyteidl.admin.Event.EventErrorIncompatibleCluster) reason_,
                   getParentForChildren(),
                   isClean());
           reason_ = null;
@@ -5941,10 +5941,10 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_EventErrorAlreadyInTerminalState_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor;
+    internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_EventIncompatibleCluster_fieldAccessorTable;
+      internal_static_flyteidl_admin_EventErrorIncompatibleCluster_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_EventFailureReason_descriptor;
   private static final 
@@ -5992,24 +5992,25 @@ public final class Event {
       "\n\032flyteidl/admin/event.proto\022\016flyteidl.a" +
       "dmin\032\032flyteidl/event/event.proto\"9\n Even" +
       "tErrorAlreadyInTerminalState\022\025\n\rcurrent_" +
-      "phase\030\001 \001(\t\"+\n\030EventIncompatibleCluster\022" +
-      "\017\n\007cluster\030\001 \001(\t\"\277\001\n\022EventFailureReason\022" +
-      "U\n\031already_in_terminal_state\030\001 \001(\01320.fly" +
-      "teidl.admin.EventErrorAlreadyInTerminalS" +
-      "tateH\000\022H\n\024incompatible_cluster\030\002 \001(\0132(.f" +
-      "lyteidl.admin.EventIncompatibleClusterH\000" +
-      "B\010\n\006reason\"j\n\035WorkflowExecutionEventRequ" +
-      "est\022\022\n\nrequest_id\030\001 \001(\t\0225\n\005event\030\002 \001(\0132&" +
-      ".flyteidl.event.WorkflowExecutionEvent\" " +
-      "\n\036WorkflowExecutionEventResponse\"b\n\031Node" +
-      "ExecutionEventRequest\022\022\n\nrequest_id\030\001 \001(" +
-      "\t\0221\n\005event\030\002 \001(\0132\".flyteidl.event.NodeEx" +
-      "ecutionEvent\"\034\n\032NodeExecutionEventRespon" +
-      "se\"b\n\031TaskExecutionEventRequest\022\022\n\nreque" +
+      "phase\030\001 \001(\t\"0\n\035EventErrorIncompatibleClu" +
+      "ster\022\017\n\007cluster\030\001 \001(\t\"\304\001\n\022EventFailureRe" +
+      "ason\022U\n\031already_in_terminal_state\030\001 \001(\0132" +
+      "0.flyteidl.admin.EventErrorAlreadyInTerm" +
+      "inalStateH\000\022M\n\024incompatible_cluster\030\002 \001(" +
+      "\0132-.flyteidl.admin.EventErrorIncompatibl" +
+      "eClusterH\000B\010\n\006reason\"j\n\035WorkflowExecutio" +
+      "nEventRequest\022\022\n\nrequest_id\030\001 \001(\t\0225\n\005eve" +
+      "nt\030\002 \001(\0132&.flyteidl.event.WorkflowExecut" +
+      "ionEvent\" \n\036WorkflowExecutionEventRespon" +
+      "se\"b\n\031NodeExecutionEventRequest\022\022\n\nreque" +
       "st_id\030\001 \001(\t\0221\n\005event\030\002 \001(\0132\".flyteidl.ev" +
-      "ent.TaskExecutionEvent\"\034\n\032TaskExecutionE" +
-      "ventResponseB7Z5github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "ent.NodeExecutionEvent\"\034\n\032NodeExecutionE" +
+      "ventResponse\"b\n\031TaskExecutionEventReques" +
+      "t\022\022\n\nrequest_id\030\001 \001(\t\0221\n\005event\030\002 \001(\0132\".f" +
+      "lyteidl.event.TaskExecutionEvent\"\034\n\032Task" +
+      "ExecutionEventResponseB7Z5github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6030,11 +6031,11 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_EventErrorAlreadyInTerminalState_descriptor,
         new java.lang.String[] { "CurrentPhase", });
-    internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor =
+    internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_admin_EventIncompatibleCluster_fieldAccessorTable = new
+    internal_static_flyteidl_admin_EventErrorIncompatibleCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_EventIncompatibleCluster_descriptor,
+        internal_static_flyteidl_admin_EventErrorIncompatibleCluster_descriptor,
         new java.lang.String[] { "Cluster", });
     internal_static_flyteidl_admin_EventFailureReason_descriptor =
       getDescriptor().getMessageTypes().get(2);
