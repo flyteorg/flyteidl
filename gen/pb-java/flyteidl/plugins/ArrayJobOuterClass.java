@@ -25,9 +25,9 @@ public final class ArrayJobOuterClass {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 1;</code>
+     * <code>int64 parallelism = 1 [deprecated = true];</code>
      */
-    long getParallelism();
+    @java.lang.Deprecated long getParallelism();
 
     /**
      * <pre>
@@ -36,9 +36,9 @@ public final class ArrayJobOuterClass {
      * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
      * </pre>
      *
-     * <code>int64 size = 2;</code>
+     * <code>int64 size = 2 [deprecated = true];</code>
      */
-    long getSize();
+    @java.lang.Deprecated long getSize();
 
     /**
      * <pre>
@@ -47,9 +47,9 @@ public final class ArrayJobOuterClass {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int64 min_successes = 3;</code>
+     * <code>int64 min_successes = 3 [deprecated = true];</code>
      */
-    long getMinSuccesses();
+    @java.lang.Deprecated long getMinSuccesses();
 
     /**
      * <pre>
@@ -57,9 +57,9 @@ public final class ArrayJobOuterClass {
      * job can be marked successful.
      * </pre>
      *
-     * <code>float min_success_ratio = 4;</code>
+     * <code>float min_success_ratio = 4 [deprecated = true];</code>
      */
-    float getMinSuccessRatio();
+    @java.lang.Deprecated float getMinSuccessRatio();
 
     public flyteidl.plugins.ArrayJobOuterClass.ArrayJob.SuccessCriteriaCase getSuccessCriteriaCase();
   }
@@ -163,8 +163,8 @@ public final class ArrayJobOuterClass {
     private java.lang.Object successCriteria_;
     public enum SuccessCriteriaCase
         implements com.google.protobuf.Internal.EnumLite {
-      MIN_SUCCESSES(3),
-      MIN_SUCCESS_RATIO(4),
+      @java.lang.Deprecated MIN_SUCCESSES(3),
+      @java.lang.Deprecated MIN_SUCCESS_RATIO(4),
       SUCCESSCRITERIA_NOT_SET(0);
       private final int value;
       private SuccessCriteriaCase(int value) {
@@ -206,9 +206,9 @@ public final class ArrayJobOuterClass {
      * running instances might be more. This has to be a positive number if assigned. Default value is size.
      * </pre>
      *
-     * <code>int64 parallelism = 1;</code>
+     * <code>int64 parallelism = 1 [deprecated = true];</code>
      */
-    public long getParallelism() {
+    @java.lang.Deprecated public long getParallelism() {
       return parallelism_;
     }
 
@@ -221,9 +221,9 @@ public final class ArrayJobOuterClass {
      * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
      * </pre>
      *
-     * <code>int64 size = 2;</code>
+     * <code>int64 size = 2 [deprecated = true];</code>
      */
-    public long getSize() {
+    @java.lang.Deprecated public long getSize() {
       return size_;
     }
 
@@ -235,9 +235,9 @@ public final class ArrayJobOuterClass {
      * assigned. Default value is size (if specified).
      * </pre>
      *
-     * <code>int64 min_successes = 3;</code>
+     * <code>int64 min_successes = 3 [deprecated = true];</code>
      */
-    public long getMinSuccesses() {
+    @java.lang.Deprecated public long getMinSuccesses() {
       if (successCriteriaCase_ == 3) {
         return (java.lang.Long) successCriteria_;
       }
@@ -251,9 +251,9 @@ public final class ArrayJobOuterClass {
      * job can be marked successful.
      * </pre>
      *
-     * <code>float min_success_ratio = 4;</code>
+     * <code>float min_success_ratio = 4 [deprecated = true];</code>
      */
-    public float getMinSuccessRatio() {
+    @java.lang.Deprecated public float getMinSuccessRatio() {
       if (successCriteriaCase_ == 4) {
         return (java.lang.Float) successCriteria_;
       }
@@ -677,9 +677,9 @@ public final class ArrayJobOuterClass {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 1;</code>
+       * <code>int64 parallelism = 1 [deprecated = true];</code>
        */
-      public long getParallelism() {
+      @java.lang.Deprecated public long getParallelism() {
         return parallelism_;
       }
       /**
@@ -689,9 +689,9 @@ public final class ArrayJobOuterClass {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 1;</code>
+       * <code>int64 parallelism = 1 [deprecated = true];</code>
        */
-      public Builder setParallelism(long value) {
+      @java.lang.Deprecated public Builder setParallelism(long value) {
         
         parallelism_ = value;
         onChanged();
@@ -704,9 +704,9 @@ public final class ArrayJobOuterClass {
        * running instances might be more. This has to be a positive number if assigned. Default value is size.
        * </pre>
        *
-       * <code>int64 parallelism = 1;</code>
+       * <code>int64 parallelism = 1 [deprecated = true];</code>
        */
-      public Builder clearParallelism() {
+      @java.lang.Deprecated public Builder clearParallelism() {
         
         parallelism_ = 0L;
         onChanged();
@@ -721,9 +721,9 @@ public final class ArrayJobOuterClass {
        * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
-       * <code>int64 size = 2;</code>
+       * <code>int64 size = 2 [deprecated = true];</code>
        */
-      public long getSize() {
+      @java.lang.Deprecated public long getSize() {
         return size_;
       }
       /**
@@ -733,9 +733,9 @@ public final class ArrayJobOuterClass {
        * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
-       * <code>int64 size = 2;</code>
+       * <code>int64 size = 2 [deprecated = true];</code>
        */
-      public Builder setSize(long value) {
+      @java.lang.Deprecated public Builder setSize(long value) {
         
         size_ = value;
         onChanged();
@@ -748,9 +748,9 @@ public final class ArrayJobOuterClass {
        * In the case this is not defined, the back-end will determine the size at run-time by reading the inputs.
        * </pre>
        *
-       * <code>int64 size = 2;</code>
+       * <code>int64 size = 2 [deprecated = true];</code>
        */
-      public Builder clearSize() {
+      @java.lang.Deprecated public Builder clearSize() {
         
         size_ = 0L;
         onChanged();
@@ -764,9 +764,9 @@ public final class ArrayJobOuterClass {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int64 min_successes = 3 [deprecated = true];</code>
        */
-      public long getMinSuccesses() {
+      @java.lang.Deprecated public long getMinSuccesses() {
         if (successCriteriaCase_ == 3) {
           return (java.lang.Long) successCriteria_;
         }
@@ -779,9 +779,9 @@ public final class ArrayJobOuterClass {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int64 min_successes = 3 [deprecated = true];</code>
        */
-      public Builder setMinSuccesses(long value) {
+      @java.lang.Deprecated public Builder setMinSuccesses(long value) {
         successCriteriaCase_ = 3;
         successCriteria_ = value;
         onChanged();
@@ -794,9 +794,9 @@ public final class ArrayJobOuterClass {
        * assigned. Default value is size (if specified).
        * </pre>
        *
-       * <code>int64 min_successes = 3;</code>
+       * <code>int64 min_successes = 3 [deprecated = true];</code>
        */
-      public Builder clearMinSuccesses() {
+      @java.lang.Deprecated public Builder clearMinSuccesses() {
         if (successCriteriaCase_ == 3) {
           successCriteriaCase_ = 0;
           successCriteria_ = null;
@@ -811,9 +811,9 @@ public final class ArrayJobOuterClass {
        * job can be marked successful.
        * </pre>
        *
-       * <code>float min_success_ratio = 4;</code>
+       * <code>float min_success_ratio = 4 [deprecated = true];</code>
        */
-      public float getMinSuccessRatio() {
+      @java.lang.Deprecated public float getMinSuccessRatio() {
         if (successCriteriaCase_ == 4) {
           return (java.lang.Float) successCriteria_;
         }
@@ -825,9 +825,9 @@ public final class ArrayJobOuterClass {
        * job can be marked successful.
        * </pre>
        *
-       * <code>float min_success_ratio = 4;</code>
+       * <code>float min_success_ratio = 4 [deprecated = true];</code>
        */
-      public Builder setMinSuccessRatio(float value) {
+      @java.lang.Deprecated public Builder setMinSuccessRatio(float value) {
         successCriteriaCase_ = 4;
         successCriteria_ = value;
         onChanged();
@@ -839,9 +839,9 @@ public final class ArrayJobOuterClass {
        * job can be marked successful.
        * </pre>
        *
-       * <code>float min_success_ratio = 4;</code>
+       * <code>float min_success_ratio = 4 [deprecated = true];</code>
        */
-      public Builder clearMinSuccessRatio() {
+      @java.lang.Deprecated public Builder clearMinSuccessRatio() {
         if (successCriteriaCase_ == 4) {
           successCriteriaCase_ = 0;
           successCriteria_ = null;
@@ -917,11 +917,12 @@ public final class ArrayJobOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n flyteidl/plugins/array_job.proto\022\020flyt" +
-      "eidl.plugins\"w\n\010ArrayJob\022\023\n\013parallelism\030" +
-      "\001 \001(\003\022\014\n\004size\030\002 \001(\003\022\027\n\rmin_successes\030\003 \001" +
-      "(\003H\000\022\033\n\021min_success_ratio\030\004 \001(\002H\000B\022\n\020suc" +
-      "cess_criteriaB9Z7github.com/flyteorg/fly" +
-      "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "eidl.plugins\"\207\001\n\010ArrayJob\022\027\n\013parallelism" +
+      "\030\001 \001(\003B\002\030\001\022\020\n\004size\030\002 \001(\003B\002\030\001\022\033\n\rmin_succ" +
+      "esses\030\003 \001(\003B\002\030\001H\000\022\037\n\021min_success_ratio\030\004" +
+      " \001(\002B\002\030\001H\000B\022\n\020success_criteriaB9Z7github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

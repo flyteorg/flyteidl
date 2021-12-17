@@ -76,16 +76,17 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2farray_5fjob_2eproto[] =
   "\n flyteidl/plugins/array_job.proto\022\020flyt"
-  "eidl.plugins\"w\n\010ArrayJob\022\023\n\013parallelism\030"
-  "\001 \001(\003\022\014\n\004size\030\002 \001(\003\022\027\n\rmin_successes\030\003 \001"
-  "(\003H\000\022\033\n\021min_success_ratio\030\004 \001(\002H\000B\022\n\020suc"
-  "cess_criteriaB9Z7github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+  "eidl.plugins\"\207\001\n\010ArrayJob\022\027\n\013parallelism"
+  "\030\001 \001(\003B\002\030\001\022\020\n\004size\030\002 \001(\003B\002\030\001\022\033\n\rmin_succ"
+  "esses\030\003 \001(\003B\002\030\001H\000\022\037\n\021min_success_ratio\030\004"
+  " \001(\002B\002\030\001H\000B\022\n\020success_criteriaB9Z7github"
+  ".com/flyteorg/flyteidl/gen/pb-go/flyteid"
+  "l/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2farray_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2farray_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2farray_5fjob_2eproto,
-  "flyteidl/plugins/array_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2farray_5fjob_2eproto, 240,
+  "flyteidl/plugins/array_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2farray_5fjob_2eproto, 257,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2farray_5fjob_2eproto() {
@@ -218,28 +219,28 @@ const char* ArrayJob::_InternalParse(const char* begin, const char* end, void* o
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // int64 parallelism = 1;
+      // int64 parallelism = 1 [deprecated = true];
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         msg->set_parallelism(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int64 size = 2;
+      // int64 size = 2 [deprecated = true];
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         msg->set_size(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int64 min_successes = 3;
+      // int64 min_successes = 3 [deprecated = true];
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_min_successes(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // float min_success_ratio = 4;
+      // float min_success_ratio = 4 [deprecated = true];
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 37) goto handle_unusual;
         msg->set_min_success_ratio(::google::protobuf::io::UnalignedLoad<float>(ptr));
@@ -273,7 +274,7 @@ bool ArrayJob::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int64 parallelism = 1;
+      // int64 parallelism = 1 [deprecated = true];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
@@ -286,7 +287,7 @@ bool ArrayJob::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 size = 2;
+      // int64 size = 2 [deprecated = true];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
@@ -299,7 +300,7 @@ bool ArrayJob::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 min_successes = 3;
+      // int64 min_successes = 3 [deprecated = true];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           clear_success_criteria();
@@ -313,7 +314,7 @@ bool ArrayJob::MergePartialFromCodedStream(
         break;
       }
 
-      // float min_success_ratio = 4;
+      // float min_success_ratio = 4 [deprecated = true];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (37 & 0xFF)) {
           clear_success_criteria();
@@ -354,22 +355,22 @@ void ArrayJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 parallelism = 1;
+  // int64 parallelism = 1 [deprecated = true];
   if (this->parallelism() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->parallelism(), output);
   }
 
-  // int64 size = 2;
+  // int64 size = 2 [deprecated = true];
   if (this->size() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->size(), output);
   }
 
-  // int64 min_successes = 3;
+  // int64 min_successes = 3 [deprecated = true];
   if (has_min_successes()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->min_successes(), output);
   }
 
-  // float min_success_ratio = 4;
+  // float min_success_ratio = 4 [deprecated = true];
   if (has_min_success_ratio()) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->min_success_ratio(), output);
   }
@@ -387,22 +388,22 @@ void ArrayJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 parallelism = 1;
+  // int64 parallelism = 1 [deprecated = true];
   if (this->parallelism() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->parallelism(), target);
   }
 
-  // int64 size = 2;
+  // int64 size = 2 [deprecated = true];
   if (this->size() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->size(), target);
   }
 
-  // int64 min_successes = 3;
+  // int64 min_successes = 3 [deprecated = true];
   if (has_min_successes()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->min_successes(), target);
   }
 
-  // float min_success_ratio = 4;
+  // float min_success_ratio = 4 [deprecated = true];
   if (has_min_success_ratio()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->min_success_ratio(), target);
   }
@@ -428,14 +429,14 @@ size_t ArrayJob::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 parallelism = 1;
+  // int64 parallelism = 1 [deprecated = true];
   if (this->parallelism() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->parallelism());
   }
 
-  // int64 size = 2;
+  // int64 size = 2 [deprecated = true];
   if (this->size() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
@@ -443,14 +444,14 @@ size_t ArrayJob::ByteSizeLong() const {
   }
 
   switch (success_criteria_case()) {
-    // int64 min_successes = 3;
+    // int64 min_successes = 3 [deprecated = true];
     case kMinSuccesses: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int64Size(
           this->min_successes());
       break;
     }
-    // float min_success_ratio = 4;
+    // float min_success_ratio = 4 [deprecated = true];
     case kMinSuccessRatio: {
       total_size += 1 + 4;
       break;
