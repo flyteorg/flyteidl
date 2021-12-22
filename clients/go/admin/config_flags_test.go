@@ -148,7 +148,7 @@ func TestConfig_SetFlags(t *testing.T) {
 
 			cmdFlags.Set("caCerts", testValue)
 			if vString, err := cmdFlags.GetString("caCerts"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.CAcerts)
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.CACertFilePath)
 
 			} else {
 				assert.FailNow(t, err.Error())

@@ -11,7 +11,7 @@ import (
 func readCACerts(certLoc string) (*x509.CertPool, error) {
 	rootPEM, err := ioutil.ReadFile(certLoc)
 	if err != nil {
-		return nil, fmt.Errorf("unable to read from %v  file due to %v", certLoc, err)
+		return nil, fmt.Errorf("unable to read from %v file due to %v", certLoc, err)
 	}
 	rootCertPool := x509.NewCertPool()
 	ok := rootCertPool.AppendCertsFromPEM(rootPEM)

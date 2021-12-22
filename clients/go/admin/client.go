@@ -133,8 +133,8 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 		var err error
 		tlsConfig := &tls.Config{} //nolint
 		// Use the cacerts passed in from the config parameter
-		if len(cfg.CAcerts) > 0 {
-			caCerts, err = readCACerts(cfg.CAcerts)
+		if len(cfg.CACertFilePath) > 0 {
+			caCerts, err = readCACerts(cfg.CACertFilePath)
 			if err != nil {
 				return nil, err
 			}

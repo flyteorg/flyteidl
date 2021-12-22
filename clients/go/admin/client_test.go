@@ -84,7 +84,7 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	})
 	t.Run("legal-from-config-with-cacerts", func(t *testing.T) {
 		once = sync.Once{}
-		clientSet, err := initializeClients(ctx, &Config{CAcerts: "testdata/root.pem"}, nil)
+		clientSet, err := initializeClients(ctx, &Config{CACertFilePath: "testdata/root.pem"}, nil)
 		assert.NoError(t, err)
 		assert.NotNil(t, clientSet)
 		assert.NotNil(t, clientSet.AuthMetadataClient())
@@ -100,7 +100,7 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 		newAdminServiceConfig := &Config{
 			Endpoint:              config.URL{URL: *u},
 			UseInsecureConnection: false,
-			CAcerts:               "testdata/non-existent.pem",
+			CACertFilePath:        "testdata/non-existent.pem",
 			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
 		}
 
