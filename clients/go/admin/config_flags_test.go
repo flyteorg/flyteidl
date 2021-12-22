@@ -141,13 +141,13 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_caCerts", func(t *testing.T) {
+	t.Run("Test_caCert", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("caCerts", testValue)
-			if vString, err := cmdFlags.GetString("caCerts"); err == nil {
+			cmdFlags.Set("caCert", testValue)
+			if vString, err := cmdFlags.GetString("caCert"); err == nil {
 				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.CACertFilePath)
 
 			} else {
