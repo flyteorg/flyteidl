@@ -4843,6 +4843,9 @@
         "map": {
           "$ref": "#/definitions/coreBindingDataMap",
           "description": "A map of bindings. The key is always a string."
+        },
+        "union": {
+          "$ref": "#/definitions/coreUnionInfo"
         }
       },
       "description": "Specifies either a simple value or a reference to another output."
@@ -5424,6 +5427,9 @@
         "union_type": {
           "$ref": "#/definitions/coreUnionType",
           "description": "Defines an union type with pre-defined LiteralTypes."
+        },
+        "structure": {
+          "$ref": "#/definitions/coreTypeStructure"
         },
         "metadata": {
           "$ref": "#/definitions/protobufStruct",
@@ -6026,6 +6032,16 @@
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
     },
+    "coreTypeStructure": {
+      "type": "object",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "title": "Must exactly match for types to be castable"
+        }
+      },
+      "title": "Hints to improve type matching\ne.g. allows distinguishing output from custom type transformers\neven if the underlying IDL serialization matches"
+    },
     "coreTypedInterface": {
       "type": "object",
       "properties": {
@@ -6044,11 +6060,19 @@
         "value": {
           "$ref": "#/definitions/coreLiteral"
         },
-        "tag": {
-          "type": "string"
+        "type": {
+          "$ref": "#/definitions/coreLiteralType"
         }
       },
       "description": "The runtime representation of a tagged union value. See `UnionType` for more details."
+    },
+    "coreUnionInfo": {
+      "type": "object",
+      "properties": {
+        "targetType": {
+          "$ref": "#/definitions/coreLiteralType"
+        }
+      }
     },
     "coreUnionType": {
       "type": "object",
@@ -6056,20 +6080,9 @@
         "variants": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/coreUnionVariant"
+            "$ref": "#/definitions/coreLiteralType"
           },
           "description": "Predefined set of variants in union."
-        }
-      }
-    },
-    "coreUnionVariant": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/coreLiteralType"
-        },
-        "tag": {
-          "type": "string"
         }
       },
       "description": "Defines a tagged union type, also known as a variant (and formally as the sum type).\n\nA sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag\nA value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by\nstoring the varaint's tag with the literal value and can be examined in runtime.\n\nType S is typically written as\nS := Apple A | Banana B | Cantaloupe C | ...\n\nNotably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:\nOptional X := X | Null\n\nSee also: https://en.wikipedia.org/wiki/Tagged_union"

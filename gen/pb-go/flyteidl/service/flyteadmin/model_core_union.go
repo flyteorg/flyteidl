@@ -12,5 +12,5 @@ package flyteadmin
 // The runtime representation of a tagged union value. See `UnionType` for more details.
 type CoreUnion struct {
 	Value *CoreLiteral `json:"value,omitempty"`
-	Tag string `json:"tag,omitempty"`
+	Type_ *CoreLiteralType `json:"type,omitempty"`
 }

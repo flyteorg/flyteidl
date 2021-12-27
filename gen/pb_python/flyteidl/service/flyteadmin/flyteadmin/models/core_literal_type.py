@@ -21,6 +21,7 @@ from flyteadmin.models.core_enum_type import CoreEnumType  # noqa: F401,E501
 from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 from flyteadmin.models.core_schema_type import CoreSchemaType  # noqa: F401,E501
 from flyteadmin.models.core_simple_type import CoreSimpleType  # noqa: F401,E501
+from flyteadmin.models.core_type_structure import CoreTypeStructure  # noqa: F401,E501
 from flyteadmin.models.core_union_type import CoreUnionType  # noqa: F401,E501
 from flyteadmin.models.protobuf_struct import ProtobufStruct  # noqa: F401,E501
 
@@ -46,6 +47,7 @@ class CoreLiteralType(object):
         'blob': 'CoreBlobType',
         'enum_type': 'CoreEnumType',
         'union_type': 'CoreUnionType',
+        'structure': 'CoreTypeStructure',
         'metadata': 'ProtobufStruct'
     }
 
@@ -57,10 +59,11 @@ class CoreLiteralType(object):
         'blob': 'blob',
         'enum_type': 'enum_type',
         'union_type': 'union_type',
+        'structure': 'structure',
         'metadata': 'metadata'
     }
 
-    def __init__(self, simple=None, schema=None, collection_type=None, map_value_type=None, blob=None, enum_type=None, union_type=None, metadata=None):  # noqa: E501
+    def __init__(self, simple=None, schema=None, collection_type=None, map_value_type=None, blob=None, enum_type=None, union_type=None, structure=None, metadata=None):  # noqa: E501
         """CoreLiteralType - a model defined in Swagger"""  # noqa: E501
 
         self._simple = None
@@ -70,6 +73,7 @@ class CoreLiteralType(object):
         self._blob = None
         self._enum_type = None
         self._union_type = None
+        self._structure = None
         self._metadata = None
         self.discriminator = None
 
@@ -87,6 +91,8 @@ class CoreLiteralType(object):
             self.enum_type = enum_type
         if union_type is not None:
             self.union_type = union_type
+        if structure is not None:
+            self.structure = structure
         if metadata is not None:
             self.metadata = metadata
 
@@ -250,6 +256,27 @@ class CoreLiteralType(object):
         """
 
         self._union_type = union_type
+
+    @property
+    def structure(self):
+        """Gets the structure of this CoreLiteralType.  # noqa: E501
+
+
+        :return: The structure of this CoreLiteralType.  # noqa: E501
+        :rtype: CoreTypeStructure
+        """
+        return self._structure
+
+    @structure.setter
+    def structure(self, structure):
+        """Sets the structure of this CoreLiteralType.
+
+
+        :param structure: The structure of this CoreLiteralType.  # noqa: E501
+        :type: CoreTypeStructure
+        """
+
+        self._structure = structure
 
     @property
     def metadata(self):

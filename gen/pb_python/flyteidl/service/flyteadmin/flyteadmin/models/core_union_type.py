@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_union_variant import CoreUnionVariant  # noqa: F401,E501
+from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 
 
 class CoreUnionType(object):
@@ -33,7 +33,7 @@ class CoreUnionType(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'variants': 'list[CoreUnionVariant]'
+        'variants': 'list[CoreLiteralType]'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class CoreUnionType(object):
         Predefined set of variants in union.  # noqa: E501
 
         :return: The variants of this CoreUnionType.  # noqa: E501
-        :rtype: list[CoreUnionVariant]
+        :rtype: list[CoreLiteralType]
         """
         return self._variants
 
@@ -67,7 +67,7 @@ class CoreUnionType(object):
         Predefined set of variants in union.  # noqa: E501
 
         :param variants: The variants of this CoreUnionType.  # noqa: E501
-        :type: list[CoreUnionVariant]
+        :type: list[CoreLiteralType]
         """
 
         self._variants = variants

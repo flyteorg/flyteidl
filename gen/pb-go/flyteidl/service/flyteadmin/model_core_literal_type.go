@@ -25,6 +25,7 @@ type CoreLiteralType struct {
 	EnumType *CoreEnumType `json:"enum_type,omitempty"`
 	// Defines an union type with pre-defined LiteralTypes.
 	UnionType *CoreUnionType `json:"union_type,omitempty"`
+	Structure *CoreTypeStructure `json:"structure,omitempty"`
 	// This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by consumers to identify special behavior or display extended information for the type.
 	Metadata *ProtobufStruct `json:"metadata,omitempty"`
 }

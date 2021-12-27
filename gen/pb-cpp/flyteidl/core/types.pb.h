@@ -73,12 +73,12 @@ extern SchemaTypeDefaultTypeInternal _SchemaType_default_instance_;
 class SchemaType_SchemaColumn;
 class SchemaType_SchemaColumnDefaultTypeInternal;
 extern SchemaType_SchemaColumnDefaultTypeInternal _SchemaType_SchemaColumn_default_instance_;
+class TypeStructure;
+class TypeStructureDefaultTypeInternal;
+extern TypeStructureDefaultTypeInternal _TypeStructure_default_instance_;
 class UnionType;
 class UnionTypeDefaultTypeInternal;
 extern UnionTypeDefaultTypeInternal _UnionType_default_instance_;
-class UnionVariant;
-class UnionVariantDefaultTypeInternal;
-extern UnionVariantDefaultTypeInternal _UnionVariant_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -90,8 +90,8 @@ template<> ::flyteidl::core::LiteralType* Arena::CreateMaybeMessage<::flyteidl::
 template<> ::flyteidl::core::OutputReference* Arena::CreateMaybeMessage<::flyteidl::core::OutputReference>(Arena*);
 template<> ::flyteidl::core::SchemaType* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType>(Arena*);
 template<> ::flyteidl::core::SchemaType_SchemaColumn* Arena::CreateMaybeMessage<::flyteidl::core::SchemaType_SchemaColumn>(Arena*);
+template<> ::flyteidl::core::TypeStructure* Arena::CreateMaybeMessage<::flyteidl::core::TypeStructure>(Arena*);
 template<> ::flyteidl::core::UnionType* Arena::CreateMaybeMessage<::flyteidl::core::UnionType>(Arena*);
-template<> ::flyteidl::core::UnionVariant* Arena::CreateMaybeMessage<::flyteidl::core::UnionVariant>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -736,136 +736,6 @@ class EnumType final :
 };
 // -------------------------------------------------------------------
 
-class UnionVariant final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.UnionVariant) */ {
- public:
-  UnionVariant();
-  virtual ~UnionVariant();
-
-  UnionVariant(const UnionVariant& from);
-
-  inline UnionVariant& operator=(const UnionVariant& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  UnionVariant(UnionVariant&& from) noexcept
-    : UnionVariant() {
-    *this = ::std::move(from);
-  }
-
-  inline UnionVariant& operator=(UnionVariant&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const UnionVariant& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const UnionVariant* internal_default_instance() {
-    return reinterpret_cast<const UnionVariant*>(
-               &_UnionVariant_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(UnionVariant* other);
-  friend void swap(UnionVariant& a, UnionVariant& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UnionVariant* New() const final {
-    return CreateMaybeMessage<UnionVariant>(nullptr);
-  }
-
-  UnionVariant* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<UnionVariant>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const UnionVariant& from);
-  void MergeFrom(const UnionVariant& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UnionVariant* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string tag = 2;
-  void clear_tag();
-  static const int kTagFieldNumber = 2;
-  const ::std::string& tag() const;
-  void set_tag(const ::std::string& value);
-  #if LANG_CXX11
-  void set_tag(::std::string&& value);
-  #endif
-  void set_tag(const char* value);
-  void set_tag(const char* value, size_t size);
-  ::std::string* mutable_tag();
-  ::std::string* release_tag();
-  void set_allocated_tag(::std::string* tag);
-
-  // .flyteidl.core.LiteralType type = 1;
-  bool has_type() const;
-  void clear_type();
-  static const int kTypeFieldNumber = 1;
-  const ::flyteidl::core::LiteralType& type() const;
-  ::flyteidl::core::LiteralType* release_type();
-  ::flyteidl::core::LiteralType* mutable_type();
-  void set_allocated_type(::flyteidl::core::LiteralType* type);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.core.UnionVariant)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr tag_;
-  ::flyteidl::core::LiteralType* type_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
-};
-// -------------------------------------------------------------------
-
 class UnionType final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.UnionType) */ {
  public:
@@ -904,7 +774,7 @@ class UnionType final :
                &_UnionType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(UnionType* other);
   friend void swap(UnionType& a, UnionType& b) {
@@ -961,16 +831,16 @@ class UnionType final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.UnionVariant variants = 1;
+  // repeated .flyteidl.core.LiteralType variants = 1;
   int variants_size() const;
   void clear_variants();
   static const int kVariantsFieldNumber = 1;
-  ::flyteidl::core::UnionVariant* mutable_variants(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >*
+  ::flyteidl::core::LiteralType* mutable_variants(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
       mutable_variants();
-  const ::flyteidl::core::UnionVariant& variants(int index) const;
-  ::flyteidl::core::UnionVariant* add_variants();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >&
+  const ::flyteidl::core::LiteralType& variants(int index) const;
+  ::flyteidl::core::LiteralType* add_variants();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
       variants() const;
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.UnionType)
@@ -978,7 +848,127 @@ class UnionType final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant > variants_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType > variants_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TypeStructure final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TypeStructure) */ {
+ public:
+  TypeStructure();
+  virtual ~TypeStructure();
+
+  TypeStructure(const TypeStructure& from);
+
+  inline TypeStructure& operator=(const TypeStructure& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TypeStructure(TypeStructure&& from) noexcept
+    : TypeStructure() {
+    *this = ::std::move(from);
+  }
+
+  inline TypeStructure& operator=(TypeStructure&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TypeStructure& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TypeStructure* internal_default_instance() {
+    return reinterpret_cast<const TypeStructure*>(
+               &_TypeStructure_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(TypeStructure* other);
+  friend void swap(TypeStructure& a, TypeStructure& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TypeStructure* New() const final {
+    return CreateMaybeMessage<TypeStructure>(nullptr);
+  }
+
+  TypeStructure* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TypeStructure>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TypeStructure& from);
+  void MergeFrom(const TypeStructure& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TypeStructure* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string tag = 1;
+  void clear_tag();
+  static const int kTagFieldNumber = 1;
+  const ::std::string& tag() const;
+  void set_tag(const ::std::string& value);
+  #if LANG_CXX11
+  void set_tag(::std::string&& value);
+  #endif
+  void set_tag(const char* value);
+  void set_tag(const char* value, size_t size);
+  ::std::string* mutable_tag();
+  ::std::string* release_tag();
+  void set_allocated_tag(::std::string* tag);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.TypeStructure)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr tag_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftypes_2eproto;
 };
@@ -1099,6 +1089,15 @@ class LiteralType final :
   ::google::protobuf::Struct* mutable_metadata();
   void set_allocated_metadata(::google::protobuf::Struct* metadata);
 
+  // .flyteidl.core.TypeStructure structure = 9;
+  bool has_structure() const;
+  void clear_structure();
+  static const int kStructureFieldNumber = 9;
+  const ::flyteidl::core::TypeStructure& structure() const;
+  ::flyteidl::core::TypeStructure* release_structure();
+  ::flyteidl::core::TypeStructure* mutable_structure();
+  void set_allocated_structure(::flyteidl::core::TypeStructure* structure);
+
   // .flyteidl.core.SimpleType simple = 1;
   private:
   bool has_simple() const;
@@ -1180,6 +1179,7 @@ class LiteralType final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::Struct* metadata_;
+  ::flyteidl::core::TypeStructure* structure_;
   union TypeUnion {
     TypeUnion() {}
     int simple_;
@@ -1723,144 +1723,93 @@ EnumType::mutable_values() {
 
 // -------------------------------------------------------------------
 
-// UnionVariant
-
-// .flyteidl.core.LiteralType type = 1;
-inline bool UnionVariant::has_type() const {
-  return this != internal_default_instance() && type_ != nullptr;
-}
-inline void UnionVariant::clear_type() {
-  if (GetArenaNoVirtual() == nullptr && type_ != nullptr) {
-    delete type_;
-  }
-  type_ = nullptr;
-}
-inline const ::flyteidl::core::LiteralType& UnionVariant::type() const {
-  const ::flyteidl::core::LiteralType* p = type_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.UnionVariant.type)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralType*>(
-      &::flyteidl::core::_LiteralType_default_instance_);
-}
-inline ::flyteidl::core::LiteralType* UnionVariant::release_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.UnionVariant.type)
-  
-  ::flyteidl::core::LiteralType* temp = type_;
-  type_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::LiteralType* UnionVariant::mutable_type() {
-  
-  if (type_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralType>(GetArenaNoVirtual());
-    type_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionVariant.type)
-  return type_;
-}
-inline void UnionVariant::set_allocated_type(::flyteidl::core::LiteralType* type) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete type_;
-  }
-  if (type) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, type, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  type_ = type;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.UnionVariant.type)
-}
-
-// string tag = 2;
-inline void UnionVariant::clear_tag() {
-  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& UnionVariant::tag() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.UnionVariant.tag)
-  return tag_.GetNoArena();
-}
-inline void UnionVariant::set_tag(const ::std::string& value) {
-  
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.UnionVariant.tag)
-}
-#if LANG_CXX11
-inline void UnionVariant::set_tag(::std::string&& value) {
-  
-  tag_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.UnionVariant.tag)
-}
-#endif
-inline void UnionVariant::set_tag(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.UnionVariant.tag)
-}
-inline void UnionVariant::set_tag(const char* value, size_t size) {
-  
-  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.UnionVariant.tag)
-}
-inline ::std::string* UnionVariant::mutable_tag() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionVariant.tag)
-  return tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* UnionVariant::release_tag() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.UnionVariant.tag)
-  
-  return tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void UnionVariant::set_allocated_tag(::std::string* tag) {
-  if (tag != nullptr) {
-    
-  } else {
-    
-  }
-  tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tag);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.UnionVariant.tag)
-}
-
-// -------------------------------------------------------------------
-
 // UnionType
 
-// repeated .flyteidl.core.UnionVariant variants = 1;
+// repeated .flyteidl.core.LiteralType variants = 1;
 inline int UnionType::variants_size() const {
   return variants_.size();
 }
 inline void UnionType::clear_variants() {
   variants_.Clear();
 }
-inline ::flyteidl::core::UnionVariant* UnionType::mutable_variants(int index) {
+inline ::flyteidl::core::LiteralType* UnionType::mutable_variants(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.core.UnionType.variants)
   return variants_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >*
 UnionType::mutable_variants() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.core.UnionType.variants)
   return &variants_;
 }
-inline const ::flyteidl::core::UnionVariant& UnionType::variants(int index) const {
+inline const ::flyteidl::core::LiteralType& UnionType::variants(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.core.UnionType.variants)
   return variants_.Get(index);
 }
-inline ::flyteidl::core::UnionVariant* UnionType::add_variants() {
+inline ::flyteidl::core::LiteralType* UnionType::add_variants() {
   // @@protoc_insertion_point(field_add:flyteidl.core.UnionType.variants)
   return variants_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::UnionVariant >&
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::LiteralType >&
 UnionType::variants() const {
   // @@protoc_insertion_point(field_list:flyteidl.core.UnionType.variants)
   return variants_;
+}
+
+// -------------------------------------------------------------------
+
+// TypeStructure
+
+// string tag = 1;
+inline void TypeStructure::clear_tag() {
+  tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TypeStructure::tag() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TypeStructure.tag)
+  return tag_.GetNoArena();
+}
+inline void TypeStructure::set_tag(const ::std::string& value) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.TypeStructure.tag)
+}
+#if LANG_CXX11
+inline void TypeStructure::set_tag(::std::string&& value) {
+  
+  tag_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TypeStructure.tag)
+}
+#endif
+inline void TypeStructure::set_tag(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.TypeStructure.tag)
+}
+inline void TypeStructure::set_tag(const char* value, size_t size) {
+  
+  tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TypeStructure.tag)
+}
+inline ::std::string* TypeStructure::mutable_tag() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TypeStructure.tag)
+  return tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TypeStructure::release_tag() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TypeStructure.tag)
+  
+  return tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TypeStructure::set_allocated_tag(::std::string* tag) {
+  if (tag != nullptr) {
+    
+  } else {
+    
+  }
+  tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tag);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TypeStructure.tag)
 }
 
 // -------------------------------------------------------------------
@@ -2140,6 +2089,57 @@ inline ::flyteidl::core::UnionType* LiteralType::mutable_union_type() {
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.LiteralType.union_type)
   return type_.union_type_;
+}
+
+// .flyteidl.core.TypeStructure structure = 9;
+inline bool LiteralType::has_structure() const {
+  return this != internal_default_instance() && structure_ != nullptr;
+}
+inline void LiteralType::clear_structure() {
+  if (GetArenaNoVirtual() == nullptr && structure_ != nullptr) {
+    delete structure_;
+  }
+  structure_ = nullptr;
+}
+inline const ::flyteidl::core::TypeStructure& LiteralType::structure() const {
+  const ::flyteidl::core::TypeStructure* p = structure_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.LiteralType.structure)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::TypeStructure*>(
+      &::flyteidl::core::_TypeStructure_default_instance_);
+}
+inline ::flyteidl::core::TypeStructure* LiteralType::release_structure() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.LiteralType.structure)
+  
+  ::flyteidl::core::TypeStructure* temp = structure_;
+  structure_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::TypeStructure* LiteralType::mutable_structure() {
+  
+  if (structure_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::TypeStructure>(GetArenaNoVirtual());
+    structure_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.LiteralType.structure)
+  return structure_;
+}
+inline void LiteralType::set_allocated_structure(::flyteidl::core::TypeStructure* structure) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete structure_;
+  }
+  if (structure) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      structure = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, structure, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  structure_ = structure;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.LiteralType.structure)
 }
 
 // .google.protobuf.Struct metadata = 6;

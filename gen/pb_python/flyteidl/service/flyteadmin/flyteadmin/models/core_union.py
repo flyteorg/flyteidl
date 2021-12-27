@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_literal import CoreLiteral  # noqa: F401,E501
+from flyteadmin.models.core_literal_type import CoreLiteralType  # noqa: F401,E501
 
 
 class CoreUnion(object):
@@ -34,25 +35,25 @@ class CoreUnion(object):
     """
     swagger_types = {
         'value': 'CoreLiteral',
-        'tag': 'str'
+        'type': 'CoreLiteralType'
     }
 
     attribute_map = {
         'value': 'value',
-        'tag': 'tag'
+        'type': 'type'
     }
 
-    def __init__(self, value=None, tag=None):  # noqa: E501
+    def __init__(self, value=None, type=None):  # noqa: E501
         """CoreUnion - a model defined in Swagger"""  # noqa: E501
 
         self._value = None
-        self._tag = None
+        self._type = None
         self.discriminator = None
 
         if value is not None:
             self.value = value
-        if tag is not None:
-            self.tag = tag
+        if type is not None:
+            self.type = type
 
     @property
     def value(self):
@@ -76,25 +77,25 @@ class CoreUnion(object):
         self._value = value
 
     @property
-    def tag(self):
-        """Gets the tag of this CoreUnion.  # noqa: E501
+    def type(self):
+        """Gets the type of this CoreUnion.  # noqa: E501
 
 
-        :return: The tag of this CoreUnion.  # noqa: E501
-        :rtype: str
+        :return: The type of this CoreUnion.  # noqa: E501
+        :rtype: CoreLiteralType
         """
-        return self._tag
+        return self._type
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this CoreUnion.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this CoreUnion.
 
 
-        :param tag: The tag of this CoreUnion.  # noqa: E501
-        :type: str
+        :param type: The type of this CoreUnion.  # noqa: E501
+        :type: CoreLiteralType
         """
 
-        self._tag = tag
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1182,6 +1182,7 @@ Specifies either a simple value or a reference to another output.
    "collection", ":ref:`ref_flyteidl.core.BindingDataCollection`", "", "A collection of binding data. This allows nesting of binding data to any number of levels."
    "promise", ":ref:`ref_flyteidl.core.OutputReference`", "", "References an output promised by another node."
    "map", ":ref:`ref_flyteidl.core.BindingDataMap`", "", "A map of bindings. The key is always a string."
+   "union", ":ref:`ref_flyteidl.core.UnionInfo`", "", ""
 
 
 
@@ -1517,7 +1518,28 @@ The runtime representation of a tagged union value. See `UnionType` for more det
    :widths: auto
 
    "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
-   "tag", ":ref:`ref_string`", "", ""
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.UnionInfo:
+
+UnionInfo
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: UnionInfo type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "targetType", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
 
 
 
@@ -2326,6 +2348,7 @@ Defines a strong type to allow type checking between interfaces.
    "blob", ":ref:`ref_flyteidl.core.BlobType`", "", "A blob might have specialized implementation details depending on associated metadata."
    "enum_type", ":ref:`ref_flyteidl.core.EnumType`", "", "Defines an enum with pre-defined string values."
    "union_type", ":ref:`ref_flyteidl.core.UnionType`", "", "Defines an union type with pre-defined LiteralTypes."
+   "structure", ":ref:`ref_flyteidl.core.TypeStructure`", "", ""
    "metadata", ":ref:`ref_google.protobuf.Struct`", "", "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking. This might be used by consumers to identify special behavior or display extended information for the type."
 
 
@@ -2400,20 +2423,22 @@ SchemaType.SchemaColumn
 
 
 
-.. _ref_flyteidl.core.UnionType:
+.. _ref_flyteidl.core.TypeStructure:
 
-UnionType
+TypeStructure
 ------------------------------------------------------------------
 
+Hints to improve type matching
+e.g. allows distinguishing output from custom type transformers
+even if the underlying IDL serialization matches
 
 
 
-
-.. csv-table:: UnionType type fields
+.. csv-table:: TypeStructure type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "variants", ":ref:`ref_flyteidl.core.UnionVariant`", "repeated", "Predefined set of variants in union."
+   "tag", ":ref:`ref_string`", "", "Must exactly match for types to be castable"
 
 
 
@@ -2421,9 +2446,9 @@ UnionType
 
 
 
-.. _ref_flyteidl.core.UnionVariant:
+.. _ref_flyteidl.core.UnionType:
 
-UnionVariant
+UnionType
 ------------------------------------------------------------------
 
 Defines a tagged union type, also known as a variant (and formally as the sum type).
@@ -2442,12 +2467,11 @@ See also: https://en.wikipedia.org/wiki/Tagged_union
 
 
 
-.. csv-table:: UnionVariant type fields
+.. csv-table:: UnionType type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
-   "tag", ":ref:`ref_string`", "", ""
+   "variants", ":ref:`ref_flyteidl.core.LiteralType`", "repeated", "Predefined set of variants in union."
 
 
 

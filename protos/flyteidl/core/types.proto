@@ -77,13 +77,17 @@ message EnumType {
 // Optional X := X | Null
 //
 // See also: https://en.wikipedia.org/wiki/Tagged_union
-message UnionVariant {
-    LiteralType type = 1;
-    string tag = 2;
-}
 message UnionType {
     // Predefined set of variants in union.
-    repeated UnionVariant variants = 1;
+    repeated LiteralType variants = 1;
+}
+
+// Hints to improve type matching
+// e.g. allows distinguishing output from custom type transformers
+// even if the underlying IDL serialization matches
+message TypeStructure {
+    // Must exactly match for types to be castable
+    string tag = 1;
 }
 
 // Defines a strong type to allow type checking between interfaces.
@@ -110,6 +114,8 @@ message LiteralType {
         // Defines an union type with pre-defined LiteralTypes.
         UnionType union_type = 8;
     }
+
+    TypeStructure structure = 9;
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
     // consumers to identify special behavior or display extended information for the type.

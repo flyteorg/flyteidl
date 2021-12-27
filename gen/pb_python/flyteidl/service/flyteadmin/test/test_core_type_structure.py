@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_union_variant import CoreUnionVariant  # noqa: E501
+from flyteadmin.models.core_type_structure import CoreTypeStructure  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreUnionVariant(unittest.TestCase):
-    """CoreUnionVariant unit test stubs"""
+class TestCoreTypeStructure(unittest.TestCase):
+    """CoreTypeStructure unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreUnionVariant(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreUnionVariant(self):
-        """Test CoreUnionVariant"""
+    def testCoreTypeStructure(self):
+        """Test CoreTypeStructure"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_union_variant.CoreUnionVariant()  # noqa: E501
+        # model = flyteadmin.models.core_type_structure.CoreTypeStructure()  # noqa: E501
         pass
 
 
