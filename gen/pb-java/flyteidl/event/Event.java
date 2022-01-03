@@ -13771,6 +13771,32 @@ public final class Event {
      */
     com.google.protobuf.ByteString
         getExternalIdBytes();
+
+    /**
+     * <pre>
+     * retry attempt number for this external resource, ie., 2 for the second attempt
+     * </pre>
+     *
+     * <code>uint32 retry_attempt = 2;</code>
+     */
+    int getRetryAttempt();
+
+    /**
+     * <pre>
+     * Phase associated with the external resource
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+     */
+    int getPhaseValue();
+    /**
+     * <pre>
+     * Phase associated with the external resource
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+     */
+    flyteidl.core.Execution.TaskExecution.Phase getPhase();
   }
   /**
    * <pre>
@@ -13790,6 +13816,7 @@ public final class Event {
     }
     private ExternalResourceInfo() {
       externalId_ = "";
+      phase_ = 0;
     }
 
     @java.lang.Override
@@ -13820,6 +13847,17 @@ public final class Event {
               java.lang.String s = input.readStringRequireUtf8();
 
               externalId_ = s;
+              break;
+            }
+            case 16: {
+
+              retryAttempt_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              phase_ = rawValue;
               break;
             }
             default: {
@@ -13896,6 +13934,44 @@ public final class Event {
       }
     }
 
+    public static final int RETRY_ATTEMPT_FIELD_NUMBER = 2;
+    private int retryAttempt_;
+    /**
+     * <pre>
+     * retry attempt number for this external resource, ie., 2 for the second attempt
+     * </pre>
+     *
+     * <code>uint32 retry_attempt = 2;</code>
+     */
+    public int getRetryAttempt() {
+      return retryAttempt_;
+    }
+
+    public static final int PHASE_FIELD_NUMBER = 3;
+    private int phase_;
+    /**
+     * <pre>
+     * Phase associated with the external resource
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+     */
+    public int getPhaseValue() {
+      return phase_;
+    }
+    /**
+     * <pre>
+     * Phase associated with the external resource
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+     */
+    public flyteidl.core.Execution.TaskExecution.Phase getPhase() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Execution.TaskExecution.Phase result = flyteidl.core.Execution.TaskExecution.Phase.valueOf(phase_);
+      return result == null ? flyteidl.core.Execution.TaskExecution.Phase.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13913,6 +13989,12 @@ public final class Event {
       if (!getExternalIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, externalId_);
       }
+      if (retryAttempt_ != 0) {
+        output.writeUInt32(2, retryAttempt_);
+      }
+      if (phase_ != flyteidl.core.Execution.TaskExecution.Phase.UNDEFINED.getNumber()) {
+        output.writeEnum(3, phase_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -13924,6 +14006,14 @@ public final class Event {
       size = 0;
       if (!getExternalIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, externalId_);
+      }
+      if (retryAttempt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, retryAttempt_);
+      }
+      if (phase_ != flyteidl.core.Execution.TaskExecution.Phase.UNDEFINED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, phase_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13942,6 +14032,9 @@ public final class Event {
 
       if (!getExternalId()
           .equals(other.getExternalId())) return false;
+      if (getRetryAttempt()
+          != other.getRetryAttempt()) return false;
+      if (phase_ != other.phase_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13955,6 +14048,10 @@ public final class Event {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExternalId().hashCode();
+      hash = (37 * hash) + RETRY_ATTEMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryAttempt();
+      hash = (37 * hash) + PHASE_FIELD_NUMBER;
+      hash = (53 * hash) + phase_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14094,6 +14191,10 @@ public final class Event {
         super.clear();
         externalId_ = "";
 
+        retryAttempt_ = 0;
+
+        phase_ = 0;
+
         return this;
       }
 
@@ -14121,6 +14222,8 @@ public final class Event {
       public flyteidl.event.Event.ExternalResourceInfo buildPartial() {
         flyteidl.event.Event.ExternalResourceInfo result = new flyteidl.event.Event.ExternalResourceInfo(this);
         result.externalId_ = externalId_;
+        result.retryAttempt_ = retryAttempt_;
+        result.phase_ = phase_;
         onBuilt();
         return result;
       }
@@ -14172,6 +14275,12 @@ public final class Event {
         if (!other.getExternalId().isEmpty()) {
           externalId_ = other.externalId_;
           onChanged();
+        }
+        if (other.getRetryAttempt() != 0) {
+          setRetryAttempt(other.getRetryAttempt());
+        }
+        if (other.phase_ != 0) {
+          setPhaseValue(other.getPhaseValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14287,6 +14396,109 @@ public final class Event {
   checkByteStringIsUtf8(value);
         
         externalId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int retryAttempt_ ;
+      /**
+       * <pre>
+       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * </pre>
+       *
+       * <code>uint32 retry_attempt = 2;</code>
+       */
+      public int getRetryAttempt() {
+        return retryAttempt_;
+      }
+      /**
+       * <pre>
+       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * </pre>
+       *
+       * <code>uint32 retry_attempt = 2;</code>
+       */
+      public Builder setRetryAttempt(int value) {
+        
+        retryAttempt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * </pre>
+       *
+       * <code>uint32 retry_attempt = 2;</code>
+       */
+      public Builder clearRetryAttempt() {
+        
+        retryAttempt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int phase_ = 0;
+      /**
+       * <pre>
+       * Phase associated with the external resource
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+       */
+      public int getPhaseValue() {
+        return phase_;
+      }
+      /**
+       * <pre>
+       * Phase associated with the external resource
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+       */
+      public Builder setPhaseValue(int value) {
+        phase_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Phase associated with the external resource
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+       */
+      public flyteidl.core.Execution.TaskExecution.Phase getPhase() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Execution.TaskExecution.Phase result = flyteidl.core.Execution.TaskExecution.Phase.valueOf(phase_);
+        return result == null ? flyteidl.core.Execution.TaskExecution.Phase.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Phase associated with the external resource
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+       */
+      public Builder setPhase(flyteidl.core.Execution.TaskExecution.Phase value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        phase_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Phase associated with the external resource
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecution.Phase phase = 3;</code>
+       */
+      public Builder clearPhase() {
+        
+        phase_ = 0;
         onChanged();
         return this;
       }
@@ -17215,19 +17427,21 @@ public final class Event {
       "e_version\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_" +
       "type\030\016 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl." +
       "event.TaskExecutionMetadataB\017\n\routput_re" +
-      "sult\"+\n\024ExternalResourceInfo\022\023\n\013external" +
-      "_id\030\001 \001(\t\"?\n\020ResourcePoolInfo\022\030\n\020allocat" +
-      "ion_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025T" +
-      "askExecutionMetadata\022\026\n\016generated_name\030\001" +
-      " \001(\t\022@\n\022external_resources\030\002 \003(\0132$.flyte" +
-      "idl.event.ExternalResourceInfo\022<\n\022resour" +
-      "ce_pool_info\030\003 \003(\0132 .flyteidl.event.Reso" +
-      "urcePoolInfo\022\031\n\021plugin_identifier\030\004 \001(\t\022" +
-      "K\n\016instance_class\030\020 \001(\01623.flyteidl.event" +
-      ".TaskExecutionMetadata.InstanceClass\"/\n\r" +
-      "InstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTI" +
-      "BLE\020\001B7Z5github.com/flyteorg/flyteidl/ge" +
-      "n/pb-go/flyteidl/eventb\006proto3"
+      "sult\"u\n\024ExternalResourceInfo\022\023\n\013external" +
+      "_id\030\001 \001(\t\022\025\n\rretry_attempt\030\002 \001(\r\0221\n\005phas" +
+      "e\030\003 \001(\0162\".flyteidl.core.TaskExecution.Ph" +
+      "ase\"?\n\020ResourcePoolInfo\022\030\n\020allocation_to" +
+      "ken\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExe" +
+      "cutionMetadata\022\026\n\016generated_name\030\001 \001(\t\022@" +
+      "\n\022external_resources\030\002 \003(\0132$.flyteidl.ev" +
+      "ent.ExternalResourceInfo\022<\n\022resource_poo" +
+      "l_info\030\003 \003(\0132 .flyteidl.event.ResourcePo" +
+      "olInfo\022\031\n\021plugin_identifier\030\004 \001(\t\022K\n\016ins" +
+      "tance_class\030\020 \001(\01623.flyteidl.event.TaskE" +
+      "xecutionMetadata.InstanceClass\"/\n\rInstan" +
+      "ceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B" +
+      "7Z5github.com/flyteorg/flyteidl/gen/pb-g" +
+      "o/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17301,7 +17515,7 @@ public final class Event {
     internal_static_flyteidl_event_ExternalResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ExternalResourceInfo_descriptor,
-        new java.lang.String[] { "ExternalId", });
+        new java.lang.String[] { "ExternalId", "RetryAttempt", "Phase", });
     internal_static_flyteidl_event_ResourcePoolInfo_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable = new

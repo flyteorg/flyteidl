@@ -13,4 +13,6 @@ package flyteadmin
 type EventExternalResourceInfo struct {
 	// Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
 	ExternalId string `json:"external_id,omitempty"`
+	RetryAttempt int64 `json:"retry_attempt,omitempty"`
+	Phase *CoreTaskExecutionPhase `json:"phase,omitempty"`
 }

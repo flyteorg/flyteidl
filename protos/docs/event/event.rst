@@ -50,6 +50,8 @@ This message contains metadata about external resources produced or used by a sp
    :widths: auto
 
    "external_id", ":ref:`ref_string`", "", "Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids."
+   "retry_attempt", ":ref:`ref_uint32`", "", "retry attempt number for this external resource, ie., 2 for the second attempt"
+   "phase", ":ref:`ref_flyteidl.core.TaskExecution.Phase`", "", "Phase associated with the external resource"
 
 
 
