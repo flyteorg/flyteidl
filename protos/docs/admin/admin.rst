@@ -2180,6 +2180,7 @@ Represents additional attributes related to a Node Execution
    "retry_group", ":ref:`ref_string`", "", "Node executions are grouped depending on retries of the parent Retry group is unique within the context of a parent node."
    "is_parent_node", ":ref:`ref_bool`", "", "Boolean flag indicating if the node has child nodes under it This can be true when a node contains a dynamic workflow which then produces child nodes."
    "spec_node_id", ":ref:`ref_string`", "", "Node id of the node in the original workflow This maps to value of WorkflowTemplate.nodes[X].id"
+   "parent_node_id", ":ref:`ref_string`", "", "Parent node id, in case of root node it is an empty string"
 
 
 

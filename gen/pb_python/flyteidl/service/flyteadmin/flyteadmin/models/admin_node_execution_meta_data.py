@@ -33,21 +33,24 @@ class AdminNodeExecutionMetaData(object):
     swagger_types = {
         'retry_group': 'str',
         'is_parent_node': 'bool',
-        'spec_node_id': 'str'
+        'spec_node_id': 'str',
+        'parent_node_id': 'str'
     }
 
     attribute_map = {
         'retry_group': 'retry_group',
         'is_parent_node': 'is_parent_node',
-        'spec_node_id': 'spec_node_id'
+        'spec_node_id': 'spec_node_id',
+        'parent_node_id': 'parent_node_id'
     }
 
-    def __init__(self, retry_group=None, is_parent_node=None, spec_node_id=None):  # noqa: E501
+    def __init__(self, retry_group=None, is_parent_node=None, spec_node_id=None, parent_node_id=None):  # noqa: E501
         """AdminNodeExecutionMetaData - a model defined in Swagger"""  # noqa: E501
 
         self._retry_group = None
         self._is_parent_node = None
         self._spec_node_id = None
+        self._parent_node_id = None
         self.discriminator = None
 
         if retry_group is not None:
@@ -56,6 +59,8 @@ class AdminNodeExecutionMetaData(object):
             self.is_parent_node = is_parent_node
         if spec_node_id is not None:
             self.spec_node_id = spec_node_id
+        if parent_node_id is not None:
+            self.parent_node_id = parent_node_id
 
     @property
     def retry_group(self):
@@ -123,6 +128,27 @@ class AdminNodeExecutionMetaData(object):
         """
 
         self._spec_node_id = spec_node_id
+
+    @property
+    def parent_node_id(self):
+        """Gets the parent_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+
+
+        :return: The parent_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_node_id
+
+    @parent_node_id.setter
+    def parent_node_id(self, parent_node_id):
+        """Sets the parent_node_id of this AdminNodeExecutionMetaData.
+
+
+        :param parent_node_id: The parent_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :type: str
+        """
+
+        self._parent_node_id = parent_node_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

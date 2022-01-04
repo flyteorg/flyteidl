@@ -5106,6 +5106,24 @@ public final class NodeExecutionOuterClass {
      */
     com.google.protobuf.ByteString
         getSpecNodeIdBytes();
+
+    /**
+     * <pre>
+     * Parent node id, in case of root node it is an empty string
+     * </pre>
+     *
+     * <code>string parent_node_id = 5;</code>
+     */
+    java.lang.String getParentNodeId();
+    /**
+     * <pre>
+     * Parent node id, in case of root node it is an empty string
+     * </pre>
+     *
+     * <code>string parent_node_id = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getParentNodeIdBytes();
   }
   /**
    * <pre>
@@ -5126,6 +5144,7 @@ public final class NodeExecutionOuterClass {
     private NodeExecutionMetaData() {
       retryGroup_ = "";
       specNodeId_ = "";
+      parentNodeId_ = "";
     }
 
     @java.lang.Override
@@ -5167,6 +5186,12 @@ public final class NodeExecutionOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               specNodeId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parentNodeId_ = s;
               break;
             }
             default: {
@@ -5304,6 +5329,48 @@ public final class NodeExecutionOuterClass {
       }
     }
 
+    public static final int PARENT_NODE_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object parentNodeId_;
+    /**
+     * <pre>
+     * Parent node id, in case of root node it is an empty string
+     * </pre>
+     *
+     * <code>string parent_node_id = 5;</code>
+     */
+    public java.lang.String getParentNodeId() {
+      java.lang.Object ref = parentNodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentNodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Parent node id, in case of root node it is an empty string
+     * </pre>
+     *
+     * <code>string parent_node_id = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getParentNodeIdBytes() {
+      java.lang.Object ref = parentNodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parentNodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5327,6 +5394,9 @@ public final class NodeExecutionOuterClass {
       if (!getSpecNodeIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, specNodeId_);
       }
+      if (!getParentNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parentNodeId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5345,6 +5415,9 @@ public final class NodeExecutionOuterClass {
       }
       if (!getSpecNodeIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, specNodeId_);
+      }
+      if (!getParentNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parentNodeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5367,6 +5440,8 @@ public final class NodeExecutionOuterClass {
           != other.getIsParentNode()) return false;
       if (!getSpecNodeId()
           .equals(other.getSpecNodeId())) return false;
+      if (!getParentNodeId()
+          .equals(other.getParentNodeId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5385,6 +5460,8 @@ public final class NodeExecutionOuterClass {
           getIsParentNode());
       hash = (37 * hash) + SPEC_NODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpecNodeId().hashCode();
+      hash = (37 * hash) + PARENT_NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentNodeId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5528,6 +5605,8 @@ public final class NodeExecutionOuterClass {
 
         specNodeId_ = "";
 
+        parentNodeId_ = "";
+
         return this;
       }
 
@@ -5557,6 +5636,7 @@ public final class NodeExecutionOuterClass {
         result.retryGroup_ = retryGroup_;
         result.isParentNode_ = isParentNode_;
         result.specNodeId_ = specNodeId_;
+        result.parentNodeId_ = parentNodeId_;
         onBuilt();
         return result;
       }
@@ -5614,6 +5694,10 @@ public final class NodeExecutionOuterClass {
         }
         if (!other.getSpecNodeId().isEmpty()) {
           specNodeId_ = other.specNodeId_;
+          onChanged();
+        }
+        if (!other.getParentNodeId().isEmpty()) {
+          parentNodeId_ = other.parentNodeId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5873,6 +5957,95 @@ public final class NodeExecutionOuterClass {
   checkByteStringIsUtf8(value);
         
         specNodeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object parentNodeId_ = "";
+      /**
+       * <pre>
+       * Parent node id, in case of root node it is an empty string
+       * </pre>
+       *
+       * <code>string parent_node_id = 5;</code>
+       */
+      public java.lang.String getParentNodeId() {
+        java.lang.Object ref = parentNodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          parentNodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Parent node id, in case of root node it is an empty string
+       * </pre>
+       *
+       * <code>string parent_node_id = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getParentNodeIdBytes() {
+        java.lang.Object ref = parentNodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          parentNodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Parent node id, in case of root node it is an empty string
+       * </pre>
+       *
+       * <code>string parent_node_id = 5;</code>
+       */
+      public Builder setParentNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        parentNodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Parent node id, in case of root node it is an empty string
+       * </pre>
+       *
+       * <code>string parent_node_id = 5;</code>
+       */
+      public Builder clearParentNodeId() {
+        
+        parentNodeId_ = getDefaultInstance().getParentNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Parent node id, in case of root node it is an empty string
+       * </pre>
+       *
+       * <code>string parent_node_id = 5;</code>
+       */
+      public Builder setParentNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        parentNodeId_ = value;
         onChanged();
         return this;
       }
@@ -14714,46 +14887,46 @@ public final class NodeExecutionOuterClass {
       "ionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007clos" +
       "ure\030\003 \001(\0132$.flyteidl.admin.NodeExecution" +
       "Closure\0227\n\010metadata\030\004 \001(\0132%.flyteidl.adm" +
-      "in.NodeExecutionMetaData\"Z\n\025NodeExecutio" +
+      "in.NodeExecutionMetaData\"r\n\025NodeExecutio" +
       "nMetaData\022\023\n\013retry_group\030\001 \001(\t\022\026\n\016is_par" +
-      "ent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(\t\"Z\n\021" +
-      "NodeExecutionList\0226\n\017node_executions\030\001 \003" +
-      "(\0132\035.flyteidl.admin.NodeExecution\022\r\n\005tok" +
-      "en\030\002 \001(\t\"\262\004\n\024NodeExecutionClosure\022\030\n\nout" +
-      "put_uri\030\001 \001(\tB\002\030\001H\000\022.\n\005error\030\002 \001(\0132\035.fly" +
-      "teidl.core.ExecutionErrorH\000\0224\n\013output_da" +
-      "ta\030\n \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H" +
-      "\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExe" +
-      "cution.Phase\022.\n\nstarted_at\030\004 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022+\n\010duration\030\005 \001(\0132\031" +
-      ".google.protobuf.Duration\022.\n\ncreated_at\030" +
-      "\006 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd" +
-      "ated_at\030\007 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyt" +
-      "eidl.admin.WorkflowNodeMetadataH\001\022>\n\022tas" +
-      "k_node_metadata\030\t \001(\0132 .flyteidl.admin.T" +
-      "askNodeMetadataH\001B\017\n\routput_resultB\021\n\017ta" +
-      "rget_metadata\"W\n\024WorkflowNodeMetadata\022?\n" +
-      "\013executionId\030\001 \001(\0132*.flyteidl.core.Workf" +
-      "lowExecutionIdentifier\"\200\001\n\020TaskNodeMetad" +
-      "ata\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.cor" +
-      "e.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001(" +
-      "\0132\036.flyteidl.core.CatalogMetadata\"\207\001\n\033Dy" +
-      "namicWorkflowNodeMetadata\022%\n\002id\030\001 \001(\0132\031." +
-      "flyteidl.core.Identifier\022A\n\021compiled_wor" +
-      "kflow\030\002 \001(\0132&.flyteidl.core.CompiledWork" +
-      "flowClosure\"Q\n\033NodeExecutionGetDataReque" +
-      "st\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExecu" +
-      "tionIdentifier\"\241\002\n\034NodeExecutionGetDataR" +
-      "esponse\022+\n\006inputs\030\001 \001(\0132\027.flyteidl.admin" +
-      ".UrlBlobB\002\030\001\022,\n\007outputs\030\002 \001(\0132\027.flyteidl" +
-      ".admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132" +
-      "\031.flyteidl.core.LiteralMap\022/\n\014full_outpu" +
-      "ts\030\004 \001(\0132\031.flyteidl.core.LiteralMap\022E\n\020d" +
-      "ynamic_workflow\030\020 \001(\0132+.flyteidl.admin.D" +
-      "ynamicWorkflowNodeMetadataB7Z5github.com" +
-      "/flyteorg/flyteidl/gen/pb-go/flyteidl/ad" +
-      "minb\006proto3"
+      "ent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(\t\022\026\n\016" +
+      "parent_node_id\030\005 \001(\t\"Z\n\021NodeExecutionLis" +
+      "t\0226\n\017node_executions\030\001 \003(\0132\035.flyteidl.ad" +
+      "min.NodeExecution\022\r\n\005token\030\002 \001(\t\"\262\004\n\024Nod" +
+      "eExecutionClosure\022\030\n\noutput_uri\030\001 \001(\tB\002\030" +
+      "\001H\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Execu" +
+      "tionErrorH\000\0224\n\013output_data\030\n \001(\0132\031.flyte" +
+      "idl.core.LiteralMapB\002\030\001H\000\0221\n\005phase\030\003 \001(\016" +
+      "2\".flyteidl.core.NodeExecution.Phase\022.\n\n" +
+      "started_at\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022+\n\010duration\030\005 \001(\0132\031.google.protobuf" +
+      ".Duration\022.\n\ncreated_at\030\006 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\0132\032." +
+      "google.protobuf.Timestamp\022F\n\026workflow_no" +
+      "de_metadata\030\010 \001(\0132$.flyteidl.admin.Workf" +
+      "lowNodeMetadataH\001\022>\n\022task_node_metadata\030" +
+      "\t \001(\0132 .flyteidl.admin.TaskNodeMetadataH" +
+      "\001B\017\n\routput_resultB\021\n\017target_metadata\"W\n" +
+      "\024WorkflowNodeMetadata\022?\n\013executionId\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\"\200\001\n\020TaskNodeMetadata\0227\n\014cache_sta" +
+      "tus\030\001 \001(\0162!.flyteidl.core.CatalogCacheSt" +
+      "atus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl.cor" +
+      "e.CatalogMetadata\"\207\001\n\033DynamicWorkflowNod" +
+      "eMetadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\022A\n\021compiled_workflow\030\002 \001(\0132&.fl" +
+      "yteidl.core.CompiledWorkflowClosure\"Q\n\033N" +
+      "odeExecutionGetDataRequest\0222\n\002id\030\001 \001(\0132&" +
+      ".flyteidl.core.NodeExecutionIdentifier\"\241" +
+      "\002\n\034NodeExecutionGetDataResponse\022+\n\006input" +
+      "s\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022,\n\007" +
+      "outputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002" +
+      "\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core." +
+      "LiteralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyte" +
+      "idl.core.LiteralMap\022E\n\020dynamic_workflow\030" +
+      "\020 \001(\0132+.flyteidl.admin.DynamicWorkflowNo" +
+      "deMetadataB7Z5github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14804,7 +14977,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionMetaData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionMetaData_descriptor,
-        new java.lang.String[] { "RetryGroup", "IsParentNode", "SpecNodeId", });
+        new java.lang.String[] { "RetryGroup", "IsParentNode", "SpecNodeId", "ParentNodeId", });
     internal_static_flyteidl_admin_NodeExecutionList_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_NodeExecutionList_fieldAccessorTable = new

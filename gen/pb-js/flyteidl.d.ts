@@ -11464,6 +11464,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData specNodeId */
             specNodeId?: (string|null);
+
+            /** NodeExecutionMetaData parentNodeId */
+            parentNodeId?: (string|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -11483,6 +11486,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData specNodeId. */
             public specNodeId: string;
+
+            /** NodeExecutionMetaData parentNodeId. */
+            public parentNodeId: string;
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.

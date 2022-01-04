@@ -15,4 +15,5 @@ type AdminNodeExecutionMetaData struct {
 	// Boolean flag indicating if the node has child nodes under it This can be true when a node contains a dynamic workflow which then produces child nodes.
 	IsParentNode bool `json:"is_parent_node,omitempty"`
 	SpecNodeId string `json:"spec_node_id,omitempty"`
+	ParentNodeId string `json:"parent_node_id,omitempty"`
 }
