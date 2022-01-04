@@ -6268,7 +6268,7 @@
         "retry_attempt": {
           "type": "integer",
           "format": "int64",
-          "title": "retry attempt number for this external resource, ie., 2 for the second attempt"
+          "title": "Retry attempt number for this external resource, ie., 2 for the second attempt"
         },
         "phase": {
           "$ref": "#/definitions/coreTaskExecutionPhase",

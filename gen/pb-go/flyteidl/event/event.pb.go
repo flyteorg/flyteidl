@@ -875,7 +875,7 @@ func (*TaskExecutionEvent) XXX_OneofWrappers() []interface{} {
 type ExternalResourceInfo struct {
 	// Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
 	ExternalId string `protobuf:"bytes,1,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
-	// retry attempt number for this external resource, ie., 2 for the second attempt
+	// Retry attempt number for this external resource, ie., 2 for the second attempt
 	RetryAttempt uint32 `protobuf:"varint,2,opt,name=retry_attempt,json=retryAttempt,proto3" json:"retry_attempt,omitempty"`
 	// Phase associated with the external resource
 	Phase                core.TaskExecution_Phase `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.TaskExecution_Phase" json:"phase,omitempty"`

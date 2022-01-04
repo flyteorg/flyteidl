@@ -13774,7 +13774,7 @@ public final class Event {
 
     /**
      * <pre>
-     * retry attempt number for this external resource, ie., 2 for the second attempt
+     * Retry attempt number for this external resource, ie., 2 for the second attempt
      * </pre>
      *
      * <code>uint32 retry_attempt = 2;</code>
@@ -13938,7 +13938,7 @@ public final class Event {
     private int retryAttempt_;
     /**
      * <pre>
-     * retry attempt number for this external resource, ie., 2 for the second attempt
+     * Retry attempt number for this external resource, ie., 2 for the second attempt
      * </pre>
      *
      * <code>uint32 retry_attempt = 2;</code>
@@ -14403,7 +14403,7 @@ public final class Event {
       private int retryAttempt_ ;
       /**
        * <pre>
-       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * Retry attempt number for this external resource, ie., 2 for the second attempt
        * </pre>
        *
        * <code>uint32 retry_attempt = 2;</code>
@@ -14413,7 +14413,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * Retry attempt number for this external resource, ie., 2 for the second attempt
        * </pre>
        *
        * <code>uint32 retry_attempt = 2;</code>
@@ -14426,7 +14426,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * retry attempt number for this external resource, ie., 2 for the second attempt
+       * Retry attempt number for this external resource, ie., 2 for the second attempt
        * </pre>
        *
        * <code>uint32 retry_attempt = 2;</code>
