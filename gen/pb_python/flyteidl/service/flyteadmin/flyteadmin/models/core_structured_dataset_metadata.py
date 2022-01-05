@@ -58,7 +58,6 @@ class CoreStructuredDatasetMetadata(object):
     def format(self):
         """Gets the format of this CoreStructuredDatasetMetadata.  # noqa: E501
 
-        This is the storage format, the format of the bits at rest parquet, feather, csv, etc.  # noqa: E501
 
         :return: The format of this CoreStructuredDatasetMetadata.  # noqa: E501
         :rtype: str
@@ -69,7 +68,6 @@ class CoreStructuredDatasetMetadata(object):
     def format(self, format):
         """Sets the format of this CoreStructuredDatasetMetadata.
 
-        This is the storage format, the format of the bits at rest parquet, feather, csv, etc.  # noqa: E501
 
         :param format: The format of this CoreStructuredDatasetMetadata.  # noqa: E501
         :type: str

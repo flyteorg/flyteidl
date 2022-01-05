@@ -4498,7 +4498,8 @@ public final class Literals {
     /**
      * <pre>
      * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
+     * Parquet, Feather, CSV, etc.
+     * Should this be an enum?
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -4507,7 +4508,8 @@ public final class Literals {
     /**
      * <pre>
      * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
+     * Parquet, Feather, CSV, etc.
+     * Should this be an enum?
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -4636,7 +4638,8 @@ public final class Literals {
     /**
      * <pre>
      * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
+     * Parquet, Feather, CSV, etc.
+     * Should this be an enum?
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -4656,7 +4659,8 @@ public final class Literals {
     /**
      * <pre>
      * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
+     * Parquet, Feather, CSV, etc.
+     * Should this be an enum?
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -5044,7 +5048,8 @@ public final class Literals {
       /**
        * <pre>
        * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
+       * Parquet, Feather, CSV, etc.
+       * Should this be an enum?
        * </pre>
        *
        * <code>string format = 1;</code>
@@ -5064,7 +5069,8 @@ public final class Literals {
       /**
        * <pre>
        * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
+       * Parquet, Feather, CSV, etc.
+       * Should this be an enum?
        * </pre>
        *
        * <code>string format = 1;</code>
@@ -5085,7 +5091,8 @@ public final class Literals {
       /**
        * <pre>
        * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
+       * Parquet, Feather, CSV, etc.
+       * Should this be an enum?
        * </pre>
        *
        * <code>string format = 1;</code>
@@ -5103,7 +5110,8 @@ public final class Literals {
       /**
        * <pre>
        * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
+       * Parquet, Feather, CSV, etc.
+       * Should this be an enum?
        * </pre>
        *
        * <code>string format = 1;</code>
@@ -5117,7 +5125,8 @@ public final class Literals {
       /**
        * <pre>
        * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
+       * Parquet, Feather, CSV, etc.
+       * Should this be an enum?
        * </pre>
        *
        * <code>string format = 1;</code>

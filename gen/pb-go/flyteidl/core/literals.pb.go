@@ -387,7 +387,8 @@ func (m *Schema) GetType() *SchemaType {
 
 type StructuredDatasetMetadata struct {
 	// This is the storage format, the format of the bits at rest
-	// parquet, feather, csv, etc.
+	// Parquet, Feather, CSV, etc.
+	// Should this be an enum?
 	Format string `protobuf:"bytes,1,opt,name=format,proto3" json:"format,omitempty"`
 	// Bundle the type information along with the literal.
 	StructuredDatasetType *StructuredDatasetType `protobuf:"bytes,2,opt,name=structured_dataset_type,json=structuredDatasetType,proto3" json:"structured_dataset_type,omitempty"`

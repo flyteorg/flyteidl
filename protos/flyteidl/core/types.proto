@@ -43,6 +43,27 @@ message SchemaType {
     repeated SchemaColumn columns = 3;
 }
 
+message StructuredDatasetType {
+    message DatasetColumn {
+        // A unique name within the schema type for the column.
+        string name = 1;
+
+        // The column type.
+        LiteralType literal_type = 2;
+    }
+
+    // A list of ordered columns this schema comprises of.
+    repeated DatasetColumn columns = 1;
+
+    string format = 2;
+
+    // arrow mostly
+    string external_schema_type = 3;
+
+    // The serialized bytes of a third-party schema library like Arrow
+    bytes external_schema_bytes = 4;
+}
+
 // Defines type behavior for blob objects
 message BlobType {
     enum BlobDimensionality {
@@ -84,6 +105,9 @@ message LiteralType {
 
         // Defines an enum with pre-defined string values.
         EnumType enum_type = 7;
+
+        // Generalized schema support
+        StructuredDatasetType structured_dataset_type = 8;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
