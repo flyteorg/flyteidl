@@ -53,12 +53,8 @@ message Schema {
 }
 
 message StructuredDatasetMetadata {
-    // This is the storage format, the format of the bits at rest
-    // parquet, feather, csv, etc.
-    string format = 1;
-
     // Bundle the type information along with the literal.
-    StructuredDatasetType structured_dataset_type = 2;
+    StructuredDatasetType structured_dataset_type = 1;
 }
 
 message StructuredDataset {
