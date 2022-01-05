@@ -54,8 +54,7 @@ message Schema {
 
 message StructuredDatasetMetadata {
     // This is the storage format, the format of the bits at rest
-    // Parquet, Feather, CSV, etc.
-    // Should this be an enum?
+    // parquet, feather, csv, etc.
     string format = 1;
 
     // Bundle the type information along with the literal.
