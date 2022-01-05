@@ -6177,7 +6177,8 @@
         "FAILING",
         "FAILED",
         "ABORTED",
-        "TIMED_OUT"
+        "TIMED_OUT",
+        "ABORTING"
       ],
       "default": "UNDEFINED"
     },

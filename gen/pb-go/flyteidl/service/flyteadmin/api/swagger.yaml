@@ -32534,6 +32534,7 @@ definitions:
     - "FAILED"
     - "ABORTED"
     - "TIMED_OUT"
+    - "ABORTING"
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"
