@@ -52,23 +52,6 @@ message Schema {
     SchemaType type = 3;
 }
 
-message StructuredDatasetMetadata {
-    // This is the storage format, the format of the bits at rest
-    // parquet, feather, csv, etc.
-    string format = 1;
-
-    // Bundle the type information along with the literal.
-    StructuredDatasetType structured_dataset_type = 2;
-}
-
-message StructuredDataset {
-    // String location uniquely identifying where the data is.
-    // Should start with the storage location (e.g. s3://, gs://, bq://, etc.)
-    string uri = 1;
-
-    StructuredDatasetMetadata metadata = 2;
-}
-
 message Scalar {
     oneof value {
         Primitive primitive = 1;
@@ -78,7 +61,6 @@ message Scalar {
         Void none_type = 5;
         Error error = 6;
         google.protobuf.Struct generic = 7;
-        StructuredDataset structured_dataset = 8;
     }
 }
 
