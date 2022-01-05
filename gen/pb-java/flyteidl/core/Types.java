@@ -1987,10 +1987,22 @@ public final class Types {
         int index);
 
     /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
      * <code>string format = 2;</code>
      */
     java.lang.String getFormat();
     /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
      * <code>string format = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -1998,7 +2010,8 @@ public final class Types {
 
     /**
      * <pre>
-     * arrow mostly
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>string external_schema_type = 3;</code>
@@ -2006,7 +2019,8 @@ public final class Types {
     java.lang.String getExternalSchemaType();
     /**
      * <pre>
-     * arrow mostly
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>string external_schema_type = 3;</code>
@@ -2016,7 +2030,8 @@ public final class Types {
 
     /**
      * <pre>
-     * The serialized bytes of a third-party schema library like Arrow
+     * The serialized bytes of a third-party schema library like Arrow.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>bytes external_schema_bytes = 4;</code>
@@ -3025,6 +3040,12 @@ public final class Types {
     public static final int FORMAT_FIELD_NUMBER = 2;
     private volatile java.lang.Object format_;
     /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
      * <code>string format = 2;</code>
      */
     public java.lang.String getFormat() {
@@ -3040,6 +3061,12 @@ public final class Types {
       }
     }
     /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
      * <code>string format = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -3060,7 +3087,8 @@ public final class Types {
     private volatile java.lang.Object externalSchemaType_;
     /**
      * <pre>
-     * arrow mostly
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>string external_schema_type = 3;</code>
@@ -3079,7 +3107,8 @@ public final class Types {
     }
     /**
      * <pre>
-     * arrow mostly
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>string external_schema_type = 3;</code>
@@ -3102,7 +3131,8 @@ public final class Types {
     private com.google.protobuf.ByteString externalSchemaBytes_;
     /**
      * <pre>
-     * The serialized bytes of a third-party schema library like Arrow
+     * The serialized bytes of a third-party schema library like Arrow.
+     * This is an optional field that will not be used for type checking.
      * </pre>
      *
      * <code>bytes external_schema_bytes = 4;</code>
@@ -3820,6 +3850,12 @@ public final class Types {
 
       private java.lang.Object format_ = "";
       /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
        * <code>string format = 2;</code>
        */
       public java.lang.String getFormat() {
@@ -3835,6 +3871,12 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
        * <code>string format = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -3851,6 +3893,12 @@ public final class Types {
         }
       }
       /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
        * <code>string format = 2;</code>
        */
       public Builder setFormat(
@@ -3864,6 +3912,12 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
        * <code>string format = 2;</code>
        */
       public Builder clearFormat() {
@@ -3873,6 +3927,12 @@ public final class Types {
         return this;
       }
       /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
        * <code>string format = 2;</code>
        */
       public Builder setFormatBytes(
@@ -3890,7 +3950,8 @@ public final class Types {
       private java.lang.Object externalSchemaType_ = "";
       /**
        * <pre>
-       * arrow mostly
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>string external_schema_type = 3;</code>
@@ -3909,7 +3970,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * arrow mostly
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>string external_schema_type = 3;</code>
@@ -3929,7 +3991,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * arrow mostly
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>string external_schema_type = 3;</code>
@@ -3946,7 +4009,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * arrow mostly
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>string external_schema_type = 3;</code>
@@ -3959,7 +4023,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * arrow mostly
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>string external_schema_type = 3;</code>
@@ -3979,7 +4044,8 @@ public final class Types {
       private com.google.protobuf.ByteString externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>bytes external_schema_bytes = 4;</code>
@@ -3989,7 +4055,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>bytes external_schema_bytes = 4;</code>
@@ -4005,7 +4072,8 @@ public final class Types {
       }
       /**
        * <pre>
-       * The serialized bytes of a third-party schema library like Arrow
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
        * </pre>
        *
        * <code>bytes external_schema_bytes = 4;</code>

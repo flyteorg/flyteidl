@@ -4497,30 +4497,10 @@ public final class Literals {
 
     /**
      * <pre>
-     * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
-     * </pre>
-     *
-     * <code>string format = 1;</code>
-     */
-    java.lang.String getFormat();
-    /**
-     * <pre>
-     * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
-     * </pre>
-     *
-     * <code>string format = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getFormatBytes();
-
-    /**
-     * <pre>
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     boolean hasStructuredDatasetType();
     /**
@@ -4528,7 +4508,7 @@ public final class Literals {
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType();
     /**
@@ -4536,7 +4516,7 @@ public final class Literals {
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder();
   }
@@ -4553,7 +4533,6 @@ public final class Literals {
       super(builder);
     }
     private StructuredDatasetMetadata() {
-      format_ = "";
     }
 
     @java.lang.Override
@@ -4581,12 +4560,6 @@ public final class Literals {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              format_ = s;
-              break;
-            }
-            case 18: {
               flyteidl.core.Types.StructuredDatasetType.Builder subBuilder = null;
               if (structuredDatasetType_ != null) {
                 subBuilder = structuredDatasetType_.toBuilder();
@@ -4631,58 +4604,14 @@ public final class Literals {
               flyteidl.core.Literals.StructuredDatasetMetadata.class, flyteidl.core.Literals.StructuredDatasetMetadata.Builder.class);
     }
 
-    public static final int FORMAT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object format_;
-    /**
-     * <pre>
-     * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
-     * </pre>
-     *
-     * <code>string format = 1;</code>
-     */
-    public java.lang.String getFormat() {
-      java.lang.Object ref = format_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        format_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * This is the storage format, the format of the bits at rest
-     * parquet, feather, csv, etc.
-     * </pre>
-     *
-     * <code>string format = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFormatBytes() {
-      java.lang.Object ref = format_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        format_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STRUCTURED_DATASET_TYPE_FIELD_NUMBER = 2;
+    public static final int STRUCTURED_DATASET_TYPE_FIELD_NUMBER = 1;
     private flyteidl.core.Types.StructuredDatasetType structuredDatasetType_;
     /**
      * <pre>
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     public boolean hasStructuredDatasetType() {
       return structuredDatasetType_ != null;
@@ -4692,7 +4621,7 @@ public final class Literals {
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     public flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType() {
       return structuredDatasetType_ == null ? flyteidl.core.Types.StructuredDatasetType.getDefaultInstance() : structuredDatasetType_;
@@ -4702,7 +4631,7 @@ public final class Literals {
      * Bundle the type information along with the literal.
      * </pre>
      *
-     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
      */
     public flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder() {
       return getStructuredDatasetType();
@@ -4722,11 +4651,8 @@ public final class Literals {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFormatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, format_);
-      }
       if (structuredDatasetType_ != null) {
-        output.writeMessage(2, getStructuredDatasetType());
+        output.writeMessage(1, getStructuredDatasetType());
       }
       unknownFields.writeTo(output);
     }
@@ -4737,12 +4663,9 @@ public final class Literals {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFormatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, format_);
-      }
       if (structuredDatasetType_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getStructuredDatasetType());
+          .computeMessageSize(1, getStructuredDatasetType());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4759,8 +4682,6 @@ public final class Literals {
       }
       flyteidl.core.Literals.StructuredDatasetMetadata other = (flyteidl.core.Literals.StructuredDatasetMetadata) obj;
 
-      if (!getFormat()
-          .equals(other.getFormat())) return false;
       if (hasStructuredDatasetType() != other.hasStructuredDatasetType()) return false;
       if (hasStructuredDatasetType()) {
         if (!getStructuredDatasetType()
@@ -4777,8 +4698,6 @@ public final class Literals {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
-      hash = (53 * hash) + getFormat().hashCode();
       if (hasStructuredDatasetType()) {
         hash = (37 * hash) + STRUCTURED_DATASET_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getStructuredDatasetType().hashCode();
@@ -4916,8 +4835,6 @@ public final class Literals {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        format_ = "";
-
         if (structuredDatasetTypeBuilder_ == null) {
           structuredDatasetType_ = null;
         } else {
@@ -4950,7 +4867,6 @@ public final class Literals {
       @java.lang.Override
       public flyteidl.core.Literals.StructuredDatasetMetadata buildPartial() {
         flyteidl.core.Literals.StructuredDatasetMetadata result = new flyteidl.core.Literals.StructuredDatasetMetadata(this);
-        result.format_ = format_;
         if (structuredDatasetTypeBuilder_ == null) {
           result.structuredDatasetType_ = structuredDatasetType_;
         } else {
@@ -5004,10 +4920,6 @@ public final class Literals {
 
       public Builder mergeFrom(flyteidl.core.Literals.StructuredDatasetMetadata other) {
         if (other == flyteidl.core.Literals.StructuredDatasetMetadata.getDefaultInstance()) return this;
-        if (!other.getFormat().isEmpty()) {
-          format_ = other.format_;
-          onChanged();
-        }
         if (other.hasStructuredDatasetType()) {
           mergeStructuredDatasetType(other.getStructuredDatasetType());
         }
@@ -5040,100 +4952,6 @@ public final class Literals {
         return this;
       }
 
-      private java.lang.Object format_ = "";
-      /**
-       * <pre>
-       * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
-       * </pre>
-       *
-       * <code>string format = 1;</code>
-       */
-      public java.lang.String getFormat() {
-        java.lang.Object ref = format_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          format_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
-       * </pre>
-       *
-       * <code>string format = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFormatBytes() {
-        java.lang.Object ref = format_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          format_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
-       * </pre>
-       *
-       * <code>string format = 1;</code>
-       */
-      public Builder setFormat(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        format_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
-       * </pre>
-       *
-       * <code>string format = 1;</code>
-       */
-      public Builder clearFormat() {
-        
-        format_ = getDefaultInstance().getFormat();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This is the storage format, the format of the bits at rest
-       * parquet, feather, csv, etc.
-       * </pre>
-       *
-       * <code>string format = 1;</code>
-       */
-      public Builder setFormatBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        format_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.Types.StructuredDatasetType structuredDatasetType_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Types.StructuredDatasetType, flyteidl.core.Types.StructuredDatasetType.Builder, flyteidl.core.Types.StructuredDatasetTypeOrBuilder> structuredDatasetTypeBuilder_;
@@ -5142,7 +4960,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public boolean hasStructuredDatasetType() {
         return structuredDatasetTypeBuilder_ != null || structuredDatasetType_ != null;
@@ -5152,7 +4970,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType() {
         if (structuredDatasetTypeBuilder_ == null) {
@@ -5166,7 +4984,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public Builder setStructuredDatasetType(flyteidl.core.Types.StructuredDatasetType value) {
         if (structuredDatasetTypeBuilder_ == null) {
@@ -5186,7 +5004,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public Builder setStructuredDatasetType(
           flyteidl.core.Types.StructuredDatasetType.Builder builderForValue) {
@@ -5204,7 +5022,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public Builder mergeStructuredDatasetType(flyteidl.core.Types.StructuredDatasetType value) {
         if (structuredDatasetTypeBuilder_ == null) {
@@ -5226,7 +5044,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public Builder clearStructuredDatasetType() {
         if (structuredDatasetTypeBuilder_ == null) {
@@ -5244,7 +5062,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public flyteidl.core.Types.StructuredDatasetType.Builder getStructuredDatasetTypeBuilder() {
         
@@ -5256,7 +5074,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       public flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder() {
         if (structuredDatasetTypeBuilder_ != null) {
@@ -5271,7 +5089,7 @@ public final class Literals {
        * Bundle the type information along with the literal.
        * </pre>
        *
-       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 2;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Types.StructuredDatasetType, flyteidl.core.Types.StructuredDatasetType.Builder, flyteidl.core.Types.StructuredDatasetTypeOrBuilder> 
@@ -16553,47 +16371,47 @@ public final class Literals {
       "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value" +
       "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001" +
       "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT" +
-      "ype\"r\n\031StructuredDatasetMetadata\022\016\n\006form" +
-      "at\030\001 \001(\t\022E\n\027structured_dataset_type\030\002 \001(" +
-      "\0132$.flyteidl.core.StructuredDatasetType\"" +
-      "\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010met" +
-      "adata\030\002 \001(\0132(.flyteidl.core.StructuredDa" +
-      "tasetMetadata\"\364\002\n\006Scalar\022-\n\tprimitive\030\001 " +
-      "\001(\0132\030.flyteidl.core.PrimitiveH\000\022#\n\004blob\030" +
-      "\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006binary\030\003" +
-      " \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006schema\030" +
-      "\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n\tnone_t" +
-      "ype\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022%\n\005erro" +
-      "r\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*\n\007gener" +
-      "ic\030\007 \001(\0132\027.google.protobuf.StructH\000\022>\n\022s" +
-      "tructured_dataset\030\010 \001(\0132 .flyteidl.core." +
-      "StructuredDatasetH\000B\007\n\005value\"\235\001\n\007Literal" +
-      "\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.ScalarH" +
-      "\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.Li" +
-      "teralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteid" +
-      "l.core.LiteralMapH\000B\007\n\005value\"=\n\021LiteralC" +
-      "ollection\022(\n\010literals\030\001 \003(\0132\026.flyteidl.c" +
-      "ore.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030\001" +
-      " \003(\0132\'.flyteidl.core.LiteralMap.Literals" +
-      "Entry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005v" +
-      "alue\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\"E" +
-      "\n\025BindingDataCollection\022,\n\010bindings\030\001 \003(" +
-      "\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindin" +
-      "gDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.co" +
-      "re.BindingDataMap.BindingsEntry\032K\n\rBindi" +
-      "ngsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.f" +
-      "lyteidl.core.BindingData:\0028\001\"\334\001\n\013Binding" +
-      "Data\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sca" +
-      "larH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.cor" +
-      "e.BindingDataCollectionH\000\0221\n\007promise\030\003 \001" +
-      "(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n\003" +
-      "map\030\004 \001(\0132\035.flyteidl.core.BindingDataMap" +
-      "H\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007b" +
-      "inding\030\002 \001(\0132\032.flyteidl.core.BindingData" +
-      "\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB6" +
-      "Z4github.com/flyteorg/flyteidl/gen/pb-go" +
-      "/flyteidl/coreb\006proto3"
+      "ype\"b\n\031StructuredDatasetMetadata\022E\n\027stru" +
+      "ctured_dataset_type\030\001 \001(\0132$.flyteidl.cor" +
+      "e.StructuredDatasetType\"\\\n\021StructuredDat" +
+      "aset\022\013\n\003uri\030\001 \001(\t\022:\n\010metadata\030\002 \001(\0132(.fl" +
+      "yteidl.core.StructuredDatasetMetadata\"\364\002" +
+      "\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030.flyteidl.c" +
+      "ore.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132\023.flyteidl" +
+      ".core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025.flyteidl." +
+      "core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132\025.flyteidl" +
+      ".core.SchemaH\000\022(\n\tnone_type\030\005 \001(\0132\023.flyt" +
+      "eidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024.flytei" +
+      "dl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132\027.googl" +
+      "e.protobuf.StructH\000\022>\n\022structured_datase" +
+      "t\030\010 \001(\0132 .flyteidl.core.StructuredDatase" +
+      "tH\000B\007\n\005value\"\235\001\n\007Literal\022\'\n\006scalar\030\001 \001(\013" +
+      "2\025.flyteidl.core.ScalarH\000\0226\n\ncollection\030" +
+      "\002 \001(\0132 .flyteidl.core.LiteralCollectionH" +
+      "\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralMa" +
+      "pH\000B\007\n\005value\"=\n\021LiteralCollection\022(\n\010lit" +
+      "erals\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\n" +
+      "LiteralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl." +
+      "core.LiteralMap.LiteralsEntry\032G\n\rLiteral" +
+      "sEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.fly" +
+      "teidl.core.Literal:\0028\001\"E\n\025BindingDataCol" +
+      "lection\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.cor" +
+      "e.BindingData\"\234\001\n\016BindingDataMap\022=\n\010bind" +
+      "ings\030\001 \003(\0132+.flyteidl.core.BindingDataMa" +
+      "p.BindingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Bin" +
+      "dingData:\0028\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001" +
+      " \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollect" +
+      "ion\030\002 \001(\0132$.flyteidl.core.BindingDataCol" +
+      "lectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.co" +
+      "re.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyt" +
+      "eidl.core.BindingDataMapH\000B\007\n\005value\"C\n\007B" +
+      "inding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.f" +
+      "lyteidl.core.BindingData\"*\n\014KeyValuePair" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStr" +
+      "ategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16652,7 +16470,7 @@ public final class Literals {
     internal_static_flyteidl_core_StructuredDatasetMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_StructuredDatasetMetadata_descriptor,
-        new java.lang.String[] { "Format", "StructuredDatasetType", });
+        new java.lang.String[] { "StructuredDatasetType", });
     internal_static_flyteidl_core_StructuredDataset_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_StructuredDataset_fieldAccessorTable = new

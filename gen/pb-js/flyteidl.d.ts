@@ -2180,9 +2180,6 @@ export namespace flyteidl {
         /** Properties of a StructuredDatasetMetadata. */
         interface IStructuredDatasetMetadata {
 
-            /** StructuredDatasetMetadata format */
-            format?: (string|null);
-
             /** StructuredDatasetMetadata structuredDatasetType */
             structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
         }
@@ -2195,9 +2192,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IStructuredDatasetMetadata);
-
-            /** StructuredDatasetMetadata format. */
-            public format: string;
 
             /** StructuredDatasetMetadata structuredDatasetType. */
             public structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);

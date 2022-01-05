@@ -33,49 +33,21 @@ class CoreStructuredDatasetMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'format': 'str',
         'structured_dataset_type': 'CoreStructuredDatasetType'
     }
 
     attribute_map = {
-        'format': 'format',
         'structured_dataset_type': 'structured_dataset_type'
     }
 
-    def __init__(self, format=None, structured_dataset_type=None):  # noqa: E501
+    def __init__(self, structured_dataset_type=None):  # noqa: E501
         """CoreStructuredDatasetMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._format = None
         self._structured_dataset_type = None
         self.discriminator = None
 
-        if format is not None:
-            self.format = format
         if structured_dataset_type is not None:
             self.structured_dataset_type = structured_dataset_type
-
-    @property
-    def format(self):
-        """Gets the format of this CoreStructuredDatasetMetadata.  # noqa: E501
-
-        This is the storage format, the format of the bits at rest parquet, feather, csv, etc.  # noqa: E501
-
-        :return: The format of this CoreStructuredDatasetMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._format
-
-    @format.setter
-    def format(self, format):
-        """Sets the format of this CoreStructuredDatasetMetadata.
-
-        This is the storage format, the format of the bits at rest parquet, feather, csv, etc.  # noqa: E501
-
-        :param format: The format of this CoreStructuredDatasetMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._format = format
 
     @property
     def structured_dataset_type(self):

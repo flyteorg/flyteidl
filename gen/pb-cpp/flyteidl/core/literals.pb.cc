@@ -460,7 +460,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fliterals_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::StructuredDatasetMetadata, format_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::StructuredDatasetMetadata, structured_dataset_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::StructuredDataset, _internal_metadata_),
@@ -573,19 +572,19 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 30, -1, sizeof(::flyteidl::core::Binary)},
   { 37, -1, sizeof(::flyteidl::core::Schema)},
   { 44, -1, sizeof(::flyteidl::core::StructuredDatasetMetadata)},
-  { 51, -1, sizeof(::flyteidl::core::StructuredDataset)},
-  { 58, -1, sizeof(::flyteidl::core::Scalar)},
-  { 72, -1, sizeof(::flyteidl::core::Literal)},
-  { 81, -1, sizeof(::flyteidl::core::LiteralCollection)},
-  { 87, 94, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
-  { 96, -1, sizeof(::flyteidl::core::LiteralMap)},
-  { 102, -1, sizeof(::flyteidl::core::BindingDataCollection)},
-  { 108, 115, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
-  { 117, -1, sizeof(::flyteidl::core::BindingDataMap)},
-  { 123, -1, sizeof(::flyteidl::core::BindingData)},
-  { 133, -1, sizeof(::flyteidl::core::Binding)},
-  { 140, -1, sizeof(::flyteidl::core::KeyValuePair)},
-  { 147, -1, sizeof(::flyteidl::core::RetryStrategy)},
+  { 50, -1, sizeof(::flyteidl::core::StructuredDataset)},
+  { 57, -1, sizeof(::flyteidl::core::Scalar)},
+  { 71, -1, sizeof(::flyteidl::core::Literal)},
+  { 80, -1, sizeof(::flyteidl::core::LiteralCollection)},
+  { 86, 93, sizeof(::flyteidl::core::LiteralMap_LiteralsEntry_DoNotUse)},
+  { 95, -1, sizeof(::flyteidl::core::LiteralMap)},
+  { 101, -1, sizeof(::flyteidl::core::BindingDataCollection)},
+  { 107, 114, sizeof(::flyteidl::core::BindingDataMap_BindingsEntry_DoNotUse)},
+  { 116, -1, sizeof(::flyteidl::core::BindingDataMap)},
+  { 122, -1, sizeof(::flyteidl::core::BindingData)},
+  { 132, -1, sizeof(::flyteidl::core::Binding)},
+  { 139, -1, sizeof(::flyteidl::core::KeyValuePair)},
+  { 146, -1, sizeof(::flyteidl::core::RetryStrategy)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -633,52 +632,52 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto[] =
   "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value"
   "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001"
   "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT"
-  "ype\"r\n\031StructuredDatasetMetadata\022\016\n\006form"
-  "at\030\001 \001(\t\022E\n\027structured_dataset_type\030\002 \001("
-  "\0132$.flyteidl.core.StructuredDatasetType\""
-  "\\\n\021StructuredDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010met"
-  "adata\030\002 \001(\0132(.flyteidl.core.StructuredDa"
-  "tasetMetadata\"\364\002\n\006Scalar\022-\n\tprimitive\030\001 "
-  "\001(\0132\030.flyteidl.core.PrimitiveH\000\022#\n\004blob\030"
-  "\002 \001(\0132\023.flyteidl.core.BlobH\000\022\'\n\006binary\030\003"
-  " \001(\0132\025.flyteidl.core.BinaryH\000\022\'\n\006schema\030"
-  "\004 \001(\0132\025.flyteidl.core.SchemaH\000\022(\n\tnone_t"
-  "ype\030\005 \001(\0132\023.flyteidl.core.VoidH\000\022%\n\005erro"
-  "r\030\006 \001(\0132\024.flyteidl.core.ErrorH\000\022*\n\007gener"
-  "ic\030\007 \001(\0132\027.google.protobuf.StructH\000\022>\n\022s"
-  "tructured_dataset\030\010 \001(\0132 .flyteidl.core."
-  "StructuredDatasetH\000B\007\n\005value\"\235\001\n\007Literal"
-  "\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.ScalarH"
-  "\000\0226\n\ncollection\030\002 \001(\0132 .flyteidl.core.Li"
-  "teralCollectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteid"
-  "l.core.LiteralMapH\000B\007\n\005value\"=\n\021LiteralC"
-  "ollection\022(\n\010literals\030\001 \003(\0132\026.flyteidl.c"
-  "ore.Literal\"\220\001\n\nLiteralMap\0229\n\010literals\030\001"
-  " \003(\0132\'.flyteidl.core.LiteralMap.Literals"
-  "Entry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005v"
-  "alue\030\002 \001(\0132\026.flyteidl.core.Literal:\0028\001\"E"
-  "\n\025BindingDataCollection\022,\n\010bindings\030\001 \003("
-  "\0132\032.flyteidl.core.BindingData\"\234\001\n\016Bindin"
-  "gDataMap\022=\n\010bindings\030\001 \003(\0132+.flyteidl.co"
-  "re.BindingDataMap.BindingsEntry\032K\n\rBindi"
-  "ngsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.f"
-  "lyteidl.core.BindingData:\0028\001\"\334\001\n\013Binding"
-  "Data\022\'\n\006scalar\030\001 \001(\0132\025.flyteidl.core.Sca"
-  "larH\000\022:\n\ncollection\030\002 \001(\0132$.flyteidl.cor"
-  "e.BindingDataCollectionH\000\0221\n\007promise\030\003 \001"
-  "(\0132\036.flyteidl.core.OutputReferenceH\000\022,\n\003"
-  "map\030\004 \001(\0132\035.flyteidl.core.BindingDataMap"
-  "H\000B\007\n\005value\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007b"
-  "inding\030\002 \001(\0132\032.flyteidl.core.BindingData"
-  "\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-  " \001(\t\" \n\rRetryStrategy\022\017\n\007retries\030\005 \001(\rB6"
-  "Z4github.com/flyteorg/flyteidl/gen/pb-go"
-  "/flyteidl/coreb\006proto3"
+  "ype\"b\n\031StructuredDatasetMetadata\022E\n\027stru"
+  "ctured_dataset_type\030\001 \001(\0132$.flyteidl.cor"
+  "e.StructuredDatasetType\"\\\n\021StructuredDat"
+  "aset\022\013\n\003uri\030\001 \001(\t\022:\n\010metadata\030\002 \001(\0132(.fl"
+  "yteidl.core.StructuredDatasetMetadata\"\364\002"
+  "\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030.flyteidl.c"
+  "ore.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132\023.flyteidl"
+  ".core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025.flyteidl."
+  "core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132\025.flyteidl"
+  ".core.SchemaH\000\022(\n\tnone_type\030\005 \001(\0132\023.flyt"
+  "eidl.core.VoidH\000\022%\n\005error\030\006 \001(\0132\024.flytei"
+  "dl.core.ErrorH\000\022*\n\007generic\030\007 \001(\0132\027.googl"
+  "e.protobuf.StructH\000\022>\n\022structured_datase"
+  "t\030\010 \001(\0132 .flyteidl.core.StructuredDatase"
+  "tH\000B\007\n\005value\"\235\001\n\007Literal\022\'\n\006scalar\030\001 \001(\013"
+  "2\025.flyteidl.core.ScalarH\000\0226\n\ncollection\030"
+  "\002 \001(\0132 .flyteidl.core.LiteralCollectionH"
+  "\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core.LiteralMa"
+  "pH\000B\007\n\005value\"=\n\021LiteralCollection\022(\n\010lit"
+  "erals\030\001 \003(\0132\026.flyteidl.core.Literal\"\220\001\n\n"
+  "LiteralMap\0229\n\010literals\030\001 \003(\0132\'.flyteidl."
+  "core.LiteralMap.LiteralsEntry\032G\n\rLiteral"
+  "sEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.fly"
+  "teidl.core.Literal:\0028\001\"E\n\025BindingDataCol"
+  "lection\022,\n\010bindings\030\001 \003(\0132\032.flyteidl.cor"
+  "e.BindingData\"\234\001\n\016BindingDataMap\022=\n\010bind"
+  "ings\030\001 \003(\0132+.flyteidl.core.BindingDataMa"
+  "p.BindingsEntry\032K\n\rBindingsEntry\022\013\n\003key\030"
+  "\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.core.Bin"
+  "dingData:\0028\001\"\334\001\n\013BindingData\022\'\n\006scalar\030\001"
+  " \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncollect"
+  "ion\030\002 \001(\0132$.flyteidl.core.BindingDataCol"
+  "lectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteidl.co"
+  "re.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyt"
+  "eidl.core.BindingDataMapH\000B\007\n\005value\"C\n\007B"
+  "inding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.f"
+  "lyteidl.core.BindingData\"*\n\014KeyValuePair"
+  "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStr"
+  "ategy\022\017\n\007retries\030\005 \001(\rB6Z4github.com/fly"
+  "teorg/flyteidl/gen/pb-go/flyteidl/coreb\006"
+  "proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fliterals_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fliterals_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fliterals_2eproto,
-  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2222,
+  "flyteidl/core/literals.proto", &assign_descriptors_table_flyteidl_2fcore_2fliterals_2eproto, 2206,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fliterals_2eproto() {
@@ -2966,7 +2965,6 @@ void StructuredDatasetMetadata::clear_structured_dataset_type() {
   structured_dataset_type_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int StructuredDatasetMetadata::kFormatFieldNumber;
 const int StructuredDatasetMetadata::kStructuredDatasetTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2979,10 +2977,6 @@ StructuredDatasetMetadata::StructuredDatasetMetadata(const StructuredDatasetMeta
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.format().size() > 0) {
-    format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.format_);
-  }
   if (from.has_structured_dataset_type()) {
     structured_dataset_type_ = new ::flyteidl::core::StructuredDatasetType(*from.structured_dataset_type_);
   } else {
@@ -2994,7 +2988,6 @@ StructuredDatasetMetadata::StructuredDatasetMetadata(const StructuredDatasetMeta
 void StructuredDatasetMetadata::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_StructuredDatasetMetadata_flyteidl_2fcore_2fliterals_2eproto.base);
-  format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   structured_dataset_type_ = nullptr;
 }
 
@@ -3004,7 +2997,6 @@ StructuredDatasetMetadata::~StructuredDatasetMetadata() {
 }
 
 void StructuredDatasetMetadata::SharedDtor() {
-  format_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete structured_dataset_type_;
 }
 
@@ -3023,7 +3015,6 @@ void StructuredDatasetMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && structured_dataset_type_ != nullptr) {
     delete structured_dataset_type_;
   }
@@ -3044,25 +3035,9 @@ const char* StructuredDatasetMetadata::_InternalParse(const char* begin, const c
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string format = 1;
+      // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.StructuredDatasetMetadata.format");
-        object = msg->mutable_format();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::StructuredDatasetType::_InternalParse;
@@ -3088,10 +3063,6 @@ const char* StructuredDatasetMetadata::_InternalParse(const char* begin, const c
     }  // switch
   }  // while
   return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -3107,24 +3078,9 @@ bool StructuredDatasetMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string format = 1;
+      // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_format()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->format().data(), static_cast<int>(this->format().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.StructuredDatasetMetadata.format"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_structured_dataset_type()));
         } else {
@@ -3160,20 +3116,10 @@ void StructuredDatasetMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string format = 1;
-  if (this->format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->format().data(), static_cast<int>(this->format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.StructuredDatasetMetadata.format");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->format(), output);
-  }
-
-  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
   if (this->has_structured_dataset_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::structured_dataset_type(this), output);
+      1, HasBitSetters::structured_dataset_type(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3189,22 +3135,11 @@ void StructuredDatasetMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string format = 1;
-  if (this->format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->format().data(), static_cast<int>(this->format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.StructuredDatasetMetadata.format");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->format(), target);
-  }
-
-  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
   if (this->has_structured_dataset_type()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::structured_dataset_type(this), target);
+        1, HasBitSetters::structured_dataset_type(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3228,14 +3163,7 @@ size_t StructuredDatasetMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string format = 1;
-  if (this->format().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->format());
-  }
-
-  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
   if (this->has_structured_dataset_type()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -3269,10 +3197,6 @@ void StructuredDatasetMetadata::MergeFrom(const StructuredDatasetMetadata& from)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.format().size() > 0) {
-
-    format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.format_);
-  }
   if (from.has_structured_dataset_type()) {
     mutable_structured_dataset_type()->::flyteidl::core::StructuredDatasetType::MergeFrom(from.structured_dataset_type());
   }
@@ -3303,8 +3227,6 @@ void StructuredDatasetMetadata::Swap(StructuredDatasetMetadata* other) {
 void StructuredDatasetMetadata::InternalSwap(StructuredDatasetMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  format_.Swap(&other->format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   swap(structured_dataset_type_, other->structured_dataset_type_);
 }
 

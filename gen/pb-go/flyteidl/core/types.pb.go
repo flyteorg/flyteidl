@@ -226,10 +226,15 @@ func (m *SchemaType_SchemaColumn) GetType() SchemaType_SchemaColumn_SchemaColumn
 type StructuredDatasetType struct {
 	// A list of ordered columns this schema comprises of.
 	Columns []*StructuredDatasetType_DatasetColumn `protobuf:"bytes,1,rep,name=columns,proto3" json:"columns,omitempty"`
-	Format  string                                 `protobuf:"bytes,2,opt,name=format,proto3" json:"format,omitempty"`
-	// arrow mostly
+	// This is the storage format, the format of the bits at rest
+	// parquet, feather, csv, etc.
+	// For two types to be compatible, the format will need to be an exact match.
+	Format string `protobuf:"bytes,2,opt,name=format,proto3" json:"format,omitempty"`
+	// This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+	// This is an optional field that will not be used for type checking.
 	ExternalSchemaType string `protobuf:"bytes,3,opt,name=external_schema_type,json=externalSchemaType,proto3" json:"external_schema_type,omitempty"`
-	// The serialized bytes of a third-party schema library like Arrow
+	// The serialized bytes of a third-party schema library like Arrow.
+	// This is an optional field that will not be used for type checking.
 	ExternalSchemaBytes  []byte   `protobuf:"bytes,4,opt,name=external_schema_bytes,json=externalSchemaBytes,proto3" json:"external_schema_bytes,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

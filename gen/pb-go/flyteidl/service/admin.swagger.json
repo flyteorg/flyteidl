@@ -5907,10 +5907,6 @@
     "coreStructuredDatasetMetadata": {
       "type": "object",
       "properties": {
-        "format": {
-          "type": "string",
-          "description": "This is the storage format, the format of the bits at rest\nparquet, feather, csv, etc."
-        },
         "structured_dataset_type": {
           "$ref": "#/definitions/coreStructuredDatasetType",
           "description": "Bundle the type information along with the literal."
@@ -5928,16 +5924,17 @@
           "description": "A list of ordered columns this schema comprises of."
         },
         "format": {
-          "type": "string"
+          "type": "string",
+          "description": "This is the storage format, the format of the bits at rest\nparquet, feather, csv, etc.\nFor two types to be compatible, the format will need to be an exact match."
         },
         "external_schema_type": {
           "type": "string",
-          "title": "arrow mostly"
+          "description": "This is a string representing the type that the bytes in external_schema_bytes are formatted in.\nThis is an optional field that will not be used for type checking."
         },
         "external_schema_bytes": {
           "type": "string",
           "format": "byte",
-          "title": "The serialized bytes of a third-party schema library like Arrow"
+          "description": "The serialized bytes of a third-party schema library like Arrow.\nThis is an optional field that will not be used for type checking."
         }
       }
     },

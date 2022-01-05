@@ -5213,7 +5213,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a StructuredDatasetMetadata.
              * @memberof flyteidl.core
              * @interface IStructuredDatasetMetadata
-             * @property {string|null} [format] StructuredDatasetMetadata format
              * @property {flyteidl.core.IStructuredDatasetType|null} [structuredDatasetType] StructuredDatasetMetadata structuredDatasetType
              */
 
@@ -5231,14 +5230,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * StructuredDatasetMetadata format.
-             * @member {string} format
-             * @memberof flyteidl.core.StructuredDatasetMetadata
-             * @instance
-             */
-            StructuredDatasetMetadata.prototype.format = "";
 
             /**
              * StructuredDatasetMetadata structuredDatasetType.
@@ -5272,10 +5263,8 @@ export const flyteidl = $root.flyteidl = (() => {
             StructuredDatasetMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.format != null && message.hasOwnProperty("format"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.format);
                 if (message.structuredDatasetType != null && message.hasOwnProperty("structuredDatasetType"))
-                    $root.flyteidl.core.StructuredDatasetType.encode(message.structuredDatasetType, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.core.StructuredDatasetType.encode(message.structuredDatasetType, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -5298,9 +5287,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.format = reader.string();
-                        break;
-                    case 2:
                         message.structuredDatasetType = $root.flyteidl.core.StructuredDatasetType.decode(reader, reader.uint32());
                         break;
                     default:
@@ -5322,9 +5308,6 @@ export const flyteidl = $root.flyteidl = (() => {
             StructuredDatasetMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.format != null && message.hasOwnProperty("format"))
-                    if (!$util.isString(message.format))
-                        return "format: string expected";
                 if (message.structuredDatasetType != null && message.hasOwnProperty("structuredDatasetType")) {
                     let error = $root.flyteidl.core.StructuredDatasetType.verify(message.structuredDatasetType);
                     if (error)

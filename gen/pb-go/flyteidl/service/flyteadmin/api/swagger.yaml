@@ -4110,7 +4110,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -4274,7 +4273,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -4484,7 +4482,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -4661,7 +4658,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -4825,7 +4821,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -5015,7 +5010,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -5179,7 +5173,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -5495,7 +5488,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -6201,7 +6193,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -6263,7 +6254,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -6418,7 +6408,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6480,7 +6469,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6667,7 +6655,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6729,7 +6716,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6915,7 +6901,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -6977,7 +6962,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7173,7 +7157,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -7235,7 +7218,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -7390,7 +7372,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7452,7 +7433,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7639,7 +7619,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7701,7 +7680,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7887,7 +7865,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -7949,7 +7926,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -8575,7 +8551,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -8637,7 +8612,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -8792,7 +8766,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -8854,7 +8827,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9041,7 +9013,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9103,7 +9074,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9289,7 +9259,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -9351,7 +9320,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11484,7 +11452,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -11546,7 +11513,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -11701,7 +11667,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11763,7 +11728,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -11950,7 +11914,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12012,7 +11975,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12198,7 +12160,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12260,7 +12221,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12456,7 +12416,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -12518,7 +12477,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -12673,7 +12631,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12735,7 +12692,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12922,7 +12878,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -12984,7 +12939,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13170,7 +13124,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13232,7 +13185,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -13858,7 +13810,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -13920,7 +13871,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -14075,7 +14025,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14137,7 +14086,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14324,7 +14272,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14386,7 +14333,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14572,7 +14518,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14634,7 +14579,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -14991,7 +14935,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -15053,7 +14996,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -15208,7 +15150,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15270,7 +15211,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15457,7 +15397,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15519,7 +15458,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15705,7 +15643,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15767,7 +15704,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -15963,7 +15899,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -16025,7 +15960,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -16180,7 +16114,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16242,7 +16175,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16429,7 +16361,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16491,7 +16422,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16677,7 +16607,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -16739,7 +16668,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17365,7 +17293,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -17427,7 +17354,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -17582,7 +17508,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17644,7 +17569,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17831,7 +17755,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -17893,7 +17816,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -18079,7 +18001,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -18141,7 +18062,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -18434,7 +18354,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -18496,7 +18415,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -18651,7 +18569,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18713,7 +18630,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18900,7 +18816,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -18962,7 +18877,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19148,7 +19062,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19210,7 +19123,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19406,7 +19318,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -19468,7 +19379,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -19623,7 +19533,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19685,7 +19594,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19872,7 +19780,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -19934,7 +19841,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -20120,7 +20026,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -20182,7 +20087,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -20808,7 +20712,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -20870,7 +20773,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -21025,7 +20927,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21087,7 +20988,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21274,7 +21174,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21336,7 +21235,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21522,7 +21420,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21584,7 +21481,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -21790,7 +21686,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -21852,7 +21747,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -22007,7 +21901,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22069,7 +21962,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22256,7 +22148,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22318,7 +22209,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22504,7 +22394,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22566,7 +22455,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -22762,7 +22650,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -22824,7 +22711,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -22979,7 +22865,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23041,7 +22926,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23228,7 +23112,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23290,7 +23173,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23476,7 +23358,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -23538,7 +23419,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24164,7 +24044,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -24226,7 +24105,6 @@ definitions:
                             - name: "name"
                             format: "format"
                             external_schema_bytes: "external_schema_bytes"
-                          format: "format"
                         uri: "uri"
                       error:
                         message: "message"
@@ -24381,7 +24259,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24443,7 +24320,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24630,7 +24506,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24692,7 +24567,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24878,7 +24752,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -24940,7 +24813,6 @@ definitions:
                               - name: "name"
                               format: "format"
                               external_schema_bytes: "external_schema_bytes"
-                            format: "format"
                           uri: "uri"
                         error:
                           message: "message"
@@ -25196,7 +25068,6 @@ definitions:
                 - name: "name"
                 format: "format"
                 external_schema_bytes: "external_schema_bytes"
-              format: "format"
             uri: "uri"
           error:
             message: "message"
@@ -25274,7 +25145,6 @@ definitions:
               - name: "name"
               format: "format"
               external_schema_bytes: "external_schema_bytes"
-            format: "format"
           uri: "uri"
         error:
           message: "message"
@@ -25855,7 +25725,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -25917,7 +25786,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -26072,7 +25940,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26134,7 +26001,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26321,7 +26187,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26383,7 +26248,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26569,7 +26433,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26631,7 +26494,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26854,7 +26716,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -26916,7 +26777,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -27071,7 +26931,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27133,7 +26992,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27320,7 +27178,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27382,7 +27239,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27568,7 +27424,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27630,7 +27485,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -27826,7 +27680,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -27888,7 +27741,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -28043,7 +27895,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28105,7 +27956,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28292,7 +28142,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28354,7 +28203,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28540,7 +28388,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -28602,7 +28449,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29228,7 +29074,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -29290,7 +29135,6 @@ definitions:
                       - name: "name"
                       format: "format"
                       external_schema_bytes: "external_schema_bytes"
-                    format: "format"
                   uri: "uri"
                 error:
                   message: "message"
@@ -29445,7 +29289,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29507,7 +29350,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29694,7 +29536,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29756,7 +29597,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -29942,7 +29782,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -30004,7 +29843,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -30712,7 +30550,6 @@ definitions:
               - name: "name"
               format: "format"
               external_schema_bytes: "external_schema_bytes"
-            format: "format"
           uri: "uri"
         error:
           message: "message"
@@ -30993,7 +30830,6 @@ definitions:
                   - name: "name"
                   format: "format"
                   external_schema_bytes: "external_schema_bytes"
-                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -31055,7 +30891,6 @@ definitions:
                   - name: "name"
                   format: "format"
                   external_schema_bytes: "external_schema_bytes"
-                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -31326,7 +31161,6 @@ definitions:
                 - name: "name"
                 format: "format"
                 external_schema_bytes: "external_schema_bytes"
-              format: "format"
             uri: "uri"
           error:
             message: "message"
@@ -31432,7 +31266,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -31667,7 +31500,6 @@ definitions:
             - name: "name"
             format: "format"
             external_schema_bytes: "external_schema_bytes"
-          format: "format"
         uri: "uri"
       error:
         message: "message"
@@ -31859,15 +31691,10 @@ definitions:
           - name: "name"
           format: "format"
           external_schema_bytes: "external_schema_bytes"
-        format: "format"
       uri: "uri"
   coreStructuredDatasetMetadata:
     type: "object"
     properties:
-      format:
-        type: "string"
-        description: "This is the storage format, the format of the bits at rest\n\
-          parquet, feather, csv, etc."
       structured_dataset_type:
         description: "Bundle the type information along with the literal."
         $ref: "#/definitions/coreStructuredDatasetType"
@@ -31879,7 +31706,6 @@ definitions:
         - name: "name"
         format: "format"
         external_schema_bytes: "external_schema_bytes"
-      format: "format"
   coreStructuredDatasetType:
     type: "object"
     properties:
@@ -31890,13 +31716,19 @@ definitions:
           $ref: "#/definitions/StructuredDatasetTypeDatasetColumn"
       format:
         type: "string"
+        description: "This is the storage format, the format of the bits at rest\n\
+          parquet, feather, csv, etc.\nFor two types to be compatible, the format\
+          \ will need to be an exact match."
       external_schema_type:
         type: "string"
-        title: "arrow mostly"
+        description: "This is a string representing the type that the bytes in external_schema_bytes\
+          \ are formatted in.\nThis is an optional field that will not be used for\
+          \ type checking."
       external_schema_bytes:
         type: "string"
         format: "byte"
-        title: "The serialized bytes of a third-party schema library like Arrow"
+        description: "The serialized bytes of a third-party schema library like Arrow.\n\
+          This is an optional field that will not be used for type checking."
         pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
     example:
       external_schema_type: "external_schema_type"
@@ -32678,7 +32510,6 @@ definitions:
                   - name: "name"
                   format: "format"
                   external_schema_bytes: "external_schema_bytes"
-                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -32740,7 +32571,6 @@ definitions:
                   - name: "name"
                   format: "format"
                   external_schema_bytes: "external_schema_bytes"
-                format: "format"
               uri: "uri"
             error:
               message: "message"
@@ -32895,7 +32725,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -32957,7 +32786,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33144,7 +32972,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33206,7 +33033,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33392,7 +33218,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33454,7 +33279,6 @@ definitions:
                     - name: "name"
                     format: "format"
                     external_schema_bytes: "external_schema_bytes"
-                  format: "format"
                 uri: "uri"
               error:
                 message: "message"
@@ -33882,7 +33706,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -33944,7 +33767,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -34099,7 +33921,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34161,7 +33982,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34348,7 +34168,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34410,7 +34229,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34596,7 +34414,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34658,7 +34475,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -34854,7 +34670,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -34916,7 +34731,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -35071,7 +34885,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35133,7 +34946,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35320,7 +35132,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35382,7 +35193,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35568,7 +35378,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -35630,7 +35439,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36256,7 +36064,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -36318,7 +36125,6 @@ definitions:
                         - name: "name"
                         format: "format"
                         external_schema_bytes: "external_schema_bytes"
-                      format: "format"
                     uri: "uri"
                   error:
                     message: "message"
@@ -36473,7 +36279,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36535,7 +36340,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36722,7 +36526,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36784,7 +36587,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -36970,7 +36772,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"
@@ -37032,7 +36833,6 @@ definitions:
                           - name: "name"
                           format: "format"
                           external_schema_bytes: "external_schema_bytes"
-                        format: "format"
                       uri: "uri"
                     error:
                       message: "message"

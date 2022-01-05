@@ -507,8 +507,6 @@ func (m *StructuredDatasetMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Format
-
 	if v, ok := interface{}(m.GetStructuredDatasetType()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return StructuredDatasetMetadataValidationError{

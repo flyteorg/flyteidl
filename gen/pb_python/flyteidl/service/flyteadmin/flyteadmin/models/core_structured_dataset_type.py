@@ -91,6 +91,7 @@ class CoreStructuredDatasetType(object):
     def format(self):
         """Gets the format of this CoreStructuredDatasetType.  # noqa: E501
 
+        This is the storage format, the format of the bits at rest parquet, feather, csv, etc. For two types to be compatible, the format will need to be an exact match.  # noqa: E501
 
         :return: The format of this CoreStructuredDatasetType.  # noqa: E501
         :rtype: str
@@ -101,6 +102,7 @@ class CoreStructuredDatasetType(object):
     def format(self, format):
         """Sets the format of this CoreStructuredDatasetType.
 
+        This is the storage format, the format of the bits at rest parquet, feather, csv, etc. For two types to be compatible, the format will need to be an exact match.  # noqa: E501
 
         :param format: The format of this CoreStructuredDatasetType.  # noqa: E501
         :type: str
@@ -112,6 +114,7 @@ class CoreStructuredDatasetType(object):
     def external_schema_type(self):
         """Gets the external_schema_type of this CoreStructuredDatasetType.  # noqa: E501
 
+        This is a string representing the type that the bytes in external_schema_bytes are formatted in. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :return: The external_schema_type of this CoreStructuredDatasetType.  # noqa: E501
         :rtype: str
@@ -122,6 +125,7 @@ class CoreStructuredDatasetType(object):
     def external_schema_type(self, external_schema_type):
         """Sets the external_schema_type of this CoreStructuredDatasetType.
 
+        This is a string representing the type that the bytes in external_schema_bytes are formatted in. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :param external_schema_type: The external_schema_type of this CoreStructuredDatasetType.  # noqa: E501
         :type: str
@@ -133,6 +137,7 @@ class CoreStructuredDatasetType(object):
     def external_schema_bytes(self):
         """Gets the external_schema_bytes of this CoreStructuredDatasetType.  # noqa: E501
 
+        The serialized bytes of a third-party schema library like Arrow. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :return: The external_schema_bytes of this CoreStructuredDatasetType.  # noqa: E501
         :rtype: str
@@ -143,6 +148,7 @@ class CoreStructuredDatasetType(object):
     def external_schema_bytes(self, external_schema_bytes):
         """Sets the external_schema_bytes of this CoreStructuredDatasetType.
 
+        The serialized bytes of a third-party schema library like Arrow. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :param external_schema_bytes: The external_schema_bytes of this CoreStructuredDatasetType.  # noqa: E501
         :type: str

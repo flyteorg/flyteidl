@@ -1057,24 +1057,10 @@ class StructuredDatasetMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // string format = 1;
-  void clear_format();
-  static const int kFormatFieldNumber = 1;
-  const ::std::string& format() const;
-  void set_format(const ::std::string& value);
-  #if LANG_CXX11
-  void set_format(::std::string&& value);
-  #endif
-  void set_format(const char* value);
-  void set_format(const char* value, size_t size);
-  ::std::string* mutable_format();
-  ::std::string* release_format();
-  void set_allocated_format(::std::string* format);
-
-  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+  // .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
   bool has_structured_dataset_type() const;
   void clear_structured_dataset_type();
-  static const int kStructuredDatasetTypeFieldNumber = 2;
+  static const int kStructuredDatasetTypeFieldNumber = 1;
   const ::flyteidl::core::StructuredDatasetType& structured_dataset_type() const;
   ::flyteidl::core::StructuredDatasetType* release_structured_dataset_type();
   ::flyteidl::core::StructuredDatasetType* mutable_structured_dataset_type();
@@ -1085,7 +1071,6 @@ class StructuredDatasetMetadata final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr format_;
   ::flyteidl::core::StructuredDatasetType* structured_dataset_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fliterals_2eproto;
@@ -3306,60 +3291,7 @@ inline void Schema::set_allocated_type(::flyteidl::core::SchemaType* type) {
 
 // StructuredDatasetMetadata
 
-// string format = 1;
-inline void StructuredDatasetMetadata::clear_format() {
-  format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& StructuredDatasetMetadata::format() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetMetadata.format)
-  return format_.GetNoArena();
-}
-inline void StructuredDatasetMetadata::set_format(const ::std::string& value) {
-  
-  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetMetadata.format)
-}
-#if LANG_CXX11
-inline void StructuredDatasetMetadata::set_format(::std::string&& value) {
-  
-  format_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.StructuredDatasetMetadata.format)
-}
-#endif
-inline void StructuredDatasetMetadata::set_format(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetMetadata.format)
-}
-inline void StructuredDatasetMetadata::set_format(const char* value, size_t size) {
-  
-  format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetMetadata.format)
-}
-inline ::std::string* StructuredDatasetMetadata::mutable_format() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetMetadata.format)
-  return format_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* StructuredDatasetMetadata::release_format() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.StructuredDatasetMetadata.format)
-  
-  return format_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void StructuredDatasetMetadata::set_allocated_format(::std::string* format) {
-  if (format != nullptr) {
-    
-  } else {
-    
-  }
-  format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), format);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetMetadata.format)
-}
-
-// .flyteidl.core.StructuredDatasetType structured_dataset_type = 2;
+// .flyteidl.core.StructuredDatasetType structured_dataset_type = 1;
 inline bool StructuredDatasetMetadata::has_structured_dataset_type() const {
   return this != internal_default_instance() && structured_dataset_type_ != nullptr;
 }

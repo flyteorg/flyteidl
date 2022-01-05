@@ -10,8 +10,6 @@
 package flyteadmin
 
 type CoreStructuredDatasetMetadata struct {
-	// This is the storage format, the format of the bits at rest parquet, feather, csv, etc.
-	Format string `json:"format,omitempty"`
 	// Bundle the type information along with the literal.
 	StructuredDatasetType *CoreStructuredDatasetType `json:"structured_dataset_type,omitempty"`
 }
