@@ -31866,8 +31866,8 @@ definitions:
     properties:
       format:
         type: "string"
-        title: "This is the storage format, the format of the bits at rest\nParquet,\
-          \ Feather, CSV, etc.\nShould this be an enum?"
+        description: "This is the storage format, the format of the bits at rest\n\
+          parquet, feather, csv, etc."
       structured_dataset_type:
         description: "Bundle the type information along with the literal."
         $ref: "#/definitions/coreStructuredDatasetType"
