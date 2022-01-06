@@ -387,6 +387,12 @@ func (m *Schema) GetType() *SchemaType {
 
 type StructuredDatasetMetadata struct {
 	// Bundle the type information along with the literal.
+	// This is here because StructuredDatasets can often be more defined at run time than at compile time.
+	// That is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset,
+	// without any column information, but at run time, you might have that column information.
+	// flytekit python will copy this type information into the literal, from the type information, if not provided by
+	// the various plugins (encoders).
+	// Since this field is run time generated, it's not used for any type checking.
 	StructuredDatasetType *StructuredDatasetType `protobuf:"bytes,1,opt,name=structured_dataset_type,json=structuredDatasetType,proto3" json:"structured_dataset_type,omitempty"`
 	XXX_NoUnkeyedLiteral  struct{}               `json:"-"`
 	XXX_unrecognized      []byte                 `json:"-"`

@@ -31696,7 +31696,14 @@ definitions:
     type: "object"
     properties:
       structured_dataset_type:
-        description: "Bundle the type information along with the literal."
+        description: "Bundle the type information along with the literal.\nThis is\
+          \ here because StructuredDatasets can often be more defined at run time\
+          \ than at compile time.\nThat is, at compile time you might only declare\
+          \ a task to return a pandas dataframe or a StructuredDataset,\nwithout any\
+          \ column information, but at run time, you might have that column information.\n\
+          flytekit python will copy this type information into the literal, from the\
+          \ type information, if not provided by\nthe various plugins (encoders).\n\
+          Since this field is run time generated, it's not used for any type checking."
         $ref: "#/definitions/coreStructuredDatasetType"
     example:
       structured_dataset_type:
