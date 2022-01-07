@@ -34,26 +34,31 @@ class EventExternalResourceInfo(object):
     """
     swagger_types = {
         'external_id': 'str',
+        'index': 'int',
         'retry_attempt': 'int',
         'phase': 'CoreTaskExecutionPhase'
     }
 
     attribute_map = {
         'external_id': 'external_id',
+        'index': 'index',
         'retry_attempt': 'retry_attempt',
         'phase': 'phase'
     }
 
-    def __init__(self, external_id=None, retry_attempt=None, phase=None):  # noqa: E501
+    def __init__(self, external_id=None, index=None, retry_attempt=None, phase=None):  # noqa: E501
         """EventExternalResourceInfo - a model defined in Swagger"""  # noqa: E501
 
         self._external_id = None
+        self._index = None
         self._retry_attempt = None
         self._phase = None
         self.discriminator = None
 
         if external_id is not None:
             self.external_id = external_id
+        if index is not None:
+            self.index = index
         if retry_attempt is not None:
             self.retry_attempt = retry_attempt
         if phase is not None:
@@ -81,6 +86,29 @@ class EventExternalResourceInfo(object):
         """
 
         self._external_id = external_id
+
+    @property
+    def index(self):
+        """Gets the index of this EventExternalResourceInfo.  # noqa: E501
+
+        A unique index for the external resource with respect to all external resources for this task. Although the identifier may change between task reporting events or retries, this will remain the same to enable aggregating information from multiple reports.  # noqa: E501
+
+        :return: The index of this EventExternalResourceInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._index
+
+    @index.setter
+    def index(self, index):
+        """Sets the index of this EventExternalResourceInfo.
+
+        A unique index for the external resource with respect to all external resources for this task. Although the identifier may change between task reporting events or retries, this will remain the same to enable aggregating information from multiple reports.  # noqa: E501
+
+        :param index: The index of this EventExternalResourceInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._index = index
 
     @property
     def retry_attempt(self):

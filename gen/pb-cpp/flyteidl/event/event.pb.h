@@ -1690,15 +1690,21 @@ class ExternalResourceInfo final :
   ::std::string* release_external_id();
   void set_allocated_external_id(::std::string* external_id);
 
-  // uint32 retry_attempt = 2;
+  // uint32 index = 2;
+  void clear_index();
+  static const int kIndexFieldNumber = 2;
+  ::google::protobuf::uint32 index() const;
+  void set_index(::google::protobuf::uint32 value);
+
+  // uint32 retry_attempt = 3;
   void clear_retry_attempt();
-  static const int kRetryAttemptFieldNumber = 2;
+  static const int kRetryAttemptFieldNumber = 3;
   ::google::protobuf::uint32 retry_attempt() const;
   void set_retry_attempt(::google::protobuf::uint32 value);
 
-  // .flyteidl.core.TaskExecution.Phase phase = 3;
+  // .flyteidl.core.TaskExecution.Phase phase = 4;
   void clear_phase();
-  static const int kPhaseFieldNumber = 3;
+  static const int kPhaseFieldNumber = 4;
   ::flyteidl::core::TaskExecution_Phase phase() const;
   void set_phase(::flyteidl::core::TaskExecution_Phase value);
 
@@ -1708,6 +1714,7 @@ class ExternalResourceInfo final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr external_id_;
+  ::google::protobuf::uint32 index_;
   ::google::protobuf::uint32 retry_attempt_;
   int phase_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -4243,7 +4250,21 @@ inline void ExternalResourceInfo::set_allocated_external_id(::std::string* exter
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.ExternalResourceInfo.external_id)
 }
 
-// uint32 retry_attempt = 2;
+// uint32 index = 2;
+inline void ExternalResourceInfo::clear_index() {
+  index_ = 0u;
+}
+inline ::google::protobuf::uint32 ExternalResourceInfo::index() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.ExternalResourceInfo.index)
+  return index_;
+}
+inline void ExternalResourceInfo::set_index(::google::protobuf::uint32 value) {
+  
+  index_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.ExternalResourceInfo.index)
+}
+
+// uint32 retry_attempt = 3;
 inline void ExternalResourceInfo::clear_retry_attempt() {
   retry_attempt_ = 0u;
 }
@@ -4257,7 +4278,7 @@ inline void ExternalResourceInfo::set_retry_attempt(::google::protobuf::uint32 v
   // @@protoc_insertion_point(field_set:flyteidl.event.ExternalResourceInfo.retry_attempt)
 }
 
-// .flyteidl.core.TaskExecution.Phase phase = 3;
+// .flyteidl.core.TaskExecution.Phase phase = 4;
 inline void ExternalResourceInfo::clear_phase() {
   phase_ = 0;
 }

@@ -939,6 +939,8 @@ func (m *ExternalResourceInfo) Validate() error {
 
 	// no validation rules for ExternalId
 
+	// no validation rules for Index
+
 	// no validation rules for RetryAttempt
 
 	// no validation rules for Phase

@@ -6473,6 +6473,9 @@ export namespace flyteidl {
             /** ExternalResourceInfo externalId */
             externalId?: (string|null);
 
+            /** ExternalResourceInfo index */
+            index?: (number|null);
+
             /** ExternalResourceInfo retryAttempt */
             retryAttempt?: (number|null);
 
@@ -6491,6 +6494,9 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo externalId. */
             public externalId: string;
+
+            /** ExternalResourceInfo index. */
+            public index: number;
 
             /** ExternalResourceInfo retryAttempt. */
             public retryAttempt: number;

@@ -15667,6 +15667,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface IExternalResourceInfo
              * @property {string|null} [externalId] ExternalResourceInfo externalId
+             * @property {number|null} [index] ExternalResourceInfo index
              * @property {number|null} [retryAttempt] ExternalResourceInfo retryAttempt
              * @property {flyteidl.core.TaskExecution.Phase|null} [phase] ExternalResourceInfo phase
              */
@@ -15693,6 +15694,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExternalResourceInfo.prototype.externalId = "";
+
+            /**
+             * ExternalResourceInfo index.
+             * @member {number} index
+             * @memberof flyteidl.event.ExternalResourceInfo
+             * @instance
+             */
+            ExternalResourceInfo.prototype.index = 0;
 
             /**
              * ExternalResourceInfo retryAttempt.
@@ -15736,10 +15745,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.externalId != null && message.hasOwnProperty("externalId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.externalId);
+                if (message.index != null && message.hasOwnProperty("index"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.index);
                 if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.retryAttempt);
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
                 if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.phase);
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.phase);
                 return writer;
             };
 
@@ -15765,9 +15776,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.externalId = reader.string();
                         break;
                     case 2:
-                        message.retryAttempt = reader.uint32();
+                        message.index = reader.uint32();
                         break;
                     case 3:
+                        message.retryAttempt = reader.uint32();
+                        break;
+                    case 4:
                         message.phase = reader.int32();
                         break;
                     default:
@@ -15792,6 +15806,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.externalId != null && message.hasOwnProperty("externalId"))
                     if (!$util.isString(message.externalId))
                         return "externalId: string expected";
+                if (message.index != null && message.hasOwnProperty("index"))
+                    if (!$util.isInteger(message.index))
+                        return "index: integer expected";
                 if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
                     if (!$util.isInteger(message.retryAttempt))
                         return "retryAttempt: integer expected";
