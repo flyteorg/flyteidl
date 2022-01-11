@@ -9087,6 +9087,19 @@ public final class ExecutionOuterClass {
      */
     flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getWorkflowIdOrBuilder();
 
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus();
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder();
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionClosure.OutputResultCase getOutputResultCase();
   }
   /**
@@ -9287,6 +9300,19 @@ public final class ExecutionOuterClass {
                 outputResult_ = subBuilder.buildPartial();
               }
               outputResultCase_ = 13;
+              break;
+            }
+            case 114: {
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -9869,6 +9895,27 @@ public final class ExecutionOuterClass {
       return getWorkflowId();
     }
 
+    public static final int STATUS_FIELD_NUMBER = 14;
+    private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
+      return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+    }
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9921,6 +9968,9 @@ public final class ExecutionOuterClass {
       }
       if (outputResultCase_ == 13) {
         output.writeMessage(13, (flyteidl.core.Literals.LiteralMap) outputResult_);
+      }
+      if (status_ != null) {
+        output.writeMessage(14, getStatus());
       }
       unknownFields.writeTo(output);
     }
@@ -9982,6 +10032,10 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, (flyteidl.core.Literals.LiteralMap) outputResult_);
       }
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getStatus());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10029,6 +10083,11 @@ public final class ExecutionOuterClass {
       if (hasWorkflowId()) {
         if (!getWorkflowId()
             .equals(other.getWorkflowId())) return false;
+      }
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
       }
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
@@ -10095,6 +10154,10 @@ public final class ExecutionOuterClass {
       if (hasWorkflowId()) {
         hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
         hash = (53 * hash) + getWorkflowId().hashCode();
+      }
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
       }
       switch (outputResultCase_) {
         case 1:
@@ -10302,6 +10365,12 @@ public final class ExecutionOuterClass {
           workflowId_ = null;
           workflowIdBuilder_ = null;
         }
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
         outputResultCase_ = 0;
         outputResult_ = null;
         return this;
@@ -10403,6 +10472,11 @@ public final class ExecutionOuterClass {
         } else {
           result.workflowId_ = workflowIdBuilder_.build();
         }
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.outputResultCase_ = outputResultCase_;
         onBuilt();
@@ -10499,6 +10573,9 @@ public final class ExecutionOuterClass {
         }
         if (other.hasWorkflowId()) {
           mergeWorkflowId(other.getWorkflowId());
+        }
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
         }
         switch (other.getOutputResultCase()) {
           case OUTPUTS: {
@@ -12716,6 +12793,123 @@ public final class ExecutionOuterClass {
           workflowId_ = null;
         }
         return workflowIdBuilder_;
+      }
+
+      private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> statusBuilder_;
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public Builder setStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public Builder setStatus(
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public Builder mergeStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22620,6 +22814,1961 @@ public final class ExecutionOuterClass {
 
   }
 
+  public interface ExecutionUpdateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionUpdateRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId();
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus();
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder();
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.ExecutionUpdateRequest}
+   */
+  public  static final class ExecutionUpdateRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionUpdateRequest)
+      ExecutionUpdateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExecutionUpdateRequest.newBuilder() to construct.
+    private ExecutionUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExecutionUpdateRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExecutionUpdateRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.class, flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <pre>
+     * Identifier of the execution to update
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
+      return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+    }
+    /**
+     * <pre>
+     * Status object to set as the new value
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      if (status_ != null) {
+        output.writeMessage(2, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest other = (flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.ExecutionUpdateRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionUpdateRequest)
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.class, flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest build() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest result = new flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> idBuilder_;
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the execution to update
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+
+      private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> statusBuilder_;
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public Builder setStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public Builder setStatus(
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public Builder mergeStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <pre>
+       * Status object to set as the new value
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionUpdateRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionUpdateRequest)
+    private static final flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExecutionUpdateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ExecutionUpdateRequest>() {
+      @java.lang.Override
+      public ExecutionUpdateRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExecutionUpdateRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExecutionUpdateRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExecutionUpdateRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ExecutionStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     */
+    int getStateValue();
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState();
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.ExecutionStatus}
+   */
+  public  static final class ExecutionStatus extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionStatus)
+      ExecutionStatusOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExecutionStatus.newBuilder() to construct.
+    private ExecutionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExecutionStatus() {
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExecutionStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.class, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
+     * Protobuf enum {@code flyteidl.admin.ExecutionStatus.ExecutionState}
+     */
+    public enum ExecutionState
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * By default, all executions are considered active.
+       * </pre>
+       *
+       * <code>EXECUTION_ACTIVE = 0;</code>
+       */
+      EXECUTION_ACTIVE(0),
+      /**
+       * <pre>
+       * Archived executions are no longer visible in the UI.
+       * </pre>
+       *
+       * <code>EXECUTION_ARCHIVED = 1;</code>
+       */
+      EXECUTION_ARCHIVED(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * By default, all executions are considered active.
+       * </pre>
+       *
+       * <code>EXECUTION_ACTIVE = 0;</code>
+       */
+      public static final int EXECUTION_ACTIVE_VALUE = 0;
+      /**
+       * <pre>
+       * Archived executions are no longer visible in the UI.
+       * </pre>
+       *
+       * <code>EXECUTION_ARCHIVED = 1;</code>
+       */
+      public static final int EXECUTION_ARCHIVED_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ExecutionState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ExecutionState forNumber(int value) {
+        switch (value) {
+          case 0: return EXECUTION_ACTIVE;
+          case 1: return EXECUTION_ARCHIVED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ExecutionState>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ExecutionState> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExecutionState>() {
+              public ExecutionState findValueByNumber(int number) {
+                return ExecutionState.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ExecutionState[] VALUES = values();
+
+      public static ExecutionState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ExecutionState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.admin.ExecutionStatus.ExecutionState)
+    }
+
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_;
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     */
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.valueOf(state_);
+      return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, state_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStatus)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.ExecutionStatus other = (flyteidl.admin.ExecutionOuterClass.ExecutionStatus) obj;
+
+      if (state_ != other.state_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.ExecutionStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionStatus)
+        flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.ExecutionStatus.class, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        state_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus build() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionStatus result = new flyteidl.admin.ExecutionOuterClass.ExecutionStatus(this);
+        result.state_ = state_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStatus) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionStatus other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance()) return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.ExecutionStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int state_ = 0;
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       */
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.valueOf(state_);
+        return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       */
+      public Builder setState(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       */
+      public Builder clearState() {
+        
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStatus)
+    private static final flyteidl.admin.ExecutionOuterClass.ExecutionStatus DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionStatus();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExecutionStatus>
+        PARSER = new com.google.protobuf.AbstractParser<ExecutionStatus>() {
+      @java.lang.Override
+      public ExecutionStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExecutionStatus(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExecutionStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExecutionStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ExecutionUpdateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionUpdateResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.ExecutionUpdateResponse}
+   */
+  public  static final class ExecutionUpdateResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionUpdateResponse)
+      ExecutionUpdateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExecutionUpdateResponse.newBuilder() to construct.
+    private ExecutionUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExecutionUpdateResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExecutionUpdateResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.class, flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse other = (flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.ExecutionUpdateResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionUpdateResponse)
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.class, flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse build() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse result = new flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionUpdateResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionUpdateResponse)
+    private static final flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExecutionUpdateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ExecutionUpdateResponse>() {
+      @java.lang.Override
+      public ExecutionUpdateResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExecutionUpdateResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExecutionUpdateResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExecutionUpdateResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.ExecutionUpdateResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionCreateRequest_descriptor;
   private static final 
@@ -22710,6 +24859,21 @@ public final class ExecutionOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -22749,7 +24913,7 @@ public final class ExecutionOuterClass {
       "token\030\002 \001(\t\"X\n\016LiteralMapBlob\022/\n\006values\030" +
       "\001 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H\000\022\r" +
       "\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata\022\r" +
-      "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\245\005\n\020Exe" +
+      "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\326\005\n\020Exe" +
       "cutionClosure\0225\n\007outputs\030\001 \001(\0132\036.flyteid" +
       "l.admin.LiteralMapBlobB\002\030\001H\000\022.\n\005error\030\002 " +
       "\001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n\013" +
@@ -22766,49 +24930,58 @@ public final class ExecutionOuterClass {
       "\030\010 \001(\0132\032.google.protobuf.Timestamp\0223\n\rno" +
       "tifications\030\t \003(\0132\034.flyteidl.admin.Notif" +
       "ication\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl." +
-      "core.IdentifierB\017\n\routput_result\"+\n\016Syst" +
-      "emMetadata\022\031\n\021execution_cluster\030\001 \001(\t\"\332\003" +
-      "\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyt" +
-      "eidl.admin.ExecutionMetadata.ExecutionMo" +
-      "de\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220" +
-      "\n\014scheduled_at\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022E\n\025parent_node_execution\030\005 \001(\0132" +
-      "&.flyteidl.core.NodeExecutionIdentifier\022" +
-      "G\n\023reference_execution\030\020 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\0227\n\017syst" +
-      "em_metadata\030\021 \001(\0132\036.flyteidl.admin.Syste" +
-      "mMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r" +
-      "\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022" +
-      "\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020No" +
-      "tificationList\0223\n\rnotifications\030\001 \003(\0132\034." +
-      "flyteidl.admin.Notification\"\260\004\n\rExecutio" +
-      "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co" +
-      "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!" +
-      ".flyteidl.admin.ExecutionMetadata\0229\n\rnot" +
-      "ifications\030\005 \001(\0132 .flyteidl.admin.Notifi" +
-      "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
-      "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
-      "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
-      "tions\0228\n\020security_context\030\n \001(\0132\036.flytei" +
-      "dl.core.SecurityContext\022/\n\tauth_role\030\020 \001" +
-      "(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022qual" +
-      "ity_of_service\030\021 \001(\0132\037.flyteidl.core.Qua" +
-      "lityOfService\022\027\n\017max_parallelism\030\022 \001(\005B\030" +
-      "\n\026notification_overridesJ\004\010\004\020\005\"b\n\031Execut" +
-      "ionTerminateRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
-      "dl.core.WorkflowExecutionIdentifier\022\r\n\005c" +
-      "ause\030\002 \001(\t\"\034\n\032ExecutionTerminateResponse" +
-      "\"Y\n\037WorkflowExecutionGetDataRequest\0226\n\002i" +
-      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
-      "nIdentifier\"\336\001\n WorkflowExecutionGetData" +
-      "Response\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.adm" +
-      "in.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteid" +
-      "l.admin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\013" +
-      "2\031.flyteidl.core.LiteralMap\022/\n\014full_outp" +
-      "uts\030\004 \001(\0132\031.flyteidl.core.LiteralMapB7Z5" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/adminb\006proto3"
+      "core.Identifier\022/\n\006status\030\016 \001(\0132\037.flytei" +
+      "dl.admin.ExecutionStatusB\017\n\routput_resul" +
+      "t\"+\n\016SystemMetadata\022\031\n\021execution_cluster" +
+      "\030\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001" +
+      "(\0162/.flyteidl.admin.ExecutionMetadata.Ex" +
+      "ecutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nestin" +
+      "g\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022E\n\025parent_node_executi" +
+      "on\030\005 \001(\0132&.flyteidl.core.NodeExecutionId" +
+      "entifier\022G\n\023reference_execution\030\020 \001(\0132*." +
+      "flyteidl.core.WorkflowExecutionIdentifie" +
+      "r\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.ad" +
+      "min.SystemMetadata\"g\n\rExecutionMode\022\n\n\006M" +
+      "ANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RE" +
+      "LAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERE" +
+      "D\020\005\"G\n\020NotificationList\0223\n\rnotifications" +
+      "\030\001 \003(\0132\034.flyteidl.admin.Notification\"\260\004\n" +
+      "\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fl" +
+      "yteidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031" +
+      ".flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadat" +
+      "a\030\003 \001(\0132!.flyteidl.admin.ExecutionMetada" +
+      "ta\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.adm" +
+      "in.NotificationListH\000\022\025\n\013disable_all\030\006 \001" +
+      "(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.La" +
+      "bels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.adm" +
+      "in.Annotations\0228\n\020security_context\030\n \001(\013" +
+      "2\036.flyteidl.core.SecurityContext\022/\n\tauth" +
+      "_role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030" +
+      "\001\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl" +
+      ".core.QualityOfService\022\027\n\017max_parallelis" +
+      "m\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"" +
+      "b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\013" +
+      "2*.flyteidl.core.WorkflowExecutionIdenti" +
+      "fier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminat" +
+      "eResponse\"Y\n\037WorkflowExecutionGetDataReq" +
+      "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
+      "wExecutionIdentifier\"\336\001\n WorkflowExecuti" +
+      "onGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.fly" +
+      "teidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132" +
+      "\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inp" +
+      "uts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014" +
+      "full_outputs\030\004 \001(\0132\031.flyteidl.core.Liter" +
+      "alMap\"\201\001\n\026ExecutionUpdateRequest\0226\n\002id\030\001" +
+      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
+      "entifier\022/\n\006status\030\002 \001(\0132\037.flyteidl.admi" +
+      "n.ExecutionStatus\"\220\001\n\017ExecutionStatus\022=\n" +
+      "\005state\030\001 \001(\0162..flyteidl.admin.ExecutionS" +
+      "tatus.ExecutionState\">\n\016ExecutionState\022\024" +
+      "\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIV" +
+      "ED\020\001\"\031\n\027ExecutionUpdateResponseB7Z5githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22888,7 +25061,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionClosure_descriptor,
-        new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "OutputData", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "OutputResult", });
+        new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "OutputData", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "Status", "OutputResult", });
     internal_static_flyteidl_admin_SystemMetadata_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_SystemMetadata_fieldAccessorTable = new
@@ -22937,6 +25110,24 @@ public final class ExecutionOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor,
         new java.lang.String[] { "Outputs", "Inputs", "FullInputs", "FullOutputs", });
+    internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor,
+        new java.lang.String[] { "Id", "Status", });
+    internal_static_flyteidl_admin_ExecutionStatus_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ExecutionStatus_descriptor,
+        new java.lang.String[] { "State", });
+    internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor,
+        new java.lang.String[] { });
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Execution.getDescriptor();

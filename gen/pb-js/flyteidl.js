@@ -21649,6 +21649,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [updatedAt] ExecutionClosure updatedAt
              * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionClosure notifications
              * @property {flyteidl.core.IIdentifier|null} [workflowId] ExecutionClosure workflowId
+             * @property {flyteidl.admin.IExecutionStatus|null} [status] ExecutionClosure status
              */
 
             /**
@@ -21771,6 +21772,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionClosure.prototype.workflowId = null;
 
+            /**
+             * ExecutionClosure status.
+             * @member {flyteidl.admin.IExecutionStatus|null|undefined} status
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.status = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -21836,6 +21845,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.AbortMetadata.encode(message.abortMetadata, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 if (message.outputData != null && message.hasOwnProperty("outputData"))
                     $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.status != null && message.hasOwnProperty("status"))
+                    $root.flyteidl.admin.ExecutionStatus.encode(message.status, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 return writer;
             };
 
@@ -21897,6 +21908,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 11:
                         message.workflowId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 14:
+                        message.status = $root.flyteidl.admin.ExecutionStatus.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -22017,6 +22031,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.Identifier.verify(message.workflowId);
                     if (error)
                         return "workflowId." + error;
+                }
+                if (message.status != null && message.hasOwnProperty("status")) {
+                    let error = $root.flyteidl.admin.ExecutionStatus.verify(message.status);
+                    if (error)
+                        return "status." + error;
                 }
                 return null;
             };
@@ -23326,6 +23345,359 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return WorkflowExecutionGetDataResponse;
+        })();
+
+        admin.ExecutionUpdateRequest = (function() {
+
+            /**
+             * Properties of an ExecutionUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface IExecutionUpdateRequest
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionUpdateRequest id
+             * @property {flyteidl.admin.IExecutionStatus|null} [status] ExecutionUpdateRequest status
+             */
+
+            /**
+             * Constructs a new ExecutionUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ExecutionUpdateRequest.
+             * @implements IExecutionUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.IExecutionUpdateRequest=} [properties] Properties to set
+             */
+            function ExecutionUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ExecutionUpdateRequest id.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @instance
+             */
+            ExecutionUpdateRequest.prototype.id = null;
+
+            /**
+             * ExecutionUpdateRequest status.
+             * @member {flyteidl.admin.IExecutionStatus|null|undefined} status
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @instance
+             */
+            ExecutionUpdateRequest.prototype.status = null;
+
+            /**
+             * Creates a new ExecutionUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IExecutionUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionUpdateRequest} ExecutionUpdateRequest instance
+             */
+            ExecutionUpdateRequest.create = function create(properties) {
+                return new ExecutionUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ExecutionUpdateRequest message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IExecutionUpdateRequest} message ExecutionUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ExecutionUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.status != null && message.hasOwnProperty("status"))
+                    $root.flyteidl.admin.ExecutionStatus.encode(message.status, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an ExecutionUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ExecutionUpdateRequest} ExecutionUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ExecutionUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.status = $root.flyteidl.admin.ExecutionStatus.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ExecutionUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ExecutionUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ExecutionUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.status != null && message.hasOwnProperty("status")) {
+                    let error = $root.flyteidl.admin.ExecutionStatus.verify(message.status);
+                    if (error)
+                        return "status." + error;
+                }
+                return null;
+            };
+
+            return ExecutionUpdateRequest;
+        })();
+
+        admin.ExecutionStatus = (function() {
+
+            /**
+             * Properties of an ExecutionStatus.
+             * @memberof flyteidl.admin
+             * @interface IExecutionStatus
+             * @property {flyteidl.admin.ExecutionStatus.ExecutionState|null} [state] ExecutionStatus state
+             */
+
+            /**
+             * Constructs a new ExecutionStatus.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ExecutionStatus.
+             * @implements IExecutionStatus
+             * @constructor
+             * @param {flyteidl.admin.IExecutionStatus=} [properties] Properties to set
+             */
+            function ExecutionStatus(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ExecutionStatus state.
+             * @member {flyteidl.admin.ExecutionStatus.ExecutionState} state
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @instance
+             */
+            ExecutionStatus.prototype.state = 0;
+
+            /**
+             * Creates a new ExecutionStatus instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @static
+             * @param {flyteidl.admin.IExecutionStatus=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionStatus} ExecutionStatus instance
+             */
+            ExecutionStatus.create = function create(properties) {
+                return new ExecutionStatus(properties);
+            };
+
+            /**
+             * Encodes the specified ExecutionStatus message. Does not implicitly {@link flyteidl.admin.ExecutionStatus.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @static
+             * @param {flyteidl.admin.IExecutionStatus} message ExecutionStatus message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ExecutionStatus.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
+                return writer;
+            };
+
+            /**
+             * Decodes an ExecutionStatus message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ExecutionStatus} ExecutionStatus
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ExecutionStatus.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionStatus();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.state = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ExecutionStatus message.
+             * @function verify
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ExecutionStatus.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.state != null && message.hasOwnProperty("state"))
+                    switch (message.state) {
+                    default:
+                        return "state: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * ExecutionState enum.
+             * @name flyteidl.admin.ExecutionStatus.ExecutionState
+             * @enum {string}
+             * @property {number} EXECUTION_ACTIVE=0 EXECUTION_ACTIVE value
+             * @property {number} EXECUTION_ARCHIVED=1 EXECUTION_ARCHIVED value
+             */
+            ExecutionStatus.ExecutionState = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "EXECUTION_ACTIVE"] = 0;
+                values[valuesById[1] = "EXECUTION_ARCHIVED"] = 1;
+                return values;
+            })();
+
+            return ExecutionStatus;
+        })();
+
+        admin.ExecutionUpdateResponse = (function() {
+
+            /**
+             * Properties of an ExecutionUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface IExecutionUpdateResponse
+             */
+
+            /**
+             * Constructs a new ExecutionUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ExecutionUpdateResponse.
+             * @implements IExecutionUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.IExecutionUpdateResponse=} [properties] Properties to set
+             */
+            function ExecutionUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new ExecutionUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ExecutionUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IExecutionUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionUpdateResponse} ExecutionUpdateResponse instance
+             */
+            ExecutionUpdateResponse.create = function create(properties) {
+                return new ExecutionUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified ExecutionUpdateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ExecutionUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IExecutionUpdateResponse} message ExecutionUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ExecutionUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes an ExecutionUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ExecutionUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ExecutionUpdateResponse} ExecutionUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ExecutionUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ExecutionUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.ExecutionUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ExecutionUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return ExecutionUpdateResponse;
         })();
 
         admin.LaunchPlanCreateRequest = (function() {
@@ -36043,6 +36415,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IWorkflowExecutionGetRequest} request WorkflowExecutionGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.Execution>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateExecution}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateExecutionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ExecutionUpdateResponse} [response] ExecutionUpdateResponse
+             */
+
+            /**
+             * Calls UpdateExecution.
+             * @function updateExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IExecutionUpdateRequest} request ExecutionUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateExecutionCallback} callback Node-style callback called with the error, if any, and ExecutionUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateExecution = function updateExecution(request, callback) {
+                return this.rpcCall(updateExecution, $root.flyteidl.admin.ExecutionUpdateRequest, $root.flyteidl.admin.ExecutionUpdateResponse, request, callback);
+            }, "name", { value: "UpdateExecution" });
+
+            /**
+             * Calls UpdateExecution.
+             * @function updateExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IExecutionUpdateRequest} request ExecutionUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ExecutionUpdateResponse>} Promise
              * @variation 2
              */
 

@@ -870,6 +870,16 @@ func (m *ExecutionClosure) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetStatus()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionClosureValidationError{
+				field:  "Status",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.OutputResult.(type) {
 
 	case *ExecutionClosure_Outputs:
@@ -1739,3 +1749,224 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = WorkflowExecutionGetDataResponseValidationError{}
+
+// Validate checks the field values on ExecutionUpdateRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionUpdateRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionUpdateRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetStatus()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionUpdateRequestValidationError{
+				field:  "Status",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// ExecutionUpdateRequestValidationError is the validation error returned by
+// ExecutionUpdateRequest.Validate if the designated constraints aren't met.
+type ExecutionUpdateRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionUpdateRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionUpdateRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionUpdateRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionUpdateRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionUpdateRequestValidationError) ErrorName() string {
+	return "ExecutionUpdateRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionUpdateRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionUpdateRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionUpdateRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionUpdateRequestValidationError{}
+
+// Validate checks the field values on ExecutionStatus with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ExecutionStatus) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for State
+
+	return nil
+}
+
+// ExecutionStatusValidationError is the validation error returned by
+// ExecutionStatus.Validate if the designated constraints aren't met.
+type ExecutionStatusValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionStatusValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionStatusValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionStatusValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionStatusValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionStatusValidationError) ErrorName() string { return "ExecutionStatusValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ExecutionStatusValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionStatus.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionStatusValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionStatusValidationError{}
+
+// Validate checks the field values on ExecutionUpdateResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionUpdateResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// ExecutionUpdateResponseValidationError is the validation error returned by
+// ExecutionUpdateResponse.Validate if the designated constraints aren't met.
+type ExecutionUpdateResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionUpdateResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionUpdateResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionUpdateResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionUpdateResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionUpdateResponseValidationError) ErrorName() string {
+	return "ExecutionUpdateResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionUpdateResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionUpdateResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionUpdateResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionUpdateResponseValidationError{}

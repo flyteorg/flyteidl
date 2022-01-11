@@ -877,6 +877,7 @@ Encapsulates the results of the Execution
    "updated_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Reported time at which the execution was last updated."
    "notifications", ":ref:`ref_flyteidl.admin.Notification`", "repeated", "The notification settings to use after merging the CreateExecutionRequest and the launch plan notification settings. An execution launched with notifications will always prefer that definition to notifications defined statically in a launch plan."
    "workflow_id", ":ref:`ref_flyteidl.core.Identifier`", "", "Identifies the workflow definition for this execution."
+   "status", ":ref:`ref_flyteidl.admin.ExecutionStatus`", "", ""
 
 
 
@@ -1059,6 +1060,27 @@ of an execution as it progresses across phase changes.
 
 
 
+.. _ref_flyteidl.admin.ExecutionStatus:
+
+ExecutionStatus
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ExecutionStatus type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "state", ":ref:`ref_flyteidl.admin.ExecutionStatus.ExecutionState`", "", ""
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.ExecutionTerminateRequest:
 
 ExecutionTerminateRequest
@@ -1091,6 +1113,42 @@ ExecutionTerminateResponse
 ------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ExecutionUpdateRequest:
+
+ExecutionUpdateRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ExecutionUpdateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the execution to update"
+   "status", ":ref:`ref_flyteidl.admin.ExecutionStatus`", "", "Status object to set as the new value"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ExecutionUpdateResponse:
+
+ExecutionUpdateResponse
+------------------------------------------------------------------
+
+
 
 
 
@@ -1250,6 +1308,22 @@ The method by which this execution was launched.
    "RELAUNCH", "3", "This execution was launched with identical inputs as a previous execution."
    "CHILD_WORKFLOW", "4", "This execution was triggered by another execution."
    "RECOVERED", "5", "This execution was recovered from another execution."
+
+
+
+.. _ref_flyteidl.admin.ExecutionStatus.ExecutionState:
+
+ExecutionStatus.ExecutionState
+------------------------------------------------------------------
+
+The state of the execution is used to control its visibility in the UI/CLI.
+
+.. csv-table:: Enum ExecutionStatus.ExecutionState values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "EXECUTION_ACTIVE", "0", "By default, all executions are considered active."
+   "EXECUTION_ARCHIVED", "1", "Archived executions are no longer visible in the UI."
 
  <!-- end enums -->
 
