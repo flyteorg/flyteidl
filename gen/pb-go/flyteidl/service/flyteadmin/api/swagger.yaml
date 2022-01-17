@@ -3078,6 +3078,7 @@ definitions:
             - "recipients_email"
             - "recipients_email"
         status:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
           state: {}
       spec:
         launch_plan:
@@ -3314,6 +3315,7 @@ definitions:
           - "recipients_email"
           - "recipients_email"
       status:
+        occurred_at: "2000-01-23T04:56:07.000+00:00"
         state: {}
   adminExecutionClusterLabel:
     type: "object"
@@ -3441,6 +3443,7 @@ definitions:
               - "recipients_email"
               - "recipients_email"
           status:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
             state: {}
         spec:
           launch_plan:
@@ -3623,6 +3626,7 @@ definitions:
               - "recipients_email"
               - "recipients_email"
           status:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
             state: {}
         spec:
           launch_plan:
@@ -4003,7 +4007,12 @@ definitions:
     properties:
       state:
         $ref: "#/definitions/ExecutionStatusExecutionState"
+      occurred_at:
+        type: "string"
+        format: "date-time"
+        description: "This timestamp represents when the state changed."
     example:
+      occurred_at: "2000-01-23T04:56:07.000+00:00"
       state: {}
   adminExecutionTerminateRequest:
     type: "object"

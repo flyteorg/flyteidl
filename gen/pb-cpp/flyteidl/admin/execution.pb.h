@@ -3117,6 +3117,15 @@ class ExecutionStatus final :
 
   // accessors -------------------------------------------------------
 
+  // .google.protobuf.Timestamp occurred_at = 2;
+  bool has_occurred_at() const;
+  void clear_occurred_at();
+  static const int kOccurredAtFieldNumber = 2;
+  const ::google::protobuf::Timestamp& occurred_at() const;
+  ::google::protobuf::Timestamp* release_occurred_at();
+  ::google::protobuf::Timestamp* mutable_occurred_at();
+  void set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at);
+
   // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
   void clear_state();
   static const int kStateFieldNumber = 1;
@@ -3128,6 +3137,7 @@ class ExecutionStatus final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::Timestamp* occurred_at_;
   int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
@@ -6245,6 +6255,52 @@ inline void ExecutionStatus::set_state(::flyteidl::admin::ExecutionStatus_Execut
   
   state_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionStatus.state)
+}
+
+// .google.protobuf.Timestamp occurred_at = 2;
+inline bool ExecutionStatus::has_occurred_at() const {
+  return this != internal_default_instance() && occurred_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& ExecutionStatus::occurred_at() const {
+  const ::google::protobuf::Timestamp* p = occurred_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStatus.occurred_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* ExecutionStatus::release_occurred_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionStatus.occurred_at)
+  
+  ::google::protobuf::Timestamp* temp = occurred_at_;
+  occurred_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* ExecutionStatus::mutable_occurred_at() {
+  
+  if (occurred_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    occurred_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionStatus.occurred_at)
+  return occurred_at_;
+}
+inline void ExecutionStatus::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(occurred_at_);
+  }
+  if (occurred_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(occurred_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      occurred_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, occurred_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  occurred_at_ = occurred_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionStatus.occurred_at)
 }
 
 // -------------------------------------------------------------------

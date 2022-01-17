@@ -23485,6 +23485,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IExecutionStatus
              * @property {flyteidl.admin.ExecutionStatus.ExecutionState|null} [state] ExecutionStatus state
+             * @property {google.protobuf.ITimestamp|null} [occurredAt] ExecutionStatus occurredAt
              */
 
             /**
@@ -23509,6 +23510,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExecutionStatus.prototype.state = 0;
+
+            /**
+             * ExecutionStatus occurredAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
+             * @memberof flyteidl.admin.ExecutionStatus
+             * @instance
+             */
+            ExecutionStatus.prototype.occurredAt = null;
 
             /**
              * Creates a new ExecutionStatus instance using the specified properties.
@@ -23536,6 +23545,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.state != null && message.hasOwnProperty("state"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -23559,6 +23570,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     switch (tag >>> 3) {
                     case 1:
                         message.state = reader.int32();
+                        break;
+                    case 2:
+                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -23587,6 +23601,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         break;
                     }
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                    if (error)
+                        return "occurredAt." + error;
+                }
                 return null;
             };
 

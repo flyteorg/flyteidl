@@ -23746,6 +23746,31 @@ public final class ExecutionOuterClass {
      * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
      */
     flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState();
+
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    boolean hasOccurredAt();
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    com.google.protobuf.Timestamp getOccurredAt();
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ExecutionStatus}
@@ -23791,6 +23816,19 @@ public final class ExecutionOuterClass {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (occurredAt_ != null) {
+                subBuilder = occurredAt_.toBuilder();
+              }
+              occurredAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(occurredAt_);
+                occurredAt_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -23960,6 +23998,39 @@ public final class ExecutionOuterClass {
       return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.UNRECOGNIZED : result;
     }
 
+    public static final int OCCURRED_AT_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp occurredAt_;
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    public boolean hasOccurredAt() {
+      return occurredAt_ != null;
+    }
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    public com.google.protobuf.Timestamp getOccurredAt() {
+      return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+    }
+    /**
+     * <pre>
+     * This timestamp represents when the state changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+      return getOccurredAt();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -23977,6 +24048,9 @@ public final class ExecutionOuterClass {
       if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
         output.writeEnum(1, state_);
       }
+      if (occurredAt_ != null) {
+        output.writeMessage(2, getOccurredAt());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -23989,6 +24063,10 @@ public final class ExecutionOuterClass {
       if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
+      }
+      if (occurredAt_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOccurredAt());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24006,6 +24084,11 @@ public final class ExecutionOuterClass {
       flyteidl.admin.ExecutionOuterClass.ExecutionStatus other = (flyteidl.admin.ExecutionOuterClass.ExecutionStatus) obj;
 
       if (state_ != other.state_) return false;
+      if (hasOccurredAt() != other.hasOccurredAt()) return false;
+      if (hasOccurredAt()) {
+        if (!getOccurredAt()
+            .equals(other.getOccurredAt())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24019,6 +24102,10 @@ public final class ExecutionOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      if (hasOccurredAt()) {
+        hash = (37 * hash) + OCCURRED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getOccurredAt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -24154,6 +24241,12 @@ public final class ExecutionOuterClass {
         super.clear();
         state_ = 0;
 
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
+        } else {
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
+        }
         return this;
       }
 
@@ -24181,6 +24274,11 @@ public final class ExecutionOuterClass {
       public flyteidl.admin.ExecutionOuterClass.ExecutionStatus buildPartial() {
         flyteidl.admin.ExecutionOuterClass.ExecutionStatus result = new flyteidl.admin.ExecutionOuterClass.ExecutionStatus(this);
         result.state_ = state_;
+        if (occurredAtBuilder_ == null) {
+          result.occurredAt_ = occurredAt_;
+        } else {
+          result.occurredAt_ = occurredAtBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -24231,6 +24329,9 @@ public final class ExecutionOuterClass {
         if (other == flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance()) return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.hasOccurredAt()) {
+          mergeOccurredAt(other.getOccurredAt());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -24304,6 +24405,159 @@ public final class ExecutionOuterClass {
         state_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp occurredAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> occurredAtBuilder_;
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public boolean hasOccurredAt() {
+        return occurredAtBuilder_ != null || occurredAt_ != null;
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public com.google.protobuf.Timestamp getOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+        } else {
+          return occurredAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public Builder setOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          occurredAt_ = value;
+          onChanged();
+        } else {
+          occurredAtBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public Builder setOccurredAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = builderForValue.build();
+          onChanged();
+        } else {
+          occurredAtBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public Builder mergeOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
+          if (occurredAt_ != null) {
+            occurredAt_ =
+              com.google.protobuf.Timestamp.newBuilder(occurredAt_).mergeFrom(value).buildPartial();
+          } else {
+            occurredAt_ = value;
+          }
+          onChanged();
+        } else {
+          occurredAtBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public Builder clearOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
+          onChanged();
+        } else {
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getOccurredAtBuilder() {
+        
+        onChanged();
+        return getOccurredAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+        if (occurredAtBuilder_ != null) {
+          return occurredAtBuilder_.getMessageOrBuilder();
+        } else {
+          return occurredAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+        }
+      }
+      /**
+       * <pre>
+       * This timestamp represents when the state changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getOccurredAtFieldBuilder() {
+        if (occurredAtBuilder_ == null) {
+          occurredAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getOccurredAt(),
+                  getParentForChildren(),
+                  isClean());
+          occurredAt_ = null;
+        }
+        return occurredAtBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -24975,13 +25229,14 @@ public final class ExecutionOuterClass {
       "alMap\"\201\001\n\026ExecutionUpdateRequest\0226\n\002id\030\001" +
       " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
       "entifier\022/\n\006status\030\002 \001(\0132\037.flyteidl.admi" +
-      "n.ExecutionStatus\"\220\001\n\017ExecutionStatus\022=\n" +
+      "n.ExecutionStatus\"\301\001\n\017ExecutionStatus\022=\n" +
       "\005state\030\001 \001(\0162..flyteidl.admin.ExecutionS" +
-      "tatus.ExecutionState\">\n\016ExecutionState\022\024" +
-      "\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIV" +
-      "ED\020\001\"\031\n\027ExecutionUpdateResponseB7Z5githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/adminb\006proto3"
+      "tatus.ExecutionState\022/\n\013occurred_at\030\002 \001(" +
+      "\0132\032.google.protobuf.Timestamp\">\n\016Executi" +
+      "onState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTI" +
+      "ON_ARCHIVED\020\001\"\031\n\027ExecutionUpdateResponse" +
+      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -25121,7 +25376,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionStatus_descriptor,
-        new java.lang.String[] { "State", });
+        new java.lang.String[] { "State", "OccurredAt", });
     internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable = new

@@ -341,6 +341,9 @@ message ExecutionStatus {
         EXECUTION_ARCHIVED = 1;
     }
     ExecutionState state = 1;
+
+    // This timestamp represents when the state changed.
+    google.protobuf.Timestamp occurred_at = 2;
 }
 
 message ExecutionUpdateResponse {}

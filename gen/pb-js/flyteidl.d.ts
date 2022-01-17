@@ -9789,6 +9789,9 @@ export namespace flyteidl {
 
             /** ExecutionStatus state */
             state?: (flyteidl.admin.ExecutionStatus.ExecutionState|null);
+
+            /** ExecutionStatus occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents an ExecutionStatus. */
@@ -9802,6 +9805,9 @@ export namespace flyteidl {
 
             /** ExecutionStatus state. */
             public state: flyteidl.admin.ExecutionStatus.ExecutionState;
+
+            /** ExecutionStatus occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /**
              * Creates a new ExecutionStatus instance using the specified properties.

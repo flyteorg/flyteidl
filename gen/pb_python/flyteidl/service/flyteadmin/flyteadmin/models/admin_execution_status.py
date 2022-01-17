@@ -33,21 +33,26 @@ class AdminExecutionStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'state': 'ExecutionStatusExecutionState'
+        'state': 'ExecutionStatusExecutionState',
+        'occurred_at': 'datetime'
     }
 
     attribute_map = {
-        'state': 'state'
+        'state': 'state',
+        'occurred_at': 'occurred_at'
     }
 
-    def __init__(self, state=None):  # noqa: E501
+    def __init__(self, state=None, occurred_at=None):  # noqa: E501
         """AdminExecutionStatus - a model defined in Swagger"""  # noqa: E501
 
         self._state = None
+        self._occurred_at = None
         self.discriminator = None
 
         if state is not None:
             self.state = state
+        if occurred_at is not None:
+            self.occurred_at = occurred_at
 
     @property
     def state(self):
@@ -69,6 +74,29 @@ class AdminExecutionStatus(object):
         """
 
         self._state = state
+
+    @property
+    def occurred_at(self):
+        """Gets the occurred_at of this AdminExecutionStatus.  # noqa: E501
+
+        This timestamp represents when the state changed.  # noqa: E501
+
+        :return: The occurred_at of this AdminExecutionStatus.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._occurred_at
+
+    @occurred_at.setter
+    def occurred_at(self, occurred_at):
+        """Sets the occurred_at of this AdminExecutionStatus.
+
+        This timestamp represents when the state changed.  # noqa: E501
+
+        :param occurred_at: The occurred_at of this AdminExecutionStatus.  # noqa: E501
+        :type: datetime
+        """
+
+        self._occurred_at = occurred_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

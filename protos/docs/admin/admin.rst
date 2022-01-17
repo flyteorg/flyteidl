@@ -1074,6 +1074,7 @@ ExecutionStatus
    :widths: auto
 
    "state", ":ref:`ref_flyteidl.admin.ExecutionStatus.ExecutionState`", "", ""
+   "occurred_at", ":ref:`ref_google.protobuf.Timestamp`", "", "This timestamp represents when the state changed."
 
 
 

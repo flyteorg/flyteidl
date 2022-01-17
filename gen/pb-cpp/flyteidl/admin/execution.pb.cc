@@ -22,8 +22,8 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AbortMetadata_flyteidl_2fadmin_2fexecution_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SystemMetadata_flyteidl_2fadmin_2fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LiteralMapBlob_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NotificationList_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Execution_flyteidl_2fadmin_2fexecution_2eproto;
@@ -454,8 +454,9 @@ static void InitDefaultsExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto() {
   ::flyteidl::admin::ExecutionStatus::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsExecutionUpdateResponse_flyteidl_2fadmin_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -668,6 +669,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStatus, state_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStatus, occurred_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionUpdateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -695,7 +697,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 146, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
   { 155, -1, sizeof(::flyteidl::admin::ExecutionUpdateRequest)},
   { 162, -1, sizeof(::flyteidl::admin::ExecutionStatus)},
-  { 168, -1, sizeof(::flyteidl::admin::ExecutionUpdateResponse)},
+  { 169, -1, sizeof(::flyteidl::admin::ExecutionUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -821,18 +823,19 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "alMap\"\201\001\n\026ExecutionUpdateRequest\0226\n\002id\030\001"
   " \001(\0132*.flyteidl.core.WorkflowExecutionId"
   "entifier\022/\n\006status\030\002 \001(\0132\037.flyteidl.admi"
-  "n.ExecutionStatus\"\220\001\n\017ExecutionStatus\022=\n"
+  "n.ExecutionStatus\"\301\001\n\017ExecutionStatus\022=\n"
   "\005state\030\001 \001(\0162..flyteidl.admin.ExecutionS"
-  "tatus.ExecutionState\">\n\016ExecutionState\022\024"
-  "\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIV"
-  "ED\020\001\"\031\n\027ExecutionUpdateResponseB7Z5githu"
-  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
-  "dl/adminb\006proto3"
+  "tatus.ExecutionState\022/\n\013occurred_at\030\002 \001("
+  "\0132\032.google.protobuf.Timestamp\">\n\016Executi"
+  "onState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTI"
+  "ON_ARCHIVED\020\001\"\031\n\027ExecutionUpdateResponse"
+  "B7Z5github.com/flyteorg/flyteidl/gen/pb-"
+  "go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3936,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3985,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -9720,13 +9723,27 @@ void ExecutionUpdateRequest::InternalSwap(ExecutionUpdateRequest* other) {
 // ===================================================================
 
 void ExecutionStatus::InitAsDefaultInstance() {
+  ::flyteidl::admin::_ExecutionStatus_default_instance_._instance.get_mutable()->occurred_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
 }
 class ExecutionStatus::HasBitSetters {
  public:
+  static const ::google::protobuf::Timestamp& occurred_at(const ExecutionStatus* msg);
 };
 
+const ::google::protobuf::Timestamp&
+ExecutionStatus::HasBitSetters::occurred_at(const ExecutionStatus* msg) {
+  return *msg->occurred_at_;
+}
+void ExecutionStatus::clear_occurred_at() {
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
+  }
+  occurred_at_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ExecutionStatus::kStateFieldNumber;
+const int ExecutionStatus::kOccurredAtFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionStatus::ExecutionStatus()
@@ -9738,12 +9755,21 @@ ExecutionStatus::ExecutionStatus(const ExecutionStatus& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_occurred_at()) {
+    occurred_at_ = new ::google::protobuf::Timestamp(*from.occurred_at_);
+  } else {
+    occurred_at_ = nullptr;
+  }
   state_ = from.state_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ExecutionStatus)
 }
 
 void ExecutionStatus::SharedCtor() {
-  state_ = 0;
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base);
+  ::memset(&occurred_at_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&state_) -
+      reinterpret_cast<char*>(&occurred_at_)) + sizeof(state_));
 }
 
 ExecutionStatus::~ExecutionStatus() {
@@ -9752,6 +9778,7 @@ ExecutionStatus::~ExecutionStatus() {
 }
 
 void ExecutionStatus::SharedDtor() {
+  if (this != internal_default_instance()) delete occurred_at_;
 }
 
 void ExecutionStatus::SetCachedSize(int size) const {
@@ -9769,6 +9796,10 @@ void ExecutionStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
+  }
+  occurred_at_ = nullptr;
   state_ = 0;
   _internal_metadata_.Clear();
 }
@@ -9794,6 +9825,19 @@ const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
+      // .google.protobuf.Timestamp occurred_at = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
+        object = msg->mutable_occurred_at();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -9809,6 +9853,9 @@ const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, 
     }  // switch
   }  // while
   return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool ExecutionStatus::MergePartialFromCodedStream(
@@ -9829,6 +9876,17 @@ bool ExecutionStatus::MergePartialFromCodedStream(
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_state(static_cast< ::flyteidl::admin::ExecutionStatus_ExecutionState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Timestamp occurred_at = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_occurred_at()));
         } else {
           goto handle_unusual;
         }
@@ -9868,6 +9926,12 @@ void ExecutionStatus::SerializeWithCachedSizes(
       1, this->state(), output);
   }
 
+  // .google.protobuf.Timestamp occurred_at = 2;
+  if (this->has_occurred_at()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::occurred_at(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -9885,6 +9949,13 @@ void ExecutionStatus::SerializeWithCachedSizes(
   if (this->state() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->state(), target);
+  }
+
+  // .google.protobuf.Timestamp occurred_at = 2;
+  if (this->has_occurred_at()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::occurred_at(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9907,6 +9978,13 @@ size_t ExecutionStatus::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .google.protobuf.Timestamp occurred_at = 2;
+  if (this->has_occurred_at()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *occurred_at_);
+  }
 
   // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
   if (this->state() != 0) {
@@ -9941,6 +10019,9 @@ void ExecutionStatus::MergeFrom(const ExecutionStatus& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_occurred_at()) {
+    mutable_occurred_at()->::google::protobuf::Timestamp::MergeFrom(from.occurred_at());
+  }
   if (from.state() != 0) {
     set_state(from.state());
   }
@@ -9971,6 +10052,7 @@ void ExecutionStatus::Swap(ExecutionStatus* other) {
 void ExecutionStatus::InternalSwap(ExecutionStatus* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(occurred_at_, other->occurred_at_);
   swap(state_, other->state_);
 }
 

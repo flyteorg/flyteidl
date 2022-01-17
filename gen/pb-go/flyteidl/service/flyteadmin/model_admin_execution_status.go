@@ -9,6 +9,12 @@
 
 package flyteadmin
 
+import (
+	"time"
+)
+
 type AdminExecutionStatus struct {
 	State *ExecutionStatusExecutionState `json:"state,omitempty"`
+	// This timestamp represents when the state changed.
+	OccurredAt time.Time `json:"occurred_at,omitempty"`
 }

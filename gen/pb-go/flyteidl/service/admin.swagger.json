@@ -3572,6 +3572,11 @@
       "properties": {
         "state": {
           "$ref": "#/definitions/ExecutionStatusExecutionState"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This timestamp represents when the state changed."
         }
       }
     },

@@ -1847,6 +1847,16 @@ func (m *ExecutionStatus) Validate() error {
 
 	// no validation rules for State
 
+	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionStatusValidationError{
+				field:  "OccurredAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 
