@@ -139,7 +139,6 @@ class CoreLiteral(object):
     def hash(self):
         """Gets the hash of this CoreLiteral.  # noqa: E501
 
-        TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.  # noqa: E501
 
         :return: The hash of this CoreLiteral.  # noqa: E501
         :rtype: str
@@ -150,7 +149,6 @@ class CoreLiteral(object):
     def hash(self, hash):
         """Sets the hash of this CoreLiteral.
 
-        TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.  # noqa: E501
 
         :param hash: The hash of this CoreLiteral.  # noqa: E501
         :type: str

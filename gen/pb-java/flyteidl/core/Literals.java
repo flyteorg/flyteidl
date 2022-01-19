@@ -8332,7 +8332,9 @@ public final class Literals {
 
     /**
      * <pre>
-     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
      * </pre>
      *
      * <code>string hash = 4;</code>
@@ -8340,7 +8342,9 @@ public final class Literals {
     java.lang.String getHash();
     /**
      * <pre>
-     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
      * </pre>
      *
      * <code>string hash = 4;</code>
@@ -8632,7 +8636,9 @@ public final class Literals {
     private volatile java.lang.Object hash_;
     /**
      * <pre>
-     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
      * </pre>
      *
      * <code>string hash = 4;</code>
@@ -8651,7 +8657,9 @@ public final class Literals {
     }
     /**
      * <pre>
-     * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
      * </pre>
      *
      * <code>string hash = 4;</code>
@@ -9605,7 +9613,9 @@ public final class Literals {
       private java.lang.Object hash_ = "";
       /**
        * <pre>
-       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
        * </pre>
        *
        * <code>string hash = 4;</code>
@@ -9624,7 +9634,9 @@ public final class Literals {
       }
       /**
        * <pre>
-       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
        * </pre>
        *
        * <code>string hash = 4;</code>
@@ -9644,7 +9656,9 @@ public final class Literals {
       }
       /**
        * <pre>
-       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
        * </pre>
        *
        * <code>string hash = 4;</code>
@@ -9661,7 +9675,9 @@ public final class Literals {
       }
       /**
        * <pre>
-       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
        * </pre>
        *
        * <code>string hash = 4;</code>
@@ -9674,7 +9690,9 @@ public final class Literals {
       }
       /**
        * <pre>
-       * TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
        * </pre>
        *
        * <code>string hash = 4;</code>

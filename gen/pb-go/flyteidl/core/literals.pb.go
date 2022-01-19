@@ -657,7 +657,9 @@ type Literal struct {
 	//	*Literal_Collection
 	//	*Literal_Map
 	Value isLiteral_Value `protobuf_oneof:"value"`
-	// TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
+	// A hash representing this literal.
+	// This is used for caching purposes. For more details refer to RFC 1893
+	// (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
 	Hash                 string   `protobuf:"bytes,4,opt,name=hash,proto3" json:"hash,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

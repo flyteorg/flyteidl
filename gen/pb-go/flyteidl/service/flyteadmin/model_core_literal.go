@@ -17,6 +17,5 @@ type CoreLiteral struct {
 	Collection *CoreLiteralCollection `json:"collection,omitempty"`
 	// A map of strings to literals.
 	Map_ *CoreLiteralMap `json:"map,omitempty"`
-	// TODO: Explain that by exposing the hash we now have finder control over the cache key calculation in calls to data catalog.
 	Hash string `json:"hash,omitempty"`
 }
