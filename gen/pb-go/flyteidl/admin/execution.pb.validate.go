@@ -870,10 +870,10 @@ func (m *ExecutionClosure) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetStatus()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetStateChangeDetails()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ExecutionClosureValidationError{
-				field:  "Status",
+				field:  "StateChangeDetails",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1768,15 +1768,7 @@ func (m *ExecutionUpdateRequest) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetStatus()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ExecutionUpdateRequestValidationError{
-				field:  "Status",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for State
 
 	return nil
 }
@@ -1837,10 +1829,10 @@ var _ interface {
 	ErrorName() string
 } = ExecutionUpdateRequestValidationError{}
 
-// Validate checks the field values on ExecutionStatus with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *ExecutionStatus) Validate() error {
+// Validate checks the field values on ExecutionStateChangeDetails with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionStateChangeDetails) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -1849,7 +1841,7 @@ func (m *ExecutionStatus) Validate() error {
 
 	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ExecutionStatusValidationError{
+			return ExecutionStateChangeDetailsValidationError{
 				field:  "OccurredAt",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -1857,12 +1849,15 @@ func (m *ExecutionStatus) Validate() error {
 		}
 	}
 
+	// no validation rules for Principal
+
 	return nil
 }
 
-// ExecutionStatusValidationError is the validation error returned by
-// ExecutionStatus.Validate if the designated constraints aren't met.
-type ExecutionStatusValidationError struct {
+// ExecutionStateChangeDetailsValidationError is the validation error returned
+// by ExecutionStateChangeDetails.Validate if the designated constraints
+// aren't met.
+type ExecutionStateChangeDetailsValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1870,22 +1865,24 @@ type ExecutionStatusValidationError struct {
 }
 
 // Field function returns field value.
-func (e ExecutionStatusValidationError) Field() string { return e.field }
+func (e ExecutionStateChangeDetailsValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ExecutionStatusValidationError) Reason() string { return e.reason }
+func (e ExecutionStateChangeDetailsValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ExecutionStatusValidationError) Cause() error { return e.cause }
+func (e ExecutionStateChangeDetailsValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ExecutionStatusValidationError) Key() bool { return e.key }
+func (e ExecutionStateChangeDetailsValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ExecutionStatusValidationError) ErrorName() string { return "ExecutionStatusValidationError" }
+func (e ExecutionStateChangeDetailsValidationError) ErrorName() string {
+	return "ExecutionStateChangeDetailsValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e ExecutionStatusValidationError) Error() string {
+func (e ExecutionStateChangeDetailsValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1897,14 +1894,14 @@ func (e ExecutionStatusValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sExecutionStatus.%s: %s%s",
+		"invalid %sExecutionStateChangeDetails.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ExecutionStatusValidationError{}
+var _ error = ExecutionStateChangeDetailsValidationError{}
 
 var _ interface {
 	Field() string
@@ -1912,7 +1909,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ExecutionStatusValidationError{}
+} = ExecutionStateChangeDetailsValidationError{}
 
 // Validate checks the field values on ExecutionUpdateResponse with the rules
 // defined in the proto definition for this message. If any rules are

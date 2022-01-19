@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.admin_abort_metadata import AdminAbortMetadata  # noqa: F401,E501
-from flyteadmin.models.admin_execution_status import AdminExecutionStatus  # noqa: F401,E501
+from flyteadmin.models.admin_execution_state_change_details import AdminExecutionStateChangeDetails  # noqa: F401,E501
 from flyteadmin.models.admin_literal_map_blob import AdminLiteralMapBlob  # noqa: F401,E501
 from flyteadmin.models.admin_notification import AdminNotification  # noqa: F401,E501
 from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F401,E501
@@ -53,7 +53,7 @@ class AdminExecutionClosure(object):
         'updated_at': 'datetime',
         'notifications': 'list[AdminNotification]',
         'workflow_id': 'CoreIdentifier',
-        'status': 'AdminExecutionStatus'
+        'state_change_details': 'AdminExecutionStateChangeDetails'
     }
 
     attribute_map = {
@@ -70,10 +70,10 @@ class AdminExecutionClosure(object):
         'updated_at': 'updated_at',
         'notifications': 'notifications',
         'workflow_id': 'workflow_id',
-        'status': 'status'
+        'state_change_details': 'state_change_details'
     }
 
-    def __init__(self, outputs=None, error=None, abort_cause=None, abort_metadata=None, output_data=None, computed_inputs=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, notifications=None, workflow_id=None, status=None):  # noqa: E501
+    def __init__(self, outputs=None, error=None, abort_cause=None, abort_metadata=None, output_data=None, computed_inputs=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, notifications=None, workflow_id=None, state_change_details=None):  # noqa: E501
         """AdminExecutionClosure - a model defined in Swagger"""  # noqa: E501
 
         self._outputs = None
@@ -89,7 +89,7 @@ class AdminExecutionClosure(object):
         self._updated_at = None
         self._notifications = None
         self._workflow_id = None
-        self._status = None
+        self._state_change_details = None
         self.discriminator = None
 
         if outputs is not None:
@@ -118,8 +118,8 @@ class AdminExecutionClosure(object):
             self.notifications = notifications
         if workflow_id is not None:
             self.workflow_id = workflow_id
-        if status is not None:
-            self.status = status
+        if state_change_details is not None:
+            self.state_change_details = state_change_details
 
     @property
     def outputs(self):
@@ -419,25 +419,25 @@ class AdminExecutionClosure(object):
         self._workflow_id = workflow_id
 
     @property
-    def status(self):
-        """Gets the status of this AdminExecutionClosure.  # noqa: E501
+    def state_change_details(self):
+        """Gets the state_change_details of this AdminExecutionClosure.  # noqa: E501
 
 
-        :return: The status of this AdminExecutionClosure.  # noqa: E501
-        :rtype: AdminExecutionStatus
+        :return: The state_change_details of this AdminExecutionClosure.  # noqa: E501
+        :rtype: AdminExecutionStateChangeDetails
         """
-        return self._status
+        return self._state_change_details
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this AdminExecutionClosure.
+    @state_change_details.setter
+    def state_change_details(self, state_change_details):
+        """Sets the state_change_details of this AdminExecutionClosure.
 
 
-        :param status: The status of this AdminExecutionClosure.  # noqa: E501
-        :type: AdminExecutionStatus
+        :param state_change_details: The state_change_details of this AdminExecutionClosure.  # noqa: E501
+        :type: AdminExecutionStateChangeDetails
         """
 
-        self._status = status
+        self._state_change_details = state_change_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

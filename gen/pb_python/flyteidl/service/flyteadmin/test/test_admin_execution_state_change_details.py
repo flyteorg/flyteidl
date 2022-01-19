@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.execution_status_execution_state import ExecutionStatusExecutionState  # noqa: E501
+from flyteadmin.models.admin_execution_state_change_details import AdminExecutionStateChangeDetails  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestExecutionStatusExecutionState(unittest.TestCase):
-    """ExecutionStatusExecutionState unit test stubs"""
+class TestAdminExecutionStateChangeDetails(unittest.TestCase):
+    """AdminExecutionStateChangeDetails unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestExecutionStatusExecutionState(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testExecutionStatusExecutionState(self):
-        """Test ExecutionStatusExecutionState"""
+    def testAdminExecutionStateChangeDetails(self):
+        """Test AdminExecutionStateChangeDetails"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.execution_status_execution_state.ExecutionStatusExecutionState()  # noqa: E501
+        # model = flyteadmin.models.admin_execution_state_change_details.AdminExecutionStateChangeDetails()  # noqa: E501
         pass
 
 

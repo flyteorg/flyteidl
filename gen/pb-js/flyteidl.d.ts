@@ -9089,8 +9089,8 @@ export namespace flyteidl {
             /** ExecutionClosure workflowId */
             workflowId?: (flyteidl.core.IIdentifier|null);
 
-            /** ExecutionClosure status */
-            status?: (flyteidl.admin.IExecutionStatus|null);
+            /** ExecutionClosure stateChangeDetails */
+            stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -9141,8 +9141,8 @@ export namespace flyteidl {
             /** ExecutionClosure workflowId. */
             public workflowId?: (flyteidl.core.IIdentifier|null);
 
-            /** ExecutionClosure status. */
-            public status?: (flyteidl.admin.IExecutionStatus|null);
+            /** ExecutionClosure stateChangeDetails. */
+            public stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error"|"abortCause"|"abortMetadata"|"outputData");
@@ -9726,14 +9726,20 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** ExecutionState enum. */
+        enum ExecutionState {
+            EXECUTION_ACTIVE = 0,
+            EXECUTION_ARCHIVED = 1
+        }
+
         /** Properties of an ExecutionUpdateRequest. */
         interface IExecutionUpdateRequest {
 
             /** ExecutionUpdateRequest id */
             id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
-            /** ExecutionUpdateRequest status */
-            status?: (flyteidl.admin.IExecutionStatus|null);
+            /** ExecutionUpdateRequest state */
+            state?: (flyteidl.admin.ExecutionState|null);
         }
 
         /** Represents an ExecutionUpdateRequest. */
@@ -9748,8 +9754,8 @@ export namespace flyteidl {
             /** ExecutionUpdateRequest id. */
             public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
-            /** ExecutionUpdateRequest status. */
-            public status?: (flyteidl.admin.IExecutionStatus|null);
+            /** ExecutionUpdateRequest state. */
+            public state: flyteidl.admin.ExecutionState;
 
             /**
              * Creates a new ExecutionUpdateRequest instance using the specified properties.
@@ -9784,71 +9790,68 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionStatus. */
-        interface IExecutionStatus {
+        /** Properties of an ExecutionStateChangeDetails. */
+        interface IExecutionStateChangeDetails {
 
-            /** ExecutionStatus state */
-            state?: (flyteidl.admin.ExecutionStatus.ExecutionState|null);
+            /** ExecutionStateChangeDetails state */
+            state?: (flyteidl.admin.ExecutionState|null);
 
-            /** ExecutionStatus occurredAt */
+            /** ExecutionStateChangeDetails occurredAt */
             occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionStateChangeDetails principal */
+            principal?: (string|null);
         }
 
-        /** Represents an ExecutionStatus. */
-        class ExecutionStatus implements IExecutionStatus {
+        /** Represents an ExecutionStateChangeDetails. */
+        class ExecutionStateChangeDetails implements IExecutionStateChangeDetails {
 
             /**
-             * Constructs a new ExecutionStatus.
+             * Constructs a new ExecutionStateChangeDetails.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IExecutionStatus);
+            constructor(properties?: flyteidl.admin.IExecutionStateChangeDetails);
 
-            /** ExecutionStatus state. */
-            public state: flyteidl.admin.ExecutionStatus.ExecutionState;
+            /** ExecutionStateChangeDetails state. */
+            public state: flyteidl.admin.ExecutionState;
 
-            /** ExecutionStatus occurredAt. */
+            /** ExecutionStateChangeDetails occurredAt. */
             public occurredAt?: (google.protobuf.ITimestamp|null);
 
-            /**
-             * Creates a new ExecutionStatus instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ExecutionStatus instance
-             */
-            public static create(properties?: flyteidl.admin.IExecutionStatus): flyteidl.admin.ExecutionStatus;
+            /** ExecutionStateChangeDetails principal. */
+            public principal: string;
 
             /**
-             * Encodes the specified ExecutionStatus message. Does not implicitly {@link flyteidl.admin.ExecutionStatus.verify|verify} messages.
-             * @param message ExecutionStatus message or plain object to encode
+             * Creates a new ExecutionStateChangeDetails instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionStateChangeDetails instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionStateChangeDetails): flyteidl.admin.ExecutionStateChangeDetails;
+
+            /**
+             * Encodes the specified ExecutionStateChangeDetails message. Does not implicitly {@link flyteidl.admin.ExecutionStateChangeDetails.verify|verify} messages.
+             * @param message ExecutionStateChangeDetails message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IExecutionStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IExecutionStateChangeDetails, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExecutionStatus message from the specified reader or buffer.
+             * Decodes an ExecutionStateChangeDetails message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExecutionStatus
+             * @returns ExecutionStateChangeDetails
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionStatus;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionStateChangeDetails;
 
             /**
-             * Verifies an ExecutionStatus message.
+             * Verifies an ExecutionStateChangeDetails message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace ExecutionStatus {
-
-            /** ExecutionState enum. */
-            enum ExecutionState {
-                EXECUTION_ACTIVE = 0,
-                EXECUTION_ARCHIVED = 1
-            }
         }
 
         /** Properties of an ExecutionUpdateResponse. */

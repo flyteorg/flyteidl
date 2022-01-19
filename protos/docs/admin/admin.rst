@@ -877,7 +877,7 @@ Encapsulates the results of the Execution
    "updated_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Reported time at which the execution was last updated."
    "notifications", ":ref:`ref_flyteidl.admin.Notification`", "repeated", "The notification settings to use after merging the CreateExecutionRequest and the launch plan notification settings. An execution launched with notifications will always prefer that definition to notifications defined statically in a launch plan."
    "workflow_id", ":ref:`ref_flyteidl.core.Identifier`", "", "Identifies the workflow definition for this execution."
-   "status", ":ref:`ref_flyteidl.admin.ExecutionStatus`", "", ""
+   "state_change_details", ":ref:`ref_flyteidl.admin.ExecutionStateChangeDetails`", "", "Provides the details of the last stage change"
 
 
 
@@ -1060,21 +1060,22 @@ of an execution as it progresses across phase changes.
 
 
 
-.. _ref_flyteidl.admin.ExecutionStatus:
+.. _ref_flyteidl.admin.ExecutionStateChangeDetails:
 
-ExecutionStatus
+ExecutionStateChangeDetails
 ------------------------------------------------------------------
 
 
 
 
 
-.. csv-table:: ExecutionStatus type fields
+.. csv-table:: ExecutionStateChangeDetails type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "state", ":ref:`ref_flyteidl.admin.ExecutionStatus.ExecutionState`", "", ""
+   "state", ":ref:`ref_flyteidl.admin.ExecutionState`", "", "The state of the execution is used to control its visibility in the UI/CLI."
    "occurred_at", ":ref:`ref_google.protobuf.Timestamp`", "", "This timestamp represents when the state changed."
+   "principal", ":ref:`ref_string`", "", "Identifies the entity (if any) responsible for causing the state change of the execution"
 
 
 
@@ -1136,7 +1137,7 @@ ExecutionUpdateRequest
    :widths: auto
 
    "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the execution to update"
-   "status", ":ref:`ref_flyteidl.admin.ExecutionStatus`", "", "Status object to set as the new value"
+   "state", ":ref:`ref_flyteidl.admin.ExecutionState`", "", "State to set as the new value active/archive"
 
 
 
@@ -1312,14 +1313,14 @@ The method by which this execution was launched.
 
 
 
-.. _ref_flyteidl.admin.ExecutionStatus.ExecutionState:
+.. _ref_flyteidl.admin.ExecutionState:
 
-ExecutionStatus.ExecutionState
+ExecutionState
 ------------------------------------------------------------------
 
 The state of the execution is used to control its visibility in the UI/CLI.
 
-.. csv-table:: Enum ExecutionStatus.ExecutionState values
+.. csv-table:: Enum ExecutionState values
    :header: "Name", "Number", "Description"
    :widths: auto
 

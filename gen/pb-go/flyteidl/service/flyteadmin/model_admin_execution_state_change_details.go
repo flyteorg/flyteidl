@@ -13,8 +13,10 @@ import (
 	"time"
 )
 
-type AdminExecutionStatus struct {
-	State *ExecutionStatusExecutionState `json:"state,omitempty"`
+type AdminExecutionStateChangeDetails struct {
+	// The state of the execution is used to control its visibility in the UI/CLI.
+	State *AdminExecutionState `json:"state,omitempty"`
 	// This timestamp represents when the state changed.
 	OccurredAt time.Time `json:"occurred_at,omitempty"`
+	Principal string `json:"principal,omitempty"`
 }

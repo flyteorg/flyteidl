@@ -23,7 +23,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AbortMetadata_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SystemMetadata_flyteidl_2fadmin_2fexecution_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LiteralMapBlob_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NotificationList_flyteidl_2fadmin_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Execution_flyteidl_2fadmin_2fexecution_2eproto;
@@ -126,10 +126,10 @@ class ExecutionUpdateRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ExecutionUpdateRequest> _instance;
 } _ExecutionUpdateRequest_default_instance_;
-class ExecutionStatusDefaultTypeInternal {
+class ExecutionStateChangeDetailsDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ExecutionStatus> _instance;
-} _ExecutionStatus_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<ExecutionStateChangeDetails> _instance;
+} _ExecutionStateChangeDetails_default_instance_;
 class ExecutionUpdateResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ExecutionUpdateResponse> _instance;
@@ -295,7 +295,7 @@ static void InitDefaultsExecutionClosure_flyteidl_2fadmin_2fexecution_2eproto() 
       &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,
       &scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base,}};
+      &scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto.base,}};
 
 static void InitDefaultsSystemMetadata_flyteidl_2fadmin_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -438,24 +438,23 @@ static void InitDefaultsExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2epr
   ::flyteidl::admin::ExecutionUpdateRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_ExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto}, {
-      &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto}, {
+      &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
 
-static void InitDefaultsExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto() {
+static void InitDefaultsExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_ExecutionStatus_default_instance_;
-    new (ptr) ::flyteidl::admin::ExecutionStatus();
+    void* ptr = &::flyteidl::admin::_ExecutionStateChangeDetails_default_instance_;
+    new (ptr) ::flyteidl::admin::ExecutionStateChangeDetails();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::ExecutionStatus::InitAsDefaultInstance();
+  ::flyteidl::admin::ExecutionStateChangeDetails::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto}, {
+::google::protobuf::internal::SCCInfo<1> scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsExecutionUpdateResponse_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -492,7 +491,7 @@ void InitDefaults_flyteidl_2fadmin_2fexecution_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowExecutionGetDataRequest_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowExecutionGetDataResponse_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionUpdateResponse_flyteidl_2fadmin_2fexecution_2eproto.base);
 }
 
@@ -586,7 +585,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, updated_at_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, notifications_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, workflow_id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, status_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, state_change_details_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClosure, output_result_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SystemMetadata, _internal_metadata_),
@@ -662,14 +661,15 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionUpdateRequest, id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionUpdateRequest, status_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionUpdateRequest, state_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStatus, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStateChangeDetails, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStatus, state_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStatus, occurred_at_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStateChangeDetails, state_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStateChangeDetails, occurred_at_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionStateChangeDetails, principal_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionUpdateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -696,8 +696,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 140, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
   { 146, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
   { 155, -1, sizeof(::flyteidl::admin::ExecutionUpdateRequest)},
-  { 162, -1, sizeof(::flyteidl::admin::ExecutionStatus)},
-  { 169, -1, sizeof(::flyteidl::admin::ExecutionUpdateResponse)},
+  { 162, -1, sizeof(::flyteidl::admin::ExecutionStateChangeDetails)},
+  { 170, -1, sizeof(::flyteidl::admin::ExecutionUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -720,7 +720,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowExecutionGetDataRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowExecutionGetDataResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionUpdateRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionStatus_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionStateChangeDetails_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionUpdateResponse_default_instance_),
 };
 
@@ -761,7 +761,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "token\030\002 \001(\t\"X\n\016LiteralMapBlob\022/\n\006values\030"
   "\001 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H\000\022\r"
   "\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata\022\r"
-  "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\326\005\n\020Exe"
+  "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\360\005\n\020Exe"
   "cutionClosure\0225\n\007outputs\030\001 \001(\0132\036.flyteid"
   "l.admin.LiteralMapBlobB\002\030\001H\000\022.\n\005error\030\002 "
   "\001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n\013"
@@ -778,64 +778,65 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "\030\010 \001(\0132\032.google.protobuf.Timestamp\0223\n\rno"
   "tifications\030\t \003(\0132\034.flyteidl.admin.Notif"
   "ication\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl."
-  "core.Identifier\022/\n\006status\030\016 \001(\0132\037.flytei"
-  "dl.admin.ExecutionStatusB\017\n\routput_resul"
-  "t\"+\n\016SystemMetadata\022\031\n\021execution_cluster"
-  "\030\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001"
-  "(\0162/.flyteidl.admin.ExecutionMetadata.Ex"
-  "ecutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nestin"
-  "g\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022E\n\025parent_node_executi"
-  "on\030\005 \001(\0132&.flyteidl.core.NodeExecutionId"
-  "entifier\022G\n\023reference_execution\030\020 \001(\0132*."
-  "flyteidl.core.WorkflowExecutionIdentifie"
-  "r\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.ad"
-  "min.SystemMetadata\"g\n\rExecutionMode\022\n\n\006M"
-  "ANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RE"
-  "LAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERE"
-  "D\020\005\"G\n\020NotificationList\0223\n\rnotifications"
-  "\030\001 \003(\0132\034.flyteidl.admin.Notification\"\260\004\n"
-  "\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fl"
-  "yteidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031"
-  ".flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadat"
-  "a\030\003 \001(\0132!.flyteidl.admin.ExecutionMetada"
-  "ta\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.adm"
-  "in.NotificationListH\000\022\025\n\013disable_all\030\006 \001"
-  "(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.La"
-  "bels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.adm"
-  "in.Annotations\0228\n\020security_context\030\n \001(\013"
-  "2\036.flyteidl.core.SecurityContext\022/\n\tauth"
-  "_role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030"
-  "\001\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl"
-  ".core.QualityOfService\022\027\n\017max_parallelis"
-  "m\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004\020\005\""
-  "b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\013"
-  "2*.flyteidl.core.WorkflowExecutionIdenti"
-  "fier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminat"
-  "eResponse\"Y\n\037WorkflowExecutionGetDataReq"
-  "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo"
-  "wExecutionIdentifier\"\336\001\n WorkflowExecuti"
-  "onGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.fly"
-  "teidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132"
-  "\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inp"
-  "uts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014"
-  "full_outputs\030\004 \001(\0132\031.flyteidl.core.Liter"
-  "alMap\"\201\001\n\026ExecutionUpdateRequest\0226\n\002id\030\001"
-  " \001(\0132*.flyteidl.core.WorkflowExecutionId"
-  "entifier\022/\n\006status\030\002 \001(\0132\037.flyteidl.admi"
-  "n.ExecutionStatus\"\301\001\n\017ExecutionStatus\022=\n"
-  "\005state\030\001 \001(\0162..flyteidl.admin.ExecutionS"
-  "tatus.ExecutionState\022/\n\013occurred_at\030\002 \001("
-  "\0132\032.google.protobuf.Timestamp\">\n\016Executi"
-  "onState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTI"
-  "ON_ARCHIVED\020\001\"\031\n\027ExecutionUpdateResponse"
-  "B7Z5github.com/flyteorg/flyteidl/gen/pb-"
-  "go/flyteidl/adminb\006proto3"
+  "core.Identifier\022I\n\024state_change_details\030"
+  "\016 \001(\0132+.flyteidl.admin.ExecutionStateCha"
+  "ngeDetailsB\017\n\routput_result\"+\n\016SystemMet"
+  "adata\022\031\n\021execution_cluster\030\001 \001(\t\"\332\003\n\021Exe"
+  "cutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyteidl."
+  "admin.ExecutionMetadata.ExecutionMode\022\021\n"
+  "\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014sch"
+  "eduled_at\030\004 \001(\0132\032.google.protobuf.Timest"
+  "amp\022E\n\025parent_node_execution\030\005 \001(\0132&.fly"
+  "teidl.core.NodeExecutionIdentifier\022G\n\023re"
+  "ference_execution\030\020 \001(\0132*.flyteidl.core."
+  "WorkflowExecutionIdentifier\0227\n\017system_me"
+  "tadata\030\021 \001(\0132\036.flyteidl.admin.SystemMeta"
+  "data\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCH"
+  "EDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CH"
+  "ILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020Notific"
+  "ationList\0223\n\rnotifications\030\001 \003(\0132\034.flyte"
+  "idl.admin.Notification\"\260\004\n\rExecutionSpec"
+  "\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.core.Id"
+  "entifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core"
+  ".LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyt"
+  "eidl.admin.ExecutionMetadata\0229\n\rnotifica"
+  "tions\030\005 \001(\0132 .flyteidl.admin.Notificatio"
+  "nListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels"
+  "\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota"
+  "tions\030\010 \001(\0132\033.flyteidl.admin.Annotations"
+  "\0228\n\020security_context\030\n \001(\0132\036.flyteidl.co"
+  "re.SecurityContext\022/\n\tauth_role\030\020 \001(\0132\030."
+  "flyteidl.admin.AuthRoleB\002\030\001\022;\n\022quality_o"
+  "f_service\030\021 \001(\0132\037.flyteidl.core.QualityO"
+  "fService\022\027\n\017max_parallelism\030\022 \001(\005B\030\n\026not"
+  "ification_overridesJ\004\010\004\020\005\"b\n\031ExecutionTe"
+  "rminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co"
+  "re.WorkflowExecutionIdentifier\022\r\n\005cause\030"
+  "\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037W"
+  "orkflowExecutionGetDataRequest\0226\n\002id\030\001 \001"
+  "(\0132*.flyteidl.core.WorkflowExecutionIden"
+  "tifier\"\336\001\n WorkflowExecutionGetDataRespo"
+  "nse\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.Ur"
+  "lBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.adm"
+  "in.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.fl"
+  "yteidl.core.LiteralMap\022/\n\014full_outputs\030\004"
+  " \001(\0132\031.flyteidl.core.LiteralMap\"\177\n\026Execu"
+  "tionUpdateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl"
+  ".core.WorkflowExecutionIdentifier\022-\n\005sta"
+  "te\030\002 \001(\0162\036.flyteidl.admin.ExecutionState"
+  "\"\220\001\n\033ExecutionStateChangeDetails\022-\n\005stat"
+  "e\030\001 \001(\0162\036.flyteidl.admin.ExecutionState\022"
+  "/\n\013occurred_at\030\002 \001(\0132\032.google.protobuf.T"
+  "imestamp\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027Execution"
+  "UpdateResponse*>\n\016ExecutionState\022\024\n\020EXEC"
+  "UTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7"
+  "Z5github.com/flyteorg/flyteidl/gen/pb-go"
+  "/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3985,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 4023,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -885,11 +886,11 @@ const ExecutionMetadata_ExecutionMode ExecutionMetadata::ExecutionMode_MIN;
 const ExecutionMetadata_ExecutionMode ExecutionMetadata::ExecutionMode_MAX;
 const int ExecutionMetadata::ExecutionMode_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* ExecutionStatus_ExecutionState_descriptor() {
+const ::google::protobuf::EnumDescriptor* ExecutionState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto);
   return file_level_enum_descriptors_flyteidl_2fadmin_2fexecution_2eproto[1];
 }
-bool ExecutionStatus_ExecutionState_IsValid(int value) {
+bool ExecutionState_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -899,13 +900,6 @@ bool ExecutionStatus_ExecutionState_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ExecutionStatus_ExecutionState ExecutionStatus::EXECUTION_ACTIVE;
-const ExecutionStatus_ExecutionState ExecutionStatus::EXECUTION_ARCHIVED;
-const ExecutionStatus_ExecutionState ExecutionStatus::ExecutionState_MIN;
-const ExecutionStatus_ExecutionState ExecutionStatus::ExecutionState_MAX;
-const int ExecutionStatus::ExecutionState_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -4480,8 +4474,8 @@ void ExecutionClosure::InitAsDefaultInstance() {
       ::google::protobuf::Timestamp::internal_default_instance());
   ::flyteidl::admin::_ExecutionClosure_default_instance_._instance.get_mutable()->workflow_id_ = const_cast< ::flyteidl::core::Identifier*>(
       ::flyteidl::core::Identifier::internal_default_instance());
-  ::flyteidl::admin::_ExecutionClosure_default_instance_._instance.get_mutable()->status_ = const_cast< ::flyteidl::admin::ExecutionStatus*>(
-      ::flyteidl::admin::ExecutionStatus::internal_default_instance());
+  ::flyteidl::admin::_ExecutionClosure_default_instance_._instance.get_mutable()->state_change_details_ = const_cast< ::flyteidl::admin::ExecutionStateChangeDetails*>(
+      ::flyteidl::admin::ExecutionStateChangeDetails::internal_default_instance());
 }
 class ExecutionClosure::HasBitSetters {
  public:
@@ -4495,7 +4489,7 @@ class ExecutionClosure::HasBitSetters {
   static const ::google::protobuf::Timestamp& created_at(const ExecutionClosure* msg);
   static const ::google::protobuf::Timestamp& updated_at(const ExecutionClosure* msg);
   static const ::flyteidl::core::Identifier& workflow_id(const ExecutionClosure* msg);
-  static const ::flyteidl::admin::ExecutionStatus& status(const ExecutionClosure* msg);
+  static const ::flyteidl::admin::ExecutionStateChangeDetails& state_change_details(const ExecutionClosure* msg);
 };
 
 const ::flyteidl::admin::LiteralMapBlob&
@@ -4538,9 +4532,9 @@ const ::flyteidl::core::Identifier&
 ExecutionClosure::HasBitSetters::workflow_id(const ExecutionClosure* msg) {
   return *msg->workflow_id_;
 }
-const ::flyteidl::admin::ExecutionStatus&
-ExecutionClosure::HasBitSetters::status(const ExecutionClosure* msg) {
-  return *msg->status_;
+const ::flyteidl::admin::ExecutionStateChangeDetails&
+ExecutionClosure::HasBitSetters::state_change_details(const ExecutionClosure* msg) {
+  return *msg->state_change_details_;
 }
 void ExecutionClosure::set_allocated_outputs(::flyteidl::admin::LiteralMapBlob* outputs) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -4663,7 +4657,7 @@ const int ExecutionClosure::kCreatedAtFieldNumber;
 const int ExecutionClosure::kUpdatedAtFieldNumber;
 const int ExecutionClosure::kNotificationsFieldNumber;
 const int ExecutionClosure::kWorkflowIdFieldNumber;
-const int ExecutionClosure::kStatusFieldNumber;
+const int ExecutionClosure::kStateChangeDetailsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionClosure::ExecutionClosure()
@@ -4706,10 +4700,10 @@ ExecutionClosure::ExecutionClosure(const ExecutionClosure& from)
   } else {
     workflow_id_ = nullptr;
   }
-  if (from.has_status()) {
-    status_ = new ::flyteidl::admin::ExecutionStatus(*from.status_);
+  if (from.has_state_change_details()) {
+    state_change_details_ = new ::flyteidl::admin::ExecutionStateChangeDetails(*from.state_change_details_);
   } else {
-    status_ = nullptr;
+    state_change_details_ = nullptr;
   }
   phase_ = from.phase_;
   clear_has_output_result();
@@ -4762,7 +4756,7 @@ void ExecutionClosure::SharedDtor() {
   if (this != internal_default_instance()) delete created_at_;
   if (this != internal_default_instance()) delete updated_at_;
   if (this != internal_default_instance()) delete workflow_id_;
-  if (this != internal_default_instance()) delete status_;
+  if (this != internal_default_instance()) delete state_change_details_;
   if (has_output_result()) {
     clear_output_result();
   }
@@ -4839,10 +4833,10 @@ void ExecutionClosure::Clear() {
     delete workflow_id_;
   }
   workflow_id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && status_ != nullptr) {
-    delete status_;
+  if (GetArenaNoVirtual() == nullptr && state_change_details_ != nullptr) {
+    delete state_change_details_;
   }
-  status_ = nullptr;
+  state_change_details_ = nullptr;
   phase_ = 0;
   clear_output_result();
   _internal_metadata_.Clear();
@@ -5031,13 +5025,13 @@ const char* ExecutionClosure::_InternalParse(const char* begin, const char* end,
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.ExecutionStatus status = 14;
+      // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
       case 14: {
         if (static_cast<::google::protobuf::uint8>(tag) != 114) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::ExecutionStatus::_InternalParse;
-        object = msg->mutable_status();
+        parser_till_end = ::flyteidl::admin::ExecutionStateChangeDetails::_InternalParse;
+        object = msg->mutable_state_change_details();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -5228,11 +5222,11 @@ bool ExecutionClosure::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.ExecutionStatus status = 14;
+      // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
       case 14: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (114 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_status()));
+               input, mutable_state_change_details()));
         } else {
           goto handle_unusual;
         }
@@ -5351,10 +5345,10 @@ void ExecutionClosure::SerializeWithCachedSizes(
       13, HasBitSetters::output_data(this), output);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 14;
-  if (this->has_status()) {
+  // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
+  if (this->has_state_change_details()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14, HasBitSetters::status(this), output);
+      14, HasBitSetters::state_change_details(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5465,11 +5459,11 @@ void ExecutionClosure::SerializeWithCachedSizes(
         13, HasBitSetters::output_data(this), target);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 14;
-  if (this->has_status()) {
+  // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
+  if (this->has_state_change_details()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        14, HasBitSetters::status(this), target);
+        14, HasBitSetters::state_change_details(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -5546,11 +5540,11 @@ size_t ExecutionClosure::ByteSizeLong() const {
         *workflow_id_);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 14;
-  if (this->has_status()) {
+  // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
+  if (this->has_state_change_details()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *status_);
+        *state_change_details_);
   }
 
   // .flyteidl.core.WorkflowExecution.Phase phase = 4;
@@ -5645,8 +5639,8 @@ void ExecutionClosure::MergeFrom(const ExecutionClosure& from) {
   if (from.has_workflow_id()) {
     mutable_workflow_id()->::flyteidl::core::Identifier::MergeFrom(from.workflow_id());
   }
-  if (from.has_status()) {
-    mutable_status()->::flyteidl::admin::ExecutionStatus::MergeFrom(from.status());
+  if (from.has_state_change_details()) {
+    mutable_state_change_details()->::flyteidl::admin::ExecutionStateChangeDetails::MergeFrom(from.state_change_details());
   }
   if (from.phase() != 0) {
     set_phase(from.phase());
@@ -5710,7 +5704,7 @@ void ExecutionClosure::InternalSwap(ExecutionClosure* other) {
   swap(created_at_, other->created_at_);
   swap(updated_at_, other->updated_at_);
   swap(workflow_id_, other->workflow_id_);
-  swap(status_, other->status_);
+  swap(state_change_details_, other->state_change_details_);
   swap(phase_, other->phase_);
   swap(output_result_, other->output_result_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -9364,22 +9358,15 @@ void WorkflowExecutionGetDataResponse::InternalSwap(WorkflowExecutionGetDataResp
 void ExecutionUpdateRequest::InitAsDefaultInstance() {
   ::flyteidl::admin::_ExecutionUpdateRequest_default_instance_._instance.get_mutable()->id_ = const_cast< ::flyteidl::core::WorkflowExecutionIdentifier*>(
       ::flyteidl::core::WorkflowExecutionIdentifier::internal_default_instance());
-  ::flyteidl::admin::_ExecutionUpdateRequest_default_instance_._instance.get_mutable()->status_ = const_cast< ::flyteidl::admin::ExecutionStatus*>(
-      ::flyteidl::admin::ExecutionStatus::internal_default_instance());
 }
 class ExecutionUpdateRequest::HasBitSetters {
  public:
   static const ::flyteidl::core::WorkflowExecutionIdentifier& id(const ExecutionUpdateRequest* msg);
-  static const ::flyteidl::admin::ExecutionStatus& status(const ExecutionUpdateRequest* msg);
 };
 
 const ::flyteidl::core::WorkflowExecutionIdentifier&
 ExecutionUpdateRequest::HasBitSetters::id(const ExecutionUpdateRequest* msg) {
   return *msg->id_;
-}
-const ::flyteidl::admin::ExecutionStatus&
-ExecutionUpdateRequest::HasBitSetters::status(const ExecutionUpdateRequest* msg) {
-  return *msg->status_;
 }
 void ExecutionUpdateRequest::clear_id() {
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
@@ -9389,7 +9376,7 @@ void ExecutionUpdateRequest::clear_id() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ExecutionUpdateRequest::kIdFieldNumber;
-const int ExecutionUpdateRequest::kStatusFieldNumber;
+const int ExecutionUpdateRequest::kStateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionUpdateRequest::ExecutionUpdateRequest()
@@ -9406,11 +9393,7 @@ ExecutionUpdateRequest::ExecutionUpdateRequest(const ExecutionUpdateRequest& fro
   } else {
     id_ = nullptr;
   }
-  if (from.has_status()) {
-    status_ = new ::flyteidl::admin::ExecutionStatus(*from.status_);
-  } else {
-    status_ = nullptr;
-  }
+  state_ = from.state_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ExecutionUpdateRequest)
 }
 
@@ -9418,8 +9401,8 @@ void ExecutionUpdateRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ExecutionUpdateRequest_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(status_));
+      reinterpret_cast<char*>(&state_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(state_));
 }
 
 ExecutionUpdateRequest::~ExecutionUpdateRequest() {
@@ -9429,7 +9412,6 @@ ExecutionUpdateRequest::~ExecutionUpdateRequest() {
 
 void ExecutionUpdateRequest::SharedDtor() {
   if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete status_;
 }
 
 void ExecutionUpdateRequest::SetCachedSize(int size) const {
@@ -9451,10 +9433,7 @@ void ExecutionUpdateRequest::Clear() {
     delete id_;
   }
   id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && status_ != nullptr) {
-    delete status_;
-  }
-  status_ = nullptr;
+  state_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -9484,17 +9463,12 @@ const char* ExecutionUpdateRequest::_InternalParse(const char* begin, const char
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.ExecutionStatus status = 2;
+      // .flyteidl.admin.ExecutionState state = 2;
       case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_state(static_cast<::flyteidl::admin::ExecutionState>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::ExecutionStatus::_InternalParse;
-        object = msg->mutable_status();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -9538,11 +9512,14 @@ bool ExecutionUpdateRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.ExecutionStatus status = 2;
+      // .flyteidl.admin.ExecutionState state = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_status()));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_state(static_cast< ::flyteidl::admin::ExecutionState >(value));
         } else {
           goto handle_unusual;
         }
@@ -9582,10 +9559,10 @@ void ExecutionUpdateRequest::SerializeWithCachedSizes(
       1, HasBitSetters::id(this), output);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 2;
-  if (this->has_status()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::status(this), output);
+  // .flyteidl.admin.ExecutionState state = 2;
+  if (this->state() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->state(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9608,11 +9585,10 @@ void ExecutionUpdateRequest::SerializeWithCachedSizes(
         1, HasBitSetters::id(this), target);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 2;
-  if (this->has_status()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::status(this), target);
+  // .flyteidl.admin.ExecutionState state = 2;
+  if (this->state() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->state(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9643,11 +9619,10 @@ size_t ExecutionUpdateRequest::ByteSizeLong() const {
         *id_);
   }
 
-  // .flyteidl.admin.ExecutionStatus status = 2;
-  if (this->has_status()) {
+  // .flyteidl.admin.ExecutionState state = 2;
+  if (this->state() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *status_);
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -9680,8 +9655,8 @@ void ExecutionUpdateRequest::MergeFrom(const ExecutionUpdateRequest& from) {
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.id());
   }
-  if (from.has_status()) {
-    mutable_status()->::flyteidl::admin::ExecutionStatus::MergeFrom(from.status());
+  if (from.state() != 0) {
+    set_state(from.state());
   }
 }
 
@@ -9711,7 +9686,7 @@ void ExecutionUpdateRequest::InternalSwap(ExecutionUpdateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(id_, other->id_);
-  swap(status_, other->status_);
+  swap(state_, other->state_);
 }
 
 ::google::protobuf::Metadata ExecutionUpdateRequest::GetMetadata() const {
@@ -9722,80 +9697,88 @@ void ExecutionUpdateRequest::InternalSwap(ExecutionUpdateRequest* other) {
 
 // ===================================================================
 
-void ExecutionStatus::InitAsDefaultInstance() {
-  ::flyteidl::admin::_ExecutionStatus_default_instance_._instance.get_mutable()->occurred_at_ = const_cast< ::google::protobuf::Timestamp*>(
+void ExecutionStateChangeDetails::InitAsDefaultInstance() {
+  ::flyteidl::admin::_ExecutionStateChangeDetails_default_instance_._instance.get_mutable()->occurred_at_ = const_cast< ::google::protobuf::Timestamp*>(
       ::google::protobuf::Timestamp::internal_default_instance());
 }
-class ExecutionStatus::HasBitSetters {
+class ExecutionStateChangeDetails::HasBitSetters {
  public:
-  static const ::google::protobuf::Timestamp& occurred_at(const ExecutionStatus* msg);
+  static const ::google::protobuf::Timestamp& occurred_at(const ExecutionStateChangeDetails* msg);
 };
 
 const ::google::protobuf::Timestamp&
-ExecutionStatus::HasBitSetters::occurred_at(const ExecutionStatus* msg) {
+ExecutionStateChangeDetails::HasBitSetters::occurred_at(const ExecutionStateChangeDetails* msg) {
   return *msg->occurred_at_;
 }
-void ExecutionStatus::clear_occurred_at() {
+void ExecutionStateChangeDetails::clear_occurred_at() {
   if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
     delete occurred_at_;
   }
   occurred_at_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ExecutionStatus::kStateFieldNumber;
-const int ExecutionStatus::kOccurredAtFieldNumber;
+const int ExecutionStateChangeDetails::kStateFieldNumber;
+const int ExecutionStateChangeDetails::kOccurredAtFieldNumber;
+const int ExecutionStateChangeDetails::kPrincipalFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ExecutionStatus::ExecutionStatus()
+ExecutionStateChangeDetails::ExecutionStateChangeDetails()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.ExecutionStateChangeDetails)
 }
-ExecutionStatus::ExecutionStatus(const ExecutionStatus& from)
+ExecutionStateChangeDetails::ExecutionStateChangeDetails(const ExecutionStateChangeDetails& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  principal_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.principal().size() > 0) {
+    principal_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.principal_);
+  }
   if (from.has_occurred_at()) {
     occurred_at_ = new ::google::protobuf::Timestamp(*from.occurred_at_);
   } else {
     occurred_at_ = nullptr;
   }
   state_ = from.state_;
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ExecutionStateChangeDetails)
 }
 
-void ExecutionStatus::SharedCtor() {
+void ExecutionStateChangeDetails::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base);
+      &scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto.base);
+  principal_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&occurred_at_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
       reinterpret_cast<char*>(&occurred_at_)) + sizeof(state_));
 }
 
-ExecutionStatus::~ExecutionStatus() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.ExecutionStatus)
+ExecutionStateChangeDetails::~ExecutionStateChangeDetails() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.ExecutionStateChangeDetails)
   SharedDtor();
 }
 
-void ExecutionStatus::SharedDtor() {
+void ExecutionStateChangeDetails::SharedDtor() {
+  principal_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete occurred_at_;
 }
 
-void ExecutionStatus::SetCachedSize(int size) const {
+void ExecutionStateChangeDetails::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ExecutionStatus& ExecutionStatus::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ExecutionStatus_flyteidl_2fadmin_2fexecution_2eproto.base);
+const ExecutionStateChangeDetails& ExecutionStateChangeDetails::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ExecutionStateChangeDetails_flyteidl_2fadmin_2fexecution_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void ExecutionStatus::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ExecutionStatus)
+void ExecutionStateChangeDetails::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ExecutionStateChangeDetails)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  principal_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
     delete occurred_at_;
   }
@@ -9805,9 +9788,9 @@ void ExecutionStatus::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, void* object,
+const char* ExecutionStateChangeDetails::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ExecutionStatus*>(object);
+  auto msg = static_cast<ExecutionStateChangeDetails*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -9817,11 +9800,11 @@ const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+      // .flyteidl.admin.ExecutionState state = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_state(static_cast<::flyteidl::admin::ExecutionStatus_ExecutionState>(val));
+        msg->set_state(static_cast<::flyteidl::admin::ExecutionState>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -9836,6 +9819,22 @@ const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, 
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string principal = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.ExecutionStateChangeDetails.principal");
+        object = msg->mutable_principal();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -9853,29 +9852,33 @@ const char* ExecutionStatus::_InternalParse(const char* begin, const char* end, 
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ExecutionStatus::MergePartialFromCodedStream(
+bool ExecutionStateChangeDetails::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.ExecutionStateChangeDetails)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+      // .flyteidl.admin.ExecutionState state = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_state(static_cast< ::flyteidl::admin::ExecutionStatus_ExecutionState >(value));
+          set_state(static_cast< ::flyteidl::admin::ExecutionState >(value));
         } else {
           goto handle_unusual;
         }
@@ -9887,6 +9890,21 @@ bool ExecutionStatus::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_occurred_at()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string principal = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_principal()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->principal().data(), static_cast<int>(this->principal().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.ExecutionStateChangeDetails.principal"));
         } else {
           goto handle_unusual;
         }
@@ -9905,22 +9923,22 @@ bool ExecutionStatus::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.ExecutionStateChangeDetails)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ExecutionStateChangeDetails)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void ExecutionStatus::SerializeWithCachedSizes(
+void ExecutionStateChangeDetails::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ExecutionStateChangeDetails)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+  // .flyteidl.admin.ExecutionState state = 1;
   if (this->state() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->state(), output);
@@ -9932,20 +9950,30 @@ void ExecutionStatus::SerializeWithCachedSizes(
       2, HasBitSetters::occurred_at(this), output);
   }
 
+  // string principal = 3;
+  if (this->principal().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->principal().data(), static_cast<int>(this->principal().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.ExecutionStateChangeDetails.principal");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->principal(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ExecutionStateChangeDetails)
 }
 
-::google::protobuf::uint8* ExecutionStatus::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ExecutionStateChangeDetails::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ExecutionStateChangeDetails)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+  // .flyteidl.admin.ExecutionState state = 1;
   if (this->state() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->state(), target);
@@ -9958,16 +9986,27 @@ void ExecutionStatus::SerializeWithCachedSizes(
         2, HasBitSetters::occurred_at(this), target);
   }
 
+  // string principal = 3;
+  if (this->principal().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->principal().data(), static_cast<int>(this->principal().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.ExecutionStateChangeDetails.principal");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->principal(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ExecutionStateChangeDetails)
   return target;
 }
 
-size_t ExecutionStatus::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ExecutionStatus)
+size_t ExecutionStateChangeDetails::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ExecutionStateChangeDetails)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9979,6 +10018,13 @@ size_t ExecutionStatus::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string principal = 3;
+  if (this->principal().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->principal());
+  }
+
   // .google.protobuf.Timestamp occurred_at = 2;
   if (this->has_occurred_at()) {
     total_size += 1 +
@@ -9986,7 +10032,7 @@ size_t ExecutionStatus::ByteSizeLong() const {
         *occurred_at_);
   }
 
-  // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+  // .flyteidl.admin.ExecutionState state = 1;
   if (this->state() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
@@ -9997,28 +10043,32 @@ size_t ExecutionStatus::ByteSizeLong() const {
   return total_size;
 }
 
-void ExecutionStatus::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ExecutionStatus)
+void ExecutionStateChangeDetails::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ExecutionStateChangeDetails)
   GOOGLE_DCHECK_NE(&from, this);
-  const ExecutionStatus* source =
-      ::google::protobuf::DynamicCastToGenerated<ExecutionStatus>(
+  const ExecutionStateChangeDetails* source =
+      ::google::protobuf::DynamicCastToGenerated<ExecutionStateChangeDetails>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ExecutionStateChangeDetails)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ExecutionStateChangeDetails)
     MergeFrom(*source);
   }
 }
 
-void ExecutionStatus::MergeFrom(const ExecutionStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ExecutionStatus)
+void ExecutionStateChangeDetails::MergeFrom(const ExecutionStateChangeDetails& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ExecutionStateChangeDetails)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.principal().size() > 0) {
+
+    principal_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.principal_);
+  }
   if (from.has_occurred_at()) {
     mutable_occurred_at()->::google::protobuf::Timestamp::MergeFrom(from.occurred_at());
   }
@@ -10027,36 +10077,38 @@ void ExecutionStatus::MergeFrom(const ExecutionStatus& from) {
   }
 }
 
-void ExecutionStatus::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ExecutionStatus)
+void ExecutionStateChangeDetails::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ExecutionStateChangeDetails)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ExecutionStatus::CopyFrom(const ExecutionStatus& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ExecutionStatus)
+void ExecutionStateChangeDetails::CopyFrom(const ExecutionStateChangeDetails& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ExecutionStateChangeDetails)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ExecutionStatus::IsInitialized() const {
+bool ExecutionStateChangeDetails::IsInitialized() const {
   return true;
 }
 
-void ExecutionStatus::Swap(ExecutionStatus* other) {
+void ExecutionStateChangeDetails::Swap(ExecutionStateChangeDetails* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ExecutionStatus::InternalSwap(ExecutionStatus* other) {
+void ExecutionStateChangeDetails::InternalSwap(ExecutionStateChangeDetails* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  principal_.Swap(&other->principal_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(occurred_at_, other->occurred_at_);
   swap(state_, other->state_);
 }
 
-::google::protobuf::Metadata ExecutionStatus::GetMetadata() const {
+::google::protobuf::Metadata ExecutionStateChangeDetails::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fexecution_2eproto[kIndexInFileMessages];
 }
@@ -10333,8 +10385,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::WorkflowExecutionGetDataResponse
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionUpdateRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionUpdateRequest >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::ExecutionUpdateRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionStatus* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::ExecutionStatus >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionStateChangeDetails* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionStateChangeDetails >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ExecutionStateChangeDetails >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionUpdateResponse* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionUpdateResponse >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::ExecutionUpdateResponse >(arena);

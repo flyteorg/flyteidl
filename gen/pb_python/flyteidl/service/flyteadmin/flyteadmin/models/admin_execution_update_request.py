@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_execution_status import AdminExecutionStatus  # noqa: F401,E501
+from flyteadmin.models.admin_execution_state import AdminExecutionState  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 
 
@@ -35,25 +35,25 @@ class AdminExecutionUpdateRequest(object):
     """
     swagger_types = {
         'id': 'CoreWorkflowExecutionIdentifier',
-        'status': 'AdminExecutionStatus'
+        'state': 'AdminExecutionState'
     }
 
     attribute_map = {
         'id': 'id',
-        'status': 'status'
+        'state': 'state'
     }
 
-    def __init__(self, id=None, status=None):  # noqa: E501
+    def __init__(self, id=None, state=None):  # noqa: E501
         """AdminExecutionUpdateRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._status = None
+        self._state = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if status is not None:
-            self.status = status
+        if state is not None:
+            self.state = state
 
     @property
     def id(self):
@@ -77,25 +77,25 @@ class AdminExecutionUpdateRequest(object):
         self._id = id
 
     @property
-    def status(self):
-        """Gets the status of this AdminExecutionUpdateRequest.  # noqa: E501
+    def state(self):
+        """Gets the state of this AdminExecutionUpdateRequest.  # noqa: E501
 
 
-        :return: The status of this AdminExecutionUpdateRequest.  # noqa: E501
-        :rtype: AdminExecutionStatus
+        :return: The state of this AdminExecutionUpdateRequest.  # noqa: E501
+        :rtype: AdminExecutionState
         """
-        return self._status
+        return self._state
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this AdminExecutionUpdateRequest.
+    @state.setter
+    def state(self, state):
+        """Sets the state of this AdminExecutionUpdateRequest.
 
 
-        :param status: The status of this AdminExecutionUpdateRequest.  # noqa: E501
-        :type: AdminExecutionStatus
+        :param state: The state of this AdminExecutionUpdateRequest.  # noqa: E501
+        :type: AdminExecutionState
         """
 
-        self._status = status
+        self._state = state
 
     def to_dict(self):
         """Returns the model properties as a dict"""

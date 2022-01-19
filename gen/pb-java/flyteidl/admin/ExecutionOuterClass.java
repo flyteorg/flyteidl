@@ -14,6 +14,124 @@ public final class ExecutionOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * The state of the execution is used to control its visibility in the UI/CLI.
+   * </pre>
+   *
+   * Protobuf enum {@code flyteidl.admin.ExecutionState}
+   */
+  public enum ExecutionState
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * By default, all executions are considered active.
+     * </pre>
+     *
+     * <code>EXECUTION_ACTIVE = 0;</code>
+     */
+    EXECUTION_ACTIVE(0),
+    /**
+     * <pre>
+     * Archived executions are no longer visible in the UI.
+     * </pre>
+     *
+     * <code>EXECUTION_ARCHIVED = 1;</code>
+     */
+    EXECUTION_ARCHIVED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * By default, all executions are considered active.
+     * </pre>
+     *
+     * <code>EXECUTION_ACTIVE = 0;</code>
+     */
+    public static final int EXECUTION_ACTIVE_VALUE = 0;
+    /**
+     * <pre>
+     * Archived executions are no longer visible in the UI.
+     * </pre>
+     *
+     * <code>EXECUTION_ARCHIVED = 1;</code>
+     */
+    public static final int EXECUTION_ARCHIVED_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExecutionState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ExecutionState forNumber(int value) {
+      switch (value) {
+        case 0: return EXECUTION_ACTIVE;
+        case 1: return EXECUTION_ARCHIVED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExecutionState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ExecutionState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ExecutionState>() {
+            public ExecutionState findValueByNumber(int number) {
+              return ExecutionState.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ExecutionState[] VALUES = values();
+
+    public static ExecutionState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExecutionState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.admin.ExecutionState)
+  }
+
   public interface ExecutionCreateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionCreateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -9088,17 +9206,29 @@ public final class ExecutionOuterClass {
     flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getWorkflowIdOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    boolean hasStatus();
+    boolean hasStateChangeDetails();
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus();
+    flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getStateChangeDetails();
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder();
+    flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder getStateChangeDetailsOrBuilder();
 
     public flyteidl.admin.ExecutionOuterClass.ExecutionClosure.OutputResultCase getOutputResultCase();
   }
@@ -9303,14 +9433,14 @@ public final class ExecutionOuterClass {
               break;
             }
             case 114: {
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
+              flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder subBuilder = null;
+              if (stateChangeDetails_ != null) {
+                subBuilder = stateChangeDetails_.toBuilder();
               }
-              status_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.parser(), extensionRegistry);
+              stateChangeDetails_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(stateChangeDetails_);
+                stateChangeDetails_ = subBuilder.buildPartial();
               }
 
               break;
@@ -9895,25 +10025,37 @@ public final class ExecutionOuterClass {
       return getWorkflowId();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 14;
-    private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+    public static final int STATE_CHANGE_DETAILS_FIELD_NUMBER = 14;
+    private flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails stateChangeDetails_;
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    public boolean hasStatus() {
-      return status_ != null;
+    public boolean hasStateChangeDetails() {
+      return stateChangeDetails_ != null;
     }
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
-      return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getStateChangeDetails() {
+      return stateChangeDetails_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.getDefaultInstance() : stateChangeDetails_;
     }
     /**
-     * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+     * <pre>
+     * Provides the details of the last stage change
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
      */
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder getStateChangeDetailsOrBuilder() {
+      return getStateChangeDetails();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9969,8 +10111,8 @@ public final class ExecutionOuterClass {
       if (outputResultCase_ == 13) {
         output.writeMessage(13, (flyteidl.core.Literals.LiteralMap) outputResult_);
       }
-      if (status_ != null) {
-        output.writeMessage(14, getStatus());
+      if (stateChangeDetails_ != null) {
+        output.writeMessage(14, getStateChangeDetails());
       }
       unknownFields.writeTo(output);
     }
@@ -10032,9 +10174,9 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, (flyteidl.core.Literals.LiteralMap) outputResult_);
       }
-      if (status_ != null) {
+      if (stateChangeDetails_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getStatus());
+          .computeMessageSize(14, getStateChangeDetails());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10084,10 +10226,10 @@ public final class ExecutionOuterClass {
         if (!getWorkflowId()
             .equals(other.getWorkflowId())) return false;
       }
-      if (hasStatus() != other.hasStatus()) return false;
-      if (hasStatus()) {
-        if (!getStatus()
-            .equals(other.getStatus())) return false;
+      if (hasStateChangeDetails() != other.hasStateChangeDetails()) return false;
+      if (hasStateChangeDetails()) {
+        if (!getStateChangeDetails()
+            .equals(other.getStateChangeDetails())) return false;
       }
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
@@ -10155,9 +10297,9 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
         hash = (53 * hash) + getWorkflowId().hashCode();
       }
-      if (hasStatus()) {
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
+      if (hasStateChangeDetails()) {
+        hash = (37 * hash) + STATE_CHANGE_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getStateChangeDetails().hashCode();
       }
       switch (outputResultCase_) {
         case 1:
@@ -10365,11 +10507,11 @@ public final class ExecutionOuterClass {
           workflowId_ = null;
           workflowIdBuilder_ = null;
         }
-        if (statusBuilder_ == null) {
-          status_ = null;
+        if (stateChangeDetailsBuilder_ == null) {
+          stateChangeDetails_ = null;
         } else {
-          status_ = null;
-          statusBuilder_ = null;
+          stateChangeDetails_ = null;
+          stateChangeDetailsBuilder_ = null;
         }
         outputResultCase_ = 0;
         outputResult_ = null;
@@ -10472,10 +10614,10 @@ public final class ExecutionOuterClass {
         } else {
           result.workflowId_ = workflowIdBuilder_.build();
         }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
+        if (stateChangeDetailsBuilder_ == null) {
+          result.stateChangeDetails_ = stateChangeDetails_;
         } else {
-          result.status_ = statusBuilder_.build();
+          result.stateChangeDetails_ = stateChangeDetailsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         result.outputResultCase_ = outputResultCase_;
@@ -10574,8 +10716,8 @@ public final class ExecutionOuterClass {
         if (other.hasWorkflowId()) {
           mergeWorkflowId(other.getWorkflowId());
         }
-        if (other.hasStatus()) {
-          mergeStatus(other.getStatus());
+        if (other.hasStateChangeDetails()) {
+          mergeStateChangeDetails(other.getStateChangeDetails());
         }
         switch (other.getOutputResultCase()) {
           case OUTPUTS: {
@@ -12795,121 +12937,157 @@ public final class ExecutionOuterClass {
         return workflowIdBuilder_;
       }
 
-      private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+      private flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails stateChangeDetails_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> statusBuilder_;
+          flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder> stateChangeDetailsBuilder_;
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+      public boolean hasStateChangeDetails() {
+        return stateChangeDetailsBuilder_ != null || stateChangeDetails_ != null;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
-        if (statusBuilder_ == null) {
-          return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getStateChangeDetails() {
+        if (stateChangeDetailsBuilder_ == null) {
+          return stateChangeDetails_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.getDefaultInstance() : stateChangeDetails_;
         } else {
-          return statusBuilder_.getMessage();
+          return stateChangeDetailsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public Builder setStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
-        if (statusBuilder_ == null) {
+      public Builder setStateChangeDetails(flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails value) {
+        if (stateChangeDetailsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          status_ = value;
+          stateChangeDetails_ = value;
           onChanged();
         } else {
-          statusBuilder_.setMessage(value);
+          stateChangeDetailsBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public Builder setStatus(
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder builderForValue) {
-        if (statusBuilder_ == null) {
-          status_ = builderForValue.build();
+      public Builder setStateChangeDetails(
+          flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder builderForValue) {
+        if (stateChangeDetailsBuilder_ == null) {
+          stateChangeDetails_ = builderForValue.build();
           onChanged();
         } else {
-          statusBuilder_.setMessage(builderForValue.build());
+          stateChangeDetailsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public Builder mergeStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
-        if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+      public Builder mergeStateChangeDetails(flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails value) {
+        if (stateChangeDetailsBuilder_ == null) {
+          if (stateChangeDetails_ != null) {
+            stateChangeDetails_ =
+              flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.newBuilder(stateChangeDetails_).mergeFrom(value).buildPartial();
           } else {
-            status_ = value;
+            stateChangeDetails_ = value;
           }
           onChanged();
         } else {
-          statusBuilder_.mergeFrom(value);
+          stateChangeDetailsBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
+      public Builder clearStateChangeDetails() {
+        if (stateChangeDetailsBuilder_ == null) {
+          stateChangeDetails_ = null;
           onChanged();
         } else {
-          status_ = null;
-          statusBuilder_ = null;
+          stateChangeDetails_ = null;
+          stateChangeDetailsBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder getStatusBuilder() {
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder getStateChangeDetailsBuilder() {
         
         onChanged();
-        return getStatusFieldBuilder().getBuilder();
+        return getStateChangeDetailsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
-        if (statusBuilder_ != null) {
-          return statusBuilder_.getMessageOrBuilder();
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder getStateChangeDetailsOrBuilder() {
+        if (stateChangeDetailsBuilder_ != null) {
+          return stateChangeDetailsBuilder_.getMessageOrBuilder();
         } else {
-          return status_ == null ?
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
+          return stateChangeDetails_ == null ?
+              flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.getDefaultInstance() : stateChangeDetails_;
         }
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus status = 14;</code>
+       * <pre>
+       * Provides the details of the last stage change
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> 
-          getStatusFieldBuilder() {
-        if (statusBuilder_ == null) {
-          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder>(
-                  getStatus(),
+          flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder> 
+          getStateChangeDetailsFieldBuilder() {
+        if (stateChangeDetailsBuilder_ == null) {
+          stateChangeDetailsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder>(
+                  getStateChangeDetails(),
                   getParentForChildren(),
                   isClean());
-          status_ = null;
+          stateChangeDetails_ = null;
         }
-        return statusBuilder_;
+        return stateChangeDetailsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22845,28 +23023,20 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Status object to set as the new value
+     * State to set as the new value active/archive
      * </pre>
      *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     * <code>.flyteidl.admin.ExecutionState state = 2;</code>
      */
-    boolean hasStatus();
+    int getStateValue();
     /**
      * <pre>
-     * Status object to set as the new value
+     * State to set as the new value active/archive
      * </pre>
      *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     * <code>.flyteidl.admin.ExecutionState state = 2;</code>
      */
-    flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus();
-    /**
-     * <pre>
-     * Status object to set as the new value
-     * </pre>
-     *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-     */
-    flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder();
+    flyteidl.admin.ExecutionOuterClass.ExecutionState getState();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ExecutionUpdateRequest}
@@ -22881,6 +23051,7 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private ExecutionUpdateRequest() {
+      state_ = 0;
     }
 
     @java.lang.Override
@@ -22920,17 +23091,10 @@ public final class ExecutionOuterClass {
 
               break;
             }
-            case 18: {
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
+            case 16: {
+              int rawValue = input.readEnum();
 
+              state_ = rawValue;
               break;
             }
             default: {
@@ -22998,37 +23162,29 @@ public final class ExecutionOuterClass {
       return getId();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
+    public static final int STATE_FIELD_NUMBER = 2;
+    private int state_;
     /**
      * <pre>
-     * Status object to set as the new value
+     * State to set as the new value active/archive
      * </pre>
      *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     * <code>.flyteidl.admin.ExecutionState state = 2;</code>
      */
-    public boolean hasStatus() {
-      return status_ != null;
+    public int getStateValue() {
+      return state_;
     }
     /**
      * <pre>
-     * Status object to set as the new value
+     * State to set as the new value active/archive
      * </pre>
      *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+     * <code>.flyteidl.admin.ExecutionState state = 2;</code>
      */
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
-      return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
-    }
-    /**
-     * <pre>
-     * Status object to set as the new value
-     * </pre>
-     *
-     * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-     */
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+    public flyteidl.admin.ExecutionOuterClass.ExecutionState getState() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.ExecutionOuterClass.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionState.valueOf(state_);
+      return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionState.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -23048,8 +23204,8 @@ public final class ExecutionOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
-      if (status_ != null) {
-        output.writeMessage(2, getStatus());
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
+        output.writeEnum(2, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -23064,9 +23220,9 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
-      if (status_ != null) {
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getStatus());
+          .computeEnumSize(2, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23088,11 +23244,7 @@ public final class ExecutionOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
-      if (hasStatus() != other.hasStatus()) return false;
-      if (hasStatus()) {
-        if (!getStatus()
-            .equals(other.getStatus())) return false;
-      }
+      if (state_ != other.state_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -23108,10 +23260,8 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
-      if (hasStatus()) {
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
-      }
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -23251,12 +23401,8 @@ public final class ExecutionOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
+        state_ = 0;
+
         return this;
       }
 
@@ -23288,11 +23434,7 @@ public final class ExecutionOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
-        }
+        result.state_ = state_;
         onBuilt();
         return result;
       }
@@ -23344,8 +23486,8 @@ public final class ExecutionOuterClass {
         if (other.hasId()) {
           mergeId(other.getId());
         }
-        if (other.hasStatus()) {
-          mergeStatus(other.getStatus());
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -23529,157 +23671,69 @@ public final class ExecutionOuterClass {
         return idBuilder_;
       }
 
-      private flyteidl.admin.ExecutionOuterClass.ExecutionStatus status_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> statusBuilder_;
+      private int state_ = 0;
       /**
        * <pre>
-       * Status object to set as the new value
+       * State to set as the new value active/archive
        * </pre>
        *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       * <code>.flyteidl.admin.ExecutionState state = 2;</code>
        */
-      public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+      public int getStateValue() {
+        return state_;
       }
       /**
        * <pre>
-       * Status object to set as the new value
+       * State to set as the new value active/archive
        * </pre>
        *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       * <code>.flyteidl.admin.ExecutionState state = 2;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getStatus() {
-        if (statusBuilder_ == null) {
-          return status_ == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
-        } else {
-          return statusBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Status object to set as the new value
-       * </pre>
-       *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-       */
-      public Builder setStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
-        if (statusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          status_ = value;
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Status object to set as the new value
-       * </pre>
-       *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-       */
-      public Builder setStatus(
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder builderForValue) {
-        if (statusBuilder_ == null) {
-          status_ = builderForValue.build();
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Status object to set as the new value
-       * </pre>
-       *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-       */
-      public Builder mergeStatus(flyteidl.admin.ExecutionOuterClass.ExecutionStatus value) {
-        if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder(status_).mergeFrom(value).buildPartial();
-          } else {
-            status_ = value;
-          }
-          onChanged();
-        } else {
-          statusBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Status object to set as the new value
-       * </pre>
-       *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-       */
-      public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Status object to set as the new value
-       * </pre>
-       *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
-       */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder getStatusBuilder() {
-        
+      public Builder setStateValue(int value) {
+        state_ = value;
         onChanged();
-        return getStatusFieldBuilder().getBuilder();
+        return this;
       }
       /**
        * <pre>
-       * Status object to set as the new value
+       * State to set as the new value active/archive
        * </pre>
        *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       * <code>.flyteidl.admin.ExecutionState state = 2;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder getStatusOrBuilder() {
-        if (statusBuilder_ != null) {
-          return statusBuilder_.getMessageOrBuilder();
-        } else {
-          return status_ == null ?
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance() : status_;
-        }
+      public flyteidl.admin.ExecutionOuterClass.ExecutionState getState() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.ExecutionOuterClass.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionState.valueOf(state_);
+        return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionState.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * Status object to set as the new value
+       * State to set as the new value active/archive
        * </pre>
        *
-       * <code>.flyteidl.admin.ExecutionStatus status = 2;</code>
+       * <code>.flyteidl.admin.ExecutionState state = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder> 
-          getStatusFieldBuilder() {
-        if (statusBuilder_ == null) {
-          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder, flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder>(
-                  getStatus(),
-                  getParentForChildren(),
-                  isClean());
-          status_ = null;
+      public Builder setState(flyteidl.admin.ExecutionOuterClass.ExecutionState value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-        return statusBuilder_;
+        
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * State to set as the new value active/archive
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 2;</code>
+       */
+      public Builder clearState() {
+        
+        state_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -23734,18 +23788,26 @@ public final class ExecutionOuterClass {
 
   }
 
-  public interface ExecutionStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionStatus)
+  public interface ExecutionStateChangeDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionStateChangeDetails)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionState state = 1;</code>
      */
     int getStateValue();
     /**
-     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionState state = 1;</code>
      */
-    flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState();
+    flyteidl.admin.ExecutionOuterClass.ExecutionState getState();
 
     /**
      * <pre>
@@ -23771,21 +23833,40 @@ public final class ExecutionOuterClass {
      * <code>.google.protobuf.Timestamp occurred_at = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
+
+    /**
+     * <pre>
+     * Identifies the entity (if any) responsible for causing the state change of the execution
+     * </pre>
+     *
+     * <code>string principal = 3;</code>
+     */
+    java.lang.String getPrincipal();
+    /**
+     * <pre>
+     * Identifies the entity (if any) responsible for causing the state change of the execution
+     * </pre>
+     *
+     * <code>string principal = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPrincipalBytes();
   }
   /**
-   * Protobuf type {@code flyteidl.admin.ExecutionStatus}
+   * Protobuf type {@code flyteidl.admin.ExecutionStateChangeDetails}
    */
-  public  static final class ExecutionStatus extends
+  public  static final class ExecutionStateChangeDetails extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionStatus)
-      ExecutionStatusOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ExecutionStateChangeDetails)
+      ExecutionStateChangeDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ExecutionStatus.newBuilder() to construct.
-    private ExecutionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ExecutionStateChangeDetails.newBuilder() to construct.
+    private ExecutionStateChangeDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ExecutionStatus() {
+    private ExecutionStateChangeDetails() {
       state_ = 0;
+      principal_ = "";
     }
 
     @java.lang.Override
@@ -23793,7 +23874,7 @@ public final class ExecutionOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ExecutionStatus(
+    private ExecutionStateChangeDetails(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -23831,6 +23912,12 @@ public final class ExecutionOuterClass {
 
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              principal_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -23852,150 +23939,40 @@ public final class ExecutionOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStateChangeDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.ExecutionOuterClass.ExecutionStatus.class, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder.class);
-    }
-
-    /**
-     * <pre>
-     * The state of the execution is used to control its visibility in the UI/CLI.
-     * </pre>
-     *
-     * Protobuf enum {@code flyteidl.admin.ExecutionStatus.ExecutionState}
-     */
-    public enum ExecutionState
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <pre>
-       * By default, all executions are considered active.
-       * </pre>
-       *
-       * <code>EXECUTION_ACTIVE = 0;</code>
-       */
-      EXECUTION_ACTIVE(0),
-      /**
-       * <pre>
-       * Archived executions are no longer visible in the UI.
-       * </pre>
-       *
-       * <code>EXECUTION_ARCHIVED = 1;</code>
-       */
-      EXECUTION_ARCHIVED(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <pre>
-       * By default, all executions are considered active.
-       * </pre>
-       *
-       * <code>EXECUTION_ACTIVE = 0;</code>
-       */
-      public static final int EXECUTION_ACTIVE_VALUE = 0;
-      /**
-       * <pre>
-       * Archived executions are no longer visible in the UI.
-       * </pre>
-       *
-       * <code>EXECUTION_ARCHIVED = 1;</code>
-       */
-      public static final int EXECUTION_ARCHIVED_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ExecutionState valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static ExecutionState forNumber(int value) {
-        switch (value) {
-          case 0: return EXECUTION_ACTIVE;
-          case 1: return EXECUTION_ARCHIVED;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ExecutionState>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ExecutionState> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ExecutionState>() {
-              public ExecutionState findValueByNumber(int number) {
-                return ExecutionState.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ExecutionState[] VALUES = values();
-
-      public static ExecutionState valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ExecutionState(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.admin.ExecutionStatus.ExecutionState)
+              flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.class, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder.class);
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_;
     /**
-     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionState state = 1;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
-     * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.ExecutionState state = 1;</code>
      */
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState() {
+    public flyteidl.admin.ExecutionOuterClass.ExecutionState getState() {
       @SuppressWarnings("deprecation")
-      flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.valueOf(state_);
-      return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.UNRECOGNIZED : result;
+      flyteidl.admin.ExecutionOuterClass.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionState.valueOf(state_);
+      return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionState.UNRECOGNIZED : result;
     }
 
     public static final int OCCURRED_AT_FIELD_NUMBER = 2;
@@ -24031,6 +24008,48 @@ public final class ExecutionOuterClass {
       return getOccurredAt();
     }
 
+    public static final int PRINCIPAL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object principal_;
+    /**
+     * <pre>
+     * Identifies the entity (if any) responsible for causing the state change of the execution
+     * </pre>
+     *
+     * <code>string principal = 3;</code>
+     */
+    public java.lang.String getPrincipal() {
+      java.lang.Object ref = principal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        principal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Identifies the entity (if any) responsible for causing the state change of the execution
+     * </pre>
+     *
+     * <code>string principal = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPrincipalBytes() {
+      java.lang.Object ref = principal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        principal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -24045,11 +24064,14 @@ public final class ExecutionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
         output.writeEnum(1, state_);
       }
       if (occurredAt_ != null) {
         output.writeMessage(2, getOccurredAt());
+      }
+      if (!getPrincipalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, principal_);
       }
       unknownFields.writeTo(output);
     }
@@ -24060,13 +24082,16 @@ public final class ExecutionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
+      if (state_ != flyteidl.admin.ExecutionOuterClass.ExecutionState.EXECUTION_ACTIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
       }
       if (occurredAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getOccurredAt());
+      }
+      if (!getPrincipalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, principal_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24078,10 +24103,10 @@ public final class ExecutionOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStatus)) {
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails)) {
         return super.equals(obj);
       }
-      flyteidl.admin.ExecutionOuterClass.ExecutionStatus other = (flyteidl.admin.ExecutionOuterClass.ExecutionStatus) obj;
+      flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails other = (flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails) obj;
 
       if (state_ != other.state_) return false;
       if (hasOccurredAt() != other.hasOccurredAt()) return false;
@@ -24089,6 +24114,8 @@ public final class ExecutionOuterClass {
         if (!getOccurredAt()
             .equals(other.getOccurredAt())) return false;
       }
+      if (!getPrincipal()
+          .equals(other.getPrincipal())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24106,74 +24133,76 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + OCCURRED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getOccurredAt().hashCode();
       }
+      hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
+      hash = (53 * hash) + getPrincipal().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(byte[] data)
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseDelimitedFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus parseFrom(
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -24186,7 +24215,7 @@ public final class ExecutionOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionStatus prototype) {
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -24202,26 +24231,26 @@ public final class ExecutionOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.admin.ExecutionStatus}
+     * Protobuf type {@code flyteidl.admin.ExecutionStateChangeDetails}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionStatus)
-        flyteidl.admin.ExecutionOuterClass.ExecutionStatusOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ExecutionStateChangeDetails)
+        flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetailsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStateChangeDetails_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.ExecutionOuterClass.ExecutionStatus.class, flyteidl.admin.ExecutionOuterClass.ExecutionStatus.Builder.class);
+                flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.class, flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.Builder.class);
       }
 
-      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionStatus.newBuilder()
+      // Construct using flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -24247,23 +24276,25 @@ public final class ExecutionOuterClass {
           occurredAt_ = null;
           occurredAtBuilder_ = null;
         }
+        principal_ = "";
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstanceForType() {
-        return flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance();
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus build() {
-        flyteidl.admin.ExecutionOuterClass.ExecutionStatus result = buildPartial();
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails build() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -24271,14 +24302,15 @@ public final class ExecutionOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus buildPartial() {
-        flyteidl.admin.ExecutionOuterClass.ExecutionStatus result = new flyteidl.admin.ExecutionOuterClass.ExecutionStatus(this);
+      public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails result = new flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails(this);
         result.state_ = state_;
         if (occurredAtBuilder_ == null) {
           result.occurredAt_ = occurredAt_;
         } else {
           result.occurredAt_ = occurredAtBuilder_.build();
         }
+        result.principal_ = principal_;
         onBuilt();
         return result;
       }
@@ -24317,21 +24349,25 @@ public final class ExecutionOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStatus) {
-          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionStatus)other);
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionStatus other) {
-        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionStatus.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails.getDefaultInstance()) return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
         if (other.hasOccurredAt()) {
           mergeOccurredAt(other.getOccurredAt());
+        }
+        if (!other.getPrincipal().isEmpty()) {
+          principal_ = other.principal_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -24348,11 +24384,11 @@ public final class ExecutionOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.ExecutionOuterClass.ExecutionStatus parsedMessage = null;
+        flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionStatus) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -24364,13 +24400,21 @@ public final class ExecutionOuterClass {
 
       private int state_ = 0;
       /**
-       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 1;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 1;</code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -24378,17 +24422,25 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 1;</code>
        */
-      public flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState getState() {
+      public flyteidl.admin.ExecutionOuterClass.ExecutionState getState() {
         @SuppressWarnings("deprecation")
-        flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.valueOf(state_);
-        return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState.UNRECOGNIZED : result;
+        flyteidl.admin.ExecutionOuterClass.ExecutionState result = flyteidl.admin.ExecutionOuterClass.ExecutionState.valueOf(state_);
+        return result == null ? flyteidl.admin.ExecutionOuterClass.ExecutionState.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 1;</code>
        */
-      public Builder setState(flyteidl.admin.ExecutionOuterClass.ExecutionStatus.ExecutionState value) {
+      public Builder setState(flyteidl.admin.ExecutionOuterClass.ExecutionState value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -24398,7 +24450,11 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.ExecutionStatus.ExecutionState state = 1;</code>
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.ExecutionState state = 1;</code>
        */
       public Builder clearState() {
         
@@ -24559,6 +24615,95 @@ public final class ExecutionOuterClass {
         }
         return occurredAtBuilder_;
       }
+
+      private java.lang.Object principal_ = "";
+      /**
+       * <pre>
+       * Identifies the entity (if any) responsible for causing the state change of the execution
+       * </pre>
+       *
+       * <code>string principal = 3;</code>
+       */
+      public java.lang.String getPrincipal() {
+        java.lang.Object ref = principal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          principal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifies the entity (if any) responsible for causing the state change of the execution
+       * </pre>
+       *
+       * <code>string principal = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPrincipalBytes() {
+        java.lang.Object ref = principal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          principal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifies the entity (if any) responsible for causing the state change of the execution
+       * </pre>
+       *
+       * <code>string principal = 3;</code>
+       */
+      public Builder setPrincipal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        principal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the entity (if any) responsible for causing the state change of the execution
+       * </pre>
+       *
+       * <code>string principal = 3;</code>
+       */
+      public Builder clearPrincipal() {
+        
+        principal_ = getDefaultInstance().getPrincipal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the entity (if any) responsible for causing the state change of the execution
+       * </pre>
+       *
+       * <code>string principal = 3;</code>
+       */
+      public Builder setPrincipalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        principal_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -24572,41 +24717,41 @@ public final class ExecutionOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionStatus)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ExecutionStateChangeDetails)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStatus)
-    private static final flyteidl.admin.ExecutionOuterClass.ExecutionStatus DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStateChangeDetails)
+    private static final flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionStatus();
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails();
     }
 
-    public static flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstance() {
+    public static flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ExecutionStatus>
-        PARSER = new com.google.protobuf.AbstractParser<ExecutionStatus>() {
+    private static final com.google.protobuf.Parser<ExecutionStateChangeDetails>
+        PARSER = new com.google.protobuf.AbstractParser<ExecutionStateChangeDetails>() {
       @java.lang.Override
-      public ExecutionStatus parsePartialFrom(
+      public ExecutionStateChangeDetails parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExecutionStatus(input, extensionRegistry);
+        return new ExecutionStateChangeDetails(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ExecutionStatus> parser() {
+    public static com.google.protobuf.Parser<ExecutionStateChangeDetails> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ExecutionStatus> getParserForType() {
+    public com.google.protobuf.Parser<ExecutionStateChangeDetails> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.ExecutionOuterClass.ExecutionStatus getDefaultInstanceForType() {
+    public flyteidl.admin.ExecutionOuterClass.ExecutionStateChangeDetails getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -25119,10 +25264,10 @@ public final class ExecutionOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_ExecutionStatus_descriptor;
+    internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable;
+      internal_static_flyteidl_admin_ExecutionStateChangeDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor;
   private static final 
@@ -25167,7 +25312,7 @@ public final class ExecutionOuterClass {
       "token\030\002 \001(\t\"X\n\016LiteralMapBlob\022/\n\006values\030" +
       "\001 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H\000\022\r" +
       "\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata\022\r" +
-      "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\326\005\n\020Exe" +
+      "\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\360\005\n\020Exe" +
       "cutionClosure\0225\n\007outputs\030\001 \001(\0132\036.flyteid" +
       "l.admin.LiteralMapBlobB\002\030\001H\000\022.\n\005error\030\002 " +
       "\001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\031\n\013" +
@@ -25184,59 +25329,60 @@ public final class ExecutionOuterClass {
       "\030\010 \001(\0132\032.google.protobuf.Timestamp\0223\n\rno" +
       "tifications\030\t \003(\0132\034.flyteidl.admin.Notif" +
       "ication\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl." +
-      "core.Identifier\022/\n\006status\030\016 \001(\0132\037.flytei" +
-      "dl.admin.ExecutionStatusB\017\n\routput_resul" +
-      "t\"+\n\016SystemMetadata\022\031\n\021execution_cluster" +
-      "\030\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001" +
-      "(\0162/.flyteidl.admin.ExecutionMetadata.Ex" +
-      "ecutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nestin" +
-      "g\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022E\n\025parent_node_executi" +
-      "on\030\005 \001(\0132&.flyteidl.core.NodeExecutionId" +
-      "entifier\022G\n\023reference_execution\030\020 \001(\0132*." +
-      "flyteidl.core.WorkflowExecutionIdentifie" +
-      "r\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.ad" +
-      "min.SystemMetadata\"g\n\rExecutionMode\022\n\n\006M" +
-      "ANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RE" +
-      "LAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERE" +
-      "D\020\005\"G\n\020NotificationList\0223\n\rnotifications" +
-      "\030\001 \003(\0132\034.flyteidl.admin.Notification\"\260\004\n" +
-      "\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fl" +
-      "yteidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031" +
-      ".flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadat" +
-      "a\030\003 \001(\0132!.flyteidl.admin.ExecutionMetada" +
-      "ta\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.adm" +
-      "in.NotificationListH\000\022\025\n\013disable_all\030\006 \001" +
-      "(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.La" +
-      "bels\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.adm" +
-      "in.Annotations\0228\n\020security_context\030\n \001(\013" +
-      "2\036.flyteidl.core.SecurityContext\022/\n\tauth" +
-      "_role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030" +
-      "\001\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl" +
-      ".core.QualityOfService\022\027\n\017max_parallelis" +
-      "m\030\022 \001(\005B\030\n\026notification_overridesJ\004\010\004\020\005\"" +
-      "b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\013" +
-      "2*.flyteidl.core.WorkflowExecutionIdenti" +
-      "fier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminat" +
-      "eResponse\"Y\n\037WorkflowExecutionGetDataReq" +
-      "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\"\336\001\n WorkflowExecuti" +
-      "onGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.fly" +
-      "teidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132" +
-      "\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inp" +
-      "uts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014" +
-      "full_outputs\030\004 \001(\0132\031.flyteidl.core.Liter" +
-      "alMap\"\201\001\n\026ExecutionUpdateRequest\0226\n\002id\030\001" +
-      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
-      "entifier\022/\n\006status\030\002 \001(\0132\037.flyteidl.admi" +
-      "n.ExecutionStatus\"\301\001\n\017ExecutionStatus\022=\n" +
-      "\005state\030\001 \001(\0162..flyteidl.admin.ExecutionS" +
-      "tatus.ExecutionState\022/\n\013occurred_at\030\002 \001(" +
-      "\0132\032.google.protobuf.Timestamp\">\n\016Executi" +
-      "onState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTI" +
-      "ON_ARCHIVED\020\001\"\031\n\027ExecutionUpdateResponse" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "core.Identifier\022I\n\024state_change_details\030" +
+      "\016 \001(\0132+.flyteidl.admin.ExecutionStateCha" +
+      "ngeDetailsB\017\n\routput_result\"+\n\016SystemMet" +
+      "adata\022\031\n\021execution_cluster\030\001 \001(\t\"\332\003\n\021Exe" +
+      "cutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyteidl." +
+      "admin.ExecutionMetadata.ExecutionMode\022\021\n" +
+      "\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014sch" +
+      "eduled_at\030\004 \001(\0132\032.google.protobuf.Timest" +
+      "amp\022E\n\025parent_node_execution\030\005 \001(\0132&.fly" +
+      "teidl.core.NodeExecutionIdentifier\022G\n\023re" +
+      "ference_execution\030\020 \001(\0132*.flyteidl.core." +
+      "WorkflowExecutionIdentifier\0227\n\017system_me" +
+      "tadata\030\021 \001(\0132\036.flyteidl.admin.SystemMeta" +
+      "data\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCH" +
+      "EDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CH" +
+      "ILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020Notific" +
+      "ationList\0223\n\rnotifications\030\001 \003(\0132\034.flyte" +
+      "idl.admin.Notification\"\260\004\n\rExecutionSpec" +
+      "\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core" +
+      ".LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyt" +
+      "eidl.admin.ExecutionMetadata\0229\n\rnotifica" +
+      "tions\030\005 \001(\0132 .flyteidl.admin.Notificatio" +
+      "nListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels" +
+      "\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota" +
+      "tions\030\010 \001(\0132\033.flyteidl.admin.Annotations" +
+      "\0228\n\020security_context\030\n \001(\0132\036.flyteidl.co" +
+      "re.SecurityContext\022/\n\tauth_role\030\020 \001(\0132\030." +
+      "flyteidl.admin.AuthRoleB\002\030\001\022;\n\022quality_o" +
+      "f_service\030\021 \001(\0132\037.flyteidl.core.QualityO" +
+      "fService\022\027\n\017max_parallelism\030\022 \001(\005B\030\n\026not" +
+      "ification_overridesJ\004\010\004\020\005\"b\n\031ExecutionTe" +
+      "rminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
+      "re.WorkflowExecutionIdentifier\022\r\n\005cause\030" +
+      "\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037W" +
+      "orkflowExecutionGetDataRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\"\336\001\n WorkflowExecutionGetDataRespo" +
+      "nse\022,\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.Ur" +
+      "lBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.adm" +
+      "in.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.fl" +
+      "yteidl.core.LiteralMap\022/\n\014full_outputs\030\004" +
+      " \001(\0132\031.flyteidl.core.LiteralMap\"\177\n\026Execu" +
+      "tionUpdateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl" +
+      ".core.WorkflowExecutionIdentifier\022-\n\005sta" +
+      "te\030\002 \001(\0162\036.flyteidl.admin.ExecutionState" +
+      "\"\220\001\n\033ExecutionStateChangeDetails\022-\n\005stat" +
+      "e\030\001 \001(\0162\036.flyteidl.admin.ExecutionState\022" +
+      "/\n\013occurred_at\030\002 \001(\0132\032.google.protobuf.T" +
+      "imestamp\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027Execution" +
+      "UpdateResponse*>\n\016ExecutionState\022\024\n\020EXEC" +
+      "UTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7" +
+      "Z5github.com/flyteorg/flyteidl/gen/pb-go" +
+      "/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -25316,7 +25462,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionClosure_descriptor,
-        new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "OutputData", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "Status", "OutputResult", });
+        new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "OutputData", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "StateChangeDetails", "OutputResult", });
     internal_static_flyteidl_admin_SystemMetadata_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_SystemMetadata_fieldAccessorTable = new
@@ -25370,13 +25516,13 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionUpdateRequest_descriptor,
-        new java.lang.String[] { "Id", "Status", });
-    internal_static_flyteidl_admin_ExecutionStatus_descriptor =
+        new java.lang.String[] { "Id", "State", });
+    internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor =
       getDescriptor().getMessageTypes().get(19);
-    internal_static_flyteidl_admin_ExecutionStatus_fieldAccessorTable = new
+    internal_static_flyteidl_admin_ExecutionStateChangeDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_ExecutionStatus_descriptor,
-        new java.lang.String[] { "State", "OccurredAt", });
+        internal_static_flyteidl_admin_ExecutionStateChangeDetails_descriptor,
+        new java.lang.String[] { "State", "OccurredAt", "Principal", });
     internal_static_flyteidl_admin_ExecutionUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_admin_ExecutionUpdateResponse_fieldAccessorTable = new

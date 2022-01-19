@@ -88,9 +88,9 @@ extern ExecutionRelaunchRequestDefaultTypeInternal _ExecutionRelaunchRequest_def
 class ExecutionSpec;
 class ExecutionSpecDefaultTypeInternal;
 extern ExecutionSpecDefaultTypeInternal _ExecutionSpec_default_instance_;
-class ExecutionStatus;
-class ExecutionStatusDefaultTypeInternal;
-extern ExecutionStatusDefaultTypeInternal _ExecutionStatus_default_instance_;
+class ExecutionStateChangeDetails;
+class ExecutionStateChangeDetailsDefaultTypeInternal;
+extern ExecutionStateChangeDetailsDefaultTypeInternal _ExecutionStateChangeDetails_default_instance_;
 class ExecutionTerminateRequest;
 class ExecutionTerminateRequestDefaultTypeInternal;
 extern ExecutionTerminateRequestDefaultTypeInternal _ExecutionTerminateRequest_default_instance_;
@@ -135,7 +135,7 @@ template<> ::flyteidl::admin::ExecutionMetadata* Arena::CreateMaybeMessage<::fly
 template<> ::flyteidl::admin::ExecutionRecoverRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionRecoverRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionRelaunchRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionRelaunchRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionSpec* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionSpec>(Arena*);
-template<> ::flyteidl::admin::ExecutionStatus* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionStatus>(Arena*);
+template<> ::flyteidl::admin::ExecutionStateChangeDetails* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionStateChangeDetails>(Arena*);
 template<> ::flyteidl::admin::ExecutionTerminateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateRequest>(Arena*);
 template<> ::flyteidl::admin::ExecutionTerminateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateResponse>(Arena*);
 template<> ::flyteidl::admin::ExecutionUpdateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionUpdateRequest>(Arena*);
@@ -176,26 +176,26 @@ inline bool ExecutionMetadata_ExecutionMode_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<ExecutionMetadata_ExecutionMode>(
     ExecutionMetadata_ExecutionMode_descriptor(), name, value);
 }
-enum ExecutionStatus_ExecutionState {
-  ExecutionStatus_ExecutionState_EXECUTION_ACTIVE = 0,
-  ExecutionStatus_ExecutionState_EXECUTION_ARCHIVED = 1,
-  ExecutionStatus_ExecutionState_ExecutionStatus_ExecutionState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  ExecutionStatus_ExecutionState_ExecutionStatus_ExecutionState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum ExecutionState {
+  EXECUTION_ACTIVE = 0,
+  EXECUTION_ARCHIVED = 1,
+  ExecutionState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  ExecutionState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool ExecutionStatus_ExecutionState_IsValid(int value);
-const ExecutionStatus_ExecutionState ExecutionStatus_ExecutionState_ExecutionState_MIN = ExecutionStatus_ExecutionState_EXECUTION_ACTIVE;
-const ExecutionStatus_ExecutionState ExecutionStatus_ExecutionState_ExecutionState_MAX = ExecutionStatus_ExecutionState_EXECUTION_ARCHIVED;
-const int ExecutionStatus_ExecutionState_ExecutionState_ARRAYSIZE = ExecutionStatus_ExecutionState_ExecutionState_MAX + 1;
+bool ExecutionState_IsValid(int value);
+const ExecutionState ExecutionState_MIN = EXECUTION_ACTIVE;
+const ExecutionState ExecutionState_MAX = EXECUTION_ARCHIVED;
+const int ExecutionState_ARRAYSIZE = ExecutionState_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* ExecutionStatus_ExecutionState_descriptor();
-inline const ::std::string& ExecutionStatus_ExecutionState_Name(ExecutionStatus_ExecutionState value) {
+const ::google::protobuf::EnumDescriptor* ExecutionState_descriptor();
+inline const ::std::string& ExecutionState_Name(ExecutionState value) {
   return ::google::protobuf::internal::NameOfEnum(
-    ExecutionStatus_ExecutionState_descriptor(), value);
+    ExecutionState_descriptor(), value);
 }
-inline bool ExecutionStatus_ExecutionState_Parse(
-    const ::std::string& name, ExecutionStatus_ExecutionState* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ExecutionStatus_ExecutionState>(
-    ExecutionStatus_ExecutionState_descriptor(), name, value);
+inline bool ExecutionState_Parse(
+    const ::std::string& name, ExecutionState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ExecutionState>(
+    ExecutionState_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1593,14 +1593,14 @@ class ExecutionClosure final :
   ::flyteidl::core::Identifier* mutable_workflow_id();
   void set_allocated_workflow_id(::flyteidl::core::Identifier* workflow_id);
 
-  // .flyteidl.admin.ExecutionStatus status = 14;
-  bool has_status() const;
-  void clear_status();
-  static const int kStatusFieldNumber = 14;
-  const ::flyteidl::admin::ExecutionStatus& status() const;
-  ::flyteidl::admin::ExecutionStatus* release_status();
-  ::flyteidl::admin::ExecutionStatus* mutable_status();
-  void set_allocated_status(::flyteidl::admin::ExecutionStatus* status);
+  // .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
+  bool has_state_change_details() const;
+  void clear_state_change_details();
+  static const int kStateChangeDetailsFieldNumber = 14;
+  const ::flyteidl::admin::ExecutionStateChangeDetails& state_change_details() const;
+  ::flyteidl::admin::ExecutionStateChangeDetails* release_state_change_details();
+  ::flyteidl::admin::ExecutionStateChangeDetails* mutable_state_change_details();
+  void set_allocated_state_change_details(::flyteidl::admin::ExecutionStateChangeDetails* state_change_details);
 
   // .flyteidl.core.WorkflowExecution.Phase phase = 4;
   void clear_phase();
@@ -1683,7 +1683,7 @@ class ExecutionClosure final :
   ::google::protobuf::Timestamp* created_at_;
   ::google::protobuf::Timestamp* updated_at_;
   ::flyteidl::core::Identifier* workflow_id_;
-  ::flyteidl::admin::ExecutionStatus* status_;
+  ::flyteidl::admin::ExecutionStateChangeDetails* state_change_details_;
   int phase_;
   union OutputResultUnion {
     OutputResultUnion() {}
@@ -2975,14 +2975,11 @@ class ExecutionUpdateRequest final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::WorkflowExecutionIdentifier* id);
 
-  // .flyteidl.admin.ExecutionStatus status = 2;
-  bool has_status() const;
-  void clear_status();
-  static const int kStatusFieldNumber = 2;
-  const ::flyteidl::admin::ExecutionStatus& status() const;
-  ::flyteidl::admin::ExecutionStatus* release_status();
-  ::flyteidl::admin::ExecutionStatus* mutable_status();
-  void set_allocated_status(::flyteidl::admin::ExecutionStatus* status);
+  // .flyteidl.admin.ExecutionState state = 2;
+  void clear_state();
+  static const int kStateFieldNumber = 2;
+  ::flyteidl::admin::ExecutionState state() const;
+  void set_state(::flyteidl::admin::ExecutionState value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionUpdateRequest)
  private:
@@ -2990,31 +2987,31 @@ class ExecutionUpdateRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
-  ::flyteidl::admin::ExecutionStatus* status_;
+  int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
 // -------------------------------------------------------------------
 
-class ExecutionStatus final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ExecutionStatus) */ {
+class ExecutionStateChangeDetails final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ExecutionStateChangeDetails) */ {
  public:
-  ExecutionStatus();
-  virtual ~ExecutionStatus();
+  ExecutionStateChangeDetails();
+  virtual ~ExecutionStateChangeDetails();
 
-  ExecutionStatus(const ExecutionStatus& from);
+  ExecutionStateChangeDetails(const ExecutionStateChangeDetails& from);
 
-  inline ExecutionStatus& operator=(const ExecutionStatus& from) {
+  inline ExecutionStateChangeDetails& operator=(const ExecutionStateChangeDetails& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  ExecutionStatus(ExecutionStatus&& from) noexcept
-    : ExecutionStatus() {
+  ExecutionStateChangeDetails(ExecutionStateChangeDetails&& from) noexcept
+    : ExecutionStateChangeDetails() {
     *this = ::std::move(from);
   }
 
-  inline ExecutionStatus& operator=(ExecutionStatus&& from) noexcept {
+  inline ExecutionStateChangeDetails& operator=(ExecutionStateChangeDetails&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -3026,34 +3023,34 @@ class ExecutionStatus final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const ExecutionStatus& default_instance();
+  static const ExecutionStateChangeDetails& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ExecutionStatus* internal_default_instance() {
-    return reinterpret_cast<const ExecutionStatus*>(
-               &_ExecutionStatus_default_instance_);
+  static inline const ExecutionStateChangeDetails* internal_default_instance() {
+    return reinterpret_cast<const ExecutionStateChangeDetails*>(
+               &_ExecutionStateChangeDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     19;
 
-  void Swap(ExecutionStatus* other);
-  friend void swap(ExecutionStatus& a, ExecutionStatus& b) {
+  void Swap(ExecutionStateChangeDetails* other);
+  friend void swap(ExecutionStateChangeDetails& a, ExecutionStateChangeDetails& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline ExecutionStatus* New() const final {
-    return CreateMaybeMessage<ExecutionStatus>(nullptr);
+  inline ExecutionStateChangeDetails* New() const final {
+    return CreateMaybeMessage<ExecutionStateChangeDetails>(nullptr);
   }
 
-  ExecutionStatus* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ExecutionStatus>(arena);
+  ExecutionStateChangeDetails* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ExecutionStateChangeDetails>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ExecutionStatus& from);
-  void MergeFrom(const ExecutionStatus& from);
+  void CopyFrom(const ExecutionStateChangeDetails& from);
+  void MergeFrom(const ExecutionStateChangeDetails& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -3075,7 +3072,7 @@ class ExecutionStatus final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ExecutionStatus* other);
+  void InternalSwap(ExecutionStateChangeDetails* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -3089,33 +3086,21 @@ class ExecutionStatus final :
 
   // nested types ----------------------------------------------------
 
-  typedef ExecutionStatus_ExecutionState ExecutionState;
-  static const ExecutionState EXECUTION_ACTIVE =
-    ExecutionStatus_ExecutionState_EXECUTION_ACTIVE;
-  static const ExecutionState EXECUTION_ARCHIVED =
-    ExecutionStatus_ExecutionState_EXECUTION_ARCHIVED;
-  static inline bool ExecutionState_IsValid(int value) {
-    return ExecutionStatus_ExecutionState_IsValid(value);
-  }
-  static const ExecutionState ExecutionState_MIN =
-    ExecutionStatus_ExecutionState_ExecutionState_MIN;
-  static const ExecutionState ExecutionState_MAX =
-    ExecutionStatus_ExecutionState_ExecutionState_MAX;
-  static const int ExecutionState_ARRAYSIZE =
-    ExecutionStatus_ExecutionState_ExecutionState_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  ExecutionState_descriptor() {
-    return ExecutionStatus_ExecutionState_descriptor();
-  }
-  static inline const ::std::string& ExecutionState_Name(ExecutionState value) {
-    return ExecutionStatus_ExecutionState_Name(value);
-  }
-  static inline bool ExecutionState_Parse(const ::std::string& name,
-      ExecutionState* value) {
-    return ExecutionStatus_ExecutionState_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
+
+  // string principal = 3;
+  void clear_principal();
+  static const int kPrincipalFieldNumber = 3;
+  const ::std::string& principal() const;
+  void set_principal(const ::std::string& value);
+  #if LANG_CXX11
+  void set_principal(::std::string&& value);
+  #endif
+  void set_principal(const char* value);
+  void set_principal(const char* value, size_t size);
+  ::std::string* mutable_principal();
+  ::std::string* release_principal();
+  void set_allocated_principal(::std::string* principal);
 
   // .google.protobuf.Timestamp occurred_at = 2;
   bool has_occurred_at() const;
@@ -3126,17 +3111,18 @@ class ExecutionStatus final :
   ::google::protobuf::Timestamp* mutable_occurred_at();
   void set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at);
 
-  // .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
+  // .flyteidl.admin.ExecutionState state = 1;
   void clear_state();
   static const int kStateFieldNumber = 1;
-  ::flyteidl::admin::ExecutionStatus_ExecutionState state() const;
-  void set_state(::flyteidl::admin::ExecutionStatus_ExecutionState value);
+  ::flyteidl::admin::ExecutionState state() const;
+  void set_state(::flyteidl::admin::ExecutionState value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStatus)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStateChangeDetails)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr principal_;
   ::google::protobuf::Timestamp* occurred_at_;
   int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -4917,55 +4903,55 @@ inline void ExecutionClosure::set_allocated_workflow_id(::flyteidl::core::Identi
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionClosure.workflow_id)
 }
 
-// .flyteidl.admin.ExecutionStatus status = 14;
-inline bool ExecutionClosure::has_status() const {
-  return this != internal_default_instance() && status_ != nullptr;
+// .flyteidl.admin.ExecutionStateChangeDetails state_change_details = 14;
+inline bool ExecutionClosure::has_state_change_details() const {
+  return this != internal_default_instance() && state_change_details_ != nullptr;
 }
-inline void ExecutionClosure::clear_status() {
-  if (GetArenaNoVirtual() == nullptr && status_ != nullptr) {
-    delete status_;
+inline void ExecutionClosure::clear_state_change_details() {
+  if (GetArenaNoVirtual() == nullptr && state_change_details_ != nullptr) {
+    delete state_change_details_;
   }
-  status_ = nullptr;
+  state_change_details_ = nullptr;
 }
-inline const ::flyteidl::admin::ExecutionStatus& ExecutionClosure::status() const {
-  const ::flyteidl::admin::ExecutionStatus* p = status_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionClosure.status)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionStatus*>(
-      &::flyteidl::admin::_ExecutionStatus_default_instance_);
+inline const ::flyteidl::admin::ExecutionStateChangeDetails& ExecutionClosure::state_change_details() const {
+  const ::flyteidl::admin::ExecutionStateChangeDetails* p = state_change_details_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionClosure.state_change_details)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionStateChangeDetails*>(
+      &::flyteidl::admin::_ExecutionStateChangeDetails_default_instance_);
 }
-inline ::flyteidl::admin::ExecutionStatus* ExecutionClosure::release_status() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionClosure.status)
+inline ::flyteidl::admin::ExecutionStateChangeDetails* ExecutionClosure::release_state_change_details() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionClosure.state_change_details)
   
-  ::flyteidl::admin::ExecutionStatus* temp = status_;
-  status_ = nullptr;
+  ::flyteidl::admin::ExecutionStateChangeDetails* temp = state_change_details_;
+  state_change_details_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::ExecutionStatus* ExecutionClosure::mutable_status() {
+inline ::flyteidl::admin::ExecutionStateChangeDetails* ExecutionClosure::mutable_state_change_details() {
   
-  if (status_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionStatus>(GetArenaNoVirtual());
-    status_ = p;
+  if (state_change_details_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionStateChangeDetails>(GetArenaNoVirtual());
+    state_change_details_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionClosure.status)
-  return status_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionClosure.state_change_details)
+  return state_change_details_;
 }
-inline void ExecutionClosure::set_allocated_status(::flyteidl::admin::ExecutionStatus* status) {
+inline void ExecutionClosure::set_allocated_state_change_details(::flyteidl::admin::ExecutionStateChangeDetails* state_change_details) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete status_;
+    delete state_change_details_;
   }
-  if (status) {
+  if (state_change_details) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      status = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, status, submessage_arena);
+      state_change_details = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, state_change_details, submessage_arena);
     }
     
   } else {
     
   }
-  status_ = status;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionClosure.status)
+  state_change_details_ = state_change_details;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionClosure.state_change_details)
 }
 
 inline bool ExecutionClosure::has_output_result() const {
@@ -6188,102 +6174,65 @@ inline void ExecutionUpdateRequest::set_allocated_id(::flyteidl::core::WorkflowE
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionUpdateRequest.id)
 }
 
-// .flyteidl.admin.ExecutionStatus status = 2;
-inline bool ExecutionUpdateRequest::has_status() const {
-  return this != internal_default_instance() && status_ != nullptr;
+// .flyteidl.admin.ExecutionState state = 2;
+inline void ExecutionUpdateRequest::clear_state() {
+  state_ = 0;
 }
-inline void ExecutionUpdateRequest::clear_status() {
-  if (GetArenaNoVirtual() == nullptr && status_ != nullptr) {
-    delete status_;
-  }
-  status_ = nullptr;
+inline ::flyteidl::admin::ExecutionState ExecutionUpdateRequest::state() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionUpdateRequest.state)
+  return static_cast< ::flyteidl::admin::ExecutionState >(state_);
 }
-inline const ::flyteidl::admin::ExecutionStatus& ExecutionUpdateRequest::status() const {
-  const ::flyteidl::admin::ExecutionStatus* p = status_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionUpdateRequest.status)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionStatus*>(
-      &::flyteidl::admin::_ExecutionStatus_default_instance_);
-}
-inline ::flyteidl::admin::ExecutionStatus* ExecutionUpdateRequest::release_status() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionUpdateRequest.status)
+inline void ExecutionUpdateRequest::set_state(::flyteidl::admin::ExecutionState value) {
   
-  ::flyteidl::admin::ExecutionStatus* temp = status_;
-  status_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::ExecutionStatus* ExecutionUpdateRequest::mutable_status() {
-  
-  if (status_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionStatus>(GetArenaNoVirtual());
-    status_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionUpdateRequest.status)
-  return status_;
-}
-inline void ExecutionUpdateRequest::set_allocated_status(::flyteidl::admin::ExecutionStatus* status) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete status_;
-  }
-  if (status) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      status = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, status, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  status_ = status;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionUpdateRequest.status)
+  state_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionUpdateRequest.state)
 }
 
 // -------------------------------------------------------------------
 
-// ExecutionStatus
+// ExecutionStateChangeDetails
 
-// .flyteidl.admin.ExecutionStatus.ExecutionState state = 1;
-inline void ExecutionStatus::clear_state() {
+// .flyteidl.admin.ExecutionState state = 1;
+inline void ExecutionStateChangeDetails::clear_state() {
   state_ = 0;
 }
-inline ::flyteidl::admin::ExecutionStatus_ExecutionState ExecutionStatus::state() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStatus.state)
-  return static_cast< ::flyteidl::admin::ExecutionStatus_ExecutionState >(state_);
+inline ::flyteidl::admin::ExecutionState ExecutionStateChangeDetails::state() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStateChangeDetails.state)
+  return static_cast< ::flyteidl::admin::ExecutionState >(state_);
 }
-inline void ExecutionStatus::set_state(::flyteidl::admin::ExecutionStatus_ExecutionState value) {
+inline void ExecutionStateChangeDetails::set_state(::flyteidl::admin::ExecutionState value) {
   
   state_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionStatus.state)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionStateChangeDetails.state)
 }
 
 // .google.protobuf.Timestamp occurred_at = 2;
-inline bool ExecutionStatus::has_occurred_at() const {
+inline bool ExecutionStateChangeDetails::has_occurred_at() const {
   return this != internal_default_instance() && occurred_at_ != nullptr;
 }
-inline const ::google::protobuf::Timestamp& ExecutionStatus::occurred_at() const {
+inline const ::google::protobuf::Timestamp& ExecutionStateChangeDetails::occurred_at() const {
   const ::google::protobuf::Timestamp* p = occurred_at_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStatus.occurred_at)
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStateChangeDetails.occurred_at)
   return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
       &::google::protobuf::_Timestamp_default_instance_);
 }
-inline ::google::protobuf::Timestamp* ExecutionStatus::release_occurred_at() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionStatus.occurred_at)
+inline ::google::protobuf::Timestamp* ExecutionStateChangeDetails::release_occurred_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionStateChangeDetails.occurred_at)
   
   ::google::protobuf::Timestamp* temp = occurred_at_;
   occurred_at_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Timestamp* ExecutionStatus::mutable_occurred_at() {
+inline ::google::protobuf::Timestamp* ExecutionStateChangeDetails::mutable_occurred_at() {
   
   if (occurred_at_ == nullptr) {
     auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
     occurred_at_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionStatus.occurred_at)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionStateChangeDetails.occurred_at)
   return occurred_at_;
 }
-inline void ExecutionStatus::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
+inline void ExecutionStateChangeDetails::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(occurred_at_);
@@ -6300,7 +6249,60 @@ inline void ExecutionStatus::set_allocated_occurred_at(::google::protobuf::Times
     
   }
   occurred_at_ = occurred_at;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionStatus.occurred_at)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionStateChangeDetails.occurred_at)
+}
+
+// string principal = 3;
+inline void ExecutionStateChangeDetails::clear_principal() {
+  principal_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ExecutionStateChangeDetails::principal() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionStateChangeDetails.principal)
+  return principal_.GetNoArena();
+}
+inline void ExecutionStateChangeDetails::set_principal(const ::std::string& value) {
+  
+  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionStateChangeDetails.principal)
+}
+#if LANG_CXX11
+inline void ExecutionStateChangeDetails::set_principal(::std::string&& value) {
+  
+  principal_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.ExecutionStateChangeDetails.principal)
+}
+#endif
+inline void ExecutionStateChangeDetails::set_principal(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionStateChangeDetails.principal)
+}
+inline void ExecutionStateChangeDetails::set_principal(const char* value, size_t size) {
+  
+  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionStateChangeDetails.principal)
+}
+inline ::std::string* ExecutionStateChangeDetails::mutable_principal() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionStateChangeDetails.principal)
+  return principal_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ExecutionStateChangeDetails::release_principal() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionStateChangeDetails.principal)
+  
+  return principal_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ExecutionStateChangeDetails::set_allocated_principal(::std::string* principal) {
+  if (principal != nullptr) {
+    
+  } else {
+    
+  }
+  principal_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), principal);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionStateChangeDetails.principal)
 }
 
 // -------------------------------------------------------------------
@@ -6364,10 +6366,10 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::ExecutionMetadata_ExecutionMode>() {
   return ::flyteidl::admin::ExecutionMetadata_ExecutionMode_descriptor();
 }
-template <> struct is_proto_enum< ::flyteidl::admin::ExecutionStatus_ExecutionState> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::admin::ExecutionState> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::ExecutionStatus_ExecutionState>() {
-  return ::flyteidl::admin::ExecutionStatus_ExecutionState_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::ExecutionState>() {
+  return ::flyteidl::admin::ExecutionState_descriptor();
 }
 
 }  // namespace protobuf

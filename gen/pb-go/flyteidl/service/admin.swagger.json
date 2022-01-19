@@ -2991,15 +2991,6 @@
       "default": "MANUAL",
       "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution.\n - RECOVERED: This execution was recovered from another execution."
     },
-    "ExecutionStatusExecutionState": {
-      "type": "string",
-      "enum": [
-        "EXECUTION_ACTIVE",
-        "EXECUTION_ARCHIVED"
-      ],
-      "default": "EXECUTION_ACTIVE",
-      "description": "The state of the execution is used to control its visibility in the UI/CLI.\n\n - EXECUTION_ACTIVE: By default, all executions are considered active.\n - EXECUTION_ARCHIVED: Archived executions are no longer visible in the UI."
-    },
     "IOStrategyDownloadMode": {
       "type": "string",
       "enum": [
@@ -3370,8 +3361,9 @@
           "$ref": "#/definitions/coreIdentifier",
           "description": "Identifies the workflow definition for this execution."
         },
-        "status": {
-          "$ref": "#/definitions/adminExecutionStatus"
+        "state_change_details": {
+          "$ref": "#/definitions/adminExecutionStateChangeDetails",
+          "title": "Provides the details of the last stage change"
         }
       },
       "title": "Encapsulates the results of the Execution"
@@ -3567,16 +3559,30 @@
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
     },
-    "adminExecutionStatus": {
+    "adminExecutionState": {
+      "type": "string",
+      "enum": [
+        "EXECUTION_ACTIVE",
+        "EXECUTION_ARCHIVED"
+      ],
+      "default": "EXECUTION_ACTIVE",
+      "description": "The state of the execution is used to control its visibility in the UI/CLI.\n\n - EXECUTION_ACTIVE: By default, all executions are considered active.\n - EXECUTION_ARCHIVED: Archived executions are no longer visible in the UI."
+    },
+    "adminExecutionStateChangeDetails": {
       "type": "object",
       "properties": {
         "state": {
-          "$ref": "#/definitions/ExecutionStatusExecutionState"
+          "$ref": "#/definitions/adminExecutionState",
+          "description": "The state of the execution is used to control its visibility in the UI/CLI."
         },
         "occurred_at": {
           "type": "string",
           "format": "date-time",
           "description": "This timestamp represents when the state changed."
+        },
+        "principal": {
+          "type": "string",
+          "title": "Identifies the entity (if any) responsible for causing the state change of the execution"
         }
       }
     },
@@ -3604,9 +3610,9 @@
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
           "title": "Identifier of the execution to update"
         },
-        "status": {
-          "$ref": "#/definitions/adminExecutionStatus",
-          "title": "Status object to set as the new value"
+        "state": {
+          "$ref": "#/definitions/adminExecutionState",
+          "title": "State to set as the new value active/archive"
         }
       }
     },

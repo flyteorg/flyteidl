@@ -2685,16 +2685,6 @@ definitions:
     - "CHILD_WORKFLOW"
     - "RECOVERED"
     default: "MANUAL"
-  ExecutionStatusExecutionState:
-    type: "string"
-    description: "The state of the execution is used to control its visibility in\
-      \ the UI/CLI.\n\n - EXECUTION_ACTIVE: By default, all executions are considered\
-      \ active.\n - EXECUTION_ARCHIVED: Archived executions are no longer visible\
-      \ in the UI."
-    enum:
-    - "EXECUTION_ACTIVE"
-    - "EXECUTION_ARCHIVED"
-    default: "EXECUTION_ACTIVE"
   IOStrategyDownloadMode:
     type: "string"
     title: "Mode to use for downloading"
@@ -3030,6 +3020,10 @@ definitions:
           project: "project"
           version: "version"
         created_at: "2000-01-23T04:56:07.000+00:00"
+        state_change_details:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          principal: "principal"
+          state: {}
         error:
           code: "code"
           kind: {}
@@ -3077,9 +3071,6 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
-        status:
-          occurred_at: "2000-01-23T04:56:07.000+00:00"
-          state: {}
       spec:
         launch_plan:
           domain: "domain"
@@ -3251,8 +3242,9 @@ definitions:
       workflow_id:
         description: "Identifies the workflow definition for this execution."
         $ref: "#/definitions/coreIdentifier"
-      status:
-        $ref: "#/definitions/adminExecutionStatus"
+      state_change_details:
+        title: "Provides the details of the last stage change"
+        $ref: "#/definitions/adminExecutionStateChangeDetails"
     title: "Encapsulates the results of the Execution"
     example:
       outputs:
@@ -3267,6 +3259,10 @@ definitions:
         project: "project"
         version: "version"
       created_at: "2000-01-23T04:56:07.000+00:00"
+      state_change_details:
+        occurred_at: "2000-01-23T04:56:07.000+00:00"
+        principal: "principal"
+        state: {}
       error:
         code: "code"
         kind: {}
@@ -3314,9 +3310,6 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
-      status:
-        occurred_at: "2000-01-23T04:56:07.000+00:00"
-        state: {}
   adminExecutionClusterLabel:
     type: "object"
     properties:
@@ -3395,6 +3388,10 @@ definitions:
             project: "project"
             version: "version"
           created_at: "2000-01-23T04:56:07.000+00:00"
+          state_change_details:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            principal: "principal"
+            state: {}
           error:
             code: "code"
             kind: {}
@@ -3442,9 +3439,6 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
-          status:
-            occurred_at: "2000-01-23T04:56:07.000+00:00"
-            state: {}
         spec:
           launch_plan:
             domain: "domain"
@@ -3578,6 +3572,10 @@ definitions:
             project: "project"
             version: "version"
           created_at: "2000-01-23T04:56:07.000+00:00"
+          state_change_details:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            principal: "principal"
+            state: {}
           error:
             code: "code"
             kind: {}
@@ -3625,9 +3623,6 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
-          status:
-            occurred_at: "2000-01-23T04:56:07.000+00:00"
-            state: {}
         spec:
           launch_plan:
             domain: "domain"
@@ -4002,17 +3997,34 @@ definitions:
       auth_role:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
-  adminExecutionStatus:
+  adminExecutionState:
+    type: "string"
+    description: "The state of the execution is used to control its visibility in\
+      \ the UI/CLI.\n\n - EXECUTION_ACTIVE: By default, all executions are considered\
+      \ active.\n - EXECUTION_ARCHIVED: Archived executions are no longer visible\
+      \ in the UI."
+    enum:
+    - "EXECUTION_ACTIVE"
+    - "EXECUTION_ARCHIVED"
+    default: "EXECUTION_ACTIVE"
+  adminExecutionStateChangeDetails:
     type: "object"
     properties:
       state:
-        $ref: "#/definitions/ExecutionStatusExecutionState"
+        description: "The state of the execution is used to control its visibility\
+          \ in the UI/CLI."
+        $ref: "#/definitions/adminExecutionState"
       occurred_at:
         type: "string"
         format: "date-time"
         description: "This timestamp represents when the state changed."
+      principal:
+        type: "string"
+        title: "Identifies the entity (if any) responsible for causing the state change\
+          \ of the execution"
     example:
       occurred_at: "2000-01-23T04:56:07.000+00:00"
+      principal: "principal"
       state: {}
   adminExecutionTerminateRequest:
     type: "object"
@@ -4037,9 +4049,9 @@ definitions:
       id:
         title: "Identifier of the execution to update"
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
-      status:
-        title: "Status object to set as the new value"
-        $ref: "#/definitions/adminExecutionStatus"
+      state:
+        title: "State to set as the new value active/archive"
+        $ref: "#/definitions/adminExecutionState"
   adminExecutionUpdateResponse:
     type: "object"
   adminFixedRate:
