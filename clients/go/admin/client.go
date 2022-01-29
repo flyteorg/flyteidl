@@ -28,6 +28,7 @@ import (
 var (
 	once            = sync.Once{}
 	adminConnection *grpc.ClientConn
+	authOpt         *grpc.DialOption
 
 	// A new connection just for auth metadata service since it will be used to retrieve auth
 	// related information that's needed to initialize the Clientset.
@@ -182,7 +183,6 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 // initializeClients creates an AdminClient, AuthServiceClient and IdentityServiceClient with a shared Admin connection
 // for the process. Note that if called with different cfg/dialoptions, it will not refresh the connection.
 func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
-	var cs Clientset
 	once.Do(func() {
 		authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
 		if err != nil {
@@ -200,8 +200,8 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		}
 
 		if opt != nil {
-			cs.authOpt = opt
 			opts = append(opts, opt)
+			authOpt = &opt
 		}
 
 		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
@@ -210,10 +210,12 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		}
 	})
 
+	var cs Clientset
 	cs.adminServiceClient = NewAdminClient(ctx, adminConnection)
 	cs.authMetadataServiceClient = service.NewAuthMetadataServiceClient(adminConnection)
 	cs.identityServiceClient = service.NewIdentityServiceClient(adminConnection)
 	cs.healthServiceClient = grpc_health_v1.NewHealthClient(adminConnection)
+	cs.authOpt = *authOpt
 	return &cs, nil
 }
 
