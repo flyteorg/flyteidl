@@ -215,7 +215,9 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 	cs.authMetadataServiceClient = service.NewAuthMetadataServiceClient(adminConnection)
 	cs.identityServiceClient = service.NewIdentityServiceClient(adminConnection)
 	cs.healthServiceClient = grpc_health_v1.NewHealthClient(adminConnection)
-	cs.authOpt = *authOpt
+	if authOpt != nil {
+		cs.authOpt = *authOpt
+	}
 	return &cs, nil
 }
 
