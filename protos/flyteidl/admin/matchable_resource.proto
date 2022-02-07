@@ -104,16 +104,16 @@ message WorkflowExecutionConfig {
   // Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness.
   int32 max_parallelism = 1;
 
-  // Indicates security context for permissions triggered with this launch plan
+  // Indicates security context permissions for executions triggered with this matchable attribute. 
   core.SecurityContext security_context = 2;
 
   // Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
   RawOutputDataConfig raw_output_data_config = 3;
 
-  // Custom labels to be applied to the execution resource.
+  // Custom labels to be applied to a triggered execution resource.
   Labels labels = 6;
 
-  // Custom annotations to be applied to the execution resource.
+  // Custom annotations to be applied to a triggered execution resource.
   Annotations annotations = 7;
 }
 
