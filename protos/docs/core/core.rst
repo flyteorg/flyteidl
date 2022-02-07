@@ -832,6 +832,7 @@ WorkflowExecution.Phase
    "FAILED", "6", ""
    "ABORTED", "7", ""
    "TIMED_OUT", "8", ""
+   "ABORTING", "9", ""
 
  
 
@@ -1506,6 +1507,7 @@ Scalar
    "none_type", ":ref:`ref_flyteidl.core.Void`", "", ""
    "error", ":ref:`ref_flyteidl.core.Error`", "", ""
    "generic", ":ref:`ref_google.protobuf.Struct`", "", ""
+   "structured_dataset", ":ref:`ref_flyteidl.core.StructuredDataset`", "", ""
 
 
 
@@ -1528,6 +1530,49 @@ A strongly typed schema that defines the interface of data retrieved from the un
 
    "uri", ":ref:`ref_string`", "", ""
    "type", ":ref:`ref_flyteidl.core.SchemaType`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.StructuredDataset:
+
+StructuredDataset
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: StructuredDataset type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "uri", ":ref:`ref_string`", "", "String location uniquely identifying where the data is. Should start with the storage location (e.g. s3://, gs://, bq://, etc.)"
+   "metadata", ":ref:`ref_flyteidl.core.StructuredDatasetMetadata`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.StructuredDatasetMetadata:
+
+StructuredDatasetMetadata
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: StructuredDatasetMetadata type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "structured_dataset_type", ":ref:`ref_flyteidl.core.StructuredDatasetType`", "", "Bundle the type information along with the literal. This is here because StructuredDatasets can often be more defined at run time than at compile time. That is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset, without any column information, but at run time, you might have that column information. flytekit python will copy this type information into the literal, from the type information, if not provided by the various plugins (encoders). Since this field is run time generated, it&#39;s not used for any type checking."
 
 
 
@@ -2336,6 +2381,7 @@ Defines a strong type to allow type checking between interfaces.
    "map_value_type", ":ref:`ref_flyteidl.core.LiteralType`", "", "Defines the type of the value of a map type. The type of the key is always a string."
    "blob", ":ref:`ref_flyteidl.core.BlobType`", "", "A blob might have specialized implementation details depending on associated metadata."
    "enum_type", ":ref:`ref_flyteidl.core.EnumType`", "", "Defines an enum with pre-defined string values."
+   "structured_dataset_type", ":ref:`ref_flyteidl.core.StructuredDatasetType`", "", "Generalized schema support"
    "metadata", ":ref:`ref_google.protobuf.Struct`", "", "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking. This might be used by consumers to identify special behavior or display extended information for the type."
    "annotation", ":ref:`ref_flyteidl.core.TypeAnnotation`", "", "This field contains arbitrary data that might have special semantic meaning for the client but does not effect internal flyte behavior."
 
@@ -2404,6 +2450,52 @@ SchemaType.SchemaColumn
 
    "name", ":ref:`ref_string`", "", "A unique name -within the schema type- for the column"
    "type", ":ref:`ref_flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType`", "", "The column type. This allows a limited set of types currently."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.StructuredDatasetType:
+
+StructuredDatasetType
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: StructuredDatasetType type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "columns", ":ref:`ref_flyteidl.core.StructuredDatasetType.DatasetColumn`", "repeated", "A list of ordered columns this schema comprises of."
+   "format", ":ref:`ref_string`", "", "This is the storage format, the format of the bits at rest parquet, feather, csv, etc. For two types to be compatible, the format will need to be an exact match."
+   "external_schema_type", ":ref:`ref_string`", "", "This is a string representing the type that the bytes in external_schema_bytes are formatted in. This is an optional field that will not be used for type checking."
+   "external_schema_bytes", ":ref:`ref_bytes`", "", "The serialized bytes of a third-party schema library like Arrow. This is an optional field that will not be used for type checking."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.StructuredDatasetType.DatasetColumn:
+
+StructuredDatasetType.DatasetColumn
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: StructuredDatasetType.DatasetColumn type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "name", ":ref:`ref_string`", "", "A unique name within the schema type for the column."
+   "literal_type", ":ref:`ref_flyteidl.core.LiteralType`", "", "The column type."
 
 
 

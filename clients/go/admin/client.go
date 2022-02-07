@@ -3,6 +3,7 @@ package admin
 import (
 	"context"
 	"crypto/tls"
+	"crypto/x509"
 	"errors"
 	"fmt"
 
@@ -27,6 +28,7 @@ import (
 var (
 	once            = sync.Once{}
 	adminConnection *grpc.ClientConn
+	authOpt         *grpc.DialOption
 
 	// A new connection just for auth metadata service since it will be used to retrieve auth
 	// related information that's needed to initialize the Clientset.
@@ -40,6 +42,11 @@ type Clientset struct {
 	authMetadataServiceClient service.AuthMetadataServiceClient
 	healthServiceClient       grpc_health_v1.HealthClient
 	identityServiceClient     service.IdentityServiceClient
+	authOpt                   grpc.DialOption
+}
+
+func (c Clientset) AuthOpt() grpc.DialOption {
+	return c.authOpt
 }
 
 // AdminClient retrieves the AdminServiceClient
@@ -135,17 +142,23 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
 	} else {
-		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
 		var creds credentials.TransportCredentials
+		var caCerts *x509.CertPool
+		var err error
+		tlsConfig := &tls.Config{} //nolint
+		// Use the cacerts passed in from the config parameter
+		if len(cfg.CACertFilePath) > 0 {
+			caCerts, err = readCACerts(cfg.CACertFilePath)
+			if err != nil {
+				return nil, err
+			}
+		}
 		if cfg.InsecureSkipVerify {
 			logger.Warnf(ctx, "using insecureSkipVerify. Server's certificate chain and host name wont be verified. Caution : shouldn't be used for production usecases")
-			tlsConfig := &tls.Config{
-				InsecureSkipVerify: true, //nolint
-
-			}
+			tlsConfig.InsecureSkipVerify = true
 			creds = credentials.NewTLS(tlsConfig)
 		} else {
-			creds = credentials.NewClientTLSFromCert(nil, "")
+			creds = credentials.NewClientTLSFromCert(caCerts, "")
 		}
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 	}
@@ -188,6 +201,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 
 		if opt != nil {
 			opts = append(opts, opt)
+			authOpt = &opt
 		}
 
 		adminConnection, err = NewAdminConnection(ctx, cfg, opts...)
@@ -201,6 +215,9 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 	cs.authMetadataServiceClient = service.NewAuthMetadataServiceClient(adminConnection)
 	cs.identityServiceClient = service.NewIdentityServiceClient(adminConnection)
 	cs.healthServiceClient = grpc_health_v1.NewHealthClient(adminConnection)
+	if authOpt != nil {
+		cs.authOpt = *authOpt
+	}
 	return &cs, nil
 }
 
