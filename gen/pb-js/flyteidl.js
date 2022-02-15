@@ -16176,6 +16176,535 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskExecutionMetadata;
         })();
 
+        event.CloudEvent = (function() {
+
+            /**
+             * Properties of a CloudEvent.
+             * @memberof flyteidl.event
+             * @interface ICloudEvent
+             * @property {string|null} [id] CloudEvent id
+             * @property {string|null} [source] CloudEvent source
+             * @property {string|null} [specVersion] CloudEvent specVersion
+             * @property {string|null} [type] CloudEvent type
+             * @property {Object.<string,flyteidl.event.ICloudEventAttributeValue>|null} [attributes] CloudEvent attributes
+             * @property {Uint8Array|null} [binaryData] CloudEvent binaryData
+             * @property {string|null} [textData] CloudEvent textData
+             * @property {google.protobuf.IAny|null} [protoData] CloudEvent protoData
+             */
+
+            /**
+             * Constructs a new CloudEvent.
+             * @memberof flyteidl.event
+             * @classdesc Represents a CloudEvent.
+             * @implements ICloudEvent
+             * @constructor
+             * @param {flyteidl.event.ICloudEvent=} [properties] Properties to set
+             */
+            function CloudEvent(properties) {
+                this.attributes = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CloudEvent id.
+             * @member {string} id
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.id = "";
+
+            /**
+             * CloudEvent source.
+             * @member {string} source
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.source = "";
+
+            /**
+             * CloudEvent specVersion.
+             * @member {string} specVersion
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.specVersion = "";
+
+            /**
+             * CloudEvent type.
+             * @member {string} type
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.type = "";
+
+            /**
+             * CloudEvent attributes.
+             * @member {Object.<string,flyteidl.event.ICloudEventAttributeValue>} attributes
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.attributes = $util.emptyObject;
+
+            /**
+             * CloudEvent binaryData.
+             * @member {Uint8Array} binaryData
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.binaryData = $util.newBuffer([]);
+
+            /**
+             * CloudEvent textData.
+             * @member {string} textData
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.textData = "";
+
+            /**
+             * CloudEvent protoData.
+             * @member {google.protobuf.IAny|null|undefined} protoData
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            CloudEvent.prototype.protoData = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * CloudEvent data.
+             * @member {"binaryData"|"textData"|"protoData"|undefined} data
+             * @memberof flyteidl.event.CloudEvent
+             * @instance
+             */
+            Object.defineProperty(CloudEvent.prototype, "data", {
+                get: $util.oneOfGetter($oneOfFields = ["binaryData", "textData", "protoData"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new CloudEvent instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.CloudEvent
+             * @static
+             * @param {flyteidl.event.ICloudEvent=} [properties] Properties to set
+             * @returns {flyteidl.event.CloudEvent} CloudEvent instance
+             */
+            CloudEvent.create = function create(properties) {
+                return new CloudEvent(properties);
+            };
+
+            /**
+             * Encodes the specified CloudEvent message. Does not implicitly {@link flyteidl.event.CloudEvent.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.CloudEvent
+             * @static
+             * @param {flyteidl.event.ICloudEvent} message CloudEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CloudEvent.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.source != null && message.hasOwnProperty("source"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.source);
+                if (message.specVersion != null && message.hasOwnProperty("specVersion"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.specVersion);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.type);
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.event.CloudEventAttributeValue.encode(message.attributes[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                if (message.binaryData != null && message.hasOwnProperty("binaryData"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.binaryData);
+                if (message.textData != null && message.hasOwnProperty("textData"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.textData);
+                if (message.protoData != null && message.hasOwnProperty("protoData"))
+                    $root.google.protobuf.Any.encode(message.protoData, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CloudEvent message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.CloudEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.CloudEvent} CloudEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CloudEvent.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEvent(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.source = reader.string();
+                        break;
+                    case 3:
+                        message.specVersion = reader.string();
+                        break;
+                    case 4:
+                        message.type = reader.string();
+                        break;
+                    case 5:
+                        reader.skip().pos++;
+                        if (message.attributes === $util.emptyObject)
+                            message.attributes = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.attributes[key] = $root.flyteidl.event.CloudEventAttributeValue.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.binaryData = reader.bytes();
+                        break;
+                    case 7:
+                        message.textData = reader.string();
+                        break;
+                    case 8:
+                        message.protoData = $root.google.protobuf.Any.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CloudEvent message.
+             * @function verify
+             * @memberof flyteidl.event.CloudEvent
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CloudEvent.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.source != null && message.hasOwnProperty("source"))
+                    if (!$util.isString(message.source))
+                        return "source: string expected";
+                if (message.specVersion != null && message.hasOwnProperty("specVersion"))
+                    if (!$util.isString(message.specVersion))
+                        return "specVersion: string expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    if (!$util.isString(message.type))
+                        return "type: string expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    if (!$util.isObject(message.attributes))
+                        return "attributes: object expected";
+                    let key = Object.keys(message.attributes);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.event.CloudEventAttributeValue.verify(message.attributes[key[i]]);
+                        if (error)
+                            return "attributes." + error;
+                    }
+                }
+                if (message.binaryData != null && message.hasOwnProperty("binaryData")) {
+                    properties.data = 1;
+                    if (!(message.binaryData && typeof message.binaryData.length === "number" || $util.isString(message.binaryData)))
+                        return "binaryData: buffer expected";
+                }
+                if (message.textData != null && message.hasOwnProperty("textData")) {
+                    if (properties.data === 1)
+                        return "data: multiple values";
+                    properties.data = 1;
+                    if (!$util.isString(message.textData))
+                        return "textData: string expected";
+                }
+                if (message.protoData != null && message.hasOwnProperty("protoData")) {
+                    if (properties.data === 1)
+                        return "data: multiple values";
+                    properties.data = 1;
+                    {
+                        let error = $root.google.protobuf.Any.verify(message.protoData);
+                        if (error)
+                            return "protoData." + error;
+                    }
+                }
+                return null;
+            };
+
+            return CloudEvent;
+        })();
+
+        event.CloudEventAttributeValue = (function() {
+
+            /**
+             * Properties of a CloudEventAttributeValue.
+             * @memberof flyteidl.event
+             * @interface ICloudEventAttributeValue
+             * @property {boolean|null} [ceBoolean] CloudEventAttributeValue ceBoolean
+             * @property {number|null} [ceInteger] CloudEventAttributeValue ceInteger
+             * @property {string|null} [ceString] CloudEventAttributeValue ceString
+             * @property {Uint8Array|null} [ceBytes] CloudEventAttributeValue ceBytes
+             * @property {string|null} [ceUri] CloudEventAttributeValue ceUri
+             * @property {string|null} [ceUriRef] CloudEventAttributeValue ceUriRef
+             * @property {google.protobuf.ITimestamp|null} [ceTimestamp] CloudEventAttributeValue ceTimestamp
+             */
+
+            /**
+             * Constructs a new CloudEventAttributeValue.
+             * @memberof flyteidl.event
+             * @classdesc Represents a CloudEventAttributeValue.
+             * @implements ICloudEventAttributeValue
+             * @constructor
+             * @param {flyteidl.event.ICloudEventAttributeValue=} [properties] Properties to set
+             */
+            function CloudEventAttributeValue(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CloudEventAttributeValue ceBoolean.
+             * @member {boolean} ceBoolean
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceBoolean = false;
+
+            /**
+             * CloudEventAttributeValue ceInteger.
+             * @member {number} ceInteger
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceInteger = 0;
+
+            /**
+             * CloudEventAttributeValue ceString.
+             * @member {string} ceString
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceString = "";
+
+            /**
+             * CloudEventAttributeValue ceBytes.
+             * @member {Uint8Array} ceBytes
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceBytes = $util.newBuffer([]);
+
+            /**
+             * CloudEventAttributeValue ceUri.
+             * @member {string} ceUri
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceUri = "";
+
+            /**
+             * CloudEventAttributeValue ceUriRef.
+             * @member {string} ceUriRef
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceUriRef = "";
+
+            /**
+             * CloudEventAttributeValue ceTimestamp.
+             * @member {google.protobuf.ITimestamp|null|undefined} ceTimestamp
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            CloudEventAttributeValue.prototype.ceTimestamp = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * CloudEventAttributeValue attr.
+             * @member {"ceBoolean"|"ceInteger"|"ceString"|"ceBytes"|"ceUri"|"ceUriRef"|"ceTimestamp"|undefined} attr
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @instance
+             */
+            Object.defineProperty(CloudEventAttributeValue.prototype, "attr", {
+                get: $util.oneOfGetter($oneOfFields = ["ceBoolean", "ceInteger", "ceString", "ceBytes", "ceUri", "ceUriRef", "ceTimestamp"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new CloudEventAttributeValue instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @static
+             * @param {flyteidl.event.ICloudEventAttributeValue=} [properties] Properties to set
+             * @returns {flyteidl.event.CloudEventAttributeValue} CloudEventAttributeValue instance
+             */
+            CloudEventAttributeValue.create = function create(properties) {
+                return new CloudEventAttributeValue(properties);
+            };
+
+            /**
+             * Encodes the specified CloudEventAttributeValue message. Does not implicitly {@link flyteidl.event.CloudEventAttributeValue.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @static
+             * @param {flyteidl.event.ICloudEventAttributeValue} message CloudEventAttributeValue message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CloudEventAttributeValue.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ceBoolean != null && message.hasOwnProperty("ceBoolean"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.ceBoolean);
+                if (message.ceInteger != null && message.hasOwnProperty("ceInteger"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.ceInteger);
+                if (message.ceString != null && message.hasOwnProperty("ceString"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ceString);
+                if (message.ceBytes != null && message.hasOwnProperty("ceBytes"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.ceBytes);
+                if (message.ceUri != null && message.hasOwnProperty("ceUri"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.ceUri);
+                if (message.ceUriRef != null && message.hasOwnProperty("ceUriRef"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.ceUriRef);
+                if (message.ceTimestamp != null && message.hasOwnProperty("ceTimestamp"))
+                    $root.google.protobuf.Timestamp.encode(message.ceTimestamp, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CloudEventAttributeValue message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.CloudEventAttributeValue} CloudEventAttributeValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CloudEventAttributeValue.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CloudEventAttributeValue();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.ceBoolean = reader.bool();
+                        break;
+                    case 2:
+                        message.ceInteger = reader.int32();
+                        break;
+                    case 3:
+                        message.ceString = reader.string();
+                        break;
+                    case 4:
+                        message.ceBytes = reader.bytes();
+                        break;
+                    case 5:
+                        message.ceUri = reader.string();
+                        break;
+                    case 6:
+                        message.ceUriRef = reader.string();
+                        break;
+                    case 7:
+                        message.ceTimestamp = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CloudEventAttributeValue message.
+             * @function verify
+             * @memberof flyteidl.event.CloudEventAttributeValue
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CloudEventAttributeValue.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.ceBoolean != null && message.hasOwnProperty("ceBoolean")) {
+                    properties.attr = 1;
+                    if (typeof message.ceBoolean !== "boolean")
+                        return "ceBoolean: boolean expected";
+                }
+                if (message.ceInteger != null && message.hasOwnProperty("ceInteger")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    if (!$util.isInteger(message.ceInteger))
+                        return "ceInteger: integer expected";
+                }
+                if (message.ceString != null && message.hasOwnProperty("ceString")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    if (!$util.isString(message.ceString))
+                        return "ceString: string expected";
+                }
+                if (message.ceBytes != null && message.hasOwnProperty("ceBytes")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    if (!(message.ceBytes && typeof message.ceBytes.length === "number" || $util.isString(message.ceBytes)))
+                        return "ceBytes: buffer expected";
+                }
+                if (message.ceUri != null && message.hasOwnProperty("ceUri")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    if (!$util.isString(message.ceUri))
+                        return "ceUri: string expected";
+                }
+                if (message.ceUriRef != null && message.hasOwnProperty("ceUriRef")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    if (!$util.isString(message.ceUriRef))
+                        return "ceUriRef: string expected";
+                }
+                if (message.ceTimestamp != null && message.hasOwnProperty("ceTimestamp")) {
+                    if (properties.attr === 1)
+                        return "attr: multiple values";
+                    properties.attr = 1;
+                    {
+                        let error = $root.google.protobuf.Timestamp.verify(message.ceTimestamp);
+                        if (error)
+                            return "ceTimestamp." + error;
+                    }
+                }
+                return null;
+            };
+
+            return CloudEventAttributeValue;
+        })();
+
         return event;
     })();
 
@@ -39275,6 +39804,133 @@ export const google = $root.google = (() => {
             };
 
             return ListValue;
+        })();
+
+        protobuf.Any = (function() {
+
+            /**
+             * Properties of an Any.
+             * @memberof google.protobuf
+             * @interface IAny
+             * @property {string|null} [type_url] Any type_url
+             * @property {Uint8Array|null} [value] Any value
+             */
+
+            /**
+             * Constructs a new Any.
+             * @memberof google.protobuf
+             * @classdesc Represents an Any.
+             * @implements IAny
+             * @constructor
+             * @param {google.protobuf.IAny=} [properties] Properties to set
+             */
+            function Any(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Any type_url.
+             * @member {string} type_url
+             * @memberof google.protobuf.Any
+             * @instance
+             */
+            Any.prototype.type_url = "";
+
+            /**
+             * Any value.
+             * @member {Uint8Array} value
+             * @memberof google.protobuf.Any
+             * @instance
+             */
+            Any.prototype.value = $util.newBuffer([]);
+
+            /**
+             * Creates a new Any instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {google.protobuf.IAny=} [properties] Properties to set
+             * @returns {google.protobuf.Any} Any instance
+             */
+            Any.create = function create(properties) {
+                return new Any(properties);
+            };
+
+            /**
+             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {google.protobuf.IAny} message Any message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Any.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type_url != null && message.hasOwnProperty("type_url"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_url);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
+                return writer;
+            };
+
+            /**
+             * Decodes an Any message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.Any} Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Any.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Any();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type_url = reader.string();
+                        break;
+                    case 2:
+                        message.value = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Any message.
+             * @function verify
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Any.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type_url != null && message.hasOwnProperty("type_url"))
+                    if (!$util.isString(message.type_url))
+                        return "type_url: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
+                        return "value: buffer expected";
+                return null;
+            };
+
+            return Any;
         })();
 
         protobuf.FileDescriptorSet = (function() {

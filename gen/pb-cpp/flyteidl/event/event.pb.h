@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/literals.pb.h"
@@ -37,6 +40,7 @@
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/catalog.pb.h"
+#include <google/protobuf/any.pb.h>
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/struct.pb.h>
 // @@protoc_insertion_point(includes)
@@ -49,7 +53,7 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[11]
+  static const ::google::protobuf::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -58,6 +62,15 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto();
 namespace flyteidl {
 namespace event {
+class CloudEvent;
+class CloudEventDefaultTypeInternal;
+extern CloudEventDefaultTypeInternal _CloudEvent_default_instance_;
+class CloudEventAttributeValue;
+class CloudEventAttributeValueDefaultTypeInternal;
+extern CloudEventAttributeValueDefaultTypeInternal _CloudEventAttributeValue_default_instance_;
+class CloudEvent_AttributesEntry_DoNotUse;
+class CloudEvent_AttributesEntry_DoNotUseDefaultTypeInternal;
+extern CloudEvent_AttributesEntry_DoNotUseDefaultTypeInternal _CloudEvent_AttributesEntry_DoNotUse_default_instance_;
 class DynamicWorkflowNodeMetadata;
 class DynamicWorkflowNodeMetadataDefaultTypeInternal;
 extern DynamicWorkflowNodeMetadataDefaultTypeInternal _DynamicWorkflowNodeMetadata_default_instance_;
@@ -95,6 +108,9 @@ extern WorkflowNodeMetadataDefaultTypeInternal _WorkflowNodeMetadata_default_ins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::event::CloudEvent* Arena::CreateMaybeMessage<::flyteidl::event::CloudEvent>(Arena*);
+template<> ::flyteidl::event::CloudEventAttributeValue* Arena::CreateMaybeMessage<::flyteidl::event::CloudEventAttributeValue>(Arena*);
+template<> ::flyteidl::event::CloudEvent_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::event::CloudEvent_AttributesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::event::DynamicWorkflowNodeMetadata* Arena::CreateMaybeMessage<::flyteidl::event::DynamicWorkflowNodeMetadata>(Arena*);
 template<> ::flyteidl::event::ExternalResourceInfo* Arena::CreateMaybeMessage<::flyteidl::event::ExternalResourceInfo>(Arena*);
 template<> ::flyteidl::event::NodeExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::NodeExecutionEvent>(Arena*);
@@ -2047,6 +2063,512 @@ class TaskExecutionMetadata final :
   ::google::protobuf::internal::ArenaStringPtr plugin_identifier_;
   int instance_class_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CloudEvent_AttributesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<CloudEvent_AttributesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::event::CloudEventAttributeValue,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<CloudEvent_AttributesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::event::CloudEventAttributeValue,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  CloudEvent_AttributesEntry_DoNotUse();
+  CloudEvent_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const CloudEvent_AttributesEntry_DoNotUse& other);
+  static const CloudEvent_AttributesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CloudEvent_AttributesEntry_DoNotUse*>(&_CloudEvent_AttributesEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class CloudEvent final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.CloudEvent) */ {
+ public:
+  CloudEvent();
+  virtual ~CloudEvent();
+
+  CloudEvent(const CloudEvent& from);
+
+  inline CloudEvent& operator=(const CloudEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CloudEvent(CloudEvent&& from) noexcept
+    : CloudEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline CloudEvent& operator=(CloudEvent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CloudEvent& default_instance();
+
+  enum DataCase {
+    kBinaryData = 6,
+    kTextData = 7,
+    kProtoData = 8,
+    DATA_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CloudEvent* internal_default_instance() {
+    return reinterpret_cast<const CloudEvent*>(
+               &_CloudEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(CloudEvent* other);
+  friend void swap(CloudEvent& a, CloudEvent& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CloudEvent* New() const final {
+    return CreateMaybeMessage<CloudEvent>(nullptr);
+  }
+
+  CloudEvent* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CloudEvent>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CloudEvent& from);
+  void MergeFrom(const CloudEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CloudEvent* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, .flyteidl.event.CloudEventAttributeValue> attributes = 5;
+  int attributes_size() const;
+  void clear_attributes();
+  static const int kAttributesFieldNumber = 5;
+  const ::google::protobuf::Map< ::std::string, ::flyteidl::event::CloudEventAttributeValue >&
+      attributes() const;
+  ::google::protobuf::Map< ::std::string, ::flyteidl::event::CloudEventAttributeValue >*
+      mutable_attributes();
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string source = 2;
+  void clear_source();
+  static const int kSourceFieldNumber = 2;
+  const ::std::string& source() const;
+  void set_source(const ::std::string& value);
+  #if LANG_CXX11
+  void set_source(::std::string&& value);
+  #endif
+  void set_source(const char* value);
+  void set_source(const char* value, size_t size);
+  ::std::string* mutable_source();
+  ::std::string* release_source();
+  void set_allocated_source(::std::string* source);
+
+  // string spec_version = 3;
+  void clear_spec_version();
+  static const int kSpecVersionFieldNumber = 3;
+  const ::std::string& spec_version() const;
+  void set_spec_version(const ::std::string& value);
+  #if LANG_CXX11
+  void set_spec_version(::std::string&& value);
+  #endif
+  void set_spec_version(const char* value);
+  void set_spec_version(const char* value, size_t size);
+  ::std::string* mutable_spec_version();
+  ::std::string* release_spec_version();
+  void set_allocated_spec_version(::std::string* spec_version);
+
+  // string type = 4;
+  void clear_type();
+  static const int kTypeFieldNumber = 4;
+  const ::std::string& type() const;
+  void set_type(const ::std::string& value);
+  #if LANG_CXX11
+  void set_type(::std::string&& value);
+  #endif
+  void set_type(const char* value);
+  void set_type(const char* value, size_t size);
+  ::std::string* mutable_type();
+  ::std::string* release_type();
+  void set_allocated_type(::std::string* type);
+
+  // bytes binary_data = 6;
+  private:
+  bool has_binary_data() const;
+  public:
+  void clear_binary_data();
+  static const int kBinaryDataFieldNumber = 6;
+  const ::std::string& binary_data() const;
+  void set_binary_data(const ::std::string& value);
+  #if LANG_CXX11
+  void set_binary_data(::std::string&& value);
+  #endif
+  void set_binary_data(const char* value);
+  void set_binary_data(const void* value, size_t size);
+  ::std::string* mutable_binary_data();
+  ::std::string* release_binary_data();
+  void set_allocated_binary_data(::std::string* binary_data);
+
+  // string text_data = 7;
+  private:
+  bool has_text_data() const;
+  public:
+  void clear_text_data();
+  static const int kTextDataFieldNumber = 7;
+  const ::std::string& text_data() const;
+  void set_text_data(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text_data(::std::string&& value);
+  #endif
+  void set_text_data(const char* value);
+  void set_text_data(const char* value, size_t size);
+  ::std::string* mutable_text_data();
+  ::std::string* release_text_data();
+  void set_allocated_text_data(::std::string* text_data);
+
+  // .google.protobuf.Any proto_data = 8;
+  bool has_proto_data() const;
+  void clear_proto_data();
+  static const int kProtoDataFieldNumber = 8;
+  const ::google::protobuf::Any& proto_data() const;
+  ::google::protobuf::Any* release_proto_data();
+  ::google::protobuf::Any* mutable_proto_data();
+  void set_allocated_proto_data(::google::protobuf::Any* proto_data);
+
+  void clear_data();
+  DataCase data_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.event.CloudEvent)
+ private:
+  class HasBitSetters;
+  void set_has_binary_data();
+  void set_has_text_data();
+  void set_has_proto_data();
+
+  inline bool has_data() const;
+  inline void clear_has_data();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      CloudEvent_AttributesEntry_DoNotUse,
+      ::std::string, ::flyteidl::event::CloudEventAttributeValue,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > attributes_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr source_;
+  ::google::protobuf::internal::ArenaStringPtr spec_version_;
+  ::google::protobuf::internal::ArenaStringPtr type_;
+  union DataUnion {
+    DataUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr binary_data_;
+    ::google::protobuf::internal::ArenaStringPtr text_data_;
+    ::google::protobuf::Any* proto_data_;
+  } data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CloudEventAttributeValue final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.CloudEventAttributeValue) */ {
+ public:
+  CloudEventAttributeValue();
+  virtual ~CloudEventAttributeValue();
+
+  CloudEventAttributeValue(const CloudEventAttributeValue& from);
+
+  inline CloudEventAttributeValue& operator=(const CloudEventAttributeValue& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CloudEventAttributeValue(CloudEventAttributeValue&& from) noexcept
+    : CloudEventAttributeValue() {
+    *this = ::std::move(from);
+  }
+
+  inline CloudEventAttributeValue& operator=(CloudEventAttributeValue&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CloudEventAttributeValue& default_instance();
+
+  enum AttrCase {
+    kCeBoolean = 1,
+    kCeInteger = 2,
+    kCeString = 3,
+    kCeBytes = 4,
+    kCeUri = 5,
+    kCeUriRef = 6,
+    kCeTimestamp = 7,
+    ATTR_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CloudEventAttributeValue* internal_default_instance() {
+    return reinterpret_cast<const CloudEventAttributeValue*>(
+               &_CloudEventAttributeValue_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(CloudEventAttributeValue* other);
+  friend void swap(CloudEventAttributeValue& a, CloudEventAttributeValue& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CloudEventAttributeValue* New() const final {
+    return CreateMaybeMessage<CloudEventAttributeValue>(nullptr);
+  }
+
+  CloudEventAttributeValue* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CloudEventAttributeValue>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CloudEventAttributeValue& from);
+  void MergeFrom(const CloudEventAttributeValue& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CloudEventAttributeValue* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool ce_boolean = 1;
+  private:
+  bool has_ce_boolean() const;
+  public:
+  void clear_ce_boolean();
+  static const int kCeBooleanFieldNumber = 1;
+  bool ce_boolean() const;
+  void set_ce_boolean(bool value);
+
+  // int32 ce_integer = 2;
+  private:
+  bool has_ce_integer() const;
+  public:
+  void clear_ce_integer();
+  static const int kCeIntegerFieldNumber = 2;
+  ::google::protobuf::int32 ce_integer() const;
+  void set_ce_integer(::google::protobuf::int32 value);
+
+  // string ce_string = 3;
+  private:
+  bool has_ce_string() const;
+  public:
+  void clear_ce_string();
+  static const int kCeStringFieldNumber = 3;
+  const ::std::string& ce_string() const;
+  void set_ce_string(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ce_string(::std::string&& value);
+  #endif
+  void set_ce_string(const char* value);
+  void set_ce_string(const char* value, size_t size);
+  ::std::string* mutable_ce_string();
+  ::std::string* release_ce_string();
+  void set_allocated_ce_string(::std::string* ce_string);
+
+  // bytes ce_bytes = 4;
+  private:
+  bool has_ce_bytes() const;
+  public:
+  void clear_ce_bytes();
+  static const int kCeBytesFieldNumber = 4;
+  const ::std::string& ce_bytes() const;
+  void set_ce_bytes(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ce_bytes(::std::string&& value);
+  #endif
+  void set_ce_bytes(const char* value);
+  void set_ce_bytes(const void* value, size_t size);
+  ::std::string* mutable_ce_bytes();
+  ::std::string* release_ce_bytes();
+  void set_allocated_ce_bytes(::std::string* ce_bytes);
+
+  // string ce_uri = 5;
+  private:
+  bool has_ce_uri() const;
+  public:
+  void clear_ce_uri();
+  static const int kCeUriFieldNumber = 5;
+  const ::std::string& ce_uri() const;
+  void set_ce_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ce_uri(::std::string&& value);
+  #endif
+  void set_ce_uri(const char* value);
+  void set_ce_uri(const char* value, size_t size);
+  ::std::string* mutable_ce_uri();
+  ::std::string* release_ce_uri();
+  void set_allocated_ce_uri(::std::string* ce_uri);
+
+  // string ce_uri_ref = 6;
+  private:
+  bool has_ce_uri_ref() const;
+  public:
+  void clear_ce_uri_ref();
+  static const int kCeUriRefFieldNumber = 6;
+  const ::std::string& ce_uri_ref() const;
+  void set_ce_uri_ref(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ce_uri_ref(::std::string&& value);
+  #endif
+  void set_ce_uri_ref(const char* value);
+  void set_ce_uri_ref(const char* value, size_t size);
+  ::std::string* mutable_ce_uri_ref();
+  ::std::string* release_ce_uri_ref();
+  void set_allocated_ce_uri_ref(::std::string* ce_uri_ref);
+
+  // .google.protobuf.Timestamp ce_timestamp = 7;
+  bool has_ce_timestamp() const;
+  void clear_ce_timestamp();
+  static const int kCeTimestampFieldNumber = 7;
+  const ::google::protobuf::Timestamp& ce_timestamp() const;
+  ::google::protobuf::Timestamp* release_ce_timestamp();
+  ::google::protobuf::Timestamp* mutable_ce_timestamp();
+  void set_allocated_ce_timestamp(::google::protobuf::Timestamp* ce_timestamp);
+
+  void clear_attr();
+  AttrCase attr_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.event.CloudEventAttributeValue)
+ private:
+  class HasBitSetters;
+  void set_has_ce_boolean();
+  void set_has_ce_integer();
+  void set_has_ce_string();
+  void set_has_ce_bytes();
+  void set_has_ce_uri();
+  void set_has_ce_uri_ref();
+  void set_has_ce_timestamp();
+
+  inline bool has_attr() const;
+  inline void clear_has_attr();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union AttrUnion {
+    AttrUnion() {}
+    bool ce_boolean_;
+    ::google::protobuf::int32 ce_integer_;
+    ::google::protobuf::internal::ArenaStringPtr ce_string_;
+    ::google::protobuf::internal::ArenaStringPtr ce_bytes_;
+    ::google::protobuf::internal::ArenaStringPtr ce_uri_;
+    ::google::protobuf::internal::ArenaStringPtr ce_uri_ref_;
+    ::google::protobuf::Timestamp* ce_timestamp_;
+  } attr_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
 };
 // ===================================================================
@@ -4586,9 +5108,953 @@ inline void TaskExecutionMetadata::set_instance_class(::flyteidl::event::TaskExe
   // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionMetadata.instance_class)
 }
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// CloudEvent
+
+// string id = 1;
+inline void CloudEvent::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CloudEvent::id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.id)
+  return id_.GetNoArena();
+}
+inline void CloudEvent::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.id)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.id)
+}
+#endif
+inline void CloudEvent::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.id)
+}
+inline void CloudEvent::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.id)
+}
+inline ::std::string* CloudEvent::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CloudEvent::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.id)
+}
+
+// string source = 2;
+inline void CloudEvent::clear_source() {
+  source_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CloudEvent::source() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.source)
+  return source_.GetNoArena();
+}
+inline void CloudEvent::set_source(const ::std::string& value) {
+  
+  source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.source)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_source(::std::string&& value) {
+  
+  source_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.source)
+}
+#endif
+inline void CloudEvent::set_source(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.source)
+}
+inline void CloudEvent::set_source(const char* value, size_t size) {
+  
+  source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.source)
+}
+inline ::std::string* CloudEvent::mutable_source() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.source)
+  return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_source() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.source)
+  
+  return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CloudEvent::set_allocated_source(::std::string* source) {
+  if (source != nullptr) {
+    
+  } else {
+    
+  }
+  source_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), source);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.source)
+}
+
+// string spec_version = 3;
+inline void CloudEvent::clear_spec_version() {
+  spec_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CloudEvent::spec_version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.spec_version)
+  return spec_version_.GetNoArena();
+}
+inline void CloudEvent::set_spec_version(const ::std::string& value) {
+  
+  spec_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.spec_version)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_spec_version(::std::string&& value) {
+  
+  spec_version_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.spec_version)
+}
+#endif
+inline void CloudEvent::set_spec_version(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  spec_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.spec_version)
+}
+inline void CloudEvent::set_spec_version(const char* value, size_t size) {
+  
+  spec_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.spec_version)
+}
+inline ::std::string* CloudEvent::mutable_spec_version() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.spec_version)
+  return spec_version_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_spec_version() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.spec_version)
+  
+  return spec_version_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CloudEvent::set_allocated_spec_version(::std::string* spec_version) {
+  if (spec_version != nullptr) {
+    
+  } else {
+    
+  }
+  spec_version_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), spec_version);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.spec_version)
+}
+
+// string type = 4;
+inline void CloudEvent::clear_type() {
+  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CloudEvent::type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.type)
+  return type_.GetNoArena();
+}
+inline void CloudEvent::set_type(const ::std::string& value) {
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.type)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_type(::std::string&& value) {
+  
+  type_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.type)
+}
+#endif
+inline void CloudEvent::set_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.type)
+}
+inline void CloudEvent::set_type(const char* value, size_t size) {
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.type)
+}
+inline ::std::string* CloudEvent::mutable_type() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.type)
+  return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.type)
+  
+  return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CloudEvent::set_allocated_type(::std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.type)
+}
+
+// map<string, .flyteidl.event.CloudEventAttributeValue> attributes = 5;
+inline int CloudEvent::attributes_size() const {
+  return attributes_.size();
+}
+inline void CloudEvent::clear_attributes() {
+  attributes_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::flyteidl::event::CloudEventAttributeValue >&
+CloudEvent::attributes() const {
+  // @@protoc_insertion_point(field_map:flyteidl.event.CloudEvent.attributes)
+  return attributes_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::flyteidl::event::CloudEventAttributeValue >*
+CloudEvent::mutable_attributes() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.event.CloudEvent.attributes)
+  return attributes_.MutableMap();
+}
+
+// bytes binary_data = 6;
+inline bool CloudEvent::has_binary_data() const {
+  return data_case() == kBinaryData;
+}
+inline void CloudEvent::set_has_binary_data() {
+  _oneof_case_[0] = kBinaryData;
+}
+inline void CloudEvent::clear_binary_data() {
+  if (has_binary_data()) {
+    data_.binary_data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_data();
+  }
+}
+inline const ::std::string& CloudEvent::binary_data() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.binary_data)
+  if (has_binary_data()) {
+    return data_.binary_data_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEvent::set_binary_data(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.binary_data)
+  if (!has_binary_data()) {
+    clear_data();
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.binary_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.binary_data)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_binary_data(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.binary_data)
+  if (!has_binary_data()) {
+    clear_data();
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.binary_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.binary_data)
+}
+#endif
+inline void CloudEvent::set_binary_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_binary_data()) {
+    clear_data();
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.binary_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.binary_data)
+}
+inline void CloudEvent::set_binary_data(const void* value, size_t size) {
+  if (!has_binary_data()) {
+    clear_data();
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.binary_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.binary_data)
+}
+inline ::std::string* CloudEvent::mutable_binary_data() {
+  if (!has_binary_data()) {
+    clear_data();
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.binary_data)
+  return data_.binary_data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_binary_data() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.binary_data)
+  if (has_binary_data()) {
+    clear_has_data();
+    return data_.binary_data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEvent::set_allocated_binary_data(::std::string* binary_data) {
+  if (has_data()) {
+    clear_data();
+  }
+  if (binary_data != nullptr) {
+    set_has_binary_data();
+    data_.binary_data_.UnsafeSetDefault(binary_data);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.binary_data)
+}
+
+// string text_data = 7;
+inline bool CloudEvent::has_text_data() const {
+  return data_case() == kTextData;
+}
+inline void CloudEvent::set_has_text_data() {
+  _oneof_case_[0] = kTextData;
+}
+inline void CloudEvent::clear_text_data() {
+  if (has_text_data()) {
+    data_.text_data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_data();
+  }
+}
+inline const ::std::string& CloudEvent::text_data() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.text_data)
+  if (has_text_data()) {
+    return data_.text_data_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEvent::set_text_data(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.text_data)
+  if (!has_text_data()) {
+    clear_data();
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.text_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.text_data)
+}
+#if LANG_CXX11
+inline void CloudEvent::set_text_data(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEvent.text_data)
+  if (!has_text_data()) {
+    clear_data();
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.text_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEvent.text_data)
+}
+#endif
+inline void CloudEvent::set_text_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_text_data()) {
+    clear_data();
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.text_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEvent.text_data)
+}
+inline void CloudEvent::set_text_data(const char* value, size_t size) {
+  if (!has_text_data()) {
+    clear_data();
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  data_.text_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEvent.text_data)
+}
+inline ::std::string* CloudEvent::mutable_text_data() {
+  if (!has_text_data()) {
+    clear_data();
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.text_data)
+  return data_.text_data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEvent::release_text_data() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.text_data)
+  if (has_text_data()) {
+    clear_has_data();
+    return data_.text_data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEvent::set_allocated_text_data(::std::string* text_data) {
+  if (has_data()) {
+    clear_data();
+  }
+  if (text_data != nullptr) {
+    set_has_text_data();
+    data_.text_data_.UnsafeSetDefault(text_data);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEvent.text_data)
+}
+
+// .google.protobuf.Any proto_data = 8;
+inline bool CloudEvent::has_proto_data() const {
+  return data_case() == kProtoData;
+}
+inline void CloudEvent::set_has_proto_data() {
+  _oneof_case_[0] = kProtoData;
+}
+inline ::google::protobuf::Any* CloudEvent::release_proto_data() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEvent.proto_data)
+  if (has_proto_data()) {
+    clear_has_data();
+      ::google::protobuf::Any* temp = data_.proto_data_;
+    data_.proto_data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::google::protobuf::Any& CloudEvent::proto_data() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEvent.proto_data)
+  return has_proto_data()
+      ? *data_.proto_data_
+      : *reinterpret_cast< ::google::protobuf::Any*>(&::google::protobuf::_Any_default_instance_);
+}
+inline ::google::protobuf::Any* CloudEvent::mutable_proto_data() {
+  if (!has_proto_data()) {
+    clear_data();
+    set_has_proto_data();
+    data_.proto_data_ = CreateMaybeMessage< ::google::protobuf::Any >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEvent.proto_data)
+  return data_.proto_data_;
+}
+
+inline bool CloudEvent::has_data() const {
+  return data_case() != DATA_NOT_SET;
+}
+inline void CloudEvent::clear_has_data() {
+  _oneof_case_[0] = DATA_NOT_SET;
+}
+inline CloudEvent::DataCase CloudEvent::data_case() const {
+  return CloudEvent::DataCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// CloudEventAttributeValue
+
+// bool ce_boolean = 1;
+inline bool CloudEventAttributeValue::has_ce_boolean() const {
+  return attr_case() == kCeBoolean;
+}
+inline void CloudEventAttributeValue::set_has_ce_boolean() {
+  _oneof_case_[0] = kCeBoolean;
+}
+inline void CloudEventAttributeValue::clear_ce_boolean() {
+  if (has_ce_boolean()) {
+    attr_.ce_boolean_ = false;
+    clear_has_attr();
+  }
+}
+inline bool CloudEventAttributeValue::ce_boolean() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_boolean)
+  if (has_ce_boolean()) {
+    return attr_.ce_boolean_;
+  }
+  return false;
+}
+inline void CloudEventAttributeValue::set_ce_boolean(bool value) {
+  if (!has_ce_boolean()) {
+    clear_attr();
+    set_has_ce_boolean();
+  }
+  attr_.ce_boolean_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_boolean)
+}
+
+// int32 ce_integer = 2;
+inline bool CloudEventAttributeValue::has_ce_integer() const {
+  return attr_case() == kCeInteger;
+}
+inline void CloudEventAttributeValue::set_has_ce_integer() {
+  _oneof_case_[0] = kCeInteger;
+}
+inline void CloudEventAttributeValue::clear_ce_integer() {
+  if (has_ce_integer()) {
+    attr_.ce_integer_ = 0;
+    clear_has_attr();
+  }
+}
+inline ::google::protobuf::int32 CloudEventAttributeValue::ce_integer() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_integer)
+  if (has_ce_integer()) {
+    return attr_.ce_integer_;
+  }
+  return 0;
+}
+inline void CloudEventAttributeValue::set_ce_integer(::google::protobuf::int32 value) {
+  if (!has_ce_integer()) {
+    clear_attr();
+    set_has_ce_integer();
+  }
+  attr_.ce_integer_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_integer)
+}
+
+// string ce_string = 3;
+inline bool CloudEventAttributeValue::has_ce_string() const {
+  return attr_case() == kCeString;
+}
+inline void CloudEventAttributeValue::set_has_ce_string() {
+  _oneof_case_[0] = kCeString;
+}
+inline void CloudEventAttributeValue::clear_ce_string() {
+  if (has_ce_string()) {
+    attr_.ce_string_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_attr();
+  }
+}
+inline const ::std::string& CloudEventAttributeValue::ce_string() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_string)
+  if (has_ce_string()) {
+    return attr_.ce_string_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEventAttributeValue::set_ce_string(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_string)
+  if (!has_ce_string()) {
+    clear_attr();
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_string)
+}
+#if LANG_CXX11
+inline void CloudEventAttributeValue::set_ce_string(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_string)
+  if (!has_ce_string()) {
+    clear_attr();
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEventAttributeValue.ce_string)
+}
+#endif
+inline void CloudEventAttributeValue::set_ce_string(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_ce_string()) {
+    clear_attr();
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEventAttributeValue.ce_string)
+}
+inline void CloudEventAttributeValue::set_ce_string(const char* value, size_t size) {
+  if (!has_ce_string()) {
+    clear_attr();
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEventAttributeValue.ce_string)
+}
+inline ::std::string* CloudEventAttributeValue::mutable_ce_string() {
+  if (!has_ce_string()) {
+    clear_attr();
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEventAttributeValue.ce_string)
+  return attr_.ce_string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEventAttributeValue::release_ce_string() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEventAttributeValue.ce_string)
+  if (has_ce_string()) {
+    clear_has_attr();
+    return attr_.ce_string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEventAttributeValue::set_allocated_ce_string(::std::string* ce_string) {
+  if (has_attr()) {
+    clear_attr();
+  }
+  if (ce_string != nullptr) {
+    set_has_ce_string();
+    attr_.ce_string_.UnsafeSetDefault(ce_string);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEventAttributeValue.ce_string)
+}
+
+// bytes ce_bytes = 4;
+inline bool CloudEventAttributeValue::has_ce_bytes() const {
+  return attr_case() == kCeBytes;
+}
+inline void CloudEventAttributeValue::set_has_ce_bytes() {
+  _oneof_case_[0] = kCeBytes;
+}
+inline void CloudEventAttributeValue::clear_ce_bytes() {
+  if (has_ce_bytes()) {
+    attr_.ce_bytes_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_attr();
+  }
+}
+inline const ::std::string& CloudEventAttributeValue::ce_bytes() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+  if (has_ce_bytes()) {
+    return attr_.ce_bytes_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEventAttributeValue::set_ce_bytes(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+  if (!has_ce_bytes()) {
+    clear_attr();
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+}
+#if LANG_CXX11
+inline void CloudEventAttributeValue::set_ce_bytes(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+  if (!has_ce_bytes()) {
+    clear_attr();
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+}
+#endif
+inline void CloudEventAttributeValue::set_ce_bytes(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_ce_bytes()) {
+    clear_attr();
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+}
+inline void CloudEventAttributeValue::set_ce_bytes(const void* value, size_t size) {
+  if (!has_ce_bytes()) {
+    clear_attr();
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_bytes_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+}
+inline ::std::string* CloudEventAttributeValue::mutable_ce_bytes() {
+  if (!has_ce_bytes()) {
+    clear_attr();
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+  return attr_.ce_bytes_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEventAttributeValue::release_ce_bytes() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+  if (has_ce_bytes()) {
+    clear_has_attr();
+    return attr_.ce_bytes_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEventAttributeValue::set_allocated_ce_bytes(::std::string* ce_bytes) {
+  if (has_attr()) {
+    clear_attr();
+  }
+  if (ce_bytes != nullptr) {
+    set_has_ce_bytes();
+    attr_.ce_bytes_.UnsafeSetDefault(ce_bytes);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEventAttributeValue.ce_bytes)
+}
+
+// string ce_uri = 5;
+inline bool CloudEventAttributeValue::has_ce_uri() const {
+  return attr_case() == kCeUri;
+}
+inline void CloudEventAttributeValue::set_has_ce_uri() {
+  _oneof_case_[0] = kCeUri;
+}
+inline void CloudEventAttributeValue::clear_ce_uri() {
+  if (has_ce_uri()) {
+    attr_.ce_uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_attr();
+  }
+}
+inline const ::std::string& CloudEventAttributeValue::ce_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_uri)
+  if (has_ce_uri()) {
+    return attr_.ce_uri_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEventAttributeValue::set_ce_uri(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri)
+  if (!has_ce_uri()) {
+    clear_attr();
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri)
+}
+#if LANG_CXX11
+inline void CloudEventAttributeValue::set_ce_uri(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri)
+  if (!has_ce_uri()) {
+    clear_attr();
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEventAttributeValue.ce_uri)
+}
+#endif
+inline void CloudEventAttributeValue::set_ce_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_ce_uri()) {
+    clear_attr();
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEventAttributeValue.ce_uri)
+}
+inline void CloudEventAttributeValue::set_ce_uri(const char* value, size_t size) {
+  if (!has_ce_uri()) {
+    clear_attr();
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEventAttributeValue.ce_uri)
+}
+inline ::std::string* CloudEventAttributeValue::mutable_ce_uri() {
+  if (!has_ce_uri()) {
+    clear_attr();
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEventAttributeValue.ce_uri)
+  return attr_.ce_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEventAttributeValue::release_ce_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEventAttributeValue.ce_uri)
+  if (has_ce_uri()) {
+    clear_has_attr();
+    return attr_.ce_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEventAttributeValue::set_allocated_ce_uri(::std::string* ce_uri) {
+  if (has_attr()) {
+    clear_attr();
+  }
+  if (ce_uri != nullptr) {
+    set_has_ce_uri();
+    attr_.ce_uri_.UnsafeSetDefault(ce_uri);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEventAttributeValue.ce_uri)
+}
+
+// string ce_uri_ref = 6;
+inline bool CloudEventAttributeValue::has_ce_uri_ref() const {
+  return attr_case() == kCeUriRef;
+}
+inline void CloudEventAttributeValue::set_has_ce_uri_ref() {
+  _oneof_case_[0] = kCeUriRef;
+}
+inline void CloudEventAttributeValue::clear_ce_uri_ref() {
+  if (has_ce_uri_ref()) {
+    attr_.ce_uri_ref_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_attr();
+  }
+}
+inline const ::std::string& CloudEventAttributeValue::ce_uri_ref() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+  if (has_ce_uri_ref()) {
+    return attr_.ce_uri_ref_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CloudEventAttributeValue::set_ce_uri_ref(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+  if (!has_ce_uri_ref()) {
+    clear_attr();
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+}
+#if LANG_CXX11
+inline void CloudEventAttributeValue::set_ce_uri_ref(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+  if (!has_ce_uri_ref()) {
+    clear_attr();
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+}
+#endif
+inline void CloudEventAttributeValue::set_ce_uri_ref(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_ce_uri_ref()) {
+    clear_attr();
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+}
+inline void CloudEventAttributeValue::set_ce_uri_ref(const char* value, size_t size) {
+  if (!has_ce_uri_ref()) {
+    clear_attr();
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  attr_.ce_uri_ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+}
+inline ::std::string* CloudEventAttributeValue::mutable_ce_uri_ref() {
+  if (!has_ce_uri_ref()) {
+    clear_attr();
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+  return attr_.ce_uri_ref_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CloudEventAttributeValue::release_ce_uri_ref() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+  if (has_ce_uri_ref()) {
+    clear_has_attr();
+    return attr_.ce_uri_ref_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CloudEventAttributeValue::set_allocated_ce_uri_ref(::std::string* ce_uri_ref) {
+  if (has_attr()) {
+    clear_attr();
+  }
+  if (ce_uri_ref != nullptr) {
+    set_has_ce_uri_ref();
+    attr_.ce_uri_ref_.UnsafeSetDefault(ce_uri_ref);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CloudEventAttributeValue.ce_uri_ref)
+}
+
+// .google.protobuf.Timestamp ce_timestamp = 7;
+inline bool CloudEventAttributeValue::has_ce_timestamp() const {
+  return attr_case() == kCeTimestamp;
+}
+inline void CloudEventAttributeValue::set_has_ce_timestamp() {
+  _oneof_case_[0] = kCeTimestamp;
+}
+inline ::google::protobuf::Timestamp* CloudEventAttributeValue::release_ce_timestamp() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CloudEventAttributeValue.ce_timestamp)
+  if (has_ce_timestamp()) {
+    clear_has_attr();
+      ::google::protobuf::Timestamp* temp = attr_.ce_timestamp_;
+    attr_.ce_timestamp_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::google::protobuf::Timestamp& CloudEventAttributeValue::ce_timestamp() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CloudEventAttributeValue.ce_timestamp)
+  return has_ce_timestamp()
+      ? *attr_.ce_timestamp_
+      : *reinterpret_cast< ::google::protobuf::Timestamp*>(&::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* CloudEventAttributeValue::mutable_ce_timestamp() {
+  if (!has_ce_timestamp()) {
+    clear_attr();
+    set_has_ce_timestamp();
+    attr_.ce_timestamp_ = CreateMaybeMessage< ::google::protobuf::Timestamp >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CloudEventAttributeValue.ce_timestamp)
+  return attr_.ce_timestamp_;
+}
+
+inline bool CloudEventAttributeValue::has_attr() const {
+  return attr_case() != ATTR_NOT_SET;
+}
+inline void CloudEventAttributeValue::clear_has_attr() {
+  _oneof_case_[0] = ATTR_NOT_SET;
+}
+inline CloudEventAttributeValue::AttrCase CloudEventAttributeValue::attr_case() const {
+  return CloudEventAttributeValue::AttrCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

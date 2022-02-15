@@ -18,6 +18,7 @@ from flyteidl.core import compiler_pb2 as flyteidl_dot_core_dot_compiler__pb2
 from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 from flyteidl.core import catalog_pb2 as flyteidl_dot_core_dot_catalog__pb2
+from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
@@ -27,9 +28,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.event',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/event'),
-  serialized_pb=_b('\n\x1a\x66lyteidl/event/event.proto\x12\x0e\x66lyteidl.event\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/core/catalog.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xe0\x02\n\x16WorkflowExecutionEvent\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x35\n\x05phase\x18\x03 \x01(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\noutput_uri\x18\x05 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x07 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x0f\n\routput_result\"\xcc\x05\n\x12NodeExecutionEvent\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x31\n\x05phase\x18\x03 \x01(\x0e\x32\".flyteidl.core.NodeExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x05 \x01(\t\x12\x14\n\noutput_uri\x18\x06 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x0f \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12\x46\n\x16workflow_node_metadata\x18\x08 \x01(\x0b\x32$.flyteidl.event.WorkflowNodeMetadataH\x01\x12>\n\x12task_node_metadata\x18\x0e \x01(\x0b\x32 .flyteidl.event.TaskNodeMetadataH\x01\x12I\n\x14parent_task_metadata\x18\t \x01(\x0b\x32+.flyteidl.event.ParentTaskExecutionMetadata\x12I\n\x14parent_node_metadata\x18\n \x01(\x0b\x32+.flyteidl.event.ParentNodeExecutionMetadata\x12\x13\n\x0bretry_group\x18\x0b \x01(\t\x12\x14\n\x0cspec_node_id\x18\x0c \x01(\t\x12\x11\n\tnode_name\x18\r \x01(\tB\x0f\n\routput_resultB\x11\n\x0ftarget_metadata\"X\n\x14WorkflowNodeMetadata\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\"\x8d\x02\n\x10TaskNodeMetadata\x12\x37\n\x0c\x63\x61\x63he_status\x18\x01 \x01(\x0e\x32!.flyteidl.core.CatalogCacheStatus\x12\x33\n\x0b\x63\x61talog_key\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.CatalogMetadata\x12\x44\n\x12reservation_status\x18\x03 \x01(\x0e\x32(.flyteidl.core.CatalogReservation.Status\x12\x45\n\x10\x64ynamic_workflow\x18\x10 \x01(\x0b\x32+.flyteidl.event.DynamicWorkflowNodeMetadata\"\x87\x01\n\x1b\x44ynamicWorkflowNodeMetadata\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x41\n\x11\x63ompiled_workflow\x18\x02 \x01(\x0b\x32&.flyteidl.core.CompiledWorkflowClosure\"Q\n\x1bParentTaskExecutionMetadata\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\".\n\x1bParentNodeExecutionMetadata\x12\x0f\n\x07node_id\x18\x01 \x01(\t\"\xfd\x04\n\x12TaskExecutionEvent\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12H\n\x18parent_node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x31\n\x05phase\x18\x04 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\x12\x13\n\x0bproducer_id\x18\x05 \x01(\t\x12$\n\x04logs\x18\x06 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12/\n\x0boccurred_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x08 \x01(\t\x12\x14\n\noutput_uri\x18\t \x01(\tH\x00\x12.\n\x05\x65rror\x18\n \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x11 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12,\n\x0b\x63ustom_info\x18\x0b \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x15\n\rphase_version\x18\x0c \x01(\r\x12\x0e\n\x06reason\x18\r \x01(\t\x12\x11\n\ttask_type\x18\x0e \x01(\t\x12\x37\n\x08metadata\x18\x10 \x01(\x0b\x32%.flyteidl.event.TaskExecutionMetadataB\x0f\n\routput_result\"\x84\x01\n\x14\x45xternalResourceInfo\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x31\n\x05phase\x18\x04 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\"?\n\x10ResourcePoolInfo\x12\x18\n\x10\x61llocation_token\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"\xc8\x02\n\x15TaskExecutionMetadata\x12\x16\n\x0egenerated_name\x18\x01 \x01(\t\x12@\n\x12\x65xternal_resources\x18\x02 \x03(\x0b\x32$.flyteidl.event.ExternalResourceInfo\x12<\n\x12resource_pool_info\x18\x03 \x03(\x0b\x32 .flyteidl.event.ResourcePoolInfo\x12\x19\n\x11plugin_identifier\x18\x04 \x01(\t\x12K\n\x0einstance_class\x18\x10 \x01(\x0e\x32\x33.flyteidl.event.TaskExecutionMetadata.InstanceClass\"/\n\rInstanceClass\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x11\n\rINTERRUPTIBLE\x10\x01\x42\x37Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/eventb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/event/event.proto\x12\x0e\x66lyteidl.event\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/core/catalog.proto\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xe0\x02\n\x16WorkflowExecutionEvent\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x35\n\x05phase\x18\x03 \x01(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\noutput_uri\x18\x05 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x07 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x0f\n\routput_result\"\xcc\x05\n\x12NodeExecutionEvent\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x31\n\x05phase\x18\x03 \x01(\x0e\x32\".flyteidl.core.NodeExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x05 \x01(\t\x12\x14\n\noutput_uri\x18\x06 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x0f \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12\x46\n\x16workflow_node_metadata\x18\x08 \x01(\x0b\x32$.flyteidl.event.WorkflowNodeMetadataH\x01\x12>\n\x12task_node_metadata\x18\x0e \x01(\x0b\x32 .flyteidl.event.TaskNodeMetadataH\x01\x12I\n\x14parent_task_metadata\x18\t \x01(\x0b\x32+.flyteidl.event.ParentTaskExecutionMetadata\x12I\n\x14parent_node_metadata\x18\n \x01(\x0b\x32+.flyteidl.event.ParentNodeExecutionMetadata\x12\x13\n\x0bretry_group\x18\x0b \x01(\t\x12\x14\n\x0cspec_node_id\x18\x0c \x01(\t\x12\x11\n\tnode_name\x18\r \x01(\tB\x0f\n\routput_resultB\x11\n\x0ftarget_metadata\"X\n\x14WorkflowNodeMetadata\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\"\x8d\x02\n\x10TaskNodeMetadata\x12\x37\n\x0c\x63\x61\x63he_status\x18\x01 \x01(\x0e\x32!.flyteidl.core.CatalogCacheStatus\x12\x33\n\x0b\x63\x61talog_key\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.CatalogMetadata\x12\x44\n\x12reservation_status\x18\x03 \x01(\x0e\x32(.flyteidl.core.CatalogReservation.Status\x12\x45\n\x10\x64ynamic_workflow\x18\x10 \x01(\x0b\x32+.flyteidl.event.DynamicWorkflowNodeMetadata\"\x87\x01\n\x1b\x44ynamicWorkflowNodeMetadata\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x41\n\x11\x63ompiled_workflow\x18\x02 \x01(\x0b\x32&.flyteidl.core.CompiledWorkflowClosure\"Q\n\x1bParentTaskExecutionMetadata\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\".\n\x1bParentNodeExecutionMetadata\x12\x0f\n\x07node_id\x18\x01 \x01(\t\"\xfd\x04\n\x12TaskExecutionEvent\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12H\n\x18parent_node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x31\n\x05phase\x18\x04 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\x12\x13\n\x0bproducer_id\x18\x05 \x01(\t\x12$\n\x04logs\x18\x06 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12/\n\x0boccurred_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x08 \x01(\t\x12\x14\n\noutput_uri\x18\t \x01(\tH\x00\x12.\n\x05\x65rror\x18\n \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x0boutput_data\x18\x11 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12,\n\x0b\x63ustom_info\x18\x0b \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x15\n\rphase_version\x18\x0c \x01(\r\x12\x0e\n\x06reason\x18\r \x01(\t\x12\x11\n\ttask_type\x18\x0e \x01(\t\x12\x37\n\x08metadata\x18\x10 \x01(\x0b\x32%.flyteidl.event.TaskExecutionMetadataB\x0f\n\routput_result\"\x84\x01\n\x14\x45xternalResourceInfo\x12\x13\n\x0b\x65xternal_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x31\n\x05phase\x18\x04 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\"?\n\x10ResourcePoolInfo\x12\x18\n\x10\x61llocation_token\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"\xc8\x02\n\x15TaskExecutionMetadata\x12\x16\n\x0egenerated_name\x18\x01 \x01(\t\x12@\n\x12\x65xternal_resources\x18\x02 \x03(\x0b\x32$.flyteidl.event.ExternalResourceInfo\x12<\n\x12resource_pool_info\x18\x03 \x03(\x0b\x32 .flyteidl.event.ResourcePoolInfo\x12\x19\n\x11plugin_identifier\x18\x04 \x01(\t\x12K\n\x0einstance_class\x18\x10 \x01(\x0e\x32\x33.flyteidl.event.TaskExecutionMetadata.InstanceClass\"/\n\rInstanceClass\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x11\n\rINTERRUPTIBLE\x10\x01\"\xc9\x02\n\nCloudEvent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06source\x18\x02 \x01(\t\x12\x14\n\x0cspec_version\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12>\n\nattributes\x18\x05 \x03(\x0b\x32*.flyteidl.event.CloudEvent.AttributesEntry\x12\x15\n\x0b\x62inary_data\x18\x06 \x01(\x0cH\x00\x12\x13\n\ttext_data\x18\x07 \x01(\tH\x00\x12*\n\nproto_data\x18\x08 \x01(\x0b\x32\x14.google.protobuf.AnyH\x00\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.flyteidl.event.CloudEventAttributeValue:\x02\x38\x01\x42\x06\n\x04\x64\x61ta\"\xd3\x01\n\x18\x43loudEventAttributeValue\x12\x14\n\nce_boolean\x18\x01 \x01(\x08H\x00\x12\x14\n\nce_integer\x18\x02 \x01(\x05H\x00\x12\x13\n\tce_string\x18\x03 \x01(\tH\x00\x12\x12\n\x08\x63\x65_bytes\x18\x04 \x01(\x0cH\x00\x12\x10\n\x06\x63\x65_uri\x18\x05 \x01(\tH\x00\x12\x14\n\nce_uri_ref\x18\x06 \x01(\tH\x00\x12\x32\n\x0c\x63\x65_timestamp\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x42\x06\n\x04\x61ttrB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/eventb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_catalog__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_catalog__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
 
 
@@ -50,8 +51,8 @@ _TASKEXECUTIONMETADATA_INSTANCECLASS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3088,
-  serialized_end=3135,
+  serialized_start=3115,
+  serialized_end=3162,
 )
 _sym_db.RegisterEnumDescriptor(_TASKEXECUTIONMETADATA_INSTANCECLASS)
 
@@ -127,8 +128,8 @@ _WORKFLOWEXECUTIONEVENT = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.event.WorkflowExecutionEvent.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=262,
-  serialized_end=614,
+  serialized_start=289,
+  serialized_end=641,
 )
 
 
@@ -262,8 +263,8 @@ _NODEEXECUTIONEVENT = _descriptor.Descriptor(
       name='target_metadata', full_name='flyteidl.event.NodeExecutionEvent.target_metadata',
       index=1, containing_type=None, fields=[]),
   ],
-  serialized_start=617,
-  serialized_end=1333,
+  serialized_start=644,
+  serialized_end=1360,
 )
 
 
@@ -293,8 +294,8 @@ _WORKFLOWNODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1335,
-  serialized_end=1423,
+  serialized_start=1362,
+  serialized_end=1450,
 )
 
 
@@ -345,8 +346,8 @@ _TASKNODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1426,
-  serialized_end=1695,
+  serialized_start=1453,
+  serialized_end=1722,
 )
 
 
@@ -383,8 +384,8 @@ _DYNAMICWORKFLOWNODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1698,
-  serialized_end=1833,
+  serialized_start=1725,
+  serialized_end=1860,
 )
 
 
@@ -414,8 +415,8 @@ _PARENTTASKEXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1835,
-  serialized_end=1916,
+  serialized_start=1862,
+  serialized_end=1943,
 )
 
 
@@ -445,8 +446,8 @@ _PARENTNODEEXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1918,
-  serialized_end=1964,
+  serialized_start=1945,
+  serialized_end=1991,
 )
 
 
@@ -584,8 +585,8 @@ _TASKEXECUTIONEVENT = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.event.TaskExecutionEvent.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1967,
-  serialized_end=2604,
+  serialized_start=1994,
+  serialized_end=2631,
 )
 
 
@@ -636,8 +637,8 @@ _EXTERNALRESOURCEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2607,
-  serialized_end=2739,
+  serialized_start=2634,
+  serialized_end=2766,
 )
 
 
@@ -674,8 +675,8 @@ _RESOURCEPOOLINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2741,
-  serialized_end=2804,
+  serialized_start=2768,
+  serialized_end=2831,
 )
 
 
@@ -734,8 +735,204 @@ _TASKEXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2807,
-  serialized_end=3135,
+  serialized_start=2834,
+  serialized_end=3162,
+)
+
+
+_CLOUDEVENT_ATTRIBUTESENTRY = _descriptor.Descriptor(
+  name='AttributesEntry',
+  full_name='flyteidl.event.CloudEvent.AttributesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.event.CloudEvent.AttributesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.event.CloudEvent.AttributesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3395,
+  serialized_end=3486,
+)
+
+_CLOUDEVENT = _descriptor.Descriptor(
+  name='CloudEvent',
+  full_name='flyteidl.event.CloudEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='flyteidl.event.CloudEvent.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='source', full_name='flyteidl.event.CloudEvent.source', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='spec_version', full_name='flyteidl.event.CloudEvent.spec_version', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='flyteidl.event.CloudEvent.type', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='flyteidl.event.CloudEvent.attributes', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='binary_data', full_name='flyteidl.event.CloudEvent.binary_data', index=5,
+      number=6, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text_data', full_name='flyteidl.event.CloudEvent.text_data', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='proto_data', full_name='flyteidl.event.CloudEvent.proto_data', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_CLOUDEVENT_ATTRIBUTESENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='data', full_name='flyteidl.event.CloudEvent.data',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=3165,
+  serialized_end=3494,
+)
+
+
+_CLOUDEVENTATTRIBUTEVALUE = _descriptor.Descriptor(
+  name='CloudEventAttributeValue',
+  full_name='flyteidl.event.CloudEventAttributeValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ce_boolean', full_name='flyteidl.event.CloudEventAttributeValue.ce_boolean', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_integer', full_name='flyteidl.event.CloudEventAttributeValue.ce_integer', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_string', full_name='flyteidl.event.CloudEventAttributeValue.ce_string', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_bytes', full_name='flyteidl.event.CloudEventAttributeValue.ce_bytes', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_uri', full_name='flyteidl.event.CloudEventAttributeValue.ce_uri', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_uri_ref', full_name='flyteidl.event.CloudEventAttributeValue.ce_uri_ref', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ce_timestamp', full_name='flyteidl.event.CloudEventAttributeValue.ce_timestamp', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='attr', full_name='flyteidl.event.CloudEventAttributeValue.attr',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=3497,
+  serialized_end=3708,
 )
 
 _WORKFLOWEXECUTIONEVENT.fields_by_name['execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
@@ -807,6 +1004,41 @@ _TASKEXECUTIONMETADATA.fields_by_name['external_resources'].message_type = _EXTE
 _TASKEXECUTIONMETADATA.fields_by_name['resource_pool_info'].message_type = _RESOURCEPOOLINFO
 _TASKEXECUTIONMETADATA.fields_by_name['instance_class'].enum_type = _TASKEXECUTIONMETADATA_INSTANCECLASS
 _TASKEXECUTIONMETADATA_INSTANCECLASS.containing_type = _TASKEXECUTIONMETADATA
+_CLOUDEVENT_ATTRIBUTESENTRY.fields_by_name['value'].message_type = _CLOUDEVENTATTRIBUTEVALUE
+_CLOUDEVENT_ATTRIBUTESENTRY.containing_type = _CLOUDEVENT
+_CLOUDEVENT.fields_by_name['attributes'].message_type = _CLOUDEVENT_ATTRIBUTESENTRY
+_CLOUDEVENT.fields_by_name['proto_data'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_CLOUDEVENT.oneofs_by_name['data'].fields.append(
+  _CLOUDEVENT.fields_by_name['binary_data'])
+_CLOUDEVENT.fields_by_name['binary_data'].containing_oneof = _CLOUDEVENT.oneofs_by_name['data']
+_CLOUDEVENT.oneofs_by_name['data'].fields.append(
+  _CLOUDEVENT.fields_by_name['text_data'])
+_CLOUDEVENT.fields_by_name['text_data'].containing_oneof = _CLOUDEVENT.oneofs_by_name['data']
+_CLOUDEVENT.oneofs_by_name['data'].fields.append(
+  _CLOUDEVENT.fields_by_name['proto_data'])
+_CLOUDEVENT.fields_by_name['proto_data'].containing_oneof = _CLOUDEVENT.oneofs_by_name['data']
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_boolean'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_boolean'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_integer'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_integer'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_string'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_string'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_bytes'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_bytes'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_uri'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_uri'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_uri_ref'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_uri_ref'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
+_CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr'].fields.append(
+  _CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_timestamp'])
+_CLOUDEVENTATTRIBUTEVALUE.fields_by_name['ce_timestamp'].containing_oneof = _CLOUDEVENTATTRIBUTEVALUE.oneofs_by_name['attr']
 DESCRIPTOR.message_types_by_name['WorkflowExecutionEvent'] = _WORKFLOWEXECUTIONEVENT
 DESCRIPTOR.message_types_by_name['NodeExecutionEvent'] = _NODEEXECUTIONEVENT
 DESCRIPTOR.message_types_by_name['WorkflowNodeMetadata'] = _WORKFLOWNODEMETADATA
@@ -818,6 +1050,8 @@ DESCRIPTOR.message_types_by_name['TaskExecutionEvent'] = _TASKEXECUTIONEVENT
 DESCRIPTOR.message_types_by_name['ExternalResourceInfo'] = _EXTERNALRESOURCEINFO
 DESCRIPTOR.message_types_by_name['ResourcePoolInfo'] = _RESOURCEPOOLINFO
 DESCRIPTOR.message_types_by_name['TaskExecutionMetadata'] = _TASKEXECUTIONMETADATA
+DESCRIPTOR.message_types_by_name['CloudEvent'] = _CLOUDEVENT
+DESCRIPTOR.message_types_by_name['CloudEventAttributeValue'] = _CLOUDEVENTATTRIBUTEVALUE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 WorkflowExecutionEvent = _reflection.GeneratedProtocolMessageType('WorkflowExecutionEvent', (_message.Message,), dict(
@@ -897,6 +1131,29 @@ TaskExecutionMetadata = _reflection.GeneratedProtocolMessageType('TaskExecutionM
   ))
 _sym_db.RegisterMessage(TaskExecutionMetadata)
 
+CloudEvent = _reflection.GeneratedProtocolMessageType('CloudEvent', (_message.Message,), dict(
+
+  AttributesEntry = _reflection.GeneratedProtocolMessageType('AttributesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _CLOUDEVENT_ATTRIBUTESENTRY,
+    __module__ = 'flyteidl.event.event_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.event.CloudEvent.AttributesEntry)
+    ))
+  ,
+  DESCRIPTOR = _CLOUDEVENT,
+  __module__ = 'flyteidl.event.event_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.event.CloudEvent)
+  ))
+_sym_db.RegisterMessage(CloudEvent)
+_sym_db.RegisterMessage(CloudEvent.AttributesEntry)
+
+CloudEventAttributeValue = _reflection.GeneratedProtocolMessageType('CloudEventAttributeValue', (_message.Message,), dict(
+  DESCRIPTOR = _CLOUDEVENTATTRIBUTEVALUE,
+  __module__ = 'flyteidl.event.event_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.event.CloudEventAttributeValue)
+  ))
+_sym_db.RegisterMessage(CloudEventAttributeValue)
+
 
 DESCRIPTOR._options = None
+_CLOUDEVENT_ATTRIBUTESENTRY._options = None
 # @@protoc_insertion_point(module_scope)

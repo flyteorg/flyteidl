@@ -6679,6 +6679,194 @@ export namespace flyteidl {
                 INTERRUPTIBLE = 1
             }
         }
+
+        /** Properties of a CloudEvent. */
+        interface ICloudEvent {
+
+            /** CloudEvent id */
+            id?: (string|null);
+
+            /** CloudEvent source */
+            source?: (string|null);
+
+            /** CloudEvent specVersion */
+            specVersion?: (string|null);
+
+            /** CloudEvent type */
+            type?: (string|null);
+
+            /** CloudEvent attributes */
+            attributes?: ({ [k: string]: flyteidl.event.ICloudEventAttributeValue }|null);
+
+            /** CloudEvent binaryData */
+            binaryData?: (Uint8Array|null);
+
+            /** CloudEvent textData */
+            textData?: (string|null);
+
+            /** CloudEvent protoData */
+            protoData?: (google.protobuf.IAny|null);
+        }
+
+        /** Represents a CloudEvent. */
+        class CloudEvent implements ICloudEvent {
+
+            /**
+             * Constructs a new CloudEvent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEvent);
+
+            /** CloudEvent id. */
+            public id: string;
+
+            /** CloudEvent source. */
+            public source: string;
+
+            /** CloudEvent specVersion. */
+            public specVersion: string;
+
+            /** CloudEvent type. */
+            public type: string;
+
+            /** CloudEvent attributes. */
+            public attributes: { [k: string]: flyteidl.event.ICloudEventAttributeValue };
+
+            /** CloudEvent binaryData. */
+            public binaryData: Uint8Array;
+
+            /** CloudEvent textData. */
+            public textData: string;
+
+            /** CloudEvent protoData. */
+            public protoData?: (google.protobuf.IAny|null);
+
+            /** CloudEvent data. */
+            public data?: ("binaryData"|"textData"|"protoData");
+
+            /**
+             * Creates a new CloudEvent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEvent instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEvent): flyteidl.event.CloudEvent;
+
+            /**
+             * Encodes the specified CloudEvent message. Does not implicitly {@link flyteidl.event.CloudEvent.verify|verify} messages.
+             * @param message CloudEvent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEvent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEvent;
+
+            /**
+             * Verifies a CloudEvent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CloudEventAttributeValue. */
+        interface ICloudEventAttributeValue {
+
+            /** CloudEventAttributeValue ceBoolean */
+            ceBoolean?: (boolean|null);
+
+            /** CloudEventAttributeValue ceInteger */
+            ceInteger?: (number|null);
+
+            /** CloudEventAttributeValue ceString */
+            ceString?: (string|null);
+
+            /** CloudEventAttributeValue ceBytes */
+            ceBytes?: (Uint8Array|null);
+
+            /** CloudEventAttributeValue ceUri */
+            ceUri?: (string|null);
+
+            /** CloudEventAttributeValue ceUriRef */
+            ceUriRef?: (string|null);
+
+            /** CloudEventAttributeValue ceTimestamp */
+            ceTimestamp?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a CloudEventAttributeValue. */
+        class CloudEventAttributeValue implements ICloudEventAttributeValue {
+
+            /**
+             * Constructs a new CloudEventAttributeValue.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICloudEventAttributeValue);
+
+            /** CloudEventAttributeValue ceBoolean. */
+            public ceBoolean: boolean;
+
+            /** CloudEventAttributeValue ceInteger. */
+            public ceInteger: number;
+
+            /** CloudEventAttributeValue ceString. */
+            public ceString: string;
+
+            /** CloudEventAttributeValue ceBytes. */
+            public ceBytes: Uint8Array;
+
+            /** CloudEventAttributeValue ceUri. */
+            public ceUri: string;
+
+            /** CloudEventAttributeValue ceUriRef. */
+            public ceUriRef: string;
+
+            /** CloudEventAttributeValue ceTimestamp. */
+            public ceTimestamp?: (google.protobuf.ITimestamp|null);
+
+            /** CloudEventAttributeValue attr. */
+            public attr?: ("ceBoolean"|"ceInteger"|"ceString"|"ceBytes"|"ceUri"|"ceUriRef"|"ceTimestamp");
+
+            /**
+             * Creates a new CloudEventAttributeValue instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CloudEventAttributeValue instance
+             */
+            public static create(properties?: flyteidl.event.ICloudEventAttributeValue): flyteidl.event.CloudEventAttributeValue;
+
+            /**
+             * Encodes the specified CloudEventAttributeValue message. Does not implicitly {@link flyteidl.event.CloudEventAttributeValue.verify|verify} messages.
+             * @param message CloudEventAttributeValue message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICloudEventAttributeValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CloudEventAttributeValue message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CloudEventAttributeValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CloudEventAttributeValue;
+
+            /**
+             * Verifies a CloudEventAttributeValue message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
     }
 
     /** Namespace admin. */
@@ -16888,6 +17076,64 @@ export namespace google {
 
             /**
              * Verifies a ListValue message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Any. */
+        interface IAny {
+
+            /** Any type_url */
+            type_url?: (string|null);
+
+            /** Any value */
+            value?: (Uint8Array|null);
+        }
+
+        /** Represents an Any. */
+        class Any implements IAny {
+
+            /**
+             * Constructs a new Any.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IAny);
+
+            /** Any type_url. */
+            public type_url: string;
+
+            /** Any value. */
+            public value: Uint8Array;
+
+            /**
+             * Creates a new Any instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Any instance
+             */
+            public static create(properties?: google.protobuf.IAny): google.protobuf.Any;
+
+            /**
+             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @param message Any message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Any message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Any;
+
+            /**
+             * Verifies an Any message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

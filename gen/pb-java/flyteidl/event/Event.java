@@ -17390,6 +17390,3862 @@ public final class Event {
 
   }
 
+  public interface CloudEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.CloudEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Unique event identifier.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * Unique event identifier.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * URI of the event source.
+     * </pre>
+     *
+     * <code>string source = 2;</code>
+     */
+    java.lang.String getSource();
+    /**
+     * <pre>
+     * URI of the event source.
+     * </pre>
+     *
+     * <code>string source = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSourceBytes();
+
+    /**
+     * <pre>
+     * Version of the spec in use.
+     * </pre>
+     *
+     * <code>string spec_version = 3;</code>
+     */
+    java.lang.String getSpecVersion();
+    /**
+     * <pre>
+     * Version of the spec in use.
+     * </pre>
+     *
+     * <code>string spec_version = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSpecVersionBytes();
+
+    /**
+     * <pre>
+     * Event type identifier.
+     * </pre>
+     *
+     * <code>string type = 4;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * Event type identifier.
+     * </pre>
+     *
+     * <code>string type = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+    int getAttributesCount();
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+    boolean containsAttributes(
+        java.lang.String key);
+    /**
+     * Use {@link #getAttributesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+    getAttributes();
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+    java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+    getAttributesMap();
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    flyteidl.event.Event.CloudEventAttributeValue getAttributesOrDefault(
+        java.lang.String key,
+        flyteidl.event.Event.CloudEventAttributeValue defaultValue);
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    flyteidl.event.Event.CloudEventAttributeValue getAttributesOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * If the event is binary data then the datacontenttype attribute
+     * should be set to an appropriate media-type.
+     * </pre>
+     *
+     * <code>bytes binary_data = 6;</code>
+     */
+    com.google.protobuf.ByteString getBinaryData();
+
+    /**
+     * <pre>
+     * If the event is string data then the datacontenttype attribute
+     * should be set to an appropriate media-type such as application/json.
+     * </pre>
+     *
+     * <code>string text_data = 7;</code>
+     */
+    java.lang.String getTextData();
+    /**
+     * <pre>
+     * If the event is string data then the datacontenttype attribute
+     * should be set to an appropriate media-type such as application/json.
+     * </pre>
+     *
+     * <code>string text_data = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getTextDataBytes();
+
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    boolean hasProtoData();
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    com.google.protobuf.Any getProtoData();
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    com.google.protobuf.AnyOrBuilder getProtoDataOrBuilder();
+
+    public flyteidl.event.Event.CloudEvent.DataCase getDataCase();
+  }
+  /**
+   * <pre>
+   * CloudEvent is copied from
+   * https://github.com/cloudevents/spec/blob/master/protobuf-format.md.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.CloudEvent}
+   */
+  public  static final class CloudEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.CloudEvent)
+      CloudEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CloudEvent.newBuilder() to construct.
+    private CloudEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CloudEvent() {
+      id_ = "";
+      source_ = "";
+      specVersion_ = "";
+      type_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CloudEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              source_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              specVersion_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                attributes_ = com.google.protobuf.MapField.newMapField(
+                    AttributesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+              attributes__ = input.readMessage(
+                  AttributesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              attributes_.getMutableMap().put(
+                  attributes__.getKey(), attributes__.getValue());
+              break;
+            }
+            case 50: {
+              dataCase_ = 6;
+              data_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              dataCase_ = 7;
+              data_ = s;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.Any.Builder subBuilder = null;
+              if (dataCase_ == 8) {
+                subBuilder = ((com.google.protobuf.Any) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Any) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 8;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetAttributes();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.CloudEvent.class, flyteidl.event.Event.CloudEvent.Builder.class);
+    }
+
+    private int bitField0_;
+    private int dataCase_ = 0;
+    private java.lang.Object data_;
+    public enum DataCase
+        implements com.google.protobuf.Internal.EnumLite {
+      BINARY_DATA(6),
+      TEXT_DATA(7),
+      PROTO_DATA(8),
+      DATA_NOT_SET(0);
+      private final int value;
+      private DataCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataCase forNumber(int value) {
+        switch (value) {
+          case 6: return BINARY_DATA;
+          case 7: return TEXT_DATA;
+          case 8: return PROTO_DATA;
+          case 0: return DATA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataCase
+    getDataCase() {
+      return DataCase.forNumber(
+          dataCase_);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * Unique event identifier.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unique event identifier.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object source_;
+    /**
+     * <pre>
+     * URI of the event source.
+     * </pre>
+     *
+     * <code>string source = 2;</code>
+     */
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URI of the event source.
+     * </pre>
+     *
+     * <code>string source = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPEC_VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object specVersion_;
+    /**
+     * <pre>
+     * Version of the spec in use.
+     * </pre>
+     *
+     * <code>string spec_version = 3;</code>
+     */
+    public java.lang.String getSpecVersion() {
+      java.lang.Object ref = specVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        specVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Version of the spec in use.
+     * </pre>
+     *
+     * <code>string spec_version = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSpecVersionBytes() {
+      java.lang.Object ref = specVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        specVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * Event type identifier.
+     * </pre>
+     *
+     * <code>string type = 4;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Event type identifier.
+     * </pre>
+     *
+     * <code>string type = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ATTRIBUTES_FIELD_NUMBER = 5;
+    private static final class AttributesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>newDefaultInstance(
+                  flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_AttributesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  flyteidl.event.Event.CloudEventAttributeValue.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> attributes_;
+    private com.google.protobuf.MapField<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+    internalGetAttributes() {
+      if (attributes_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AttributesDefaultEntryHolder.defaultEntry);
+      }
+      return attributes_;
+    }
+
+    public int getAttributesCount() {
+      return internalGetAttributes().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    public boolean containsAttributes(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetAttributes().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getAttributesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> getAttributes() {
+      return getAttributesMap();
+    }
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> getAttributesMap() {
+      return internalGetAttributes().getMap();
+    }
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    public flyteidl.event.Event.CloudEventAttributeValue getAttributesOrDefault(
+        java.lang.String key,
+        flyteidl.event.Event.CloudEventAttributeValue defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> map =
+          internalGetAttributes().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional &amp; Extension Attributes
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+     */
+
+    public flyteidl.event.Event.CloudEventAttributeValue getAttributesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> map =
+          internalGetAttributes().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int BINARY_DATA_FIELD_NUMBER = 6;
+    /**
+     * <pre>
+     * If the event is binary data then the datacontenttype attribute
+     * should be set to an appropriate media-type.
+     * </pre>
+     *
+     * <code>bytes binary_data = 6;</code>
+     */
+    public com.google.protobuf.ByteString getBinaryData() {
+      if (dataCase_ == 6) {
+        return (com.google.protobuf.ByteString) data_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final int TEXT_DATA_FIELD_NUMBER = 7;
+    /**
+     * <pre>
+     * If the event is string data then the datacontenttype attribute
+     * should be set to an appropriate media-type such as application/json.
+     * </pre>
+     *
+     * <code>string text_data = 7;</code>
+     */
+    public java.lang.String getTextData() {
+      java.lang.Object ref = "";
+      if (dataCase_ == 7) {
+        ref = data_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (dataCase_ == 7) {
+          data_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * If the event is string data then the datacontenttype attribute
+     * should be set to an appropriate media-type such as application/json.
+     * </pre>
+     *
+     * <code>string text_data = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTextDataBytes() {
+      java.lang.Object ref = "";
+      if (dataCase_ == 7) {
+        ref = data_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (dataCase_ == 7) {
+          data_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROTO_DATA_FIELD_NUMBER = 8;
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    public boolean hasProtoData() {
+      return dataCase_ == 8;
+    }
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    public com.google.protobuf.Any getProtoData() {
+      if (dataCase_ == 8) {
+         return (com.google.protobuf.Any) data_;
+      }
+      return com.google.protobuf.Any.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * If the event is a protobuf then it must be encoded using this Any
+     * type. The datacontenttype attribute should be set to
+     * application/protobuf and the dataschema attribute set to the message
+     * type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any proto_data = 8;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getProtoDataOrBuilder() {
+      if (dataCase_ == 8) {
+         return (com.google.protobuf.Any) data_;
+      }
+      return com.google.protobuf.Any.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
+      }
+      if (!getSpecVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, specVersion_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetAttributes(),
+          AttributesDefaultEntryHolder.defaultEntry,
+          5);
+      if (dataCase_ == 6) {
+        output.writeBytes(
+            6, (com.google.protobuf.ByteString) data_);
+      }
+      if (dataCase_ == 7) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, data_);
+      }
+      if (dataCase_ == 8) {
+        output.writeMessage(8, (com.google.protobuf.Any) data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
+      }
+      if (!getSpecVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, specVersion_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
+      }
+      for (java.util.Map.Entry<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> entry
+           : internalGetAttributes().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+        attributes__ = AttributesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, attributes__);
+      }
+      if (dataCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(
+              6, (com.google.protobuf.ByteString) data_);
+      }
+      if (dataCase_ == 7) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, data_);
+      }
+      if (dataCase_ == 8) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, (com.google.protobuf.Any) data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.CloudEvent)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.CloudEvent other = (flyteidl.event.Event.CloudEvent) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (!getSpecVersion()
+          .equals(other.getSpecVersion())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!internalGetAttributes().equals(
+          other.internalGetAttributes())) return false;
+      if (!getDataCase().equals(other.getDataCase())) return false;
+      switch (dataCase_) {
+        case 6:
+          if (!getBinaryData()
+              .equals(other.getBinaryData())) return false;
+          break;
+        case 7:
+          if (!getTextData()
+              .equals(other.getTextData())) return false;
+          break;
+        case 8:
+          if (!getProtoData()
+              .equals(other.getProtoData())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+      hash = (37 * hash) + SPEC_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecVersion().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      if (!internalGetAttributes().getMap().isEmpty()) {
+        hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetAttributes().hashCode();
+      }
+      switch (dataCase_) {
+        case 6:
+          hash = (37 * hash) + BINARY_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getBinaryData().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + TEXT_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getTextData().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + PROTO_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getProtoData().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.CloudEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CloudEvent is copied from
+     * https://github.com/cloudevents/spec/blob/master/protobuf-format.md.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.CloudEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.CloudEvent)
+        flyteidl.event.Event.CloudEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetAttributes();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableAttributes();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.CloudEvent.class, flyteidl.event.Event.CloudEvent.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.CloudEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        source_ = "";
+
+        specVersion_ = "";
+
+        type_ = "";
+
+        internalGetMutableAttributes().clear();
+        dataCase_ = 0;
+        data_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEvent getDefaultInstanceForType() {
+        return flyteidl.event.Event.CloudEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEvent build() {
+        flyteidl.event.Event.CloudEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEvent buildPartial() {
+        flyteidl.event.Event.CloudEvent result = new flyteidl.event.Event.CloudEvent(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.source_ = source_;
+        result.specVersion_ = specVersion_;
+        result.type_ = type_;
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+        if (dataCase_ == 6) {
+          result.data_ = data_;
+        }
+        if (dataCase_ == 7) {
+          result.data_ = data_;
+        }
+        if (dataCase_ == 8) {
+          if (protoDataBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = protoDataBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.dataCase_ = dataCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.CloudEvent) {
+          return mergeFrom((flyteidl.event.Event.CloudEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.CloudEvent other) {
+        if (other == flyteidl.event.Event.CloudEvent.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getSource().isEmpty()) {
+          source_ = other.source_;
+          onChanged();
+        }
+        if (!other.getSpecVersion().isEmpty()) {
+          specVersion_ = other.specVersion_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        internalGetMutableAttributes().mergeFrom(
+            other.internalGetAttributes());
+        switch (other.getDataCase()) {
+          case BINARY_DATA: {
+            setBinaryData(other.getBinaryData());
+            break;
+          }
+          case TEXT_DATA: {
+            dataCase_ = 7;
+            data_ = other.data_;
+            onChanged();
+            break;
+          }
+          case PROTO_DATA: {
+            mergeProtoData(other.getProtoData());
+            break;
+          }
+          case DATA_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.CloudEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.CloudEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataCase_ = 0;
+      private java.lang.Object data_;
+      public DataCase
+          getDataCase() {
+        return DataCase.forNumber(
+            dataCase_);
+      }
+
+      public Builder clearData() {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * Unique event identifier.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique event identifier.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique event identifier.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique event identifier.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique event identifier.
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object source_ = "";
+      /**
+       * <pre>
+       * URI of the event source.
+       * </pre>
+       *
+       * <code>string source = 2;</code>
+       */
+      public java.lang.String getSource() {
+        java.lang.Object ref = source_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          source_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI of the event source.
+       * </pre>
+       *
+       * <code>string source = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSourceBytes() {
+        java.lang.Object ref = source_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          source_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI of the event source.
+       * </pre>
+       *
+       * <code>string source = 2;</code>
+       */
+      public Builder setSource(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI of the event source.
+       * </pre>
+       *
+       * <code>string source = 2;</code>
+       */
+      public Builder clearSource() {
+        
+        source_ = getDefaultInstance().getSource();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI of the event source.
+       * </pre>
+       *
+       * <code>string source = 2;</code>
+       */
+      public Builder setSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        source_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object specVersion_ = "";
+      /**
+       * <pre>
+       * Version of the spec in use.
+       * </pre>
+       *
+       * <code>string spec_version = 3;</code>
+       */
+      public java.lang.String getSpecVersion() {
+        java.lang.Object ref = specVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          specVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Version of the spec in use.
+       * </pre>
+       *
+       * <code>string spec_version = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSpecVersionBytes() {
+        java.lang.Object ref = specVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          specVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Version of the spec in use.
+       * </pre>
+       *
+       * <code>string spec_version = 3;</code>
+       */
+      public Builder setSpecVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        specVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Version of the spec in use.
+       * </pre>
+       *
+       * <code>string spec_version = 3;</code>
+       */
+      public Builder clearSpecVersion() {
+        
+        specVersion_ = getDefaultInstance().getSpecVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Version of the spec in use.
+       * </pre>
+       *
+       * <code>string spec_version = 3;</code>
+       */
+      public Builder setSpecVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        specVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * Event type identifier.
+       * </pre>
+       *
+       * <code>string type = 4;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Event type identifier.
+       * </pre>
+       *
+       * <code>string type = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Event type identifier.
+       * </pre>
+       *
+       * <code>string type = 4;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Event type identifier.
+       * </pre>
+       *
+       * <code>string type = 4;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Event type identifier.
+       * </pre>
+       *
+       * <code>string type = 4;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> attributes_;
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+      internalGetAttributes() {
+        if (attributes_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              AttributesDefaultEntryHolder.defaultEntry);
+        }
+        return attributes_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+      internalGetMutableAttributes() {
+        onChanged();;
+        if (attributes_ == null) {
+          attributes_ = com.google.protobuf.MapField.newMapField(
+              AttributesDefaultEntryHolder.defaultEntry);
+        }
+        if (!attributes_.isMutable()) {
+          attributes_ = attributes_.copy();
+        }
+        return attributes_;
+      }
+
+      public int getAttributesCount() {
+        return internalGetAttributes().getMap().size();
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public boolean containsAttributes(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetAttributes().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getAttributesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> getAttributes() {
+        return getAttributesMap();
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> getAttributesMap() {
+        return internalGetAttributes().getMap();
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public flyteidl.event.Event.CloudEventAttributeValue getAttributesOrDefault(
+          java.lang.String key,
+          flyteidl.event.Event.CloudEventAttributeValue defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> map =
+            internalGetAttributes().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public flyteidl.event.Event.CloudEventAttributeValue getAttributesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> map =
+            internalGetAttributes().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearAttributes() {
+        internalGetMutableAttributes().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public Builder removeAttributes(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributes().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue>
+      getMutableAttributes() {
+        return internalGetMutableAttributes().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+      public Builder putAttributes(
+          java.lang.String key,
+          flyteidl.event.Event.CloudEventAttributeValue value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributes().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional &amp; Extension Attributes
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.event.CloudEventAttributeValue&gt; attributes = 5;</code>
+       */
+
+      public Builder putAllAttributes(
+          java.util.Map<java.lang.String, flyteidl.event.Event.CloudEventAttributeValue> values) {
+        internalGetMutableAttributes().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      /**
+       * <pre>
+       * If the event is binary data then the datacontenttype attribute
+       * should be set to an appropriate media-type.
+       * </pre>
+       *
+       * <code>bytes binary_data = 6;</code>
+       */
+      public com.google.protobuf.ByteString getBinaryData() {
+        if (dataCase_ == 6) {
+          return (com.google.protobuf.ByteString) data_;
+        }
+        return com.google.protobuf.ByteString.EMPTY;
+      }
+      /**
+       * <pre>
+       * If the event is binary data then the datacontenttype attribute
+       * should be set to an appropriate media-type.
+       * </pre>
+       *
+       * <code>bytes binary_data = 6;</code>
+       */
+      public Builder setBinaryData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  dataCase_ = 6;
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is binary data then the datacontenttype attribute
+       * should be set to an appropriate media-type.
+       * </pre>
+       *
+       * <code>bytes binary_data = 6;</code>
+       */
+      public Builder clearBinaryData() {
+        if (dataCase_ == 6) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <pre>
+       * If the event is string data then the datacontenttype attribute
+       * should be set to an appropriate media-type such as application/json.
+       * </pre>
+       *
+       * <code>string text_data = 7;</code>
+       */
+      public java.lang.String getTextData() {
+        java.lang.Object ref = "";
+        if (dataCase_ == 7) {
+          ref = data_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (dataCase_ == 7) {
+            data_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If the event is string data then the datacontenttype attribute
+       * should be set to an appropriate media-type such as application/json.
+       * </pre>
+       *
+       * <code>string text_data = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTextDataBytes() {
+        java.lang.Object ref = "";
+        if (dataCase_ == 7) {
+          ref = data_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (dataCase_ == 7) {
+            data_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * If the event is string data then the datacontenttype attribute
+       * should be set to an appropriate media-type such as application/json.
+       * </pre>
+       *
+       * <code>string text_data = 7;</code>
+       */
+      public Builder setTextData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  dataCase_ = 7;
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is string data then the datacontenttype attribute
+       * should be set to an appropriate media-type such as application/json.
+       * </pre>
+       *
+       * <code>string text_data = 7;</code>
+       */
+      public Builder clearTextData() {
+        if (dataCase_ == 7) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is string data then the datacontenttype attribute
+       * should be set to an appropriate media-type such as application/json.
+       * </pre>
+       *
+       * <code>string text_data = 7;</code>
+       */
+      public Builder setTextDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        dataCase_ = 7;
+        data_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> protoDataBuilder_;
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public boolean hasProtoData() {
+        return dataCase_ == 8;
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public com.google.protobuf.Any getProtoData() {
+        if (protoDataBuilder_ == null) {
+          if (dataCase_ == 8) {
+            return (com.google.protobuf.Any) data_;
+          }
+          return com.google.protobuf.Any.getDefaultInstance();
+        } else {
+          if (dataCase_ == 8) {
+            return protoDataBuilder_.getMessage();
+          }
+          return com.google.protobuf.Any.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public Builder setProtoData(com.google.protobuf.Any value) {
+        if (protoDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          protoDataBuilder_.setMessage(value);
+        }
+        dataCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public Builder setProtoData(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (protoDataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          protoDataBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public Builder mergeProtoData(com.google.protobuf.Any value) {
+        if (protoDataBuilder_ == null) {
+          if (dataCase_ == 8 &&
+              data_ != com.google.protobuf.Any.getDefaultInstance()) {
+            data_ = com.google.protobuf.Any.newBuilder((com.google.protobuf.Any) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 8) {
+            protoDataBuilder_.mergeFrom(value);
+          }
+          protoDataBuilder_.setMessage(value);
+        }
+        dataCase_ = 8;
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public Builder clearProtoData() {
+        if (protoDataBuilder_ == null) {
+          if (dataCase_ == 8) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 8) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          protoDataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public com.google.protobuf.Any.Builder getProtoDataBuilder() {
+        return getProtoDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getProtoDataOrBuilder() {
+        if ((dataCase_ == 8) && (protoDataBuilder_ != null)) {
+          return protoDataBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 8) {
+            return (com.google.protobuf.Any) data_;
+          }
+          return com.google.protobuf.Any.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * If the event is a protobuf then it must be encoded using this Any
+       * type. The datacontenttype attribute should be set to
+       * application/protobuf and the dataschema attribute set to the message
+       * type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any proto_data = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getProtoDataFieldBuilder() {
+        if (protoDataBuilder_ == null) {
+          if (!(dataCase_ == 8)) {
+            data_ = com.google.protobuf.Any.getDefaultInstance();
+          }
+          protoDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  (com.google.protobuf.Any) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 8;
+        onChanged();;
+        return protoDataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.CloudEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.CloudEvent)
+    private static final flyteidl.event.Event.CloudEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.CloudEvent();
+    }
+
+    public static flyteidl.event.Event.CloudEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloudEvent>
+        PARSER = new com.google.protobuf.AbstractParser<CloudEvent>() {
+      @java.lang.Override
+      public CloudEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CloudEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CloudEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.CloudEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CloudEventAttributeValueOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.CloudEventAttributeValue)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Boolean value.
+     * </pre>
+     *
+     * <code>bool ce_boolean = 1;</code>
+     */
+    boolean getCeBoolean();
+
+    /**
+     * <pre>
+     * Integer value.
+     * </pre>
+     *
+     * <code>int32 ce_integer = 2;</code>
+     */
+    int getCeInteger();
+
+    /**
+     * <pre>
+     * String value.
+     * </pre>
+     *
+     * <code>string ce_string = 3;</code>
+     */
+    java.lang.String getCeString();
+    /**
+     * <pre>
+     * String value.
+     * </pre>
+     *
+     * <code>string ce_string = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getCeStringBytes();
+
+    /**
+     * <pre>
+     * Byte string value.
+     * </pre>
+     *
+     * <code>bytes ce_bytes = 4;</code>
+     */
+    com.google.protobuf.ByteString getCeBytes();
+
+    /**
+     * <pre>
+     * URI value.
+     * </pre>
+     *
+     * <code>string ce_uri = 5;</code>
+     */
+    java.lang.String getCeUri();
+    /**
+     * <pre>
+     * URI value.
+     * </pre>
+     *
+     * <code>string ce_uri = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getCeUriBytes();
+
+    /**
+     * <pre>
+     * URI reference value.
+     * </pre>
+     *
+     * <code>string ce_uri_ref = 6;</code>
+     */
+    java.lang.String getCeUriRef();
+    /**
+     * <pre>
+     * URI reference value.
+     * </pre>
+     *
+     * <code>string ce_uri_ref = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getCeUriRefBytes();
+
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    boolean hasCeTimestamp();
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    com.google.protobuf.Timestamp getCeTimestamp();
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCeTimestampOrBuilder();
+
+    public flyteidl.event.Event.CloudEventAttributeValue.AttrCase getAttrCase();
+  }
+  /**
+   * <pre>
+   * CloudEventAttribute enables extensions to use any of the seven allowed
+   * data types as the value of an envelope key.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.CloudEventAttributeValue}
+   */
+  public  static final class CloudEventAttributeValue extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.CloudEventAttributeValue)
+      CloudEventAttributeValueOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CloudEventAttributeValue.newBuilder() to construct.
+    private CloudEventAttributeValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CloudEventAttributeValue() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CloudEventAttributeValue(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              attrCase_ = 1;
+              attr_ = input.readBool();
+              break;
+            }
+            case 16: {
+              attrCase_ = 2;
+              attr_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              attrCase_ = 3;
+              attr_ = s;
+              break;
+            }
+            case 34: {
+              attrCase_ = 4;
+              attr_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              attrCase_ = 5;
+              attr_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              attrCase_ = 6;
+              attr_ = s;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (attrCase_ == 7) {
+                subBuilder = ((com.google.protobuf.Timestamp) attr_).toBuilder();
+              }
+              attr_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Timestamp) attr_);
+                attr_ = subBuilder.buildPartial();
+              }
+              attrCase_ = 7;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CloudEventAttributeValue_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CloudEventAttributeValue_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.CloudEventAttributeValue.class, flyteidl.event.Event.CloudEventAttributeValue.Builder.class);
+    }
+
+    private int attrCase_ = 0;
+    private java.lang.Object attr_;
+    public enum AttrCase
+        implements com.google.protobuf.Internal.EnumLite {
+      CE_BOOLEAN(1),
+      CE_INTEGER(2),
+      CE_STRING(3),
+      CE_BYTES(4),
+      CE_URI(5),
+      CE_URI_REF(6),
+      CE_TIMESTAMP(7),
+      ATTR_NOT_SET(0);
+      private final int value;
+      private AttrCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AttrCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static AttrCase forNumber(int value) {
+        switch (value) {
+          case 1: return CE_BOOLEAN;
+          case 2: return CE_INTEGER;
+          case 3: return CE_STRING;
+          case 4: return CE_BYTES;
+          case 5: return CE_URI;
+          case 6: return CE_URI_REF;
+          case 7: return CE_TIMESTAMP;
+          case 0: return ATTR_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public AttrCase
+    getAttrCase() {
+      return AttrCase.forNumber(
+          attrCase_);
+    }
+
+    public static final int CE_BOOLEAN_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * Boolean value.
+     * </pre>
+     *
+     * <code>bool ce_boolean = 1;</code>
+     */
+    public boolean getCeBoolean() {
+      if (attrCase_ == 1) {
+        return (java.lang.Boolean) attr_;
+      }
+      return false;
+    }
+
+    public static final int CE_INTEGER_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * Integer value.
+     * </pre>
+     *
+     * <code>int32 ce_integer = 2;</code>
+     */
+    public int getCeInteger() {
+      if (attrCase_ == 2) {
+        return (java.lang.Integer) attr_;
+      }
+      return 0;
+    }
+
+    public static final int CE_STRING_FIELD_NUMBER = 3;
+    /**
+     * <pre>
+     * String value.
+     * </pre>
+     *
+     * <code>string ce_string = 3;</code>
+     */
+    public java.lang.String getCeString() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 3) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (attrCase_ == 3) {
+          attr_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * String value.
+     * </pre>
+     *
+     * <code>string ce_string = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCeStringBytes() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 3) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (attrCase_ == 3) {
+          attr_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CE_BYTES_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * Byte string value.
+     * </pre>
+     *
+     * <code>bytes ce_bytes = 4;</code>
+     */
+    public com.google.protobuf.ByteString getCeBytes() {
+      if (attrCase_ == 4) {
+        return (com.google.protobuf.ByteString) attr_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final int CE_URI_FIELD_NUMBER = 5;
+    /**
+     * <pre>
+     * URI value.
+     * </pre>
+     *
+     * <code>string ce_uri = 5;</code>
+     */
+    public java.lang.String getCeUri() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 5) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (attrCase_ == 5) {
+          attr_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URI value.
+     * </pre>
+     *
+     * <code>string ce_uri = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCeUriBytes() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 5) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (attrCase_ == 5) {
+          attr_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CE_URI_REF_FIELD_NUMBER = 6;
+    /**
+     * <pre>
+     * URI reference value.
+     * </pre>
+     *
+     * <code>string ce_uri_ref = 6;</code>
+     */
+    public java.lang.String getCeUriRef() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 6) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (attrCase_ == 6) {
+          attr_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URI reference value.
+     * </pre>
+     *
+     * <code>string ce_uri_ref = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCeUriRefBytes() {
+      java.lang.Object ref = "";
+      if (attrCase_ == 6) {
+        ref = attr_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (attrCase_ == 6) {
+          attr_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CE_TIMESTAMP_FIELD_NUMBER = 7;
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    public boolean hasCeTimestamp() {
+      return attrCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    public com.google.protobuf.Timestamp getCeTimestamp() {
+      if (attrCase_ == 7) {
+         return (com.google.protobuf.Timestamp) attr_;
+      }
+      return com.google.protobuf.Timestamp.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Timestamp value.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCeTimestampOrBuilder() {
+      if (attrCase_ == 7) {
+         return (com.google.protobuf.Timestamp) attr_;
+      }
+      return com.google.protobuf.Timestamp.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (attrCase_ == 1) {
+        output.writeBool(
+            1, (boolean)((java.lang.Boolean) attr_));
+      }
+      if (attrCase_ == 2) {
+        output.writeInt32(
+            2, (int)((java.lang.Integer) attr_));
+      }
+      if (attrCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, attr_);
+      }
+      if (attrCase_ == 4) {
+        output.writeBytes(
+            4, (com.google.protobuf.ByteString) attr_);
+      }
+      if (attrCase_ == 5) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, attr_);
+      }
+      if (attrCase_ == 6) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, attr_);
+      }
+      if (attrCase_ == 7) {
+        output.writeMessage(7, (com.google.protobuf.Timestamp) attr_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (attrCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(
+              1, (boolean)((java.lang.Boolean) attr_));
+      }
+      if (attrCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(
+              2, (int)((java.lang.Integer) attr_));
+      }
+      if (attrCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, attr_);
+      }
+      if (attrCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(
+              4, (com.google.protobuf.ByteString) attr_);
+      }
+      if (attrCase_ == 5) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, attr_);
+      }
+      if (attrCase_ == 6) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, attr_);
+      }
+      if (attrCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (com.google.protobuf.Timestamp) attr_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.CloudEventAttributeValue)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.CloudEventAttributeValue other = (flyteidl.event.Event.CloudEventAttributeValue) obj;
+
+      if (!getAttrCase().equals(other.getAttrCase())) return false;
+      switch (attrCase_) {
+        case 1:
+          if (getCeBoolean()
+              != other.getCeBoolean()) return false;
+          break;
+        case 2:
+          if (getCeInteger()
+              != other.getCeInteger()) return false;
+          break;
+        case 3:
+          if (!getCeString()
+              .equals(other.getCeString())) return false;
+          break;
+        case 4:
+          if (!getCeBytes()
+              .equals(other.getCeBytes())) return false;
+          break;
+        case 5:
+          if (!getCeUri()
+              .equals(other.getCeUri())) return false;
+          break;
+        case 6:
+          if (!getCeUriRef()
+              .equals(other.getCeUriRef())) return false;
+          break;
+        case 7:
+          if (!getCeTimestamp()
+              .equals(other.getCeTimestamp())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (attrCase_) {
+        case 1:
+          hash = (37 * hash) + CE_BOOLEAN_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getCeBoolean());
+          break;
+        case 2:
+          hash = (37 * hash) + CE_INTEGER_FIELD_NUMBER;
+          hash = (53 * hash) + getCeInteger();
+          break;
+        case 3:
+          hash = (37 * hash) + CE_STRING_FIELD_NUMBER;
+          hash = (53 * hash) + getCeString().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + CE_BYTES_FIELD_NUMBER;
+          hash = (53 * hash) + getCeBytes().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + CE_URI_FIELD_NUMBER;
+          hash = (53 * hash) + getCeUri().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + CE_URI_REF_FIELD_NUMBER;
+          hash = (53 * hash) + getCeUriRef().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + CE_TIMESTAMP_FIELD_NUMBER;
+          hash = (53 * hash) + getCeTimestamp().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CloudEventAttributeValue parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.CloudEventAttributeValue prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CloudEventAttribute enables extensions to use any of the seven allowed
+     * data types as the value of an envelope key.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.CloudEventAttributeValue}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.CloudEventAttributeValue)
+        flyteidl.event.Event.CloudEventAttributeValueOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEventAttributeValue_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEventAttributeValue_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.CloudEventAttributeValue.class, flyteidl.event.Event.CloudEventAttributeValue.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.CloudEventAttributeValue.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        attrCase_ = 0;
+        attr_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CloudEventAttributeValue_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEventAttributeValue getDefaultInstanceForType() {
+        return flyteidl.event.Event.CloudEventAttributeValue.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEventAttributeValue build() {
+        flyteidl.event.Event.CloudEventAttributeValue result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CloudEventAttributeValue buildPartial() {
+        flyteidl.event.Event.CloudEventAttributeValue result = new flyteidl.event.Event.CloudEventAttributeValue(this);
+        if (attrCase_ == 1) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 2) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 3) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 4) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 5) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 6) {
+          result.attr_ = attr_;
+        }
+        if (attrCase_ == 7) {
+          if (ceTimestampBuilder_ == null) {
+            result.attr_ = attr_;
+          } else {
+            result.attr_ = ceTimestampBuilder_.build();
+          }
+        }
+        result.attrCase_ = attrCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.CloudEventAttributeValue) {
+          return mergeFrom((flyteidl.event.Event.CloudEventAttributeValue)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.CloudEventAttributeValue other) {
+        if (other == flyteidl.event.Event.CloudEventAttributeValue.getDefaultInstance()) return this;
+        switch (other.getAttrCase()) {
+          case CE_BOOLEAN: {
+            setCeBoolean(other.getCeBoolean());
+            break;
+          }
+          case CE_INTEGER: {
+            setCeInteger(other.getCeInteger());
+            break;
+          }
+          case CE_STRING: {
+            attrCase_ = 3;
+            attr_ = other.attr_;
+            onChanged();
+            break;
+          }
+          case CE_BYTES: {
+            setCeBytes(other.getCeBytes());
+            break;
+          }
+          case CE_URI: {
+            attrCase_ = 5;
+            attr_ = other.attr_;
+            onChanged();
+            break;
+          }
+          case CE_URI_REF: {
+            attrCase_ = 6;
+            attr_ = other.attr_;
+            onChanged();
+            break;
+          }
+          case CE_TIMESTAMP: {
+            mergeCeTimestamp(other.getCeTimestamp());
+            break;
+          }
+          case ATTR_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.CloudEventAttributeValue parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.CloudEventAttributeValue) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int attrCase_ = 0;
+      private java.lang.Object attr_;
+      public AttrCase
+          getAttrCase() {
+        return AttrCase.forNumber(
+            attrCase_);
+      }
+
+      public Builder clearAttr() {
+        attrCase_ = 0;
+        attr_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      /**
+       * <pre>
+       * Boolean value.
+       * </pre>
+       *
+       * <code>bool ce_boolean = 1;</code>
+       */
+      public boolean getCeBoolean() {
+        if (attrCase_ == 1) {
+          return (java.lang.Boolean) attr_;
+        }
+        return false;
+      }
+      /**
+       * <pre>
+       * Boolean value.
+       * </pre>
+       *
+       * <code>bool ce_boolean = 1;</code>
+       */
+      public Builder setCeBoolean(boolean value) {
+        attrCase_ = 1;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Boolean value.
+       * </pre>
+       *
+       * <code>bool ce_boolean = 1;</code>
+       */
+      public Builder clearCeBoolean() {
+        if (attrCase_ == 1) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Integer value.
+       * </pre>
+       *
+       * <code>int32 ce_integer = 2;</code>
+       */
+      public int getCeInteger() {
+        if (attrCase_ == 2) {
+          return (java.lang.Integer) attr_;
+        }
+        return 0;
+      }
+      /**
+       * <pre>
+       * Integer value.
+       * </pre>
+       *
+       * <code>int32 ce_integer = 2;</code>
+       */
+      public Builder setCeInteger(int value) {
+        attrCase_ = 2;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Integer value.
+       * </pre>
+       *
+       * <code>int32 ce_integer = 2;</code>
+       */
+      public Builder clearCeInteger() {
+        if (attrCase_ == 2) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <pre>
+       * String value.
+       * </pre>
+       *
+       * <code>string ce_string = 3;</code>
+       */
+      public java.lang.String getCeString() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 3) {
+          ref = attr_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (attrCase_ == 3) {
+            attr_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * String value.
+       * </pre>
+       *
+       * <code>string ce_string = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCeStringBytes() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 3) {
+          ref = attr_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (attrCase_ == 3) {
+            attr_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * String value.
+       * </pre>
+       *
+       * <code>string ce_string = 3;</code>
+       */
+      public Builder setCeString(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  attrCase_ = 3;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * String value.
+       * </pre>
+       *
+       * <code>string ce_string = 3;</code>
+       */
+      public Builder clearCeString() {
+        if (attrCase_ == 3) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * String value.
+       * </pre>
+       *
+       * <code>string ce_string = 3;</code>
+       */
+      public Builder setCeStringBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        attrCase_ = 3;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * Byte string value.
+       * </pre>
+       *
+       * <code>bytes ce_bytes = 4;</code>
+       */
+      public com.google.protobuf.ByteString getCeBytes() {
+        if (attrCase_ == 4) {
+          return (com.google.protobuf.ByteString) attr_;
+        }
+        return com.google.protobuf.ByteString.EMPTY;
+      }
+      /**
+       * <pre>
+       * Byte string value.
+       * </pre>
+       *
+       * <code>bytes ce_bytes = 4;</code>
+       */
+      public Builder setCeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  attrCase_ = 4;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Byte string value.
+       * </pre>
+       *
+       * <code>bytes ce_bytes = 4;</code>
+       */
+      public Builder clearCeBytes() {
+        if (attrCase_ == 4) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <pre>
+       * URI value.
+       * </pre>
+       *
+       * <code>string ce_uri = 5;</code>
+       */
+      public java.lang.String getCeUri() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 5) {
+          ref = attr_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (attrCase_ == 5) {
+            attr_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI value.
+       * </pre>
+       *
+       * <code>string ce_uri = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCeUriBytes() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 5) {
+          ref = attr_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (attrCase_ == 5) {
+            attr_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI value.
+       * </pre>
+       *
+       * <code>string ce_uri = 5;</code>
+       */
+      public Builder setCeUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  attrCase_ = 5;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI value.
+       * </pre>
+       *
+       * <code>string ce_uri = 5;</code>
+       */
+      public Builder clearCeUri() {
+        if (attrCase_ == 5) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * URI value.
+       * </pre>
+       *
+       * <code>string ce_uri = 5;</code>
+       */
+      public Builder setCeUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        attrCase_ = 5;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <pre>
+       * URI reference value.
+       * </pre>
+       *
+       * <code>string ce_uri_ref = 6;</code>
+       */
+      public java.lang.String getCeUriRef() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 6) {
+          ref = attr_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (attrCase_ == 6) {
+            attr_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI reference value.
+       * </pre>
+       *
+       * <code>string ce_uri_ref = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCeUriRefBytes() {
+        java.lang.Object ref = "";
+        if (attrCase_ == 6) {
+          ref = attr_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (attrCase_ == 6) {
+            attr_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI reference value.
+       * </pre>
+       *
+       * <code>string ce_uri_ref = 6;</code>
+       */
+      public Builder setCeUriRef(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  attrCase_ = 6;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI reference value.
+       * </pre>
+       *
+       * <code>string ce_uri_ref = 6;</code>
+       */
+      public Builder clearCeUriRef() {
+        if (attrCase_ == 6) {
+          attrCase_ = 0;
+          attr_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * URI reference value.
+       * </pre>
+       *
+       * <code>string ce_uri_ref = 6;</code>
+       */
+      public Builder setCeUriRefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        attrCase_ = 6;
+        attr_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> ceTimestampBuilder_;
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public boolean hasCeTimestamp() {
+        return attrCase_ == 7;
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public com.google.protobuf.Timestamp getCeTimestamp() {
+        if (ceTimestampBuilder_ == null) {
+          if (attrCase_ == 7) {
+            return (com.google.protobuf.Timestamp) attr_;
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        } else {
+          if (attrCase_ == 7) {
+            return ceTimestampBuilder_.getMessage();
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public Builder setCeTimestamp(com.google.protobuf.Timestamp value) {
+        if (ceTimestampBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attr_ = value;
+          onChanged();
+        } else {
+          ceTimestampBuilder_.setMessage(value);
+        }
+        attrCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public Builder setCeTimestamp(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (ceTimestampBuilder_ == null) {
+          attr_ = builderForValue.build();
+          onChanged();
+        } else {
+          ceTimestampBuilder_.setMessage(builderForValue.build());
+        }
+        attrCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public Builder mergeCeTimestamp(com.google.protobuf.Timestamp value) {
+        if (ceTimestampBuilder_ == null) {
+          if (attrCase_ == 7 &&
+              attr_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            attr_ = com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) attr_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            attr_ = value;
+          }
+          onChanged();
+        } else {
+          if (attrCase_ == 7) {
+            ceTimestampBuilder_.mergeFrom(value);
+          }
+          ceTimestampBuilder_.setMessage(value);
+        }
+        attrCase_ = 7;
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public Builder clearCeTimestamp() {
+        if (ceTimestampBuilder_ == null) {
+          if (attrCase_ == 7) {
+            attrCase_ = 0;
+            attr_ = null;
+            onChanged();
+          }
+        } else {
+          if (attrCase_ == 7) {
+            attrCase_ = 0;
+            attr_ = null;
+          }
+          ceTimestampBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCeTimestampBuilder() {
+        return getCeTimestampFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCeTimestampOrBuilder() {
+        if ((attrCase_ == 7) && (ceTimestampBuilder_ != null)) {
+          return ceTimestampBuilder_.getMessageOrBuilder();
+        } else {
+          if (attrCase_ == 7) {
+            return (com.google.protobuf.Timestamp) attr_;
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Timestamp value.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp ce_timestamp = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCeTimestampFieldBuilder() {
+        if (ceTimestampBuilder_ == null) {
+          if (!(attrCase_ == 7)) {
+            attr_ = com.google.protobuf.Timestamp.getDefaultInstance();
+          }
+          ceTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  (com.google.protobuf.Timestamp) attr_,
+                  getParentForChildren(),
+                  isClean());
+          attr_ = null;
+        }
+        attrCase_ = 7;
+        onChanged();;
+        return ceTimestampBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.CloudEventAttributeValue)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.CloudEventAttributeValue)
+    private static final flyteidl.event.Event.CloudEventAttributeValue DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.CloudEventAttributeValue();
+    }
+
+    public static flyteidl.event.Event.CloudEventAttributeValue getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloudEventAttributeValue>
+        PARSER = new com.google.protobuf.AbstractParser<CloudEventAttributeValue>() {
+      @java.lang.Override
+      public CloudEventAttributeValue parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CloudEventAttributeValue(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CloudEventAttributeValue> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudEventAttributeValue> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.CloudEventAttributeValue getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_WorkflowExecutionEvent_descriptor;
   private static final 
@@ -17445,6 +21301,21 @@ public final class Event {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_TaskExecutionMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_CloudEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_CloudEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_CloudEvent_AttributesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_CloudEvent_AttributesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_CloudEventAttributeValue_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_CloudEventAttributeValue_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -17458,82 +21329,97 @@ public final class Event {
       "vent\032\034flyteidl/core/literals.proto\032\034flyt" +
       "eidl/core/compiler.proto\032\035flyteidl/core/" +
       "execution.proto\032\036flyteidl/core/identifie" +
-      "r.proto\032\033flyteidl/core/catalog.proto\032\037go" +
-      "ogle/protobuf/timestamp.proto\032\034google/pr" +
-      "otobuf/struct.proto\"\340\002\n\026WorkflowExecutio" +
-      "nEvent\022@\n\014execution_id\030\001 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\022\023\n\013prod" +
-      "ucer_id\030\002 \001(\t\0225\n\005phase\030\003 \001(\0162&.flyteidl." +
-      "core.WorkflowExecution.Phase\022/\n\013occurred" +
-      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022\024\n" +
-      "\noutput_uri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.fly" +
-      "teidl.core.ExecutionErrorH\000\0220\n\013output_da" +
-      "ta\030\007 \001(\0132\031.flyteidl.core.LiteralMapH\000B\017\n" +
-      "\routput_result\"\314\005\n\022NodeExecutionEvent\0222\n" +
-      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\022\023\n\013producer_id\030\002 \001(\t\0221\n\005phase\030" +
-      "\003 \001(\0162\".flyteidl.core.NodeExecution.Phas" +
-      "e\022/\n\013occurred_at\030\004 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022\021\n\tinput_uri\030\005 \001(\t\022\024\n\noutput_" +
-      "uri\030\006 \001(\tH\000\022.\n\005error\030\007 \001(\0132\035.flyteidl.co" +
-      "re.ExecutionErrorH\000\0220\n\013output_data\030\017 \001(\013" +
-      "2\031.flyteidl.core.LiteralMapH\000\022F\n\026workflo" +
-      "w_node_metadata\030\010 \001(\0132$.flyteidl.event.W" +
-      "orkflowNodeMetadataH\001\022>\n\022task_node_metad" +
-      "ata\030\016 \001(\0132 .flyteidl.event.TaskNodeMetad" +
-      "ataH\001\022I\n\024parent_task_metadata\030\t \001(\0132+.fl" +
-      "yteidl.event.ParentTaskExecutionMetadata" +
-      "\022I\n\024parent_node_metadata\030\n \001(\0132+.flyteid" +
-      "l.event.ParentNodeExecutionMetadata\022\023\n\013r" +
-      "etry_group\030\013 \001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021" +
-      "\n\tnode_name\030\r \001(\tB\017\n\routput_resultB\021\n\017ta" +
-      "rget_metadata\"X\n\024WorkflowNodeMetadata\022@\n" +
-      "\014execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\"\215\002\n\020TaskNodeMeta" +
-      "data\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.co" +
-      "re.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001" +
-      "(\0132\036.flyteidl.core.CatalogMetadata\022D\n\022re" +
-      "servation_status\030\003 \001(\0162(.flyteidl.core.C" +
-      "atalogReservation.Status\022E\n\020dynamic_work" +
-      "flow\030\020 \001(\0132+.flyteidl.event.DynamicWorkf" +
-      "lowNodeMetadata\"\207\001\n\033DynamicWorkflowNodeM" +
-      "etadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
-      "tifier\022A\n\021compiled_workflow\030\002 \001(\0132&.flyt" +
-      "eidl.core.CompiledWorkflowClosure\"Q\n\033Par" +
-      "entTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&.f" +
-      "lyteidl.core.TaskExecutionIdentifier\".\n\033" +
-      "ParentNodeExecutionMetadata\022\017\n\007node_id\030\001" +
-      " \001(\t\"\375\004\n\022TaskExecutionEvent\022*\n\007task_id\030\001" +
-      " \001(\0132\031.flyteidl.core.Identifier\022H\n\030paren" +
-      "t_node_execution_id\030\002 \001(\0132&.flyteidl.cor" +
-      "e.NodeExecutionIdentifier\022\025\n\rretry_attem" +
-      "pt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core." +
-      "TaskExecution.Phase\022\023\n\013producer_id\030\005 \001(\t" +
-      "\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\022/" +
-      "\n\013occurred_at\030\007 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_uri" +
-      "\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core." +
-      "ExecutionErrorH\000\0220\n\013output_data\030\021 \001(\0132\031." +
-      "flyteidl.core.LiteralMapH\000\022,\n\013custom_inf" +
-      "o\030\013 \001(\0132\027.google.protobuf.Struct\022\025\n\rphas" +
-      "e_version\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_" +
-      "type\030\016 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl." +
-      "event.TaskExecutionMetadataB\017\n\routput_re" +
-      "sult\"\204\001\n\024ExternalResourceInfo\022\023\n\013externa" +
-      "l_id\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_attem" +
-      "pt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core." +
-      "TaskExecution.Phase\"?\n\020ResourcePoolInfo\022" +
-      "\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002" +
-      " \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016genera" +
-      "ted_name\030\001 \001(\t\022@\n\022external_resources\030\002 \003" +
-      "(\0132$.flyteidl.event.ExternalResourceInfo" +
-      "\022<\n\022resource_pool_info\030\003 \003(\0132 .flyteidl." +
-      "event.ResourcePoolInfo\022\031\n\021plugin_identif" +
-      "ier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.flyt" +
-      "eidl.event.TaskExecutionMetadata.Instanc" +
-      "eClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\r" +
-      "INTERRUPTIBLE\020\001B7Z5github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/eventb\006proto3"
+      "r.proto\032\033flyteidl/core/catalog.proto\032\031go" +
+      "ogle/protobuf/any.proto\032\037google/protobuf" +
+      "/timestamp.proto\032\034google/protobuf/struct" +
+      ".proto\"\340\002\n\026WorkflowExecutionEvent\022@\n\014exe" +
+      "cution_id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\022\023\n\013producer_id\030\002 \001(\t" +
+      "\0225\n\005phase\030\003 \001(\0162&.flyteidl.core.Workflow" +
+      "Execution.Phase\022/\n\013occurred_at\030\004 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022\024\n\noutput_uri\030\005" +
+      " \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.flyteidl.core.Ex" +
+      "ecutionErrorH\000\0220\n\013output_data\030\007 \001(\0132\031.fl" +
+      "yteidl.core.LiteralMapH\000B\017\n\routput_resul" +
+      "t\"\314\005\n\022NodeExecutionEvent\0222\n\002id\030\001 \001(\0132&.f" +
+      "lyteidl.core.NodeExecutionIdentifier\022\023\n\013" +
+      "producer_id\030\002 \001(\t\0221\n\005phase\030\003 \001(\0162\".flyte" +
+      "idl.core.NodeExecution.Phase\022/\n\013occurred" +
+      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022\021\n" +
+      "\tinput_uri\030\005 \001(\t\022\024\n\noutput_uri\030\006 \001(\tH\000\022." +
+      "\n\005error\030\007 \001(\0132\035.flyteidl.core.ExecutionE" +
+      "rrorH\000\0220\n\013output_data\030\017 \001(\0132\031.flyteidl.c" +
+      "ore.LiteralMapH\000\022F\n\026workflow_node_metada" +
+      "ta\030\010 \001(\0132$.flyteidl.event.WorkflowNodeMe" +
+      "tadataH\001\022>\n\022task_node_metadata\030\016 \001(\0132 .f" +
+      "lyteidl.event.TaskNodeMetadataH\001\022I\n\024pare" +
+      "nt_task_metadata\030\t \001(\0132+.flyteidl.event." +
+      "ParentTaskExecutionMetadata\022I\n\024parent_no" +
+      "de_metadata\030\n \001(\0132+.flyteidl.event.Paren" +
+      "tNodeExecutionMetadata\022\023\n\013retry_group\030\013 " +
+      "\001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021\n\tnode_name\030\r" +
+      " \001(\tB\017\n\routput_resultB\021\n\017target_metadata" +
+      "\"X\n\024WorkflowNodeMetadata\022@\n\014execution_id" +
+      "\030\001 \001(\0132*.flyteidl.core.WorkflowExecution" +
+      "Identifier\"\215\002\n\020TaskNodeMetadata\0227\n\014cache" +
+      "_status\030\001 \001(\0162!.flyteidl.core.CatalogCac" +
+      "heStatus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl" +
+      ".core.CatalogMetadata\022D\n\022reservation_sta" +
+      "tus\030\003 \001(\0162(.flyteidl.core.CatalogReserva" +
+      "tion.Status\022E\n\020dynamic_workflow\030\020 \001(\0132+." +
+      "flyteidl.event.DynamicWorkflowNodeMetada" +
+      "ta\"\207\001\n\033DynamicWorkflowNodeMetadata\022%\n\002id" +
+      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022A\n\021com" +
+      "piled_workflow\030\002 \001(\0132&.flyteidl.core.Com" +
+      "piledWorkflowClosure\"Q\n\033ParentTaskExecut" +
+      "ionMetadata\0222\n\002id\030\001 \001(\0132&.flyteidl.core." +
+      "TaskExecutionIdentifier\".\n\033ParentNodeExe" +
+      "cutionMetadata\022\017\n\007node_id\030\001 \001(\t\"\375\004\n\022Task" +
+      "ExecutionEvent\022*\n\007task_id\030\001 \001(\0132\031.flytei" +
+      "dl.core.Identifier\022H\n\030parent_node_execut" +
+      "ion_id\030\002 \001(\0132&.flyteidl.core.NodeExecuti" +
+      "onIdentifier\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005p" +
+      "hase\030\004 \001(\0162\".flyteidl.core.TaskExecution" +
+      ".Phase\022\023\n\013producer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(" +
+      "\0132\026.flyteidl.core.TaskLog\022/\n\013occurred_at" +
+      "\030\007 \001(\0132\032.google.protobuf.Timestamp\022\021\n\tin" +
+      "put_uri\030\010 \001(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005e" +
+      "rror\030\n \001(\0132\035.flyteidl.core.ExecutionErro" +
+      "rH\000\0220\n\013output_data\030\021 \001(\0132\031.flyteidl.core" +
+      ".LiteralMapH\000\022,\n\013custom_info\030\013 \001(\0132\027.goo" +
+      "gle.protobuf.Struct\022\025\n\rphase_version\030\014 \001" +
+      "(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n" +
+      "\010metadata\030\020 \001(\0132%.flyteidl.event.TaskExe" +
+      "cutionMetadataB\017\n\routput_result\"\204\001\n\024Exte" +
+      "rnalResourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n" +
+      "\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005p" +
+      "hase\030\004 \001(\0162\".flyteidl.core.TaskExecution" +
+      ".Phase\"?\n\020ResourcePoolInfo\022\030\n\020allocation" +
+      "_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025Task" +
+      "ExecutionMetadata\022\026\n\016generated_name\030\001 \001(" +
+      "\t\022@\n\022external_resources\030\002 \003(\0132$.flyteidl" +
+      ".event.ExternalResourceInfo\022<\n\022resource_" +
+      "pool_info\030\003 \003(\0132 .flyteidl.event.Resourc" +
+      "ePoolInfo\022\031\n\021plugin_identifier\030\004 \001(\t\022K\n\016" +
+      "instance_class\030\020 \001(\01623.flyteidl.event.Ta" +
+      "skExecutionMetadata.InstanceClass\"/\n\rIns" +
+      "tanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE" +
+      "\020\001\"\311\002\n\nCloudEvent\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030" +
+      "\002 \001(\t\022\024\n\014spec_version\030\003 \001(\t\022\014\n\004type\030\004 \001(" +
+      "\t\022>\n\nattributes\030\005 \003(\0132*.flyteidl.event.C" +
+      "loudEvent.AttributesEntry\022\025\n\013binary_data" +
+      "\030\006 \001(\014H\000\022\023\n\ttext_data\030\007 \001(\tH\000\022*\n\nproto_d" +
+      "ata\030\010 \001(\0132\024.google.protobuf.AnyH\000\032[\n\017Att" +
+      "ributesEntry\022\013\n\003key\030\001 \001(\t\0227\n\005value\030\002 \001(\013" +
+      "2(.flyteidl.event.CloudEventAttributeVal" +
+      "ue:\0028\001B\006\n\004data\"\323\001\n\030CloudEventAttributeVa" +
+      "lue\022\024\n\nce_boolean\030\001 \001(\010H\000\022\024\n\nce_integer\030" +
+      "\002 \001(\005H\000\022\023\n\tce_string\030\003 \001(\tH\000\022\022\n\010ce_bytes" +
+      "\030\004 \001(\014H\000\022\020\n\006ce_uri\030\005 \001(\tH\000\022\024\n\nce_uri_ref" +
+      "\030\006 \001(\tH\000\0222\n\014ce_timestamp\030\007 \001(\0132\032.google." +
+      "protobuf.TimestampH\000B\006\n\004attrB7Z5github.c" +
+      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
+      "eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17551,6 +21437,7 @@ public final class Event {
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Catalog.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
@@ -17620,11 +21507,30 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionMetadata_descriptor,
         new java.lang.String[] { "GeneratedName", "ExternalResources", "ResourcePoolInfo", "PluginIdentifier", "InstanceClass", });
+    internal_static_flyteidl_event_CloudEvent_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_flyteidl_event_CloudEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_CloudEvent_descriptor,
+        new java.lang.String[] { "Id", "Source", "SpecVersion", "Type", "Attributes", "BinaryData", "TextData", "ProtoData", "Data", });
+    internal_static_flyteidl_event_CloudEvent_AttributesEntry_descriptor =
+      internal_static_flyteidl_event_CloudEvent_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_event_CloudEvent_AttributesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_CloudEvent_AttributesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_flyteidl_event_CloudEventAttributeValue_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_flyteidl_event_CloudEventAttributeValue_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_CloudEventAttributeValue_descriptor,
+        new java.lang.String[] { "CeBoolean", "CeInteger", "CeString", "CeBytes", "CeUri", "CeUriRef", "CeTimestamp", "Attr", });
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Compiler.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
