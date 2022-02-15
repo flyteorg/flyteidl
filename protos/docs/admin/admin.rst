@@ -5,6 +5,109 @@ Protocol Documentation
 
 
 
+.. _ref_flyteidl/admin/cluster_assignment.proto:
+
+flyteidl/admin/cluster_assignment.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.Affinity:
+
+Affinity
+------------------------------------------------------------------
+
+Defines a set of constraints used to select eligible objects based on labels they possess.
+
+
+
+.. csv-table:: Affinity type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "selectors", ":ref:`ref_flyteidl.admin.Selector`", "repeated", "Multiples selectors are 'and'-ed together to produce the list of matching, eligible objects."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ClusterAssignment:
+
+ClusterAssignment
+------------------------------------------------------------------
+
+Encapsulates specifications for routing an execution onto a specific cluster.
+
+
+
+.. csv-table:: ClusterAssignment type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "affinity", ":ref:`ref_flyteidl.admin.Affinity`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.Selector:
+
+Selector
+------------------------------------------------------------------
+
+A Selector is a specification for identifying a set of objects with corresponding labels.
+
+
+
+.. csv-table:: Selector type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", "The label key."
+   "value", ":ref:`ref_string`", "repeated", "One or more values used to match labels. For equality (or inequality) requirements, values must contain a single element. For set-based requirements, values may contain one or more elements."
+   "operator", ":ref:`ref_flyteidl.admin.Selector.Operator`", "", ""
+
+
+
+
+
+ <!-- end messages -->
+
+
+
+.. _ref_flyteidl.admin.Selector.Operator:
+
+Selector.Operator
+------------------------------------------------------------------
+
+Defines how a label with a corresponding key and value is selected or excluded.
+
+.. csv-table:: Enum Selector.Operator values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "EQUALS", "0", ""
+   "NOT_EQUALS", "1", ""
+   "IN", "2", ""
+   "NOT_IN", "3", ""
+   "EXISTS", "4", "A label key with any value"
+   "DOES_NOT_EXIST", "5", "Resource has no such label key"
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+
 .. _ref_flyteidl/admin/common.proto:
 
 flyteidl/admin/common.proto
@@ -1053,6 +1156,7 @@ of an execution as it progresses across phase changes.
    "auth_role", ":ref:`ref_flyteidl.admin.AuthRole`", "", "**Deprecated.** Optional: auth override to apply this execution."
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of task nodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
+   "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
 
 
 

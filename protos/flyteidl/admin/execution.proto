@@ -3,6 +3,7 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/admin/cluster_assignment.proto";
 import "flyteidl/admin/common.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
@@ -281,6 +282,9 @@ message ExecutionSpec {
     // This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
     // and parallelism/concurrency of MapTasks is independent from this.
     int32 max_parallelism = 18;
+
+    // Controls how to select an available cluster on which this execution should run.
+    ClusterAssignment cluster_assignment = 19;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

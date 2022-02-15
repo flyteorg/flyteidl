@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.admin_annotations import AdminAnnotations  # noqa: F401,E501
 from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
+from flyteadmin.models.admin_cluster_assignment import AdminClusterAssignment  # noqa: F401,E501
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_notification_list import AdminNotificationList  # noqa: F401,E501
@@ -51,7 +52,8 @@ class AdminExecutionSpec(object):
         'security_context': 'CoreSecurityContext',
         'auth_role': 'AdminAuthRole',
         'quality_of_service': 'CoreQualityOfService',
-        'max_parallelism': 'int'
+        'max_parallelism': 'int',
+        'cluster_assignment': 'AdminClusterAssignment'
     }
 
     attribute_map = {
@@ -65,10 +67,11 @@ class AdminExecutionSpec(object):
         'security_context': 'security_context',
         'auth_role': 'auth_role',
         'quality_of_service': 'quality_of_service',
-        'max_parallelism': 'max_parallelism'
+        'max_parallelism': 'max_parallelism',
+        'cluster_assignment': 'cluster_assignment'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, cluster_assignment=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -82,6 +85,7 @@ class AdminExecutionSpec(object):
         self._auth_role = None
         self._quality_of_service = None
         self._max_parallelism = None
+        self._cluster_assignment = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -106,6 +110,8 @@ class AdminExecutionSpec(object):
             self.quality_of_service = quality_of_service
         if max_parallelism is not None:
             self.max_parallelism = max_parallelism
+        if cluster_assignment is not None:
+            self.cluster_assignment = cluster_assignment
 
     @property
     def launch_plan(self):
@@ -353,6 +359,29 @@ class AdminExecutionSpec(object):
         """
 
         self._max_parallelism = max_parallelism
+
+    @property
+    def cluster_assignment(self):
+        """Gets the cluster_assignment of this AdminExecutionSpec.  # noqa: E501
+
+        Controls how to select an available cluster on which this execution should run.  # noqa: E501
+
+        :return: The cluster_assignment of this AdminExecutionSpec.  # noqa: E501
+        :rtype: AdminClusterAssignment
+        """
+        return self._cluster_assignment
+
+    @cluster_assignment.setter
+    def cluster_assignment(self, cluster_assignment):
+        """Sets the cluster_assignment of this AdminExecutionSpec.
+
+        Controls how to select an available cluster on which this execution should run.  # noqa: E501
+
+        :param cluster_assignment: The cluster_assignment of this AdminExecutionSpec.  # noqa: E501
+        :type: AdminClusterAssignment
+        """
+
+        self._cluster_assignment = cluster_assignment
 
     def to_dict(self):
         """Returns the model properties as a dict"""
