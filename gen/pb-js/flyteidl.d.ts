@@ -140,6 +140,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a CatalogReservation. */
+        interface ICatalogReservation {
+        }
+
+        /** Represents a CatalogReservation. */
+        class CatalogReservation implements ICatalogReservation {
+
+            /**
+             * Constructs a new CatalogReservation.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ICatalogReservation);
+
+            /**
+             * Creates a new CatalogReservation instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CatalogReservation instance
+             */
+            public static create(properties?: flyteidl.core.ICatalogReservation): flyteidl.core.CatalogReservation;
+
+            /**
+             * Encodes the specified CatalogReservation message. Does not implicitly {@link flyteidl.core.CatalogReservation.verify|verify} messages.
+             * @param message CatalogReservation message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ICatalogReservation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CatalogReservation message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CatalogReservation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CatalogReservation;
+
+            /**
+             * Verifies a CatalogReservation message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace CatalogReservation {
+
+            /** Status enum. */
+            enum Status {
+                RESERVATION_DISABLED = 0,
+                RESERVATION_ACQUIRED = 1,
+                RESERVATION_EXISTS = 2,
+                RESERVATION_RELEASED = 3,
+                RESERVATION_FAILURE = 4
+            }
+        }
+
         /** ResourceType enum. */
         enum ResourceType {
             UNSPECIFIED = 0,
@@ -2119,58 +2177,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an Union. */
-        interface IUnion {
+        /** Properties of a StructuredDatasetMetadata. */
+        interface IStructuredDatasetMetadata {
 
-            /** Union value */
-            value?: (flyteidl.core.ILiteral|null);
-
-            /** Union type */
-            type?: (flyteidl.core.ILiteralType|null);
+            /** StructuredDatasetMetadata structuredDatasetType */
+            structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
         }
 
-        /** Represents an Union. */
-        class Union implements IUnion {
+        /** Represents a StructuredDatasetMetadata. */
+        class StructuredDatasetMetadata implements IStructuredDatasetMetadata {
 
             /**
-             * Constructs a new Union.
+             * Constructs a new StructuredDatasetMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IUnion);
+            constructor(properties?: flyteidl.core.IStructuredDatasetMetadata);
 
-            /** Union value. */
-            public value?: (flyteidl.core.ILiteral|null);
-
-            /** Union type. */
-            public type?: (flyteidl.core.ILiteralType|null);
+            /** StructuredDatasetMetadata structuredDatasetType. */
+            public structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
 
             /**
-             * Creates a new Union instance using the specified properties.
+             * Creates a new StructuredDatasetMetadata instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns Union instance
+             * @returns StructuredDatasetMetadata instance
              */
-            public static create(properties?: flyteidl.core.IUnion): flyteidl.core.Union;
+            public static create(properties?: flyteidl.core.IStructuredDatasetMetadata): flyteidl.core.StructuredDatasetMetadata;
 
             /**
-             * Encodes the specified Union message. Does not implicitly {@link flyteidl.core.Union.verify|verify} messages.
-             * @param message Union message or plain object to encode
+             * Encodes the specified StructuredDatasetMetadata message. Does not implicitly {@link flyteidl.core.StructuredDatasetMetadata.verify|verify} messages.
+             * @param message StructuredDatasetMetadata message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IUnion, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IStructuredDatasetMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an Union message from the specified reader or buffer.
+             * Decodes a StructuredDatasetMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Union
+             * @returns StructuredDatasetMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Union;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetMetadata;
 
             /**
-             * Verifies an Union message.
+             * Verifies a StructuredDatasetMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a StructuredDataset. */
+        interface IStructuredDataset {
+
+            /** StructuredDataset uri */
+            uri?: (string|null);
+
+            /** StructuredDataset metadata */
+            metadata?: (flyteidl.core.IStructuredDatasetMetadata|null);
+        }
+
+        /** Represents a StructuredDataset. */
+        class StructuredDataset implements IStructuredDataset {
+
+            /**
+             * Constructs a new StructuredDataset.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IStructuredDataset);
+
+            /** StructuredDataset uri. */
+            public uri: string;
+
+            /** StructuredDataset metadata. */
+            public metadata?: (flyteidl.core.IStructuredDatasetMetadata|null);
+
+            /**
+             * Creates a new StructuredDataset instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StructuredDataset instance
+             */
+            public static create(properties?: flyteidl.core.IStructuredDataset): flyteidl.core.StructuredDataset;
+
+            /**
+             * Encodes the specified StructuredDataset message. Does not implicitly {@link flyteidl.core.StructuredDataset.verify|verify} messages.
+             * @param message StructuredDataset message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IStructuredDataset, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StructuredDataset message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StructuredDataset
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDataset;
+
+            /**
+             * Verifies a StructuredDataset message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -2201,8 +2311,8 @@ export namespace flyteidl {
             /** Scalar generic */
             generic?: (google.protobuf.IStruct|null);
 
-            /** Scalar union */
-            union?: (flyteidl.core.IUnion|null);
+            /** Scalar structuredDataset */
+            structuredDataset?: (flyteidl.core.IStructuredDataset|null);
         }
 
         /** Represents a Scalar. */
@@ -2235,11 +2345,11 @@ export namespace flyteidl {
             /** Scalar generic. */
             public generic?: (google.protobuf.IStruct|null);
 
-            /** Scalar union. */
-            public union?: (flyteidl.core.IUnion|null);
+            /** Scalar structuredDataset. */
+            public structuredDataset?: (flyteidl.core.IStructuredDataset|null);
 
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"union");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"structuredDataset");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -2549,58 +2659,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an UnionInfo. */
-        interface IUnionInfo {
-
-            /** UnionInfo targetType */
-            targetType?: (flyteidl.core.ILiteralType|null);
-        }
-
-        /** Represents an UnionInfo. */
-        class UnionInfo implements IUnionInfo {
-
-            /**
-             * Constructs a new UnionInfo.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IUnionInfo);
-
-            /** UnionInfo targetType. */
-            public targetType?: (flyteidl.core.ILiteralType|null);
-
-            /**
-             * Creates a new UnionInfo instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns UnionInfo instance
-             */
-            public static create(properties?: flyteidl.core.IUnionInfo): flyteidl.core.UnionInfo;
-
-            /**
-             * Encodes the specified UnionInfo message. Does not implicitly {@link flyteidl.core.UnionInfo.verify|verify} messages.
-             * @param message UnionInfo message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IUnionInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an UnionInfo message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns UnionInfo
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.UnionInfo;
-
-            /**
-             * Verifies an UnionInfo message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a BindingData. */
         interface IBindingData {
 
@@ -2615,9 +2673,6 @@ export namespace flyteidl {
 
             /** BindingData map */
             map?: (flyteidl.core.IBindingDataMap|null);
-
-            /** BindingData union */
-            union?: (flyteidl.core.IUnionInfo|null);
         }
 
         /** Represents a BindingData. */
@@ -2640,9 +2695,6 @@ export namespace flyteidl {
 
             /** BindingData map. */
             public map?: (flyteidl.core.IBindingDataMap|null);
-
-            /** BindingData union. */
-            public union?: (flyteidl.core.IUnionInfo|null);
 
             /** BindingData value. */
             public value?: ("scalar"|"collection"|"promise"|"map");
@@ -2988,6 +3040,137 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a StructuredDatasetType. */
+        interface IStructuredDatasetType {
+
+            /** StructuredDatasetType columns */
+            columns?: (flyteidl.core.StructuredDatasetType.IDatasetColumn[]|null);
+
+            /** StructuredDatasetType format */
+            format?: (string|null);
+
+            /** StructuredDatasetType externalSchemaType */
+            externalSchemaType?: (string|null);
+
+            /** StructuredDatasetType externalSchemaBytes */
+            externalSchemaBytes?: (Uint8Array|null);
+        }
+
+        /** Represents a StructuredDatasetType. */
+        class StructuredDatasetType implements IStructuredDatasetType {
+
+            /**
+             * Constructs a new StructuredDatasetType.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IStructuredDatasetType);
+
+            /** StructuredDatasetType columns. */
+            public columns: flyteidl.core.StructuredDatasetType.IDatasetColumn[];
+
+            /** StructuredDatasetType format. */
+            public format: string;
+
+            /** StructuredDatasetType externalSchemaType. */
+            public externalSchemaType: string;
+
+            /** StructuredDatasetType externalSchemaBytes. */
+            public externalSchemaBytes: Uint8Array;
+
+            /**
+             * Creates a new StructuredDatasetType instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StructuredDatasetType instance
+             */
+            public static create(properties?: flyteidl.core.IStructuredDatasetType): flyteidl.core.StructuredDatasetType;
+
+            /**
+             * Encodes the specified StructuredDatasetType message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.verify|verify} messages.
+             * @param message StructuredDatasetType message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IStructuredDatasetType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StructuredDatasetType message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StructuredDatasetType
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetType;
+
+            /**
+             * Verifies a StructuredDatasetType message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace StructuredDatasetType {
+
+            /** Properties of a DatasetColumn. */
+            interface IDatasetColumn {
+
+                /** DatasetColumn name */
+                name?: (string|null);
+
+                /** DatasetColumn literalType */
+                literalType?: (flyteidl.core.ILiteralType|null);
+            }
+
+            /** Represents a DatasetColumn. */
+            class DatasetColumn implements IDatasetColumn {
+
+                /**
+                 * Constructs a new DatasetColumn.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: flyteidl.core.StructuredDatasetType.IDatasetColumn);
+
+                /** DatasetColumn name. */
+                public name: string;
+
+                /** DatasetColumn literalType. */
+                public literalType?: (flyteidl.core.ILiteralType|null);
+
+                /**
+                 * Creates a new DatasetColumn instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns DatasetColumn instance
+                 */
+                public static create(properties?: flyteidl.core.StructuredDatasetType.IDatasetColumn): flyteidl.core.StructuredDatasetType.DatasetColumn;
+
+                /**
+                 * Encodes the specified DatasetColumn message. Does not implicitly {@link flyteidl.core.StructuredDatasetType.DatasetColumn.verify|verify} messages.
+                 * @param message DatasetColumn message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: flyteidl.core.StructuredDatasetType.IDatasetColumn, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a DatasetColumn message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns DatasetColumn
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.StructuredDatasetType.DatasetColumn;
+
+                /**
+                 * Verifies a DatasetColumn message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+            }
+        }
+
         /** Properties of a BlobType. */
         interface IBlobType {
 
@@ -3107,104 +3290,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an UnionType. */
-        interface IUnionType {
+        /** Properties of a TypeAnnotation. */
+        interface ITypeAnnotation {
 
-            /** UnionType variants */
-            variants?: (flyteidl.core.ILiteralType[]|null);
+            /** TypeAnnotation annotations */
+            annotations?: (google.protobuf.IStruct|null);
         }
 
-        /** Represents an UnionType. */
-        class UnionType implements IUnionType {
+        /** Represents a TypeAnnotation. */
+        class TypeAnnotation implements ITypeAnnotation {
 
             /**
-             * Constructs a new UnionType.
+             * Constructs a new TypeAnnotation.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IUnionType);
+            constructor(properties?: flyteidl.core.ITypeAnnotation);
 
-            /** UnionType variants. */
-            public variants: flyteidl.core.ILiteralType[];
+            /** TypeAnnotation annotations. */
+            public annotations?: (google.protobuf.IStruct|null);
 
             /**
-             * Creates a new UnionType instance using the specified properties.
+             * Creates a new TypeAnnotation instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns UnionType instance
+             * @returns TypeAnnotation instance
              */
-            public static create(properties?: flyteidl.core.IUnionType): flyteidl.core.UnionType;
+            public static create(properties?: flyteidl.core.ITypeAnnotation): flyteidl.core.TypeAnnotation;
 
             /**
-             * Encodes the specified UnionType message. Does not implicitly {@link flyteidl.core.UnionType.verify|verify} messages.
-             * @param message UnionType message or plain object to encode
+             * Encodes the specified TypeAnnotation message. Does not implicitly {@link flyteidl.core.TypeAnnotation.verify|verify} messages.
+             * @param message TypeAnnotation message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IUnionType, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.ITypeAnnotation, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an UnionType message from the specified reader or buffer.
+             * Decodes a TypeAnnotation message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns UnionType
+             * @returns TypeAnnotation
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.UnionType;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TypeAnnotation;
 
             /**
-             * Verifies an UnionType message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a TypeStructure. */
-        interface ITypeStructure {
-
-            /** TypeStructure tag */
-            tag?: (string|null);
-        }
-
-        /** Represents a TypeStructure. */
-        class TypeStructure implements ITypeStructure {
-
-            /**
-             * Constructs a new TypeStructure.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ITypeStructure);
-
-            /** TypeStructure tag. */
-            public tag: string;
-
-            /**
-             * Creates a new TypeStructure instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TypeStructure instance
-             */
-            public static create(properties?: flyteidl.core.ITypeStructure): flyteidl.core.TypeStructure;
-
-            /**
-             * Encodes the specified TypeStructure message. Does not implicitly {@link flyteidl.core.TypeStructure.verify|verify} messages.
-             * @param message TypeStructure message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ITypeStructure, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TypeStructure message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TypeStructure
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TypeStructure;
-
-            /**
-             * Verifies a TypeStructure message.
+             * Verifies a TypeAnnotation message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -3232,14 +3363,14 @@ export namespace flyteidl {
             /** LiteralType enumType */
             enumType?: (flyteidl.core.IEnumType|null);
 
-            /** LiteralType unionType */
-            unionType?: (flyteidl.core.IUnionType|null);
-
-            /** LiteralType structure */
-            structure?: (flyteidl.core.ITypeStructure|null);
+            /** LiteralType structuredDatasetType */
+            structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
 
             /** LiteralType metadata */
             metadata?: (google.protobuf.IStruct|null);
+
+            /** LiteralType annotation */
+            annotation?: (flyteidl.core.ITypeAnnotation|null);
         }
 
         /** Represents a LiteralType. */
@@ -3269,17 +3400,17 @@ export namespace flyteidl {
             /** LiteralType enumType. */
             public enumType?: (flyteidl.core.IEnumType|null);
 
-            /** LiteralType unionType. */
-            public unionType?: (flyteidl.core.IUnionType|null);
-
-            /** LiteralType structure. */
-            public structure?: (flyteidl.core.ITypeStructure|null);
+            /** LiteralType structuredDatasetType. */
+            public structuredDatasetType?: (flyteidl.core.IStructuredDatasetType|null);
 
             /** LiteralType metadata. */
             public metadata?: (google.protobuf.IStruct|null);
 
+            /** LiteralType annotation. */
+            public annotation?: (flyteidl.core.ITypeAnnotation|null);
+
             /** LiteralType type. */
-            public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|"unionType");
+            public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|"structuredDatasetType");
 
             /**
              * Creates a new LiteralType instance using the specified properties.
@@ -3488,7 +3619,8 @@ export namespace flyteidl {
                 FAILING = 5,
                 FAILED = 6,
                 ABORTED = 7,
-                TIMED_OUT = 8
+                TIMED_OUT = 8,
+                ABORTING = 9
             }
         }
 
@@ -4413,6 +4545,9 @@ export namespace flyteidl {
 
             /** TaskMetadata interruptible */
             interruptible?: (boolean|null);
+
+            /** TaskMetadata cacheSerializable */
+            cacheSerializable?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -4444,6 +4579,9 @@ export namespace flyteidl {
 
             /** TaskMetadata interruptible. */
             public interruptible: boolean;
+
+            /** TaskMetadata cacheSerializable. */
+            public cacheSerializable: boolean;
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -6019,6 +6157,9 @@ export namespace flyteidl {
             /** TaskNodeMetadata catalogKey */
             catalogKey?: (flyteidl.core.ICatalogMetadata|null);
 
+            /** TaskNodeMetadata reservationStatus */
+            reservationStatus?: (flyteidl.core.CatalogReservation.Status|null);
+
             /** TaskNodeMetadata dynamicWorkflow */
             dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
         }
@@ -6037,6 +6178,9 @@ export namespace flyteidl {
 
             /** TaskNodeMetadata catalogKey. */
             public catalogKey?: (flyteidl.core.ICatalogMetadata|null);
+
+            /** TaskNodeMetadata reservationStatus. */
+            public reservationStatus: flyteidl.core.CatalogReservation.Status;
 
             /** TaskNodeMetadata dynamicWorkflow. */
             public dynamicWorkflow?: (flyteidl.event.IDynamicWorkflowNodeMetadata|null);
@@ -6386,6 +6530,15 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo externalId */
             externalId?: (string|null);
+
+            /** ExternalResourceInfo index */
+            index?: (number|null);
+
+            /** ExternalResourceInfo retryAttempt */
+            retryAttempt?: (number|null);
+
+            /** ExternalResourceInfo phase */
+            phase?: (flyteidl.core.TaskExecution.Phase|null);
         }
 
         /** Represents an ExternalResourceInfo. */
@@ -6399,6 +6552,15 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo externalId. */
             public externalId: string;
+
+            /** ExternalResourceInfo index. */
+            public index: number;
+
+            /** ExternalResourceInfo retryAttempt. */
+            public retryAttempt: number;
+
+            /** ExternalResourceInfo phase. */
+            public phase: flyteidl.core.TaskExecution.Phase;
 
             /**
              * Creates a new ExternalResourceInfo instance using the specified properties.
@@ -7975,11 +8137,66 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an EventErrorIncompatibleCluster. */
+        interface IEventErrorIncompatibleCluster {
+
+            /** EventErrorIncompatibleCluster cluster */
+            cluster?: (string|null);
+        }
+
+        /** Represents an EventErrorIncompatibleCluster. */
+        class EventErrorIncompatibleCluster implements IEventErrorIncompatibleCluster {
+
+            /**
+             * Constructs a new EventErrorIncompatibleCluster.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IEventErrorIncompatibleCluster);
+
+            /** EventErrorIncompatibleCluster cluster. */
+            public cluster: string;
+
+            /**
+             * Creates a new EventErrorIncompatibleCluster instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns EventErrorIncompatibleCluster instance
+             */
+            public static create(properties?: flyteidl.admin.IEventErrorIncompatibleCluster): flyteidl.admin.EventErrorIncompatibleCluster;
+
+            /**
+             * Encodes the specified EventErrorIncompatibleCluster message. Does not implicitly {@link flyteidl.admin.EventErrorIncompatibleCluster.verify|verify} messages.
+             * @param message EventErrorIncompatibleCluster message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IEventErrorIncompatibleCluster, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an EventErrorIncompatibleCluster message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns EventErrorIncompatibleCluster
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.EventErrorIncompatibleCluster;
+
+            /**
+             * Verifies an EventErrorIncompatibleCluster message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an EventFailureReason. */
         interface IEventFailureReason {
 
             /** EventFailureReason alreadyInTerminalState */
             alreadyInTerminalState?: (flyteidl.admin.IEventErrorAlreadyInTerminalState|null);
+
+            /** EventFailureReason incompatibleCluster */
+            incompatibleCluster?: (flyteidl.admin.IEventErrorIncompatibleCluster|null);
         }
 
         /** Represents an EventFailureReason. */
@@ -7994,8 +8211,11 @@ export namespace flyteidl {
             /** EventFailureReason alreadyInTerminalState. */
             public alreadyInTerminalState?: (flyteidl.admin.IEventErrorAlreadyInTerminalState|null);
 
+            /** EventFailureReason incompatibleCluster. */
+            public incompatibleCluster?: (flyteidl.admin.IEventErrorIncompatibleCluster|null);
+
             /** EventFailureReason reason. */
-            public reason?: "alreadyInTerminalState";
+            public reason?: ("alreadyInTerminalState"|"incompatibleCluster");
 
             /**
              * Creates a new EventFailureReason instance using the specified properties.
@@ -8926,6 +9146,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId */
             workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure stateChangeDetails */
+            stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -8975,6 +9198,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId. */
             public workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure stateChangeDetails. */
+            public stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error"|"abortCause"|"abortMetadata"|"outputData");
@@ -9552,6 +9778,180 @@ export namespace flyteidl {
 
             /**
              * Verifies a WorkflowExecutionGetDataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** ExecutionState enum. */
+        enum ExecutionState {
+            EXECUTION_ACTIVE = 0,
+            EXECUTION_ARCHIVED = 1
+        }
+
+        /** Properties of an ExecutionUpdateRequest. */
+        interface IExecutionUpdateRequest {
+
+            /** ExecutionUpdateRequest id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionUpdateRequest state */
+            state?: (flyteidl.admin.ExecutionState|null);
+        }
+
+        /** Represents an ExecutionUpdateRequest. */
+        class ExecutionUpdateRequest implements IExecutionUpdateRequest {
+
+            /**
+             * Constructs a new ExecutionUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionUpdateRequest);
+
+            /** ExecutionUpdateRequest id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionUpdateRequest state. */
+            public state: flyteidl.admin.ExecutionState;
+
+            /**
+             * Creates a new ExecutionUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionUpdateRequest): flyteidl.admin.ExecutionUpdateRequest;
+
+            /**
+             * Encodes the specified ExecutionUpdateRequest message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateRequest.verify|verify} messages.
+             * @param message ExecutionUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionUpdateRequest;
+
+            /**
+             * Verifies an ExecutionUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionStateChangeDetails. */
+        interface IExecutionStateChangeDetails {
+
+            /** ExecutionStateChangeDetails state */
+            state?: (flyteidl.admin.ExecutionState|null);
+
+            /** ExecutionStateChangeDetails occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionStateChangeDetails principal */
+            principal?: (string|null);
+        }
+
+        /** Represents an ExecutionStateChangeDetails. */
+        class ExecutionStateChangeDetails implements IExecutionStateChangeDetails {
+
+            /**
+             * Constructs a new ExecutionStateChangeDetails.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionStateChangeDetails);
+
+            /** ExecutionStateChangeDetails state. */
+            public state: flyteidl.admin.ExecutionState;
+
+            /** ExecutionStateChangeDetails occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionStateChangeDetails principal. */
+            public principal: string;
+
+            /**
+             * Creates a new ExecutionStateChangeDetails instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionStateChangeDetails instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionStateChangeDetails): flyteidl.admin.ExecutionStateChangeDetails;
+
+            /**
+             * Encodes the specified ExecutionStateChangeDetails message. Does not implicitly {@link flyteidl.admin.ExecutionStateChangeDetails.verify|verify} messages.
+             * @param message ExecutionStateChangeDetails message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionStateChangeDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionStateChangeDetails message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionStateChangeDetails
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionStateChangeDetails;
+
+            /**
+             * Verifies an ExecutionStateChangeDetails message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionUpdateResponse. */
+        interface IExecutionUpdateResponse {
+        }
+
+        /** Represents an ExecutionUpdateResponse. */
+        class ExecutionUpdateResponse implements IExecutionUpdateResponse {
+
+            /**
+             * Constructs a new ExecutionUpdateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionUpdateResponse);
+
+            /**
+             * Creates a new ExecutionUpdateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionUpdateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionUpdateResponse): flyteidl.admin.ExecutionUpdateResponse;
+
+            /**
+             * Encodes the specified ExecutionUpdateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateResponse.verify|verify} messages.
+             * @param message ExecutionUpdateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionUpdateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionUpdateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionUpdateResponse;
+
+            /**
+             * Verifies an ExecutionUpdateResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -15003,6 +15403,20 @@ export namespace flyteidl {
             public getExecution(request: flyteidl.admin.IWorkflowExecutionGetRequest): Promise<flyteidl.admin.Execution>;
 
             /**
+             * Calls UpdateExecution.
+             * @param request ExecutionUpdateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ExecutionUpdateResponse
+             */
+            public updateExecution(request: flyteidl.admin.IExecutionUpdateRequest, callback: flyteidl.service.AdminService.UpdateExecutionCallback): void;
+
+            /**
+             * Calls UpdateExecution.
+             * @param request ExecutionUpdateRequest message or plain object
+             * @returns Promise
+             */
+            public updateExecution(request: flyteidl.admin.IExecutionUpdateRequest): Promise<flyteidl.admin.ExecutionUpdateResponse>;
+
+            /**
              * Calls GetExecutionData.
              * @param request WorkflowExecutionGetDataRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetDataResponse
@@ -15515,6 +15929,13 @@ export namespace flyteidl {
              * @param [response] Execution
              */
             type GetExecutionCallback = (error: (Error|null), response?: flyteidl.admin.Execution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateExecution}.
+             * @param error Error, if any
+             * @param [response] ExecutionUpdateResponse
+             */
+            type UpdateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionUpdateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getExecutionData}.

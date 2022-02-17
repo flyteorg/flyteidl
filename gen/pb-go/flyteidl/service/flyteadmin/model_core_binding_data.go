@@ -19,5 +19,4 @@ type CoreBindingData struct {
 	Promise *CoreOutputReference `json:"promise,omitempty"`
 	// A map of bindings. The key is always a string.
 	Map_ *CoreBindingDataMap `json:"map,omitempty"`
-	Union *CoreUnionInfo `json:"union,omitempty"`
 }

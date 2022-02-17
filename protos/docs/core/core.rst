@@ -57,6 +57,20 @@ Catalog artifact information with specific metadata
 
 
 
+
+
+.. _ref_flyteidl.core.CatalogReservation:
+
+CatalogReservation
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
  
 
 
@@ -78,6 +92,25 @@ Indicates the status of CatalogCaching. The reason why this is not embedded in T
    "CACHE_POPULATED", "3", "used to indicate that the resultant artifact was added to the cache"
    "CACHE_LOOKUP_FAILURE", "4", "Used to indicate that cache lookup failed because of an error"
    "CACHE_PUT_FAILURE", "5", "Used to indicate that cache lookup failed because of an error"
+
+
+
+.. _ref_flyteidl.core.CatalogReservation.Status:
+
+CatalogReservation.Status
+------------------------------------------------------------------
+
+Indicates the status of a catalog reservation operation.
+
+.. csv-table:: Enum CatalogReservation.Status values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "RESERVATION_DISABLED", "0", "Used to indicate that reservations are disabled"
+   "RESERVATION_ACQUIRED", "1", "Used to indicate that a reservation was successfully acquired or extended"
+   "RESERVATION_EXISTS", "2", "Used to indicate that an active reservation currently exists"
+   "RESERVATION_RELEASED", "3", "Used to indicate that the reservation has been successfully released"
+   "RESERVATION_FAILURE", "4", "Used to indicate that a reservation operation resulted in failure"
 
  
 
@@ -799,6 +832,7 @@ WorkflowExecution.Phase
    "FAILED", "6", ""
    "ABORTED", "7", ""
    "TIMED_OUT", "8", ""
+   "ABORTING", "9", ""
 
  
 
@@ -1182,7 +1216,6 @@ Specifies either a simple value or a reference to another output.
    "collection", ":ref:`ref_flyteidl.core.BindingDataCollection`", "", "A collection of binding data. This allows nesting of binding data to any number of levels."
    "promise", ":ref:`ref_flyteidl.core.OutputReference`", "", "References an output promised by another node."
    "map", ":ref:`ref_flyteidl.core.BindingDataMap`", "", "A map of bindings. The key is always a string."
-   "union", ":ref:`ref_flyteidl.core.UnionInfo`", "", ""
 
 
 
@@ -1474,7 +1507,7 @@ Scalar
    "none_type", ":ref:`ref_flyteidl.core.Void`", "", ""
    "error", ":ref:`ref_flyteidl.core.Error`", "", ""
    "generic", ":ref:`ref_google.protobuf.Struct`", "", ""
-   "union", ":ref:`ref_flyteidl.core.Union`", "", ""
+   "structured_dataset", ":ref:`ref_flyteidl.core.StructuredDataset`", "", ""
 
 
 
@@ -1504,42 +1537,42 @@ A strongly typed schema that defines the interface of data retrieved from the un
 
 
 
-.. _ref_flyteidl.core.Union:
+.. _ref_flyteidl.core.StructuredDataset:
 
-Union
-------------------------------------------------------------------
-
-The runtime representation of a tagged union value. See `UnionType` for more details.
-
-
-
-.. csv-table:: Union type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
-   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
-
-
-
-
-
-
-
-.. _ref_flyteidl.core.UnionInfo:
-
-UnionInfo
+StructuredDataset
 ------------------------------------------------------------------
 
 
 
 
 
-.. csv-table:: UnionInfo type fields
+.. csv-table:: StructuredDataset type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "targetType", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+   "uri", ":ref:`ref_string`", "", "String location uniquely identifying where the data is. Should start with the storage location (e.g. s3://, gs://, bq://, etc.)"
+   "metadata", ":ref:`ref_flyteidl.core.StructuredDatasetMetadata`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.StructuredDatasetMetadata:
+
+StructuredDatasetMetadata
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: StructuredDatasetMetadata type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "structured_dataset_type", ":ref:`ref_flyteidl.core.StructuredDatasetType`", "", "Bundle the type information along with the literal. This is here because StructuredDatasets can often be more defined at run time than at compile time. That is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset, without any column information, but at run time, you might have that column information. flytekit python will copy this type information into the literal, from the type information, if not provided by the various plugins (encoders). Since this field is run time generated, it&#39;s not used for any type checking."
 
 
 
@@ -2053,6 +2086,7 @@ Task Metadata
    "discovery_version", ":ref:`ref_string`", "", "Indicates a logical version to apply to this task for the purpose of discovery."
    "deprecated_error_message", ":ref:`ref_string`", "", "If set, this indicates that this task is deprecated. This will enable owners of tasks to notify consumers of the ending of support for a given task."
    "interruptible", ":ref:`ref_bool`", "", ""
+   "cache_serializable", ":ref:`ref_bool`", "", "Indicates whether the system should attempt to execute discoverable instances in serial to avoid duplicate work"
 
 
 
@@ -2347,9 +2381,9 @@ Defines a strong type to allow type checking between interfaces.
    "map_value_type", ":ref:`ref_flyteidl.core.LiteralType`", "", "Defines the type of the value of a map type. The type of the key is always a string."
    "blob", ":ref:`ref_flyteidl.core.BlobType`", "", "A blob might have specialized implementation details depending on associated metadata."
    "enum_type", ":ref:`ref_flyteidl.core.EnumType`", "", "Defines an enum with pre-defined string values."
-   "union_type", ":ref:`ref_flyteidl.core.UnionType`", "", "Defines an union type with pre-defined LiteralTypes."
-   "structure", ":ref:`ref_flyteidl.core.TypeStructure`", "", ""
+   "structured_dataset_type", ":ref:`ref_flyteidl.core.StructuredDatasetType`", "", "Generalized schema support"
    "metadata", ":ref:`ref_google.protobuf.Struct`", "", "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking. This might be used by consumers to identify special behavior or display extended information for the type."
+   "annotation", ":ref:`ref_flyteidl.core.TypeAnnotation`", "", "This field contains arbitrary data that might have special semantic meaning for the client but does not effect internal flyte behavior."
 
 
 
@@ -2423,22 +2457,23 @@ SchemaType.SchemaColumn
 
 
 
-.. _ref_flyteidl.core.TypeStructure:
+.. _ref_flyteidl.core.StructuredDatasetType:
 
-TypeStructure
+StructuredDatasetType
 ------------------------------------------------------------------
 
-Hints to improve type matching
-e.g. allows distinguishing output from custom type transformers
-even if the underlying IDL serialization matches
 
 
 
-.. csv-table:: TypeStructure type fields
+
+.. csv-table:: StructuredDatasetType type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "tag", ":ref:`ref_string`", "", "Must exactly match for types to be castable"
+   "columns", ":ref:`ref_flyteidl.core.StructuredDatasetType.DatasetColumn`", "repeated", "A list of ordered columns this schema comprises of."
+   "format", ":ref:`ref_string`", "", "This is the storage format, the format of the bits at rest parquet, feather, csv, etc. For two types to be compatible, the format will need to be an exact match."
+   "external_schema_type", ":ref:`ref_string`", "", "This is a string representing the type that the bytes in external_schema_bytes are formatted in. This is an optional field that will not be used for type checking."
+   "external_schema_bytes", ":ref:`ref_bytes`", "", "The serialized bytes of a third-party schema library like Arrow. This is an optional field that will not be used for type checking."
 
 
 
@@ -2446,32 +2481,42 @@ even if the underlying IDL serialization matches
 
 
 
-.. _ref_flyteidl.core.UnionType:
+.. _ref_flyteidl.core.StructuredDatasetType.DatasetColumn:
 
-UnionType
+StructuredDatasetType.DatasetColumn
 ------------------------------------------------------------------
 
-Defines a tagged union type, also known as a variant (and formally as the sum type).
-
-A sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag
-A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
-storing the varaint&#39;s tag with the literal value and can be examined in runtime.
-
-Type S is typically written as
-S := Apple A | Banana B | Cantaloupe C | ...
-
-Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
-Optional X := X | Null
-
-See also: https://en.wikipedia.org/wiki/Tagged_union
 
 
 
-.. csv-table:: UnionType type fields
+
+.. csv-table:: StructuredDatasetType.DatasetColumn type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "variants", ":ref:`ref_flyteidl.core.LiteralType`", "repeated", "Predefined set of variants in union."
+   "name", ":ref:`ref_string`", "", "A unique name within the schema type for the column."
+   "literal_type", ":ref:`ref_flyteidl.core.LiteralType`", "", "The column type."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.TypeAnnotation:
+
+TypeAnnotation
+------------------------------------------------------------------
+
+TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
+
+
+
+.. csv-table:: TypeAnnotation type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "annotations", ":ref:`ref_google.protobuf.Struct`", "", "A arbitrary JSON payload to describe a type."
 
 
 

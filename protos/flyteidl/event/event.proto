@@ -99,6 +99,8 @@ message TaskNodeMetadata {
     core.CatalogCacheStatus cache_status = 1;
     // This structure carries the catalog artifact information
     core.CatalogMetadata catalog_key = 2;
+    // Captures the status of cache reservations for this execution.
+    core.CatalogReservation.Status reservation_status = 3;
 
     // In the case this task launched a dynamic workflow we capture its structure here.
     DynamicWorkflowNodeMetadata dynamic_workflow = 16;
@@ -191,6 +193,17 @@ message ExternalResourceInfo {
 
     // Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids.
     string external_id = 1;
+
+    // A unique index for the external resource with respect to all external resources for this task. Although the
+    // identifier may change between task reporting events or retries, this will remain the same to enable aggregating
+    // information from multiple reports.
+    uint32 index = 2;
+
+    // Retry attempt number for this external resource, ie., 2 for the second attempt
+    uint32 retry_attempt = 3;
+
+    // Phase associated with the external resource
+    core.TaskExecution.Phase phase = 4;
 }
 
 

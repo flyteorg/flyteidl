@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**register_project**](docs/AdminServiceApi.md#register_project) | **POST** /api/v1/projects | Registers a :ref:&#x60;ref_flyteidl.admin.Project&#x60; with the Flyte deployment.
 *AdminServiceApi* | [**relaunch_execution**](docs/AdminServiceApi.md#relaunch_execution) | **POST** /api/v1/executions/relaunch | Triggers the creation of an identical :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Terminates an in-progress :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
+*AdminServiceApi* | [**update_execution**](docs/AdminServiceApi.md#update_execution) | **PUT** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Update execution belonging to project domain :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**update_launch_plan**](docs/AdminServiceApi.md#update_launch_plan) | **PUT** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Updates the status of a registered :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
 *AdminServiceApi* | [**update_named_entity**](docs/AdminServiceApi.md#update_named_entity) | **PUT** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Updates a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**update_project**](docs/AdminServiceApi.md#update_project) | **PUT** /api/v1/projects/{id} | Updates an existing :ref:&#x60;ref_flyteidl.admin.Project&#x60;  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
@@ -142,8 +143,12 @@ Class | Method | HTTP request | Description
  - [AdminExecutionRecoverRequest](docs/AdminExecutionRecoverRequest.md)
  - [AdminExecutionRelaunchRequest](docs/AdminExecutionRelaunchRequest.md)
  - [AdminExecutionSpec](docs/AdminExecutionSpec.md)
+ - [AdminExecutionState](docs/AdminExecutionState.md)
+ - [AdminExecutionStateChangeDetails](docs/AdminExecutionStateChangeDetails.md)
  - [AdminExecutionTerminateRequest](docs/AdminExecutionTerminateRequest.md)
  - [AdminExecutionTerminateResponse](docs/AdminExecutionTerminateResponse.md)
+ - [AdminExecutionUpdateRequest](docs/AdminExecutionUpdateRequest.md)
+ - [AdminExecutionUpdateResponse](docs/AdminExecutionUpdateResponse.md)
  - [AdminFixedRate](docs/AdminFixedRate.md)
  - [AdminFixedRateUnit](docs/AdminFixedRateUnit.md)
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
@@ -230,6 +235,7 @@ Class | Method | HTTP request | Description
  - [AdminWorkflowList](docs/AdminWorkflowList.md)
  - [AdminWorkflowSpec](docs/AdminWorkflowSpec.md)
  - [BlobTypeBlobDimensionality](docs/BlobTypeBlobDimensionality.md)
+ - [CatalogReservationStatus](docs/CatalogReservationStatus.md)
  - [ComparisonExpressionOperator](docs/ComparisonExpressionOperator.md)
  - [ConjunctionExpressionLogicalOperator](docs/ConjunctionExpressionLogicalOperator.md)
  - [ConnectionSetIdList](docs/ConnectionSetIdList.md)
@@ -296,6 +302,9 @@ Class | Method | HTTP request | Description
  - [CoreSecurityContext](docs/CoreSecurityContext.md)
  - [CoreSimpleType](docs/CoreSimpleType.md)
  - [CoreSql](docs/CoreSql.md)
+ - [CoreStructuredDataset](docs/CoreStructuredDataset.md)
+ - [CoreStructuredDatasetMetadata](docs/CoreStructuredDatasetMetadata.md)
+ - [CoreStructuredDatasetType](docs/CoreStructuredDatasetType.md)
  - [CoreTaskExecutionIdentifier](docs/CoreTaskExecutionIdentifier.md)
  - [CoreTaskExecutionPhase](docs/CoreTaskExecutionPhase.md)
  - [CoreTaskLog](docs/CoreTaskLog.md)
@@ -303,11 +312,8 @@ Class | Method | HTTP request | Description
  - [CoreTaskNode](docs/CoreTaskNode.md)
  - [CoreTaskNodeOverrides](docs/CoreTaskNodeOverrides.md)
  - [CoreTaskTemplate](docs/CoreTaskTemplate.md)
- - [CoreTypeStructure](docs/CoreTypeStructure.md)
+ - [CoreTypeAnnotation](docs/CoreTypeAnnotation.md)
  - [CoreTypedInterface](docs/CoreTypedInterface.md)
- - [CoreUnion](docs/CoreUnion.md)
- - [CoreUnionInfo](docs/CoreUnionInfo.md)
- - [CoreUnionType](docs/CoreUnionType.md)
  - [CoreVariable](docs/CoreVariable.md)
  - [CoreVariableMap](docs/CoreVariableMap.md)
  - [CoreVoid](docs/CoreVoid.md)
@@ -354,6 +360,7 @@ Class | Method | HTTP request | Description
  - [SecretMountType](docs/SecretMountType.md)
  - [SortDirection](docs/SortDirection.md)
  - [SqlDialect](docs/SqlDialect.md)
+ - [StructuredDatasetTypeDatasetColumn](docs/StructuredDatasetTypeDatasetColumn.md)
  - [TaskExecutionMetadataInstanceClass](docs/TaskExecutionMetadataInstanceClass.md)
  - [TaskLogMessageFormat](docs/TaskLogMessageFormat.md)
  - [WorkflowMetadataOnFailurePolicy](docs/WorkflowMetadataOnFailurePolicy.md)

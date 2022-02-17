@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"sync"
 	"testing"
 	"time"
 
@@ -32,11 +31,6 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 		assert.NotNil(t, InitializeAdminClient(ctx, &Config{
 			Endpoint: config.URL{URL: *u},
 		}))
-	})
-
-	t.Run("illegal", func(t *testing.T) {
-		once = sync.Once{}
-		assert.NotNil(t, InitializeAdminClient(ctx, &Config{}))
 	})
 }
 
@@ -82,6 +76,31 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 		assert.NotNil(t, clientSet.AuthMetadataClient())
 		assert.NotNil(t, clientSet.AdminClient())
 		assert.NotNil(t, clientSet.HealthServiceClient())
+	})
+	t.Run("legal-from-config-with-cacerts", func(t *testing.T) {
+		clientSet, err := initializeClients(ctx, &Config{CACertFilePath: "testdata/root.pem"}, nil)
+		assert.NoError(t, err)
+		assert.NotNil(t, clientSet)
+		assert.NotNil(t, clientSet.AuthMetadataClient())
+		assert.NotNil(t, clientSet.AdminClient())
+	})
+	t.Run("legal-from-config-with-invalid-cacerts", func(t *testing.T) {
+		defer func() {
+			if r := recover(); r == nil {
+				t.Errorf("The code did not panic")
+			}
+		}()
+		newAdminServiceConfig := &Config{
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: false,
+			CACertFilePath:        "testdata/non-existent.pem",
+			PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
+		}
+
+		assert.NoError(t, SetConfig(newAdminServiceConfig))
+		clientSet, err := initializeClients(ctx, newAdminServiceConfig, nil)
+		assert.NotNil(t, err)
+		assert.Nil(t, clientSet)
 	})
 }
 

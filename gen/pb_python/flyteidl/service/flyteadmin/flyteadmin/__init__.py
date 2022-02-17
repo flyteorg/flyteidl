@@ -41,8 +41,12 @@ from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQue
 from flyteadmin.models.admin_execution_recover_request import AdminExecutionRecoverRequest
 from flyteadmin.models.admin_execution_relaunch_request import AdminExecutionRelaunchRequest
 from flyteadmin.models.admin_execution_spec import AdminExecutionSpec
+from flyteadmin.models.admin_execution_state import AdminExecutionState
+from flyteadmin.models.admin_execution_state_change_details import AdminExecutionStateChangeDetails
 from flyteadmin.models.admin_execution_terminate_request import AdminExecutionTerminateRequest
 from flyteadmin.models.admin_execution_terminate_response import AdminExecutionTerminateResponse
+from flyteadmin.models.admin_execution_update_request import AdminExecutionUpdateRequest
+from flyteadmin.models.admin_execution_update_response import AdminExecutionUpdateResponse
 from flyteadmin.models.admin_fixed_rate import AdminFixedRate
 from flyteadmin.models.admin_fixed_rate_unit import AdminFixedRateUnit
 from flyteadmin.models.admin_get_version_response import AdminGetVersionResponse
@@ -129,6 +133,7 @@ from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWo
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
 from flyteadmin.models.blob_type_blob_dimensionality import BlobTypeBlobDimensionality
+from flyteadmin.models.catalog_reservation_status import CatalogReservationStatus
 from flyteadmin.models.comparison_expression_operator import ComparisonExpressionOperator
 from flyteadmin.models.conjunction_expression_logical_operator import ConjunctionExpressionLogicalOperator
 from flyteadmin.models.connection_set_id_list import ConnectionSetIdList
@@ -195,6 +200,9 @@ from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_sql import CoreSql
+from flyteadmin.models.core_structured_dataset import CoreStructuredDataset
+from flyteadmin.models.core_structured_dataset_metadata import CoreStructuredDatasetMetadata
+from flyteadmin.models.core_structured_dataset_type import CoreStructuredDatasetType
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier
 from flyteadmin.models.core_task_execution_phase import CoreTaskExecutionPhase
 from flyteadmin.models.core_task_log import CoreTaskLog
@@ -202,11 +210,8 @@ from flyteadmin.models.core_task_metadata import CoreTaskMetadata
 from flyteadmin.models.core_task_node import CoreTaskNode
 from flyteadmin.models.core_task_node_overrides import CoreTaskNodeOverrides
 from flyteadmin.models.core_task_template import CoreTaskTemplate
-from flyteadmin.models.core_type_structure import CoreTypeStructure
+from flyteadmin.models.core_type_annotation import CoreTypeAnnotation
 from flyteadmin.models.core_typed_interface import CoreTypedInterface
-from flyteadmin.models.core_union import CoreUnion
-from flyteadmin.models.core_union_info import CoreUnionInfo
-from flyteadmin.models.core_union_type import CoreUnionType
 from flyteadmin.models.core_variable import CoreVariable
 from flyteadmin.models.core_variable_map import CoreVariableMap
 from flyteadmin.models.core_void import CoreVoid
@@ -253,6 +258,7 @@ from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
 from flyteadmin.models.secret_mount_type import SecretMountType
 from flyteadmin.models.sort_direction import SortDirection
 from flyteadmin.models.sql_dialect import SqlDialect
+from flyteadmin.models.structured_dataset_type_dataset_column import StructuredDatasetTypeDatasetColumn
 from flyteadmin.models.task_execution_metadata_instance_class import TaskExecutionMetadataInstanceClass
 from flyteadmin.models.task_log_message_format import TaskLogMessageFormat
 from flyteadmin.models.workflow_metadata_on_failure_policy import WorkflowMetadataOnFailurePolicy

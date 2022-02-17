@@ -1938,6 +1938,2205 @@ public final class Types {
 
   }
 
+  public interface StructuredDatasetTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.StructuredDatasetType)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn> 
+        getColumnsList();
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    flyteidl.core.Types.StructuredDatasetType.DatasetColumn getColumns(int index);
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    int getColumnsCount();
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    java.util.List<? extends flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder> 
+        getColumnsOrBuilderList();
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder getColumnsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    java.lang.String getFormat();
+    /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFormatBytes();
+
+    /**
+     * <pre>
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    java.lang.String getExternalSchemaType();
+    /**
+     * <pre>
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getExternalSchemaTypeBytes();
+
+    /**
+     * <pre>
+     * The serialized bytes of a third-party schema library like Arrow.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>bytes external_schema_bytes = 4;</code>
+     */
+    com.google.protobuf.ByteString getExternalSchemaBytes();
+  }
+  /**
+   * Protobuf type {@code flyteidl.core.StructuredDatasetType}
+   */
+  public  static final class StructuredDatasetType extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.StructuredDatasetType)
+      StructuredDatasetTypeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StructuredDatasetType.newBuilder() to construct.
+    private StructuredDatasetType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StructuredDatasetType() {
+      columns_ = java.util.Collections.emptyList();
+      format_ = "";
+      externalSchemaType_ = "";
+      externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StructuredDatasetType(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                columns_ = new java.util.ArrayList<flyteidl.core.Types.StructuredDatasetType.DatasetColumn>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              columns_.add(
+                  input.readMessage(flyteidl.core.Types.StructuredDatasetType.DatasetColumn.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              format_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              externalSchemaType_ = s;
+              break;
+            }
+            case 34: {
+
+              externalSchemaBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          columns_ = java.util.Collections.unmodifiableList(columns_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Types.StructuredDatasetType.class, flyteidl.core.Types.StructuredDatasetType.Builder.class);
+    }
+
+    public interface DatasetColumnOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:flyteidl.core.StructuredDatasetType.DatasetColumn)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * A unique name within the schema type for the column.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      java.lang.String getName();
+      /**
+       * <pre>
+       * A unique name within the schema type for the column.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      boolean hasLiteralType();
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      flyteidl.core.Types.LiteralType getLiteralType();
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder();
+    }
+    /**
+     * Protobuf type {@code flyteidl.core.StructuredDatasetType.DatasetColumn}
+     */
+    public  static final class DatasetColumn extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:flyteidl.core.StructuredDatasetType.DatasetColumn)
+        DatasetColumnOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use DatasetColumn.newBuilder() to construct.
+      private DatasetColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DatasetColumn() {
+        name_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DatasetColumn(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+              case 18: {
+                flyteidl.core.Types.LiteralType.Builder subBuilder = null;
+                if (literalType_ != null) {
+                  subBuilder = literalType_.toBuilder();
+                }
+                literalType_ = input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(literalType_);
+                  literalType_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Types.StructuredDatasetType.DatasetColumn.class, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder.class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_;
+      /**
+       * <pre>
+       * A unique name within the schema type for the column.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * A unique name within the schema type for the column.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LITERAL_TYPE_FIELD_NUMBER = 2;
+      private flyteidl.core.Types.LiteralType literalType_;
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      public boolean hasLiteralType() {
+        return literalType_ != null;
+      }
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType getLiteralType() {
+        return literalType_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+      }
+      /**
+       * <pre>
+       * The column type.
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder() {
+        return getLiteralType();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (literalType_ != null) {
+          output.writeMessage(2, getLiteralType());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (literalType_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, getLiteralType());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof flyteidl.core.Types.StructuredDatasetType.DatasetColumn)) {
+          return super.equals(obj);
+        }
+        flyteidl.core.Types.StructuredDatasetType.DatasetColumn other = (flyteidl.core.Types.StructuredDatasetType.DatasetColumn) obj;
+
+        if (!getName()
+            .equals(other.getName())) return false;
+        if (hasLiteralType() != other.hasLiteralType()) return false;
+        if (hasLiteralType()) {
+          if (!getLiteralType()
+              .equals(other.getLiteralType())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        if (hasLiteralType()) {
+          hash = (37 * hash) + LITERAL_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getLiteralType().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(flyteidl.core.Types.StructuredDatasetType.DatasetColumn prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code flyteidl.core.StructuredDatasetType.DatasetColumn}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:flyteidl.core.StructuredDatasetType.DatasetColumn)
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  flyteidl.core.Types.StructuredDatasetType.DatasetColumn.class, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder.class);
+        }
+
+        // Construct using flyteidl.core.Types.StructuredDatasetType.DatasetColumn.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          name_ = "";
+
+          if (literalTypeBuilder_ == null) {
+            literalType_ = null;
+          } else {
+            literalType_ = null;
+            literalTypeBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Types.StructuredDatasetType.DatasetColumn getDefaultInstanceForType() {
+          return flyteidl.core.Types.StructuredDatasetType.DatasetColumn.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Types.StructuredDatasetType.DatasetColumn build() {
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public flyteidl.core.Types.StructuredDatasetType.DatasetColumn buildPartial() {
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn result = new flyteidl.core.Types.StructuredDatasetType.DatasetColumn(this);
+          result.name_ = name_;
+          if (literalTypeBuilder_ == null) {
+            result.literalType_ = literalType_;
+          } else {
+            result.literalType_ = literalTypeBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof flyteidl.core.Types.StructuredDatasetType.DatasetColumn) {
+            return mergeFrom((flyteidl.core.Types.StructuredDatasetType.DatasetColumn)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(flyteidl.core.Types.StructuredDatasetType.DatasetColumn other) {
+          if (other == flyteidl.core.Types.StructuredDatasetType.DatasetColumn.getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            onChanged();
+          }
+          if (other.hasLiteralType()) {
+            mergeLiteralType(other.getLiteralType());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (flyteidl.core.Types.StructuredDatasetType.DatasetColumn) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <pre>
+         * A unique name within the schema type for the column.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * A unique name within the schema type for the column.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * A unique name within the schema type for the column.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * A unique name within the schema type for the column.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public Builder clearName() {
+          
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * A unique name within the schema type for the column.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          name_ = value;
+          onChanged();
+          return this;
+        }
+
+        private flyteidl.core.Types.LiteralType literalType_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> literalTypeBuilder_;
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public boolean hasLiteralType() {
+          return literalTypeBuilder_ != null || literalType_ != null;
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public flyteidl.core.Types.LiteralType getLiteralType() {
+          if (literalTypeBuilder_ == null) {
+            return literalType_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+          } else {
+            return literalTypeBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public Builder setLiteralType(flyteidl.core.Types.LiteralType value) {
+          if (literalTypeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            literalType_ = value;
+            onChanged();
+          } else {
+            literalTypeBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public Builder setLiteralType(
+            flyteidl.core.Types.LiteralType.Builder builderForValue) {
+          if (literalTypeBuilder_ == null) {
+            literalType_ = builderForValue.build();
+            onChanged();
+          } else {
+            literalTypeBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public Builder mergeLiteralType(flyteidl.core.Types.LiteralType value) {
+          if (literalTypeBuilder_ == null) {
+            if (literalType_ != null) {
+              literalType_ =
+                flyteidl.core.Types.LiteralType.newBuilder(literalType_).mergeFrom(value).buildPartial();
+            } else {
+              literalType_ = value;
+            }
+            onChanged();
+          } else {
+            literalTypeBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public Builder clearLiteralType() {
+          if (literalTypeBuilder_ == null) {
+            literalType_ = null;
+            onChanged();
+          } else {
+            literalType_ = null;
+            literalTypeBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public flyteidl.core.Types.LiteralType.Builder getLiteralTypeBuilder() {
+          
+          onChanged();
+          return getLiteralTypeFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        public flyteidl.core.Types.LiteralTypeOrBuilder getLiteralTypeOrBuilder() {
+          if (literalTypeBuilder_ != null) {
+            return literalTypeBuilder_.getMessageOrBuilder();
+          } else {
+            return literalType_ == null ?
+                flyteidl.core.Types.LiteralType.getDefaultInstance() : literalType_;
+          }
+        }
+        /**
+         * <pre>
+         * The column type.
+         * </pre>
+         *
+         * <code>.flyteidl.core.LiteralType literal_type = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
+            getLiteralTypeFieldBuilder() {
+          if (literalTypeBuilder_ == null) {
+            literalTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
+                    getLiteralType(),
+                    getParentForChildren(),
+                    isClean());
+            literalType_ = null;
+          }
+          return literalTypeBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:flyteidl.core.StructuredDatasetType.DatasetColumn)
+      }
+
+      // @@protoc_insertion_point(class_scope:flyteidl.core.StructuredDatasetType.DatasetColumn)
+      private static final flyteidl.core.Types.StructuredDatasetType.DatasetColumn DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new flyteidl.core.Types.StructuredDatasetType.DatasetColumn();
+      }
+
+      public static flyteidl.core.Types.StructuredDatasetType.DatasetColumn getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DatasetColumn>
+          PARSER = new com.google.protobuf.AbstractParser<DatasetColumn>() {
+        @java.lang.Override
+        public DatasetColumn parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DatasetColumn(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DatasetColumn> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DatasetColumn> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumn getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int COLUMNS_FIELD_NUMBER = 1;
+    private java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn> columns_;
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    public java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn> getColumnsList() {
+      return columns_;
+    }
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder> 
+        getColumnsOrBuilderList() {
+      return columns_;
+    }
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    public int getColumnsCount() {
+      return columns_.size();
+    }
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    public flyteidl.core.Types.StructuredDatasetType.DatasetColumn getColumns(int index) {
+      return columns_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of ordered columns this schema comprises of.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+     */
+    public flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder getColumnsOrBuilder(
+        int index) {
+      return columns_.get(index);
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object format_;
+    /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    public java.lang.String getFormat() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        format_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * This is the storage format, the format of the bits at rest
+     * parquet, feather, csv, etc.
+     * For two types to be compatible, the format will need to be an exact match.
+     * </pre>
+     *
+     * <code>string format = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFormatBytes() {
+      java.lang.Object ref = format_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        format_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object externalSchemaType_;
+    /**
+     * <pre>
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    public java.lang.String getExternalSchemaType() {
+      java.lang.Object ref = externalSchemaType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalSchemaType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>string external_schema_type = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExternalSchemaTypeBytes() {
+      java.lang.Object ref = externalSchemaType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        externalSchemaType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString externalSchemaBytes_;
+    /**
+     * <pre>
+     * The serialized bytes of a third-party schema library like Arrow.
+     * This is an optional field that will not be used for type checking.
+     * </pre>
+     *
+     * <code>bytes external_schema_bytes = 4;</code>
+     */
+    public com.google.protobuf.ByteString getExternalSchemaBytes() {
+      return externalSchemaBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < columns_.size(); i++) {
+        output.writeMessage(1, columns_.get(i));
+      }
+      if (!getFormatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
+      }
+      if (!getExternalSchemaTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalSchemaType_);
+      }
+      if (!externalSchemaBytes_.isEmpty()) {
+        output.writeBytes(4, externalSchemaBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < columns_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, columns_.get(i));
+      }
+      if (!getFormatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
+      }
+      if (!getExternalSchemaTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, externalSchemaType_);
+      }
+      if (!externalSchemaBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, externalSchemaBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Types.StructuredDatasetType)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Types.StructuredDatasetType other = (flyteidl.core.Types.StructuredDatasetType) obj;
+
+      if (!getColumnsList()
+          .equals(other.getColumnsList())) return false;
+      if (!getFormat()
+          .equals(other.getFormat())) return false;
+      if (!getExternalSchemaType()
+          .equals(other.getExternalSchemaType())) return false;
+      if (!getExternalSchemaBytes()
+          .equals(other.getExternalSchemaBytes())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getColumnsCount() > 0) {
+        hash = (37 * hash) + COLUMNS_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnsList().hashCode();
+      }
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + getFormat().hashCode();
+      hash = (37 * hash) + EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalSchemaType().hashCode();
+      hash = (37 * hash) + EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalSchemaBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Types.StructuredDatasetType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Types.StructuredDatasetType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.core.StructuredDatasetType}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.StructuredDatasetType)
+        flyteidl.core.Types.StructuredDatasetTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Types.StructuredDatasetType.class, flyteidl.core.Types.StructuredDatasetType.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Types.StructuredDatasetType.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getColumnsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (columnsBuilder_ == null) {
+          columns_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnsBuilder_.clear();
+        }
+        format_ = "";
+
+        externalSchemaType_ = "";
+
+        externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Types.internal_static_flyteidl_core_StructuredDatasetType_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Types.StructuredDatasetType getDefaultInstanceForType() {
+        return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Types.StructuredDatasetType build() {
+        flyteidl.core.Types.StructuredDatasetType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Types.StructuredDatasetType buildPartial() {
+        flyteidl.core.Types.StructuredDatasetType result = new flyteidl.core.Types.StructuredDatasetType(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (columnsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            columns_ = java.util.Collections.unmodifiableList(columns_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.columns_ = columns_;
+        } else {
+          result.columns_ = columnsBuilder_.build();
+        }
+        result.format_ = format_;
+        result.externalSchemaType_ = externalSchemaType_;
+        result.externalSchemaBytes_ = externalSchemaBytes_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Types.StructuredDatasetType) {
+          return mergeFrom((flyteidl.core.Types.StructuredDatasetType)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Types.StructuredDatasetType other) {
+        if (other == flyteidl.core.Types.StructuredDatasetType.getDefaultInstance()) return this;
+        if (columnsBuilder_ == null) {
+          if (!other.columns_.isEmpty()) {
+            if (columns_.isEmpty()) {
+              columns_ = other.columns_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnsIsMutable();
+              columns_.addAll(other.columns_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.columns_.isEmpty()) {
+            if (columnsBuilder_.isEmpty()) {
+              columnsBuilder_.dispose();
+              columnsBuilder_ = null;
+              columns_ = other.columns_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnsFieldBuilder() : null;
+            } else {
+              columnsBuilder_.addAllMessages(other.columns_);
+            }
+          }
+        }
+        if (!other.getFormat().isEmpty()) {
+          format_ = other.format_;
+          onChanged();
+        }
+        if (!other.getExternalSchemaType().isEmpty()) {
+          externalSchemaType_ = other.externalSchemaType_;
+          onChanged();
+        }
+        if (other.getExternalSchemaBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setExternalSchemaBytes(other.getExternalSchemaBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Types.StructuredDatasetType parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Types.StructuredDatasetType) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn> columns_ =
+        java.util.Collections.emptyList();
+      private void ensureColumnsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          columns_ = new java.util.ArrayList<flyteidl.core.Types.StructuredDatasetType.DatasetColumn>(columns_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder, flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder> columnsBuilder_;
+
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn> getColumnsList() {
+        if (columnsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(columns_);
+        } else {
+          return columnsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public int getColumnsCount() {
+        if (columnsBuilder_ == null) {
+          return columns_.size();
+        } else {
+          return columnsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumn getColumns(int index) {
+        if (columnsBuilder_ == null) {
+          return columns_.get(index);
+        } else {
+          return columnsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder setColumns(
+          int index, flyteidl.core.Types.StructuredDatasetType.DatasetColumn value) {
+        if (columnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnsIsMutable();
+          columns_.set(index, value);
+          onChanged();
+        } else {
+          columnsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder setColumns(
+          int index, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder builderForValue) {
+        if (columnsBuilder_ == null) {
+          ensureColumnsIsMutable();
+          columns_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder addColumns(flyteidl.core.Types.StructuredDatasetType.DatasetColumn value) {
+        if (columnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnsIsMutable();
+          columns_.add(value);
+          onChanged();
+        } else {
+          columnsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder addColumns(
+          int index, flyteidl.core.Types.StructuredDatasetType.DatasetColumn value) {
+        if (columnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnsIsMutable();
+          columns_.add(index, value);
+          onChanged();
+        } else {
+          columnsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder addColumns(
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder builderForValue) {
+        if (columnsBuilder_ == null) {
+          ensureColumnsIsMutable();
+          columns_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder addColumns(
+          int index, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder builderForValue) {
+        if (columnsBuilder_ == null) {
+          ensureColumnsIsMutable();
+          columns_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder addAllColumns(
+          java.lang.Iterable<? extends flyteidl.core.Types.StructuredDatasetType.DatasetColumn> values) {
+        if (columnsBuilder_ == null) {
+          ensureColumnsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, columns_);
+          onChanged();
+        } else {
+          columnsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder clearColumns() {
+        if (columnsBuilder_ == null) {
+          columns_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public Builder removeColumns(int index) {
+        if (columnsBuilder_ == null) {
+          ensureColumnsIsMutable();
+          columns_.remove(index);
+          onChanged();
+        } else {
+          columnsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder getColumnsBuilder(
+          int index) {
+        return getColumnsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder getColumnsOrBuilder(
+          int index) {
+        if (columnsBuilder_ == null) {
+          return columns_.get(index);  } else {
+          return columnsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder> 
+           getColumnsOrBuilderList() {
+        if (columnsBuilder_ != null) {
+          return columnsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(columns_);
+        }
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder addColumnsBuilder() {
+        return getColumnsFieldBuilder().addBuilder(
+            flyteidl.core.Types.StructuredDatasetType.DatasetColumn.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder addColumnsBuilder(
+          int index) {
+        return getColumnsFieldBuilder().addBuilder(
+            index, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of ordered columns this schema comprises of.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.StructuredDatasetType.DatasetColumn columns = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder> 
+           getColumnsBuilderList() {
+        return getColumnsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Types.StructuredDatasetType.DatasetColumn, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder, flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder> 
+          getColumnsFieldBuilder() {
+        if (columnsBuilder_ == null) {
+          columnsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Types.StructuredDatasetType.DatasetColumn, flyteidl.core.Types.StructuredDatasetType.DatasetColumn.Builder, flyteidl.core.Types.StructuredDatasetType.DatasetColumnOrBuilder>(
+                  columns_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          columns_ = null;
+        }
+        return columnsBuilder_;
+      }
+
+      private java.lang.Object format_ = "";
+      /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public java.lang.String getFormat() {
+        java.lang.Object ref = format_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          format_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFormatBytes() {
+        java.lang.Object ref = format_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          format_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder setFormat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        format_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder clearFormat() {
+        
+        format_ = getDefaultInstance().getFormat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This is the storage format, the format of the bits at rest
+       * parquet, feather, csv, etc.
+       * For two types to be compatible, the format will need to be an exact match.
+       * </pre>
+       *
+       * <code>string format = 2;</code>
+       */
+      public Builder setFormatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        format_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object externalSchemaType_ = "";
+      /**
+       * <pre>
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public java.lang.String getExternalSchemaType() {
+        java.lang.Object ref = externalSchemaType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          externalSchemaType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExternalSchemaTypeBytes() {
+        java.lang.Object ref = externalSchemaType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          externalSchemaType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder setExternalSchemaType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        externalSchemaType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder clearExternalSchemaType() {
+        
+        externalSchemaType_ = getDefaultInstance().getExternalSchemaType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This is a string representing the type that the bytes in external_schema_bytes are formatted in.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>string external_schema_type = 3;</code>
+       */
+      public Builder setExternalSchemaTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        externalSchemaType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public com.google.protobuf.ByteString getExternalSchemaBytes() {
+        return externalSchemaBytes_;
+      }
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public Builder setExternalSchemaBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        externalSchemaBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The serialized bytes of a third-party schema library like Arrow.
+       * This is an optional field that will not be used for type checking.
+       * </pre>
+       *
+       * <code>bytes external_schema_bytes = 4;</code>
+       */
+      public Builder clearExternalSchemaBytes() {
+        
+        externalSchemaBytes_ = getDefaultInstance().getExternalSchemaBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.StructuredDatasetType)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.StructuredDatasetType)
+    private static final flyteidl.core.Types.StructuredDatasetType DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Types.StructuredDatasetType();
+    }
+
+    public static flyteidl.core.Types.StructuredDatasetType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StructuredDatasetType>
+        PARSER = new com.google.protobuf.AbstractParser<StructuredDatasetType>() {
+      @java.lang.Override
+      public StructuredDatasetType parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StructuredDatasetType(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StructuredDatasetType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StructuredDatasetType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Types.StructuredDatasetType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BlobTypeOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.BlobType)
       com.google.protobuf.MessageOrBuilder {
@@ -3415,80 +5614,52 @@ public final class Types {
 
   }
 
-  public interface UnionTypeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.UnionType)
+  public interface TypeAnnotationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.TypeAnnotation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    java.util.List<flyteidl.core.Types.LiteralType> 
-        getVariantsList();
+    boolean hasAnnotations();
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    flyteidl.core.Types.LiteralType getVariants(int index);
+    com.google.protobuf.Struct getAnnotations();
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    int getVariantsCount();
-    /**
-     * <pre>
-     * Predefined set of variants in union.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-     */
-    java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-        getVariantsOrBuilderList();
-    /**
-     * <pre>
-     * Predefined set of variants in union.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-     */
-    flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
-        int index);
+    com.google.protobuf.StructOrBuilder getAnnotationsOrBuilder();
   }
   /**
    * <pre>
-   * Defines a tagged union type, also known as a variant (and formally as the sum type).
-   * A sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag
-   * A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
-   * storing the varaint's tag with the literal value and can be examined in runtime.
-   * Type S is typically written as
-   * S := Apple A | Banana B | Cantaloupe C | ...
-   * Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
-   * Optional X := X | Null
-   * See also: https://en.wikipedia.org/wiki/Tagged_union
+   * TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.core.UnionType}
+   * Protobuf type {@code flyteidl.core.TypeAnnotation}
    */
-  public  static final class UnionType extends
+  public  static final class TypeAnnotation extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.UnionType)
-      UnionTypeOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.TypeAnnotation)
+      TypeAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UnionType.newBuilder() to construct.
-    private UnionType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TypeAnnotation.newBuilder() to construct.
+    private TypeAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UnionType() {
-      variants_ = java.util.Collections.emptyList();
+    private TypeAnnotation() {
     }
 
     @java.lang.Override
@@ -3496,7 +5667,7 @@ public final class Types {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnionType(
+    private TypeAnnotation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3516,12 +5687,16 @@ public final class Types {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                variants_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>();
-                mutable_bitField0_ |= 0x00000001;
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (annotations_ != null) {
+                subBuilder = annotations_.toBuilder();
               }
-              variants_.add(
-                  input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry));
+              annotations_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(annotations_);
+                annotations_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3539,79 +5714,54 @@ public final class Types {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          variants_ = java.util.Collections.unmodifiableList(variants_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_UnionType_descriptor;
+      return flyteidl.core.Types.internal_static_flyteidl_core_TypeAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_UnionType_fieldAccessorTable
+      return flyteidl.core.Types.internal_static_flyteidl_core_TypeAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Types.UnionType.class, flyteidl.core.Types.UnionType.Builder.class);
+              flyteidl.core.Types.TypeAnnotation.class, flyteidl.core.Types.TypeAnnotation.Builder.class);
     }
 
-    public static final int VARIANTS_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.core.Types.LiteralType> variants_;
+    public static final int ANNOTATIONS_FIELD_NUMBER = 1;
+    private com.google.protobuf.Struct annotations_;
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    public java.util.List<flyteidl.core.Types.LiteralType> getVariantsList() {
-      return variants_;
+    public boolean hasAnnotations() {
+      return annotations_ != null;
     }
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    public java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-        getVariantsOrBuilderList() {
-      return variants_;
+    public com.google.protobuf.Struct getAnnotations() {
+      return annotations_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotations_;
     }
     /**
      * <pre>
-     * Predefined set of variants in union.
+     * A arbitrary JSON payload to describe a type.
      * </pre>
      *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+     * <code>.google.protobuf.Struct annotations = 1;</code>
      */
-    public int getVariantsCount() {
-      return variants_.size();
-    }
-    /**
-     * <pre>
-     * Predefined set of variants in union.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-     */
-    public flyteidl.core.Types.LiteralType getVariants(int index) {
-      return variants_.get(index);
-    }
-    /**
-     * <pre>
-     * Predefined set of variants in union.
-     * </pre>
-     *
-     * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-     */
-    public flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
-        int index) {
-      return variants_.get(index);
+    public com.google.protobuf.StructOrBuilder getAnnotationsOrBuilder() {
+      return getAnnotations();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3628,8 +5778,8 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < variants_.size(); i++) {
-        output.writeMessage(1, variants_.get(i));
+      if (annotations_ != null) {
+        output.writeMessage(1, getAnnotations());
       }
       unknownFields.writeTo(output);
     }
@@ -3640,9 +5790,9 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < variants_.size(); i++) {
+      if (annotations_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, variants_.get(i));
+          .computeMessageSize(1, getAnnotations());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3654,13 +5804,16 @@ public final class Types {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Types.UnionType)) {
+      if (!(obj instanceof flyteidl.core.Types.TypeAnnotation)) {
         return super.equals(obj);
       }
-      flyteidl.core.Types.UnionType other = (flyteidl.core.Types.UnionType) obj;
+      flyteidl.core.Types.TypeAnnotation other = (flyteidl.core.Types.TypeAnnotation) obj;
 
-      if (!getVariantsList()
-          .equals(other.getVariantsList())) return false;
+      if (hasAnnotations() != other.hasAnnotations()) return false;
+      if (hasAnnotations()) {
+        if (!getAnnotations()
+            .equals(other.getAnnotations())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3672,78 +5825,78 @@ public final class Types {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getVariantsCount() > 0) {
-        hash = (37 * hash) + VARIANTS_FIELD_NUMBER;
-        hash = (53 * hash) + getVariantsList().hashCode();
+      if (hasAnnotations()) {
+        hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotations().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(byte[] data)
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(java.io.InputStream input)
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Types.UnionType parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.Types.TypeAnnotation parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.UnionType parseDelimitedFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Types.UnionType parseFrom(
+    public static flyteidl.core.Types.TypeAnnotation parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3756,7 +5909,7 @@ public final class Types {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Types.UnionType prototype) {
+    public static Builder newBuilder(flyteidl.core.Types.TypeAnnotation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3773,37 +5926,29 @@ public final class Types {
     }
     /**
      * <pre>
-     * Defines a tagged union type, also known as a variant (and formally as the sum type).
-     * A sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag
-     * A value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by
-     * storing the varaint's tag with the literal value and can be examined in runtime.
-     * Type S is typically written as
-     * S := Apple A | Banana B | Cantaloupe C | ...
-     * Notably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:
-     * Optional X := X | Null
-     * See also: https://en.wikipedia.org/wiki/Tagged_union
+     * TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.core.UnionType}
+     * Protobuf type {@code flyteidl.core.TypeAnnotation}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.UnionType)
-        flyteidl.core.Types.UnionTypeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.TypeAnnotation)
+        flyteidl.core.Types.TypeAnnotationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_UnionType_descriptor;
+        return flyteidl.core.Types.internal_static_flyteidl_core_TypeAnnotation_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_UnionType_fieldAccessorTable
+        return flyteidl.core.Types.internal_static_flyteidl_core_TypeAnnotation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Types.UnionType.class, flyteidl.core.Types.UnionType.Builder.class);
+                flyteidl.core.Types.TypeAnnotation.class, flyteidl.core.Types.TypeAnnotation.Builder.class);
       }
 
-      // Construct using flyteidl.core.Types.UnionType.newBuilder()
+      // Construct using flyteidl.core.Types.TypeAnnotation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3816,17 +5961,16 @@ public final class Types {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getVariantsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (variantsBuilder_ == null) {
-          variants_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
         } else {
-          variantsBuilder_.clear();
+          annotations_ = null;
+          annotationsBuilder_ = null;
         }
         return this;
       }
@@ -3834,17 +5978,17 @@ public final class Types {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_UnionType_descriptor;
+        return flyteidl.core.Types.internal_static_flyteidl_core_TypeAnnotation_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.UnionType getDefaultInstanceForType() {
-        return flyteidl.core.Types.UnionType.getDefaultInstance();
+      public flyteidl.core.Types.TypeAnnotation getDefaultInstanceForType() {
+        return flyteidl.core.Types.TypeAnnotation.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.UnionType build() {
-        flyteidl.core.Types.UnionType result = buildPartial();
+      public flyteidl.core.Types.TypeAnnotation build() {
+        flyteidl.core.Types.TypeAnnotation result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3852,17 +5996,12 @@ public final class Types {
       }
 
       @java.lang.Override
-      public flyteidl.core.Types.UnionType buildPartial() {
-        flyteidl.core.Types.UnionType result = new flyteidl.core.Types.UnionType(this);
-        int from_bitField0_ = bitField0_;
-        if (variantsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            variants_ = java.util.Collections.unmodifiableList(variants_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.variants_ = variants_;
+      public flyteidl.core.Types.TypeAnnotation buildPartial() {
+        flyteidl.core.Types.TypeAnnotation result = new flyteidl.core.Types.TypeAnnotation(this);
+        if (annotationsBuilder_ == null) {
+          result.annotations_ = annotations_;
         } else {
-          result.variants_ = variantsBuilder_.build();
+          result.annotations_ = annotationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3902,41 +6041,18 @@ public final class Types {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Types.UnionType) {
-          return mergeFrom((flyteidl.core.Types.UnionType)other);
+        if (other instanceof flyteidl.core.Types.TypeAnnotation) {
+          return mergeFrom((flyteidl.core.Types.TypeAnnotation)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Types.UnionType other) {
-        if (other == flyteidl.core.Types.UnionType.getDefaultInstance()) return this;
-        if (variantsBuilder_ == null) {
-          if (!other.variants_.isEmpty()) {
-            if (variants_.isEmpty()) {
-              variants_ = other.variants_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureVariantsIsMutable();
-              variants_.addAll(other.variants_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.variants_.isEmpty()) {
-            if (variantsBuilder_.isEmpty()) {
-              variantsBuilder_.dispose();
-              variantsBuilder_ = null;
-              variants_ = other.variants_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              variantsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getVariantsFieldBuilder() : null;
-            } else {
-              variantsBuilder_.addAllMessages(other.variants_);
-            }
-          }
+      public Builder mergeFrom(flyteidl.core.Types.TypeAnnotation other) {
+        if (other == flyteidl.core.Types.TypeAnnotation.getDefaultInstance()) return this;
+        if (other.hasAnnotations()) {
+          mergeAnnotations(other.getAnnotations());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3953,11 +6069,11 @@ public final class Types {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Types.UnionType parsedMessage = null;
+        flyteidl.core.Types.TypeAnnotation parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Types.UnionType) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.Types.TypeAnnotation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3966,318 +6082,158 @@ public final class Types {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<flyteidl.core.Types.LiteralType> variants_ =
-        java.util.Collections.emptyList();
-      private void ensureVariantsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          variants_ = new java.util.ArrayList<flyteidl.core.Types.LiteralType>(variants_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> variantsBuilder_;
-
+      private com.google.protobuf.Struct annotations_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> annotationsBuilder_;
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public java.util.List<flyteidl.core.Types.LiteralType> getVariantsList() {
-        if (variantsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(variants_);
+      public boolean hasAnnotations() {
+        return annotationsBuilder_ != null || annotations_ != null;
+      }
+      /**
+       * <pre>
+       * A arbitrary JSON payload to describe a type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct annotations = 1;</code>
+       */
+      public com.google.protobuf.Struct getAnnotations() {
+        if (annotationsBuilder_ == null) {
+          return annotations_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotations_;
         } else {
-          return variantsBuilder_.getMessageList();
+          return annotationsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public int getVariantsCount() {
-        if (variantsBuilder_ == null) {
-          return variants_.size();
-        } else {
-          return variantsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public flyteidl.core.Types.LiteralType getVariants(int index) {
-        if (variantsBuilder_ == null) {
-          return variants_.get(index);
-        } else {
-          return variantsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public Builder setVariants(
-          int index, flyteidl.core.Types.LiteralType value) {
-        if (variantsBuilder_ == null) {
+      public Builder setAnnotations(com.google.protobuf.Struct value) {
+        if (annotationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureVariantsIsMutable();
-          variants_.set(index, value);
+          annotations_ = value;
           onChanged();
         } else {
-          variantsBuilder_.setMessage(index, value);
+          annotationsBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public Builder setVariants(
-          int index, flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (variantsBuilder_ == null) {
-          ensureVariantsIsMutable();
-          variants_.set(index, builderForValue.build());
+      public Builder setAnnotations(
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (annotationsBuilder_ == null) {
+          annotations_ = builderForValue.build();
           onChanged();
         } else {
-          variantsBuilder_.setMessage(index, builderForValue.build());
+          annotationsBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public Builder addVariants(flyteidl.core.Types.LiteralType value) {
-        if (variantsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeAnnotations(com.google.protobuf.Struct value) {
+        if (annotationsBuilder_ == null) {
+          if (annotations_ != null) {
+            annotations_ =
+              com.google.protobuf.Struct.newBuilder(annotations_).mergeFrom(value).buildPartial();
+          } else {
+            annotations_ = value;
           }
-          ensureVariantsIsMutable();
-          variants_.add(value);
           onChanged();
         } else {
-          variantsBuilder_.addMessage(value);
+          annotationsBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public Builder addVariants(
-          int index, flyteidl.core.Types.LiteralType value) {
-        if (variantsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureVariantsIsMutable();
-          variants_.add(index, value);
+      public Builder clearAnnotations() {
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
           onChanged();
         } else {
-          variantsBuilder_.addMessage(index, value);
+          annotations_ = null;
+          annotationsBuilder_ = null;
         }
+
         return this;
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public Builder addVariants(
-          flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (variantsBuilder_ == null) {
-          ensureVariantsIsMutable();
-          variants_.add(builderForValue.build());
-          onChanged();
+      public com.google.protobuf.Struct.Builder getAnnotationsBuilder() {
+        
+        onChanged();
+        return getAnnotationsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * A arbitrary JSON payload to describe a type.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct annotations = 1;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getAnnotationsOrBuilder() {
+        if (annotationsBuilder_ != null) {
+          return annotationsBuilder_.getMessageOrBuilder();
         } else {
-          variantsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public Builder addVariants(
-          int index, flyteidl.core.Types.LiteralType.Builder builderForValue) {
-        if (variantsBuilder_ == null) {
-          ensureVariantsIsMutable();
-          variants_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          variantsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public Builder addAllVariants(
-          java.lang.Iterable<? extends flyteidl.core.Types.LiteralType> values) {
-        if (variantsBuilder_ == null) {
-          ensureVariantsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, variants_);
-          onChanged();
-        } else {
-          variantsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public Builder clearVariants() {
-        if (variantsBuilder_ == null) {
-          variants_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          variantsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public Builder removeVariants(int index) {
-        if (variantsBuilder_ == null) {
-          ensureVariantsIsMutable();
-          variants_.remove(index);
-          onChanged();
-        } else {
-          variantsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public flyteidl.core.Types.LiteralType.Builder getVariantsBuilder(
-          int index) {
-        return getVariantsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public flyteidl.core.Types.LiteralTypeOrBuilder getVariantsOrBuilder(
-          int index) {
-        if (variantsBuilder_ == null) {
-          return variants_.get(index);  } else {
-          return variantsBuilder_.getMessageOrBuilder(index);
+          return annotations_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : annotations_;
         }
       }
       /**
        * <pre>
-       * Predefined set of variants in union.
+       * A arbitrary JSON payload to describe a type.
        * </pre>
        *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
+       * <code>.google.protobuf.Struct annotations = 1;</code>
        */
-      public java.util.List<? extends flyteidl.core.Types.LiteralTypeOrBuilder> 
-           getVariantsOrBuilderList() {
-        if (variantsBuilder_ != null) {
-          return variantsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(variants_);
-        }
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public flyteidl.core.Types.LiteralType.Builder addVariantsBuilder() {
-        return getVariantsFieldBuilder().addBuilder(
-            flyteidl.core.Types.LiteralType.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public flyteidl.core.Types.LiteralType.Builder addVariantsBuilder(
-          int index) {
-        return getVariantsFieldBuilder().addBuilder(
-            index, flyteidl.core.Types.LiteralType.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Predefined set of variants in union.
-       * </pre>
-       *
-       * <code>repeated .flyteidl.core.LiteralType variants = 1;</code>
-       */
-      public java.util.List<flyteidl.core.Types.LiteralType.Builder> 
-           getVariantsBuilderList() {
-        return getVariantsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
-          getVariantsFieldBuilder() {
-        if (variantsBuilder_ == null) {
-          variantsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
-                  variants_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getAnnotationsFieldBuilder() {
+        if (annotationsBuilder_ == null) {
+          annotationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getAnnotations(),
                   getParentForChildren(),
                   isClean());
-          variants_ = null;
+          annotations_ = null;
         }
-        return variantsBuilder_;
+        return annotationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4292,638 +6248,41 @@ public final class Types {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.UnionType)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.TypeAnnotation)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.UnionType)
-    private static final flyteidl.core.Types.UnionType DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.TypeAnnotation)
+    private static final flyteidl.core.Types.TypeAnnotation DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Types.UnionType();
+      DEFAULT_INSTANCE = new flyteidl.core.Types.TypeAnnotation();
     }
 
-    public static flyteidl.core.Types.UnionType getDefaultInstance() {
+    public static flyteidl.core.Types.TypeAnnotation getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UnionType>
-        PARSER = new com.google.protobuf.AbstractParser<UnionType>() {
+    private static final com.google.protobuf.Parser<TypeAnnotation>
+        PARSER = new com.google.protobuf.AbstractParser<TypeAnnotation>() {
       @java.lang.Override
-      public UnionType parsePartialFrom(
+      public TypeAnnotation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnionType(input, extensionRegistry);
+        return new TypeAnnotation(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UnionType> parser() {
+    public static com.google.protobuf.Parser<TypeAnnotation> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UnionType> getParserForType() {
+    public com.google.protobuf.Parser<TypeAnnotation> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.Types.UnionType getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TypeStructureOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.TypeStructure)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Must exactly match for types to be castable
-     * </pre>
-     *
-     * <code>string tag = 1;</code>
-     */
-    java.lang.String getTag();
-    /**
-     * <pre>
-     * Must exactly match for types to be castable
-     * </pre>
-     *
-     * <code>string tag = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagBytes();
-  }
-  /**
-   * <pre>
-   * Hints to improve type matching
-   * e.g. allows distinguishing output from custom type transformers
-   * even if the underlying IDL serialization matches
-   * </pre>
-   *
-   * Protobuf type {@code flyteidl.core.TypeStructure}
-   */
-  public  static final class TypeStructure extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.TypeStructure)
-      TypeStructureOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TypeStructure.newBuilder() to construct.
-    private TypeStructure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TypeStructure() {
-      tag_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TypeStructure(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tag_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_TypeStructure_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.core.Types.internal_static_flyteidl_core_TypeStructure_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.core.Types.TypeStructure.class, flyteidl.core.Types.TypeStructure.Builder.class);
-    }
-
-    public static final int TAG_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tag_;
-    /**
-     * <pre>
-     * Must exactly match for types to be castable
-     * </pre>
-     *
-     * <code>string tag = 1;</code>
-     */
-    public java.lang.String getTag() {
-      java.lang.Object ref = tag_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tag_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Must exactly match for types to be castable
-     * </pre>
-     *
-     * <code>string tag = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagBytes() {
-      java.lang.Object ref = tag_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tag_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTagBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tag_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTagBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tag_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.core.Types.TypeStructure)) {
-        return super.equals(obj);
-      }
-      flyteidl.core.Types.TypeStructure other = (flyteidl.core.Types.TypeStructure) obj;
-
-      if (!getTag()
-          .equals(other.getTag())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TAG_FIELD_NUMBER;
-      hash = (53 * hash) + getTag().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.core.Types.TypeStructure parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.core.Types.TypeStructure parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.core.Types.TypeStructure parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.core.Types.TypeStructure prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Hints to improve type matching
-     * e.g. allows distinguishing output from custom type transformers
-     * even if the underlying IDL serialization matches
-     * </pre>
-     *
-     * Protobuf type {@code flyteidl.core.TypeStructure}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.TypeStructure)
-        flyteidl.core.Types.TypeStructureOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_TypeStructure_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_TypeStructure_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.core.Types.TypeStructure.class, flyteidl.core.Types.TypeStructure.Builder.class);
-      }
-
-      // Construct using flyteidl.core.Types.TypeStructure.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        tag_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.core.Types.internal_static_flyteidl_core_TypeStructure_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.core.Types.TypeStructure getDefaultInstanceForType() {
-        return flyteidl.core.Types.TypeStructure.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.core.Types.TypeStructure build() {
-        flyteidl.core.Types.TypeStructure result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.core.Types.TypeStructure buildPartial() {
-        flyteidl.core.Types.TypeStructure result = new flyteidl.core.Types.TypeStructure(this);
-        result.tag_ = tag_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Types.TypeStructure) {
-          return mergeFrom((flyteidl.core.Types.TypeStructure)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.core.Types.TypeStructure other) {
-        if (other == flyteidl.core.Types.TypeStructure.getDefaultInstance()) return this;
-        if (!other.getTag().isEmpty()) {
-          tag_ = other.tag_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.core.Types.TypeStructure parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Types.TypeStructure) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object tag_ = "";
-      /**
-       * <pre>
-       * Must exactly match for types to be castable
-       * </pre>
-       *
-       * <code>string tag = 1;</code>
-       */
-      public java.lang.String getTag() {
-        java.lang.Object ref = tag_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tag_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Must exactly match for types to be castable
-       * </pre>
-       *
-       * <code>string tag = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagBytes() {
-        java.lang.Object ref = tag_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tag_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Must exactly match for types to be castable
-       * </pre>
-       *
-       * <code>string tag = 1;</code>
-       */
-      public Builder setTag(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tag_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Must exactly match for types to be castable
-       * </pre>
-       *
-       * <code>string tag = 1;</code>
-       */
-      public Builder clearTag() {
-        
-        tag_ = getDefaultInstance().getTag();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Must exactly match for types to be castable
-       * </pre>
-       *
-       * <code>string tag = 1;</code>
-       */
-      public Builder setTagBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tag_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.TypeStructure)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.core.TypeStructure)
-    private static final flyteidl.core.Types.TypeStructure DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.core.Types.TypeStructure();
-    }
-
-    public static flyteidl.core.Types.TypeStructure getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TypeStructure>
-        PARSER = new com.google.protobuf.AbstractParser<TypeStructure>() {
-      @java.lang.Override
-      public TypeStructure parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TypeStructure(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TypeStructure> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TypeStructure> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.core.Types.TypeStructure getDefaultInstanceForType() {
+    public flyteidl.core.Types.TypeAnnotation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5077,41 +6436,28 @@ public final class Types {
 
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    boolean hasUnionType();
+    boolean hasStructuredDatasetType();
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    flyteidl.core.Types.UnionType getUnionType();
+    flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType();
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    flyteidl.core.Types.UnionTypeOrBuilder getUnionTypeOrBuilder();
-
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    boolean hasStructure();
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    flyteidl.core.Types.TypeStructure getStructure();
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    flyteidl.core.Types.TypeStructureOrBuilder getStructureOrBuilder();
+    flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder();
 
     /**
      * <pre>
@@ -5140,6 +6486,34 @@ public final class Types {
      * <code>.google.protobuf.Struct metadata = 6;</code>
      */
     com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    boolean hasAnnotation();
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    flyteidl.core.Types.TypeAnnotation getAnnotation();
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    flyteidl.core.Types.TypeAnnotationOrBuilder getAnnotationOrBuilder();
 
     public flyteidl.core.Types.LiteralType.TypeCase getTypeCase();
   }
@@ -5276,28 +6650,28 @@ public final class Types {
               break;
             }
             case 66: {
-              flyteidl.core.Types.UnionType.Builder subBuilder = null;
+              flyteidl.core.Types.StructuredDatasetType.Builder subBuilder = null;
               if (typeCase_ == 8) {
-                subBuilder = ((flyteidl.core.Types.UnionType) type_).toBuilder();
+                subBuilder = ((flyteidl.core.Types.StructuredDatasetType) type_).toBuilder();
               }
               type_ =
-                  input.readMessage(flyteidl.core.Types.UnionType.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.core.Types.StructuredDatasetType.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.Types.UnionType) type_);
+                subBuilder.mergeFrom((flyteidl.core.Types.StructuredDatasetType) type_);
                 type_ = subBuilder.buildPartial();
               }
               typeCase_ = 8;
               break;
             }
             case 74: {
-              flyteidl.core.Types.TypeStructure.Builder subBuilder = null;
-              if (structure_ != null) {
-                subBuilder = structure_.toBuilder();
+              flyteidl.core.Types.TypeAnnotation.Builder subBuilder = null;
+              if (annotation_ != null) {
+                subBuilder = annotation_.toBuilder();
               }
-              structure_ = input.readMessage(flyteidl.core.Types.TypeStructure.parser(), extensionRegistry);
+              annotation_ = input.readMessage(flyteidl.core.Types.TypeAnnotation.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(structure_);
-                structure_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(annotation_);
+                annotation_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5344,7 +6718,7 @@ public final class Types {
       MAP_VALUE_TYPE(4),
       BLOB(5),
       ENUM_TYPE(7),
-      UNION_TYPE(8),
+      STRUCTURED_DATASET_TYPE(8),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -5366,7 +6740,7 @@ public final class Types {
           case 4: return MAP_VALUE_TYPE;
           case 5: return BLOB;
           case 7: return ENUM_TYPE;
-          case 8: return UNION_TYPE;
+          case 8: return STRUCTURED_DATASET_TYPE;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -5603,63 +6977,42 @@ public final class Types {
       return flyteidl.core.Types.EnumType.getDefaultInstance();
     }
 
-    public static final int UNION_TYPE_FIELD_NUMBER = 8;
+    public static final int STRUCTURED_DATASET_TYPE_FIELD_NUMBER = 8;
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    public boolean hasUnionType() {
+    public boolean hasStructuredDatasetType() {
       return typeCase_ == 8;
     }
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    public flyteidl.core.Types.UnionType getUnionType() {
+    public flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType() {
       if (typeCase_ == 8) {
-         return (flyteidl.core.Types.UnionType) type_;
+         return (flyteidl.core.Types.StructuredDatasetType) type_;
       }
-      return flyteidl.core.Types.UnionType.getDefaultInstance();
+      return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
     }
     /**
      * <pre>
-     * Defines an union type with pre-defined LiteralTypes.
+     * Generalized schema support
      * </pre>
      *
-     * <code>.flyteidl.core.UnionType union_type = 8;</code>
+     * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
      */
-    public flyteidl.core.Types.UnionTypeOrBuilder getUnionTypeOrBuilder() {
+    public flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder() {
       if (typeCase_ == 8) {
-         return (flyteidl.core.Types.UnionType) type_;
+         return (flyteidl.core.Types.StructuredDatasetType) type_;
       }
-      return flyteidl.core.Types.UnionType.getDefaultInstance();
-    }
-
-    public static final int STRUCTURE_FIELD_NUMBER = 9;
-    private flyteidl.core.Types.TypeStructure structure_;
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    public boolean hasStructure() {
-      return structure_ != null;
-    }
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    public flyteidl.core.Types.TypeStructure getStructure() {
-      return structure_ == null ? flyteidl.core.Types.TypeStructure.getDefaultInstance() : structure_;
-    }
-    /**
-     * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-     */
-    public flyteidl.core.Types.TypeStructureOrBuilder getStructureOrBuilder() {
-      return getStructure();
+      return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
     }
 
     public static final int METADATA_FIELD_NUMBER = 6;
@@ -5698,6 +7051,42 @@ public final class Types {
       return getMetadata();
     }
 
+    public static final int ANNOTATION_FIELD_NUMBER = 9;
+    private flyteidl.core.Types.TypeAnnotation annotation_;
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    public boolean hasAnnotation() {
+      return annotation_ != null;
+    }
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    public flyteidl.core.Types.TypeAnnotation getAnnotation() {
+      return annotation_ == null ? flyteidl.core.Types.TypeAnnotation.getDefaultInstance() : annotation_;
+    }
+    /**
+     * <pre>
+     * This field contains arbitrary data that might have special semantic
+     * meaning for the client but does not effect internal flyte behavior.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+     */
+    public flyteidl.core.Types.TypeAnnotationOrBuilder getAnnotationOrBuilder() {
+      return getAnnotation();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5734,10 +7123,10 @@ public final class Types {
         output.writeMessage(7, (flyteidl.core.Types.EnumType) type_);
       }
       if (typeCase_ == 8) {
-        output.writeMessage(8, (flyteidl.core.Types.UnionType) type_);
+        output.writeMessage(8, (flyteidl.core.Types.StructuredDatasetType) type_);
       }
-      if (structure_ != null) {
-        output.writeMessage(9, getStructure());
+      if (annotation_ != null) {
+        output.writeMessage(9, getAnnotation());
       }
       unknownFields.writeTo(output);
     }
@@ -5778,11 +7167,11 @@ public final class Types {
       }
       if (typeCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, (flyteidl.core.Types.UnionType) type_);
+          .computeMessageSize(8, (flyteidl.core.Types.StructuredDatasetType) type_);
       }
-      if (structure_ != null) {
+      if (annotation_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getStructure());
+          .computeMessageSize(9, getAnnotation());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5799,15 +7188,15 @@ public final class Types {
       }
       flyteidl.core.Types.LiteralType other = (flyteidl.core.Types.LiteralType) obj;
 
-      if (hasStructure() != other.hasStructure()) return false;
-      if (hasStructure()) {
-        if (!getStructure()
-            .equals(other.getStructure())) return false;
-      }
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
         if (!getMetadata()
             .equals(other.getMetadata())) return false;
+      }
+      if (hasAnnotation() != other.hasAnnotation()) return false;
+      if (hasAnnotation()) {
+        if (!getAnnotation()
+            .equals(other.getAnnotation())) return false;
       }
       if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
@@ -5836,8 +7225,8 @@ public final class Types {
               .equals(other.getEnumType())) return false;
           break;
         case 8:
-          if (!getUnionType()
-              .equals(other.getUnionType())) return false;
+          if (!getStructuredDatasetType()
+              .equals(other.getStructuredDatasetType())) return false;
           break;
         case 0:
         default:
@@ -5853,13 +7242,13 @@ public final class Types {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasStructure()) {
-        hash = (37 * hash) + STRUCTURE_FIELD_NUMBER;
-        hash = (53 * hash) + getStructure().hashCode();
-      }
       if (hasMetadata()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasAnnotation()) {
+        hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotation().hashCode();
       }
       switch (typeCase_) {
         case 1:
@@ -5887,8 +7276,8 @@ public final class Types {
           hash = (53 * hash) + getEnumType().hashCode();
           break;
         case 8:
-          hash = (37 * hash) + UNION_TYPE_FIELD_NUMBER;
-          hash = (53 * hash) + getUnionType().hashCode();
+          hash = (37 * hash) + STRUCTURED_DATASET_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getStructuredDatasetType().hashCode();
           break;
         case 0:
         default:
@@ -6030,17 +7419,17 @@ public final class Types {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (structureBuilder_ == null) {
-          structure_ = null;
-        } else {
-          structure_ = null;
-          structureBuilder_ = null;
-        }
         if (metadataBuilder_ == null) {
           metadata_ = null;
         } else {
           metadata_ = null;
           metadataBuilder_ = null;
+        }
+        if (annotationBuilder_ == null) {
+          annotation_ = null;
+        } else {
+          annotation_ = null;
+          annotationBuilder_ = null;
         }
         typeCase_ = 0;
         type_ = null;
@@ -6109,21 +7498,21 @@ public final class Types {
           }
         }
         if (typeCase_ == 8) {
-          if (unionTypeBuilder_ == null) {
+          if (structuredDatasetTypeBuilder_ == null) {
             result.type_ = type_;
           } else {
-            result.type_ = unionTypeBuilder_.build();
+            result.type_ = structuredDatasetTypeBuilder_.build();
           }
-        }
-        if (structureBuilder_ == null) {
-          result.structure_ = structure_;
-        } else {
-          result.structure_ = structureBuilder_.build();
         }
         if (metadataBuilder_ == null) {
           result.metadata_ = metadata_;
         } else {
           result.metadata_ = metadataBuilder_.build();
+        }
+        if (annotationBuilder_ == null) {
+          result.annotation_ = annotation_;
+        } else {
+          result.annotation_ = annotationBuilder_.build();
         }
         result.typeCase_ = typeCase_;
         onBuilt();
@@ -6174,11 +7563,11 @@ public final class Types {
 
       public Builder mergeFrom(flyteidl.core.Types.LiteralType other) {
         if (other == flyteidl.core.Types.LiteralType.getDefaultInstance()) return this;
-        if (other.hasStructure()) {
-          mergeStructure(other.getStructure());
-        }
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
+        }
+        if (other.hasAnnotation()) {
+          mergeAnnotation(other.getAnnotation());
         }
         switch (other.getTypeCase()) {
           case SIMPLE: {
@@ -6205,8 +7594,8 @@ public final class Types {
             mergeEnumType(other.getEnumType());
             break;
           }
-          case UNION_TYPE: {
-            mergeUnionType(other.getUnionType());
+          case STRUCTURED_DATASET_TYPE: {
+            mergeStructuredDatasetType(other.getStructuredDatasetType());
             break;
           }
           case TYPE_NOT_SET: {
@@ -7192,87 +8581,87 @@ public final class Types {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.UnionType, flyteidl.core.Types.UnionType.Builder, flyteidl.core.Types.UnionTypeOrBuilder> unionTypeBuilder_;
+          flyteidl.core.Types.StructuredDatasetType, flyteidl.core.Types.StructuredDatasetType.Builder, flyteidl.core.Types.StructuredDatasetTypeOrBuilder> structuredDatasetTypeBuilder_;
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public boolean hasUnionType() {
+      public boolean hasStructuredDatasetType() {
         return typeCase_ == 8;
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public flyteidl.core.Types.UnionType getUnionType() {
-        if (unionTypeBuilder_ == null) {
+      public flyteidl.core.Types.StructuredDatasetType getStructuredDatasetType() {
+        if (structuredDatasetTypeBuilder_ == null) {
           if (typeCase_ == 8) {
-            return (flyteidl.core.Types.UnionType) type_;
+            return (flyteidl.core.Types.StructuredDatasetType) type_;
           }
-          return flyteidl.core.Types.UnionType.getDefaultInstance();
+          return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
         } else {
           if (typeCase_ == 8) {
-            return unionTypeBuilder_.getMessage();
+            return structuredDatasetTypeBuilder_.getMessage();
           }
-          return flyteidl.core.Types.UnionType.getDefaultInstance();
+          return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
         }
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public Builder setUnionType(flyteidl.core.Types.UnionType value) {
-        if (unionTypeBuilder_ == null) {
+      public Builder setStructuredDatasetType(flyteidl.core.Types.StructuredDatasetType value) {
+        if (structuredDatasetTypeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           type_ = value;
           onChanged();
         } else {
-          unionTypeBuilder_.setMessage(value);
+          structuredDatasetTypeBuilder_.setMessage(value);
         }
         typeCase_ = 8;
         return this;
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public Builder setUnionType(
-          flyteidl.core.Types.UnionType.Builder builderForValue) {
-        if (unionTypeBuilder_ == null) {
+      public Builder setStructuredDatasetType(
+          flyteidl.core.Types.StructuredDatasetType.Builder builderForValue) {
+        if (structuredDatasetTypeBuilder_ == null) {
           type_ = builderForValue.build();
           onChanged();
         } else {
-          unionTypeBuilder_.setMessage(builderForValue.build());
+          structuredDatasetTypeBuilder_.setMessage(builderForValue.build());
         }
         typeCase_ = 8;
         return this;
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public Builder mergeUnionType(flyteidl.core.Types.UnionType value) {
-        if (unionTypeBuilder_ == null) {
+      public Builder mergeStructuredDatasetType(flyteidl.core.Types.StructuredDatasetType value) {
+        if (structuredDatasetTypeBuilder_ == null) {
           if (typeCase_ == 8 &&
-              type_ != flyteidl.core.Types.UnionType.getDefaultInstance()) {
-            type_ = flyteidl.core.Types.UnionType.newBuilder((flyteidl.core.Types.UnionType) type_)
+              type_ != flyteidl.core.Types.StructuredDatasetType.getDefaultInstance()) {
+            type_ = flyteidl.core.Types.StructuredDatasetType.newBuilder((flyteidl.core.Types.StructuredDatasetType) type_)
                 .mergeFrom(value).buildPartial();
           } else {
             type_ = value;
@@ -7280,22 +8669,22 @@ public final class Types {
           onChanged();
         } else {
           if (typeCase_ == 8) {
-            unionTypeBuilder_.mergeFrom(value);
+            structuredDatasetTypeBuilder_.mergeFrom(value);
           }
-          unionTypeBuilder_.setMessage(value);
+          structuredDatasetTypeBuilder_.setMessage(value);
         }
         typeCase_ = 8;
         return this;
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public Builder clearUnionType() {
-        if (unionTypeBuilder_ == null) {
+      public Builder clearStructuredDatasetType() {
+        if (structuredDatasetTypeBuilder_ == null) {
           if (typeCase_ == 8) {
             typeCase_ = 0;
             type_ = null;
@@ -7306,178 +8695,61 @@ public final class Types {
             typeCase_ = 0;
             type_ = null;
           }
-          unionTypeBuilder_.clear();
+          structuredDatasetTypeBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public flyteidl.core.Types.UnionType.Builder getUnionTypeBuilder() {
-        return getUnionTypeFieldBuilder().getBuilder();
+      public flyteidl.core.Types.StructuredDatasetType.Builder getStructuredDatasetTypeBuilder() {
+        return getStructuredDatasetTypeFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
-      public flyteidl.core.Types.UnionTypeOrBuilder getUnionTypeOrBuilder() {
-        if ((typeCase_ == 8) && (unionTypeBuilder_ != null)) {
-          return unionTypeBuilder_.getMessageOrBuilder();
+      public flyteidl.core.Types.StructuredDatasetTypeOrBuilder getStructuredDatasetTypeOrBuilder() {
+        if ((typeCase_ == 8) && (structuredDatasetTypeBuilder_ != null)) {
+          return structuredDatasetTypeBuilder_.getMessageOrBuilder();
         } else {
           if (typeCase_ == 8) {
-            return (flyteidl.core.Types.UnionType) type_;
+            return (flyteidl.core.Types.StructuredDatasetType) type_;
           }
-          return flyteidl.core.Types.UnionType.getDefaultInstance();
+          return flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
         }
       }
       /**
        * <pre>
-       * Defines an union type with pre-defined LiteralTypes.
+       * Generalized schema support
        * </pre>
        *
-       * <code>.flyteidl.core.UnionType union_type = 8;</code>
+       * <code>.flyteidl.core.StructuredDatasetType structured_dataset_type = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.UnionType, flyteidl.core.Types.UnionType.Builder, flyteidl.core.Types.UnionTypeOrBuilder> 
-          getUnionTypeFieldBuilder() {
-        if (unionTypeBuilder_ == null) {
+          flyteidl.core.Types.StructuredDatasetType, flyteidl.core.Types.StructuredDatasetType.Builder, flyteidl.core.Types.StructuredDatasetTypeOrBuilder> 
+          getStructuredDatasetTypeFieldBuilder() {
+        if (structuredDatasetTypeBuilder_ == null) {
           if (!(typeCase_ == 8)) {
-            type_ = flyteidl.core.Types.UnionType.getDefaultInstance();
+            type_ = flyteidl.core.Types.StructuredDatasetType.getDefaultInstance();
           }
-          unionTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Types.UnionType, flyteidl.core.Types.UnionType.Builder, flyteidl.core.Types.UnionTypeOrBuilder>(
-                  (flyteidl.core.Types.UnionType) type_,
+          structuredDatasetTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.StructuredDatasetType, flyteidl.core.Types.StructuredDatasetType.Builder, flyteidl.core.Types.StructuredDatasetTypeOrBuilder>(
+                  (flyteidl.core.Types.StructuredDatasetType) type_,
                   getParentForChildren(),
                   isClean());
           type_ = null;
         }
         typeCase_ = 8;
         onChanged();;
-        return unionTypeBuilder_;
-      }
-
-      private flyteidl.core.Types.TypeStructure structure_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.TypeStructure, flyteidl.core.Types.TypeStructure.Builder, flyteidl.core.Types.TypeStructureOrBuilder> structureBuilder_;
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public boolean hasStructure() {
-        return structureBuilder_ != null || structure_ != null;
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public flyteidl.core.Types.TypeStructure getStructure() {
-        if (structureBuilder_ == null) {
-          return structure_ == null ? flyteidl.core.Types.TypeStructure.getDefaultInstance() : structure_;
-        } else {
-          return structureBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public Builder setStructure(flyteidl.core.Types.TypeStructure value) {
-        if (structureBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          structure_ = value;
-          onChanged();
-        } else {
-          structureBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public Builder setStructure(
-          flyteidl.core.Types.TypeStructure.Builder builderForValue) {
-        if (structureBuilder_ == null) {
-          structure_ = builderForValue.build();
-          onChanged();
-        } else {
-          structureBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public Builder mergeStructure(flyteidl.core.Types.TypeStructure value) {
-        if (structureBuilder_ == null) {
-          if (structure_ != null) {
-            structure_ =
-              flyteidl.core.Types.TypeStructure.newBuilder(structure_).mergeFrom(value).buildPartial();
-          } else {
-            structure_ = value;
-          }
-          onChanged();
-        } else {
-          structureBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public Builder clearStructure() {
-        if (structureBuilder_ == null) {
-          structure_ = null;
-          onChanged();
-        } else {
-          structure_ = null;
-          structureBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public flyteidl.core.Types.TypeStructure.Builder getStructureBuilder() {
-        
-        onChanged();
-        return getStructureFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      public flyteidl.core.Types.TypeStructureOrBuilder getStructureOrBuilder() {
-        if (structureBuilder_ != null) {
-          return structureBuilder_.getMessageOrBuilder();
-        } else {
-          return structure_ == null ?
-              flyteidl.core.Types.TypeStructure.getDefaultInstance() : structure_;
-        }
-      }
-      /**
-       * <code>.flyteidl.core.TypeStructure structure = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Types.TypeStructure, flyteidl.core.Types.TypeStructure.Builder, flyteidl.core.Types.TypeStructureOrBuilder> 
-          getStructureFieldBuilder() {
-        if (structureBuilder_ == null) {
-          structureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Types.TypeStructure, flyteidl.core.Types.TypeStructure.Builder, flyteidl.core.Types.TypeStructureOrBuilder>(
-                  getStructure(),
-                  getParentForChildren(),
-                  isClean());
-          structure_ = null;
-        }
-        return structureBuilder_;
+        return structuredDatasetTypeBuilder_;
       }
 
       private com.google.protobuf.Struct metadata_;
@@ -7640,6 +8912,168 @@ public final class Types {
           metadata_ = null;
         }
         return metadataBuilder_;
+      }
+
+      private flyteidl.core.Types.TypeAnnotation annotation_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.TypeAnnotation, flyteidl.core.Types.TypeAnnotation.Builder, flyteidl.core.Types.TypeAnnotationOrBuilder> annotationBuilder_;
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public boolean hasAnnotation() {
+        return annotationBuilder_ != null || annotation_ != null;
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public flyteidl.core.Types.TypeAnnotation getAnnotation() {
+        if (annotationBuilder_ == null) {
+          return annotation_ == null ? flyteidl.core.Types.TypeAnnotation.getDefaultInstance() : annotation_;
+        } else {
+          return annotationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public Builder setAnnotation(flyteidl.core.Types.TypeAnnotation value) {
+        if (annotationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          annotation_ = value;
+          onChanged();
+        } else {
+          annotationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public Builder setAnnotation(
+          flyteidl.core.Types.TypeAnnotation.Builder builderForValue) {
+        if (annotationBuilder_ == null) {
+          annotation_ = builderForValue.build();
+          onChanged();
+        } else {
+          annotationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public Builder mergeAnnotation(flyteidl.core.Types.TypeAnnotation value) {
+        if (annotationBuilder_ == null) {
+          if (annotation_ != null) {
+            annotation_ =
+              flyteidl.core.Types.TypeAnnotation.newBuilder(annotation_).mergeFrom(value).buildPartial();
+          } else {
+            annotation_ = value;
+          }
+          onChanged();
+        } else {
+          annotationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public Builder clearAnnotation() {
+        if (annotationBuilder_ == null) {
+          annotation_ = null;
+          onChanged();
+        } else {
+          annotation_ = null;
+          annotationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public flyteidl.core.Types.TypeAnnotation.Builder getAnnotationBuilder() {
+        
+        onChanged();
+        return getAnnotationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      public flyteidl.core.Types.TypeAnnotationOrBuilder getAnnotationOrBuilder() {
+        if (annotationBuilder_ != null) {
+          return annotationBuilder_.getMessageOrBuilder();
+        } else {
+          return annotation_ == null ?
+              flyteidl.core.Types.TypeAnnotation.getDefaultInstance() : annotation_;
+        }
+      }
+      /**
+       * <pre>
+       * This field contains arbitrary data that might have special semantic
+       * meaning for the client but does not effect internal flyte behavior.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TypeAnnotation annotation = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.TypeAnnotation, flyteidl.core.Types.TypeAnnotation.Builder, flyteidl.core.Types.TypeAnnotationOrBuilder> 
+          getAnnotationFieldBuilder() {
+        if (annotationBuilder_ == null) {
+          annotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.TypeAnnotation, flyteidl.core.Types.TypeAnnotation.Builder, flyteidl.core.Types.TypeAnnotationOrBuilder>(
+                  getAnnotation(),
+                  getParentForChildren(),
+                  isClean());
+          annotation_ = null;
+        }
+        return annotationBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9239,6 +10673,16 @@ public final class Types {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_SchemaType_SchemaColumn_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_StructuredDatasetType_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_StructuredDatasetType_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_BlobType_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9249,15 +10693,10 @@ public final class Types {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_EnumType_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_UnionType_descriptor;
+    internal_static_flyteidl_core_TypeAnnotation_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_UnionType_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_TypeStructure_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_TypeStructure_fieldAccessorTable;
+      internal_static_flyteidl_core_TypeAnnotation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_LiteralType_descriptor;
   private static final 
@@ -9290,32 +10729,39 @@ public final class Types {
       ".core.SchemaType.SchemaColumn.SchemaColu" +
       "mnType\"_\n\020SchemaColumnType\022\013\n\007INTEGER\020\000\022" +
       "\t\n\005FLOAT\020\001\022\n\n\006STRING\020\002\022\013\n\007BOOLEAN\020\003\022\014\n\010D" +
-      "ATETIME\020\004\022\014\n\010DURATION\020\005\"\217\001\n\010BlobType\022\016\n\006" +
-      "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f" +
-      "lyteidl.core.BlobType.BlobDimensionality" +
-      "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU" +
-      "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"9\n" +
-      "\tUnionType\022,\n\010variants\030\001 \003(\0132\032.flyteidl." +
-      "core.LiteralType\"\034\n\rTypeStructure\022\013\n\003tag" +
-      "\030\001 \001(\t\"\277\003\n\013LiteralType\022+\n\006simple\030\001 \001(\0162\031" +
-      ".flyteidl.core.SimpleTypeH\000\022+\n\006schema\030\002 " +
-      "\001(\0132\031.flyteidl.core.SchemaTypeH\000\0225\n\017coll" +
-      "ection_type\030\003 \001(\0132\032.flyteidl.core.Litera" +
-      "lTypeH\000\0224\n\016map_value_type\030\004 \001(\0132\032.flytei" +
-      "dl.core.LiteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.fl" +
-      "yteidl.core.BlobTypeH\000\022,\n\tenum_type\030\007 \001(" +
-      "\0132\027.flyteidl.core.EnumTypeH\000\022.\n\nunion_ty" +
-      "pe\030\010 \001(\0132\030.flyteidl.core.UnionTypeH\000\022/\n\t" +
-      "structure\030\t \001(\0132\034.flyteidl.core.TypeStru" +
-      "cture\022)\n\010metadata\030\006 \001(\0132\027.google.protobu" +
-      "f.StructB\006\n\004type\"/\n\017OutputReference\022\017\n\007n" +
-      "ode_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016fa" +
-      "iled_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\n" +
-      "SimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLO" +
-      "AT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIM" +
-      "E\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010" +
-      "\022\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "ATETIME\020\004\022\014\n\010DURATION\020\005\"\372\001\n\025StructuredDa" +
+      "tasetType\022C\n\007columns\030\001 \003(\01322.flyteidl.co" +
+      "re.StructuredDatasetType.DatasetColumn\022\016" +
+      "\n\006format\030\002 \001(\t\022\034\n\024external_schema_type\030\003" +
+      " \001(\t\022\035\n\025external_schema_bytes\030\004 \001(\014\032O\n\rD" +
+      "atasetColumn\022\014\n\004name\030\001 \001(\t\0220\n\014literal_ty" +
+      "pe\030\002 \001(\0132\032.flyteidl.core.LiteralType\"\217\001\n" +
+      "\010BlobType\022\016\n\006format\030\001 \001(\t\022B\n\016dimensional" +
+      "ity\030\002 \001(\0162*.flyteidl.core.BlobType.BlobD" +
+      "imensionality\"/\n\022BlobDimensionality\022\n\n\006S" +
+      "INGLE\020\000\022\r\n\tMULTIPART\020\001\"\032\n\010EnumType\022\016\n\006va" +
+      "lues\030\001 \003(\t\">\n\016TypeAnnotation\022,\n\013annotati" +
+      "ons\030\001 \001(\0132\027.google.protobuf.Struct\"\332\003\n\013L" +
+      "iteralType\022+\n\006simple\030\001 \001(\0162\031.flyteidl.co" +
+      "re.SimpleTypeH\000\022+\n\006schema\030\002 \001(\0132\031.flytei" +
+      "dl.core.SchemaTypeH\000\0225\n\017collection_type\030" +
+      "\003 \001(\0132\032.flyteidl.core.LiteralTypeH\000\0224\n\016m" +
+      "ap_value_type\030\004 \001(\0132\032.flyteidl.core.Lite" +
+      "ralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyteidl.core." +
+      "BlobTypeH\000\022,\n\tenum_type\030\007 \001(\0132\027.flyteidl" +
+      ".core.EnumTypeH\000\022G\n\027structured_dataset_t" +
+      "ype\030\010 \001(\0132$.flyteidl.core.StructuredData" +
+      "setTypeH\000\022)\n\010metadata\030\006 \001(\0132\027.google.pro" +
+      "tobuf.Struct\0221\n\nannotation\030\t \001(\0132\035.flyte" +
+      "idl.core.TypeAnnotationB\006\n\004type\"/\n\017Outpu" +
+      "tReference\022\017\n\007node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t" +
+      "\"0\n\005Error\022\026\n\016failed_node_id\030\001 \001(\t\022\017\n\007mes" +
+      "sage\030\002 \001(\t*\206\001\n\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007I" +
+      "NTEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLE" +
+      "AN\020\004\022\014\n\010DATETIME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINA" +
+      "RY\020\007\022\t\n\005ERROR\020\010\022\n\n\006STRUCT\020\tB6Z4github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
+      "oreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9342,36 +10788,42 @@ public final class Types {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SchemaType_SchemaColumn_descriptor,
         new java.lang.String[] { "Name", "Type", });
-    internal_static_flyteidl_core_BlobType_descriptor =
+    internal_static_flyteidl_core_StructuredDatasetType_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_core_StructuredDatasetType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_StructuredDatasetType_descriptor,
+        new java.lang.String[] { "Columns", "Format", "ExternalSchemaType", "ExternalSchemaBytes", });
+    internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor =
+      internal_static_flyteidl_core_StructuredDatasetType_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor,
+        new java.lang.String[] { "Name", "LiteralType", });
+    internal_static_flyteidl_core_BlobType_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_BlobType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_BlobType_descriptor,
         new java.lang.String[] { "Format", "Dimensionality", });
     internal_static_flyteidl_core_EnumType_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_EnumType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_EnumType_descriptor,
         new java.lang.String[] { "Values", });
-    internal_static_flyteidl_core_UnionType_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_flyteidl_core_UnionType_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_UnionType_descriptor,
-        new java.lang.String[] { "Variants", });
-    internal_static_flyteidl_core_TypeStructure_descriptor =
+    internal_static_flyteidl_core_TypeAnnotation_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_flyteidl_core_TypeStructure_fieldAccessorTable = new
+    internal_static_flyteidl_core_TypeAnnotation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_TypeStructure_descriptor,
-        new java.lang.String[] { "Tag", });
+        internal_static_flyteidl_core_TypeAnnotation_descriptor,
+        new java.lang.String[] { "Annotations", });
     internal_static_flyteidl_core_LiteralType_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_LiteralType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_LiteralType_descriptor,
-        new java.lang.String[] { "Simple", "Schema", "CollectionType", "MapValueType", "Blob", "EnumType", "UnionType", "Structure", "Metadata", "Type", });
+        new java.lang.String[] { "Simple", "Schema", "CollectionType", "MapValueType", "Blob", "EnumType", "StructuredDatasetType", "Metadata", "Annotation", "Type", });
     internal_static_flyteidl_core_OutputReference_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_OutputReference_fieldAccessorTable = new

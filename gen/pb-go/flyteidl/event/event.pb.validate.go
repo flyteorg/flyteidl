@@ -40,6 +40,10 @@ var (
 
 	_ = core.CatalogCacheStatus(0)
 
+	_ = core.CatalogReservation_Status(0)
+
+	_ = core.TaskExecution_Phase(0)
+
 	_ = core.TaskExecution_Phase(0)
 )
 
@@ -442,6 +446,8 @@ func (m *TaskNodeMetadata) Validate() error {
 			}
 		}
 	}
+
+	// no validation rules for ReservationStatus
 
 	if v, ok := interface{}(m.GetDynamicWorkflow()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -932,6 +938,12 @@ func (m *ExternalResourceInfo) Validate() error {
 	}
 
 	// no validation rules for ExternalId
+
+	// no validation rules for Index
+
+	// no validation rules for RetryAttempt
+
+	// no validation rules for Phase
 
 	return nil
 }

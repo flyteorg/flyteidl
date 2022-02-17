@@ -115,6 +115,94 @@ var _ interface {
 	ErrorName() string
 } = SchemaTypeValidationError{}
 
+// Validate checks the field values on StructuredDatasetType with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *StructuredDatasetType) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetColumns() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return StructuredDatasetTypeValidationError{
+					field:  fmt.Sprintf("Columns[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	// no validation rules for Format
+
+	// no validation rules for ExternalSchemaType
+
+	// no validation rules for ExternalSchemaBytes
+
+	return nil
+}
+
+// StructuredDatasetTypeValidationError is the validation error returned by
+// StructuredDatasetType.Validate if the designated constraints aren't met.
+type StructuredDatasetTypeValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e StructuredDatasetTypeValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e StructuredDatasetTypeValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e StructuredDatasetTypeValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e StructuredDatasetTypeValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e StructuredDatasetTypeValidationError) ErrorName() string {
+	return "StructuredDatasetTypeValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e StructuredDatasetTypeValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sStructuredDatasetType.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = StructuredDatasetTypeValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = StructuredDatasetTypeValidationError{}
+
 // Validate checks the field values on BlobType with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *BlobType) Validate() error {
@@ -247,101 +335,30 @@ var _ interface {
 	ErrorName() string
 } = EnumTypeValidationError{}
 
-// Validate checks the field values on UnionType with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *UnionType) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	for idx, item := range m.GetVariants() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return UnionTypeValidationError{
-					field:  fmt.Sprintf("Variants[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	return nil
-}
-
-// UnionTypeValidationError is the validation error returned by
-// UnionType.Validate if the designated constraints aren't met.
-type UnionTypeValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e UnionTypeValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e UnionTypeValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e UnionTypeValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e UnionTypeValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e UnionTypeValidationError) ErrorName() string { return "UnionTypeValidationError" }
-
-// Error satisfies the builtin error interface
-func (e UnionTypeValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sUnionType.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = UnionTypeValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = UnionTypeValidationError{}
-
-// Validate checks the field values on TypeStructure with the rules defined in
+// Validate checks the field values on TypeAnnotation with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
-func (m *TypeStructure) Validate() error {
+func (m *TypeAnnotation) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	// no validation rules for Tag
+	if v, ok := interface{}(m.GetAnnotations()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TypeAnnotationValidationError{
+				field:  "Annotations",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
 
-// TypeStructureValidationError is the validation error returned by
-// TypeStructure.Validate if the designated constraints aren't met.
-type TypeStructureValidationError struct {
+// TypeAnnotationValidationError is the validation error returned by
+// TypeAnnotation.Validate if the designated constraints aren't met.
+type TypeAnnotationValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -349,22 +366,22 @@ type TypeStructureValidationError struct {
 }
 
 // Field function returns field value.
-func (e TypeStructureValidationError) Field() string { return e.field }
+func (e TypeAnnotationValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e TypeStructureValidationError) Reason() string { return e.reason }
+func (e TypeAnnotationValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e TypeStructureValidationError) Cause() error { return e.cause }
+func (e TypeAnnotationValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e TypeStructureValidationError) Key() bool { return e.key }
+func (e TypeAnnotationValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e TypeStructureValidationError) ErrorName() string { return "TypeStructureValidationError" }
+func (e TypeAnnotationValidationError) ErrorName() string { return "TypeAnnotationValidationError" }
 
 // Error satisfies the builtin error interface
-func (e TypeStructureValidationError) Error() string {
+func (e TypeAnnotationValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -376,14 +393,14 @@ func (e TypeStructureValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sTypeStructure.%s: %s%s",
+		"invalid %sTypeAnnotation.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = TypeStructureValidationError{}
+var _ error = TypeAnnotationValidationError{}
 
 var _ interface {
 	Field() string
@@ -391,7 +408,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = TypeStructureValidationError{}
+} = TypeAnnotationValidationError{}
 
 // Validate checks the field values on LiteralType with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -401,20 +418,20 @@ func (m *LiteralType) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetStructure()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return LiteralTypeValidationError{
-				field:  "Structure",
+				field:  "Metadata",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetAnnotation()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return LiteralTypeValidationError{
-				field:  "Metadata",
+				field:  "Annotation",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -486,12 +503,12 @@ func (m *LiteralType) Validate() error {
 			}
 		}
 
-	case *LiteralType_UnionType:
+	case *LiteralType_StructuredDatasetType:
 
-		if v, ok := interface{}(m.GetUnionType()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetStructuredDatasetType()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return LiteralTypeValidationError{
-					field:  "UnionType",
+					field:  "StructuredDatasetType",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -764,3 +781,83 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = SchemaType_SchemaColumnValidationError{}
+
+// Validate checks the field values on StructuredDatasetType_DatasetColumn with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *StructuredDatasetType_DatasetColumn) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Name
+
+	if v, ok := interface{}(m.GetLiteralType()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StructuredDatasetType_DatasetColumnValidationError{
+				field:  "LiteralType",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// StructuredDatasetType_DatasetColumnValidationError is the validation error
+// returned by StructuredDatasetType_DatasetColumn.Validate if the designated
+// constraints aren't met.
+type StructuredDatasetType_DatasetColumnValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e StructuredDatasetType_DatasetColumnValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e StructuredDatasetType_DatasetColumnValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e StructuredDatasetType_DatasetColumnValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e StructuredDatasetType_DatasetColumnValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e StructuredDatasetType_DatasetColumnValidationError) ErrorName() string {
+	return "StructuredDatasetType_DatasetColumnValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e StructuredDatasetType_DatasetColumnValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sStructuredDatasetType_DatasetColumn.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = StructuredDatasetType_DatasetColumnValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = StructuredDatasetType_DatasetColumnValidationError{}

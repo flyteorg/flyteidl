@@ -634,6 +634,28 @@ for further state transitions).
 
 
 
+.. _ref_flyteidl.admin.EventErrorIncompatibleCluster:
+
+EventErrorIncompatibleCluster
+------------------------------------------------------------------
+
+Indicates an event was rejected because it came from a different cluster than 
+is on record as running the execution.
+
+
+
+.. csv-table:: EventErrorIncompatibleCluster type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "cluster", ":ref:`ref_string`", "", "The cluster which has been recorded as processing the execution. +required"
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.EventFailureReason:
 
 EventFailureReason
@@ -648,6 +670,7 @@ Indicates why a sent event was not used to update execution.
    :widths: auto
 
    "already_in_terminal_state", ":ref:`ref_flyteidl.admin.EventErrorAlreadyInTerminalState`", "", ""
+   "incompatible_cluster", ":ref:`ref_flyteidl.admin.EventErrorIncompatibleCluster`", "", ""
 
 
 
@@ -841,11 +864,11 @@ Encapsulates the results of the Execution
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "outputs", ":ref:`ref_flyteidl.admin.LiteralMapBlob`", "", "Output URI in the case of a successful execution."
+   "outputs", ":ref:`ref_flyteidl.admin.LiteralMapBlob`", "", "**Deprecated.** Output URI in the case of a successful execution. DEPRECATED. Use GetExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information in the case of a failed execution."
    "abort_cause", ":ref:`ref_string`", "", "**Deprecated.** In the case of a user-specified abort, this will pass along the user-supplied cause."
    "abort_metadata", ":ref:`ref_flyteidl.admin.AbortMetadata`", "", "In the case of a user-specified abort, this will pass along the user and their supplied cause."
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this execution. DEPRECATED. Use GetExecutionData to fetch output data instead."
    "computed_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Inputs computed and passed for execution. computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan"
    "phase", ":ref:`ref_flyteidl.core.WorkflowExecution.Phase`", "", "Most recent recorded phase for the execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Reported time at which the execution began running."
@@ -854,6 +877,7 @@ Encapsulates the results of the Execution
    "updated_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Reported time at which the execution was last updated."
    "notifications", ":ref:`ref_flyteidl.admin.Notification`", "repeated", "The notification settings to use after merging the CreateExecutionRequest and the launch plan notification settings. An execution launched with notifications will always prefer that definition to notifications defined statically in a launch plan."
    "workflow_id", ":ref:`ref_flyteidl.core.Identifier`", "", "Identifies the workflow definition for this execution."
+   "state_change_details", ":ref:`ref_flyteidl.admin.ExecutionStateChangeDetails`", "", "Provides the details of the last stage change"
 
 
 
@@ -1036,6 +1060,29 @@ of an execution as it progresses across phase changes.
 
 
 
+.. _ref_flyteidl.admin.ExecutionStateChangeDetails:
+
+ExecutionStateChangeDetails
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ExecutionStateChangeDetails type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "state", ":ref:`ref_flyteidl.admin.ExecutionState`", "", "The state of the execution is used to control its visibility in the UI/CLI."
+   "occurred_at", ":ref:`ref_google.protobuf.Timestamp`", "", "This timestamp represents when the state changed."
+   "principal", ":ref:`ref_string`", "", "Identifies the entity (if any) responsible for causing the state change of the execution"
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.ExecutionTerminateRequest:
 
 ExecutionTerminateRequest
@@ -1068,6 +1115,42 @@ ExecutionTerminateResponse
 ------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ExecutionUpdateRequest:
+
+ExecutionUpdateRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ExecutionUpdateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the execution to update"
+   "state", ":ref:`ref_flyteidl.admin.ExecutionState`", "", "State to set as the new value active/archive"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ExecutionUpdateResponse:
+
+ExecutionUpdateResponse
+------------------------------------------------------------------
+
+
 
 
 
@@ -1227,6 +1310,22 @@ The method by which this execution was launched.
    "RELAUNCH", "3", "This execution was launched with identical inputs as a previous execution."
    "CHILD_WORKFLOW", "4", "This execution was triggered by another execution."
    "RECOVERED", "5", "This execution was recovered from another execution."
+
+
+
+.. _ref_flyteidl.admin.ExecutionState:
+
+ExecutionState
+------------------------------------------------------------------
+
+The state of the execution is used to control its visibility in the UI/CLI.
+
+.. csv-table:: Enum ExecutionState values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "EXECUTION_ACTIVE", "0", "By default, all executions are considered active."
+   "EXECUTION_ARCHIVED", "1", "Archived executions are no longer visible in the UI."
 
  <!-- end enums -->
 
@@ -1979,9 +2078,9 @@ Container for node execution details and results.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "output_uri", ":ref:`ref_string`", "", "Links to a remotely stored, serialized core.LiteralMap of node execution outputs."
+   "output_uri", ":ref:`ref_string`", "", "**Deprecated.** Links to a remotely stored, serialized core.LiteralMap of node execution outputs. DEPRECATED. Use GetNodeExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information for the Node"
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this node execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this node execution. DEPRECATED. Use GetNodeExecutionData to fetch output data instead."
    "phase", ":ref:`ref_flyteidl.core.NodeExecution.Phase`", "", "The last recorded phase for this node execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Time at which the node execution began running."
    "duration", ":ref:`ref_google.protobuf.Duration`", "", "The amount of time the node execution spent running."
@@ -2903,9 +3002,9 @@ Container for task execution details and results.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "output_uri", ":ref:`ref_string`", "", "Path to remote data store where output blob is stored if the execution succeeded (and produced outputs)."
+   "output_uri", ":ref:`ref_string`", "", "**Deprecated.** Path to remote data store where output blob is stored if the execution succeeded (and produced outputs). DEPRECATED. Use GetTaskExecutionData to fetch output data instead."
    "error", ":ref:`ref_flyteidl.core.ExecutionError`", "", "Error information for the task execution. Populated if the execution failed."
-   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Raw output data produced by this task execution."
+   "output_data", ":ref:`ref_flyteidl.core.LiteralMap`", "", "**Deprecated.** Raw output data produced by this task execution. DEPRECATED. Use GetTaskExecutionData to fetch output data instead."
    "phase", ":ref:`ref_flyteidl.core.TaskExecution.Phase`", "", "The last recorded phase for this task execution."
    "logs", ":ref:`ref_flyteidl.core.TaskLog`", "repeated", "Detailed log information output by the task execution."
    "started_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Time at which the task execution began running."

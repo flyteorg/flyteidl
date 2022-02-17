@@ -783,6 +783,53 @@
         "tags": [
           "AdminService"
         ]
+      },
+      "put": {
+        "summary": "Update execution belonging to project domain :ref:`ref_flyteidl.admin.Execution`.",
+        "description": "Update execution belonging to project domain.",
+        "operationId": "UpdateExecution",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminExecutionUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
       }
     },
     "/api/v1/launch_plan_ids/{project}/{domain}": {
@@ -2851,6 +2898,18 @@
       ],
       "default": "SINGLE"
     },
+    "CatalogReservationStatus": {
+      "type": "string",
+      "enum": [
+        "RESERVATION_DISABLED",
+        "RESERVATION_ACQUIRED",
+        "RESERVATION_EXISTS",
+        "RESERVATION_RELEASED",
+        "RESERVATION_FAILURE"
+      ],
+      "default": "RESERVATION_DISABLED",
+      "description": "Indicates the status of a catalog reservation operation.\n\n - RESERVATION_DISABLED: Used to indicate that reservations are disabled\n - RESERVATION_ACQUIRED: Used to indicate that a reservation was successfully acquired or extended\n - RESERVATION_EXISTS: Used to indicate that an active reservation currently exists\n - RESERVATION_RELEASED: Used to indicate that the reservation has been successfully released\n - RESERVATION_FAILURE: Used to indicate that a reservation operation resulted in failure"
+    },
     "ComparisonExpressionOperator": {
       "type": "string",
       "enum": [
@@ -3074,6 +3133,19 @@
       "default": "UNDEFINED",
       "description": "The dialect of the SQL statement. This is used to validate and parse SQL statements at compilation time to avoid\nexpensive runtime operations. If set to an unsupported dialect, no validation will be done on the statement.\nWe support the following dialect: ansi, hive."
     },
+    "StructuredDatasetTypeDatasetColumn": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A unique name within the schema type for the column."
+        },
+        "literal_type": {
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "The column type."
+        }
+      }
+    },
     "TaskExecutionMetadataInstanceClass": {
       "type": "string",
       "enum": [
@@ -3233,7 +3305,7 @@
       "properties": {
         "outputs": {
           "$ref": "#/definitions/adminLiteralMapBlob",
-          "description": "Output URI in the case of a successful execution."
+          "description": "Output URI in the case of a successful execution.\nDEPRECATED. Use GetExecutionData to fetch output data instead."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
@@ -3249,7 +3321,7 @@
         },
         "output_data": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Raw output data produced by this execution."
+          "description": "Raw output data produced by this execution.\nDEPRECATED. Use GetExecutionData to fetch output data instead."
         },
         "computed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
@@ -3288,6 +3360,10 @@
         "workflow_id": {
           "$ref": "#/definitions/coreIdentifier",
           "description": "Identifies the workflow definition for this execution."
+        },
+        "state_change_details": {
+          "$ref": "#/definitions/adminExecutionStateChangeDetails",
+          "title": "Provides the details of the last stage change"
         }
       },
       "title": "Encapsulates the results of the Execution"
@@ -3483,6 +3559,33 @@
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
     },
+    "adminExecutionState": {
+      "type": "string",
+      "enum": [
+        "EXECUTION_ACTIVE",
+        "EXECUTION_ARCHIVED"
+      ],
+      "default": "EXECUTION_ACTIVE",
+      "description": "The state of the execution is used to control its visibility in the UI/CLI.\n\n - EXECUTION_ACTIVE: By default, all executions are considered active.\n - EXECUTION_ARCHIVED: Archived executions are no longer visible in the UI."
+    },
+    "adminExecutionStateChangeDetails": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/adminExecutionState",
+          "description": "The state of the execution is used to control its visibility in the UI/CLI."
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This timestamp represents when the state changed."
+        },
+        "principal": {
+          "type": "string",
+          "title": "Identifies the entity (if any) responsible for causing the state change of the execution"
+        }
+      }
+    },
     "adminExecutionTerminateRequest": {
       "type": "object",
       "properties": {
@@ -3498,6 +3601,22 @@
       "description": "Request to terminate an in-progress execution.  This action is irreversible.\nIf an execution is already terminated, this request will simply be a no-op.\nThis request will fail if it references a non-existent execution.\nIf the request succeeds the phase \"ABORTED\" will be recorded for the termination\nwith the optional cause added to the output_result."
     },
     "adminExecutionTerminateResponse": {
+      "type": "object"
+    },
+    "adminExecutionUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "title": "Identifier of the execution to update"
+        },
+        "state": {
+          "$ref": "#/definitions/adminExecutionState",
+          "title": "State to set as the new value active/archive"
+        }
+      }
+    },
+    "adminExecutionUpdateResponse": {
       "type": "object"
     },
     "adminFixedRate": {
@@ -3935,7 +4054,7 @@
       "properties": {
         "output_uri": {
           "type": "string",
-          "description": "Links to a remotely stored, serialized core.LiteralMap of node execution outputs."
+          "description": "Links to a remotely stored, serialized core.LiteralMap of node execution outputs.\nDEPRECATED. Use GetNodeExecutionData to fetch output data instead."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
@@ -3943,7 +4062,7 @@
         },
         "output_data": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Raw output data produced by this node execution."
+          "description": "Raw output data produced by this node execution.\nDEPRECATED. Use GetNodeExecutionData to fetch output data instead."
         },
         "phase": {
           "$ref": "#/definitions/coreNodeExecutionPhase",
@@ -4378,7 +4497,7 @@
       "properties": {
         "output_uri": {
           "type": "string",
-          "description": "Path to remote data store where output blob is stored if the execution succeeded (and produced outputs)."
+          "description": "Path to remote data store where output blob is stored if the execution succeeded (and produced outputs).\nDEPRECATED. Use GetTaskExecutionData to fetch output data instead."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
@@ -4386,7 +4505,7 @@
         },
         "output_data": {
           "$ref": "#/definitions/coreLiteralMap",
-          "description": "Raw output data produced by this task execution."
+          "description": "Raw output data produced by this task execution.\nDEPRECATED. Use GetTaskExecutionData to fetch output data instead."
         },
         "phase": {
           "$ref": "#/definitions/coreTaskExecutionPhase",
@@ -4843,9 +4962,6 @@
         "map": {
           "$ref": "#/definitions/coreBindingDataMap",
           "description": "A map of bindings. The key is always a string."
-        },
-        "union": {
-          "$ref": "#/definitions/coreUnionInfo"
         }
       },
       "description": "Specifies either a simple value or a reference to another output."
@@ -5424,16 +5540,17 @@
           "$ref": "#/definitions/coreEnumType",
           "description": "Defines an enum with pre-defined string values."
         },
-        "union_type": {
-          "$ref": "#/definitions/coreUnionType",
-          "description": "Defines an union type with pre-defined LiteralTypes."
-        },
-        "structure": {
-          "$ref": "#/definitions/coreTypeStructure"
+        "structured_dataset_type": {
+          "$ref": "#/definitions/coreStructuredDatasetType",
+          "title": "Generalized schema support"
         },
         "metadata": {
           "$ref": "#/definitions/protobufStruct",
           "description": "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by\nconsumers to identify special behavior or display extended information for the type."
+        },
+        "annotation": {
+          "$ref": "#/definitions/coreTypeAnnotation",
+          "description": "This field contains arbitrary data that might have special semantic\nmeaning for the client but does not effect internal flyte behavior."
         }
       },
       "description": "Defines a strong type to allow type checking between interfaces."
@@ -5779,8 +5896,8 @@
         "generic": {
           "$ref": "#/definitions/protobufStruct"
         },
-        "union": {
-          "$ref": "#/definitions/coreUnion"
+        "structured_dataset": {
+          "$ref": "#/definitions/coreStructuredDataset"
         }
       }
     },
@@ -5873,6 +5990,52 @@
       },
       "description": "Sql represents a generic sql workload with a statement and dialect."
     },
+    "coreStructuredDataset": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "title": "String location uniquely identifying where the data is.\nShould start with the storage location (e.g. s3://, gs://, bq://, etc.)"
+        },
+        "metadata": {
+          "$ref": "#/definitions/coreStructuredDatasetMetadata"
+        }
+      }
+    },
+    "coreStructuredDatasetMetadata": {
+      "type": "object",
+      "properties": {
+        "structured_dataset_type": {
+          "$ref": "#/definitions/coreStructuredDatasetType",
+          "description": "Bundle the type information along with the literal.\nThis is here because StructuredDatasets can often be more defined at run time than at compile time.\nThat is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset,\nwithout any column information, but at run time, you might have that column information.\nflytekit python will copy this type information into the literal, from the type information, if not provided by\nthe various plugins (encoders).\nSince this field is run time generated, it's not used for any type checking."
+        }
+      }
+    },
+    "coreStructuredDatasetType": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StructuredDatasetTypeDatasetColumn"
+          },
+          "description": "A list of ordered columns this schema comprises of."
+        },
+        "format": {
+          "type": "string",
+          "description": "This is the storage format, the format of the bits at rest\nparquet, feather, csv, etc.\nFor two types to be compatible, the format will need to be an exact match."
+        },
+        "external_schema_type": {
+          "type": "string",
+          "description": "This is a string representing the type that the bytes in external_schema_bytes are formatted in.\nThis is an optional field that will not be used for type checking."
+        },
+        "external_schema_bytes": {
+          "type": "string",
+          "format": "byte",
+          "description": "The serialized bytes of a third-party schema library like Arrow.\nThis is an optional field that will not be used for type checking."
+        }
+      }
+    },
     "coreTaskExecutionIdentifier": {
       "type": "object",
       "properties": {
@@ -5953,6 +6116,11 @@
         "interruptible": {
           "type": "boolean",
           "format": "boolean"
+        },
+        "cache_serializable": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Indicates whether the system should attempt to execute discoverable instances in serial to avoid duplicate work"
         }
       },
       "title": "Task Metadata"
@@ -6032,15 +6200,15 @@
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
     },
-    "coreTypeStructure": {
+    "coreTypeAnnotation": {
       "type": "object",
       "properties": {
-        "tag": {
-          "type": "string",
-          "title": "Must exactly match for types to be castable"
+        "annotations": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "A arbitrary JSON payload to describe a type."
         }
       },
-      "title": "Hints to improve type matching\ne.g. allows distinguishing output from custom type transformers\neven if the underlying IDL serialization matches"
+      "description": "TypeAnnotation encapsulates registration time information about a type. This can be used for various control-plane operations. TypeAnnotation will not be available at runtime when a task runs."
     },
     "coreTypedInterface": {
       "type": "object",
@@ -6053,39 +6221,6 @@
         }
       },
       "description": "Defines strongly typed inputs and outputs."
-    },
-    "coreUnion": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "$ref": "#/definitions/coreLiteral"
-        },
-        "type": {
-          "$ref": "#/definitions/coreLiteralType"
-        }
-      },
-      "description": "The runtime representation of a tagged union value. See `UnionType` for more details."
-    },
-    "coreUnionInfo": {
-      "type": "object",
-      "properties": {
-        "targetType": {
-          "$ref": "#/definitions/coreLiteralType"
-        }
-      }
-    },
-    "coreUnionType": {
-      "type": "object",
-      "properties": {
-        "variants": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreLiteralType"
-          },
-          "description": "Predefined set of variants in union."
-        }
-      },
-      "description": "Defines a tagged union type, also known as a variant (and formally as the sum type).\n\nA sum type S is defined by a sequence of types (A, B, C, ...), each tagged by a string tag\nA value of type S is constructed from a value of any of the variant types. The specific choice of type is recorded by\nstoring the varaint's tag with the literal value and can be examined in runtime.\n\nType S is typically written as\nS := Apple A | Banana B | Cantaloupe C | ...\n\nNotably, a nullable (optional) type is a sum type between some type X and the singleton type representing a null-value:\nOptional X := X | Null\n\nSee also: https://en.wikipedia.org/wiki/Tagged_union"
     },
     "coreVariable": {
       "type": "object",
@@ -6147,7 +6282,8 @@
         "FAILING",
         "FAILED",
         "ABORTED",
-        "TIMED_OUT"
+        "TIMED_OUT",
+        "ABORTING"
       ],
       "default": "UNDEFINED"
     },
@@ -6236,6 +6372,20 @@
         "external_id": {
           "type": "string",
           "description": "Identifier for an external resource created by this task execution, for example Qubole query ID or presto query ids."
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64",
+          "description": "A unique index for the external resource with respect to all external resources for this task. Although the\nidentifier may change between task reporting events or retries, this will remain the same to enable aggregating\ninformation from multiple reports."
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Retry attempt number for this external resource, ie., 2 for the second attempt"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreTaskExecutionPhase",
+          "title": "Phase associated with the external resource"
         }
       },
       "description": "This message contains metadata about external resources produced or used by a specific task execution."
@@ -6592,6 +6742,10 @@
         "catalog_key": {
           "$ref": "#/definitions/coreCatalogMetadata",
           "title": "This structure carries the catalog artifact information"
+        },
+        "reservation_status": {
+          "$ref": "#/definitions/CatalogReservationStatus",
+          "description": "Captures the status of cache reservations for this execution."
         },
         "dynamic_workflow": {
           "$ref": "#/definitions/flyteidleventDynamicWorkflowNodeMetadata",
