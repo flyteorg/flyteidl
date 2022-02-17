@@ -41,8 +41,12 @@ from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQue
 from flyteadmin.models.admin_execution_recover_request import AdminExecutionRecoverRequest
 from flyteadmin.models.admin_execution_relaunch_request import AdminExecutionRelaunchRequest
 from flyteadmin.models.admin_execution_spec import AdminExecutionSpec
+from flyteadmin.models.admin_execution_state import AdminExecutionState
+from flyteadmin.models.admin_execution_state_change_details import AdminExecutionStateChangeDetails
 from flyteadmin.models.admin_execution_terminate_request import AdminExecutionTerminateRequest
 from flyteadmin.models.admin_execution_terminate_response import AdminExecutionTerminateResponse
+from flyteadmin.models.admin_execution_update_request import AdminExecutionUpdateRequest
+from flyteadmin.models.admin_execution_update_response import AdminExecutionUpdateResponse
 from flyteadmin.models.admin_fixed_rate import AdminFixedRate
 from flyteadmin.models.admin_fixed_rate_unit import AdminFixedRateUnit
 from flyteadmin.models.admin_get_version_response import AdminGetVersionResponse
@@ -206,6 +210,7 @@ from flyteadmin.models.core_task_metadata import CoreTaskMetadata
 from flyteadmin.models.core_task_node import CoreTaskNode
 from flyteadmin.models.core_task_node_overrides import CoreTaskNodeOverrides
 from flyteadmin.models.core_task_template import CoreTaskTemplate
+from flyteadmin.models.core_type_annotation import CoreTypeAnnotation
 from flyteadmin.models.core_typed_interface import CoreTypedInterface
 from flyteadmin.models.core_variable import CoreVariable
 from flyteadmin.models.core_variable_map import CoreVariableMap

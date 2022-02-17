@@ -3296,6 +3296,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a TypeAnnotation. */
+        interface ITypeAnnotation {
+
+            /** TypeAnnotation annotations */
+            annotations?: (google.protobuf.IStruct|null);
+        }
+
+        /** Represents a TypeAnnotation. */
+        class TypeAnnotation implements ITypeAnnotation {
+
+            /**
+             * Constructs a new TypeAnnotation.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITypeAnnotation);
+
+            /** TypeAnnotation annotations. */
+            public annotations?: (google.protobuf.IStruct|null);
+
+            /**
+             * Creates a new TypeAnnotation instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TypeAnnotation instance
+             */
+            public static create(properties?: flyteidl.core.ITypeAnnotation): flyteidl.core.TypeAnnotation;
+
+            /**
+             * Encodes the specified TypeAnnotation message. Does not implicitly {@link flyteidl.core.TypeAnnotation.verify|verify} messages.
+             * @param message TypeAnnotation message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITypeAnnotation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TypeAnnotation message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TypeAnnotation
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TypeAnnotation;
+
+            /**
+             * Verifies a TypeAnnotation message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LiteralType. */
         interface ILiteralType {
 
@@ -3322,6 +3374,9 @@ export namespace flyteidl {
 
             /** LiteralType metadata */
             metadata?: (google.protobuf.IStruct|null);
+
+            /** LiteralType annotation */
+            annotation?: (flyteidl.core.ITypeAnnotation|null);
         }
 
         /** Represents a LiteralType. */
@@ -3356,6 +3411,9 @@ export namespace flyteidl {
 
             /** LiteralType metadata. */
             public metadata?: (google.protobuf.IStruct|null);
+
+            /** LiteralType annotation. */
+            public annotation?: (flyteidl.core.ITypeAnnotation|null);
 
             /** LiteralType type. */
             public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob"|"enumType"|"structuredDatasetType");
@@ -9094,6 +9152,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId */
             workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure stateChangeDetails */
+            stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -9143,6 +9204,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId. */
             public workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure stateChangeDetails. */
+            public stateChangeDetails?: (flyteidl.admin.IExecutionStateChangeDetails|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error"|"abortCause"|"abortMetadata"|"outputData");
@@ -9720,6 +9784,180 @@ export namespace flyteidl {
 
             /**
              * Verifies a WorkflowExecutionGetDataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** ExecutionState enum. */
+        enum ExecutionState {
+            EXECUTION_ACTIVE = 0,
+            EXECUTION_ARCHIVED = 1
+        }
+
+        /** Properties of an ExecutionUpdateRequest. */
+        interface IExecutionUpdateRequest {
+
+            /** ExecutionUpdateRequest id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionUpdateRequest state */
+            state?: (flyteidl.admin.ExecutionState|null);
+        }
+
+        /** Represents an ExecutionUpdateRequest. */
+        class ExecutionUpdateRequest implements IExecutionUpdateRequest {
+
+            /**
+             * Constructs a new ExecutionUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionUpdateRequest);
+
+            /** ExecutionUpdateRequest id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionUpdateRequest state. */
+            public state: flyteidl.admin.ExecutionState;
+
+            /**
+             * Creates a new ExecutionUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionUpdateRequest): flyteidl.admin.ExecutionUpdateRequest;
+
+            /**
+             * Encodes the specified ExecutionUpdateRequest message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateRequest.verify|verify} messages.
+             * @param message ExecutionUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionUpdateRequest;
+
+            /**
+             * Verifies an ExecutionUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionStateChangeDetails. */
+        interface IExecutionStateChangeDetails {
+
+            /** ExecutionStateChangeDetails state */
+            state?: (flyteidl.admin.ExecutionState|null);
+
+            /** ExecutionStateChangeDetails occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionStateChangeDetails principal */
+            principal?: (string|null);
+        }
+
+        /** Represents an ExecutionStateChangeDetails. */
+        class ExecutionStateChangeDetails implements IExecutionStateChangeDetails {
+
+            /**
+             * Constructs a new ExecutionStateChangeDetails.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionStateChangeDetails);
+
+            /** ExecutionStateChangeDetails state. */
+            public state: flyteidl.admin.ExecutionState;
+
+            /** ExecutionStateChangeDetails occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionStateChangeDetails principal. */
+            public principal: string;
+
+            /**
+             * Creates a new ExecutionStateChangeDetails instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionStateChangeDetails instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionStateChangeDetails): flyteidl.admin.ExecutionStateChangeDetails;
+
+            /**
+             * Encodes the specified ExecutionStateChangeDetails message. Does not implicitly {@link flyteidl.admin.ExecutionStateChangeDetails.verify|verify} messages.
+             * @param message ExecutionStateChangeDetails message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionStateChangeDetails, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionStateChangeDetails message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionStateChangeDetails
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionStateChangeDetails;
+
+            /**
+             * Verifies an ExecutionStateChangeDetails message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ExecutionUpdateResponse. */
+        interface IExecutionUpdateResponse {
+        }
+
+        /** Represents an ExecutionUpdateResponse. */
+        class ExecutionUpdateResponse implements IExecutionUpdateResponse {
+
+            /**
+             * Constructs a new ExecutionUpdateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionUpdateResponse);
+
+            /**
+             * Creates a new ExecutionUpdateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionUpdateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionUpdateResponse): flyteidl.admin.ExecutionUpdateResponse;
+
+            /**
+             * Encodes the specified ExecutionUpdateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionUpdateResponse.verify|verify} messages.
+             * @param message ExecutionUpdateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionUpdateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionUpdateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionUpdateResponse;
+
+            /**
+             * Verifies an ExecutionUpdateResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -15171,6 +15409,20 @@ export namespace flyteidl {
             public getExecution(request: flyteidl.admin.IWorkflowExecutionGetRequest): Promise<flyteidl.admin.Execution>;
 
             /**
+             * Calls UpdateExecution.
+             * @param request ExecutionUpdateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ExecutionUpdateResponse
+             */
+            public updateExecution(request: flyteidl.admin.IExecutionUpdateRequest, callback: flyteidl.service.AdminService.UpdateExecutionCallback): void;
+
+            /**
+             * Calls UpdateExecution.
+             * @param request ExecutionUpdateRequest message or plain object
+             * @returns Promise
+             */
+            public updateExecution(request: flyteidl.admin.IExecutionUpdateRequest): Promise<flyteidl.admin.ExecutionUpdateResponse>;
+
+            /**
              * Calls GetExecutionData.
              * @param request WorkflowExecutionGetDataRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetDataResponse
@@ -15683,6 +15935,13 @@ export namespace flyteidl {
              * @param [response] Execution
              */
             type GetExecutionCallback = (error: (Error|null), response?: flyteidl.admin.Execution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateExecution}.
+             * @param error Error, if any
+             * @param [response] ExecutionUpdateResponse
+             */
+            type UpdateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionUpdateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getExecutionData}.
