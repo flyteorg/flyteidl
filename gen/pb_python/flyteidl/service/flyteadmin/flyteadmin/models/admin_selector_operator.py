@@ -31,7 +31,6 @@ class AdminSelectorOperator(object):
     IN = "IN"
     NOT_IN = "NOT_IN"
     EXISTS = "EXISTS"
-    DOES_NOT_EXIST = "DOES_NOT_EXIST"
 
     """
     Attributes:

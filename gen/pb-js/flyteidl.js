@@ -16703,7 +16703,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
-                    case 5:
                         break;
                     }
                 return null;
@@ -16718,7 +16717,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} IN=2 IN value
              * @property {number} NOT_IN=3 NOT_IN value
              * @property {number} EXISTS=4 EXISTS value
-             * @property {number} DOES_NOT_EXIST=5 DOES_NOT_EXIST value
              */
             Selector.Operator = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -16727,7 +16725,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[2] = "IN"] = 2;
                 values[valuesById[3] = "NOT_IN"] = 3;
                 values[valuesById[4] = "EXISTS"] = 4;
-                values[valuesById[5] = "DOES_NOT_EXIST"] = 5;
                 return values;
             })();
 

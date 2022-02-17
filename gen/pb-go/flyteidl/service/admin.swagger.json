@@ -4447,8 +4447,7 @@
         "NOT_EQUALS",
         "IN",
         "NOT_IN",
-        "EXISTS",
-        "DOES_NOT_EXIST"
+        "EXISTS"
       ],
       "default": "EQUALS",
       "description": "Defines how a label with a corresponding key and value is selected or excluded."

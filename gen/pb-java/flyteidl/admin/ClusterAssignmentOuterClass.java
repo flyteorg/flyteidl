@@ -1738,14 +1738,6 @@ public final class ClusterAssignmentOuterClass {
        * <code>EXISTS = 4;</code>
        */
       EXISTS(4),
-      /**
-       * <pre>
-       * Resource has no such label key
-       * </pre>
-       *
-       * <code>DOES_NOT_EXIST = 5;</code>
-       */
-      DOES_NOT_EXIST(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -1773,14 +1765,6 @@ public final class ClusterAssignmentOuterClass {
        * <code>EXISTS = 4;</code>
        */
       public static final int EXISTS_VALUE = 4;
-      /**
-       * <pre>
-       * Resource has no such label key
-       * </pre>
-       *
-       * <code>DOES_NOT_EXIST = 5;</code>
-       */
-      public static final int DOES_NOT_EXIST_VALUE = 5;
 
 
       public final int getNumber() {
@@ -1806,7 +1790,6 @@ public final class ClusterAssignmentOuterClass {
           case 2: return IN;
           case 3: return NOT_IN;
           case 4: return EXISTS;
-          case 5: return DOES_NOT_EXIST;
           default: return null;
         }
       }
@@ -2694,13 +2677,13 @@ public final class ClusterAssignmentOuterClass {
       "o\022\016flyteidl.admin\"?\n\021ClusterAssignment\022*" +
       "\n\010affinity\030\001 \001(\0132\030.flyteidl.admin.Affini" +
       "ty\"7\n\010Affinity\022+\n\tselectors\030\001 \003(\0132\030.flyt" +
-      "eidl.admin.Selector\"\267\001\n\010Selector\022\013\n\003key\030" +
+      "eidl.admin.Selector\"\243\001\n\010Selector\022\013\n\003key\030" +
       "\001 \001(\t\022\r\n\005value\030\002 \003(\t\0223\n\010operator\030\003 \001(\0162!" +
-      ".flyteidl.admin.Selector.Operator\"Z\n\010Ope" +
+      ".flyteidl.admin.Selector.Operator\"F\n\010Ope" +
       "rator\022\n\n\006EQUALS\020\000\022\016\n\nNOT_EQUALS\020\001\022\006\n\002IN\020" +
-      "\002\022\n\n\006NOT_IN\020\003\022\n\n\006EXISTS\020\004\022\022\n\016DOES_NOT_EX" +
-      "IST\020\005B7Z5github.com/flyteorg/flyteidl/ge" +
-      "n/pb-go/flyteidl/adminb\006proto3"
+      "\002\022\n\n\006NOT_IN\020\003\022\n\n\006EXISTS\020\004B7Z5github.com/" +
+      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

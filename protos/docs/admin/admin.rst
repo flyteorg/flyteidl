@@ -97,7 +97,6 @@ Defines how a label with a corresponding key and value is selected or excluded.
    "IN", "2", ""
    "NOT_IN", "3", ""
    "EXISTS", "4", "A label key with any value"
-   "DOES_NOT_EXIST", "5", "Resource has no such label key"
 
  <!-- end enums -->
 

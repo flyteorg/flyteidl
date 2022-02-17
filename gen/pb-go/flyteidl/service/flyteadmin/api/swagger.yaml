@@ -10517,7 +10517,6 @@ definitions:
     - "IN"
     - "NOT_IN"
     - "EXISTS"
-    - "DOES_NOT_EXIST"
     default: "EQUALS"
   adminSlackNotification:
     type: "object"

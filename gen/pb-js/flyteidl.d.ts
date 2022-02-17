@@ -6918,8 +6918,7 @@ export namespace flyteidl {
                 NOT_EQUALS = 1,
                 IN = 2,
                 NOT_IN = 3,
-                EXISTS = 4,
-                DOES_NOT_EXIST = 5
+                EXISTS = 4
             }
         }
 

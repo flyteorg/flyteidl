@@ -78,13 +78,12 @@ enum Selector_Operator {
   Selector_Operator_IN = 2,
   Selector_Operator_NOT_IN = 3,
   Selector_Operator_EXISTS = 4,
-  Selector_Operator_DOES_NOT_EXIST = 5,
   Selector_Operator_Selector_Operator_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Selector_Operator_Selector_Operator_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Selector_Operator_IsValid(int value);
 const Selector_Operator Selector_Operator_Operator_MIN = Selector_Operator_EQUALS;
-const Selector_Operator Selector_Operator_Operator_MAX = Selector_Operator_DOES_NOT_EXIST;
+const Selector_Operator Selector_Operator_Operator_MAX = Selector_Operator_EXISTS;
 const int Selector_Operator_Operator_ARRAYSIZE = Selector_Operator_Operator_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Selector_Operator_descriptor();
@@ -436,8 +435,6 @@ class Selector final :
     Selector_Operator_NOT_IN;
   static const Operator EXISTS =
     Selector_Operator_EXISTS;
-  static const Operator DOES_NOT_EXIST =
-    Selector_Operator_DOES_NOT_EXIST;
   static inline bool Operator_IsValid(int value) {
     return Selector_Operator_IsValid(value);
   }

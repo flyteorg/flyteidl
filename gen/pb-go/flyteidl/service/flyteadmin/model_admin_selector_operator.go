@@ -18,5 +18,4 @@ const (
 	AdminSelectorOperatorIN AdminSelectorOperator = "IN"
 	AdminSelectorOperatorNOT_IN AdminSelectorOperator = "NOT_IN"
 	AdminSelectorOperatorEXISTS AdminSelectorOperator = "EXISTS"
-	AdminSelectorOperatorDOES_NOT_EXIST AdminSelectorOperator = "DOES_NOT_EXIST"
 )

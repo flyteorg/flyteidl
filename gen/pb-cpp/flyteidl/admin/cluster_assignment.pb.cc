@@ -133,18 +133,18 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcluster_5fassignment_2ep
   "o\022\016flyteidl.admin\"\?\n\021ClusterAssignment\022*"
   "\n\010affinity\030\001 \001(\0132\030.flyteidl.admin.Affini"
   "ty\"7\n\010Affinity\022+\n\tselectors\030\001 \003(\0132\030.flyt"
-  "eidl.admin.Selector\"\267\001\n\010Selector\022\013\n\003key\030"
+  "eidl.admin.Selector\"\243\001\n\010Selector\022\013\n\003key\030"
   "\001 \001(\t\022\r\n\005value\030\002 \003(\t\0223\n\010operator\030\003 \001(\0162!"
-  ".flyteidl.admin.Selector.Operator\"Z\n\010Ope"
+  ".flyteidl.admin.Selector.Operator\"F\n\010Ope"
   "rator\022\n\n\006EQUALS\020\000\022\016\n\nNOT_EQUALS\020\001\022\006\n\002IN\020"
-  "\002\022\n\n\006NOT_IN\020\003\022\n\n\006EXISTS\020\004\022\022\n\016DOES_NOT_EX"
-  "IST\020\005B7Z5github.com/flyteorg/flyteidl/ge"
-  "n/pb-go/flyteidl/adminb\006proto3"
+  "\002\022\n\n\006NOT_IN\020\003\022\n\n\006EXISTS\020\004B7Z5github.com/"
+  "flyteorg/flyteidl/gen/pb-go/flyteidl/adm"
+  "inb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcluster_5fassignment_2eproto,
-  "flyteidl/admin/cluster_assignment.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 430,
+  "flyteidl/admin/cluster_assignment.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 410,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcluster_5fassignment_2eproto() {
@@ -169,7 +169,6 @@ bool Selector_Operator_IsValid(int value) {
     case 2:
     case 3:
     case 4:
-    case 5:
       return true;
     default:
       return false;
@@ -182,7 +181,6 @@ const Selector_Operator Selector::NOT_EQUALS;
 const Selector_Operator Selector::IN;
 const Selector_Operator Selector::NOT_IN;
 const Selector_Operator Selector::EXISTS;
-const Selector_Operator Selector::DOES_NOT_EXIST;
 const Selector_Operator Selector::Operator_MIN;
 const Selector_Operator Selector::Operator_MAX;
 const int Selector::Operator_ARRAYSIZE;

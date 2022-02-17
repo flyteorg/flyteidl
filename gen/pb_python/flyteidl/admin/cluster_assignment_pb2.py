@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/cluster_assignment.proto\x12\x0e\x66lyteidl.admin\"?\n\x11\x43lusterAssignment\x12*\n\x08\x61\x66\x66inity\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Affinity\"7\n\x08\x41\x66\x66inity\x12+\n\tselectors\x18\x01 \x03(\x0b\x32\x18.flyteidl.admin.Selector\"\xb7\x01\n\x08Selector\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x03(\t\x12\x33\n\x08operator\x18\x03 \x01(\x0e\x32!.flyteidl.admin.Selector.Operator\"Z\n\x08Operator\x12\n\n\x06\x45QUALS\x10\x00\x12\x0e\n\nNOT_EQUALS\x10\x01\x12\x06\n\x02IN\x10\x02\x12\n\n\x06NOT_IN\x10\x03\x12\n\n\x06\x45XISTS\x10\x04\x12\x12\n\x0e\x44OES_NOT_EXIST\x10\x05\x42\x37Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/cluster_assignment.proto\x12\x0e\x66lyteidl.admin\"?\n\x11\x43lusterAssignment\x12*\n\x08\x61\x66\x66inity\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Affinity\"7\n\x08\x41\x66\x66inity\x12+\n\tselectors\x18\x01 \x03(\x0b\x32\x18.flyteidl.admin.Selector\"\xa3\x01\n\x08Selector\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x03(\t\x12\x33\n\x08operator\x18\x03 \x01(\x0e\x32!.flyteidl.admin.Selector.Operator\"F\n\x08Operator\x12\n\n\x06\x45QUALS\x10\x00\x12\x0e\n\nNOT_EQUALS\x10\x01\x12\x06\n\x02IN\x10\x02\x12\n\n\x06NOT_IN\x10\x03\x12\n\n\x06\x45XISTS\x10\x04\x42\x37Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 
@@ -51,15 +51,11 @@ _SELECTOR_OPERATOR = _descriptor.EnumDescriptor(
       name='EXISTS', index=4, number=4,
       serialized_options=None,
       type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DOES_NOT_EXIST', index=5, number=5,
-      serialized_options=None,
-      type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=275,
-  serialized_end=365,
+  serialized_end=345,
 )
 _sym_db.RegisterEnumDescriptor(_SELECTOR_OPERATOR)
 
@@ -168,7 +164,7 @@ _SELECTOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=182,
-  serialized_end=365,
+  serialized_end=345,
 )
 
 _CLUSTERASSIGNMENT.fields_by_name['affinity'].message_type = _AFFINITY
