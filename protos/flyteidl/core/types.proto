@@ -147,7 +147,7 @@ message LiteralType {
         StructuredDatasetType structured_dataset_type = 8;
 
         // Defines an union type with pre-defined LiteralTypes.
-        UnionType union_type = 9;
+        UnionType union_type = 10;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
@@ -159,7 +159,7 @@ message LiteralType {
     TypeAnnotation annotation = 9;
 
     // Hints to improve type matching.
-    TypeStructure structure = 10;
+    TypeStructure structure = 11;
 }
 
 // A reference to an output produced by a node. The type can be retrieved -and validated- from

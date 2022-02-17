@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"b\n\x19StructuredDatasetMetadata\x12\x45\n\x17structured_dataset_type\x18\x01 \x01(\x0b\x32$.flyteidl.core.StructuredDatasetType\"\\\n\x11StructuredDataset\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12:\n\x08metadata\x18\x02 \x01(\x0b\x32(.flyteidl.core.StructuredDatasetMetadata\"\xf4\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x12>\n\x12structured_dataset\x18\x08 \x01(\x0b\x32 .flyteidl.core.StructuredDatasetH\x00\x42\x07\n\x05value\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\xdc\x01\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"X\n\x05Union\x12%\n\x05value\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.Literal\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"b\n\x19StructuredDatasetMetadata\x12\x45\n\x17structured_dataset_type\x18\x01 \x01(\x0b\x32$.flyteidl.core.StructuredDatasetType\"\\\n\x11StructuredDataset\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12:\n\x08metadata\x18\x02 \x01(\x0b\x32(.flyteidl.core.StructuredDatasetMetadata\"\x9b\x03\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x12>\n\x12structured_dataset\x18\x08 \x01(\x0b\x32 .flyteidl.core.StructuredDatasetH\x00\x12%\n\x05union\x18\t \x01(\x0b\x32\x14.flyteidl.core.UnionH\x00\x42\x07\n\x05value\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\";\n\tUnionInfo\x12.\n\ntargetType\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\x85\x02\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x12\'\n\x05union\x18\x05 \x01(\x0b\x32\x18.flyteidl.core.UnionInfoB\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
 
@@ -269,6 +269,44 @@ _SCHEMA = _descriptor.Descriptor(
 )
 
 
+_UNION = _descriptor.Descriptor(
+  name='Union',
+  full_name='flyteidl.core.Union',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.core.Union.value', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='flyteidl.core.Union.type', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=605,
+  serialized_end=693,
+)
+
+
 _STRUCTUREDDATASETMETADATA = _descriptor.Descriptor(
   name='StructuredDatasetMetadata',
   full_name='flyteidl.core.StructuredDatasetMetadata',
@@ -295,8 +333,8 @@ _STRUCTUREDDATASETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=605,
-  serialized_end=703,
+  serialized_start=695,
+  serialized_end=793,
 )
 
 
@@ -333,8 +371,8 @@ _STRUCTUREDDATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=705,
-  serialized_end=797,
+  serialized_start=795,
+  serialized_end=887,
 )
 
 
@@ -401,6 +439,13 @@ _SCALAR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='union', full_name='flyteidl.core.Scalar.union', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -416,8 +461,8 @@ _SCALAR = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.Scalar.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=800,
-  serialized_end=1172,
+  serialized_start=890,
+  serialized_end=1301,
 )
 
 
@@ -464,8 +509,8 @@ _LITERAL = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.Literal.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1175,
-  serialized_end=1332,
+  serialized_start=1304,
+  serialized_end=1461,
 )
 
 
@@ -495,8 +540,8 @@ _LITERALCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1334,
-  serialized_end=1395,
+  serialized_start=1463,
+  serialized_end=1524,
 )
 
 
@@ -533,8 +578,8 @@ _LITERALMAP_LITERALSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1471,
-  serialized_end=1542,
+  serialized_start=1600,
+  serialized_end=1671,
 )
 
 _LITERALMAP = _descriptor.Descriptor(
@@ -563,8 +608,8 @@ _LITERALMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1398,
-  serialized_end=1542,
+  serialized_start=1527,
+  serialized_end=1671,
 )
 
 
@@ -594,8 +639,8 @@ _BINDINGDATACOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1544,
-  serialized_end=1613,
+  serialized_start=1673,
+  serialized_end=1742,
 )
 
 
@@ -632,8 +677,8 @@ _BINDINGDATAMAP_BINDINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1697,
-  serialized_end=1772,
+  serialized_start=1826,
+  serialized_end=1901,
 )
 
 _BINDINGDATAMAP = _descriptor.Descriptor(
@@ -662,8 +707,39 @@ _BINDINGDATAMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1616,
-  serialized_end=1772,
+  serialized_start=1745,
+  serialized_end=1901,
+)
+
+
+_UNIONINFO = _descriptor.Descriptor(
+  name='UnionInfo',
+  full_name='flyteidl.core.UnionInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='targetType', full_name='flyteidl.core.UnionInfo.targetType', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1903,
+  serialized_end=1962,
 )
 
 
@@ -702,6 +778,13 @@ _BINDINGDATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='union', full_name='flyteidl.core.BindingData.union', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -717,8 +800,8 @@ _BINDINGDATA = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.BindingData.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1775,
-  serialized_end=1995,
+  serialized_start=1965,
+  serialized_end=2226,
 )
 
 
@@ -755,8 +838,8 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1997,
-  serialized_end=2064,
+  serialized_start=2228,
+  serialized_end=2295,
 )
 
 
@@ -793,8 +876,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2066,
-  serialized_end=2108,
+  serialized_start=2297,
+  serialized_end=2339,
 )
 
 
@@ -824,8 +907,8 @@ _RETRYSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2110,
-  serialized_end=2142,
+  serialized_start=2341,
+  serialized_end=2373,
 )
 
 _PRIMITIVE.fields_by_name['datetime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -851,6 +934,8 @@ _PRIMITIVE.fields_by_name['duration'].containing_oneof = _PRIMITIVE.oneofs_by_na
 _BLOB.fields_by_name['metadata'].message_type = _BLOBMETADATA
 _BLOBMETADATA.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._BLOBTYPE
 _SCHEMA.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._SCHEMATYPE
+_UNION.fields_by_name['value'].message_type = _LITERAL
+_UNION.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
 _STRUCTUREDDATASETMETADATA.fields_by_name['structured_dataset_type'].message_type = flyteidl_dot_core_dot_types__pb2._STRUCTUREDDATASETTYPE
 _STRUCTUREDDATASET.fields_by_name['metadata'].message_type = _STRUCTUREDDATASETMETADATA
 _SCALAR.fields_by_name['primitive'].message_type = _PRIMITIVE
@@ -861,6 +946,7 @@ _SCALAR.fields_by_name['none_type'].message_type = _VOID
 _SCALAR.fields_by_name['error'].message_type = flyteidl_dot_core_dot_types__pb2._ERROR
 _SCALAR.fields_by_name['generic'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 _SCALAR.fields_by_name['structured_dataset'].message_type = _STRUCTUREDDATASET
+_SCALAR.fields_by_name['union'].message_type = _UNION
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['primitive'])
 _SCALAR.fields_by_name['primitive'].containing_oneof = _SCALAR.oneofs_by_name['value']
@@ -885,6 +971,9 @@ _SCALAR.fields_by_name['generic'].containing_oneof = _SCALAR.oneofs_by_name['val
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['structured_dataset'])
 _SCALAR.fields_by_name['structured_dataset'].containing_oneof = _SCALAR.oneofs_by_name['value']
+_SCALAR.oneofs_by_name['value'].fields.append(
+  _SCALAR.fields_by_name['union'])
+_SCALAR.fields_by_name['union'].containing_oneof = _SCALAR.oneofs_by_name['value']
 _LITERAL.fields_by_name['scalar'].message_type = _SCALAR
 _LITERAL.fields_by_name['collection'].message_type = _LITERALCOLLECTION
 _LITERAL.fields_by_name['map'].message_type = _LITERALMAP
@@ -905,10 +994,12 @@ _BINDINGDATACOLLECTION.fields_by_name['bindings'].message_type = _BINDINGDATA
 _BINDINGDATAMAP_BINDINGSENTRY.fields_by_name['value'].message_type = _BINDINGDATA
 _BINDINGDATAMAP_BINDINGSENTRY.containing_type = _BINDINGDATAMAP
 _BINDINGDATAMAP.fields_by_name['bindings'].message_type = _BINDINGDATAMAP_BINDINGSENTRY
+_UNIONINFO.fields_by_name['targetType'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
 _BINDINGDATA.fields_by_name['scalar'].message_type = _SCALAR
 _BINDINGDATA.fields_by_name['collection'].message_type = _BINDINGDATACOLLECTION
 _BINDINGDATA.fields_by_name['promise'].message_type = flyteidl_dot_core_dot_types__pb2._OUTPUTREFERENCE
 _BINDINGDATA.fields_by_name['map'].message_type = _BINDINGDATAMAP
+_BINDINGDATA.fields_by_name['union'].message_type = _UNIONINFO
 _BINDINGDATA.oneofs_by_name['value'].fields.append(
   _BINDINGDATA.fields_by_name['scalar'])
 _BINDINGDATA.fields_by_name['scalar'].containing_oneof = _BINDINGDATA.oneofs_by_name['value']
@@ -928,6 +1019,7 @@ DESCRIPTOR.message_types_by_name['Blob'] = _BLOB
 DESCRIPTOR.message_types_by_name['BlobMetadata'] = _BLOBMETADATA
 DESCRIPTOR.message_types_by_name['Binary'] = _BINARY
 DESCRIPTOR.message_types_by_name['Schema'] = _SCHEMA
+DESCRIPTOR.message_types_by_name['Union'] = _UNION
 DESCRIPTOR.message_types_by_name['StructuredDatasetMetadata'] = _STRUCTUREDDATASETMETADATA
 DESCRIPTOR.message_types_by_name['StructuredDataset'] = _STRUCTUREDDATASET
 DESCRIPTOR.message_types_by_name['Scalar'] = _SCALAR
@@ -936,6 +1028,7 @@ DESCRIPTOR.message_types_by_name['LiteralCollection'] = _LITERALCOLLECTION
 DESCRIPTOR.message_types_by_name['LiteralMap'] = _LITERALMAP
 DESCRIPTOR.message_types_by_name['BindingDataCollection'] = _BINDINGDATACOLLECTION
 DESCRIPTOR.message_types_by_name['BindingDataMap'] = _BINDINGDATAMAP
+DESCRIPTOR.message_types_by_name['UnionInfo'] = _UNIONINFO
 DESCRIPTOR.message_types_by_name['BindingData'] = _BINDINGDATA
 DESCRIPTOR.message_types_by_name['Binding'] = _BINDING
 DESCRIPTOR.message_types_by_name['KeyValuePair'] = _KEYVALUEPAIR
@@ -983,6 +1076,13 @@ Schema = _reflection.GeneratedProtocolMessageType('Schema', (_message.Message,),
   # @@protoc_insertion_point(class_scope:flyteidl.core.Schema)
   ))
 _sym_db.RegisterMessage(Schema)
+
+Union = _reflection.GeneratedProtocolMessageType('Union', (_message.Message,), dict(
+  DESCRIPTOR = _UNION,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Union)
+  ))
+_sym_db.RegisterMessage(Union)
 
 StructuredDatasetMetadata = _reflection.GeneratedProtocolMessageType('StructuredDatasetMetadata', (_message.Message,), dict(
   DESCRIPTOR = _STRUCTUREDDATASETMETADATA,
@@ -1055,6 +1155,13 @@ BindingDataMap = _reflection.GeneratedProtocolMessageType('BindingDataMap', (_me
   ))
 _sym_db.RegisterMessage(BindingDataMap)
 _sym_db.RegisterMessage(BindingDataMap.BindingsEntry)
+
+UnionInfo = _reflection.GeneratedProtocolMessageType('UnionInfo', (_message.Message,), dict(
+  DESCRIPTOR = _UNIONINFO,
+  __module__ = 'flyteidl.core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.UnionInfo)
+  ))
+_sym_db.RegisterMessage(UnionInfo)
 
 BindingData = _reflection.GeneratedProtocolMessageType('BindingData', (_message.Message,), dict(
   DESCRIPTOR = _BINDINGDATA,
