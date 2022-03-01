@@ -11980,6 +11980,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData specNodeId */
             specNodeId?: (string|null);
+
+            /** NodeExecutionMetaData isDynamic */
+            isDynamic?: (boolean|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -11999,6 +12002,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData specNodeId. */
             public specNodeId: string;
+
+            /** NodeExecutionMetaData isDynamic. */
+            public isDynamic: boolean;
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.
