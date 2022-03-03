@@ -4297,6 +4297,7 @@ definitions:
                   - null
                 map:
                   literals: {}
+                hash: "hash"
               var:
                 description: "description"
                 type:
@@ -4530,6 +4531,7 @@ definitions:
                   - null
                 map:
                   literals: {}
+                hash: "hash"
               var:
                 description: "description"
                 type:
@@ -4827,6 +4829,7 @@ definitions:
                 - null
               map:
                 literals: {}
+              hash: "hash"
             var:
               description: "description"
               type:
@@ -5091,6 +5094,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5324,6 +5328,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5601,6 +5606,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5834,6 +5840,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -6219,6 +6226,7 @@ definitions:
                 - null
               map:
                 literals: {}
+              hash: "hash"
             var:
               description: "description"
               type:
@@ -12911,6 +12919,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          is_dynamic: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -12967,6 +12976,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          is_dynamic: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -13037,11 +13047,18 @@ definitions:
         type: "string"
         title: "Node id of the node in the original workflow\nThis maps to value of\
           \ WorkflowTemplate.nodes[X].id"
+      is_dynamic:
+        type: "boolean"
+        format: "boolean"
+        description: "Boolean flag indicating if the node has contains a dynamic workflow\
+          \ which then produces child nodes.\nThis is to distinguish between subworkflows\
+          \ and dynamic workflows which can both have is_parent_node as true."
     title: "Represents additional attributes related to a Node Execution"
     example:
       retry_group: "retry_group"
       is_parent_node: true
       spec_node_id: "spec_node_id"
+      is_dynamic: true
   adminNotification:
     type: "object"
     properties:
@@ -48566,6 +48583,10 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
+      hash:
+        type: "string"
+        title: "A hash representing this literal.\nThis is used for caching purposes.\
+          \ For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
@@ -48677,6 +48698,7 @@ definitions:
         - null
       map:
         literals: {}
+      hash: "hash"
   coreLiteralCollection:
     type: "object"
     properties:
@@ -49576,6 +49598,7 @@ definitions:
           - null
         map:
           literals: {}
+        hash: "hash"
       var:
         description: "description"
         type:
@@ -49751,6 +49774,7 @@ definitions:
               - null
             map:
               literals: {}
+            hash: "hash"
           var:
             description: "description"
             type:
@@ -59406,6 +59430,7 @@ definitions:
         retry_group: "retry_group"
         is_parent_node: true
         spec_node_id: "spec_node_id"
+        is_dynamic: true
       input_uri: "input_uri"
       id:
         execution_id:

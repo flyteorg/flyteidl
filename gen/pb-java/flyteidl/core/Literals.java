@@ -9355,6 +9355,28 @@ public final class Literals {
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getMapOrBuilder();
 
+    /**
+     * <pre>
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    java.lang.String getHash();
+    /**
+     * <pre>
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashBytes();
+
     public flyteidl.core.Literals.Literal.ValueCase getValueCase();
   }
   /**
@@ -9374,6 +9396,7 @@ public final class Literals {
       super(builder);
     }
     private Literal() {
+      hash_ = "";
     }
 
     @java.lang.Override
@@ -9440,6 +9463,12 @@ public final class Literals {
                 value_ = subBuilder.buildPartial();
               }
               valueCase_ = 3;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hash_ = s;
               break;
             }
             default: {
@@ -9628,6 +9657,52 @@ public final class Literals {
       return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
     }
 
+    public static final int HASH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object hash_;
+    /**
+     * <pre>
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    public java.lang.String getHash() {
+      java.lang.Object ref = hash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hash_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A hash representing this literal.
+     * This is used for caching purposes. For more details refer to RFC 1893
+     * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+     * </pre>
+     *
+     * <code>string hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashBytes() {
+      java.lang.Object ref = hash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9651,6 +9726,9 @@ public final class Literals {
       if (valueCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.Literals.LiteralMap) value_);
       }
+      if (!getHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, hash_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9672,6 +9750,9 @@ public final class Literals {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.Literals.LiteralMap) value_);
       }
+      if (!getHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, hash_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9687,6 +9768,8 @@ public final class Literals {
       }
       flyteidl.core.Literals.Literal other = (flyteidl.core.Literals.Literal) obj;
 
+      if (!getHash()
+          .equals(other.getHash())) return false;
       if (!getValueCase().equals(other.getValueCase())) return false;
       switch (valueCase_) {
         case 1:
@@ -9715,6 +9798,8 @@ public final class Literals {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getHash().hashCode();
       switch (valueCase_) {
         case 1:
           hash = (37 * hash) + SCALAR_FIELD_NUMBER;
@@ -9868,6 +9953,8 @@ public final class Literals {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        hash_ = "";
+
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -9917,6 +10004,7 @@ public final class Literals {
             result.value_ = mapBuilder_.build();
           }
         }
+        result.hash_ = hash_;
         result.valueCase_ = valueCase_;
         onBuilt();
         return result;
@@ -9966,6 +10054,10 @@ public final class Literals {
 
       public Builder mergeFrom(flyteidl.core.Literals.Literal other) {
         if (other == flyteidl.core.Literals.Literal.getDefaultInstance()) return this;
+        if (!other.getHash().isEmpty()) {
+          hash_ = other.hash_;
+          onChanged();
+        }
         switch (other.getValueCase()) {
           case SCALAR: {
             mergeScalar(other.getScalar());
@@ -10541,6 +10633,105 @@ public final class Literals {
         valueCase_ = 3;
         onChanged();;
         return mapBuilder_;
+      }
+
+      private java.lang.Object hash_ = "";
+      /**
+       * <pre>
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public java.lang.String getHash() {
+        java.lang.Object ref = hash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashBytes() {
+        java.lang.Object ref = hash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder setHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder clearHash() {
+        
+        hash_ = getDefaultInstance().getHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A hash representing this literal.
+       * This is used for caching purposes. For more details refer to RFC 1893
+       * (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)
+       * </pre>
+       *
+       * <code>string hash = 4;</code>
+       */
+      public Builder setHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hash_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18313,35 +18504,36 @@ public final class Literals {
       "(\0132\027.google.protobuf.StructH\000\022>\n\022structu" +
       "red_dataset\030\010 \001(\0132 .flyteidl.core.Struct" +
       "uredDatasetH\000\022%\n\005union\030\t \001(\0132\024.flyteidl." +
-      "core.UnionH\000B\007\n\005value\"\235\001\n\007Literal\022\'\n\006sca" +
+      "core.UnionH\000B\007\n\005value\"\253\001\n\007Literal\022\'\n\006sca" +
       "lar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\0226\n\nco" +
       "llection\030\002 \001(\0132 .flyteidl.core.LiteralCo" +
       "llectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core." +
-      "LiteralMapH\000B\007\n\005value\"=\n\021LiteralCollecti" +
-      "on\022(\n\010literals\030\001 \003(\0132\026.flyteidl.core.Lit" +
-      "eral\"\220\001\n\nLiteralMap\0229\n\010literals\030\001 \003(\0132\'." +
-      "flyteidl.core.LiteralMap.LiteralsEntry\032G" +
-      "\n\rLiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 " +
-      "\001(\0132\026.flyteidl.core.Literal:\0028\001\"E\n\025Bindi" +
-      "ngDataCollection\022,\n\010bindings\030\001 \003(\0132\032.fly" +
-      "teidl.core.BindingData\"\234\001\n\016BindingDataMa" +
-      "p\022=\n\010bindings\030\001 \003(\0132+.flyteidl.core.Bind" +
-      "ingDataMap.BindingsEntry\032K\n\rBindingsEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl" +
-      ".core.BindingData:\0028\001\";\n\tUnionInfo\022.\n\nta" +
-      "rgetType\030\001 \001(\0132\032.flyteidl.core.LiteralTy" +
-      "pe\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001(\0132\025.fly" +
-      "teidl.core.ScalarH\000\022:\n\ncollection\030\002 \001(\0132" +
-      "$.flyteidl.core.BindingDataCollectionH\000\022" +
-      "1\n\007promise\030\003 \001(\0132\036.flyteidl.core.OutputR" +
-      "eferenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core." +
-      "BindingDataMapH\000\022\'\n\005union\030\005 \001(\0132\030.flytei" +
-      "dl.core.UnionInfoB\007\n\005value\"C\n\007Binding\022\013\n" +
-      "\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.c" +
-      "ore.BindingData\"*\n\014KeyValuePair\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007" +
-      "retries\030\005 \001(\rB6Z4github.com/flyteorg/fly" +
-      "teidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005value\"=\n\021L" +
+      "iteralCollection\022(\n\010literals\030\001 \003(\0132\026.fly" +
+      "teidl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010lit" +
+      "erals\030\001 \003(\0132\'.flyteidl.core.LiteralMap.L" +
+      "iteralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Litera" +
+      "l:\0028\001\"E\n\025BindingDataCollection\022,\n\010bindin" +
+      "gs\030\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n" +
+      "\016BindingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyt" +
+      "eidl.core.BindingDataMap.BindingsEntry\032K" +
+      "\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 " +
+      "\001(\0132\032.flyteidl.core.BindingData:\0028\001\";\n\tU" +
+      "nionInfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl." +
+      "core.LiteralType\"\205\002\n\013BindingData\022\'\n\006scal" +
+      "ar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncol" +
+      "lection\030\002 \001(\0132$.flyteidl.core.BindingDat" +
+      "aCollectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteid" +
+      "l.core.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035." +
+      "flyteidl.core.BindingDataMapH\000\022\'\n\005union\030" +
+      "\005 \001(\0132\030.flyteidl.core.UnionInfoB\007\n\005value" +
+      "\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(" +
+      "\0132\032.flyteidl.core.BindingData\"*\n\014KeyValu" +
+      "ePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRet" +
+      "ryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
+      "oreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18424,7 +18616,7 @@ public final class Literals {
     internal_static_flyteidl_core_Literal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Literal_descriptor,
-        new java.lang.String[] { "Scalar", "Collection", "Map", "Value", });
+        new java.lang.String[] { "Scalar", "Collection", "Map", "Hash", "Value", });
     internal_static_flyteidl_core_LiteralCollection_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_LiteralCollection_fieldAccessorTable = new
