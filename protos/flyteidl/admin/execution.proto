@@ -281,6 +281,9 @@ message ExecutionSpec {
     // This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
     // and parallelism/concurrency of MapTasks is independent from this.
     int32 max_parallelism = 18;
+
+    // Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+    RawOutputDataConfig raw_output_data_config = 19;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.
