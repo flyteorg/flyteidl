@@ -364,7 +364,6 @@ class AdminExecutionSpec(object):
     def raw_output_data_config(self):
         """Gets the raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
 
-        Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).  # noqa: E501
 
         :return: The raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
         :rtype: AdminRawOutputDataConfig
@@ -375,7 +374,6 @@ class AdminExecutionSpec(object):
     def raw_output_data_config(self, raw_output_data_config):
         """Sets the raw_output_data_config of this AdminExecutionSpec.
 
-        Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).  # noqa: E501
 
         :param raw_output_data_config: The raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
         :type: AdminRawOutputDataConfig

@@ -16814,7 +16814,8 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -16822,7 +16823,8 @@ public final class ExecutionOuterClass {
     boolean hasRawOutputDataConfig();
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -16830,7 +16832,8 @@ public final class ExecutionOuterClass {
     flyteidl.admin.Common.RawOutputDataConfig getRawOutputDataConfig();
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -17436,7 +17439,8 @@ public final class ExecutionOuterClass {
     private flyteidl.admin.Common.RawOutputDataConfig rawOutputDataConfig_;
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -17446,7 +17450,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -17456,7 +17461,8 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
      * </pre>
      *
      * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19630,7 +19636,8 @@ public final class ExecutionOuterClass {
           flyteidl.admin.Common.RawOutputDataConfig, flyteidl.admin.Common.RawOutputDataConfig.Builder, flyteidl.admin.Common.RawOutputDataConfigOrBuilder> rawOutputDataConfigBuilder_;
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19640,7 +19647,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19654,7 +19662,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19674,7 +19683,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19692,7 +19702,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19714,7 +19725,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19732,7 +19744,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19744,7 +19757,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
@@ -19759,7 +19773,8 @@ public final class ExecutionOuterClass {
       }
       /**
        * <pre>
-       * Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
        * </pre>
        *
        * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>

@@ -282,7 +282,8 @@ message ExecutionSpec {
     // and parallelism/concurrency of MapTasks is independent from this.
     int32 max_parallelism = 18;
 
-    // Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+    // User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+    // This should be a prefix like s3://my-bucket/my-data
     RawOutputDataConfig raw_output_data_config = 19;
 }
 

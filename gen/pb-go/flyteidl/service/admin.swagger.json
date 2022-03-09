@@ -3558,7 +3558,7 @@
         },
         "raw_output_data_config": {
           "$ref": "#/definitions/adminRawOutputDataConfig",
-          "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
+          "title": "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).\nThis should be a prefix like s3://my-bucket/my-data"
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."

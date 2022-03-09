@@ -1048,7 +1048,8 @@ type ExecutionSpec struct {
 	// This is useful to achieve fairness. Note: MapTasks are regarded as one unit,
 	// and parallelism/concurrency of MapTasks is independent from this.
 	MaxParallelism int32 `protobuf:"varint,18,opt,name=max_parallelism,json=maxParallelism,proto3" json:"max_parallelism,omitempty"`
-	// Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
+	// User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+	// This should be a prefix like s3://my-bucket/my-data
 	RawOutputDataConfig  *RawOutputDataConfig `protobuf:"bytes,19,opt,name=raw_output_data_config,json=rawOutputDataConfig,proto3" json:"raw_output_data_config,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
