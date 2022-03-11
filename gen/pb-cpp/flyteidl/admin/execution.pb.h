@@ -2320,10 +2320,19 @@ class ExecutionSpec final :
   ::flyteidl::core::QualityOfService* mutable_quality_of_service();
   void set_allocated_quality_of_service(::flyteidl::core::QualityOfService* quality_of_service);
 
-  // .flyteidl.admin.ClusterAssignment cluster_assignment = 19;
+  // .flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;
+  bool has_raw_output_data_config() const;
+  void clear_raw_output_data_config();
+  static const int kRawOutputDataConfigFieldNumber = 19;
+  const ::flyteidl::admin::RawOutputDataConfig& raw_output_data_config() const;
+  ::flyteidl::admin::RawOutputDataConfig* release_raw_output_data_config();
+  ::flyteidl::admin::RawOutputDataConfig* mutable_raw_output_data_config();
+  void set_allocated_raw_output_data_config(::flyteidl::admin::RawOutputDataConfig* raw_output_data_config);
+
+  // .flyteidl.admin.ClusterAssignment cluster_assignment = 20;
   bool has_cluster_assignment() const;
   void clear_cluster_assignment();
-  static const int kClusterAssignmentFieldNumber = 19;
+  static const int kClusterAssignmentFieldNumber = 20;
   const ::flyteidl::admin::ClusterAssignment& cluster_assignment() const;
   ::flyteidl::admin::ClusterAssignment* release_cluster_assignment();
   ::flyteidl::admin::ClusterAssignment* mutable_cluster_assignment();
@@ -2373,6 +2382,7 @@ class ExecutionSpec final :
   ::flyteidl::core::SecurityContext* security_context_;
   ::flyteidl::admin::AuthRole* auth_role_;
   ::flyteidl::core::QualityOfService* quality_of_service_;
+  ::flyteidl::admin::RawOutputDataConfig* raw_output_data_config_;
   ::flyteidl::admin::ClusterAssignment* cluster_assignment_;
   ::google::protobuf::int32 max_parallelism_;
   union NotificationOverridesUnion {
@@ -5788,7 +5798,52 @@ inline void ExecutionSpec::set_max_parallelism(::google::protobuf::int32 value) 
   // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.max_parallelism)
 }
 
-// .flyteidl.admin.ClusterAssignment cluster_assignment = 19;
+// .flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;
+inline bool ExecutionSpec::has_raw_output_data_config() const {
+  return this != internal_default_instance() && raw_output_data_config_ != nullptr;
+}
+inline const ::flyteidl::admin::RawOutputDataConfig& ExecutionSpec::raw_output_data_config() const {
+  const ::flyteidl::admin::RawOutputDataConfig* p = raw_output_data_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.raw_output_data_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::RawOutputDataConfig*>(
+      &::flyteidl::admin::_RawOutputDataConfig_default_instance_);
+}
+inline ::flyteidl::admin::RawOutputDataConfig* ExecutionSpec::release_raw_output_data_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionSpec.raw_output_data_config)
+  
+  ::flyteidl::admin::RawOutputDataConfig* temp = raw_output_data_config_;
+  raw_output_data_config_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::RawOutputDataConfig* ExecutionSpec::mutable_raw_output_data_config() {
+  
+  if (raw_output_data_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::RawOutputDataConfig>(GetArenaNoVirtual());
+    raw_output_data_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionSpec.raw_output_data_config)
+  return raw_output_data_config_;
+}
+inline void ExecutionSpec::set_allocated_raw_output_data_config(::flyteidl::admin::RawOutputDataConfig* raw_output_data_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(raw_output_data_config_);
+  }
+  if (raw_output_data_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      raw_output_data_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, raw_output_data_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  raw_output_data_config_ = raw_output_data_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.raw_output_data_config)
+}
+
+// .flyteidl.admin.ClusterAssignment cluster_assignment = 20;
 inline bool ExecutionSpec::has_cluster_assignment() const {
   return this != internal_default_instance() && cluster_assignment_ != nullptr;
 }

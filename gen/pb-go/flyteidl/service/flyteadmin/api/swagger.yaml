@@ -3103,12 +3103,6 @@ definitions:
             - "recipients_email"
             - "recipients_email"
       spec:
-        launch_plan:
-          domain: "domain"
-          resource_type: {}
-          name: "name"
-          project: "project"
-          version: "version"
         metadata:
           mode: {}
           principal: "principal"
@@ -3126,13 +3120,28 @@ definitions:
           nesting: 0
           system_metadata:
             execution_cluster: "execution_cluster"
+        disable_all: true
+        inputs:
+          literals: {}
+        annotations:
+          values:
+            key: "values"
+        max_parallelism: 6
+        labels:
+          values:
+            key: "values"
+        launch_plan:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
         quality_of_service:
           tier: {}
           spec:
             queueing_budget: "queueing_budget"
-        disable_all: true
-        inputs:
-          literals: {}
+        raw_output_data_config:
+          output_location_prefix: "output_location_prefix"
         cluster_assignment:
           affinity:
             selectors:
@@ -3146,10 +3155,6 @@ definitions:
               - "value"
               key: "key"
               operator: {}
-        annotations:
-          values:
-            key: "values"
-        max_parallelism: 6
         notifications:
           notifications:
           - pager_duty:
@@ -3225,9 +3230,6 @@ definitions:
             group_version: "group_version"
             key: "key"
             group: "group"
-        labels:
-          values:
-            key: "values"
         auth_role:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
@@ -3484,12 +3486,6 @@ definitions:
               - "recipients_email"
               - "recipients_email"
         spec:
-          launch_plan:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           metadata:
             mode: {}
             principal: "principal"
@@ -3507,13 +3503,28 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
+          disable_all: true
+          inputs:
+            literals: {}
+          annotations:
+            values:
+              key: "values"
+          max_parallelism: 6
+          labels:
+            values:
+              key: "values"
+          launch_plan:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           quality_of_service:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
-          disable_all: true
-          inputs:
-            literals: {}
+          raw_output_data_config:
+            output_location_prefix: "output_location_prefix"
           cluster_assignment:
             affinity:
               selectors:
@@ -3527,10 +3538,6 @@ definitions:
                 - "value"
                 key: "key"
                 operator: {}
-          annotations:
-            values:
-              key: "values"
-          max_parallelism: 6
           notifications:
             notifications:
             - pager_duty:
@@ -3606,9 +3613,6 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
-          labels:
-            values:
-              key: "values"
           auth_role:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -3681,12 +3685,6 @@ definitions:
               - "recipients_email"
               - "recipients_email"
         spec:
-          launch_plan:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           metadata:
             mode: {}
             principal: "principal"
@@ -3704,13 +3702,28 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
+          disable_all: true
+          inputs:
+            literals: {}
+          annotations:
+            values:
+              key: "values"
+          max_parallelism: 6
+          labels:
+            values:
+              key: "values"
+          launch_plan:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           quality_of_service:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
-          disable_all: true
-          inputs:
-            literals: {}
+          raw_output_data_config:
+            output_location_prefix: "output_location_prefix"
           cluster_assignment:
             affinity:
               selectors:
@@ -3724,10 +3737,6 @@ definitions:
                 - "value"
                 key: "key"
                 operator: {}
-          annotations:
-            values:
-              key: "values"
-          max_parallelism: 6
           notifications:
             notifications:
             - pager_duty:
@@ -3803,9 +3812,6 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
-          labels:
-            values:
-              key: "values"
           auth_role:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -3948,6 +3954,11 @@ definitions:
           \ parallel for the entire workflow.\nThis is useful to achieve fairness.\
           \ Note: MapTasks are regarded as one unit,\nand parallelism/concurrency\
           \ of MapTasks is independent from this."
+      raw_output_data_config:
+        title: "User setting to configure where to store offloaded data (i.e. Blobs,\
+          \ structured datasets, query data, etc.).\nThis should be a prefix like\
+          \ s3://my-bucket/my-data"
+        $ref: "#/definitions/adminRawOutputDataConfig"
       cluster_assignment:
         description: "Controls how to select an available cluster on which this execution\
           \ should run."
@@ -3956,12 +3967,6 @@ definitions:
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
     example:
-      launch_plan:
-        domain: "domain"
-        resource_type: {}
-        name: "name"
-        project: "project"
-        version: "version"
       metadata:
         mode: {}
         principal: "principal"
@@ -3979,13 +3984,28 @@ definitions:
         nesting: 0
         system_metadata:
           execution_cluster: "execution_cluster"
+      disable_all: true
+      inputs:
+        literals: {}
+      annotations:
+        values:
+          key: "values"
+      max_parallelism: 6
+      labels:
+        values:
+          key: "values"
+      launch_plan:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
       quality_of_service:
         tier: {}
         spec:
           queueing_budget: "queueing_budget"
-      disable_all: true
-      inputs:
-        literals: {}
+      raw_output_data_config:
+        output_location_prefix: "output_location_prefix"
       cluster_assignment:
         affinity:
           selectors:
@@ -3999,10 +4019,6 @@ definitions:
             - "value"
             key: "key"
             operator: {}
-      annotations:
-        values:
-          key: "values"
-      max_parallelism: 6
       notifications:
         notifications:
         - pager_duty:
@@ -4078,9 +4094,6 @@ definitions:
           group_version: "group_version"
           key: "key"
           group: "group"
-      labels:
-        values:
-          key: "values"
       auth_role:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
@@ -4326,6 +4339,7 @@ definitions:
                   - null
                 map:
                   literals: {}
+                hash: "hash"
               var:
                 description: "description"
                 type:
@@ -4501,6 +4515,7 @@ definitions:
                   - null
                 map:
                   literals: {}
+                hash: "hash"
               var:
                 description: "description"
                 type:
@@ -4734,6 +4749,7 @@ definitions:
                 - null
               map:
                 literals: {}
+              hash: "hash"
             var:
               description: "description"
               type:
@@ -4934,6 +4950,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5109,6 +5126,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5322,6 +5340,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5497,6 +5516,7 @@ definitions:
                     - null
                   map:
                     literals: {}
+                  hash: "hash"
                 var:
                   description: "description"
                   type:
@@ -5824,6 +5844,7 @@ definitions:
                 - null
               map:
                 literals: {}
+              hash: "hash"
             var:
               description: "description"
               type:
@@ -9954,6 +9975,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          is_dynamic: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -10010,6 +10032,7 @@ definitions:
           retry_group: "retry_group"
           is_parent_node: true
           spec_node_id: "spec_node_id"
+          is_dynamic: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -10080,11 +10103,18 @@ definitions:
         type: "string"
         title: "Node id of the node in the original workflow\nThis maps to value of\
           \ WorkflowTemplate.nodes[X].id"
+      is_dynamic:
+        type: "boolean"
+        format: "boolean"
+        description: "Boolean flag indicating if the node has contains a dynamic workflow\
+          \ which then produces child nodes.\nThis is to distinguish between subworkflows\
+          \ and dynamic workflows which can both have is_parent_node as true."
     title: "Represents additional attributes related to a Node Execution"
     example:
       retry_group: "retry_group"
       is_parent_node: true
       spec_node_id: "spec_node_id"
+      is_dynamic: true
   adminNotification:
     type: "object"
     properties:
@@ -31761,6 +31791,10 @@ definitions:
       map:
         description: "A map of strings to literals."
         $ref: "#/definitions/coreLiteralMap"
+      hash:
+        type: "string"
+        title: "A hash representing this literal.\nThis is used for caching purposes.\
+          \ For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
     description: "A simple value. This supports any level of nesting (e.g. array of\
       \ array of array of Blobs) as well as simple primitives."
     example:
@@ -31820,6 +31854,7 @@ definitions:
         - null
       map:
         literals: {}
+      hash: "hash"
   coreLiteralCollection:
     type: "object"
     properties:
@@ -32447,6 +32482,7 @@ definitions:
           - null
         map:
           literals: {}
+        hash: "hash"
       var:
         description: "description"
         type:
@@ -32564,6 +32600,7 @@ definitions:
               - null
             map:
               literals: {}
+            hash: "hash"
           var:
             description: "description"
             type:
@@ -38574,6 +38611,7 @@ definitions:
         retry_group: "retry_group"
         is_parent_node: true
         spec_node_id: "spec_node_id"
+        is_dynamic: true
       input_uri: "input_uri"
       id:
         execution_id:

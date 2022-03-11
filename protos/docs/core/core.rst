@@ -1369,6 +1369,7 @@ A simple value. This supports any level of nesting (e.g. array of array of array
    "scalar", ":ref:`ref_flyteidl.core.Scalar`", "", "A simple value."
    "collection", ":ref:`ref_flyteidl.core.LiteralCollection`", "", "A collection of literals to allow nesting."
    "map", ":ref:`ref_flyteidl.core.LiteralMap`", "", "A map of strings to literals."
+   "hash", ":ref:`ref_string`", "", "A hash representing this literal. This is used for caching purposes. For more details refer to RFC 1893 (https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
 
 
 

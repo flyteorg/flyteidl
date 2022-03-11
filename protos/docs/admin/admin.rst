@@ -1155,6 +1155,7 @@ of an execution as it progresses across phase changes.
    "auth_role", ":ref:`ref_flyteidl.admin.AuthRole`", "", "**Deprecated.** Optional: auth override to apply this execution."
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of task nodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
+   "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
 
 
@@ -2359,6 +2360,7 @@ Represents additional attributes related to a Node Execution
    "retry_group", ":ref:`ref_string`", "", "Node executions are grouped depending on retries of the parent Retry group is unique within the context of a parent node."
    "is_parent_node", ":ref:`ref_bool`", "", "Boolean flag indicating if the node has child nodes under it This can be true when a node contains a dynamic workflow which then produces child nodes."
    "spec_node_id", ":ref:`ref_string`", "", "Node id of the node in the original workflow This maps to value of WorkflowTemplate.nodes[X].id"
+   "is_dynamic", ":ref:`ref_bool`", "", "Boolean flag indicating if the node has contains a dynamic workflow which then produces child nodes. This is to distinguish between subworkflows and dynamic workflows which can both have is_parent_node as true."
 
 
 

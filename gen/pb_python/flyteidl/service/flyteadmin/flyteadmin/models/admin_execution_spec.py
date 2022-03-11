@@ -22,6 +22,7 @@ from flyteadmin.models.admin_cluster_assignment import AdminClusterAssignment  #
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_notification_list import AdminNotificationList  # noqa: F401,E501
+from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: F401,E501
@@ -53,6 +54,7 @@ class AdminExecutionSpec(object):
         'auth_role': 'AdminAuthRole',
         'quality_of_service': 'CoreQualityOfService',
         'max_parallelism': 'int',
+        'raw_output_data_config': 'AdminRawOutputDataConfig',
         'cluster_assignment': 'AdminClusterAssignment'
     }
 
@@ -68,10 +70,11 @@ class AdminExecutionSpec(object):
         'auth_role': 'auth_role',
         'quality_of_service': 'quality_of_service',
         'max_parallelism': 'max_parallelism',
+        'raw_output_data_config': 'raw_output_data_config',
         'cluster_assignment': 'cluster_assignment'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, cluster_assignment=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -85,6 +88,7 @@ class AdminExecutionSpec(object):
         self._auth_role = None
         self._quality_of_service = None
         self._max_parallelism = None
+        self._raw_output_data_config = None
         self._cluster_assignment = None
         self.discriminator = None
 
@@ -110,6 +114,8 @@ class AdminExecutionSpec(object):
             self.quality_of_service = quality_of_service
         if max_parallelism is not None:
             self.max_parallelism = max_parallelism
+        if raw_output_data_config is not None:
+            self.raw_output_data_config = raw_output_data_config
         if cluster_assignment is not None:
             self.cluster_assignment = cluster_assignment
 
@@ -359,6 +365,27 @@ class AdminExecutionSpec(object):
         """
 
         self._max_parallelism = max_parallelism
+
+    @property
+    def raw_output_data_config(self):
+        """Gets the raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
+
+
+        :return: The raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
+        :rtype: AdminRawOutputDataConfig
+        """
+        return self._raw_output_data_config
+
+    @raw_output_data_config.setter
+    def raw_output_data_config(self, raw_output_data_config):
+        """Sets the raw_output_data_config of this AdminExecutionSpec.
+
+
+        :param raw_output_data_config: The raw_output_data_config of this AdminExecutionSpec.  # noqa: E501
+        :type: AdminRawOutputDataConfig
+        """
+
+        self._raw_output_data_config = raw_output_data_config
 
     @property
     def cluster_assignment(self):

@@ -1342,6 +1342,16 @@ func (m *ExecutionSpec) Validate() error {
 
 	// no validation rules for MaxParallelism
 
+	if v, ok := interface{}(m.GetRawOutputDataConfig()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionSpecValidationError{
+				field:  "RawOutputDataConfig",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	if v, ok := interface{}(m.GetClusterAssignment()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ExecutionSpecValidationError{

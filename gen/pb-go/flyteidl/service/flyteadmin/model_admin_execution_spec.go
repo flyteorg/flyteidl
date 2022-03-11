@@ -30,6 +30,7 @@ type AdminExecutionSpec struct {
 	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
 	// Controls the maximum number of task nodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this.
 	MaxParallelism int32 `json:"max_parallelism,omitempty"`
+	RawOutputDataConfig *AdminRawOutputDataConfig `json:"raw_output_data_config,omitempty"`
 	// Controls how to select an available cluster on which this execution should run.
 	ClusterAssignment *AdminClusterAssignment `json:"cluster_assignment,omitempty"`
 }

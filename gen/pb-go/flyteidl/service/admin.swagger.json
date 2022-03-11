@@ -3564,6 +3564,10 @@
           "format": "int32",
           "description": "Controls the maximum number of task nodes that can be run in parallel for the entire workflow.\nThis is useful to achieve fairness. Note: MapTasks are regarded as one unit,\nand parallelism/concurrency of MapTasks is independent from this."
         },
+        "raw_output_data_config": {
+          "$ref": "#/definitions/adminRawOutputDataConfig",
+          "title": "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).\nThis should be a prefix like s3://my-bucket/my-data"
+        },
         "cluster_assignment": {
           "$ref": "#/definitions/adminClusterAssignment",
           "description": "Controls how to select an available cluster on which this execution should run."
@@ -4182,6 +4186,11 @@
         "spec_node_id": {
           "type": "string",
           "title": "Node id of the node in the original workflow\nThis maps to value of WorkflowTemplate.nodes[X].id"
+        },
+        "is_dynamic": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Boolean flag indicating if the node has contains a dynamic workflow which then produces child nodes.\nThis is to distinguish between subworkflows and dynamic workflows which can both have is_parent_node as true."
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
@@ -5543,6 +5552,10 @@
         "map": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
+        },
+        "hash": {
+          "type": "string",
+          "title": "A hash representing this literal.\nThis is used for caching purposes. For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."

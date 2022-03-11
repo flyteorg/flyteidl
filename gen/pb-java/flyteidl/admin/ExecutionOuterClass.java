@@ -16814,10 +16814,38 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    boolean hasRawOutputDataConfig();
+    /**
+     * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    flyteidl.admin.Common.RawOutputDataConfig getRawOutputDataConfig();
+    /**
+     * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    flyteidl.admin.Common.RawOutputDataConfigOrBuilder getRawOutputDataConfigOrBuilder();
+
+    /**
+     * <pre>
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     boolean hasClusterAssignment();
     /**
@@ -16825,7 +16853,7 @@ public final class ExecutionOuterClass {
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignment();
     /**
@@ -16833,7 +16861,7 @@ public final class ExecutionOuterClass {
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentOrBuilder();
 
@@ -17012,6 +17040,19 @@ public final class ExecutionOuterClass {
               break;
             }
             case 154: {
+              flyteidl.admin.Common.RawOutputDataConfig.Builder subBuilder = null;
+              if (rawOutputDataConfig_ != null) {
+                subBuilder = rawOutputDataConfig_.toBuilder();
+              }
+              rawOutputDataConfig_ = input.readMessage(flyteidl.admin.Common.RawOutputDataConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rawOutputDataConfig_);
+                rawOutputDataConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 162: {
               flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder subBuilder = null;
               if (clusterAssignment_ != null) {
                 subBuilder = clusterAssignment_.toBuilder();
@@ -17432,14 +17473,50 @@ public final class ExecutionOuterClass {
       return maxParallelism_;
     }
 
-    public static final int CLUSTER_ASSIGNMENT_FIELD_NUMBER = 19;
+    public static final int RAW_OUTPUT_DATA_CONFIG_FIELD_NUMBER = 19;
+    private flyteidl.admin.Common.RawOutputDataConfig rawOutputDataConfig_;
+    /**
+     * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    public boolean hasRawOutputDataConfig() {
+      return rawOutputDataConfig_ != null;
+    }
+    /**
+     * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    public flyteidl.admin.Common.RawOutputDataConfig getRawOutputDataConfig() {
+      return rawOutputDataConfig_ == null ? flyteidl.admin.Common.RawOutputDataConfig.getDefaultInstance() : rawOutputDataConfig_;
+    }
+    /**
+     * <pre>
+     * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+     * This should be a prefix like s3://my-bucket/my-data
+     * </pre>
+     *
+     * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+     */
+    public flyteidl.admin.Common.RawOutputDataConfigOrBuilder getRawOutputDataConfigOrBuilder() {
+      return getRawOutputDataConfig();
+    }
+
+    public static final int CLUSTER_ASSIGNMENT_FIELD_NUMBER = 20;
     private flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment clusterAssignment_;
     /**
      * <pre>
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     public boolean hasClusterAssignment() {
       return clusterAssignment_ != null;
@@ -17449,7 +17526,7 @@ public final class ExecutionOuterClass {
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignment() {
       return clusterAssignment_ == null ? flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.getDefaultInstance() : clusterAssignment_;
@@ -17459,7 +17536,7 @@ public final class ExecutionOuterClass {
      * Controls how to select an available cluster on which this execution should run.
      * </pre>
      *
-     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
      */
     public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentOrBuilder() {
       return getClusterAssignment();
@@ -17513,8 +17590,11 @@ public final class ExecutionOuterClass {
       if (maxParallelism_ != 0) {
         output.writeInt32(18, maxParallelism_);
       }
+      if (rawOutputDataConfig_ != null) {
+        output.writeMessage(19, getRawOutputDataConfig());
+      }
       if (clusterAssignment_ != null) {
-        output.writeMessage(19, getClusterAssignment());
+        output.writeMessage(20, getClusterAssignment());
       }
       unknownFields.writeTo(output);
     }
@@ -17570,9 +17650,13 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, maxParallelism_);
       }
+      if (rawOutputDataConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, getRawOutputDataConfig());
+      }
       if (clusterAssignment_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getClusterAssignment());
+          .computeMessageSize(20, getClusterAssignment());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17631,6 +17715,11 @@ public final class ExecutionOuterClass {
       }
       if (getMaxParallelism()
           != other.getMaxParallelism()) return false;
+      if (hasRawOutputDataConfig() != other.hasRawOutputDataConfig()) return false;
+      if (hasRawOutputDataConfig()) {
+        if (!getRawOutputDataConfig()
+            .equals(other.getRawOutputDataConfig())) return false;
+      }
       if (hasClusterAssignment() != other.hasClusterAssignment()) return false;
       if (hasClusterAssignment()) {
         if (!getClusterAssignment()
@@ -17694,6 +17783,10 @@ public final class ExecutionOuterClass {
       }
       hash = (37 * hash) + MAX_PARALLELISM_FIELD_NUMBER;
       hash = (53 * hash) + getMaxParallelism();
+      if (hasRawOutputDataConfig()) {
+        hash = (37 * hash) + RAW_OUTPUT_DATA_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getRawOutputDataConfig().hashCode();
+      }
       if (hasClusterAssignment()) {
         hash = (37 * hash) + CLUSTER_ASSIGNMENT_FIELD_NUMBER;
         hash = (53 * hash) + getClusterAssignment().hashCode();
@@ -17899,6 +17992,12 @@ public final class ExecutionOuterClass {
         }
         maxParallelism_ = 0;
 
+        if (rawOutputDataConfigBuilder_ == null) {
+          rawOutputDataConfig_ = null;
+        } else {
+          rawOutputDataConfig_ = null;
+          rawOutputDataConfigBuilder_ = null;
+        }
         if (clusterAssignmentBuilder_ == null) {
           clusterAssignment_ = null;
         } else {
@@ -17984,6 +18083,11 @@ public final class ExecutionOuterClass {
           result.qualityOfService_ = qualityOfServiceBuilder_.build();
         }
         result.maxParallelism_ = maxParallelism_;
+        if (rawOutputDataConfigBuilder_ == null) {
+          result.rawOutputDataConfig_ = rawOutputDataConfig_;
+        } else {
+          result.rawOutputDataConfig_ = rawOutputDataConfigBuilder_.build();
+        }
         if (clusterAssignmentBuilder_ == null) {
           result.clusterAssignment_ = clusterAssignment_;
         } else {
@@ -18064,6 +18168,9 @@ public final class ExecutionOuterClass {
         }
         if (other.getMaxParallelism() != 0) {
           setMaxParallelism(other.getMaxParallelism());
+        }
+        if (other.hasRawOutputDataConfig()) {
+          mergeRawOutputDataConfig(other.getRawOutputDataConfig());
         }
         if (other.hasClusterAssignment()) {
           mergeClusterAssignment(other.getClusterAssignment());
@@ -19625,6 +19732,168 @@ public final class ExecutionOuterClass {
         return this;
       }
 
+      private flyteidl.admin.Common.RawOutputDataConfig rawOutputDataConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.RawOutputDataConfig, flyteidl.admin.Common.RawOutputDataConfig.Builder, flyteidl.admin.Common.RawOutputDataConfigOrBuilder> rawOutputDataConfigBuilder_;
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public boolean hasRawOutputDataConfig() {
+        return rawOutputDataConfigBuilder_ != null || rawOutputDataConfig_ != null;
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public flyteidl.admin.Common.RawOutputDataConfig getRawOutputDataConfig() {
+        if (rawOutputDataConfigBuilder_ == null) {
+          return rawOutputDataConfig_ == null ? flyteidl.admin.Common.RawOutputDataConfig.getDefaultInstance() : rawOutputDataConfig_;
+        } else {
+          return rawOutputDataConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public Builder setRawOutputDataConfig(flyteidl.admin.Common.RawOutputDataConfig value) {
+        if (rawOutputDataConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rawOutputDataConfig_ = value;
+          onChanged();
+        } else {
+          rawOutputDataConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public Builder setRawOutputDataConfig(
+          flyteidl.admin.Common.RawOutputDataConfig.Builder builderForValue) {
+        if (rawOutputDataConfigBuilder_ == null) {
+          rawOutputDataConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          rawOutputDataConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public Builder mergeRawOutputDataConfig(flyteidl.admin.Common.RawOutputDataConfig value) {
+        if (rawOutputDataConfigBuilder_ == null) {
+          if (rawOutputDataConfig_ != null) {
+            rawOutputDataConfig_ =
+              flyteidl.admin.Common.RawOutputDataConfig.newBuilder(rawOutputDataConfig_).mergeFrom(value).buildPartial();
+          } else {
+            rawOutputDataConfig_ = value;
+          }
+          onChanged();
+        } else {
+          rawOutputDataConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public Builder clearRawOutputDataConfig() {
+        if (rawOutputDataConfigBuilder_ == null) {
+          rawOutputDataConfig_ = null;
+          onChanged();
+        } else {
+          rawOutputDataConfig_ = null;
+          rawOutputDataConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public flyteidl.admin.Common.RawOutputDataConfig.Builder getRawOutputDataConfigBuilder() {
+        
+        onChanged();
+        return getRawOutputDataConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      public flyteidl.admin.Common.RawOutputDataConfigOrBuilder getRawOutputDataConfigOrBuilder() {
+        if (rawOutputDataConfigBuilder_ != null) {
+          return rawOutputDataConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return rawOutputDataConfig_ == null ?
+              flyteidl.admin.Common.RawOutputDataConfig.getDefaultInstance() : rawOutputDataConfig_;
+        }
+      }
+      /**
+       * <pre>
+       * User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.).
+       * This should be a prefix like s3://my-bucket/my-data
+       * </pre>
+       *
+       * <code>.flyteidl.admin.RawOutputDataConfig raw_output_data_config = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.RawOutputDataConfig, flyteidl.admin.Common.RawOutputDataConfig.Builder, flyteidl.admin.Common.RawOutputDataConfigOrBuilder> 
+          getRawOutputDataConfigFieldBuilder() {
+        if (rawOutputDataConfigBuilder_ == null) {
+          rawOutputDataConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.RawOutputDataConfig, flyteidl.admin.Common.RawOutputDataConfig.Builder, flyteidl.admin.Common.RawOutputDataConfigOrBuilder>(
+                  getRawOutputDataConfig(),
+                  getParentForChildren(),
+                  isClean());
+          rawOutputDataConfig_ = null;
+        }
+        return rawOutputDataConfigBuilder_;
+      }
+
       private flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment clusterAssignment_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder> clusterAssignmentBuilder_;
@@ -19633,7 +19902,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public boolean hasClusterAssignment() {
         return clusterAssignmentBuilder_ != null || clusterAssignment_ != null;
@@ -19643,7 +19912,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignment() {
         if (clusterAssignmentBuilder_ == null) {
@@ -19657,7 +19926,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public Builder setClusterAssignment(flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment value) {
         if (clusterAssignmentBuilder_ == null) {
@@ -19677,7 +19946,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public Builder setClusterAssignment(
           flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder builderForValue) {
@@ -19695,7 +19964,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public Builder mergeClusterAssignment(flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment value) {
         if (clusterAssignmentBuilder_ == null) {
@@ -19717,7 +19986,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public Builder clearClusterAssignment() {
         if (clusterAssignmentBuilder_ == null) {
@@ -19735,7 +20004,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder getClusterAssignmentBuilder() {
         
@@ -19747,7 +20016,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentOrBuilder() {
         if (clusterAssignmentBuilder_ != null) {
@@ -19762,7 +20031,7 @@ public final class ExecutionOuterClass {
        * Controls how to select an available cluster on which this execution should run.
        * </pre>
        *
-       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 19;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment = 20;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder> 
@@ -25601,7 +25870,7 @@ public final class ExecutionOuterClass {
       "HEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016C" +
       "HILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020Notifi" +
       "cationList\0223\n\rnotifications\030\001 \003(\0132\034.flyt" +
-      "eidl.admin.Notification\"\357\004\n\rExecutionSpe" +
+      "eidl.admin.Notification\"\264\005\n\rExecutionSpe" +
       "c\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.core.I" +
       "dentifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.cor" +
       "e.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.fly" +
@@ -25614,32 +25883,33 @@ public final class ExecutionOuterClass {
       "ore.SecurityContext\022/\n\tauth_role\030\020 \001(\0132\030" +
       ".flyteidl.admin.AuthRoleB\002\030\001\022;\n\022quality_" +
       "of_service\030\021 \001(\0132\037.flyteidl.core.Quality" +
-      "OfService\022\027\n\017max_parallelism\030\022 \001(\005\022=\n\022cl" +
-      "uster_assignment\030\023 \001(\0132!.flyteidl.admin." +
-      "ClusterAssignmentB\030\n\026notification_overri" +
-      "desJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226" +
-      "\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecu" +
-      "tionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Executi" +
-      "onTerminateResponse\"Y\n\037WorkflowExecution" +
-      "GetDataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
-      "re.WorkflowExecutionIdentifier\"\336\001\n Workf" +
-      "lowExecutionGetDataResponse\022,\n\007outputs\030\001" +
-      " \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022+\n\006inp" +
-      "uts\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022." +
-      "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite" +
-      "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl." +
-      "core.LiteralMap\"\177\n\026ExecutionUpdateReques" +
-      "t\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowEx" +
-      "ecutionIdentifier\022-\n\005state\030\002 \001(\0162\036.flyte" +
-      "idl.admin.ExecutionState\"\220\001\n\033ExecutionSt" +
-      "ateChangeDetails\022-\n\005state\030\001 \001(\0162\036.flytei" +
-      "dl.admin.ExecutionState\022/\n\013occurred_at\030\002" +
-      " \001(\0132\032.google.protobuf.Timestamp\022\021\n\tprin" +
-      "cipal\030\003 \001(\t\"\031\n\027ExecutionUpdateResponse*>" +
-      "\n\016ExecutionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026" +
-      "\n\022EXECUTION_ARCHIVED\020\001B7Z5github.com/fly" +
-      "teorg/flyteidl/gen/pb-go/flyteidl/adminb" +
-      "\006proto3"
+      "OfService\022\027\n\017max_parallelism\030\022 \001(\005\022C\n\026ra" +
+      "w_output_data_config\030\023 \001(\0132#.flyteidl.ad" +
+      "min.RawOutputDataConfig\022=\n\022cluster_assig" +
+      "nment\030\024 \001(\0132!.flyteidl.admin.ClusterAssi" +
+      "gnmentB\030\n\026notification_overridesJ\004\010\004\020\005\"b" +
+      "\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminate" +
+      "Response\"Y\n\037WorkflowExecutionGetDataRequ" +
+      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\"\336\001\n WorkflowExecutio" +
+      "nGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.flyt" +
+      "eidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027" +
+      ".flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inpu" +
+      "ts\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014f" +
+      "ull_outputs\030\004 \001(\0132\031.flyteidl.core.Litera" +
+      "lMap\"\177\n\026ExecutionUpdateRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\022-\n\005state\030\002 \001(\0162\036.flyteidl.admin.E" +
+      "xecutionState\"\220\001\n\033ExecutionStateChangeDe" +
+      "tails\022-\n\005state\030\001 \001(\0162\036.flyteidl.admin.Ex" +
+      "ecutionState\022/\n\013occurred_at\030\002 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\021\n\tprincipal\030\003 \001(\t" +
+      "\"\031\n\027ExecutionUpdateResponse*>\n\016Execution" +
+      "State\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION" +
+      "_ARCHIVED\020\001B7Z5github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -25744,7 +26014,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "ClusterAssignment", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

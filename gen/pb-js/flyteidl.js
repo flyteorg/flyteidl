@@ -5755,6 +5755,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
              * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
              * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
+             * @property {string|null} [hash] Literal hash
              */
 
             /**
@@ -5795,6 +5796,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Literal.prototype.map = null;
+
+            /**
+             * Literal hash.
+             * @member {string} hash
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.hash = "";
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -5840,6 +5849,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.map != null && message.hasOwnProperty("map"))
                     $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.hash);
                 return writer;
             };
 
@@ -5869,6 +5880,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.hash = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5918,6 +5932,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "map." + error;
                     }
                 }
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    if (!$util.isString(message.hash))
+                        return "hash: string expected";
                 return null;
             };
 
@@ -23084,6 +23101,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAuthRole|null} [authRole] ExecutionSpec authRole
              * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] ExecutionSpec qualityOfService
              * @property {number|null} [maxParallelism] ExecutionSpec maxParallelism
+             * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] ExecutionSpec rawOutputDataConfig
              * @property {flyteidl.admin.IClusterAssignment|null} [clusterAssignment] ExecutionSpec clusterAssignment
              */
 
@@ -23191,6 +23209,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionSpec.prototype.maxParallelism = 0;
 
             /**
+             * ExecutionSpec rawOutputDataConfig.
+             * @member {flyteidl.admin.IRawOutputDataConfig|null|undefined} rawOutputDataConfig
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.rawOutputDataConfig = null;
+
+            /**
              * ExecutionSpec clusterAssignment.
              * @member {flyteidl.admin.IClusterAssignment|null|undefined} clusterAssignment
              * @memberof flyteidl.admin.ExecutionSpec
@@ -23258,8 +23284,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 if (message.maxParallelism != null && message.hasOwnProperty("maxParallelism"))
                     writer.uint32(/* id 18, wireType 0 =*/144).int32(message.maxParallelism);
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
+                    $root.flyteidl.admin.RawOutputDataConfig.encode(message.rawOutputDataConfig, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
                 if (message.clusterAssignment != null && message.hasOwnProperty("clusterAssignment"))
-                    $root.flyteidl.admin.ClusterAssignment.encode(message.clusterAssignment, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                    $root.flyteidl.admin.ClusterAssignment.encode(message.clusterAssignment, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                 return writer;
             };
 
@@ -23315,6 +23343,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.maxParallelism = reader.int32();
                         break;
                     case 19:
+                        message.rawOutputDataConfig = $root.flyteidl.admin.RawOutputDataConfig.decode(reader, reader.uint32());
+                        break;
+                    case 20:
                         message.clusterAssignment = $root.flyteidl.admin.ClusterAssignment.decode(reader, reader.uint32());
                         break;
                     default:
@@ -23395,6 +23426,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.maxParallelism != null && message.hasOwnProperty("maxParallelism"))
                     if (!$util.isInteger(message.maxParallelism))
                         return "maxParallelism: integer expected";
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig")) {
+                    let error = $root.flyteidl.admin.RawOutputDataConfig.verify(message.rawOutputDataConfig);
+                    if (error)
+                        return "rawOutputDataConfig." + error;
+                }
                 if (message.clusterAssignment != null && message.hasOwnProperty("clusterAssignment")) {
                     let error = $root.flyteidl.admin.ClusterAssignment.verify(message.clusterAssignment);
                     if (error)
@@ -29053,6 +29089,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [retryGroup] NodeExecutionMetaData retryGroup
              * @property {boolean|null} [isParentNode] NodeExecutionMetaData isParentNode
              * @property {string|null} [specNodeId] NodeExecutionMetaData specNodeId
+             * @property {boolean|null} [isDynamic] NodeExecutionMetaData isDynamic
              */
 
             /**
@@ -29095,6 +29132,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionMetaData.prototype.specNodeId = "";
 
             /**
+             * NodeExecutionMetaData isDynamic.
+             * @member {boolean} isDynamic
+             * @memberof flyteidl.admin.NodeExecutionMetaData
+             * @instance
+             */
+            NodeExecutionMetaData.prototype.isDynamic = false;
+
+            /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionMetaData
@@ -29124,6 +29169,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isParentNode);
                 if (message.specNodeId != null && message.hasOwnProperty("specNodeId"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.specNodeId);
+                if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.isDynamic);
                 return writer;
             };
 
@@ -29154,6 +29201,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.specNodeId = reader.string();
                         break;
+                    case 4:
+                        message.isDynamic = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -29182,6 +29232,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.specNodeId != null && message.hasOwnProperty("specNodeId"))
                     if (!$util.isString(message.specNodeId))
                         return "specNodeId: string expected";
+                if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
+                    if (typeof message.isDynamic !== "boolean")
+                        return "isDynamic: boolean expected";
                 return null;
             };
 
