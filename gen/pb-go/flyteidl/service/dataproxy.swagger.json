@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "flyteidl/service/dataproxy.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/dataproxy": {
+      "post": {
+        "summary": "Retrieves user information about the currently logged in user.",
+        "description": "Creates a write-only http location that is accessible for tasks at runtime.",
+        "operationId": "CreateUploadLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DataProxy"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "serviceCreateUploadLocationRequest": {
+      "type": "object",
+      "properties": {
+        "suffix": {
+          "type": "string",
+          "description": "Suffix specifies a desired suffix for the generated location."
+        }
+      },
+      "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."
+    },
+    "serviceCreateUploadLocationResponse": {
+      "type": "object",
+      "properties": {
+        "signed_url": {
+          "type": "string",
+          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+        },
+        "native_url": {
+          "type": "string",
+          "title": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
+        }
+      }
+    }
+  }
+}

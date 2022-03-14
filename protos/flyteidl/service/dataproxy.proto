@@ -1,0 +1,35 @@
+syntax = "proto3";
+package flyteidl.service;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
+
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+message CreateUploadLocationResponse {
+  // SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+  string signed_url = 1;
+
+  // NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
+  string native_url = 2;
+}
+
+// CreateUploadLocationRequest specified request for the CreateUploadLocation API.
+message CreateUploadLocationRequest {
+  // Suffix specifies a desired suffix for the generated location.
+  string suffix = 1;
+}
+
+// DataProxy defines an RPC Service that allows access to user-data in a controlled manner.
+service DataProxy {
+  // Retrieves user information about the currently logged in user.
+  rpc CreateUploadLocation (CreateUploadLocationRequest) returns (CreateUploadLocationResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/dataproxy"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Creates a write-only http location that is accessible for tasks at runtime."
+    };
+  }
+}
