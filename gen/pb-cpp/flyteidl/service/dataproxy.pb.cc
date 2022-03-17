@@ -16,6 +16,8 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace flyteidl {
 namespace service {
 class CreateUploadLocationResponseDefaultTypeInternal {
@@ -39,8 +41,9 @@ static void InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdatapr
   ::flyteidl::service::CreateUploadLocationResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -53,8 +56,9 @@ static void InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdatapro
   ::flyteidl::service::CreateUploadLocationRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {
+      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
@@ -73,6 +77,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fdataproxy_2epr
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, signed_url_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, native_url_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, expires_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -81,10 +86,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fdataproxy_2epr
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, suffix_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, expires_in_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::service::CreateUploadLocationResponse)},
-  { 7, -1, sizeof(::flyteidl::service::CreateUploadLocationRequest)},
+  { 8, -1, sizeof(::flyteidl::service::CreateUploadLocationRequest)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -102,10 +108,14 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "\n flyteidl/service/dataproxy.proto\022\020flyt"
   "eidl.service\032\034google/api/annotations.pro"
   "to\032,protoc-gen-swagger/options/annotatio"
-  "ns.proto\"F\n\034CreateUploadLocationResponse"
-  "\022\022\n\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t"
-  "\"N\n\033CreateUploadLocationRequest\022\017\n\007proje"
-  "ct\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t"
+  "ns.proto\032\036google/protobuf/duration.proto"
+  "\032\037google/protobuf/timestamp.proto\"v\n\034Cre"
+  "ateUploadLocationResponse\022\022\n\nsigned_url\030"
+  "\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpires_at\030"
+  "\003 \001(\0132\032.google.protobuf.Timestamp\"}\n\033Cre"
+  "ateUploadLocationRequest\022\017\n\007project\030\001 \001("
+  "\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nexp"
+  "ires_in\030\004 \001(\0132\031.google.protobuf.Duration"
   "2\361\001\n\tDataProxy\022\343\001\n\024CreateUploadLocation\022"
   "-.flyteidl.service.CreateUploadLocationR"
   "equest\032..flyteidl.service.CreateUploadLo"
@@ -118,16 +128,18 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto,
-  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 591,
+  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 751,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
   {
     ::AddDescriptors_google_2fapi_2fannotations_2eproto,
     ::AddDescriptors_protoc_2dgen_2dswagger_2foptions_2fannotations_2eproto,
+    ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
+    ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto, deps, 2);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto, deps, 4);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -138,14 +150,28 @@ namespace service {
 // ===================================================================
 
 void CreateUploadLocationResponse::InitAsDefaultInstance() {
+  ::flyteidl::service::_CreateUploadLocationResponse_default_instance_._instance.get_mutable()->expires_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
 }
 class CreateUploadLocationResponse::HasBitSetters {
  public:
+  static const ::google::protobuf::Timestamp& expires_at(const CreateUploadLocationResponse* msg);
 };
 
+const ::google::protobuf::Timestamp&
+CreateUploadLocationResponse::HasBitSetters::expires_at(const CreateUploadLocationResponse* msg) {
+  return *msg->expires_at_;
+}
+void CreateUploadLocationResponse::clear_expires_at() {
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int CreateUploadLocationResponse::kSignedUrlFieldNumber;
 const int CreateUploadLocationResponse::kNativeUrlFieldNumber;
+const int CreateUploadLocationResponse::kExpiresAtFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CreateUploadLocationResponse::CreateUploadLocationResponse()
@@ -165,6 +191,11 @@ CreateUploadLocationResponse::CreateUploadLocationResponse(const CreateUploadLoc
   if (from.native_url().size() > 0) {
     native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
   }
+  if (from.has_expires_at()) {
+    expires_at_ = new ::google::protobuf::Timestamp(*from.expires_at_);
+  } else {
+    expires_at_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationResponse)
 }
 
@@ -173,6 +204,7 @@ void CreateUploadLocationResponse::SharedCtor() {
       &scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
   signed_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  expires_at_ = nullptr;
 }
 
 CreateUploadLocationResponse::~CreateUploadLocationResponse() {
@@ -183,6 +215,7 @@ CreateUploadLocationResponse::~CreateUploadLocationResponse() {
 void CreateUploadLocationResponse::SharedDtor() {
   signed_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete expires_at_;
 }
 
 void CreateUploadLocationResponse::SetCachedSize(int size) const {
@@ -202,6 +235,10 @@ void CreateUploadLocationResponse::Clear() {
 
   signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -248,6 +285,19 @@ const char* CreateUploadLocationResponse::_InternalParse(const char* begin, cons
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .google.protobuf.Timestamp expires_at = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
+        object = msg->mutable_expires_at();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -314,6 +364,17 @@ bool CreateUploadLocationResponse::MergePartialFromCodedStream(
         break;
       }
 
+      // .google.protobuf.Timestamp expires_at = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expires_at()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -361,6 +422,12 @@ void CreateUploadLocationResponse::SerializeWithCachedSizes(
       2, this->native_url(), output);
   }
 
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::expires_at(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -394,6 +461,13 @@ void CreateUploadLocationResponse::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->native_url(), target);
+  }
+
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::expires_at(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -431,6 +505,13 @@ size_t CreateUploadLocationResponse::ByteSizeLong() const {
         this->native_url());
   }
 
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *expires_at_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -466,6 +547,9 @@ void CreateUploadLocationResponse::MergeFrom(const CreateUploadLocationResponse&
 
     native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
   }
+  if (from.has_expires_at()) {
+    mutable_expires_at()->::google::protobuf::Timestamp::MergeFrom(from.expires_at());
+  }
 }
 
 void CreateUploadLocationResponse::CopyFrom(const ::google::protobuf::Message& from) {
@@ -497,6 +581,7 @@ void CreateUploadLocationResponse::InternalSwap(CreateUploadLocationResponse* ot
     GetArenaNoVirtual());
   native_url_.Swap(&other->native_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(expires_at_, other->expires_at_);
 }
 
 ::google::protobuf::Metadata CreateUploadLocationResponse::GetMetadata() const {
@@ -508,15 +593,29 @@ void CreateUploadLocationResponse::InternalSwap(CreateUploadLocationResponse* ot
 // ===================================================================
 
 void CreateUploadLocationRequest::InitAsDefaultInstance() {
+  ::flyteidl::service::_CreateUploadLocationRequest_default_instance_._instance.get_mutable()->expires_in_ = const_cast< ::google::protobuf::Duration*>(
+      ::google::protobuf::Duration::internal_default_instance());
 }
 class CreateUploadLocationRequest::HasBitSetters {
  public:
+  static const ::google::protobuf::Duration& expires_in(const CreateUploadLocationRequest* msg);
 };
 
+const ::google::protobuf::Duration&
+CreateUploadLocationRequest::HasBitSetters::expires_in(const CreateUploadLocationRequest* msg) {
+  return *msg->expires_in_;
+}
+void CreateUploadLocationRequest::clear_expires_in() {
+  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
+    delete expires_in_;
+  }
+  expires_in_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int CreateUploadLocationRequest::kProjectFieldNumber;
 const int CreateUploadLocationRequest::kDomainFieldNumber;
 const int CreateUploadLocationRequest::kSuffixFieldNumber;
+const int CreateUploadLocationRequest::kExpiresInFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CreateUploadLocationRequest::CreateUploadLocationRequest()
@@ -540,6 +639,11 @@ CreateUploadLocationRequest::CreateUploadLocationRequest(const CreateUploadLocat
   if (from.suffix().size() > 0) {
     suffix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.suffix_);
   }
+  if (from.has_expires_in()) {
+    expires_in_ = new ::google::protobuf::Duration(*from.expires_in_);
+  } else {
+    expires_in_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationRequest)
 }
 
@@ -549,6 +653,7 @@ void CreateUploadLocationRequest::SharedCtor() {
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   suffix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  expires_in_ = nullptr;
 }
 
 CreateUploadLocationRequest::~CreateUploadLocationRequest() {
@@ -560,6 +665,7 @@ void CreateUploadLocationRequest::SharedDtor() {
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   suffix_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete expires_in_;
 }
 
 void CreateUploadLocationRequest::SetCachedSize(int size) const {
@@ -580,6 +686,10 @@ void CreateUploadLocationRequest::Clear() {
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
+    delete expires_in_;
+  }
+  expires_in_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -642,6 +752,19 @@ const char* CreateUploadLocationRequest::_InternalParse(const char* begin, const
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .google.protobuf.Duration expires_in = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Duration::_InternalParse;
+        object = msg->mutable_expires_in();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -723,6 +846,17 @@ bool CreateUploadLocationRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .google.protobuf.Duration expires_in = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expires_in()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -780,6 +914,12 @@ void CreateUploadLocationRequest::SerializeWithCachedSizes(
       3, this->suffix(), output);
   }
 
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::expires_in(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -826,6 +966,13 @@ void CreateUploadLocationRequest::SerializeWithCachedSizes(
         3, this->suffix(), target);
   }
 
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::expires_in(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -868,6 +1015,13 @@ size_t CreateUploadLocationRequest::ByteSizeLong() const {
         this->suffix());
   }
 
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *expires_in_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -907,6 +1061,9 @@ void CreateUploadLocationRequest::MergeFrom(const CreateUploadLocationRequest& f
 
     suffix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.suffix_);
   }
+  if (from.has_expires_in()) {
+    mutable_expires_in()->::google::protobuf::Duration::MergeFrom(from.expires_in());
+  }
 }
 
 void CreateUploadLocationRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -940,6 +1097,7 @@ void CreateUploadLocationRequest::InternalSwap(CreateUploadLocationRequest* othe
     GetArenaNoVirtual());
   suffix_.Swap(&other->suffix_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(expires_in_, other->expires_in_);
 }
 
 ::google::protobuf::Metadata CreateUploadLocationRequest::GetMetadata() const {

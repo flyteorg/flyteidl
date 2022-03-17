@@ -33,6 +33,8 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 #include "protoc-gen-swagger/options/annotations.pb.h"
+#include <google/protobuf/duration.pb.h>
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fdataproxy_2eproto
@@ -194,6 +196,15 @@ class CreateUploadLocationResponse final :
   ::std::string* release_native_url();
   void set_allocated_native_url(::std::string* native_url);
 
+  // .google.protobuf.Timestamp expires_at = 3;
+  bool has_expires_at() const;
+  void clear_expires_at();
+  static const int kExpiresAtFieldNumber = 3;
+  const ::google::protobuf::Timestamp& expires_at() const;
+  ::google::protobuf::Timestamp* release_expires_at();
+  ::google::protobuf::Timestamp* mutable_expires_at();
+  void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationResponse)
  private:
   class HasBitSetters;
@@ -201,6 +212,7 @@ class CreateUploadLocationResponse final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr signed_url_;
   ::google::protobuf::internal::ArenaStringPtr native_url_;
+  ::google::protobuf::Timestamp* expires_at_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -343,6 +355,15 @@ class CreateUploadLocationRequest final :
   ::std::string* release_suffix();
   void set_allocated_suffix(::std::string* suffix);
 
+  // .google.protobuf.Duration expires_in = 4;
+  bool has_expires_in() const;
+  void clear_expires_in();
+  static const int kExpiresInFieldNumber = 4;
+  const ::google::protobuf::Duration& expires_in() const;
+  ::google::protobuf::Duration* release_expires_in();
+  ::google::protobuf::Duration* mutable_expires_in();
+  void set_allocated_expires_in(::google::protobuf::Duration* expires_in);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationRequest)
  private:
   class HasBitSetters;
@@ -351,6 +372,7 @@ class CreateUploadLocationRequest final :
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr suffix_;
+  ::google::protobuf::Duration* expires_in_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -469,6 +491,52 @@ inline void CreateUploadLocationResponse::set_allocated_native_url(::std::string
   }
   native_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), native_url);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationResponse.native_url)
+}
+
+// .google.protobuf.Timestamp expires_at = 3;
+inline bool CreateUploadLocationResponse::has_expires_at() const {
+  return this != internal_default_instance() && expires_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& CreateUploadLocationResponse::expires_at() const {
+  const ::google::protobuf::Timestamp* p = expires_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationResponse.expires_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* CreateUploadLocationResponse::release_expires_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationResponse.expires_at)
+  
+  ::google::protobuf::Timestamp* temp = expires_at_;
+  expires_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* CreateUploadLocationResponse::mutable_expires_at() {
+  
+  if (expires_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    expires_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationResponse.expires_at)
+  return expires_at_;
+}
+inline void CreateUploadLocationResponse::set_allocated_expires_at(::google::protobuf::Timestamp* expires_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_at_);
+  }
+  if (expires_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      expires_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_at_ = expires_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationResponse.expires_at)
 }
 
 // -------------------------------------------------------------------
@@ -632,6 +700,52 @@ inline void CreateUploadLocationRequest::set_allocated_suffix(::std::string* suf
   }
   suffix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), suffix);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.suffix)
+}
+
+// .google.protobuf.Duration expires_in = 4;
+inline bool CreateUploadLocationRequest::has_expires_in() const {
+  return this != internal_default_instance() && expires_in_ != nullptr;
+}
+inline const ::google::protobuf::Duration& CreateUploadLocationRequest::expires_in() const {
+  const ::google::protobuf::Duration* p = expires_in_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.expires_in)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
+}
+inline ::google::protobuf::Duration* CreateUploadLocationRequest::release_expires_in() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.expires_in)
+  
+  ::google::protobuf::Duration* temp = expires_in_;
+  expires_in_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Duration* CreateUploadLocationRequest::mutable_expires_in() {
+  
+  if (expires_in_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
+    expires_in_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.expires_in)
+  return expires_in_;
+}
+inline void CreateUploadLocationRequest::set_allocated_expires_in(::google::protobuf::Duration* expires_in) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_in_);
+  }
+  if (expires_in) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires_in)->GetArena();
+    if (message_arena != submessage_arena) {
+      expires_in = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires_in, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_in_ = expires_in;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.expires_in)
 }
 
 #ifdef __GNUC__

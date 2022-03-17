@@ -38318,6 +38318,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ICreateUploadLocationResponse
              * @property {string|null} [signedUrl] CreateUploadLocationResponse signedUrl
              * @property {string|null} [nativeUrl] CreateUploadLocationResponse nativeUrl
+             * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateUploadLocationResponse expiresAt
              */
 
             /**
@@ -38352,6 +38353,14 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationResponse.prototype.nativeUrl = "";
 
             /**
+             * CreateUploadLocationResponse expiresAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+             * @memberof flyteidl.service.CreateUploadLocationResponse
+             * @instance
+             */
+            CreateUploadLocationResponse.prototype.expiresAt = null;
+
+            /**
              * Creates a new CreateUploadLocationResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.service.CreateUploadLocationResponse
@@ -38379,6 +38388,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
                 if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.nativeUrl);
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -38406,6 +38417,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.nativeUrl = reader.string();
                         break;
+                    case 3:
+                        message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -38431,6 +38445,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
                     if (!$util.isString(message.nativeUrl))
                         return "nativeUrl: string expected";
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                    if (error)
+                        return "expiresAt." + error;
+                }
                 return null;
             };
 
@@ -38446,6 +38465,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] CreateUploadLocationRequest project
              * @property {string|null} [domain] CreateUploadLocationRequest domain
              * @property {string|null} [suffix] CreateUploadLocationRequest suffix
+             * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationRequest expiresIn
              */
 
             /**
@@ -38488,6 +38508,14 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationRequest.prototype.suffix = "";
 
             /**
+             * CreateUploadLocationRequest expiresIn.
+             * @member {google.protobuf.IDuration|null|undefined} expiresIn
+             * @memberof flyteidl.service.CreateUploadLocationRequest
+             * @instance
+             */
+            CreateUploadLocationRequest.prototype.expiresIn = null;
+
+            /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.service.CreateUploadLocationRequest
@@ -38517,6 +38545,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.suffix != null && message.hasOwnProperty("suffix"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
+                    $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -38547,6 +38577,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.suffix = reader.string();
                         break;
+                    case 4:
+                        message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -38575,6 +38608,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.suffix != null && message.hasOwnProperty("suffix"))
                     if (!$util.isString(message.suffix))
                         return "suffix: string expected";
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
+                    let error = $root.google.protobuf.Duration.verify(message.expiresIn);
+                    if (error)
+                        return "expiresIn." + error;
+                }
                 return null;
             };
 

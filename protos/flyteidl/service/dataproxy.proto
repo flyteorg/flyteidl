@@ -5,6 +5,8 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
 
 import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
 
 message CreateUploadLocationResponse {
   // SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
@@ -12,6 +14,9 @@ message CreateUploadLocationResponse {
 
   // NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
   string native_url = 2;
+
+  // ExpiresAt defines when will the signed URL expires.
+  google.protobuf.Timestamp expires_at = 3;
 }
 
 // CreateUploadLocationRequest specified request for the CreateUploadLocation API.
@@ -24,6 +29,10 @@ message CreateUploadLocationRequest {
 
   // Suffix specifies a desired suffix for the generated location.
   string suffix = 3;
+
+  // ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+  // exceeds the platform allowed max.
+  google.protobuf.Duration expires_in = 4;
 }
 
 // DataProxy defines an RPC Service that allows access to user-data in a controlled manner.

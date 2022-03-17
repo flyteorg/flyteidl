@@ -53,6 +53,31 @@ public final class Dataproxy {
      */
     com.google.protobuf.ByteString
         getNativeUrlBytes();
+
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    boolean hasExpiresAt();
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    com.google.protobuf.Timestamp getExpiresAt();
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.service.CreateUploadLocationResponse}
@@ -105,6 +130,19 @@ public final class Dataproxy {
               java.lang.String s = input.readStringRequireUtf8();
 
               nativeUrl_ = s;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expiresAt_ != null) {
+                subBuilder = expiresAt_.toBuilder();
+              }
+              expiresAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expiresAt_);
+                expiresAt_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -223,6 +261,39 @@ public final class Dataproxy {
       }
     }
 
+    public static final int EXPIRES_AT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp expiresAt_;
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    public boolean hasExpiresAt() {
+      return expiresAt_ != null;
+    }
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    public com.google.protobuf.Timestamp getExpiresAt() {
+      return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+    }
+    /**
+     * <pre>
+     * ExpiresAt defines when will the signed URL expires.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+      return getExpiresAt();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -243,6 +314,9 @@ public final class Dataproxy {
       if (!getNativeUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nativeUrl_);
       }
+      if (expiresAt_ != null) {
+        output.writeMessage(3, getExpiresAt());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -257,6 +331,10 @@ public final class Dataproxy {
       }
       if (!getNativeUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nativeUrl_);
+      }
+      if (expiresAt_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getExpiresAt());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -277,6 +355,11 @@ public final class Dataproxy {
           .equals(other.getSignedUrl())) return false;
       if (!getNativeUrl()
           .equals(other.getNativeUrl())) return false;
+      if (hasExpiresAt() != other.hasExpiresAt()) return false;
+      if (hasExpiresAt()) {
+        if (!getExpiresAt()
+            .equals(other.getExpiresAt())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -292,6 +375,10 @@ public final class Dataproxy {
       hash = (53 * hash) + getSignedUrl().hashCode();
       hash = (37 * hash) + NATIVE_URL_FIELD_NUMBER;
       hash = (53 * hash) + getNativeUrl().hashCode();
+      if (hasExpiresAt()) {
+        hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getExpiresAt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -429,6 +516,12 @@ public final class Dataproxy {
 
         nativeUrl_ = "";
 
+        if (expiresAtBuilder_ == null) {
+          expiresAt_ = null;
+        } else {
+          expiresAt_ = null;
+          expiresAtBuilder_ = null;
+        }
         return this;
       }
 
@@ -457,6 +550,11 @@ public final class Dataproxy {
         flyteidl.service.Dataproxy.CreateUploadLocationResponse result = new flyteidl.service.Dataproxy.CreateUploadLocationResponse(this);
         result.signedUrl_ = signedUrl_;
         result.nativeUrl_ = nativeUrl_;
+        if (expiresAtBuilder_ == null) {
+          result.expiresAt_ = expiresAt_;
+        } else {
+          result.expiresAt_ = expiresAtBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -512,6 +610,9 @@ public final class Dataproxy {
         if (!other.getNativeUrl().isEmpty()) {
           nativeUrl_ = other.nativeUrl_;
           onChanged();
+        }
+        if (other.hasExpiresAt()) {
+          mergeExpiresAt(other.getExpiresAt());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -719,6 +820,159 @@ public final class Dataproxy {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.Timestamp expiresAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiresAtBuilder_;
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public boolean hasExpiresAt() {
+        return expiresAtBuilder_ != null || expiresAt_ != null;
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp getExpiresAt() {
+        if (expiresAtBuilder_ == null) {
+          return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+        } else {
+          return expiresAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public Builder setExpiresAt(com.google.protobuf.Timestamp value) {
+        if (expiresAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expiresAt_ = value;
+          onChanged();
+        } else {
+          expiresAtBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public Builder setExpiresAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (expiresAtBuilder_ == null) {
+          expiresAt_ = builderForValue.build();
+          onChanged();
+        } else {
+          expiresAtBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public Builder mergeExpiresAt(com.google.protobuf.Timestamp value) {
+        if (expiresAtBuilder_ == null) {
+          if (expiresAt_ != null) {
+            expiresAt_ =
+              com.google.protobuf.Timestamp.newBuilder(expiresAt_).mergeFrom(value).buildPartial();
+          } else {
+            expiresAt_ = value;
+          }
+          onChanged();
+        } else {
+          expiresAtBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public Builder clearExpiresAt() {
+        if (expiresAtBuilder_ == null) {
+          expiresAt_ = null;
+          onChanged();
+        } else {
+          expiresAt_ = null;
+          expiresAtBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getExpiresAtBuilder() {
+        
+        onChanged();
+        return getExpiresAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+        if (expiresAtBuilder_ != null) {
+          return expiresAtBuilder_.getMessageOrBuilder();
+        } else {
+          return expiresAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+        }
+      }
+      /**
+       * <pre>
+       * ExpiresAt defines when will the signed URL expires.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getExpiresAtFieldBuilder() {
+        if (expiresAtBuilder_ == null) {
+          expiresAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getExpiresAt(),
+                  getParentForChildren(),
+                  isClean());
+          expiresAt_ = null;
+        }
+        return expiresAtBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -829,6 +1083,34 @@ public final class Dataproxy {
      */
     com.google.protobuf.ByteString
         getSuffixBytes();
+
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    boolean hasExpiresIn();
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    com.google.protobuf.Duration getExpiresIn();
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getExpiresInOrBuilder();
   }
   /**
    * <pre>
@@ -892,6 +1174,19 @@ public final class Dataproxy {
               java.lang.String s = input.readStringRequireUtf8();
 
               suffix_ = s;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (expiresIn_ != null) {
+                subBuilder = expiresIn_.toBuilder();
+              }
+              expiresIn_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expiresIn_);
+                expiresIn_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1052,6 +1347,42 @@ public final class Dataproxy {
       }
     }
 
+    public static final int EXPIRES_IN_FIELD_NUMBER = 4;
+    private com.google.protobuf.Duration expiresIn_;
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    public boolean hasExpiresIn() {
+      return expiresIn_ != null;
+    }
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    public com.google.protobuf.Duration getExpiresIn() {
+      return expiresIn_ == null ? com.google.protobuf.Duration.getDefaultInstance() : expiresIn_;
+    }
+    /**
+     * <pre>
+     * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+     * exceeds the platform allowed max.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expires_in = 4;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getExpiresInOrBuilder() {
+      return getExpiresIn();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1075,6 +1406,9 @@ public final class Dataproxy {
       if (!getSuffixBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, suffix_);
       }
+      if (expiresIn_ != null) {
+        output.writeMessage(4, getExpiresIn());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1092,6 +1426,10 @@ public final class Dataproxy {
       }
       if (!getSuffixBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, suffix_);
+      }
+      if (expiresIn_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getExpiresIn());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1114,6 +1452,11 @@ public final class Dataproxy {
           .equals(other.getDomain())) return false;
       if (!getSuffix()
           .equals(other.getSuffix())) return false;
+      if (hasExpiresIn() != other.hasExpiresIn()) return false;
+      if (hasExpiresIn()) {
+        if (!getExpiresIn()
+            .equals(other.getExpiresIn())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1131,6 +1474,10 @@ public final class Dataproxy {
       hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
       hash = (53 * hash) + getSuffix().hashCode();
+      if (hasExpiresIn()) {
+        hash = (37 * hash) + EXPIRES_IN_FIELD_NUMBER;
+        hash = (53 * hash) + getExpiresIn().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1274,6 +1621,12 @@ public final class Dataproxy {
 
         suffix_ = "";
 
+        if (expiresInBuilder_ == null) {
+          expiresIn_ = null;
+        } else {
+          expiresIn_ = null;
+          expiresInBuilder_ = null;
+        }
         return this;
       }
 
@@ -1303,6 +1656,11 @@ public final class Dataproxy {
         result.project_ = project_;
         result.domain_ = domain_;
         result.suffix_ = suffix_;
+        if (expiresInBuilder_ == null) {
+          result.expiresIn_ = expiresIn_;
+        } else {
+          result.expiresIn_ = expiresInBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1362,6 +1720,9 @@ public final class Dataproxy {
         if (!other.getSuffix().isEmpty()) {
           suffix_ = other.suffix_;
           onChanged();
+        }
+        if (other.hasExpiresIn()) {
+          mergeExpiresIn(other.getExpiresIn());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1658,6 +2019,168 @@ public final class Dataproxy {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.Duration expiresIn_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> expiresInBuilder_;
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public boolean hasExpiresIn() {
+        return expiresInBuilder_ != null || expiresIn_ != null;
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public com.google.protobuf.Duration getExpiresIn() {
+        if (expiresInBuilder_ == null) {
+          return expiresIn_ == null ? com.google.protobuf.Duration.getDefaultInstance() : expiresIn_;
+        } else {
+          return expiresInBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public Builder setExpiresIn(com.google.protobuf.Duration value) {
+        if (expiresInBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expiresIn_ = value;
+          onChanged();
+        } else {
+          expiresInBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public Builder setExpiresIn(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (expiresInBuilder_ == null) {
+          expiresIn_ = builderForValue.build();
+          onChanged();
+        } else {
+          expiresInBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public Builder mergeExpiresIn(com.google.protobuf.Duration value) {
+        if (expiresInBuilder_ == null) {
+          if (expiresIn_ != null) {
+            expiresIn_ =
+              com.google.protobuf.Duration.newBuilder(expiresIn_).mergeFrom(value).buildPartial();
+          } else {
+            expiresIn_ = value;
+          }
+          onChanged();
+        } else {
+          expiresInBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public Builder clearExpiresIn() {
+        if (expiresInBuilder_ == null) {
+          expiresIn_ = null;
+          onChanged();
+        } else {
+          expiresIn_ = null;
+          expiresInBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public com.google.protobuf.Duration.Builder getExpiresInBuilder() {
+        
+        onChanged();
+        return getExpiresInFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getExpiresInOrBuilder() {
+        if (expiresInBuilder_ != null) {
+          return expiresInBuilder_.getMessageOrBuilder();
+        } else {
+          return expiresIn_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : expiresIn_;
+        }
+      }
+      /**
+       * <pre>
+       * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
+       * exceeds the platform allowed max.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expires_in = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getExpiresInFieldBuilder() {
+        if (expiresInBuilder_ == null) {
+          expiresInBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getExpiresIn(),
+                  getParentForChildren(),
+                  isClean());
+          expiresIn_ = null;
+        }
+        return expiresInBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1733,10 +2256,14 @@ public final class Dataproxy {
       "\n flyteidl/service/dataproxy.proto\022\020flyt" +
       "eidl.service\032\034google/api/annotations.pro" +
       "to\032,protoc-gen-swagger/options/annotatio" +
-      "ns.proto\"F\n\034CreateUploadLocationResponse" +
-      "\022\022\n\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t" +
-      "\"N\n\033CreateUploadLocationRequest\022\017\n\007proje" +
-      "ct\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t" +
+      "ns.proto\032\036google/protobuf/duration.proto" +
+      "\032\037google/protobuf/timestamp.proto\"v\n\034Cre" +
+      "ateUploadLocationResponse\022\022\n\nsigned_url\030" +
+      "\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpires_at\030" +
+      "\003 \001(\0132\032.google.protobuf.Timestamp\"}\n\033Cre" +
+      "ateUploadLocationRequest\022\017\n\007project\030\001 \001(" +
+      "\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nexp" +
+      "ires_in\030\004 \001(\0132\031.google.protobuf.Duration" +
       "2\361\001\n\tDataProxy\022\343\001\n\024CreateUploadLocation\022" +
       "-.flyteidl.service.CreateUploadLocationR" +
       "equest\032..flyteidl.service.CreateUploadLo" +
@@ -1759,19 +2286,21 @@ public final class Dataproxy {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           grpc.gateway.protoc_gen_swagger.options.Annotations.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_service_CreateUploadLocationResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_service_CreateUploadLocationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateUploadLocationResponse_descriptor,
-        new java.lang.String[] { "SignedUrl", "NativeUrl", });
+        new java.lang.String[] { "SignedUrl", "NativeUrl", "ExpiresAt", });
     internal_static_flyteidl_service_CreateUploadLocationRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_service_CreateUploadLocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateUploadLocationRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Suffix", });
+        new java.lang.String[] { "Project", "Domain", "Suffix", "ExpiresIn", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
@@ -1780,6 +2309,8 @@ public final class Dataproxy {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     grpc.gateway.protoc_gen_swagger.options.Annotations.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

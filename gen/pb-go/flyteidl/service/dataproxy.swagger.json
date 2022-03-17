@@ -59,6 +59,10 @@
         "suffix": {
           "type": "string",
           "description": "Suffix specifies a desired suffix for the generated location."
+        },
+        "expires_in": {
+          "type": "string",
+          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max."
         }
       },
       "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."
@@ -73,6 +77,11 @@
         "native_url": {
           "type": "string",
           "title": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ExpiresAt defines when will the signed URL expires."
         }
       }
     }
