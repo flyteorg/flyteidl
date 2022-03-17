@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/dataproxy": {
+    "/api/v1/dataproxy/upload": {
       "post": {
         "summary": "Retrieves user information about the currently logged in user.",
         "description": "Creates a write-only http location that is accessible for tasks at runtime.",

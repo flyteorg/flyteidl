@@ -107,7 +107,7 @@ func RegisterDataProxyHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 }
 
 var (
-	pattern_DataProxy_CreateUploadLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "dataproxy"}, ""))
+	pattern_DataProxy_CreateUploadLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "dataproxy", "upload"}, ""))
 )
 
 var (

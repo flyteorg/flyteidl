@@ -40,7 +40,7 @@ service DataProxy {
   // Retrieves user information about the currently logged in user.
   rpc CreateUploadLocation (CreateUploadLocationRequest) returns (CreateUploadLocationResponse) {
     option (google.api.http) = {
-      post: "/api/v1/dataproxy"
+      post: "/api/v1/dataproxy/upload"
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {

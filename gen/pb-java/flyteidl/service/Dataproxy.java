@@ -2264,14 +2264,14 @@ public final class Dataproxy {
       "ateUploadLocationRequest\022\017\n\007project\030\001 \001(" +
       "\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nexp" +
       "ires_in\030\004 \001(\0132\031.google.protobuf.Duration" +
-      "2\361\001\n\tDataProxy\022\343\001\n\024CreateUploadLocation\022" +
+      "2\370\001\n\tDataProxy\022\352\001\n\024CreateUploadLocation\022" +
       "-.flyteidl.service.CreateUploadLocationR" +
       "equest\032..flyteidl.service.CreateUploadLo" +
-      "cationResponse\"l\202\323\344\223\002\026\"\021/api/v1/dataprox" +
-      "y:\001*\222AM\032KCreates a write-only http locat" +
-      "ion that is accessible for tasks at runt" +
-      "ime.B9Z7github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/serviceb\006proto3"
+      "cationResponse\"s\202\323\344\223\002\035\"\030/api/v1/dataprox" +
+      "y/upload:\001*\222AM\032KCreates a write-only htt" +
+      "p location that is accessible for tasks " +
+      "at runtime.B9Z7github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
