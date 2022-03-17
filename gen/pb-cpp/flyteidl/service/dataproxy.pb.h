@@ -301,9 +301,37 @@ class CreateUploadLocationRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string suffix = 1;
+  // string project = 1;
+  void clear_project();
+  static const int kProjectFieldNumber = 1;
+  const ::std::string& project() const;
+  void set_project(const ::std::string& value);
+  #if LANG_CXX11
+  void set_project(::std::string&& value);
+  #endif
+  void set_project(const char* value);
+  void set_project(const char* value, size_t size);
+  ::std::string* mutable_project();
+  ::std::string* release_project();
+  void set_allocated_project(::std::string* project);
+
+  // string domain = 2;
+  void clear_domain();
+  static const int kDomainFieldNumber = 2;
+  const ::std::string& domain() const;
+  void set_domain(const ::std::string& value);
+  #if LANG_CXX11
+  void set_domain(::std::string&& value);
+  #endif
+  void set_domain(const char* value);
+  void set_domain(const char* value, size_t size);
+  ::std::string* mutable_domain();
+  ::std::string* release_domain();
+  void set_allocated_domain(::std::string* domain);
+
+  // string suffix = 3;
   void clear_suffix();
-  static const int kSuffixFieldNumber = 1;
+  static const int kSuffixFieldNumber = 3;
   const ::std::string& suffix() const;
   void set_suffix(const ::std::string& value);
   #if LANG_CXX11
@@ -320,6 +348,8 @@ class CreateUploadLocationRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr project_;
+  ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr suffix_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
@@ -445,7 +475,113 @@ inline void CreateUploadLocationResponse::set_allocated_native_url(::std::string
 
 // CreateUploadLocationRequest
 
-// string suffix = 1;
+// string project = 1;
+inline void CreateUploadLocationRequest::clear_project() {
+  project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationRequest::project() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.project)
+  return project_.GetNoArena();
+}
+inline void CreateUploadLocationRequest::set_project(const ::std::string& value) {
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationRequest.project)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationRequest::set_project(::std::string&& value) {
+  
+  project_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationRequest.project)
+}
+#endif
+inline void CreateUploadLocationRequest::set_project(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationRequest.project)
+}
+inline void CreateUploadLocationRequest::set_project(const char* value, size_t size) {
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationRequest.project)
+}
+inline ::std::string* CreateUploadLocationRequest::mutable_project() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.project)
+  return project_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationRequest::release_project() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.project)
+  
+  return project_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationRequest::set_allocated_project(::std::string* project) {
+  if (project != nullptr) {
+    
+  } else {
+    
+  }
+  project_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), project);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.project)
+}
+
+// string domain = 2;
+inline void CreateUploadLocationRequest::clear_domain() {
+  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationRequest::domain() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.domain)
+  return domain_.GetNoArena();
+}
+inline void CreateUploadLocationRequest::set_domain(const ::std::string& value) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationRequest.domain)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationRequest::set_domain(::std::string&& value) {
+  
+  domain_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationRequest.domain)
+}
+#endif
+inline void CreateUploadLocationRequest::set_domain(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationRequest.domain)
+}
+inline void CreateUploadLocationRequest::set_domain(const char* value, size_t size) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationRequest.domain)
+}
+inline ::std::string* CreateUploadLocationRequest::mutable_domain() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.domain)
+  return domain_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationRequest::release_domain() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.domain)
+  
+  return domain_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationRequest::set_allocated_domain(::std::string* domain) {
+  if (domain != nullptr) {
+    
+  } else {
+    
+  }
+  domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.domain)
+}
+
+// string suffix = 3;
 inline void CreateUploadLocationRequest::clear_suffix() {
   suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

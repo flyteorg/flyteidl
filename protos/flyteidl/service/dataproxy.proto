@@ -16,8 +16,14 @@ message CreateUploadLocationResponse {
 
 // CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 message CreateUploadLocationRequest {
+  // Project to create the upload location for
+  string project = 1;
+
+  // Domain to create the upload location for
+  string domain = 2;
+
   // Suffix specifies a desired suffix for the generated location.
-  string suffix = 1;
+  string suffix = 3;
 }
 
 // DataProxy defines an RPC Service that allows access to user-data in a controlled manner.

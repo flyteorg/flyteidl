@@ -48,6 +48,14 @@
     "serviceCreateUploadLocationRequest": {
       "type": "object",
       "properties": {
+        "project": {
+          "type": "string",
+          "title": "Project to create the upload location for"
+        },
+        "domain": {
+          "type": "string",
+          "title": "Domain to create the upload location for"
+        },
         "suffix": {
           "type": "string",
           "description": "Suffix specifies a desired suffix for the generated location."

@@ -38443,6 +38443,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a CreateUploadLocationRequest.
              * @memberof flyteidl.service
              * @interface ICreateUploadLocationRequest
+             * @property {string|null} [project] CreateUploadLocationRequest project
+             * @property {string|null} [domain] CreateUploadLocationRequest domain
              * @property {string|null} [suffix] CreateUploadLocationRequest suffix
              */
 
@@ -38460,6 +38462,22 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * CreateUploadLocationRequest project.
+             * @member {string} project
+             * @memberof flyteidl.service.CreateUploadLocationRequest
+             * @instance
+             */
+            CreateUploadLocationRequest.prototype.project = "";
+
+            /**
+             * CreateUploadLocationRequest domain.
+             * @member {string} domain
+             * @memberof flyteidl.service.CreateUploadLocationRequest
+             * @instance
+             */
+            CreateUploadLocationRequest.prototype.domain = "";
 
             /**
              * CreateUploadLocationRequest suffix.
@@ -38493,8 +38511,12 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.suffix != null && message.hasOwnProperty("suffix"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.suffix);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
                 return writer;
             };
 
@@ -38517,6 +38539,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
                         message.suffix = reader.string();
                         break;
                     default:
@@ -38538,6 +38566,12 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
                 if (message.suffix != null && message.hasOwnProperty("suffix"))
                     if (!$util.isString(message.suffix))
                         return "suffix: string expected";

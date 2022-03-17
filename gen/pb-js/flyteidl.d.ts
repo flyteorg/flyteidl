@@ -16534,6 +16534,12 @@ export namespace flyteidl {
         /** Properties of a CreateUploadLocationRequest. */
         interface ICreateUploadLocationRequest {
 
+            /** CreateUploadLocationRequest project */
+            project?: (string|null);
+
+            /** CreateUploadLocationRequest domain */
+            domain?: (string|null);
+
             /** CreateUploadLocationRequest suffix */
             suffix?: (string|null);
         }
@@ -16546,6 +16552,12 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.service.ICreateUploadLocationRequest);
+
+            /** CreateUploadLocationRequest project. */
+            public project: string;
+
+            /** CreateUploadLocationRequest domain. */
+            public domain: string;
 
             /** CreateUploadLocationRequest suffix. */
             public suffix: string;

@@ -778,10 +778,46 @@ public final class Dataproxy {
 
     /**
      * <pre>
+     * Project to create the upload location for
+     * </pre>
+     *
+     * <code>string project = 1;</code>
+     */
+    java.lang.String getProject();
+    /**
+     * <pre>
+     * Project to create the upload location for
+     * </pre>
+     *
+     * <code>string project = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getProjectBytes();
+
+    /**
+     * <pre>
+     * Domain to create the upload location for
+     * </pre>
+     *
+     * <code>string domain = 2;</code>
+     */
+    java.lang.String getDomain();
+    /**
+     * <pre>
+     * Domain to create the upload location for
+     * </pre>
+     *
+     * <code>string domain = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+
+    /**
+     * <pre>
      * Suffix specifies a desired suffix for the generated location.
      * </pre>
      *
-     * <code>string suffix = 1;</code>
+     * <code>string suffix = 3;</code>
      */
     java.lang.String getSuffix();
     /**
@@ -789,7 +825,7 @@ public final class Dataproxy {
      * Suffix specifies a desired suffix for the generated location.
      * </pre>
      *
-     * <code>string suffix = 1;</code>
+     * <code>string suffix = 3;</code>
      */
     com.google.protobuf.ByteString
         getSuffixBytes();
@@ -811,6 +847,8 @@ public final class Dataproxy {
       super(builder);
     }
     private CreateUploadLocationRequest() {
+      project_ = "";
+      domain_ = "";
       suffix_ = "";
     }
 
@@ -839,6 +877,18 @@ public final class Dataproxy {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               suffix_ = s;
@@ -876,14 +926,98 @@ public final class Dataproxy {
               flyteidl.service.Dataproxy.CreateUploadLocationRequest.class, flyteidl.service.Dataproxy.CreateUploadLocationRequest.Builder.class);
     }
 
-    public static final int SUFFIX_FIELD_NUMBER = 1;
+    public static final int PROJECT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object project_;
+    /**
+     * <pre>
+     * Project to create the upload location for
+     * </pre>
+     *
+     * <code>string project = 1;</code>
+     */
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Project to create the upload location for
+     * </pre>
+     *
+     * <code>string project = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object domain_;
+    /**
+     * <pre>
+     * Domain to create the upload location for
+     * </pre>
+     *
+     * <code>string domain = 2;</code>
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Domain to create the upload location for
+     * </pre>
+     *
+     * <code>string domain = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUFFIX_FIELD_NUMBER = 3;
     private volatile java.lang.Object suffix_;
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location.
      * </pre>
      *
-     * <code>string suffix = 1;</code>
+     * <code>string suffix = 3;</code>
      */
     public java.lang.String getSuffix() {
       java.lang.Object ref = suffix_;
@@ -902,7 +1036,7 @@ public final class Dataproxy {
      * Suffix specifies a desired suffix for the generated location.
      * </pre>
      *
-     * <code>string suffix = 1;</code>
+     * <code>string suffix = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSuffixBytes() {
@@ -932,8 +1066,14 @@ public final class Dataproxy {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getProjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
+      }
       if (!getSuffixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, suffix_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, suffix_);
       }
       unknownFields.writeTo(output);
     }
@@ -944,8 +1084,14 @@ public final class Dataproxy {
       if (size != -1) return size;
 
       size = 0;
+      if (!getProjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
       if (!getSuffixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, suffix_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, suffix_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -962,6 +1108,10 @@ public final class Dataproxy {
       }
       flyteidl.service.Dataproxy.CreateUploadLocationRequest other = (flyteidl.service.Dataproxy.CreateUploadLocationRequest) obj;
 
+      if (!getProject()
+          .equals(other.getProject())) return false;
+      if (!getDomain()
+          .equals(other.getDomain())) return false;
       if (!getSuffix()
           .equals(other.getSuffix())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -975,6 +1125,10 @@ public final class Dataproxy {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
       hash = (53 * hash) + getSuffix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1114,6 +1268,10 @@ public final class Dataproxy {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        project_ = "";
+
+        domain_ = "";
+
         suffix_ = "";
 
         return this;
@@ -1142,6 +1300,8 @@ public final class Dataproxy {
       @java.lang.Override
       public flyteidl.service.Dataproxy.CreateUploadLocationRequest buildPartial() {
         flyteidl.service.Dataproxy.CreateUploadLocationRequest result = new flyteidl.service.Dataproxy.CreateUploadLocationRequest(this);
+        result.project_ = project_;
+        result.domain_ = domain_;
         result.suffix_ = suffix_;
         onBuilt();
         return result;
@@ -1191,6 +1351,14 @@ public final class Dataproxy {
 
       public Builder mergeFrom(flyteidl.service.Dataproxy.CreateUploadLocationRequest other) {
         if (other == flyteidl.service.Dataproxy.CreateUploadLocationRequest.getDefaultInstance()) return this;
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          onChanged();
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
         if (!other.getSuffix().isEmpty()) {
           suffix_ = other.suffix_;
           onChanged();
@@ -1224,13 +1392,191 @@ public final class Dataproxy {
         return this;
       }
 
+      private java.lang.Object project_ = "";
+      /**
+       * <pre>
+       * Project to create the upload location for
+       * </pre>
+       *
+       * <code>string project = 1;</code>
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Project to create the upload location for
+       * </pre>
+       *
+       * <code>string project = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Project to create the upload location for
+       * </pre>
+       *
+       * <code>string project = 1;</code>
+       */
+      public Builder setProject(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        project_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Project to create the upload location for
+       * </pre>
+       *
+       * <code>string project = 1;</code>
+       */
+      public Builder clearProject() {
+        
+        project_ = getDefaultInstance().getProject();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Project to create the upload location for
+       * </pre>
+       *
+       * <code>string project = 1;</code>
+       */
+      public Builder setProjectBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        project_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <pre>
+       * Domain to create the upload location for
+       * </pre>
+       *
+       * <code>string domain = 2;</code>
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Domain to create the upload location for
+       * </pre>
+       *
+       * <code>string domain = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Domain to create the upload location for
+       * </pre>
+       *
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Domain to create the upload location for
+       * </pre>
+       *
+       * <code>string domain = 2;</code>
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Domain to create the upload location for
+       * </pre>
+       *
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object suffix_ = "";
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location.
        * </pre>
        *
-       * <code>string suffix = 1;</code>
+       * <code>string suffix = 3;</code>
        */
       public java.lang.String getSuffix() {
         java.lang.Object ref = suffix_;
@@ -1249,7 +1595,7 @@ public final class Dataproxy {
        * Suffix specifies a desired suffix for the generated location.
        * </pre>
        *
-       * <code>string suffix = 1;</code>
+       * <code>string suffix = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSuffixBytes() {
@@ -1269,7 +1615,7 @@ public final class Dataproxy {
        * Suffix specifies a desired suffix for the generated location.
        * </pre>
        *
-       * <code>string suffix = 1;</code>
+       * <code>string suffix = 3;</code>
        */
       public Builder setSuffix(
           java.lang.String value) {
@@ -1286,7 +1632,7 @@ public final class Dataproxy {
        * Suffix specifies a desired suffix for the generated location.
        * </pre>
        *
-       * <code>string suffix = 1;</code>
+       * <code>string suffix = 3;</code>
        */
       public Builder clearSuffix() {
         
@@ -1299,7 +1645,7 @@ public final class Dataproxy {
        * Suffix specifies a desired suffix for the generated location.
        * </pre>
        *
-       * <code>string suffix = 1;</code>
+       * <code>string suffix = 3;</code>
        */
       public Builder setSuffixBytes(
           com.google.protobuf.ByteString value) {
@@ -1389,15 +1735,16 @@ public final class Dataproxy {
       "to\032,protoc-gen-swagger/options/annotatio" +
       "ns.proto\"F\n\034CreateUploadLocationResponse" +
       "\022\022\n\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t" +
-      "\"-\n\033CreateUploadLocationRequest\022\016\n\006suffi" +
-      "x\030\001 \001(\t2\361\001\n\tDataProxy\022\343\001\n\024CreateUploadLo" +
-      "cation\022-.flyteidl.service.CreateUploadLo" +
-      "cationRequest\032..flyteidl.service.CreateU" +
-      "ploadLocationResponse\"l\202\323\344\223\002\026\"\021/api/v1/d" +
-      "ataproxy:\001*\222AM\032KCreates a write-only htt" +
-      "p location that is accessible for tasks " +
-      "at runtime.B9Z7github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
+      "\"N\n\033CreateUploadLocationRequest\022\017\n\007proje" +
+      "ct\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t" +
+      "2\361\001\n\tDataProxy\022\343\001\n\024CreateUploadLocation\022" +
+      "-.flyteidl.service.CreateUploadLocationR" +
+      "equest\032..flyteidl.service.CreateUploadLo" +
+      "cationResponse\"l\202\323\344\223\002\026\"\021/api/v1/dataprox" +
+      "y:\001*\222AM\032KCreates a write-only http locat" +
+      "ion that is accessible for tasks at runt" +
+      "ime.B9Z7github.com/flyteorg/flyteidl/gen" +
+      "/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1424,7 +1771,7 @@ public final class Dataproxy {
     internal_static_flyteidl_service_CreateUploadLocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateUploadLocationRequest_descriptor,
-        new java.lang.String[] { "Suffix", });
+        new java.lang.String[] { "Project", "Domain", "Suffix", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
