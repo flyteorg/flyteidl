@@ -4,7 +4,11 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
+	"math"
+	"math/rand"
 	"strings"
+	"sync"
+	"time"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 
@@ -124,7 +128,9 @@ func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 }
 
 type ClientCredentialsTokenSourceProvider struct {
-	ccConfig clientcredentials.Config
+	ccConfig                     clientcredentials.Config
+	MaxDurationBeforeTokenExpiry time.Duration
+	RefreshTokenPreemptively     bool
 }
 
 func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
@@ -141,15 +147,69 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 	if len(scopes) == 0 {
 		scopes = clientMetadata.Scopes
 	}
-
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
 			ClientID:     cfg.ClientID,
 			ClientSecret: secret,
 			TokenURL:     tokenURL,
-			Scopes:       scopes}}, nil
+			Scopes:       scopes},
+		MaxDurationBeforeTokenExpiry: cfg.MaxDurationBeforeTokenExpiry.Duration,
+		RefreshTokenPreemptively:     cfg.RefreshTokenPreemptively}, nil
 }
 
 func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	if p.RefreshTokenPreemptively {
+		source := p.ccConfig.TokenSource(ctx)
+		return &customTokenSource{
+			new:                          source,
+			mu:                           sync.Mutex{},
+			t:                            nil,
+			maxDurationBeforeTokenExpiry: p.MaxDurationBeforeTokenExpiry,
+		}, nil
+	}
 	return p.ccConfig.TokenSource(ctx), nil
+}
+
+type customTokenSource struct {
+	new                          oauth2.TokenSource
+	mu                           sync.Mutex // guards everything else
+	t                            *oauth2.Token
+	refreshTime                  time.Time
+	refreshed                    bool
+	maxDurationBeforeTokenExpiry time.Duration
+}
+
+func (s *customTokenSource) Token() (*oauth2.Token, error) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if s.t.Valid() {
+		if time.Now().After(s.refreshTime) && !s.refreshed {
+			t, err := s.new.Token()
+			if err != nil {
+				s.refreshed = true // don't try to refresh again before expiry
+			} else {
+				s.t = t
+				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+				s.refreshed = false
+				return s.t, nil
+			}
+		} else {
+			return s.t, nil
+		}
+	}
+	t, err := s.new.Token()
+	if err != nil {
+		return nil, err
+	}
+	s.t = t
+	s.refreshed = false
+	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+	return t, nil
+}
+
+func getRandomDuration(maxDuration time.Duration) time.Duration {
+	rand.Seed(time.Now().UnixNano()) // this changes global random seed
+	ms := maxDuration.Seconds()
+	msInt := int(math.Round(rand.Float64() * ms))
+	return time.Duration(msInt) * time.Second
 }
