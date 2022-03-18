@@ -4,8 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"math"
-	"math/rand"
+	"k8s.io/apimachinery/pkg/util/wait"
 	"strings"
 	"sync"
 	"time"
@@ -129,7 +128,7 @@ func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 
 type ClientCredentialsTokenSourceProvider struct {
 	ccConfig                     clientcredentials.Config
-	MaxDurationBeforeTokenExpiry time.Duration
+	MinDurationBeforeTokenExpiry time.Duration
 	RefreshTokenPreemptively     bool
 }
 
@@ -153,7 +152,7 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 			ClientSecret: secret,
 			TokenURL:     tokenURL,
 			Scopes:       scopes},
-		MaxDurationBeforeTokenExpiry: cfg.MaxDurationBeforeTokenExpiry.Duration,
+		MinDurationBeforeTokenExpiry: cfg.PreemptiveRefreshDuration.Duration,
 		RefreshTokenPreemptively:     cfg.RefreshTokenPreemptively}, nil
 }
 
@@ -164,7 +163,7 @@ func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context
 			new:                          source,
 			mu:                           sync.Mutex{},
 			t:                            nil,
-			maxDurationBeforeTokenExpiry: p.MaxDurationBeforeTokenExpiry,
+			minDurationBeforeTokenExpiry: p.MinDurationBeforeTokenExpiry,
 		}, nil
 	}
 	return p.ccConfig.TokenSource(ctx), nil
@@ -176,7 +175,7 @@ type customTokenSource struct {
 	t                            *oauth2.Token
 	refreshTime                  time.Time
 	refreshed                    bool
-	maxDurationBeforeTokenExpiry time.Duration
+	minDurationBeforeTokenExpiry time.Duration
 }
 
 func (s *customTokenSource) Token() (*oauth2.Token, error) {
@@ -187,9 +186,10 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 			t, err := s.new.Token()
 			if err != nil {
 				s.refreshed = true // don't try to refresh again before expiry
+				return s.t, nil
 			} else {
 				s.t = t
-				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.minDurationBeforeTokenExpiry))
 				s.refreshed = false
 				return s.t, nil
 			}
@@ -203,13 +203,11 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 	}
 	s.t = t
 	s.refreshed = false
-	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.minDurationBeforeTokenExpiry))
 	return t, nil
 }
 
-func getRandomDuration(maxDuration time.Duration) time.Duration {
-	rand.Seed(time.Now().UnixNano()) // this changes global random seed
-	ms := maxDuration.Seconds()
-	msInt := int(math.Round(rand.Float64() * ms))
-	return time.Duration(msInt) * time.Second
+// Get random duration between minDuration and 2 * minDuration
+func getRandomDuration(minDuration time.Duration) time.Duration {
+	return wait.Jitter(minDuration, 0) // 0 means using the default jitter maxFactor which should be 1.0
 }

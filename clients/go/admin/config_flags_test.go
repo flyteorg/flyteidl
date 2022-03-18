@@ -211,14 +211,14 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_MaxDurationBeforeExpiry", func(t *testing.T) {
+	t.Run("Test_preemptiveRefreshDuration", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.MaxDurationBeforeTokenExpiry.String()
+			testValue := defaultConfig.PreemptiveRefreshDuration.String()
 
-			cmdFlags.Set("MaxDurationBeforeExpiry", testValue)
-			if vString, err := cmdFlags.GetString("MaxDurationBeforeExpiry"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.MaxDurationBeforeTokenExpiry)
+			cmdFlags.Set("preemptiveRefreshDuration", testValue)
+			if vString, err := cmdFlags.GetString("preemptiveRefreshDuration"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.PreemptiveRefreshDuration)
 
 			} else {
 				assert.FailNow(t, err.Error())
