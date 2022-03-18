@@ -206,9 +206,9 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 	return t, nil
 }
 
-// Get random duration between 0 and minDuration
-func getRandomDuration(minDuration time.Duration) time.Duration {
-	// d is 1.0 to 2.0 times minDuration
-	d := wait.Jitter(minDuration, 1)
-	return d - minDuration
+// Get random duration between 0 and maxDuration
+func getRandomDuration(maxDuration time.Duration) time.Duration {
+	// d is 1.0 to 2.0 times maxDuration
+	d := wait.Jitter(maxDuration, 1)
+	return d - maxDuration
 }
