@@ -187,15 +187,13 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 			if err != nil {
 				s.refreshed = true // don't try to refresh again before expiry
 				return s.t, nil
-			} else {
-				s.t = t
-				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
-				s.refreshed = false
-				return s.t, nil
 			}
-		} else {
+			s.t = t
+			s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+			s.refreshed = false
 			return s.t, nil
 		}
+		return s.t, nil
 	}
 	t, err := s.new.Token()
 	if err != nil {
