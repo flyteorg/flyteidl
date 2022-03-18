@@ -46,7 +46,7 @@ type Config struct {
 	MaxRetries                int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
 	AuthType                  AuthType        `json:"authType" pflag:"-,Type of OAuth2 flow used for communicating with admin."`
 	RefreshTokenPreemptively  bool            `json:"refreshTokenPreemptively" pflag:",Preemptively refreshes auth token with jitter before it expires (client credential only)."`
-	PreemptiveRefreshDuration config.Duration `json:"preemptiveRefreshDuration" pflag:",Minimum duration between token refresh attempt and token expiry."`
+	PreemptiveRefreshDuration config.Duration `json:"preemptiveRefreshDuration" pflag:",Max duration between token refresh attempt and token expiry."`
 	// Deprecated: settings will be discovered dynamically
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`

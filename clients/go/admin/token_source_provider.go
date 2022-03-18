@@ -128,7 +128,7 @@ func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 
 type ClientCredentialsTokenSourceProvider struct {
 	ccConfig                     clientcredentials.Config
-	MinDurationBeforeTokenExpiry time.Duration
+	MaxDurationBeforeTokenExpiry time.Duration
 	RefreshTokenPreemptively     bool
 }
 
@@ -152,7 +152,7 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 			ClientSecret: secret,
 			TokenURL:     tokenURL,
 			Scopes:       scopes},
-		MinDurationBeforeTokenExpiry: cfg.PreemptiveRefreshDuration.Duration,
+		MaxDurationBeforeTokenExpiry: cfg.PreemptiveRefreshDuration.Duration,
 		RefreshTokenPreemptively:     cfg.RefreshTokenPreemptively}, nil
 }
 
@@ -163,7 +163,7 @@ func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context
 			new:                          source,
 			mu:                           sync.Mutex{},
 			t:                            nil,
-			minDurationBeforeTokenExpiry: p.MinDurationBeforeTokenExpiry,
+			maxDurationBeforeTokenExpiry: p.MaxDurationBeforeTokenExpiry,
 		}, nil
 	}
 	return p.ccConfig.TokenSource(ctx), nil
@@ -175,7 +175,7 @@ type customTokenSource struct {
 	t                            *oauth2.Token
 	refreshTime                  time.Time
 	refreshed                    bool
-	minDurationBeforeTokenExpiry time.Duration
+	maxDurationBeforeTokenExpiry time.Duration
 }
 
 func (s *customTokenSource) Token() (*oauth2.Token, error) {
@@ -189,7 +189,7 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 				return s.t, nil
 			} else {
 				s.t = t
-				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.minDurationBeforeTokenExpiry))
+				s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
 				s.refreshed = false
 				return s.t, nil
 			}
@@ -203,11 +203,13 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 	}
 	s.t = t
 	s.refreshed = false
-	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.minDurationBeforeTokenExpiry))
+	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
 	return t, nil
 }
 
-// Get random duration between minDuration and 2 * minDuration
+// Get random duration between 0 and minDuration
 func getRandomDuration(minDuration time.Duration) time.Duration {
-	return wait.Jitter(minDuration, 0) // 0 means using the default jitter maxFactor which should be 1.0
+	// d is 1.0 to 2.0 times minDuration
+	d := wait.Jitter(minDuration, 1)
+	return d - minDuration
 }

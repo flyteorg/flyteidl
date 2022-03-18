@@ -58,7 +58,7 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "perRetryTimeout"), defaultConfig.PerRetryTimeout.String(), "gRPC per retry timeout")
 	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "maxRetries"), defaultConfig.MaxRetries, "Max number of gRPC retries")
 	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "refreshTokenPreemptively"), defaultConfig.RefreshTokenPreemptively, "Preemptively refreshes auth token with jitter before it expires (client credential only).")
-	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "preemptiveRefreshDuration"), defaultConfig.PreemptiveRefreshDuration.String(), "Minimum duration between token refresh attempt and token expiry.")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "preemptiveRefreshDuration"), defaultConfig.PreemptiveRefreshDuration.String(), "Max duration between token refresh attempt and token expiry.")
 	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "useAuth"), defaultConfig.DeprecatedUseAuth, "Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information.")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "clientId"), defaultConfig.ClientID, "Client ID")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "clientSecretLocation"), defaultConfig.ClientSecretLocation, "File containing the client secret")
