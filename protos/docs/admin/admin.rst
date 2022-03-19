@@ -1943,6 +1943,7 @@ Generic container for encapsulating all types of the above attributes messages.
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", ""
    "plugin_overrides", ":ref:`ref_flyteidl.admin.PluginOverrides`", "", ""
    "workflow_execution_config", ":ref:`ref_flyteidl.admin.WorkflowExecutionConfig`", "", ""
+   "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", ""
 
 
 
@@ -2085,6 +2086,7 @@ based on matching tags.
    "QUALITY_OF_SERVICE_SPECIFICATION", "4", "Configures default quality of service when undefined in an execution spec."
    "PLUGIN_OVERRIDE", "5", "Selects configurable plugin implementation behavior for a given task type."
    "WORKFLOW_EXECUTION_CONFIG", "6", "Adds defaults for customizable workflow-execution specifications and overrides."
+   "CLUSTER_ASSIGNMENT", "7", "Controls how to select an available cluster on which this execution should run."
 
 
 
