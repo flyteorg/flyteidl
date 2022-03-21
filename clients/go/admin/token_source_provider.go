@@ -128,9 +128,8 @@ func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrc
 }
 
 type ClientCredentialsTokenSourceProvider struct {
-	ccConfig                     clientcredentials.Config
-	MaxDurationBeforeTokenExpiry time.Duration
-	RefreshTokenPreemptively     bool
+	ccConfig           clientcredentials.Config
+	TokenRefreshWindow time.Duration
 }
 
 func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
@@ -153,45 +152,44 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 			ClientSecret: secret,
 			TokenURL:     tokenURL,
 			Scopes:       scopes},
-		MaxDurationBeforeTokenExpiry: cfg.PreemptiveRefreshDuration.Duration,
-		RefreshTokenPreemptively:     cfg.RefreshTokenPreemptively}, nil
+		TokenRefreshWindow: cfg.TokenRefreshWindow.Duration}, nil
 }
 
 func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
-	if p.RefreshTokenPreemptively {
+	if p.TokenRefreshWindow > 0 {
 		source := p.ccConfig.TokenSource(ctx)
 		return &customTokenSource{
-			new:                          source,
-			mu:                           sync.Mutex{},
-			t:                            nil,
-			maxDurationBeforeTokenExpiry: p.MaxDurationBeforeTokenExpiry,
+			new:                source,
+			mu:                 sync.Mutex{},
+			t:                  nil,
+			tokenRefreshWindow: p.TokenRefreshWindow,
 		}, nil
 	}
 	return p.ccConfig.TokenSource(ctx), nil
 }
 
 type customTokenSource struct {
-	new                          oauth2.TokenSource
-	mu                           sync.Mutex // guards everything else
-	t                            *oauth2.Token
-	refreshTime                  time.Time
-	refreshed                    bool
-	maxDurationBeforeTokenExpiry time.Duration
+	new                oauth2.TokenSource
+	mu                 sync.Mutex // guards everything else
+	t                  *oauth2.Token
+	refreshTime        time.Time
+	failedToRefresh    bool
+	tokenRefreshWindow time.Duration
 }
 
 func (s *customTokenSource) Token() (*oauth2.Token, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if s.t.Valid() {
-		if time.Now().After(s.refreshTime) && !s.refreshed {
+		if time.Now().After(s.refreshTime) && !s.failedToRefresh {
 			t, err := s.new.Token()
 			if err != nil {
-				s.refreshed = true // don't try to refresh again before expiry
+				s.failedToRefresh = true // don't try to refresh again before expiry
 				return s.t, nil
 			}
 			s.t = t
-			s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
-			s.refreshed = false
+			s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.tokenRefreshWindow))
+			s.failedToRefresh = false
 			return s.t, nil
 		}
 		return s.t, nil
@@ -201,8 +199,8 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 		return nil, err
 	}
 	s.t = t
-	s.refreshed = false
-	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.maxDurationBeforeTokenExpiry))
+	s.failedToRefresh = false
+	s.refreshTime = s.t.Expiry.Add(-getRandomDuration(s.tokenRefreshWindow))
 	return t, nil
 }
 

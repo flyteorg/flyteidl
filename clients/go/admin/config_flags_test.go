@@ -197,28 +197,14 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_refreshTokenPreemptively", func(t *testing.T) {
+	t.Run("Test_tokenRefreshWindow", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := "1"
+			testValue := defaultConfig.TokenRefreshWindow.String()
 
-			cmdFlags.Set("refreshTokenPreemptively", testValue)
-			if vBool, err := cmdFlags.GetBool("refreshTokenPreemptively"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.RefreshTokenPreemptively)
-
-			} else {
-				assert.FailNow(t, err.Error())
-			}
-		})
-	})
-	t.Run("Test_preemptiveRefreshDuration", func(t *testing.T) {
-
-		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.PreemptiveRefreshDuration.String()
-
-			cmdFlags.Set("preemptiveRefreshDuration", testValue)
-			if vString, err := cmdFlags.GetString("preemptiveRefreshDuration"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.PreemptiveRefreshDuration)
+			cmdFlags.Set("tokenRefreshWindow", testValue)
+			if vString, err := cmdFlags.GetString("tokenRefreshWindow"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.TokenRefreshWindow)
 
 			} else {
 				assert.FailNow(t, err.Error())
