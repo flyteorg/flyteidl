@@ -92,7 +92,7 @@ type CreateUploadLocationRequest struct {
 	Project string `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
 	// Domain to create the upload location for
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
-	// Suffix specifies a desired suffix for the generated location.
+	// Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
 	Suffix string `protobuf:"bytes,3,opt,name=suffix,proto3" json:"suffix,omitempty"`
 	// ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
 	// exceeds the platform allowed max.

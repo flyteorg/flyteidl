@@ -58,7 +58,7 @@
         },
         "suffix": {
           "type": "string",
-          "description": "Suffix specifies a desired suffix for the generated location."
+          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`."
         },
         "expires_in": {
           "type": "string",

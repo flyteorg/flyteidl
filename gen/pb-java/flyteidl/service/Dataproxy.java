@@ -1068,7 +1068,7 @@ public final class Dataproxy {
 
     /**
      * <pre>
-     * Suffix specifies a desired suffix for the generated location.
+     * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1076,7 +1076,7 @@ public final class Dataproxy {
     java.lang.String getSuffix();
     /**
      * <pre>
-     * Suffix specifies a desired suffix for the generated location.
+     * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1309,7 +1309,7 @@ public final class Dataproxy {
     private volatile java.lang.Object suffix_;
     /**
      * <pre>
-     * Suffix specifies a desired suffix for the generated location.
+     * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1328,7 +1328,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Suffix specifies a desired suffix for the generated location.
+     * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1934,7 +1934,7 @@ public final class Dataproxy {
       private java.lang.Object suffix_ = "";
       /**
        * <pre>
-       * Suffix specifies a desired suffix for the generated location.
+       * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1953,7 +1953,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Suffix specifies a desired suffix for the generated location.
+       * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1973,7 +1973,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Suffix specifies a desired suffix for the generated location.
+       * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1990,7 +1990,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Suffix specifies a desired suffix for the generated location.
+       * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2003,7 +2003,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Suffix specifies a desired suffix for the generated location.
+       * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
        * </pre>
        *
        * <code>string suffix = 3;</code>

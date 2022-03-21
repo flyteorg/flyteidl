@@ -27,7 +27,7 @@ message CreateUploadLocationRequest {
   // Domain to create the upload location for
   string domain = 2;
 
-  // Suffix specifies a desired suffix for the generated location.
+  // Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
   string suffix = 3;
 
   // ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
