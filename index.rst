@@ -6,9 +6,9 @@ Flyteidl: Flyte's Core Language Specification
 ``Flyteidl`` contains the core language specification of Flyte, using `Google's Protocol Buffers <https://developers.google.com/protocol-buffers>`_. 
 The Specification contains:
 
-#. The core specification for Flyte workflows, tasks and the type system
+#. The core specification for Flyte workflows, tasks, and the type system
 #. The specification for FlyteAdmin's `gRPC <https://grpc.io/>`_ and ``REST`` endpoints
-#. Some of the core plugin APIs like - Spark, Sagemaker, etc,.
+#. Some of the core plugin APIs like - Spark, Sagemaker, etc.
 
 This specification is used to generate client stubs for `Flytekit <https://flyte.readthedocs.io/projects/flytekit>`_, `Flytekit Java <https://github.com/spotify/flytekit-java>`_, `Flytectl <https://github.com/flyteorg/flytectl>`_ and the `FlyteAdmin Service <https://pkg.go.dev/github.com/lyft/flyteadmin>`_.
 
