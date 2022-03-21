@@ -1,6 +1,6 @@
 # Flyteidl
 
-This is one of the core repositories of Flyte. It contains the Specification of the Flyte Language using protobuf messages, the Backend API specification in gRPC and Swagger REST. The repo contains the generated clients and protocol message structures in multiple languages. Along with the generated code, the repository also contains the Golang clients for Flyte's backend APIs (the services grouped under FlyteAdmin).
+This is one of the core repositories of Flyte. It contains the Specification of the Flyte Language using protobuf messages, the Backend API specification in gRPC, and Swagger REST. The repo contains the generated clients and protocol message structures in multiple languages. Along with the generated code, the repository also contains the Golang clients for Flyte's backend APIs (the services grouped under FlyteAdmin).
 
 [![Slack](https://img.shields.io/badge/slack-join_chat-white.svg?logo=slack&style=social)](https://slack.flyte.org)
 
@@ -33,8 +33,8 @@ This is one of the core repositories of Flyte. It contains the Specification of 
 
 ## Docs structure
 
-The index.rst files for protos is kept in a parallel folder structure under the ``docs`` folder.
-All the proto definitions are within ``protos/flyteidl`` and their corresponding docs are in ``protos/docs``
+The index.rst files for protos are arranged in a parallel under the ``docs`` folder.
+All the proto definitions are within ``protos/flyteidl`` and their corresponding docs are in ``protos/docs``.
 
 ```
 docs
@@ -58,8 +58,8 @@ docs
 │   └── service.rst
 ```
 
-Each module in protos has a module in docs with same name.
-For example: ``protos/flyteidl/core`` has same named doc structure placing it index and other documentation files in ``protos/docs/core``.
+Each module in protos has a module in docs with the same name.
+For example: ``protos/flyteidl/core`` has a module ``protos/docs/core`` under the ``docs`` folder which has the corresponding index and documentation files.
 
 
 ## Generating Documentation
@@ -74,5 +74,5 @@ For example: ``protos/flyteidl/core`` has same named doc structure placing it in
 
 * ``make generate`` generates the modified rst files.
 
-* ``make html`` Generates the Sphinx documentation from the docs folder that uses the modified rst files.
+* ``make html`` generates the Sphinx documentation from the docs folder that uses the modified rst files.
 
