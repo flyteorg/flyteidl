@@ -226,7 +226,7 @@ message TaskExecutionMetadata {
     // Unique, generated name for this task execution used by the backend.
     string generated_name = 1;
 
-    // Additional data on external resources on other back-ends or platforms (e.g. Hive, Qubole, etc) launched by this task execution.
+    // Additional data on external resources on other back-ends or platforms (e.g., Hive, Qubole, etc) launched by this task execution.
     repeated ExternalResourceInfo external_resources = 2;
 
     // Includes additional data on concurrent resource management used during execution..

@@ -33,7 +33,7 @@ This is one of the core repositories of Flyte. It contains the Specification of 
 
 ## Docs structure
 
-The index.rst files for protos are arranged in a parallel under the ``docs`` folder.
+The index.rst files for protos are arranged in parallel under the ``docs`` folder.
 All the proto definitions are within ``protos/flyteidl`` and their corresponding docs are in ``protos/docs``.
 
 ```

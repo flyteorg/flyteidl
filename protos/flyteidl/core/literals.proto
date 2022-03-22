@@ -71,7 +71,7 @@ message StructuredDatasetMetadata {
 
 message StructuredDataset {
     // String location uniquely identifying where the data is.
-    // Should start with the storage location (e.g. s3://, gs://, bq://, etc.)
+    // Should start with the storage location (e.g., s3://, gs://, bq://, etc.)
     string uri = 1;
 
     StructuredDatasetMetadata metadata = 2;
@@ -91,7 +91,7 @@ message Scalar {
     }
 }
 
-// A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
+// A simple value. This supports any level of nesting (e.g., array of array of array of Blobs) as well as simple primitives.
 message Literal {
     oneof value {
         // A simple value.

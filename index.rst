@@ -1,4 +1,4 @@
-.. flyteidl documentation master file, created by
+.. flyteidl documentation master file
 
 Flyteidl: Flyte's Core Language Specification
 ==============================================
