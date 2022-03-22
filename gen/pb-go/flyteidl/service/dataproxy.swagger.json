@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/dataproxy/upload": {
+    "/api/v1/dataproxy/artifact_urn": {
       "post": {
         "summary": "Retrieves user information about the currently logged in user.",
         "description": "Creates a write-only http location that is accessible for tasks at runtime.",
@@ -50,19 +50,19 @@
       "properties": {
         "project": {
           "type": "string",
-          "title": "Project to create the upload location for"
+          "title": "Project to create the upload location for\n+required"
         },
         "domain": {
           "type": "string",
-          "title": "Domain to create the upload location for"
+          "title": "Domain to create the upload location for.\n+required"
         },
         "suffix": {
           "type": "string",
-          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`."
+          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.\n+optional. By default, the service will generate a random file name."
         },
         "expires_in": {
           "type": "string",
-          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max."
+          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
         }
       },
       "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."

@@ -1033,6 +1033,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Project to create the upload location for
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -1041,6 +1042,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Project to create the upload location for
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -1050,7 +1052,8 @@ public final class Dataproxy {
 
     /**
      * <pre>
-     * Domain to create the upload location for
+     * Domain to create the upload location for.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -1058,7 +1061,8 @@ public final class Dataproxy {
     java.lang.String getDomain();
     /**
      * <pre>
-     * Domain to create the upload location for
+     * Domain to create the upload location for.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -1069,6 +1073,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+     * +optional. By default, the service will generate a random file name.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1077,6 +1082,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+     * +optional. By default, the service will generate a random file name.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1088,6 +1094,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1097,6 +1104,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1106,6 +1114,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1226,6 +1235,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Project to create the upload location for
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -1245,6 +1255,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Project to create the upload location for
+     * +required
      * </pre>
      *
      * <code>string project = 1;</code>
@@ -1267,7 +1278,8 @@ public final class Dataproxy {
     private volatile java.lang.Object domain_;
     /**
      * <pre>
-     * Domain to create the upload location for
+     * Domain to create the upload location for.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -1286,7 +1298,8 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Domain to create the upload location for
+     * Domain to create the upload location for.
+     * +required
      * </pre>
      *
      * <code>string domain = 2;</code>
@@ -1310,6 +1323,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+     * +optional. By default, the service will generate a random file name.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1329,6 +1343,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+     * +optional. By default, the service will generate a random file name.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1353,6 +1368,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1364,6 +1380,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1375,6 +1392,7 @@ public final class Dataproxy {
      * <pre>
      * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
      * exceeds the platform allowed max.
+     * +optional. The default value comes from a global config.
      * </pre>
      *
      * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -1757,6 +1775,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Project to create the upload location for
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -1776,6 +1795,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Project to create the upload location for
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -1796,6 +1816,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Project to create the upload location for
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -1813,6 +1834,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Project to create the upload location for
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -1826,6 +1848,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Project to create the upload location for
+       * +required
        * </pre>
        *
        * <code>string project = 1;</code>
@@ -1845,7 +1868,8 @@ public final class Dataproxy {
       private java.lang.Object domain_ = "";
       /**
        * <pre>
-       * Domain to create the upload location for
+       * Domain to create the upload location for.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1864,7 +1888,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Domain to create the upload location for
+       * Domain to create the upload location for.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1884,7 +1909,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Domain to create the upload location for
+       * Domain to create the upload location for.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1901,7 +1927,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Domain to create the upload location for
+       * Domain to create the upload location for.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1914,7 +1941,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Domain to create the upload location for
+       * Domain to create the upload location for.
+       * +required
        * </pre>
        *
        * <code>string domain = 2;</code>
@@ -1935,6 +1963,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+       * +optional. By default, the service will generate a random file name.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1954,6 +1983,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+       * +optional. By default, the service will generate a random file name.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1974,6 +2004,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+       * +optional. By default, the service will generate a random file name.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -1991,6 +2022,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+       * +optional. By default, the service will generate a random file name.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2004,6 +2036,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+       * +optional. By default, the service will generate a random file name.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2027,6 +2060,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2038,6 +2072,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2053,6 +2088,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2074,6 +2110,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2093,6 +2130,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2116,6 +2154,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2135,6 +2174,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2148,6 +2188,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2164,6 +2205,7 @@ public final class Dataproxy {
        * <pre>
        * ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
        * exceeds the platform allowed max.
+       * +optional. The default value comes from a global config.
        * </pre>
        *
        * <code>.google.protobuf.Duration expires_in = 4;</code>
@@ -2264,14 +2306,15 @@ public final class Dataproxy {
       "ateUploadLocationRequest\022\017\n\007project\030\001 \001(" +
       "\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nexp" +
       "ires_in\030\004 \001(\0132\031.google.protobuf.Duration" +
-      "2\370\001\n\tDataProxy\022\352\001\n\024CreateUploadLocation\022" +
+      "2\376\001\n\tDataProxy\022\360\001\n\024CreateUploadLocation\022" +
       "-.flyteidl.service.CreateUploadLocationR" +
       "equest\032..flyteidl.service.CreateUploadLo" +
-      "cationResponse\"s\202\323\344\223\002\035\"\030/api/v1/dataprox" +
-      "y/upload:\001*\222AM\032KCreates a write-only htt" +
-      "p location that is accessible for tasks " +
-      "at runtime.B9Z7github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
+      "cationResponse\"y\202\323\344\223\002#\"\036/api/v1/dataprox" +
+      "y/artifact_urn:\001*\222AM\032KCreates a write-on" +
+      "ly http location that is accessible for " +
+      "tasks at runtime.B9Z7github.com/flyteorg" +
+      "/flyteidl/gen/pb-go/flyteidl/serviceb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
