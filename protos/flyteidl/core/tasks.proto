@@ -38,7 +38,7 @@ message Resources {
     // The desired set of resources requested. ResourceNames must be unique within the list.
     repeated ResourceEntry requests = 1;
 
-    // Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique
+    // Defines a set of bounds (e.g., min/max) within which the task can reliably run. ResourceNames must be unique
     // within the list.
     repeated ResourceEntry limits = 2;
 }
@@ -57,7 +57,7 @@ message RuntimeMetadata {
     // checks to ensure tighter validation or setting expectations.
     string version = 2;
 
-    //+optional It can be used to provide extra information about the runtime (e.g. python, golang... etc.).
+    //+optional It can be used to provide extra information about the runtime (e.g., python, golang... etc.).
     string flavor = 3;
 }
 
@@ -172,7 +172,7 @@ message Container {
     // Deprecated, please use TaskTemplate.config instead.
     repeated KeyValuePair config = 6 [deprecated = true];
 
-    // Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
+    // Ports to open in the container. This feature is not supported by all execution engines. (e.g., supported on K8s but
     // not supported on AWS Batch)
     // Only K8s
     repeated ContainerPort ports = 7;

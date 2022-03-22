@@ -40,7 +40,7 @@ message IfElseBlock {
 }
 
 // BranchNode is a special node that alter the flow of the workflow graph. It allows the control flow to branch at
-// runtime based on a series of conditions that get evaluated on various parameters (e.g. inputs, primitives).
+// runtime based on a series of conditions that get evaluated on various parameters (e.g., inputs, primitives).
 message BranchNode {
     //+required
     IfElseBlock if_else = 1;
@@ -115,7 +115,7 @@ message Node {
     repeated string upstream_node_ids = 4;
 
     //+optional. A node can define aliases for a subset of its outputs. This is particularly useful if different nodes
-    // need to conform to the same interface (e.g. all branches in a branch node). Downstream nodes must refer to this
+    // need to conform to the same interface (e.g., all branches in a branch node). Downstream nodes must refer to this
     // nodes outputs using the alias if one's specified.
     repeated Alias output_aliases = 5;
 

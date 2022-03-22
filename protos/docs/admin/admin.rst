@@ -8,7 +8,7 @@ Protocol Documentation
 .. _ref_flyteidl/admin/common.proto:
 
 flyteidl/admin/common.proto
-=============================
+==================================================================
 
 
 
@@ -17,10 +17,10 @@ flyteidl/admin/common.proto
 .. _ref_flyteidl.admin.Annotations:
 
 Annotations
------------
+------------------------------------------------------------------
 
 Annotation values to be applied to an execution resource.
-In the future a mode (e.g.,, OVERRIDE, APPEND, etc.) can be defined
+In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 to specify how to merge annotations defined at registration and execution time.
 
 
@@ -40,7 +40,7 @@ to specify how to merge annotations defined at registration and execution time.
 .. _ref_flyteidl.admin.Annotations.ValuesEntry:
 
 Annotations.ValuesEntry
-------------------------
+------------------------------------------------------------------
 
 
 
@@ -62,7 +62,7 @@ Annotations.ValuesEntry
 .. _ref_flyteidl.admin.AuthRole:
 
 AuthRole
----------
+------------------------------------------------------------------
 
 Defines permissions associated with executions created by this launch plan spec.
 Use either of these roles when they have permissions required by your workflow execution.
@@ -86,7 +86,7 @@ Deprecated.
 .. _ref_flyteidl.admin.EmailNotification:
 
 EmailNotification
-------------------
+------------------------------------------------------------------
 
 Defines an email notification specification.
 
@@ -107,10 +107,10 @@ Defines an email notification specification.
 .. _ref_flyteidl.admin.Labels:
 
 Labels
--------
+------------------------------------------------------------------
 
 Label values are applied to an execution resource.
-In the future, a mode (e.g.,, OVERRIDE, APPEND, etc.) can be defined
+In the future, a mode (e.g. OVERRIDE, APPEND, etc) can be defined
 to specify how to merge labels defined at registration and execution time.
 
 
@@ -130,7 +130,7 @@ to specify how to merge labels defined at registration and execution time.
 .. _ref_flyteidl.admin.Labels.ValuesEntry:
 
 Labels.ValuesEntry
--------------------
+------------------------------------------------------------------
 
 
 
@@ -152,7 +152,7 @@ Labels.ValuesEntry
 .. _ref_flyteidl.admin.NamedEntity:
 
 NamedEntity
------------
+------------------------------------------------------------------
 
 Encapsulates information common to a NamedEntity, a Flyte resource such as a task,
 workflow or launch plan. A NamedEntity is exclusively identified by its resource type
@@ -177,7 +177,7 @@ and identifier.
 .. _ref_flyteidl.admin.NamedEntityGetRequest:
 
 NamedEntityGetRequest
-----------------------
+------------------------------------------------------------------
 
 A request to retrieve the metadata associated with a NamedEntityIdentifier
 
@@ -199,7 +199,7 @@ A request to retrieve the metadata associated with a NamedEntityIdentifier
 .. _ref_flyteidl.admin.NamedEntityIdentifier:
 
 NamedEntityIdentifier
-----------------------
+------------------------------------------------------------------
 
 Encapsulation of fields that identifies a Flyte resource.
 A Flyte resource can be a task, workflow or launch plan.
@@ -225,7 +225,7 @@ by project, domain, and name.
 .. _ref_flyteidl.admin.NamedEntityIdentifierList:
 
 NamedEntityIdentifierList
--------------------------
+------------------------------------------------------------------
 
 Represents a list of NamedEntityIdentifiers.
 
@@ -247,7 +247,7 @@ Represents a list of NamedEntityIdentifiers.
 .. _ref_flyteidl.admin.NamedEntityIdentifierListRequest:
 
 NamedEntityIdentifierListRequest
----------------------------------
+------------------------------------------------------------------
 
 Represents a request structure to list NamedEntityIdentifiers.
 
@@ -273,7 +273,7 @@ Represents a request structure to list NamedEntityIdentifiers.
 .. _ref_flyteidl.admin.NamedEntityList:
 
 NamedEntityList
----------------
+------------------------------------------------------------------
 
 Represents a list of NamedEntityIdentifiers.
 
@@ -295,7 +295,7 @@ Represents a list of NamedEntityIdentifiers.
 .. _ref_flyteidl.admin.NamedEntityListRequest:
 
 NamedEntityListRequest
------------------------
+------------------------------------------------------------------
 
 Represents a request structure to list NamedEntity objects
 
@@ -322,7 +322,7 @@ Represents a request structure to list NamedEntity objects
 .. _ref_flyteidl.admin.NamedEntityMetadata:
 
 NamedEntityMetadata
---------------------
+------------------------------------------------------------------
 
 Additional metadata around a named entity.
 
@@ -344,7 +344,7 @@ Additional metadata around a named entity.
 .. _ref_flyteidl.admin.NamedEntityUpdateRequest:
 
 NamedEntityUpdateRequest
-------------------------
+------------------------------------------------------------------
 
 Request to set the referenced named entity state to the configured value.
 
@@ -367,7 +367,7 @@ Request to set the referenced named entity state to the configured value.
 .. _ref_flyteidl.admin.NamedEntityUpdateResponse:
 
 NamedEntityUpdateResponse
---------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -381,7 +381,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.Notification:
 
 Notification
--------------
+------------------------------------------------------------------
 
 Represents a structure for notifications based on execution status.
 The notification content is configured within flyte admin but can be templatized.
@@ -407,7 +407,7 @@ Future iterations could expose configuring notifications with custom content.
 .. _ref_flyteidl.admin.ObjectGetRequest:
 
 ObjectGetRequest
------------------
+------------------------------------------------------------------
 
 Shared request structure to fetch a single resource.
 Resources include: Task, Workflow, LaunchPlan
@@ -429,7 +429,7 @@ Resources include: Task, Workflow, LaunchPlan
 .. _ref_flyteidl.admin.PagerDutyNotification:
 
 PagerDutyNotification
-----------------------
+------------------------------------------------------------------
 
 Defines a pager duty notification specification.
 
@@ -450,7 +450,7 @@ Defines a pager duty notification specification.
 .. _ref_flyteidl.admin.RawOutputDataConfig:
 
 RawOutputDataConfig
---------------------
+------------------------------------------------------------------
 
 Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).
 See https://github.com/flyteorg/flyte/issues/211 for more background information.
@@ -461,7 +461,7 @@ See https://github.com/flyteorg/flyte/issues/211 for more background information
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "output_location_prefix", ":ref:`ref_string`", "", "Prefix for where offloaded data from user workflows will be written e.g., s3://bucket/key or s3://bucket/"
+   "output_location_prefix", ":ref:`ref_string`", "", "Prefix for where offloaded data from user workflows will be written e.g. s3://bucket/key or s3://bucket/"
 
 
 
@@ -472,7 +472,7 @@ See https://github.com/flyteorg/flyte/issues/211 for more background information
 .. _ref_flyteidl.admin.ResourceListRequest:
 
 ResourceListRequest
---------------------
+------------------------------------------------------------------
 
 Shared request structure to retrieve a list of resources.
 Resources include: Task, Workflow, LaunchPlan
@@ -498,7 +498,7 @@ Resources include: Task, Workflow, LaunchPlan
 .. _ref_flyteidl.admin.SlackNotification:
 
 SlackNotification
-------------------
+------------------------------------------------------------------
 
 Defines a slack notification specification.
 
@@ -519,7 +519,7 @@ Defines a slack notification specification.
 .. _ref_flyteidl.admin.Sort:
 
 Sort
------
+------------------------------------------------------------------
 
 Specifies sort ordering in a list request.
 
@@ -541,7 +541,7 @@ Specifies sort ordering in a list request.
 .. _ref_flyteidl.admin.UrlBlob:
 
 UrlBlob
--------
+------------------------------------------------------------------
 
 Represents a string url and associated metadata used throughout the platform.
 
@@ -565,7 +565,7 @@ Represents a string url and associated metadata used throughout the platform.
 .. _ref_flyteidl.admin.NamedEntityState:
 
 NamedEntityState
-----------------
+------------------------------------------------------------------
 
 The status of the named entity is used to control its visibility in the UI.
 
@@ -582,7 +582,7 @@ The status of the named entity is used to control its visibility in the UI.
 .. _ref_flyteidl.admin.Sort.Direction:
 
 Sort.Direction
----------------
+------------------------------------------------------------------
 
 
 
@@ -605,7 +605,7 @@ Sort.Direction
 .. _ref_flyteidl/admin/event.proto:
 
 flyteidl/admin/event.proto
-===========================
+==================================================================
 
 
 
@@ -614,7 +614,7 @@ flyteidl/admin/event.proto
 .. _ref_flyteidl.admin.EventErrorAlreadyInTerminalState:
 
 EventErrorAlreadyInTerminalState
----------------------------------
+------------------------------------------------------------------
 
 Indicates that a sent event was not used to update execution state due to
 the referenced execution already being terminated (and therefore ineligible
@@ -637,7 +637,7 @@ for further state transitions).
 .. _ref_flyteidl.admin.EventErrorIncompatibleCluster:
 
 EventErrorIncompatibleCluster
-------------------------------
+------------------------------------------------------------------
 
 Indicates an event was rejected because it came from a different cluster than 
 is on record as running the execution.
@@ -659,7 +659,7 @@ is on record as running the execution.
 .. _ref_flyteidl.admin.EventFailureReason:
 
 EventFailureReason
--------------------
+------------------------------------------------------------------
 
 Indicates why a sent event was not used to update execution.
 
@@ -681,7 +681,7 @@ Indicates why a sent event was not used to update execution.
 .. _ref_flyteidl.admin.NodeExecutionEventRequest:
 
 NodeExecutionEventRequest
---------------------------
+------------------------------------------------------------------
 
 Request to send a notification that a node execution event has occurred.
 
@@ -703,7 +703,7 @@ Request to send a notification that a node execution event has occurred.
 .. _ref_flyteidl.admin.NodeExecutionEventResponse:
 
 NodeExecutionEventResponse
----------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -717,7 +717,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.TaskExecutionEventRequest:
 
 TaskExecutionEventRequest
---------------------------
+------------------------------------------------------------------
 
 Request to send a notification that a task execution event has occurred.
 
@@ -739,7 +739,7 @@ Request to send a notification that a task execution event has occurred.
 .. _ref_flyteidl.admin.TaskExecutionEventResponse:
 
 TaskExecutionEventResponse
----------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -753,7 +753,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.WorkflowExecutionEventRequest:
 
 WorkflowExecutionEventRequest
-------------------------------
+------------------------------------------------------------------
 
 Request to send a notification that a workflow execution event has occurred.
 
@@ -775,7 +775,7 @@ Request to send a notification that a workflow execution event has occurred.
 .. _ref_flyteidl.admin.WorkflowExecutionEventResponse:
 
 WorkflowExecutionEventResponse
-------------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -798,7 +798,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl/admin/execution.proto:
 
 flyteidl/admin/execution.proto
-===============================
+==================================================================
 
 
 
@@ -807,7 +807,7 @@ flyteidl/admin/execution.proto
 .. _ref_flyteidl.admin.AbortMetadata:
 
 AbortMetadata
---------------
+------------------------------------------------------------------
 
 Specifies metadata around an aborted workflow execution.
 
@@ -829,7 +829,7 @@ Specifies metadata around an aborted workflow execution.
 .. _ref_flyteidl.admin.Execution:
 
 Execution
-----------
+------------------------------------------------------------------
 
 A workflow execution represents an instantiated workflow, including all inputs and additional
 metadata as well as computed results included state, outputs, and duration-based attributes.
@@ -854,7 +854,7 @@ Used as a response object used in Get and List execution requests.
 .. _ref_flyteidl.admin.ExecutionClosure:
 
 ExecutionClosure
------------------
+------------------------------------------------------------------
 
 Encapsulates the results of the Execution
 
@@ -888,7 +888,7 @@ Encapsulates the results of the Execution
 .. _ref_flyteidl.admin.ExecutionCreateRequest:
 
 ExecutionCreateRequest
-----------------------
+------------------------------------------------------------------
 
 Request to launch an execution with the given project, domain and optionally-assigned name.
 
@@ -913,7 +913,7 @@ Request to launch an execution with the given project, domain and optionally-ass
 .. _ref_flyteidl.admin.ExecutionCreateResponse:
 
 ExecutionCreateResponse
-------------------------
+------------------------------------------------------------------
 
 The unique identifier for a successfully created execution.
 If the name was *not* specified in the create request, this identifier will include a generated name.
@@ -935,7 +935,7 @@ If the name was *not* specified in the create request, this identifier will incl
 .. _ref_flyteidl.admin.ExecutionList:
 
 ExecutionList
---------------
+------------------------------------------------------------------
 
 Used as a response for request to list executions.
 See :ref:`ref_flyteidl.admin.Execution` for more details
@@ -958,7 +958,7 @@ See :ref:`ref_flyteidl.admin.Execution` for more details
 .. _ref_flyteidl.admin.ExecutionMetadata:
 
 ExecutionMetadata
-------------------
+------------------------------------------------------------------
 
 Represents attributes about an execution which are not required to launch the execution but are useful to record.
 These attributes are assigned at launch time and do not change.
@@ -986,7 +986,7 @@ These attributes are assigned at launch time and do not change.
 .. _ref_flyteidl.admin.ExecutionRecoverRequest:
 
 ExecutionRecoverRequest
-------------------------
+------------------------------------------------------------------
 
 Request to recover the referenced execution.
 
@@ -1009,7 +1009,7 @@ Request to recover the referenced execution.
 .. _ref_flyteidl.admin.ExecutionRelaunchRequest:
 
 ExecutionRelaunchRequest
--------------------------
+------------------------------------------------------------------
 
 Request to relaunch the referenced execution.
 
@@ -1031,7 +1031,7 @@ Request to relaunch the referenced execution.
 .. _ref_flyteidl.admin.ExecutionSpec:
 
 ExecutionSpec
---------------
+------------------------------------------------------------------
 
 An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
 of an execution as it progresses across phase changes.
@@ -1063,7 +1063,7 @@ of an execution as it progresses across phase changes.
 .. _ref_flyteidl.admin.ExecutionStateChangeDetails:
 
 ExecutionStateChangeDetails
-----------------------------
+------------------------------------------------------------------
 
 
 
@@ -1086,7 +1086,7 @@ ExecutionStateChangeDetails
 .. _ref_flyteidl.admin.ExecutionTerminateRequest:
 
 ExecutionTerminateRequest
---------------------------
+------------------------------------------------------------------
 
 Request to terminate an in-progress execution.  This action is irreversible.
 If an execution is already terminated, this request will simply be a no-op.
@@ -1112,7 +1112,7 @@ with the optional cause added to the output_result.
 .. _ref_flyteidl.admin.ExecutionTerminateResponse:
 
 ExecutionTerminateResponse
----------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -1126,7 +1126,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.ExecutionUpdateRequest:
 
 ExecutionUpdateRequest
------------------------
+------------------------------------------------------------------
 
 
 
@@ -1148,7 +1148,7 @@ ExecutionUpdateRequest
 .. _ref_flyteidl.admin.ExecutionUpdateResponse:
 
 ExecutionUpdateResponse
--------------------------
+------------------------------------------------------------------
 
 
 
@@ -1162,7 +1162,7 @@ ExecutionUpdateResponse
 .. _ref_flyteidl.admin.LiteralMapBlob:
 
 LiteralMapBlob
----------------
+------------------------------------------------------------------
 
 Input/output data can represented by actual values or a link to where values are stored
 
@@ -1184,7 +1184,7 @@ Input/output data can represented by actual values or a link to where values are
 .. _ref_flyteidl.admin.NotificationList:
 
 NotificationList
------------------
+------------------------------------------------------------------
 
 
 
@@ -1205,7 +1205,7 @@ NotificationList
 .. _ref_flyteidl.admin.SystemMetadata:
 
 SystemMetadata
----------------
+------------------------------------------------------------------
 
 Represents system, rather than user-facing, metadata about an execution.
 
@@ -1226,7 +1226,7 @@ Represents system, rather than user-facing, metadata about an execution.
 .. _ref_flyteidl.admin.WorkflowExecutionGetDataRequest:
 
 WorkflowExecutionGetDataRequest
---------------------------------
+------------------------------------------------------------------
 
 Request structure to fetch inputs, output and other data produced by an execution.
 By default this data is not returned inline in :ref:`ref_flyteidl.admin.WorkflowExecutionGetRequest`
@@ -1248,7 +1248,7 @@ By default this data is not returned inline in :ref:`ref_flyteidl.admin.Workflow
 .. _ref_flyteidl.admin.WorkflowExecutionGetDataResponse:
 
 WorkflowExecutionGetDataResponse
----------------------------------
+------------------------------------------------------------------
 
 Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
 
@@ -1272,7 +1272,7 @@ Response structure for WorkflowExecutionGetDataRequest which contains inputs and
 .. _ref_flyteidl.admin.WorkflowExecutionGetRequest:
 
 WorkflowExecutionGetRequest
-----------------------------
+------------------------------------------------------------------
 
 A message used to fetch a single workflow execution entity.
 See :ref:`ref_flyteidl.admin.Execution` for more details
@@ -1296,7 +1296,7 @@ See :ref:`ref_flyteidl.admin.Execution` for more details
 .. _ref_flyteidl.admin.ExecutionMetadata.ExecutionMode:
 
 ExecutionMetadata.ExecutionMode
---------------------------------
+------------------------------------------------------------------
 
 The method by which this execution was launched.
 
@@ -1316,7 +1316,7 @@ The method by which this execution was launched.
 .. _ref_flyteidl.admin.ExecutionState:
 
 ExecutionState
----------------
+------------------------------------------------------------------
 
 The state of the execution is used to control its visibility in the UI/CLI.
 
@@ -1339,7 +1339,7 @@ The state of the execution is used to control its visibility in the UI/CLI.
 .. _ref_flyteidl/admin/launch_plan.proto:
 
 flyteidl/admin/launch_plan.proto
-=================================
+==================================================================
 
 
 
@@ -1348,7 +1348,7 @@ flyteidl/admin/launch_plan.proto
 .. _ref_flyteidl.admin.ActiveLaunchPlanListRequest:
 
 ActiveLaunchPlanListRequest
-----------------------------
+------------------------------------------------------------------
 
 Represents a request structure to list active launch plans within a project/domain.
 See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
@@ -1374,7 +1374,7 @@ See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
 .. _ref_flyteidl.admin.ActiveLaunchPlanRequest:
 
 ActiveLaunchPlanRequest
-------------------------
+------------------------------------------------------------------
 
 Represents a request struct for finding an active launch plan for a given NamedEntityIdentifier
 See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
@@ -1396,7 +1396,7 @@ See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
 .. _ref_flyteidl.admin.Auth:
 
 Auth
------
+------------------------------------------------------------------
 
 Defines permissions associated with executions created by this launch plan spec.
 Use either of these roles when they have permissions required by your workflow execution.
@@ -1420,7 +1420,7 @@ Deprecated.
 .. _ref_flyteidl.admin.LaunchPlan:
 
 LaunchPlan
-----------
+------------------------------------------------------------------
 
 A LaunchPlan provides the capability to templatize workflow executions.
 Launch plans simplify associating one or more schedules, inputs and notifications with your workflows.
@@ -1446,7 +1446,7 @@ definition doesn't necessarily have a default value for said input.
 .. _ref_flyteidl.admin.LaunchPlanClosure:
 
 LaunchPlanClosure
--------------------
+------------------------------------------------------------------
 
 Values computed by the flyte platform after launch plan registration.
 These include expected_inputs required to be present in a CreateExecutionRequest
@@ -1473,7 +1473,7 @@ to launch the reference workflow as well timestamp values associated with the la
 .. _ref_flyteidl.admin.LaunchPlanCreateRequest:
 
 LaunchPlanCreateRequest
-------------------------
+------------------------------------------------------------------
 
 Request to register a launch plan. The included LaunchPlanSpec may have a complete or incomplete set of inputs required
 to launch a workflow execution. By default all launch plans are registered in state INACTIVE. If you wish to
@@ -1497,7 +1497,7 @@ set the state to ACTIVE, you must submit a LaunchPlanUpdateRequest, after you ha
 .. _ref_flyteidl.admin.LaunchPlanCreateResponse:
 
 LaunchPlanCreateResponse
--------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -1511,7 +1511,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.LaunchPlanList:
 
 LaunchPlanList
----------------
+------------------------------------------------------------------
 
 Response object for list launch plan requests.
 See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
@@ -1534,7 +1534,7 @@ See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
 .. _ref_flyteidl.admin.LaunchPlanMetadata:
 
 LaunchPlanMetadata
--------------------
+------------------------------------------------------------------
 
 Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch
 the reference workflow.
@@ -1557,7 +1557,7 @@ the reference workflow.
 .. _ref_flyteidl.admin.LaunchPlanSpec:
 
 LaunchPlanSpec
----------------
+------------------------------------------------------------------
 
 User-provided launch plan definition and configuration values.
 
@@ -1590,7 +1590,7 @@ User-provided launch plan definition and configuration values.
 .. _ref_flyteidl.admin.LaunchPlanUpdateRequest:
 
 LaunchPlanUpdateRequest
-------------------------
+------------------------------------------------------------------
 
 Request to set the referenced launch plan state to the configured value.
 See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
@@ -1613,7 +1613,7 @@ See :ref:`ref_flyteidl.admin.LaunchPlan` for more details
 .. _ref_flyteidl.admin.LaunchPlanUpdateResponse:
 
 LaunchPlanUpdateResponse
--------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -1629,11 +1629,11 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.LaunchPlanState:
 
 LaunchPlanState
-----------------
+------------------------------------------------------------------
 
 By default any launch plan regardless of state can be used to launch a workflow execution.
 However, at most one version of a launch plan
-(e.g., a NamedEntityIdentifier set of shared project, domain and name values) can be
+(e.g. a NamedEntityIdentifier set of shared project, domain and name values) can be
 active at a time in regards to *schedules*. That is, at most one schedule in a NamedEntityIdentifier
 group will be observed and trigger executions at a defined cadence.
 
@@ -1656,7 +1656,7 @@ group will be observed and trigger executions at a defined cadence.
 .. _ref_flyteidl/admin/matchable_resource.proto:
 
 flyteidl/admin/matchable_resource.proto
-========================================
+==================================================================
 
 
 
@@ -1665,7 +1665,7 @@ flyteidl/admin/matchable_resource.proto
 .. _ref_flyteidl.admin.ClusterResourceAttributes:
 
 ClusterResourceAttributes
---------------------------
+------------------------------------------------------------------
 
 
 
@@ -1675,7 +1675,7 @@ ClusterResourceAttributes
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "attributes", ":ref:`ref_flyteidl.admin.ClusterResourceAttributes.AttributesEntry`", "repeated", "Custom resource attributes which will be applied in cluster resource creation (e.g., quotas). Map keys are the *case-sensitive* names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation."
+   "attributes", ":ref:`ref_flyteidl.admin.ClusterResourceAttributes.AttributesEntry`", "repeated", "Custom resource attributes which will be applied in cluster resource creation (e.g. quotas). Map keys are the *case-sensitive* names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation."
 
 
 
@@ -1686,7 +1686,7 @@ ClusterResourceAttributes
 .. _ref_flyteidl.admin.ClusterResourceAttributes.AttributesEntry:
 
 ClusterResourceAttributes.AttributesEntry
--------------------------------------------
+------------------------------------------------------------------
 
 
 
@@ -1708,7 +1708,7 @@ ClusterResourceAttributes.AttributesEntry
 .. _ref_flyteidl.admin.ExecutionClusterLabel:
 
 ExecutionClusterLabel
-----------------------
+------------------------------------------------------------------
 
 
 
@@ -1729,7 +1729,7 @@ ExecutionClusterLabel
 .. _ref_flyteidl.admin.ExecutionQueueAttributes:
 
 ExecutionQueueAttributes
--------------------------
+------------------------------------------------------------------
 
 
 
@@ -1750,7 +1750,7 @@ ExecutionQueueAttributes
 .. _ref_flyteidl.admin.ListMatchableAttributesRequest:
 
 ListMatchableAttributesRequest
--------------------------------
+------------------------------------------------------------------
 
 Request all matching resource attributes for a resource type.
 See :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details
@@ -1772,7 +1772,7 @@ See :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details
 .. _ref_flyteidl.admin.ListMatchableAttributesResponse:
 
 ListMatchableAttributesResponse
---------------------------------
+------------------------------------------------------------------
 
 Response for a request for all matching resource attributes for a resource type.
 See :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details
@@ -1794,7 +1794,7 @@ See :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for more details
 .. _ref_flyteidl.admin.MatchableAttributesConfiguration:
 
 MatchableAttributesConfiguration
----------------------------------
+------------------------------------------------------------------
 
 Represents a custom set of attributes applied for either a domain; a domain and project; or
 domain, project and workflow name.
@@ -1822,7 +1822,7 @@ default execution values, and more all across different levels of specificity.
 .. _ref_flyteidl.admin.MatchingAttributes:
 
 MatchingAttributes
--------------------
+------------------------------------------------------------------
 
 Generic container for encapsulating all types of the above attributes messages.
 
@@ -1849,7 +1849,7 @@ Generic container for encapsulating all types of the above attributes messages.
 .. _ref_flyteidl.admin.PluginOverride:
 
 PluginOverride
----------------
+------------------------------------------------------------------
 
 This MatchableAttribute configures selecting alternate plugin implementations for a given task type.
 In addition to an override implementation a selection of fallbacks can be provided or other modes
@@ -1874,7 +1874,7 @@ for handling cases where the desired plugin override is not enabled in a given F
 .. _ref_flyteidl.admin.PluginOverrides:
 
 PluginOverrides
-----------------
+------------------------------------------------------------------
 
 
 
@@ -1895,7 +1895,7 @@ PluginOverrides
 .. _ref_flyteidl.admin.TaskResourceAttributes:
 
 TaskResourceAttributes
------------------------
+------------------------------------------------------------------
 
 Defines task resource defaults and limits that will be applied at task registration.
 
@@ -1917,7 +1917,7 @@ Defines task resource defaults and limits that will be applied at task registrat
 .. _ref_flyteidl.admin.TaskResourceSpec:
 
 TaskResourceSpec
------------------
+------------------------------------------------------------------
 
 Defines a set of overridable task resource attributes set during task registration.
 
@@ -1942,7 +1942,7 @@ Defines a set of overridable task resource attributes set during task registrati
 .. _ref_flyteidl.admin.WorkflowExecutionConfig:
 
 WorkflowExecutionConfig
-------------------------
+------------------------------------------------------------------
 
 Adds defaults for customizable workflow-execution specifications and overrides.
 
@@ -1965,7 +1965,7 @@ Adds defaults for customizable workflow-execution specifications and overrides.
 .. _ref_flyteidl.admin.MatchableResource:
 
 MatchableResource
-------------------
+------------------------------------------------------------------
 
 Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes
 based on matching tags.
@@ -1987,7 +1987,7 @@ based on matching tags.
 .. _ref_flyteidl.admin.PluginOverride.MissingPluginBehavior:
 
 PluginOverride.MissingPluginBehavior
--------------------------------------
+------------------------------------------------------------------
 
 
 
@@ -2010,7 +2010,7 @@ PluginOverride.MissingPluginBehavior
 .. _ref_flyteidl/admin/node_execution.proto:
 
 flyteidl/admin/node_execution.proto
-====================================
+==================================================================
 
 
 
@@ -2019,7 +2019,7 @@ flyteidl/admin/node_execution.proto
 .. _ref_flyteidl.admin.DynamicWorkflowNodeMetadata:
 
 DynamicWorkflowNodeMetadata
-----------------------------
+------------------------------------------------------------------
 
 For dynamic workflow nodes we capture information about the dynamic workflow definition that gets generated.
 
@@ -2041,7 +2041,7 @@ For dynamic workflow nodes we capture information about the dynamic workflow def
 .. _ref_flyteidl.admin.NodeExecution:
 
 NodeExecution
---------------
+------------------------------------------------------------------
 
 Encapsulates all details for a single node execution entity.
 A node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested
@@ -2068,7 +2068,7 @@ The same task can be called repeatedly in a single workflow but each node is uni
 .. _ref_flyteidl.admin.NodeExecutionClosure:
 
 NodeExecutionClosure
----------------------
+------------------------------------------------------------------
 
 Container for node execution details and results.
 
@@ -2098,7 +2098,7 @@ Container for node execution details and results.
 .. _ref_flyteidl.admin.NodeExecutionForTaskListRequest:
 
 NodeExecutionForTaskListRequest
---------------------------------
+------------------------------------------------------------------
 
 Represents a request structure to retrieve a list of node execution entities launched by a specific task.
 This can arise when a task yields a subworkflow.
@@ -2124,7 +2124,7 @@ This can arise when a task yields a subworkflow.
 .. _ref_flyteidl.admin.NodeExecutionGetDataRequest:
 
 NodeExecutionGetDataRequest
-----------------------------
+------------------------------------------------------------------
 
 Request structure to fetch inputs and output for a node execution.
 By default, these are not returned in :ref:`ref_flyteidl.admin.NodeExecutionGetRequest`
@@ -2146,7 +2146,7 @@ By default, these are not returned in :ref:`ref_flyteidl.admin.NodeExecutionGetR
 .. _ref_flyteidl.admin.NodeExecutionGetDataResponse:
 
 NodeExecutionGetDataResponse
------------------------------
+------------------------------------------------------------------
 
 Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution.
 
@@ -2171,7 +2171,7 @@ Response structure for NodeExecutionGetDataRequest which contains inputs and out
 .. _ref_flyteidl.admin.NodeExecutionGetRequest:
 
 NodeExecutionGetRequest
-------------------------
+------------------------------------------------------------------
 
 A message used to fetch a single node execution entity.
 See :ref:`ref_flyteidl.admin.NodeExecution` for more details
@@ -2193,7 +2193,7 @@ See :ref:`ref_flyteidl.admin.NodeExecution` for more details
 .. _ref_flyteidl.admin.NodeExecutionList:
 
 NodeExecutionList
------------------
+------------------------------------------------------------------
 
 Request structure to retrieve a list of node execution entities.
 See :ref:`ref_flyteidl.admin.NodeExecution` for more details
@@ -2216,7 +2216,7 @@ See :ref:`ref_flyteidl.admin.NodeExecution` for more details
 .. _ref_flyteidl.admin.NodeExecutionListRequest:
 
 NodeExecutionListRequest
--------------------------
+------------------------------------------------------------------
 
 Represents a request structure to retrieve a list of node execution entities.
 See :ref:`ref_flyteidl.admin.NodeExecution` for more details
@@ -2243,7 +2243,7 @@ See :ref:`ref_flyteidl.admin.NodeExecution` for more details
 .. _ref_flyteidl.admin.NodeExecutionMetaData:
 
 NodeExecutionMetaData
-----------------------
+------------------------------------------------------------------
 
 Represents additional attributes related to a Node Execution
 
@@ -2267,7 +2267,7 @@ Represents additional attributes related to a Node Execution
 .. _ref_flyteidl.admin.TaskNodeMetadata:
 
 TaskNodeMetadata
------------------
+------------------------------------------------------------------
 
 Metadata for the case in which the node is a TaskNode
 
@@ -2289,7 +2289,7 @@ Metadata for the case in which the node is a TaskNode
 .. _ref_flyteidl.admin.WorkflowNodeMetadata:
 
 WorkflowNodeMetadata
----------------------
+------------------------------------------------------------------
 
 Metadata for a WorkflowNode
 
@@ -2319,7 +2319,7 @@ Metadata for a WorkflowNode
 .. _ref_flyteidl/admin/notification.proto:
 
 flyteidl/admin/notification.proto
-==================================
+==================================================================
 
 
 
@@ -2328,7 +2328,7 @@ flyteidl/admin/notification.proto
 .. _ref_flyteidl.admin.EmailMessage:
 
 EmailMessage
--------------
+------------------------------------------------------------------
 
 Represents the Email object that is sent to a publisher/subscriber
 to forward the notification.
@@ -2363,7 +2363,7 @@ Note: This is internal to Admin and doesn't need to be exposed to other componen
 .. _ref_flyteidl/admin/project.proto:
 
 flyteidl/admin/project.proto
-==============================
+==================================================================
 
 
 
@@ -2372,10 +2372,10 @@ flyteidl/admin/project.proto
 .. _ref_flyteidl.admin.Domain:
 
 Domain
--------
+------------------------------------------------------------------
 
 Namespace within a project commonly used to differentiate between different service instances.
-e.g., "production", "development", etc.
+e.g. "production", "development", etc.
 
 
 
@@ -2395,7 +2395,7 @@ e.g., "production", "development", etc.
 .. _ref_flyteidl.admin.Project:
 
 Project
--------
+------------------------------------------------------------------
 
 Top-level namespace used to classify different entities like workflows and executions.
 
@@ -2421,7 +2421,7 @@ Top-level namespace used to classify different entities like workflows and execu
 .. _ref_flyteidl.admin.ProjectListRequest:
 
 ProjectListRequest
-------------------
+------------------------------------------------------------------
 
 Request to retrieve a list of projects matching specified filters. 
 See :ref:`ref_flyteidl.admin.Project` for more details
@@ -2446,7 +2446,7 @@ See :ref:`ref_flyteidl.admin.Project` for more details
 .. _ref_flyteidl.admin.ProjectRegisterRequest:
 
 ProjectRegisterRequest
------------------------
+------------------------------------------------------------------
 
 Adds a new user-project within the Flyte deployment.
 See :ref:`ref_flyteidl.admin.Project` for more details
@@ -2468,7 +2468,7 @@ See :ref:`ref_flyteidl.admin.Project` for more details
 .. _ref_flyteidl.admin.ProjectRegisterResponse:
 
 ProjectRegisterResponse
-------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be updated in the future.
 
@@ -2482,7 +2482,7 @@ Purposefully empty, may be updated in the future.
 .. _ref_flyteidl.admin.ProjectUpdateResponse:
 
 ProjectUpdateResponse
----------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be updated in the future.
 
@@ -2496,7 +2496,7 @@ Purposefully empty, may be updated in the future.
 .. _ref_flyteidl.admin.Projects:
 
 Projects
----------
+------------------------------------------------------------------
 
 Represents a list of projects.
 See :ref:`ref_flyteidl.admin.Project` for more details
@@ -2521,7 +2521,7 @@ See :ref:`ref_flyteidl.admin.Project` for more details
 .. _ref_flyteidl.admin.Project.ProjectState:
 
 Project.ProjectState
----------------------
+------------------------------------------------------------------
 
 The state of the project is used to control its visibility in the UI and validity.
 
@@ -2545,7 +2545,7 @@ The state of the project is used to control its visibility in the UI and validit
 .. _ref_flyteidl/admin/project_domain_attributes.proto:
 
 flyteidl/admin/project_domain_attributes.proto
-===============================================
+==================================================================
 
 
 
@@ -2554,7 +2554,7 @@ flyteidl/admin/project_domain_attributes.proto
 .. _ref_flyteidl.admin.ProjectDomainAttributes:
 
 ProjectDomainAttributes
-------------------------
+------------------------------------------------------------------
 
 Defines a set of custom matching attributes which defines resource defaults for a project and domain.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -2578,7 +2578,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.ProjectDomainAttributesDeleteRequest:
 
 ProjectDomainAttributesDeleteRequest
--------------------------------------
+------------------------------------------------------------------
 
 Request to delete a set matchable project domain attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -2602,7 +2602,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.ProjectDomainAttributesDeleteResponse:
 
 ProjectDomainAttributesDeleteResponse
---------------------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -2616,7 +2616,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.ProjectDomainAttributesGetRequest:
 
 ProjectDomainAttributesGetRequest
-----------------------------------
+------------------------------------------------------------------
 
 Request to get an individual project domain attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -2640,7 +2640,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.ProjectDomainAttributesGetResponse:
 
 ProjectDomainAttributesGetResponse
------------------------------------
+------------------------------------------------------------------
 
 Response to get an individual project domain attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -2662,7 +2662,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.ProjectDomainAttributesUpdateRequest:
 
 ProjectDomainAttributesUpdateRequest
--------------------------------------
+------------------------------------------------------------------
 
 Sets custom attributes for a project-domain combination.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -2684,7 +2684,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.ProjectDomainAttributesUpdateResponse:
 
 ProjectDomainAttributesUpdateResponse
---------------------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -2707,7 +2707,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl/admin/schedule.proto:
 
 flyteidl/admin/schedule.proto
-==============================
+==================================================================
 
 
 
@@ -2716,7 +2716,7 @@ flyteidl/admin/schedule.proto
 .. _ref_flyteidl.admin.CronSchedule:
 
 CronSchedule
--------------
+------------------------------------------------------------------
 
 Options for schedules to run according to a cron expression.
 
@@ -2738,9 +2738,9 @@ Options for schedules to run according to a cron expression.
 .. _ref_flyteidl.admin.FixedRate:
 
 FixedRate
-----------
+------------------------------------------------------------------
 
-Option for schedules run at a certain frequency e.g., every 2 minutes.
+Option for schedules run at a certain frequency e.g. every 2 minutes.
 
 
 
@@ -2760,7 +2760,7 @@ Option for schedules run at a certain frequency e.g., every 2 minutes.
 .. _ref_flyteidl.admin.Schedule:
 
 Schedule
----------
+------------------------------------------------------------------
 
 Defines complete set of information required to trigger an execution on a schedule.
 
@@ -2770,7 +2770,7 @@ Defines complete set of information required to trigger an execution on a schedu
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "cron_expression", ":ref:`ref_string`", "", "**Deprecated.** Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year e.g., for a schedule that runs every 15 minutes: 0/15 * * * ? *"
+   "cron_expression", ":ref:`ref_string`", "", "**Deprecated.** Uses AWS syntax: Minutes Hours Day-of-month Month Day-of-week Year e.g. for a schedule that runs every 15 minutes: 0/15 * * * ? *"
    "rate", ":ref:`ref_flyteidl.admin.FixedRate`", "", ""
    "cron_schedule", ":ref:`ref_flyteidl.admin.CronSchedule`", "", ""
    "kickoff_time_input_arg", ":ref:`ref_string`", "", "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
@@ -2786,7 +2786,7 @@ Defines complete set of information required to trigger an execution on a schedu
 .. _ref_flyteidl.admin.FixedRateUnit:
 
 FixedRateUnit
---------------
+------------------------------------------------------------------
 
 Represents a frequency at which to run a schedule.
 
@@ -2810,7 +2810,7 @@ Represents a frequency at which to run a schedule.
 .. _ref_flyteidl/admin/task.proto:
 
 flyteidl/admin/task.proto
-==========================
+==================================================================
 
 
 
@@ -2819,7 +2819,7 @@ flyteidl/admin/task.proto
 .. _ref_flyteidl.admin.Task:
 
 Task
------
+------------------------------------------------------------------
 
 Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks
 arranged to process workflow inputs and produce a deterministic set of outputs.
@@ -2843,7 +2843,7 @@ Tasks can come in many varieties tuned for specialized behavior.
 .. _ref_flyteidl.admin.TaskClosure:
 
 TaskClosure
-------------
+------------------------------------------------------------------
 
 Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data
 and task metadata.
@@ -2866,7 +2866,7 @@ and task metadata.
 .. _ref_flyteidl.admin.TaskCreateRequest:
 
 TaskCreateRequest
-------------------
+------------------------------------------------------------------
 
 Represents a request structure to create a revision of a task.
 See :ref:`ref_flyteidl.admin.Task` for more details
@@ -2889,7 +2889,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
 .. _ref_flyteidl.admin.TaskCreateResponse:
 
 TaskCreateResponse
-------------------
+------------------------------------------------------------------
 
 Represents a response structure if task creation succeeds.
 
@@ -2905,7 +2905,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.TaskList:
 
 TaskList
----------
+------------------------------------------------------------------
 
 Represents a list of tasks returned from the admin.
 See :ref:`ref_flyteidl.admin.Task` for more details
@@ -2928,7 +2928,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
 .. _ref_flyteidl.admin.TaskSpec:
 
 TaskSpec
----------
+------------------------------------------------------------------
 
 Represents a structure that encapsulates the user-configured specification of the task.
 
@@ -2958,7 +2958,7 @@ Represents a structure that encapsulates the user-configured specification of th
 .. _ref_flyteidl/admin/task_execution.proto:
 
 flyteidl/admin/task_execution.proto
-====================================
+==================================================================
 
 
 
@@ -2967,7 +2967,7 @@ flyteidl/admin/task_execution.proto
 .. _ref_flyteidl.admin.TaskExecution:
 
 TaskExecution
---------------
+------------------------------------------------------------------
 
 Encapsulates all details for a single task execution entity.
 A task execution represents an instantiated task, including all inputs and additional
@@ -2993,7 +2993,7 @@ metadata as well as computed results included state, outputs, and duration-based
 .. _ref_flyteidl.admin.TaskExecutionClosure:
 
 TaskExecutionClosure
----------------------
+------------------------------------------------------------------
 
 Container for task execution details and results.
 
@@ -3026,7 +3026,7 @@ Container for task execution details and results.
 .. _ref_flyteidl.admin.TaskExecutionGetDataRequest:
 
 TaskExecutionGetDataRequest
-----------------------------
+------------------------------------------------------------------
 
 Request structure to fetch inputs and output for a task execution.
 By default this data is not returned inline in :ref:`ref_flyteidl.admin.TaskExecutionGetRequest`
@@ -3048,7 +3048,7 @@ By default this data is not returned inline in :ref:`ref_flyteidl.admin.TaskExec
 .. _ref_flyteidl.admin.TaskExecutionGetDataResponse:
 
 TaskExecutionGetDataResponse
------------------------------
+------------------------------------------------------------------
 
 Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution.
 
@@ -3072,7 +3072,7 @@ Response structure for TaskExecutionGetDataRequest which contains inputs and out
 .. _ref_flyteidl.admin.TaskExecutionGetRequest:
 
 TaskExecutionGetRequest
-------------------------
+------------------------------------------------------------------
 
 A message used to fetch a single task execution entity.
 See :ref:`ref_flyteidl.admin.TaskExecution` for more details
@@ -3094,7 +3094,7 @@ See :ref:`ref_flyteidl.admin.TaskExecution` for more details
 .. _ref_flyteidl.admin.TaskExecutionList:
 
 TaskExecutionList
-------------------
+------------------------------------------------------------------
 
 Response structure for a query to list of task execution entities.
 See :ref:`ref_flyteidl.admin.TaskExecution` for more details
@@ -3117,7 +3117,7 @@ See :ref:`ref_flyteidl.admin.TaskExecution` for more details
 .. _ref_flyteidl.admin.TaskExecutionListRequest:
 
 TaskExecutionListRequest
--------------------------
+------------------------------------------------------------------
 
 Represents a request structure to retrieve a list of task execution entities yielded by a specific node execution.
 See :ref:`ref_flyteidl.admin.TaskExecution` for more details
@@ -3152,7 +3152,7 @@ See :ref:`ref_flyteidl.admin.TaskExecution` for more details
 .. _ref_flyteidl/admin/version.proto:
 
 flyteidl/admin/version.proto
-=============================
+==================================================================
 
 
 
@@ -3161,7 +3161,7 @@ flyteidl/admin/version.proto
 .. _ref_flyteidl.admin.GetVersionRequest:
 
 GetVersionRequest
-------------------
+------------------------------------------------------------------
 
 Empty request for GetVersion
 
@@ -3175,7 +3175,7 @@ Empty request for GetVersion
 .. _ref_flyteidl.admin.GetVersionResponse:
 
 GetVersionResponse
--------------------
+------------------------------------------------------------------
 
 Response for the GetVersion API
 
@@ -3196,7 +3196,7 @@ Response for the GetVersion API
 .. _ref_flyteidl.admin.Version:
 
 Version
---------
+------------------------------------------------------------------
 
 Provides Version information for a component
 
@@ -3228,7 +3228,7 @@ Provides Version information for a component
 .. _ref_flyteidl/admin/workflow.proto:
 
 flyteidl/admin/workflow.proto
-==============================
+==================================================================
 
 
 
@@ -3237,7 +3237,7 @@ flyteidl/admin/workflow.proto
 .. _ref_flyteidl.admin.Workflow:
 
 Workflow
----------
+------------------------------------------------------------------
 
 Represents the workflow structure stored in the Admin
 A workflow is created by ordering tasks and associating outputs to inputs
@@ -3261,7 +3261,7 @@ in order to produce a directed-acyclic execution graph.
 .. _ref_flyteidl.admin.WorkflowClosure:
 
 WorkflowClosure
-----------------
+------------------------------------------------------------------
 
 A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.
 
@@ -3283,7 +3283,7 @@ A container holding the compiled workflow produced from the WorkflowSpec and add
 .. _ref_flyteidl.admin.WorkflowCreateRequest:
 
 WorkflowCreateRequest
-----------------------
+------------------------------------------------------------------
 
 Represents a request structure to create a revision of a workflow.
 See :ref:`ref_flyteidl.admin.Workflow` for more details
@@ -3306,7 +3306,7 @@ See :ref:`ref_flyteidl.admin.Workflow` for more details
 .. _ref_flyteidl.admin.WorkflowCreateResponse:
 
 WorkflowCreateResponse
------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -3320,7 +3320,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.WorkflowList:
 
 WorkflowList
--------------
+------------------------------------------------------------------
 
 Represents a list of workflows returned from the admin.
 See :ref:`ref_flyteidl.admin.Workflow` for more details
@@ -3343,7 +3343,7 @@ See :ref:`ref_flyteidl.admin.Workflow` for more details
 .. _ref_flyteidl.admin.WorkflowSpec:
 
 WorkflowSpec
-------------
+------------------------------------------------------------------
 
 Represents a structure that encapsulates the specification of the workflow.
 
@@ -3374,7 +3374,7 @@ Represents a structure that encapsulates the specification of the workflow.
 .. _ref_flyteidl/admin/workflow_attributes.proto:
 
 flyteidl/admin/workflow_attributes.proto
-=========================================
+==================================================================
 
 
 
@@ -3383,7 +3383,7 @@ flyteidl/admin/workflow_attributes.proto
 .. _ref_flyteidl.admin.WorkflowAttributes:
 
 WorkflowAttributes
-------------------
+------------------------------------------------------------------
 
 Defines a set of custom matching attributes which defines resource defaults for a project, domain and workflow.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -3408,7 +3408,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.WorkflowAttributesDeleteRequest:
 
 WorkflowAttributesDeleteRequest
---------------------------------
+------------------------------------------------------------------
 
 Request to delete a set matchable workflow attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -3433,7 +3433,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.WorkflowAttributesDeleteResponse:
 
 WorkflowAttributesDeleteResponse
---------------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 
@@ -3447,7 +3447,7 @@ Purposefully empty, may be populated in the future.
 .. _ref_flyteidl.admin.WorkflowAttributesGetRequest:
 
 WorkflowAttributesGetRequest
------------------------------
+------------------------------------------------------------------
 
 Request to get an individual workflow attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -3472,7 +3472,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.WorkflowAttributesGetResponse:
 
 WorkflowAttributesGetResponse
-------------------------------
+------------------------------------------------------------------
 
 Response to get an individual workflow attribute override.
 
@@ -3493,7 +3493,7 @@ Response to get an individual workflow attribute override.
 .. _ref_flyteidl.admin.WorkflowAttributesUpdateRequest:
 
 WorkflowAttributesUpdateRequest
---------------------------------
+------------------------------------------------------------------
 
 Sets custom attributes for a project, domain and workflow combination.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
@@ -3515,7 +3515,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 .. _ref_flyteidl.admin.WorkflowAttributesUpdateResponse:
 
 WorkflowAttributesUpdateResponse
---------------------------------
+------------------------------------------------------------------
 
 Purposefully empty, may be populated in the future.
 

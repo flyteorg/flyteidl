@@ -109,7 +109,7 @@ message UnionType {
 }
 
 // Hints to improve type matching
-// e.g. allows distinguishing output from custom type transformers
+// e.g., allows distinguishing output from custom type transformers
 // even if the underlying IDL serialization matches.
 message TypeStructure {
     // Must exactly match for types to be castable

@@ -7,7 +7,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/admin/common.proto";
 
 // Namespace within a project commonly used to differentiate between different service instances.
-// e.g. "production", "development", etc.
+// e.g., "production", "development", etc.
 message Domain {
     // Globally unique domain name.
     string id    = 1;

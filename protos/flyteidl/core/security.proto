@@ -114,13 +114,13 @@ message SecurityContext {
     Identity run_as = 1;
 
     // secrets indicate the list of secrets the task needs in order to proceed. Secrets will be mounted/passed to the
-    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
+    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g., AWS
     // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
     // to the secret) and to pass it to the remote execution engine.
     repeated Secret secrets = 2;
 
     // tokens indicate the list of token requests the task needs in order to proceed. Tokens will be mounted/passed to the
-    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g. AWS
+    // pod as it starts. If the plugin responsible for kicking of the task will not run it on a flyte cluster (e.g., AWS
     // Batch), it's the responsibility of the plugin to fetch the secret (which means propeller identity will need access
     // to the secret) and to pass it to the remote execution engine.
     repeated OAuth2TokenRequest tokens = 3;
