@@ -28276,9 +28276,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
                     $root.flyteidl.admin.RawOutputDataConfig.encode(message.rawOutputDataConfig, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.labels != null && message.hasOwnProperty("labels"))
-                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.annotations != null && message.hasOwnProperty("annotations"))
-                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -28309,10 +28309,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.rawOutputDataConfig = $root.flyteidl.admin.RawOutputDataConfig.decode(reader, reader.uint32());
                         break;
-                    case 6:
+                    case 4:
                         message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
                         break;
-                    case 7:
+                    case 5:
                         message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
                         break;
                     default:

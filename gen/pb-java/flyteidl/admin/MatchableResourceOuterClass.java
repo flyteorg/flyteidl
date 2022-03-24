@@ -6173,7 +6173,7 @@ public final class MatchableResourceOuterClass {
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     boolean hasLabels();
     /**
@@ -6181,7 +6181,7 @@ public final class MatchableResourceOuterClass {
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     flyteidl.admin.Common.Labels getLabels();
     /**
@@ -6189,7 +6189,7 @@ public final class MatchableResourceOuterClass {
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
 
@@ -6198,7 +6198,7 @@ public final class MatchableResourceOuterClass {
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     boolean hasAnnotations();
     /**
@@ -6206,7 +6206,7 @@ public final class MatchableResourceOuterClass {
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     flyteidl.admin.Common.Annotations getAnnotations();
     /**
@@ -6214,7 +6214,7 @@ public final class MatchableResourceOuterClass {
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder();
   }
@@ -6292,7 +6292,7 @@ public final class MatchableResourceOuterClass {
 
               break;
             }
-            case 50: {
+            case 34: {
               flyteidl.admin.Common.Labels.Builder subBuilder = null;
               if (labels_ != null) {
                 subBuilder = labels_.toBuilder();
@@ -6305,7 +6305,7 @@ public final class MatchableResourceOuterClass {
 
               break;
             }
-            case 58: {
+            case 42: {
               flyteidl.admin.Common.Annotations.Builder subBuilder = null;
               if (annotations_ != null) {
                 subBuilder = annotations_.toBuilder();
@@ -6429,14 +6429,14 @@ public final class MatchableResourceOuterClass {
       return getRawOutputDataConfig();
     }
 
-    public static final int LABELS_FIELD_NUMBER = 6;
+    public static final int LABELS_FIELD_NUMBER = 4;
     private flyteidl.admin.Common.Labels labels_;
     /**
      * <pre>
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public boolean hasLabels() {
       return labels_ != null;
@@ -6446,7 +6446,7 @@ public final class MatchableResourceOuterClass {
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public flyteidl.admin.Common.Labels getLabels() {
       return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
@@ -6456,20 +6456,20 @@ public final class MatchableResourceOuterClass {
      * Custom labels to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 6;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
       return getLabels();
     }
 
-    public static final int ANNOTATIONS_FIELD_NUMBER = 7;
+    public static final int ANNOTATIONS_FIELD_NUMBER = 5;
     private flyteidl.admin.Common.Annotations annotations_;
     /**
      * <pre>
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     public boolean hasAnnotations() {
       return annotations_ != null;
@@ -6479,7 +6479,7 @@ public final class MatchableResourceOuterClass {
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     public flyteidl.admin.Common.Annotations getAnnotations() {
       return annotations_ == null ? flyteidl.admin.Common.Annotations.getDefaultInstance() : annotations_;
@@ -6489,7 +6489,7 @@ public final class MatchableResourceOuterClass {
      * Custom annotations to be applied to a triggered execution resource.
      * </pre>
      *
-     * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+     * <code>.flyteidl.admin.Annotations annotations = 5;</code>
      */
     public flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder() {
       return getAnnotations();
@@ -6519,10 +6519,10 @@ public final class MatchableResourceOuterClass {
         output.writeMessage(3, getRawOutputDataConfig());
       }
       if (labels_ != null) {
-        output.writeMessage(6, getLabels());
+        output.writeMessage(4, getLabels());
       }
       if (annotations_ != null) {
-        output.writeMessage(7, getAnnotations());
+        output.writeMessage(5, getAnnotations());
       }
       unknownFields.writeTo(output);
     }
@@ -6547,11 +6547,11 @@ public final class MatchableResourceOuterClass {
       }
       if (labels_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getLabels());
+          .computeMessageSize(4, getLabels());
       }
       if (annotations_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAnnotations());
+          .computeMessageSize(5, getAnnotations());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7273,7 +7273,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public boolean hasLabels() {
         return labelsBuilder_ != null || labels_ != null;
@@ -7283,7 +7283,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.Labels getLabels() {
         if (labelsBuilder_ == null) {
@@ -7297,7 +7297,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder setLabels(flyteidl.admin.Common.Labels value) {
         if (labelsBuilder_ == null) {
@@ -7317,7 +7317,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder setLabels(
           flyteidl.admin.Common.Labels.Builder builderForValue) {
@@ -7335,7 +7335,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder mergeLabels(flyteidl.admin.Common.Labels value) {
         if (labelsBuilder_ == null) {
@@ -7357,7 +7357,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder clearLabels() {
         if (labelsBuilder_ == null) {
@@ -7375,7 +7375,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.Labels.Builder getLabelsBuilder() {
         
@@ -7387,7 +7387,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
         if (labelsBuilder_ != null) {
@@ -7402,7 +7402,7 @@ public final class MatchableResourceOuterClass {
        * Custom labels to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 6;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> 
@@ -7426,7 +7426,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public boolean hasAnnotations() {
         return annotationsBuilder_ != null || annotations_ != null;
@@ -7436,7 +7436,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public flyteidl.admin.Common.Annotations getAnnotations() {
         if (annotationsBuilder_ == null) {
@@ -7450,7 +7450,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public Builder setAnnotations(flyteidl.admin.Common.Annotations value) {
         if (annotationsBuilder_ == null) {
@@ -7470,7 +7470,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public Builder setAnnotations(
           flyteidl.admin.Common.Annotations.Builder builderForValue) {
@@ -7488,7 +7488,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public Builder mergeAnnotations(flyteidl.admin.Common.Annotations value) {
         if (annotationsBuilder_ == null) {
@@ -7510,7 +7510,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public Builder clearAnnotations() {
         if (annotationsBuilder_ == null) {
@@ -7528,7 +7528,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public flyteidl.admin.Common.Annotations.Builder getAnnotationsBuilder() {
         
@@ -7540,7 +7540,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       public flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder() {
         if (annotationsBuilder_ != null) {
@@ -7555,7 +7555,7 @@ public final class MatchableResourceOuterClass {
        * Custom annotations to be applied to a triggered execution resource.
        * </pre>
        *
-       * <code>.flyteidl.admin.Annotations annotations = 7;</code>
+       * <code>.flyteidl.admin.Annotations annotations = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Annotations, flyteidl.admin.Common.Annotations.Builder, flyteidl.admin.Common.AnnotationsOrBuilder> 
@@ -12460,8 +12460,8 @@ public final class MatchableResourceOuterClass {
       "ext\030\002 \001(\0132\036.flyteidl.core.SecurityContex" +
       "t\022C\n\026raw_output_data_config\030\003 \001(\0132#.flyt" +
       "eidl.admin.RawOutputDataConfig\022&\n\006labels" +
-      "\030\006 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota" +
-      "tions\030\007 \001(\0132\033.flyteidl.admin.Annotations" +
+      "\030\004 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota" +
+      "tions\030\005 \001(\0132\033.flyteidl.admin.Annotations" +
       "\"\341\004\n\022MatchingAttributes\022J\n\030task_resource" +
       "_attributes\030\001 \001(\0132&.flyteidl.admin.TaskR" +
       "esourceAttributesH\000\022P\n\033cluster_resource_" +

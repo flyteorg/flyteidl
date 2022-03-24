@@ -1274,19 +1274,19 @@ class WorkflowExecutionConfig final :
   ::flyteidl::admin::RawOutputDataConfig* mutable_raw_output_data_config();
   void set_allocated_raw_output_data_config(::flyteidl::admin::RawOutputDataConfig* raw_output_data_config);
 
-  // .flyteidl.admin.Labels labels = 6;
+  // .flyteidl.admin.Labels labels = 4;
   bool has_labels() const;
   void clear_labels();
-  static const int kLabelsFieldNumber = 6;
+  static const int kLabelsFieldNumber = 4;
   const ::flyteidl::admin::Labels& labels() const;
   ::flyteidl::admin::Labels* release_labels();
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
-  // .flyteidl.admin.Annotations annotations = 7;
+  // .flyteidl.admin.Annotations annotations = 5;
   bool has_annotations() const;
   void clear_annotations();
-  static const int kAnnotationsFieldNumber = 7;
+  static const int kAnnotationsFieldNumber = 5;
   const ::flyteidl::admin::Annotations& annotations() const;
   ::flyteidl::admin::Annotations* release_annotations();
   ::flyteidl::admin::Annotations* mutable_annotations();
@@ -2749,7 +2749,7 @@ inline void WorkflowExecutionConfig::set_allocated_raw_output_data_config(::flyt
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionConfig.raw_output_data_config)
 }
 
-// .flyteidl.admin.Labels labels = 6;
+// .flyteidl.admin.Labels labels = 4;
 inline bool WorkflowExecutionConfig::has_labels() const {
   return this != internal_default_instance() && labels_ != nullptr;
 }
@@ -2794,7 +2794,7 @@ inline void WorkflowExecutionConfig::set_allocated_labels(::flyteidl::admin::Lab
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionConfig.labels)
 }
 
-// .flyteidl.admin.Annotations annotations = 7;
+// .flyteidl.admin.Annotations annotations = 5;
 inline bool WorkflowExecutionConfig::has_annotations() const {
   return this != internal_default_instance() && annotations_ != nullptr;
 }

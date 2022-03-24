@@ -488,8 +488,8 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "ext\030\002 \001(\0132\036.flyteidl.core.SecurityContex"
   "t\022C\n\026raw_output_data_config\030\003 \001(\0132#.flyt"
   "eidl.admin.RawOutputDataConfig\022&\n\006labels"
-  "\030\006 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota"
-  "tions\030\007 \001(\0132\033.flyteidl.admin.Annotations"
+  "\030\004 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota"
+  "tions\030\005 \001(\0132\033.flyteidl.admin.Annotations"
   "\"\341\004\n\022MatchingAttributes\022J\n\030task_resource"
   "_attributes\030\001 \001(\0132&.flyteidl.admin.TaskR"
   "esourceAttributesH\000\022P\n\033cluster_resource_"
@@ -3437,9 +3437,9 @@ const char* WorkflowExecutionConfig::_InternalParse(const char* begin, const cha
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.Labels labels = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+      // .flyteidl.admin.Labels labels = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::Labels::_InternalParse;
@@ -3450,9 +3450,9 @@ const char* WorkflowExecutionConfig::_InternalParse(const char* begin, const cha
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.Annotations annotations = 7;
-      case 7: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
+      // .flyteidl.admin.Annotations annotations = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::Annotations::_InternalParse;
@@ -3528,9 +3528,9 @@ bool WorkflowExecutionConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Labels labels = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+      // .flyteidl.admin.Labels labels = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_labels()));
         } else {
@@ -3539,9 +3539,9 @@ bool WorkflowExecutionConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Annotations annotations = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
+      // .flyteidl.admin.Annotations annotations = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_annotations()));
         } else {
@@ -3594,16 +3594,16 @@ void WorkflowExecutionConfig::SerializeWithCachedSizes(
       3, HasBitSetters::raw_output_data_config(this), output);
   }
 
-  // .flyteidl.admin.Labels labels = 6;
+  // .flyteidl.admin.Labels labels = 4;
   if (this->has_labels()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, HasBitSetters::labels(this), output);
+      4, HasBitSetters::labels(this), output);
   }
 
-  // .flyteidl.admin.Annotations annotations = 7;
+  // .flyteidl.admin.Annotations annotations = 5;
   if (this->has_annotations()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, HasBitSetters::annotations(this), output);
+      5, HasBitSetters::annotations(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3638,18 +3638,18 @@ void WorkflowExecutionConfig::SerializeWithCachedSizes(
         3, HasBitSetters::raw_output_data_config(this), target);
   }
 
-  // .flyteidl.admin.Labels labels = 6;
+  // .flyteidl.admin.Labels labels = 4;
   if (this->has_labels()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        6, HasBitSetters::labels(this), target);
+        4, HasBitSetters::labels(this), target);
   }
 
-  // .flyteidl.admin.Annotations annotations = 7;
+  // .flyteidl.admin.Annotations annotations = 5;
   if (this->has_annotations()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        7, HasBitSetters::annotations(this), target);
+        5, HasBitSetters::annotations(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3687,14 +3687,14 @@ size_t WorkflowExecutionConfig::ByteSizeLong() const {
         *raw_output_data_config_);
   }
 
-  // .flyteidl.admin.Labels labels = 6;
+  // .flyteidl.admin.Labels labels = 4;
   if (this->has_labels()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *labels_);
   }
 
-  // .flyteidl.admin.Annotations annotations = 7;
+  // .flyteidl.admin.Annotations annotations = 5;
   if (this->has_annotations()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(

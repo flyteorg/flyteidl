@@ -112,10 +112,10 @@ message WorkflowExecutionConfig {
   RawOutputDataConfig raw_output_data_config = 3;
 
   // Custom labels to be applied to a triggered execution resource.
-  Labels labels = 6;
+  Labels labels = 4;
 
   // Custom annotations to be applied to a triggered execution resource.
-  Annotations annotations = 7;
+  Annotations annotations = 5;
 }
 
 // Generic container for encapsulating all types of the above attributes messages.
