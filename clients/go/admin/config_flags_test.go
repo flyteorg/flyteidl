@@ -197,6 +197,20 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_authType", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("authType", testValue)
+			if vString, err := cmdFlags.GetString("authType"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.AuthType)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 	t.Run("Test_tokenRefreshWindow", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
@@ -256,7 +270,7 @@ func TestConfig_SetFlags(t *testing.T) {
 	t.Run("Test_scopes", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := join_Config("1,1", ",")
+			testValue := join_Config(defaultConfig.Scopes, ",")
 
 			cmdFlags.Set("scopes", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("scopes"); err == nil {
@@ -340,7 +354,7 @@ func TestConfig_SetFlags(t *testing.T) {
 	t.Run("Test_command", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := join_Config("1,1", ",")
+			testValue := join_Config(defaultConfig.Command, ",")
 
 			cmdFlags.Set("command", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("command"); err == nil {
