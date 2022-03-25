@@ -11814,6 +11814,18 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig maxParallelism */
             maxParallelism?: (number|null);
+
+            /** WorkflowExecutionConfig securityContext */
+            securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** WorkflowExecutionConfig rawOutputDataConfig */
+            rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+
+            /** WorkflowExecutionConfig labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** WorkflowExecutionConfig annotations */
+            annotations?: (flyteidl.admin.IAnnotations|null);
         }
 
         /** Represents a WorkflowExecutionConfig. */
@@ -11827,6 +11839,18 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig maxParallelism. */
             public maxParallelism: number;
+
+            /** WorkflowExecutionConfig securityContext. */
+            public securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** WorkflowExecutionConfig rawOutputDataConfig. */
+            public rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+
+            /** WorkflowExecutionConfig labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** WorkflowExecutionConfig annotations. */
+            public annotations?: (flyteidl.admin.IAnnotations|null);
 
             /**
              * Creates a new WorkflowExecutionConfig instance using the specified properties.
