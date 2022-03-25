@@ -53,6 +53,8 @@ This message contains metadata about external resources produced or used by a sp
    "index", ":ref:`ref_uint32`", "", "A unique index for the external resource with respect to all external resources for this task. Although the identifier may change between task reporting events or retries, this will remain the same to enable aggregating information from multiple reports."
    "retry_attempt", ":ref:`ref_uint32`", "", "Retry attempt number for this external resource, ie., 2 for the second attempt"
    "phase", ":ref:`ref_flyteidl.core.TaskExecution.Phase`", "", "Phase associated with the external resource"
+   "cache_status", ":ref:`ref_flyteidl.core.CatalogCacheStatus`", "", "Captures the status of caching for this external resource execution."
+   "logs", ":ref:`ref_flyteidl.core.TaskLog`", "repeated", "log information for the external resource execution"
 
 
 
