@@ -6600,6 +6600,16 @@
         "node_name": {
           "type": "string",
           "title": "Friendly readable name for the node"
+        },
+        "is_parent": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Whether this node launched a subworkflow."
+        },
+        "is_dynamic": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Whether this node yielded a dynamic workflow."
         }
       }
     },

@@ -270,7 +270,7 @@ func TestConfig_SetFlags(t *testing.T) {
 	t.Run("Test_scopes", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := join_Config(defaultConfig.Scopes, ",")
+			testValue := join_Config("1,1", ",")
 
 			cmdFlags.Set("scopes", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("scopes"); err == nil {
@@ -354,7 +354,7 @@ func TestConfig_SetFlags(t *testing.T) {
 	t.Run("Test_command", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := join_Config(defaultConfig.Command, ",")
+			testValue := join_Config("1,1", ",")
 
 			cmdFlags.Set("command", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("command"); err == nil {

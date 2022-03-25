@@ -2058,6 +2058,10 @@ Adds defaults for customizable workflow-execution specifications and overrides.
    :widths: auto
 
    "max_parallelism", ":ref:`ref_int32`", "", "Can be used to control the number of parallel nodes to run within the workflow. This is useful to achieve fairness."
+   "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "Indicates security context permissions for executions triggered with this matchable attribute."
+   "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
+   "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Custom labels to be applied to a triggered execution resource."
+   "annotations", ":ref:`ref_flyteidl.admin.Annotations`", "", "Custom annotations to be applied to a triggered execution resource."
 
 
 

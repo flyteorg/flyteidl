@@ -559,6 +559,18 @@ class NodeExecutionEvent final :
   ::flyteidl::core::NodeExecution_Phase phase() const;
   void set_phase(::flyteidl::core::NodeExecution_Phase value);
 
+  // bool is_parent = 16;
+  void clear_is_parent();
+  static const int kIsParentFieldNumber = 16;
+  bool is_parent() const;
+  void set_is_parent(bool value);
+
+  // bool is_dynamic = 17;
+  void clear_is_dynamic();
+  static const int kIsDynamicFieldNumber = 17;
+  bool is_dynamic() const;
+  void set_is_dynamic(bool value);
+
   // string output_uri = 6;
   private:
   bool has_output_uri() const;
@@ -642,6 +654,8 @@ class NodeExecutionEvent final :
   ::flyteidl::event::ParentTaskExecutionMetadata* parent_task_metadata_;
   ::flyteidl::event::ParentNodeExecutionMetadata* parent_node_metadata_;
   int phase_;
+  bool is_parent_;
+  bool is_dynamic_;
   union OutputResultUnion {
     OutputResultUnion() {}
     ::google::protobuf::internal::ArenaStringPtr output_uri_;
@@ -3107,6 +3121,34 @@ inline void NodeExecutionEvent::set_allocated_node_name(::std::string* node_name
   }
   node_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), node_name);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.node_name)
+}
+
+// bool is_parent = 16;
+inline void NodeExecutionEvent::clear_is_parent() {
+  is_parent_ = false;
+}
+inline bool NodeExecutionEvent::is_parent() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.is_parent)
+  return is_parent_;
+}
+inline void NodeExecutionEvent::set_is_parent(bool value) {
+  
+  is_parent_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.is_parent)
+}
+
+// bool is_dynamic = 17;
+inline void NodeExecutionEvent::clear_is_dynamic() {
+  is_dynamic_ = false;
+}
+inline bool NodeExecutionEvent::is_dynamic() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.is_dynamic)
+  return is_dynamic_;
+}
+inline void NodeExecutionEvent::set_is_dynamic(bool value) {
+  
+  is_dynamic_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.is_dynamic)
 }
 
 inline bool NodeExecutionEvent::has_output_result() const {

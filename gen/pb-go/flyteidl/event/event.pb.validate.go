@@ -232,6 +232,10 @@ func (m *NodeExecutionEvent) Validate() error {
 
 	// no validation rules for NodeName
 
+	// no validation rules for IsParent
+
+	// no validation rules for IsDynamic
+
 	switch m.OutputResult.(type) {
 
 	case *NodeExecutionEvent_OutputUri:
