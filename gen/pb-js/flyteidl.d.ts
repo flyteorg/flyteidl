@@ -6795,6 +6795,12 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo phase */
             phase?: (flyteidl.core.TaskExecution.Phase|null);
+
+            /** ExternalResourceInfo cacheStatus */
+            cacheStatus?: (flyteidl.core.CatalogCacheStatus|null);
+
+            /** ExternalResourceInfo logs */
+            logs?: (flyteidl.core.ITaskLog[]|null);
         }
 
         /** Represents an ExternalResourceInfo. */
@@ -6817,6 +6823,12 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo phase. */
             public phase: flyteidl.core.TaskExecution.Phase;
+
+            /** ExternalResourceInfo cacheStatus. */
+            public cacheStatus: flyteidl.core.CatalogCacheStatus;
+
+            /** ExternalResourceInfo logs. */
+            public logs: flyteidl.core.ITaskLog[];
 
             /**
              * Creates a new ExternalResourceInfo instance using the specified properties.
