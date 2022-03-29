@@ -6246,6 +6246,9 @@ export namespace flyteidl {
             /** NodeExecutionEvent nodeName */
             nodeName?: (string|null);
 
+            /** NodeExecutionEvent eventVersion */
+            eventVersion?: (number|null);
+
             /** NodeExecutionEvent isParent */
             isParent?: (boolean|null);
 
@@ -6306,6 +6309,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent nodeName. */
             public nodeName: string;
+
+            /** NodeExecutionEvent eventVersion. */
+            public eventVersion: number;
 
             /** NodeExecutionEvent isParent. */
             public isParent: boolean;

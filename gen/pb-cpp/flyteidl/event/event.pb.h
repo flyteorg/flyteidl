@@ -559,15 +559,21 @@ class NodeExecutionEvent final :
   ::flyteidl::core::NodeExecution_Phase phase() const;
   void set_phase(::flyteidl::core::NodeExecution_Phase value);
 
-  // bool is_parent = 16;
+  // int32 event_version = 16;
+  void clear_event_version();
+  static const int kEventVersionFieldNumber = 16;
+  ::google::protobuf::int32 event_version() const;
+  void set_event_version(::google::protobuf::int32 value);
+
+  // bool is_parent = 17;
   void clear_is_parent();
-  static const int kIsParentFieldNumber = 16;
+  static const int kIsParentFieldNumber = 17;
   bool is_parent() const;
   void set_is_parent(bool value);
 
-  // bool is_dynamic = 17;
+  // bool is_dynamic = 18;
   void clear_is_dynamic();
-  static const int kIsDynamicFieldNumber = 17;
+  static const int kIsDynamicFieldNumber = 18;
   bool is_dynamic() const;
   void set_is_dynamic(bool value);
 
@@ -654,6 +660,7 @@ class NodeExecutionEvent final :
   ::flyteidl::event::ParentTaskExecutionMetadata* parent_task_metadata_;
   ::flyteidl::event::ParentNodeExecutionMetadata* parent_node_metadata_;
   int phase_;
+  ::google::protobuf::int32 event_version_;
   bool is_parent_;
   bool is_dynamic_;
   union OutputResultUnion {
@@ -3143,7 +3150,21 @@ inline void NodeExecutionEvent::set_allocated_node_name(::std::string* node_name
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.node_name)
 }
 
-// bool is_parent = 16;
+// int32 event_version = 16;
+inline void NodeExecutionEvent::clear_event_version() {
+  event_version_ = 0;
+}
+inline ::google::protobuf::int32 NodeExecutionEvent::event_version() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.event_version)
+  return event_version_;
+}
+inline void NodeExecutionEvent::set_event_version(::google::protobuf::int32 value) {
+  
+  event_version_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.event_version)
+}
+
+// bool is_parent = 17;
 inline void NodeExecutionEvent::clear_is_parent() {
   is_parent_ = false;
 }
@@ -3157,7 +3178,7 @@ inline void NodeExecutionEvent::set_is_parent(bool value) {
   // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.is_parent)
 }
 
-// bool is_dynamic = 17;
+// bool is_dynamic = 18;
 inline void NodeExecutionEvent::clear_is_dynamic() {
   is_dynamic_ = false;
 }

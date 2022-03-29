@@ -34,6 +34,7 @@ type EventNodeExecutionEvent struct {
 	RetryGroup string `json:"retry_group,omitempty"`
 	SpecNodeId string `json:"spec_node_id,omitempty"`
 	NodeName string `json:"node_name,omitempty"`
+	EventVersion int32 `json:"event_version,omitempty"`
 	// Whether this node launched a subworkflow.
 	IsParent bool `json:"is_parent,omitempty"`
 	// Whether this node yielded a dynamic workflow.
