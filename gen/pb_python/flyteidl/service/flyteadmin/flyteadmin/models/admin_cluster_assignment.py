@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.admin_affinity import AdminAffinity  # noqa: F401,E501
+from flyteadmin.models.admin_toleration import AdminToleration  # noqa: F401,E501
 
 
 class AdminClusterAssignment(object):
@@ -33,21 +34,26 @@ class AdminClusterAssignment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'affinity': 'AdminAffinity'
+        'affinity': 'AdminAffinity',
+        'toleration': 'AdminToleration'
     }
 
     attribute_map = {
-        'affinity': 'affinity'
+        'affinity': 'affinity',
+        'toleration': 'toleration'
     }
 
-    def __init__(self, affinity=None):  # noqa: E501
+    def __init__(self, affinity=None, toleration=None):  # noqa: E501
         """AdminClusterAssignment - a model defined in Swagger"""  # noqa: E501
 
         self._affinity = None
+        self._toleration = None
         self.discriminator = None
 
         if affinity is not None:
             self.affinity = affinity
+        if toleration is not None:
+            self.toleration = toleration
 
     @property
     def affinity(self):
@@ -69,6 +75,27 @@ class AdminClusterAssignment(object):
         """
 
         self._affinity = affinity
+
+    @property
+    def toleration(self):
+        """Gets the toleration of this AdminClusterAssignment.  # noqa: E501
+
+
+        :return: The toleration of this AdminClusterAssignment.  # noqa: E501
+        :rtype: AdminToleration
+        """
+        return self._toleration
+
+    @toleration.setter
+    def toleration(self, toleration):
+        """Sets the toleration of this AdminClusterAssignment.
+
+
+        :param toleration: The toleration of this AdminClusterAssignment.  # noqa: E501
+        :type: AdminToleration
+        """
+
+        self._toleration = toleration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
