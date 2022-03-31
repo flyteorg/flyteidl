@@ -2343,6 +2343,29 @@ public final class Event {
     com.google.protobuf.ByteString
         getNodeNameBytes();
 
+    /**
+     * <code>int32 event_version = 16;</code>
+     */
+    int getEventVersion();
+
+    /**
+     * <pre>
+     * Whether this node launched a subworkflow.
+     * </pre>
+     *
+     * <code>bool is_parent = 17;</code>
+     */
+    boolean getIsParent();
+
+    /**
+     * <pre>
+     * Whether this node yielded a dynamic workflow.
+     * </pre>
+     *
+     * <code>bool is_dynamic = 18;</code>
+     */
+    boolean getIsDynamic();
+
     public flyteidl.event.Event.NodeExecutionEvent.OutputResultCase getOutputResultCase();
 
     public flyteidl.event.Event.NodeExecutionEvent.TargetMetadataCase getTargetMetadataCase();
@@ -2540,6 +2563,21 @@ public final class Event {
                 outputResult_ = subBuilder.buildPartial();
               }
               outputResultCase_ = 15;
+              break;
+            }
+            case 128: {
+
+              eventVersion_ = input.readInt32();
+              break;
+            }
+            case 136: {
+
+              isParent_ = input.readBool();
+              break;
+            }
+            case 144: {
+
+              isDynamic_ = input.readBool();
               break;
             }
             default: {
@@ -3189,6 +3227,41 @@ public final class Event {
       }
     }
 
+    public static final int EVENT_VERSION_FIELD_NUMBER = 16;
+    private int eventVersion_;
+    /**
+     * <code>int32 event_version = 16;</code>
+     */
+    public int getEventVersion() {
+      return eventVersion_;
+    }
+
+    public static final int IS_PARENT_FIELD_NUMBER = 17;
+    private boolean isParent_;
+    /**
+     * <pre>
+     * Whether this node launched a subworkflow.
+     * </pre>
+     *
+     * <code>bool is_parent = 17;</code>
+     */
+    public boolean getIsParent() {
+      return isParent_;
+    }
+
+    public static final int IS_DYNAMIC_FIELD_NUMBER = 18;
+    private boolean isDynamic_;
+    /**
+     * <pre>
+     * Whether this node yielded a dynamic workflow.
+     * </pre>
+     *
+     * <code>bool is_dynamic = 18;</code>
+     */
+    public boolean getIsDynamic() {
+      return isDynamic_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3247,6 +3320,15 @@ public final class Event {
       }
       if (outputResultCase_ == 15) {
         output.writeMessage(15, (flyteidl.core.Literals.LiteralMap) outputResult_);
+      }
+      if (eventVersion_ != 0) {
+        output.writeInt32(16, eventVersion_);
+      }
+      if (isParent_ != false) {
+        output.writeBool(17, isParent_);
+      }
+      if (isDynamic_ != false) {
+        output.writeBool(18, isDynamic_);
       }
       unknownFields.writeTo(output);
     }
@@ -3311,6 +3393,18 @@ public final class Event {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, (flyteidl.core.Literals.LiteralMap) outputResult_);
       }
+      if (eventVersion_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, eventVersion_);
+      }
+      if (isParent_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(17, isParent_);
+      }
+      if (isDynamic_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(18, isDynamic_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3357,6 +3451,12 @@ public final class Event {
           .equals(other.getSpecNodeId())) return false;
       if (!getNodeName()
           .equals(other.getNodeName())) return false;
+      if (getEventVersion()
+          != other.getEventVersion()) return false;
+      if (getIsParent()
+          != other.getIsParent()) return false;
+      if (getIsDynamic()
+          != other.getIsDynamic()) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
         case 6:
@@ -3426,6 +3526,14 @@ public final class Event {
       hash = (53 * hash) + getSpecNodeId().hashCode();
       hash = (37 * hash) + NODE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNodeName().hashCode();
+      hash = (37 * hash) + EVENT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getEventVersion();
+      hash = (37 * hash) + IS_PARENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsParent());
+      hash = (37 * hash) + IS_DYNAMIC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDynamic());
       switch (outputResultCase_) {
         case 6:
           hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
@@ -3623,6 +3731,12 @@ public final class Event {
 
         nodeName_ = "";
 
+        eventVersion_ = 0;
+
+        isParent_ = false;
+
+        isDynamic_ = false;
+
         outputResultCase_ = 0;
         outputResult_ = null;
         targetMetadataCase_ = 0;
@@ -3710,6 +3824,9 @@ public final class Event {
         result.retryGroup_ = retryGroup_;
         result.specNodeId_ = specNodeId_;
         result.nodeName_ = nodeName_;
+        result.eventVersion_ = eventVersion_;
+        result.isParent_ = isParent_;
+        result.isDynamic_ = isDynamic_;
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
         onBuilt();
@@ -3794,6 +3911,15 @@ public final class Event {
         if (!other.getNodeName().isEmpty()) {
           nodeName_ = other.nodeName_;
           onChanged();
+        }
+        if (other.getEventVersion() != 0) {
+          setEventVersion(other.getEventVersion());
+        }
+        if (other.getIsParent() != false) {
+          setIsParent(other.getIsParent());
+        }
+        if (other.getIsDynamic() != false) {
+          setIsDynamic(other.getIsDynamic());
         }
         switch (other.getOutputResultCase()) {
           case OUTPUT_URI: {
@@ -5699,6 +5825,108 @@ public final class Event {
   checkByteStringIsUtf8(value);
         
         nodeName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int eventVersion_ ;
+      /**
+       * <code>int32 event_version = 16;</code>
+       */
+      public int getEventVersion() {
+        return eventVersion_;
+      }
+      /**
+       * <code>int32 event_version = 16;</code>
+       */
+      public Builder setEventVersion(int value) {
+        
+        eventVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 event_version = 16;</code>
+       */
+      public Builder clearEventVersion() {
+        
+        eventVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isParent_ ;
+      /**
+       * <pre>
+       * Whether this node launched a subworkflow.
+       * </pre>
+       *
+       * <code>bool is_parent = 17;</code>
+       */
+      public boolean getIsParent() {
+        return isParent_;
+      }
+      /**
+       * <pre>
+       * Whether this node launched a subworkflow.
+       * </pre>
+       *
+       * <code>bool is_parent = 17;</code>
+       */
+      public Builder setIsParent(boolean value) {
+        
+        isParent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Whether this node launched a subworkflow.
+       * </pre>
+       *
+       * <code>bool is_parent = 17;</code>
+       */
+      public Builder clearIsParent() {
+        
+        isParent_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isDynamic_ ;
+      /**
+       * <pre>
+       * Whether this node yielded a dynamic workflow.
+       * </pre>
+       *
+       * <code>bool is_dynamic = 18;</code>
+       */
+      public boolean getIsDynamic() {
+        return isDynamic_;
+      }
+      /**
+       * <pre>
+       * Whether this node yielded a dynamic workflow.
+       * </pre>
+       *
+       * <code>bool is_dynamic = 18;</code>
+       */
+      public Builder setIsDynamic(boolean value) {
+        
+        isDynamic_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Whether this node yielded a dynamic workflow.
+       * </pre>
+       *
+       * <code>bool is_dynamic = 18;</code>
+       */
+      public Builder clearIsDynamic() {
+        
+        isDynamic_ = false;
         onChanged();
         return this;
       }
@@ -13808,6 +14036,67 @@ public final class Event {
      * <code>.flyteidl.core.TaskExecution.Phase phase = 4;</code>
      */
     flyteidl.core.Execution.TaskExecution.Phase getPhase();
+
+    /**
+     * <pre>
+     * Captures the status of caching for this external resource execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+     */
+    int getCacheStatusValue();
+    /**
+     * <pre>
+     * Captures the status of caching for this external resource execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+     */
+    flyteidl.core.Catalog.CatalogCacheStatus getCacheStatus();
+
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    java.util.List<flyteidl.core.Execution.TaskLog> 
+        getLogsList();
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    flyteidl.core.Execution.TaskLog getLogs(int index);
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    int getLogsCount();
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    java.util.List<? extends flyteidl.core.Execution.TaskLogOrBuilder> 
+        getLogsOrBuilderList();
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    flyteidl.core.Execution.TaskLogOrBuilder getLogsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -13828,6 +14117,8 @@ public final class Event {
     private ExternalResourceInfo() {
       externalId_ = "";
       phase_ = 0;
+      cacheStatus_ = 0;
+      logs_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -13876,6 +14167,21 @@ public final class Event {
               phase_ = rawValue;
               break;
             }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              cacheStatus_ = rawValue;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                logs_ = new java.util.ArrayList<flyteidl.core.Execution.TaskLog>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              logs_.add(
+                  input.readMessage(flyteidl.core.Execution.TaskLog.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -13891,6 +14197,9 @@ public final class Event {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          logs_ = java.util.Collections.unmodifiableList(logs_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -13908,6 +14217,7 @@ public final class Event {
               flyteidl.event.Event.ExternalResourceInfo.class, flyteidl.event.Event.ExternalResourceInfo.Builder.class);
     }
 
+    private int bitField0_;
     public static final int EXTERNAL_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object externalId_;
     /**
@@ -14003,6 +14313,86 @@ public final class Event {
       return result == null ? flyteidl.core.Execution.TaskExecution.Phase.UNRECOGNIZED : result;
     }
 
+    public static final int CACHE_STATUS_FIELD_NUMBER = 5;
+    private int cacheStatus_;
+    /**
+     * <pre>
+     * Captures the status of caching for this external resource execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+     */
+    public int getCacheStatusValue() {
+      return cacheStatus_;
+    }
+    /**
+     * <pre>
+     * Captures the status of caching for this external resource execution.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+     */
+    public flyteidl.core.Catalog.CatalogCacheStatus getCacheStatus() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Catalog.CatalogCacheStatus result = flyteidl.core.Catalog.CatalogCacheStatus.valueOf(cacheStatus_);
+      return result == null ? flyteidl.core.Catalog.CatalogCacheStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int LOGS_FIELD_NUMBER = 6;
+    private java.util.List<flyteidl.core.Execution.TaskLog> logs_;
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    public java.util.List<flyteidl.core.Execution.TaskLog> getLogsList() {
+      return logs_;
+    }
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Execution.TaskLogOrBuilder> 
+        getLogsOrBuilderList() {
+      return logs_;
+    }
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    public int getLogsCount() {
+      return logs_.size();
+    }
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    public flyteidl.core.Execution.TaskLog getLogs(int index) {
+      return logs_.get(index);
+    }
+    /**
+     * <pre>
+     * log information for the external resource execution
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+     */
+    public flyteidl.core.Execution.TaskLogOrBuilder getLogsOrBuilder(
+        int index) {
+      return logs_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14029,6 +14419,12 @@ public final class Event {
       if (phase_ != flyteidl.core.Execution.TaskExecution.Phase.UNDEFINED.getNumber()) {
         output.writeEnum(4, phase_);
       }
+      if (cacheStatus_ != flyteidl.core.Catalog.CatalogCacheStatus.CACHE_DISABLED.getNumber()) {
+        output.writeEnum(5, cacheStatus_);
+      }
+      for (int i = 0; i < logs_.size(); i++) {
+        output.writeMessage(6, logs_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -14053,6 +14449,14 @@ public final class Event {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, phase_);
       }
+      if (cacheStatus_ != flyteidl.core.Catalog.CatalogCacheStatus.CACHE_DISABLED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, cacheStatus_);
+      }
+      for (int i = 0; i < logs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, logs_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14075,6 +14479,9 @@ public final class Event {
       if (getRetryAttempt()
           != other.getRetryAttempt()) return false;
       if (phase_ != other.phase_) return false;
+      if (cacheStatus_ != other.cacheStatus_) return false;
+      if (!getLogsList()
+          .equals(other.getLogsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14094,6 +14501,12 @@ public final class Event {
       hash = (53 * hash) + getRetryAttempt();
       hash = (37 * hash) + PHASE_FIELD_NUMBER;
       hash = (53 * hash) + phase_;
+      hash = (37 * hash) + CACHE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + cacheStatus_;
+      if (getLogsCount() > 0) {
+        hash = (37 * hash) + LOGS_FIELD_NUMBER;
+        hash = (53 * hash) + getLogsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14226,6 +14639,7 @@ public final class Event {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getLogsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -14239,6 +14653,14 @@ public final class Event {
 
         phase_ = 0;
 
+        cacheStatus_ = 0;
+
+        if (logsBuilder_ == null) {
+          logs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          logsBuilder_.clear();
+        }
         return this;
       }
 
@@ -14265,10 +14687,23 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.ExternalResourceInfo buildPartial() {
         flyteidl.event.Event.ExternalResourceInfo result = new flyteidl.event.Event.ExternalResourceInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.externalId_ = externalId_;
         result.index_ = index_;
         result.retryAttempt_ = retryAttempt_;
         result.phase_ = phase_;
+        result.cacheStatus_ = cacheStatus_;
+        if (logsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            logs_ = java.util.Collections.unmodifiableList(logs_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.logs_ = logs_;
+        } else {
+          result.logs_ = logsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -14330,6 +14765,35 @@ public final class Event {
         if (other.phase_ != 0) {
           setPhaseValue(other.getPhaseValue());
         }
+        if (other.cacheStatus_ != 0) {
+          setCacheStatusValue(other.getCacheStatusValue());
+        }
+        if (logsBuilder_ == null) {
+          if (!other.logs_.isEmpty()) {
+            if (logs_.isEmpty()) {
+              logs_ = other.logs_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureLogsIsMutable();
+              logs_.addAll(other.logs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.logs_.isEmpty()) {
+            if (logsBuilder_.isEmpty()) {
+              logsBuilder_.dispose();
+              logsBuilder_ = null;
+              logs_ = other.logs_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              logsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLogsFieldBuilder() : null;
+            } else {
+              logsBuilder_.addAllMessages(other.logs_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -14358,6 +14822,7 @@ public final class Event {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object externalId_ = "";
       /**
@@ -14593,6 +15058,383 @@ public final class Event {
         phase_ = 0;
         onChanged();
         return this;
+      }
+
+      private int cacheStatus_ = 0;
+      /**
+       * <pre>
+       * Captures the status of caching for this external resource execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+       */
+      public int getCacheStatusValue() {
+        return cacheStatus_;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this external resource execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+       */
+      public Builder setCacheStatusValue(int value) {
+        cacheStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this external resource execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+       */
+      public flyteidl.core.Catalog.CatalogCacheStatus getCacheStatus() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Catalog.CatalogCacheStatus result = flyteidl.core.Catalog.CatalogCacheStatus.valueOf(cacheStatus_);
+        return result == null ? flyteidl.core.Catalog.CatalogCacheStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this external resource execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+       */
+      public Builder setCacheStatus(flyteidl.core.Catalog.CatalogCacheStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        cacheStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this external resource execution.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CatalogCacheStatus cache_status = 5;</code>
+       */
+      public Builder clearCacheStatus() {
+        
+        cacheStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<flyteidl.core.Execution.TaskLog> logs_ =
+        java.util.Collections.emptyList();
+      private void ensureLogsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          logs_ = new java.util.ArrayList<flyteidl.core.Execution.TaskLog>(logs_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Execution.TaskLog, flyteidl.core.Execution.TaskLog.Builder, flyteidl.core.Execution.TaskLogOrBuilder> logsBuilder_;
+
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public java.util.List<flyteidl.core.Execution.TaskLog> getLogsList() {
+        if (logsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(logs_);
+        } else {
+          return logsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public int getLogsCount() {
+        if (logsBuilder_ == null) {
+          return logs_.size();
+        } else {
+          return logsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public flyteidl.core.Execution.TaskLog getLogs(int index) {
+        if (logsBuilder_ == null) {
+          return logs_.get(index);
+        } else {
+          return logsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder setLogs(
+          int index, flyteidl.core.Execution.TaskLog value) {
+        if (logsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogsIsMutable();
+          logs_.set(index, value);
+          onChanged();
+        } else {
+          logsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder setLogs(
+          int index, flyteidl.core.Execution.TaskLog.Builder builderForValue) {
+        if (logsBuilder_ == null) {
+          ensureLogsIsMutable();
+          logs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          logsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder addLogs(flyteidl.core.Execution.TaskLog value) {
+        if (logsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogsIsMutable();
+          logs_.add(value);
+          onChanged();
+        } else {
+          logsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder addLogs(
+          int index, flyteidl.core.Execution.TaskLog value) {
+        if (logsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogsIsMutable();
+          logs_.add(index, value);
+          onChanged();
+        } else {
+          logsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder addLogs(
+          flyteidl.core.Execution.TaskLog.Builder builderForValue) {
+        if (logsBuilder_ == null) {
+          ensureLogsIsMutable();
+          logs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          logsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder addLogs(
+          int index, flyteidl.core.Execution.TaskLog.Builder builderForValue) {
+        if (logsBuilder_ == null) {
+          ensureLogsIsMutable();
+          logs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          logsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder addAllLogs(
+          java.lang.Iterable<? extends flyteidl.core.Execution.TaskLog> values) {
+        if (logsBuilder_ == null) {
+          ensureLogsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, logs_);
+          onChanged();
+        } else {
+          logsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder clearLogs() {
+        if (logsBuilder_ == null) {
+          logs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          logsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public Builder removeLogs(int index) {
+        if (logsBuilder_ == null) {
+          ensureLogsIsMutable();
+          logs_.remove(index);
+          onChanged();
+        } else {
+          logsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public flyteidl.core.Execution.TaskLog.Builder getLogsBuilder(
+          int index) {
+        return getLogsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public flyteidl.core.Execution.TaskLogOrBuilder getLogsOrBuilder(
+          int index) {
+        if (logsBuilder_ == null) {
+          return logs_.get(index);  } else {
+          return logsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Execution.TaskLogOrBuilder> 
+           getLogsOrBuilderList() {
+        if (logsBuilder_ != null) {
+          return logsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(logs_);
+        }
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public flyteidl.core.Execution.TaskLog.Builder addLogsBuilder() {
+        return getLogsFieldBuilder().addBuilder(
+            flyteidl.core.Execution.TaskLog.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public flyteidl.core.Execution.TaskLog.Builder addLogsBuilder(
+          int index) {
+        return getLogsFieldBuilder().addBuilder(
+            index, flyteidl.core.Execution.TaskLog.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * log information for the external resource execution
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.TaskLog logs = 6;</code>
+       */
+      public java.util.List<flyteidl.core.Execution.TaskLog.Builder> 
+           getLogsBuilderList() {
+        return getLogsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Execution.TaskLog, flyteidl.core.Execution.TaskLog.Builder, flyteidl.core.Execution.TaskLogOrBuilder> 
+          getLogsFieldBuilder() {
+        if (logsBuilder_ == null) {
+          logsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Execution.TaskLog, flyteidl.core.Execution.TaskLog.Builder, flyteidl.core.Execution.TaskLogOrBuilder>(
+                  logs_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          logs_ = null;
+        }
+        return logsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -17469,7 +18311,7 @@ public final class Event {
       "\noutput_uri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.fly" +
       "teidl.core.ExecutionErrorH\000\0220\n\013output_da" +
       "ta\030\007 \001(\0132\031.flyteidl.core.LiteralMapH\000B\017\n" +
-      "\routput_result\"\314\005\n\022NodeExecutionEvent\0222\n" +
+      "\routput_result\"\212\006\n\022NodeExecutionEvent\0222\n" +
       "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
       "dentifier\022\023\n\013producer_id\030\002 \001(\t\0221\n\005phase\030" +
       "\003 \001(\0162\".flyteidl.core.NodeExecution.Phas" +
@@ -17486,54 +18328,58 @@ public final class Event {
       "\022I\n\024parent_node_metadata\030\n \001(\0132+.flyteid" +
       "l.event.ParentNodeExecutionMetadata\022\023\n\013r" +
       "etry_group\030\013 \001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021" +
-      "\n\tnode_name\030\r \001(\tB\017\n\routput_resultB\021\n\017ta" +
-      "rget_metadata\"X\n\024WorkflowNodeMetadata\022@\n" +
-      "\014execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\"\215\002\n\020TaskNodeMeta" +
-      "data\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.co" +
-      "re.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001" +
-      "(\0132\036.flyteidl.core.CatalogMetadata\022D\n\022re" +
-      "servation_status\030\003 \001(\0162(.flyteidl.core.C" +
-      "atalogReservation.Status\022E\n\020dynamic_work" +
-      "flow\030\020 \001(\0132+.flyteidl.event.DynamicWorkf" +
-      "lowNodeMetadata\"\207\001\n\033DynamicWorkflowNodeM" +
-      "etadata\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
-      "tifier\022A\n\021compiled_workflow\030\002 \001(\0132&.flyt" +
-      "eidl.core.CompiledWorkflowClosure\"Q\n\033Par" +
-      "entTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&.f" +
-      "lyteidl.core.TaskExecutionIdentifier\".\n\033" +
-      "ParentNodeExecutionMetadata\022\017\n\007node_id\030\001" +
-      " \001(\t\"\375\004\n\022TaskExecutionEvent\022*\n\007task_id\030\001" +
-      " \001(\0132\031.flyteidl.core.Identifier\022H\n\030paren" +
-      "t_node_execution_id\030\002 \001(\0132&.flyteidl.cor" +
-      "e.NodeExecutionIdentifier\022\025\n\rretry_attem" +
-      "pt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core." +
-      "TaskExecution.Phase\022\023\n\013producer_id\030\005 \001(\t" +
-      "\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\022/" +
-      "\n\013occurred_at\030\007 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_uri" +
-      "\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core." +
-      "ExecutionErrorH\000\0220\n\013output_data\030\021 \001(\0132\031." +
-      "flyteidl.core.LiteralMapH\000\022,\n\013custom_inf" +
-      "o\030\013 \001(\0132\027.google.protobuf.Struct\022\025\n\rphas" +
-      "e_version\030\014 \001(\r\022\016\n\006reason\030\r \001(\t\022\021\n\ttask_" +
-      "type\030\016 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl." +
-      "event.TaskExecutionMetadataB\017\n\routput_re" +
-      "sult\"\204\001\n\024ExternalResourceInfo\022\023\n\013externa" +
-      "l_id\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_attem" +
-      "pt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core." +
-      "TaskExecution.Phase\"?\n\020ResourcePoolInfo\022" +
-      "\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002" +
-      " \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016genera" +
-      "ted_name\030\001 \001(\t\022@\n\022external_resources\030\002 \003" +
-      "(\0132$.flyteidl.event.ExternalResourceInfo" +
-      "\022<\n\022resource_pool_info\030\003 \003(\0132 .flyteidl." +
-      "event.ResourcePoolInfo\022\031\n\021plugin_identif" +
-      "ier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.flyt" +
-      "eidl.event.TaskExecutionMetadata.Instanc" +
-      "eClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\r" +
-      "INTERRUPTIBLE\020\001B7Z5github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/eventb\006proto3"
+      "\n\tnode_name\030\r \001(\t\022\025\n\revent_version\030\020 \001(\005" +
+      "\022\021\n\tis_parent\030\021 \001(\010\022\022\n\nis_dynamic\030\022 \001(\010B" +
+      "\017\n\routput_resultB\021\n\017target_metadata\"X\n\024W" +
+      "orkflowNodeMetadata\022@\n\014execution_id\030\001 \001(" +
+      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
+      "ifier\"\215\002\n\020TaskNodeMetadata\0227\n\014cache_stat" +
+      "us\030\001 \001(\0162!.flyteidl.core.CatalogCacheSta" +
+      "tus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl.core" +
+      ".CatalogMetadata\022D\n\022reservation_status\030\003" +
+      " \001(\0162(.flyteidl.core.CatalogReservation." +
+      "Status\022E\n\020dynamic_workflow\030\020 \001(\0132+.flyte" +
+      "idl.event.DynamicWorkflowNodeMetadata\"\207\001" +
+      "\n\033DynamicWorkflowNodeMetadata\022%\n\002id\030\001 \001(" +
+      "\0132\031.flyteidl.core.Identifier\022A\n\021compiled" +
+      "_workflow\030\002 \001(\0132&.flyteidl.core.Compiled" +
+      "WorkflowClosure\"Q\n\033ParentTaskExecutionMe" +
+      "tadata\0222\n\002id\030\001 \001(\0132&.flyteidl.core.TaskE" +
+      "xecutionIdentifier\".\n\033ParentNodeExecutio" +
+      "nMetadata\022\017\n\007node_id\030\001 \001(\t\"\375\004\n\022TaskExecu" +
+      "tionEvent\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.co" +
+      "re.Identifier\022H\n\030parent_node_execution_i" +
+      "d\030\002 \001(\0132&.flyteidl.core.NodeExecutionIde" +
+      "ntifier\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030" +
+      "\004 \001(\0162\".flyteidl.core.TaskExecution.Phas" +
+      "e\022\023\n\013producer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.f" +
+      "lyteidl.core.TaskLog\022/\n\013occurred_at\030\007 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\021\n\tinput_u" +
+      "ri\030\010 \001(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030" +
+      "\n \001(\0132\035.flyteidl.core.ExecutionErrorH\000\0220" +
+      "\n\013output_data\030\021 \001(\0132\031.flyteidl.core.Lite" +
+      "ralMapH\000\022,\n\013custom_info\030\013 \001(\0132\027.google.p" +
+      "rotobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022\016\n" +
+      "\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010meta" +
+      "data\030\020 \001(\0132%.flyteidl.event.TaskExecutio" +
+      "nMetadataB\017\n\routput_result\"\343\001\n\024ExternalR" +
+      "esourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n\005inde" +
+      "x\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030" +
+      "\004 \001(\0162\".flyteidl.core.TaskExecution.Phas" +
+      "e\0227\n\014cache_status\030\005 \001(\0162!.flyteidl.core." +
+      "CatalogCacheStatus\022$\n\004logs\030\006 \003(\0132\026.flyte" +
+      "idl.core.TaskLog\"?\n\020ResourcePoolInfo\022\030\n\020" +
+      "allocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(" +
+      "\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016generated" +
+      "_name\030\001 \001(\t\022@\n\022external_resources\030\002 \003(\0132" +
+      "$.flyteidl.event.ExternalResourceInfo\022<\n" +
+      "\022resource_pool_info\030\003 \003(\0132 .flyteidl.eve" +
+      "nt.ResourcePoolInfo\022\031\n\021plugin_identifier" +
+      "\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.flyteid" +
+      "l.event.TaskExecutionMetadata.InstanceCl" +
+      "ass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINT" +
+      "ERRUPTIBLE\020\001B7Z5github.com/flyteorg/flyt" +
+      "eidl/gen/pb-go/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17565,7 +18411,7 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "OutputData", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "OutputData", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "EventVersion", "IsParent", "IsDynamic", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
@@ -17607,7 +18453,7 @@ public final class Event {
     internal_static_flyteidl_event_ExternalResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ExternalResourceInfo_descriptor,
-        new java.lang.String[] { "ExternalId", "Index", "RetryAttempt", "Phase", });
+        new java.lang.String[] { "ExternalId", "Index", "RetryAttempt", "Phase", "CacheStatus", "Logs", });
     internal_static_flyteidl_event_ResourcePoolInfo_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_event_ResourcePoolInfo_fieldAccessorTable = new

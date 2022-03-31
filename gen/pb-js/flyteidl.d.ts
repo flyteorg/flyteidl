@@ -6245,6 +6245,15 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent nodeName */
             nodeName?: (string|null);
+
+            /** NodeExecutionEvent eventVersion */
+            eventVersion?: (number|null);
+
+            /** NodeExecutionEvent isParent */
+            isParent?: (boolean|null);
+
+            /** NodeExecutionEvent isDynamic */
+            isDynamic?: (boolean|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -6300,6 +6309,15 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent nodeName. */
             public nodeName: string;
+
+            /** NodeExecutionEvent eventVersion. */
+            public eventVersion: number;
+
+            /** NodeExecutionEvent isParent. */
+            public isParent: boolean;
+
+            /** NodeExecutionEvent isDynamic. */
+            public isDynamic: boolean;
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -6783,6 +6801,12 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo phase */
             phase?: (flyteidl.core.TaskExecution.Phase|null);
+
+            /** ExternalResourceInfo cacheStatus */
+            cacheStatus?: (flyteidl.core.CatalogCacheStatus|null);
+
+            /** ExternalResourceInfo logs */
+            logs?: (flyteidl.core.ITaskLog[]|null);
         }
 
         /** Represents an ExternalResourceInfo. */
@@ -6805,6 +6829,12 @@ export namespace flyteidl {
 
             /** ExternalResourceInfo phase. */
             public phase: flyteidl.core.TaskExecution.Phase;
+
+            /** ExternalResourceInfo cacheStatus. */
+            public cacheStatus: flyteidl.core.CatalogCacheStatus;
+
+            /** ExternalResourceInfo logs. */
+            public logs: flyteidl.core.ITaskLog[];
 
             /**
              * Creates a new ExternalResourceInfo instance using the specified properties.
@@ -11802,6 +11832,18 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig maxParallelism */
             maxParallelism?: (number|null);
+
+            /** WorkflowExecutionConfig securityContext */
+            securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** WorkflowExecutionConfig rawOutputDataConfig */
+            rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+
+            /** WorkflowExecutionConfig labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** WorkflowExecutionConfig annotations */
+            annotations?: (flyteidl.admin.IAnnotations|null);
         }
 
         /** Represents a WorkflowExecutionConfig. */
@@ -11815,6 +11857,18 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig maxParallelism. */
             public maxParallelism: number;
+
+            /** WorkflowExecutionConfig securityContext. */
+            public securityContext?: (flyteidl.core.ISecurityContext|null);
+
+            /** WorkflowExecutionConfig rawOutputDataConfig. */
+            public rawOutputDataConfig?: (flyteidl.admin.IRawOutputDataConfig|null);
+
+            /** WorkflowExecutionConfig labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** WorkflowExecutionConfig annotations. */
+            public annotations?: (flyteidl.admin.IAnnotations|null);
 
             /**
              * Creates a new WorkflowExecutionConfig instance using the specified properties.

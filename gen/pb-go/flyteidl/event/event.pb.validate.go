@@ -45,6 +45,8 @@ var (
 	_ = core.TaskExecution_Phase(0)
 
 	_ = core.TaskExecution_Phase(0)
+
+	_ = core.CatalogCacheStatus(0)
 )
 
 // define the regex for a UUID once up-front
@@ -231,6 +233,12 @@ func (m *NodeExecutionEvent) Validate() error {
 	// no validation rules for SpecNodeId
 
 	// no validation rules for NodeName
+
+	// no validation rules for EventVersion
+
+	// no validation rules for IsParent
+
+	// no validation rules for IsDynamic
 
 	switch m.OutputResult.(type) {
 
@@ -944,6 +952,23 @@ func (m *ExternalResourceInfo) Validate() error {
 	// no validation rules for RetryAttempt
 
 	// no validation rules for Phase
+
+	// no validation rules for CacheStatus
+
+	for idx, item := range m.GetLogs() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ExternalResourceInfoValidationError{
+					field:  fmt.Sprintf("Logs[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }

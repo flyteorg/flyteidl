@@ -87,6 +87,14 @@ message NodeExecutionEvent {
 
     // Friendly readable name for the node
     string node_name = 13;
+
+    int32 event_version = 16;
+
+    // Whether this node launched a subworkflow.
+    bool is_parent = 17;
+
+    // Whether this node yielded a dynamic workflow.
+    bool is_dynamic = 18;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched
@@ -204,6 +212,12 @@ message ExternalResourceInfo {
 
     // Phase associated with the external resource
     core.TaskExecution.Phase phase = 4;
+
+    // Captures the status of caching for this external resource execution.
+    core.CatalogCacheStatus cache_status = 5;
+
+    // log information for the external resource execution
+    repeated core.TaskLog logs = 6;
 }
 
 

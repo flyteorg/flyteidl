@@ -14890,6 +14890,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [retryGroup] NodeExecutionEvent retryGroup
              * @property {string|null} [specNodeId] NodeExecutionEvent specNodeId
              * @property {string|null} [nodeName] NodeExecutionEvent nodeName
+             * @property {number|null} [eventVersion] NodeExecutionEvent eventVersion
+             * @property {boolean|null} [isParent] NodeExecutionEvent isParent
+             * @property {boolean|null} [isDynamic] NodeExecutionEvent isDynamic
              */
 
             /**
@@ -15027,6 +15030,30 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.nodeName = "";
 
+            /**
+             * NodeExecutionEvent eventVersion.
+             * @member {number} eventVersion
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.eventVersion = 0;
+
+            /**
+             * NodeExecutionEvent isParent.
+             * @member {boolean} isParent
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.isParent = false;
+
+            /**
+             * NodeExecutionEvent isDynamic.
+             * @member {boolean} isDynamic
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.isDynamic = false;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -15106,6 +15133,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.event.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.outputData != null && message.hasOwnProperty("outputData"))
                     $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
+                    writer.uint32(/* id 16, wireType 0 =*/128).int32(message.eventVersion);
+                if (message.isParent != null && message.hasOwnProperty("isParent"))
+                    writer.uint32(/* id 17, wireType 0 =*/136).bool(message.isParent);
+                if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
+                    writer.uint32(/* id 18, wireType 0 =*/144).bool(message.isDynamic);
                 return writer;
             };
 
@@ -15171,6 +15204,15 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 13:
                         message.nodeName = reader.string();
+                        break;
+                    case 16:
+                        message.eventVersion = reader.int32();
+                        break;
+                    case 17:
+                        message.isParent = reader.bool();
+                        break;
+                    case 18:
+                        message.isDynamic = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15287,6 +15329,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nodeName != null && message.hasOwnProperty("nodeName"))
                     if (!$util.isString(message.nodeName))
                         return "nodeName: string expected";
+                if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
+                    if (!$util.isInteger(message.eventVersion))
+                        return "eventVersion: integer expected";
+                if (message.isParent != null && message.hasOwnProperty("isParent"))
+                    if (typeof message.isParent !== "boolean")
+                        return "isParent: boolean expected";
+                if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
+                    if (typeof message.isDynamic !== "boolean")
+                        return "isDynamic: boolean expected";
                 return null;
             };
 
@@ -16377,6 +16428,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [index] ExternalResourceInfo index
              * @property {number|null} [retryAttempt] ExternalResourceInfo retryAttempt
              * @property {flyteidl.core.TaskExecution.Phase|null} [phase] ExternalResourceInfo phase
+             * @property {flyteidl.core.CatalogCacheStatus|null} [cacheStatus] ExternalResourceInfo cacheStatus
+             * @property {Array.<flyteidl.core.ITaskLog>|null} [logs] ExternalResourceInfo logs
              */
 
             /**
@@ -16388,6 +16441,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.event.IExternalResourceInfo=} [properties] Properties to set
              */
             function ExternalResourceInfo(properties) {
+                this.logs = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -16427,6 +16481,22 @@ export const flyteidl = $root.flyteidl = (() => {
             ExternalResourceInfo.prototype.phase = 0;
 
             /**
+             * ExternalResourceInfo cacheStatus.
+             * @member {flyteidl.core.CatalogCacheStatus} cacheStatus
+             * @memberof flyteidl.event.ExternalResourceInfo
+             * @instance
+             */
+            ExternalResourceInfo.prototype.cacheStatus = 0;
+
+            /**
+             * ExternalResourceInfo logs.
+             * @member {Array.<flyteidl.core.ITaskLog>} logs
+             * @memberof flyteidl.event.ExternalResourceInfo
+             * @instance
+             */
+            ExternalResourceInfo.prototype.logs = $util.emptyArray;
+
+            /**
              * Creates a new ExternalResourceInfo instance using the specified properties.
              * @function create
              * @memberof flyteidl.event.ExternalResourceInfo
@@ -16458,6 +16528,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.phase);
+                if (message.cacheStatus != null && message.hasOwnProperty("cacheStatus"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.cacheStatus);
+                if (message.logs != null && message.logs.length)
+                    for (let i = 0; i < message.logs.length; ++i)
+                        $root.flyteidl.core.TaskLog.encode(message.logs[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -16490,6 +16565,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.phase = reader.int32();
+                        break;
+                    case 5:
+                        message.cacheStatus = reader.int32();
+                        break;
+                    case 6:
+                        if (!(message.logs && message.logs.length))
+                            message.logs = [];
+                        message.logs.push($root.flyteidl.core.TaskLog.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16533,6 +16616,27 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 7:
                         break;
                     }
+                if (message.cacheStatus != null && message.hasOwnProperty("cacheStatus"))
+                    switch (message.cacheStatus) {
+                    default:
+                        return "cacheStatus: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+                if (message.logs != null && message.hasOwnProperty("logs")) {
+                    if (!Array.isArray(message.logs))
+                        return "logs: array expected";
+                    for (let i = 0; i < message.logs.length; ++i) {
+                        let error = $root.flyteidl.core.TaskLog.verify(message.logs[i]);
+                        if (error)
+                            return "logs." + error;
+                    }
+                }
                 return null;
             };
 
@@ -28184,6 +28288,10 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IWorkflowExecutionConfig
              * @property {number|null} [maxParallelism] WorkflowExecutionConfig maxParallelism
+             * @property {flyteidl.core.ISecurityContext|null} [securityContext] WorkflowExecutionConfig securityContext
+             * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] WorkflowExecutionConfig rawOutputDataConfig
+             * @property {flyteidl.admin.ILabels|null} [labels] WorkflowExecutionConfig labels
+             * @property {flyteidl.admin.IAnnotations|null} [annotations] WorkflowExecutionConfig annotations
              */
 
             /**
@@ -28208,6 +28316,38 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowExecutionConfig.prototype.maxParallelism = 0;
+
+            /**
+             * WorkflowExecutionConfig securityContext.
+             * @member {flyteidl.core.ISecurityContext|null|undefined} securityContext
+             * @memberof flyteidl.admin.WorkflowExecutionConfig
+             * @instance
+             */
+            WorkflowExecutionConfig.prototype.securityContext = null;
+
+            /**
+             * WorkflowExecutionConfig rawOutputDataConfig.
+             * @member {flyteidl.admin.IRawOutputDataConfig|null|undefined} rawOutputDataConfig
+             * @memberof flyteidl.admin.WorkflowExecutionConfig
+             * @instance
+             */
+            WorkflowExecutionConfig.prototype.rawOutputDataConfig = null;
+
+            /**
+             * WorkflowExecutionConfig labels.
+             * @member {flyteidl.admin.ILabels|null|undefined} labels
+             * @memberof flyteidl.admin.WorkflowExecutionConfig
+             * @instance
+             */
+            WorkflowExecutionConfig.prototype.labels = null;
+
+            /**
+             * WorkflowExecutionConfig annotations.
+             * @member {flyteidl.admin.IAnnotations|null|undefined} annotations
+             * @memberof flyteidl.admin.WorkflowExecutionConfig
+             * @instance
+             */
+            WorkflowExecutionConfig.prototype.annotations = null;
 
             /**
              * Creates a new WorkflowExecutionConfig instance using the specified properties.
@@ -28235,6 +28375,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.maxParallelism != null && message.hasOwnProperty("maxParallelism"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.maxParallelism);
+                if (message.securityContext != null && message.hasOwnProperty("securityContext"))
+                    $root.flyteidl.core.SecurityContext.encode(message.securityContext, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig"))
+                    $root.flyteidl.admin.RawOutputDataConfig.encode(message.rawOutputDataConfig, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.labels != null && message.hasOwnProperty("labels"))
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.annotations != null && message.hasOwnProperty("annotations"))
+                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -28259,6 +28407,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.maxParallelism = reader.int32();
                         break;
+                    case 2:
+                        message.securityContext = $root.flyteidl.core.SecurityContext.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.rawOutputDataConfig = $root.flyteidl.admin.RawOutputDataConfig.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -28281,6 +28441,26 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.maxParallelism != null && message.hasOwnProperty("maxParallelism"))
                     if (!$util.isInteger(message.maxParallelism))
                         return "maxParallelism: integer expected";
+                if (message.securityContext != null && message.hasOwnProperty("securityContext")) {
+                    let error = $root.flyteidl.core.SecurityContext.verify(message.securityContext);
+                    if (error)
+                        return "securityContext." + error;
+                }
+                if (message.rawOutputDataConfig != null && message.hasOwnProperty("rawOutputDataConfig")) {
+                    let error = $root.flyteidl.admin.RawOutputDataConfig.verify(message.rawOutputDataConfig);
+                    if (error)
+                        return "rawOutputDataConfig." + error;
+                }
+                if (message.labels != null && message.hasOwnProperty("labels")) {
+                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
+                    if (error)
+                        return "labels." + error;
+                }
+                if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                    let error = $root.flyteidl.admin.Annotations.verify(message.annotations);
+                    if (error)
+                        return "annotations." + error;
+                }
                 return null;
             };
 
