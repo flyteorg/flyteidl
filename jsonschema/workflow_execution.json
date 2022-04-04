@@ -2,32 +2,40 @@
   "$schema": "http://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin/workflow-execution-event-request",
   "properties": {
-    "execution_id": {
-      "$ref": "#/$defs/WorkflowExecutionIdentifier"
-    },
-    "producer_id": {
+    "RequestId": {
       "type": "string"
     },
-    "phase": {
-      "type": "integer"
-    },
-    "occurred_at": {
-      "$ref": "#/$defs/Timestamp"
-    },
-    "output_result": {
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "output_uri": {
-              "type": "string"
-            }
-          }
+    "Event": {
+      "type": "object",
+      "properties": {
+        "execution_id": {
+          "$ref": "#/$defs/WorkflowExecutionIdentifier"
         },
-        {
-          "$ref": "#/$defs/ExecutionError"
+        "producer_id": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "integer"
+        },
+        "occurred_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "output_result": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "output_uri": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "$ref": "#/$defs/ExecutionError"
+            }
+          ]
         }
-      ]
+      }
     }
   },
   "$defs": {
