@@ -1728,24 +1728,44 @@ public final class ClusterAssignmentOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     java.util.List<flyteidl.admin.ClusterAssignmentOuterClass.Selector> 
         getSelectorsList();
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     flyteidl.admin.ClusterAssignmentOuterClass.Selector getSelectors(int index);
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     int getSelectorsCount();
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     java.util.List<? extends flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder> 
         getSelectorsOrBuilderList();
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder getSelectorsOrBuilder(
@@ -1842,12 +1862,20 @@ public final class ClusterAssignmentOuterClass {
     public static final int SELECTORS_FIELD_NUMBER = 1;
     private java.util.List<flyteidl.admin.ClusterAssignmentOuterClass.Selector> selectors_;
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     public java.util.List<flyteidl.admin.ClusterAssignmentOuterClass.Selector> getSelectorsList() {
       return selectors_;
     }
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     public java.util.List<? extends flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder> 
@@ -1855,18 +1883,30 @@ public final class ClusterAssignmentOuterClass {
       return selectors_;
     }
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     public int getSelectorsCount() {
       return selectors_.size();
     }
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     public flyteidl.admin.ClusterAssignmentOuterClass.Selector getSelectors(int index) {
       return selectors_.get(index);
     }
     /**
+     * <pre>
+     * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
      */
     public flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder getSelectorsOrBuilder(
@@ -2233,6 +2273,10 @@ public final class ClusterAssignmentOuterClass {
           flyteidl.admin.ClusterAssignmentOuterClass.Selector, flyteidl.admin.ClusterAssignmentOuterClass.Selector.Builder, flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder> selectorsBuilder_;
 
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public java.util.List<flyteidl.admin.ClusterAssignmentOuterClass.Selector> getSelectorsList() {
@@ -2243,6 +2287,10 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public int getSelectorsCount() {
@@ -2253,6 +2301,10 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.Selector getSelectors(int index) {
@@ -2263,6 +2315,10 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder setSelectors(
@@ -2280,6 +2336,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder setSelectors(
@@ -2294,6 +2354,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder addSelectors(flyteidl.admin.ClusterAssignmentOuterClass.Selector value) {
@@ -2310,6 +2374,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder addSelectors(
@@ -2327,6 +2395,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder addSelectors(
@@ -2341,6 +2413,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder addSelectors(
@@ -2355,6 +2431,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder addAllSelectors(
@@ -2370,6 +2450,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder clearSelectors() {
@@ -2383,6 +2467,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public Builder removeSelectors(int index) {
@@ -2396,6 +2484,10 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.Selector.Builder getSelectorsBuilder(
@@ -2403,6 +2495,10 @@ public final class ClusterAssignmentOuterClass {
         return getSelectorsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder getSelectorsOrBuilder(
@@ -2413,6 +2509,10 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public java.util.List<? extends flyteidl.admin.ClusterAssignmentOuterClass.SelectorOrBuilder> 
@@ -2424,6 +2524,10 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.Selector.Builder addSelectorsBuilder() {
@@ -2431,6 +2535,10 @@ public final class ClusterAssignmentOuterClass {
             flyteidl.admin.ClusterAssignmentOuterClass.Selector.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public flyteidl.admin.ClusterAssignmentOuterClass.Selector.Builder addSelectorsBuilder(
@@ -2439,6 +2547,10 @@ public final class ClusterAssignmentOuterClass {
             index, flyteidl.admin.ClusterAssignmentOuterClass.Selector.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Selector selectors = 1;</code>
        */
       public java.util.List<flyteidl.admin.ClusterAssignmentOuterClass.Selector.Builder> 

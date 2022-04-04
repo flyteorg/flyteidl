@@ -53,6 +53,7 @@ class AdminToleration(object):
     def selectors(self):
         """Gets the selectors of this AdminToleration.  # noqa: E501
 
+        A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.  # noqa: E501
 
         :return: The selectors of this AdminToleration.  # noqa: E501
         :rtype: list[AdminSelector]
@@ -63,6 +64,7 @@ class AdminToleration(object):
     def selectors(self, selectors):
         """Sets the selectors of this AdminToleration.
 
+        A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.  # noqa: E501
 
         :param selectors: The selectors of this AdminToleration.  # noqa: E501
         :type: list[AdminSelector]

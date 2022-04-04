@@ -93,7 +93,7 @@ Defines a set of specific label selectors that the execution can tolerate on a c
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "selectors", ":ref:`ref_flyteidl.admin.Selector`", "repeated", ""
+   "selectors", ":ref:`ref_flyteidl.admin.Selector`", "repeated", "A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS."
 
 
 

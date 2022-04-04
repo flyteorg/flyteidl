@@ -146,6 +146,7 @@ func (m *Affinity) GetSelectors() []*Selector {
 
 // Defines a set of specific label selectors that the execution can tolerate on a cluster.
 type Toleration struct {
+	// A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
 	Selectors            []*Selector `protobuf:"bytes,1,rep,name=selectors,proto3" json:"selectors,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`

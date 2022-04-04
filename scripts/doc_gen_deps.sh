@@ -25,7 +25,7 @@ cp -r $TMP_DEPS_GRPC_GATEWAY_FOLDER/protoc-gen-swagger $TMP_DEPS_FOLDER
 rm -rf $TMP_DEPS_GRPC_GATEWAY_FOLDER
 
 # k8 dependencies
-git clone --depth 1 https://github.com/kubernetes/api $TMP_DEPS_K8S_IO/api
-git clone --depth 1 https://github.com/kubernetes/apimachinery $TMP_DEPS_K8S_IO/apimachinery
+git clone --depth 1 git@github.com:kubernetes/api.git $TMP_DEPS_K8S_IO/api
+git clone --depth 1 git@github.com:kubernetes/apimachinery.git $TMP_DEPS_K8S_IO/apimachinery
 cp -r $TMP_DEPS_K8S_IO $TMP_DEPS_FOLDER
 rm -rf $TMP_DEPS_K8S_IO
