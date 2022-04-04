@@ -263,18 +263,18 @@ CreateUploadLocationResponse
 
 
 
-.. _ref_flyteidl.service.DataProxy:
+.. _ref_flyteidl.service.DataProxyService:
 
-DataProxy
+DataProxyService
 ------------------------------------------------------------------
 
-DataProxy defines an RPC Service that allows access to user-data in a controlled manner.
+DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
 
-.. csv-table:: DataProxy service methods
+.. csv-table:: DataProxyService service methods
    :header: "Method Name", "Request Type", "Response Type", "Description"
    :widths: auto
 
-   "CreateUploadLocation", ":ref:`ref_flyteidl.service.CreateUploadLocationRequest`", ":ref:`ref_flyteidl.service.CreateUploadLocationResponse`", "Retrieves user information about the currently logged in user."
+   "CreateUploadLocation", ":ref:`ref_flyteidl.service.CreateUploadLocationRequest`", ":ref:`ref_flyteidl.service.CreateUploadLocationResponse`", "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain."
  <!-- end services -->
 
 
